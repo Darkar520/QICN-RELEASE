@@ -1,0 +1,65 @@
+# Git internals
+.git/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Node / JS
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Caches / temp
+.cache/
+.tmp/
+tmp/
+temp/
+_build/
+**/.cache/
+**/.tmp/
+**/tmp/
+**/_build/
+
+# LaTeX auxiliares
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.lof
+*.lot
+*.bcf
+*.run.xml
+*.xdv
+
+# Release-local no versionar
+corpus/pdf_release/_unpacked/
+release/_tmp_text/
+release/**/build_logs/
+release/**/logs/
+
+# Allowlist minima (solo lo que prometes auditar)
+!corpus/pdf_release/manifest.json
+!corpus/pdf_release/manifest.sha256.txt
+!corpus/pdf_release/pdf_corpus.zip
+!corpus/pdf_release/pdf_corpus.zip.sha256.txt

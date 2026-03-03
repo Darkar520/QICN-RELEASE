@@ -1,0 +1,1298 @@
+﻿[
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\CHANGELOG.md",
+        "line_number":  7,
+        "keyword":  "manifest",
+        "snippet":  "- Integridad verificable por hash SHA-256 (`pdf_corpus.zip.sha256.txt`) y manifest (`manifest.json` + `manifest.sha256.txt`)."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\CHANGELOG.md",
+        "line_number":  7,
+        "keyword":  "sha256",
+        "snippet":  "- Integridad verificable por hash SHA-256 (`pdf_corpus.zip.sha256.txt`) y manifest (`manifest.json` + `manifest.sha256.txt`)."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\CHANGELOG.md",
+        "line_number":  9,
+        "keyword":  "RO",
+        "snippet":  "### H2 - Canonizacion documental (control editorial minimo)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\CHANGELOG.md",
+        "line_number":  33,
+        "keyword":  "admissibility",
+        "snippet":  "- El paquete queda listo para una fase posterior de edicion editorial: unificacion de definiciones, Methods/Admissibility, RO/SNO, reduccion de redundancia."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\CHANGELOG.md",
+        "line_number":  33,
+        "keyword":  "RO",
+        "snippet":  "- El paquete queda listo para una fase posterior de edicion editorial: unificacion de definiciones, Methods/Admissibility, RO/SNO, reduccion de redundancia."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\CHANGELOG.md",
+        "line_number":  33,
+        "keyword":  "SNO",
+        "snippet":  "- El paquete queda listo para una fase posterior de edicion editorial: unificacion de definiciones, Methods/Admissibility, RO/SNO, reduccion de redundancia."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  4,
+        "keyword":  "manifest",
+        "snippet":  "El foco es **integridad verificable por artefactos** (hashes + manifest), no recompilacion completa de fuentes."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  12,
+        "keyword":  "sha256",
+        "snippet":  "$zipReal = (Get-FileHash -Algorithm SHA256 \"corpus\\pdf_release\\pdf_corpus.zip\").Hash.ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  13,
+        "keyword":  "sha256",
+        "snippet":  "$zipExp  = ((Get-Content \"corpus\\pdf_release\\pdf_corpus.zip.sha256.txt\" -Raw).Split() | Select-Object -First 1).ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  14,
+        "keyword":  "manifest",
+        "snippet":  "$manReal = (Get-FileHash -Algorithm SHA256 \"corpus\\pdf_release\\manifest.json\").Hash.ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  14,
+        "keyword":  "sha256",
+        "snippet":  "$manReal = (Get-FileHash -Algorithm SHA256 \"corpus\\pdf_release\\manifest.json\").Hash.ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  15,
+        "keyword":  "manifest",
+        "snippet":  "$manExp  = ((Get-Content \"corpus\\pdf_release\\manifest.sha256.txt\" -Raw).Split() | Select-Object -First 1).ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  15,
+        "keyword":  "sha256",
+        "snippet":  "$manExp  = ((Get-Content \"corpus\\pdf_release\\manifest.sha256.txt\" -Raw).Split() | Select-Object -First 1).ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  18,
+        "keyword":  "manifest",
+        "snippet":  "\"manifest_match=$($manReal -eq $manExp)\""
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  21,
+        "keyword":  "manifest",
+        "snippet":  "Si `zip_match=True` y `manifest_match=True`, la integridad basica del release esta OK."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  32,
+        "keyword":  "manifest",
+        "snippet":  "- `manifest.json` - manifest con hashes por PDF"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  33,
+        "keyword":  "manifest",
+        "snippet":  "- `*.sha256.txt` - hashes oficiales del zip y del manifest"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  33,
+        "keyword":  "sha256",
+        "snippet":  "- `*.sha256.txt` - hashes oficiales del zip y del manifest"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  36,
+        "keyword":  "manifest",
+        "snippet":  "- Corpus PDF consolidado y deduplicado con `manifest.json` y hashes SHA-256."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  45,
+        "keyword":  "RO",
+        "snippet":  "## Reproducibility"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  46,
+        "keyword":  "RO",
+        "snippet":  "La reproducibilidad del release se define como:"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  48,
+        "keyword":  "manifest",
+        "snippet":  "- `manifest.json` coincide con su SHA-256 esperado."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  56,
+        "keyword":  "admissibility",
+        "snippet":  "- Edicion editorial: unificacion de definiciones, reduccion de redundancia, y mapeo consistente de secciones \"Methods / Admissibility / RO/SNO\" en un paper objetivo."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  56,
+        "keyword":  "EO",
+        "snippet":  "- Edicion editorial: unificacion de definiciones, reduccion de redundancia, y mapeo consistente de secciones \"Methods / Admissibility / RO/SNO\" en un paper objetivo."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  56,
+        "keyword":  "RO",
+        "snippet":  "- Edicion editorial: unificacion de definiciones, reduccion de redundancia, y mapeo consistente de secciones \"Methods / Admissibility / RO/SNO\" en un paper objetivo."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\README.md",
+        "line_number":  56,
+        "keyword":  "SNO",
+        "snippet":  "- Edicion editorial: unificacion de definiciones, reduccion de redundancia, y mapeo consistente de secciones \"Methods / Admissibility / RO/SNO\" en un paper objetivo."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  5,
+        "keyword":  "C2",
+        "snippet":  "- 1a86ec656885a998_1a86ec656885a998_main_ac20e128"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  15,
+        "keyword":  "C2",
+        "snippet":  "- dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  27,
+        "keyword":  "C2",
+        "snippet":  "| 1a86ec656885a998_1a86ec656885a998_main_ac20e128 | NEEDS_MANUAL_TAGGING | NEEDS_MANUAL_TAGGING |"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  37,
+        "keyword":  "C2",
+        "snippet":  "| dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561 | NEEDS_MANUAL_TAGGING | NEEDS_MANUAL_TAGGING |"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  48,
+        "keyword":  "admissibility",
+        "snippet":  "- Admissibility"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  49,
+        "keyword":  "RO",
+        "snippet":  "- RO"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  50,
+        "keyword":  "SNO",
+        "snippet":  "- SNO"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  51,
+        "keyword":  "negative control",
+        "snippet":  "- Negative Controls"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  51,
+        "keyword":  "RO",
+        "snippet":  "- Negative Controls"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  55,
+        "keyword":  "RO",
+        "snippet":  "- Mirrors quedan como referencia, no como fuente de ediciÃ³n."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  62,
+        "keyword":  "admissibility",
+        "snippet":  "2. Confirmar que cada documento tenga secciÃ³n Methods/Verification/Admissibility."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+        "line_number":  64,
+        "keyword":  "RO",
+        "snippet":  "4. Mantener NotebookLM/SISTEMA_CANON_PAPERS como mirror-only."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  5,
+        "keyword":  "C2",
+        "snippet":  "| 1a86ec656885a998_1a86ec656885a998_main_ac20e128 | 1a86ec656885a998 | main | rigid-identity-paper/main.tex | corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  5,
+        "keyword":  "sha256",
+        "snippet":  "| 1a86ec656885a998_1a86ec656885a998_main_ac20e128 | 1a86ec656885a998 | main | rigid-identity-paper/main.tex | corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  6,
+        "keyword":  "sha256",
+        "snippet":  "| 44806ece96bbdae2_main_1c305418 | 44806ece96bbdae2 | main | rigid-identity-framework/paper4/main.tex | corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf | PDF_ONLY | sha256"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  7,
+        "keyword":  "sha256",
+        "snippet":  "| 6968859f53621468_6968859f53621468_main_f973c787 | 6968859f53621468 | main | rigid-identity-framework/paper1/main.tex | corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__696885"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  8,
+        "keyword":  "EO",
+        "snippet":  "| 857c4c89149a369c_857c4c89149a369c_main_7294ab07 | 857c4c89149a369c | main | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex | corpus/pdf_release/pdfs/857c4c89149a369c_8"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  8,
+        "keyword":  "RO",
+        "snippet":  "| 857c4c89149a369c_857c4c89149a369c_main_7294ab07 | 857c4c89149a369c | main | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex | corpus/pdf_release/pdfs/857c4c89149a369c_8"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  8,
+        "keyword":  "sha256",
+        "snippet":  "| 857c4c89149a369c_857c4c89149a369c_main_7294ab07 | 857c4c89149a369c | main | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex | corpus/pdf_release/pdfs/857c4c89149a369c_8"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  9,
+        "keyword":  "EO",
+        "snippet":  "| 87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e | 87dc170947cc65f0 | main | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex | corpus/pdf_release/pdfs/87dc170947cc65f"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  9,
+        "keyword":  "RO",
+        "snippet":  "| 87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e | 87dc170947cc65f0 | main | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex | corpus/pdf_release/pdfs/87dc170947cc65f"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  9,
+        "keyword":  "sha256",
+        "snippet":  "| 87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e | 87dc170947cc65f0 | main | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex | corpus/pdf_release/pdfs/87dc170947cc65f"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  10,
+        "keyword":  "sha256",
+        "snippet":  "| 9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e | 9e4b83e44e669730 | main | rigid-identity-framework/paper2/main.tex | corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  11,
+        "keyword":  "sha256",
+        "snippet":  "| aa4d0b933892715a_aa4d0b933892715a_main_df41c33d | aa4d0b933892715a | main | phenomenological-regimes-paper/main.tex | corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b9"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  12,
+        "keyword":  "sha256",
+        "snippet":  "| c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc | c3d1cc6abf9c8c70 | main | phenomenological-instability-paper/main.tex | corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  13,
+        "keyword":  "sha256",
+        "snippet":  "| canonical_core | 3b77e7b20616cf25 | CANONICAL_CORE | rigid-identity-framework/CANONICAL_CORE.tex | corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf | PDF_ONLY | sha256:canonical_core |  "
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  14,
+        "keyword":  "sha256",
+        "snippet":  "| canonical_core_74be3e | eead218e079c0ad2 | CANONICAL_CORE_RECONSTRUCTED | NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.tex | corpus/pdf_release/pdfs/canonical_core_74be3e__eead218e079c0ad2.pdf | CA"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  15,
+        "keyword":  "RO",
+        "snippet":  "| canonical_core_957f4e | bbe9bbb48ddf4f9c | NO CONSTA | NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/CANONICAL_CORE.tex | corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf | MIRROR | sha25"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  15,
+        "keyword":  "sha256",
+        "snippet":  "| canonical_core_957f4e | bbe9bbb48ddf4f9c | NO CONSTA | NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/CANONICAL_CORE.tex | corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf | MIRROR | sha25"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  16,
+        "keyword":  "sha256",
+        "snippet":  "| canonical_core_957f4e | ea247e98e09de39b | CANONICAL_CORE | NotebookLM/LaTeX/CANONICAL_CORE.tex | corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf | PDF_ONLY | sha256:canonical_co"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  17,
+        "keyword":  "C2",
+        "snippet":  "| dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561 | dc23c9c9345aae47 | main | rigid-identity-framework/paper3/main.tex | corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  17,
+        "keyword":  "sha256",
+        "snippet":  "| dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561 | dc23c9c9345aae47 | main | rigid-identity-framework/paper3/main.tex | corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  18,
+        "keyword":  "sha256",
+        "snippet":  "| phenomenological_instability | 04b40ecc9376767e | phenomenological-instability | NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-instability.tex | corpus/pdf_release/pdfs/phenomenological_ins"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  19,
+        "keyword":  "sha256",
+        "snippet":  "| phenomenological_instability_2fe669 | 0b013024c06a2f7d | phenomenological-instability | NotebookLM/LaTeX/phenomenological-instability.tex | corpus/pdf_release/pdfs/phenomenological_instability_2fe66"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  20,
+        "keyword":  "sha256",
+        "snippet":  "| phenomenological_regimes | 9dab69286f9e9107 | phenomenological-regimes | NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-regimes.tex | corpus/pdf_release/pdfs/phenomenological_regimes__9dab69"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  21,
+        "keyword":  "sha256",
+        "snippet":  "| phenomenological_regimes_529d6b | 39860a8a5035ed82 | phenomenological-regimes | NotebookLM/LaTeX/phenomenological-regimes.tex | corpus/pdf_release/pdfs/phenomenological_regimes_529d6b__39860a8a5035e"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  22,
+        "keyword":  "sha256",
+        "snippet":  "| rigid_identity_paper | 3e026c9275c59788 | rigid-identity-paper | NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/rigid-identity-paper.tex | corpus/pdf_release/pdfs/rigid_identity_paper__3e026c9275c59788.pdf |"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\doc_inventory.md",
+        "line_number":  23,
+        "keyword":  "sha256",
+        "snippet":  "| rigid_identity_paper_8925ec | bb0cda8022f6c8ac | rigid-identity-paper | NotebookLM/LaTeX/rigid-identity-paper.tex | corpus/pdf_release/pdfs/rigid_identity_paper_8925ec__bb0cda8022f6c8ac.pdf | CANON "
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\primary_supporting_map.md",
+        "line_number":  9,
+        "keyword":  "C2",
+        "snippet":  "| dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561 | dc23c9c9345aae47 | primary | rigid-identity-framework/paper3/main.tex | CANON | CANON_MAP relPath contains rigid-identity-framework/paper1..paper4; "
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\primary_supporting_map.md",
+        "line_number":  10,
+        "keyword":  "C2",
+        "snippet":  "| 1a86ec656885a998_1a86ec656885a998_main_ac20e128 | 1a86ec656885a998 | supporting | rigid-identity-paper/main.tex | CANON | NO CONSTA criterio editorial explícito para este doc; usando CANON_MAP-only."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\primary_supporting_map.md",
+        "line_number":  11,
+        "keyword":  "EO",
+        "snippet":  "| 857c4c89149a369c_857c4c89149a369c_main_7294ab07 | 857c4c89149a369c | supporting | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex | CANON | NO CONSTA criterio editorial"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\primary_supporting_map.md",
+        "line_number":  11,
+        "keyword":  "RO",
+        "snippet":  "| 857c4c89149a369c_857c4c89149a369c_main_7294ab07 | 857c4c89149a369c | supporting | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex | CANON | NO CONSTA criterio editorial"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\primary_supporting_map.md",
+        "line_number":  12,
+        "keyword":  "EO",
+        "snippet":  "| 87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e | 87dc170947cc65f0 | supporting | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex | CANON | NO CONSTA criterio editor"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\primary_supporting_map.md",
+        "line_number":  12,
+        "keyword":  "RO",
+        "snippet":  "| 87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e | 87dc170947cc65f0 | supporting | Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex | CANON | NO CONSTA criterio editor"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\editorial_audit_v1\\primary_supporting_map.md",
+        "line_number":  16,
+        "keyword":  "RO",
+        "snippet":  "| canonical_core_957f4e | bbe9bbb48ddf4f9c | supporting | NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/CANONICAL_CORE.tex | MIRROR | NO CONSTA criterio editorial explícito para este doc; usando CANON_MAP-onl"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  4,
+        "keyword":  "RO",
+        "snippet":  "- Introducir QO (Qualia Operacional no-biologica) como definicion operacional medible."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  5,
+        "keyword":  "EO",
+        "snippet":  "- Integrar QO con EO/RO/SNO/NC sin duplicar disclaimers."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  5,
+        "keyword":  "RO",
+        "snippet":  "- Integrar QO con EO/RO/SNO/NC sin duplicar disclaimers."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  5,
+        "keyword":  "SNO",
+        "snippet":  "- Integrar QO con EO/RO/SNO/NC sin duplicar disclaimers."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  8,
+        "keyword":  "admissibility",
+        "snippet":  "## Opcion A (recomendada): Addendum/Appendix del hub Methods/Admissibility"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  12,
+        "keyword":  "EO",
+        "snippet":  "4. Prereg y criterios de admisibilidad (EO/RO/SNO + NC)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  12,
+        "keyword":  "RO",
+        "snippet":  "4. Prereg y criterios de admisibilidad (EO/RO/SNO + NC)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  12,
+        "keyword":  "SNO",
+        "snippet":  "4. Prereg y criterios de admisibilidad (EO/RO/SNO + NC)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  14,
+        "keyword":  "RO",
+        "snippet":  "6. Claim registry permitido/prohibido"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  15,
+        "keyword":  "EO",
+        "snippet":  "7. Referencias cruzadas a Paper I-IV sin repetir teoria"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  20,
+        "keyword":  "RO",
+        "snippet":  "1. Problema y alcance QO"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  22,
+        "keyword":  "EO",
+        "snippet":  "3. Marco de validacion (EO/RO/SNO/NC)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  22,
+        "keyword":  "RO",
+        "snippet":  "3. Marco de validacion (EO/RO/SNO/NC)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  22,
+        "keyword":  "SNO",
+        "snippet":  "3. Marco de validacion (EO/RO/SNO/NC)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  23,
+        "keyword":  "RO",
+        "snippet":  "4. Metricas y protocolo prereg"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  28,
+        "keyword":  "EO",
+        "snippet":  "- Enlaces: citar hub Methods y mantener Paper I-IV como contexto teorico."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  31,
+        "keyword":  "RO",
+        "snippet":  "- Opcion A primero (menor redundancia, menor costo editorial)."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\editorial_insertion_plan.md",
+        "line_number":  32,
+        "keyword":  "RO",
+        "snippet":  "- Promover a Opcion B solo si la extension supera 8-12 paginas o requiere revision independiente."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  5,
+        "keyword":  "admissibility",
+        "snippet":  "| QO state/readout | Readout q_t del estado s_t bajo condicion c_t | BLUEPRINT slots generales; seccion exacta NO CONSTA | Paper hub Methods/Admissibility + appendix de definiciones | Definir variable"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  6,
+        "keyword":  "EO",
+        "snippet":  "| EO/RO/SNO gates | Puertas operacionales para validez de observaciones | BLUEPRINT menciona RO/SNO/NC; detalle PR6/PR7/PR8 NO CONSTA en release | Methods hub (seccion gates) | Tabla unica de gates y "
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  6,
+        "keyword":  "PR6",
+        "snippet":  "| EO/RO/SNO gates | Puertas operacionales para validez de observaciones | BLUEPRINT menciona RO/SNO/NC; detalle PR6/PR7/PR8 NO CONSTA en release | Methods hub (seccion gates) | Tabla unica de gates y "
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  6,
+        "keyword":  "RO",
+        "snippet":  "| EO/RO/SNO gates | Puertas operacionales para validez de observaciones | BLUEPRINT menciona RO/SNO/NC; detalle PR6/PR7/PR8 NO CONSTA en release | Methods hub (seccion gates) | Tabla unica de gates y "
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  6,
+        "keyword":  "SNO",
+        "snippet":  "| EO/RO/SNO gates | Puertas operacionales para validez de observaciones | BLUEPRINT menciona RO/SNO/NC; detalle PR6/PR7/PR8 NO CONSTA en release | Methods hub (seccion gates) | Tabla unica de gates y "
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  7,
+        "keyword":  "C2",
+        "snippet":  "| Negative Controls (NC1/NC2/NC4) | Pruebas de falsacion y leakage | BLUEPRINT slot + artifacts en workspace (negative_controls_report.json) | Methods hub + appendix experiment design | Especificar ba"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  7,
+        "keyword":  "NC1",
+        "snippet":  "| Negative Controls (NC1/NC2/NC4) | Pruebas de falsacion y leakage | BLUEPRINT slot + artifacts en workspace (negative_controls_report.json) | Methods hub + appendix experiment design | Especificar ba"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  7,
+        "keyword":  "NC2",
+        "snippet":  "| Negative Controls (NC1/NC2/NC4) | Pruebas de falsacion y leakage | BLUEPRINT slot + artifacts en workspace (negative_controls_report.json) | Methods hub + appendix experiment design | Especificar ba"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  7,
+        "keyword":  "NC4",
+        "snippet":  "| Negative Controls (NC1/NC2/NC4) | Pruebas de falsacion y leakage | BLUEPRINT slot + artifacts en workspace (negative_controls_report.json) | Methods hub + appendix experiment design | Especificar ba"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  7,
+        "keyword":  "negative control",
+        "snippet":  "| Negative Controls (NC1/NC2/NC4) | Pruebas de falsacion y leakage | BLUEPRINT slot + artifacts en workspace (negative_controls_report.json) | Methods hub + appendix experiment design | Especificar ba"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  7,
+        "keyword":  "RO",
+        "snippet":  "| Negative Controls (NC1/NC2/NC4) | Pruebas de falsacion y leakage | BLUEPRINT slot + artifacts en workspace (negative_controls_report.json) | Methods hub + appendix experiment design | Especificar ba"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  9,
+        "keyword":  "RO",
+        "snippet":  "| QII | QII = E_split ||q - q_split|| | NO CONSTA | Methods hub metricas QO | Agregar perturbation split protocol | Medio |"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  10,
+        "keyword":  "RO",
+        "snippet":  "| QSC | Invariancia tipo RO de q bajo transformaciones permitidas | NO CONSTA | Methods hub metricas QO | Definir set de transforms permitidas | Medio |"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\methods_mapping_table.md",
+        "line_number":  12,
+        "keyword":  "RO",
+        "snippet":  "| Claim policy QO | Solo caracter operacional no-biologico | RELEASE_NOTES Non-goals | Claim registry unico en Methods hub | Lista de claims permitidos/prohibidos | Alto reputacional por overclaim |"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  9,
+        "keyword":  "sha256",
+        "snippet":  "- SUMMARY: @{generated_at=2026-03-01T19:34:12.423Z; status=PASS; sha256_pdf_corpus_zip=3395006bdac94f26f956ade3e560ce1ceb1de76321323e6db242acfc86db6654; counts=; outputs=; inputs=; not_available_field"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  17,
+        "keyword":  "C2",
+        "snippet":  "- Paper III -\u003e dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561 (docId dc23c9c9345aae47)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  21,
+        "keyword":  "C2",
+        "snippet":  "| 1a86ec656885a998_1a86ec656885a998_main_ac20e128 | 1a86ec656885a998 | corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf | True | SOURCE_AVAILABLE | NO CONS"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  32,
+        "keyword":  "C2",
+        "snippet":  "| dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561 | dc23c9c9345aae47 | corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf | True | SOURCE_AVAILABLE | Equival"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  41,
+        "keyword":  "C2",
+        "snippet":  "- 1a86ec656885a998_1a86ec656885a998_main_ac20e128:"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  48,
+        "keyword":  "EO",
+        "snippet":  "- C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\Sistema Canon Sandbox\\artifacts\\paper_exports\\roeo_batch_campaign_v1\\main.tex"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  48,
+        "keyword":  "RO",
+        "snippet":  "- C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\Sistema Canon Sandbox\\artifacts\\paper_exports\\roeo_batch_campaign_v1\\main.tex"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  50,
+        "keyword":  "EO",
+        "snippet":  "- C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\Sistema Canon Sandbox\\artifacts\\paper_exports\\roeo_batch_final_paper_v1\\main.tex"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  50,
+        "keyword":  "RO",
+        "snippet":  "- C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\Sistema Canon Sandbox\\artifacts\\paper_exports\\roeo_batch_final_paper_v1\\main.tex"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\papers_inventory.md",
+        "line_number":  64,
+        "keyword":  "C2",
+        "snippet":  "- dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561:"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  4,
+        "keyword":  "ticks.ndjson",
+        "snippet":  "- Objetivo: anexar q_t a artifacts (ticks.ndjson/run_summary) sin dependencia de LLM."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  5,
+        "keyword":  "RO",
+        "snippet":  "- Archivos propuestos:"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  6,
+        "keyword":  "EpisodeHarness",
+        "snippet":  "- Sistema Canon Sandbox/src/experiments/ExperimentalEpisodeHarness.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  7,
+        "keyword":  "admissibility",
+        "snippet":  "- Sistema Canon Sandbox/src/experiments/AdmissibilityEngine.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  10,
+        "keyword":  "admissibility",
+        "snippet":  "- Sistema Canon Sandbox/tests/admissibility-exporter.v1.test.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  13,
+        "keyword":  "admissibility",
+        "snippet":  "- node \"Sistema Canon Sandbox/tests/admissibility-exporter.v1.test.js\""
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  19,
+        "keyword":  "C2",
+        "snippet":  "- Objetivo: ejecutar splits/interventions + placebo para NC1/NC2/NC4."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  19,
+        "keyword":  "NC1",
+        "snippet":  "- Objetivo: ejecutar splits/interventions + placebo para NC1/NC2/NC4."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  19,
+        "keyword":  "NC2",
+        "snippet":  "- Objetivo: ejecutar splits/interventions + placebo para NC1/NC2/NC4."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  19,
+        "keyword":  "NC4",
+        "snippet":  "- Objetivo: ejecutar splits/interventions + placebo para NC1/NC2/NC4."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  20,
+        "keyword":  "RO",
+        "snippet":  "- Archivos propuestos:"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  21,
+        "keyword":  "RO",
+        "snippet":  "- Sistema Canon Sandbox/src/experiments/negative_controls_runner.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  22,
+        "keyword":  "SNO",
+        "snippet":  "- Sistema Canon Sandbox/src/experiments/sno_discriminator.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  23,
+        "keyword":  "EO",
+        "snippet":  "- Sistema Canon Sandbox/scripts/evaluate-roeo.cjs"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  23,
+        "keyword":  "RO",
+        "snippet":  "- Sistema Canon Sandbox/scripts/evaluate-roeo.cjs"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  24,
+        "keyword":  "RO",
+        "snippet":  "- Sistema Canon Sandbox/tests/negative-controls.v1.test.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  25,
+        "keyword":  "SNO",
+        "snippet":  "- Sistema Canon Sandbox/tests/sno.v1.test.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  27,
+        "keyword":  "RO",
+        "snippet":  "- node \"Sistema Canon Sandbox/tests/negative-controls.v1.test.js\""
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  28,
+        "keyword":  "SNO",
+        "snippet":  "- node \"Sistema Canon Sandbox/tests/sno.v1.test.js\""
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  29,
+        "keyword":  "EO",
+        "snippet":  "- node \"Sistema Canon Sandbox/scripts/evaluate-roeo.cjs\"  # params NO CONSTA"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  29,
+        "keyword":  "RO",
+        "snippet":  "- node \"Sistema Canon Sandbox/scripts/evaluate-roeo.cjs\"  # params NO CONSTA"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  35,
+        "keyword":  "RO",
+        "snippet":  "- Archivos propuestos:"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  36,
+        "keyword":  "admissibility",
+        "snippet":  "- Sistema Canon Sandbox/scripts/evaluate-admissibility.cjs"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  37,
+        "keyword":  "EO",
+        "snippet":  "- Sistema Canon Sandbox/scripts/export-roeo.cjs"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  37,
+        "keyword":  "RO",
+        "snippet":  "- Sistema Canon Sandbox/scripts/export-roeo.cjs"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  38,
+        "keyword":  "EO",
+        "snippet":  "- Sistema Canon Sandbox/src/experiments/latex_asset_generator_roeo.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  38,
+        "keyword":  "RO",
+        "snippet":  "- Sistema Canon Sandbox/src/experiments/latex_asset_generator_roeo.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  39,
+        "keyword":  "EO",
+        "snippet":  "- Sistema Canon Sandbox/tests/exporter_roeo.v1.test.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  39,
+        "keyword":  "RO",
+        "snippet":  "- Sistema Canon Sandbox/tests/exporter_roeo.v1.test.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  40,
+        "keyword":  "admissibility",
+        "snippet":  "- Sistema Canon Sandbox/tests/admissibility-exporter.v1.test.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  42,
+        "keyword":  "EO",
+        "snippet":  "- node \"Sistema Canon Sandbox/tests/exporter_roeo.v1.test.js\""
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  42,
+        "keyword":  "RO",
+        "snippet":  "- node \"Sistema Canon Sandbox/tests/exporter_roeo.v1.test.js\""
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  43,
+        "keyword":  "admissibility",
+        "snippet":  "- node \"Sistema Canon Sandbox/tests/admissibility-exporter.v1.test.js\""
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  44,
+        "keyword":  "admissibility",
+        "snippet":  "- node \"Sistema Canon Sandbox/scripts/evaluate-admissibility.cjs\"  # args NO CONSTA"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  45,
+        "keyword":  "EO",
+        "snippet":  "- node \"Sistema Canon Sandbox/scripts/export-roeo.cjs\"  # args NO CONSTA"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  45,
+        "keyword":  "RO",
+        "snippet":  "- node \"Sistema Canon Sandbox/scripts/export-roeo.cjs\"  # args NO CONSTA"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\PR_QO_plan_v1.md",
+        "line_number":  47,
+        "keyword":  "RO",
+        "snippet":  "- FAIL: schema invalido, metricas faltantes o control leak no reportado."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  4,
+        "keyword":  "RNO",
+        "snippet":  "- Estado: s_t (estado interno del sistema en tick t)."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  6,
+        "keyword":  "RO",
+        "snippet":  "- Condicion: c_t (variable experimental/control en tick t)."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  11,
+        "keyword":  "RO",
+        "snippet":  "- QSC = invariancia tipo RO de q bajo transformaciones permitidas"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  15,
+        "keyword":  "ADMISSIBLE",
+        "snippet":  "- EPI gate: ADMISSIBLE"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  16,
+        "keyword":  "C2",
+        "snippet":  "- NC obligatorios: NC1 temporal permute, NC2 self-vars noise/shift, NC4 leak"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  16,
+        "keyword":  "NC1",
+        "snippet":  "- NC obligatorios: NC1 temporal permute, NC2 self-vars noise/shift, NC4 leak"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  16,
+        "keyword":  "NC2",
+        "snippet":  "- NC obligatorios: NC1 temporal permute, NC2 self-vars noise/shift, NC4 leak"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  16,
+        "keyword":  "NC4",
+        "snippet":  "- NC obligatorios: NC1 temporal permute, NC2 self-vars noise/shift, NC4 leak"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  17,
+        "keyword":  "RNO",
+        "snippet":  "- Compatibilidad SNO/RNO: requerida"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  17,
+        "keyword":  "SNO",
+        "snippet":  "- Compatibilidad SNO/RNO: requerida"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  24,
+        "keyword":  "RO",
+        "snippet":  "3. QRC muestra recuperacion monotona posterior a intervencion controlada."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  25,
+        "keyword":  "RO",
+        "snippet":  "### Debe fallar (3, controles negativos)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  26,
+        "keyword":  "NC1",
+        "snippet":  "1. NC1 (temporal permute) degrada QDI vs condicion valida."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  27,
+        "keyword":  "C2",
+        "snippet":  "2. NC2 (self-vars noise/shift) incrementa QII y degrada QSC."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  27,
+        "keyword":  "NC2",
+        "snippet":  "2. NC2 (self-vars noise/shift) incrementa QII y degrada QSC."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  28,
+        "keyword":  "NC4",
+        "snippet":  "3. NC4 (leak) invalida batch (status no admisible)."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  31,
+        "keyword":  "RO",
+        "snippet":  "- Prohibido: \"qualia humana\"."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  32,
+        "keyword":  "RO",
+        "snippet":  "- Prohibido: \"sentir\"."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  33,
+        "keyword":  "RO",
+        "snippet":  "- Prohibido: \"conciencia biologica\"."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\QO_spec_v1.md",
+        "line_number":  39,
+        "keyword":  "RO",
+        "snippet":  "- Implementacion: propuesta en PR-Q1/Q2/Q3."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\summary.md",
+        "line_number":  4,
+        "keyword":  "C2",
+        "snippet":  "- 1a86ec656885a998_1a86ec656885a998_main_ac20e128 -\u003e 1a86ec656885a998"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\summary.md",
+        "line_number":  15,
+        "keyword":  "C2",
+        "snippet":  "- dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561 -\u003e dc23c9c9345aae47"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\summary.md",
+        "line_number":  24,
+        "keyword":  "admissibility",
+        "snippet":  "- Recomendada: Opcion A (Addendum/Appendix en hub Methods/Admissibility)."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\summary.md",
+        "line_number":  34,
+        "keyword":  "NC4",
+        "snippet":  "- Leakage en controles negativos (NC4) si no se enforcea gate."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\summary.md",
+        "line_number":  34,
+        "keyword":  "RO",
+        "snippet":  "- Leakage en controles negativos (NC4) si no se enforcea gate."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\summary.md",
+        "line_number":  37,
+        "keyword":  "RO",
+        "snippet":  "## Proximos comandos (PLAN-ONLY, no ejecutar aqui)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\summary.md",
+        "line_number":  41,
+        "keyword":  "RO",
+        "snippet":  "node tests/negative-controls.v1.test.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\qualia_qo_planning_v1\\summary.md",
+        "line_number":  42,
+        "keyword":  "admissibility",
+        "snippet":  "node tests/admissibility-exporter.v1.test.js"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  5,
+        "keyword":  "manifest",
+        "snippet":  "- Manifest fuente: `corpus/pdf_release/manifest.json`"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  9,
+        "keyword":  "EO",
+        "snippet":  "## Conteos"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  13,
+        "keyword":  "RO",
+        "snippet":  "- mirrors skipped: 1"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  16,
+        "keyword":  "RO",
+        "snippet":  "## Reproducibility"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  17,
+        "keyword":  "sha256",
+        "snippet":  "- PDFs are immutable artifacts; identified by sha256."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  20,
+        "keyword":  "admissibility",
+        "snippet":  "## Admissibility"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  21,
+        "keyword":  "RO",
+        "snippet":  "- Existe pipeline de admisibilidad en el proyecto."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  22,
+        "keyword":  "PR6",
+        "snippet":  "- Referencias PR6-PR8: NOT_AVAILABLE en este paquete de release si no constan explÃ­citas en PDFs."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  38,
+        "keyword":  "manifest",
+        "snippet":  "manifest.json"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  39,
+        "keyword":  "manifest",
+        "snippet":  "manifest.sha256.txt"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  39,
+        "keyword":  "sha256",
+        "snippet":  "manifest.sha256.txt"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  41,
+        "keyword":  "sha256",
+        "snippet":  "pdf_corpus.zip.sha256.txt"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\RELEASE_MAP.md",
+        "line_number":  45,
+        "keyword":  "RO",
+        "snippet":  "- NotebookLM/SISTEMA_CANON_PAPERS = mirror-only."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  6,
+        "keyword":  "integrity",
+        "snippet":  "## Integrity \u0026 Hashes"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  7,
+        "keyword":  "sha256",
+        "snippet":  "SHA256 oficial del corpus:"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  12,
+        "keyword":  "sha256",
+        "snippet":  "- `corpus/pdf_release/pdf_corpus.zip.sha256.txt`"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  13,
+        "keyword":  "manifest",
+        "snippet":  "- `corpus/pdf_release/manifest.json`"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  14,
+        "keyword":  "manifest",
+        "snippet":  "- `corpus/pdf_release/manifest.sha256.txt`"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  14,
+        "keyword":  "sha256",
+        "snippet":  "- `corpus/pdf_release/manifest.sha256.txt`"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  20,
+        "keyword":  "sha256",
+        "snippet":  "$zipReal = (Get-FileHash -Algorithm SHA256 \"corpus\\pdf_release\\pdf_corpus.zip\").Hash.ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  21,
+        "keyword":  "sha256",
+        "snippet":  "$zipExp  = ((Get-Content \"corpus\\pdf_release\\pdf_corpus.zip.sha256.txt\" -Raw).Split() | Select-Object -First 1).ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  22,
+        "keyword":  "manifest",
+        "snippet":  "$manReal = (Get-FileHash -Algorithm SHA256 \"corpus\\pdf_release\\manifest.json\").Hash.ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  22,
+        "keyword":  "sha256",
+        "snippet":  "$manReal = (Get-FileHash -Algorithm SHA256 \"corpus\\pdf_release\\manifest.json\").Hash.ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  23,
+        "keyword":  "manifest",
+        "snippet":  "$manExp  = ((Get-Content \"corpus\\pdf_release\\manifest.sha256.txt\" -Raw).Split() | Select-Object -First 1).ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  23,
+        "keyword":  "sha256",
+        "snippet":  "$manExp  = ((Get-Content \"corpus\\pdf_release\\manifest.sha256.txt\" -Raw).Split() | Select-Object -First 1).ToLower()"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  26,
+        "keyword":  "manifest",
+        "snippet":  "\"manifest_match=$($manReal -eq $manExp)\""
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  38,
+        "keyword":  "manifest",
+        "snippet":  "- `manifest.json` + hashes (integridad)"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  42,
+        "keyword":  "manifest",
+        "snippet":  "- Corpus PDF consolidado y deduplicado con manifest y hashes."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  52,
+        "keyword":  "RO",
+        "snippet":  "## Reproducibility"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  54,
+        "keyword":  "sha256",
+        "snippet":  "1. Calcular hash SHA256 de `pdf_corpus.zip` y compararlo con `pdf_corpus.zip.sha256.txt`."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  55,
+        "keyword":  "manifest",
+        "snippet":  "2. Calcular hash SHA256 de `manifest.json` y compararlo con `manifest.sha256.txt`."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  55,
+        "keyword":  "sha256",
+        "snippet":  "2. Calcular hash SHA256 de `manifest.json` y compararlo con `manifest.sha256.txt`."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  58,
+        "keyword":  "RO",
+        "snippet":  "## Reproducibility - quick check"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  59,
+        "keyword":  "manifest",
+        "snippet":  "- Regla rÃ¡pida: si `zip_match=True` y `manifest_match=True`, la integridad bÃ¡sica estÃ¡ OK."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  61,
+        "keyword":  "admissibility",
+        "snippet":  "## Admissibility / Governance"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  62,
+        "keyword":  "manifest",
+        "snippet":  "Este repositorio es un release package auditable: el corpus se valida por hash (zip + manifest)."
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  69,
+        "keyword":  "RO",
+        "snippet":  "- `mirrors=1`"
+    },
+    {
+        "file":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\RELEASE_NOTES.md",
+        "line_number":  101,
+        "keyword":  "integrity",
+        "snippet":  "git commit -m \"release: qicn package 2026-03-01 (canon map + pdf corpus + integrity hashes)\""
+    }
+]

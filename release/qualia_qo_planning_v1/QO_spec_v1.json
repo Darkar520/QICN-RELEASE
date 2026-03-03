@@ -1,0 +1,177 @@
+﻿{
+    "$schema":  "https://json-schema.org/draft/2020-12/schema",
+    "title":  "QO Batch Report v1",
+    "type":  "object",
+    "required":  [
+                     "batch_id",
+                     "run_id",
+                     "timestamp_utc",
+                     "prereg",
+                     "gates",
+                     "metrics",
+                     "controls",
+                     "claim_policy"
+                 ],
+    "properties":  {
+                       "batch_id":  {
+                                        "type":  "string"
+                                    },
+                       "run_id":  {
+                                      "type":  "string"
+                                  },
+                       "timestamp_utc":  {
+                                             "type":  "string",
+                                             "format":  "date-time"
+                                         },
+                       "prereg":  {
+                                      "properties":  {
+                                                         "config_sha256":  {
+                                                                               "type":  "string",
+                                                                               "pattern":  "^[a-f0-9]{64}$"
+                                                                           },
+                                                         "config_path":  {
+                                                                             "type":  "string"
+                                                                         },
+                                                         "version":  {
+                                                                         "type":  "string"
+                                                                     }
+                                                     },
+                                      "type":  "object",
+                                      "required":  [
+                                                       "config_path",
+                                                       "config_sha256"
+                                                   ]
+                                  },
+                       "gates":  {
+                                     "properties":  {
+                                                        "SNO_RNO_compatible":  {
+                                                                                   "type":  "boolean"
+                                                                               },
+                                                        "EPI":  {
+                                                                    "type":  "string",
+                                                                    "enum":  [
+                                                                                 "ADMISSIBLE",
+                                                                                 "DISCARDED",
+                                                                                 "TAMPERED"
+                                                                             ]
+                                                                }
+                                                    },
+                                     "type":  "object",
+                                     "required":  [
+                                                      "EPI",
+                                                      "SNO_RNO_compatible"
+                                                  ]
+                                 },
+                       "metrics":  {
+                                       "properties":  {
+                                                          "QSC":  {
+                                                                      "type":  "number"
+                                                                  },
+                                                          "QII":  {
+                                                                      "type":  "number"
+                                                                  },
+                                                          "QRC":  {
+                                                                      "type":  "number"
+                                                                  },
+                                                          "QDI":  {
+                                                                      "type":  "number"
+                                                                  }
+                                                      },
+                                       "type":  "object",
+                                       "required":  [
+                                                        "QDI",
+                                                        "QII",
+                                                        "QSC",
+                                                        "QRC"
+                                                    ]
+                                   },
+                       "controls":  {
+                                        "properties":  {
+                                                           "NC2_selfvars_noise_shift":  {
+                                                                                            "type":  "string",
+                                                                                            "enum":  [
+                                                                                                         "PASS",
+                                                                                                         "FAIL"
+                                                                                                     ]
+                                                                                        },
+                                                           "NC1_temporal_permute":  {
+                                                                                        "type":  "string",
+                                                                                        "enum":  [
+                                                                                                     "PASS",
+                                                                                                     "FAIL"
+                                                                                                 ]
+                                                                                    },
+                                                           "NC4_leak":  {
+                                                                            "type":  "string",
+                                                                            "enum":  [
+                                                                                         "PASS",
+                                                                                         "FAIL"
+                                                                                     ]
+                                                                        }
+                                                       },
+                                        "type":  "object",
+                                        "required":  [
+                                                         "NC1_temporal_permute",
+                                                         "NC2_selfvars_noise_shift",
+                                                         "NC4_leak"
+                                                     ]
+                                    },
+                       "readout":  {
+                                       "properties":  {
+                                                          "readout_symbol":  {
+                                                                                 "const":  "q_t"
+                                                                             },
+                                                          "state_symbol":  {
+                                                                               "const":  "s_t"
+                                                                           },
+                                                          "condition_symbol":  {
+                                                                                   "const":  "c_t"
+                                                                               }
+                                                      },
+                                       "type":  "object",
+                                       "required":  [
+                                                        "state_symbol",
+                                                        "readout_symbol",
+                                                        "condition_symbol"
+                                                    ]
+                                   },
+                       "artifacts":  {
+                                         "properties":  {
+                                                            "run_summary_json":  {
+                                                                                     "type":  "string"
+                                                                                 },
+                                                            "admissibility_json":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                            "ticks_ndjson":  {
+                                                                                 "type":  "string"
+                                                                             }
+                                                        },
+                                         "type":  "object"
+                                     },
+                       "claim_policy":  {
+                                            "properties":  {
+                                                               "allowed":  {
+                                                                               "items":  {
+                                                                                             "type":  "string"
+                                                                                         },
+                                                                               "type":  "array"
+                                                                           },
+                                                               "forbidden":  {
+                                                                                 "items":  {
+                                                                                               "type":  "string"
+                                                                                           },
+                                                                                 "type":  "array"
+                                                                             }
+                                                           },
+                                            "type":  "object",
+                                            "required":  [
+                                                             "forbidden",
+                                                             "allowed"
+                                                         ]
+                                        },
+                       "notes":  {
+                                     "type":  "string"
+                                 }
+                   }
+}

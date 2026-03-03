@@ -1,0 +1,576 @@
+﻿{
+    "generated_at":  "2026-03-02T16:11:42",
+    "roots":  {
+                  "RELEASE_ROOT":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01",
+                  "WORKSPACE_ROOT":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0",
+                  "PDF_CORPUS_ZIP":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\corpus\\pdf_release\\pdf_corpus.zip",
+                  "CANON_MAP":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\CANON_MAP.v1.json",
+                  "BLUEPRINT":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\BLUEPRINT_EDITORIAL.md",
+                  "INDEX_PDFS":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-03-01\\release\\INDEX_PDFS.json",
+                  "NOTEBOOKLM_ROOT":  "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM"
+              },
+    "source_summary":  {
+                           "canon_map_entries":  18,
+                           "index_pdfs_entries":  18,
+                           "summary_counts":  {
+                                                  "canon":  18,
+                                                  "pdf_only":  3,
+                                                  "duplicates":  0,
+                                                  "mirrors":  1
+                                              },
+                           "release_map_present":  true,
+                           "release_notes_present":  true
+                       },
+    "paper_equivalents_paper_I_to_IV":  [
+                                            "Paper IV -\u003e 44806ece96bbdae2_main_1c305418 (docId 44806ece96bbdae2)",
+                                            "Paper I -\u003e 6968859f53621468_6968859f53621468_main_f973c787 (docId 6968859f53621468)",
+                                            "Paper II -\u003e 9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e (docId 9e4b83e44e669730)",
+                                            "Paper III -\u003e dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561 (docId dc23c9c9345aae47)"
+                                        ],
+    "papers_inventory":  [
+                             {
+                                 "paper_key":  "1a86ec656885a998_1a86ec656885a998_main_ac20e128",
+                                 "canonical_pdf_docId":  "1a86ec656885a998",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf",
+                                 "canonical_pdf_sha256":  "e57194de090c7672d69a35adec316cecfe5467f079041c78b794e6c38fd22b28",
+                                 "canonical_pdf_bytes":  415158,
+                                 "canonical_pdf_pages":  28,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\rigid-identity-paper\\main.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "rigid-identity-paper/main.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "44806ece96bbdae2_main_1c305418",
+                                 "canonical_pdf_docId":  "44806ece96bbdae2",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
+                                 "canonical_pdf_sha256":  "d2a8e0c4d38b2455c2393c9571e1c2bf328d3a89f95186bf080abfe220b4d6fb",
+                                 "canonical_pdf_bytes":  380358,
+                                 "canonical_pdf_pages":  15,
+                                 "category":  "pdf_only",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\rigid-identity-framework\\paper4\\main.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "rigid-identity-framework/paper4/main.tex"
+                                                      ],
+                                 "status":  "PDF_ONLY",
+                                 "source_status":  "PASS_PDF_ONLY",
+                                 "compilability_hint":  "SOURCE_PREVIOUSLY_NOT_COMPILABLE",
+                                 "notes":  "Equivalent to Paper IV candidate"
+                             },
+                             {
+                                 "paper_key":  "6968859f53621468_6968859f53621468_main_f973c787",
+                                 "canonical_pdf_docId":  "6968859f53621468",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+                                 "canonical_pdf_sha256":  "72c50a74bb290dbde5b9b8bd55d1d743a4aecdc5d7e5255d41bf0f612d532feb",
+                                 "canonical_pdf_bytes":  409772,
+                                 "canonical_pdf_pages":  28,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\rigid-identity-framework\\paper1\\main.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "rigid-identity-framework/paper1/main.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "Equivalent to Paper I candidate"
+                             },
+                             {
+                                 "paper_key":  "857c4c89149a369c_857c4c89149a369c_main_7294ab07",
+                                 "canonical_pdf_docId":  "857c4c89149a369c",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf",
+                                 "canonical_pdf_sha256":  "81710282a74890579320c899572d3c879f7ef0780e195c617c1cd554e1ea65d1",
+                                 "canonical_pdf_bytes":  50435,
+                                 "canonical_pdf_pages":  2,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\Sistema Canon Sandbox\\artifacts\\paper_exports\\roeo_batch_campaign_v1\\main.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e",
+                                 "canonical_pdf_docId":  "87dc170947cc65f0",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf",
+                                 "canonical_pdf_sha256":  "62bb07b98035f7542c4542209513a1df0550dc6c831c028d27b5c72c767a2246",
+                                 "canonical_pdf_bytes":  50082,
+                                 "canonical_pdf_pages":  2,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\Sistema Canon Sandbox\\artifacts\\paper_exports\\roeo_batch_final_paper_v1\\main.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e",
+                                 "canonical_pdf_docId":  "9e4b83e44e669730",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730.pdf",
+                                 "canonical_pdf_sha256":  "0d3ab0b919d46a6d08400a5db26d5734cf2b748627d5fa332b884f1501ef13ea",
+                                 "canonical_pdf_bytes":  418095,
+                                 "canonical_pdf_pages":  27,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\rigid-identity-framework\\paper2\\main.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "rigid-identity-framework/paper2/main.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "Equivalent to Paper II candidate"
+                             },
+                             {
+                                 "paper_key":  "aa4d0b933892715a_aa4d0b933892715a_main_df41c33d",
+                                 "canonical_pdf_docId":  "aa4d0b933892715a",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b933892715a.pdf",
+                                 "canonical_pdf_sha256":  "4a531535707c914dfe990c3d773288ed038f302f9d83f5d0ff68b9e9ceb0f181",
+                                 "canonical_pdf_bytes":  421908,
+                                 "canonical_pdf_pages":  27,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\phenomenological-regimes-paper\\main.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "phenomenological-regimes-paper/main.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc",
+                                 "canonical_pdf_docId":  "c3d1cc6abf9c8c70",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d1cc6abf9c8c70.pdf",
+                                 "canonical_pdf_sha256":  "05b6ad06d442b1f9429d0f83a15f33e538628d9cdb3e1007dee52f812af7ac44",
+                                 "canonical_pdf_bytes":  442983,
+                                 "canonical_pdf_pages":  23,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\phenomenological-instability-paper\\main.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "phenomenological-instability-paper/main.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "canonical_core",
+                                 "canonical_pdf_docId":  "3b77e7b20616cf25",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+                                 "canonical_pdf_sha256":  "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2",
+                                 "canonical_pdf_bytes":  324747,
+                                 "canonical_pdf_pages":  15,
+                                 "category":  "pdf_only",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\rigid-identity-framework\\CANONICAL_CORE.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "rigid-identity-framework/CANONICAL_CORE.tex"
+                                                      ],
+                                 "status":  "PDF_ONLY",
+                                 "source_status":  "PASS_PDF_ONLY",
+                                 "compilability_hint":  "SOURCE_PREVIOUSLY_NOT_COMPILABLE",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "canonical_core_74be3e",
+                                 "canonical_pdf_docId":  "eead218e079c0ad2",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/canonical_core_74be3e__eead218e079c0ad2.pdf",
+                                 "canonical_pdf_sha256":  "7e188a05a621517b955ecaaaefd9d0f2a40b6c8b6bfd7ee6d1767e1251f40ec9",
+                                 "canonical_pdf_bytes":  437620,
+                                 "canonical_pdf_pages":  23,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE_RECONSTRUCTED.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "canonical_core_957f4e",
+                                 "canonical_pdf_docId":  "ea247e98e09de39b",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf",
+                                 "canonical_pdf_sha256":  "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234",
+                                 "canonical_pdf_bytes":  437615,
+                                 "canonical_pdf_pages":  23,
+                                 "category":  "pdf_only",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE.tex",
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\LaTeX\\CANONICAL_CORE.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "NotebookLM/LaTeX/CANONICAL_CORE.tex",
+                                                          "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/CANONICAL_CORE.tex"
+                                                      ],
+                                 "status":  "PDF_ONLY",
+                                 "source_status":  "PASS_PDF_ONLY",
+                                 "compilability_hint":  "SOURCE_PREVIOUSLY_NOT_COMPILABLE",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561",
+                                 "canonical_pdf_docId":  "dc23c9c9345aae47",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf",
+                                 "canonical_pdf_sha256":  "fac1401174b95dade045a8aef8155f82a13064a7277d3f791cd36176eaf4c950",
+                                 "canonical_pdf_bytes":  377721,
+                                 "canonical_pdf_pages":  17,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\rigid-identity-framework\\paper3\\main.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "rigid-identity-framework/paper3/main.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "Equivalent to Paper III candidate"
+                             },
+                             {
+                                 "paper_key":  "phenomenological_instability",
+                                 "canonical_pdf_docId":  "04b40ecc9376767e",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/phenomenological_instability__04b40ecc9376767e.pdf",
+                                 "canonical_pdf_sha256":  "31030ffc92201f86c06d463af37ae3431b4463f21ce1762df48ec8fd8ca938c3",
+                                 "canonical_pdf_bytes":  406994,
+                                 "canonical_pdf_pages":  20,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\LaTeX\\phenomenological-instability.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-instability.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "phenomenological_instability_2fe669",
+                                 "canonical_pdf_docId":  "0b013024c06a2f7d",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/phenomenological_instability_2fe669__0b013024c06a2f7d.pdf",
+                                 "canonical_pdf_sha256":  "8f6037540b743b5abfef90e0eba7bf588111350f1cff50a730cdec666cfa5163",
+                                 "canonical_pdf_bytes":  406994,
+                                 "canonical_pdf_pages":  20,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\phenomenological-instability.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "NotebookLM/LaTeX/phenomenological-instability.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "phenomenological_regimes",
+                                 "canonical_pdf_docId":  "9dab69286f9e9107",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/phenomenological_regimes__9dab69286f9e9107.pdf",
+                                 "canonical_pdf_sha256":  "7e3d5fdd494f7919320f9e27177e2381c89e23cc4c735d4aa001c38b350aa72e",
+                                 "canonical_pdf_bytes":  419346,
+                                 "canonical_pdf_pages":  27,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\LaTeX\\phenomenological-regimes.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-regimes.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "phenomenological_regimes_529d6b",
+                                 "canonical_pdf_docId":  "39860a8a5035ed82",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/phenomenological_regimes_529d6b__39860a8a5035ed82.pdf",
+                                 "canonical_pdf_sha256":  "b0819508b3a38c35b28839d254ccc961604d3e798449bd356918075de6520452",
+                                 "canonical_pdf_bytes":  419346,
+                                 "canonical_pdf_pages":  27,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\phenomenological-regimes.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "NotebookLM/LaTeX/phenomenological-regimes.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "rigid_identity_paper",
+                                 "canonical_pdf_docId":  "3e026c9275c59788",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/rigid_identity_paper__3e026c9275c59788.pdf",
+                                 "canonical_pdf_sha256":  "7e014482f0cd9abfac1bac8e88eaa29196ce0299951c80f7afe45c180f17f578",
+                                 "canonical_pdf_bytes":  409159,
+                                 "canonical_pdf_pages":  28,
+                                 "category":  "mirror",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\LaTeX\\rigid-identity-paper.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/rigid-identity-paper.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             },
+                             {
+                                 "paper_key":  "rigid_identity_paper_8925ec",
+                                 "canonical_pdf_docId":  "bb0cda8022f6c8ac",
+                                 "canonical_pdf_path":  "corpus/pdf_release/pdfs/rigid_identity_paper_8925ec__bb0cda8022f6c8ac.pdf",
+                                 "canonical_pdf_sha256":  "c9e55f8f588d2bcb1ca4e55d97d2272d5ba0f9d7bf61199ac97e4ef684cf3c58",
+                                 "canonical_pdf_bytes":  409159,
+                                 "canonical_pdf_pages":  28,
+                                 "category":  "canon",
+                                 "has_source_tex":  true,
+                                 "source_paths":  [
+                                                      "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\rigid-identity-paper.tex"
+                                                  ],
+                                 "source_rel_paths":  [
+                                                          "NotebookLM/LaTeX/rigid-identity-paper.tex"
+                                                      ],
+                                 "status":  "SOURCE_AVAILABLE",
+                                 "source_status":  "SOURCE_OK",
+                                 "compilability_hint":  "COMPILABLE_PREVIOUS_RUN",
+                                 "notes":  "NO CONSTA"
+                             }
+                         ],
+    "zip_pdf_index":  [
+                          {
+                              "docId":  "04b40ecc9376767e",
+                              "title":  "phenomenological-instability",
+                              "path_in_zip":  "pdfs/04b40ecc9376767e__04b40ecc9376767e_phenomenological-instability.pdf",
+                              "bytes":  406994,
+                              "sha256":  "31030ffc92201f86c06d463af37ae3431b4463f21ce1762df48ec8fd8ca938c3",
+                              "category":  "canon",
+                              "manifest_rel_path":  "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-instability.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "0b013024c06a2f7d",
+                              "title":  "phenomenological-instability",
+                              "path_in_zip":  "pdfs/0b013024c06a2f7d__0b013024c06a2f7d_phenomenological-instability.pdf",
+                              "bytes":  406994,
+                              "sha256":  "8f6037540b743b5abfef90e0eba7bf588111350f1cff50a730cdec666cfa5163",
+                              "category":  "canon",
+                              "manifest_rel_path":  "NotebookLM/LaTeX/phenomenological-instability.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "1a86ec656885a998",
+                              "title":  "main",
+                              "path_in_zip":  "pdfs/1a86ec656885a998__1a86ec656885a998_main.pdf",
+                              "bytes":  415158,
+                              "sha256":  "e57194de090c7672d69a35adec316cecfe5467f079041c78b794e6c38fd22b28",
+                              "category":  "canon",
+                              "manifest_rel_path":  "rigid-identity-paper/main.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "39860a8a5035ed82",
+                              "title":  "phenomenological-regimes",
+                              "path_in_zip":  "pdfs/39860a8a5035ed82__39860a8a5035ed82_phenomenological-regimes.pdf",
+                              "bytes":  419346,
+                              "sha256":  "b0819508b3a38c35b28839d254ccc961604d3e798449bd356918075de6520452",
+                              "category":  "canon",
+                              "manifest_rel_path":  "NotebookLM/LaTeX/phenomenological-regimes.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "3b77e7b20616cf25",
+                              "title":  "CANONICAL_CORE",
+                              "path_in_zip":  "pdfs/3b77e7b20616cf25__CANONICAL_CORE.pdf",
+                              "bytes":  324747,
+                              "sha256":  "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2",
+                              "category":  "pdf_only",
+                              "manifest_rel_path":  "rigid-identity-framework/CANONICAL_CORE.tex",
+                              "manifest_status":  "PASS_PDF_ONLY"
+                          },
+                          {
+                              "docId":  "3e026c9275c59788",
+                              "title":  "rigid-identity-paper",
+                              "path_in_zip":  "pdfs/3e026c9275c59788__3e026c9275c59788_rigid-identity-paper.pdf",
+                              "bytes":  409159,
+                              "sha256":  "7e014482f0cd9abfac1bac8e88eaa29196ce0299951c80f7afe45c180f17f578",
+                              "category":  "mirror",
+                              "manifest_rel_path":  "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/rigid-identity-paper.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "44806ece96bbdae2",
+                              "title":  "main",
+                              "path_in_zip":  "pdfs/44806ece96bbdae2__main.pdf",
+                              "bytes":  380358,
+                              "sha256":  "d2a8e0c4d38b2455c2393c9571e1c2bf328d3a89f95186bf080abfe220b4d6fb",
+                              "category":  "pdf_only",
+                              "manifest_rel_path":  "rigid-identity-framework/paper4/main.tex",
+                              "manifest_status":  "PASS_PDF_ONLY"
+                          },
+                          {
+                              "docId":  "6968859f53621468",
+                              "title":  "main",
+                              "path_in_zip":  "pdfs/6968859f53621468__6968859f53621468_main.pdf",
+                              "bytes":  409772,
+                              "sha256":  "72c50a74bb290dbde5b9b8bd55d1d743a4aecdc5d7e5255d41bf0f612d532feb",
+                              "category":  "canon",
+                              "manifest_rel_path":  "rigid-identity-framework/paper1/main.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "857c4c89149a369c",
+                              "title":  "main",
+                              "path_in_zip":  "pdfs/857c4c89149a369c__857c4c89149a369c_main.pdf",
+                              "bytes":  50435,
+                              "sha256":  "81710282a74890579320c899572d3c879f7ef0780e195c617c1cd554e1ea65d1",
+                              "category":  "canon",
+                              "manifest_rel_path":  "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "87dc170947cc65f0",
+                              "title":  "main",
+                              "path_in_zip":  "pdfs/87dc170947cc65f0__87dc170947cc65f0_main.pdf",
+                              "bytes":  50082,
+                              "sha256":  "62bb07b98035f7542c4542209513a1df0550dc6c831c028d27b5c72c767a2246",
+                              "category":  "canon",
+                              "manifest_rel_path":  "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "9dab69286f9e9107",
+                              "title":  "phenomenological-regimes",
+                              "path_in_zip":  "pdfs/9dab69286f9e9107__9dab69286f9e9107_phenomenological-regimes.pdf",
+                              "bytes":  419346,
+                              "sha256":  "7e3d5fdd494f7919320f9e27177e2381c89e23cc4c735d4aa001c38b350aa72e",
+                              "category":  "canon",
+                              "manifest_rel_path":  "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-regimes.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "9e4b83e44e669730",
+                              "title":  "main",
+                              "path_in_zip":  "pdfs/9e4b83e44e669730__9e4b83e44e669730_main.pdf",
+                              "bytes":  418095,
+                              "sha256":  "0d3ab0b919d46a6d08400a5db26d5734cf2b748627d5fa332b884f1501ef13ea",
+                              "category":  "canon",
+                              "manifest_rel_path":  "rigid-identity-framework/paper2/main.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "aa4d0b933892715a",
+                              "title":  "main",
+                              "path_in_zip":  "pdfs/aa4d0b933892715a__aa4d0b933892715a_main.pdf",
+                              "bytes":  421908,
+                              "sha256":  "4a531535707c914dfe990c3d773288ed038f302f9d83f5d0ff68b9e9ceb0f181",
+                              "category":  "canon",
+                              "manifest_rel_path":  "phenomenological-regimes-paper/main.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "bb0cda8022f6c8ac",
+                              "title":  "rigid-identity-paper",
+                              "path_in_zip":  "pdfs/bb0cda8022f6c8ac__bb0cda8022f6c8ac_rigid-identity-paper.pdf",
+                              "bytes":  409159,
+                              "sha256":  "c9e55f8f588d2bcb1ca4e55d97d2272d5ba0f9d7bf61199ac97e4ef684cf3c58",
+                              "category":  "canon",
+                              "manifest_rel_path":  "NotebookLM/LaTeX/rigid-identity-paper.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "c3d1cc6abf9c8c70",
+                              "title":  "main",
+                              "path_in_zip":  "pdfs/c3d1cc6abf9c8c70__c3d1cc6abf9c8c70_main.pdf",
+                              "bytes":  442983,
+                              "sha256":  "05b6ad06d442b1f9429d0f83a15f33e538628d9cdb3e1007dee52f812af7ac44",
+                              "category":  "canon",
+                              "manifest_rel_path":  "phenomenological-instability-paper/main.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "dc23c9c9345aae47",
+                              "title":  "main",
+                              "path_in_zip":  "pdfs/dc23c9c9345aae47__dc23c9c9345aae47_main.pdf",
+                              "bytes":  377721,
+                              "sha256":  "fac1401174b95dade045a8aef8155f82a13064a7277d3f791cd36176eaf4c950",
+                              "category":  "canon",
+                              "manifest_rel_path":  "rigid-identity-framework/paper3/main.tex",
+                              "manifest_status":  "PASS"
+                          },
+                          {
+                              "docId":  "ea247e98e09de39b",
+                              "title":  "CANONICAL_CORE",
+                              "path_in_zip":  "pdfs/ea247e98e09de39b__CANONICAL_CORE_RECONSTRUCTED.pdf",
+                              "bytes":  437615,
+                              "sha256":  "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234",
+                              "category":  "pdf_only",
+                              "manifest_rel_path":  "NotebookLM/LaTeX/CANONICAL_CORE.tex",
+                              "manifest_status":  "PASS_PDF_ONLY"
+                          },
+                          {
+                              "docId":  "eead218e079c0ad2",
+                              "title":  "CANONICAL_CORE_RECONSTRUCTED",
+                              "path_in_zip":  "pdfs/eead218e079c0ad2__eead218e079c0ad2_CANONICAL_CORE_RECONSTRUCTED.pdf",
+                              "bytes":  437620,
+                              "sha256":  "7e188a05a621517b955ecaaaefd9d0f2a40b6c8b6bfd7ee6d1767e1251f40ec9",
+                              "category":  "canon",
+                              "manifest_rel_path":  "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.tex",
+                              "manifest_status":  "PASS"
+                          }
+                      ]
+}

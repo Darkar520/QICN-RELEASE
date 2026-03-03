@@ -1,0 +1,19 @@
+﻿Get-FileHash -Algorithm SHA256 corpus\\pdf_release\\pdf_corpus.zip
+Get-Content corpus\\pdf_release\\pdf_corpus.zip.sha256.txt -Raw
+Get-FileHash -Algorithm SHA256 corpus\\pdf_release\\manifest.json
+Get-Content corpus\\pdf_release\\manifest.sha256.txt -Raw
+Test-Path editorial docs
+Set-Content CHANGELOG.md
+Set-Content README.md
+Set-Content RELEASE_NOTES.md
+git config --get user.name
+git config --get user.email
+git add .gitignore README.md RELEASE_NOTES.md CHANGELOG.md
+git add release corpus\\pdf_release
+git commit -m "release: QICN package v1 (canon map + pdf corpus + integrity hashes)"
+git branch -M main
+ensure tag release-2026-03-01 at HEAD
+git status --short --branch > release/FREEZE_AUDIT_v1/git_status.txt
+git log -1 --oneline --decorate > release/FREEZE_AUDIT_v1/git_log_1.txt
+git tag --list > release/FREEZE_AUDIT_v1/git_tags.txt
+git remote get-url origin

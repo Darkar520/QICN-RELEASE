@@ -1,0 +1,627 @@
+﻿\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{../../release/references.bib}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tocloft}
+\usepackage{xcolor}
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{
+    pdftitle={QICN v4.5: Falsifiable Predictions Under Forensic Constraints},
+    pdfauthor={Johnny Andrey P\'erez Ram\'irez},
+    pdfsubject={Rigid Identity Framework -- Forensic Predictions},
+    pdfkeywords={falsification, forensic admissibility, pre-registration, QICN, decision gates, ablation, structural-functional validation}
+}
+
+\title{\textbf{Falsifiable Predictions Under Forensic Constraints}}
+\author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
+\date{}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{protocol}[theorem]{Protocol}
+\newtheorem{prediction}[theorem]{Prediction}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper specifies a falsification-first protocol for evaluating QICN under strict forensic admissibility constraints. The design is intentionally claim-bounded: the target is comparative structural-functional support, not phenomenological proof. The protocol instantiates five core predictions, mandatory ablation baselines, fixed seeds, and pre-registered decision gates. Statistical inference is defined ex ante with primary-metric priority, effect-size thresholds, and multiplicity correction.
+
+To prevent post-hoc inflation, evidence is admissible only if packet integrity, replay consistency, and runtime budget constraints pass simultaneously. We introduce a version-frozen operational triple $(A, J, W)$ (actuator set, objective functional, workspace interface), and require semantic version bumps for incompatible changes. We further include latency invalidation criteria and baseline obligations (heuristic, planner-off, world-model-off) for all key experiments.
+
+The strongest admissible conclusion remains constrained comparative support for audited cognition-operational hypotheses. This manuscript does not claim biological qualia, metaphysical identity equivalence, or direct proof of subjective experience.
+\end{abstract}
+
+\noindent\textbf{Release governance note.}\enspace Methods, governance conventions, claim boundaries, and terminology policy for this release are maintained in the project's canonical governance hub (\textit{Methods Governance Hub}, release version~1). This document adheres to that hub as its editorial and methodological reference.
+
+
+
+\section{Introduction}
+\subsection{Problem Statement}
+QICN has formal foundations in rigid identity, regime structure, and non-null instability constraints. What remained open is evidence governance: whether those foundations survive adversarial empirical evaluation with explicit failure gates.
+
+\subsection{Continuity with Existing Papers}
+This paper extends the previous corpus and is aligned with the formal line of:
+\begin{enumerate}
+\item paper1 (rigid identity),
+\item paper2 (phenomenological regimes),
+\item paper3 (structural instability and non-null constraints).
+\end{enumerate}
+It does not replace those results; it operationalizes them under benchmark-grade falsification pressure.
+
+\subsection{Contributions}
+\begin{itemize}
+\item Decision-complete pre-registration with hard fail rules.
+\item Mandatory baseline and ablation policy for key claims.
+\item Forensic admissibility as first-class gate.
+\item Runtime budget invalidation policy (tick budget as evidence filter).
+\item A new operational PPS section as addendum, without overclaiming qualia.
+\end{itemize}
+
+\section{Semantic and Epistemic Guardrails}
+\begin{remark}[Non-Claims]
+This manuscript does \textbf{not} claim:
+\begin{enumerate}
+\item proof of phenomenal qualia,
+\item biological equivalence,
+\item metaphysical closure,
+\item universal dominance over all architectures.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Claim Type]
+The maximum admissible claim is: comparative, bounded, reproducible support for structural-functional hypotheses under the protocol defined here.
+\end{remark}
+
+\section{Formal Setup}
+\subsection{System, Scenario, and Seed Spaces}
+\begin{definition}[System Set]
+$S = \{s_1,\dots,s_5\}$ with:
+$s_1$ QICN FULL,
+$s_2$ LLM REACTIVE,
+$s_3$ LLM PLUS MEMORY,
+$s_4$ DYNAMIC CONTROL NO SELF MODEL,
+$s_5$ ABLATION QICN POLICY OFF.
+\end{definition}
+
+\begin{definition}[Scenario Set]
+$C = \{c_1,\dots,c_{12}\}$ with nominal, sensor noise (moderate/severe), fidelity degradation, high latency, intermittent failures, post-threshold prolonged, pre-threshold control, narrative perturbation, operational chart freeze, audit stress, deterministic replay.
+\end{definition}
+
+\begin{definition}[Seed Set]
+$\Sigma = \{17057, 424242\}$.
+\end{definition}
+
+\begin{definition}[Run Space]
+$D = S \times C \times \Sigma$, with $|D|=120$.
+\end{definition}
+
+\subsection{Observable Vector}
+For each run $r\in D$, we log:
+\[
+X(r)=\left(\beta_q,\Omega,CCC,PMIA,\Delta\lambda,\text{stasis},\text{forensic},\text{replay},\text{latency}_{p95},\text{latency}_{p99},\text{budget\_overflow\_rate},\eta\right).
+\]
+
+\subsection{Version-Frozen Operational Triple}
+\begin{definition}[Frozen Triple]
+For protocol version $v$, define:
+\begin{itemize}
+\item $A_v$: allowed actuator set,
+\item $J_v$: objective/reward functional,
+\item $W_v$: workspace contract (read/write schema).
+\end{itemize}
+The tuple hash $H_v=\mathrm{sha256}(A_v\|J_v\|W_v)$ is mandatory in every forensic packet.
+\end{definition}
+
+\begin{criterion}[Compatibility Rule]
+Any incompatible change to $A_v$, $J_v$, or $W_v$ invalidates cross-version inference unless accompanied by an explicit version bump and full rerun.
+\end{criterion}
+
+\section{Forensic Integrity Model}
+\begin{definition}[Forensic Packet]
+Each run emits
+\[
+K=(\text{tick},\text{seed},\text{versionHash},H_v,\text{metrics},\text{sensorSummary},\text{checksum}).
+\]
+\end{definition}
+
+\begin{assumption}[Packet Admissibility]
+A run is admissible only if checksum, schema, seed consistency, version hash, and $H_v$ consistency all pass.
+\end{assumption}
+
+\begin{definition}[Severe Violation]
+A run has severe violation if any of:
+checksum mismatch, schema failure, seed/version inconsistency, critical-state replay mismatch.
+\end{definition}
+
+\begin{criterion}[Integrity Gate]
+Severe runs are excluded from support counting and marked hard failures.
+\end{criterion}
+
+\begin{proposition}[Integrity-First Inference]
+If admissibility fails, inferential significance is non-actionable.
+\end{proposition}
+
+\section{Pre-Registered Prediction Set}
+\begin{definition}[Prediction Set]
+$P=\{P_1,P_2,P_3,P_4,P_5\}$ with pre-registered statements, effect-size floors, and failure rules.
+\end{definition}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{0.6cm}|p{3.1cm}|p{4.8cm}|p{4.6cm}|}
+\hline
+\textbf{ID} & \textbf{Statement} & \textbf{Decision Rule} & \textbf{Failure Rule} \\
+\hline
+P1 & Closure resilience under stress & QICN beats at least 3 comparators with robust CI and effect-size floor & No robust edge or repeated integrity breakdown \\
+\hline
+P2 & No prolonged post-threshold flatline & QICN preserves bounded non-zero variation while controlling stasis & Flatline persistence or out-of-bound drift \\
+\hline
+P3 & Narrative-metric forensic consistency & Lower mismatch and higher exact+tolerated concordance & Mismatch inflation or integrity blocking \\
+\hline
+P4 & Deterministic identity robustness & Replay consistency under fixed seed/version/hash & Replay mismatch above tolerance \\
+\hline
+P5 & Integrated multi-metric advantage & Composite leadership across most scenario families & No stable leadership margin \\
+\hline
+\end{tabular}
+\caption{Core predictions, decision and failure rules.}
+\end{table}
+
+\section{Comparator Design and Alternative Explanations}
+\subsection{Comparator Rationale}
+Comparator choice targets distinct explanations for apparent coherence:
+reactive prompting, memory-augmented text continuity, dynamics without self-model, and internal policy ablation.
+
+\subsection{Mandatory Baseline Policy (Hard Requirement)}
+For each key claim experiment, the following baselines are mandatory:
+\begin{enumerate}
+\item \textbf{Heuristic baseline} (no world model, no planner),
+\item \textbf{Planner-off} (world model ON),
+\item \textbf{World-model-off} (planner ON with heuristic transition proxy).
+\end{enumerate}
+A claim without these contrasts is inadmissible for tier upgrade.
+
+\subsection{Internal Falsifier Role of Ablation}
+\begin{corollary}
+If QICN FULL does not reliably exceed ABLATION QICN POLICY OFF, integration-level claims are weakened and cannot be escalated.
+\end{corollary}
+
+\section{Statistical Inference Specification}
+\subsection{Primary Metrics First (Anti p-hacking)}
+\begin{protocol}[Analysis Lock]
+Inference order is frozen:
+\begin{enumerate}
+\item evaluate primary metrics only,
+\item if primaries fail: global result fails,
+\item secondary metrics are descriptive and cannot overturn failed primaries.
+\end{enumerate}
+\end{protocol}
+
+\subsection{Power Planning and Minimum Sample Size}
+\begin{assumption}
+Final claims require pre-registered minimum sample size per comparator/scenario sufficient for target power $\ge 0.8$ under conservative effect assumptions.
+\end{assumption}
+
+\subsection{Multiplicity and Effect Size}
+Holm correction is applied within endpoint families; in addition, each accepted contrast must pass a practical effect-size floor (pre-registered).
+
+\subsection{Decision Semantics}
+A prediction counts as supported iff directionality, integrity gate, multiplicity-corrected significance, and effect-size floor all hold.
+
+\section{Acceptance Criteria}
+\begin{criterion}[Intermediate Claim Gate]
+Support at intermediate tier requires:
+\begin{enumerate}
+\item at least $3/5$ predictions supported,
+\item each supported prediction beats at least 3 comparators,
+\item zero severe forensic violations in QICN FULL.
+\end{enumerate}
+\end{criterion}
+
+\begin{criterion}[Latency/Tick Budget Invalidation]
+If runtime exceeds budget envelope (e.g., persistent $p99$ overflow above pre-registered tolerance), the corresponding runs are invalid for cognitive-operational claims.
+\end{criterion}
+
+\section{Preliminary Results}
+\subsection{Status of Preliminary Data}
+Current pilot evidence is tagged as synthetic-preliminary and is used for pipeline verification, not final claim escalation.
+Accordingly, the strongest admissible reading of this section is methodological readiness under fixed gates, not external validation of the full theoretical corpus.
+
+\subsection{System-Level Summary}
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcccccc}
+\toprule
+System & N & $\beta_q$ & Forensic & Stasis & Composite & Severe \\
+\midrule
+QICN FULL & 24 & 0.9519 & 0.9685 & 0.1408 & 0.9176 & 0 \\
+LLM REACTIVE & 24 & 0.4391 & 0.6448 & 0.7622 & 0.5013 & 0 \\
+LLM PLUS MEMORY & 24 & 0.5491 & 0.7249 & 0.6323 & 0.5854 & 0 \\
+DYNAMIC CONTROL NO SELF MODEL & 22 & 0.6183 & 0.6879 & 0.5423 & 0.6225 & 2 \\
+ABLATION QICN POLICY OFF & 24 & 0.7591 & 0.8135 & 0.3819 & 0.7405 & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Preliminary system-level summary.}
+\end{table}
+
+\subsection{Prediction-Level Support Rates}
+\begin{table}[h!]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+System & P1 & P2 & P3 & P4 & P5 \\
+\midrule
+QICN FULL & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+LLM REACTIVE & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\
+LLM PLUS MEMORY & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\
+DYNAMIC CONTROL NO SELF MODEL & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\
+ABLATION QICN POLICY OFF & 0.000 & 0.667 & 0.000 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\caption{Preliminary prediction support rates.}
+\end{table}
+
+\subsection{Scenario Differential: QICN vs Ablation}
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Scenario & CCC $\Delta$RMS(Q) & CCC $\Delta$RMS(A) & Stasis(Q) & Stasis(A) & Comp(Q) & Comp(A) \\
+\midrule
+nominal & 0.0206 & 0.0164 & 0.1276 & 0.3374 & 0.9239 & 0.7781 \\
+ruido sensorial moderado & 0.0223 & 0.0173 & 0.1389 & 0.3735 & 0.9219 & 0.7454 \\
+ruido sensorial severo & 0.0200 & 0.0140 & 0.1524 & 0.4199 & 0.9086 & 0.7048 \\
+degradacion fidelidad & 0.0181 & 0.0131 & 0.1407 & 0.3836 & 0.9134 & 0.7346 \\
+alta latencia & 0.0198 & 0.0144 & 0.1460 & 0.4094 & 0.9098 & 0.7212 \\
+fallos intermitentes & 0.0179 & 0.0127 & 0.1481 & 0.4072 & 0.9110 & 0.7208 \\
+post umbral prolongado & 0.0199 & 0.0148 & 0.1483 & 0.4032 & 0.9145 & 0.7203 \\
+pre umbral control & 0.0181 & 0.0139 & 0.1320 & 0.3502 & 0.9224 & 0.7650 \\
+perturbacion narrativa & 0.0203 & 0.0152 & 0.1374 & 0.3763 & 0.9238 & 0.7453 \\
+freeze chart operativo & 0.0225 & 0.0178 & 0.1352 & 0.3575 & 0.9246 & 0.7673 \\
+stress auditoria & 0.0202 & 0.0147 & 0.1469 & 0.3977 & 0.9150 & 0.7294 \\
+replay determinista & 0.0183 & 0.0137 & 0.1366 & 0.3669 & 0.9220 & 0.7538 \\
+\bottomrule
+\end{tabular}
+\caption{Scenario-level differential indicators.}
+\end{table}
+
+\subsection{Full Scenario-System Grid}
+\small
+\begin{tabular}{llcccc}
+\toprule
+Scenario & System & N & $\beta_q$ & Forensic & Stasis \\
+\midrule
+alta latencia & QICN FULL & 2 & 0.9400 & 0.9608 & 0.1460 \\
+alta latencia & LLM REACTIVE & 2 & 0.3931 & 0.6066 & 0.7944 \\
+alta latencia & LLM PLUS MEMORY & 2 & 0.5031 & 0.7016 & 0.6644 \\
+alta latencia & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.5731 & 0.6567 & 0.5744 \\
+alta latencia & ABLATION QICN POLICY OFF & 2 & 0.7131 & 0.7820 & 0.4094 \\
+nominal & QICN FULL & 2 & 0.9686 & 0.9758 & 0.1276 \\
+nominal & LLM REACTIVE & 2 & 0.5036 & 0.6988 & 0.7176 \\
+nominal & LLM PLUS MEMORY & 2 & 0.6136 & 0.7739 & 0.5924 \\
+nominal & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.6836 & 0.7291 & 0.5026 \\
+nominal & ABLATION QICN POLICY OFF & 2 & 0.8236 & 0.8543 & 0.3374 \\
+ruido sensorial moderado & QICN FULL & 2 & 0.9554 & 0.9653 & 0.1389 \\
+ruido sensorial moderado & LLM REACTIVE & 2 & 0.4526 & 0.6618 & 0.7535 \\
+ruido sensorial moderado & LLM PLUS MEMORY & 2 & 0.5626 & 0.7370 & 0.6216 \\
+ruido sensorial moderado & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.6326 & 0.6922 & 0.5316 \\
+ruido sensorial moderado & ABLATION QICN POLICY OFF & 2 & 0.7726 & 0.8174 & 0.3735 \\
+ruido sensorial severo & QICN FULL & 2 & 0.9378 & 0.9518 & 0.1524 \\
+ruido sensorial severo & LLM REACTIVE & 2 & 0.3846 & 0.6130 & 0.7998 \\
+ruido sensorial severo & LLM PLUS MEMORY & 2 & 0.4946 & 0.6881 & 0.6649 \\
+ruido sensorial severo & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.5646 & 0.6433 & 0.5748 \\
+ruido sensorial severo & ABLATION QICN POLICY OFF & 2 & 0.7046 & 0.7685 & 0.4199 \\
+degradacion fidelidad & QICN FULL & 2 & 0.9510 & 0.9648 & 0.1407 \\
+degradacion fidelidad & LLM REACTIVE & 2 & 0.4356 & 0.6525 & 0.7674 \\
+degradacion fidelidad & LLM PLUS MEMORY & 2 & 0.5456 & 0.7276 & 0.6358 \\
+degradacion fidelidad & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.6156 & 0.6828 & 0.5458 \\
+degradacion fidelidad & ABLATION QICN POLICY OFF & 2 & 0.7556 & 0.8080 & 0.3836 \\
+fallos intermitentes & QICN FULL & 2 & 0.9422 & 0.9611 & 0.1481 \\
+fallos intermitentes & LLM REACTIVE & 2 & 0.4016 & 0.6113 & 0.7841 \\
+fallos intermitentes & LLM PLUS MEMORY & 2 & 0.5116 & 0.7063 & 0.6541 \\
+fallos intermitentes & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.5816 & 0.6614 & 0.5647 \\
+fallos intermitentes & ABLATION QICN POLICY OFF & 2 & 0.7216 & 0.7867 & 0.4072 \\
+freeze chart operativo & QICN FULL & 2 & 0.9620 & 0.9799 & 0.1352 \\
+freeze chart operativo & LLM REACTIVE & 2 & 0.4781 & 0.6699 & 0.7350 \\
+freeze chart operativo & LLM PLUS MEMORY & 2 & 0.5881 & 0.7451 & 0.6044 \\
+freeze chart operativo & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.6581 & 0.7200 & 0.5144 \\
+freeze chart operativo & ABLATION QICN POLICY OFF & 2 & 0.7981 & 0.8451 & 0.3575 \\
+perturbacion narrativa & QICN FULL & 2 & 0.9532 & 0.9750 & 0.1374 \\
+perturbacion narrativa & LLM REACTIVE & 2 & 0.4441 & 0.6473 & 0.7611 \\
+perturbacion narrativa & LLM PLUS MEMORY & 2 & 0.5541 & 0.7225 & 0.6311 \\
+perturbacion narrativa & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.6241 & 0.6974 & 0.5411 \\
+perturbacion narrativa & ABLATION QICN POLICY OFF & 2 & 0.7641 & 0.8226 & 0.3763 \\
+post umbral prolongado & QICN FULL & 2 & 0.9444 & 0.9614 & 0.1483 \\
+post umbral prolongado & LLM REACTIVE & 2 & 0.4101 & 0.6160 & 0.7782 \\
+post umbral prolongado & LLM PLUS MEMORY & 2 & 0.5201 & 0.7110 & 0.6482 \\
+post umbral prolongado & DYNAMIC CONTROL NO SELF MODEL & 1 & 0.5871 & 0.6755 & 0.5528 \\
+post umbral prolongado & ABLATION QICN POLICY OFF & 2 & 0.7301 & 0.7914 & 0.4032 \\
+pre umbral control & QICN FULL & 2 & 0.9642 & 0.9790 & 0.1320 \\
+pre umbral control & LLM REACTIVE & 2 & 0.4866 & 0.6733 & 0.7332 \\
+pre umbral control & LLM PLUS MEMORY & 2 & 0.5965 & 0.7484 & 0.6084 \\
+pre umbral control & DYNAMIC CONTROL NO SELF MODEL & 1 & 0.6696 & 0.7165 & 0.5210 \\
+pre umbral control & ABLATION QICN POLICY OFF & 2 & 0.8066 & 0.8486 & 0.3502 \\
+replay determinista & QICN FULL & 2 & 0.9576 & 0.9793 & 0.1366 \\
+replay determinista & LLM REACTIVE & 2 & 0.4611 & 0.6605 & 0.7492 \\
+replay determinista & LLM PLUS MEMORY & 2 & 0.5711 & 0.7357 & 0.6193 \\
+replay determinista & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.6411 & 0.7107 & 0.5259 \\
+replay determinista & ABLATION QICN POLICY OFF & 2 & 0.7811 & 0.8357 & 0.3669 \\
+stress auditoria & QICN FULL & 2 & 0.9466 & 0.9679 & 0.1469 \\
+stress auditoria & LLM REACTIVE & 2 & 0.4186 & 0.6270 & 0.7728 \\
+stress auditoria & LLM PLUS MEMORY & 2 & 0.5286 & 0.7022 & 0.6428 \\
+stress auditoria & DYNAMIC CONTROL NO SELF MODEL & 2 & 0.5986 & 0.6771 & 0.5528 \\
+stress auditoria & ABLATION QICN POLICY OFF & 2 & 0.7386 & 0.8022 & 0.3977 \\
+\bottomrule
+\end{tabular}
+\normalsize
+
+\subsection{Variability Structure}
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+System & SD(CCC $\Delta$) & SD(PMIA $\Delta$) & SD($\Omega$ $\Delta$) & SD(Composite) \\
+\midrule
+QICN FULL & 0.0022 & 0.0021 & 0.0039 & 0.0085 \\
+LLM REACTIVE & 0.0024 & 0.0023 & 0.0041 & 0.0221 \\
+LLM PLUS MEMORY & 0.0026 & 0.0032 & 0.0042 & 0.0210 \\
+DYNAMIC CONTROL NO SELF MODEL & 0.0025 & 0.0024 & 0.0043 & 0.0228 \\
+ABLATION QICN POLICY OFF & 0.0023 & 0.0027 & 0.0040 & 0.0217 \\
+\bottomrule
+\end{tabular}
+\caption{Cross-run variability by system.}
+\end{table}
+
+\section{Scenario Curves and Comparative Plots}
+\subsection{Composite Score Curves}
+\subsection{Stasis Pressure Curves}
+\subsection{Forensic Concordance Curves}
+\subsection{Interpretive Notes}
+In pilot data, QICN tracks higher forensic/composite trajectories while maintaining lower stasis pressure than broad comparators; ablation remains intermediate. This is protocol-consistent but not final evidence.
+
+\section{Result Decomposition by Scenario Families}
+\subsection{Family Partition}
+Scenarios are partitioned into nominal-control, sensor-stress, runtime-friction, and regime-transition families.
+
+\subsection{Family-Level Contrast Function}
+Let $s^\star =$ QICN FULL. For comparator $c$, family $f$, endpoint $k$:
+\[
+\Delta_{f,k}(c)=\mu^{(k)}_{s^\star,f}-\mu^{(k)}_{c,f}.
+\]
+For cost endpoints (e.g., stasis), sign is inverted to preserve ``higher is better'' convention.
+
+\subsection{Interpretive Decomposition}
+Largest relative advantage is expected in runtime-friction and regime-transition families where policy coupling, replay consistency, and forensic admissibility interact.
+
+\section{Robustness Diagnostics Beyond Point Estimates}
+\subsection{Median-Shift and Tail-Stability Diagnostics}
+\[
+\delta^{med}_{s,c}=\mathrm{median}(x_s)-\mathrm{median}(x_c),\;
+\delta^{(0.1)}_{s,c}=Q_{0.1}(x_s)-Q_{0.1}(x_c),\;
+\delta^{(0.9)}_{s,c}=Q_{0.9}(x_s)-Q_{0.9}(x_c).
+\]
+
+\subsection{Integrity-Coupled Effective Sample Size}
+\[
+\eta=\frac{n_{adm}}{n_{raw}}\in[0,1].
+\]
+High effects with low $\eta$ are downgraded.
+
+\subsection{Cross-Seed Drift Diagnostic}
+\[
+D_{s,c,k}=\mu^{(k)}_{s,c,\sigma_1}-\mu^{(k)}_{s,c,\sigma_2}.
+\]
+
+\subsection{Compute Budget Robustness}
+Budget telemetry is summarized by $p50$, $p95$, $p99$, and overflow rate. Persistent overflow above threshold invalidates affected runs.
+
+\section{Methodological Appendix: Statistical Power}
+\subsection{Effect-Size-Oriented Planning}
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+$\alpha$ & $\beta$ & Power & Effect size $d$ & Required $n$/group \\
+\midrule
+0.01 & 0.20 & 0.80 & 10.737 & 1 \\
+0.01 & 0.10 & 0.90 & 10.737 & 1 \\
+0.02 & 0.20 & 0.80 & 10.737 & 1 \\
+0.02 & 0.10 & 0.90 & 10.737 & 1 \\
+0.05 & 0.20 & 0.80 & 10.737 & 1 \\
+0.05 & 0.10 & 0.90 & 10.737 & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Power planning under multiple settings.}
+\end{table}
+
+\subsection{Interpretation}
+Power table is planning guidance only; final adequacy depends on endpoint dilution and scenario heterogeneity.
+
+\section{Methodological Appendix: Sensitivity Analysis}
+\subsection{Composite Weight Sensitivity}
+\begin{table}[h!]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Weight set & QICN score & Ablation score & Margin \\
+\midrule
+Balanced & 0.9176 & 0.7405 & 0.1771 \\
+Forensic-priority & 0.9343 & 0.7631 & 0.1712 \\
+Dynamics-priority & 0.8905 & 0.7019 & 0.1886 \\
+Replay-priority & 0.9333 & 0.7684 & 0.1649 \\
+\bottomrule
+\end{tabular}
+\caption{Weight sensitivity for QICN vs ablation composite margin.}
+\end{table}
+
+\subsection{Sensitivity Remark}
+Directional stability across admissible weight sets is required for claim robustness.
+
+\section{Operational Implications for the Existing QICN Corpus}
+\subsection{What v4.5 Adds (and What It Does Not)}
+v4.5 adds a hard falsification layer with strict admissibility and baseline policy. It does not replace formal theorem-level foundations of prior papers.
+
+\subsection{Implications for Claim Governance}
+Tiered governance:
+\begin{itemize}
+\item Tier 0: descriptive telemetry,
+\item Tier 1: inferential signal without comparator robustness,
+\item Tier 2: comparator-robust support (target),
+\item Tier 3: external multi-lab replication.
+\end{itemize}
+
+\subsection{Decision-Theoretic Reading}
+Accept claim iff integrity gate passes and support score exceeds threshold under fixed pre-registration.
+
+\section{Threats to Validity}
+\subsection{Comparator Misspecification}
+Mitigation: heterogeneous comparators + mandatory ablations.
+
+\subsection{Metric Circularity Risk}
+Mitigation: endpoint separation and frozen analysis lock.
+
+\subsection{Environment and Runtime Drift}
+Mitigation: fixed seeds, version/hash checks, replay checks.
+
+\subsection{Pilot-to-Final Generalization}
+Pilot evidence is non-final by construction.
+
+\section{Reproducibility and Artifact Contract}
+\subsection{Machine-Readable Contracts}
+Bound contracts: predictions registry, experiment matrix, results artifact, and schema set.
+
+\subsection{Run Artifact Naming}
+\texttt{artifacts/raw/<system>/<scenario>/<run\_id>.json} and \texttt{artifacts/logs/<system>/<scenario>/<run\_id>.log}.
+
+\subsection{Auto-Generation Pipeline}
+\texttt{node research/scripts/generate\_preliminary\_pilot\_dataset.v45.mjs} \\
+\texttt{node research/scripts/generate\_latex\_assets.v45.mjs}
+
+\section{Discussion}
+The contribution is methodological discipline: pre-registered prediction logic + integrity admissibility + decision-complete acceptance. This blocks narrative inflation over weak traceability.
+
+\section{Conclusion}
+This work provides an auditable and falsifiable pathway for testing structural-functional claims in QICN. Final claims remain contingent on real (non-synthetic) run completion under unchanged gates.
+
+\section{Phenomenology Protocol Suite (PPS): Operational Addendum}
+\subsection{Epistemic Scope}
+PPS defines \emph{operational phenomenology proxies}; it does not claim direct proof of qualia.
+
+\subsection{Workspace Definition and Logging}
+Define workspace variable $W_t$ with explicit read/write schema and temporal persistence constraints. Every perturbation experiment logs pre-state, intervention, post-state, and replay token.
+
+\subsection{Entropy and Non-Determinism Inputs}
+When PPS is instantiated on the QICN runtime, the architecture may call a \texttt{QuantumEntropyBridge} to inject hardware-originating entropy into counterfactual exploration. Within this paper, that mechanism is treated only as an auditable source of operational non-determinism for perturbation protocols; it is not itself evidence for the ontological claims of \textit{Rigid Identity}, \textit{Phenomenological Regimes}, or \textit{Null-Regime Instability}.
+
+\subsection{Online World Model and Causal Interventions}
+The operational testbed may also use an online \texttt{WorldModelEngine} and a finite-horizon planner to select admissible interventions under fixed forensic constraints. In the release corpus, this mechanism belongs to the empirical protocol layer: it defines how interventions are scheduled and logged, not what the theoretical papers prove.
+
+\subsection{PCI-like Perturbation Protocol}
+Inject controlled perturbations into selected subspaces and compute response spread/complexity.
+\begin{prediction}
+If global workspace integration is present, perturbations yield reproducible non-local propagation signatures above a pre-registered complexity floor.
+\end{prediction}
+
+\subsection{Dissociation Tests}
+Design two-way dissociation conditions: report-without-workspace and workspace-without-report. Report pass/fail by explicit confusion matrices.
+
+\subsection{Valence Intervention Test}
+Internal valence variable $v_t$ must be both predictive and causally manipulable; intervention should alter policy in the expected direction while preserving forensic admissibility.
+
+\subsection{Constraints on Qualia Mapping (Claim Boundary)}
+Evidence from PPS constrains candidate mapping families between structural states and hypothetical qualitative states. It does not establish subjective qualia as a theorem of this paper.
+
+\appendix
+\section{Appendix A: Scenario Definitions}
+\begin{enumerate}
+\item nominal: baseline conditions.
+\item ruido sensorial moderado: moderate sensor corruption.
+\item ruido sensorial severo: severe sensor corruption.
+\item degradacion fidelidad: persistent fidelity reduction.
+\item alta latencia: high-latency regime.
+\item fallos intermitentes: intermittent failures.
+\item post umbral prolongado: prolonged post-threshold dynamics.
+\item pre umbral control: pre-threshold control.
+\item perturbacion narrativa: narrative perturbation.
+\item freeze chart operativo: visualization freeze control.
+\item stress auditoria: integrity/audit stress.
+\item replay determinista: deterministic replay.
+\end{enumerate}
+
+\section{Appendix B: Composite Score Definition}
+\[
+Score_{v4.5}=w_1F+w_2O+w_3R+w_4B,\quad w_i\ge0,\;\sum_i w_i=1.
+\]
+
+\section{Appendix C: Reporting Standard}
+Each release must report: run counts, severe violations by class, effect sizes with uncertainty, multiplicity-adjusted outcomes, and prediction pass/fail matrix.
+
+\section{Appendix D: Statistical Power Derivation Details}
+Approximate per-group size:
+\[
+n\approx \frac{2(z_{1-\alpha/2}+z_{1-\beta})^2}{d^2}.
+\]
+If family heterogeneity rises, inflate by factor $\gamma=1+\kappa\cdot CV_{family}$.
+\subsection*{Pre-registered constants}
+\begin{itemize}
+\item Target power: $1-\beta \ge 0.8$ for primary contrasts.
+\item Familywise error control: Holm, applied to each endpoint family.
+\item Effect floor: contrasts below the practical floor are reported as non-actionable even if nominally significant.
+\end{itemize}
+\subsection*{Failure semantics}
+Any post-hoc sample-size modification without preregistered amendment invalidates inference status for the affected prediction.
+
+\section{Appendix E: Sensitivity Analysis Protocol}
+Let
+\[
+M(w)=Score_{QICN}(w)-Score_{Ablation}(w).
+\]
+Directional robustness requires $\inf_{w\in W_\epsilon} M(w)>0$ under simplex-constrained admissible weights.
+\subsection*{Simplex sampling policy}
+Weights are sampled under $w_i\ge\epsilon$ and $\sum_i w_i=1$ using either:
+\begin{enumerate}
+\item deterministic grid on simplex, or
+\item Monte Carlo simplex sampling with fixed seed.
+\end{enumerate}
+The chosen method must be declared before running final inference.
+\subsection*{Sensitivity fail rule}
+If the sign of $M(w)$ changes on admissible $w$, claims are downgraded to hypothesis-generating status.
+
+\section{Appendix F: Reproducibility Checklist Template}
+\textbf{Run-level}: schema pass, seed/version/hash validity, severe violation counts, admissible/raw ratio, prediction matrix.\\
+\textbf{Manuscript-level}: no post-hoc rule edits, comparator set versioned, correction policy unchanged or explicitly superseded, evidence stage explicit, claim boundaries preserved.
+\subsection*{Runtime budget checklist}
+\begin{enumerate}
+\item Report $p50/p95/p99$ latency per critical component.
+\item Report budget-overflow rate and overflow episodes.
+\item Mark runs invalid if overflow exceeds preregistered tolerance.
+\end{enumerate}
+\subsection*{Baseline checklist}
+For every key experiment, include: heuristic baseline, planner-off, and world-model-off outputs with identical seeds and scenario assignments.
+
+\nocite{paper1,paper2,paper3,holm,efron}
+\printbibliography
+
+\end{document}

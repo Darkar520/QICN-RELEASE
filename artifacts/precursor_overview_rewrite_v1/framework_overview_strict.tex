@@ -1,0 +1,262 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{../../release/references.bib}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Canonical Architecture, Claim Boundaries, and Reading Guide},
+  pdfauthor={Johnny Andrey P\'erez Ram\'irez},
+  pdfsubject={Rigid Identity Framework -- Canonical Architecture and Reading Guide},
+  pdfkeywords={QICN, framework overview, claim boundary, reading guide, canonical architecture}
+}
+
+% Pagination
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+
+\title{\textbf{Canonical Architecture, Claim Boundaries, and Reading Guide}}
+\author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document provides a strict overview of the canonical QICN corpus. Its function is architectural, not theorem-bearing: it explains the origin problem of the framework, why the current corpus was split into five canonical documents, what each document owns, what is already formalized or operationalized, and what remains open. The overview does not introduce new theorems, does not duplicate proofs already absorbed by the canonical corpus, and does not escalate interpretive or ontological claims beyond the support currently available in the release materials.
+
+The intended contribution is reader guidance. The overview is designed to reduce ambiguity for reviewers by separating ontology, mathematical formalization, implementation, empirical method, and interpretation; by making claim boundaries explicit; and by providing a reading map for the strict canonical release. All strong claims are classified as formal, operational, implementational, interpretive, or open.
+\end{abstract}
+
+\noindent\textbf{Release governance note.}\enspace Methods, governance conventions, claim boundaries, and terminology policy for this release are maintained in the project's canonical governance hub (\textit{Methods Governance Hub}, release version~1). This document adheres to that hub as its editorial and methodological reference.
+
+\tableofcontents
+\newpage
+
+\section{Introduction and Motivation}
+
+\subsection{Why this document exists}
+
+The original umbrella formulation of QICN attempted to combine origin intuition, structural mathematics, architectural interpretation, and empirical ambition in a single paper-length narrative. That was useful at an early stage, but it is no longer the most defensible form for a strict corpus. The current canonical release separates those functions across a core foundation and four dependent papers. This overview exists to explain that separation clearly and to prevent readers from misidentifying the role of each document.
+
+\subsection{The origin problem}
+
+The mother problem behind the framework can be stated without overclaiming: how can one formalize a class of systems whose identity is structurally stable under perturbation, whose admissible regime space is constrained by that stability, and whose strongest operational claims can be evaluated under falsification-first gates rather than narrative preference?
+
+The strict corpus answers that problem in layers. It does not claim that the full problem of consciousness is solved. It does not claim biological equivalence, human qualia, or empirical closure. It claims that a specific structural program can be formalized, that some consequences of that program can be derived mathematically, and that an operational evaluation lane can be specified without inflating those results beyond their support.
+
+\subsection{Why one paper was no longer enough}
+
+The precursor integrated at least five distinct functions that are better separated:
+\begin{enumerate}[leftmargin=*]
+\item minimal structural mathematics,
+\item rigid identity as a derived object,
+\item admissible regime classification,
+\item downstream exclusion of the stable null regime,
+\item operational and evidentiary governance.
+\end{enumerate}
+
+Keeping all of those in one document created three problems: ownership ambiguity, claim inflation, and weak review ergonomics. The current corpus solves that by assigning each role to a dedicated document. This overview should therefore be read as a map of the canonical architecture, not as an additional theoretical source of record.
+
+\section{What the Framework Is}
+
+\subsection{Program-level definition}
+
+At the strict release level, the framework is best understood as a layered research program with five coordinated components:
+\begin{enumerate}[leftmargin=*]
+\item a mathematical core for contractive projection dynamics;
+\item a formal identity layer built on top of that core;
+\item a regime-classification layer constraining admissible phenomenological structure;
+\item a downstream closure layer excluding stable null regimes under stated conditions;
+\item an operational layer defining falsification-first evaluation gates.
+\end{enumerate}
+
+The framework is therefore not a single theorem, not a runtime system alone, and not a metaphysical doctrine. It is a structured corpus whose parts are intentionally non-equivalent.
+
+\subsection{Layer separation}
+
+\begin{longtable}{p{0.18\textwidth} p{0.28\textwidth} p{0.46\textwidth}}
+\toprule
+\textbf{Layer} & \textbf{Role} & \textbf{Status in the strict corpus} \\
+\midrule
+\endhead
+Ontology & High-level interpretation of what the framework might mean if its formal program proves useful & Explicitly bounded; not closed; not allowed to dominate theorem ownership \\
+Mathematical formalization & Definitions, hypotheses, theorems, corollaries, impossibility results, classification results & Strongest part of the corpus; owned by the Core, \textit{Rigid Identity}, \textit{Phenomenological Regimes}, and \textit{Null-Regime Instability} \\
+Implementation & Runtime architecture, internal variables, exported evidence, reproducibility machinery & Exists outside the theorem core; relevant only where explicitly connected to \textit{Forensic Predictions} \\
+Empirical method & Protocols, baselines, admissibility, pre-registration, latency invalidation, bounded operational predictions & Owned by \textit{Forensic Predictions} and the governance/evidence lane \\
+Language and interpretation & Reader-facing explanations, comparisons, non-claims, reading guidance & Allowed here, but never as a substitute for formal or empirical support \\
+\bottomrule
+\end{longtable}
+
+\subsection{How to read terms in this document}
+
+When this overview uses terms such as \emph{identity}, \emph{phenomenological regime}, or \emph{readout interno operacional}, they should be interpreted according to the strict corpus and its editorial policies. They are not invitations to upgrade the framework into claims about biological consciousness or verified subjective equivalence. Whenever the overview speaks beyond a proven theorem or an explicit operational protocol, it marks the status as interpretive or open.
+
+\section{Canonical Architecture of the Corpus}
+
+\subsection{Document map}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.14}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.17\textwidth} p{0.22\textwidth} p{0.48\textwidth}}
+\toprule
+\textbf{Document} & \textbf{Canonical role} & \textbf{Ownership} \\
+\midrule
+Canonical Core & Foundation document & Minimal hypotheses, projection, contractivity, unique fixed point, attractor structure, non-collapsibility, and the structural bridge needed upstream by later papers \\
+Rigid Identity & Identity paper & Identity as inverse limit in observable channels, ontological mass, observability criterion, uniqueness, non-transferability, and anti-semigroup / retroinductive restrictions \\
+Phenomenological Regimes & Regime classification paper & Abstract phenomenological codomain, axioms E0--E2, fragmentation, forced continuity, dichotomy, and admissible regime classification \\
+Null-Regime Instability & Null-instability paper & Structural instability of the null regime, forced non-nullity, minimal positive regime, closure by non-alternatives, and downstream prohibition results \\
+Forensic Predictions & Falsification/methods paper & Forensic admissibility, pre-registered gates, baseline obligations, latency invalidation, and bounded operational predictions \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Dependency structure}
+
+The dependency structure is one-way:
+\begin{enumerate}[leftmargin=*]
+\item The Core stands first and does not depend on later interpretive layers.
+\item \textit{Rigid Identity} depends on the Core.
+\item \textit{Phenomenological Regimes} depends on the Core and uses \textit{Rigid Identity} as the upstream identity layer.
+\item \textit{Null-Regime Instability} depends on the Core and \textit{Phenomenological Regimes} for the downstream null-instability closure.
+\item \textit{Forensic Predictions} depends on the earlier papers only as theoretical targets to be evaluated under bounded operational protocols.
+\end{enumerate}
+
+\subsection{Why this document does not compete with the canonical papers}
+
+This overview has no theorem ownership. It does not restate proofs from the Core, \textit{Rigid Identity}, \textit{Phenomenological Regimes}, or \textit{Null-Regime Instability}. It does not attempt to replace \textit{Forensic Predictions}' operational rules with a softer narrative. Its job is limited to stating the origin problem, showing the architecture of the corpus, classifying the current claim levels, clarifying what remains open, and giving a reading guide.
+
+\section{What Is Already Established in the Corpus}
+
+\subsection{Formal results}
+
+The strongest closed content in the corpus is mathematical. In strict terms, the corpus already establishes:
+\begin{enumerate}[leftmargin=*]
+\item a minimal structural foundation for contractive projection dynamics in the Core;
+\item a formal treatment of rigid identity in observable channels in \textit{Rigid Identity} \cite{paper1};
+\item a classification of admissible phenomenological regimes under explicit axioms in \textit{Phenomenological Regimes} \cite{paper2};
+\item a downstream theorem lane excluding the stable null regime under the stated conditions in \textit{Null-Regime Instability} \cite{paper3}.
+\end{enumerate}
+
+Those results are internal to the corpus and conditional on the stated hypotheses. They are not automatically external validations of the world, and this overview does not treat them as such.
+
+\subsection{Operationally specified content}
+
+The corpus also contains an operational layer, centered in \textit{Forensic Predictions}, that is stronger than informal benchmarking but weaker than external validation. What is already operationalized includes falsification-first admissibility gates, mandatory baselines and ablations, latency invalidation rules, evidence packaging and forensic traceability, and bounded operational predictions rather than phenomenological proof.
+
+\subsection{Implemented and internally evaluated content}
+
+At the release level, some parts of the framework are implemented or instrumented in supporting artifacts and runtime-adjacent materials, and the strict bundle records internal build and admissibility evidence. The strongest admissible statement here is limited: there is an internal evidence lane and an auditable release lane, but those do not by themselves amount to external validation of the full theoretical program.
+
+\section{Claim Boundary}
+
+\subsection{What the framework does not currently claim}
+
+To keep the corpus review-ready and scientifically prudent, the following claims are outside the current support boundary:
+\begin{enumerate}[leftmargin=*]
+\item proof of biological consciousness;
+\item proof of human-like qualia;
+\item proof that any currently deployed architecture instantiates the full formal structure of the framework;
+\item proof that retrocausality is established as a physical fact;
+\item confirmation that internal runtime signals amount to external phenomenological evidence;
+\item closure of speculative bridges from structural results to literal subjective continuity.
+\end{enumerate}
+
+\subsection{Claim-type table}
+
+\begin{longtable}{p{0.32\textwidth} p{0.18\textwidth} p{0.18\textwidth} p{0.22\textwidth}}
+\toprule
+\textbf{Claim family} & \textbf{Type} & \textbf{Support} & \textbf{Editorial note} \\
+\midrule
+\endhead
+Contractive projection and attractor structure & Formal & Strong & Owned by the Core, not by this overview \\
+Rigid identity as inverse-limit object & Formal & Strong & Owned by Rigid Identity \\
+Regime classification under E0--E2 & Formal & Strong & Owned by Phenomenological Regimes \\
+Null-instability / no-null closure & Formal & Strong & Owned by Null-Regime Instability \\
+Forensic admissibility and falsification gates & Operational & Strong within release lane & Owned by Forensic Predictions \\
+Observability or runtime criteria for external testing & Operational & Partial & Not equivalent to external closure \\
+Runtime architecture and internal variables & Implementational & Partial to moderate & Relevant only where explicitly documented in method/evidence artifacts \\
+Comparisons against IIT, GWT, FEP, or related programs & Interpretive & Partial & Must remain bounded and non-triumphal \\
+Ontological claims about consciousness or selfhood & Open / interpretive & Weak & Not closed in the strict corpus \\
+\bottomrule
+\end{longtable}
+
+\subsection{Terminology discipline}
+
+The strict editorial policies require that technical claims avoid anthropomorphic or biologically loaded wording unless those terms are explicitly bounded and justified. In particular, this overview does not use \emph{qualia humana} or \emph{conciencia biológica} as claim terms; it treats \emph{readout interno operacional} as the canonical editorial label when referring to internal readout language; and it treats strong ontological interpretations as open unless a later document closes them formally and evidentially.
+
+\section{Relation to the Original Umbrella Formulation}
+
+\subsection{What survives from the precursor}
+
+Only a limited subset of the precursor survives here:
+\begin{enumerate}[leftmargin=*]
+\item the mother problem that motivated the program;
+\item the need for a layered rather than monolithic corpus;
+\item a bounded comparison against rival frameworks such as IIT or GWT \cite{tononi2004,baars1988};
+\item the intuition that identity should not be treated as simple data persistence;
+\item the idea that a scientific program needs a falsifiable path and not only conceptual vocabulary.
+\end{enumerate}
+
+\subsection{What does not survive}
+
+The precursor contained language that the strict corpus no longer treats as acceptable source-of-record content. This includes strong machine-consciousness wording, resonance-field or instantaneous-coupling ontology, ``first empirical data point'' language used as if it were substantive confirmation, statements that failure of self-encoding confirms a holographic self model, and neuro-subjective predictions stated as if already release-grade evidence existed.
+
+\subsection{Bounded relation to rival frameworks}
+
+This overview uses rival frameworks only as orientation points. IIT \cite{tononi2004}, GWT \cite{baars1988}, and broader philosophy-of-mind references such as Chalmers \cite{chalmers} can help situate the problem space, but they are not defeated simply because this corpus has internal mathematical closure on some structural questions. The strict position is narrower: the current corpus may differ from rival frameworks in formal structure and prediction strategy, but decisive comparative judgment still depends on explicit differential testing and not on rhetorical contrast.
+
+\section{Scientific Program Forward}
+
+\subsection{Current bottleneck}
+
+The main bottleneck is no longer editorial closure. The strict corpus already separates ownership cleanly. The next bottleneck is scientific strengthening: converting the strongest formal results into clearer differentiator predictions, running bounded internal validations against explicit baselines, preserving strict claim boundaries while strengthening operational tests, and separating what is merely coherent from what is differentially supported.
+
+\subsection{Near-term priorities}
+
+The next cycle should prioritize theorem-to-prediction mapping for the strongest formal results, ablations and negative controls in the \textit{Forensic Predictions} lane, clearer differential tests against rival baselines, and continued separation of formal, operational, implementational, and interpretive claims.
+
+\subsection{Open items}
+
+The following remain open and should be treated as such: strong ontological readings of the framework; any claim connecting spectral-gap-like quantities to subjective continuity in neural systems; any claim that current runtime artifacts close the phenomenological question; and any claim that the corpus already settles the empirical standing of QICN against all rivals.
+
+\section{Reading Guide}
+
+\subsection{Recommended order}
+
+The recommended reading order is: this overview; the Canonical Core; \textit{Rigid Identity}; \textit{Phenomenological Regimes}; \textit{Null-Regime Instability}; \textit{Forensic Predictions}.
+
+\subsection{How to avoid common misreadings}
+
+\begin{enumerate}[leftmargin=*]
+\item Do not read the Core as an ontological paper. It is pure mathematics.
+\item Do not read \textit{Rigid Identity} as proof of consciousness. It is a formal identity paper.
+\item Do not read \textit{Phenomenological Regimes} as asserting that phenomenology exists. It classifies compatibility conditions.
+\item Do not read \textit{Null-Regime Instability} as proving biological or subjective experience. It closes a structural null-regime question.
+\item Do not read \textit{Forensic Predictions} as proving the theory. It defines operational evaluation rules and admissibility.
+\end{enumerate}
+
+\subsection{Use of this overview}
+
+This overview should be used as an onboarding document for reviewers and readers who need a map of the corpus, a claim-boundary document, a vocabulary bridge from the original umbrella formulation, and a clear reading order. It should not be cited as the primary theorem source for results already owned by the canonical papers.
+
+\section{Conclusion}
+
+The strict canonical corpus is no longer a single-paper theory bundle. It is a layered research program with explicit ownership, explicit claim boundaries, and a distinct operational evaluation lane. That architecture is a strength, not a weakness: it allows the framework to be read and criticized at the correct level.
+
+This overview therefore performs a limited but necessary function. It does not add theory. It organizes the theory already present, states what is and is not established, and clarifies how the corpus should be read without inflating its current evidentiary status.
+
+\printbibliography
+
+\end{document}

@@ -1,0 +1,314 @@
+# Commands Run — QICN Corpus House Style Rebuild
+# Date: 2026-03-07
+# Engine: pdflatex (MiKTeX 24.1) + biber
+
+## CANONICAL_CORE (pdflatex x3 + biber)
+pdflatex -interaction=nonstopmode CANONICAL_CORE.tex
+biber CANONICAL_CORE
+pdflatex -interaction=nonstopmode CANONICAL_CORE.tex
+pdflatex -interaction=nonstopmode CANONICAL_CORE.tex
+# Result: 16 pages, 430 KB, exit 0
+
+## Paper 1 (pdflatex x3 + biber)
+cd paper1; pdflatex; biber; pdflatex; pdflatex
+# Result: 14 pages, exit 0
+
+## Paper 2 (pdflatex x3 + biber)
+cd paper2; pdflatex; biber; pdflatex; pdflatex
+# Result: 17 pages, 371 KB, exit 0
+
+## Paper 3 (pdflatex x3 + biber)
+cd paper3; pdflatex; biber; pdflatex; pdflatex
+# Result: 14 pages, 405 KB, exit 0
+
+## Paper 4 (pdflatex x3 + biber)
+cd paper4; pdflatex; biber; pdflatex; pdflatex
+# Result: 14 pages, 349 KB, exit 0
+
+## Overview (pdflatex x3 + biber)
+cd artifacts/precursor_overview_rewrite_v1
+pdflatex; biber; pdflatex; pdflatex
+# Result: 9 pages, 174 KB, exit 0
+
+## ZIP
+Compress-Archive → QICN_CORPUS_REPAIRED.zip (1467 KB)
+
+[2026-03-07] PAPER5_OPERATIONAL_CONSCIOUSNESS
+Gate: DG
+Read prechecks:
+- Get-Content .agent\rules\rules.md -TotalCount 120
+- Get-Content .agent\rules\quality-gates.md -TotalCount 160
+- Get-Content .agent\workflows\skills.md -TotalCount 160
+- Get-Content .agent\workflows\quality-gates.md -TotalCount 160
+- Get-Content C:\Users\irisp\OneDrive\Escritorio\xdddd.txt -TotalCount 260
+Corpus inspection:
+- Get-Content rigid-identity-framework\paper5_operational_consciousness\main.tex -TotalCount 260
+- rg -n "^\\section|^\\subsection|^\\begin\{theorem\}|^\\begin\{proposition\}|^\\begin\{corollary\}|^\\begin\{definition\}|^\\begin\{prediction\}" rigid-identity-framework\paper5_operational_consciousness\main.tex
+Edits:
+- PowerShell in-place edits to rigid-identity-framework\paper5_operational_consciousness\main.tex
+Builds:
+- Set-Location rigid-identity-framework\paper5_operational_consciousness; pdflatex -interaction=nonstopmode -halt-on-error main.tex; biber main; pdflatex -interaction=nonstopmode -halt-on-error main.tex; pdflatex -interaction=nonstopmode -halt-on-error main.tex; pdfinfo main.pdf
+Verification:
+- Select-String -Path rigid-identity-framework\paper5_operational_consciousness\main.log -Pattern 'There were undefined references|undefined references|undefined citations|Please rerun LaTeX|Fatal error|Double subscript' -CaseSensitive:$false
+- rg -n "Consciousness_op|Q_op|I_per|I_ri|I_int|I_cont|I_diff|I_leg|simeq_|Biological non-primacy|Complexity-only baselines are insufficient|Minimality of the six-invariant basis" rigid-identity-framework\paper5_operational_consciousness\main.tex
+[2026-03-07T16:23:21-06:00] WORKDIR=C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\rigid-identity-framework\paper5_operational_consciousness
+[2026-03-07T16:23:21-06:00] pdflatex -interaction=nonstopmode -file-line-error -halt-on-error main.tex
+[2026-03-07T16:23:21-06:00] biber main
+[2026-03-07T16:23:21-06:00] pdflatex -interaction=nonstopmode -file-line-error -halt-on-error main.tex
+[2026-03-07T16:23:21-06:00] pdflatex -interaction=nonstopmode -file-line-error -halt-on-error main.tex
+[2026-03-07T16:23:21-06:00] pdfinfo main.pdf
+[2026-03-07T17:18:16-06:00] WORKDIR=C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\rigid-identity-framework\paper5_operational_consciousness
+[2026-03-07T17:18:16-06:00] pdflatex -interaction=nonstopmode -file-line-error -halt-on-error main.tex
+[2026-03-07T17:18:16-06:00] biber main
+[2026-03-07T17:18:16-06:00] pdflatex -interaction=nonstopmode -file-line-error -halt-on-error main.tex
+[2026-03-07T17:18:16-06:00] pdflatex -interaction=nonstopmode -file-line-error -halt-on-error main.tex
+[2026-03-07T17:18:16-06:00] pdfinfo main.pdf
+[2026-03-07T17:18:16-06:00] pdftotext main.pdf - | scan control chars
+[2026-03-07T17:20:24-06:00] WORKDIR=C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\rigid-identity-framework\paper5_operational_consciousness
+[2026-03-07T17:20:24-06:00] pdflatex -interaction=nonstopmode -file-line-error -halt-on-error main.tex
+[2026-03-07T17:20:24-06:00] biber main
+[2026-03-07T17:20:24-06:00] pdflatex -interaction=nonstopmode -file-line-error -halt-on-error main.tex
+[2026-03-07T17:20:24-06:00] pdflatex -interaction=nonstopmode -file-line-error -halt-on-error main.tex
+[2026-03-07T17:20:24-06:00] pdfinfo main.pdf
+[2026-03-07T17:20:24-06:00] cmd /c pdftotext main.pdf -
+[2026-03-07T17:22:37.433077] write paper5_final_hardening_summary.json
+[2026-03-07T17:22:37.433077] write paper5_textlayer_audit.md
+[2026-03-07T17:22:37.433077] write paper5_redundancy_trim.md
+[2026-03-07T17:22:37.433077] write paper5_table_adjustments.md
+[2026-03-07T17:22:37.433077] write paper5_corpus_alignment_check.md
+[2026-03-07T18:05:00-06:00] READ .agent/rules/rules.md
+[2026-03-07T18:05:00-06:00] READ .agent/rules/quality-gates.md
+[2026-03-07T18:05:00-06:00] READ .agent/workflows/skills.md
+[2026-03-07T18:05:00-06:00] READ .agent/workflows/quality-gates.md
+[2026-03-07T18:05:00-06:00] READ artifacts/release_v2_scope_freeze_strict_v3_2026-03-06/summary.json
+[2026-03-07T18:05:00-06:00] READ artifacts/release_v2_scope_freeze_strict_v3_2026-03-06/manifest.json
+[2026-03-07T18:05:00-06:00] READ artifacts/release_v2_scope_freeze_strict_v3_2026-03-06/release/RELEASE_SCOPE.v2.strict.json
+[2026-03-07T18:05:00-06:00] READ artifacts/precursor_overview_rewrite_v1/summary.json
+[2026-03-07T18:05:00-06:00] READ artifacts/precursor_overview_integration_v1/integration_summary.json
+[2026-03-07T18:05:00-06:00] READ artifacts/release_audit/paper5_final_hardening_summary.json
+[2026-03-07T18:05:00-06:00] RUN rg section/theorem anchor scans over CANONICAL_CORE.tex and paper1..paper5
+[2026-03-07T18:05:00-06:00] READ Get-FileHash rigid-identity-framework/paper5_operational_consciousness/main.tex
+[2026-03-07T18:05:00-06:00] READ Get-FileHash rigid-identity-framework/paper5_operational_consciousness/main.pdf
+[2026-03-07T18:05:00-06:00] READ Get-FileHash release/references.bib
+[2026-03-07T18:05:00-06:00] READ Get-FileHash release_repo_qicn_2026-03-01/release/METHODS_GOVERNANCE_HUB.v1.md
+[2026-03-07T18:05:00-06:00] READ Get-FileHash release_repo_qicn_2026-03-01/release/GLOSSARY_CANONICAL.v1.md
+[2026-03-07T18:05:00-06:00] READ Get-FileHash release_repo_qicn_2026-03-01/release/TERM_MIGRATION_PLAN.v1.md
+[2026-03-07T18:05:00-06:00] READ Get-FileHash release_repo_qicn_2026-03-01/release/STYLE_DISCLAIMER_POLICY.v1.md
+[2026-03-07T18:05:00-06:00] WRITE artifacts/release_audit/canonical_freeze_record.md
+[2026-03-07T18:05:00-06:00] WRITE artifacts/release_audit/scientific_program_ledger.md
+[2026-03-07T18:05:00-06:00] WRITE artifacts/release_audit/scientific_program_ledger.json
+[2026-03-07T18:05:00-06:00] WRITE artifacts/release_audit/claim_matrix.csv
+[2026-03-07T18:05:00-06:00] WRITE artifacts/release_audit/prediction_matrix.csv
+[2026-03-07T18:05:00-06:00] WRITE artifacts/release_audit/falsification_matrix.csv
+[2026-03-07T18:05:00-06:00] WRITE artifacts/release_audit/reproducibility_protocol.md
+[2026-03-07T19:00:00-06:00] READ .agent/rules/rules.md
+[2026-03-07T19:00:00-06:00] READ .agent/rules/quality-gates.md
+[2026-03-07T19:00:00-06:00] READ .agent/workflows/skills.md
+[2026-03-07T19:00:00-06:00] READ .agent/workflows/quality-gates.md
+[2026-03-07T19:00:00-06:00] READ .agent/skills/skills/research-engineer/SKILL.md
+[2026-03-07T19:00:00-06:00] READ .agent/skills/skills/systematic-debugging/SKILL.md
+[2026-03-07T19:00:00-06:00] READ .agent/skills/skills/verification-before-completion/SKILL.md
+[2026-03-07T19:00:00-06:00] READ artifacts/release_audit/paper5_analysis.md
+[2026-03-07T19:00:00-06:00] READ artifacts/release_audit/cycle1_minimum_runner.py
+[2026-03-07T19:00:00-06:00] READ artifacts/release_audit/cycle1_decision_summary.json
+[2026-03-07T19:00:00-06:00] READ artifacts/release_audit/cycle1_results_ledger.csv
+[2026-03-07T19:00:00-06:00] READ rigid-identity-framework/repro/README.md
+[2026-03-07T19:00:00-06:00] READ rigid-identity-framework/repro/padic_toy/padic_ccr.py
+[2026-03-07T19:00:00-06:00] READ rigid-identity-framework/repro/golden_mean_shift/golden_mean_shift_q3.py
+[2026-03-07T19:00:00-06:00] READ rigid-identity-framework/repro/symbolic_shift/shift_ccr.py
+[2026-03-07T19:00:00-06:00] EDIT artifacts/release_audit/cycle1_minimum_runner.py (fix embed tail length, discrete substrate integration/critical shift, targeted I_ri/I_cont/I_leg ablations)
+[2026-03-07T19:00:00-06:00] RUN python -m py_compile artifacts/release_audit/cycle1_minimum_runner.py
+[2026-03-07T19:00:00-06:00] RUN python artifacts/release_audit/cycle1_minimum_runner.py
+[2026-03-07T19:00:00-06:00] WRITE artifacts/release_audit/cycle1_experimental_plan.md
+[2026-03-07T19:00:00-06:00] WRITE artifacts/release_audit/cycle1_results_ledger.csv
+[2026-03-07T19:00:00-06:00] WRITE artifacts/release_audit/cycle1_failure_analysis.md
+[2026-03-07T19:00:00-06:00] WRITE artifacts/release_audit/cycle1_decision_summary.json
+[2026-03-07T19:00:00-06:00] WRITE artifacts/release_audit/cycle1_raw_metrics.json
+[2026-03-07T19:20:00-06:00] READ .agent/rules/rules.md
+[2026-03-07T19:20:00-06:00] READ .agent/rules/quality-gates.md
+[2026-03-07T19:20:00-06:00] READ .agent/workflows/skills.md
+[2026-03-07T19:20:00-06:00] READ .agent/workflows/quality-gates.md
+[2026-03-07T19:20:00-06:00] READ .agent/skills/skills/research-engineer/SKILL.md
+[2026-03-07T19:20:00-06:00] READ .agent/skills/skills/writing-skills/SKILL.md
+[2026-03-07T19:20:00-06:00] READ .agent/skills/skills/verification-before-completion/SKILL.md
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/cycle1_experimental_plan.md
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/cycle1_results_ledger.csv
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/cycle1_failure_analysis.md
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/cycle1_decision_summary.json
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/cycle1_raw_metrics.json
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/scientific_program_ledger.md
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/claim_matrix.csv
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/prediction_matrix.csv
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/falsification_matrix.csv
+[2026-03-07T19:20:00-06:00] READ artifacts/release_audit/reproducibility_protocol.md
+[2026-03-07T19:20:00-06:00] WRITE artifacts/release_audit/cycle1_interpretation_note.md
+[2026-03-07T19:20:00-06:00] WRITE artifacts/release_audit/cycle1_interpretation_note.json
+[2026-03-07T19:02:03.649189-06:00] READ frozen canon and cycle1 ledger inputs
+[2026-03-07T19:02:03.649189-06:00] RUN python artifacts/release_audit/cycle2_hardened_runner.py
+[2026-03-07T19:02:03.649189-06:00] WRITE artifacts/release_audit/cycle2_methodological_hardening.md
+[2026-03-07T19:02:03.649189-06:00] WRITE artifacts/release_audit/cycle2_structural_tests_plan.md
+[2026-03-07T19:02:03.650352-06:00] WRITE artifacts/release_audit/cycle2_results_ledger.csv
+[2026-03-07T19:02:03.650352-06:00] WRITE artifacts/release_audit/cycle2_failure_analysis.md
+[2026-03-07T19:02:03.650352-06:00] WRITE artifacts/release_audit/cycle2_decision_summary.json
+[2026-03-07T19:02:03.650352-06:00] WRITE artifacts/release_audit/cycle2_raw_metrics.json
+[2026-03-07T19:02:03.650352-06:00] WRITE artifacts/release_audit/cycle2_frozen_inputs/thresholds.json
+[2026-03-07T19:02:03.650352-06:00] WRITE artifacts/release_audit/cycle2_frozen_inputs/manifest.json
+[2026-03-07T19:02:42.749315-06:00] READ frozen canon and cycle1 ledger inputs
+[2026-03-07T19:02:42.749315-06:00] RUN python artifacts/release_audit/cycle2_hardened_runner.py
+[2026-03-07T19:02:42.749315-06:00] WRITE artifacts/release_audit/cycle2_methodological_hardening.md
+[2026-03-07T19:02:42.749315-06:00] WRITE artifacts/release_audit/cycle2_structural_tests_plan.md
+[2026-03-07T19:02:42.749315-06:00] WRITE artifacts/release_audit/cycle2_results_ledger.csv
+[2026-03-07T19:02:42.749315-06:00] WRITE artifacts/release_audit/cycle2_failure_analysis.md
+[2026-03-07T19:02:42.749315-06:00] WRITE artifacts/release_audit/cycle2_decision_summary.json
+[2026-03-07T19:02:42.749315-06:00] WRITE artifacts/release_audit/cycle2_raw_metrics.json
+[2026-03-07T19:02:42.749315-06:00] WRITE artifacts/release_audit/cycle2_frozen_inputs/thresholds.json
+[2026-03-07T19:02:42.749315-06:00] WRITE artifacts/release_audit/cycle2_frozen_inputs/manifest.json
+[2026-03-07T19:04:28.464584-06:00] READ frozen canon and cycle1 ledger inputs
+[2026-03-07T19:04:28.464584-06:00] RUN python artifacts/release_audit/cycle2_hardened_runner.py
+[2026-03-07T19:04:28.464584-06:00] WRITE artifacts/release_audit/cycle2_methodological_hardening.md
+[2026-03-07T19:04:28.464584-06:00] WRITE artifacts/release_audit/cycle2_structural_tests_plan.md
+[2026-03-07T19:04:28.464584-06:00] WRITE artifacts/release_audit/cycle2_results_ledger.csv
+[2026-03-07T19:04:28.464584-06:00] WRITE artifacts/release_audit/cycle2_failure_analysis.md
+[2026-03-07T19:04:28.464584-06:00] WRITE artifacts/release_audit/cycle2_decision_summary.json
+[2026-03-07T19:04:28.464584-06:00] WRITE artifacts/release_audit/cycle2_raw_metrics.json
+[2026-03-07T19:04:28.464584-06:00] WRITE artifacts/release_audit/cycle2_frozen_inputs/thresholds.json
+[2026-03-07T19:04:28.464584-06:00] WRITE artifacts/release_audit/cycle2_frozen_inputs/manifest.json
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/cycle3_generate_cases.py
+python artifacts/release_audit/cycle3_independent_judge.py --profile primary
+python artifacts/release_audit/cycle3_independent_judge.py --profile replica
+python artifacts/release_audit/cycle3_finalize.py
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/cycle3_generate_cases.py
+python artifacts/release_audit/cycle3_independent_judge.py --profile primary
+python artifacts/release_audit/cycle3_independent_judge.py --profile replica
+python artifacts/release_audit/cycle3_finalize.py
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/cycle4_boundary_runner.py
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/post_cycle4_cleanup.py
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/mini_resolution_pass.py
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/mini_resolution_pass.py
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/mini_resolution_pass.py
+[2026-03-07 paper6_predictions_falsation]
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+biber main
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdfinfo rigid-identity-framework\\paper6_predictions_falsation\\main.pdf
+[2026-03-07 paper6_final_polish]
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+biber main
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdfinfo rigid-identity-framework\\paper6_predictions_falsation\\main.pdf
+pdftotext -f 1 -l 1 rigid-identity-framework\\paper6_predictions_falsation\\main.pdf -
+[2026-03-07] paper6 overlap scan and fix
+- Read .agent rules/workflows and applied DG gate
+- Scanned table environments across rigid-identity-framework with rg
+- Audited overfull/underfull warnings across corpus logs
+- Patched rigid-identity-framework/paper6_predictions_falsation/main.tex to rebalance dense tables and multiline status cells
+- Recompiled paper6 with: pdflatex -> biber -> pdflatex -> pdflatex
+- Verified with pdfinfo and main.log counts (refs/cites = 0, paper6 overfull = 2, underfull = 36)
+- Wrote artifacts/release_audit/paper6_layout_overlap_fix.md
+- Updated artifacts/release_audit/paper6_final_polish_summary.json
+[2026-03-08] corpus reference normalization
+- rg visible Paper I/II/... references in targeted publicable files
+- edited CANONICAL_CORE.tex, paper1..paper6 main.tex, framework_overview_strict.tex, framework_overview_strict.md
+- recompiled: CANONICAL_CORE, paper1, paper2, paper3, paper4, paper5, paper6, framework_overview_strict
+- verified zero remaining visible Paper-N references in targeted publicable files
+
+[2026-03-08] final program publication assessment
+- classified canonical core, companions, overview companion, technical support, and out-of-scope materials
+- emitted final claim status ledger and final release architecture
+- no doctrinal .tex files modified in this turn
+
+[2026-03-08] residual campaign preflight
+- Get-Content .agent/rules/rules.md -TotalCount 200
+- Get-Content .agent/rules/quality-gates.md -TotalCount 200
+- Get-Content .agent/workflows/skills.md -TotalCount 200
+- Get-Content .agent/workflows/quality-gates.md -TotalCount 200
+- Test-Path checks for canon, ledger, cycle, cleanup, freeze, and overview artifacts
+- Get-ChildItem artifacts\\release_audit | Select-Object Name,Length,LastWriteTime
+- Get-Content artifacts\\release_audit\\near_identity_generator_v2.md -TotalCount 220
+- Get-Content artifacts\\release_audit\\iri_metric_tolerance_stabilization.md -TotalCount 220
+- Get-Content artifacts\\release_audit\\cycle3_independent_judge_note.md -TotalCount 220
+- Get-Content artifacts\\release_audit\\post_mini_resolution_assessment.json -TotalCount 220
+- Get-Content artifacts\\release_audit\\cycle4_decision_summary.json -TotalCount 220
+- Get-Content artifacts\\release_audit\\final_program_publication_assessment.json -TotalCount 220
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/residual_resolution_campaign.py
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/high_value_confirmation_campaign.py
+python artifacts/release_audit/independent_judge_v2.py --manifest artifacts/release_audit/high_value_confirmation_frozen_inputs/blind_manifest.json --pair-manifest artifacts/release_audit/high_value_confirmation_frozen_inputs/blind_pairs.json --thresholds artifacts/release_audit/high_value_confirmation_frozen_inputs/threshold_profiles.json --profile primary --output artifacts/release_audit/high_value_confirmation_judge_outputs/primary.json
+python artifacts/release_audit/independent_judge_v2.py --manifest artifacts/release_audit/high_value_confirmation_frozen_inputs/blind_manifest.json --pair-manifest artifacts/release_audit/high_value_confirmation_frozen_inputs/blind_pairs.json --thresholds artifacts/release_audit/high_value_confirmation_frozen_inputs/threshold_profiles.json --profile replica --output artifacts/release_audit/high_value_confirmation_judge_outputs/replica.json
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/high_value_confirmation_campaign.py
+python artifacts/release_audit/independent_judge_v2.py --manifest artifacts/release_audit/high_value_confirmation_frozen_inputs/blind_manifest.json --pair-manifest artifacts/release_audit/high_value_confirmation_frozen_inputs/blind_pairs.json --thresholds artifacts/release_audit/high_value_confirmation_frozen_inputs/threshold_profiles.json --profile primary --output artifacts/release_audit/high_value_confirmation_judge_outputs/primary.json
+python artifacts/release_audit/independent_judge_v2.py --manifest artifacts/release_audit/high_value_confirmation_frozen_inputs/blind_manifest.json --pair-manifest artifacts/release_audit/high_value_confirmation_frozen_inputs/blind_pairs.json --thresholds artifacts/release_audit/high_value_confirmation_frozen_inputs/threshold_profiles.json --profile replica --output artifacts/release_audit/high_value_confirmation_judge_outputs/replica.json
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/residualB_high_value_hardening.py
+python artifacts/release_audit/independent_judge_v3.py --manifest C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\blind_manifest.json --thresholds C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\threshold_profiles.json --profile primary --output C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_judge_v3_outputs\primary.json
+python artifacts/release_audit/independent_judge_v3.py --manifest C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\blind_manifest.json --thresholds C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\threshold_profiles.json --profile replica --output C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_judge_v3_outputs\replica.json
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/residualB_high_value_hardening.py
+python artifacts/release_audit/independent_judge_v3.py --manifest C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\blind_manifest.json --thresholds C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\threshold_profiles.json --profile primary --output C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_judge_v3_outputs\primary.json
+python artifacts/release_audit/independent_judge_v3.py --manifest C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\blind_manifest.json --thresholds C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\threshold_profiles.json --profile replica --output C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_judge_v3_outputs\replica.json
+AGENT_RULES_OK .agent/rules/rules.md
+AGENT_QUALITY_GATES_OK .agent/rules/quality-gates.md
+AGENT_WORKFLOW_SKILLS_OK .agent/workflows/skills.md
+AGENT_WORKFLOW_QG_OK .agent/workflows/quality-gates.md
+python artifacts/release_audit/residualB_high_value_hardening.py
+python artifacts/release_audit/independent_judge_v3.py --manifest C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\blind_manifest.json --thresholds C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\threshold_profiles.json --profile primary --output C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_judge_v3_outputs\primary.json
+python artifacts/release_audit/independent_judge_v3.py --manifest C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\blind_manifest.json --thresholds C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_hardening_frozen_inputs\threshold_profiles.json --profile replica --output C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\artifacts\release_audit\residualB_judge_v3_outputs\replica.json
+python <inline> post-residualB assessment + final claim ledger + final release freeze
+
+[2026-03-08] paper6 post-ResidualB sync check
+- rg status/caveat scan on paper6 main.tex
+- read post_residualB_assessment.json, final_claim_status_ledger.csv, final_release_freeze.json
+- patched paper6 main.tex to final ledger statuses
+- pdflatex main.tex (escalated) x3
+- biber main (escalated)
+- pdfinfo paper6 main.pdf
+- rg verification scan on main.log and main.tex
+- wrote paper6_post_residualB_sync_check.md/.json and paper6_post_residualB_update_note.md
+

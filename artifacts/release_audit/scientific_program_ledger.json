@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-03-07",
+  "status": "PASS",
+  "freeze_status": "PASS_FROZEN_CANON_V3_PLUS_PAPER5",
+  "doctrine_status": "FROZEN_FOR_SCIENTIFIC_CYCLE",
+  "included_canonical_documents": [
+    "rigid-identity-framework/CANONICAL_CORE.tex",
+    "rigid-identity-framework/paper1/main.tex",
+    "rigid-identity-framework/paper2/main.tex",
+    "rigid-identity-framework/paper3/main.tex",
+    "rigid-identity-framework/paper4/main.tex",
+    "rigid-identity-framework/paper5_operational_consciousness/main.tex"
+  ],
+  "included_canonical_compiled_artifacts": [
+    "rigid-identity-framework/paper5_operational_consciousness/main.pdf"
+  ],
+  "excluded_historical_lineage": [
+    "rigid-identity-paper/main.tex",
+    "phenomenological-regimes-paper/main.tex",
+    "phenomenological-instability-paper/main.tex"
+  ],
+  "overview_status": {
+    "path": "artifacts/precursor_overview_rewrite_v1/framework_overview_strict.tex",
+    "summary_status": "WARN",
+    "integration_status": "BLOCKED_TECHNICAL",
+    "ready_for_corpus_integration": false,
+    "freeze_decision": "excluded_from_canonical_freeze_for_this_cycle"
+  },
+  "bibliography_source_of_record": "release/references.bib",
+  "strict_release_anchor": {
+    "summary_path": "artifacts/release_v2_scope_freeze_strict_v3_2026-03-06/summary.json",
+    "manifest_path": "artifacts/release_v2_scope_freeze_strict_v3_2026-03-06/manifest.json",
+    "scope_path": "artifacts/release_v2_scope_freeze_strict_v3_2026-03-06/release/RELEASE_SCOPE.v2.strict.json",
+    "scope_hash_path": "artifacts/release_v2_scope_freeze_strict_v3_2026-03-06/release/RELEASE_SCOPE.v2.strict.sha256.txt",
+    "manifest_hash_path": "artifacts/release_v2_scope_freeze_strict_v3_2026-03-06/manifest.sha256.txt",
+    "zip_hash_path": "artifacts/release_v2_scope_freeze_strict_v3_2026-03-06/pdf_corpus.zip.sha256.txt",
+    "status": "WARN",
+    "reason": "non_blocking_biber_toolchain_warning"
+  },
+  "paper5_anchor": {
+    "summary_path": "artifacts/release_audit/paper5_final_hardening_summary.json",
+    "status": "PASS",
+    "page_count": 25,
+    "ready_for_serious_review": true
+  },
+  "counts": {
+    "claims_extracted": 28,
+    "predictions_derived": 10,
+    "falsification_tests_defined": 8
+  },
+  "output_paths": {
+    "freeze_record": "artifacts/release_audit/canonical_freeze_record.md",
+    "claim_matrix": "artifacts/release_audit/claim_matrix.csv",
+    "prediction_matrix": "artifacts/release_audit/prediction_matrix.csv",
+    "falsification_matrix": "artifacts/release_audit/falsification_matrix.csv",
+    "reproducibility_protocol": "artifacts/release_audit/reproducibility_protocol.md",
+    "commands_run": "artifacts/release_audit/commands_run.txt"
+  },
+  "residual_blockers": [
+    "Framework overview remains excluded until technical integration is repaired.",
+    "Strict v3 carries a non-blocking MiKTeX/Biber anomaly already classified as WARN_BIBER_NONZERO_BUT_RESOLVED.",
+    "No external validation exists yet; this package only organizes internal falsification and reproducibility work."
+  ],
+  "ready_for_next_experimental_cycle": true
+}

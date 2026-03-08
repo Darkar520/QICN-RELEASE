@@ -1,0 +1,74 @@
+{
+    "status":  "PASS",
+    "core_release_status":  "PASS_FROZEN",
+    "companion_release_status":  "PASS_LAYERED",
+    "overview_release_status":  "INTEGRATE_AS_OVERVIEW_COMPANION",
+    "claim_status_ledger_status":  "PASS",
+    "program_publicability_status":  "PASS_INTERNAL_COHERENT_RELEASE",
+    "main_release_components":  [
+                                    "CANONICAL_CORE",
+                                    "paper1",
+                                    "paper2",
+                                    "paper3",
+                                    "paper4",
+                                    "paper5"
+                                ],
+    "main_companions":  [
+                            "paper6_predictions_falsation",
+                            "framework_overview_strict",
+                            "governance/glossary/style/term-migration",
+                            "scientific_program_ledger + matrices + reproducibility protocol",
+                            "cycle and post-cycle audit artifacts"
+                        ],
+    "main_out_of_scope_items":  [
+                                    "historical duplicate lineage",
+                                    "outreach / grant / reviewer outreach docs",
+                                    "legacy README / abstract / resumen bundles not aligned to release package",
+                                    "non-frozen scratch materials"
+                                ],
+    "claim_status_map":  {
+                             "P5_03":  {
+                                           "scope":  "INTERNAL_SUPPORT_ONLY",
+                                           "status":  "PROVISIONAL_SUPPORT",
+                                           "limitation":  "METRIC_OR_TOLERANCE_LIMIT"
+                                       },
+                             "P5_06":  {
+                                           "scope":  "INTERNAL_SUPPORT_ONLY",
+                                           "status":  "PROVISIONAL_SUPPORT",
+                                           "limitation":  "METRIC_OR_TOLERANCE_LIMIT"
+                                       },
+                             "P5_04":  {
+                                           "scope":  "INTERNAL_SUPPORT_ONLY",
+                                           "status":  "STILL_AMBIGUOUS",
+                                           "limitation":  "IMPLEMENTATION_LIMIT"
+                                       },
+                             "P5_01":  {
+                                           "scope":  "INTERNAL_SUPPORT_ONLY",
+                                           "status":  "STILL_AMBIGUOUS",
+                                           "limitation":  "IMPLEMENTATION_LIMIT"
+                                       },
+                             "P5_05":  {
+                                           "scope":  "INTERNAL_SUPPORT_ONLY",
+                                           "status":  "ROBUST_SUPPORT",
+                                           "limitation":  "INTERNAL_SUPPORT_ONLY"
+                                       },
+                             "P5_02":  {
+                                           "scope":  "INTERNAL_SUPPORT_ONLY",
+                                           "status":  "PROVISIONAL_SUPPORT",
+                                           "limitation":  "METRIC_OR_TOLERANCE_LIMIT"
+                                       }
+                         },
+    "overview_decision":  {
+                              "status":  "INTEGRATE_AS_OVERVIEW_COMPANION",
+                              "role_rule":  "not a theorem-owning source",
+                              "rationale":  "compiled, normalized, non-doctrinal, useful as reader guide"
+                          },
+    "residual_blockers":  [
+                              "All empirical support remains internal-only.",
+                              "P5-02/P5-06 remain metric-or-tolerance-limited.",
+                              "P5-01/P5-04 remain implementation-limited and ambiguous.",
+                              "paper6 metadata Unicode display remains partially toolchain-limited in pdfinfo on Windows.",
+                              "Strict release still carries a non-blocking MiKTeX/Biber warning history."
+                          ],
+    "ready_for_internal_scientific_release":  true
+}

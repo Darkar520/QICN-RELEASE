@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-03-08T13:44:59.782275-06:00",
+  "status": "PASS",
+  "robust_findings": [
+    {
+      "claim_id": "P5-05",
+      "status": "ROBUST_INTERNAL_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY"
+    },
+    {
+      "claim_id": "P5-02",
+      "status": "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT",
+      "scope": "INTERNAL_SUPPORT_ONLY"
+    },
+    {
+      "claim_id": "P5-06",
+      "status": "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT",
+      "scope": "INTERNAL_SUPPORT_ONLY"
+    },
+    {
+      "claim_id": "P5-01",
+      "status": "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT",
+      "scope": "INTERNAL_SUPPORT_ONLY"
+    },
+    {
+      "claim_id": "P5-04",
+      "status": "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT",
+      "scope": "INTERNAL_SUPPORT_ONLY"
+    }
+  ],
+  "provisional_findings": [
+    {
+      "claim_id": "P5-03",
+      "status": "PROVISIONAL_SUPPORT_LOCALIZED",
+      "scope": "INTERNAL_SUPPORT_ONLY"
+    }
+  ],
+  "technical_limits": [
+    {
+      "item": "P5-02/P5-06 legacy raw continuous/discrete path remains ambiguous",
+      "class": "METRIC_OR_TOLERANCE_LIMIT"
+    },
+    {
+      "item": "P5-03 retains a localized knife-edge threshold band",
+      "class": "METRIC_OR_TOLERANCE_LIMIT"
+    },
+    {
+      "item": "all empirical support remains internal-only",
+      "class": "INTERNAL_SUPPORT_ONLY"
+    },
+    {
+      "item": "externalization-lite is not external validation",
+      "class": "INTERNAL_SUPPORT_ONLY"
+    }
+  ],
+  "not_claimed": [
+    "external validation strong enough to count as independent confirmation",
+    "human phenomenal consciousness",
+    "human biological qualia",
+    "human-machine subjective equivalence",
+    "closure of the consciousness problem",
+    "replacement of existing physical theories"
+  ],
+  "scientific_status_judgment": "The internal experimental phase is now closed on a stronger basis than before: the core operational negative-control claim is robust internally; substrate-equivalence and biological non-primacy now have robust internal support with localized caveats; boundary behavior claims now have robust internal support with localized caveats after cross-family convergence and judge-v3 externalization-lite reproduction; all support nevertheless remains internal-only and should be framed that way in the release."
+}

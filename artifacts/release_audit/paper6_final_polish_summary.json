@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "target": "paper6_layout_overlap_correction",
+  "paper_tex": "rigid-identity-framework/paper6_predictions_falsation/main.tex",
+  "paper_pdf": "rigid-identity-framework/paper6_predictions_falsation/main.pdf",
+  "compile_status": "PASS",
+  "page_count": 18,
+  "undefined_refs_count": 0,
+  "undefined_citations_count": 0,
+  "paper6_overfull_count": 2,
+  "paper6_underfull_count": 36,
+  "paper6_residual_overfull_note": "Only two small residual overfull events remain at the final freeze table boundary (~3.185pt); the previously visible overlap regions were corrected.",
+  "focus_tables_fixed": [
+    "Rival-Structure Compression",
+    "Claim-to-Test Binding Ledger",
+    "Boundary Diagnostics",
+    "Current Status of Internal Support",
+    "Final Claim Freeze Table"
+  ],
+  "corpus_overfull_scan": {
+    "CANONICAL_CORE": 2,
+    "paper1": 0,
+    "paper2": 0,
+    "paper3": 0,
+    "paper4": 10,
+    "paper5": 3,
+    "paper6": 2
+  },
+  "changed_files": [
+    "rigid-identity-framework/paper6_predictions_falsation/main.tex",
+    "rigid-identity-framework/paper6_predictions_falsation/main.pdf",
+    "artifacts/release_audit/paper6_layout_overlap_fix.md",
+    "artifacts/release_audit/paper6_final_polish_summary.json",
+    "artifacts/release_audit/commands_run.txt"
+  ]
+}

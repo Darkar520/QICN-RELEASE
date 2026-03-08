@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-03-08T13:29:32.856370-06:00",
+  "status": "PASS",
+  "judge_v3_status": "PASS",
+  "second_family_status": "PASS",
+  "externalization_lite_status": "PASS",
+  "residualB_status": "ROBUST_INTERNAL_SUPPORT",
+  "claims_strengthened": [
+    "P5-01",
+    "P5-04"
+  ],
+  "claims_remaining_provisional": [],
+  "claims_still_ambiguous": [],
+  "main_blocker_classification": {
+    "ResidualB": "INTERNAL_SUPPORT_ONLY despite stronger cross-family and judge-path convergence"
+  },
+  "main_output_paths": [
+    "artifacts/release_audit/residualB_hardening_summary.md",
+    "artifacts/release_audit/residualB_hardening_summary.json",
+    "artifacts/release_audit/independent_judge_v3_note.md",
+    "artifacts/release_audit/residualB_second_family_report.md",
+    "artifacts/release_audit/residualB_externalization_lite_protocol.md",
+    "artifacts/release_audit/residualB_results_ledger.csv",
+    "artifacts/release_audit/residualB_failure_analysis.md",
+    "artifacts/release_audit/residualB_raw_metrics.json",
+    "artifacts/release_audit/residualB_blind_reveal_map.json",
+    "artifacts/release_audit/residualB_second_family_cases.csv",
+    "artifacts/release_audit/residualB_threshold_stability_v2.csv"
+  ],
+  "residual_caveats": [
+    "All support remains internal-only; no external validation is claimed.",
+    "The new family changes the nature of the evidence by adding cross-family convergence, but it still lives inside the same internal framework.",
+    "Externalization-lite is pseudo_external_reproduction from frozen artifacts on one machine, not independent external confirmation."
+  ],
+  "ready_for_post_residualB_assessment": true
+}

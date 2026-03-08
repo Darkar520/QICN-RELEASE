@@ -1,0 +1,58 @@
+{
+    "generated_at":  "2026-03-08T14:41:00.2480471-06:00",
+    "gate":  "DG",
+    "paper6_updated":  true,
+    "paper6_aligned_with_final_ledger":  true,
+    "pdf_recompiled":  true,
+    "sections_checked":  [
+                             "Abstract",
+                             "Status Classes",
+                             "Claim-to-Test Binding Ledger",
+                             "Failure-mode / downgrade table",
+                             "Boundary Diagnostics",
+                             "Current Status of Internal Support",
+                             "Claim-Specific Diagnostic Notes",
+                             "Cycle Evidence Map",
+                             "Priority Next Discriminators",
+                             "Final Claim Freeze Table",
+                             "Conclusion"
+                         ],
+    "sections_updated":  [
+                             "Abstract",
+                             "Status Classes",
+                             "Claim-to-Test Binding Ledger",
+                             "Failure-mode / downgrade table",
+                             "Boundary Diagnostics",
+                             "Current Status of Internal Support",
+                             "Claim-Specific Diagnostic Notes",
+                             "Cycle Evidence Map",
+                             "Priority Next Discriminators",
+                             "Final Claim Freeze Table",
+                             "Conclusion"
+                         ],
+    "final_statuses":  {
+                           "P5_01":  "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT",
+                           "P5_02":  "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT",
+                           "P5_03":  "PROVISIONAL_SUPPORT_LOCALIZED",
+                           "P5_04":  "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT",
+                           "P5_05":  "ROBUST_INTERNAL_SUPPORT",
+                           "P5_06":  "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT"
+                       },
+    "transversal_caveat":  "all empirical support remains INTERNAL_SUPPORT_ONLY",
+    "localized_caveats":  [
+                              "legacy raw I_ri metric-handling caveat for P5-02/P5-06",
+                              "localized knife-edge threshold band for P5-03",
+                              "stronger internal boundary confirmation for P5-01/P5-04 without external validation"
+                          ],
+    "verification":  {
+                         "compile_status":  "PASS",
+                         "pdf_pages":  19,
+                         "undefined_reference_scan":  "CLEAR",
+                         "scope_regression":  "no canonical .tex files outside paper6 edited"
+                     },
+    "residual_blockers":  [
+                              "Windows pdfinfo renders Unicode author metadata with mojibake",
+                              "non-blocking LaTeX box warnings remain in dense tables",
+                              "pdftotext unavailable in current environment for extra PDF text extraction check"
+                          ]
+}

@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-03-08T13:44:59.798041-06:00",
+  "status": "PASS",
+  "freeze_name": "internal_scientific_release_final_freeze",
+  "doctrine_frozen": true,
+  "experimental_phase_internal_frozen": true,
+  "core_release_components": [
+    "rigid-identity-framework/CANONICAL_CORE.tex",
+    "rigid-identity-framework/paper1/main.tex",
+    "rigid-identity-framework/paper2/main.tex",
+    "rigid-identity-framework/paper3/main.tex",
+    "rigid-identity-framework/paper4/main.tex",
+    "rigid-identity-framework/paper5_operational_consciousness/main.tex"
+  ],
+  "companion_release_components": [
+    "rigid-identity-framework/paper6_predictions_falsation/main.tex",
+    "artifacts/precursor_overview_rewrite_v1/framework_overview_strict.tex",
+    "release/references.bib",
+    "release_repo_qicn_2026-03-01/release/METHODS_GOVERNANCE_HUB.v1.md",
+    "release_repo_qicn_2026-03-01/release/GLOSSARY_CANONICAL.v1.md",
+    "release_repo_qicn_2026-03-01/release/STYLE_DISCLAIMER_POLICY.v1.md",
+    "release_repo_qicn_2026-03-01/release/TERM_MIGRATION_PLAN.v1.md"
+  ],
+  "technical_support_layer": [
+    "artifacts/release_audit/scientific_program_ledger.md",
+    "artifacts/release_audit/claim_matrix.csv",
+    "artifacts/release_audit/prediction_matrix.csv",
+    "artifacts/release_audit/falsification_matrix.csv",
+    "artifacts/release_audit/reproducibility_protocol.md",
+    "artifacts/release_audit/final_claim_status_ledger.csv",
+    "artifacts/release_audit/post_residualB_assessment.md",
+    "artifacts/release_audit/final_claim_ledger_update.md",
+    "artifacts/release_audit/final_program_publication_assessment.md",
+    "artifacts/release_audit/high_value_confirmation_campaign_summary.md",
+    "artifacts/release_audit/residualB_hardening_summary.md"
+  ],
+  "out_of_scope_for_main_release": [
+    "historical duplicate lineage",
+    "legacy README / abstract / resumen bundles",
+    "outreach and grant docs",
+    "scratch or non-frozen experiments",
+    "pseudo_external_reproduction working directories themselves as primary release artifacts"
+  ],
+  "overview_final_status": "INTEGRATE_AS_OVERVIEW_COMPANION",
+  "paper6_final_status": "CANONICAL_COMPANION",
+  "ready_for_external_reproduction_planning": true
+}

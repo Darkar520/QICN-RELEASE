@@ -312,3 +312,64 @@ python <inline> post-residualB assessment + final claim ledger + final release f
 - rg verification scan on main.log and main.tex
 - wrote paper6_post_residualB_sync_check.md/.json and paper6_post_residualB_update_note.md
 
+
+[2026-03-08] github release freeze attempt
+- git init -b main
+- git config user.name 'Johnny Andrey Pérez Ramírez' (repo-local)
+- git config user.email 'internal-freeze@local.invalid' (repo-local)
+- git add selected core/companion/release-support files
+- git commit 'Freeze internal scientific release final'
+- checked gh availability/auth env/credential helper/remotes
+- blocked before remote creation/push due missing GitHub remote + auth path
+
+[2026-03-08] github release freeze publish completed
+- git remote add origin https://github.com/Darkar520/QUICN-RELEASE.git
+- git push -u origin main
+- git fetch origin main
+- git push -u origin main:internal-scientific-release-final-freeze
+- git clone --branch internal-scientific-release-final-freeze --single-branch https://github.com/Darkar520/QUICN-RELEASE.git C:\Users\irisp\OneDrive\Escritorio\QICN_repro_clean
+- python -m venv C:\Users\irisp\OneDrive\Escritorio\QICN_repro_clean\.venv
+- wrote C:\Users\irisp\OneDrive\Escritorio\QICN_repro_clean\REPRODUCTION_README.md
+- verified clone commit/branch with git -c safe.directory=...
+- verified venv python with C:\Users\irisp\OneDrive\Escritorio\QICN_repro_clean\.venv\Scripts\python.exe --version
+[2026-03-08] paper6 final sync check against final freeze
+- Get-Content .agent\rules\rules.md -TotalCount 120
+- Get-Content .agent\rules\quality-gates.md -TotalCount 160
+- Get-Content .agent\workflows\skills.md -TotalCount 160
+- Get-Content .agent\workflows\quality-gates.md -TotalCount 160
+- Get-ChildItem -Force .agent\skills\skills
+- Get-Content .agent\skills\skills\research-engineer\SKILL.md -TotalCount 160
+- Get-Content .agent\skills\skills\writing-skills\SKILL.md -TotalCount 160
+- Get-Content .agent\skills\skills\verification-before-completion\SKILL.md -TotalCount 160
+- Get-Content artifacts\release_audit\post_residualB_assessment.json
+- Get-Content artifacts\release_audit\final_claim_status_ledger.csv
+- Get-Content artifacts\release_audit\final_release_freeze.json
+- Test-Path artifacts\release_audit\clean_release_recheck_final.md/.json
+- rg status/caveat scan over rigid-identity-framework\paper6_predictions_falsation\main.tex
+- pdfinfo rigid-identity-framework\paper6_predictions_falsation\main.pdf
+- git status --short -- rigid-identity-framework/paper6_predictions_falsation/main.tex rigid-identity-framework/paper6_predictions_falsation/main.pdf
+- wrote artifacts\release_audit\paper6_final_sync_check.md
+- wrote artifacts\release_audit\paper6_final_sync_check.json
+[2026-03-09] paper6 clean reproduction sync
+- Get-Content .agent\rules\rules.md -TotalCount 140
+- Get-Content .agent\rules\quality-gates.md -TotalCount 180
+- Get-Content .agent\workflows\skills.md -TotalCount 180
+- Get-Content .agent\workflows\quality-gates.md -TotalCount 180
+- Get-Content C:\Users\irisp\.codex\skills\pdf\SKILL.md -TotalCount 200
+- Get-Content .agent\skills\skills\research-engineer\SKILL.md -TotalCount 120
+- Get-Content .agent\skills\skills\writing-skills\SKILL.md -TotalCount 120
+- Get-Content .agent\skills\skills\verification-before-completion\SKILL.md -TotalCount 120
+- Get-Content artifacts\release_audit\final_claim_status_ledger.csv
+- Get-Content artifacts\release_audit\post_residualB_assessment.json
+- Get-Content artifacts\release_audit\final_program_publication_assessment.json
+- Get-Content artifacts\release_audit\final_release_freeze.json
+- Get-Content artifacts\release_audit\github_release_push_note.md
+- Get-Content artifacts\release_audit\clean_clone_setup_note.md
+- Get-Content artifacts\release_audit\reproduction_readme_note.md
+- rg clean-clone / pseudo-external / internal-only scan over rigid-identity-framework\paper6_predictions_falsation\main.tex
+- pdflatex -interaction=nonstopmode -halt-on-error main.tex
+- pdfinfo rigid-identity-framework\paper6_predictions_falsation\main.pdf
+- rg undefined references/citations/fatal scan over rigid-identity-framework\paper6_predictions_falsation\main.log
+- wrote artifacts\release_audit\paper6_clean_reproduction_sync_note.md
+- wrote artifacts\release_audit\paper6_clean_reproduction_sync_note.json
+- wrote artifacts\release_audit\paper6_clean_reproduction_update_note.md

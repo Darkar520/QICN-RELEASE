@@ -480,17 +480,21 @@ Frozen manifests and thresholds & active & prevents live-state leakage during ju
 Semi-blind evaluation & active but partial & reduces bias; does not equal full blind evaluation \\
 Threshold stress testing & localized caveat & shows local knife-edge behavior instead of broad collapse \\
 Pseudo-multi-environment replication & passed internally & strengthens reproducibility discipline without constituting external replication \\
+Clean-clone release re-instantiation & passed internally & frozen package was rebuilt from a GitHub clean clone plus fresh venv with no tracked-file divergence during verification \\
 Independent external judge codebase & absent & keeps all current support inside the internal program \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
+\noindent\textbf{Release-level reproduction note.}\enspace In addition to the cycle-specific judge hardening, the frozen release package was re-instantiated from a clean GitHub clone and a fresh virtual environment on the same machine, and the verification step did not introduce tracked-file drift in the freeze package. This strengthens internal reproducibility and handoff discipline at the release layer. It does \emph{not} count as external validation, third-party confirmation, or a claim upgrade by itself.
+
 \section{Cycle Evidence Map}
 The current status ledger is not based on one cycle. It is the result of a narrow but cumulative internal program. The table below records only the highest-value consequence of each phase, not every local metric.
 
 \begin{center}
+\footnotesize
 \renewcommand{\arraystretch}{1.16}
-\setlength{\tabcolsep}{4pt}
+\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{@{}p{0.11\linewidth}Y Y Y p{0.15\linewidth}@{}}
 \toprule
 Phase & Main question & Strongest result & Main residual & Claim effect \\
@@ -531,7 +535,7 @@ The remaining caveats are narrow enough to state cleanly:
 \item The strongest positive substrate-equivalence path is still partly dependent on normalized $\Iri$ handling. This is a \Status{METRIC\_OR\_TOLERANCE\_LIMIT}, not a robust positive closure.
 \item The current `near\_identity\_v2` probe remains an \Status{IMPLEMENTATION\_LIMIT}. It is cleaner than the original generator, but in the tested band it under-stresses the intended boundary.
 \item Threshold stress is not globally problematic, but it is not perfectly flat either. The current result is localized rather than globally robust.
-\item All empirical support remains \Status{INTERNAL\_SUPPORT\_ONLY}. No external lab, external evaluator, or external benchmark suite has confirmed the framework.
+\item All empirical support remains \Status{INTERNAL\_SUPPORT\_ONLY}. No external lab, external evaluator, or external benchmark suite has confirmed the framework. The clean-clone/fresh-environment re-instantiation strengthens same-machine release reproducibility only; it is not external validation, and no separate clean-agent confirmation artifact is being counted here as stronger evidence than that.
 \end{enumerate}
 
 \subsection{Non-Claims Revisited}

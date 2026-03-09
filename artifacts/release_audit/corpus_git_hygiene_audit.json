@@ -1,0 +1,40 @@
+{
+  "tracked_release_file_count": 51,
+  "safe_ignore_applied": true,
+  "safe_ignore_patterns": [
+    ".agent/",
+    ".claude/",
+    ".kilocode/",
+    ".vscode/",
+    "__pycache__/",
+    "*.pyc",
+    ".venv/",
+    "venv/",
+    "node_modules/",
+    "*.aux",
+    "*.log",
+    "*.out",
+    "*.toc",
+    "*.bcf",
+    "*.blg",
+    "*.bbl",
+    "*.run.xml",
+    "nul",
+    "*_tmp.json",
+    "_search_tmp.json",
+    "_tmp_case.json"
+  ],
+  "auto_added_release_content": [],
+  "out_of_scope_groups": [
+    "historical duplicate lineages and legacy corpora",
+    "outreach/grant/old summary material outside frozen release architecture",
+    "bulk zip bundles and workspace snapshots",
+    "backup trees and side workspaces"
+  ],
+  "needs_later_explicit_curation": [
+    "additional artifacts/release_audit notes, matrices, scripts, and frozen-input directories not yet tracked",
+    "runner/judge helper scripts supporting campaign execution",
+    "root-level research/support folders"
+  ],
+  "recommended_next_step": "Stage only .gitignore and hygiene audit notes now, then make a later explicit curation pass for untracked scientific artifacts."
+}

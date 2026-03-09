@@ -1,0 +1,30 @@
+# Local/editor state
+.agent/
+.claude/
+.kilocode/
+.vscode/
+
+# Python cache / envs
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node dependencies
+node_modules/
+
+# LaTeX / PDF build intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.bcf
+*.blg
+*.bbl
+*.run.xml
+
+# Common temporary/generated scratch
+nul
+*_tmp.json
+_search_tmp.json
+_tmp_case.json

@@ -1,0 +1,3 @@
+pair_id,left_case,right_case,expected,design_note
+A_family2_positive_raw,A_family2_positive_continuous_cycle2,A_family2_positive_quantized,PASS,continuous vs quantized substrate with invariant-preserving quantization
+A_family2_negative_raw,A_family2_positive_continuous_cycle2,A_family2_negative_quantized_broken,FAIL,same family but differentiation channel broken after quantization

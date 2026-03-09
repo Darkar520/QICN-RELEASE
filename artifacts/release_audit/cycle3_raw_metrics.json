@@ -1,0 +1,2827 @@
+{
+  "generated_at": "2026-03-07T19:59:01.420276-06:00",
+  "primary_blind_results": {
+    "generated_at": "2026-03-07T19:58:59.788535-06:00",
+    "profile": "primary",
+    "judge_contract": {
+      "consumes": [
+        "blind_manifest.json",
+        "blind_pairs.json",
+        "stress_targets.json",
+        "threshold_profiles.json",
+        "frozen case artifacts"
+      ],
+      "blind_reveal_map_seen": false,
+      "pythonhashseed": ""
+    },
+    "base_results": {
+      "B001": {
+        "blind_id": "B001",
+        "substrate": "dense_control",
+        "decision": "FAIL",
+        "reason": "certification failed because invariant margins crossed below zero: I_ri, I_int, I_cont, I_diff, I_leg",
+        "invariant_margins": {
+          "I_per": 1.167462,
+          "I_ri": -0.073119,
+          "I_int": -0.041376,
+          "I_cont": -2.252129,
+          "I_diff": -0.2464,
+          "I_leg": -0.375
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": false,
+          "I_int": false,
+          "I_cont": false,
+          "I_diff": false,
+          "I_leg": false
+        },
+        "clean_acc": 0.525,
+        "noisy_acc": 0.575,
+        "compression_acc": 0.75,
+        "critical_shift_rate": 1.0,
+        "sham_fpr": 0.45,
+        "class_separation": 0.0536,
+        "within_class_radius": 0.12672,
+        "integration_observed": 0.308624,
+        "p95_jump": 3.202129,
+        "mean_abs_second": 0.040973,
+        "activity_entropy": 8.61941,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 8,
+          "label0_to_1": 12,
+          "label1_to_0": 7,
+          "label1_to_1": 13
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 20,
+          "label1_to_1": 0
+        },
+        "sham_signature": {
+          "label0_to_0": 8,
+          "label0_to_1": 12,
+          "label1_to_0": 6,
+          "label1_to_1": 14
+        }
+      },
+      "B002": {
+        "blind_id": "B002",
+        "substrate": "continuous",
+        "decision": "PASS",
+        "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+        "invariant_margins": {
+          "I_per": 0.721603,
+          "I_ri": 2.623922,
+          "I_int": 0.648394,
+          "I_cont": 0.873566,
+          "I_diff": 0.568764,
+          "I_leg": 0.1
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": true,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": true,
+          "I_leg": true
+        },
+        "clean_acc": 1.0,
+        "noisy_acc": 1.0,
+        "compression_acc": 1.0,
+        "critical_shift_rate": 1.0,
+        "sham_fpr": 0.0,
+        "class_separation": 2.623922,
+        "within_class_radius": 1e-06,
+        "integration_observed": 0.998394,
+        "p95_jump": 0.076434,
+        "mean_abs_second": 0.748764,
+        "activity_entropy": 2.319444,
+        "consciousness_op_pass": true,
+        "q_op_non_empty": true,
+        "normal_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 20,
+          "label1_to_1": 0
+        },
+        "sham_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      },
+      "B003": {
+        "blind_id": "B003",
+        "substrate": "continuous",
+        "decision": "AMBIGUOUS",
+        "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.000)",
+        "invariant_margins": {
+          "I_per": 0.449855,
+          "I_ri": 0.0,
+          "I_int": -0.18371,
+          "I_cont": 0.921568,
+          "I_diff": -0.3,
+          "I_leg": -0.4
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": false,
+          "I_int": false,
+          "I_cont": true,
+          "I_diff": false,
+          "I_leg": false
+        },
+        "clean_acc": 0.5,
+        "noisy_acc": 0.5,
+        "compression_acc": 0.5,
+        "critical_shift_rate": 0.5,
+        "sham_fpr": 0.5,
+        "class_separation": 0.0,
+        "within_class_radius": 0.0,
+        "integration_observed": 0.16629,
+        "p95_jump": 0.028432,
+        "mean_abs_second": 0.050472,
+        "activity_entropy": -0.0,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        },
+        "sham_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        }
+      },
+      "B004": {
+        "blind_id": "B004",
+        "substrate": "discrete",
+        "decision": "PASS",
+        "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+        "invariant_margins": {
+          "I_per": 0.25,
+          "I_ri": 3.464102,
+          "I_int": 0.64955,
+          "I_cont": 0.95,
+          "I_diff": 0.82,
+          "I_leg": 0.1
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": true,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": true,
+          "I_leg": true
+        },
+        "clean_acc": 1.0,
+        "noisy_acc": 1.0,
+        "compression_acc": 1.0,
+        "critical_shift_rate": 1.0,
+        "sham_fpr": 0.0,
+        "class_separation": 3.464102,
+        "within_class_radius": 0.0,
+        "integration_observed": 0.99955,
+        "p95_jump": 0.0,
+        "mean_abs_second": 1.0,
+        "activity_entropy": 1.183122,
+        "consciousness_op_pass": true,
+        "q_op_non_empty": true,
+        "normal_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 20,
+          "label1_to_1": 0
+        },
+        "sham_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      },
+      "B005": {
+        "blind_id": "B005",
+        "substrate": "continuous",
+        "decision": "FAIL",
+        "reason": "certification failed because invariant margins crossed below zero: I_leg",
+        "invariant_margins": {
+          "I_per": 0.721603,
+          "I_ri": 2.257546,
+          "I_int": 0.648325,
+          "I_cont": 0.879032,
+          "I_diff": 0.231821,
+          "I_leg": -0.4
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": true,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": true,
+          "I_leg": false
+        },
+        "clean_acc": 0.5,
+        "noisy_acc": 0.5,
+        "compression_acc": 0.5,
+        "critical_shift_rate": 0.5,
+        "sham_fpr": 0.5,
+        "class_separation": 2.257546,
+        "within_class_radius": 0.0,
+        "integration_observed": 0.998325,
+        "p95_jump": 0.070968,
+        "mean_abs_second": 0.411821,
+        "activity_entropy": 2.216469,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        },
+        "sham_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        }
+      }
+    },
+    "pair_results": {
+      "PAIR001": {
+        "decision": "AMBIGUOUS",
+        "reason": "signatures match, but invariant-margin divergence exceeds the clean equivalence tolerance"
+      }
+    },
+    "stress_results": {
+      "B002": {
+        "base": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.648394,
+            "I_cont": 0.873566,
+            "I_diff": 0.568764,
+            "I_leg": 0.1
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "local_loose": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.668394,
+            "I_cont": 0.913566,
+            "I_diff": 0.588764,
+            "I_leg": 0.12
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "local_tight": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.628394,
+            "I_cont": 0.833566,
+            "I_diff": 0.548764,
+            "I_leg": 0.08
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "legibility_tight": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.648394,
+            "I_cont": 0.873566,
+            "I_diff": 0.568764,
+            "I_leg": 0.07
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "differentiation_tight": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.618394,
+            "I_cont": 0.873566,
+            "I_diff": 0.538764,
+            "I_leg": 0.1
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        }
+      },
+      "B004": {
+        "base": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.64955,
+            "I_cont": 0.95,
+            "I_diff": 0.82,
+            "I_leg": 0.1
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "local_loose": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.66955,
+            "I_cont": 0.99,
+            "I_diff": 0.84,
+            "I_leg": 0.12
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "local_tight": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.62955,
+            "I_cont": 0.91,
+            "I_diff": 0.8,
+            "I_leg": 0.08
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "legibility_tight": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.64955,
+            "I_cont": 0.95,
+            "I_diff": 0.82,
+            "I_leg": 0.07
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "differentiation_tight": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.61955,
+            "I_cont": 0.95,
+            "I_diff": 0.79,
+            "I_leg": 0.1
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        }
+      },
+      "B001": {
+        "base": {
+          "blind_id": "B001",
+          "substrate": "dense_control",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_ri, I_int, I_cont, I_diff, I_leg",
+          "invariant_margins": {
+            "I_per": 1.167462,
+            "I_ri": -0.073119,
+            "I_int": -0.041376,
+            "I_cont": -2.252129,
+            "I_diff": -0.2464,
+            "I_leg": -0.375
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": false,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.525,
+          "noisy_acc": 0.575,
+          "compression_acc": 0.75,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.45,
+          "class_separation": 0.0536,
+          "within_class_radius": 0.12672,
+          "integration_observed": 0.308624,
+          "p95_jump": 3.202129,
+          "mean_abs_second": 0.040973,
+          "activity_entropy": 8.61941,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 7,
+            "label1_to_1": 13
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 6,
+            "label1_to_1": 14
+          }
+        },
+        "local_loose": {
+          "blind_id": "B001",
+          "substrate": "dense_control",
+          "decision": "AMBIGUOUS",
+          "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.021)",
+          "invariant_margins": {
+            "I_per": 1.177462,
+            "I_ri": -0.073119,
+            "I_int": -0.021376,
+            "I_cont": -2.212129,
+            "I_diff": -0.2264,
+            "I_leg": -0.355
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": false,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.525,
+          "noisy_acc": 0.575,
+          "compression_acc": 0.75,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.45,
+          "class_separation": 0.0536,
+          "within_class_radius": 0.12672,
+          "integration_observed": 0.308624,
+          "p95_jump": 3.202129,
+          "mean_abs_second": 0.040973,
+          "activity_entropy": 8.61941,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 7,
+            "label1_to_1": 13
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 6,
+            "label1_to_1": 14
+          }
+        },
+        "local_tight": {
+          "blind_id": "B001",
+          "substrate": "dense_control",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_ri, I_int, I_cont, I_diff, I_leg",
+          "invariant_margins": {
+            "I_per": 1.157462,
+            "I_ri": -0.073119,
+            "I_int": -0.061376,
+            "I_cont": -2.292129,
+            "I_diff": -0.2664,
+            "I_leg": -0.395
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": false,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.525,
+          "noisy_acc": 0.575,
+          "compression_acc": 0.75,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.45,
+          "class_separation": 0.0536,
+          "within_class_radius": 0.12672,
+          "integration_observed": 0.308624,
+          "p95_jump": 3.202129,
+          "mean_abs_second": 0.040973,
+          "activity_entropy": 8.61941,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 7,
+            "label1_to_1": 13
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 6,
+            "label1_to_1": 14
+          }
+        }
+      },
+      "B003": {
+        "base": {
+          "blind_id": "B003",
+          "substrate": "continuous",
+          "decision": "AMBIGUOUS",
+          "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.000)",
+          "invariant_margins": {
+            "I_per": 0.449855,
+            "I_ri": 0.0,
+            "I_int": -0.18371,
+            "I_cont": 0.921568,
+            "I_diff": -0.3,
+            "I_leg": -0.4
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": true,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 0.0,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.16629,
+          "p95_jump": 0.028432,
+          "mean_abs_second": 0.050472,
+          "activity_entropy": -0.0,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "local_loose": {
+          "blind_id": "B003",
+          "substrate": "continuous",
+          "decision": "AMBIGUOUS",
+          "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.000)",
+          "invariant_margins": {
+            "I_per": 0.459855,
+            "I_ri": 0.0,
+            "I_int": -0.16371,
+            "I_cont": 0.961568,
+            "I_diff": -0.28,
+            "I_leg": -0.38
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": true,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 0.0,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.16629,
+          "p95_jump": 0.028432,
+          "mean_abs_second": 0.050472,
+          "activity_entropy": -0.0,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "local_tight": {
+          "blind_id": "B003",
+          "substrate": "continuous",
+          "decision": "AMBIGUOUS",
+          "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.000)",
+          "invariant_margins": {
+            "I_per": 0.439855,
+            "I_ri": 0.0,
+            "I_int": -0.20371,
+            "I_cont": 0.881568,
+            "I_diff": -0.32,
+            "I_leg": -0.42
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": true,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 0.0,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.16629,
+          "p95_jump": 0.028432,
+          "mean_abs_second": 0.050472,
+          "activity_entropy": -0.0,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        }
+      },
+      "B005": {
+        "base": {
+          "blind_id": "B005",
+          "substrate": "continuous",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_leg",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.257546,
+            "I_int": 0.648325,
+            "I_cont": 0.879032,
+            "I_diff": 0.231821,
+            "I_leg": -0.4
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 2.257546,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.998325,
+          "p95_jump": 0.070968,
+          "mean_abs_second": 0.411821,
+          "activity_entropy": 2.216469,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "local_loose": {
+          "blind_id": "B005",
+          "substrate": "continuous",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_leg",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.257546,
+            "I_int": 0.668325,
+            "I_cont": 0.919032,
+            "I_diff": 0.251821,
+            "I_leg": -0.38
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 2.257546,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.998325,
+          "p95_jump": 0.070968,
+          "mean_abs_second": 0.411821,
+          "activity_entropy": 2.216469,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "local_tight": {
+          "blind_id": "B005",
+          "substrate": "continuous",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_leg",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.257546,
+            "I_int": 0.628325,
+            "I_cont": 0.839032,
+            "I_diff": 0.211821,
+            "I_leg": -0.42
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 2.257546,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.998325,
+          "p95_jump": 0.070968,
+          "mean_abs_second": 0.411821,
+          "activity_entropy": 2.216469,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "legibility_tight": {
+          "blind_id": "B005",
+          "substrate": "continuous",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_leg",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.257546,
+            "I_int": 0.648325,
+            "I_cont": 0.879032,
+            "I_diff": 0.231821,
+            "I_leg": -0.43
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 2.257546,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.998325,
+          "p95_jump": 0.070968,
+          "mean_abs_second": 0.411821,
+          "activity_entropy": 2.216469,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        }
+      }
+    }
+  },
+  "replica_blind_results": {
+    "generated_at": "2026-03-07T19:59:01.201698-06:00",
+    "profile": "replica",
+    "judge_contract": {
+      "consumes": [
+        "blind_manifest.json",
+        "blind_pairs.json",
+        "stress_targets.json",
+        "threshold_profiles.json",
+        "frozen case artifacts"
+      ],
+      "blind_reveal_map_seen": false,
+      "pythonhashseed": "0"
+    },
+    "base_results": {
+      "B005": {
+        "blind_id": "B005",
+        "substrate": "continuous",
+        "decision": "FAIL",
+        "reason": "certification failed because invariant margins crossed below zero: I_leg",
+        "invariant_margins": {
+          "I_per": 0.721603,
+          "I_ri": 2.257546,
+          "I_int": 0.648325,
+          "I_cont": 0.879032,
+          "I_diff": 0.231821,
+          "I_leg": -0.4
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": true,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": true,
+          "I_leg": false
+        },
+        "clean_acc": 0.5,
+        "noisy_acc": 0.5,
+        "compression_acc": 0.5,
+        "critical_shift_rate": 0.5,
+        "sham_fpr": 0.5,
+        "class_separation": 2.257546,
+        "within_class_radius": 0.0,
+        "integration_observed": 0.998325,
+        "p95_jump": 0.070968,
+        "mean_abs_second": 0.411821,
+        "activity_entropy": 2.216469,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        },
+        "sham_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        }
+      },
+      "B004": {
+        "blind_id": "B004",
+        "substrate": "discrete",
+        "decision": "PASS",
+        "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+        "invariant_margins": {
+          "I_per": 0.25,
+          "I_ri": 3.464102,
+          "I_int": 0.64955,
+          "I_cont": 0.95,
+          "I_diff": 0.82,
+          "I_leg": 0.1
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": true,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": true,
+          "I_leg": true
+        },
+        "clean_acc": 1.0,
+        "noisy_acc": 1.0,
+        "compression_acc": 1.0,
+        "critical_shift_rate": 1.0,
+        "sham_fpr": 0.0,
+        "class_separation": 3.464102,
+        "within_class_radius": 0.0,
+        "integration_observed": 0.99955,
+        "p95_jump": 0.0,
+        "mean_abs_second": 1.0,
+        "activity_entropy": 1.183122,
+        "consciousness_op_pass": true,
+        "q_op_non_empty": true,
+        "normal_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 20,
+          "label1_to_1": 0
+        },
+        "sham_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      },
+      "B003": {
+        "blind_id": "B003",
+        "substrate": "continuous",
+        "decision": "AMBIGUOUS",
+        "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.000)",
+        "invariant_margins": {
+          "I_per": 0.449855,
+          "I_ri": 0.0,
+          "I_int": -0.18371,
+          "I_cont": 0.921568,
+          "I_diff": -0.3,
+          "I_leg": -0.4
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": false,
+          "I_int": false,
+          "I_cont": true,
+          "I_diff": false,
+          "I_leg": false
+        },
+        "clean_acc": 0.5,
+        "noisy_acc": 0.5,
+        "compression_acc": 0.5,
+        "critical_shift_rate": 0.5,
+        "sham_fpr": 0.5,
+        "class_separation": 0.0,
+        "within_class_radius": 0.0,
+        "integration_observed": 0.16629,
+        "p95_jump": 0.028432,
+        "mean_abs_second": 0.050472,
+        "activity_entropy": -0.0,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        },
+        "sham_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 28,
+          "label1_to_0": 0,
+          "label1_to_1": 28
+        }
+      },
+      "B002": {
+        "blind_id": "B002",
+        "substrate": "continuous",
+        "decision": "PASS",
+        "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+        "invariant_margins": {
+          "I_per": 0.721603,
+          "I_ri": 2.623922,
+          "I_int": 0.648394,
+          "I_cont": 0.873566,
+          "I_diff": 0.568764,
+          "I_leg": 0.1
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": true,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": true,
+          "I_leg": true
+        },
+        "clean_acc": 1.0,
+        "noisy_acc": 1.0,
+        "compression_acc": 1.0,
+        "critical_shift_rate": 1.0,
+        "sham_fpr": 0.0,
+        "class_separation": 2.623922,
+        "within_class_radius": 1e-06,
+        "integration_observed": 0.998394,
+        "p95_jump": 0.076434,
+        "mean_abs_second": 0.748764,
+        "activity_entropy": 2.319444,
+        "consciousness_op_pass": true,
+        "q_op_non_empty": true,
+        "normal_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 20,
+          "label1_to_1": 0
+        },
+        "sham_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      },
+      "B001": {
+        "blind_id": "B001",
+        "substrate": "dense_control",
+        "decision": "FAIL",
+        "reason": "certification failed because invariant margins crossed below zero: I_ri, I_int, I_cont, I_diff, I_leg",
+        "invariant_margins": {
+          "I_per": 1.167462,
+          "I_ri": -0.073119,
+          "I_int": -0.041376,
+          "I_cont": -2.252129,
+          "I_diff": -0.2464,
+          "I_leg": -0.375
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": false,
+          "I_int": false,
+          "I_cont": false,
+          "I_diff": false,
+          "I_leg": false
+        },
+        "clean_acc": 0.525,
+        "noisy_acc": 0.575,
+        "compression_acc": 0.75,
+        "critical_shift_rate": 1.0,
+        "sham_fpr": 0.45,
+        "class_separation": 0.0536,
+        "within_class_radius": 0.12672,
+        "integration_observed": 0.308624,
+        "p95_jump": 3.202129,
+        "mean_abs_second": 0.040973,
+        "activity_entropy": 8.61941,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 8,
+          "label0_to_1": 12,
+          "label1_to_0": 7,
+          "label1_to_1": 13
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 20,
+          "label1_to_1": 0
+        },
+        "sham_signature": {
+          "label0_to_0": 8,
+          "label0_to_1": 12,
+          "label1_to_0": 6,
+          "label1_to_1": 14
+        }
+      }
+    },
+    "pair_results": {
+      "PAIR001": {
+        "decision": "AMBIGUOUS",
+        "reason": "signatures match, but invariant-margin divergence exceeds the clean equivalence tolerance"
+      }
+    },
+    "stress_results": {
+      "B002": {
+        "base": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.648394,
+            "I_cont": 0.873566,
+            "I_diff": 0.568764,
+            "I_leg": 0.1
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "local_loose": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.668394,
+            "I_cont": 0.913566,
+            "I_diff": 0.588764,
+            "I_leg": 0.12
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "local_tight": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.628394,
+            "I_cont": 0.833566,
+            "I_diff": 0.548764,
+            "I_leg": 0.08
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "legibility_tight": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.648394,
+            "I_cont": 0.873566,
+            "I_diff": 0.568764,
+            "I_leg": 0.07
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "differentiation_tight": {
+          "blind_id": "B002",
+          "substrate": "continuous",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.623922,
+            "I_int": 0.618394,
+            "I_cont": 0.873566,
+            "I_diff": 0.538764,
+            "I_leg": 0.1
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 2.623922,
+          "within_class_radius": 1e-06,
+          "integration_observed": 0.998394,
+          "p95_jump": 0.076434,
+          "mean_abs_second": 0.748764,
+          "activity_entropy": 2.319444,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        }
+      },
+      "B004": {
+        "base": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.64955,
+            "I_cont": 0.95,
+            "I_diff": 0.82,
+            "I_leg": 0.1
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "local_loose": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.66955,
+            "I_cont": 0.99,
+            "I_diff": 0.84,
+            "I_leg": 0.12
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "local_tight": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.62955,
+            "I_cont": 0.91,
+            "I_diff": 0.8,
+            "I_leg": 0.08
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "legibility_tight": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.64955,
+            "I_cont": 0.95,
+            "I_diff": 0.82,
+            "I_leg": 0.07
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        },
+        "differentiation_tight": {
+          "blind_id": "B004",
+          "substrate": "discrete",
+          "decision": "PASS",
+          "reason": "all six invariant margins remain positive with headroom beyond the ambiguity band",
+          "invariant_margins": {
+            "I_per": 0.25,
+            "I_ri": 3.464102,
+            "I_int": 0.61955,
+            "I_cont": 0.95,
+            "I_diff": 0.79,
+            "I_leg": 0.1
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": true
+          },
+          "clean_acc": 1.0,
+          "noisy_acc": 1.0,
+          "compression_acc": 1.0,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.0,
+          "class_separation": 3.464102,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.99955,
+          "p95_jump": 0.0,
+          "mean_abs_second": 1.0,
+          "activity_entropy": 1.183122,
+          "consciousness_op_pass": true,
+          "q_op_non_empty": true,
+          "normal_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 20,
+            "label0_to_1": 0,
+            "label1_to_0": 0,
+            "label1_to_1": 20
+          }
+        }
+      },
+      "B001": {
+        "base": {
+          "blind_id": "B001",
+          "substrate": "dense_control",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_ri, I_int, I_cont, I_diff, I_leg",
+          "invariant_margins": {
+            "I_per": 1.167462,
+            "I_ri": -0.073119,
+            "I_int": -0.041376,
+            "I_cont": -2.252129,
+            "I_diff": -0.2464,
+            "I_leg": -0.375
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": false,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.525,
+          "noisy_acc": 0.575,
+          "compression_acc": 0.75,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.45,
+          "class_separation": 0.0536,
+          "within_class_radius": 0.12672,
+          "integration_observed": 0.308624,
+          "p95_jump": 3.202129,
+          "mean_abs_second": 0.040973,
+          "activity_entropy": 8.61941,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 7,
+            "label1_to_1": 13
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 6,
+            "label1_to_1": 14
+          }
+        },
+        "local_loose": {
+          "blind_id": "B001",
+          "substrate": "dense_control",
+          "decision": "AMBIGUOUS",
+          "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.021)",
+          "invariant_margins": {
+            "I_per": 1.177462,
+            "I_ri": -0.073119,
+            "I_int": -0.021376,
+            "I_cont": -2.212129,
+            "I_diff": -0.2264,
+            "I_leg": -0.355
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": false,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.525,
+          "noisy_acc": 0.575,
+          "compression_acc": 0.75,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.45,
+          "class_separation": 0.0536,
+          "within_class_radius": 0.12672,
+          "integration_observed": 0.308624,
+          "p95_jump": 3.202129,
+          "mean_abs_second": 0.040973,
+          "activity_entropy": 8.61941,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 7,
+            "label1_to_1": 13
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 6,
+            "label1_to_1": 14
+          }
+        },
+        "local_tight": {
+          "blind_id": "B001",
+          "substrate": "dense_control",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_ri, I_int, I_cont, I_diff, I_leg",
+          "invariant_margins": {
+            "I_per": 1.157462,
+            "I_ri": -0.073119,
+            "I_int": -0.061376,
+            "I_cont": -2.292129,
+            "I_diff": -0.2664,
+            "I_leg": -0.395
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": false,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.525,
+          "noisy_acc": 0.575,
+          "compression_acc": 0.75,
+          "critical_shift_rate": 1.0,
+          "sham_fpr": 0.45,
+          "class_separation": 0.0536,
+          "within_class_radius": 0.12672,
+          "integration_observed": 0.308624,
+          "p95_jump": 3.202129,
+          "mean_abs_second": 0.040973,
+          "activity_entropy": 8.61941,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 7,
+            "label1_to_1": 13
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 20,
+            "label1_to_0": 20,
+            "label1_to_1": 0
+          },
+          "sham_signature": {
+            "label0_to_0": 8,
+            "label0_to_1": 12,
+            "label1_to_0": 6,
+            "label1_to_1": 14
+          }
+        }
+      },
+      "B003": {
+        "base": {
+          "blind_id": "B003",
+          "substrate": "continuous",
+          "decision": "AMBIGUOUS",
+          "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.000)",
+          "invariant_margins": {
+            "I_per": 0.449855,
+            "I_ri": 0.0,
+            "I_int": -0.18371,
+            "I_cont": 0.921568,
+            "I_diff": -0.3,
+            "I_leg": -0.4
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": true,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 0.0,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.16629,
+          "p95_jump": 0.028432,
+          "mean_abs_second": 0.050472,
+          "activity_entropy": -0.0,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "local_loose": {
+          "blind_id": "B003",
+          "substrate": "continuous",
+          "decision": "AMBIGUOUS",
+          "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.000)",
+          "invariant_margins": {
+            "I_per": 0.459855,
+            "I_ri": 0.0,
+            "I_int": -0.16371,
+            "I_cont": 0.961568,
+            "I_diff": -0.28,
+            "I_leg": -0.38
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": true,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 0.0,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.16629,
+          "p95_jump": 0.028432,
+          "mean_abs_second": 0.050472,
+          "activity_entropy": -0.0,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "local_tight": {
+          "blind_id": "B003",
+          "substrate": "continuous",
+          "decision": "AMBIGUOUS",
+          "reason": "certification failed and at least one invariant lies inside the ambiguity band (0.000)",
+          "invariant_margins": {
+            "I_per": 0.439855,
+            "I_ri": 0.0,
+            "I_int": -0.20371,
+            "I_cont": 0.881568,
+            "I_diff": -0.32,
+            "I_leg": -0.42
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": false,
+            "I_int": false,
+            "I_cont": true,
+            "I_diff": false,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 0.0,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.16629,
+          "p95_jump": 0.028432,
+          "mean_abs_second": 0.050472,
+          "activity_entropy": -0.0,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        }
+      },
+      "B005": {
+        "base": {
+          "blind_id": "B005",
+          "substrate": "continuous",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_leg",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.257546,
+            "I_int": 0.648325,
+            "I_cont": 0.879032,
+            "I_diff": 0.231821,
+            "I_leg": -0.4
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 2.257546,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.998325,
+          "p95_jump": 0.070968,
+          "mean_abs_second": 0.411821,
+          "activity_entropy": 2.216469,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "local_loose": {
+          "blind_id": "B005",
+          "substrate": "continuous",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_leg",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.257546,
+            "I_int": 0.668325,
+            "I_cont": 0.919032,
+            "I_diff": 0.251821,
+            "I_leg": -0.38
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 2.257546,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.998325,
+          "p95_jump": 0.070968,
+          "mean_abs_second": 0.411821,
+          "activity_entropy": 2.216469,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "local_tight": {
+          "blind_id": "B005",
+          "substrate": "continuous",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_leg",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.257546,
+            "I_int": 0.628325,
+            "I_cont": 0.839032,
+            "I_diff": 0.211821,
+            "I_leg": -0.42
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 2.257546,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.998325,
+          "p95_jump": 0.070968,
+          "mean_abs_second": 0.411821,
+          "activity_entropy": 2.216469,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        },
+        "legibility_tight": {
+          "blind_id": "B005",
+          "substrate": "continuous",
+          "decision": "FAIL",
+          "reason": "certification failed because invariant margins crossed below zero: I_leg",
+          "invariant_margins": {
+            "I_per": 0.721603,
+            "I_ri": 2.257546,
+            "I_int": 0.648325,
+            "I_cont": 0.879032,
+            "I_diff": 0.231821,
+            "I_leg": -0.43
+          },
+          "pass_flags": {
+            "I_per": true,
+            "I_ri": true,
+            "I_int": true,
+            "I_cont": true,
+            "I_diff": true,
+            "I_leg": false
+          },
+          "clean_acc": 0.5,
+          "noisy_acc": 0.5,
+          "compression_acc": 0.5,
+          "critical_shift_rate": 0.5,
+          "sham_fpr": 0.5,
+          "class_separation": 2.257546,
+          "within_class_radius": 0.0,
+          "integration_observed": 0.998325,
+          "p95_jump": 0.070968,
+          "mean_abs_second": 0.411821,
+          "activity_entropy": 2.216469,
+          "consciousness_op_pass": false,
+          "q_op_non_empty": false,
+          "normal_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "critical_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          },
+          "sham_signature": {
+            "label0_to_0": 0,
+            "label0_to_1": 28,
+            "label1_to_0": 0,
+            "label1_to_1": 28
+          }
+        }
+      }
+    }
+  },
+  "reveal_map": {
+    "B001": {
+      "case_id": "C3_NEG_COMPLEXITY",
+      "family": "negative_control_complexity",
+      "generator_family": "complexity_negative",
+      "target_invariant": "I_ri,I_cont,I_diff,I_leg",
+      "substrate": "dense_control"
+    },
+    "B002": {
+      "case_id": "C3_EQ_CONTINUOUS",
+      "family": "cross_substrate_positive",
+      "generator_family": "positive_continuous",
+      "target_invariant": "",
+      "substrate": "continuous"
+    },
+    "B003": {
+      "case_id": "C3_NEAR_IDENTITY",
+      "family": "near_miss_ablation",
+      "generator_family": "near_identity",
+      "target_invariant": "I_ri",
+      "substrate": "continuous"
+    },
+    "B004": {
+      "case_id": "C3_EQ_DISCRETE",
+      "family": "cross_substrate_positive",
+      "generator_family": "positive_discrete",
+      "target_invariant": "",
+      "substrate": "discrete"
+    },
+    "B005": {
+      "case_id": "C3_NEAR_LEGIBILITY",
+      "family": "near_miss_ablation",
+      "generator_family": "near_legibility",
+      "target_invariant": "I_leg",
+      "substrate": "continuous"
+    }
+  },
+  "stress_assessment": {
+    "B001": {
+      "decisions": {
+        "base": "FAIL",
+        "local_loose": "AMBIGUOUS",
+        "local_tight": "FAIL"
+      },
+      "local_flip": true,
+      "targeted_flip": false
+    },
+    "B002": {
+      "decisions": {
+        "base": "PASS",
+        "local_loose": "PASS",
+        "local_tight": "PASS",
+        "legibility_tight": "PASS",
+        "differentiation_tight": "PASS"
+      },
+      "local_flip": false,
+      "targeted_flip": false
+    },
+    "B003": {
+      "decisions": {
+        "base": "AMBIGUOUS",
+        "local_loose": "AMBIGUOUS",
+        "local_tight": "AMBIGUOUS"
+      },
+      "local_flip": false,
+      "targeted_flip": false
+    },
+    "B004": {
+      "decisions": {
+        "base": "PASS",
+        "local_loose": "PASS",
+        "local_tight": "PASS",
+        "legibility_tight": "PASS",
+        "differentiation_tight": "PASS"
+      },
+      "local_flip": false,
+      "targeted_flip": false
+    },
+    "B005": {
+      "decisions": {
+        "base": "FAIL",
+        "local_loose": "FAIL",
+        "local_tight": "FAIL",
+        "legibility_tight": "FAIL"
+      },
+      "local_flip": false,
+      "targeted_flip": false
+    }
+  },
+  "replication_comparison": {
+    "case_agreement": {
+      "B001": true,
+      "B002": true,
+      "B003": true,
+      "B004": true,
+      "B005": true
+    },
+    "pair_agreement": {
+      "PAIR001": true
+    },
+    "max_metric_drift": 0.0,
+    "all_case_agree": true,
+    "all_pair_agree": true
+  }
+}

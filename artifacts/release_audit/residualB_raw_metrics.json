@@ -1,0 +1,147 @@
+{
+  "generated_at": "2026-03-08T13:29:32.840601-06:00",
+  "judge_agreement": true,
+  "family1_converges": true,
+  "family2_converges": true,
+  "patterns": {
+    "family1_primary": {
+      "base": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_loose": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_tight": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ]
+    },
+    "family1_replica": {
+      "base": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_loose": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_tight": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ]
+    },
+    "family1_external": {
+      "base": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_loose": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_tight": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ]
+    },
+    "family2_primary": {
+      "base": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_loose": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_tight": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ]
+    },
+    "family2_replica": {
+      "base": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_loose": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_tight": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ]
+    },
+    "family2_external": {
+      "base": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_loose": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ],
+      "local_tight": [
+        "PASS",
+        "AMBIGUOUS",
+        "FAIL"
+      ]
+    }
+  },
+  "first_fails": {
+    "family1_primary": {
+      "base": [
+        "I_leg",
+        "I_ri",
+        "I_ri"
+      ],
+      "local_loose": [
+        "I_leg",
+        "I_ri",
+        "I_ri"
+      ],
+      "local_tight": [
+        "I_leg",
+        "I_ri",
+        "I_ri"
+      ]
+    },
+    "family2_primary": {
+      "base": [
+        "I_leg",
+        "I_ri",
+        "I_ri"
+      ],
+      "local_loose": [
+        "I_leg",
+        "I_ri",
+        "I_ri"
+      ],
+      "local_tight": [
+        "I_leg",
+        "I_ri",
+        "I_ri"
+      ]
+    }
+  },
+  "externalization_mode": "pseudo_external_reproduction"
+}

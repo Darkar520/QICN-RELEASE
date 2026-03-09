@@ -1,0 +1,139 @@
+{
+  "generated_at": "2026-03-08T11:54:37.124919-06:00",
+  "residualA": {
+    "positive_pair_decisions": {
+      "base": "PASS",
+      "local_loose": "PASS",
+      "local_tight": "PASS",
+      "legibility_tight": "PASS",
+      "differentiation_tight": "PASS"
+    },
+    "negative_pair_decisions": {
+      "base": "FAIL",
+      "local_loose": "FAIL",
+      "local_tight": "FAIL",
+      "legibility_tight": "FAIL",
+      "differentiation_tight": "FAIL"
+    },
+    "base_left_invariants": {
+      "I_per": 0.721603,
+      "I_ri": 2.623922,
+      "I_int": 0.648394,
+      "I_cont": 0.873566,
+      "I_diff": 0.568764,
+      "I_leg": 0.1
+    },
+    "base_right_invariants": {
+      "I_per": 0.25,
+      "I_ri": 3.464102,
+      "I_int": 0.64955,
+      "I_cont": 0.95,
+      "I_diff": 0.82,
+      "I_leg": 0.1
+    },
+    "base_raw_pair": {
+      "decision": "AMBIGUOUS",
+      "reason": "signatures match, but invariant-margin divergence exceeds the clean equivalence tolerance"
+    },
+    "base_normalized_pair": {
+      "decision": "PASS",
+      "reason": "signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved",
+      "iri_shape_delta": 0.0,
+      "non_iri_delta": 0.471603
+    }
+  },
+  "residualB": {
+    "config": {
+      "a0": 0.1,
+      "a1": 0.08,
+      "a2": 0.1,
+      "amp": 4.5,
+      "bias_amp": 0.4,
+      "freq": 10.0,
+      "tdrift": 0.005
+    },
+    "first_fail": {
+      "I_per": null,
+      "I_ri": 0.12,
+      "I_int": null,
+      "I_cont": null,
+      "I_diff": null,
+      "I_leg": null
+    },
+    "profile_decisions": {
+      "base": {
+        "0.05": "PASS",
+        "0.08": "PASS",
+        "0.1": "AMBIGUOUS",
+        "0.12": "FAIL",
+        "0.15": "FAIL"
+      },
+      "local_loose": {
+        "0.05": "PASS",
+        "0.08": "PASS",
+        "0.1": "AMBIGUOUS",
+        "0.12": "FAIL",
+        "0.15": "FAIL"
+      },
+      "local_tight": {
+        "0.05": "PASS",
+        "0.08": "PASS",
+        "0.1": "AMBIGUOUS",
+        "0.12": "FAIL",
+        "0.15": "FAIL"
+      }
+    },
+    "base_ladder": [
+      {
+        "severity": 0.05,
+        "decision": "PASS",
+        "I_per": 0.721603,
+        "I_ri": 0.334861,
+        "I_int": 0.115223,
+        "I_cont": 0.902204,
+        "I_diff": 0.568449,
+        "I_leg": 0.1
+      },
+      {
+        "severity": 0.08,
+        "decision": "PASS",
+        "I_per": 0.721603,
+        "I_ri": 0.137976,
+        "I_int": 0.108485,
+        "I_cont": 0.877729,
+        "I_diff": 0.56826,
+        "I_leg": 0.1
+      },
+      {
+        "severity": 0.1,
+        "decision": "AMBIGUOUS",
+        "I_per": 0.721603,
+        "I_ri": 0.006736,
+        "I_int": 0.104192,
+        "I_cont": 0.862511,
+        "I_diff": 0.568134,
+        "I_leg": 0.1
+      },
+      {
+        "severity": 0.12,
+        "decision": "FAIL",
+        "I_per": 0.721603,
+        "I_ri": -0.124492,
+        "I_int": 0.100342,
+        "I_cont": 0.846538,
+        "I_diff": 0.568007,
+        "I_leg": 0.1
+      },
+      {
+        "severity": 0.15,
+        "decision": "FAIL",
+        "I_per": 0.721603,
+        "I_ri": -0.32131,
+        "I_int": 0.095662,
+        "I_cont": 0.821206,
+        "I_diff": 0.567818,
+        "I_leg": 0.1
+      }
+    ]
+  }
+}

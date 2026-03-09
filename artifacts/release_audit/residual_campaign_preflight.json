@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-03-08",
+  "status": "PASS",
+  "gate": "DG",
+  "sufficiency_verdict": "SUFFICIENT_TO_START",
+  "ready_artifacts_count": 38,
+  "incomplete_artifacts_count": 5,
+  "missing_items_count": 0,
+  "can_campaign_start_now": true,
+  "available_artifacts_ready_to_use": [
+    "rigid-identity-framework/CANONICAL_CORE.tex",
+    "rigid-identity-framework/paper1/main.tex",
+    "rigid-identity-framework/paper2/main.tex",
+    "rigid-identity-framework/paper3/main.tex",
+    "rigid-identity-framework/paper4/main.tex",
+    "rigid-identity-framework/paper5_operational_consciousness/main.tex",
+    "rigid-identity-framework/paper6_predictions_falsation/main.tex",
+    "artifacts/precursor_overview_rewrite_v1/framework_overview_strict.tex",
+    "artifacts/precursor_overview_rewrite_v1/framework_overview_strict.pdf",
+    "artifacts/release_audit/scientific_program_ledger.md",
+    "artifacts/release_audit/scientific_program_ledger.json",
+    "artifacts/release_audit/claim_matrix.csv",
+    "artifacts/release_audit/prediction_matrix.csv",
+    "artifacts/release_audit/falsification_matrix.csv",
+    "artifacts/release_audit/reproducibility_protocol.md",
+    "artifacts/release_audit/cycle1_results_ledger.csv",
+    "artifacts/release_audit/cycle1_decision_summary.json",
+    "artifacts/release_audit/cycle2_results_ledger.csv",
+    "artifacts/release_audit/cycle2_decision_summary.json",
+    "artifacts/release_audit/cycle3_generate_cases.py",
+    "artifacts/release_audit/cycle3_independent_judge.py",
+    "artifacts/release_audit/cycle3_frozen_inputs/blind_manifest.json",
+    "artifacts/release_audit/cycle3_frozen_inputs/threshold_profiles.json",
+    "artifacts/release_audit/cycle3_decision_summary.json",
+    "artifacts/release_audit/cycle4_threshold_maps.csv",
+    "artifacts/release_audit/cycle4_near_miss_ladder.csv",
+    "artifacts/release_audit/cycle4_equivalence_case_audit.md",
+    "artifacts/release_audit/cycle4_decision_summary.json",
+    "artifacts/release_audit/post_cycle4_assessment.json",
+    "artifacts/release_audit/near_identity_generator_cleanup.md",
+    "artifacts/release_audit/iri_preservation_cleanup.md",
+    "artifacts/release_audit/mini_resolution_pass_summary.json",
+    "artifacts/release_audit/near_identity_generator_v2.md",
+    "artifacts/release_audit/iri_metric_tolerance_stabilization.md",
+    "artifacts/release_audit/final_program_publication_assessment.json",
+    "artifacts/release_audit/final_claim_status_ledger.csv",
+    "artifacts/release_audit/canonical_freeze_record.md",
+    "artifacts/release_audit/paper6_freeze_note.md"
+  ],
+  "artifacts_present_but_insufficient": [
+    {
+      "item": "artifacts/release_audit/near_identity_generator_v2.md",
+      "status": "UNRESOLVED_IMPLEMENTATION_LIMIT",
+      "why": "The v2 probe is cleaner than the old generator but still too weak to create a meaningful I_ri boundary crossing in the tested band."
+    },
+    {
+      "item": "near_identity generator path in the current runner stack",
+      "status": "UNRESOLVED_IMPLEMENTATION_LIMIT",
+      "why": "The generator still leaks across multiple invariants and is not yet a clean enough monovariant probe."
+    },
+    {
+      "item": "artifacts/release_audit/iri_metric_tolerance_stabilization.md",
+      "status": "RESOLVED_PROVISIONAL",
+      "why": "It sharpens the positive harder pair via normalized I_ri handling but does not yet deliver robust closure."
+    },
+    {
+      "item": "artifacts/release_audit/cycle4_threshold_maps.csv",
+      "status": "LOCALIZED_NOT_CLOSED",
+      "why": "It localizes the threshold knife-edge but does not eliminate that local sensitivity."
+    },
+    {
+      "item": "artifacts/release_audit/cycle3_independent_judge.py plus Cycle 3 blind contract",
+      "status": "INTERNAL_ONLY_EVALUATION",
+      "why": "It is sufficiently independent for an internal residual campaign, but still lives in the same repository/runtime and does not constitute external judgment."
+    }
+  ],
+  "missing_minimum_information": [],
+  "exact_next_execution_target": [
+    "Residual B: near_identity probe cleanup into the cleanest achievable near-monovariant boundary probe, then rerun only the boundary-relevant ladder and critical case.",
+    "Residual A: harder positive substrate-equivalence stabilization focused on the already localized I_ri metric/tolerance bottleneck, using the existing frozen manifests, threshold profiles, and case audits."
+  ],
+  "minimum_missing_requests": []
+}

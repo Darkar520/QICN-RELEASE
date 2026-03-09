@@ -1,0 +1,31 @@
+module,profile,case_or_pair,decision,why
+ResidualA,base,positive_pair_raw,AMBIGUOUS,"signatures match, but invariant-margin divergence exceeds the clean equivalence tolerance"
+ResidualA,base,positive_pair_normalized_iri,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+ResidualA,base,negative_pair_normalized_iri,FAIL,at least one member of the pair failed certification under the base threshold profile
+ResidualA,local_loose,positive_pair_raw,AMBIGUOUS,"signatures match, but invariant-margin divergence exceeds the clean equivalence tolerance"
+ResidualA,local_loose,positive_pair_normalized_iri,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+ResidualA,local_loose,negative_pair_normalized_iri,FAIL,at least one member of the pair failed certification under the base threshold profile
+ResidualA,local_tight,positive_pair_raw,AMBIGUOUS,"signatures match, but invariant-margin divergence exceeds the clean equivalence tolerance"
+ResidualA,local_tight,positive_pair_normalized_iri,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+ResidualA,local_tight,negative_pair_normalized_iri,FAIL,at least one member of the pair failed certification under the base threshold profile
+ResidualA,legibility_tight,positive_pair_raw,AMBIGUOUS,"signatures match, but invariant-margin divergence exceeds the clean equivalence tolerance"
+ResidualA,legibility_tight,positive_pair_normalized_iri,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+ResidualA,legibility_tight,negative_pair_normalized_iri,FAIL,at least one member of the pair failed certification under the base threshold profile
+ResidualA,differentiation_tight,positive_pair_raw,AMBIGUOUS,"signatures match, but invariant-margin divergence exceeds the clean equivalence tolerance"
+ResidualA,differentiation_tight,positive_pair_normalized_iri,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+ResidualA,differentiation_tight,negative_pair_normalized_iri,FAIL,at least one member of the pair failed certification under the base threshold profile
+ResidualB,base,near_identity_v3_0.05,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+ResidualB,local_loose,near_identity_v3_0.05,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+ResidualB,local_tight,near_identity_v3_0.05,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+ResidualB,base,near_identity_v3_0.08,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+ResidualB,local_loose,near_identity_v3_0.08,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+ResidualB,local_tight,near_identity_v3_0.08,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+ResidualB,base,near_identity_v3_0.1,AMBIGUOUS,"all invariants stayed positive, but the nearest invariant margin 0.007 falls inside the ambiguity band"
+ResidualB,local_loose,near_identity_v3_0.1,AMBIGUOUS,"all invariants stayed positive, but the nearest invariant margin 0.007 falls inside the ambiguity band"
+ResidualB,local_tight,near_identity_v3_0.1,AMBIGUOUS,"all invariants stayed positive, but the nearest invariant margin 0.007 falls inside the ambiguity band"
+ResidualB,base,near_identity_v3_0.12,FAIL,certification failed because invariant margins crossed below zero: I_ri
+ResidualB,local_loose,near_identity_v3_0.12,FAIL,certification failed because invariant margins crossed below zero: I_ri
+ResidualB,local_tight,near_identity_v3_0.12,FAIL,certification failed because invariant margins crossed below zero: I_ri
+ResidualB,base,near_identity_v3_0.15,FAIL,certification failed because invariant margins crossed below zero: I_ri
+ResidualB,local_loose,near_identity_v3_0.15,FAIL,certification failed because invariant margins crossed below zero: I_ri
+ResidualB,local_tight,near_identity_v3_0.15,FAIL,certification failed because invariant margins crossed below zero: I_ri

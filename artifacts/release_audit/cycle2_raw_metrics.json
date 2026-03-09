@@ -1,0 +1,1012 @@
+{
+  "thresholds": {
+    "collapse_radius": 0.12,
+    "integration_correlation_floor": 0.35,
+    "continuity_jump_ceiling": 0.95,
+    "differentiation_separation_floor": 0.3,
+    "non_null_floor": 0.18,
+    "legibility": {
+      "clean_acc": 0.9,
+      "noisy_acc": 0.75,
+      "critical_shift": 0.7,
+      "sham_fpr": 0.1,
+      "compression_acc": 0.8
+    },
+    "seeds": [
+      11,
+      23,
+      37,
+      47,
+      59,
+      71,
+      83
+    ],
+    "horizon": 40,
+    "replicas_per_class": 4
+  },
+  "manifest": {
+    "generated_at": "2026-03-07T19:04:27.420177-06:00",
+    "generator_phase": "A",
+    "generator_judge_contract": "judge must consume only threshold file, manifest hashes, and frozen case artifacts",
+    "entries": [
+      {
+        "case_id": "B1_EQ_CONTINUOUS",
+        "family": "B1_harder_cross_substrate_equivalence",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b1_eq_continuous.json",
+        "sha256": "22ce9ea01b47e5bc52ae8b7dfc2832c4b7b2aa8fe51edf587d95fe80f50a758a"
+      },
+      {
+        "case_id": "B1_EQ_EVENT_SPARSE",
+        "family": "B1_harder_cross_substrate_equivalence",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b1_eq_event_sparse.json",
+        "sha256": "4599e0e5dbe3cd2114d5fe16a484ded0ae68a8b843443ad7cfb23a2a668d6910"
+      },
+      {
+        "case_id": "B2_NEAR_MISS_PERSISTENCE",
+        "family": "B2_near_miss_ablations",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b2_near_miss_persistence.json",
+        "sha256": "d3a685dcc4baa4db06404406472dc914adb4b932051532bc25d611b5c729fbe5"
+      },
+      {
+        "case_id": "B2_NEAR_MISS_IDENTITY",
+        "family": "B2_near_miss_ablations",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b2_near_miss_identity.json",
+        "sha256": "a613266c390a29c3b99d821bdbdf60b40fd7808ee51d378472652ee7e9558841"
+      },
+      {
+        "case_id": "B2_NEAR_MISS_CONTINUITY",
+        "family": "B2_near_miss_ablations",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b2_near_miss_continuity.json",
+        "sha256": "39f7c5769824428e5fedfbb9d9fc6958f23446adf3fde8d30d543874807a0ce5"
+      },
+      {
+        "case_id": "B2_NEAR_MISS_LEGIBILITY",
+        "family": "B2_near_miss_ablations",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b2_near_miss_legibility.json",
+        "sha256": "d48a8217e3b1be4a417f3208fa2ae08cb46fa22ac4d1c1ebf32fcdea7896e269"
+      },
+      {
+        "case_id": "B3_CURVE_CONTINUITY_L0",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_continuity_l0.json",
+        "sha256": "271035a1091de362e2aad064d1268e69a62c5f9aaf3eefc3b3310649c4cff046"
+      },
+      {
+        "case_id": "B3_CURVE_CONTINUITY_L1",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_continuity_l1.json",
+        "sha256": "d3904c511bc2af3e15935d0036f6b23b923f1ad1bb75d91b3db9fa882890e6a8"
+      },
+      {
+        "case_id": "B3_CURVE_CONTINUITY_L2",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_continuity_l2.json",
+        "sha256": "14cde233c1f5d31a6ab6ef9b0b91b489b81e770f919b3e563d7127425b5da185"
+      },
+      {
+        "case_id": "B3_CURVE_CONTINUITY_L3",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_continuity_l3.json",
+        "sha256": "c640047e48270950705d0c0d9327337e4fc21688b8063b914d9ffcb62b0ffe85"
+      },
+      {
+        "case_id": "B3_CURVE_CONTINUITY_L4",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_continuity_l4.json",
+        "sha256": "8dcb586a9f7346c00108b25c55f8624cb7afffb25c895f05aed8c03d5dbf4050"
+      },
+      {
+        "case_id": "B3_CURVE_LEGIBILITY_L0",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_legibility_l0.json",
+        "sha256": "3a379c3b45522d497936103879c3c618d3d171a8e74f91fbe0a8847be46aa47b"
+      },
+      {
+        "case_id": "B3_CURVE_LEGIBILITY_L1",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_legibility_l1.json",
+        "sha256": "edd3b9c85d5411ea3ad2857a6d27843ec9db015be243b701de3a762dcbe7ecb1"
+      },
+      {
+        "case_id": "B3_CURVE_LEGIBILITY_L2",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_legibility_l2.json",
+        "sha256": "8390501ed191c2e5b1dad9a014ec5c439f34573c7f4538c50682d5873754ee46"
+      },
+      {
+        "case_id": "B3_CURVE_LEGIBILITY_L3",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_legibility_l3.json",
+        "sha256": "a88d8c98ce90d52d0535ac698a07fce611a8a9b1a9ae7f2e99380f792cd7bbfa"
+      },
+      {
+        "case_id": "B3_CURVE_LEGIBILITY_L4",
+        "family": "B3_partial_invariant_degradation",
+        "artifact_path": "artifacts/release_audit/cycle2_frozen_inputs/b3_curve_legibility_l4.json",
+        "sha256": "deac024b4f751bbfd007bb95a4ea81f4aaf54a4ac01a26c585c57fd4e195e19b"
+      }
+    ]
+  },
+  "judged_cases": {
+    "B1_EQ_CONTINUOUS": {
+      "case_id": "B1_EQ_CONTINUOUS",
+      "family": "B1_harder_cross_substrate_equivalence",
+      "generator": "positive_continuous",
+      "substrate": "continuous_dense",
+      "target_invariant": "",
+      "severity": 0.0,
+      "invariant_margins": {
+        "I_per": 0.721603,
+        "I_ri": 2.623926,
+        "I_int": 0.648548,
+        "I_cont": 0.877233,
+        "I_diff": 0.568765,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 2.623926,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.998548,
+      "p95_jump": 0.072767,
+      "mean_abs_second": 0.748765,
+      "activity_entropy": 2.236985,
+      "consciousness_op_pass": true,
+      "q_op_non_empty": true,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B1_EQ_EVENT_SPARSE": {
+      "case_id": "B1_EQ_EVENT_SPARSE",
+      "family": "B1_harder_cross_substrate_equivalence",
+      "generator": "positive_event",
+      "substrate": "event_sparse",
+      "target_invariant": "",
+      "severity": 0.0,
+      "invariant_margins": {
+        "I_per": 0.827169,
+        "I_ri": 2.443161,
+        "I_int": 0.648524,
+        "I_cont": 0.880658,
+        "I_diff": 0.514729,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 2.443168,
+      "within_class_radius": 8e-06,
+      "integration_observed": 0.998524,
+      "p95_jump": 0.069342,
+      "mean_abs_second": 0.694729,
+      "activity_entropy": 1.685115,
+      "consciousness_op_pass": true,
+      "q_op_non_empty": true,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B2_NEAR_MISS_PERSISTENCE": {
+      "case_id": "B2_NEAR_MISS_PERSISTENCE",
+      "family": "B2_near_miss_ablations",
+      "generator": "near_persistence",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_per",
+      "severity": 0.72,
+      "invariant_margins": {
+        "I_per": -0.089932,
+        "I_ri": 0.446859,
+        "I_int": 0.647019,
+        "I_cont": 0.769633,
+        "I_diff": -0.054079,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": false,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": false,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 0.44686,
+      "within_class_radius": 1e-06,
+      "integration_observed": 0.997019,
+      "p95_jump": 0.180367,
+      "mean_abs_second": 0.125921,
+      "activity_entropy": 3.391521,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B2_NEAR_MISS_IDENTITY": {
+      "case_id": "B2_NEAR_MISS_IDENTITY",
+      "family": "B2_near_miss_ablations",
+      "generator": "near_identity",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_ri",
+      "severity": 0.8,
+      "invariant_margins": {
+        "I_per": 0.449855,
+        "I_ri": 0.0,
+        "I_int": -0.18371,
+        "I_cont": 0.921568,
+        "I_diff": -0.3,
+        "I_leg": -0.4
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": false,
+        "I_int": false,
+        "I_cont": true,
+        "I_diff": false,
+        "I_leg": false
+      },
+      "clean_acc": 0.5,
+      "noisy_acc": 0.5,
+      "compression_acc": 0.5,
+      "critical_shift_rate": 0.5,
+      "sham_fpr": 0.5,
+      "class_separation": 0.0,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.16629,
+      "p95_jump": 0.028432,
+      "mean_abs_second": 0.050472,
+      "activity_entropy": -0.0,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "sham_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B2_NEAR_MISS_CONTINUITY": {
+      "case_id": "B2_NEAR_MISS_CONTINUITY",
+      "family": "B2_near_miss_ablations",
+      "generator": "near_continuity",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_cont",
+      "severity": 0.58,
+      "invariant_margins": {
+        "I_per": 0.649435,
+        "I_ri": 2.190435,
+        "I_int": 0.579755,
+        "I_cont": -0.179458,
+        "I_diff": 0.326151,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": false,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 2.190436,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.929755,
+      "p95_jump": 1.129458,
+      "mean_abs_second": 0.506151,
+      "activity_entropy": 3.949386,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B2_NEAR_MISS_LEGIBILITY": {
+      "case_id": "B2_NEAR_MISS_LEGIBILITY",
+      "family": "B2_near_miss_ablations",
+      "generator": "near_legibility",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_leg",
+      "severity": 0.55,
+      "invariant_margins": {
+        "I_per": 0.721603,
+        "I_ri": 2.257546,
+        "I_int": 0.648325,
+        "I_cont": 0.879032,
+        "I_diff": 0.231821,
+        "I_leg": -0.4
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": false
+      },
+      "clean_acc": 0.5,
+      "noisy_acc": 0.5,
+      "compression_acc": 0.5,
+      "critical_shift_rate": 0.5,
+      "sham_fpr": 0.5,
+      "class_separation": 2.257546,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.998325,
+      "p95_jump": 0.070968,
+      "mean_abs_second": 0.411821,
+      "activity_entropy": 2.216469,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "sham_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_CONTINUITY_L0": {
+      "case_id": "B3_CURVE_CONTINUITY_L0",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_continuity",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_cont",
+      "severity": 0.0,
+      "invariant_margins": {
+        "I_per": 0.721603,
+        "I_ri": 2.623926,
+        "I_int": 0.648548,
+        "I_cont": 0.877233,
+        "I_diff": 0.568765,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 2.623926,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.998548,
+      "p95_jump": 0.072767,
+      "mean_abs_second": 0.748765,
+      "activity_entropy": 2.236985,
+      "consciousness_op_pass": true,
+      "q_op_non_empty": true,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_CONTINUITY_L1": {
+      "case_id": "B3_CURVE_CONTINUITY_L1",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_continuity",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_cont",
+      "severity": 0.25,
+      "invariant_margins": {
+        "I_per": 0.69232,
+        "I_ri": 2.067679,
+        "I_int": 0.610212,
+        "I_cont": 0.549196,
+        "I_diff": 0.248227,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 2.067679,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.960212,
+      "p95_jump": 0.400804,
+      "mean_abs_second": 0.428227,
+      "activity_entropy": 2.803168,
+      "consciousness_op_pass": true,
+      "q_op_non_empty": true,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_CONTINUITY_L2": {
+      "case_id": "B3_CURVE_CONTINUITY_L2",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_continuity",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_cont",
+      "severity": 0.5,
+      "invariant_margins": {
+        "I_per": 0.660093,
+        "I_ri": 1.725939,
+        "I_int": 0.463569,
+        "I_cont": 0.125422,
+        "I_diff": 0.003493,
+        "I_leg": -0.3
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": false
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 0.5,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 1.72594,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.813569,
+      "p95_jump": 0.824578,
+      "mean_abs_second": 0.183493,
+      "activity_entropy": 2.803168,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_CONTINUITY_L3": {
+      "case_id": "B3_CURVE_CONTINUITY_L3",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_continuity",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_cont",
+      "severity": 0.75,
+      "invariant_margins": {
+        "I_per": 0.626253,
+        "I_ri": 1.591798,
+        "I_int": 0.314841,
+        "I_cont": -0.435085,
+        "I_diff": -0.125365,
+        "I_leg": -0.3
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": false,
+        "I_diff": false,
+        "I_leg": false
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 0.5,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 1.591798,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.664841,
+      "p95_jump": 1.385085,
+      "mean_abs_second": 0.054635,
+      "activity_entropy": 2.803168,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_CONTINUITY_L4": {
+      "case_id": "B3_CURVE_CONTINUITY_L4",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_continuity",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_cont",
+      "severity": 1.0,
+      "invariant_margins": {
+        "I_per": 0.577609,
+        "I_ri": 1.543153,
+        "I_int": 0.227446,
+        "I_cont": -1.23428,
+        "I_diff": -0.18,
+        "I_leg": -0.4
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": false,
+        "I_diff": false,
+        "I_leg": false
+      },
+      "clean_acc": 0.5,
+      "noisy_acc": 0.5,
+      "compression_acc": 0.5,
+      "critical_shift_rate": 0.5,
+      "sham_fpr": 0.5,
+      "class_separation": 1.543154,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.577446,
+      "p95_jump": 2.18428,
+      "mean_abs_second": 0.0,
+      "activity_entropy": 3.184136,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "sham_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_LEGIBILITY_L0": {
+      "case_id": "B3_CURVE_LEGIBILITY_L0",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_legibility",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_leg",
+      "severity": 0.0,
+      "invariant_margins": {
+        "I_per": 0.721603,
+        "I_ri": 2.623926,
+        "I_int": 0.648548,
+        "I_cont": 0.877233,
+        "I_diff": 0.568765,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 2.623926,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.998548,
+      "p95_jump": 0.072767,
+      "mean_abs_second": 0.748765,
+      "activity_entropy": 2.236985,
+      "consciousness_op_pass": true,
+      "q_op_non_empty": true,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_LEGIBILITY_L1": {
+      "case_id": "B3_CURVE_LEGIBILITY_L1",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_legibility",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_leg",
+      "severity": 0.2,
+      "invariant_margins": {
+        "I_per": 0.721603,
+        "I_ri": 2.465289,
+        "I_int": 0.648542,
+        "I_cont": 0.877386,
+        "I_diff": 0.419012,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 2.465289,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.998542,
+      "p95_jump": 0.072614,
+      "mean_abs_second": 0.599012,
+      "activity_entropy": 2.216469,
+      "consciousness_op_pass": true,
+      "q_op_non_empty": true,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_LEGIBILITY_L2": {
+      "case_id": "B3_CURVE_LEGIBILITY_L2",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_legibility",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_leg",
+      "severity": 0.4,
+      "invariant_margins": {
+        "I_per": 0.721603,
+        "I_ri": 2.334464,
+        "I_int": 0.648487,
+        "I_cont": 0.878724,
+        "I_diff": 0.269259,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 2.334464,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.998487,
+      "p95_jump": 0.071276,
+      "mean_abs_second": 0.449259,
+      "activity_entropy": 2.216469,
+      "consciousness_op_pass": true,
+      "q_op_non_empty": true,
+      "normal_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 28,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 28,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_LEGIBILITY_L3": {
+      "case_id": "B3_CURVE_LEGIBILITY_L3",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_legibility",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_leg",
+      "severity": 0.6,
+      "invariant_margins": {
+        "I_per": 0.721603,
+        "I_ri": 2.236337,
+        "I_int": 0.648206,
+        "I_cont": 0.878724,
+        "I_diff": 0.269259,
+        "I_leg": -0.4
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": false
+      },
+      "clean_acc": 0.5,
+      "noisy_acc": 0.5,
+      "compression_acc": 0.5,
+      "critical_shift_rate": 0.5,
+      "sham_fpr": 0.5,
+      "class_separation": 2.236337,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.998206,
+      "p95_jump": 0.071276,
+      "mean_abs_second": 0.449259,
+      "activity_entropy": 2.216469,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "sham_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    },
+    "B3_CURVE_LEGIBILITY_L4": {
+      "case_id": "B3_CURVE_LEGIBILITY_L4",
+      "family": "B3_partial_invariant_degradation",
+      "generator": "curve_legibility",
+      "substrate": "continuous_dense",
+      "target_invariant": "I_leg",
+      "severity": 0.8,
+      "invariant_margins": {
+        "I_per": 0.721603,
+        "I_ri": 2.175337,
+        "I_int": 0.646005,
+        "I_cont": 0.877386,
+        "I_diff": 0.419012,
+        "I_leg": -0.4
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": false
+      },
+      "clean_acc": 0.5,
+      "noisy_acc": 0.5,
+      "compression_acc": 0.5,
+      "critical_shift_rate": 0.5,
+      "sham_fpr": 0.5,
+      "class_separation": 2.175337,
+      "within_class_radius": 0.0,
+      "integration_observed": 0.996005,
+      "p95_jump": 0.072614,
+      "mean_abs_second": 0.599012,
+      "activity_entropy": 2.216469,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      },
+      "sham_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 28,
+        "label1_to_0": 0,
+        "label1_to_1": 28
+      }
+    }
+  }
+}

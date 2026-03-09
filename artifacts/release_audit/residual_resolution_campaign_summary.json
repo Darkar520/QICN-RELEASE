@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-03-08T11:54:37.124919-06:00",
+  "status": "PASS",
+  "residualA_status": "PROVISIONAL_SUPPORT_LOCALIZED",
+  "residualB_status": "PROVISIONAL_SUPPORT_LOCALIZED",
+  "claims_strengthened": [
+    "P5-01",
+    "P5-02",
+    "P5-04",
+    "P5-06"
+  ],
+  "claims_remaining_provisional": [
+    "P5-01",
+    "P5-02",
+    "P5-04",
+    "P5-06"
+  ],
+  "claims_still_ambiguous": [],
+  "main_blocker_classification": {
+    "ResidualA": "metric/tolerance-level",
+    "ResidualB": "boundary-localized with internal-support-only caveat"
+  },
+  "main_output_paths": [
+    "artifacts/release_audit/residual_resolution_campaign_summary.md",
+    "artifacts/release_audit/residual_resolution_campaign_summary.json",
+    "artifacts/release_audit/residual_A_substrate_equivalence_resolution.md",
+    "artifacts/release_audit/residual_B_boundary_probe_resolution.md",
+    "artifacts/release_audit/residual_resolution_results_ledger.csv",
+    "artifacts/release_audit/residual_resolution_failure_analysis.md",
+    "artifacts/release_audit/residual_resolution_raw_metrics.json",
+    "artifacts/release_audit/near_identity_v3_ladder.csv",
+    "artifacts/release_audit/iri_refined_pair_audit.md",
+    "artifacts/release_audit/threshold_stability_check_residualA.csv",
+    "artifacts/release_audit/threshold_stability_check_residualB.csv"
+  ],
+  "residual_caveats": [
+    "All support remains internal-only; no external validation is claimed.",
+    "Residual A still depends on conservative normalized-I_ri handling rather than raw-margin equivalence.",
+    "Residual B now behaves like a localized boundary instrument, but still within one internal probe family."
+  ],
+  "ready_for_post_residual_campaign_assessment": true
+}

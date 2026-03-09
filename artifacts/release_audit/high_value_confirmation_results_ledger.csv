@@ -1,0 +1,39 @@
+module,family,item_id,threshold_profile,primary_decision,replica_decision,reason
+Mission1,family1,A_family1_positive_norm,base,PASS,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+Mission1,family1,A_family1_positive_norm,local_loose,PASS,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+Mission1,family1,A_family1_positive_norm,local_tight,PASS,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+Mission1,family1,A_family1_positive_norm,legibility_tight,PASS,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+Mission1,family1,A_family1_positive_norm,differentiation_tight,PASS,PASS,"signatures match, non-I_ri margins stay within tolerance, and normalized I_ri shape is preserved"
+Mission1,family1,A_family1_negative_norm,base,FAIL,FAIL,at least one member of the pair failed certification
+Mission1,family1,A_family1_negative_norm,local_loose,FAIL,FAIL,at least one member of the pair failed certification
+Mission1,family1,A_family1_negative_norm,local_tight,FAIL,FAIL,at least one member of the pair failed certification
+Mission1,family1,A_family1_negative_norm,legibility_tight,FAIL,FAIL,at least one member of the pair failed certification
+Mission1,family1,A_family1_negative_norm,differentiation_tight,FAIL,FAIL,at least one member of the pair failed certification
+Mission1,family2,A_family2_positive_raw,base,PASS,PASS,matching signatures with bounded invariant-margin divergence
+Mission1,family2,A_family2_positive_raw,local_loose,PASS,PASS,matching signatures with bounded invariant-margin divergence
+Mission1,family2,A_family2_positive_raw,local_tight,PASS,PASS,matching signatures with bounded invariant-margin divergence
+Mission1,family2,A_family2_positive_raw,legibility_tight,PASS,PASS,matching signatures with bounded invariant-margin divergence
+Mission1,family2,A_family2_positive_raw,differentiation_tight,PASS,PASS,matching signatures with bounded invariant-margin divergence
+Mission1,family2,A_family2_negative_raw,base,FAIL,FAIL,at least one member of the pair failed certification
+Mission1,family2,A_family2_negative_raw,local_loose,FAIL,FAIL,at least one member of the pair failed certification
+Mission1,family2,A_family2_negative_raw,local_tight,FAIL,FAIL,at least one member of the pair failed certification
+Mission1,family2,A_family2_negative_raw,legibility_tight,FAIL,FAIL,at least one member of the pair failed certification
+Mission1,family2,A_family2_negative_raw,differentiation_tight,FAIL,FAIL,at least one member of the pair failed certification
+Mission2,family1,HC_B1_01,base,PASS,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+Mission2,family1,HC_B1_01,local_loose,PASS,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+Mission2,family1,HC_B1_01,local_tight,PASS,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+Mission2,family1,HC_B1_02,base,AMBIGUOUS,AMBIGUOUS,"all invariants stayed positive, but the nearest invariant margin 0.007 falls inside the ambiguity band"
+Mission2,family1,HC_B1_02,local_loose,AMBIGUOUS,AMBIGUOUS,"all invariants stayed positive, but the nearest invariant margin 0.007 falls inside the ambiguity band"
+Mission2,family1,HC_B1_02,local_tight,AMBIGUOUS,AMBIGUOUS,"all invariants stayed positive, but the nearest invariant margin 0.007 falls inside the ambiguity band"
+Mission2,family1,HC_B1_03,base,FAIL,FAIL,certification failed because invariant margins crossed below zero: I_ri
+Mission2,family1,HC_B1_03,local_loose,FAIL,FAIL,certification failed because invariant margins crossed below zero: I_ri
+Mission2,family1,HC_B1_03,local_tight,FAIL,FAIL,certification failed because invariant margins crossed below zero: I_ri
+Mission2,family2,HC_B2_01,base,PASS,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+Mission2,family2,HC_B2_01,local_loose,PASS,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+Mission2,family2,HC_B2_01,local_tight,PASS,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+Mission2,family2,HC_B2_02,base,PASS,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+Mission2,family2,HC_B2_02,local_loose,PASS,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+Mission2,family2,HC_B2_02,local_tight,PASS,PASS,all six invariant margins remain positive with headroom beyond the ambiguity band
+Mission2,family2,HC_B2_03,base,FAIL,FAIL,certification failed because invariant margins crossed below zero: I_leg
+Mission2,family2,HC_B2_03,local_loose,FAIL,FAIL,certification failed because invariant margins crossed below zero: I_leg
+Mission2,family2,HC_B2_03,local_tight,FAIL,FAIL,certification failed because invariant margins crossed below zero: I_leg

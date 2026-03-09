@@ -1,0 +1,37 @@
+{
+  "B001": {
+    "case_id": "C3_NEG_COMPLEXITY",
+    "family": "negative_control_complexity",
+    "generator_family": "complexity_negative",
+    "target_invariant": "I_ri,I_cont,I_diff,I_leg",
+    "substrate": "dense_control"
+  },
+  "B002": {
+    "case_id": "C3_EQ_CONTINUOUS",
+    "family": "cross_substrate_positive",
+    "generator_family": "positive_continuous",
+    "target_invariant": "",
+    "substrate": "continuous"
+  },
+  "B003": {
+    "case_id": "C3_NEAR_IDENTITY",
+    "family": "near_miss_ablation",
+    "generator_family": "near_identity",
+    "target_invariant": "I_ri",
+    "substrate": "continuous"
+  },
+  "B004": {
+    "case_id": "C3_EQ_DISCRETE",
+    "family": "cross_substrate_positive",
+    "generator_family": "positive_discrete",
+    "target_invariant": "",
+    "substrate": "discrete"
+  },
+  "B005": {
+    "case_id": "C3_NEAR_LEGIBILITY",
+    "family": "near_miss_ablation",
+    "generator_family": "near_legibility",
+    "target_invariant": "I_leg",
+    "substrate": "continuous"
+  }
+}

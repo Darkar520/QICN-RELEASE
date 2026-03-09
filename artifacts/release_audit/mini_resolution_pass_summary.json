@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-03-07T22:08:18.093777-06:00",
+  "status": "PASS",
+  "near_identity_v2_status": "UNRESOLVED_IMPLEMENTATION_LIMIT",
+  "iri_stabilization_status": "RESOLVED_PROVISIONAL",
+  "critical_case_rerun_status": {
+    "near_identity_v2_critical": "PASS",
+    "harder_substrate_equivalence_positive": "PASS"
+  },
+  "claims_strengthened": [
+    "P5-02",
+    "P5-06"
+  ],
+  "claims_remaining_provisional": [
+    "P5-02",
+    "P5-06"
+  ],
+  "claims_still_ambiguous": [
+    "P5-01",
+    "P5-04"
+  ],
+  "blocker_classification": {
+    "near_identity": "implementation-level",
+    "iri": "metric/tolerance-level"
+  },
+  "main_output_paths": [
+    "artifacts/release_audit/mini_resolution_pass_summary.md",
+    "artifacts/release_audit/mini_resolution_pass_summary.json",
+    "artifacts/release_audit/near_identity_generator_v2.md",
+    "artifacts/release_audit/iri_metric_tolerance_stabilization.md",
+    "artifacts/release_audit/mini_resolution_results_ledger.csv",
+    "artifacts/release_audit/near_identity_v2_ladder.csv",
+    "artifacts/release_audit/iri_stabilization_case_audit.md"
+  ],
+  "ready_for_post_mini_resolution_assessment": true
+}

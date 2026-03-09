@@ -1,0 +1,25 @@
+{
+  "collapse_radius": 0.12,
+  "integration_correlation_floor": 0.35,
+  "continuity_jump_ceiling": 0.95,
+  "differentiation_separation_floor": 0.3,
+  "non_null_floor": 0.18,
+  "legibility": {
+    "clean_acc": 0.9,
+    "noisy_acc": 0.75,
+    "critical_shift": 0.7,
+    "sham_fpr": 0.1,
+    "compression_acc": 0.8
+  },
+  "seeds": [
+    11,
+    23,
+    37,
+    47,
+    59,
+    71,
+    83
+  ],
+  "horizon": 40,
+  "replicas_per_class": 4
+}

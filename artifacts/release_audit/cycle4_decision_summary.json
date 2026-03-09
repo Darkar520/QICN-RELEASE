@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-03-07T20:28:08.054535-06:00",
+  "status": "PASS",
+  "phaseA_threshold_cleanup_status": "STILL_AMBIGUOUS_BUT_LOCALIZED",
+  "phaseB_near_miss_resolution_status": "UNRESOLVED_IMPLEMENTATION_LIMIT",
+  "phaseC_substrate_equivalence_resolution_status": "STILL_AMBIGUOUS_BUT_LOCALIZED",
+  "main_threshold_findings": {
+    "robust_thresholds": [
+      "legibility clean_acc on the positive continuous case remained PASS across 0.88-0.93",
+      "the positive case did not show local threshold fragility in the tested legibility sweep"
+    ],
+    "fragile_thresholds": [
+      "integration_correlation_floor becomes knife-edge for the negative control around 0.280-0.335 under the current ambiguity-band rule"
+    ],
+    "diagnosis": "the Cycle 3 ambiguity is driven primarily by one threshold plus the ambiguity-band classifier, not by a broad collapse of the criterion",
+    "acceptable_status": "provisional_only_for_this_local_edge_case"
+  },
+  "main_near_miss_findings": {
+    "classification": "the ambiguous near-miss remains boundary-like, but not as a clean rigid-identity-only boundary",
+    "driver": "the generator entangles I_ri with I_int, I_diff and I_leg degradation",
+    "meaning": "the ambiguity is more about case placement than criterion collapse"
+  },
+  "main_substrate_equivalence_findings": {
+    "ambiguous_pair": "continuous vs discrete remains unresolved",
+    "primary_source": "binding invariant divergence on I_ri",
+    "refined_positive_pair": "AMBIGUOUS",
+    "refined_negative_pair": "FAIL",
+    "interpretation": "the criterion remains localized but not provisionally resolved"
+  },
+  "claims_strengthened": [
+    "P5-03 (threshold behavior now localized rather than broadly fragile)",
+    "none beyond localization"
+  ],
+  "claims_remaining_provisional": [
+    "P5-02",
+    "P5-06"
+  ],
+  "claims_still_ambiguous": [
+    "P5-01",
+    "P5-04"
+  ],
+  "main_output_paths": [
+    "artifacts/release_audit/cycle4_threshold_boundary_cleanup.md",
+    "artifacts/release_audit/cycle4_near_miss_resolution.md",
+    "artifacts/release_audit/cycle4_substrate_equivalence_resolution.md",
+    "artifacts/release_audit/cycle4_results_ledger.csv",
+    "artifacts/release_audit/cycle4_decision_summary.json",
+    "artifacts/release_audit/cycle4_raw_metrics.json",
+    "artifacts/release_audit/cycle4_threshold_maps.csv",
+    "artifacts/release_audit/cycle4_near_miss_ladder.csv",
+    "artifacts/release_audit/cycle4_equivalence_case_audit.md"
+  ],
+  "residual_blockers": [
+    "near_identity remains an implementation-limited near-miss generator rather than a clean one-invariant probe",
+    "substrate equivalence is still internal-only and not external validation",
+    "the continuous-vs-discrete harder pair remains tolerance-bound rather than robustly certified"
+  ],
+  "ready_for_post_cycle4_assessment": true
+}

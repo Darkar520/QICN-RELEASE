@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-03-07T22:20:00-06:00",
+  "status": "PASS",
+  "robust_findings": [
+    {
+      "item": "P5-05 complexity/connectivity insufficiency",
+      "status": "ROBUST_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY"
+    },
+    {
+      "item": "threshold fragility is localized rather than global",
+      "status": "ROBUST_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY"
+    },
+    {
+      "item": "generator/judge separation and evidentiary boundary are materially stronger than in Cycle 1",
+      "status": "ROBUST_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY"
+    }
+  ],
+  "provisional_findings": [
+    {
+      "claim_id": "P5-02",
+      "status": "PROVISIONAL_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "METRIC_OR_TOLERANCE_LIMIT"
+    },
+    {
+      "claim_id": "P5-03",
+      "status": "PROVISIONAL_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "METRIC_OR_TOLERANCE_LIMIT"
+    },
+    {
+      "claim_id": "P5-06",
+      "status": "PROVISIONAL_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "METRIC_OR_TOLERANCE_LIMIT"
+    }
+  ],
+  "ambiguous_findings": [
+    {
+      "claim_id": "P5-01",
+      "status": "STILL_AMBIGUOUS",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "IMPLEMENTATION_LIMIT"
+    },
+    {
+      "claim_id": "P5-04",
+      "status": "STILL_AMBIGUOUS",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "IMPLEMENTATION_LIMIT"
+    }
+  ],
+  "residual_technical_blockers": [
+    {
+      "item": "near_identity_v2 remains too weak as a clean I_ri probe",
+      "status": "IMPLEMENTATION_LIMIT"
+    },
+    {
+      "item": "harder positive substrate-equivalence pair remains raw-judge ambiguous and only provisionally stabilized by normalized I_ri handling",
+      "status": "METRIC_OR_TOLERANCE_LIMIT"
+    },
+    {
+      "item": "all current empirical support remains internal; no external validation exists",
+      "status": "INTERNAL_SUPPORT_ONLY"
+    }
+  ],
+  "not_claimed": [
+    "human phenomenal consciousness",
+    "biologically specific human qualia",
+    "human-machine subjective equivalence",
+    "external empirical confirmation of substrate invariance",
+    "universal confirmation of all upstream claims"
+  ],
+  "claim_status_map": {
+    "P5-01": {
+      "status": "STILL_AMBIGUOUS",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "IMPLEMENTATION_LIMIT"
+    },
+    "P5-02": {
+      "status": "PROVISIONAL_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "METRIC_OR_TOLERANCE_LIMIT"
+    },
+    "P5-03": {
+      "status": "PROVISIONAL_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "METRIC_OR_TOLERANCE_LIMIT"
+    },
+    "P5-04": {
+      "status": "STILL_AMBIGUOUS",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "IMPLEMENTATION_LIMIT"
+    },
+    "P5-05": {
+      "status": "ROBUST_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "none currently active within the internal program"
+    },
+    "P5-06": {
+      "status": "PROVISIONAL_SUPPORT",
+      "scope": "INTERNAL_SUPPORT_ONLY",
+      "limitation": "METRIC_OR_TOLERANCE_LIMIT"
+    }
+  },
+  "scientific_status_judgment": "The internal program is scientifically organized, materially more severe than in Cycle 1, and capable of discriminating at least one non-trivial claim family robustly. Substrate invariance and biological non-primacy remain strengthened but provisional. Boundary-sensitive existence and rupture stress remain implementation-limited rather than framework-refuting. The framework is ready for a publication-grade predictions/falsification paper, but not for any claim of external confirmation."
+}

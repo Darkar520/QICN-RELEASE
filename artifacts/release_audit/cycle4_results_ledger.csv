@@ -1,0 +1,4 @@
+phase,test_id,target_claims,target_object,decision,why
+A,C4_THRESHOLD_BOUNDARY,P5-03; P5-04,integration_correlation_floor around the Cycle 3 negative-control ambiguity,STILL_AMBIGUOUS_BUT_LOCALIZED,"the Cycle 3 ambiguity is driven primarily by one threshold plus the ambiguity-band classifier, not by a broad collapse of the criterion"
+B,C4_NEAR_MISS_IDENTITY_LADDER,P5-01; P5-04,near_identity severity ladder,UNRESOLVED_IMPLEMENTATION_LIMIT,the ambiguity is more about case placement than criterion collapse
+C,C4_SUBSTRATE_EQUIVALENCE_RESOLUTION,P5-02; P5-06,continuous vs discrete plus refined positive/negative pairs,STILL_AMBIGUOUS_BUT_LOCALIZED,the criterion remains localized but not provisionally resolved

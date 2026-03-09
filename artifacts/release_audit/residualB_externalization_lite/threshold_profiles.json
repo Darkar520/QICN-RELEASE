@@ -1,0 +1,77 @@
+{
+  "base": {
+    "collapse_radius": 0.12,
+    "integration_correlation_floor": 0.35,
+    "continuity_jump_ceiling": 0.95,
+    "differentiation_separation_floor": 0.3,
+    "non_null_floor": 0.18,
+    "legibility": {
+      "clean_acc": 0.9,
+      "noisy_acc": 0.75,
+      "critical_shift": 0.7,
+      "sham_fpr": 0.1,
+      "compression_acc": 0.8
+    },
+    "seeds": [
+      11,
+      23,
+      37,
+      47,
+      59,
+      71,
+      83
+    ],
+    "horizon": 40,
+    "replicas_per_class": 4
+  },
+  "local_loose": {
+    "collapse_radius": 0.11,
+    "integration_correlation_floor": 0.33,
+    "continuity_jump_ceiling": 0.99,
+    "differentiation_separation_floor": 0.28,
+    "non_null_floor": 0.16,
+    "legibility": {
+      "clean_acc": 0.88,
+      "noisy_acc": 0.73,
+      "critical_shift": 0.68,
+      "sham_fpr": 0.12,
+      "compression_acc": 0.78
+    },
+    "seeds": [
+      11,
+      23,
+      37,
+      47,
+      59,
+      71,
+      83
+    ],
+    "horizon": 40,
+    "replicas_per_class": 4
+  },
+  "local_tight": {
+    "collapse_radius": 0.13,
+    "integration_correlation_floor": 0.37,
+    "continuity_jump_ceiling": 0.91,
+    "differentiation_separation_floor": 0.32,
+    "non_null_floor": 0.2,
+    "legibility": {
+      "clean_acc": 0.92,
+      "noisy_acc": 0.77,
+      "critical_shift": 0.72,
+      "sham_fpr": 0.08,
+      "compression_acc": 0.82
+    },
+    "seeds": [
+      11,
+      23,
+      37,
+      47,
+      59,
+      71,
+      83
+    ],
+    "horizon": 40,
+    "replicas_per_class": 4
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-03-08T12:55:45.180069-06:00",
+  "mission1": {
+    "family1_positive_stable": true,
+    "family1_negative_stable": true,
+    "family2_positive_stable": true,
+    "family2_negative_stable": true,
+    "pair_replication_agreement": true,
+    "pair_profiles": {
+      "A_family1_positive_norm": {
+        "base": {
+          "primary": "PASS",
+          "replica": "PASS"
+        },
+        "local_loose": {
+          "primary": "PASS",
+          "replica": "PASS"
+        },
+        "local_tight": {
+          "primary": "PASS",
+          "replica": "PASS"
+        },
+        "legibility_tight": {
+          "primary": "PASS",
+          "replica": "PASS"
+        },
+        "differentiation_tight": {
+          "primary": "PASS",
+          "replica": "PASS"
+        }
+      },
+      "A_family1_negative_norm": {
+        "base": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        },
+        "local_loose": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        },
+        "local_tight": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        },
+        "legibility_tight": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        },
+        "differentiation_tight": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        }
+      },
+      "A_family2_positive_raw": {
+        "base": {
+          "primary": "PASS",
+          "replica": "PASS"
+        },
+        "local_loose": {
+          "primary": "PASS",
+          "replica": "PASS"
+        },
+        "local_tight": {
+          "primary": "PASS",
+          "replica": "PASS"
+        },
+        "legibility_tight": {
+          "primary": "PASS",
+          "replica": "PASS"
+        },
+        "differentiation_tight": {
+          "primary": "PASS",
+          "replica": "PASS"
+        }
+      },
+      "A_family2_negative_raw": {
+        "base": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        },
+        "local_loose": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        },
+        "local_tight": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        },
+        "legibility_tight": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        },
+        "differentiation_tight": {
+          "primary": "FAIL",
+          "replica": "FAIL"
+        }
+      }
+    }
+  },
+  "mission2": {
+    "family1_pattern_ok": true,
+    "family1_replication_ok": true,
+    "family1_first_fail_invariants": [
+      "I_ri",
+      "I_ri",
+      "I_ri"
+    ],
+    "family2_profile_patterns": {
+      "base": [
+        "PASS",
+        "PASS",
+        "FAIL"
+      ],
+      "local_loose": [
+        "PASS",
+        "PASS",
+        "FAIL"
+      ],
+      "local_tight": [
+        "PASS",
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "family2_first_fails": {
+      "base": [
+        "",
+        "",
+        "I_leg"
+      ],
+      "local_loose": [
+        "",
+        "",
+        "I_leg"
+      ],
+      "local_tight": [
+        "",
+        "",
+        "I_leg"
+      ]
+    },
+    "family2_replication_ok": true,
+    "family2_converges": false
+  }
+}

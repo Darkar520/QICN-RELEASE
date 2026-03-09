@@ -1,0 +1,122 @@
+# Narrow ArtifactList Audit Curation
+
+## Decision rule
+This pass adds only untracked artifacts that are required to understand, rerun, or audit the frozen internal scientific release. It does not auto-add broad historical trees, cosmetic diagnostics, or workspace overflow.
+
+## Selected to enter remote
+- `artifacts/release_audit/clean_clone_setup_note.md`
+- `artifacts/release_audit/github_release_push_note.md`
+- `artifacts/release_audit/reproduction_readme_note.md`
+- `artifacts/release_audit/cycle1_experimental_plan.md`
+- `artifacts/release_audit/cycle1_results_ledger.csv`
+- `artifacts/release_audit/cycle1_failure_analysis.md`
+- `artifacts/release_audit/cycle1_decision_summary.json`
+- `artifacts/release_audit/cycle1_interpretation_note.md`
+- `artifacts/release_audit/cycle1_interpretation_note.json`
+- `artifacts/release_audit/cycle1_minimum_runner.py`
+- `artifacts/release_audit/cycle2_methodological_hardening.md`
+- `artifacts/release_audit/cycle2_structural_tests_plan.md`
+- `artifacts/release_audit/cycle2_results_ledger.csv`
+- `artifacts/release_audit/cycle2_failure_analysis.md`
+- `artifacts/release_audit/cycle2_decision_summary.json`
+- `artifacts/release_audit/cycle2_raw_metrics.json`
+- `artifacts/release_audit/cycle2_hardened_runner.py`
+- `artifacts/release_audit/cycle2_frozen_inputs`
+- `artifacts/release_audit/cycle3_blind_or_semiblind_protocol.md`
+- `artifacts/release_audit/cycle3_independent_judge_note.md`
+- `artifacts/release_audit/cycle3_threshold_stress_report.md`
+- `artifacts/release_audit/cycle3_replication_report.md`
+- `artifacts/release_audit/cycle3_results_ledger.csv`
+- `artifacts/release_audit/cycle3_failure_analysis.md`
+- `artifacts/release_audit/cycle3_decision_summary.json`
+- `artifacts/release_audit/cycle3_raw_metrics.json`
+- `artifacts/release_audit/cycle3_generate_cases.py`
+- `artifacts/release_audit/cycle3_independent_judge.py`
+- `artifacts/release_audit/cycle3_frozen_inputs`
+- `artifacts/release_audit/cycle4_threshold_boundary_cleanup.md`
+- `artifacts/release_audit/cycle4_near_miss_resolution.md`
+- `artifacts/release_audit/cycle4_substrate_equivalence_resolution.md`
+- `artifacts/release_audit/cycle4_equivalence_case_audit.md`
+- `artifacts/release_audit/cycle4_threshold_maps.csv`
+- `artifacts/release_audit/cycle4_near_miss_ladder.csv`
+- `artifacts/release_audit/cycle4_results_ledger.csv`
+- `artifacts/release_audit/cycle4_decision_summary.json`
+- `artifacts/release_audit/cycle4_raw_metrics.json`
+- `artifacts/release_audit/cycle4_boundary_runner.py`
+- `artifacts/release_audit/post_cycle4_assessment.md`
+- `artifacts/release_audit/post_cycle4_assessment.json`
+- `artifacts/release_audit/post_mini_resolution_assessment.md`
+- `artifacts/release_audit/post_mini_resolution_assessment.json`
+- `artifacts/release_audit/near_identity_generator_cleanup.md`
+- `artifacts/release_audit/iri_preservation_cleanup.md`
+- `artifacts/release_audit/mini_resolution_pass_summary.md`
+- `artifacts/release_audit/mini_resolution_pass_summary.json`
+- `artifacts/release_audit/mini_resolution_results_ledger.csv`
+- `artifacts/release_audit/mini_resolution_pass.py`
+- `artifacts/release_audit/near_identity_generator_v2.md`
+- `artifacts/release_audit/near_identity_v2_ladder.csv`
+- `artifacts/release_audit/iri_metric_tolerance_stabilization.md`
+- `artifacts/release_audit/iri_stabilization_case_audit.md`
+- `artifacts/release_audit/residual_campaign_preflight.md`
+- `artifacts/release_audit/residual_campaign_preflight.json`
+- `artifacts/release_audit/residual_resolution_campaign_summary.md`
+- `artifacts/release_audit/residual_resolution_campaign_summary.json`
+- `artifacts/release_audit/residual_A_substrate_equivalence_resolution.md`
+- `artifacts/release_audit/residual_B_boundary_probe_resolution.md`
+- `artifacts/release_audit/residual_resolution_results_ledger.csv`
+- `artifacts/release_audit/residual_resolution_failure_analysis.md`
+- `artifacts/release_audit/residual_resolution_raw_metrics.json`
+- `artifacts/release_audit/near_identity_v3_ladder.csv`
+- `artifacts/release_audit/iri_refined_pair_audit.md`
+- `artifacts/release_audit/threshold_stability_check_residualA.csv`
+- `artifacts/release_audit/threshold_stability_check_residualB.csv`
+- `artifacts/release_audit/residual_resolution_campaign.py`
+- `artifacts/release_audit/high_value_confirmation_campaign_summary.md`
+- `artifacts/release_audit/high_value_confirmation_campaign_summary.json`
+- `artifacts/release_audit/mission1_independent_confirmation_report.md`
+- `artifacts/release_audit/mission2_probe_family_diversification_report.md`
+- `artifacts/release_audit/high_value_confirmation_results_ledger.csv`
+- `artifacts/release_audit/high_value_confirmation_failure_analysis.md`
+- `artifacts/release_audit/high_value_confirmation_raw_metrics.json`
+- `artifacts/release_audit/environment_replication_report.md`
+- `artifacts/release_audit/independent_judge_v2_note.md`
+- `artifacts/release_audit/second_family_substrate_pairs.csv`
+- `artifacts/release_audit/second_family_boundary_probes.csv`
+- `artifacts/release_audit/threshold_stability_check_family2.csv`
+- `artifacts/release_audit/high_value_confirmation_campaign.py`
+- `artifacts/release_audit/independent_judge_v2.py`
+- `artifacts/release_audit/high_value_confirmation_frozen_inputs`
+- `artifacts/release_audit/residualB_hardening_summary.md`
+- `artifacts/release_audit/residualB_hardening_summary.json`
+- `artifacts/release_audit/independent_judge_v3_note.md`
+- `artifacts/release_audit/residualB_second_family_report.md`
+- `artifacts/release_audit/residualB_externalization_lite_protocol.md`
+- `artifacts/release_audit/residualB_results_ledger.csv`
+- `artifacts/release_audit/residualB_failure_analysis.md`
+- `artifacts/release_audit/residualB_raw_metrics.json`
+- `artifacts/release_audit/residualB_second_family_cases.csv`
+- `artifacts/release_audit/residualB_threshold_stability_v2.csv`
+- `artifacts/release_audit/residualB_blind_reveal_map.json`
+- `artifacts/release_audit/residualB_high_value_hardening.py`
+- `artifacts/release_audit/independent_judge_v3.py`
+- `artifacts/release_audit/residualB_hardening_frozen_inputs`
+- `artifacts/release_audit/residualB_externalization_lite`
+
+## Deliberately excluded from this curation pass
+- layout, metadata, and PDF cosmetic diagnostics
+- dg_* and build_* helper scripts not needed to rerun frozen scientific evidence
+- historical duplicate lineages, sandbox trees, outreach/grant material, legacy README/abstract bundles
+- zip bundles, workspace snapshots, backup trees, and release_repo_* mirrors
+- temporary or scratch diagnostic files outside the curated scientific evidence path
+
+## Missing from requested curation list
+- none
+
+## Release rationale
+The curated set covers:
+- cycle-by-cycle decision summaries and ledgers used by the final claim ledger,
+- frozen inputs and judge/generator paths required for internal reruns,
+- residual-resolution and high-value confirmation evidence,
+- clean-clone / reproduction handoff notes that support the release freeze.
+
+Everything else remains out until a later explicit release decision.

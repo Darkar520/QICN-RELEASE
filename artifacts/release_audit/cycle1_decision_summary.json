@@ -1,0 +1,519 @@
+{
+  "status": "PASS",
+  "cycle": "cycle1_minimum",
+  "tests_executed": 3,
+  "test1_status": "PASS",
+  "test2_status": "PASS",
+  "test3_status": "PASS",
+  "thresholds": {
+    "collapse_radius": 0.12,
+    "integration_resolution_floor": 0.05,
+    "continuity_jump_ceiling": 0.95,
+    "differentiation_separation_floor": 0.3,
+    "non_null_floor": 0.18,
+    "legibility": {
+      "clean_acc": 0.9,
+      "noisy_acc": 0.75,
+      "critical_shift": 0.7,
+      "sham_fpr": 0.1,
+      "compression_acc": 0.8
+    }
+  },
+  "seeds": [
+    11,
+    23,
+    37,
+    47,
+    59
+  ],
+  "systems": {
+    "positive_continuous": {
+      "system": "positive_continuous",
+      "substrate": "continuous",
+      "connectivity_density": 0.75,
+      "activity_entropy": 2.319444,
+      "invariant_margins": {
+        "I_per": 0.721603,
+        "I_ri": 2.623922,
+        "I_int": 0.279707,
+        "I_cont": 0.873566,
+        "I_diff": 0.568764,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 2.623922,
+      "within_class_radius": 1e-06,
+      "integration_raw": 0.329707,
+      "p95_jump": 0.076434,
+      "mean_abs_second": 0.748764,
+      "consciousness_op_pass": true,
+      "q_op_non_empty": true,
+      "normal_signature": {
+        "label0_to_0": 20,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 20
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 20,
+        "label1_to_0": 20,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 20,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 20
+      }
+    },
+    "positive_discrete": {
+      "system": "positive_discrete",
+      "substrate": "discrete",
+      "connectivity_density": 0.75,
+      "activity_entropy": 1.183122,
+      "invariant_margins": {
+        "I_per": 0.25,
+        "I_ri": 3.464102,
+        "I_int": 0.185702,
+        "I_cont": 0.95,
+        "I_diff": 0.82,
+        "I_leg": 0.1
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": true,
+        "I_int": true,
+        "I_cont": true,
+        "I_diff": true,
+        "I_leg": true
+      },
+      "clean_acc": 1.0,
+      "noisy_acc": 1.0,
+      "compression_acc": 1.0,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.0,
+      "class_separation": 3.464102,
+      "within_class_radius": 0.0,
+      "integration_raw": 0.235702,
+      "p95_jump": 0.0,
+      "mean_abs_second": 1.0,
+      "consciousness_op_pass": true,
+      "q_op_non_empty": true,
+      "normal_signature": {
+        "label0_to_0": 20,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 20
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 20,
+        "label1_to_0": 20,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 20,
+        "label0_to_1": 0,
+        "label1_to_0": 0,
+        "label1_to_1": 20
+      }
+    },
+    "complexity_negative": {
+      "system": "complexity_negative",
+      "substrate": "dense_control",
+      "connectivity_density": 0.916667,
+      "activity_entropy": 8.61941,
+      "invariant_margins": {
+        "I_per": 1.167462,
+        "I_ri": -0.073119,
+        "I_int": 2.281713,
+        "I_cont": -2.252129,
+        "I_diff": -0.2464,
+        "I_leg": -0.375
+      },
+      "pass_flags": {
+        "I_per": true,
+        "I_ri": false,
+        "I_int": true,
+        "I_cont": false,
+        "I_diff": false,
+        "I_leg": false
+      },
+      "clean_acc": 0.525,
+      "noisy_acc": 0.575,
+      "compression_acc": 0.75,
+      "critical_shift_rate": 1.0,
+      "sham_fpr": 0.45,
+      "class_separation": 0.0536,
+      "within_class_radius": 0.12672,
+      "integration_raw": 2.331713,
+      "p95_jump": 3.202129,
+      "mean_abs_second": 0.040973,
+      "consciousness_op_pass": false,
+      "q_op_non_empty": false,
+      "normal_signature": {
+        "label0_to_0": 8,
+        "label0_to_1": 12,
+        "label1_to_0": 7,
+        "label1_to_1": 13
+      },
+      "critical_signature": {
+        "label0_to_0": 0,
+        "label0_to_1": 20,
+        "label1_to_0": 20,
+        "label1_to_1": 0
+      },
+      "sham_signature": {
+        "label0_to_0": 8,
+        "label0_to_1": 12,
+        "label1_to_0": 6,
+        "label1_to_1": 14
+      }
+    },
+    "ablations": {
+      "I_per": {
+        "system": "ablate_persistence",
+        "substrate": "continuous",
+        "connectivity_density": 0.75,
+        "activity_entropy": 1.496609,
+        "invariant_margins": {
+          "I_per": -0.12,
+          "I_ri": 0.0,
+          "I_int": 0.057082,
+          "I_cont": 0.787773,
+          "I_diff": -0.3,
+          "I_leg": -0.7
+        },
+        "pass_flags": {
+          "I_per": false,
+          "I_ri": false,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": false,
+          "I_leg": false
+        },
+        "clean_acc": 1.0,
+        "noisy_acc": 0.5,
+        "compression_acc": 1.0,
+        "critical_shift_rate": 0.0,
+        "sham_fpr": 0.0,
+        "class_separation": 0.0,
+        "within_class_radius": 0.0,
+        "integration_raw": 0.107082,
+        "p95_jump": 0.162227,
+        "mean_abs_second": 0.0,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "sham_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      },
+      "I_ri": {
+        "system": "ablate_identity",
+        "substrate": "continuous",
+        "connectivity_density": 0.75,
+        "activity_entropy": 0.900479,
+        "invariant_margins": {
+          "I_per": -0.084387,
+          "I_ri": -0.00126,
+          "I_int": 0.162887,
+          "I_cont": 0.875941,
+          "I_diff": -0.29973,
+          "I_leg": -0.4
+        },
+        "pass_flags": {
+          "I_per": false,
+          "I_ri": false,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": false,
+          "I_leg": false
+        },
+        "clean_acc": 0.5,
+        "noisy_acc": 0.5,
+        "compression_acc": 0.5,
+        "critical_shift_rate": 0.5,
+        "sham_fpr": 0.5,
+        "class_separation": 0.00027,
+        "within_class_radius": 0.00153,
+        "integration_raw": 0.212887,
+        "p95_jump": 0.074059,
+        "mean_abs_second": 0.017755,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "sham_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      },
+      "I_int": {
+        "system": "ablate_integration",
+        "substrate": "continuous",
+        "connectivity_density": 0.25,
+        "activity_entropy": 2.302432,
+        "invariant_margins": {
+          "I_per": -0.093847,
+          "I_ri": 0.139987,
+          "I_int": -0.05,
+          "I_cont": 0.816112,
+          "I_diff": -0.158417,
+          "I_leg": 0.1
+        },
+        "pass_flags": {
+          "I_per": false,
+          "I_ri": true,
+          "I_int": false,
+          "I_cont": true,
+          "I_diff": false,
+          "I_leg": true
+        },
+        "clean_acc": 1.0,
+        "noisy_acc": 1.0,
+        "compression_acc": 1.0,
+        "critical_shift_rate": 1.0,
+        "sham_fpr": 0.0,
+        "class_separation": 0.141583,
+        "within_class_radius": 0.001595,
+        "integration_raw": 0.0,
+        "p95_jump": 0.133888,
+        "mean_abs_second": 0.052174,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 20,
+          "label1_to_1": 0
+        },
+        "sham_signature": {
+          "label0_to_0": 20,
+          "label0_to_1": 0,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      },
+      "I_cont": {
+        "system": "ablate_continuity",
+        "substrate": "continuous",
+        "connectivity_density": 0.75,
+        "activity_entropy": 3.248959,
+        "invariant_margins": {
+          "I_per": 0.577609,
+          "I_ri": 1.543789,
+          "I_int": 0.265499,
+          "I_cont": -1.234281,
+          "I_diff": -0.18,
+          "I_leg": -0.4
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": true,
+          "I_int": true,
+          "I_cont": false,
+          "I_diff": false,
+          "I_leg": false
+        },
+        "clean_acc": 0.5,
+        "noisy_acc": 0.5,
+        "compression_acc": 0.5,
+        "critical_shift_rate": 0.5,
+        "sham_fpr": 0.5,
+        "class_separation": 1.54379,
+        "within_class_radius": 1e-06,
+        "integration_raw": 0.315499,
+        "p95_jump": 2.184281,
+        "mean_abs_second": 0.0,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "sham_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      },
+      "I_diff": {
+        "system": "ablate_differentiation",
+        "substrate": "continuous",
+        "connectivity_density": 0.75,
+        "activity_entropy": 2.140848,
+        "invariant_margins": {
+          "I_per": -0.065984,
+          "I_ri": 0.14304,
+          "I_int": 0.051748,
+          "I_cont": 0.907682,
+          "I_diff": -0.18,
+          "I_leg": -0.4
+        },
+        "pass_flags": {
+          "I_per": false,
+          "I_ri": true,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": false,
+          "I_leg": false
+        },
+        "clean_acc": 0.5,
+        "noisy_acc": 0.5,
+        "compression_acc": 0.5,
+        "critical_shift_rate": 0.5,
+        "sham_fpr": 0.5,
+        "class_separation": 0.146508,
+        "within_class_radius": 0.003468,
+        "integration_raw": 0.101748,
+        "p95_jump": 0.042318,
+        "mean_abs_second": 0.0,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "sham_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      },
+      "I_leg": {
+        "system": "ablate_legibility",
+        "substrate": "continuous",
+        "connectivity_density": 0.75,
+        "activity_entropy": 1.0,
+        "invariant_margins": {
+          "I_per": 0.721603,
+          "I_ri": 0.172862,
+          "I_int": 0.279707,
+          "I_cont": 0.943262,
+          "I_diff": -0.18,
+          "I_leg": -0.4
+        },
+        "pass_flags": {
+          "I_per": true,
+          "I_ri": true,
+          "I_int": true,
+          "I_cont": true,
+          "I_diff": false,
+          "I_leg": false
+        },
+        "clean_acc": 0.5,
+        "noisy_acc": 0.5,
+        "compression_acc": 0.5,
+        "critical_shift_rate": 0.5,
+        "sham_fpr": 0.5,
+        "class_separation": 0.172862,
+        "within_class_radius": 0.0,
+        "integration_raw": 0.329707,
+        "p95_jump": 0.006738,
+        "mean_abs_second": 0.0,
+        "consciousness_op_pass": false,
+        "q_op_non_empty": false,
+        "normal_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "critical_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        },
+        "sham_signature": {
+          "label0_to_0": 0,
+          "label0_to_1": 20,
+          "label1_to_0": 0,
+          "label1_to_1": 20
+        }
+      }
+    }
+  },
+  "main_failures_detected": [],
+  "main_claims_strengthened": [
+    "NC-02",
+    "P5-01",
+    "P5-02",
+    "P5-04",
+    "P5-05",
+    "P5-06"
+  ],
+  "main_claims_weakened": [],
+  "artifacts_generated": [
+    "artifacts/release_audit/cycle1_experimental_plan.md",
+    "artifacts/release_audit/cycle1_results_ledger.csv",
+    "artifacts/release_audit/cycle1_failure_analysis.md",
+    "artifacts/release_audit/cycle1_decision_summary.json",
+    "artifacts/release_audit/cycle1_raw_metrics.json"
+  ],
+  "ready_for_cycle2": true
+}

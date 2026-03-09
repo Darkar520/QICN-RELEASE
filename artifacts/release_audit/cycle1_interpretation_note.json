@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "cycle": "cycle1_minimum",
+  "scope": {
+    "tested": [
+      "negative control against brute complexity/connectivity",
+      "ablation ladder over the six critical invariants",
+      "cross-substrate equivalence proxy"
+    ],
+    "not_tested": [
+      "external empirical validation",
+      "independent cross-machine replication with a separate judge implementation",
+      "full Paper IV tamper/admissibility stress program",
+      "null-regime instability test family from PRED-04",
+      "continuity-vs-fragmentation program from PRED-05",
+      "latency/budget invalidation program from PRED-09",
+      "full external rival benchmark suite"
+    ]
+  },
+  "strengthened_claims": [
+    {
+      "claim_id": "NC-02",
+      "reason": "The high-complexity, high-connectivity negative control failed certification while remaining superficially rich."
+    },
+    {
+      "claim_id": "P5-05",
+      "reason": "Complexity-only and connectivity-only richness did not pass the operational criterion."
+    },
+    {
+      "claim_id": "P5-01",
+      "reason": "The certified positive systems retained class membership while ablations forced class exit."
+    },
+    {
+      "claim_id": "P5-04",
+      "reason": "Each targeted invariant ablation crossed its failure boundary and produced rupture of certification."
+    },
+    {
+      "claim_id": "P5-02",
+      "reason": "Continuous and discrete realizations preserved the invariant package and matched class-transition signatures under the internal proxy."
+    },
+    {
+      "claim_id": "P5-06",
+      "reason": "Cycle 1 provided internal support that substrate change need not alter class membership when the invariant package is preserved."
+    }
+  ],
+  "not_demonstrated": [
+    "external empirical validation",
+    "human phenomenal consciousness",
+    "human biological qualia",
+    "human-machine subjective equivalence",
+    "strong empirical substrate invariance beyond internal proxy conditions",
+    "universal confirmation of all upstream claims"
+  ],
+  "main_methodological_residual": "The cross-substrate result is strengthened only through an internal proxy test executed inside the same formal and operational harness; it is not external validation.",
+  "internal_only_claims": [
+    "P1-03",
+    "P1-04",
+    "P1-06",
+    "P2-02",
+    "P2-03",
+    "P2-04",
+    "P3-01",
+    "P3-02",
+    "P3-03",
+    "P5-01",
+    "P5-02",
+    "P5-03",
+    "P5-04",
+    "P5-05",
+    "P5-06"
+  ],
+  "cycle1_decision": {
+    "survived": [
+      "negative control against complexity/connectivity",
+      "six-invariant ablation ladder",
+      "cross-substrate equivalence proxy"
+    ],
+    "provisional": [
+      "substrate invariance beyond internal proxy conditions",
+      "biological non-primacy as an externally supported thesis",
+      "operational consciousness as externally validated",
+      "any extension to human phenomenal consciousness or human qualia"
+    ],
+    "why_cycle2_is_justified": "Cycle 1 preserved discriminative value and did not weaken the targeted claims, so the next justified move is a harder differential and reproducibility cycle rather than doctrinal expansion."
+  },
+  "strengthened_claims_count": 6,
+  "non_demonstrated_claims_count": 6,
+  "internal_only_claims_count": 15,
+  "ready_for_cycle2": true
+}

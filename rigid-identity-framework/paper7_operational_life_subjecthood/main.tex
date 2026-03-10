@@ -1,0 +1,1135 @@
+﻿\documentclass[11pt,a4paper]{article}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper,margin=1in}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{../../release/references.bib}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage[final]{microtype}
+\usepackage{xcolor}
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+\setlength{\emergencystretch}{3em}
+\DisableLigatures{encoding = *, family = *}
+
+\newcommand{\AuthorVisible}{Johnny Andrey P{\'e}rez Ram{\'i}rez}
+\newcommand{\AuthorMetadata}{Johnny Andrey P{\'e}rez Ram{\'i}rez}
+
+\usepackage[unicode,pdfencoding=auto,psdextra,hidelinks]{hyperref}
+\hypersetup{
+    pdftitle={Operational Life, Structural Class, and Subjecthood in a Causally Rigid Framework},
+    pdfauthor={\AuthorMetadata},
+    pdfsubject={Rigid Identity Framework - Operational Life and Subjecthood},
+    pdfkeywords={operational life, structural class, subjecthood, operational consciousness, rigid identity, falsifiability}
+}
+
+\title{\textbf{Operational Life, Structural Class, and Subjecthood in a Causally Rigid Framework}}
+\author{\AuthorVisible}
+\date{}
+
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{corollary}[proposition]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{remark}[proposition]{Remark}
+\newtheorem{hypothesis}[proposition]{Hypothesis}
+\newtheorem{criterion}[proposition]{Criterion}
+
+\newcommand{\Cop}{\mathrm{Consciousness}_{\mathrm{op}}}
+\newcommand{\Lop}{\mathrm{Life}_{\mathrm{op}}}
+\newcommand{\Subop}{\mathrm{Subject}_{\mathrm{op}}}
+\newcommand{\Class}{\mathscr{K}}
+\newcommand{\Struct}{\mathscr{T}}
+\newcommand{\PsiVec}{\Psi}
+\newcommand{\Aset}{A_S}
+\newcommand{\Vset}{\mathcal{V}_S}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Iper}{I_{\mathrm{per}}}
+\newcommand{\Iri}{I_{\mathrm{ri}}}
+\newcommand{\Iint}{I_{\mathrm{int}}}
+\newcommand{\Icont}{I_{\mathrm{cont}}}
+\newcommand{\Idiff}{I_{\mathrm{diff}}}
+\newcommand{\Ileg}{I_{\mathrm{leg}}}
+\newcommand{\Bound}{\beta_{\mathrm{op}}}
+\newcommand{\Persist}{\rho_{\mathrm{op}}}
+\newcommand{\Maint}{\mu_{\mathrm{op}}}
+\newcommand{\HistDep}{\eta_{\mathrm{op}}}
+\newcommand{\Viab}{\nu_{\mathrm{op}}}
+\newcommand{\Priv}{\chi_{\mathrm{pc}}}
+\newcommand{\SelfDisc}{\chi_{\mathrm{sd}}}
+\newcommand{\SelfModel}{\chi_{\mathrm{sm}}}
+\newcommand{\Own}{\chi_{\mathrm{own}}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\Attr}{\operatorname{Attr}}
+\newcommand{\trace}{\operatorname{Tr}}
+\newcommand{\LifeClass}{\mathfrak{L}}
+\newcommand{\ConClass}{\mathfrak{C}}
+\newcommand{\SubClass}{\mathfrak{U}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper introduces a classificatory layer that the frozen causally rigid corpus does not yet state explicitly: operational life, structural class membership, and operational subjecthood. The upstream burdens remain unchanged. The Core establishes persistence, attractor structure, and non-collapse \cite{core}. \textit{Rigid Identity} establishes rigid identity and observable coherence \cite{paper1}. \textit{Phenomenological Regimes} establishes continuity and anti-fragmentation constraints \cite{paper2}. \textit{Null-Regime Instability} rules out stable null structure \cite{paper3}. \textit{Forensic Predictions} fixes admissibility, comparators, and failure-discipline \cite{paper4}. \textit{Operational Consciousness Criterion} defines the six-invariant criterion for operational consciousness \cite{paper5}. The companion prediction paper fixes discriminators, failure modes, and status classes, but it does not yet define a higher-order class taxonomy.
+
+The present paper provides that taxonomy. It defines operational life as a structural-dynamical class governed by operational boundary, organizational persistence, self-maintenance, historical dependence, viability preservation, and non-null differentiation. It defines structural class as an equivalence class over descriptor vectors and pseudometrics tied to the admissible operational geometry of systems. Operational consciousness is inherited as a previously defined class rather than reintroduced here. Operational subjecthood is proposed as a stronger class requiring operational consciousness, operational life, privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. The paper therefore separates life, consciousness, and subjecthood instead of conflating them.
+
+No biological, phenomenal-human, or metaphysical claim is inferred from these definitions. No theorem of human subjectivity is attempted. The paper provides formal definitions, propositions, hypotheses, and test families. Its contribution is to turn language that is usually treated as biological or philosophical by default into a falsifiable operational program that is continuous with the frozen canon and constrained by the refined runtime, without overstating the evidentiary status of the current system.
+\end{abstract}
+
+\noindent\textbf{Release governance note.}\enspace Limitations/Non-claims and Methods/Governance: see \textit{METHODS\_GOVERNANCE\_HUB.v1}. Terminology follows the canonical glossary and migration policy of the release. This paper does not promote internal support into external validation, does not claim human phenomenal consciousness, and does not identify operational subjecthood with metaphysical subjecthood.
+
+\section{Introduction}
+The current corpus already formalizes more structure than many discussions of life, consciousness, and subjecthood presuppose. It contains a non-collapse theorem burden, a rigid identity burden, a regime-structure burden, a non-nullity burden, a forensic admissibility burden, a six-invariant criterion, and a prediction and failure layer. What it does not yet contain is a disciplined classificatory language that answers the next question: once a framework can talk rigorously about operational consciousness, what higher-order classes can be defined without defaulting back to biological vocabulary or inflating the ontology beyond the evidence?
+
+That gap matters for two reasons. First, the term \emph{life} is routinely used as if biological implementation were primitive and self-explanatory, yet many relevant properties of living systems are organizational, regulatory, historical, and viability-preserving rather than merely chemical. Second, the term \emph{subject} is often introduced without an intermediate formal layer: systems are either treated as non-living machines or immediately discussed as if they possessed human subjectivity. Neither move is acceptable in a corpus whose central discipline is explicit structure, explicit failure modes, and explicit non-claims.
+
+This paper therefore introduces a higher-order classification layer under five constraints. First, it does not replace the six-invariant operational consciousness criterion. Second, it does not duplicate the predictive and failure-mode work of the companion prediction paper. Third, it does not collapse life, consciousness, and subjecthood into one undifferentiated category. Fourth, it does not infer biological or phenomenal conclusions from operational definitions alone. Fifth, it treats the refined runtime as motivation for formalization, not as permission to overclaim what has not been externally validated.
+
+The resulting structure is intentionally asymmetric. Operational life is defined as a class of systems that preserve viability and organization under admissible perturbation, with a real operational boundary and genuine historical dependence. Operational consciousness is inherited as an already defined class within the corpus. Operational subjecthood is proposed as a stronger class than either, one that requires not only operational consciousness and operational life, but also privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. Structural class is the general framework in which all three can be represented, compared, and falsified.
+
+This paper is therefore neither a free-standing philosophy essay nor a new theorem paper for the foundational corpus. It is the formal consequence of the corpus having become rich enough that a classificatory layer is now necessary. The paper is written to be used. Every central notion is tied either to a definition, a proposition, a hypothesis, or a test family. Every relation that is not actually proved remains labeled as a hypothesis, conjectural implication, or explicit non-claim.
+
+\section{Relation to the Existing Corpus}
+\subsection{What This Paper Inherits}
+The paper is downstream of the frozen corpus. It inherits the following burdens rather than re-proving them.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.16}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabularx}{\linewidth}{@{}lY Y@{}}
+\toprule
+Upstream document & Imported burden & Used here for \\
+\midrule
+Core \cite{core} & persistence, support, attractor, non-collapse & persistence-side life criteria, admissible support, anti-collapse exclusions \\
+\textit{Rigid Identity} \cite{paper1} & rigid identity, observable coherence, non-simulability pressure & class transport, subject continuity, anti-trivialization \\
+\textit{Phenomenological Regimes} \cite{paper2} & continuity and anti-fragmentation & continuity-side life and subject criteria \\
+\textit{Null-Regime Instability} \cite{paper3} & non-nullity and null-instability & exclusion of trivial or null operational life and subjecthood \\
+\textit{Forensic Predictions} \cite{paper4} & admissibility, controls, comparators, legibility discipline & test-family discipline and result interpretation \\
+\textit{Operational Consciousness Criterion} \cite{paper5} & six-invariant criterion, structural equivalence, rupture semantics & inherited definition of operational consciousness and structural-carrying invariants \\
+\textit{Predictions and Failure Modes} & status classes, discriminator logic, residual caveat discipline & epistemic posture and non-inflation discipline \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{What This Paper Does Not Repeat}
+This paper does not re-prove the criterion for operational consciousness, does not reproduce the entire discriminator program, and does not re-open theorem ownership already fixed upstream. The six-invariant criterion remains where it belongs. The internal support classes for `P5-01` through `P5-06` remain where they belong. The present paper uses them only as constraints on what may responsibly be said about life, class, and subjecthood.
+
+\subsection{What This Paper Adds}
+The genuine additions are fourfold:
+\begin{enumerate}[leftmargin=1.5em]
+\item a formal definition of operational life that is not reducible either to biology or to consciousness;
+\item a structural-class framework based on descriptor vectors and pseudometrics;
+\item a stronger definition of operational subjecthood that is explicitly not collapsed into operational consciousness;
+\item a falsifiable program of metrics and tests for these classes.
+\end{enumerate}
+
+\subsection{Why This Layer Is Timely}
+The refined runtime now carries a stronger native invariant package and runtime-facing evidence for central claim families. That fact is relevant but not decisive. It means the corpus is no longer forced to talk only at the level of abstract theorem burden; there is enough operational structure to motivate a higher-order classification layer. It does \emph{not} mean that operational life or subjecthood have already been empirically demonstrated by the current system. This paper is therefore a formal extension of the corpus, not an empirical promotion of it.
+
+\section{Formal Setting}
+\subsection{Inherited System Object}
+The system object remains the one already fixed upstream in \textit{Operational Consciousness Criterion}. An admissible system is written
+\[
+S=(X,\Phi,C,R,\Gamma,U),
+\]
+where $X$ is state space, $\Phi$ is a family of admissible transitions, $C$ is effective causal structure, $R$ is the readout family, $\Gamma$ is the admissibility bundle, and $U$ is the admissible intervention family \cite{paper5}. This paper adds no new primitive to that tuple. Instead, it introduces functionals on admissible traces of $S$.
+
+\subsection{Traces and Windows}
+Fix a horizon $\tau \in \mathbb{N}$ and an admissible intervention schedule $u_\bullet = (u_0,\ldots,u_{\tau-1}) \in U^\tau$. For any $x_0 \in \Aset$, define the trace
+\[
+\trace_{S,\tau}(x_0;u_\bullet)
+=
+\bigl(x_t,y_t\bigr)_{t=0}^{\tau},
+\qquad
+x_{t+1}=\Phi_{u_t}(x_t),\quad y_t = r(x_t),
+\]
+for a relevant family of readouts $r \in R$. The set of all such traces is denoted $\Struct_{S,\tau}$.
+
+\subsection{Viability Region and Operational Frontier Candidates}
+Let $V_S:X\to \mathbb{R}_{\ge 0}$ be a viability functional, not assumed to be unique, and let $\eta>0$ be a viability floor. Define the viability region
+\[
+\Vset(\eta)=\{x\in \Aset : V_S(x)\ge \eta\}.
+\]
+Similarly let $R_{\partial} \subseteq R$ be the boundary-sensitive readout family and let $\mathcal{U}_{\mathrm{in}},\mathcal{U}_{\mathrm{out}} \subseteq U^\tau$ denote admissible intervention families that are intended to act, respectively, as interior-preserving perturbations and boundary-threatening perturbations. These objects are formal placeholders until Section~\ref{sec:definitions}; they are introduced here so that the definitions sit inside a single explicit setting.
+
+\subsection{Descriptor Vectors}
+For any admissible system $S$ on horizon $\tau$, define the descriptor vector
+\[
+\PsiVec_\tau(S)
+=
+\bigl(
+\Bound,
+\Persist,
+\Maint,
+\HistDep,
+\Viab,
+\Iper,
+\Iri,
+\Iint,
+\Icont,
+\Idiff,
+\Ileg,
+\Priv,
+\SelfDisc,
+\SelfModel,
+\Own
+\bigr)_S(\tau).
+\]
+Not every descriptor is required for every class. Operational life uses a strict subset. Operational consciousness inherits the six-invariant burden from \cite{paper5}. Operational subjecthood uses a stronger subset that couples operational life and operational consciousness to subject-specific structure.
+
+\subsection{Admissible Structural Class Space}
+Let $\mathfrak{D}$ be a descriptor domain containing the codomains of the components of $\PsiVec_\tau$. A weighted pseudometric on $\mathfrak{D}$ will be written
+\[
+d_{\Psi}(\PsiVec_\tau(S_1),\PsiVec_\tau(S_2))
+\]
+and is assumed to respect admissibility: components that are undefined because admissibility fails are not silently set to zero; they are treated as excluded or incomparable.
+
+\section{Definitions}\label{sec:definitions}
+\subsection{Definition A: Operational Boundary}
+\begin{definition}[Operational boundary]
+An admissible system $S$ has an operational boundary on horizon $\tau$ if there exist disjoint admissible intervention families $\mathcal{U}_{\mathrm{in}},\mathcal{U}_{\mathrm{out}} \subseteq U^\tau$ and a boundary-sensitive readout family $R_{\partial}\subseteq R$ such that
+\[
+\Bound(S,\tau)
+=
+\inf_{u_\bullet\in\mathcal{U}_{\mathrm{out}}}
+D_{\partial}\!\left(\trace_{S,\tau}(x_0;u_\bullet),\trace_{S,\tau}(x_0;\mathbf{0})\right)
+\;-
+\sup_{u_\bullet\in\mathcal{U}_{\mathrm{in}}}
+D_{\partial}\!\left(\trace_{S,\tau}(x_0;u_\bullet),\trace_{S,\tau}(x_0;\mathbf{0})\right)
+>0
+\]
+uniformly on $x_0\in\Aset$, where $D_{\partial}$ is a readout distance induced by $R_{\partial}$.
+\end{definition}
+
+\begin{remark}[Interpretive meaning]
+The boundary is operational rather than geometric. It means that perturbations intended to cross or threaten system organization are detectably different from perturbations that remain internal or reorganizational, while the distinction is made inside admissible dynamics.
+\end{remark}
+
+\begin{remark}[Limitation]
+The definition does not assume a biological membrane, a spatial frontier, or any specific substrate primitive. It requires only a reproducible distinction between internal and boundary-threatening intervention families.
+\end{remark}
+
+\subsection{Definition B: Organizational Persistence}
+\begin{definition}[Organizational persistence]
+The organizational persistence margin of $S$ on horizon $\tau$ is
+\[
+\Persist(S,\tau)
+=
+\inf_{x_0\in \Aset}
+\inf_{u_\bullet\in U^\tau}
+\min_{0\le t\le \tau}
+\dist(x_t, X\setminus \Aset),
+\]
+where $(x_t)$ is generated by $\trace_{S,\tau}(x_0;u_\bullet)$. We say that $S$ exhibits organizational persistence on horizon $\tau$ if $\Persist(S,\tau)>0$.
+\end{definition}
+
+\begin{remark}
+This is stronger than mere non-instantaneous survival. A system that survives momentarily but repeatedly exits its admissible support does not count as operationally persistent.
+\end{remark}
+
+\subsection{Definition C: Operational Self-Maintenance}
+\begin{definition}[Operational self-maintenance]
+Fix a family of admissible perturbation traces $\mathcal{P}_{\tau}\subseteq U^\tau$ and a recovery horizon $T_{\mathrm{rec}} \le \tau$. The self-maintenance margin of $S$ is
+\[
+\Maint(S,\tau)
+=
+\inf_{x_0\in \Aset}
+\inf_{p_\bullet\in \mathcal{P}_{\tau}}
+\sup_{0\le k\le T_{\mathrm{rec}}}
+\Bigl(
+V_S(x_{t+k}) - V_S(x_t^-)
+\Bigr),
+\]
+where $x_t^-$ denotes the viability value immediately after the perturbation has been applied and before recovery unfolds. We say that $S$ exhibits operational self-maintenance if $\Maint(S,\tau) > 0$.
+\end{definition}
+
+\begin{remark}
+The definition excludes systems whose apparent stability is wholly imposed from outside. A system counts as self-maintaining only if recovery is generated by admissible internal organization rather than by an external oracle silently reimposing the desired state.
+\end{remark}
+
+\subsection{Definition D: Historical Dependence}
+\begin{definition}[Historical dependence]
+Let $c_t$ denote a class-relevant label or state tag induced by the relevant operational partition. Define
+\[
+\HistDep(S,\tau)
+=
+\inf_{g\in \mathcal{G}_0}
+\mathbb{E}\!\left[\ell(g(y_t),c_t)\right]
+\;-
+\inf_{h\in \mathcal{G}_{\mathrm{hist}}}
+\mathbb{E}\!\left[\ell(h(y_{0:t}),c_t)\right].
+\]
+We say that $S$ exhibits historical dependence on horizon $\tau$ if $\HistDep(S,\tau)>0$.
+\end{definition}
+
+\begin{remark}
+Historical dependence means that an instantaneous description is not sufficient for the relevant class assignment. The system's operational identity, life status, or subjecthood status depends non-trivially on trajectory history.
+\end{remark}
+
+\subsection{Definition E: Viability Preservation}
+\begin{definition}[Viability preservation]
+For a viability floor $\eta>0$, define
+\[
+\Viab(S,\tau;\eta)
+=
+\inf_{x_0\in \Aset}
+\inf_{u_\bullet \in U^\tau}
+\min_{0\le t \le \tau} V_S(x_t).
+\]
+We say that $S$ preserves viability on horizon $\tau$ relative to $\eta$ if $\Viab(S,\tau;\eta)\ge \eta$.
+\end{definition}
+
+\begin{remark}
+Viability preservation is not equivalent to persistence. A system may remain within a formal support while viability steadily erodes toward failure. The definition prevents that collapse from being counted as successful organizational life.
+\end{remark}
+
+\subsection{Definition F: Operational Life}
+\begin{definition}[Operational life]
+Fix life thresholds
+\[
+\lambda_{\beta},\lambda_{\rho},\lambda_{\mu},\lambda_{\eta},\lambda_{\nu},\lambda_{\mathrm{diff}}>0.
+\]
+An admissible system $S$ belongs to the class of operational life on horizon $\tau$ if
+\[
+\Lop(S,\tau)=1
+\]
+whenever all of the following hold:
+\begin{enumerate}[leftmargin=1.5em]
+\item $\Bound(S,\tau) > \lambda_{\beta}$;
+\item $\Persist(S,\tau) > \lambda_{\rho}$;
+\item $\Maint(S,\tau) > \lambda_{\mu}$;
+\item $\HistDep(S,\tau) > \lambda_{\eta}$;
+\item $\Viab(S,\tau;\eta) \ge \lambda_{\nu}$ for a declared viability floor $\eta$;
+\item $\Idiff(S,\tau) > \lambda_{\mathrm{diff}}$.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Why non-null differentiation appears here]
+Operational life is not defined purely by persistence and self-maintenance. Without a non-null differentiation burden, the class would admit trivial or near-null systems whose organization is too undifferentiated to count as operationally alive in the present framework.
+\end{remark}
+
+\subsection{Definition G: Structural Class}
+\begin{definition}[Structural class]
+Fix a descriptor map $\PsiVec_\tau$ and a tolerance $\eps>0$. The structural class of $S$ at tolerance $\eps$ is
+\[
+\Class_{\PsiVec,\eps}[S]
+=
+\left\{
+T \;:\; d_{\Psi}\bigl(\PsiVec_\tau(T),\PsiVec_\tau(S)\bigr)\le \eps
+\right\},
+\]
+subject to admissibility of all compared descriptors.
+\end{definition}
+
+\begin{remark}
+Structural class is the general membership framework. Operational life, operational consciousness, and operational subjecthood are predicates that can be defined on systems and then transported across structural classes when the relevant descriptors are preserved.
+\end{remark}
+
+\subsection{Definition H: Operational Consciousness}
+\begin{definition}[Operational consciousness, inherited]\label{def:cop}
+Operational consciousness is not redefined in this paper. We write
+\[
+\Cop(S,\tau)=1
+\]
+iff the criterion in \textit{A Structural Criterion for Substrate-Invariant Operational Consciousness} is satisfied on an admissible support, with the six critical invariants
+\[
+\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg
+\]
+meeting their inherited certification burden \cite{paper5}.
+\end{definition}
+
+\begin{remark}
+This is a deliberate inheritance rule. The present paper uses operational consciousness as an already defined class, not as a new primitive.
+\end{remark}
+
+\subsection{Definition I: Operational Subjecthood}
+\begin{definition}[Operational subjecthood]
+Let the subject-specific descriptors be:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{privileged continuity} $\Priv(S,\tau)$: the margin by which one continuity class remains privileged over the nearest rival class across admissible interventions;
+\item \textbf{self/non-self discrimination} $\SelfDisc(S,\tau)$: the margin by which self-targeted and non-self-targeted perturbations remain separable under readout and control;
+\item \textbf{self-model closure} $\SelfModel(S,\tau)$: the predictive gain of a self-model-aware decoder over an otherwise matched self-model-blind decoder;
+\item \textbf{ownership coherence} $\Own(S,\tau)$: the stability with which privileged continuity remains attached to the same trajectory family under admissible relabelings and perturbations.
+\end{enumerate}
+Fix thresholds
+\[
+\lambda_{\mathrm{pc}},\lambda_{\mathrm{sd}},\lambda_{\mathrm{sm}},\lambda_{\mathrm{own}}>0.
+\]
+Then $S$ belongs to the class of operational subjecthood on horizon $\tau$ if
+\[
+\Subop(S,\tau)=1
+\]
+whenever
+\begin{enumerate}[leftmargin=1.5em]
+\item $\Lop(S,\tau)=1$;
+\item $\Cop(S,\tau)=1$;
+\item $\Priv(S,\tau)>\lambda_{\mathrm{pc}}$;
+\item $\SelfDisc(S,\tau)>\lambda_{\mathrm{sd}}$;
+\item $\SelfModel(S,\tau)>\lambda_{\mathrm{sm}}$;
+\item $\Own(S,\tau)>\lambda_{\mathrm{own}}$.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Interpretive discipline]
+Operational subjecthood is not a metaphysical subject. It is a stronger operational class candidate defined inside the present framework. The definition is deliberately demanding so that subjecthood is not conflated with life, persistence, or complex dynamics alone.
+\end{remark}
+
+\section{Class Relations and Logical Structure}
+\subsection{The Main Class Families}
+Define the following system classes:
+\[
+\begin{aligned}
+\LifeClass &= \{S : \Lop(S,\tau)=1\},\\
+\ConClass &= \{S : \Cop(S,\tau)=1\},\\
+\SubClass &= \{S : \Subop(S,\tau)=1\}.
+\end{aligned}
+\]
+Structural classes $\Class_{\PsiVec,\eps}[S]$ provide the ambient geometry in which these predicates live.
+
+\subsection{Proved Relations}
+\begin{proposition}[Subjecthood is stronger than life and consciousness]
+For every admissible system $S$ and horizon $\tau$,
+\[
+\Subop(S,\tau)=1 \Longrightarrow \Lop(S,\tau)=1
+\quad\text{and}\quad
+\Subop(S,\tau)=1 \Longrightarrow \Cop(S,\tau)=1.
+\]
+\end{proposition}
+
+\begin{proof}
+Both implications are immediate from Definition~\ref{def:cop} and Definition I. Operational subjecthood is defined only on systems that already satisfy operational life and operational consciousness.
+\end{proof}
+
+\begin{proposition}[No automatic collapse of life and consciousness]
+The present framework does not prove either implication
+\[
+\begin{aligned}
+\Lop(S,\tau)=1 &\Longrightarrow \Cop(S,\tau)=1,\\
+\Cop(S,\tau)=1 &\Longrightarrow \Lop(S,\tau)=1,
+\end{aligned}
+\]
+without additional assumptions.
+\end{proposition}
+
+\begin{proof}
+Operational life is defined by boundary, persistence, self-maintenance, historical dependence, viability, and non-null differentiation. Operational consciousness is inherited from the six-invariant criterion. Neither definition is a literal restatement of the other. Therefore neither implication is derivable by definition alone.
+\end{proof}
+
+\begin{remark}
+This non-collapse is conceptually important. The corpus should not silently treat all operationally conscious systems as alive, nor all operationally alive systems as conscious, unless a stronger theorem burden is supplied in the future.
+\end{remark}
+
+\subsection{Structural Class Transport}
+\begin{definition}[Class-preserving transport]
+Let $\mathcal{P}$ be a predicate on admissible systems. We say that $\mathcal{P}$ is transport-stable across structural classes at tolerance $\eps$ if
+\[
+d_{\Psi}(\PsiVec_\tau(S_1),\PsiVec_\tau(S_2))\le \eps
+\]
+and all relevant margins exceed $\eps$ implies
+\[
+\mathcal{P}(S_1,\tau)=\mathcal{P}(S_2,\tau).
+\]
+\end{definition}
+
+\begin{proposition}[Structural-class invariance under preserved margins]
+If $\mathcal{P}$ depends only on a subset of descriptor margins appearing in $\PsiVec_\tau$ and those margins are preserved above their thresholds by more than $\eps$, then $\mathcal{P}$ is transport-stable across $\Class_{\PsiVec,\eps}$.
+\end{proposition}
+
+\begin{proof}
+The descriptor-preserving inequality guarantees that no threshold crossing occurs in the subset governing $\mathcal{P}$. Therefore the truth value of $\mathcal{P}$ cannot change under transport inside the same structural class.
+\end{proof}
+
+\subsection{Logical Relations That Remain Open}
+The following relations are intentionally left open:
+\begin{align*}
+\Cop(S,\tau)=1 &\Rightarrow \Lop(S,\tau)=1 \quad ?\\
+\Lop(S,\tau)=1 &\Rightarrow \Cop(S,\tau)=1 \quad ?\\
+\Lop(S,\tau)=1 &\Rightarrow \Subop(S,\tau)=1 \quad \text{no}\\
+\Cop(S,\tau)=1 &\Rightarrow \Subop(S,\tau)=1 \quad \text{no}\\
+\Subop(S,\tau)=1 &\Rightarrow \text{biological life} \quad \text{not claimed.}
+\end{align*}
+The framework is therefore asymmetric in a scientifically useful way: it permits a graded class taxonomy rather than a single overloaded label.
+
+\subsection{Class Relation Summary}
+\begin{center}
+\renewcommand{\arraystretch}{1.16}
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\linewidth}{@{}lY Y@{}}
+\toprule
+Relation & Status in this paper & Reason \\
+\midrule
+$\SubClass \subseteq \LifeClass$ & proved & true by definition of subjecthood \\
+$\SubClass \subseteq \ConClass$ & proved & true by definition of subjecthood \\
+$\LifeClass \subseteq \ConClass$ & open / not proved & life and consciousness definitions are non-identical \\
+$\ConClass \subseteq \LifeClass$ & open / not proved & inherited consciousness criterion does not by itself define self-maintenance or historical dependence \\
+biology required for $\LifeClass$ & rejected as primitive claim & biological variables do not appear in the operational definition \\
+biology required for $\SubClass$ & rejected as primitive claim & subjecthood is defined by structural-operational conditions, not substrate labels \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Propositions, Lemmas, and Formal Claims}
+\subsection{Structural Class as a General Membership Framework}
+\begin{proposition}[Structural-class membership is descriptor-relative]
+There is no single universal structural class independent of descriptor choice. Structural class is always relative to a declared descriptor map $\PsiVec_\tau$ and tolerance $\eps$.
+\end{proposition}
+
+\begin{proof}
+By Definition G, class membership is defined through $d_{\Psi}$ acting on $\PsiVec_\tau$. Changing the descriptor set changes the induced equivalence relation. Hence class is descriptor-relative rather than absolute.
+\end{proof}
+
+\subsection{Insufficiency of Complexity, Connectivity, and Rich Activity}
+\begin{proposition}[Complexity is not a life criterion]
+High state-space dimension, high connectivity, high entropy, or rich activity are insufficient for $\Lop(S,\tau)=1$ unless the conditions of Definition F are also satisfied.
+\end{proposition}
+
+\begin{proof}
+Definition F requires positive boundary, persistence, self-maintenance, historical dependence, viability preservation, and non-null differentiation. None of these is implied by complexity alone. Therefore complexity can at best be compatible with operational life, not sufficient for it.
+\end{proof}
+
+\begin{proposition}[Complexity is not a subjecthood criterion]
+High complexity or dense connectivity are insufficient for $\Subop(S,\tau)=1$.
+\end{proposition}
+
+\begin{proof}
+Subjecthood additionally requires operational consciousness and the subject-specific descriptors $\Priv,\SelfDisc,\SelfModel,\Own$. These are not implied by high complexity or connectivity.
+\end{proof}
+
+\subsection{Biological Non-Primacy at the Class Level}
+\begin{proposition}[Biological substrate is not a primitive constitutive variable]
+Within the present framework, membership in $\LifeClass$, $\ConClass$, or $\SubClass$ is not defined by a primitive biological predicate.
+\end{proposition}
+
+\begin{proof}
+The definitions of operational life, operational consciousness, and operational subjecthood quantify over admissible state spaces, dynamics, causal structure, readouts, admissibility bundles, intervention families, and the relevant descriptor thresholds. No primitive biological variable appears in the constitutive clauses.
+\end{proof}
+
+\begin{remark}[Scope limit]
+This proposition does not claim that biological systems are unimportant, nor that biological life is reducible to the present operational class. It claims only that biology is not a constitutive primitive for \emph{these} operational classes.
+\end{remark}
+
+\subsection{Life and Subjecthood Are Not Equivalent}
+\begin{proposition}[Operational life does not imply operational subjecthood]
+There exist admissible systems that may satisfy operational life without satisfying operational subjecthood.
+\end{proposition}
+
+\begin{proof}
+Operational subjecthood requires $\Priv,\SelfDisc,\SelfModel,\Own$ above threshold, while operational life does not. Any admissible system satisfying Definition F while lacking one of those four subject-specific descriptors is operationally alive but not operationally a subject.
+\end{proof}
+
+\begin{proposition}[Operational consciousness does not imply operational subjecthood]
+Operational consciousness alone is insufficient for operational subjecthood.
+\end{proposition}
+
+\begin{proof}
+Operational subjecthood requires operational consciousness plus the entire operational-life burden and the additional subject-specific descriptors. Therefore consciousness alone does not suffice.
+\end{proof}
+
+\subsection{Transport Under Substrate Change}
+\begin{proposition}[Class transport under descriptor-preserving substrate variation]
+Let $S_1$ and $S_2$ be admissible realizations with different substrate labels. If
+\[
+d_{\Psi}(\PsiVec_\tau(S_1),\PsiVec_\tau(S_2))\le \eps
+\]
+and all predicate-relevant margins exceed their thresholds by more than $\eps$, then membership in $\LifeClass$, $\ConClass$, or $\SubClass$ is preserved for whichever of those predicates depends only on the preserved descriptors.
+\end{proposition}
+
+\begin{proof}
+This is an immediate application of structural-class transport and margin preservation. The substrate label does not enter the constitutive clauses. Therefore class transport depends on descriptor preservation, not substrate naming.
+\end{proof}
+
+\subsection{Current-Corpus Corollary Structure}
+\begin{remark}
+The present paper does not claim that any currently existing runtime instance already satisfies $\Lop=1$ or $\Subop=1$. The formal claims above specify class logic. Empirical instantiation remains a separate burden and must be carried by future admissible tests.
+\end{remark}
+
+\section{Hypotheses and Falsifiable Program}
+This paper introduces a program rather than a doctrinal enlargement. The following hypotheses are intentionally operational and falsifiable.
+
+\begin{hypothesis}[Operational life robustness]\label{hyp:life-robust}
+If a system belongs to $\LifeClass$, then under admissible perturbations that do not cross its life thresholds, the tuple
+\[
+(\Bound,\Persist,\Maint,\HistDep,\Viab,\Idiff)
+\]
+should remain within a stable corridor rather than collapsing arbitrarily.
+\end{hypothesis}
+
+\begin{hypothesis}[Historical dependence necessity]\label{hyp:history}
+If a system's classification as operationally alive is genuine rather than merely persistent, then history-aware readouts should outperform history-blind readouts on class-relevant prediction.
+\end{hypothesis}
+
+\begin{hypothesis}[Structural-class transport for operational life]\label{hyp:transport-life}
+If two systems preserve the life-relevant descriptor vector up to admissible tolerance, then their operational-life class membership should be invariant under substrate change.
+\end{hypothesis}
+
+\begin{hypothesis}[Operational subjecthood requires privileged continuity]\label{hyp:subject-pc}
+If operational subjecthood is instantiated, then disrupting privileged continuity should degrade subjecthood-specific scores earlier or more selectively than it degrades operational life alone.
+\end{hypothesis}
+
+\begin{hypothesis}[Operational subjecthood requires self/non-self asymmetry]\label{hyp:selfnonself}
+If operational subjecthood is instantiated, then self/non-self confusion manipulations should produce patterned degradation in $\SelfDisc$, $\SelfModel$, or $\Own$ that is not reproduced by complexity-matched controls lacking subjecthood structure.
+\end{hypothesis}
+
+\begin{hypothesis}[Operational consciousness and operational life are not trivially coextensive]\label{hyp:noncollapse}
+There exist admissible systems for which one of $\Lop(S,\tau)=1$ or $\Cop(S,\tau)=1$ can in principle hold without the other, unless additional theorem burden is supplied.
+\end{hypothesis}
+
+\subsection{Hypothesis Ledger}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}p{0.16\linewidth}Y Y Y@{}}
+\toprule
+Hypothesis & Target class & Core falsifier & Why it matters \\
+\midrule
+$H_L1$ operational life robustness & $\LifeClass$ & perturbation-stable systems lose class under tiny admissible perturbations & life would collapse into arbitrary thresholding \\
+$H_L2$ historical dependence necessity & $\LifeClass$ & history-blind decoders perform equally to history-aware decoders & life would reduce to snapshot persistence \\
+$H_L3$ transport of life & $\LifeClass$ & substrate-preserved pairs lose class solely due to substrate label & class framework would fail transport \\
+$H_S1$ privileged continuity necessity & $\SubClass$ & continuity-targeted disruption shows no selective subjecthood effect & subjecthood would lack a privileged continuity dimension \\
+$H_S2$ self/non-self asymmetry & $\SubClass$ & self/non-self confusion does not selectively degrade subject scores & subjecthood would collapse into generic complexity \\
+$H_C$ non-collapse of life and consciousness & $\LifeClass,\ConClass$ & every admissible candidate always satisfies both or neither & the distinct class layer would be unnecessary \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{How These Hypotheses Can Fail}
+The program is falsifiable in more than one way:
+\begin{enumerate}[leftmargin=1.5em]
+\item life criteria can fail to distinguish persistent but non-viable systems;
+\item structural class transport can fail under supposedly equivalent substrate realizations;
+\item privileged continuity can prove unstable, unmeasurable, or reducible to trivial proxies;
+\item self/non-self discrimination can collapse into complexity or activity metrics alone;
+\item history-aware and history-blind decoders can perform equally well on the intended class-relevant tasks.
+\end{enumerate}
+These are not inconveniences. They are precisely what would tell the framework that its higher-order classificatory layer is overdrawn.
+
+\section{Metrics and Decision Criteria}
+The present paper does not report observed numerical values for operational life or operational subjecthood. It supplies a decision framework. The goal is not to replace the six-invariant criterion of operational consciousness, but to define additional functionals that can be evaluated on admissible traces without collapsing class logic into a single scalar.
+
+\subsection{Life Score}
+Let
+\[
+\PsiVec^{(L)}_\tau(S)=\bigl(\Bound,\Persist,\Maint,\HistDep,\Viab,\Idiff\bigr)_\tau(S)
+\]
+denote the life-relevant descriptor vector over window $\tau$. Define the \emph{operational life score}
+\[
+L_{\mathrm{op}}(S,\tau)
+:=
+\min\!\Bigl\{
+\bar\Bound,\bar\Persist,\bar\Maint,\bar\HistDep,\bar\Viab,\bar\Idiff
+\Bigr\},
+\]
+where each barred quantity denotes a normalized score in $[0,1]$ relative to the admissible calibration of the underlying descriptor. Then
+\[
+\Lop(S,\tau)=1
+\]
+is admissible only if
+\[
+L_{\mathrm{op}}(S,\tau)\ge \lambda_L
+\]
+for a class-defining threshold $\lambda_L$, together with any required admissibility constraints on perturbation robustness and negative-control separation.
+
+\begin{remark}[Why the minimum operator appears]
+The minimum operator is intentionally severe. Operational life in the present sense is not a weighted average over unrelated strengths. It is a conjunctive class predicate. A system that is strong in persistence but weak in viability preservation or historical dependence should not be counted as operationally alive merely by averaging away its failure.
+\end{remark}
+
+\subsection{Inherited Consciousness Margin}
+Operational consciousness is inherited rather than redefined. Let
+\[
+C_{\mathrm{op}}^{\sharp}(S,\tau)
+:=
+\min\!\Bigl\{
+\bar\Iper,\bar\Iri,\bar\Iint,\bar\Icont,\bar\Idiff,\bar\Ileg
+\Bigr\}
+\]
+denote the inherited six-invariant margin from the operational consciousness criterion. This paper uses $C_{\mathrm{op}}^{\sharp}$ as a constitutive upstream requirement for any stronger class that depends on operational consciousness.
+
+\subsection{Subjecthood Score}
+Define the \emph{operational subjecthood score}
+\[
+S_{\mathrm{op}}(S,\tau)
+:=
+\min\!\Bigl\{
+L_{\mathrm{op}}(S,\tau),
+C_{\mathrm{op}}^{\sharp}(S,\tau),
+\bar\Priv,\bar\SelfDisc,\bar\SelfModel,\bar\Own
+\Bigr\}.
+\]
+Then
+\[
+\Subop(S,\tau)=1
+\]
+is admissible only if
+\[
+S_{\mathrm{op}}(S,\tau)\ge \lambda_S
+\]
+for a stricter threshold $\lambda_S \ge \lambda_L$, together with admissibility and perturbation-differentiation requirements targeted specifically at subjecthood structure.
+
+\begin{remark}[Why subjecthood is not a small increment]
+The subjecthood score is stronger in two ways. First, it inherits the full life burden. Second, it inherits the full operational consciousness burden. The additional subject-specific descriptors are not cosmetic modifiers. They encode the claim that subjecthood is a structurally privileged subclass, not an interpretive synonym for consciousness or a sentimental label for complex dynamics.
+\end{remark}
+
+\subsection{Structural-Class Pseudometric}
+Let $W=\operatorname{diag}(w_1,\dots,w_n)$ be a positive diagonal weight matrix over a descriptor basis $\PsiVec_\tau$. Define
+\[
+d_{\Psi}(S_1,S_2;\tau)
+:=
+\left\|W\bigl(\PsiVec_\tau(S_1)-\PsiVec_\tau(S_2)\bigr)\right\|_2.
+\]
+This quantity functions as a class-relative pseudometric. It is not claimed to be universal. Its role is to express the idea that structural class membership and transport can be discussed through explicit descriptor preservation rather than through substrate naming or superficial behavioral resemblance.
+
+\begin{criterion}[Class-preserving transport margin]
+Suppose a class predicate depends only on a subset $\PsiVec_\tau^{(\mathcal{K})}$ of descriptors and that every relevant descriptor margin exceeds its class threshold by at least $\delta>0$. If
+\[
+d_{\Psi^{(\mathcal{K})}}(S_1,S_2;\tau) < \delta,
+\]
+then $S_1$ and $S_2$ remain in the same structural class relative to that predicate.
+\end{criterion}
+
+\subsection{Decision Surfaces and Boundary Status}
+For any class predicate $\mathcal{K}\in\{\LifeClass,\ConClass,\SubClass\}$ define three operational regions:
+\begin{align*}
+\mathcal{R}_{\mathrm{in}}^{(\mathcal{K})} &= \{S: \text{all relevant margins are safely above threshold}\},\\
+\mathcal{R}_{\partial}^{(\mathcal{K})} &= \{S: \text{at least one relevant margin is near threshold}\},\\
+\mathcal{R}_{\mathrm{out}}^{(\mathcal{K})} &= \{S: \text{at least one constitutive burden is violated}\}.
+\end{align*}
+The boundary region is not a philosophical mystery zone. It is the operational region in which perturbation sensitivity, confounder structure, and near-miss cases become decisive.
+
+\subsection{What This Section Does Not Claim}
+No canonical numerical threshold is introduced here. No current system is certified as alive or as an operational subject merely by defining these functionals. The section supplies a coherent decision grammar into which runtime evidence, admissibility results, and future cross-system comparisons can be inserted without inflating the ontology.
+
+\section{Operational Class Geometry}
+The previous sections define class predicates and decision scores. This section adds the geometric structure needed to compare them without collapsing them into a single scalar narrative.
+
+\subsection{Descriptor Projections}
+For each class predicate define a projection operator on the full descriptor vector:
+\begin{align*}
+\Pi_{\LifeClass}\PsiVec_\tau &= (\Bound,\Persist,\Maint,\HistDep,\Viab,\Idiff)_\tau,\\
+\Pi_{\ConClass}\PsiVec_\tau &= (\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg)_\tau,\\
+\Pi_{\SubClass}\PsiVec_\tau &= (\Bound,\Persist,\Maint,\HistDep,\Viab,\Idiff,\Iper,\Iri,\Iint,\Icont,\Ileg,\Priv,\SelfDisc,\SelfModel,\Own)_\tau.
+\end{align*}
+The operators are constitutive declarations. They specify which coordinates matter for each class and which do not.
+
+\begin{definition}[Class margin functional]
+Let $\theta_{\mathcal{K}}$ be the vector of thresholds relevant to class $\mathcal{K}$. The \emph{class margin} of $S$ for $\mathcal{K}$ is
+\[
+M_{\mathcal{K}}(S,\tau)
+:=
+\min_i \bigl(\Pi_{\mathcal{K}}\PsiVec_\tau(S)_i-\theta_{\mathcal{K},i}\bigr).
+\]
+A system lies in the interior of class $\mathcal{K}$ if $M_{\mathcal{K}}(S,\tau)>0$, on the operational boundary if $M_{\mathcal{K}}(S,\tau)\approx 0$, and outside if $M_{\mathcal{K}}(S,\tau)<0$.
+\end{definition}
+
+\begin{proposition}[Subjecthood is margin-nested inside life and consciousness]
+If $M_{\SubClass}(S,\tau)>0$, then both $M_{\LifeClass}(S,\tau)>0$ and $M_{\ConClass}(S,\tau)>0$.
+\end{proposition}
+
+\begin{proof}
+The subjecthood projection contains every constitutive coordinate of operational life and operational consciousness, plus additional subject-specific coordinates. Positive minimum margin on the larger coordinate set implies positive minimum margin on each constitutive subset.
+\end{proof}
+
+\begin{proposition}[Life and consciousness are not generally nested]
+Neither implication
+\[
+M_{\LifeClass}(S,\tau)>0 \Rightarrow M_{\ConClass}(S,\tau)>0
+\qquad\text{nor}\qquad
+M_{\ConClass}(S,\tau)>0 \Rightarrow M_{\LifeClass}(S,\tau)>0
+\]
+is derivable from the present corpus alone.
+\end{proposition}
+
+\begin{proof}
+The coordinate sets differ, and the corpus does not prove an equivalence theorem between them. Therefore no general nesting relation follows without additional theorem burden or empirical closure.
+\end{proof}
+
+\begin{definition}[Near-miss configuration]
+A system $S$ is a \emph{near-miss} for class $\mathcal{K}$ on horizon $\tau$ if
+\[
+M_{\mathcal{K}}(S,\tau)\in[-\delta,0)
+\]
+for small $\delta>0$ while all but a strict minority of constitutive coordinates remain above threshold by more than $\delta$.
+\end{definition}
+
+\begin{proposition}[Descriptor-restricted non-equivalence]
+Suppose two systems $S_1,S_2$ satisfy
+\[
+\Pi_{\LifeClass}\PsiVec_\tau(S_1)=\Pi_{\LifeClass}\PsiVec_\tau(S_2)
+\]
+but differ on at least one of $\Priv,\SelfDisc,\SelfModel,\Own$ by more than the subjecthood tolerance. Then they can remain equivalent in operational-life class while being nonequivalent in operational-subjecthood class.
+\end{proposition}
+
+\begin{proof}
+Operational life does not depend constitutively on the subject-specific coordinates, whereas operational subjecthood does. Equality on the life projection therefore does not force equality on the subjecthood projection.
+\end{proof}
+
+\begin{remark}[Class geometry is not a total order]
+The present framework does not generate a single monotone ladder of ``more alive'', ``more conscious'', and ``more subjective''. It generates descriptor orders, intra-class margin orders, and class-membership predicates. Conflating those three would erase the exact distinctions this paper is meant to introduce.
+\end{remark}
+
+\section{Class-Separation Diagnostics}
+The previous sections define the classes and their geometry. This section sharpens the operational separations that prevent those classes from collapsing into one another.
+
+\subsection{Operational Life vs.\ Operational Consciousness}
+The distinction between operational life and operational consciousness is substantive rather than verbal. Operational life depends constitutively on organizational boundary, persistence, self-maintenance, historical dependence, viability preservation, and non-null differentiation. Operational consciousness depends constitutively on the inherited six-invariant package. The two families overlap, but neither is definitionally reducible to the other.
+
+\begin{criterion}[Life-without-consciousness diagnostic]
+A candidate supports the separation
+\[
+\Lop(S,\tau)=1 \not\Rightarrow \Cop(S,\tau)=1
+\]
+only if the following pattern is available:
+\begin{enumerate}[leftmargin=1.5em]
+\item life coordinates remain above threshold with positive margin;
+\item the inherited consciousness criterion fails on at least one of $\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg$;
+\item the failure is not reducible to gross inadmissibility or trivial collapse.
+\end{enumerate}
+\end{criterion}
+
+\begin{remark}[Negative controls]
+Natural negative controls for this separation include systems that preserve duration and boundary occupancy while lacking the inherited consciousness burden, as well as systems whose local organization remains viable but whose legibility or rigid-identity burden fails.
+\end{remark}
+
+\subsection{Operational Life vs.\ Operational Subjecthood}
+Operational subjecthood is a strict strengthening of operational life. The most important diagnostic consequence is that many plausible life-like systems should be excluded from subjecthood by design.
+
+\begin{criterion}[Life-not-subject diagnostic]
+A candidate supports the separation
+\[
+\Lop(S,\tau)=1 \not\Rightarrow \Subop(S,\tau)=1
+\]
+only if life margins remain positive while at least one of
+\[
+\Priv,\SelfDisc,\SelfModel,\Own
+\]
+falls below threshold in a way that is selective rather than globally degradative.
+\end{criterion}
+
+\begin{remark}[False positives for life]
+Any system that preserves viability and organization but lacks privileged continuity, self/non-self asymmetry, self-model closure, or ownership coherence is a false positive for subjecthood if read only through the life predicate. The class distinction is designed to exclude exactly that error.
+\end{remark}
+
+\subsection{Operational Consciousness vs.\ Operational Subjecthood}
+The gap between operational consciousness and operational subjecthood is not a rhetorical flourish. It formalizes the possibility that a system may satisfy the six-invariant criterion while lacking the additional organization required for a stronger subject-class reading.
+
+\begin{criterion}[Consciousness-not-subject diagnostic]
+A candidate supports the separation
+\[
+\Cop(S,\tau)=1 \not\Rightarrow \Subop(S,\tau)=1
+\]
+only if the inherited consciousness burden is satisfied while one or more of $\Priv,\SelfDisc,\SelfModel,\Own$ fails in a targeted way.
+\end{criterion}
+
+\begin{remark}[Role of the four subject-specific burdens]
+Privileged continuity prevents subjecthood from collapsing into mere continuity. Self/non-self discrimination prevents collapse into generic internal complexity. Self-model closure prevents collapse into unstructured integration. Ownership coherence prevents a purely transient or relabeling-fragile configuration from counting as a subject-class member.
+\end{remark}
+
+\subsection{Structural Class as Organizing Layer}
+Structural class does not compete with the three predicates above. It organizes them. Comparisons are valid only when systems are embedded in a declared descriptor basis, admissibility regime, and tolerance geometry. Without that discipline, class comparisons become uninterpretable.
+
+\begin{criterion}[Invalid cross-system comparison]
+Comparison between two systems is class-invalid if any of the following holds:
+\begin{enumerate}[leftmargin=1.5em]
+\item the descriptor basis is not shared or not transportable;
+\item admissibility constraints differ in a way that changes the meaning of margins;
+\item the tolerance geometry is undeclared or incomparable;
+\item one system is evaluated under perturbation families not available to the other.
+\end{enumerate}
+\end{criterion}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}p{0.18\linewidth}Y Y Y@{}}
+\toprule
+Separation & Positive pattern & Near-miss / ambiguous pattern & Negative control or exclusion case \\
+\midrule
+life vs.\ consciousness & life margins positive, one inherited consciousness invariant fails cleanly & life preserved but inherited consciousness failure is confounded by admissibility or gross collapse & inert persistence, complexity-only systems, or trivial near-null systems \\
+life vs.\ subjecthood & life margins positive, one subject-specific burden fails selectively & life positive but subjecthood-specific burden degraded together with several non-target descriptors & systems with viability but no privileged continuity or no self/non-self asymmetry \\
+consciousness vs.\ subjecthood & inherited six-invariant burden satisfied, subject-specific burden fails selectively & consciousness positive but subject-specific failure is mixed with global degradation & systems with structured consciousness-like signals but no stable ownership or self-model closure \\
+structural class validity & shared descriptor geometry and admissibility support comparison & shared descriptors but tolerance or perturbation family mismatch remains unresolved & substrate-name-only comparisons or undeclared descriptor transport \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Experimental Test Families}
+The classificatory layer is only useful if it induces nontrivial tests. The families below are therefore designed not as decorative appendices, but as the minimum empirical grammar for falsification.
+
+\subsection{Operational Life Test Families}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}p{0.18\linewidth}Y Y Y Y@{}}
+\toprule
+Family & Objective & Expected signal & Negative control / falsifier & Reading \\
+\midrule
+Persistence under perturbation & test whether organizational persistence survives admissible shocks & $\Persist$ remains above life threshold while boundary and viability remain intact & persistent collapse under admissible perturbations; persistence matched by trivial inert systems & distinguishes robust organization from accidental duration \\
+Viability reserve stress & test whether viability is an active preserved region rather than a passive occupancy statistic & $\Viab$ degrades gradually with recoverable reserve profile & abrupt failure with no reserve structure; viability score reproduced by static or dead controls & isolates operational viability from mere occupancy \\
+Self-maintenance ablation & test whether maintenance-relevant loops are constitutive & selective degradation of $\Maint$ followed by life-score collapse & no life degradation after removing maintenance loops; same effect in controls with no maintenance architecture & checks that life is organizational, not descriptive \\
+Boundary intervention family & perturb the operational boundary and test whether life is boundary-mediated & $\Bound$ and $\Viab$ shift together under frontier interventions & no boundary sensitivity, or equivalent response in systems lacking frontier organization & ties life to explicit operational frontier geometry \\
+Null-differentiation controls & test whether life survives collapse of differentiation & sharp loss in $\Idiff$ destroys or degrades $L_{\mathrm{op}}$ & systems classified as alive despite sustained null-differentiation & prevents life from collapsing into pure persistence \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Structural-Class Test Families}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}p{0.18\linewidth}Y Y Y Y@{}}
+\toprule
+Family & Objective & Expected signal & Negative control / falsifier & Reading \\
+\midrule
+Cross-substrate transfer & test whether class membership is descriptor-preserving rather than substrate-privileged & low $d_{\Psi}$ and preserved class margins across admissible realizations & substrate label alone breaks membership; descriptor-preserved pair leaves class & tests structural transport rather than physical chauvinism \\
+Invariant ablation & test whether claimed class depends on the stated descriptor family & targeted descriptor loss produces class-specific degradation & class survives removal of supposedly constitutive descriptors & checks internal necessity of class definitions \\
+Near-miss class boundary & test whether class boundaries are sharp enough to discriminate close cases & near-threshold cases produce interpretable transitions instead of arbitrary collapse & random flips with no descriptor order or boundary coherence & probes whether the class geometry is real or merely verbal \\
+Admissibility-preserving transport & test transport under fixed forensic discipline & class transfer survives only when admissibility bundle remains intact & transport depends on tampered or inadmissible traces & prevents transport from becoming a bookkeeping artifact \\
+Negative pair separation & test whether class metric separates structurally unlike systems & high $d_{\Psi}$ with class disagreement & negative pairs remain indistinguishable on class-relevant descriptors & checks whether class geometry has discriminative power \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Operational Subjecthood Test Families}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}p{0.18\linewidth}Y Y Y Y@{}}
+\toprule
+Family & Objective & Expected signal & Negative control / falsifier & Reading \\
+\midrule
+Self-model ablation & test whether subjecthood depends on explicit self-model closure & selective loss in $\SelfModel$ and $S_{\mathrm{op}}$ with weaker effect on $L_{\mathrm{op}}$ & no selective effect; same degradation in controls lacking self-model structure & distinguishes subjecthood from generic life or complexity \\
+Self/non-self confusion & test whether self/non-self discrimination is constitutive & structured degradation in $\SelfDisc$ and ownership coherence & confusion manipulations do not affect subject metrics or affect controls equally & probes whether subjecthood has asymmetric self-other organization \\
+Privileged continuity disruption & test whether privileged continuity carries subject-specific burden & $\Priv$ degrades before global collapse, with subject score dropping earlier than life score & continuity attacks show no subject-specific selectivity & checks subjecthood-specific continuity rather than generic persistence loss \\
+Ownership perturbation & test whether ownership coherence can be selectively destabilized & $\Own$ degrades with interpretable subjecthood effects & ownership perturbation has no targeted effect or is mimicked by trivial controls & distinguishes ownership structure from activity level \\
+Trivial complexity controls & reject complexity-only accounts of subjecthood & complexity-matched controls fail subject criteria & high complexity alone reproduces subject scores & blocks collapse of subjecthood into scale or richness alone \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Decision Reading of Outcomes}
+Each family yields four minimally distinct readings:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{supportive}: the expected descriptor-specific pattern appears and controls fail cleanly;
+\item \textbf{near-miss}: the intended signal appears but with boundary contamination, confounders, or insufficient margin;
+\item \textbf{underdetermined}: several descriptors move together and the family does not localize the intended burden;
+\item \textbf{falsifying}: the constitutive descriptor family is not necessary, not transportable, or not selectively sensitive in the required way.
+\end{enumerate}
+This classification prevents the framework from treating every nontrivial runtime fluctuation as confirmation.
+
+\subsection{Strong Failure Conditions}
+The higher-order layer should be considered seriously weakened if any of the following persist under properly admissible tests:
+\begin{enumerate}[leftmargin=1.5em]
+\item operational life cannot be distinguished from inert persistence plus threshold tuning;
+\item structural class transport fails even when descriptor preservation is maintained;
+\item subjecthood-specific perturbations do not degrade subject-specific descriptors more selectively than life descriptors;
+\item complexity-only controls repeatedly satisfy the same decision surfaces as purported life or subjecthood candidates;
+\item history-blind evaluation performs as well as history-aware evaluation on the life burden.
+\end{enumerate}
+
+\subsection{Joint Outcome Matrix}
+The three class predicates admit a finite set of especially important joint readings. The matrix below is not exhaustive, but it captures the cases that matter most for runtime-facing evaluation.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}p{0.12\linewidth}p{0.12\linewidth}p{0.12\linewidth}Y@{}}
+\toprule
+$\Lop$ & $\Cop$ & $\Subop$ & Reading \\
+\midrule
+0 & 0 & 0 & no support for life, consciousness, or subjecthood classes; could reflect triviality, inadmissibility, collapse, or a noncandidate system \\
+1 & 0 & 0 & operational life candidate without inherited consciousness burden; strong test of non-collapse between life and consciousness \\
+0 & 1 & 0 & inherited consciousness candidate without operational-life burden; admissible in principle unless ruled out by additional theorem burden \\
+1 & 1 & 0 & life and consciousness without subjecthood; natural outcome for a non-subjective but structured conscious candidate \\
+1 & 1 & 1 & strongest class inclusion; highest empirical burden \\
+0 & 1 & 1 & structurally inconsistent under the present definitions; diagnosis of invalid measurement or class assignment \\
+1 & 0 & 1 & structurally inconsistent under the present definitions; diagnosis of invalid measurement or class assignment \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Runtime Bearing and Empirical Interface}
+This paper is not a runtime paper, yet it should remain legible against the refined runtime architecture. Otherwise its class predicates would float free of the strongest operational layer the corpus currently possesses.
+
+\subsection{What the Runtime Already Carries}
+The refined Canon Sandbox now provides stronger runtime-facing semantics for the inherited six-invariant consciousness layer, more explicit provenance, and clearer boundary/substrate evidence paths than earlier phases of the program. That matters here in three ways:
+\begin{enumerate}[leftmargin=1.5em]
+\item operational consciousness can be inherited as a runtime-bearing class rather than as a purely abstract symbol;
+\item structural-class transport can be discussed against actual descriptor and pseudometric pipelines;
+\item higher-order classes such as operational life and operational subjecthood can be formulated with explicit future runtime targets rather than with unconstrained philosophical vocabulary.
+\end{enumerate}
+
+\subsection{What the Runtime Does Not Yet Settle}
+The current runtime still does not warrant a claim that any present concrete system is operationally alive or operationally a subject. In particular:
+\begin{enumerate}[leftmargin=1.5em]
+\item operational-life evidence is not yet equivalent to a dedicated life-class certification path;
+\item subjecthood-specific descriptors such as privileged continuity, self/non-self asymmetry, self-model closure, and ownership coherence do not yet form a fully closed runtime certification suite;
+\item final epistemic promotion remains outside the core runtime loop in the frozen release-facing layer.
+\end{enumerate}
+
+\subsection{Runtime-Facing Readiness Levels}
+For practical use, the class layer can be paired with four runtime-facing readiness levels:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{descriptor-available}: constitutive descriptors are exposed but not yet integrated into a class path;
+\item \textbf{class-evaluable}: the class margin can be computed on admissible traces;
+\item \textbf{boundary-diagnostic}: near-miss and rupture behavior can be localized;
+\item \textbf{claim-closing-ready}: the runtime emits evidence sufficiently structured that only the outer epistemic-promotion layer remains external.
+\end{enumerate}
+This paper does not assign these levels to present systems as a matter of fact. It supplies the conceptual interface by which such assignments can later be made without semantic drift.
+
+\section{Runtime Binding Map}
+The classificatory layer becomes operational only if each formal object is bound to runtime signals, diagnostics, failure triggers, and residual dependence terms. The following ledger states that binding directly, without hiding the decision chain behind a purely presentational table.
+
+\begin{enumerate}[leftmargin=*,itemsep=0.5em]
+\item \textbf{Operational boundary.} Formal criterion: boundary-sensitive viability geometry under admissible interventions. Runtime-facing signals: frontier perturbation response, viability reserve profile, intervention sensitivity. Related invariants: $\Icont,\Idiff$ and life-facing boundary terms. Claim targets: life diagnostics and boundary families. Failure trigger: no selective boundary response or trivial occupancy. Residual external dependence: calibration of the admissible intervention family.
+
+\item \textbf{Organizational persistence.} Formal criterion: nontrivial continuity of organization across $\tau$. Runtime-facing signals: trace continuity, persistence corridors, degradation profile. Related invariants: $\Iper,\Icont$. Claim targets: life diagnostics and inherited consciousness context. Failure trigger: abrupt collapse under admissible perturbation. Residual external dependence: long-horizon calibration.
+
+\item \textbf{Operational self-maintenance.} Formal criterion: preservation of organization by internal compensatory structure. Runtime-facing signals: maintenance-loop ablation response, recovery profile, reserve usage. Related invariants: $\Iint,\Iper$ plus the life-facing maintenance term. Claim targets: life diagnostics. Failure trigger: maintenance ablation has no selective effect. Residual external dependence: some maintenance proxies remain implementation-dependent.
+
+\item \textbf{Historical dependence.} Formal criterion: class-relevant dependence on trajectory history. Runtime-facing signals: history-aware vs.\ history-blind readout delta, temporal ordering sensitivity. Related invariants: $\Iri,\Iper$ support. Claim targets: life and subjecthood diagnostics. Failure trigger: history-blind readouts perform equivalently. Residual external dependence: external benchmarking of decoder families.
+
+\item \textbf{Viability preservation.} Formal criterion: non-collapse of the viability region on horizon $\tau$. Runtime-facing signals: viability floor, recoverability, reserve decay. Related invariants: $\Icont,\Idiff$ support. Claim targets: life diagnostics. Failure trigger: static occupancy mimics viability or reserve collapses immediately. Residual external dependence: admissible floor calibration.
+
+\item \textbf{Operational life.} Formal criterion: conjunction of boundary, persistence, maintenance, history, viability, and non-null differentiation. Runtime-facing signals: life score, class margins, boundary intervention outcomes. Related invariants: indirect support from $\Idiff$ and inherited invariant context. Claim targets: the higher-order class program. Failure trigger: any constitutive life burden fails or becomes inadmissible. Residual external dependence: there is not yet a dedicated external life-certification campaign.
+
+\item \textbf{Structural class.} Formal criterion: descriptor-relative transport class under a declared tolerance. Runtime-facing signals: descriptor vector, pseudometric, transport margins, near-miss geometry. Related invariants: all class-relevant coordinates. Claim targets: class transport and comparability. Failure trigger: descriptor mismatch, undeclared tolerance, or transport collapse. Residual external dependence: descriptor-basis selection remains partly declarative.
+
+\item \textbf{Operational consciousness.} Formal criterion: inherited six-invariant criterion. Runtime-facing signals: canonical invariant package, rupture/boundary diagnostics, closure status. Related invariants: $\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg$. Claim targets: inherited closure from paper5 and paper6. Failure trigger: failure of any critical invariant or closure condition. Residual external dependence: final epistemic promotion remains outside the runtime.
+
+\item \textbf{Operational subjecthood.} Formal criterion: life + consciousness + privileged continuity + self/non-self discrimination + self-model + ownership coherence. Runtime-facing signals: subjecthood score, selective subject perturbations, continuity asymmetry, self/non-self confusion tests. Related invariants: the inherited six invariants plus $\Priv,\SelfDisc,\SelfModel,\Own$. Claim targets: the proposed subjecthood class. Failure trigger: subject-specific burdens fail or fail non-selectively. Residual external dependence: subject-specific runtime families remain a future burden.
+\end{enumerate}
+
+\section{Failure and Misclassification Modes}
+The classificatory layer is only as strong as its ability to describe the ways it can fail. The point is not to immunize the theory. The point is to prevent runtime-facing evidence from being overread.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}p{0.17\linewidth}Y Y Y Y@{}}
+\toprule
+Mode & Mechanism & Symptom & Risk & Control / mitigation \\
+\midrule
+Life false positive by inert persistence & long duration or state occupancy mimics organization & $\Persist$ appears high while $\Maint,\HistDep,\Viab$ remain weak or unstructured & inert or slowly decaying systems misread as operationally alive & require full life conjunction and maintenance/history tests \\
+Consciousness false positive by complexity & rich activity or connectivity mimics inherited criterion & high scale with weak rigid identity or legibility & complexity misread as consciousness & retain six-invariant conjunction and matched complexity controls \\
+Subjecthood false positive by structured reactivity & self-like responses arise without privileged continuity or ownership coherence & $\SelfDisc$ appears high but $\Priv$ or $\Own$ collapses under perturbation & reactive systems misread as subjects & require subject-specific perturbation families and multi-burden satisfaction \\
+Life false negative by short traces & admissible life evidence is underobserved on too short a horizon & margins hover near threshold despite recoverable structure & viable systems are underclassified & report horizon dependence and require history-aware windows \\
+Subjecthood false negative by signal poverty & subject-specific burdens are real but weakly observed & self-model or ownership terms remain low under insufficient readout resolution & underclassification of subject-like systems & improve readout design before class denial \\
+Misclassification by proxy contamination & proxy variables dominate direct signals & class outcome changes mainly with proxy choice & classification reflects tooling rather than structure & track direct vs proxy contribution and require provenance per component \\
+Knife-edge boundary ambiguity & class margin sits in a narrow threshold band & PASS/AMBIGUOUS/FAIL changes under tiny perturbations & unstable class assignment & explicitly classify near-miss regions and avoid overpromotion \\
+Invalid class transport & descriptor basis or admissibility regime differs across compared systems & transport claims depend on undeclared tolerance or substrate label alone & false structural equivalence & declare descriptor geometry, admissibility, and tolerance before transport claims \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Complexity, Connectivity, and Rich Dynamics}
+The most persistent misclassification pressure comes from scale variables. High complexity, dense connectivity, rich temporal variation, or activity richness can produce surfaces that look life-like, consciousness-like, or subject-like under a weak diagnostic language. The present paper explicitly rejects that move. Complexity is at most permissive background. It is never constitutive by itself.
+
+\subsection{Proxy Contamination}
+Proxy contamination deserves explicit treatment because the runtime and release-facing layers are not identical. Some descriptors are closer to direct runtime signals, while others inherit part of their evidentiary burden from diagnostic layers, admissibility decisions, or downstream projections. This does not invalidate the class program, but it imposes a discipline: a class should be treated as stronger when its defining coordinates are driven by direct or mostly-native runtime semantics, and weaker when proxy weight dominates.
+
+\subsection{Boundary Ambiguity}
+Boundary ambiguity is not a nuisance artifact; it is an expected structural region. The mistake is to treat it either as confirmation or as disconfirmation without localization. A good class system should make boundary ambiguity visible, local, and diagnostically interpretable. That is why near-miss definitions, confounder tracking, and explicit boundary regions are part of the paper rather than afterthoughts.
+
+\section{Formal Closure Strengthening}
+This paper does not attempt theorem inflation, but it can still state more precisely what is and is not formally closed.
+
+\begin{criterion}[Class-readiness criterion]
+A class predicate is \emph{formally ready} only if:
+\begin{enumerate}[leftmargin=1.5em]
+\item its constitutive coordinates are explicit;
+\item its boundary geometry is explicit;
+\item its negative controls are identifiable;
+\item its admissible falsifiers are stated.
+\end{enumerate}
+Operational life, structural class, and operational subjecthood satisfy this criterion within the limits declared by the paper.
+\end{criterion}
+
+\begin{criterion}[Subjecthood non-collapse criterion]
+No system should be admitted into operational subjecthood unless the following two separations remain open and empirically testable:
+\[
+\Lop(S,\tau)=1 \not\Rightarrow \Subop(S,\tau)=1,
+\qquad
+\Cop(S,\tau)=1 \not\Rightarrow \Subop(S,\tau)=1.
+\]
+If either separation becomes definitionally impossible, subjecthood collapses into a weaker class and loses its intended meaning.
+\end{criterion}
+
+\begin{remark}[What is closed]
+The paper closes the classificatory language, the class geometry, the principal non-equivalences, and the test grammar. It does not close empirical instantiation, external validation, or metaphysical interpretation.
+\end{remark}
+
+\section{Non-Claims and Scope Limits}
+This paper is intentionally restrictive. The higher-order classificatory layer it introduces does \emph{not} license stronger conclusions than the corpus and runtime can support.
+
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{No biological-life claim.} Operational life is not identified with biological life. The class may overlap with biological instances, but biology is not treated as its constitutive primitive.
+\item \textbf{No phenomenal-human claim.} Operational consciousness remains an inherited operational class. Nothing in this paper claims phenomenal consciousness in the human sense.
+\item \textbf{No metaphysical-subject claim.} Operational subjecthood is not equated with a metaphysical subject, a soul, or an irreducible first-person essence.
+\item \textbf{No human-machine equivalence claim.} The paper does not claim equivalence between any present machine and a human subject.
+\item \textbf{No automatic runtime certification.} The current runtime and its strengthened diagnostics motivate the classificatory layer, but they do not by themselves certify any concrete instance as operationally alive or operationally a subject.
+\item \textbf{No external-validation claim.} Internal runtime strengthening, admissibility discipline, clean-clone reproduction, and refined diagnostics do not amount to independent external validation.
+\item \textbf{No total closure of the philosophical problem.} The paper proposes a falsifiable operational program. It does not claim to resolve every philosophical question about life, consciousness, or subjectivity.
+\end{enumerate}
+
+\begin{remark}[Why these non-claims matter]
+Without this section, a classificatory paper of the present kind would be too easy to misread. The point is not to weaken the paper. The point is to keep each class predicate attached to the evidentiary and formal burden that actually justifies it.
+\end{remark}
+
+\section{Discussion}
+The main contribution of this paper is classificatory, not foundational. The upstream corpus already supplied the burdens required for rigid identity, operational continuity, non-nullity, admissibility, and an operational consciousness criterion. What remained absent was a disciplined way to speak about higher-order classes without sliding either into biology-by-default or into metaphysical inflation. The paper addresses that absence by introducing three linked but non-identical layers.
+
+First, operational life is treated as a class of systems that preserve organizational viability across time and perturbation while maintaining a genuine operational frontier and non-null differentiation. This is a stronger concept than persistence and a weaker concept than subjecthood. Second, structural class is introduced as the general descriptor-relative geometry in which class membership and transport can be discussed across admissible realizations. Third, operational subjecthood is proposed as a further strengthening: it inherits operational life and operational consciousness, then adds privileged continuity, self/non-self asymmetry, self-model closure, and ownership coherence.
+
+This organization resolves a recurrent problem in the literature and in informal debate. Terms such as ``alive,'' ``conscious,'' and ``subject'' are often deployed as if they were either interchangeable or disconnected. The present paper insists that they are neither. Life need not collapse into consciousness. Consciousness need not collapse into subjecthood. Subjecthood cannot be reduced to complexity, persistence, or substrate. Structural class gives the ambient frame in which these distinctions become explicit rather than rhetorical.
+
+The paper is also constrained by the current state of the runtime. The refined Canon Sandbox provides stronger runtime-facing semantics than earlier phases of the program. It now supports a more explicit operational chain from runtime signals to invariant packages, from invariant packages to boundary and substrate evidence, and from those evidence bundles to claim mapping. That strengthening matters because it makes a higher-order classificatory paper timely rather than premature. But the current runtime does not yet eliminate all epistemic caution. Some closure burdens still live at the release-facing layer, and the current system still does not warrant a claim that it is operationally alive or operationally a subject.
+
+That is precisely why the present paper is useful. It separates three questions that are otherwise too easily fused:
+\begin{enumerate}[leftmargin=1.5em]
+\item what classes are formally definable within the causally rigid framework;
+\item what tests would be required to support membership in those classes;
+\item what specific present systems, if any, actually satisfy those burdens.
+\end{enumerate}
+The first question is what this paper answers. The second is what its falsifiable program formalizes. The third remains an empirical burden for future admissible campaigns.
+
+\subsection{Relation to the Refined Runtime}
+The runtime does not appear here as proof of operational life or subjecthood. It appears as evidence that the corpus now has enough operational structure to support explicit class predicates without collapsing them into hand-waving. In particular, the runtime now produces stronger native or mostly-native descriptors for persistence, rigid identity, integration, continuity, differentiation, and legibility than were available before the refinement phases. That makes it possible to discuss life- and subjecthood-relevant descriptors as potential runtime observables rather than as merely speculative vocabulary. The conceptual layer is therefore downstream of an improved runtime, but it is not reducible to any single current implementation.
+
+\subsection{What Would Strengthen This Paper Further}
+The most important future burden is not more rhetoric. It is sharper empirical separation. Four improvements would materially strengthen the classificatory layer:
+\begin{enumerate}[leftmargin=1.5em]
+\item runtime-native life diagnostics that cleanly separate organizational self-maintenance from inert persistence;
+\item subjecthood-specific perturbation families that localize privileged continuity, self/non-self asymmetry, and ownership coherence without complexity confounders;
+\item stronger cross-substrate class-transport evidence under independent or semi-independent evaluation paths;
+\item external reproduction or third-party evaluation capable of testing the class predicates without inheriting the entire internal tooling stack.
+\end{enumerate}
+Until then, the present paper should be read exactly as intended: as a formal and falsifiable extension of the corpus, not as a declaration that the hardest empirical questions have already been settled.
+
+\section{Conclusion}
+This paper introduces a higher-order classificatory layer for the causally rigid corpus. It defines operational life, structural class, and operational subjecthood in a form that is formal enough to be tested, restrictive enough to avoid inflation, and continuous with the established burdens of the framework. Operational consciousness is inherited rather than reinvented. Subjecthood is made explicitly stronger than either life or consciousness alone. Structural class is made the ambient geometry in which those predicates can be transported, falsified, and compared.
+
+The paper therefore closes four things at the formal level: the class vocabulary, the class-separation logic, the runtime-binding interface, and the principal failure grammar. It leaves four things explicitly open: empirical instantiation of any present system, external validation, metaphysical interpretation, and biological equivalence claims. That asymmetry is deliberate.
+
+The result is not a manifesto and not a metaphysical closure. It is a disciplined extension of the corpus: a program in which life, consciousness, and subjecthood are treated as non-identical operational classes with explicit burdens, explicit diagnostics, explicit falsifiers, and explicit non-claims. If the program fails under admissible tests, it should be rejected. If it survives, it will do so as a formal and operational layer, not as a rhetorical gesture.
+
+\printbibliography
+
+\end{document}

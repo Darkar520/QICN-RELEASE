@@ -379,3 +379,132 @@ python <inline> post-residualB assessment + final claim ledger + final release f
 [final-release-completeness-check] detected and fixed missing governance companions in release_repo_qicn_2026-03-01/release/
 
 [final-release-completeness-check] governance companions remain outside outer branch because release_repo_qicn_2026-03-01 is an embedded git repo
+
+[canon system audit]
+python artifacts\release_audit\_canon_audit_build.py
+Remove-Item artifacts\\release_audit\\_canon_audit_build.py
+[canon system audit full]
+python emit canon_system_audit_full from existing audit artifacts
+python emit canon_system_audit_full from existing audit artifacts
+replace unicode punctuation in canon_system_audit_full.md with ASCII hyphen
+bundle canon system audit artifacts into artifacts\\release_audit\\canon_system_audit_bundle
+[canon_refinement_phase1]
+Get-Content .agent/rules/rules.md
+Get-Content .agent/workflows/quality-gates.md
+Get-Content .agent/workflows/skills.md
+Get-Content .agent/skills/skills/architecture/SKILL.md
+Get-Content .agent/skills/skills/systematic-debugging/SKILL.md
+Get-Content .agent/skills/skills/verification-before-completion/SKILL.md
+Get-Content Sistema Canon Sandbox/scripts/verify-source-of-truth.cjs
+Get-Content Sistema Canon Sandbox/scripts/emit-run-metadata.cjs
+Get-Content artifacts/release_audit/final_release_freeze.json
+node Sistema Canon Sandbox/scripts/verify-source-of-truth.cjs
+node -e buildRunMetadata('phase1-check')
+npm run build:js  # escalated after sandbox spawn EPERM
+node Sistema Canon Sandbox/scripts/run-episode.cjs --duration=1 --tag=phase1refine2
+node AdmissibilityEngine.evaluateRun({artifactDir: latest_phase1refine2})
+Get-Content Sistema Canon Sandbox/artifacts/runtime_source_of_truth_check.json
+Get-Content latest_phase1refine2/run_header.json
+Get-Content latest_phase1refine2/lineage.json
+Get-Content latest_phase1refine2/claim_mapping_snapshot.json
+[canon_refinement_phase2]
+Get-Content .agent/rules/rules.md
+Get-Content .agent/workflows/quality-gates.md
+Get-Content .agent/skills/skills/architecture/SKILL.md
+Get-Content .agent/skills/skills/systematic-debugging/SKILL.md
+Get-Content .agent/skills/skills/verification-before-completion/SKILL.md
+Get-Content Sistema Canon Sandbox/src/utils/tick_invariants.js
+Get-Content Sistema Canon Sandbox/src/canon/boundary/BoundaryProbeScaffold.js
+Get-Content Sistema Canon Sandbox/src/canon/substrate/SubstrateEquivalenceScaffold.js
+Get-Content Sistema Canon Sandbox/src/canon/claimMapping/runtimeClaimMapping.js
+Get-Content Sistema Canon Sandbox/src/experiments/roeo_signature.js
+Get-Content Sistema Canon Sandbox/src/experiments/sno_discriminator.js
+Get-Content Sistema Canon Sandbox/src/experiments/negative_controls_runner.js
+Get-Content Sistema Canon Sandbox/src/utils/cognitiveEmergenceEvaluation.js
+Get-Content Sistema Canon Sandbox/src/utils/phenomenologyProtocolSuite.js
+Get-Content Sistema Canon Sandbox/src/config/cognitiveEmergenceOperationalSpec.js
+node Sistema Canon Sandbox/scripts/verify-source-of-truth.cjs
+node Sistema Canon Sandbox/scripts/run-episode.cjs --duration=1 --tag=phase2refine
+node AdmissibilityEngine.evaluateRun({artifactDir: latest_phase2refine})
+node Sistema Canon Sandbox/scripts/evaluate-canon-runtime.cjs latest_phase2refine
+node --input-type=module evaluateRoeoBatch(minimal_prereg_phase2_runtime_substrate_check)
+npm run build:js  # escalated after sandbox spawn EPERM
+
+# Canon Refinement Phase 3
+Get-Content .agent/rules/rules.md
+Get-Content .agent/workflows/quality-gates.md
+Get-Content .agent/skills/skills/architecture/SKILL.md
+Get-Content .agent/skills/skills/systematic-debugging/SKILL.md
+Get-Content .agent/skills/skills/verification-before-completion/SKILL.md
+node Sistema Canon Sandbox/scripts/verify-source-of-truth.cjs
+node Sistema Canon Sandbox/scripts/run-episode.cjs --duration=1 --tag=phase3refine
+node --input-type=module AdmissibilityEngine.evaluateRun(phase3refine_artifact)
+node Sistema Canon Sandbox/scripts/evaluate-canon-runtime.cjs <phase3refine_artifact>
+npm run build:js
+phase4: reviewed .agent/rules/rules.md
+phase4: reviewed .agent/workflows/quality-gates.md
+phase4: reviewed .agent/skills/skills/architecture/SKILL.md
+phase4: reviewed .agent/skills/skills/systematic-debugging/SKILL.md
+phase4: reviewed .agent/skills/skills/verification-before-completion/SKILL.md
+phase4: node --check "Sistema Canon Sandbox/scripts/run-episode.cjs"
+phase4: node --check "Sistema Canon Sandbox/scripts/evaluate-canon-runtime.cjs"
+phase4: node "Sistema Canon Sandbox/scripts/verify-source-of-truth.cjs"
+phase4: esm import verification for canon invariant/boundary/substrate/claimMapping modules
+phase4: node "Sistema Canon Sandbox/scripts/run-episode.cjs" --duration=1 --tag=phase4refine
+phase4: node "Sistema Canon Sandbox/scripts/evaluate-canon-runtime.cjs" "Sistema Canon Sandbox/artifacts/phase4refine_1773103983988_17057"
+phase4: npm run build:js (workdir="Sistema Canon Sandbox")
+phase4: copied boundary_closure_runtime_diagnostics.json to artifacts/release_audit
+phase4: copied substrate_closure_runtime_diagnostics.json to artifacts/release_audit
+phase4: copied invariant_semantics_provenance.json to artifacts/release_audit
+phase4: copied legacy_isolation_check.json to artifacts/release_audit
+phase5: node --check "Sistema Canon Sandbox/scripts/run-episode.cjs"
+phase5: node --check "Sistema Canon Sandbox/scripts/evaluate-canon-runtime.cjs"
+phase5: node "Sistema Canon Sandbox/scripts/verify-source-of-truth.cjs"
+phase5: esm import verification for invariant/boundary/substrate/claimMapping/AdmissibilityEngine modules
+phase5: node "Sistema Canon Sandbox/scripts/run-episode.cjs" --duration=1 --tag=phase5refine
+phase5: node "Sistema Canon Sandbox/scripts/evaluate-canon-runtime.cjs" "Sistema Canon Sandbox/artifacts/phase5refine_1773105633690_17057"
+phase5: npm run build:js (workdir="Sistema Canon Sandbox")
+phase5: copied full_native_invariant_status.json to artifacts/release_audit
+phase5: copied claim_closure_runtime_diagnostics.json to artifacts/release_audit
+phase5: copied release_materialization_map.json to artifacts/release_audit
+phase5: copied legacy_archive_decision_map.json to artifacts/release_audit
+phase5: updated sourceOfTruth/verify-source-of-truth classification to ARCHIVE_NOW_SAFE vs BLOCKED_KEEP_ONE_MORE_PHASE
+phase5: node "Sistema Canon Sandbox/scripts/verify-source-of-truth.cjs" (post-classification rerun)
+phase5: npm run build:js (post-classification rerun)
+phase5: copied full_native_invariant_status.json to artifacts/release_audit
+phase5: copied claim_closure_runtime_diagnostics.json to artifacts/release_audit
+phase5: copied release_materialization_map.json to artifacts/release_audit
+phase5: copied legacy_archive_decision_map.json to artifacts/release_audit
+phase5: wrote canon_refinement_phase5_summary.{md,json}
+phase5: wrote canon_full_native_push_note.md
+phase5: wrote canon_claim_closure_runtime_strengthening_note.md
+phase5: wrote canon_release_materialization_reduction_note.md
+phase5: wrote canon_safe_legacy_archive_cleanup_note.md
+phase5: wrote canon_refinement_phase5_diff_note.md
+phase5: wrote canon_refinement_phase5_file_matrix.csv
+
+[phase5] wrote canon_refinement_phase5_file_matrix.csv and reran output existence verification
+node --check "Sistema Canon Sandbox/scripts/evaluate-canon-runtime.cjs"
+node --check "Sistema Canon Sandbox/scripts/run-episode.cjs"
+node "Sistema Canon Sandbox/scripts/run-episode.cjs" --duration=1 --tag=phase6refineb
+node "Sistema Canon Sandbox/scripts/evaluate-canon-runtime.cjs" "C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\Sistema Canon Sandbox\artifacts\phase6refineb_1773110233260_17057"
+node "Sistema Canon Sandbox/scripts/verify-source-of-truth.cjs"
+npm run build:js
+[2026-03-09 post-phase6/p5-03/legacy docs]
+- node "Sistema Canon Sandbox/scripts/verify-source-of-truth.cjs"
+- node "Sistema Canon Sandbox/scripts/evaluate-canon-runtime.cjs" "Sistema Canon Sandbox/artifacts/p503miniphase_1773112113858_17057"
+- generated post_phase6_assessment.md/.json and post_phase6_claim_runtime_status.csv
+- copied canon_p5_03_threshold_diagnostics.json into artifacts/release_audit
+- generated canon_p5_03_miniphase_summary.md/.json, canon_p5_03_runtime_internalization_note.md, canon_p5_03_diff_note.md, canon_p5_03_file_matrix.csv
+- generated final_legacy_tree_consolidation_summary.md/.json, final_legacy_tree_execution_map.json, final_legacy_tree_diff_note.md
+
+[paper7] pdflatex -interaction=nonstopmode -halt-on-error main.tex
+[paper7] biber main
+[paper7] pdflatex -interaction=nonstopmode -halt-on-error main.tex
+[paper7] pdflatex -interaction=nonstopmode -halt-on-error main.tex
+[paper7] generated build summary, mapping note, nonredundancy check, scope/nonclaims note
+[paper7-final-hardening-pass]
+rg -n "^\\section|^\\subsection|Class-Separation Diagnostics|Runtime Binding Map|Failure and Misclassification Modes|Formal Closure Strengthening" rigid-identity-framework/paper7_operational_life_subjecthood/main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex

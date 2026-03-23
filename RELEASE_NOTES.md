@@ -13,10 +13,15 @@ Archivos de integridad incluidos:
 - `corpus/pdf_release/manifest.json`
 - `corpus/pdf_release/manifest.sha256.txt`
 
-Verificación (PowerShell):
-```powershell
-Set-Location "C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\release_repo_qicn_2026-03-01"
+Verificación (Linux/macOS):
+```bash
+cd corpus/pdf_release
+sha256sum -c pdf_corpus.zip.sha256.txt
+sha256sum -c manifest.sha256.txt
+```
 
+Verificación (PowerShell — ejecutar desde la raíz del repositorio):
+```powershell
 $zipReal = (Get-FileHash -Algorithm SHA256 "corpus\pdf_release\pdf_corpus.zip").Hash.ToLower()
 $zipExp  = ((Get-Content "corpus\pdf_release\pdf_corpus.zip.sha256.txt" -Raw).Split() | Select-Object -First 1).ToLower()
 $manReal = (Get-FileHash -Algorithm SHA256 "corpus\pdf_release\manifest.json").Hash.ToLower()
@@ -33,6 +38,9 @@ $manExp  = ((Get-Content "corpus\pdf_release\manifest.sha256.txt" -Raw).Split() 
   - `RELEASE_MAP.md` (mapa de release)
   - `BLUEPRINT_EDITORIAL.md` (blueprint editorial)
   - `SUMMARY.json` (resumen)
+  - `FREEZE_AUDIT_v1/` (artefactos de auditoría del freeze)
+    - `git_log_1.txt` (log del commit de release)
+    - `git_tags.txt` (tags del repositorio en el freeze)
 - `corpus/pdf_release/`
   - `pdf_corpus.zip` (corpus PDF final)
   - `manifest.json` + hashes (integridad)
@@ -78,7 +86,7 @@ No se hacen afirmaciones fuera de lo verificable por artefactos incluidos.
 
 ## Gitification Plan (PowerShell)
 ```powershell
-Set-Location "C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\release_repo_qicn_2026-03-01"
+# Ejecutar desde la raiz del repositorio clonado
 
 git init
 
@@ -103,8 +111,7 @@ git commit -m "release: qicn package 2026-03-01 (canon map + pdf corpus + integr
 git branch -M main
 git tag release-2026-03-01
 
-# NO CONSTA: URL del repo GitHub
-# git remote add origin <GITHUB_REPO_URL>
+git remote add origin <GITHUB_REPO_URL>
 git remote -v
 
 git push -u origin main --tags

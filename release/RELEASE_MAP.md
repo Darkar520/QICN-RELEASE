@@ -31,6 +31,9 @@ release_repo_qicn_2026-03-01*/
     RELEASE_MAP.md
     BLUEPRINT_EDITORIAL.md
     SUMMARY.json
+    FREEZE_AUDIT_v1/
+      git_log_1.txt
+      git_tags.txt
   corpus/
     pdf_release/
       _unpacked/

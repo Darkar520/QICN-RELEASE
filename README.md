@@ -4,11 +4,17 @@ Este repositorio es un **paquete de release auditable** que distribuye un **corp
 El foco es **integridad verificable por artefactos** (hashes + manifest), no recompilacion completa de fuentes.
 
 ## Quick Start (verificacion de integridad)
-Requisito: PowerShell.
 
+**Linux / macOS (bash):**
+```bash
+cd corpus/pdf_release
+sha256sum -c pdf_corpus.zip.sha256.txt
+sha256sum -c manifest.sha256.txt
+```
+En macOS usa `shasum -a 256 -c` en lugar de `sha256sum -c`.
+
+**Windows (PowerShell) — ejecutar desde la raíz del repositorio:**
 ```powershell
-Set-Location "C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\release_repo_qicn_2026-03-01"
-
 $zipReal = (Get-FileHash -Algorithm SHA256 "corpus\pdf_release\pdf_corpus.zip").Hash.ToLower()
 $zipExp  = ((Get-Content "corpus\pdf_release\pdf_corpus.zip.sha256.txt" -Raw).Split() | Select-Object -First 1).ToLower()
 $manReal = (Get-FileHash -Algorithm SHA256 "corpus\pdf_release\manifest.json").Hash.ToLower()
@@ -18,7 +24,7 @@ $manExp  = ((Get-Content "corpus\pdf_release\manifest.sha256.txt" -Raw).Split() 
 "manifest_match=$($manReal -eq $manExp)"
 ```
 
-Si `zip_match=True` y `manifest_match=True`, la integridad basica del release esta OK.
+Si ambas verificaciones pasan, la integridad basica del release esta OK.
 
 ## Directory Map
 - `release/`
@@ -27,6 +33,9 @@ Si `zip_match=True` y `manifest_match=True`, la integridad basica del release es
   - `RELEASE_MAP.md` - mapa de release / navegacion
   - `BLUEPRINT_EDITORIAL.md` - blueprint editorial para alineacion de documentos
   - `SUMMARY.json` - resumen del release
+  - `FREEZE_AUDIT_v1/` - artefactos de auditoria del freeze (cadena de custodia)
+    - `git_log_1.txt` - log del commit de release
+    - `git_tags.txt` - tags del repositorio en el freeze
 - `corpus/pdf_release/`
   - `pdf_corpus.zip` - corpus PDF final
   - `manifest.json` - manifest con hashes por PDF

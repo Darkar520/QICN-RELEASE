@@ -1,0 +1,154 @@
+{
+  "canon_map_version": "v1",
+  "generated_at": "2026-03-23",
+  "freeze_name": "internal_scientific_release_final_freeze",
+  "freeze_commit": "017a0cd62ad2eea1406a54b45883e574aee9f2a7",
+  "source_of_truth": "rigid-identity-framework/",
+  "description": "Mapping of canonical claims and invariants to their source documents in the rigid-identity-framework corpus. This map is frozen for the internal scientific release cycle and is not authoritative for external validation.",
+
+  "canonical_corpus": {
+    "CANONICAL_CORE": {
+      "path": "rigid-identity-framework/CANONICAL_CORE.tex",
+      "sha256": "620b7be40e1e19b35ccc694981d440f37fc691bbf8f59ea0a00794f7c0e3632c",
+      "role": "core",
+      "claims": ["CORE-01", "CORE-02", "CORE-03", "CORE-04"]
+    },
+    "paper1": {
+      "path": "rigid-identity-framework/paper1/main.tex",
+      "sha256": "4195fda9ea7cbd26e206ed4162927e30ddadb9229caa3ad655fbf4caec895fc2",
+      "title": "Rigid Identity",
+      "role": "core",
+      "claims": ["P1-01", "P1-02", "P1-03", "P1-04", "P1-05", "P1-06"]
+    },
+    "paper2": {
+      "path": "rigid-identity-framework/paper2/main.tex",
+      "sha256": "2e31cb488e476244a8395f1c291af48514fa86a0ee88b7f7a6483ff381cf87f6",
+      "title": "Phenomenological Regimes",
+      "role": "core",
+      "claims": ["P2-01", "P2-02", "P2-03", "P2-04"]
+    },
+    "paper3": {
+      "path": "rigid-identity-framework/paper3/main.tex",
+      "sha256": "2568f092ab1a1dbffa96499ca211f5354de0f0661e86b2a462f21a8e71ad2a02",
+      "title": "Null-Regime Instability",
+      "role": "core",
+      "claims": ["P3-01", "P3-02", "P3-03"]
+    },
+    "paper4": {
+      "path": "rigid-identity-framework/paper4/main.tex",
+      "sha256": "220f05e3d805075ed219662d3b05390fbaa5d565f692db5b3c102145f983ecda",
+      "title": "Forensic Predictions",
+      "role": "core",
+      "claims": ["P4-01", "P4-02", "P4-03"]
+    },
+    "paper5": {
+      "path": "rigid-identity-framework/paper5_operational_consciousness/main.tex",
+      "sha256": "9faafecb58ed6e22a25f0dc7c3be32cc3e3e346a128668a9fe5567cbfa3498fd",
+      "title": "Operational Consciousness Criterion",
+      "role": "core",
+      "claims": ["P5-01", "P5-02", "P5-03", "P5-04", "P5-05", "P5-06"],
+      "non_claims": ["NC-01", "NC-02"]
+    },
+    "paper6": {
+      "path": "rigid-identity-framework/paper6_predictions_falsation/main.tex",
+      "sha256": "6c3c41cf78ead10b212968e5c61ff5fbcf87b3b8dd10ed772853f8b26e077ae5",
+      "title": "Predictions and Failure Modes",
+      "role": "canonical_companion",
+      "predictions": ["PRED-01", "PRED-02", "PRED-03", "PRED-04", "PRED-05", "PRED-06", "PRED-07", "PRED-08", "PRED-09", "PRED-10"]
+    },
+    "paper7": {
+      "path": "rigid-identity-framework/paper7_operational_life_subjecthood/main.tex",
+      "sha256": "70c3cedf6cb1a3670f1fb5c4fc9b89b65fe77e7fa5b541567c7e434a8fb4a4e0",
+      "title": "Operational Life, Structural Class, and Subjecthood in a Causally Rigid Framework",
+      "role": "canonical_companion",
+      "inherits_from": ["CANONICAL_CORE", "paper1", "paper2", "paper3", "paper4", "paper5"],
+      "adds": [
+        "operational_boundary",
+        "organizational_persistence",
+        "operational_self_maintenance",
+        "historical_dependence",
+        "viability_preservation",
+        "operational_life",
+        "structural_class",
+        "operational_subjecthood",
+        "class_geometry_near_miss_structure",
+        "life_subjecthood_test_families"
+      ],
+      "non_claims": ["NC-01", "NC-02", "paper7_nonclaims"]
+    }
+  },
+
+  "six_invariants_to_corpus_map": {
+    "I_per": {
+      "name": "Persistence",
+      "canonical_anchor": "paper5_operational_consciousness/main.tex",
+      "related_claims": ["P5-01", "P5-03", "P5-04"],
+      "related_predictions": ["PRED-07", "PRED-02"]
+    },
+    "I_ri": {
+      "name": "Rigid Identity",
+      "canonical_anchor": "paper1/main.tex",
+      "related_claims": ["P1-01", "P1-02", "P5-01", "P5-02"],
+      "related_predictions": ["PRED-01"]
+    },
+    "I_int": {
+      "name": "Integration",
+      "canonical_anchor": "paper5_operational_consciousness/main.tex",
+      "related_claims": ["P5-01", "P5-04"],
+      "related_predictions": ["PRED-08"]
+    },
+    "I_cont": {
+      "name": "Continuity",
+      "canonical_anchor": "paper2/main.tex",
+      "related_claims": ["P2-03", "P5-01", "P5-04"],
+      "related_predictions": ["PRED-05", "PRED-02"]
+    },
+    "I_diff": {
+      "name": "Differentiation",
+      "canonical_anchor": "paper5_operational_consciousness/main.tex",
+      "related_claims": ["P5-01", "P5-05"],
+      "related_predictions": ["PRED-03"]
+    },
+    "I_leg": {
+      "name": "Legibility",
+      "canonical_anchor": "paper5_operational_consciousness/main.tex",
+      "related_claims": ["P5-01"],
+      "related_predictions": ["PRED-08"]
+    }
+  },
+
+  "claim_status_summary": {
+    "P5-01": { "status": "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT", "scope": "INTERNAL_SUPPORT_ONLY" },
+    "P5-02": { "status": "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT", "scope": "INTERNAL_SUPPORT_ONLY" },
+    "P5-03": { "status": "PROVISIONAL_SUPPORT_LOCALIZED", "scope": "INTERNAL_SUPPORT_ONLY" },
+    "P5-04": { "status": "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT", "scope": "INTERNAL_SUPPORT_ONLY" },
+    "P5-05": { "status": "ROBUST_INTERNAL_SUPPORT", "scope": "INTERNAL_SUPPORT_ONLY" },
+    "P5-06": { "status": "ROBUST_SUPPORT_WITH_LOCALIZED_CAVEAT", "scope": "INTERNAL_SUPPORT_ONLY" },
+    "EXT-01": { "status": "NOT_CLAIMED", "scope": "NOT_CLAIMED" },
+    "HUM-01": { "status": "NOT_CLAIMED", "scope": "NOT_CLAIMED" }
+  },
+
+  "qicn_system_correspondence": {
+    "freeze_commit_referenced_by_qicn_system": "2b0d0c0",
+    "note": "QICN-SYSTEM CANON_SOURCE_OF_TRUTH.md references this release repository as the verified freeze package. The correspondence is tracked via the freeze_ref field in QICN-SYSTEM build metadata.",
+    "canon_invariant_package_version": "canon-invariant-package.v6",
+    "dependency_surface": "claim labels and inherited claim-family naming only; QICN-SYSTEM runtime execution does not depend on this package"
+  },
+
+  "non_claims": {
+    "NC-01": {
+      "statement": "The corpus does not establish human phenomenal consciousness, human biological qualia, or human subjective equivalence.",
+      "anchors": ["paper5", "paper6", "paper7"]
+    },
+    "NC-02": {
+      "statement": "The corpus does not claim that all complex computation is conscious, nor that machine moral status follows automatically from computation alone.",
+      "anchors": ["paper5", "paper6"]
+    },
+    "paper7_nonclaims": {
+      "statement": "Paper 7 does not claim biological life as constitutive primitive, human phenomenal consciousness, metaphysical subjecthood, human-machine equivalence, runtime certification that any current system satisfies operational life or subjecthood, external validation, or final philosophical closure about life, consciousness, or subjectivity.",
+      "anchors": ["paper7"]
+    }
+  },
+
+  "epistemic_posture": "All empirical support is internal only. No external validation exists. This map is not a claim of external confirmation. It is a traceability record for the internal scientific release cycle."
+}

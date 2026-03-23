@@ -13,6 +13,7 @@
 
 ## Companion layer
 - `Predictions and Failure Modes` (`paper6`)
+- `Operational Life, Structural Class, and Subjecthood` (`paper7`)
 - `framework_overview_strict` as overview companion / reader guide
 - governance, glossary, style, term-migration, and bibliography
 

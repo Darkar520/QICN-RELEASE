@@ -20,6 +20,9 @@ The doctrine of the canonical QICN corpus is frozen for the current scientific c
 | `rigid-identity-framework/paper4/main.tex` | `paper4` | `220f05e3d805075ed219662d3b05390fbaa5d565f692db5b3c102145f983ecda` | inherited from strict v3 scope |
 | `rigid-identity-framework/paper5_operational_consciousness/main.tex` | `paper5` | `9FAAFECB58ED6E22A25F0DC7C3BE32CC3E3E346A128668A9FE5567CBFA3498FD` | canonical addendum anchored by release audit |
 | `rigid-identity-framework/paper5_operational_consciousness/main.pdf` | `paper5_pdf` | `929FC3C7788E7246EC31D49E85B9CF8E55D5D2BB57C2C12267D20398CDF8DB6E` | compiled review artifact |
+| `rigid-identity-framework/paper6_predictions_falsation/main.tex` | `paper6` | inherited from paper6 companion freeze | canonical companion anchored by release audit |
+| `rigid-identity-framework/paper7_operational_life_subjecthood/main.tex` | `paper7` | `70c3cedf6cb1a3670f1fb5c4fc9b89b65fe77e7fa5b541567c7e434a8fb4a4e0` | canonical companion anchored by paper7 freeze commit |
+| `rigid-identity-framework/paper7_operational_life_subjecthood/main.pdf` | `paper7_pdf` | `800b1cb1d7b8d36ab51bb535d5176613f52782d63d9fa75ae8529b919c6d8f77` | compiled review artifact |
 | `release/references.bib` | `bibliography` | `D847E87D315DD20B10301D8E11A3FB89F359F22CCE0105FB8ADCE55C144A514F` | canonical bibliography |
 | `release_repo_qicn_2026-03-01/release/METHODS_GOVERNANCE_HUB.v1.md` | `annex_governance` | `7BBC4CFFDB20295C8DBEF690306CDA95E4D0F687CB99EF8C9EAE957C97EB3D92` | governance annex |
 | `release_repo_qicn_2026-03-01/release/GLOSSARY_CANONICAL.v1.md` | `annex_glossary` | `A6C409B4DB2578AE6CAAC34515F11DE092434C1717889BEF627E2E4FA5331A37` | terminology annex |

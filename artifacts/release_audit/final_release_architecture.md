@@ -10,6 +10,7 @@
 
 ## Canonical companions
 - `rigid-identity-framework/paper6_predictions_falsation/main.tex`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.tex`
 
 ## Overview companion
 - `artifacts/precursor_overview_rewrite_v1/framework_overview_strict.tex`
@@ -26,7 +27,7 @@
 - `artifacts/release_audit/prediction_matrix.csv`
 - `artifacts/release_audit/falsification_matrix.csv`
 - `artifacts/release_audit/reproducibility_protocol.md`
-- Cycle 1–4 ledgers, decision summaries, post-cycle assessments, mini-resolution summaries, freeze records, build summaries, and normalization summaries in `artifacts/release_audit/`
+- Cycle 1ï¿½4 ledgers, decision summaries, post-cycle assessments, mini-resolution summaries, freeze records, build summaries, and normalization summaries in `artifacts/release_audit/`
 
 ## Out of scope for main release
 - historical duplicate lineage

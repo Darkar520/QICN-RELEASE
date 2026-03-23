@@ -23,6 +23,7 @@ These files exist locally but are currently outside the outer frozen branch:
 ## Components verified present in the frozen branch
 - `rigid-identity-framework/CANONICAL_CORE.tex/.pdf`
 - `rigid-identity-framework/paper1..paper6/main.tex/.pdf`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.tex/.pdf`
 - `artifacts/precursor_overview_rewrite_v1/framework_overview_strict.tex/.pdf`
 - `release/references.bib`
 - final release ledgers and curated supporting technical artifacts under `artifacts/release_audit/`

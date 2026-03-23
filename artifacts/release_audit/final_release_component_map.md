@@ -10,6 +10,7 @@
 
 ## CANONICAL_COMPANION
 - paper6_predictions_falsation
+- paper7_operational_life_subjecthood
 
 ## OVERVIEW_COMPANION
 - framework_overview_strict

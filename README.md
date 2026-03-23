@@ -4,10 +4,25 @@ Este repositorio es un **paquete de release auditable** que distribuye un **corp
 El foco es **integridad verificable por artefactos** (hashes + manifest), no recompilacion completa de fuentes.
 
 ## Quick Start (verificacion de integridad)
-Requisito: PowerShell.
+
+### Linux / macOS / WSL (bash)
+
+```bash
+cd /path/to/QUICN-RELEASE
+
+ZIP_ACTUAL=$(sha256sum corpus/pdf_release/pdf_corpus.zip | awk '{print $1}')
+ZIP_EXPECTED=$(awk '{print $1}' corpus/pdf_release/pdf_corpus.zip.sha256.txt)
+MAN_ACTUAL=$(sha256sum corpus/pdf_release/manifest.json | awk '{print $1}')
+MAN_EXPECTED=$(awk '{print $1}' corpus/pdf_release/manifest.sha256.txt)
+
+echo "zip_match=$([ "$ZIP_ACTUAL" = "$ZIP_EXPECTED" ] && echo True || echo False)"
+echo "manifest_match=$([ "$MAN_ACTUAL" = "$MAN_EXPECTED" ] && echo True || echo False)"
+```
+
+### PowerShell (Windows)
 
 ```powershell
-Set-Location "C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\release_repo_qicn_2026-03-01"
+Set-Location "C:\path\to\QUICN-RELEASE"
 
 $zipReal = (Get-FileHash -Algorithm SHA256 "corpus\pdf_release\pdf_corpus.zip").Hash.ToLower()
 $zipExp  = ((Get-Content "corpus\pdf_release\pdf_corpus.zip.sha256.txt" -Raw).Split() | Select-Object -First 1).ToLower()
@@ -27,6 +42,11 @@ Si `zip_match=True` y `manifest_match=True`, la integridad basica del release es
   - `RELEASE_MAP.md` - mapa de release / navegacion
   - `BLUEPRINT_EDITORIAL.md` - blueprint editorial para alineacion de documentos
   - `SUMMARY.json` - resumen del release
+  - `FREEZE_AUDIT_v1/` - artefactos de auditoria del freeze package
+    - `git_log_1.txt` - historial de commits del repositorio
+    - `git_tags.txt` - tags de release
+    - `CORPUS_MANIFEST_AUDIT.json` - auditoria maquina-legible con verificacion de hashes
+    - `FREEZE_AUDIT_REPORT.md` - reporte completo de auditoria
 - `corpus/pdf_release/`
   - `pdf_corpus.zip` - corpus PDF final
   - `manifest.json` - manifest con hashes por PDF

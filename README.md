@@ -4,10 +4,25 @@ Este repositorio es un **paquete de release auditable** que distribuye un **corp
 El foco es **integridad verificable por artefactos** (hashes + manifest), no recompilacion completa de fuentes.
 
 ## Quick Start (verificacion de integridad)
-Requisito: PowerShell.
+
+### Bash / Linux / macOS
+
+```bash
+cd <ruta-al-repo>
+
+zip_real=$(sha256sum corpus/pdf_release/pdf_corpus.zip | awk '{print $1}')
+zip_exp=$(awk '{print $1}' corpus/pdf_release/pdf_corpus.zip.sha256.txt)
+man_real=$(sha256sum corpus/pdf_release/manifest.json | awk '{print $1}')
+man_exp=$(awk '{print $1}' corpus/pdf_release/manifest.sha256.txt)
+
+echo "zip_match=$([ "$zip_real" = "$zip_exp" ] && echo True || echo False)"
+echo "manifest_match=$([ "$man_real" = "$man_exp" ] && echo True || echo False)"
+```
+
+### PowerShell / Windows
 
 ```powershell
-Set-Location "C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\release_repo_qicn_2026-03-01"
+Set-Location "<ruta-al-repo>"
 
 $zipReal = (Get-FileHash -Algorithm SHA256 "corpus\pdf_release\pdf_corpus.zip").Hash.ToLower()
 $zipExp  = ((Get-Content "corpus\pdf_release\pdf_corpus.zip.sha256.txt" -Raw).Split() | Select-Object -First 1).ToLower()

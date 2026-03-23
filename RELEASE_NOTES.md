@@ -13,9 +13,20 @@ Archivos de integridad incluidos:
 - `corpus/pdf_release/manifest.json`
 - `corpus/pdf_release/manifest.sha256.txt`
 
-Verificación (PowerShell):
+Verificación (Bash/Linux/macOS):
+```bash
+cd <ruta-al-repo>
+zip_real=$(sha256sum corpus/pdf_release/pdf_corpus.zip | awk '{print $1}')
+zip_exp=$(awk '{print $1}' corpus/pdf_release/pdf_corpus.zip.sha256.txt)
+man_real=$(sha256sum corpus/pdf_release/manifest.json | awk '{print $1}')
+man_exp=$(awk '{print $1}' corpus/pdf_release/manifest.sha256.txt)
+echo "zip_match=$([ "$zip_real" = "$zip_exp" ] && echo True || echo False)"
+echo "manifest_match=$([ "$man_real" = "$man_exp" ] && echo True || echo False)"
+```
+
+Verificación (PowerShell/Windows):
 ```powershell
-Set-Location "C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\release_repo_qicn_2026-03-01"
+Set-Location "<ruta-al-repo>"
 
 $zipReal = (Get-FileHash -Algorithm SHA256 "corpus\pdf_release\pdf_corpus.zip").Hash.ToLower()
 $zipExp  = ((Get-Content "corpus\pdf_release\pdf_corpus.zip.sha256.txt" -Raw).Split() | Select-Object -First 1).ToLower()
@@ -78,7 +89,7 @@ No se hacen afirmaciones fuera de lo verificable por artefactos incluidos.
 
 ## Gitification Plan (PowerShell)
 ```powershell
-Set-Location "C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\release_repo_qicn_2026-03-01"
+Set-Location "<ruta-al-repo>"
 
 git init
 

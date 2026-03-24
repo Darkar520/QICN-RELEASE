@@ -173,8 +173,8 @@ function buildCanonicalReleaseBundle() {
         reason: 'implementation artifacts are not part of the canonical theoretical release'
       }
     ],
-    open_gaps: [
-      freeze.pin_status.remaining_gap,
+    open_gaps: freeze.pin_status.remaining_gap ? [freeze.pin_status.remaining_gap] : [],
+    provenance_notes: [
       'working_tree_observed_not_clean_at_hardening_start'
     ],
     interpretation_boundary:

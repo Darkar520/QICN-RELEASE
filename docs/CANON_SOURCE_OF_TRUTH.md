@@ -10,6 +10,9 @@ This document fixes the strongest verifiable canonical boundary available inside
 - Release repository: `release_repo_qicn_2026-03-01`
 - Canonical freeze tag observed locally: `release-2026-03-01`
 - Observed local tag commit: `2d7504be95ca33af5941e30abf7059dc2774edca`
+- Explicit upstream canonical tag: `canonical-freeze-2026-03-01`
+- Explicit upstream canonical tag commit:
+  `2d7504be95ca33af5941e30abf7059dc2774edca`
 - Freeze audit snapshot commit captured inside the repo:
   `2b0d0c0 release: QICN package v1 (canon map + pdf corpus + integrity hashes)`
 - Observed remote branch `origin/main` at closure:
@@ -22,21 +25,20 @@ This document fixes the strongest verifiable canonical boundary available inside
 ## Interpretation of the freeze state
 
 - A verifiable local freeze exists.
-- The strongest available pin remains local.
-- Upstream evidence is now partially resolved: remote `main` carries the
-  canonical-hardening closure history and contains the local freeze object in
-  ancestry, while remote tag `release-2026-03-01` still backs the earlier
-  package commit `cb4ec37384e9601f3081ec60c85ca154cd180e8b`.
-- The remaining gap is exact and limited: the strongest local freeze commit
-  `2d7504be95ca33af5941e30abf7059dc2774edca` is a later audit-evidence
-  freeze object that is present in local history and in remote main ancestry,
-  but not yet exposed by a dedicated remote freeze tag or equivalent upstream
-  pin. The remote branch state must not be overread as canonical tag closure.
+- The strongest available pin is now resolved both locally and upstream:
+  local tag `release-2026-03-01` and explicit remote tag
+  `canonical-freeze-2026-03-01` both name the freeze object
+  `2d7504be95ca33af5941e30abf7059dc2774edca`.
+- Remote tag `release-2026-03-01` remains a historical release-package tag
+  for the earlier package commit `cb4ec37384e9601f3081ec60c85ca154cd180e8b`;
+  it should not be confused with the stronger freeze tag above.
 - The working tree observed at hardening start was not clean:
   `release/EDITORIAL_GROUPING_V2/` and `release/RELEASE_V2_PREP_A/` were
   present as untracked auxiliary materials.
 - Those materials are now physically separated under
   `release/_non_canonical/`.
+- That observation remains a provenance note, not an active warning on the
+  current canonical baseline.
 - Therefore the canonical reference is the tagged freeze package, not the
   observed working tree.
 

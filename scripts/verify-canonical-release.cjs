@@ -61,7 +61,7 @@ if (!failures.length) {
       if (!manifest.bundle_categories[key]) failures.push(`missing_bundle_category:${key}`);
     }
   }
-  if (manifest.git && manifest.git.upstream_pin_status !== 'partially_resolved') {
+  if (manifest.git && !['resolved', 'partially_resolved'].includes(manifest.git.upstream_pin_status)) {
     warnings.push('bundle_manifest_upstream_pin_status_unexpected');
   }
   if (!Array.isArray(manifest.excluded_materials) || manifest.excluded_materials.length < 2) {

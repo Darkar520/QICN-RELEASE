@@ -32,20 +32,23 @@
   },
   "pin_status": {
     "local_freeze_present": true,
-    "upstream_pin_resolved": false,
-    "upstream_pin_status": "partially_resolved",
+    "upstream_pin_resolved": true,
+    "upstream_pin_status": "resolved",
     "remote_evidence": {
       "remote": "origin",
       "observed_remote_branch": "origin/main",
       "observed_remote_branch_contains_local_freeze_commit_in_ancestry": true,
-      "observed_remote_branch_support": "Live remote review confirms that origin/main carries the canonical-hardening closure history and contains the local freeze object in ancestry. Mutable branch state is supportive evidence only and is not treated as canonical tag closure.",
+      "observed_remote_branch_support": "Live remote review confirms that origin/main carries the canonical-hardening closure history and contains the local freeze object in ancestry. Mutable branch state remains supportive evidence only and is not treated as canonical tag closure.",
+      "observed_remote_canonical_tag": "canonical-freeze-2026-03-01",
+      "observed_remote_canonical_tag_commit": "2d7504be95ca33af5941e30abf7059dc2774edca",
+      "observed_remote_canonical_tag_role": "Explicit upstream pin for the strongest local freeze object.",
       "observed_remote_tag": "release-2026-03-01",
       "observed_remote_tag_commit": "cb4ec37384e9601f3081ec60c85ca154cd180e8b",
       "evidence_source": "git ls-remote --heads --tags origin"
     },
-    "reason": "Remote evidence is stronger than before: origin/main now carries the canonical-hardening closure history and contains the local freeze object in ancestry, while the named remote release tag still resolves to the earlier package commit.",
-    "remaining_gap": "The strongest local freeze object remains the local tag commit 2d7504be95ca33af5941e30abf7059dc2774edca. The named remote tag release-2026-03-01 still points to cb4ec37384e9601f3081ec60c85ca154cd180e8b. Remote branch ancestry is supportive evidence only; branch state alone must not be overread as canonical tag closure.",
-    "full_resolution_requirement": "To close the gap completely, the remote must expose an explicit canonical tag or equivalent upstream pin that points to the intended freeze object 2d7504be95ca33af5941e30abf7059dc2774edca."
+    "reason": "Upstream pin is now resolved because the remote exposes an explicit canonical tag, canonical-freeze-2026-03-01, that points exactly to the strongest local freeze object 2d7504be95ca33af5941e30abf7059dc2774edca.",
+    "remaining_gap": null,
+    "full_resolution_requirement": null
   },
   "non_claim_boundary": "Freeze identity is packaging and traceability only. It is not external validation, theory confirmation, or closure."
 }

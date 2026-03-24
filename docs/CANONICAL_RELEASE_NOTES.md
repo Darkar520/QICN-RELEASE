@@ -25,19 +25,23 @@ This note accompanies the canonical hardening supplement for
 
 - strongest available freeze: local tag `release-2026-03-01`
 - verifiable package core: `corpus/pdf_release/*` plus release manifests
-- upstream pin status: `partially_resolved`
+- explicit upstream canonical tag: `canonical-freeze-2026-03-01`
+- upstream pin status: `resolved`
 - remote evidence:
   - `origin/main` has been live-verified as carrying the canonical-hardening
     closure history and the local freeze object in ancestry; branch state is
     supportive evidence only and not canonical tag closure
+  - remote tag `canonical-freeze-2026-03-01` resolves to
+    `2d7504be95ca33af5941e30abf7059dc2774edca`
   - remote tag `release-2026-03-01` resolves to
     `cb4ec37384e9601f3081ec60c85ca154cd180e8b`
-- remaining gap: strongest local freeze commit
-  `2d7504be95ca33af5941e30abf7059dc2774edca` is not yet named by a dedicated
-  remote freeze tag or equivalent upstream pin; remote branch state alone does
-  not close that gap
+- remaining gap: none for the upstream pin itself; the historical release tag
+  `release-2026-03-01` remains an earlier package tag and should not be
+  confused with the explicit canonical freeze tag above
 - non-canonical v2 auxiliary folders are now physically separated under
   `release/_non_canonical/`
+- the dirty working tree observed at hardening start is retained as provenance
+  history only and is not treated as an active warning on the current baseline
 
 ## Included in the canonical bundle
 

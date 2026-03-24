@@ -42,6 +42,7 @@ const requiredPaths = [
 
 const failures = [];
 const warnings = [];
+const provenanceNotes = [];
 
 for (const rel of requiredPaths) {
   if (!exists(rel)) failures.push(`missing_required_path:${rel}`);
@@ -52,7 +53,8 @@ let result = {
   checked_at: new Date().toISOString(),
   status: 'FAIL',
   failures,
-  warnings
+  warnings,
+  provenance_notes: provenanceNotes
 };
 
 if (failures.length === 0) {
@@ -123,7 +125,7 @@ if (failures.length === 0) {
     freeze.observed_repo_state_at_hardening_start &&
     freeze.observed_repo_state_at_hardening_start.working_tree_clean === false
   ) {
-    warnings.push('working_tree_not_clean_at_hardening_start');
+    provenanceNotes.push('working_tree_not_clean_at_hardening_start');
   }
 
   result = {
@@ -146,7 +148,8 @@ if (failures.length === 0) {
       upstream_pin_status: freeze.pin_status.upstream_pin_status
     },
     failures,
-    warnings
+    warnings,
+    provenance_notes: provenanceNotes
   };
 }
 

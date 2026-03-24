@@ -12,19 +12,25 @@ This document fixes the strongest verifiable canonical boundary available inside
 - Observed local tag commit: `2d7504be95ca33af5941e30abf7059dc2774edca`
 - Freeze audit snapshot commit captured inside the repo:
   `2b0d0c0 release: QICN package v1 (canon map + pdf corpus + integrity hashes)`
-- Observed `origin/main` and remote tag `release-2026-03-01`:
+- Observed remote branch `origin/main` after hardening push:
+  `80374abab59b4f20e8fdb34626193f633e3eb306`
+- Observed remote tag `release-2026-03-01`:
   `cb4ec37384e9601f3081ec60c85ca154cd180e8b`
 
 ## Interpretation of the freeze state
 
 - A verifiable local freeze exists.
 - The strongest available pin remains local.
-- Upstream evidence is now partially resolved: remote `main` and remote tag
-  `release-2026-03-01` both back the earlier package commit
+- Upstream evidence is now partially resolved: remote `main` now backs the
+  canonical-hardening supplement commit
+  `80374abab59b4f20e8fdb34626193f633e3eb306`, while remote tag
+  `release-2026-03-01` still backs the earlier package commit
   `cb4ec37384e9601f3081ec60c85ca154cd180e8b`.
 - The remaining gap is exact and limited: the strongest local freeze commit
   `2d7504be95ca33af5941e30abf7059dc2774edca` is a later audit-evidence
-  augmentation not yet backed by the observed remote branch/tag state.
+  freeze object that is present in local history and in remote main ancestry,
+  but not yet exposed by a dedicated remote freeze tag or equivalent upstream
+  pin. The remote branch state must not be overread as canonical tag closure.
 - The working tree observed at hardening start was not clean:
   `release/EDITORIAL_GROUPING_V2/` and `release/RELEASE_V2_PREP_A/` were
   present as untracked auxiliary materials.

@@ -25,12 +25,25 @@
 - `release/TERM_MIGRATION_PLAN.v1.md`
 - `release/CROSSPAPER_LINKMAP.v1.json`
 - `release/EDITORIAL_BLUEPRINT_ACTIONS.v1.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `docs/CANONICAL_RELEASE_NOTES.md`
+- `release/release_freeze_manifest.json`
+- `release/canon_manifest.v1.json`
+- `release/claim_registry.v1.json`
+- `release/layer_boundaries.v1.json`
+- `release/system_interface_boundary.v1.json`
 
 ## What's Excluded
 
 - Regeneration of `pdf_corpus.zip` for Camino 1.
 - Rewriting paper contents.
 - Full upstream workspace build artifacts.
+- `release/_non_canonical/` editorial/preparatory material outside the tagged
+  canonical freeze.
 
 ## Reproducibility
 
@@ -44,10 +57,10 @@
 - Command evidence: `release/FREEZE_AUDIT_v1/commands_run.txt`
 - Git freeze evidence: `release/FREEZE_AUDIT_v1/git_status.txt`, `git_log_1.txt`, `git_tags.txt`
 
-## Gitification Plan (PowerShell)
+## Historical Gitification Plan (PowerShell)
 
 ```powershell
-Set-Location "C:\Users\irisp\OneDrive\Escritorio\TRADING 3.0\release_repo_qicn_2026-03-01"
+Set-Location "<REPO_ROOT>"
 git init
 git add .gitignore README.md RELEASE_NOTES.md CHANGELOG.md
 git add release corpus\pdf_release
@@ -57,4 +70,13 @@ git tag release-2026-03-01
 git remote add origin <GITHUB_REPO_URL>
 git push -u origin main
 git push origin --tags
+```
+
+## Canonical hardening verification
+
+```powershell
+node scripts/verify-canonical-integrity.cjs
+node scripts/verify-claim-registry.cjs
+node scripts/build-canonical-release-bundle.cjs
+node scripts/verify-canonical-release.cjs
 ```

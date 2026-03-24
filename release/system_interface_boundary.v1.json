@@ -1,0 +1,47 @@
+{
+  "artifact_role": "theory_system_interface_boundary",
+  "schema_version": "1.0.0",
+  "external_repository": {
+    "name": "QICN-SYSTEM",
+    "local_path_observation": "NOT_CANONICAL_IN_THIS_RELEASE",
+    "status": "separate_repository"
+  },
+  "interfaces": [
+    {
+      "id": "protocol.qicn_v45",
+      "corpus_source": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
+      "system_role": "operational reflection of admissibility, baselines, and bounded support protocol",
+      "interface_type": "operational_reflection_only",
+      "non_inference": "Does not validate the formal core or phenomenological theorems."
+    },
+    {
+      "id": "annex.roeo_export",
+      "corpus_source": [
+        "corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf",
+        "corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf"
+      ],
+      "system_role": "operational export evidence and ROEO surface output",
+      "interface_type": "operational_annex_only",
+      "non_inference": "Operational equivalence exports do not imply causal or ontological proof."
+    },
+    {
+      "id": "governance.non_claim_alignment",
+      "corpus_source": [
+        "release/GLOSSARY_CANONICAL.v1.md",
+        "release/METHODS_GOVERNANCE_HUB.v1.md",
+        "release/STYLE_DISCLAIMER_POLICY.v1.md"
+      ],
+      "system_role": "alignment of support labels, output policies, surface policies, and controlled statements",
+      "interface_type": "semantic_governance_alignment_only",
+      "non_inference": "Governance alignment does not convert runtime support into theory confirmation."
+    }
+  ],
+  "prohibited_inferences": [
+    "runtime_metrics_imply_core_theorem_validity",
+    "support_labels_imply_framework_confirmation",
+    "controlled_statements_imply_external_validation",
+    "formal_theorem_implies_current_runtime_instantiation",
+    "canonical_freeze_implies_system_validation"
+  ],
+  "non_claim_boundary": "The interface is explicit and limited. It does not authorize automatic cross-repo closure."
+}

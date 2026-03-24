@@ -55,6 +55,7 @@ _build/
 # Release-local no versionar
 corpus/pdf_release/_unpacked/
 release/_tmp_text/
+release/_non_canonical/*
 release/**/build_logs/
 release/**/logs/
 
@@ -63,3 +64,4 @@ release/**/logs/
 !corpus/pdf_release/manifest.sha256.txt
 !corpus/pdf_release/pdf_corpus.zip
 !corpus/pdf_release/pdf_corpus.zip.sha256.txt
+!release/_non_canonical/README.md

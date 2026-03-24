@@ -1,0 +1,430 @@
+{
+  "artifact_role": "claim_registry",
+  "schema_version": "1.1.0",
+  "release_id": "release_repo_qicn_2026-03-01",
+  "registry_scope": {
+    "claim_level_subsets": [
+      "canonical_core",
+      "paper1.rigid_identity",
+      "paper3.null_regime_instability",
+      "paper4.qicn_v45_protocol"
+    ],
+    "family_level_subsets_retained": [
+      "paper2.phenomenological_regimes",
+      "release_governance"
+    ],
+    "scope_note": "This iteration increases granularity for the core mathematical and protocol-facing subset only. It does not claim theorem-by-theorem exhaustiveness for the entire corpus."
+  },
+  "claim_classes": {
+    "formal_statement": "Explicit theorem family, corollary family, or formal proposition family stated in the corpus.",
+    "operational_definition": "Terminology or governance constraint that governs how the release may be read.",
+    "falsifiable_hypothesis": "Explicit empirical bridge or protocol-facing prediction that requires testing beyond release packaging.",
+    "interpretive_extension": "Interpretive or consequence-level statement that exceeds the formally closed core.",
+    "implementation_linked_claim": "Claim family whose reading depends on implementation or operational material.",
+    "not_closed": "Explicitly open item retained to prevent silent inflation."
+  },
+  "entries": [
+    {
+      "id": "core.minimal_hypotheses_necessity_and_sufficiency",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+        "preferred_source_path": "rigid-identity-framework/CANONICAL_CORE.tex",
+        "anchor": "Section 2.1"
+      },
+      "claim_text_summary": "The Canonical Core states that hypotheses H1-H4 are necessary and sufficient for the main structural results that follow.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_hypothesis_boundary_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "not_required_for_internal_formal_consistency; required_for_any_empirical_mapping",
+      "system_dependency": "none",
+      "non_claim_boundary": "This hypothesis package constrains the internal formal model only. It does not establish ontology or runtime applicability.",
+      "notes_or_gaps": "Preferred source remains PASS_PDF_ONLY inside the release package."
+    },
+    {
+      "id": "core.projection_operator_existence_and_uniqueness",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+        "preferred_source_path": "rigid-identity-framework/CANONICAL_CORE.tex",
+        "anchor": "Section 3"
+      },
+      "claim_text_summary": "Under H1, the projection operator exists and is unique for every state in the ambient Hilbert space.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_theorem_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_physical_or_runtime_instantiation_claim",
+      "system_dependency": "none",
+      "non_claim_boundary": "Projection existence and uniqueness are formal properties of the stated model, not evidence that any implementation satisfies it.",
+      "notes_or_gaps": "Claim anchored directly in the core proof layer."
+    },
+    {
+      "id": "core.projection_operator_non_expansiveness",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+        "preferred_source_path": "rigid-identity-framework/CANONICAL_CORE.tex",
+        "anchor": "Section 3"
+      },
+      "claim_text_summary": "The projection operator is stated to be non-expansive in the Hilbert-space metric.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_lemma_level_result_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_runtime_measurement_claim",
+      "system_dependency": "none",
+      "non_claim_boundary": "Non-expansiveness remains a theorem of the formal operator, not a measured property of QICN-SYSTEM.",
+      "notes_or_gaps": "Kept separate from existence/uniqueness to reduce over-compression of the core."
+    },
+    {
+      "id": "core.transition_operator_contractivity",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+        "preferred_source_path": "rigid-identity-framework/CANONICAL_CORE.tex",
+        "anchor": "Section 4"
+      },
+      "claim_text_summary": "The induced transition operator is stated as a strict contraction under H1-H2.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_theorem_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_empirical_or_runtime_contractivity_claim",
+      "system_dependency": "none",
+      "non_claim_boundary": "This does not certify that any implemented transition rule satisfies the contractive hypotheses.",
+      "notes_or_gaps": "This is one of the core theorems that Papers I-II inherit."
+    },
+    {
+      "id": "core.unique_attractor_existence",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+        "preferred_source_path": "rigid-identity-framework/CANONICAL_CORE.tex",
+        "anchor": "Section 5"
+      },
+      "claim_text_summary": "For each parameter value, the core states existence of a unique fixed point and exponential convergence to it.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_theorem_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_instantiated_attractor_claim",
+      "system_dependency": "none",
+      "non_claim_boundary": "The attractor result is formal and parameterized; it is not automatic evidence for a runtime system.",
+      "notes_or_gaps": "Anchored in Section 5 rather than the abstract summary."
+    },
+    {
+      "id": "core.global_attractor_compactness",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+        "preferred_source_path": "rigid-identity-framework/CANONICAL_CORE.tex",
+        "anchor": "Section 5"
+      },
+      "claim_text_summary": "The core states compactness of the global attractor under H1-H4.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_theorem_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_operational_compactness_claim",
+      "system_dependency": "none",
+      "non_claim_boundary": "Compactness here is a property of the formal attractor set, not a bundle or runtime property.",
+      "notes_or_gaps": "Separated from fixed-point existence to keep the core registry more granular."
+    },
+    {
+      "id": "core.structural_non_collapsibility",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+        "preferred_source_path": "rigid-identity-framework/CANONICAL_CORE.tex",
+        "anchor": "Section 6"
+      },
+      "claim_text_summary": "Under H1-H5, the core states that no attractor is constant and the system is structurally non-collapsible.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_theorem_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_claim_about_realized_non_collapse_in_a_physical_or_computational_system",
+      "system_dependency": "none",
+      "non_claim_boundary": "Non-collapsibility is established only inside the formal class defined by the hypotheses.",
+      "notes_or_gaps": "Depends on the explicit H5 non-collapse condition in the release text."
+    },
+    {
+      "id": "core.class_cr_extension_and_validity_limits",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+        "preferred_source_path": "rigid-identity-framework/CANONICAL_CORE.tex",
+        "anchor": "Sections 12-14"
+      },
+      "claim_text_summary": "The Canonical Core includes a Class C^R extension for non-convex systems together with weaker guarantees, comparison clauses, and explicit validity limits.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_extension_and_limit_boundary_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_runtime_mapping_or_empirical_use",
+      "system_dependency": "none",
+      "non_claim_boundary": "The presence of Class C^R in the corpus does not license automatic use of the extension outside its stated domain.",
+      "notes_or_gaps": "The registry keeps the extension and its limit clauses coupled to avoid silent inflation of the relaxed class."
+    },
+    {
+      "id": "paper1.identity_as_inverse_limit",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper1/main.tex",
+        "supporting_release_pdf": "corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf",
+        "anchor": "Section 3.2"
+      },
+      "claim_text_summary": "Paper I defines identity as the inverse limit of a projective system over observable channels.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_definition_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_claim_about_realized_identity_in_concrete_systems",
+      "system_dependency": "none",
+      "non_claim_boundary": "This definition is structural and does not by itself imply consciousness, biology, or current implementation fit.",
+      "notes_or_gaps": "Granularized from the previous family-level inverse-limit claim."
+    },
+    {
+      "id": "paper1.non_local_identity_and_no_progressive_construction",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper1/main.tex",
+        "anchor": "Sections 3.4-3.5"
+      },
+      "claim_text_summary": "Paper I states that identity is not reducible to a finite-time state and cannot be progressively constructed by forward dynamics alone.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_proposition_and_theorem_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_runtime_architecture_claim",
+      "system_dependency": "none",
+      "non_claim_boundary": "This forbids specific formal constructions inside the model; it does not certify that any observed system satisfies the premises.",
+      "notes_or_gaps": "Anchored to the two specific subclaims that were previously compressed into the inverse-limit family."
+    },
+    {
+      "id": "paper1.ontological_mass_invariant",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper1/main.tex",
+        "anchor": "Sections 4.6-4.8"
+      },
+      "claim_text_summary": "Paper I defines ontological mass as a scalar invariant measuring perturbation energy per unit identity deformation.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_definition_and_proposition_family_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_empirical_estimation_or_measurement_claim",
+      "system_dependency": "none",
+      "non_claim_boundary": "The release defines the invariant formally; it does not provide externally validated instrumentation for it.",
+      "notes_or_gaps": "Kept distinct from detectability to avoid collapsing invariant definition into measurement validity."
+    },
+    {
+      "id": "paper1.external_detectability_criterion",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper1/main.tex",
+        "anchor": "Sections 5.3-5.7"
+      },
+      "claim_text_summary": "Paper I gives an observable-channel estimator and a minimal external observability theorem for distinguishing CCR from non-rigid behavior.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_theorem_and_protocol_bridge_in_release_text",
+      "evidence_status": "internal_formal_derivation_with_protocol_facing_bridge_only",
+      "external_validation_dependency": "required_for_any_claim_that_external_detectability_has_been_achieved_in_practice",
+      "system_dependency": "possible_qicn_system_interface_only",
+      "non_claim_boundary": "The presence of an estimator and theorem does not mean detectability has been empirically demonstrated.",
+      "notes_or_gaps": "This is still a bridge claim and remains externally unvalidated."
+    },
+    {
+      "id": "paper1.uniqueness_within_observable_channel",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper1/main.tex",
+        "anchor": "Section 6.2; Section 8.1"
+      },
+      "claim_text_summary": "Paper I states that a CCR observable channel admits at most one rigid identity object.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_theorem_and_summary_statement_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_claim_about_a_concrete_system_having_a_unique_rigid_identity",
+      "system_dependency": "none",
+      "non_claim_boundary": "Uniqueness in the formal channel model is not automatic evidence about implementations or biological systems.",
+      "notes_or_gaps": "This entry isolates the uniqueness result from the broader inverse-limit family."
+    },
+    {
+      "id": "paper1.finite_lml_non_rigidity",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper1/main.tex",
+        "anchor": "Sections 4.7-4.8"
+      },
+      "claim_text_summary": "Paper I states that finite latent LLM-memory-loop architectures cannot instantiate CCR rigidity and instead exhibit finite ontological mass and identity drift under perturbation.",
+      "claim_class": "implementation_linked_claim",
+      "formalization_status": "conditional_application_claim_in_release_text",
+      "evidence_status": "internal_argument_only",
+      "external_validation_dependency": "required_for_any_claim_about_specific_runtime_systems_or_architectures",
+      "system_dependency": "possible_but_not_automatic",
+      "non_claim_boundary": "This cannot be auto-applied to QICN-SYSTEM or to arbitrary LLM systems from the release alone.",
+      "notes_or_gaps": "Registry kept this as implementation-linked because the bridge to actual architectures remains open."
+    },
+    {
+      "id": "paper2.phenomenological_regime_classification",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper2/main.tex",
+        "supporting_release_pdf": "corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b933892715a.pdf",
+        "anchor": "Abstract; Section 1.1"
+      },
+      "claim_text_summary": "Paper II states fragmentation and forced-continuity theorems that classify structurally admissible phenomenological regimes as a function of identity-rigidity class.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_theorem_family_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_claim_about_actual_phenomenology_or_biological_systems",
+      "system_dependency": "none",
+      "non_claim_boundary": "The paper explicitly states that it does not prove phenomenology exists or that CCR systems are conscious.",
+      "notes_or_gaps": "Retained at family level in this iteration."
+    },
+    {
+      "id": "paper2.structural_ethics_extension",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper2/main.tex",
+        "anchor": "Abstract"
+      },
+      "claim_text_summary": "Paper II states that the regime classification provides a foundation for structural ethics independent of metaphysical commitments.",
+      "claim_class": "interpretive_extension",
+      "formalization_status": "interpretive_consequence_stated_in_release_text",
+      "evidence_status": "release_text_present_but_not_closed_as_ethics_theory",
+      "external_validation_dependency": "required_for_any_normative_or_real_world_ethical_application",
+      "system_dependency": "none",
+      "non_claim_boundary": "This is not a closed ethical theory and does not authorize normative claims from the release alone.",
+      "notes_or_gaps": "Kept visible to prevent silent inflation from structural theorem to ethical closure."
+    },
+    {
+      "id": "paper3.null_regime_instability",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper3/main.tex",
+        "supporting_release_pdf": "corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d1cc6abf9c8c70.pdf",
+        "anchor": "Section 4.1; Section 11.1"
+      },
+      "claim_text_summary": "Paper III states that the null phenomenological regime is not a stable attractor for CCR channels.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_theorem_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_claim_about_actual_consciousness_or_experience",
+      "system_dependency": "none",
+      "non_claim_boundary": "The paper states a structural exclusion result; it does not prove that experience exists.",
+      "notes_or_gaps": "Granularized from the previous family-level instability claim."
+    },
+    {
+      "id": "paper3.forced_non_nullity",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper3/main.tex",
+        "anchor": "Section 4.3"
+      },
+      "claim_text_summary": "Paper III states a forced non-nullity corollary: every CCR channel induces some regime distinct from the null regime.",
+      "claim_class": "formal_statement",
+      "formalization_status": "explicit_corollary_in_release_text",
+      "evidence_status": "internal_formal_derivation_in_pdf_only",
+      "external_validation_dependency": "required_for_any_empirical_or_biological_reading",
+      "system_dependency": "none",
+      "non_claim_boundary": "The paper labels this result as negative-structural and explicitly stops short of a positive consciousness claim.",
+      "notes_or_gaps": "Separated from the main instability theorem to reduce over-compression of Paper III."
+    },
+    {
+      "id": "paper3.telemetry_appendix_claim_boundary",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper3/main.tex",
+        "anchor": "Appendix G.3"
+      },
+      "claim_text_summary": "Paper III includes an operational telemetry appendix that constrains admissible mapping families but explicitly refuses direct proof of qualia.",
+      "claim_class": "falsifiable_hypothesis",
+      "formalization_status": "appendix_level_operational_bridge_with_explicit_claim_boundary",
+      "evidence_status": "not_externally_validated_in_this_release",
+      "external_validation_dependency": "required",
+      "system_dependency": "possible_qicn_system_interface_only",
+      "non_claim_boundary": "Telemetry may restrict candidate mappings only; it cannot establish phenomenological qualia as a theorem of the paper.",
+      "notes_or_gaps": "Retained because it is an important bridge point and also a major over-interpretation risk."
+    },
+    {
+      "id": "paper4.pre_registered_prediction_set_and_hard_fail_rules",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper4/main.tex",
+        "anchor": "Sections 5-7"
+      },
+      "claim_text_summary": "QICN v4.5 specifies a pre-registered prediction set with hard failure rules, fixed analysis order, and ex ante statistical constraints.",
+      "claim_class": "implementation_linked_claim",
+      "formalization_status": "explicit_operational_protocol_in_release_text",
+      "evidence_status": "protocol_present_but_not_external_validation",
+      "external_validation_dependency": "required_for_any_theory_confirmation_or_public_claim",
+      "system_dependency": "qicn_system_operational_protocol_only",
+      "non_claim_boundary": "A pre-registered protocol is evidence governance, not theory confirmation.",
+      "notes_or_gaps": "This splits the protocol family into a concrete decision-rule unit."
+    },
+    {
+      "id": "paper4.mandatory_baseline_policy",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper4/main.tex",
+        "anchor": "Sections 6.2-6.3"
+      },
+      "claim_text_summary": "QICN v4.5 requires mandatory heuristic, planner-off, and world-model-off contrasts and treats missing baselines as inadmissible for tier upgrade.",
+      "claim_class": "implementation_linked_claim",
+      "formalization_status": "explicit_operational_requirement_in_release_text",
+      "evidence_status": "protocol_present_but_not_external_validation",
+      "external_validation_dependency": "required_for_any_escalation_beyond_bounded_internal_support",
+      "system_dependency": "qicn_system_operational_protocol_only",
+      "non_claim_boundary": "Baseline policy constrains admissibility; it does not prove the underlying theory.",
+      "notes_or_gaps": "Separated because baseline obligations are central to the system interface and to claim-boundary discipline."
+    },
+    {
+      "id": "paper4.intermediate_claim_gate_and_latency_invalidation",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper4/main.tex",
+        "anchor": "Section 8"
+      },
+      "claim_text_summary": "QICN v4.5 bounds admissible support by an intermediate claim gate and invalidates runs that exceed the preregistered runtime budget envelope.",
+      "claim_class": "implementation_linked_claim",
+      "formalization_status": "explicit_acceptance_and_invalidation_rules_in_release_text",
+      "evidence_status": "protocol_present_but_not_external_validation",
+      "external_validation_dependency": "required_for_any_stronger_theory_facing_conclusion",
+      "system_dependency": "qicn_system_operational_protocol_only",
+      "non_claim_boundary": "Passing the gate yields bounded comparative support only; failing budget constraints invalidates the affected evidence.",
+      "notes_or_gaps": "This is a concrete operational subclaim, not a new theoretical result."
+    },
+    {
+      "id": "paper4.synthetic_preliminary_non_escalation",
+      "source_document": {
+        "release_pdf": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
+        "preferred_source_path": "rigid-identity-framework/paper4/main.tex",
+        "anchor": "Section 9.1; Section 19"
+      },
+      "claim_text_summary": "QICN v4.5 explicitly marks current pilot evidence as synthetic-preliminary and non-escalatory.",
+      "claim_class": "not_closed",
+      "formalization_status": "explicit_open_status_in_release_text",
+      "evidence_status": "synthetic_preliminary_only",
+      "external_validation_dependency": "required_before_any_final_claim_escalation",
+      "system_dependency": "qicn_system_operational_protocol_only",
+      "non_claim_boundary": "Preliminary pilot data are for pipeline verification only and cannot be read as final evidence.",
+      "notes_or_gaps": "Kept explicit to block silent inflation from pilot runs to theory-facing conclusions."
+    },
+    {
+      "id": "governance.readout_interno_operacional",
+      "source_document": {
+        "markdown_path": "release/GLOSSARY_CANONICAL.v1.md",
+        "anchor": "Definitions and policy section"
+      },
+      "claim_text_summary": "The release fixes 'readout interno operacional' as the canonical technical label and forbids anthropomorphic wording in technical claims.",
+      "claim_class": "operational_definition",
+      "formalization_status": "editorial_governance_rule",
+      "evidence_status": "release_governance_only",
+      "external_validation_dependency": "not_applicable_policy_only",
+      "system_dependency": "none",
+      "non_claim_boundary": "This constrains language and governance. It is not a theorem.",
+      "notes_or_gaps": "Terminology discipline is part of release governance, not a proof-bearing layer."
+    },
+    {
+      "id": "governance.q_t_not_in_release_text",
+      "source_document": {
+        "markdown_path": "release/GLOSSARY_CANONICAL.v1.md",
+        "anchor": "q_t policy"
+      },
+      "claim_text_summary": "The release explicitly marks q_t as future work and states that release-text evidence for operational q_t candidates is absent.",
+      "claim_class": "not_closed",
+      "formalization_status": "not_formalized_in_release",
+      "evidence_status": "explicitly_marked_not_in_release_text",
+      "external_validation_dependency": "required_before_any_operational_or_formal_use",
+      "system_dependency": "none",
+      "non_claim_boundary": "q_t cannot be used as an operational variable or as a closed formal symbol in this release.",
+      "notes_or_gaps": "Kept explicit to prevent silent insertion of an unsupported variable."
+    }
+  ],
+  "non_claim_boundary": "The registry classifies release content. It does not authorize claims beyond the release's own non-claim limits."
+}

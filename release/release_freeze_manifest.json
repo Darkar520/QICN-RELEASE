@@ -1,0 +1,50 @@
+{
+  "artifact_role": "canonical_freeze_manifest",
+  "schema_version": "1.1.0",
+  "release_id": "release_repo_qicn_2026-03-01",
+  "freeze_reference": {
+    "local_tag": "release-2026-03-01",
+    "local_tag_commit": "2d7504be95ca33af5941e30abf7059dc2774edca",
+    "freeze_audit_snapshot_commit": "2b0d0c0",
+    "freeze_audit_snapshot_source": "release/FREEZE_AUDIT_v1/git_log_1.txt",
+    "freeze_audit_integrity_path": "release/FREEZE_AUDIT_v1/integrity_check.json",
+    "freeze_verification_strength": "local_tag_plus_hash_sidecars_plus_audit_snapshot"
+  },
+  "observed_repo_state_at_hardening_start": {
+    "branch": "main",
+    "local_head": "2d7504be95ca33af5941e30abf7059dc2774edca",
+    "origin_main": "cb4ec37384e9601f3081ec60c85ca154cd180e8b",
+    "ahead_of_origin_main_by_commits": 2,
+    "working_tree_clean": false,
+    "observed_untracked_paths": [
+      "release/EDITORIAL_GROUPING_V2/",
+      "release/RELEASE_V2_PREP_A/"
+    ]
+  },
+  "current_non_canonical_separation": {
+    "physically_separated": true,
+    "excluded_tree_root": "release/_non_canonical/",
+    "excluded_paths": [
+      "release/_non_canonical/EDITORIAL_GROUPING_V2/",
+      "release/_non_canonical/RELEASE_V2_PREP_A/"
+    ],
+    "separation_boundary": "These directories are outside the canonical freeze, outside the canonical bundle, and outside the source-of-truth set."
+  },
+  "pin_status": {
+    "local_freeze_present": true,
+    "upstream_pin_resolved": false,
+    "upstream_pin_status": "partially_resolved",
+    "remote_evidence": {
+      "remote": "origin",
+      "observed_remote_branch": "origin/main",
+      "observed_remote_branch_commit": "cb4ec37384e9601f3081ec60c85ca154cd180e8b",
+      "observed_remote_tag": "release-2026-03-01",
+      "observed_remote_tag_commit": "cb4ec37384e9601f3081ec60c85ca154cd180e8b",
+      "evidence_source": "git ls-remote --heads --tags origin"
+    },
+    "reason": "Remote evidence resolves the earlier release package commit and tag, but the strongest local freeze remains the later audit-evidence commit.",
+    "remaining_gap": "The local freeze tag commit 2d7504be95ca33af5941e30abf7059dc2774edca is not the same object as the remote main/tag commit cb4ec37384e9601f3081ec60c85ca154cd180e8b. The pdf corpus freeze is remotely backed, but the audit-evidence augmentation remains local in this repo state.",
+    "full_resolution_requirement": "To close the gap completely, the remote must carry either the 2d7504be95ca33af5941e30abf7059dc2774edca commit on main or a remote tag that points to it."
+  },
+  "non_claim_boundary": "Freeze identity is packaging and traceability only. It is not external validation, theory confirmation, or closure."
+}

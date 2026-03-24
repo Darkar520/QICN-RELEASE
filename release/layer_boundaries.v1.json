@@ -1,0 +1,138 @@
+{
+  "artifact_role": "layer_boundaries",
+  "schema_version": "1.0.0",
+  "layers": [
+    {
+      "id": "ontology",
+      "includes": [
+        "claims about what exists",
+        "claims about what identity is in reality",
+        "claims about phenomenology in itself"
+      ],
+      "excludes": [
+        "theorem proofs",
+        "runtime metrics",
+        "release governance docs"
+      ],
+      "valid_assertions": [
+        "only conditional ontology-language already present in the papers"
+      ],
+      "prohibited_inferences": [
+        "theorem_proved_implies_ontology_confirmed",
+        "runtime_support_implies_ontology_confirmed"
+      ]
+    },
+    {
+      "id": "mathematical_formalization",
+      "includes": [
+        "hypotheses",
+        "operators",
+        "theorems",
+        "corollaries",
+        "invariants",
+        "formal protocols"
+      ],
+      "excludes": [
+        "implementation success",
+        "external validation",
+        "publication status"
+      ],
+      "valid_assertions": [
+        "internal formal derivation inside stated assumptions"
+      ],
+      "prohibited_inferences": [
+        "formal_derivation_implies_runtime_instantiation",
+        "formal_derivation_implies_empirical_truth"
+      ]
+    },
+    {
+      "id": "implementation_system",
+      "includes": [
+        "QICN-SYSTEM",
+        "runtime artifacts",
+        "support labels",
+        "surface and export policies"
+      ],
+      "excludes": [
+        "theorem closure",
+        "ontology",
+        "external validation"
+      ],
+      "valid_assertions": [
+        "operational support and governance only"
+      ],
+      "prohibited_inferences": [
+        "implementation_exists_implies_theory_validated",
+        "system_metrics_imply_phenomenological_theorem_confirmation"
+      ]
+    },
+    {
+      "id": "interpretation",
+      "includes": [
+        "explanatory readings",
+        "structural-ethics remarks",
+        "non-claim language policy"
+      ],
+      "excludes": [
+        "theorem proofs",
+        "external validation"
+      ],
+      "valid_assertions": [
+        "disciplined restatement of what a formal result may suggest"
+      ],
+      "prohibited_inferences": [
+        "interpretation_implies_closed_theorem",
+        "interpretation_implies_scientific_confirmation"
+      ]
+    },
+    {
+      "id": "internal_evidence",
+      "includes": [
+        "admissible runtime outputs",
+        "support labels",
+        "controlled statements",
+        "operational exports"
+      ],
+      "excludes": [
+        "external replication",
+        "publication-grade confirmation"
+      ],
+      "valid_assertions": [
+        "internal support posture only"
+      ],
+      "prohibited_inferences": [
+        "internal_support_implies_external_validation",
+        "exportable_with_boundary_implies_claim_safe_release"
+      ]
+    },
+    {
+      "id": "external_validation",
+      "includes": [
+        "independent replication",
+        "independent methodological review",
+        "external empirical confirmation"
+      ],
+      "excludes": [
+        "local release bundles",
+        "local smoke suites",
+        "release governance docs"
+      ],
+      "valid_assertions": [
+        "none are granted by this hardening phase"
+      ],
+      "prohibited_inferences": [
+        "freeze_or_registry_implies_external_validation"
+      ]
+    }
+  ],
+  "allowed_bridges": [
+    "formal_to_system_only_via_explicit_interface_docs",
+    "system_to_internal_evidence_only_via_policy_governed_artifacts"
+  ],
+  "blocked_automatic_bridges": [
+    "system_to_ontology",
+    "internal_evidence_to_theorem_closure",
+    "release_freeze_to_framework_confirmation"
+  ],
+  "non_claim_boundary": "Layer separation is a governance device. It does not settle theory, ontology, or validation."
+}

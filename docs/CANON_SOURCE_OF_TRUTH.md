@@ -12,8 +12,10 @@ This document fixes the strongest verifiable canonical boundary available inside
 - Observed local tag commit: `2d7504be95ca33af5941e30abf7059dc2774edca`
 - Freeze audit snapshot commit captured inside the repo:
   `2b0d0c0 release: QICN package v1 (canon map + pdf corpus + integrity hashes)`
-- Observed remote branch `origin/main` after hardening push:
-  `80374abab59b4f20e8fdb34626193f633e3eb306`
+- Observed remote branch `origin/main` at closure:
+  live-reviewed as carrying the canonical-hardening closure history and the
+  local freeze object in ancestry; because branch tips are mutable, this is
+  supportive evidence only and not treated as the canonical pin.
 - Observed remote tag `release-2026-03-01`:
   `cb4ec37384e9601f3081ec60c85ca154cd180e8b`
 
@@ -21,11 +23,10 @@ This document fixes the strongest verifiable canonical boundary available inside
 
 - A verifiable local freeze exists.
 - The strongest available pin remains local.
-- Upstream evidence is now partially resolved: remote `main` now backs the
-  canonical-hardening supplement commit
-  `80374abab59b4f20e8fdb34626193f633e3eb306`, while remote tag
-  `release-2026-03-01` still backs the earlier package commit
-  `cb4ec37384e9601f3081ec60c85ca154cd180e8b`.
+- Upstream evidence is now partially resolved: remote `main` carries the
+  canonical-hardening closure history and contains the local freeze object in
+  ancestry, while remote tag `release-2026-03-01` still backs the earlier
+  package commit `cb4ec37384e9601f3081ec60c85ca154cd180e8b`.
 - The remaining gap is exact and limited: the strongest local freeze commit
   `2d7504be95ca33af5941e30abf7059dc2774edca` is a later audit-evidence
   freeze object that is present in local history and in remote main ancestry,

@@ -27,8 +27,9 @@ This note accompanies the canonical hardening supplement for
 - verifiable package core: `corpus/pdf_release/*` plus release manifests
 - upstream pin status: `partially_resolved`
 - remote evidence:
-  - `origin/main` resolves to
-    `80374abab59b4f20e8fdb34626193f633e3eb306`
+  - `origin/main` has been live-verified as carrying the canonical-hardening
+    closure history and the local freeze object in ancestry; branch state is
+    supportive evidence only and not canonical tag closure
   - remote tag `release-2026-03-01` resolves to
     `cb4ec37384e9601f3081ec60c85ca154cd180e8b`
 - remaining gap: strongest local freeze commit

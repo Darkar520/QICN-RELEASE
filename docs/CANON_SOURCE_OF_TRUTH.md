@@ -20,9 +20,10 @@ This document fixes the strongest verifiable canonical boundary available inside
   live-reviewed as carrying the canonical-hardening closure history and the
   local freeze object in ancestry; because branch tips are mutable, this is
   supportive evidence only and not treated as the canonical pin.
-- Competing public freeze branch:
-  none observed in the current remote baseline; immutable tags and manifests
-  carry freeze authority instead.
+- Historical remote freeze branch:
+  `origin/internal-scientific-release-final-freeze` is still present, but it
+  is not the public source-of-truth branch for external audit. Immutable tags
+  and release manifests carry freeze authority instead.
 - Observed remote tag `release-2026-03-01`:
   `cb4ec37384e9601f3081ec60c85ca154cd180e8b`
 

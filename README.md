@@ -2,23 +2,18 @@
 
 Audit-first release package with immutable PDF corpus artifacts and editorial metadata.
 
-## Quick Start (PowerShell integrity check)
+## Quick Start (cross-platform verification)
 
-```powershell
-Set-Location "<REPO_ROOT>"
-
-$zipReal = (Get-FileHash -Algorithm SHA256 "corpus\pdf_release\pdf_corpus.zip").Hash.ToLower()
-$zipExp  = ((Get-Content "corpus\pdf_release\pdf_corpus.zip.sha256.txt" -Raw).Split() | Select-Object -First 1).ToLower()
-$manReal = (Get-FileHash -Algorithm SHA256 "corpus\pdf_release\manifest.json").Hash.ToLower()
-$manExp  = ((Get-Content "corpus\pdf_release\manifest.sha256.txt" -Raw).Split() | Select-Object -First 1).ToLower()
-
-"zip_match=$($zipReal -eq $zipExp)"
-"manifest_match=$($manReal -eq $manExp)"
+```bash
+node scripts/verify-canonical-integrity.cjs
+node scripts/verify-claim-registry.cjs
+node scripts/verify-canonical-release.cjs
 ```
 
 Expected for release acceptance:
-- `zip_match=True`
-- `manifest_match=True`
+- `verify-canonical-integrity.cjs` returns `PASS` or `PASS_WITH_WARNINGS`
+- `verify-claim-registry.cjs` returns `PASS` or `PASS_WITH_WARNINGS`
+- `verify-canonical-release.cjs` returns `PASS` or `PASS_WITH_WARNINGS`
 
 ## Directory Map
 
@@ -58,7 +53,7 @@ Explicitly excluded from canon/source-of-truth:
 
 Verification and bundle commands:
 
-```powershell
+```bash
 node scripts/verify-canonical-integrity.cjs
 node scripts/verify-claim-registry.cjs
 node scripts/build-canonical-release-bundle.cjs
@@ -68,6 +63,7 @@ node scripts/verify-canonical-release.cjs
 ## Known limitations
 
 - `pdf_only`: this package distributes canonical PDFs and release metadata; it does not include a full source recompilation pipeline.
+- `release_id`: `release_repo_qicn_2026-03-01` is a historical release identifier, not a required clone directory name.
 
 ## Non-goals
 

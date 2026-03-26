@@ -3,11 +3,12 @@
 ## Purpose
 
 This document fixes the strongest verifiable canonical boundary available inside
-`release_repo_qicn_2026-03-01` without rewriting theoretical source texts.
+`QICN-RELEASE` without rewriting theoretical source texts.
 
 ## Canonical freeze reference
 
-- Release repository: `release_repo_qicn_2026-03-01`
+- Public source-of-truth repository: `QICN-RELEASE`
+- Public source-of-truth branch: `main`
 - Canonical freeze tag observed locally: `release-2026-03-01`
 - Observed local tag commit: `2d7504be95ca33af5941e30abf7059dc2774edca`
 - Explicit upstream canonical tag: `canonical-freeze-2026-03-01`
@@ -19,6 +20,9 @@ This document fixes the strongest verifiable canonical boundary available inside
   live-reviewed as carrying the canonical-hardening closure history and the
   local freeze object in ancestry; because branch tips are mutable, this is
   supportive evidence only and not treated as the canonical pin.
+- Competing public freeze branch:
+  none observed in the current remote baseline; immutable tags and manifests
+  carry freeze authority instead.
 - Observed remote tag `release-2026-03-01`:
   `cb4ec37384e9601f3081ec60c85ca154cd180e8b`
 
@@ -41,6 +45,8 @@ This document fixes the strongest verifiable canonical boundary available inside
   current canonical baseline.
 - Therefore the canonical reference is the tagged freeze package, not the
   observed working tree.
+- For public source-of-truth purposes, `main` is the only live branch
+  authority. Immutable tags and release manifests carry the freeze authority.
 
 ## Source-of-truth files
 
@@ -76,6 +82,8 @@ freeze:
   - `release/_non_canonical/RELEASE_V2_PREP_A/`
 - Upstream workspaces outside this repo, except as lineage references recorded
   by `CANON_MAP.v1.json`.
+- Historical generated bundles under `_build/`, except as reproduced bundle
+  outputs and audit evidence. They are not the live source-of-truth branch.
 - `QICN-SYSTEM` runtime artifacts, metrics, labels, policies, or controlled
   statements.
 - Any external validation claim, publication claim, or framework-confirmation

@@ -3,7 +3,7 @@
 ## Purpose
 
 This note accompanies the canonical hardening supplement for
-`release_repo_qicn_2026-03-01`.
+`QICN-RELEASE`.
 
 ## What this supplement adds
 
@@ -25,6 +25,7 @@ This note accompanies the canonical hardening supplement for
 
 - strongest available freeze: local tag `release-2026-03-01`
 - verifiable package core: `corpus/pdf_release/*` plus release manifests
+- sole public source-of-truth branch: `main`
 - explicit upstream canonical tag: `canonical-freeze-2026-03-01`
 - upstream pin status: `resolved`
 - remote evidence:
@@ -38,6 +39,9 @@ This note accompanies the canonical hardening supplement for
 - remaining gap: none for the upstream pin itself; the historical release tag
   `release-2026-03-01` remains an earlier package tag and should not be
   confused with the explicit canonical freeze tag above
+- no competing public freeze branch is required or observed in the current
+  remote baseline; `main` is the live branch authority and immutable tags keep
+  freeze identity
 - non-canonical v2 auxiliary folders are now physically separated under
   `release/_non_canonical/`
 - the dirty working tree observed at hardening start is retained as provenance

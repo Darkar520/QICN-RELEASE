@@ -1,10 +1,11 @@
 {
   "generated_at": "2026-03-01T06:51:41.672Z",
   "run_metadata": {
-    "REPO_ROOT": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0",
-    "NOTEBOOKLM_ROOT": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM",
-    "RELEASE_ROOT": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\release_repo_qicn_2026-02-28",
-    "OUTPUT_ROOT": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_release_2026-03-01"
+    "REPO_ROOT": "WORKSPACE_CLONE_ROOT",
+    "NOTEBOOKLM_ROOT": "NotebookLM",
+    "RELEASE_ROOT": "QICN-RELEASE",
+    "OUTPUT_ROOT": "corpus/pdf_release",
+    "portability_note": "Historical local build roots were normalized to portable placeholders or workspace-relative lineage references. Repo-relative release paths remain authoritative."
   },
   "canonical_picks": {
     "qicn_supreme_ontological_foundations": {
@@ -79,7 +80,7 @@
       "fatal_snippet": "Document Class: article 2025/01/22 v1.4n Standard LaTeX document class\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/base\\size10.clo))\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/amsmath\\amsmath.sty\nFor additional information on amsmath, use the `?' option.\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/amsmath\\amstext.sty\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/amsmath\\amsgen.sty))\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/amsmath\\amsbsy.sty)\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/amsmath\\amsopn.sty))\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/amscls\\amsthm.sty)\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/l3backend\\l3backend-pdftex.def)\nNo file bad_paper.aux.\n\n! LaTeX Error: \\begin{theorem} on input line 14 ended by \\end{defin}.\n\nSee the LaTeX manual or LaTeX Companion for explanation.\nType  H <return>  for immediate help.\n ...                                              \n                                                  \nl.16 \\end{defin}\n                \n!  ==> Fatal error occurred, no output PDF file produced!\nTranscript written on bad_paper.log.\n\n\n--- RETRYING AFTER LATEX HYGIENE GUARD ---\n\nThis is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)\n restricted \\write18 enabled.\nentering extended mode\n(bad_paper.tex\nLaTeX2e <2025-11-01>\nL3 programming layer <2025-12-24>\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/base\\article.cls\nDocument Class: article 2025/01/22 v1.4n Standard LaTeX document class",
       "match_candidates": [
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\0e837b163588d47c__CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "match_score": 10,
           "match_explain": [
@@ -88,7 +89,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\0ed43ebfc3de3e58__paper3-main.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0ed43ebfc3de3e58__paper3-main.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0ed43ebfc3de3e58__paper3-main.pdf",
           "match_score": 10,
           "match_explain": [
@@ -97,7 +98,7 @@
           "sha256": "9497dc108947197457a00fa458b12bf5e1f30fe477761529b2af5b1d115fbd5a"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\366450ec229d6a4e__Reverse_Causality_Engineering.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/366450ec229d6a4e__Reverse_Causality_Engineering.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/366450ec229d6a4e__Reverse_Causality_Engineering.pdf",
           "match_score": 10,
           "match_explain": [
@@ -106,7 +107,7 @@
           "sha256": "c4d2de1a2c4976721ced5808514d884fd892b70e4acc015b3fe88bd45590c889"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\41968a2904195222__QICN_INTEGRATED_PAPER.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/41968a2904195222__QICN_INTEGRATED_PAPER.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/41968a2904195222__QICN_INTEGRATED_PAPER.pdf",
           "match_score": 10,
           "match_explain": [
@@ -115,7 +116,7 @@
           "sha256": "6fddac5261013cebd19c9d0c69d0189c656b66b74acbbfe3d5c69e9cf13dd574"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\46fe2e03096ce712__main.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/46fe2e03096ce712__main.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/46fe2e03096ce712__main.pdf",
           "match_score": 10,
           "match_explain": [
@@ -124,7 +125,7 @@
           "sha256": "483513cbd0965ae95ec163e3ac90c062e29c1f8fcade97726378ad83189e5397"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\4a88f4c39c2a16b9__Ingeniería_de_Causalidad_Inversa.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/4a88f4c39c2a16b9__Ingeniería_de_Causalidad_Inversa.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/4a88f4c39c2a16b9__Ingeniería_de_Causalidad_Inversa.pdf",
           "match_score": 10,
           "match_explain": [
@@ -134,7 +135,7 @@
         }
       ],
       "equivalence": {
-        "candidate_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\0e837b163588d47c__CANONICAL_CORE.pdf",
+        "candidate_pdf": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
         "anchor_pdf": null,
         "status": "NOT_COMPARABLE_NO_ANCHOR",
         "checks": {
@@ -172,7 +173,7 @@
       "fatal_snippet": "Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'\n) (C:\\Users\\irisp\\MiKTeX\\tex/latex/tcolorbox\\tcbskins.code.tex\nLibrary (tcolorbox): 'tcbskins.code.tex' version '6.9.0'\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tikzfill\\tikzfill.image.sty\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tikzfill\\tikzfill-common.sty)\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tikzfill\\tikzlibraryfill.image.code.tex))\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tcolorbox\\tcbskinsjigsaw.code.tex\nLibrary (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'\n)) (C:\\Users\\irisp\\MiKTeX\\tex/latex/tcolorbox\\tcbbreakable.code.tex\nLibrary (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/pdfcol\\pdfcol.sty))\n\n! LaTeX Error: Command \\beth already defined.\n               Or name \\end... illegal, see p.192 of the manual.\n\nSee the LaTeX manual or LaTeX Companion for explanation.\nType  H <return>  for immediate help.\n ...                                              \n                                                  \nl.141 \\newcommand{\\beth}{\\ensuremath{\\beth}}\n                                            \n!  ==> Fatal error occurred, no output PDF file produced!\nTranscript written on QICN_ONTOLOGICAL_FRAMEWORK.log.\n\n\n--- RETRYING AFTER LATEX HYGIENE GUARD ---\n\nThis is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)\n restricted \\write18 enabled.\nentering extended mode\n(QICN_ONTOLOGICAL_FRAMEWORK.tex\nLaTeX2e <2025-11-01>\nL3 programming layer <2025-12-24>\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/base\\article.cls",
       "match_candidates": [
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\QICN.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -182,7 +183,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\pdfs\\QICN.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/QICN.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -192,7 +193,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\PDFs\\QICN.pdf",
+          "pdf_path": "NotebookLM/PDFs/QICN.pdf",
           "rel_path": "NotebookLM/PDFs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -202,7 +203,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\PDFs\\QICN.pdf",
+          "pdf_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/QICN.pdf",
           "rel_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -212,7 +213,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\0e837b163588d47c__CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "match_score": 10,
           "match_explain": [
@@ -221,7 +222,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\0ed43ebfc3de3e58__paper3-main.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0ed43ebfc3de3e58__paper3-main.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0ed43ebfc3de3e58__paper3-main.pdf",
           "match_score": 10,
           "match_explain": [
@@ -231,7 +232,7 @@
         }
       ],
       "equivalence": {
-        "candidate_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\QICN.pdf",
+        "candidate_pdf": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
         "anchor_pdf": null,
         "status": "NOT_COMPARABLE_NO_ANCHOR",
         "checks": {
@@ -308,7 +309,7 @@
       "fatal_snippet": null,
       "match_candidates": [
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+          "pdf_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "rel_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "match_score": 90,
           "match_explain": [
@@ -319,7 +320,7 @@
           "sha256": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/CANONICAL_CORE.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -330,7 +331,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\pdfs\\CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/CANONICAL_CORE.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -341,7 +342,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\PDFs\\CANONICAL_CORE.pdf",
+          "pdf_path": "NotebookLM/PDFs/CANONICAL_CORE.pdf",
           "rel_path": "NotebookLM/PDFs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -352,7 +353,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\PDFs\\CANONICAL_CORE.pdf",
+          "pdf_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/CANONICAL_CORE.pdf",
           "rel_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -363,7 +364,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\CANONICAL_CORE\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/CANONICAL_CORE/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/CANONICAL_CORE/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "match_score": 60,
           "match_explain": [
@@ -374,8 +375,8 @@
         }
       ],
       "equivalence": {
-        "candidate_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE_RECONSTRUCTED.pdf",
-        "anchor_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+        "candidate_pdf": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
+        "anchor_pdf": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
         "status": "PASS_TEXTLIKE",
         "checks": {
           "diff_file": "artifacts/pdf_corpus_release_2026-03-01/logs/equivalence_tmp/ea247e98e09de39b_diff.txt",
@@ -439,7 +440,7 @@
       "fatal_snippet": "Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'\n) (C:\\Users\\irisp\\MiKTeX\\tex/latex/tcolorbox\\tcbskins.code.tex\nLibrary (tcolorbox): 'tcbskins.code.tex' version '6.9.0'\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tikzfill\\tikzfill.image.sty\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tikzfill\\tikzfill-common.sty)\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tikzfill\\tikzlibraryfill.image.code.tex))\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tcolorbox\\tcbskinsjigsaw.code.tex\nLibrary (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'\n)) (C:\\Users\\irisp\\MiKTeX\\tex/latex/tcolorbox\\tcbbreakable.code.tex\nLibrary (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/pdfcol\\pdfcol.sty))\n\n! LaTeX Error: Command \\beth already defined.\n               Or name \\end... illegal, see p.192 of the manual.\n\nSee the LaTeX manual or LaTeX Companion for explanation.\nType  H <return>  for immediate help.\n ...                                              \n                                                  \nl.141 \\newcommand{\\beth}{\\ensuremath{\\beth}}\n                                            \n!  ==> Fatal error occurred, no output PDF file produced!\nTranscript written on QICN_ONTOLOGICAL_FRAMEWORK.log.\n\n\n--- RETRYING AFTER LATEX HYGIENE GUARD ---\n\nThis is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)\n restricted \\write18 enabled.\nentering extended mode\n(QICN_ONTOLOGICAL_FRAMEWORK.tex\nLaTeX2e <2025-11-01>\nL3 programming layer <2025-12-24>\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/base\\article.cls",
       "match_candidates": [
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\QICN.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -449,7 +450,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\pdfs\\QICN.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/QICN.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -459,7 +460,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\PDFs\\QICN.pdf",
+          "pdf_path": "NotebookLM/PDFs/QICN.pdf",
           "rel_path": "NotebookLM/PDFs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -469,7 +470,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\PDFs\\QICN.pdf",
+          "pdf_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/QICN.pdf",
           "rel_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -479,7 +480,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+          "pdf_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "rel_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "match_score": 30,
           "match_explain": [
@@ -488,7 +489,7 @@
           "sha256": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\0e837b163588d47c__CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "match_score": 10,
           "match_explain": [
@@ -498,7 +499,7 @@
         }
       ],
       "equivalence": {
-        "candidate_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\QICN.pdf",
+        "candidate_pdf": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
         "anchor_pdf": null,
         "status": "NOT_COMPARABLE_NO_ANCHOR",
         "checks": {
@@ -537,7 +538,7 @@
       "fatal_snippet": "(C:\\Users\\irisp\\MiKTeX\\tex/latex/pdfcol\\pdfcol.sty))\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/psnfss\\t1ptm.fd)\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/l3backend\\l3backend-pdftex.def)\nNo file QICN_SUPREME_ONTOLOGICAL_FOUNDATIONS.aux.\n*geometry* driver: auto-detecting\n*geometry* detected driver: pdftex\n(C:\\Users\\irisp\\MiKTeX\\tex/context/base/mkii\\supp-pdf.mkii\n[Loading MPS to PDF converter (version 2006.09.02).]\n) (C:\\Users\\irisp\\MiKTeX\\tex/latex/epstopdf-pkg\\epstopdf-base.sty\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/00miktex\\epstopdf-sys.cfg))\n! Argument of \\@icentercr has an extra }.\n<inserted text> \n                \\par \nl.133 ...CN System for Identity Dynamics}\\\\[1.5em]\n                                                  \n!  ==> Fatal error occurred, no output PDF file produced!\nTranscript written on QICN_SUPREME_ONTOLOGICAL_FOUNDATIONS.log.\n\npdflatex: major issue: So far, you have not checked for MiKTeX updates.\n\n\n=== xelatex pass1 ===\nThis is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex.fmt)\n restricted \\write18 enabled.\nentering extended mode\n(QICN_SUPREME_ONTOLOGICAL_FOUNDATIONS.tex\nLaTeX2e <2025-11-01>\nL3 programming layer <2025-12-24>\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/base\\article.cls\nDocument Class: article 2025/01/22 v1.4n Standard LaTeX document class",
       "match_candidates": [
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\QICN.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -547,7 +548,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\pdfs\\QICN.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/QICN.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -557,7 +558,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\PDFs\\QICN.pdf",
+          "pdf_path": "NotebookLM/PDFs/QICN.pdf",
           "rel_path": "NotebookLM/PDFs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -567,7 +568,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\PDFs\\QICN.pdf",
+          "pdf_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/QICN.pdf",
           "rel_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -577,7 +578,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+          "pdf_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "rel_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "match_score": 30,
           "match_explain": [
@@ -586,7 +587,7 @@
           "sha256": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\0e837b163588d47c__CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "match_score": 10,
           "match_explain": [
@@ -596,7 +597,7 @@
         }
       ],
       "equivalence": {
-        "candidate_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\QICN.pdf",
+        "candidate_pdf": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
         "anchor_pdf": null,
         "status": "NOT_COMPARABLE_NO_ANCHOR",
         "checks": {
@@ -658,7 +659,7 @@
       "fatal_snippet": null,
       "match_candidates": [
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+          "pdf_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "rel_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "match_score": 75,
           "match_explain": [
@@ -669,7 +670,7 @@
           "sha256": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/CANONICAL_CORE.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -680,7 +681,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\pdfs\\CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/CANONICAL_CORE.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -691,7 +692,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\PDFs\\CANONICAL_CORE.pdf",
+          "pdf_path": "NotebookLM/PDFs/CANONICAL_CORE.pdf",
           "rel_path": "NotebookLM/PDFs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -702,7 +703,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\PDFs\\CANONICAL_CORE.pdf",
+          "pdf_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/CANONICAL_CORE.pdf",
           "rel_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -713,7 +714,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\CANONICAL_CORE\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/CANONICAL_CORE/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/CANONICAL_CORE/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "match_score": 60,
           "match_explain": [
@@ -724,7 +725,7 @@
         }
       ],
       "equivalence": {
-        "candidate_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+        "candidate_pdf": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
         "anchor_pdf": null,
         "status": "NOT_COMPARABLE_NO_ANCHOR",
         "checks": {
@@ -808,7 +809,7 @@
       "fatal_snippet": "Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'\n) (C:\\Users\\irisp\\MiKTeX\\tex/latex/tcolorbox\\tcbskins.code.tex\nLibrary (tcolorbox): 'tcbskins.code.tex' version '6.9.0'\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tikzfill\\tikzfill.image.sty\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tikzfill\\tikzfill-common.sty)\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tikzfill\\tikzlibraryfill.image.code.tex))\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/tcolorbox\\tcbskinsjigsaw.code.tex\nLibrary (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'\n)) (C:\\Users\\irisp\\MiKTeX\\tex/latex/tcolorbox\\tcbbreakable.code.tex\nLibrary (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/pdfcol\\pdfcol.sty))\n\n! LaTeX Error: Command \\beth already defined.\n               Or name \\end... illegal, see p.192 of the manual.\n\nSee the LaTeX manual or LaTeX Companion for explanation.\nType  H <return>  for immediate help.\n ...                                              \n                                                  \nl.141 \\newcommand{\\beth}{\\ensuremath{\\beth}}\n                                            \n!  ==> Fatal error occurred, no output PDF file produced!\nTranscript written on QICN_ONTOLOGICAL_FRAMEWORK.log.\n\n\n--- RETRYING AFTER LATEX HYGIENE GUARD ---\n\nThis is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)\n restricted \\write18 enabled.\nentering extended mode\n(QICN_ONTOLOGICAL_FRAMEWORK.tex\nLaTeX2e <2025-11-01>\nL3 programming layer <2025-12-24>\n(C:\\Users\\irisp\\MiKTeX\\tex/latex/base\\article.cls",
       "match_candidates": [
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\QICN.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -818,7 +819,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\pdfs\\QICN.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/QICN.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -828,7 +829,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\PDFs\\QICN.pdf",
+          "pdf_path": "NotebookLM/PDFs/QICN.pdf",
           "rel_path": "NotebookLM/PDFs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -838,7 +839,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\PDFs\\QICN.pdf",
+          "pdf_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/QICN.pdf",
           "rel_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/QICN.pdf",
           "match_score": 40,
           "match_explain": [
@@ -848,7 +849,7 @@
           "sha256": "b0668c85e22035f58c3ed0f2c7839482590c8deb5aa8a8eda50b7a9b31a97b59"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\LaTeX\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+          "pdf_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "rel_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "match_score": 15,
           "match_explain": [
@@ -857,7 +858,7 @@
           "sha256": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\0e837b163588d47c__CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/0e837b163588d47c__CANONICAL_CORE.pdf",
           "match_score": 10,
           "match_explain": [
@@ -867,7 +868,7 @@
         }
       ],
       "equivalence": {
-        "candidate_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\QICN.pdf",
+        "candidate_pdf": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/QICN.pdf",
         "anchor_pdf": null,
         "status": "NOT_COMPARABLE_NO_ANCHOR",
         "checks": {
@@ -982,7 +983,7 @@
       "fatal_snippet": null,
       "match_candidates": [
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/CANONICAL_CORE.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -993,7 +994,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\pdfs\\CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/CANONICAL_CORE.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/pdfs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -1004,7 +1005,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\PDFs\\CANONICAL_CORE.pdf",
+          "pdf_path": "NotebookLM/PDFs/CANONICAL_CORE.pdf",
           "rel_path": "NotebookLM/PDFs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -1015,7 +1016,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\NotebookLM\\SISTEMA_CANON_PAPERS\\PDFs\\CANONICAL_CORE.pdf",
+          "pdf_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/CANONICAL_CORE.pdf",
           "rel_path": "NotebookLM/SISTEMA_CANON_PAPERS/PDFs/CANONICAL_CORE.pdf",
           "match_score": 70,
           "match_explain": [
@@ -1026,7 +1027,7 @@
           "sha256": "3fc08a13c9c99a14bea23b5d84b5e310ee468dba8966c4d128bd4c286dfa54e2"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\CANONICAL_CORE\\CANONICAL_CORE_RECONSTRUCTED.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/CANONICAL_CORE/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/CANONICAL_CORE/CANONICAL_CORE_RECONSTRUCTED.pdf",
           "match_score": 60,
           "match_explain": [
@@ -1036,7 +1037,7 @@
           "sha256": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_build\\CANONICAL_CORE\\CANONICAL_CORE.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_build/CANONICAL_CORE/CANONICAL_CORE.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_build/CANONICAL_CORE/CANONICAL_CORE.pdf",
           "match_score": 60,
           "match_explain": [
@@ -1047,7 +1048,7 @@
         }
       ],
       "equivalence": {
-        "candidate_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\CANONICAL_CORE.pdf",
+        "candidate_pdf": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/CANONICAL_CORE.pdf",
         "anchor_pdf": null,
         "status": "NOT_COMPARABLE_NO_ANCHOR",
         "checks": {
@@ -1149,7 +1150,7 @@
       "fatal_snippet": null,
       "match_candidates": [
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\_build\\3b77e7b20616cf25\\src\\paper4\\main.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/_build/3b77e7b20616cf25/src/paper4/main.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/_build/3b77e7b20616cf25/src/paper4/main.pdf",
           "match_score": 65,
           "match_explain": [
@@ -1159,7 +1160,7 @@
           "sha256": "d2a8e0c4d38b2455c2393c9571e1c2bf328d3a89f95186bf080abfe220b4d6fb"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_build\\CANONICAL_CORE\\paper4\\main.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_build/CANONICAL_CORE/paper4/main.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_build/CANONICAL_CORE/paper4/main.pdf",
           "match_score": 65,
           "match_explain": [
@@ -1169,7 +1170,7 @@
           "sha256": "d2a8e0c4d38b2455c2393c9571e1c2bf328d3a89f95186bf080abfe220b4d6fb"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\release_audit\\pdf_corpus_rebuild\\_build\\3b77e7b20616cf25\\src\\paper4\\main.pdf",
+          "pdf_path": "artifacts/release_audit/pdf_corpus_rebuild/_build/3b77e7b20616cf25/src/paper4/main.pdf",
           "rel_path": "artifacts/release_audit/pdf_corpus_rebuild/_build/3b77e7b20616cf25/src/paper4/main.pdf",
           "match_score": 65,
           "match_explain": [
@@ -1179,7 +1180,7 @@
           "sha256": "d2a8e0c4d38b2455c2393c9571e1c2bf328d3a89f95186bf080abfe220b4d6fb"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\notebooklm_pdf_bundle_2026-02-28\\PDF_BUNDLE\\pdfs\\d90ce7adb779c06e__predictions-v45-main-v45-19p.pdf",
+          "pdf_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/d90ce7adb779c06e__predictions-v45-main-v45-19p.pdf",
           "rel_path": "artifacts/notebooklm_pdf_bundle_2026-02-28/PDF_BUNDLE/pdfs/d90ce7adb779c06e__predictions-v45-main-v45-19p.pdf",
           "match_score": 20,
           "match_explain": [
@@ -1189,7 +1190,7 @@
           "sha256": "416ffc661a9779ce1abdbbcfd9774c3c355d5b52421eafba16db8b7ad7c30fe9"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\73d5ee1cef3b7d86_predictions-v45-main-v45-19p.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/73d5ee1cef3b7d86_predictions-v45-main-v45-19p.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/73d5ee1cef3b7d86_predictions-v45-main-v45-19p.pdf",
           "match_score": 20,
           "match_explain": [
@@ -1199,7 +1200,7 @@
           "sha256": "416ffc661a9779ce1abdbbcfd9774c3c355d5b52421eafba16db8b7ad7c30fe9"
         },
         {
-          "pdf_path": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\pdf_corpus_2026-02-28\\_zip_payload\\pdfs\\b7af2ced4acee2bf_predictions-v45-main-v45-19p.pdf",
+          "pdf_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/b7af2ced4acee2bf_predictions-v45-main-v45-19p.pdf",
           "rel_path": "artifacts/pdf_corpus_rebuild/pdf_corpus_2026-02-28/_zip_payload/pdfs/b7af2ced4acee2bf_predictions-v45-main-v45-19p.pdf",
           "match_score": 20,
           "match_explain": [
@@ -1210,8 +1211,8 @@
         }
       ],
       "equivalence": {
-        "candidate_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\artifacts\\pdf_corpus_rebuild\\_build\\3b77e7b20616cf25\\src\\paper4\\main.pdf",
-        "anchor_pdf": "C:\\Users\\irisp\\OneDrive\\Escritorio\\TRADING 3.0\\rigid-identity-framework\\paper4\\main.pdf",
+        "candidate_pdf": "artifacts/pdf_corpus_rebuild/_build/3b77e7b20616cf25/src/paper4/main.pdf",
+        "anchor_pdf": "rigid-identity-framework/paper4/main.pdf",
         "status": "PASS_TEXTLIKE",
         "checks": {
           "diff_file": "artifacts/pdf_corpus_release_2026-03-01/logs/equivalence_tmp/44806ece96bbdae2_diff.txt",

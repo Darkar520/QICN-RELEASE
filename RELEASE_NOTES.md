@@ -3,11 +3,12 @@
 ## Release ID
 
 - release_repo_qicn_2026-03-01
+- public source-of-truth repo/branch: `QICN-RELEASE/main`
 
 ## Official hashes
 
 - corpus/pdf_release/pdf_corpus.zip: 3395006bdac94f26f956ade3e560ce1ceb1de76321323e6db242acfc86db6654
-- corpus/pdf_release/manifest.json: dd2f3a930e6cedcbd084f200506572fcac237864a21b8ba68e82ba85b87258e7
+- corpus/pdf_release/manifest.json: a5be525da3c18cea1202d66b4c0d22795f5e4d00f9baafef10951fe95ff3446c
 
 ## What's Included
 
@@ -50,6 +51,10 @@
 - Recompute SHA256 for zip and manifest.
 - Compare each value against the corresponding `.sha256.txt` file.
 - Accept release only if both matches are true.
+- Preferred cross-platform verification path:
+  - `node scripts/verify-canonical-integrity.cjs`
+  - `node scripts/verify-claim-registry.cjs`
+  - `node scripts/verify-canonical-release.cjs`
 
 ## Governance
 
@@ -57,10 +62,9 @@
 - Command evidence: `release/FREEZE_AUDIT_v1/commands_run.txt`
 - Git freeze evidence: `release/FREEZE_AUDIT_v1/git_status.txt`, `git_log_1.txt`, `git_tags.txt`
 
-## Historical Gitification Plan (PowerShell)
+## Historical Gitification Plan (reference only)
 
-```powershell
-Set-Location "<REPO_ROOT>"
+```text
 git init
 git add .gitignore README.md RELEASE_NOTES.md CHANGELOG.md
 git add release corpus\pdf_release
@@ -74,7 +78,7 @@ git push origin --tags
 
 ## Canonical hardening verification
 
-```powershell
+```bash
 node scripts/verify-canonical-integrity.cjs
 node scripts/verify-claim-registry.cjs
 node scripts/build-canonical-release-bundle.cjs

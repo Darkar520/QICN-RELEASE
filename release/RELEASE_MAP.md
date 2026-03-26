@@ -19,11 +19,11 @@
 
 ## Admissibility
 - Existe pipeline de admisibilidad en el proyecto.
-- Referencias PR6-PR8: NOT_AVAILABLE en este paquete de release si no constan explícitas en PDFs.
+- Referencias PR6-PR8: `NOT_AVAILABLE` en este paquete de release si no constan explicitas en PDFs.
 
 ## Directory map
 ```text
-release_repo_qicn_2026-03-01*/
+QICN-RELEASE clone/
   README.md
   release/
     CANON_MAP.v1.json

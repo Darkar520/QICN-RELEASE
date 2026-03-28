@@ -2,57 +2,20 @@
 
 ## Purpose
 
-This document fixes the strongest verifiable canonical boundary available inside
-`QICN-RELEASE` without rewriting theoretical source texts.
+This document fixes the live public source-of-truth boundary for `QICN-RELEASE`.
 
-## Canonical freeze reference
+## Authority state
 
 - Public source-of-truth repository: `QICN-RELEASE`
-- Public source-of-truth branch: `main`
-- Canonical freeze tag observed locally: `release-2026-03-01`
-- Observed local tag commit: `2d7504be95ca33af5941e30abf7059dc2774edca`
-- Explicit upstream canonical tag: `canonical-freeze-2026-03-01`
-- Explicit upstream canonical tag commit:
-  `2d7504be95ca33af5941e30abf7059dc2774edca`
-- Freeze audit snapshot commit captured inside the repo:
-  `2b0d0c0 release: QICN package v1 (canon map + pdf corpus + integrity hashes)`
-- Observed remote branch `origin/main` at closure:
-  live-reviewed as carrying the canonical-hardening closure history and the
-  local freeze object in ancestry; because branch tips are mutable, this is
-  supportive evidence only and not treated as the canonical pin.
-- Historical freeze branch status:
-  the former remote branch `internal-scientific-release-final-freeze` has been
-  retired from the active remote branch set. Immutable tags and release
-  manifests carry freeze authority instead.
-- Observed remote tag `release-2026-03-01`:
-  `cb4ec37384e9601f3081ec60c85ca154cd180e8b`
-
-## Interpretation of the freeze state
-
-- A verifiable local freeze exists.
-- The strongest available pin is now resolved both locally and upstream:
-  local tag `release-2026-03-01` and explicit remote tag
-  `canonical-freeze-2026-03-01` both name the freeze object
-  `2d7504be95ca33af5941e30abf7059dc2774edca`.
-- Remote tag `release-2026-03-01` remains a historical release-package tag
-  for the earlier package commit `cb4ec37384e9601f3081ec60c85ca154cd180e8b`;
-  it should not be confused with the stronger freeze tag above.
-- The working tree observed at hardening start was not clean:
-  `release/EDITORIAL_GROUPING_V2/` and `release/RELEASE_V2_PREP_A/` were
-  present as untracked auxiliary materials.
-- Those materials are now physically separated under
-  `release/_non_canonical/`.
-- That observation remains a provenance note, not an active warning on the
-  current canonical baseline.
-- Therefore the canonical reference is the tagged freeze package, not the
-  observed working tree.
-- For public source-of-truth purposes, `main` is the only live branch
-  authority. Immutable tags and release manifests carry the freeze authority.
+- Sole live public branch authority: `main`
+- Historical freeze tag retained as provenance: `release-2026-03-01`
+- Historical explicit canonical tag retained as provenance: `canonical-freeze-2026-03-01`
+- Live public canonicalization on trunk:
+  - primary formal spine: Canonical Core and Papers I-V
+  - accepted supporting public extensions: Papers VI-VII
+  - explicitly outside the public canon for now: Paper VIII pending release-audit acceptance
 
 ## Source-of-truth files
-
-The following files are the release-level source of truth for the canonical
-freeze:
 
 1. `corpus/pdf_release/pdf_corpus.zip`
 2. `corpus/pdf_release/pdf_corpus.zip.sha256.txt`
@@ -60,38 +23,26 @@ freeze:
 4. `corpus/pdf_release/manifest.sha256.txt`
 5. `release/CANON_MAP.v1.json`
 6. `release/INDEX_PDFS.json`
-7. `release/FREEZE_AUDIT_v1/integrity_check.json`
-8. `release/release_freeze_manifest.json`
-9. `release/canon_manifest.v1.json`
-10. `release/claim_registry.v1.json`
-11. `release/layer_boundaries.v1.json`
-12. `release/system_interface_boundary.v1.json`
+7. `release/release_freeze_manifest.json`
+8. `release/canon_manifest.v1.json`
+9. `release/claim_registry.v1.json`
+10. `release/layer_boundaries.v1.json`
+11. `release/system_interface_boundary.v1.json`
 
-## What counts as canon
+## What counts as current public canon
 
-- The immutable PDF corpus enumerated by the release manifest and PDF index.
-- The canonical selection metadata that defines preferred lineages and mirror
-  policy.
-- The release governance documents included in `release/`, but only as release
-  governance and claim-boundary material, not as theorem proofs.
+- the immutable PDF corpus and its index/manifests as currently published on `main`
+- the primary formal spine through Paper V
+- the accepted supporting public extensions Papers VI-VII
+- the release governance and boundary documents that constrain interpretation
 
-## What does not count as source-of-truth canon
+## What does not count as current public canon
 
-- Physically separated excluded material under
-  `release/_non_canonical/`, including:
-  - `release/_non_canonical/EDITORIAL_GROUPING_V2/`
-  - `release/_non_canonical/RELEASE_V2_PREP_A/`
-- Upstream workspaces outside this repo, except as lineage references recorded
-  by `CANON_MAP.v1.json`.
-- Historical generated bundles under `_build/`, except as reproduced bundle
-  outputs and audit evidence. They are not the live source-of-truth branch.
-- `QICN-SYSTEM` runtime artifacts, metrics, labels, policies, or controlled
-  statements.
-- Any external validation claim, publication claim, or framework-confirmation
-  statement.
+- historical audit snapshots whose scope pre-dates the current trunk expansion
+- `release/_non_canonical/`
+- `QICN-SYSTEM` runtime outputs
+- Paper VIII until a release-audit acceptance path is recorded inside the public release repo
 
 ## Non-claim boundary
 
-Canonical freeze means that the package boundary, the included corpus, and the
-documented claim layers are traceable. It does not mean the framework is
-externally validated, empirically closed, or scientifically confirmed.
+Public canonicalization of trunk improves traceability and public alignment only. It does not constitute external validation, theory confirmation, human equivalence, or metaphysical closure.

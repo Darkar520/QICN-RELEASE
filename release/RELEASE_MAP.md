@@ -1,46 +1,21 @@
 # RELEASE_MAP
 
 ## What is included
-- Corpus PDF fuente: `corpus/pdf_release/pdf_corpus.zip`
-- Manifest fuente: `corpus/pdf_release/manifest.json`
-- Canon map: `release/CANON_MAP.v1.json`
-- Index PDFs: `release/INDEX_PDFS.json`
 
-## Conteos
-- total clusters: 18
-- CANON count: 18
-- PASS_PDF_ONLY count: 3
-- mirrors skipped: 1
-- duplicates skipped: 0
+- corpus PDF source: `corpus/pdf_release/pdf_corpus.zip`
+- manifest source: `corpus/pdf_release/manifest.json`
+- canon map: `release/CANON_MAP.v1.json`
+- PDF index: `release/INDEX_PDFS.json`
 
-## Reproducibility
-- PDFs are immutable artifacts; identified by sha256.
-- Canon selection policy is deterministic; see CANON_MAP.
+## Counts
 
-## Admissibility
-- Existe pipeline de admisibilidad en el proyecto.
-- Referencias PR6-PR8: `NOT_AVAILABLE` en este paquete de release si no constan explicitas en PDFs.
+- total canonical clusters: 21
+- primary formal spine docs: 6
+- supporting public extensions added on trunk: 2
+- operational annex count: 2
 
-## Directory map
-```text
-QICN-RELEASE clone/
-  README.md
-  release/
-    CANON_MAP.v1.json
-    INDEX_PDFS.json
-    RELEASE_MAP.md
-    BLUEPRINT_EDITORIAL.md
-    SUMMARY.json
-  corpus/
-    pdf_release/
-      _unpacked/
-      pdfs/
-      manifest.json
-      manifest.sha256.txt
-      pdf_corpus.zip
-      pdf_corpus.zip.sha256.txt
-```
+## Public canonical scope
 
-## Policy
-- NotebookLM/SISTEMA_CANON_PAPERS = mirror-only.
-- rigid-identity-framework/paperX = preferred source lineage cuando aparece en paths.
+- Canonical Core and Papers I-V are the preferred public formal spine
+- Papers VI-VII are accepted supporting public extensions
+- paper8 remains outside the public release until release-audit acceptance exists inside this repo

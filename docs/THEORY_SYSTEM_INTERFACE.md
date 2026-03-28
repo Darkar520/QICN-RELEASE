@@ -1,58 +1,36 @@
 # THEORY_SYSTEM_INTERFACE
 
-This document fixes the interface boundary between `QICN-RELEASE` and
-`QICN-SYSTEM`.
+This document fixes the explicit boundary between `QICN-RELEASE` and `QICN-SYSTEM`.
 
-## What the system can reflect operationally
+## Public corpus areas with an operational counterpart
 
-The following corpus areas have an operational counterpart in `QICN-SYSTEM`:
-
-- `QICN v4.5: Falsifiable Predictions Under Forensic Constraints`
-  - operational reflection: admissibility, pre-registered gating, baseline
-    handling, artifact traceability
-- `QICN ROEO Export` annexes
-  - operational reflection: ROEO export artifacts and enforcement surfaces
-- governance docs (`METHODS_GOVERNANCE_HUB`, glossary, style policy)
-  - operational reflection: support labels, output consumption policy, surface
-    policy, controlled statements, export gating
+- Paper IV
+  - operational reflection: admissibility, baseline handling, comparator discipline, artifact traceability
+- Paper V
+  - operational reflection: invariant diagnostics, criterion-facing structure, rupture semantics, admissible support burdens
+- Paper VI
+  - operational reflection: prediction family diagnostics, downgrade logic, negative controls, internal support-status surfaces
+- Paper VII
+  - operational reflection: descriptor families and runtime-facing diagnostics for operational life, structural class, and subjecthood
+- ROEO annexes and governance docs
+  - operational reflection: export surfaces, terminology policy, controlled statements, surface policy
 
 ## What the system does not close
 
-`QICN-SYSTEM` does not, by itself:
+- the Canonical Core or Papers I-III as real-world theorems
+- external validation of Papers IV-VII
+- human consciousness, human subjectivity, or metaphysical subjecthood
+- automatic promotion of internal Paper VIII downstream work into the public release
 
-- prove the Canonical Core
-- prove Papers I-III
-- validate phenomenological theorems
-- validate ontological mass as a real-world observable
-- convert internal support into external validation
+## What must not be inferred
 
-## What the corpus requires beyond the system
-
-The following remain outside what `QICN-SYSTEM` can settle:
-
-- empirical applicability of formal rigidity claims
-- any biological or subjective reading
-- any external validation of CCC-linked or protocol-linked hypotheses
-- any claim that a runtime implementation satisfies all axioms of the formal
-  corpus
-
-## What must not be inferred from system to corpus
-
-- runtime metrics -> canonical theorems are true in reality
-- support labels -> framework confirmation
-- controlled statements -> theory closure
-- operational equivalence exports -> causal or ontological proof
-
-## What must not be inferred from corpus to system
-
-- formal theorem -> current runtime implementation satisfies the theorem
-- inverse-limit identity claim -> system instantiates rigid identity
-- phenomenological classification -> system has consciousness or qualia
-- canonical freeze -> system is scientifically validated
+- runtime metrics -> public theorem confirmation
+- internal support labels -> external validation
+- descriptor families -> current system is an operational subject
+- public canonicalization of trunk -> subjectivity closure
 
 ## Interface policy
 
-- The interface is explicit, limited, and one-way by default.
-- Every bridge from corpus to system must remain tagged as operational or
-  governance-only unless external validation exists.
-- Every bridge from system to corpus must remain tagged as internal support only.
+- the interface remains explicit, limited, and one-way by default
+- every bridge from corpus to system remains tagged as operational or governance-only unless external validation exists
+- paper8-driven subjectivity runtime work remains downstream internal material until it is accepted into the public release

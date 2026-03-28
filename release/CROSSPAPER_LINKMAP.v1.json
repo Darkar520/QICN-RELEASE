@@ -1,302 +1,233 @@
-﻿{
-    "generated_at":  "2026-03-03T00:01:47",
-    "source_files":  [
-                         "release/CANON_MAP.v1.json",
-                         "release/INDEX_PDFS.json",
-                         "release/editorial_audit_v1/primary_supporting_map.json",
-                         "release/editorial_audit_v1/methods_coverage_table.csv",
-                         "release/editorial_audit_v1/q_t_candidate_evidence.json"
-                     ],
-    "policy_note":  "No inventar relaciones factuales no constatadas. Edges marcados como proposal cuando corresponde.",
-    "nodes":  [
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "44806ece96bbdae2_main_1c305418",
-                      "docId":  "44806ece96bbdae2",
-                      "classification":  "primary",
-                      "status":  "PDF_ONLY",
-                      "source_path":  "rigid-identity-framework/paper4/main.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "6968859f53621468_6968859f53621468_main_f973c787",
-                      "docId":  "6968859f53621468",
-                      "classification":  "primary",
-                      "status":  "CANON",
-                      "source_path":  "rigid-identity-framework/paper1/main.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e",
-                      "docId":  "9e4b83e44e669730",
-                      "classification":  "primary",
-                      "status":  "CANON",
-                      "source_path":  "rigid-identity-framework/paper2/main.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "canonical_core",
-                      "docId":  "3b77e7b20616cf25",
-                      "classification":  "primary",
-                      "status":  "PDF_ONLY",
-                      "source_path":  "rigid-identity-framework/CANONICAL_CORE.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561",
-                      "docId":  "dc23c9c9345aae47",
-                      "classification":  "primary",
-                      "status":  "CANON",
-                      "source_path":  "rigid-identity-framework/paper3/main.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "1a86ec656885a998_1a86ec656885a998_main_ac20e128",
-                      "docId":  "1a86ec656885a998",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "rigid-identity-paper/main.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "857c4c89149a369c_857c4c89149a369c_main_7294ab07",
-                      "docId":  "857c4c89149a369c",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e",
-                      "docId":  "87dc170947cc65f0",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "aa4d0b933892715a_aa4d0b933892715a_main_df41c33d",
-                      "docId":  "aa4d0b933892715a",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "phenomenological-regimes-paper/main.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc",
-                      "docId":  "c3d1cc6abf9c8c70",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "phenomenological-instability-paper/main.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "canonical_core_74be3e",
-                      "docId":  "eead218e079c0ad2",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "canonical_core_957f4e",
-                      "docId":  "bbe9bbb48ddf4f9c",
-                      "classification":  "supporting",
-                      "status":  "MIRROR",
-                      "source_path":  "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/CANONICAL_CORE.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "canonical_core_957f4e",
-                      "docId":  "ea247e98e09de39b",
-                      "classification":  "supporting",
-                      "status":  "PDF_ONLY",
-                      "source_path":  "NotebookLM/LaTeX/CANONICAL_CORE.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "phenomenological_instability",
-                      "docId":  "04b40ecc9376767e",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-instability.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "phenomenological_instability_2fe669",
-                      "docId":  "0b013024c06a2f7d",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "NotebookLM/LaTeX/phenomenological-instability.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "phenomenological_regimes",
-                      "docId":  "9dab69286f9e9107",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-regimes.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "phenomenological_regimes_529d6b",
-                      "docId":  "39860a8a5035ed82",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "NotebookLM/LaTeX/phenomenological-regimes.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "rigid_identity_paper",
-                      "docId":  "3e026c9275c59788",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/rigid-identity-paper.tex"
-                  },
-                  {
-                      "node_type":  "document",
-                      "doc_key":  "rigid_identity_paper_8925ec",
-                      "docId":  "bb0cda8022f6c8ac",
-                      "classification":  "supporting",
-                      "status":  "CANON",
-                      "source_path":  "NotebookLM/LaTeX/rigid-identity-paper.tex"
-                  },
-                  {
-                      "node_type":  "hub",
-                      "hub_key":  "METHODS_GOVERNANCE_HUB.v1",
-                      "path":  "release/METHODS_GOVERNANCE_HUB.v1.md"
-                  },
-                  {
-                      "node_type":  "hub",
-                      "hub_key":  "GLOSSARY_CANONICAL.v1",
-                      "path":  "release/GLOSSARY_CANONICAL.v1.md"
-                  },
-                  {
-                      "node_type":  "hub",
-                      "hub_key":  "STYLE_DISCLAIMER_POLICY.v1",
-                      "path":  "release/STYLE_DISCLAIMER_POLICY.v1.md"
-                  }
-              ],
-    "edges":  [
-                  {
-                      "from_doc_key":  "44806ece96bbdae2_main_1c305418",
-                      "from_docId":  "44806ece96bbdae2",
-                      "to":  "METHODS_GOVERNANCE_HUB.v1",
-                      "type":  "should_reference_hub",
-                      "edge_basis":  "proposal",
-                      "evidence":  "primary_supporting_map.json + methods_coverage_table.csv"
-                  },
-                  {
-                      "from_doc_key":  "44806ece96bbdae2_main_1c305418",
-                      "from_docId":  "44806ece96bbdae2",
-                      "to":  "GLOSSARY_CANONICAL.v1",
-                      "type":  "should_use_canonical_terms",
-                      "edge_basis":  "proposal",
-                      "evidence":  "q_t_candidate_evidence.json (NOT_IN_RELEASE_TEXT)"
-                  },
-                  {
-                      "from_doc_key":  "6968859f53621468_6968859f53621468_main_f973c787",
-                      "from_docId":  "6968859f53621468",
-                      "to":  "METHODS_GOVERNANCE_HUB.v1",
-                      "type":  "should_reference_hub",
-                      "edge_basis":  "proposal",
-                      "evidence":  "primary_supporting_map.json + methods_coverage_table.csv"
-                  },
-                  {
-                      "from_doc_key":  "6968859f53621468_6968859f53621468_main_f973c787",
-                      "from_docId":  "6968859f53621468",
-                      "to":  "GLOSSARY_CANONICAL.v1",
-                      "type":  "should_use_canonical_terms",
-                      "edge_basis":  "proposal",
-                      "evidence":  "q_t_candidate_evidence.json (NOT_IN_RELEASE_TEXT)"
-                  },
-                  {
-                      "from_doc_key":  "9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e",
-                      "from_docId":  "9e4b83e44e669730",
-                      "to":  "METHODS_GOVERNANCE_HUB.v1",
-                      "type":  "should_reference_hub",
-                      "edge_basis":  "proposal",
-                      "evidence":  "primary_supporting_map.json + methods_coverage_table.csv"
-                  },
-                  {
-                      "from_doc_key":  "9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e",
-                      "from_docId":  "9e4b83e44e669730",
-                      "to":  "GLOSSARY_CANONICAL.v1",
-                      "type":  "should_use_canonical_terms",
-                      "edge_basis":  "proposal",
-                      "evidence":  "q_t_candidate_evidence.json (NOT_IN_RELEASE_TEXT)"
-                  },
-                  {
-                      "from_doc_key":  "canonical_core",
-                      "from_docId":  "3b77e7b20616cf25",
-                      "to":  "METHODS_GOVERNANCE_HUB.v1",
-                      "type":  "should_reference_hub",
-                      "edge_basis":  "proposal",
-                      "evidence":  "primary_supporting_map.json + methods_coverage_table.csv"
-                  },
-                  {
-                      "from_doc_key":  "canonical_core",
-                      "from_docId":  "3b77e7b20616cf25",
-                      "to":  "GLOSSARY_CANONICAL.v1",
-                      "type":  "should_use_canonical_terms",
-                      "edge_basis":  "proposal",
-                      "evidence":  "q_t_candidate_evidence.json (NOT_IN_RELEASE_TEXT)"
-                  },
-                  {
-                      "from_doc_key":  "dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561",
-                      "from_docId":  "dc23c9c9345aae47",
-                      "to":  "METHODS_GOVERNANCE_HUB.v1",
-                      "type":  "should_reference_hub",
-                      "edge_basis":  "proposal",
-                      "evidence":  "primary_supporting_map.json + methods_coverage_table.csv"
-                  },
-                  {
-                      "from_doc_key":  "dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561",
-                      "from_docId":  "dc23c9c9345aae47",
-                      "to":  "GLOSSARY_CANONICAL.v1",
-                      "type":  "should_use_canonical_terms",
-                      "edge_basis":  "proposal",
-                      "evidence":  "q_t_candidate_evidence.json (NOT_IN_RELEASE_TEXT)"
-                  },
-                  {
-                      "from_doc_key":  "1a86ec656885a998_1a86ec656885a998_main_ac20e128",
-                      "from_docId":  "1a86ec656885a998",
-                      "to":  "STYLE_DISCLAIMER_POLICY.v1",
-                      "type":  "should_apply_disclaimer_policy",
-                      "edge_basis":  "proposal",
-                      "evidence":  "methods_mentions_index.json"
-                  },
-                  {
-                      "from_doc_key":  "857c4c89149a369c_857c4c89149a369c_main_7294ab07",
-                      "from_docId":  "857c4c89149a369c",
-                      "to":  "STYLE_DISCLAIMER_POLICY.v1",
-                      "type":  "should_apply_disclaimer_policy",
-                      "edge_basis":  "proposal",
-                      "evidence":  "methods_mentions_index.json"
-                  },
-                  {
-                      "from_doc_key":  "87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e",
-                      "from_docId":  "87dc170947cc65f0",
-                      "to":  "STYLE_DISCLAIMER_POLICY.v1",
-                      "type":  "should_apply_disclaimer_policy",
-                      "edge_basis":  "proposal",
-                      "evidence":  "methods_mentions_index.json"
-                  },
-                  {
-                      "from_doc_key":  "aa4d0b933892715a_aa4d0b933892715a_main_df41c33d",
-                      "from_docId":  "aa4d0b933892715a",
-                      "to":  "STYLE_DISCLAIMER_POLICY.v1",
-                      "type":  "should_apply_disclaimer_policy",
-                      "edge_basis":  "proposal",
-                      "evidence":  "methods_mentions_index.json"
-                  },
-                  {
-                      "from_doc_key":  "c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc",
-                      "from_docId":  "c3d1cc6abf9c8c70",
-                      "to":  "STYLE_DISCLAIMER_POLICY.v1",
-                      "type":  "should_apply_disclaimer_policy",
-                      "edge_basis":  "proposal",
-                      "evidence":  "methods_mentions_index.json"
-                  }
-              ]
+{
+  "generated_at": "2026-03-28T20:35:45.997Z",
+  "source_files": [
+    "release/CANON_MAP.v1.json",
+    "release/claim_registry.v1.json",
+    "release/system_interface_boundary.v1.json"
+  ],
+  "policy_note": "Crosspaper links in the public release are limited to explicit upstream dependency, governance alignment, and runtime-interface relevance. No theory confirmation is inferred from linkage alone.",
+  "nodes": [
+    {
+      "node_type": "document",
+      "doc_family_id": "core.v0",
+      "classification": "primary_formal_spine",
+      "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+      "source_path": "rigid-identity-framework/CANONICAL_CORE.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper1.rigid_identity",
+      "classification": "primary_formal_spine",
+      "release_pdf": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+      "source_path": "rigid-identity-framework/paper1/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper2.phenomenological_regimes",
+      "classification": "primary_formal_spine",
+      "release_pdf": "corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730.pdf",
+      "source_path": "rigid-identity-framework/paper2/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper3.null_regime_instability",
+      "classification": "primary_formal_spine",
+      "release_pdf": "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf",
+      "source_path": "rigid-identity-framework/paper3/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper4.qicn_v45_protocol",
+      "classification": "primary_formal_spine",
+      "release_pdf": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
+      "source_path": "rigid-identity-framework/paper4/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper5.operational_consciousness_criterion",
+      "classification": "primary_formal_spine",
+      "release_pdf": "corpus/pdf_release/pdfs/1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6__1e1b2ec217a514f7.pdf",
+      "source_path": "rigid-identity-framework/paper5_operational_consciousness/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper6.predictions_and_failure_modes",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
+      "source_path": "rigid-identity-framework/paper6_predictions_falsation/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper7.operational_life_subjecthood",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
+      "source_path": "rigid-identity-framework/paper7_operational_life_subjecthood/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper1.parallel_lineage",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf",
+      "source_path": "rigid-identity-paper/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper2.supporting_lineage",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b933892715a.pdf",
+      "source_path": "phenomenological-regimes-paper/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper3.supporting_lineage",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d1cc6abf9c8c70.pdf",
+      "source_path": "phenomenological-instability-paper/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "core.reconstructed_lineage",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/canonical_core_74be3e__eead218e079c0ad2.pdf",
+      "source_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "core.notebooklm_lineage",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf",
+      "source_path": "NotebookLM/LaTeX/CANONICAL_CORE.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "instability.notebooklm_mirror_a",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_instability__04b40ecc9376767e.pdf",
+      "source_path": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-instability.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "instability.notebooklm_mirror_b",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_instability_2fe669__0b013024c06a2f7d.pdf",
+      "source_path": "NotebookLM/LaTeX/phenomenological-instability.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "regimes.notebooklm_mirror_a",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_regimes__9dab69286f9e9107.pdf",
+      "source_path": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-regimes.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "regimes.notebooklm_mirror_b",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_regimes_529d6b__39860a8a5035ed82.pdf",
+      "source_path": "NotebookLM/LaTeX/phenomenological-regimes.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper1.notebooklm_mirror_a",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/rigid_identity_paper__3e026c9275c59788.pdf",
+      "source_path": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/rigid-identity-paper.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper1.notebooklm_mirror_b",
+      "classification": "supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/rigid_identity_paper_8925ec__bb0cda8022f6c8ac.pdf",
+      "source_path": "NotebookLM/LaTeX/rigid-identity-paper.tex"
+    },
+    {
+      "node_type": "hub",
+      "hub_key": "METHODS_GOVERNANCE_HUB.v1",
+      "path": "release/METHODS_GOVERNANCE_HUB.v1.md"
+    },
+    {
+      "node_type": "hub",
+      "hub_key": "GLOSSARY_CANONICAL.v1",
+      "path": "release/GLOSSARY_CANONICAL.v1.md"
+    },
+    {
+      "node_type": "hub",
+      "hub_key": "THEORY_SYSTEM_INTERFACE",
+      "path": "docs/THEORY_SYSTEM_INTERFACE.md"
+    }
+  ],
+  "edges": [
+    {
+      "from": "paper4.qicn_v45_protocol",
+      "to": "paper6.predictions_and_failure_modes",
+      "type": "protocol_supports_prediction_layer",
+      "edge_basis": "declared_upstream_dependency"
+    },
+    {
+      "from": "paper5.operational_consciousness_criterion",
+      "to": "paper6.predictions_and_failure_modes",
+      "type": "criterion_to_prediction_layer",
+      "edge_basis": "declared_upstream_dependency"
+    },
+    {
+      "from": "paper5.operational_consciousness_criterion",
+      "to": "paper7.operational_life_subjecthood",
+      "type": "criterion_to_classificatory_extension",
+      "edge_basis": "declared_upstream_dependency"
+    },
+    {
+      "from": "paper6.predictions_and_failure_modes",
+      "to": "paper7.operational_life_subjecthood",
+      "type": "status_boundary_carries_forward",
+      "edge_basis": "declared_upstream_dependency"
+    },
+    {
+      "from": "paper4.qicn_v45_protocol",
+      "to": "METHODS_GOVERNANCE_HUB.v1",
+      "type": "governed_by_release_methods_hub",
+      "edge_basis": "policy"
+    },
+    {
+      "from": "paper4.qicn_v45_protocol",
+      "to": "GLOSSARY_CANONICAL.v1",
+      "type": "governed_by_canonical_term_policy",
+      "edge_basis": "policy"
+    },
+    {
+      "from": "paper5.operational_consciousness_criterion",
+      "to": "METHODS_GOVERNANCE_HUB.v1",
+      "type": "governed_by_release_methods_hub",
+      "edge_basis": "policy"
+    },
+    {
+      "from": "paper5.operational_consciousness_criterion",
+      "to": "GLOSSARY_CANONICAL.v1",
+      "type": "governed_by_canonical_term_policy",
+      "edge_basis": "policy"
+    },
+    {
+      "from": "paper6.predictions_and_failure_modes",
+      "to": "METHODS_GOVERNANCE_HUB.v1",
+      "type": "governed_by_release_methods_hub",
+      "edge_basis": "policy"
+    },
+    {
+      "from": "paper6.predictions_and_failure_modes",
+      "to": "GLOSSARY_CANONICAL.v1",
+      "type": "governed_by_canonical_term_policy",
+      "edge_basis": "policy"
+    },
+    {
+      "from": "paper7.operational_life_subjecthood",
+      "to": "METHODS_GOVERNANCE_HUB.v1",
+      "type": "governed_by_release_methods_hub",
+      "edge_basis": "policy"
+    },
+    {
+      "from": "paper7.operational_life_subjecthood",
+      "to": "GLOSSARY_CANONICAL.v1",
+      "type": "governed_by_canonical_term_policy",
+      "edge_basis": "policy"
+    }
+  ]
 }

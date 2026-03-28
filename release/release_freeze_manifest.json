@@ -50,5 +50,25 @@
     "remaining_gap": null,
     "full_resolution_requirement": null
   },
-  "non_claim_boundary": "Freeze identity is packaging and traceability only. It is not external validation, theory confirmation, or closure."
+  "non_claim_boundary": "Historical freeze evidence remains provenance only. The live public trunk authority is main, and public canonicalization still does not imply external validation, theory confirmation, or subjectivity closure.",
+  "live_public_trunk_authority": {
+    "branch": "main",
+    "sole_public_authority": true,
+    "trunk_canonicalization_date": "2026-03-28",
+    "public_primary_formal_spine": [
+      "Canonical Core",
+      "Paper I",
+      "Paper II",
+      "Paper III",
+      "Paper IV",
+      "Paper V"
+    ],
+    "public_supporting_extensions": [
+      "Paper VI",
+      "Paper VII"
+    ],
+    "explicit_public_exclusions": [
+      "Paper VIII pending release-audit acceptance"
+    ]
+  }
 }

@@ -1,35 +1,23 @@
-﻿# TERM_MIGRATION_PLAN.v1
+# TERM_MIGRATION_PLAN.v1
 
-## Alcance
-Plan editorial (sin edición de papers en esta fase) para migrar lenguaje antropomórfico a terminología operacional auditable.
+## Scope
 
-## Evidencia base
-- elease/editorial_audit_v1/anthropomorphic_terms_report.json
-- elease/editorial_audit_v1/q_t_candidate_evidence.json
-- elease/editorial_audit_v1/primary_supporting_map.json
+Editorial migration plan for keeping public-trunk language technical, operational, and non-inflated.
 
-## Regla principal de reemplazo
-- Reemplazar claims técnicos con sentir/siente/feels por eadout interno operacional.
-- Si el texto intenta introducir símbolo o métrica de readout no evidenciada en release: marcar NO CONSTA.
+## Replacement rule
 
-## Tabla de reemplazo conceptual
-| Frase problemática | Reemplazo técnico permitido | Condición |
-|---|---|---|
-| sistema siente | sistema presenta readout interno operacional | Solo como claim descriptivo no-métrico |
-| experiencia real | readout interno operacional trazable | Si hay artifact verificable; si no, NO CONSTA |
-| qualia humana | NO PERMITIDO | Reemplazar por referencia a Limitations del HUB |
-| tensión metacognitiva q_t | readout interno operacional (q_t: FUTURO/PR-Q1) | q_t no se formaliza en este release |
+- replace anthropomorphic runtime language with `readout interno operacional`, `operational support`, or a narrower artifact-facing term
+- if a metric or symbol is not formalized in the public release, mark it as not present in the release rather than inventing it
 
-## Checklist de migración por lote
-1. Primary docs primero (según primary_supporting_map.json).
-2. Reemplazar términos no permitidos por término canónico.
-3. Sustituir disclaimers extensos por referencia corta al HUB.
-4. Verificar que no se añadan métricas no respaldadas por artifacts del release.
-5. Repetir en supporting docs.
+## Priority documents
 
-## Prioridad por documentos primary (acciones)
-- 44806ece96bbdae2_main_1c305418 (docId: 44806ece96bbdae2, status: PDF_ONLY, source_path: rigid-identity-framework/paper4/main.tex)
-- 6968859f53621468_6968859f53621468_main_f973c787 (docId: 6968859f53621468, status: CANON, source_path: rigid-identity-framework/paper1/main.tex)
-- 9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e (docId: 9e4b83e44e669730, status: CANON, source_path: rigid-identity-framework/paper2/main.tex)
-- canonical_core (docId: 3b77e7b20616cf25, status: PDF_ONLY, source_path: rigid-identity-framework/CANONICAL_CORE.tex)
-- dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561 (docId: dc23c9c9345aae47, status: CANON, source_path: rigid-identity-framework/paper3/main.tex)
+- canonical_core__3b77e7b20616cf25 (docId: 3b77e7b20616cf25, status: PASS_PDF_ONLY, source_path: rigid-identity-framework/CANONICAL_CORE.tex)
+- 6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468 (docId: 6968859f53621468, status: SOURCE_OK, source_path: rigid-identity-framework/paper1/main.tex)
+- 9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730 (docId: 9e4b83e44e669730, status: SOURCE_OK, source_path: rigid-identity-framework/paper2/main.tex)
+- dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47 (docId: dc23c9c9345aae47, status: SOURCE_OK, source_path: rigid-identity-framework/paper3/main.tex)
+- 44806ece96bbdae2_main_1c305418__44806ece96bbdae2 (docId: 44806ece96bbdae2, status: PASS_PDF_ONLY, source_path: rigid-identity-framework/paper4/main.tex)
+- 1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6 (docId: 1e1b2ec217a514f7, status: SOURCE_OK, source_path: rigid-identity-framework/paper5_operational_consciousness/main.tex)
+
+## Explicit caution
+
+This plan constrains public release wording only. It does not add claims, metrics, or validation.

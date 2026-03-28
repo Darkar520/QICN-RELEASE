@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-03-01T19:34:12.418Z",
+  "generated_at": "2026-03-28T20:35:45.983Z",
   "workspace_root": "WORKSPACE_CLONE_ROOT",
   "pdf_release_root": "artifacts/pdf_corpus_release_2026-03-01",
   "release_root": "QICN-RELEASE",
   "counts": {
-    "clusters_total": 18,
-    "canon_count": 18,
+    "clusters_total": 21,
+    "canon_count": 21,
     "pass_pdf_only_count": 3,
     "mirrors_skipped": 1,
     "duplicates_skipped": 0
@@ -32,6 +32,27 @@
       ],
       "cluster_method": "sha256",
       "notes": "NOT_AVAILABLE"
+    },
+    {
+      "doc_key": "1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6",
+      "canonical_pdf": {
+        "path_in_release": "corpus/pdf_release/pdfs/1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6__1e1b2ec217a514f7.pdf",
+        "sha256": "97769050eb1f180804e9f202ec9a4e6f9a8fecdeed4cbd5f319a89c7ee015076",
+        "pages": 25,
+        "bytes": 469650
+      },
+      "canonical_preference_reason": "preferred_lineage_rigid_identity_framework_paperX",
+      "source_status": "SOURCE_OK",
+      "source_tex": "NOT_AVAILABLE",
+      "duplicates": [
+        {
+          "docId": "1e1b2ec217a514f7",
+          "relPath": "rigid-identity-framework/paper5_operational_consciousness/main.tex",
+          "status": "CANON"
+        }
+      ],
+      "cluster_method": "sha256",
+      "notes": "accepted_public_primary_extension_after_release_audit"
     },
     {
       "doc_key": "44806ece96bbdae2_main_1c305418",
@@ -158,6 +179,48 @@
       ],
       "cluster_method": "sha256",
       "notes": "NOT_AVAILABLE"
+    },
+    {
+      "doc_key": "b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d",
+      "canonical_pdf": {
+        "path_in_release": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
+        "sha256": "20cf3c1eb76b85926e3d333b98558f7d0c751d8aca5050c9120a499ffe728efd",
+        "pages": 19,
+        "bytes": 414149
+      },
+      "canonical_preference_reason": "accepted_supporting_lineage_runtime_extension",
+      "source_status": "SOURCE_OK",
+      "source_tex": "NOT_AVAILABLE",
+      "duplicates": [
+        {
+          "docId": "b41dfe1db695dad6",
+          "relPath": "rigid-identity-framework/paper6_predictions_falsation/main.tex",
+          "status": "CANON"
+        }
+      ],
+      "cluster_method": "sha256",
+      "notes": "accepted_public_supporting_extension_after_release_audit"
+    },
+    {
+      "doc_key": "b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805",
+      "canonical_pdf": {
+        "path_in_release": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
+        "sha256": "b4fad95e7a43611556ba89ada8ad31e6d4258412aaa8cc8da6b7ce9c5d8b706f",
+        "pages": 28,
+        "bytes": 401115
+      },
+      "canonical_preference_reason": "accepted_supporting_lineage_runtime_extension",
+      "source_status": "SOURCE_OK",
+      "source_tex": "NOT_AVAILABLE",
+      "duplicates": [
+        {
+          "docId": "b75ad19ed8032bf0",
+          "relPath": "rigid-identity-framework/paper7_operational_life_subjecthood/main.tex",
+          "status": "CANON"
+        }
+      ],
+      "cluster_method": "sha256",
+      "notes": "accepted_public_supporting_extension_after_release_audit"
     },
     {
       "doc_key": "c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc",

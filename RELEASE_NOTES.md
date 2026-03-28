@@ -1,4 +1,4 @@
-﻿# RELEASE_NOTES
+# RELEASE_NOTES
 
 ## Release ID
 
@@ -7,76 +7,16 @@
 
 ## Official hashes
 
-- corpus/pdf_release/pdf_corpus.zip: 3395006bdac94f26f956ade3e560ce1ceb1de76321323e6db242acfc86db6654
-- corpus/pdf_release/manifest.json: a5be525da3c18cea1202d66b4c0d22795f5e4d00f9baafef10951fe95ff3446c
+- corpus/pdf_release/pdf_corpus.zip: 033558681adad9e746db6d942130537f68a1cf92cd7f2103e947ed7be6488632
+- corpus/pdf_release/manifest.json: 79816c05953b805aa7fc891a2b76bdd0e73466aee21d193b697d29cdf98610cd
 
-## What's Included
+## Public canonical scope
 
-- `corpus/pdf_release/pdf_corpus.zip`
-- `corpus/pdf_release/pdf_corpus.zip.sha256.txt`
-- `corpus/pdf_release/manifest.json`
-- `corpus/pdf_release/manifest.sha256.txt`
-- `release/CANON_MAP.v1.json`
-- `release/INDEX_PDFS.json`
-- `release/RELEASE_MAP.md`
-- `release/BLUEPRINT_EDITORIAL.md`
-- `release/GLOSSARY_CANONICAL.v1.md`
-- `release/METHODS_GOVERNANCE_HUB.v1.md`
-- `release/STYLE_DISCLAIMER_POLICY.v1.md`
-- `release/TERM_MIGRATION_PLAN.v1.md`
-- `release/CROSSPAPER_LINKMAP.v1.json`
-- `release/EDITORIAL_BLUEPRINT_ACTIONS.v1.md`
-- `docs/CANON_SOURCE_OF_TRUTH.md`
-- `docs/CANON_MANIFEST.md`
-- `docs/CLAIM_REGISTRY.md`
-- `docs/LAYER_BOUNDARIES.md`
-- `docs/THEORY_SYSTEM_INTERFACE.md`
-- `docs/CANONICAL_RELEASE_NOTES.md`
-- `release/release_freeze_manifest.json`
-- `release/canon_manifest.v1.json`
-- `release/claim_registry.v1.json`
-- `release/layer_boundaries.v1.json`
-- `release/system_interface_boundary.v1.json`
+- primary formal spine: Canonical Core and Papers I-V
+- accepted supporting public extensions: Papers VI-VII
+- explicitly outside current public canon: Paper VIII pending release-audit acceptance
 
-## What's Excluded
-
-- Regeneration of `pdf_corpus.zip` for Camino 1.
-- Rewriting paper contents.
-- Full upstream workspace build artifacts.
-- `release/_non_canonical/` editorial/preparatory material outside the tagged
-  canonical freeze.
-
-## Reproducibility
-
-- Recompute SHA256 for zip and manifest.
-- Compare each value against the corresponding `.sha256.txt` file.
-- Accept release only if both matches are true.
-- Preferred cross-platform verification path:
-  - `node scripts/verify-canonical-integrity.cjs`
-  - `node scripts/verify-claim-registry.cjs`
-  - `node scripts/verify-canonical-release.cjs`
-
-## Governance
-
-- Integrity evidence: `release/FREEZE_AUDIT_v1/integrity_check.json`
-- Command evidence: `release/FREEZE_AUDIT_v1/commands_run.txt`
-- Git freeze evidence: `release/FREEZE_AUDIT_v1/git_status.txt`, `git_log_1.txt`, `git_tags.txt`
-
-## Historical Gitification Plan (reference only)
-
-```text
-git init
-git add .gitignore README.md RELEASE_NOTES.md CHANGELOG.md
-git add release corpus\pdf_release
-git commit -m "release: QICN package v1 (canon map + pdf corpus + integrity hashes)"
-git branch -M main
-git tag release-2026-03-01
-git remote add origin <GITHUB_REPO_URL>
-git push -u origin main
-git push origin --tags
-```
-
-## Canonical hardening verification
+## Verification
 
 ```bash
 node scripts/verify-canonical-integrity.cjs
@@ -84,3 +24,13 @@ node scripts/verify-claim-registry.cjs
 node scripts/build-canonical-release-bundle.cjs
 node scripts/verify-canonical-release.cjs
 ```
+
+## Governance
+
+- historical freeze tags remain provenance anchors only
+- `main` is the sole live public authority
+- historical audit files that still reflect the shorter spine are retained as provenance, not as live canon authority
+
+## Non-claim boundary
+
+This release package is a canonicalization and governance artifact. It does not imply external validation, runtime closure, or human-equivalence claims.

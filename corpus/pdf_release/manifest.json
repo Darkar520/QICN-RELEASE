@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-28T20:35:45.914Z",
+  "generated_at": "2026-03-28T22:43:04.356Z",
   "run_metadata": {
     "REPO_ROOT": "WORKSPACE_CLONE_ROOT",
     "NOTEBOOKLM_ROOT": "NotebookLM",
@@ -55,11 +55,11 @@
     "latexmk": true
   },
   "counts": {
-    "PASS": 18,
+    "PASS": 19,
     "PASS_PDF_ONLY": 4,
     "DROP": 5,
     "SKIP_DUPLICATE_CANONICAL": 2,
-    "total": 29
+    "total": 30
   },
   "entries": [
     {
@@ -1327,6 +1327,25 @@
       "bundle_pdf_path": "PDF_BUNDLE/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
       "pdf_sha256": "b4fad95e7a43611556ba89ada8ad31e6d4258412aaa8cc8da6b7ce9c5d8b706f",
       "pdf_pages": 28,
+      "pdf_only_reason": null,
+      "drop_reason": null,
+      "fail_reason": null,
+      "fatal_snippet": null,
+      "match_candidates": null,
+      "equivalence": null
+    },
+    {
+      "docId": "a8cbd1be2034253b",
+      "relPath": "rigid-identity-framework/paper8_first_person_subjectivity/main.tex",
+      "status": "PASS",
+      "rootSignature": "NOT_AVAILABLE",
+      "source_hash_partial": "6567b2a2327ee14df54aaec9456038f978a04f57907b697cc5d4fe31ecedb7c7",
+      "canonical_of": null,
+      "engine_used": "NOT_AVAILABLE",
+      "pdf_source_path": "rigid-identity-framework/paper8_first_person_subjectivity/main.pdf",
+      "bundle_pdf_path": "PDF_BUNDLE/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
+      "pdf_sha256": "754e421c96cb30f40fc74f07ffbbfc265b98f71f27a07a40026f094a5141835f",
+      "pdf_pages": 42,
       "pdf_only_reason": null,
       "drop_reason": null,
       "fail_reason": null,

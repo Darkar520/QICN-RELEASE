@@ -7,14 +7,13 @@
 
 ## Official hashes
 
-- corpus/pdf_release/pdf_corpus.zip: 033558681adad9e746db6d942130537f68a1cf92cd7f2103e947ed7be6488632
-- corpus/pdf_release/manifest.json: 79816c05953b805aa7fc891a2b76bdd0e73466aee21d193b697d29cdf98610cd
+- corpus/pdf_release/pdf_corpus.zip: 1ab538bd42376f790debe7c11a5f1525deab83a24d45b3823846c0b0e5eb03d7
+- corpus/pdf_release/manifest.json: c8f3c8b86de1a84ad42b9fdfe6ef81fb374ab9881d1509e9b0f5cef7d331b727
 
 ## Public canonical scope
 
-- primary formal spine: Canonical Core and Papers I-V
-- accepted supporting public extensions: Papers VI-VII
-- explicitly outside current public canon: Paper VIII pending release-audit acceptance
+- primary formal spine: Canonical Core and Papers I-VIII
+- supporting public lineages remain separately classified under `release/canon_manifest.v1.json`
 
 ## Verification
 

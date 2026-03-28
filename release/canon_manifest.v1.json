@@ -2,7 +2,7 @@
   "artifact_role": "canonical_boundary_manifest",
   "schema_version": "1.1.0",
   "release_id": "release_repo_qicn_2026-03-01",
-  "canonical_pdf_count": 21,
+  "canonical_pdf_count": 22,
   "source_of_truth_refs": {
     "pdf_bundle": "corpus/pdf_release/pdf_corpus.zip",
     "pdf_bundle_sha256": "corpus/pdf_release/pdf_corpus.zip.sha256.txt",
@@ -80,21 +80,30 @@
       "preferred_source_path": "rigid-identity-framework/paper5_operational_consciousness/main.tex",
       "source_status": "SOURCE_OK",
       "role": "formal_source_of_truth"
-    }
-  ],
-  "supporting_lineages_included_in_freeze": [
+    },
     {
       "doc_family_id": "paper6.predictions_and_failure_modes",
       "release_pdf": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
-      "source_path": "rigid-identity-framework/paper6_predictions_falsation/main.tex",
-      "role": "supporting_formal_lineage"
+      "preferred_source_path": "rigid-identity-framework/paper6_predictions_falsation/main.tex",
+      "source_status": "SOURCE_OK",
+      "role": "formal_source_of_truth"
     },
     {
       "doc_family_id": "paper7.operational_life_subjecthood",
       "release_pdf": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
-      "source_path": "rigid-identity-framework/paper7_operational_life_subjecthood/main.tex",
-      "role": "supporting_contextual_extension"
+      "preferred_source_path": "rigid-identity-framework/paper7_operational_life_subjecthood/main.tex",
+      "source_status": "SOURCE_OK",
+      "role": "formal_source_of_truth"
     },
+    {
+      "doc_family_id": "paper8.first_person_subjectivity",
+      "release_pdf": "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper8_first_person_subjectivity/main.tex",
+      "source_status": "SOURCE_OK",
+      "role": "formal_source_of_truth"
+    }
+  ],
+  "supporting_lineages_included_in_freeze": [
     {
       "doc_family_id": "paper1.parallel_lineage",
       "release_pdf": "corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf",
@@ -207,14 +216,12 @@
       "paper2.phenomenological_regimes",
       "paper3.null_regime_instability",
       "paper4.qicn_v45_protocol",
-      "paper5.operational_consciousness_criterion"
-    ],
-    "supporting_public_extensions": [
+      "paper5.operational_consciousness_criterion",
       "paper6.predictions_and_failure_modes",
-      "paper7.operational_life_subjecthood"
-    ],
-    "excluded_pending_public_acceptance": [
+      "paper7.operational_life_subjecthood",
       "paper8.first_person_subjectivity"
-    ]
+    ],
+    "supporting_public_extensions": [],
+    "excluded_pending_public_acceptance": []
   }
 }

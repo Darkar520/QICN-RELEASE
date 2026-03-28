@@ -10,10 +10,11 @@
 - Paper V
 - Paper VI
 - Paper VII
+- Paper VIII
 
 ## Editorial rules
 
-- one preferred public formal spine through Paper V
-- supporting public extensions stay classified as supporting, not primary
+- one preferred public formal spine through Paper VIII
+- supporting public lineages stay classified as supporting, not primary
 - mirror lineages remain traceability material only
-- subjectivity work beyond Paper VII remains outside the public release until accepted here
+- materials beyond Paper VIII remain outside the public release until accepted here

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-28T20:35:45.997Z",
+  "generated_at": "2026-03-28T22:43:04.496Z",
   "source_files": [
     "release/CANON_MAP.v1.json",
     "release/claim_registry.v1.json",
@@ -52,16 +52,23 @@
     {
       "node_type": "document",
       "doc_family_id": "paper6.predictions_and_failure_modes",
-      "classification": "supporting_lineage",
+      "classification": "primary_formal_spine",
       "release_pdf": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
       "source_path": "rigid-identity-framework/paper6_predictions_falsation/main.tex"
     },
     {
       "node_type": "document",
       "doc_family_id": "paper7.operational_life_subjecthood",
-      "classification": "supporting_lineage",
+      "classification": "primary_formal_spine",
       "release_pdf": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
       "source_path": "rigid-identity-framework/paper7_operational_life_subjecthood/main.tex"
+    },
+    {
+      "node_type": "document",
+      "doc_family_id": "paper8.first_person_subjectivity",
+      "classification": "primary_formal_spine",
+      "release_pdf": "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
+      "source_path": "rigid-identity-framework/paper8_first_person_subjectivity/main.tex"
     },
     {
       "node_type": "document",
@@ -183,6 +190,30 @@
     },
     {
       "from": "paper4.qicn_v45_protocol",
+      "to": "paper8.first_person_subjectivity",
+      "type": "protocol_supports_subjectivity_runtime_path",
+      "edge_basis": "declared_upstream_dependency"
+    },
+    {
+      "from": "paper5.operational_consciousness_criterion",
+      "to": "paper8.first_person_subjectivity",
+      "type": "criterion_to_subjectivity_layer",
+      "edge_basis": "declared_upstream_dependency"
+    },
+    {
+      "from": "paper6.predictions_and_failure_modes",
+      "to": "paper8.first_person_subjectivity",
+      "type": "prediction_and_failure_burden_carries_forward",
+      "edge_basis": "declared_upstream_dependency"
+    },
+    {
+      "from": "paper7.operational_life_subjecthood",
+      "to": "paper8.first_person_subjectivity",
+      "type": "subjecthood_to_first_person_subjectivity",
+      "edge_basis": "declared_upstream_dependency"
+    },
+    {
+      "from": "paper4.qicn_v45_protocol",
       "to": "METHODS_GOVERNANCE_HUB.v1",
       "type": "governed_by_release_methods_hub",
       "edge_basis": "policy"
@@ -225,6 +256,18 @@
     },
     {
       "from": "paper7.operational_life_subjecthood",
+      "to": "GLOSSARY_CANONICAL.v1",
+      "type": "governed_by_canonical_term_policy",
+      "edge_basis": "policy"
+    },
+    {
+      "from": "paper8.first_person_subjectivity",
+      "to": "METHODS_GOVERNANCE_HUB.v1",
+      "type": "governed_by_release_methods_hub",
+      "edge_basis": "policy"
+    },
+    {
+      "from": "paper8.first_person_subjectivity",
       "to": "GLOSSARY_CANONICAL.v1",
       "type": "governed_by_canonical_term_policy",
       "edge_basis": "policy"

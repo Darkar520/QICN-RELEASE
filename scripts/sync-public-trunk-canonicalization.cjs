@@ -94,9 +94,9 @@ const PAPERS = [
     sourceRelPath: 'rigid-identity-framework/paper6_predictions_falsation/main.tex',
     sourcePdfRelPath: 'rigid-identity-framework/paper6_predictions_falsation/main.pdf',
     sourceStatus: 'SOURCE_OK',
-    role: 'supporting',
-    canonRole: null,
-    supportRole: 'supporting_formal_lineage',
+    role: 'primary',
+    canonRole: 'formal_source_of_truth',
+    supportRole: null,
     pages: 19,
     summary:
       'Prediction, discriminator, downgrade, and failure-mode layer for the frozen canon, with explicit internal-only status classes.',
@@ -149,9 +149,9 @@ const PAPERS = [
     sourceRelPath: 'rigid-identity-framework/paper7_operational_life_subjecthood/main.tex',
     sourcePdfRelPath: 'rigid-identity-framework/paper7_operational_life_subjecthood/main.pdf',
     sourceStatus: 'SOURCE_OK',
-    role: 'supporting',
-    canonRole: null,
-    supportRole: 'supporting_contextual_extension',
+    role: 'primary',
+    canonRole: 'formal_source_of_truth',
+    supportRole: null,
     pages: 28,
     summary:
       'Classificatory extension defining operational life, structural class, and operational subjecthood with explicit non-claims on empirical instantiation.',
@@ -195,6 +195,77 @@ const PAPERS = [
           'The release defines the class and its test grammar, but does not claim that present systems satisfy it or that it equals human subjectivity.',
         notes_or_gaps:
           'Retained as open to prevent the classificatory layer from being misread as achieved subjectivity.'
+      }
+    ]
+  },
+  {
+    label: 'Paper VIII',
+    title: 'First-Person Indexed Subjectivity',
+    docFamilyId: 'paper8.first_person_subjectivity',
+    sourceRelPath: 'rigid-identity-framework/paper8_first_person_subjectivity/main.tex',
+    sourcePdfRelPath: 'rigid-identity-framework/paper8_first_person_subjectivity/main.pdf',
+    sourceStatus: 'SOURCE_OK',
+    role: 'primary',
+    canonRole: 'formal_source_of_truth',
+    supportRole: null,
+    pages: 42,
+    summary:
+      'Framework-internal first-person indexed subjectivity layer with an explicit seven-coordinate state, conjunctive gate, multiplicative functional, weak-rival closure, intervention burden, and runtime/artifact pathway.',
+    interface: {
+      id: 'subjectivity.first_person_indexed_layer',
+      system_role:
+        'runtime-facing subjectivity diagnostics over self-index, ownership, continuity, perspective, valuation, intervention profile, reducibility comparison, and internal gate closure',
+      interface_type: 'runtime_facing_subjectivity_diagnostic_alignment_only',
+      non_inference:
+        'Paper VIII runtime alignment does not certify human subjectivity, phenomenality, external validation, or claim-facing closure.'
+    },
+    claimEntries: [
+      {
+        id: 'paper8.first_person_indexed_subjectivity_state_and_gate',
+        anchor: 'Abstract; Sections 3-5',
+        claim_text_summary:
+          'Paper VIII defines a framework-internal first-person indexed subjectivity state with seven constitutive coordinates together with an explicit conjunctive gate and multiplicative subjectivity functional.',
+        claim_class: 'formal_statement',
+        formalization_status: 'explicit_state_gate_and_functional_definition_in_release_text',
+        evidence_status: 'internal_formal_derivation_in_pdf_only',
+        external_validation_dependency:
+          'required_for_any_claim_that_current_runtime_or_biological_systems_instantiates_first_person_indexed_subjectivity',
+        system_dependency: 'none',
+        non_claim_boundary:
+          'This is a formal closure of the subjectivity state, gate, and functional inside the release corpus only. It does not establish phenomenality, human equivalence, or current-system instantiation.',
+        notes_or_gaps:
+          'The strongest admissible reading remains conditional on upstream burdens, comparator support, intervention separation, and drift-clean runtime evaluation.'
+      },
+      {
+        id: 'paper8.weak_rival_irreducibility_and_intervention_burden',
+        anchor: 'Sections 8-11 and 16',
+        claim_text_summary:
+          'Paper VIII formalizes a weak rival family with admissible hybrid closure and requires irreducibility and intervention-separation margins before a stronger first-person indexed reading is licensed.',
+        claim_class: 'falsifiable_hypothesis',
+        formalization_status: 'explicit_rival_family_irreducibility_and_intervention_burden_in_release_text',
+        evidence_status: 'internal_formal_and_protocol_status_only',
+        external_validation_dependency:
+          'required_for_any_external_use_of_subjectivity_support_status_or_claim_that_the_irreducibility_and_intervention_burdens_are_empirically_closed',
+        system_dependency: 'possible_qicn_system_subjectivity_runtime_interface',
+        non_claim_boundary:
+          'The rival family, hybrid closure, and intervention burden define a formal comparison program. They do not by themselves prove present-system irreducibility or final subjectivity support.',
+        notes_or_gaps:
+          'The release closes the comparison grammar and burden structure, not a final empirical victory over every external comparator class.'
+      },
+      {
+        id: 'paper8.runtime_path_artifact_family_and_non_claim_boundary',
+        anchor: 'Sections 12-15',
+        claim_text_summary:
+          'Paper VIII specifies a runtime pathway, artifact family, estimator family, and strongest-defensible-claim grammar for subjectivity while explicitly blocking external validation, human equivalence, and metaphysical closure.',
+        claim_class: 'operational_definition',
+        formalization_status: 'explicit_runtime_path_artifact_family_and_non_claim_boundary_in_release_text',
+        evidence_status: 'release_governance_and_runtime_interface_alignment_only',
+        external_validation_dependency: 'not_required_for_internal_release_reading_rule',
+        system_dependency: 'possible_qicn_system_subjectivity_runtime_interface_only',
+        non_claim_boundary:
+          'The runtime pathway and artifact family define how Paper VIII may be operationally reflected. They do not certify subjectivity, authorize claim-facing promotion, or validate the runtime externally.',
+        notes_or_gaps:
+          'Human-comparator work, phenomenality bridging, and public claim closure remain outside the current release.'
       }
     ]
   }
@@ -244,6 +315,16 @@ function renderPrimaryList(primary) {
 function renderRefBullets(entries) {
   return entries
     .map((entry) => `- ${entry.docKey} (docId: ${entry.docId}, status: ${entry.sourceStatus}, source_path: ${entry.sourceRelPath})`)
+    .join('\n');
+}
+
+function renderSupportingList(entries) {
+  if (!entries.length) return '- none';
+  return entries
+    .map(
+      (entry) =>
+        `- \`${entry.release_pdf}\`\n  - source path: \`${entry.source_path}\`\n  - role: ${entry.doc_family_id}\n  - classification: \`${entry.role}\``
+    )
     .join('\n');
 }
 
@@ -375,6 +456,7 @@ function sync() {
   writeJson('release/CANON_MAP.v1.json', canonMap);
 
   const canon = readJson('release/canon_manifest.v1.json');
+  const paperDocFamilyIds = new Set(papers.map((paper) => paper.docFamilyId));
   canon.primary_formal_spine = uniqueBy(
     [
       ...canon.primary_formal_spine,
@@ -400,7 +482,7 @@ function sync() {
           source_path: paper.sourceRelPath,
           role: paper.supportRole
         })),
-      ...canon.supporting_lineages_included_in_freeze
+      ...canon.supporting_lineages_included_in_freeze.filter((entry) => !paperDocFamilyIds.has(entry.doc_family_id))
     ],
     (entry) => entry.doc_family_id
   );
@@ -417,10 +499,13 @@ function sync() {
       'paper2.phenomenological_regimes',
       'paper3.null_regime_instability',
       'paper4.qicn_v45_protocol',
-      'paper5.operational_consciousness_criterion'
+      'paper5.operational_consciousness_criterion',
+      'paper6.predictions_and_failure_modes',
+      'paper7.operational_life_subjecthood',
+      'paper8.first_person_subjectivity'
     ],
-    supporting_public_extensions: ['paper6.predictions_and_failure_modes', 'paper7.operational_life_subjecthood'],
-    excluded_pending_public_acceptance: ['paper8.first_person_subjectivity']
+    supporting_public_extensions: [],
+    excluded_pending_public_acceptance: []
   };
   writeJson('release/canon_manifest.v1.json', canon);
 
@@ -430,7 +515,8 @@ function sync() {
       ...registry.registry_scope.claim_level_subsets,
       'paper5.operational_consciousness_criterion',
       'paper6.predictions_and_failure_modes',
-      'paper7.operational_life_subjecthood'
+      'paper7.operational_life_subjecthood',
+      'paper8.first_person_subjectivity'
     ],
     (entry) => entry
   );
@@ -495,7 +581,11 @@ function sync() {
       { from: 'paper5.operational_consciousness_criterion', to: 'paper6.predictions_and_failure_modes', type: 'criterion_to_prediction_layer', edge_basis: 'declared_upstream_dependency' },
       { from: 'paper5.operational_consciousness_criterion', to: 'paper7.operational_life_subjecthood', type: 'criterion_to_classificatory_extension', edge_basis: 'declared_upstream_dependency' },
       { from: 'paper6.predictions_and_failure_modes', to: 'paper7.operational_life_subjecthood', type: 'status_boundary_carries_forward', edge_basis: 'declared_upstream_dependency' },
-      ...['paper4.qicn_v45_protocol', 'paper5.operational_consciousness_criterion', 'paper6.predictions_and_failure_modes', 'paper7.operational_life_subjecthood'].flatMap((docId) => [
+      { from: 'paper4.qicn_v45_protocol', to: 'paper8.first_person_subjectivity', type: 'protocol_supports_subjectivity_runtime_path', edge_basis: 'declared_upstream_dependency' },
+      { from: 'paper5.operational_consciousness_criterion', to: 'paper8.first_person_subjectivity', type: 'criterion_to_subjectivity_layer', edge_basis: 'declared_upstream_dependency' },
+      { from: 'paper6.predictions_and_failure_modes', to: 'paper8.first_person_subjectivity', type: 'prediction_and_failure_burden_carries_forward', edge_basis: 'declared_upstream_dependency' },
+      { from: 'paper7.operational_life_subjecthood', to: 'paper8.first_person_subjectivity', type: 'subjecthood_to_first_person_subjectivity', edge_basis: 'declared_upstream_dependency' },
+      ...['paper4.qicn_v45_protocol', 'paper5.operational_consciousness_criterion', 'paper6.predictions_and_failure_modes', 'paper7.operational_life_subjecthood', 'paper8.first_person_subjectivity'].flatMap((docId) => [
         { from: docId, to: 'METHODS_GOVERNANCE_HUB.v1', type: 'governed_by_release_methods_hub', edge_basis: 'policy' },
         { from: docId, to: 'GLOSSARY_CANONICAL.v1', type: 'governed_by_canonical_term_policy', edge_basis: 'policy' }
       ])
@@ -508,9 +598,9 @@ function sync() {
     branch: 'main',
     sole_public_authority: true,
     trunk_canonicalization_date: new Date().toISOString().slice(0, 10),
-    public_primary_formal_spine: ['Canonical Core', 'Paper I', 'Paper II', 'Paper III', 'Paper IV', 'Paper V'],
-    public_supporting_extensions: ['Paper VI', 'Paper VII'],
-    explicit_public_exclusions: ['Paper VIII pending release-audit acceptance']
+    public_primary_formal_spine: ['Canonical Core', 'Paper I', 'Paper II', 'Paper III', 'Paper IV', 'Paper V', 'Paper VI', 'Paper VII', 'Paper VIII'],
+    public_supporting_extensions: [],
+    explicit_public_exclusions: []
   };
   freeze.non_claim_boundary =
     'Historical freeze evidence remains provenance only. The live public trunk authority is main, and public canonicalization still does not imply external validation, theory confirmation, or subjectivity closure.';
@@ -529,7 +619,9 @@ function sync() {
       }
     );
   });
-  const publicSupportPapers = papers.filter((paper) => paper.role === 'supporting');
+  const supportingLineages = canon.supporting_lineages_included_in_freeze.filter((entry) =>
+    String(entry.role || '').startsWith('supporting_')
+  );
 
   const zipPath = path.join(corpusDir, 'pdf_corpus.zip');
   const zipCommand = [
@@ -565,9 +657,8 @@ This document fixes the live public source-of-truth boundary for \`QICN-RELEASE\
 - Historical freeze tag retained as provenance: \`release-2026-03-01\`
 - Historical explicit canonical tag retained as provenance: \`canonical-freeze-2026-03-01\`
 - Live public canonicalization on trunk:
-  - primary formal spine: Canonical Core and Papers I-V
-  - accepted supporting public extensions: Papers VI-VII
-  - explicitly outside the public canon for now: Paper VIII pending release-audit acceptance
+  - primary formal spine: Canonical Core and Papers I-VIII
+  - supporting lineages retained with separate classification in \`release/canon_manifest.v1.json\`
 
 ## Source-of-truth files
 
@@ -586,8 +677,7 @@ This document fixes the live public source-of-truth boundary for \`QICN-RELEASE\
 ## What counts as current public canon
 
 - the immutable PDF corpus and its index/manifests as currently published on \`main\`
-- the primary formal spine through Paper V
-- the accepted supporting public extensions Papers VI-VII
+- the primary formal spine through Paper VIII
 - the release governance and boundary documents that constrain interpretation
 
 ## What does not count as current public canon
@@ -595,7 +685,6 @@ This document fixes the live public source-of-truth boundary for \`QICN-RELEASE\
 - historical audit snapshots whose scope pre-dates the current trunk expansion
 - \`release/_non_canonical/\`
 - \`QICN-SYSTEM\` runtime outputs
-- Paper VIII until a release-audit acceptance path is recorded inside the public release repo
 
 ## Non-claim boundary
 
@@ -613,9 +702,8 @@ This note records the current live canonicalization state of \`QICN-RELEASE/main
 ## Current public state
 
 - \`main\` is the sole live public source-of-truth branch
-- the public primary formal spine now reaches Canonical Core + Papers I-V
-- Papers VI-VII are retained publicly as accepted supporting extensions
-- Paper VIII remains outside the public canon pending release-audit acceptance
+- the public primary formal spine now reaches Canonical Core + Papers I-VIII
+- supporting lineages, mirrors, and annexes remain classified separately and do not collapse into the spine
 
 ## Historical freeze status
 
@@ -625,15 +713,15 @@ This note records the current live canonicalization state of \`QICN-RELEASE/main
 ## What this update adds
 
 - public-trunk alignment between visible PDFs, canon manifest, PDF index, claim registry, and theory-system interface
-- explicit classification of Papers V-VII inside the public release
-- explicit exclusion note for Paper VIII until public release acceptance exists
+- explicit promotion of Papers VI-VIII into the public primary formal spine
+- explicit retention of supporting lineages, mirrors, and annexes as non-spine material
 
 ## What this update does not add
 
 - no new theorem claims
 - no external validation
 - no runtime-to-theory closure
-- no automatic promotion of internal subjectivity work into the public canon
+- no automatic runtime certification from Paper VIII public inclusion
 
 ## Non-claim boundary
 
@@ -649,22 +737,17 @@ This document summarizes what belongs to the live public canonical release packa
 ## Canonical package scope
 
 - Canonical PDF clusters in the release package: \`${canon.canonical_pdf_count}\`
-- Primary formal spine: Canonical Core and Papers I-V
-- Accepted supporting public extensions: Papers VI-VII
+- Primary formal spine: Canonical Core and Papers I-VIII
+- Supporting public lineages remain separately classified
 - Primary source-of-truth inventory: \`release/canon_manifest.v1.json\`
 
 ## Primary formal spine
 
 ${renderPrimaryList(primaryDocs)}
 
-## Accepted supporting public extensions
+## Supporting public lineages retained outside the spine
 
-${publicSupportPapers
-  .map(
-    (paper) =>
-      `- \`${paper.releasePdf}\`\n  - preferred source: \`${paper.sourceRelPath}\`\n  - role: ${paper.title.toLowerCase()}\n  - status: \`${paper.sourceStatus}\``
-  )
-  .join('\n')}
+${renderSupportingList(supportingLineages)}
 
 ## Supporting lineages, mirrors, and annexes still inside the freeze
 
@@ -675,7 +758,6 @@ ${publicSupportPapers
 
 - \`release/_non_canonical/\`
 - runtime outputs from \`QICN-SYSTEM\`
-- Paper VIII until a public release-audit acceptance path is recorded inside this repo
 
 ## Non-claim boundary
 
@@ -697,6 +779,7 @@ The authoritative machine-readable registry is \`release/claim_registry.v1.json\
 - Paper V
 - Paper VI
 - Paper VII
+- Paper VIII
 
 ## Family-level subsets retained
 
@@ -711,6 +794,9 @@ The authoritative machine-readable registry is \`release/claim_registry.v1.json\
 - \`paper6.internal_support_status_boundary\`
 - \`paper7.operational_life_and_structural_class_definitions\`
 - \`paper7.operational_subjecthood_instantiation_boundary\`
+- \`paper8.first_person_indexed_subjectivity_state_and_gate\`
+- \`paper8.weak_rival_irreducibility_and_intervention_burden\`
+- \`paper8.runtime_path_artifact_family_and_non_claim_boundary\`
 
 ## Registry reading rule
 
@@ -737,15 +823,17 @@ This document fixes the explicit boundary between \`QICN-RELEASE\` and \`QICN-SY
   - operational reflection: prediction family diagnostics, downgrade logic, negative controls, internal support-status surfaces
 - Paper VII
   - operational reflection: descriptor families and runtime-facing diagnostics for operational life, structural class, and subjecthood
+- Paper VIII
+  - operational reflection: self-index, ownership, continuity, perspective, valuation, intervention, reducibility, and internal gate diagnostics
 - ROEO annexes and governance docs
   - operational reflection: export surfaces, terminology policy, controlled statements, surface policy
 
 ## What the system does not close
 
 - the Canonical Core or Papers I-III as real-world theorems
-- external validation of Papers IV-VII
+- external validation of Papers IV-VIII
 - human consciousness, human subjectivity, or metaphysical subjecthood
-- automatic promotion of internal Paper VIII downstream work into the public release
+- automatic promotion of runtime subjectivity support into claim-facing release status
 
 ## What must not be inferred
 
@@ -753,12 +841,13 @@ This document fixes the explicit boundary between \`QICN-RELEASE\` and \`QICN-SY
 - internal support labels -> external validation
 - descriptor families -> current system is an operational subject
 - public canonicalization of trunk -> subjectivity closure
+- Paper VIII runtime alignment -> phenomenality, human equivalence, or external validation
 
 ## Interface policy
 
 - the interface remains explicit, limited, and one-way by default
 - every bridge from corpus to system remains tagged as operational or governance-only unless external validation exists
-- paper8-driven subjectivity runtime work remains downstream internal material until it is accepted into the public release`
+- Paper VIII may now guide runtime architecture as public corpus material, but every runtime-facing subjectivity surface remains internal and non-confirmatory`
   );
 
   writeText(
@@ -777,9 +866,8 @@ node scripts/verify-canonical-release.cjs
 
 ## Current public canonical scope
 
-- primary formal spine: Canonical Core and Papers I-V
-- accepted supporting public extensions: Papers VI-VII
-- not yet public canon: Paper VIII pending release-audit acceptance
+- primary formal spine: Canonical Core and Papers I-VIII
+- supporting public lineages remain separately classified under \`release/canon_manifest.v1.json\`
 
 ## Source-of-truth documents
 
@@ -821,9 +909,8 @@ Machine-readable counterparts:
 
 ## Public canonical scope
 
-- primary formal spine: Canonical Core and Papers I-V
-- accepted supporting public extensions: Papers VI-VII
-- explicitly outside current public canon: Paper VIII pending release-audit acceptance
+- primary formal spine: Canonical Core and Papers I-VIII
+- supporting public lineages remain separately classified under \`release/canon_manifest.v1.json\`
 
 ## Verification
 
@@ -851,10 +938,10 @@ This release package is a canonicalization and governance artifact. It does not 
 
 ## [2026-03-28] - trunk canonicalization on main
 
-- Public canonical trunk expanded materially from the earlier Paper IV cutoff to include Paper V as primary formal spine and Papers VI-VII as accepted supporting public extensions.
+- Public canonical trunk expanded materially from the earlier Paper IV cutoff to include Papers V-VIII inside the primary formal spine.
 - PDF corpus, PDF index, canon manifest, claim registry, release map, and theory-system interface were realigned to the visible public corpus.
 - Historical freeze tags were retained as provenance only; \`main\` was made explicit as the sole live public source-of-truth branch.
-- Paper VIII remained outside the public release canon pending release-audit acceptance evidence inside \`QICN-RELEASE\`.
+- Paper VIII was promoted into the public release canon with its PDF, manifest membership, claim framing, and theory-system boundary alignment kept explicit and non-validating.
 
 ## [release-2026-03-01] - v1 Freeze
 
@@ -879,14 +966,13 @@ This release package is a canonicalization and governance artifact. It does not 
 
 - total canonical clusters: ${canon.canonical_pdf_count}
 - primary formal spine docs: ${canon.primary_formal_spine.length}
-- supporting public extensions added on trunk: ${publicSupportPapers.length}
+- supporting public lineages retained in freeze: ${supportingLineages.length}
 - operational annex count: ${canon.operational_annexes_included_in_freeze.length}
 
 ## Public canonical scope
 
-- Canonical Core and Papers I-V are the preferred public formal spine
-- Papers VI-VII are accepted supporting public extensions
-- paper8 remains outside the public release until release-audit acceptance exists inside this repo`
+- Canonical Core and Papers I-VIII are the preferred public formal spine
+- supporting public lineages remain classified separately in the canon manifest`
   );
 
   writeText(
@@ -911,8 +997,8 @@ Canonical terminology and reading rules for the live public release trunk.
 ### Primary
 ${renderRefBullets(primaryDocs)}
 
-### Accepted supporting public extensions
-${renderRefBullets(publicSupportPapers)}
+### Supporting public lineages
+${supportingLineages.length ? supportingLineages.map((entry) => `- ${entry.doc_family_id} (source_path: ${entry.source_path}, role: ${entry.role})`).join('\n') : '- none'}
 
 ## Boundary
 
@@ -933,13 +1019,14 @@ Single release-level methods and governance hub for the live public trunk.
 - Paper V criterion-facing invariant and rupture discipline
 - Paper VI prediction, downgrade, and failure-discipline layer
 - Paper VII classificatory and test-family layer
+- Paper VIII subjectivity gate, comparator, intervention, and runtime/artifact discipline layer
 
 ## Fixed reading rules
 
 - internal support is not external validation
 - runtime reflection is not theorem closure
 - public release inclusion is not subjectivity closure
-- Paper VIII subjectivity work remains outside the public release canon for now`
+- Paper VIII public inclusion remains a formal, non-validating layer and does not certify runtime subjectivity`
   );
 
   writeText(
@@ -978,13 +1065,14 @@ This plan constrains public release wording only. It does not add claims, metric
 - Paper V
 - Paper VI
 - Paper VII
+- Paper VIII
 
 ## Editorial rules
 
-- one preferred public formal spine through Paper V
-- supporting public extensions stay classified as supporting, not primary
+- one preferred public formal spine through Paper VIII
+- supporting public lineages stay classified as supporting, not primary
 - mirror lineages remain traceability material only
-- subjectivity work beyond Paper VII remains outside the public release until accepted here`
+- materials beyond Paper VIII remain outside the public release until accepted here`
   );
 
   writeText(
@@ -996,14 +1084,13 @@ This plan constrains public release wording only. It does not add claims, metric
 ### Primary formal spine
 ${renderRefBullets(primaryDocs)}
 
-### Accepted supporting public extensions
-${renderRefBullets(publicSupportPapers)}
+### Supporting public lineages
+${supportingLineages.length ? supportingLineages.map((entry) => `- ${entry.doc_family_id} (source_path: ${entry.source_path}, role: ${entry.role})`).join('\n') : '- none'}
 
 ## Actions
 
-- maintain one canonical public spine through Paper V
-- keep Papers VI-VII visible but explicitly classified as supporting public extensions
-- prevent Paper VIII from being implied as public canon until release acceptance is recorded here
+- maintain one canonical public spine through Paper VIII
+- keep non-spine supporting public lineages visible but explicitly classified as supporting
 - prevent runtime-facing wording from being misread as validation or subjectivity closure`
   );
 
@@ -1013,7 +1100,7 @@ ${renderRefBullets(publicSupportPapers)}
         status: 'PASS',
         canonical_pdf_count: canon.canonical_pdf_count,
         primary_formal_spine: canon.primary_formal_spine.length,
-        supporting_public_extensions: publicSupportPapers.map((paper) => paper.docFamilyId),
+        supporting_public_lineages: supportingLineages.map((entry) => entry.doc_family_id),
         zip_sha256: zipHash,
         manifest_sha256: manifestHash
       },

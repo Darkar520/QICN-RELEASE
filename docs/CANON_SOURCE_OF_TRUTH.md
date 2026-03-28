@@ -11,9 +11,8 @@ This document fixes the live public source-of-truth boundary for `QICN-RELEASE`.
 - Historical freeze tag retained as provenance: `release-2026-03-01`
 - Historical explicit canonical tag retained as provenance: `canonical-freeze-2026-03-01`
 - Live public canonicalization on trunk:
-  - primary formal spine: Canonical Core and Papers I-V
-  - accepted supporting public extensions: Papers VI-VII
-  - explicitly outside the public canon for now: Paper VIII pending release-audit acceptance
+  - primary formal spine: Canonical Core and Papers I-VIII
+  - supporting lineages retained with separate classification in `release/canon_manifest.v1.json`
 
 ## Source-of-truth files
 
@@ -32,8 +31,7 @@ This document fixes the live public source-of-truth boundary for `QICN-RELEASE`.
 ## What counts as current public canon
 
 - the immutable PDF corpus and its index/manifests as currently published on `main`
-- the primary formal spine through Paper V
-- the accepted supporting public extensions Papers VI-VII
+- the primary formal spine through Paper VIII
 - the release governance and boundary documents that constrain interpretation
 
 ## What does not count as current public canon
@@ -41,7 +39,6 @@ This document fixes the live public source-of-truth boundary for `QICN-RELEASE`.
 - historical audit snapshots whose scope pre-dates the current trunk expansion
 - `release/_non_canonical/`
 - `QICN-SYSTEM` runtime outputs
-- Paper VIII until a release-audit acceptance path is recorded inside the public release repo
 
 ## Non-claim boundary
 

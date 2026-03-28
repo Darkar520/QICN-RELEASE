@@ -9,13 +9,12 @@
 
 ## Counts
 
-- total canonical clusters: 21
-- primary formal spine docs: 6
-- supporting public extensions added on trunk: 2
+- total canonical clusters: 22
+- primary formal spine docs: 9
+- supporting public lineages retained in freeze: 3
 - operational annex count: 2
 
 ## Public canonical scope
 
-- Canonical Core and Papers I-V are the preferred public formal spine
-- Papers VI-VII are accepted supporting public extensions
-- paper8 remains outside the public release until release-audit acceptance exists inside this repo
+- Canonical Core and Papers I-VIII are the preferred public formal spine
+- supporting public lineages remain classified separately in the canon manifest

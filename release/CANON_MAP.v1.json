@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-03-28T20:35:45.983Z",
+  "generated_at": "2026-03-28T22:43:04.480Z",
   "workspace_root": "WORKSPACE_CLONE_ROOT",
   "pdf_release_root": "artifacts/pdf_corpus_release_2026-03-01",
   "release_root": "QICN-RELEASE",
   "counts": {
-    "clusters_total": 21,
-    "canon_count": 21,
+    "clusters_total": 22,
+    "canon_count": 22,
     "pass_pdf_only_count": 3,
     "mirrors_skipped": 1,
     "duplicates_skipped": 0
@@ -158,6 +158,27 @@
       ],
       "cluster_method": "sha256",
       "notes": "NOT_AVAILABLE"
+    },
+    {
+      "doc_key": "a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2",
+      "canonical_pdf": {
+        "path_in_release": "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
+        "sha256": "754e421c96cb30f40fc74f07ffbbfc265b98f71f27a07a40026f094a5141835f",
+        "pages": 42,
+        "bytes": 542401
+      },
+      "canonical_preference_reason": "preferred_lineage_rigid_identity_framework_paperX",
+      "source_status": "SOURCE_OK",
+      "source_tex": "NOT_AVAILABLE",
+      "duplicates": [
+        {
+          "docId": "a8cbd1be2034253b",
+          "relPath": "rigid-identity-framework/paper8_first_person_subjectivity/main.tex",
+          "status": "CANON"
+        }
+      ],
+      "cluster_method": "sha256",
+      "notes": "accepted_public_primary_extension_after_release_audit"
     },
     {
       "doc_key": "aa4d0b933892715a_aa4d0b933892715a_main_df41c33d",

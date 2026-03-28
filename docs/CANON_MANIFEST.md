@@ -4,9 +4,9 @@ This document summarizes what belongs to the live public canonical release packa
 
 ## Canonical package scope
 
-- Canonical PDF clusters in the release package: `21`
-- Primary formal spine: Canonical Core and Papers I-V
-- Accepted supporting public extensions: Papers VI-VII
+- Canonical PDF clusters in the release package: `22`
+- Primary formal spine: Canonical Core and Papers I-VIII
+- Supporting public lineages remain separately classified
 - Primary source-of-truth inventory: `release/canon_manifest.v1.json`
 
 ## Primary formal spine
@@ -35,9 +35,6 @@ This document summarizes what belongs to the live public canonical release packa
   - preferred source: `rigid-identity-framework/paper5_operational_consciousness/main.tex`
   - role: operational consciousness criterion
   - status: `SOURCE_OK`
-
-## Accepted supporting public extensions
-
 - `corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf`
   - preferred source: `rigid-identity-framework/paper6_predictions_falsation/main.tex`
   - role: predictions and failure modes
@@ -46,6 +43,25 @@ This document summarizes what belongs to the live public canonical release packa
   - preferred source: `rigid-identity-framework/paper7_operational_life_subjecthood/main.tex`
   - role: operational life, structural class, and subjecthood
   - status: `SOURCE_OK`
+- `corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf`
+  - preferred source: `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+  - role: first-person indexed subjectivity
+  - status: `SOURCE_OK`
+
+## Supporting public lineages retained outside the spine
+
+- `corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf`
+  - source path: `rigid-identity-paper/main.tex`
+  - role: paper1.parallel_lineage
+  - classification: `supporting_parallel_lineage`
+- `corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b933892715a.pdf`
+  - source path: `phenomenological-regimes-paper/main.tex`
+  - role: paper2.supporting_lineage
+  - classification: `supporting_formal_lineage`
+- `corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d1cc6abf9c8c70.pdf`
+  - source path: `phenomenological-instability-paper/main.tex`
+  - role: paper3.supporting_lineage
+  - classification: `supporting_formal_lineage`
 
 ## Supporting lineages, mirrors, and annexes still inside the freeze
 
@@ -56,7 +72,6 @@ This document summarizes what belongs to the live public canonical release packa
 
 - `release/_non_canonical/`
 - runtime outputs from `QICN-SYSTEM`
-- Paper VIII until a public release-audit acceptance path is recorded inside this repo
 
 ## Non-claim boundary
 

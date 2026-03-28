@@ -7,9 +7,8 @@ This note records the current live canonicalization state of `QICN-RELEASE/main`
 ## Current public state
 
 - `main` is the sole live public source-of-truth branch
-- the public primary formal spine now reaches Canonical Core + Papers I-V
-- Papers VI-VII are retained publicly as accepted supporting extensions
-- Paper VIII remains outside the public canon pending release-audit acceptance
+- the public primary formal spine now reaches Canonical Core + Papers I-VIII
+- supporting lineages, mirrors, and annexes remain classified separately and do not collapse into the spine
 
 ## Historical freeze status
 
@@ -19,15 +18,15 @@ This note records the current live canonicalization state of `QICN-RELEASE/main`
 ## What this update adds
 
 - public-trunk alignment between visible PDFs, canon manifest, PDF index, claim registry, and theory-system interface
-- explicit classification of Papers V-VII inside the public release
-- explicit exclusion note for Paper VIII until public release acceptance exists
+- explicit promotion of Papers VI-VIII into the public primary formal spine
+- explicit retention of supporting lineages, mirrors, and annexes as non-spine material
 
 ## What this update does not add
 
 - no new theorem claims
 - no external validation
 - no runtime-to-theory closure
-- no automatic promotion of internal subjectivity work into the public canon
+- no automatic runtime certification from Paper VIII public inclusion
 
 ## Non-claim boundary
 

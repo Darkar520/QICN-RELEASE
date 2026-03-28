@@ -12,9 +12,8 @@ node scripts/verify-canonical-release.cjs
 
 ## Current public canonical scope
 
-- primary formal spine: Canonical Core and Papers I-V
-- accepted supporting public extensions: Papers VI-VII
-- not yet public canon: Paper VIII pending release-audit acceptance
+- primary formal spine: Canonical Core and Papers I-VIII
+- supporting public lineages remain separately classified under `release/canon_manifest.v1.json`
 
 ## Source-of-truth documents
 

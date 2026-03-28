@@ -11,6 +11,7 @@ The authoritative machine-readable registry is `release/claim_registry.v1.json`.
 - Paper V
 - Paper VI
 - Paper VII
+- Paper VIII
 
 ## Family-level subsets retained
 
@@ -25,6 +26,9 @@ The authoritative machine-readable registry is `release/claim_registry.v1.json`.
 - `paper6.internal_support_status_boundary`
 - `paper7.operational_life_and_structural_class_definitions`
 - `paper7.operational_subjecthood_instantiation_boundary`
+- `paper8.first_person_indexed_subjectivity_state_and_gate`
+- `paper8.weak_rival_irreducibility_and_intervention_burden`
+- `paper8.runtime_path_artifact_family_and_non_claim_boundary`
 
 ## Registry reading rule
 

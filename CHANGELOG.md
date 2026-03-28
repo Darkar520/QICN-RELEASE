@@ -2,10 +2,10 @@
 
 ## [2026-03-28] - trunk canonicalization on main
 
-- Public canonical trunk expanded materially from the earlier Paper IV cutoff to include Paper V as primary formal spine and Papers VI-VII as accepted supporting public extensions.
+- Public canonical trunk expanded materially from the earlier Paper IV cutoff to include Papers V-VIII inside the primary formal spine.
 - PDF corpus, PDF index, canon manifest, claim registry, release map, and theory-system interface were realigned to the visible public corpus.
 - Historical freeze tags were retained as provenance only; `main` was made explicit as the sole live public source-of-truth branch.
-- Paper VIII remained outside the public release canon pending release-audit acceptance evidence inside `QICN-RELEASE`.
+- Paper VIII was promoted into the public release canon with its PDF, manifest membership, claim framing, and theory-system boundary alignment kept explicit and non-validating.
 
 ## [release-2026-03-01] - v1 Freeze
 

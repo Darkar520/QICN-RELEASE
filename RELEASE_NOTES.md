@@ -7,8 +7,8 @@
 
 ## Official hashes
 
-- corpus/pdf_release/pdf_corpus.zip: 1ab538bd42376f790debe7c11a5f1525deab83a24d45b3823846c0b0e5eb03d7
-- corpus/pdf_release/manifest.json: c8f3c8b86de1a84ad42b9fdfe6ef81fb374ab9881d1509e9b0f5cef7d331b727
+- corpus/pdf_release/pdf_corpus.zip: 8d37675d32b0530680878785a208ac856f45cb8fcc9463a346401846b4a7b124
+- corpus/pdf_release/manifest.json: 961a1cadca83f37ecfa824bede611e31f5378e343d3c8748fc75c54d3b922227
 
 ## Public canonical scope
 

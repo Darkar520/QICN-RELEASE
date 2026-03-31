@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [2026-03-31] - bounded spine refresh
+
+- Canonical Core and Papers I-IV were refreshed from the current source corpus without widening the public formal spine.
+- PDF corpus metadata, canon map entries, and release hash sidecars were realigned to the refreshed Core and Papers I-IV payloads.
+- Paper IX remained outside the public release because the release repo still fixes the accepted public boundary through Paper VIII.
+
 ## [2026-03-28] - trunk canonicalization on main
 
 - Public canonical trunk expanded materially from the earlier Paper IV cutoff to include Papers V-VIII inside the primary formal spine.

@@ -20,6 +20,7 @@ This note records the current live canonicalization state of `QICN-RELEASE/main`
 - public-trunk alignment between visible PDFs, canon manifest, PDF index, claim registry, and theory-system interface
 - explicit promotion of Papers VI-VIII into the public primary formal spine
 - explicit retention of supporting lineages, mirrors, and annexes as non-spine material
+- bounded refresh of Canonical Core and Papers I-IV PDF payloads to match the current source corpus without changing release scope
 
 ## What this update does not add
 
@@ -27,6 +28,7 @@ This note records the current live canonicalization state of `QICN-RELEASE/main`
 - no external validation
 - no runtime-to-theory closure
 - no automatic runtime certification from Paper VIII public inclusion
+- no promotion of Paper IX or any material beyond Paper VIII
 
 ## Non-claim boundary
 

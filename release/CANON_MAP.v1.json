@@ -1,484 +1,309 @@
 {
-  "generated_at": "2026-03-31T13:49:55.7097577-06:00",
-  "workspace_root": "WORKSPACE_CLONE_ROOT",
-  "pdf_release_root": "artifacts/pdf_corpus_release_2026-03-01",
-  "release_root": "QICN-RELEASE",
-  "counts": {
-    "clusters_total": 22,
-    "canon_count": 22,
-    "pass_pdf_only_count": 3,
-    "mirrors_skipped": 1,
-    "duplicates_skipped": 0
+  "artifact_role": "canonical_map",
+  "schema_version": "2.0.0",
+  "generated_at": "2026-04-22T21:07:20.262Z",
+  "release_id": "release_repo_qicn_2026-03-01",
+  "active_base_layer": {
+    "doc_family_id": "basecore.active",
+    "title": "BaseCore of the Rigid Identity Framework",
+    "release_pdf": "corpus/pdf_release/pdfs/basecore_active__22e6f0b127df916b.pdf",
+    "preferred_source_path": "rigid-identity-framework/basecore/BASECORE.tex",
+    "source_status": "SOURCE_OK",
+    "role": "formal_source_of_truth",
+    "pages": 40,
+    "sha256": "4e3ae62300371f63a3d1c292cbc247946f6f68528a55224a92764dcea91700a2",
+    "bytes": 638613,
+    "package_root": "rigid-identity-framework/basecore/"
   },
-  "ambiguous_clusters": "NOT_AVAILABLE",
-  "entries": [
+  "downstream_public_packages": [
     {
-      "doc_key": "1a86ec656885a998_1a86ec656885a998_main_ac20e128",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf",
-        "sha256": "e57194de090c7672d69a35adec316cecfe5467f079041c78b794e6c38fd22b28",
-        "pages": 28,
-        "bytes": 415158
-      },
-      "canonical_preference_reason": "fallback_path_depth_and_lexicographic",
+      "doc_family_id": "paper1.rigid_identity",
+      "title": "Paper I - Rigid Identity",
+      "release_pdf": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper1/main.tex",
       "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "1a86ec656885a998",
-          "relPath": "rigid-identity-paper/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
+      "role": "supporting_downstream_package",
+      "pages": 26,
+      "sha256": "1029f2bec421ad596c1f692ecd871bed029bbc94c32fac3a38b9e3dc2696e482",
+      "bytes": 454530,
+      "package_root": null
     },
     {
-      "doc_key": "1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6__1e1b2ec217a514f7.pdf",
-        "sha256": "97769050eb1f180804e9f202ec9a4e6f9a8fecdeed4cbd5f319a89c7ee015076",
-        "pages": 25,
-        "bytes": 469650
-      },
-      "canonical_preference_reason": "preferred_lineage_rigid_identity_framework_paperX",
+      "doc_family_id": "paper2.phenomenological_regimes",
+      "title": "Paper II - Phenomenological Regimes",
+      "release_pdf": "corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper2/main.tex",
       "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "1e1b2ec217a514f7",
-          "relPath": "rigid-identity-framework/paper5_operational_consciousness/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "accepted_public_primary_extension_after_release_audit"
+      "role": "supporting_downstream_package",
+      "pages": 17,
+      "sha256": "1d4f19a3e8816772efa57f54f8d9dbcb0f996181d5f0555cef6a52e8726e6942",
+      "bytes": 370947,
+      "package_root": null
     },
     {
-      "doc_key": "44806ece96bbdae2_main_1c305418",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
-        "sha256": "97a724df0ab8afa7f4cf0400ad3bb005152cd427753c0aac59cd86b9807e18a2",
-        "pages": 14,
-        "bytes": 347955
-      },
-      "canonical_preference_reason": "preferred_lineage_rigid_identity_framework_paperX",
+      "doc_family_id": "paper3.null_regime_instability",
+      "title": "Paper III - Null-Regime Instability",
+      "release_pdf": "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper3/main.tex",
+      "source_status": "SOURCE_OK",
+      "role": "supporting_downstream_package",
+      "pages": 13,
+      "sha256": "bca3c1bdbd786ebd13dc65af25ed4c63f6c1fa66b4448c237300d30f01224ebd",
+      "bytes": 398304,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "paper4.qicn_v45_protocol",
+      "title": "Paper IV - QICN v4.5 Protocol",
+      "release_pdf": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper4/main.tex",
       "source_status": "PASS_PDF_ONLY",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "44806ece96bbdae2",
-          "relPath": "rigid-identity-framework/paper4/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
+      "role": "supporting_downstream_package",
+      "pages": 14,
+      "sha256": "97a724df0ab8afa7f4cf0400ad3bb005152cd427753c0aac59cd86b9807e18a2",
+      "bytes": 347955,
+      "package_root": null
     },
     {
-      "doc_key": "6968859f53621468_6968859f53621468_main_f973c787",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
-        "sha256": "1029f2bec421ad596c1f692ecd871bed029bbc94c32fac3a38b9e3dc2696e482",
-        "pages": 26,
-        "bytes": 454530
-      },
-      "canonical_preference_reason": "preferred_lineage_rigid_identity_framework_paperX",
+      "doc_family_id": "paper5.operational_consciousness_criterion",
+      "title": "Paper V - Operational Consciousness Criterion",
+      "release_pdf": "corpus/pdf_release/pdfs/1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6__1e1b2ec217a514f7.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper5_operational_consciousness/main.tex",
       "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "6968859f53621468",
-          "relPath": "rigid-identity-framework/paper1/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
+      "role": "supporting_downstream_package",
+      "pages": 25,
+      "sha256": "97769050eb1f180804e9f202ec9a4e6f9a8fecdeed4cbd5f319a89c7ee015076",
+      "bytes": 469650,
+      "package_root": null
     },
     {
-      "doc_key": "857c4c89149a369c_857c4c89149a369c_main_7294ab07",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf",
-        "sha256": "81710282a74890579320c899572d3c879f7ef0780e195c617c1cd554e1ea65d1",
-        "pages": 2,
-        "bytes": 50435
-      },
-      "canonical_preference_reason": "fallback_path_depth_and_lexicographic",
+      "doc_family_id": "paper6.predictions_and_failure_modes",
+      "title": "Paper VI - Predictions and Failure Modes",
+      "release_pdf": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper6_predictions_falsation/main.tex",
       "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "857c4c89149a369c",
-          "relPath": "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
+      "role": "supporting_downstream_package",
+      "pages": 19,
+      "sha256": "20cf3c1eb76b85926e3d333b98558f7d0c751d8aca5050c9120a499ffe728efd",
+      "bytes": 414149,
+      "package_root": null
     },
     {
-      "doc_key": "87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf",
-        "sha256": "62bb07b98035f7542c4542209513a1df0550dc6c831c028d27b5c72c767a2246",
-        "pages": 2,
-        "bytes": 50082
-      },
-      "canonical_preference_reason": "fallback_path_depth_and_lexicographic",
+      "doc_family_id": "paper7.operational_life_subjecthood",
+      "title": "Paper VII - Operational Life, Structural Class, and Subjecthood",
+      "release_pdf": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper7_operational_life_subjecthood/main.tex",
       "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "87dc170947cc65f0",
-          "relPath": "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
+      "role": "supporting_downstream_package",
+      "pages": 28,
+      "sha256": "b4fad95e7a43611556ba89ada8ad31e6d4258412aaa8cc8da6b7ce9c5d8b706f",
+      "bytes": 401115,
+      "package_root": null
     },
     {
-      "doc_key": "9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730.pdf",
-        "sha256": "1d4f19a3e8816772efa57f54f8d9dbcb0f996181d5f0555cef6a52e8726e6942",
-        "pages": 17,
-        "bytes": 370947
-      },
-      "canonical_preference_reason": "preferred_lineage_rigid_identity_framework_paperX",
+      "doc_family_id": "paper8.first_person_subjectivity",
+      "title": "Paper VIII - First-Person Indexed Subjectivity",
+      "release_pdf": "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper8_first_person_subjectivity/main.tex",
       "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "9e4b83e44e669730",
-          "relPath": "rigid-identity-framework/paper2/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
+      "role": "supporting_downstream_package",
+      "pages": 42,
+      "sha256": "754e421c96cb30f40fc74f07ffbbfc265b98f71f27a07a40026f094a5141835f",
+      "bytes": 542401,
+      "package_root": null
     },
     {
-      "doc_key": "a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
-        "sha256": "754e421c96cb30f40fc74f07ffbbfc265b98f71f27a07a40026f094a5141835f",
-        "pages": 42,
-        "bytes": 542401
-      },
-      "canonical_preference_reason": "preferred_lineage_rigid_identity_framework_paperX",
+      "doc_family_id": "paper9.phenomenal_bridge_organization",
+      "title": "Paper IX - Phenomenal Bridge Organization",
+      "release_pdf": "corpus/pdf_release/pdfs/paper9_phenomenal_bridge_organization__565acddf4d96cb0f.pdf",
+      "preferred_source_path": "rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex",
       "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "a8cbd1be2034253b",
-          "relPath": "rigid-identity-framework/paper8_first_person_subjectivity/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "accepted_public_primary_extension_after_release_audit"
-    },
-    {
-      "doc_key": "aa4d0b933892715a_aa4d0b933892715a_main_df41c33d",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b933892715a.pdf",
-        "sha256": "4a531535707c914dfe990c3d773288ed038f302f9d83f5d0ff68b9e9ceb0f181",
-        "pages": 27,
-        "bytes": 421908
-      },
-      "canonical_preference_reason": "preferred_lineage_phenomenological",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "aa4d0b933892715a",
-          "relPath": "phenomenological-regimes-paper/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
-        "sha256": "20cf3c1eb76b85926e3d333b98558f7d0c751d8aca5050c9120a499ffe728efd",
-        "pages": 19,
-        "bytes": 414149
-      },
-      "canonical_preference_reason": "accepted_supporting_lineage_runtime_extension",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "b41dfe1db695dad6",
-          "relPath": "rigid-identity-framework/paper6_predictions_falsation/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "accepted_public_supporting_extension_after_release_audit"
-    },
-    {
-      "doc_key": "b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
-        "sha256": "b4fad95e7a43611556ba89ada8ad31e6d4258412aaa8cc8da6b7ce9c5d8b706f",
-        "pages": 28,
-        "bytes": 401115
-      },
-      "canonical_preference_reason": "accepted_supporting_lineage_runtime_extension",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "b75ad19ed8032bf0",
-          "relPath": "rigid-identity-framework/paper7_operational_life_subjecthood/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "accepted_public_supporting_extension_after_release_audit"
-    },
-    {
-      "doc_key": "c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d1cc6abf9c8c70.pdf",
-        "sha256": "05b6ad06d442b1f9429d0f83a15f33e538628d9cdb3e1007dee52f812af7ac44",
-        "pages": 23,
-        "bytes": 442983
-      },
-      "canonical_preference_reason": "preferred_lineage_phenomenological",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "c3d1cc6abf9c8c70",
-          "relPath": "phenomenological-instability-paper/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "canonical_core",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
-        "sha256": "6c43f183bda6e1945c25af4b43053b19ba42e8e155cbf8e2abe8526064008b89",
-        "pages": 17,
-        "bytes": 440885
-      },
-      "canonical_preference_reason": "fallback_path_depth_and_lexicographic",
-      "source_status": "PASS_PDF_ONLY",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "3b77e7b20616cf25",
-          "relPath": "rigid-identity-framework/CANONICAL_CORE.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "canonical_core_74be3e",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/canonical_core_74be3e__eead218e079c0ad2.pdf",
-        "sha256": "7e188a05a621517b955ecaaaefd9d0f2a40b6c8b6bfd7ee6d1767e1251f40ec9",
-        "pages": 23,
-        "bytes": 437620
-      },
-      "canonical_preference_reason": "preferred_lineage_notebooklm_latex",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "eead218e079c0ad2",
-          "relPath": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "canonical_core_957f4e",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf",
-        "sha256": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234",
-        "pages": 23,
-        "bytes": 437615
-      },
-      "canonical_preference_reason": "preferred_lineage_notebooklm_latex",
-      "source_status": "PASS_PDF_ONLY",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "ea247e98e09de39b",
-          "relPath": "NotebookLM/LaTeX/CANONICAL_CORE.tex",
-          "status": "CANON"
-        },
-        {
-          "docId": "bbe9bbb48ddf4f9c",
-          "relPath": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/CANONICAL_CORE.tex",
-          "status": "MIRROR_ONLY"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf",
-        "sha256": "bca3c1bdbd786ebd13dc65af25ed4c63f6c1fa66b4448c237300d30f01224ebd",
-        "pages": 13,
-        "bytes": 398304
-      },
-      "canonical_preference_reason": "preferred_lineage_rigid_identity_framework_paperX",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "dc23c9c9345aae47",
-          "relPath": "rigid-identity-framework/paper3/main.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "phenomenological_instability",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/phenomenological_instability__04b40ecc9376767e.pdf",
-        "sha256": "31030ffc92201f86c06d463af37ae3431b4463f21ce1762df48ec8fd8ca938c3",
-        "pages": 20,
-        "bytes": 406994
-      },
-      "canonical_preference_reason": "preferred_lineage_phenomenological",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "04b40ecc9376767e",
-          "relPath": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-instability.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "phenomenological_instability_2fe669",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/phenomenological_instability_2fe669__0b013024c06a2f7d.pdf",
-        "sha256": "8f6037540b743b5abfef90e0eba7bf588111350f1cff50a730cdec666cfa5163",
-        "pages": 20,
-        "bytes": 406994
-      },
-      "canonical_preference_reason": "preferred_lineage_phenomenological",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "0b013024c06a2f7d",
-          "relPath": "NotebookLM/LaTeX/phenomenological-instability.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "phenomenological_regimes",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/phenomenological_regimes__9dab69286f9e9107.pdf",
-        "sha256": "7e3d5fdd494f7919320f9e27177e2381c89e23cc4c735d4aa001c38b350aa72e",
-        "pages": 27,
-        "bytes": 419346
-      },
-      "canonical_preference_reason": "preferred_lineage_phenomenological",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "9dab69286f9e9107",
-          "relPath": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-regimes.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "phenomenological_regimes_529d6b",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/phenomenological_regimes_529d6b__39860a8a5035ed82.pdf",
-        "sha256": "b0819508b3a38c35b28839d254ccc961604d3e798449bd356918075de6520452",
-        "pages": 27,
-        "bytes": 419346
-      },
-      "canonical_preference_reason": "preferred_lineage_phenomenological",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "39860a8a5035ed82",
-          "relPath": "NotebookLM/LaTeX/phenomenological-regimes.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "rigid_identity_paper",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/rigid_identity_paper__3e026c9275c59788.pdf",
-        "sha256": "7e014482f0cd9abfac1bac8e88eaa29196ce0299951c80f7afe45c180f17f578",
-        "pages": 28,
-        "bytes": 409159
-      },
-      "canonical_preference_reason": "mirror_lineage_notebooklm_sistema_canon_papers",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "3e026c9275c59788",
-          "relPath": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/rigid-identity-paper.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
-    },
-    {
-      "doc_key": "rigid_identity_paper_8925ec",
-      "canonical_pdf": {
-        "path_in_release": "corpus/pdf_release/pdfs/rigid_identity_paper_8925ec__bb0cda8022f6c8ac.pdf",
-        "sha256": "c9e55f8f588d2bcb1ca4e55d97d2272d5ba0f9d7bf61199ac97e4ef684cf3c58",
-        "pages": 28,
-        "bytes": 409159
-      },
-      "canonical_preference_reason": "preferred_lineage_notebooklm_latex",
-      "source_status": "SOURCE_OK",
-      "source_tex": "NOT_AVAILABLE",
-      "duplicates": [
-        {
-          "docId": "bb0cda8022f6c8ac",
-          "relPath": "NotebookLM/LaTeX/rigid-identity-paper.tex",
-          "status": "CANON"
-        }
-      ],
-      "cluster_method": "sha256",
-      "notes": "NOT_AVAILABLE"
+      "role": "supporting_downstream_package",
+      "pages": 42,
+      "sha256": "efc3a8ffb6620af5ffd7bbd13becdc3eb2848a2b49f1dbb3b8028d25fc9713e6",
+      "bytes": 520468,
+      "package_root": null
     }
   ],
-  "path_interpretation_boundary": "Absolute local roots were stripped. Repo-relative release paths and recorded lineage relPath values remain authoritative."
+  "preserved_legacy_and_lineage_material": [
+    {
+      "doc_family_id": "canonical_core.legacy_package",
+      "title": "Canonical Core Legacy Package",
+      "release_pdf": "corpus/pdf_release/pdfs/canonical_core_legacy_package__f37b3e3e96f89b1a.pdf",
+      "preferred_source_path": "rigid-identity-framework/canonical_core_legacy/CANONICAL_CORE.tex",
+      "source_status": "SOURCE_OK",
+      "role": "supporting_legacy_package",
+      "pages": 64,
+      "sha256": "8daa7bc939086cb429cb566bf70f4515bc773151b5246d672e4a42d7c5544ffb",
+      "bytes": 829165,
+      "package_root": "rigid-identity-framework/canonical_core_legacy/"
+    },
+    {
+      "doc_family_id": "canonical_core.historical_frozen_pdf",
+      "title": "canonical_core.historical_frozen_pdf",
+      "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+      "preferred_source_path": "historical_release_surface_only",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "historical_frozen_variant",
+      "pages": 17,
+      "sha256": "6c43f183bda6e1945c25af4b43053b19ba42e8e155cbf8e2abe8526064008b89",
+      "bytes": 440885,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "paper1.parallel_lineage",
+      "title": "paper1.parallel_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf",
+      "preferred_source_path": "rigid-identity-paper/main.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "supporting_parallel_lineage",
+      "pages": 28,
+      "sha256": "e57194de090c7672d69a35adec316cecfe5467f079041c78b794e6c38fd22b28",
+      "bytes": 415158,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "paper2.supporting_lineage",
+      "title": "paper2.supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b933892715a.pdf",
+      "preferred_source_path": "phenomenological-regimes-paper/main.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "supporting_formal_lineage",
+      "pages": 27,
+      "sha256": "4a531535707c914dfe990c3d773288ed038f302f9d83f5d0ff68b9e9ceb0f181",
+      "bytes": 421908,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "paper3.supporting_lineage",
+      "title": "paper3.supporting_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d1cc6abf9c8c70.pdf",
+      "preferred_source_path": "phenomenological-instability-paper/main.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "supporting_formal_lineage",
+      "pages": 23,
+      "sha256": "05b6ad06d442b1f9429d0f83a15f33e538628d9cdb3e1007dee52f812af7ac44",
+      "bytes": 442983,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "core.reconstructed_lineage",
+      "title": "core.reconstructed_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/canonical_core_74be3e__eead218e079c0ad2.pdf",
+      "preferred_source_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "reconstructed_lineage",
+      "pages": 23,
+      "sha256": "7e188a05a621517b955ecaaaefd9d0f2a40b6c8b6bfd7ee6d1767e1251f40ec9",
+      "bytes": 437620,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "core.notebooklm_lineage",
+      "title": "core.notebooklm_lineage",
+      "release_pdf": "corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf",
+      "preferred_source_path": "NotebookLM/LaTeX/CANONICAL_CORE.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "mirror_lineage",
+      "pages": 23,
+      "sha256": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234",
+      "bytes": 437615,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "instability.notebooklm_mirror_a",
+      "title": "instability.notebooklm_mirror_a",
+      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_instability__04b40ecc9376767e.pdf",
+      "preferred_source_path": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-instability.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "mirror_lineage",
+      "pages": 20,
+      "sha256": "31030ffc92201f86c06d463af37ae3431b4463f21ce1762df48ec8fd8ca938c3",
+      "bytes": 406994,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "instability.notebooklm_mirror_b",
+      "title": "instability.notebooklm_mirror_b",
+      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_instability_2fe669__0b013024c06a2f7d.pdf",
+      "preferred_source_path": "NotebookLM/LaTeX/phenomenological-instability.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "mirror_lineage",
+      "pages": 20,
+      "sha256": "8f6037540b743b5abfef90e0eba7bf588111350f1cff50a730cdec666cfa5163",
+      "bytes": 406994,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "regimes.notebooklm_mirror_a",
+      "title": "regimes.notebooklm_mirror_a",
+      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_regimes__9dab69286f9e9107.pdf",
+      "preferred_source_path": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-regimes.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "mirror_lineage",
+      "pages": 27,
+      "sha256": "7e3d5fdd494f7919320f9e27177e2381c89e23cc4c735d4aa001c38b350aa72e",
+      "bytes": 419346,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "regimes.notebooklm_mirror_b",
+      "title": "regimes.notebooklm_mirror_b",
+      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_regimes_529d6b__39860a8a5035ed82.pdf",
+      "preferred_source_path": "NotebookLM/LaTeX/phenomenological-regimes.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "mirror_lineage",
+      "pages": 27,
+      "sha256": "b0819508b3a38c35b28839d254ccc961604d3e798449bd356918075de6520452",
+      "bytes": 419346,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "paper1.notebooklm_mirror_a",
+      "title": "paper1.notebooklm_mirror_a",
+      "release_pdf": "corpus/pdf_release/pdfs/rigid_identity_paper__3e026c9275c59788.pdf",
+      "preferred_source_path": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/rigid-identity-paper.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "mirror_lineage",
+      "pages": 28,
+      "sha256": "7e014482f0cd9abfac1bac8e88eaa29196ce0299951c80f7afe45c180f17f578",
+      "bytes": 409159,
+      "package_root": null
+    },
+    {
+      "doc_family_id": "paper1.notebooklm_mirror_b",
+      "title": "paper1.notebooklm_mirror_b",
+      "release_pdf": "corpus/pdf_release/pdfs/rigid_identity_paper_8925ec__bb0cda8022f6c8ac.pdf",
+      "preferred_source_path": "NotebookLM/LaTeX/rigid-identity-paper.tex",
+      "source_status": "PRESERVED_VARIANT",
+      "role": "mirror_lineage",
+      "pages": 28,
+      "sha256": "c9e55f8f588d2bcb1ca4e55d97d2272d5ba0f9d7bf61199ac97e4ef684cf3c58",
+      "bytes": 409159,
+      "package_root": null
+    }
+  ],
+  "operational_annexes": [
+    {
+      "doc_family_id": "roeo.batch_campaign",
+      "release_pdf": "corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf",
+      "source_path": "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex",
+      "role": "operational_annex_not_formal_source"
+    },
+    {
+      "doc_family_id": "roeo.final_paper",
+      "release_pdf": "corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf",
+      "source_path": "Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex",
+      "role": "operational_annex_not_formal_source"
+    }
+  ],
+  "variant_classification_counts": {
+    "PRIMARY_ACTIVE": 1,
+    "DOWNSTREAM": 9,
+    "LEGACY": 1,
+    "MIRROR_OR_RECONSTRUCTED": 11,
+    "HISTORICAL_FROZEN": 1,
+    "OPERATIONAL_ANNEX": 2
+  },
+  "non_claim_boundary": "This map locates editorial roles. It does not upgrade any supporting, legacy, or mirror document into the active mathematical base."
 }

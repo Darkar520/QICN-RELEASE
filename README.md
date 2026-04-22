@@ -1,6 +1,6 @@
 # QICN Release Package
 
-Audit-first public release package with immutable PDF corpus artifacts and canonical boundary metadata.
+Audit-first public release package with active BaseCore source material, immutable PDF corpus artifacts, and explicit boundary metadata.
 
 ## Quick verification
 
@@ -10,10 +10,12 @@ node scripts/verify-claim-registry.cjs
 node scripts/verify-canonical-release.cjs
 ```
 
-## Current public canonical scope
+## Current public release shape
 
-- primary formal spine: Canonical Core and Papers I-VIII
-- supporting public lineages remain separately classified under `release/canon_manifest.v1.json`
+- active mathematical base layer: BaseCore
+- public downstream packages: Papers I-IX
+- preserved legacy package: canonical_core_legacy
+- preserved supporting, mirror, and historical variants remain separately classified under `release/canon_manifest.v1.json`
 
 ## Source-of-truth documents
 
@@ -34,6 +36,7 @@ Machine-readable counterparts:
 
 ## Non-goals
 
-- no source recompilation pipeline inside this repo
+- no blind collapse of legacy or mirror material into the active base
 - no external validation claims
 - no automatic bridge from internal runtime work to public theory closure
+- no phenomenality, human-equivalence, or adjudication claims from packaging alone

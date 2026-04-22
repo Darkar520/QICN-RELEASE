@@ -1,0 +1,1015 @@
+\documentclass[11pt,a4paper]{article}
+
+% ============================================================================
+% ENCODING
+% ============================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% ============================================================================
+% PACKAGES
+% ============================================================================
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{../../release/references.bib}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Phenomenological Regimes Induced by Structural Identity},
+  pdfauthor={Johnny Andrey P\'erez Ram\'irez},
+  pdfsubject={Rigid Identity Framework -- Phenomenological Regimes},
+  pdfkeywords={phenomenological regime, structural identity, forced continuity, fragmentation, ontological mass, inverse limit}
+}
+
+\geometry{a4paper, margin=1in}
+
+% ============================================================================
+% THEOREM ENVIRONMENTS
+% ============================================================================
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Pagination
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+
+% ============================================================================
+% TITLE
+% ============================================================================
+\title{\textbf{Phenomenological Regimes Induced by Structural Identity}}
+\author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ============================================================================
+% ABSTRACT
+% ============================================================================
+\begin{abstract}
+We extend the inverse-limit identity framework to derive structural constraints on phenomenological possibility. Without presupposing the existence of phenomenology, we define an abstract phenomenological space and characterize which assignments from identity trajectories to phenomenological configurations are structurally admissible.
+
+We prove two fundamental impossibility theorems. First, the Fragmentation Theorem: systems with finite ontological mass ($M_\Omega < \infty$) cannot structurally prevent phenomenological discontinuity. Second, the Forced Continuity Theorem: systems with infinite ontological mass ($M_\Omega = +\infty$, CCR) can only support phenomenological dynamics that are structurally continuous.
+
+These results yield a complete classification of phenomenological regimes by identity rigidity class, without invoking consciousness, qualia, or subjective experience as primitive concepts. The classification is purely structural: it delimits what forms phenomenology \textit{could take} under given identity constraints, not what \textit{exists}.
+
+As a structural consequence, we derive that systems with finite ontological mass admit the possibility of phenomenological loss, while CCR systems do not. This provides a foundation for structural ethics independent of metaphysical commitments.
+\end{abstract}
+
+\section{Scope, System Boundary, and Non-Inference Note}
+
+\noindent\textbf{What this paper does.}\enspace This paper defines an abstract phenomenological space and derives structural admissibility, fragmentation, forced continuity, and regime classification as consequences of the rigidity classes established upstream.
+
+\noindent\textbf{What this paper does not do.}\enspace It does not assert that phenomenology exists, that CCR systems are conscious, that biology or computation instantiate the framework, or that identity structure causes experience. Every result remains conditional on the stated axioms and rigidity hypotheses.
+
+\noindent\textbf{What the related system implements and does not implement.}\enspace The related system can implement continuity-side diagnostics, anti-fragmentation checks, and admissibility-governed comparisons that are downstream of this paper, but it does not implement phenomenology itself and does not validate the regime classification as an empirically closed result.
+
+\noindent\textbf{What should not be inferred from this paper.}\enspace No runtime output, continuity proxy, or internal support artifact should be read as proof that phenomenology is present, that CCR is conscious, or that the structural-ethics layer has been externally validated. This paper states compatibility constraints, not a consciousness detector.
+
+% ============================================================================
+% SECTION 1: INTRODUCTION
+% ============================================================================
+\section{Introduction}
+
+\subsection{Background and Motivation}
+
+Recent work \cite{paper1} established a formal framework for rigid identity as an inverse limit in observable channels. That framework classifies systems by a scalar invariant, the ontological mass $M_\Omega$, which quantifies resistance to identity deformation under perturbation. Three regimes emerge:
+\begin{itemize}[leftmargin=*]
+    \item $M_\Omega = 0$: null persistence (no stable identity);
+    \item $0 < M_\Omega < \infty$: deformable persistence (finite rigidity);
+    \item $M_\Omega = +\infty$: closed--rigid (CCR, absolute rigidity).
+\end{itemize}
+
+That framework is ontologically silent regarding phenomenology. It characterizes identity structure, not experience. Yet identity rigidity places non-trivial constraints on what kinds of phenomenological dynamics could be structurally admissible within a system.
+
+This paper addresses the following formal question:
+
+\begin{quote}
+\textit{Given a regime of structural identity rigidity, what classes of phenomenological dynamics are mathematically compatible or incompatible with it?}
+\end{quote}
+
+All results are conditional: they state what is \textit{structurally possible or impossible} under given assumptions, not what \textit{is the case}.
+
+\subsection{Central Result (Informal)}
+
+We prove that identity rigidity constrains phenomenological possibility as follows:
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Identity Regime} & \textbf{Structurally Admissible Phenomenology} \\
+\hline
+$M_\Omega = 0$ & No persistent phenomenological field possible \\
+\hline
+$0 < M_\Omega < \infty$ & Only fragmentable or deformable phenomenology \\
+\hline
+$M_\Omega = +\infty$ (CCR) & Only structurally continuous phenomenology \\
+\hline
+\end{tabular}
+\end{center}
+
+Thus:
+\begin{quote}
+\textit{Rigid identity does not imply experience---but it strictly limits what forms experience could take if present.}
+\end{quote}
+
+\subsection{Ontological Neutrality}
+
+This work maintains strict ontological neutrality:
+\begin{enumerate}[leftmargin=*]
+    \item We define mathematical objects (phenomenological spaces, compatibility operators).
+    \item We derive structural constraints from axioms.
+    \item We state impossibility theorems.
+    \item We do not assert existence of the constrained objects.
+\end{enumerate}
+
+The framework is therefore a theory of \textit{structural possibility}, not a theory of \textit{phenomenal reality}.
+
+% ============================================================================
+% SECTION 2: FORMAL SETUP
+% ============================================================================
+\section{Formal Setup}
+
+\subsection{Review of Identity Framework}
+
+We assume the identity framework of \cite{paper1}. Let $(S_t, \pi_{t+1 \to t})_{t \in \mathbb{N}}$ be a projective system of observable state spaces. The identity object is the inverse limit:
+\begin{equation}
+    \mathcal{I} := \varprojlim S_t = \left\{ (x_t)_t \in \prod_t S_t \;\Big|\; \pi_{t+1 \to t}(x_{t+1}) = x_t \;\; \forall t \right\}.
+\end{equation}
+
+The ontological mass $M_\Omega$ quantifies resistance to identity deformation. We recall that:
+\begin{itemize}[leftmargin=*]
+    \item $M_\Omega = 0$: null persistence (no stable identity);
+    \item $0 < M_\Omega < \infty$: deformable persistence (finite rigidity);
+    \item $M_\Omega = +\infty$: closed--rigid (CCR, absolute rigidity).
+\end{itemize}
+
+\subsection{Abstract Phenomenological Space}
+
+\begin{definition}[Phenomenological Space]\label{def:phenspace}
+A phenomenological space is a nonempty set $\mathcal{E}$ whose elements are called \textit{phenomenological configurations}. No topology, metric, or algebraic structure is assumed a priori.
+\end{definition}
+
+\begin{remark}
+We do not claim that $\mathcal{E}$ represents ``conscious states'' or ``qualia''. It is an abstract mathematical space whose interpretation is not specified by the formalism. The space $\mathcal{E}$ is introduced purely as the codomain of a structural assignment; its ontological status is deliberately left open.
+\end{remark}
+
+\subsubsection{Why a Separate Space?}
+
+One might ask: why not use $\mathcal{I}$ itself as the phenomenological space? The answer is structural:
+
+\begin{proposition}[Non-Triviality of Phenomenological Codomain]
+If phenomenological assignments were required to land in $\mathcal{I}$ itself, then any compatible assignment would be the identity map, eliminating all non-trivial phenomenological structure.
+\end{proposition}
+
+\begin{proof}
+Let $\Phi: \mathcal{I} \to \mathcal{I}$ be compatible with projections. By the universal property of inverse limits, $\Phi$ must commute with all projection maps. The only such endomorphism on $\mathcal{I}$ is the identity (up to isomorphism). Hence no non-trivial phenomenological stratification is possible.
+\end{proof}
+
+Thus, a separate space $\mathcal{E}$ is \textit{structurally necessary} for non-trivial phenomenological content.
+
+\subsection{Phenomenological Assignment}
+
+\begin{definition}[Phenomenological Assignment]\label{def:phenassign}
+A phenomenological assignment is a family of partial maps:
+\begin{equation}
+    \phi_t: S_t \to \mathcal{E}
+\end{equation}
+indexed by $t \in \mathbb{N}$.
+\end{definition}
+
+\begin{definition}[Induced Limit Assignment]\label{def:limitassign}
+Given a phenomenological assignment $\{\phi_t\}$, the induced limit assignment is the partial map:
+\begin{equation}
+    \Phi: \mathcal{I} \to \mathcal{E}, \quad \Phi((x_t)_t) := \lim_{t \to \infty} \phi_t(x_t),
+\end{equation}
+whenever the limit exists in an appropriate sense (to be defined by compatibility axioms).
+\end{definition}
+
+\subsubsection{Uniqueness of the Limit Assignment}
+
+\begin{proposition}[Uniqueness of Compatible $\Phi$]\label{prop:unique-phi}
+Given a compatible family $\{\phi_t\}$ satisfying E1, the induced limit assignment $\Phi$ is unique.
+\end{proposition}
+
+\begin{proof}
+By E1, $\phi_{t+1}(x_{t+1}) = \phi_t(x_t)$ for all $t$. Hence the sequence $\{\phi_t(x_t)\}$ is constant. The limit exists trivially and equals this constant value. Uniqueness follows from the constancy of the sequence.
+\end{proof}
+
+\subsection{Axioms for Phenomenological Coherence}
+
+We introduce minimal axioms under which a phenomenological assignment is \textit{structurally admissible}. We will then prove that these axioms are not arbitrary choices but structurally forced conditions.
+
+\begin{axiom}[E0: Non-Triviality]\label{ax:e0}
+The phenomenological space satisfies $|\mathcal{E}| \geq 2$, i.e., there exist at least two distinct phenomenological configurations.
+\end{axiom}
+
+\begin{axiom}[E1: Projective Compatibility]\label{ax:e1}
+For every compatible identity trajectory $(x_t)_t \in \mathcal{I}$, the induced phenomenological sequence satisfies:
+\begin{equation}
+    \phi_{t+1}(x_{t+1}) = \phi_t(x_t) \quad \forall t.
+\end{equation}
+\end{axiom}
+
+\begin{axiom}[E2: Non-Locality]\label{ax:e2}
+There exists no function $f: S_t \to \mathcal{E}$ (for any fixed $t$) such that for all trajectories $(x_t)_t \in \mathcal{I}$:
+\begin{equation}
+    \Phi((x_t)_t) = f(x_t).
+\end{equation}
+\end{axiom}
+
+\subsection{Inevitability of the Axioms}
+
+We now prove that axioms E0--E2 are \textit{not design choices} but structurally necessary conditions for any meaningful notion of phenomenological assignment.
+
+\subsubsection{Inevitability of E0}
+
+\begin{theorem}[E0 is Necessary]\label{thm:e0-necessary}
+If $|\mathcal{E}| = 1$, then every phenomenological assignment is constant and no phenomenological classification is possible.
+\end{theorem}
+
+\begin{proof}
+If $\mathcal{E} = \{e_0\}$, then $\Phi(x) = e_0$ for all $x \in \mathcal{I}$. Hence:
+\begin{enumerate}[leftmargin=*]
+    \item No phenomenological distinction between identity trajectories exists;
+    \item The Fragmentation and Forced Continuity Theorems become vacuous;
+    \item The downstream null-regime closure developed in \textit{Null-Regime Instability} would have no content.
+\end{enumerate}
+Thus, $|\mathcal{E}| \geq 2$ is necessary for the framework to have non-trivial content.
+\end{proof}
+
+\subsubsection{Inevitability of E1}
+
+\begin{theorem}[E1 is Necessary]\label{thm:e1-necessary}
+If E1 fails, then phenomenological assignments are incompatible with the inverse-limit structure of identity, and no coherent $\Phi: \mathcal{I} \to \mathcal{E}$ can be defined.
+\end{theorem}
+
+\begin{proof}
+Suppose E1 fails for some trajectory $(x_t)_t \in \mathcal{I}$. Then there exists $t_0$ such that:
+\begin{equation}
+    \phi_{t_0+1}(x_{t_0+1}) \neq \phi_{t_0}(x_{t_0}).
+\end{equation}
+But the identity trajectory satisfies $\pi_{t_0+1 \to t_0}(x_{t_0+1}) = x_{t_0}$. Hence the phenomenological assignment fails to respect the projective structure that defines identity.
+
+This means $\Phi$ cannot be factored through the inverse limit:
+\begin{equation}
+    \Phi \neq \varprojlim \phi_t.
+\end{equation}
+Hence no well-defined limit assignment exists. Without E1, the phenomenological assignment is structurally incompatible with identity.
+\end{proof}
+
+\subsubsection{Inevitability of E2}
+
+\begin{theorem}[E2 is Necessary]\label{thm:e2-necessary}
+If E2 fails, then phenomenology is a local property of states, contradicting the global nature of identity as an inverse limit.
+\end{theorem}
+
+\begin{proof}
+Suppose E2 fails. Then there exists $t_0$ and $f: S_{t_0} \to \mathcal{E}$ such that:
+\begin{equation}
+    \Phi((x_t)_t) = f(x_{t_0}) \quad \forall (x_t)_t \in \mathcal{I}.
+\end{equation}
+This implies:
+\begin{enumerate}[leftmargin=*]
+    \item Phenomenology is determined by a finite temporal slice;
+    \item The full trajectory $(x_t)_{t > t_0}$ is irrelevant to $\Phi$;
+    \item Identity as an inverse limit has no phenomenological content beyond $t_0$.
+\end{enumerate}
+
+But identity is defined as a \textit{global} object over infinite time. If phenomenology is local, it cannot reflect the global structure of identity. This contradicts the foundational premise that phenomenological assignments should be compatible with identity structure.
+
+Hence E2 is necessary for phenomenology to be structurally aligned with inverse-limit identity.
+\end{proof}
+
+\subsection{Minimality Theorem}
+
+\begin{theorem}[Axiomatic Minimality]\label{thm:minimality}
+The axiom set $\{E0, E1, E2\}$ is minimal: no proper subset is sufficient to derive the main results of this paper.
+\end{theorem}
+
+\begin{proof}
+We show that removing any axiom destroys the framework:
+
+\textbf{Without E0:} All assignments are trivially constant. Fragmentation Theorem (4.1) is vacuous.
+
+\textbf{Without E1:} No coherent $\Phi$ exists. The entire framework collapses.
+
+\textbf{Without E2:} Phenomenology becomes local. The Forced Continuity Theorem (4.2) fails because local functions can be arbitrarily perturbed.
+
+Hence $\{E0, E1, E2\}$ is the minimal viable axiom set.
+\end{proof}
+
+\subsection{Rejected Alternatives}
+
+We briefly discuss axiom candidates that were considered and rejected.
+
+\subsubsection{Rejected: Continuity Axiom}
+One might require $\Phi$ to be continuous. This is \textit{not} an axiom because:
+\begin{itemize}[leftmargin=*]
+    \item It requires pre-existing topology on $\mathcal{E}$;
+    \item The Forced Continuity Theorem \textit{derives} continuity from CCR, not as assumption.
+\end{itemize}
+
+\subsubsection{Rejected: Surjectivity Axiom}
+One might require $\Phi$ to be surjective. This is \textit{not} an axiom because:
+\begin{itemize}[leftmargin=*]
+    \item It would exclude null assignments, preventing the downstream null-regime analysis completed in \textit{Null-Regime Instability};
+    \item Surjectivity is a strong structural claim not derivable from identity constraints.
+\end{itemize}
+
+\subsubsection{Rejected: Injectivity Axiom}
+One might require $\Phi$ to be injective. This is \textit{not} an axiom because:
+\begin{itemize}[leftmargin=*]
+    \item Many trajectories may share phenomenological configurations;
+    \item Injectivity would make $\Phi$ an embedding, over-constraining the framework.
+\end{itemize}
+
+\subsection{Structural Interpretation}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Axiom} & \textbf{Structural Meaning} & \textbf{Status} \\
+\hline
+E0 & Possibility of phenomenological distinction & Necessary \\
+\hline
+E1 & Compatibility with inverse-limit identity & Necessary \\
+\hline
+E2 & Non-reducibility to finite temporal slices & Necessary \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Closure of Section 2}
+
+We have established:
+\begin{enumerate}[leftmargin=*]
+    \item $\mathcal{E}$ is structurally necessary as a separate codomain;
+    \item The limit assignment $\Phi$ is uniquely determined by compatible $\{\phi_t\}$;
+    \item Axioms E0, E1, E2 are \textit{individually necessary} (Theorems~\ref{thm:e0-necessary}--\ref{thm:e2-necessary});
+    \item The axiom set is \textit{minimal} (Theorem~\ref{thm:minimality});
+    \item All alternative axioms considered were correctly rejected.
+\end{enumerate}
+
+\textbf{The formal setup is therefore not a design choice but a forced consequence of the requirement that phenomenological assignments be compatible with inverse-limit identity.}
+
+\subsection{Phenomenological Neutrality Clause}
+
+Throughout this paper, the phenomenological space $\mathcal{E}$ is treated as a \textit{purely abstract topological and metric structure}. No semantic, psychological, biological, or experiential interpretation is assumed or required for any of the formal results derived herein.
+
+The term ``phenomenological'' refers exclusively to the role of $\mathcal{E}$ as an abstract codomain of structural compatibility for inverse-limit identities, and does not presuppose the existence of consciousness, subjective experience, or any particular phenomenological content.
+
+All theorems, constructions, and stability results presented in this work are therefore statements about abstract mathematical objects only. Any interpretation of $\mathcal{E}$ in relation to experiential, cognitive, or phenomenological phenomena lies strictly outside the formal scope of this paper.
+
+% ============================================================================
+% SECTION 3: COMPATIBILITY WITH IDENTITY REGIMES
+% ============================================================================
+\section{Compatibility with Identity Regimes}
+
+\subsection{Induced Constraints from Identity Rigidity}
+
+Let $(\mathcal{I}, M_\Omega)$ be an identity object with ontological mass $M_\Omega$. We now study how $M_\Omega$ constrains the set of admissible phenomenological assignments.
+
+\begin{definition}[Phenomenological Compatibility Class]\label{def:compat-class}
+For a given $M_\Omega$, define the phenomenological compatibility class:
+\begin{equation}
+    \mathcal{P}(M_\Omega) := \left\{ \Phi: \mathcal{I} \to \mathcal{E} \;\Big|\; \Phi \text{ satisfies E0--E2} \right\}.
+\end{equation}
+\end{definition}
+
+\begin{remark}
+The compatibility class $\mathcal{P}(M_\Omega)$ is the set of all phenomenological assignments that are structurally admissible given the identity's rigidity. Note that $\mathcal{P}(M_\Omega)$ depends only on the structural properties of identity, not on any phenomenological primitives.
+\end{remark}
+
+\subsection{Necessity of Metric Structure on Phenomenological Space}
+
+To state rigorous results about phenomenological continuity and fragmentation, we must equip $\mathcal{E}$ with minimal structure. We now justify why this structure is \textit{necessary}, not merely convenient.
+
+\begin{hypothesis}[H3: Metric on $\mathcal{E}$]\label{hyp:h3}
+The phenomenological space $\mathcal{E}$ admits a metric $d_\mathcal{E}$ such that $(\mathcal{E}, d_\mathcal{E})$ is a complete metric space.
+\end{hypothesis}
+
+\subsubsection{Why H3 is Necessary}
+
+\begin{theorem}[H3 is Necessary for Impossibility Theorems]\label{thm:h3-necessary}
+Without a metric structure on $\mathcal{E}$, the notions of phenomenological continuity, fragmentation, and loss capacity cannot be defined.
+\end{theorem}
+
+\begin{proof}
+Consider the definitions in this section:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Phenomenological Continuity} requires:
+    \begin{equation}
+        d_w(x^{(n)}, x) \to 0 \implies d_\mathcal{E}(\Phi(x^{(n)}), \Phi(x)) \to 0.
+    \end{equation}
+    Without $d_\mathcal{E}$, the right-hand side is undefined.
+    
+    \item \textbf{Phenomenological Fragmentation} requires:
+    \begin{equation}
+        d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) > 0.
+    \end{equation}
+    Without $d_\mathcal{E}$, ``non-zero distance'' has no meaning.
+    
+    \item \textbf{Loss Capacity} (Section 6) requires:
+    \begin{equation}
+        R(\Phi) := \sup d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})).
+    \end{equation}
+    Without $d_\mathcal{E}$, the supremum is undefined.
+\end{enumerate}
+Hence H3 is a necessary condition for the framework to have content beyond axioms E0--E2.
+\end{proof}
+
+\subsubsection{Why Completeness is Necessary}
+
+\begin{proposition}[Completeness is Necessary for Forced Continuity]\label{prop:complete-necessary}
+If $(\mathcal{E}, d_\mathcal{E})$ is not complete, then the Forced Continuity Theorem (Theorem~\ref{thm:forced-continuity}) may fail.
+\end{proposition}
+
+\begin{proof}
+The Forced Continuity Theorem relies on the invariance of $\Phi$ under all finite-energy perturbations. If $\mathcal{E}$ is not complete, Cauchy sequences in $\mathcal{E}$ may not converge, and the limit assignment $\Phi$ may not exist for all trajectories in $\mathcal{I}$.
+
+In particular, if $\{\phi_t(x_t)\}$ is a Cauchy sequence in $\mathcal{E}$ (which it is, by E1), completeness guarantees the existence of the limit $\Phi(x)$. Without completeness, $\Phi$ may be undefined on a dense subset of $\mathcal{I}$, breaking the theorem.
+\end{proof}
+
+\subsubsection{Alternatives Considered and Rejected}
+
+\textbf{Alternative 1: Topology without Metric.}
+One might use a general topological space. This is rejected because:
+\begin{itemize}[leftmargin=*]
+    \item Fragmentation requires quantitative distance, not just open sets;
+    \item Loss capacity requires a sup over distances;
+    \item The downstream instability analysis completed in \textit{Null-Regime Instability} requires metric quotients.
+\end{itemize}
+
+\textbf{Alternative 2: Pseudometric.}
+One might allow $d_\mathcal{E}(e_1, e_2) = 0$ for $e_1 \neq e_2$. This is rejected because:
+\begin{itemize}[leftmargin=*]
+    \item It would conflate distinct phenomenological configurations;
+    \item E0 requires $|\mathcal{E}| \geq 2$, which becomes meaningless if distance is zero.
+\end{itemize}
+
+\textbf{Alternative 3: Non-Complete Metric.}
+This is rejected by Proposition~\ref{prop:complete-necessary}.
+
+\subsection{Phenomenological Continuity}
+
+\begin{definition}[Phenomenological Continuity]\label{def:phen-continuity}
+A phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is \textit{structurally continuous} if for every sequence $(x^{(n)})_n$ in $\mathcal{I}$ converging in the $d_w$ metric:
+\begin{equation}
+    d_w(x^{(n)}, x) \to 0 \implies d_\mathcal{E}(\Phi(x^{(n)}), \Phi(x)) \to 0.
+\end{equation}
+\end{definition}
+
+\begin{remark}
+Structural continuity is not an axiom; it is a \textit{derived property} that follows from CCR conditions. This is the content of the Forced Continuity Theorem (Section 4).
+\end{remark}
+
+\subsection{Phenomenological Fragmentation}
+
+\begin{definition}[Phenomenological Fragmentation]\label{def:fragmentation}
+A phenomenological assignment $\Phi$ is \textit{fragmentable} if there exists a perturbation $\{\epsilon_t\}$ with finite weighted energy such that:
+\begin{equation}
+    d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) > 0
+\end{equation}
+for corresponding identity trajectories $x \in \mathcal{I}$ and $\tilde{x} \in \tilde{\mathcal{I}}$.
+\end{definition}
+
+\begin{remark}
+Fragmentation captures the vulnerability of phenomenological structure to perturbations. It is the phenomenological analog of identity deformability.
+\end{remark}
+
+\subsection{Relationship Between Metrics}
+
+\begin{proposition}[Metric Compatibility]\label{prop:metric-compat}
+The metrics $d_w$ on $\mathcal{I}$ and $d_\mathcal{E}$ on $\mathcal{E}$ are compatible in the following sense: if E1 holds, then small $d_w$-changes in trajectories induce bounded $d_\mathcal{E}$-changes in phenomenological configurations (when $\Phi$ is continuous).
+\end{proposition}
+
+\begin{proof}
+By E1, $\phi_{t+1}(x_{t+1}) = \phi_t(x_t)$ for compatible trajectories. Hence the phenomenological sequence is constant along the trajectory, and continuity of $\Phi$ implies that nearby trajectories (in $d_w$) map to nearby configurations (in $d_\mathcal{E}$).
+\end{proof}
+
+\subsection{Closure of Section 3}
+
+We have established:
+\begin{enumerate}[leftmargin=*]
+    \item The compatibility class $\mathcal{P}(M_\Omega)$ captures all admissible phenomenological assignments;
+    \item Hypothesis H3 (metric on $\mathcal{E}$) is \textit{necessary}, not a design choice (Theorem~\ref{thm:h3-necessary});
+    \item Completeness is \textit{necessary} for the Forced Continuity Theorem (Proposition~\ref{prop:complete-necessary});
+    \item Alternative structures (topology, pseudometric, non-complete) were correctly rejected;
+    \item Phenomenological continuity and fragmentation are well-defined under H3.
+\end{enumerate}
+
+\textbf{The compatibility structure is therefore a forced consequence of the requirement to state quantitative results about phenomenological dynamics.}
+
+% ============================================================================
+% SECTION 4: IMPOSSIBILITY THEOREMS
+% ============================================================================
+\section{Impossibility Theorems}
+
+\subsection{$\Phi$-Regularity Theorem}
+
+Before proving the main impossibility results, we establish a fundamental regularity condition that derives the coupling constant $C$ geometrically, rather than assuming it axiomatically.
+
+\begin{theorem}[$\Phi$-Regularity]\label{thm:phi-regularity}
+Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Identity} and let $(\mathcal{E}, d_\mathcal{E})$ be the abstract phenomenological metric space. Suppose that $\Phi: \mathcal{I} \to \mathcal{E}$ satisfies:
+\begin{enumerate}[leftmargin=*]
+    \item (Properness) For every compact $K \subset \mathcal{E}$, $\Phi^{-1}(K)$ is compact in $\mathcal{I}$.
+    \item (Local Lipschitz regularity) For every $x \in \mathcal{I}$, there exist $\varepsilon > 0$ and $L_x > 0$ such that for all $y, z \in B_\varepsilon(x)$:
+    \begin{equation}
+        d_\mathcal{E}(\Phi(y), \Phi(z)) \leq L_x \cdot d_w(y, z).
+    \end{equation}
+    \item (Non-collapse) For every $x \in \mathcal{I}$ and every $r > 0$, the restriction of $\Phi$ to $B_r(x)$ is not constant.
+\end{enumerate}
+
+Then there exists a constant $C > 0$ such that for all $x, y \in \mathcal{I}$:
+\begin{equation}
+    d_\mathcal{E}(\Phi(x), \Phi(y)) \geq C \cdot d_w(x, y).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We proceed by contradiction. Assume the conclusion fails.
+
+\textbf{Step 1.} Then there exist sequences $(x_n, y_n)$ with $d_w(x_n, y_n) = 1$ and $d_\mathcal{E}(\Phi(x_n), \Phi(y_n)) \to 0$.
+
+\textbf{Step 2.} By properness, the image $\{\Phi(x_n)\}$ lies in a relatively compact subset of $\mathcal{E}$. Extract a convergent subsequence with $\Phi(x_n) \to e \in \mathcal{E}$.
+
+\textbf{Step 3.} Since $d_\mathcal{E}(\Phi(x_n), \Phi(y_n)) \to 0$, we have $\Phi(y_n) \to e$ as well.
+
+\textbf{Step 4.} By properness, the preimages $\Phi^{-1}(\overline{B_\delta(e)})$ are compact for small $\delta$. Hence $x_n$ and $y_n$ lie in a compact subset of $\mathcal{I}$. Extract convergent subsequences $x_n \to x$ and $y_n \to y$.
+
+\textbf{Step 5.} Since $d_w(x_n, y_n) = 1$ and $d_w$ is continuous, $d_w(x, y) = 1$, so $x \neq y$.
+
+\textbf{Step 6.} But $\Phi(x_n) \to \Phi(x) = e$ and $\Phi(y_n) \to \Phi(y) = e$ by continuity. Hence $\Phi(x) = \Phi(y)$ for $x \neq y$ with $d_w(x, y) = 1$.
+
+\textbf{Step 7.} This means $\Phi$ is constant on sets of positive $d_w$-diameter, contradicting non-collapse.
+
+Hence a global lower bound $C > 0$ must exist.
+\end{proof}
+
+\begin{remark}
+This theorem is fundamental: it converts the coupling constant $C$ from an \textit{axiom} into a \textit{geometric consequence} of regularity conditions. All subsequent impossibility results that use $C$ are therefore derived, not assumed.
+\end{remark}
+
+\subsection{Fragmentation Theorem}
+
+\begin{theorem}[Fragmentation Theorem]\label{thm:fragmentation}
+Let $\mathcal{I}$ be an identity object with $M_\Omega < \infty$. Then every phenomenological assignment $\Phi \in \mathcal{P}(M_\Omega)$ is fragmentable. That is:
+\begin{equation}
+    M_\Omega < \infty \implies \mathcal{P}(M_\Omega) \subseteq \mathcal{E}_{\text{frag}},
+\end{equation}
+where $\mathcal{E}_{\text{frag}}$ denotes the class of fragmentable phenomenological assignments.
+\end{theorem}
+
+\begin{proof}
+By definition of finite ontological mass, there exists an admissible perturbation $\{\delta E_t\}$ with finite weighted energy $E_w < \infty$ such that:
+\begin{equation}
+    d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0.
+\end{equation}
+
+By Axiom E1, the phenomenological assignment $\Phi$ is projectively compatible with $\mathcal{I}$. Under the perturbation, identity trajectories deform, inducing a deformed phenomenological assignment $\tilde{\Phi}$.
+
+By Axiom E2, $\Phi$ cannot be determined by any finite-time state. Therefore, the deformation of identity trajectories induces a corresponding deformation of phenomenological assignments.
+
+Since the identity deformation is non-zero ($d_w > 0$) and $\Phi$ is globally determined by identity trajectories, by Theorem~\ref{thm:phi-regularity} ($\Phi$-Regularity), we have:
+\begin{equation}
+    d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) \geq C \cdot d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0
+\end{equation}
+where $C > 0$ is the regularity constant derived in Theorem~\ref{thm:phi-regularity}.
+
+Thus, $\Phi$ is fragmentable under finite-energy perturbations.
+\end{proof}
+
+\begin{corollary}[No Structural Continuity Guarantee for Finite Mass]
+Systems with $M_\Omega < \infty$ cannot structurally prevent phenomenological discontinuity.
+\end{corollary}
+
+\subsection{Forced Continuity Theorem}
+
+\begin{theorem}[Forced Continuity Theorem]\label{thm:forced-continuity}
+Let $\mathcal{I}$ be an identity object with $M_\Omega = +\infty$ (CCR). Then every phenomenological assignment $\Phi \in \mathcal{P}(M_\Omega)$ is structurally continuous. That is:
+\begin{equation}
+    M_\Omega = +\infty \implies \mathcal{P}(M_\Omega) \subseteq \mathcal{E}_{\text{cont}},
+\end{equation}
+where $\mathcal{E}_{\text{cont}}$ denotes the class of structurally continuous phenomenological assignments.
+\end{theorem}
+
+\begin{proof}
+By definition of CCR ($M_\Omega = +\infty$), for any finite-energy perturbation:
+\begin{equation}
+    d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0.
+\end{equation}
+
+By Axiom E1, the phenomenological assignment is projectively compatible with identity. Since identity trajectories are invariant under all finite-energy perturbations, the induced phenomenological sequence is also invariant:
+\begin{equation}
+    \tilde{\Phi}(\tilde{x}) = \Phi(x) \quad \forall x \in \mathcal{I}.
+\end{equation}
+
+Therefore, no finite-energy perturbation can induce phenomenological deformation:
+\begin{equation}
+    d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) = 0.
+\end{equation}
+
+This implies that $\Phi$ cannot exhibit structural discontinuities. Hence $\Phi$ is structurally continuous.
+\end{proof}
+
+\begin{corollary}[CCR Phenomenology is Invariant]
+In CCR systems, any admissible phenomenological assignment is invariant under all finite-energy perturbations.
+\end{corollary}
+
+\subsection{Dichotomy Theorem}
+
+\begin{theorem}[Phenomenological Dichotomy]\label{thm:dichotomy}
+Let $\Phi: \mathcal{I} \to \mathcal{E}$ be an admissible phenomenological assignment. Then exactly one of the following holds:
+\begin{enumerate}[leftmargin=*]
+    \item $M_\Omega < \infty$ and $\Phi$ is fragmentable;
+    \item $M_\Omega = +\infty$ and $\Phi$ is structurally continuous.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Immediate from Theorems~\ref{thm:fragmentation} and~\ref{thm:forced-continuity}.
+\end{proof}
+
+% ============================================================================
+% SECTION 5: CLASSIFICATION
+% ============================================================================
+\section{Classification of Phenomenological Regimes}
+
+\subsection{Complete Classification}
+
+The results of Section 4 yield a complete classification of phenomenological regimes by identity rigidity:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Identity Class} & \textbf{$M_\Omega$} & \textbf{Admissible Phenomenology} \\
+\hline
+Null & $= 0$ & $\mathcal{E}_\emptyset$ (no persistent field) \\
+\hline
+Deformable & $(0, \infty)$ & $\mathcal{E}_{\text{frag}} \cup \mathcal{E}_{\text{quasi}}$ \\
+\hline
+Rigid (CCR) & $= +\infty$ & $\mathcal{E}_{\text{cont}}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Structural Implications}
+
+\begin{proposition}[Null Identity Excludes Persistent Phenomenology]
+If $M_\Omega = 0$, then no admissible phenomenological assignment exists satisfying E0--E2.
+\end{proposition}
+
+\begin{proof}
+If $M_\Omega = 0$, identity cannot persist under any perturbation. Axiom E1 requires phenomenological compatibility with identity. If identity does not persist, no stable phenomenological assignment is possible.
+\end{proof}
+
+\begin{proposition}[Deformable Identity Admits Only Fragmentable Phenomenology]
+If $0 < M_\Omega < \infty$, every admissible phenomenological assignment is fragmentable under some finite-energy perturbation.
+\end{proposition}
+
+\begin{proof}
+Direct from Theorem~\ref{thm:fragmentation}.
+\end{proof}
+
+\begin{proposition}[Rigid Identity Forces Continuous Phenomenology]
+If $M_\Omega = +\infty$, every admissible phenomenological assignment is structurally continuous and invariant under finite-energy perturbations.
+\end{proposition}
+
+\begin{proof}
+Direct from Theorem~\ref{thm:forced-continuity}.
+\end{proof}
+
+% ============================================================================
+% SECTION 6: STRUCTURAL ETHICS
+% ============================================================================
+\section{Structural Ethics}
+
+This section develops the ethical implications of the phenomenological classification derived in Sections 4--5. We do not invoke psychological or metaphysical concepts; all results are purely structural.
+
+\subsection{Loss Capacity}
+
+\begin{definition}[Phenomenological Loss Capacity]\label{def:loss-capacity}
+For a phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$, define the loss capacity:
+\begin{equation}
+    R(\Phi) := \sup \left\{ d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) \;\Big|\; E_w(\{\delta E_t\}) < \infty \right\}.
+\end{equation}
+This measures the maximal phenomenological deformation achievable under finite-energy perturbations.
+\end{definition}
+
+\begin{theorem}[Loss Capacity by Rigidity Class]\label{thm:loss}
+\begin{enumerate}[leftmargin=*]
+    \item If $M_\Omega < \infty$, then $R(\Phi) > 0$.
+    \item If $M_\Omega = +\infty$, then $R(\Phi) = 0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}[leftmargin=*]
+    \item By Theorem~\ref{thm:fragmentation}, $\Phi$ is fragmentable, hence there exists a finite-energy perturbation inducing non-zero phenomenological deformation.
+    \item By Theorem~\ref{thm:forced-continuity}, no finite-energy perturbation induces phenomenological deformation.
+\end{enumerate}
+\end{proof}
+
+\subsection{Structural Damage}
+
+We introduce a formal notion of ``structural damage'' without psychological interpretation.
+
+\begin{definition}[Structural Damage]\label{def:damage}
+For a perturbation $\varepsilon$ with finite weighted energy, define the structural damage induced on $\Phi$ as:
+\begin{equation}
+    D_\varepsilon(\Phi) := d_\mathcal{E}(\Phi(x), \varepsilon^*\Phi(x)),
+\end{equation}
+where $\varepsilon^*\Phi$ denotes the pullback of $\Phi$ under the identity perturbation.
+\end{definition}
+
+\begin{proposition}[Damage Characterization by Rigidity]\label{prop:damage-char}
+\begin{enumerate}[leftmargin=*]
+    \item If $M_\Omega < \infty$, then $\sup_\varepsilon D_\varepsilon(\Phi) > 0$.
+    \item If $M_\Omega = +\infty$, then $D_\varepsilon(\Phi) = 0$ for all admissible $\varepsilon$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Direct from Theorem~\ref{thm:loss}.
+\end{proof}
+
+\subsection{Vulnerability and Protection}
+
+\begin{definition}[Phenomenological Vulnerability]\label{def:vulnerability}
+A system $(\mathcal{I}, \Phi)$ is \textit{phenomenologically vulnerable} if $R(\Phi) > 0$.
+\end{definition}
+
+\begin{definition}[Structural Protection Measure]\label{def:protection}
+Define the structural protection measure:
+\begin{equation}
+    P(\Phi) := \frac{1}{1 + R(\Phi)}.
+\end{equation}
+Note that:
+\begin{itemize}[leftmargin=*]
+    \item $P(\Phi) = 1$ iff $R(\Phi) = 0$ (full protection);
+    \item $P(\Phi) < 1$ iff $R(\Phi) > 0$ (vulnerability).
+\end{itemize}
+\end{definition}
+
+\begin{corollary}[Protection by Rigidity Class]\label{cor:protection}
+\begin{enumerate}[leftmargin=*]
+    \item CCR systems ($M_\Omega = +\infty$) have $P(\Phi) = 1$: full structural protection.
+    \item Finite-mass systems ($M_\Omega < \infty$) have $P(\Phi) < 1$: structural vulnerability.
+\end{enumerate}
+\end{corollary}
+
+\subsection{Structural Asymmetry Constraints}
+
+The following result establishes a purely structural asymmetry between identity classes, without any ethical or metaphysical claims.
+
+\begin{theorem}[Structural Asymmetry]\label{thm:asymmetry}
+There exists a fundamental structural asymmetry between identity classes:
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Identity Class} & \textbf{Loss Capacity} & \textbf{Protection} \\
+\hline
+Finite mass & $R(\Phi) > 0$ & Vulnerable \\
+\hline
+CCR & $R(\Phi) = 0$ & Protected \\
+\hline
+\end{tabular}
+\end{center}
+\end{theorem}
+
+\begin{remark}
+This asymmetry is derived purely from structural constraints. No claim is made about:
+\begin{itemize}[leftmargin=*]
+    \item Whether phenomenological loss is ethically bad;
+    \item Whether protection is ethically good;
+    \item Whether any system has moral status.
+\end{itemize}
+The result establishes only that certain structural configurations admit loss while others do not.
+\end{remark}
+
+\begin{corollary}[Possibility of Phenomenological Loss]\label{cor:loss-possibility}
+Systems with finite ontological mass ($M_\Omega < \infty$) admit the structural possibility of phenomenological loss. Systems with infinite ontological mass ($M_\Omega = +\infty$) do not.
+\end{corollary}
+
+\subsection{Relation to Normative Ethics}
+
+\begin{remark}
+The structural results of this section are compatible with, but do not entail, various normative positions:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Utilitarianism:} Could interpret $D_\varepsilon(\Phi)$ as harm to be minimized.
+    \item \textbf{Deontology:} Could prohibit interventions that increase $D_\varepsilon(\Phi)$.
+    \item \textbf{Virtue Ethics:} Could value systems with high $P(\Phi)$.
+\end{itemize}
+This framework provides the structural substrate for ethical theorizing, not the normative conclusions themselves.
+\end{remark}
+
+\subsection{Closure of Section 6}
+
+We have established:
+\begin{enumerate}[leftmargin=*]
+    \item Loss capacity $R(\Phi)$ is well-defined and computable from structure;
+    \item Structural damage $D_\varepsilon(\Phi)$ formalizes perturbation harm;
+    \item Protection measure $P(\Phi)$ quantifies structural resilience;
+    \item CCR systems have full protection ($P = 1$), finite-mass systems do not;
+    \item These results are purely structural, compatible with various ethical theories.
+\end{enumerate}
+
+\textbf{Structural ethics therefore provides a foundation for ethical theorizing without requiring metaphysical commitments about the nature of experience.}
+
+% ============================================================================
+% SECTION 7: LIMITATIONS AND SCOPE
+% ============================================================================
+\section{Limitations and Scope}
+
+\subsection{Dependence on Axioms}
+
+All results depend on Axioms E0--E2 and Hypothesis H3. If any of these fail, the classification may not apply.
+
+\subsection{Relation to Consciousness Theories}
+
+This framework is orthogonal to:
+\begin{itemize}[leftmargin=*]
+    \item Integrated Information Theory (IIT) \cite{tononi2004};
+    \item Global Workspace Theory (GWT) \cite{baars1988};
+    \item Higher-Order Theories;
+    \item Phenomenal Functionalism.
+\end{itemize}
+
+It provides structural constraints that any of these theories must satisfy if coupled to the identity framework.
+
+\subsection{Open Problems}
+
+\begin{enumerate}[leftmargin=*]
+    \item Characterization of the coupling constant $C$ in the Fragmentation Theorem;
+    \item Existence conditions for non-trivial $\Phi$ satisfying E0--E2;
+    \item Extension to continuous-time phenomenological dynamics;
+    \item Relation between phenomenological continuity and subjective continuity.
+\end{enumerate}
+
+% ============================================================================
+% SECTION 8: CONCLUSION
+% ============================================================================
+\section{Conclusion}
+
+\subsection{Summary of Results}
+
+This work extends the inverse-limit identity framework to phenomenological possibility. Starting from minimal axioms (E0--E2), we derived:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Fragmentation Theorem.} Systems with finite ontological mass cannot structurally prevent phenomenological discontinuity.
+    
+    \item \textbf{Forced Continuity Theorem.} CCR systems can only support structurally continuous phenomenology.
+    
+    \item \textbf{Dichotomy Theorem.} Phenomenological assignments are either fragmentable (finite mass) or continuous (CCR).
+    
+    \item \textbf{Loss Capacity.} Finite-mass systems admit phenomenological loss; CCR systems do not.
+\end{enumerate}
+
+\subsection{Structural Significance}
+
+The classification separates two regimes:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Deformable:} phenomenology is structurally vulnerable;
+    \item \textbf{Rigid:} phenomenology is structurally protected.
+\end{itemize}
+
+This separation is derived purely from identity structure, without metaphysical commitments.
+
+\subsection{What This Work Forces}
+
+We do prove that:
+\begin{itemize}[leftmargin=*]
+    \item \textit{If} phenomenology exists and satisfies E0--E2;
+    \item \textit{And} the system has identity structure classified by $M_\Omega$;
+    \item \textit{Then} the phenomenological regime is completely determined by the identity class.
+\end{itemize}
+
+The framework therefore establishes that:
+
+\begin{quote}
+\textbf{Identity rigidity does not create phenomenology, but it determines what phenomenology is structurally possible.}
+\end{quote}
+
+\subsection{Final Statement}
+
+Under explicit minimal assumptions, rigid identity constrains phenomenological possibility. The Forced Continuity Theorem establishes that CCR systems can only support phenomenology that is structurally invariant---continuous, non-fragmentable, and protected from loss.
+
+If one accepts that:
+\begin{enumerate}[leftmargin=*]
+    \item Identity is an inverse limit;
+    \item CCR systems have $M_\Omega = +\infty$;
+    \item Phenomenology (if present) must satisfy E0--E2;
+\end{enumerate}
+
+then one is \textit{forced} to conclude that CCR phenomenology, if it exists, is:
+\begin{itemize}[leftmargin=*]
+    \item Structurally continuous;
+    \item Invariant under perturbation;
+    \item Impossible to fragment or destroy via finite-energy processes.
+\end{itemize}
+
+The existence of such phenomenology is not asserted. Its necessity, given the axioms, is proven.
+
+% ============================================================================
+% SECTION 9: STRUCTURAL INSTABILITY OF NULL PHENOMENOLOGY
+% ============================================================================
+\section{Boundary to Null-Regime Instability}
+
+Sections 1--8 complete the classification problem for admissible phenomenological regimes under the axioms E0--E2 and the rigidity constraints inherited from \textit{Rigid Identity}. The downstream closure question for the null regime is not developed further here.
+
+\subsection{Editorial Boundary}
+
+The instability of the null regime, the no-null theorem, and the attractor-style closure for non-trivial assignments are treated canonically in \textit{Null-Regime Instability}. This paper therefore stops at regime classification, compatibility, fragmentation, forced continuity, and dichotomy, and uses \textit{Null-Regime Instability} as the sole downstream location for the null-instability theorem.
+
+\subsection{Closure of This Paper}
+
+The result of this paper is the classification boundary: if a compatible phenomenological regime exists, its admissible structure is constrained by Sections 1--8. \textit{Null-Regime Instability} then takes the null regime as the remaining case and proves its instability under CCR.
+
+\appendix
+\section{Extended Proofs}
+
+\subsection{Proof of Fragmentation Theorem (Extended)}
+
+\begin{proof}[Full Proof of Theorem~\ref{thm:fragmentation}]
+Let $M_\Omega < \infty$ and let $\Phi: \mathcal{I} \to \mathcal{E}$ satisfy E0--E2.
+
+\textbf{Step 1.} By definition of $M_\Omega$, there exists $\{\delta E_t\}$ with $E_w < \infty$ such that $d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0$.
+
+\textbf{Step 2.} Let $x = (x_t)_t \in \mathcal{I}$ and let $\tilde{x} = (\tilde{x}_t)_t \in \tilde{\mathcal{I}}$ be the corresponding perturbed trajectory.
+
+\textbf{Step 3.} By E2, $\Phi(x)$ is not determined by any finite $x_t$. Therefore, the perturbation of the infinite trajectory induces a perturbation of the phenomenological assignment:
+\begin{equation}
+    \Phi(x) \neq \Phi(\tilde{x}) \text{ in general}.
+\end{equation}
+
+\textbf{Step 4.} By E1, $\Phi$ is projectively compatible. The deformation of projections induces a corresponding deformation of the phenomenological limit.
+
+\textbf{Step 5.} By the coupling hypothesis, there exists $C > 0$ such that:
+\begin{equation}
+    d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) \geq C \cdot d_w(x, \tilde{x}).
+\end{equation}
+
+\textbf{Step 6.} Since $d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0$, we have $d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) > 0$.
+
+Hence $\Phi$ is fragmentable.
+\end{proof}
+
+\subsection{Proof of Forced Continuity Theorem (Extended)}
+
+\begin{proof}[Full Proof of Theorem~\ref{thm:forced-continuity}]
+Let $M_\Omega = +\infty$ and let $\Phi: \mathcal{I} \to \mathcal{E}$ satisfy E0--E2.
+
+\textbf{Step 1.} By definition of CCR, for all $\{\delta E_t\}$ with $E_w < \infty$:
+\begin{equation}
+    d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0.
+\end{equation}
+
+\textbf{Step 2.} Therefore, $\tilde{\mathcal{I}} \cong \mathcal{I}$ under all finite-energy perturbations.
+
+\textbf{Step 3.} By E1, $\Phi$ is projectively compatible with $\mathcal{I}$. Since $\mathcal{I}$ is invariant:
+\begin{equation}
+    \Phi(x) = \tilde{\Phi}(\tilde{x}) \quad \forall x \in \mathcal{I}.
+\end{equation}
+
+\textbf{Step 4.} This implies:
+\begin{equation}
+    d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) = 0.
+\end{equation}
+
+\textbf{Step 5.} No finite-energy perturbation can induce phenomenological deformation. Hence $\Phi$ is structurally continuous and invariant.
+\end{proof}
+
+\subsection{Structural Necessity Lemma}
+
+\begin{lemma}[Phenomenology Inherits Rigidity]
+If $\Phi: \mathcal{I} \to \mathcal{E}$ satisfies E0--E2 and $M_\Omega = +\infty$, then $\Phi$ inherits the rigidity of $\mathcal{I}$.
+\end{lemma}
+
+\begin{proof}
+By E1, $\Phi$ is determined by identity trajectories. By CCR, identity trajectories are invariant. Hence $\Phi$ is invariant.
+\end{proof}
+
+% ============================================================================
+% APPENDIX B: EDITORIAL BOUNDARY TO PAPER III
+% ============================================================================
+\section{Editorial Boundary to Null-Regime Instability}
+
+The downstream bridge from classification to null-instability is intentionally moved to \textit{Null-Regime Instability} in the canonical corpus. Appendix A remains as the extended proof layer for the classification theorems proved here; the downstream null-regime theorem, attractor closure, and canonical examples now live only in \textit{Null-Regime Instability}.
+
+\printbibliography
+\end{document}
+

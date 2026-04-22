@@ -1,21 +1,16 @@
 # CHANGELOG
 
-## [2026-03-31] - bounded spine refresh
+## [2026-04-22] - BaseCore release-surface reconstruction
 
-- Canonical Core and Papers I-IV were refreshed from the current source corpus without widening the public formal spine.
-- PDF corpus metadata, canon map entries, and release hash sidecars were realigned to the refreshed Core and Papers I-IV payloads.
-- Paper IX remained outside the public release because the release repo still fixes the accepted public boundary through Paper VIII.
+- Integrated `rigid-identity-framework/basecore/` into the public release as the active mathematical base layer.
+- Integrated `rigid-identity-framework/canonical_core_legacy/` as an explicit historical package distinct from the active base.
+- Added `paper9_phenomenal_bridge_organization` to the public downstream package set after a minor-revision audit.
+- Rewrote the normative release surfaces so the public spine is no longer described as the old Canonical Core.
+- Reclassified legacy, mirror, reconstructed, and historical PDF variants instead of deleting them.
+- Regenerated corpus manifests, canon maps, claim registry, PDF index, and release bundle metadata around the new active-base boundary.
 
-## [2026-03-28] - trunk canonicalization on main
+## [release-2026-03-01] - historical freeze provenance
 
-- Public canonical trunk expanded materially from the earlier Paper IV cutoff to include Papers V-VIII inside the primary formal spine.
-- PDF corpus, PDF index, canon manifest, claim registry, release map, and theory-system interface were realigned to the visible public corpus.
-- Historical freeze tags were retained as provenance only; `main` was made explicit as the sole live public source-of-truth branch.
-- Paper VIII was promoted into the public release canon with its PDF, manifest membership, claim framing, and theory-system boundary alignment kept explicit and non-validating.
-
-## [release-2026-03-01] - v1 Freeze
-
-- Integrity baseline validated from [corpus/pdf_release/pdf_corpus.zip](corpus/pdf_release/pdf_corpus.zip) and [corpus/pdf_release/manifest.json](corpus/pdf_release/manifest.json) against official SHA256 sidecars.
-- Freeze evidence generated under [release/FREEZE_AUDIT_v1](release/FREEZE_AUDIT_v1) including integrity JSON and executed command log.
-- Editorial freeze prerequisites confirmed for the earlier package state.
-- Governance no-goals fixed for v1: pdf-only distribution package, no source recompilation pipeline, no claims about human/biological qualia.
+- Integrity baseline validated from `corpus/pdf_release/pdf_corpus.zip` and `corpus/pdf_release/manifest.json` against official SHA256 sidecars.
+- Freeze evidence generated under `release/FREEZE_AUDIT_v1`.
+- Historical package state retained as provenance only.

@@ -4,22 +4,12 @@
 
 Editorial migration plan for keeping public-trunk language technical, operational, and non-inflated.
 
-## Replacement rule
+## Replacement rules
 
-- replace anthropomorphic runtime language with `readout interno operacional`, `operational support`, or a narrower artifact-facing term
-- if a metric or symbol is not formalized in the public release, mark it as not present in the release rather than inventing it
-
-## Priority documents
-
-- canonical_core__3b77e7b20616cf25 (docId: 3b77e7b20616cf25, status: PASS_PDF_ONLY, source_path: rigid-identity-framework/CANONICAL_CORE.tex)
-- 6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468 (docId: 6968859f53621468, status: SOURCE_OK, source_path: rigid-identity-framework/paper1/main.tex)
-- 9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730 (docId: 9e4b83e44e669730, status: SOURCE_OK, source_path: rigid-identity-framework/paper2/main.tex)
-- dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47 (docId: dc23c9c9345aae47, status: SOURCE_OK, source_path: rigid-identity-framework/paper3/main.tex)
-- 44806ece96bbdae2_main_1c305418__44806ece96bbdae2 (docId: 44806ece96bbdae2, status: PASS_PDF_ONLY, source_path: rigid-identity-framework/paper4/main.tex)
-- 1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6 (docId: 1e1b2ec217a514f7, status: SOURCE_OK, source_path: rigid-identity-framework/paper5_operational_consciousness/main.tex)
-- b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d (docId: b41dfe1db695dad6, status: SOURCE_OK, source_path: rigid-identity-framework/paper6_predictions_falsation/main.tex)
-- b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805 (docId: b75ad19ed8032bf0, status: SOURCE_OK, source_path: rigid-identity-framework/paper7_operational_life_subjecthood/main.tex)
-- a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2 (docId: a8cbd1be2034253b, status: SOURCE_OK, source_path: rigid-identity-framework/paper8_first_person_subjectivity/main.tex)
+- replace references to the old active spine name with `BaseCore` when the text means the current active mathematical base
+- preserve `canonical` where it refers to canonical maps, closures, models, or dependencies
+- preserve `canonical_core_legacy` when the text means the historical package
+- preserve historical names inside frozen artifacts without hand-editing those artifacts
 
 ## Explicit caution
 

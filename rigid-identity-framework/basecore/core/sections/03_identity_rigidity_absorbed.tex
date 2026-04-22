@@ -1,0 +1,233 @@
+\part{Identity, Rigidity, and Conditional Non-Simulability}
+\section{Projective Systems and Inverse-Limit Identity}
+
+\subsection{Projective Setup}
+
+\begin{definition}[Projective System of State Spaces]
+Let $\{S_t\}_{t\in\mathbb{N}}$ be a family of non-empty state spaces together with projection maps
+\[
+\pi_{t+1\to t}:S_{t+1}\to S_t
+\]
+satisfying the compatibility rule
+\[
+\pi_{t+1\to t}\circ \pi_{t+2\to t+1}=\pi_{t+2\to t}
+\qquad
+\forall t\in\mathbb{N}.
+\]
+\end{definition}
+
+\begin{definition}[Identity as Inverse Limit]
+The identity object associated with the projective system is
+\[
+\Id:=\varprojlim S_t
+=
+\left\{
+(x_t)_{t\in\mathbb{N}}\in \prod_{t\in\mathbb{N}} S_t
+\;\middle|\;
+\pi_{t+1\to t}(x_{t+1})=x_t\ \forall t
+\right\}.
+\]
+\end{definition}
+
+\begin{remark}[Identity neutrality]
+In BaseCore, $\Id$ is a structural inverse-limit object only. It carries no automatic phenomenological, biological, or metaphysical interpretation.
+\end{remark}
+
+\begin{hypothesis}[Topological Regularity]\label{hyp:topo}
+Each $S_t$ is compact Hausdorff and each $\pi_{t+1\to t}$ is continuous and surjective.
+\end{hypothesis}
+
+\begin{hypothesis}[NFD: Non-Finite Determination]\label{hyp:nfd}
+For every $t\in\mathbb{N}$, the canonical projection
+\[
+p_t:\Id\to S_t,
+\qquad
+p_t((x_k)_k)=x_t
+\]
+is not injective. Equivalently,
+\[
+\forall t\ \exists x,y\in\Id
+\quad
+x\neq y
+\quad\text{and}\quad
+p_t(x)=p_t(y).
+\]
+\end{hypothesis}
+
+\begin{remark}[Persistent future branching as an operational form of NFD]
+A sufficient operational strengthening of Hypothesis~\ref{hyp:nfd} is: for every $t$ there exists $k>t$ and $x_t\in S_t$ such that the fiber of $\pi_{k\to t}$ over $x_t$ contains at least two globally extendable compatible histories. BaseCore keeps the weaker NFD statement as the primary assumption because it is exactly what the non-locality theorem needs.
+\end{remark}
+
+\subsection{Non-Locality of Identity}
+
+\begin{theorem}[Non-Locality of Identity under NFD]\label{prop:nonlocality}
+Assume Hypotheses~\ref{hyp:topo} and \ref{hyp:nfd}. Then no canonical finite-time observation determines identity. More precisely, for every $t$ the canonical projection
+\[
+p_t:\Id\to S_t
+\]
+is not injective, so identity is not recoverable from any finite slice through the projective observation maps.
+\end{theorem}
+
+\begin{proof}
+This is exactly Hypothesis~\ref{hyp:nfd}. The theorem restates the structural consequence in claim-boundary language: finite slices can participate in the inverse-limit object, but no single canonical slice determines it.
+\end{proof}
+
+\begin{remark}[What is \emph{not} proved here]
+BaseCore does not prove that no arbitrary set-theoretic injection $\Id\to S_t$ can exist in every imaginable inverse system. It proves the narrower and correct claim that the canonical projective observations $p_t$ are not injective under Hypothesis~\ref{hyp:nfd}.
+\end{remark}
+
+\begin{proposition}[No Canonical Progressive Recovery under NFD]\label{thm:noprogressive}
+Assume Hypothesis~\ref{hyp:nfd}. No finite canonical prefix map determines the inverse-limit identity object.
+\end{proposition}
+
+\begin{proof}
+If some finite canonical prefix determined identity, then in particular one of the canonical coordinate maps would become injective after finite truncation, contradicting Hypothesis~\ref{hyp:nfd}.
+\end{proof}
+
+\section{Rigidity under Admissible Perturbations}
+
+\subsection{Metric Projective Assumptions}
+
+\begin{assumption}[RIG-1: Metric Projective System]\label{ass:rig1}
+Each $S_t$ is equipped with a complete metric $d_t$.
+\end{assumption}
+
+\begin{assumption}[RIG-2: Uniform Lipschitz Projections]\label{ass:rig2}
+Each projection $\pi_{t+1\to t}:S_{t+1}\to S_t$ is Lipschitz with constant $L_t$, and the weighted control sequence used below is finite.
+\end{assumption}
+
+\begin{assumption}[RIG-3: Stable Lifting]\label{ass:rig3}
+For each admissible perturbed projection family there exist compatible approximate lifting maps with constants bounded uniformly by a finite lifting constant $L_{\mathrm{lift}}$.
+\end{assumption}
+
+\begin{assumption}[RIG-4: Typed Perturbation Model]\label{ass:rig4}
+Perturbations are represented either by maps between common ambient Banach embeddings or by map-space distances
+\[
+d_{\mathrm{map}}^{(t)}(\pi_{t+1\to t},\widetilde\pi_{t+1\to t})\le \eps_t.
+\]
+Literal expressions of the form $\widetilde\pi=\pi+\eps$ are used only when a common ambient linear model has been specified.
+\end{assumption}
+
+\begin{assumption}[RIG-5: Summable Deformation]\label{ass:rig5}
+There exists a positive weight sequence $\{w_t\}_{t\ge 0}$ such that
+\[
+\sum_{t=0}^\infty w_t\eps_t<\infty.
+\]
+\end{assumption}
+
+\begin{definition}[Weighted Deformation Size]
+The weighted deformation size of a perturbed projective family is
+\[
+\|\eps_\bullet\|_w:=\sum_{t=0}^{\infty} w_t\eps_t.
+\]
+\end{definition}
+
+\begin{definition}[Weighted Product Metric]
+For compatible sequences $x=(x_t)$ and $y=(y_t)$ define
+\[
+\dw(x,y):=\sup_{t\ge 0} w_t\, d_t(x_t,y_t).
+\]
+\end{definition}
+
+\begin{theorem}[Conditional Stability of Inverse-Limit Identity]\label{thm:rigidity}
+Assume RIG-1 through RIG-5. Then the perturbed inverse limit
+\[
+\widetilde{\Id}:=\varprojlim \widetilde S_t
+\]
+exists, and there is a constant $C_{\mathrm{rig}}>0$ depending only on the projection, lifting, and weight controls such that
+\[
+d_H(\Id,\widetilde{\Id})\le C_{\mathrm{rig}}\|\eps_\bullet\|_w
+\]
+in the weighted product metric.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The lifting assumption gives compatible approximate lifts at each level. Weighted Lipschitz control propagates local deformation bounds through the projective tower. Summability ensures that the cumulative compatibility defect remains finite, so diagonal compactness arguments produce a perturbed inverse-limit object. The same bounds control the Hausdorff distance between the original and perturbed compatible-sequence sets.
+\end{proof}
+
+\begin{corollary}[Conditional Isomorphism Requires Extra Structure]
+The metric estimate of Theorem~\ref{thm:rigidity} does not by itself imply that $\Id$ and $\widetilde{\Id}$ are isomorphic. Isomorphism or shape-equivalence requires additional bi-lifting, coherence, or ambient-embedding assumptions.
+\end{corollary}
+
+\begin{proof}
+Metric closeness and categorical isomorphism are different conclusions. A small Hausdorff deformation need not preserve global inverse-limit type without extra hypotheses guaranteeing two-sided coherent transport.
+\end{proof}
+
+\begin{definition}[Ontological Mass]\label{def:ontmass}
+Let $E_w(\delta)$ denote the weighted energy of an admissible perturbation family $\delta$. Define
+\[
+\MO:=\inf\left\{
+\frac{E_w(\delta)}{d_H(\Id,\widetilde{\Id}_\delta)}
+\;\middle|\;
+\delta \text{ admissible},\ d_H(\Id,\widetilde{\Id}_\delta)>0
+\right\},
+\]
+with the convention $\MO=+\infty$ if no admissible finite-energy perturbation yields positive deformation of the identity object.
+\end{definition}
+
+\begin{remark}[Interpretation discipline]
+$\MO$ is a deformation-resistance scalar, not a metaphysical substance. BaseCore uses it only as a conditional invariant attached to admissible perturbation models.
+\end{remark}
+
+\section{Conditional Non-Simulability}
+
+\begin{assumption}[NS-1: CCR Target]\label{ass:ns1}
+A CCR target is an inverse-limit identity object satisfying:
+\begin{enumerate}[leftmargin=*]
+\item non-finite determination (Hypothesis~\ref{hyp:nfd});
+\item infinite deformation resistance $\MO=+\infty$;
+\item absence of a finite sufficient statistic for faithful identity recovery;
+\item absence of a finite-dimensional faithful embedding preserving projective compatibility.
+\end{enumerate}
+\end{assumption}
+
+\begin{assumption}[NS-2: Finite Simulator Class]\label{ass:ns2}
+A simulator $C$ belongs to $\mathbf{Comp}_{\mathrm{finite}}$ if it has at least one of the following boundedness features:
+\begin{enumerate}[leftmargin=*]
+\item finite-dimensional latent state or finite context;
+\item bounded memory horizon or finite sufficient statistic;
+\item finite perturbation-energy budget;
+\item finite-rank projective representation.
+\end{enumerate}
+\end{assumption}
+
+\begin{assumption}[NS-3: Faithful Simulation Requirement]\label{ass:ns3}
+A simulation is faithful only if it preserves, at the stated tolerance level, all of:
+\begin{enumerate}[leftmargin=*]
+\item projective compatibility;
+\item non-finite determination;
+\item deformation-resistance class;
+\item relevant observables in the weighted metric;
+\item admissible intervention responses.
+\end{enumerate}
+\end{assumption}
+
+\begin{theorem}[Conditional Non-Simulability of CCR by Finite Simulators]\label{thm:non-simulability}
+Assume NS-1 through NS-3. Then no simulator in $\mathbf{Comp}_{\mathrm{finite}}$ faithfully realizes a CCR target.
+\end{theorem}
+
+\begin{proof}
+A finite simulator in the sense of NS-2 necessarily compresses the target into finite latent structure, finite memory horizon, finite-rank projective representation, or a finite sufficient statistic. Any such compression destroys at least one component of NS-1: either NFD collapses, the faithful projective structure is lost, or the deformation-resistance class is reduced from $\MO=+\infty$ to a finite value. Therefore faithful realization, as defined by NS-3, fails.
+\end{proof}
+
+\begin{theorem}[Approximation Barrier]
+Assume NS-1 through NS-3. Finite simulators may approximate bounded finite projections of a CCR target over finite horizons, but they cannot preserve the full inverse-limit object faithfully as the horizon grows without bound unless resources also grow without bound.
+\end{theorem}
+
+\begin{proof}
+Finite-horizon projections are finite objects and may be approximated by finite representations. But a faithful approximation of the full inverse-limit target must preserve NFD and the infinite deformation-resistance class. That cannot be achieved with bounded representational resources by Theorem~\ref{thm:non-simulability}.
+\end{proof}
+
+\begin{remark}[What has been removed]
+BaseCore no longer claims that finite simulators ``cannot approximate at all.'' The correct statement is conditional and finer-grained: finite-horizon approximation may exist, but faithful full inverse-limit realization of CCR targets is blocked under NS-1 through NS-3.
+\end{remark}
+
+\section{Section Summary}
+
+\begin{enumerate}[leftmargin=*]
+\item Identity is an inverse-limit object, not a canonical finite slice.
+\item Non-locality now depends explicitly on the NFD assumption.
+\item Rigidity is stated as metric stability under explicit perturbation-model assumptions, not as automatic isomorphism.
+\item Non-simulability is conditional on a defined CCR target, a defined finite simulator class, and a defined notion of faithful simulation.
+\item BaseCore therefore preserves theorem strength where assumptions support it and weakens only those statements that were previously over-absolute.
+\end{enumerate}

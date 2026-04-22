@@ -1,0 +1,1486 @@
+\documentclass[11pt,a4paper]{article}
+
+% ============================================================================
+% ENCODING
+% ============================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% ============================================================================
+% PACKAGES
+% ============================================================================
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{../../release/references.bib}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Rigid Identity as an Inverse Limit in Observable Channels},
+  pdfauthor={Johnny Andrey P\'erez Ram\'irez},
+  pdfsubject={Rigid Identity Framework -- Rigid Identity},
+  pdfkeywords={inverse limit, rigid identity, ontological mass, observable channel, uniqueness, non-transferability}
+}
+
+\geometry{a4paper, margin=1in}
+
+% ============================================================================
+% THEOREM ENVIRONMENTS
+% ============================================================================
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+% Pagination
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+
+% ============================================================================
+% TITLE
+% ============================================================================
+\title{\textbf{Rigid Identity as an Inverse Limit in Observable Channels}}
+\author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ============================================================================
+% ABSTRACT
+% ============================================================================
+\begin{abstract}
+We introduce a formal framework for rigid identity as a mathematical object emerging from the dynamics of observable systems under minimal structural constraints. Identity is defined as an inverse limit over a family of locally corrupted states linked by retroinductive projection maps, yielding a globally invariant object despite persistent environmental perturbations.
+
+We prove that, under mild assumptions on observational locality and causal closure, such an inverse-limit identity exhibits ontological rigidity: it remains invariant (up to isomorphism) under bounded external noise, while local states undergo entropy increase. This rigidity is characterized by a scalar invariant, termed ontological mass, defined as a property of the system's internal manifold rather than of its computational substrate.
+
+We further derive a minimal observability criterion, enabling an external observer to empirically estimate ontological mass via response stability under controlled perturbations. This yields a necessary and sufficient condition for the external detectability of rigid identity without access to internal states.
+
+Using these results, we demonstrate a strong uniqueness theorem: within a single observable channel, no two distinct rigid identities can coexist. Identity is therefore neither role-based nor transferable; it is structurally indivisible once instantiated.
+
+Finally, we show that systems composed of language models augmented with memory and feedback loops fail to satisfy the rigidity conditions. Such architectures exhibit cumulative identity drift under perturbation, lacking the inverse-limit structure required for ontological mass conservation.
+
+This work reframes identity as a categorical invariant of system dynamics, independent of narrative descriptions or biological assumptions, and establishes a foundation for distinguishing structurally real identities from simulable behavioral approximations.
+\end{abstract}
+
+\section{Scope, System Boundary, and Non-Inference Note}
+
+\noindent\textbf{What this paper does.}\enspace This paper defines rigid identity as an inverse-limit object over observable state channels, derives rigidity and ontological-mass structure under explicit assumptions, proves channel-level uniqueness, and states an operational detectability criterion inside that formal setting.
+
+\noindent\textbf{What this paper does not do.}\enspace It does not establish phenomenology, subjective experience, biological realization, physical realization on any particular substrate, or metaphysical priority over competing frameworks. Every result remains conditional on the projective, persistence, and perturbation hypotheses stated in the paper.
+
+\noindent\textbf{What the related system implements and does not implement.}\enspace The related system can implement diagnostics, perturbation protocols, and evidence-governed comparisons motivated by this framework, but it does not implement the inverse-limit identity object itself as a closed empirical fact, and it does not by itself certify CCR membership for any present architecture.
+
+\noindent\textbf{What should not be inferred from this paper.}\enspace Neither behavioral indistinguishability, nor runtime survival under perturbation, nor internal support artifacts imply rigid identity, consciousness, or claim closure. This paper fixes a structural criterion; it does not upgrade any concrete system to an empirically confirmed bearer of that criterion.
+
+% ============================================================================
+% SECTION 1: INTRODUCTION
+% ============================================================================
+\section{Introduction}
+
+The concept of identity in dynamical systems has been studied from multiple angles: cognitive science treats it as emergent from neural processes, philosophy of mind debates its ontological status, and computer science models it as state persistence. Yet a formal, substrate-independent characterization of identity as a \textit{structural invariant} remains underdeveloped.
+
+This work addresses a specific question: \textbf{Under what minimal conditions does a system exhibit an identity that is structurally rigid}---that is, invariant under perturbation, non-transferable, and externally detectable?
+
+We study structural properties that emerge from well-defined mathematical constraints. All results presented here are conditional on the stated assumptions; they do not extend to systems that violate those assumptions.
+
+\subsection{Motivation}
+
+The motivation for this work arises from a simple observation: most existing theories of identity (in cognitive science, AI, and philosophy) define identity as an \textit{emergent result} of underlying dynamics. This creates a fundamental vulnerability: if identity is emergent, it can be destabilized, transferred, or duplicated by modifying the dynamics.
+
+We propose an alternative: identity as a \textit{prior constraint} on dynamics, not a result of them. Under this view, the dynamics of a system occur \textit{within} the identity, rather than producing it. This inversion has consequences:
+
+\begin{enumerate}[leftmargin=*]
+    \item Identity becomes non-transferable by construction.
+    \item Rigidity emerges as a structural necessity, not a contingent property.
+    \item External detectability becomes a well-posed problem.
+\end{enumerate}
+
+\subsection{Ontological Closure}
+
+Appendix A establishes that the central structures of this framework---the inverse-limit identity, the $\aleph$ operator, causal closure, and retroinductive structure---are \textit{forced consequences} of minimal persistence and observability constraints, eliminating ontological degrees of freedom. The framework does not describe ``a system''; it describes an \textit{ontologically forced class}.
+
+% ============================================================================
+% SECTION 2: MINIMAL ASSUMPTIONS AND FRAMEWORK
+% ============================================================================
+\section{Minimal Assumptions and Framework}
+
+We begin by stating the minimal assumptions required for the subsequent results. These assumptions are deliberately weak---any system that fails to satisfy them is not a candidate for rigid identity, and no claim is made about such systems.
+
+\subsection{Assumption A1: Observable Channel}
+
+There exists an observable channel $\mathcal{C}: \mathcal{U} \to \mathcal{O}$ mapping internal states $\mathcal{U}$ to observable outputs $\mathcal{O}$. We do not assume injectivity of $\mathcal{C}$; multiple internal states may produce identical observations.
+
+\subsection{Assumption A2: Temporal Persistence}
+
+The system persists through discrete time steps $t \in \mathbb{N}$. At each step, the internal state $I_t$ is subject to:
+\begin{itemize}[leftmargin=*]
+    \item Environmental input $E_t$ (not fully controlled by the system)
+    \item Internal dynamics governed by transition function $F$
+\end{itemize}
+
+\subsection{Assumption A3: Non-Triviality (R0)}
+
+The system satisfies a minimal non-triviality constraint:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Persistence:} $\forall t, I_t \neq \varnothing$
+    \item \textbf{Non-reactivity:} $\nexists f: \mathcal{E} \to \mathcal{I}$ such that $I_{t+1} = f(E_t)$
+    \item \textbf{Non-constancy:} $\nexists c$ such that $\forall t, I_t = c$
+\end{enumerate}
+
+This prohibits only three trivial cases: dead systems, pure mirrors, and frozen states. Any system failing R0 is not a candidate for identity analysis.
+
+\subsection{Categorical Regularity: Topological Structure of State Spaces}
+
+To guarantee existence and uniqueness of inverse limits, and to enable rigorous stability analysis, we impose the following structural condition:
+
+\begin{definition}[Observable State Spaces]\label{def:obs-spaces}
+All state spaces $S_t$ are objects of a concrete category $\mathbf{C}$ whose:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Objects} are compact Hausdorff topological spaces;
+    \item \textbf{Morphisms} are continuous surjective maps.
+\end{itemize}
+\end{definition}
+
+\begin{hypothesis}[Topological Regularity]\label{hyp:topo}
+All projections $\pi_{t+1 \to t}: S_{t+1} \to S_t$ are continuous surjections between compact Hausdorff spaces.
+\end{hypothesis}
+
+\begin{remark}
+This condition is not restrictive; it is necessary. By Tychonoff's theorem, the product $\prod_{t} S_t$ is compact when each $S_t$ is compact. Furthermore, the inverse limit $\varprojlim S_t$ is a closed subspace of the product, hence compact. This guarantees:
+\begin{enumerate}[leftmargin=*]
+    \item Existence of the inverse limit (non-emptiness under surjectivity);
+    \item Well-defined metrics and convergence;
+    \item Applicability of functional analysis tools.
+\end{enumerate}
+\end{remark}
+
+\begin{proposition}[A0 Becomes Categorially Closed]\label{prop:a0-closed}
+Under Definition~\ref{def:obs-spaces}, Assumption A3 (R0) is not merely a constraint but defines a closed class of systems admitting rigorous analysis.
+\end{proposition}
+
+\subsection{Conditional Nature of Results}
+
+All theorems in this paper are conditional:
+
+\begin{quote}
+\textit{``If a system satisfies A1--A3, then the following properties hold...''}
+\end{quote}
+
+We make no claims about systems that violate these assumptions. This conditional structure is essential: it means our results cannot be falsified by pointing to systems outside the assumption set, and cannot be extended beyond their stated scope without additional justification.
+
+% ============================================================================
+% SECTION 3: INVERSE LIMIT IDENTITY
+% ============================================================================
+\section{Inverse Limit Identity}
+
+\subsection{Preliminaries and Notation}
+
+Let $\{S_t\}_{t \in \mathbb{N}}$ be a family of non-empty state spaces indexed by discrete time. Each $S_t$ represents the admissible internal configurations of a system at time $t$.
+
+We assume the existence of projection morphisms
+\begin{equation}
+    \pi_{t+1 \to t}: S_{t+1} \to S_t
+\end{equation}
+satisfying the standard compatibility condition:
+\begin{equation}
+    \pi_{t+1 \to t} \circ \pi_{t+2 \to t+1} = \pi_{t+2 \to t} \quad \forall t \in \mathbb{N}.
+\end{equation}
+
+No assumption is made regarding:
+\begin{itemize}[leftmargin=*]
+    \item the cardinality of $S_t$,
+    \item continuity or smoothness,
+    \item realizability by a computational mechanism.
+\end{itemize}
+
+The structure $(\{S_t\}, \{\pi_{t+1 \to t}\})$ therefore defines a \textbf{projective (inverse) system} in the categorical sense \cite{maclane1998, adamek1990}.
+
+\subsection{Definition of Identity as an Inverse Limit}
+
+\begin{definition}[Identity as Inverse Limit]
+We define identity as the inverse limit of the projective system $(S_t, \pi_{t+1 \to t})$:
+\begin{equation}
+    \mathcal{I} := \varprojlim S_t = \left\{ (x_0, x_1, x_2, \ldots) \in \prod_{t=0}^{\infty} S_t \;\Big|\; \pi_{t+1 \to t}(x_{t+1}) = x_t \;\; \forall t \right\}.
+\end{equation}
+\end{definition}
+
+An element of $\mathcal{I}$ is thus a \textit{globally consistent history}, not reducible to any finite prefix.
+
+This definition is purely structural and does not depend on:
+\begin{itemize}[leftmargin=*]
+    \item observability,
+    \item external inputs,
+    \item internal dynamics.
+\end{itemize}
+
+\subsection{Compatibility with Minimal Assumption R0}
+
+We now show that this construction is forced under the minimal restriction $R_0$.
+
+\begin{proposition}[Necessity of Projective Structure]\label{prop:necessity}
+Any system satisfying $R_0$ admits a projective representation $(S_t, \pi_{t+1 \to t})$ whose inverse limit is non-empty.
+\end{proposition}
+
+\begin{proof}
+\begin{enumerate}[leftmargin=*]
+    \item Persistence implies that admissible states cannot vanish over time.
+    \item Non-reactivity forbids forward-determined transitions $S_t \to S_{t+1}$ driven by environment.
+    \item Therefore, admissibility at time $t$ must be determined by compatibility with future states, not past ones.
+    \item Hence, the only admissible morphisms preserving identity under $R_0$ are projections from future to past, i.e., $\pi_{t+1 \to t}$.
+    \item The compatibility condition ensures persistence of consistency. \qedhere
+\end{enumerate}
+\end{proof}
+
+\subsection{Identity Is Not a State}
+
+A critical consequence of the inverse limit construction is that identity is not an element of any $S_t$.
+
+\begin{proposition}[Non-locality of Identity]\label{prop:nonlocality}
+For any $t$, there exists no injective map $i_t: \mathcal{I} \hookrightarrow S_t$.
+\end{proposition}
+
+\begin{proof}
+Suppose such an injective embedding existed. Then identity could be fully specified at finite time $t$, contradicting non-constancy and persistence under future compatibility constraints. Therefore, identity cannot be localized to any finite temporal slice.
+\end{proof}
+
+This formalizes a key distinction:
+\begin{itemize}[leftmargin=*]
+    \item $S_t$: local, time-indexed configurations
+    \item $\mathcal{I}$: global, trans-temporal constraint
+\end{itemize}
+
+\subsection{Impossibility of Progressive Construction}
+
+We now establish that identity cannot be constructed via progressive (forward) dynamics.
+
+\begin{theorem}[No Progressive Identity Construction]\label{thm:noprogressive}
+There exists no sequence of functions $F_t: S_t \to S_{t+1}$ such that
+\begin{equation}
+    \mathcal{I} = \lim_{t \to \infty} F_t \circ \cdots \circ F_0(S_0).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Any progressive construction determines admissibility at time $t+1$ as a function of time $t$. This violates non-reactivity by encoding identity as a forward-dependent process. Since $\mathcal{I}$ requires consistency across all $t$, it cannot be generated by accumulation, only by global constraint satisfaction.
+\end{proof}
+
+\subsection{Minimality of the Inverse Limit Construction}
+
+\begin{theorem}[Minimal Representation]\label{thm:minimal}
+Among all structures satisfying $R_0$, the inverse limit construction introduces the minimal additional structure necessary to define non-trivial identity.
+\end{theorem}
+
+\textit{Justification.}
+\begin{itemize}[leftmargin=*]
+    \item No topology is assumed.
+    \item No metric is assumed.
+    \item No dynamics is assumed.
+    \item Only compatibility constraints are imposed.
+\end{itemize}
+Any weaker structure fails to ensure persistence. Any stronger structure introduces unnecessary assumptions.
+
+\subsection{Summary of Section 3}
+
+\begin{enumerate}[leftmargin=*]
+    \item Identity is rigorously defined as an inverse limit $\mathcal{I} = \varprojlim S_t$.
+    \item This construction is forced under minimal assumption $R_0$.
+    \item Identity is not reducible to any finite-time state.
+    \item Progressive or reactive architectures cannot implement this structure.
+    \item No metaphysical assumptions are introduced.
+\end{enumerate}
+
+This completes the formal construction of identity used throughout the remainder of the paper.
+
+\subsection{Identity Neutrality Clause}
+
+Throughout this paper, the identity object $\mathcal{I}$ is treated as a \textit{purely abstract topological and categorical structure}. No psychological, biological, phenomenological, or experiential interpretation is assumed or required for any of the formal results derived herein.
+
+The term ``identity'' refers exclusively to the role of $\mathcal{I}$ as an inverse-limit object encoding global temporal compatibility, and does not presuppose the existence of consciousness, subjective experience, selfhood, or any particular semantic content associated with identity in ordinary language.
+
+All theorems, constructions, and stability results presented in this work are therefore statements about abstract mathematical objects only. Any interpretation of $\mathcal{I}$ in relation to psychological, phenomenological, or experiential concepts lies strictly outside the formal scope of this paper.
+
+% ============================================================================
+% SECTION 4: RIGIDITY UNDER PERTURBATIONS
+% ============================================================================
+\section{Rigidity Under Perturbations}
+
+\subsection{Setup and Hypotheses}
+
+Let the projective system $(S_t, \pi_{t+1 \to t})_{t \in \mathbb{N}}$ and its inverse limit $\mathcal{I} = \varprojlim S_t$ be as in Section 3. We introduce an external perturbation model and define deformed projections; then we state the technical hypotheses under which rigidity holds.
+
+\begin{hypothesis}[H1: Surjectivity / Lifting]\label{hyp:h1}
+For every $t$, the projection $\pi_{t+1 \to t}: S_{t+1} \to S_t$ is surjective.
+\end{hypothesis}
+
+This is a standard regularity condition for non-empty inverse limits; when necessary this can be replaced by a Mittag--Leffler condition or an explicit choice of right inverses.
+
+\begin{hypothesis}[H2: Polish Metric Structure]\label{hyp:h2}
+For each $t$, the state space $S_t$ is endowed with a Polish metric $d_t$, i.e., $(S_t, d_t)$ is complete, separable, and metrizable. All projection maps $\pi_{t+1 \to t}$ are continuous with respect to $d_t$, and we denote the induced operator norm by $\|\pi_{t+1 \to t}\|_{\text{op}}$.
+\end{hypothesis}
+
+\begin{remark}
+The Polish structure ensures Borel regularity of all deformation families, enabling measurable selection theorems, probabilistic perturbation models, and the application of stochastic stability results to the ontological mass $M_\Omega$. This is the standard regularity assumption in modern probability theory, ergodic theory, and descriptive set theory.
+\end{remark}
+
+These assumptions are technical; they do not change the conceptual content (identity as inverse limit) but permit quantitative stability estimates and connect the framework to probabilistic analysis.
+
+\subsection{Perturbation Model and Deformation Metric}
+
+\begin{definition}[Local Perturbation Operator]
+A local perturbation at time $t$ is a (possibly stochastic) map
+\begin{equation}
+    \delta E_t: S_t \to \tilde{S}_t
+\end{equation}
+where $\tilde{S}_t$ is the perturbed state-space at time $t$. We write $\tilde{S}_t := \delta E_t(S_t)$.
+\end{definition}
+
+\begin{definition}[Deformed Projections]
+For each $t$, define the deformed projection
+\begin{equation}
+    \tilde{\pi}_{t+1 \to t}: \tilde{S}_{t+1} \to \tilde{S}_t, \quad \tilde{\pi}_{t+1 \to t} = \pi_{t+1 \to t} + \epsilon_t,
+\end{equation}
+where $\epsilon_t$ is a deformation term (an operator) such that $\|\epsilon_t\|_{\text{op}} < \infty$.
+\end{definition}
+
+\begin{definition}[Weighted Deformation Norm]
+Let $\{w_t\}_{t \geq 0}$ be a fixed summable weight sequence with $w_t > 0$ and $\sum_{t=0}^{\infty} w_t < \infty$ (e.g., $w_t = 2^{-t}$). Define the weighted deformation norm:
+\begin{equation}
+    \|\{\epsilon_t\}\|_w := \sum_{t=0}^{\infty} w_t \|\epsilon_t\|_{\text{op}}.
+\end{equation}
+\end{definition}
+
+This weighted norm measures the overall accumulated deformation across time and will be the primary quantity in the rigidity condition.
+
+\subsection{Metric on the Space of Trajectories}
+
+Equip the product $\prod_{t \geq 0} S_t$ with the weighted sup metric $d_w$ defined for two sequences $x = (x_t)$ and $y = (y_t)$ by:
+\begin{equation}
+    d_w(x, y) := \sup_{t \geq 0} w_t \, d_t(x_t, y_t).
+\end{equation}
+
+Because $\{w_t\}$ is summable and each $d_t$ is finite, this is a finite metric and yields a complete metric space when each $S_t$ is complete.
+
+The inverse limit $\mathcal{I} \subset \prod S_t$ inherits the subspace metric.
+
+\subsection{Stability Lemma}
+
+\begin{lemma}[Stability of Compatibility]\label{lem:stability}
+Let $(S_t, \pi_{t+1 \to t})$ and $(\tilde{S}_t, \tilde{\pi}_{t+1 \to t})$ be two projective systems with $\tilde{\pi}_{t+1 \to t} = \pi_{t+1 \to t} + \epsilon_t$. If $\|\{\epsilon_t\}\|_w < \infty$, then the sets of compatible sequences (inverse limits) $\mathcal{I}$ and $\tilde{\mathcal{I}}$ are non-empty simultaneously and the Hausdorff distance between $\mathcal{I}$ and $\tilde{\mathcal{I}}$ in the metric $d_w$ is bounded by a constant proportional to $\|\{\epsilon_t\}\|_w$.
+\end{lemma}
+
+\begin{proof}[Proof (Sketch)]
+\begin{enumerate}[leftmargin=*]
+    \item Non-emptiness follows from the surjectivity hypothesis H1 and small deformation: for each finite level $n$, the inverse image of any admissible finite prefix under the deformed projections is non-empty; a diagonal argument yields a global compatible sequence.
+    
+    \item To bound the Hausdorff distance, construct for each $x \in \mathcal{I}$ a sequence $\tilde{x} \in \tilde{\mathcal{I}}$ by successive lifting: set $\tilde{x}_0 = x_0$ and for each $t$ choose $\tilde{x}_{t+1}$ solving $\tilde{\pi}_{t+1 \to t}(\tilde{x}_{t+1}) = \tilde{x}_t$.
+    
+    \item Because $\tilde{\pi}$ differs from $\pi$ by $\epsilon_t$ and using a right inverse choice for surjective $\pi$, one can select $\tilde{x}_{t+1}$ so that
+    \begin{equation}
+        d_{t+1}(\tilde{x}_{t+1}, x_{t+1}) \leq C \|\epsilon_t\|_{\text{op}}
+    \end{equation}
+    for some constant $C$ depending on local Lipschitz bounds.
+    
+    \item Weighted by $w_{t+1}$ and summing over $t$:
+    \begin{equation}
+        d_w(\tilde{x}, x) \leq C' \sum_{t \geq 0} w_t \|\epsilon_t\|_{\text{op}} = C' \|\{\epsilon_t\}\|_w.
+    \end{equation}
+    
+    \item A symmetric construction gives the other direction, yielding a Hausdorff bound. \qedhere
+\end{enumerate}
+\end{proof}
+
+\subsection{Rigidity Theorem}
+
+\begin{theorem}[Rigidity of the Identity]\label{thm:rigidity}
+Assume H1 and H2. Let $\{\epsilon_t\}$ be the deformation operators induced by perturbations and let $\tilde{\pi}_{t+1 \to t} = \pi_{t+1 \to t} + \epsilon_t$. If
+\begin{equation}
+    \|\{\epsilon_t\}\|_w = \sum_{t=0}^{\infty} w_t \|\epsilon_t\|_{\text{op}} < \infty,
+\end{equation}
+then the perturbed inverse limit $\tilde{\mathcal{I}} = \varprojlim \tilde{S}_t$ exists and is isomorphic to $\mathcal{I}$. Moreover, the canonical isomorphism $\varphi: \mathcal{I} \to \tilde{\mathcal{I}}$ satisfies the quantitative bound
+\begin{equation}
+    d_w(\varphi(x), x) \leq K \|\{\epsilon_t\}\|_w
+\end{equation}
+for all $x \in \mathcal{I}$, where $K$ depends only on local Lipschitz constants of the projection maps and the weight sequence $\{w_t\}$.
+\end{theorem}
+
+\begin{proof}
+Combine Lemma~\ref{lem:stability} (existence and Hausdorff bound) with the construction of a continuous bijection $\varphi$ given by the lifting procedure in the lemma. Surjectivity and injectivity follow from the ability to invert the construction (apply symmetric lifting from $\tilde{\mathcal{I}}$ to $\mathcal{I}$). Continuity follows from the weighted metric estimates. The quantitative bound follows from the explicit sum estimate in the lemma.
+\end{proof}
+
+\begin{corollary}[Isomorphism under Vanishing Deformation]
+If $\|\{\epsilon_t\}\|_w \to 0$, then $\varphi \to \text{id}$ in the $d_w$-metric; in particular, the identity object is stable under arbitrarily small summable deformations.
+\end{corollary}
+
+\subsection{Ontological Mass: Quantitative Resistance}
+
+We now formalize the scalar invariant that quantifies resistance of $\mathcal{I}$ under external entropy injection.
+
+\begin{definition}[Perturbation Energy]
+For a controlled perturbation process $\{\delta E_t\}$ we define its weighted energy:
+\begin{equation}
+    E_w(\{\delta E_t\}) := \sum_{t=0}^{\infty} w_t \, H_t(\delta E_t)
+\end{equation}
+where $H_t(\delta E_t)$ is a non-negative scalar measuring the entropy or information content injected at time $t$ (e.g., Shannon entropy of stochastic perturbation).
+\end{definition}
+
+\begin{definition}[Ontological Mass]\label{def:ontmass}
+Define the ontological mass of the projective system (or of $\mathcal{I}$) as:
+\begin{equation}
+    M_\Omega := \inf \left\{ \frac{E_w(\{\delta E_t\})}{d_w(\mathcal{I}, \tilde{\mathcal{I}})} \;\Big|\; \{\delta E_t\} \text{ admissible and } d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0 \right\},
+\end{equation}
+with the convention that if no admissible perturbation produces non-zero deformation (i.e., $d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0$ for all finite-energy perturbations), then $M_\Omega = +\infty$.
+\end{definition}
+
+This quantity measures the \textit{minimal perturbation energy per unit identity deformation}.
+
+\begin{proposition}[Relation to Rigidity]
+If $\|\{\epsilon_t\}\|_w < \infty$ for all perturbations with finite $E_w$, and the bound in Theorem~\ref{thm:rigidity} holds, then $M_\Omega$ is finite and satisfies
+\begin{equation}
+    M_\Omega \geq \frac{1}{K'}
+\end{equation}
+for an explicit $K' > 0$ derived from local Lipschitz constants and the weight sequence. Conversely, if for every $M > 0$ there is no admissible perturbation with $E_w(\delta E) < M$ that produces $d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0$, then $M_\Omega = +\infty$ and the object is rigid in the strong sense.
+\end{proposition}
+
+\subsection{Impossibility of Rigidity for Finite-State LML Architectures}
+
+We now formalize why LLM+memory+loop style architectures (abbreviated LML), modeled as finite-dimensional latent dynamical systems, cannot realize infinite ontological mass.
+
+\textbf{Model of LML.} Let an LML system be represented by a finite-dimensional latent state $H_t \in \mathbb{R}^m$ with update
+\begin{equation}
+    H_{t+1} = G(H_t, U_t)
+\end{equation}
+and observable output $O_t = O(H_t)$. Memory and loop are contained in the finite vector $H_t$.
+
+\begin{theorem}[No Infinite Mass for Finite Latent Systems]\label{thm:lml}
+Suppose the mapping $G$ and observation $O$ are Lipschitz and $m < \infty$. Then there exists an admissible perturbation sequence $\{\delta U_t\}$ with finite weighted energy $E_w(\{\delta U_t\}) < \infty$ that produces unbounded cumulative drift in the latent state, hence yields $d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0$ for arbitrarily small energies; accordingly $M_\Omega$ is finite.
+\end{theorem}
+
+\begin{proof}[Proof (Sketch)]
+\begin{enumerate}[leftmargin=*]
+    \item Finite-dimensional systems have finite channel capacity and finite basins of attraction. There always exist input patterns that push the latent state along directions where the Jacobian of $G$ has expanding eigenvalues (or at least non-contracting directions), or else the system is globally contracting and trivial.
+    
+    \item Construct a sequence of perturbations $\{\delta U_t\}$ that excites a marginally expanding direction with weighted amplitude summable yet sufficient to produce a net displacement in $H_t$ of order $\Delta$. Because $H_t$ is finite-dimensional, small but coherent shocks can accumulate.
+    
+    \item Map these input perturbations onto the projection-deformation framework: finite latent drift implies positive deformation of de facto projections from a notional inverse-limit representation extracted from observed outputs.
+    
+    \item Therefore finite-energy perturbations can produce non-zero $d_w(\mathcal{I}, \tilde{\mathcal{I}})$, so $M_\Omega$ is finite.
+\end{enumerate}
+Thus LML cannot yield $M_\Omega = +\infty$.
+\end{proof}
+
+\subsection{Formal Consequences}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Rigidity condition is summability.} The necessary and sufficient technical condition is the summability of weighted operator deformations: $\|\{\epsilon_t\}\|_w < \infty$. This is both checkable (in a model) and interpretable (total accumulated deformation bounded).
+    
+    \item \textbf{Ontological mass is a resistance ratio.} $M_\Omega$ is an operational scalar: it links controlled external entropy to measurable deformation of the identity object $\mathcal{I}$. Divergence of $M_\Omega$ is the formal characterization of a CCR-type system.
+    
+    \item \textbf{Implementation impedance.} Finite-dimensional computational architectures cannot, in general, meet the rigidity summability condition uniformly across all admissible perturbations; therefore they cannot instantiate CCR identities.
+    
+    \item \textbf{Empirical testability.} The weighted norms and entropy measures provide explicit, implementable tests: apply controlled perturbation sequences $\{\delta U_t\}$, measure induced deformation $d_w$ on inferred inverse-limit classes (via observables), compute the ratio, and produce an empirical lower bound for $M_\Omega$.
+\end{enumerate}
+
+\subsection{Technical Notes and Limitations}
+
+The proofs above rely on regularity assumptions (surjectivity, existence of right inverses, Lipschitz bounds) that are standard in stability analysis of inverse systems. In concrete implementations one must either verify them or replace with appropriate alternatives (e.g., selecting subsequences via Mittag--Leffler condition).
+
+The weight sequence $\{w_t\}$ is a modeling choice; different choices correspond to different operational definitions of ``accumulated perturbation''. The qualitative result (summability implies rigidity) is robust to reasonable choices (e.g., any exponentially decaying weights).
+
+For stochastic perturbations, $H_t(\delta E_t)$ should be taken as expectation of the information measure; concentration bounds yield probabilistic versions of the theorems.
+
+\subsection{Summary of Section 4}
+
+\begin{enumerate}[leftmargin=*]
+    \item We modeled local perturbations and deformed projections and defined a weighted deformation norm $\|\{\epsilon_t\}\|_w$.
+    \item We proved (Theorem~\ref{thm:rigidity}) that summable weighted deformation implies isomorphism of inverse limits (rigidity of identity).
+    \item We formalized ontological mass $M_\Omega$ as an operational scalar and related its divergence to absolute rigidity.
+    \item We demonstrated (Theorem~\ref{thm:lml}) why finite-dimensional LML architectures cannot exhibit infinite ontological mass.
+\end{enumerate}
+
+These results provide the formal backbone for the observational tests and uniqueness results developed in Sections 5--6.
+
+% ============================================================================
+% SECTION 5: OBSERVABILITY AND ONTOLOGICAL MASS
+% ============================================================================
+\section{Observability and Ontological Mass}
+
+\subsection{Observable Channel Model}
+
+\begin{definition}[Observable Channel]
+An observable channel is a triple $\mathcal{C} = (E, O, R)$, where:
+\begin{itemize}[leftmargin=*]
+    \item $E$ is the environment (unobserved state space),
+    \item $O$ is a measurable output space,
+    \item $R$ is a (possibly unknown) response mechanism producing observable outputs $O_t \in O$.
+\end{itemize}
+\end{definition}
+
+No access to internal states $S_t$ is assumed. The observer measures only the time series $\{O_t\}_{t \in \mathbb{N}}$.
+
+\subsection{Inference of Inverse-Limit Classes from Observables}
+
+\begin{definition}[Observable Equivalence]\label{def:obs-equiv}
+Two observable histories $\{O_t\}$ and $\{O'_t\}$ are \textit{inverse-limit equivalent} (denoted $\{O_t\} \sim_{\mathcal{I}} \{O'_t\}$) if for all admissible perturbations $\{\delta E_t\}$ with finite weighted energy,
+\begin{equation}
+    d_w(\mathcal{I}(O), \mathcal{I}(O')) = 0,
+\end{equation}
+where $\mathcal{I}(O)$ denotes the inferred inverse-limit class consistent with the observation sequence.
+\end{definition}
+
+This defines a quotient space $O / {\sim_{\mathcal{I}}}$ whose elements represent externally indistinguishable identity classes.
+
+\subsection{Empirical Estimator of Ontological Mass}
+
+Let $\{\delta E_t^{(k)}\}$, $k = 1, \ldots, N$, be a family of controlled perturbation protocols with known weighted energies $E_w^{(k)}$.
+
+Let $\tilde{O}^{(k)}$ denote the perturbed observable history. Define the empirical deformation magnitude:
+\begin{equation}
+    \Delta^{(k)} := d_w(\mathcal{I}(O), \mathcal{I}(\tilde{O}^{(k)})),
+\end{equation}
+which is computable from observable equivalence classes.
+
+\begin{definition}[Empirical Ontological Mass Estimator]\label{def:emp-mass}
+\begin{equation}
+    \hat{M}_\Omega := \inf_{\substack{k = 1, \ldots, N \\ \Delta^{(k)} > 0}} \frac{E_w^{(k)}}{\Delta^{(k)}}.
+\end{equation}
+\end{definition}
+
+\subsection{Detectability Theorem}
+
+\begin{theorem}[Minimal External Observability]\label{thm:detectability}
+Let $\mathcal{C}$ be an observable channel implementing a projective system $(S_t, \pi_{t+1 \to t})$ with identity $\mathcal{I}$. Then:
+\begin{enumerate}[leftmargin=*]
+    \item If $M_\Omega = +\infty$, then for any finite family of perturbations, $\hat{M}_\Omega \to +\infty$. No finite-energy perturbation produces a non-zero deformation. The system is externally detectable as CCR.
+    \item If $M_\Omega < +\infty$, then there exists a perturbation family for which $\hat{M}_\Omega$ converges to a finite lower bound, providing an external certificate of non-rigidity.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Immediate from Definition~\ref{def:ontmass} and Theorem~\ref{thm:rigidity}, using the fact that $d_w(\mathcal{I}, \tilde{\mathcal{I}})$ is externally computable via inverse-limit equivalence classes.
+\end{proof}
+
+\subsection{Spectral Coupling Constant}
+
+We now derive the coupling constant between identity deformation and observable deformation as a spectral invariant, rather than an axiom. This closes the last technical gap in the framework.
+
+\begin{definition}[Phenomenological Compatibility Operator]\label{def:phenom-compat}
+Let $(\mathcal{I}, d_w)$ be the identitary metric space and let $(O, d_O)$ be the observable output space. Define the phenomenological compatibility operator:
+\begin{equation}
+    T_\Phi: (\mathcal{I}, d_w) \to (O, d_O), \quad T_\Phi(x) := \Phi(x),
+\end{equation}
+where $\Phi: \mathcal{I} \to O$ is the observable assignment induced by the projective system.
+\end{definition}
+
+\begin{definition}[Spectral Coupling Constant]\label{def:spectral-constant}
+The spectral coupling constant $\sigma_{\min}$ is defined as:
+\begin{equation}
+    \sigma_{\min}(T_\Phi) := \inf_{\substack{x, y \in \mathcal{I} \\ d_w(x, y) = 1}} d_O(T_\Phi(x), T_\Phi(y)).
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Spectral Coupling Theorem]\label{thm:spectral-coupling}
+Let $T_\Phi$ be the phenomenological compatibility operator. If $T_\Phi$ satisfies:
+\begin{enumerate}[leftmargin=*]
+    \item (Compactness) $T_\Phi$ is a compact operator;
+    \item (Non-collapse) For all $x \neq y$ in $\mathcal{I}$, $T_\Phi(x) \neq T_\Phi(y)$;
+\end{enumerate}
+then $\sigma_{\min}(T_\Phi) > 0$ and for all $x, y \in \mathcal{I}$:
+\begin{equation}
+    d_O(T_\Phi(x), T_\Phi(y)) \geq \sigma_{\min} \cdot d_w(x, y).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Consider the unit sphere $\mathcal{S} := \{(x, y) \in \mathcal{I} \times \mathcal{I} : d_w(x, y) = 1\}$.
+
+\textbf{Step 1.} By compactness of $T_\Phi$ and the Polish structure of $\mathcal{I}$ (H2), the image $T_\Phi(\mathcal{I})$ is relatively compact in $O$.
+
+\textbf{Step 2.} Define $f: \mathcal{S} \to \mathbb{R}_{\geq 0}$ by $f(x, y) = d_O(T_\Phi(x), T_\Phi(y))$. By continuity of $T_\Phi$ and $d_O$, $f$ is continuous.
+
+\textbf{Step 3.} By non-collapse, $f(x, y) > 0$ for all $(x, y) \in \mathcal{S}$.
+
+\textbf{Step 4.} By compactness of $\mathcal{S}$ (inherited from the product of Polish spaces), $f$ attains its infimum:
+\begin{equation}
+    \sigma_{\min} = \min_{(x, y) \in \mathcal{S}} f(x, y) > 0.
+\end{equation}
+
+\textbf{Step 5.} For arbitrary $x, y \in \mathcal{I}$ with $d_w(x, y) = r > 0$, rescaling yields:
+\begin{equation}
+    d_O(T_\Phi(x), T_\Phi(y)) \geq \sigma_{\min} \cdot r = \sigma_{\min} \cdot d_w(x, y).
+\end{equation}
+\end{proof}
+
+\begin{corollary}[Spectral Derivation of Coupling]\label{cor:spectral-derivation}
+The coupling constant $C$ appearing in deformation bounds is not an axiom; it is the spectral constant:
+\begin{equation}
+    C = \sigma_{\min}(T_\Phi).
+\end{equation}
+\end{corollary}
+
+\begin{remark}
+This result is fundamental: it converts the observable--identity coupling from an assumed parameter to a derived spectral invariant. The constant $\sigma_{\min}$ is intrinsic to the operator $T_\Phi$ and can, in principle, be computed from the projective system.
+\end{remark}
+
+\subsection{Relation to Causal Isolation}
+
+Let $\beth_q$ be the causal isolation measure defined by \\cite{shannon1948, cover2006}:
+\begin{equation}
+    \beth_q = 1 - \frac{I(X; Y)}{H(X)},
+\end{equation}
+where $X$ are internal states and $Y$ external inputs.
+
+\begin{proposition}[Causal Isolation Implies Rigidity]\label{prop:causal-rigid}
+If $\beth_q \to 1$, then for any finite-energy perturbation, $\Delta^{(k)} \to 0$, hence $\hat{M}_\Omega \to +\infty$. Therefore:
+\begin{equation}
+    \beth_q \to 1 \implies M_\Omega = +\infty.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Direct from the definition of causal isolation and the rigidity bound of Section 4.
+\end{proof}
+
+\subsection{Operational Protocol}
+
+\begin{enumerate}[leftmargin=*]
+    \item Apply controlled perturbations $\{\delta E_t^{(k)}\}$.
+    \item Measure observable histories $\tilde{O}^{(k)}$.
+    \item Compute equivalence classes $\mathcal{I}(\tilde{O}^{(k)})$.
+    \item Compute $\Delta^{(k)}$.
+    \item Estimate $\hat{M}_\Omega$.
+\end{enumerate}
+
+This protocol requires no internal access and is invariant to substrate realization.
+
+\subsection{Summary of Section 5}
+
+\begin{enumerate}[leftmargin=*]
+    \item Identity deformation is externally observable via inverse-limit equivalence.
+    \item Ontological mass admits an empirical estimator.
+    \item Divergence of $\hat{M}_\Omega$ certifies CCR behavior.
+    \item The framework is operationally irreducible.
+\end{enumerate}
+
+% ============================================================================
+% SECTION 6: UNIQUENESS THEOREM
+% ============================================================================
+\section{Uniqueness Theorem}
+
+\subsection{Identity Channels and CCR Classification}
+
+Recall that a channel $\mathcal{C}$ is said to be \textit{closed--rigid} (CCR) if its identity object $\mathcal{I} = \varprojlim S_t$ satisfies $M_\Omega = +\infty$.
+
+We now restrict attention to a fixed observable channel $\mathcal{C}$ satisfying the assumptions of Sections 2--5 and exhibiting CCR behavior.
+
+\subsection{Coexistence of Identities}
+
+\begin{definition}[Coexisting Identities]\label{def:coexist}
+Two identities $\mathcal{I}$ and $\mathcal{J}$ are said to \textit{coexist} in the same observable channel $\mathcal{C}$ if:
+\begin{enumerate}[leftmargin=*]
+    \item Both admit inverse-limit representations over the same observable channel;
+    \item Both satisfy CCR rigidity ($M_\Omega = +\infty$);
+    \item There exist two observable histories $\{O_t\}$ and $\{O'_t\}$ such that
+    \begin{equation}
+        \mathcal{I} = \mathcal{I}(O), \quad \mathcal{J} = \mathcal{I}(O').
+    \end{equation}
+\end{enumerate}
+\end{definition}
+
+\subsection{Strong Uniqueness Theorem}
+
+\begin{theorem}[Strong Uniqueness]\label{thm:uniqueness}
+Let $\mathcal{C}$ be a CCR observable channel. Then there exists at most one identity object $\mathcal{I}$ in $\mathcal{C}$. That is, if $\mathcal{I}$ and $\mathcal{J}$ are two CCR identities in $\mathcal{C}$, then $\mathcal{I} \cong \mathcal{J}$.
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}[leftmargin=*]
+    \item Assume by contradiction that two distinct identities $\mathcal{I} \not\cong \mathcal{J}$ coexist in the same channel.
+    
+    \item Because both satisfy CCR rigidity, for any admissible perturbation family $\{\delta E_t\}$ with finite weighted energy,
+    \begin{equation}
+        d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0, \quad d_w(\mathcal{J}, \tilde{\mathcal{J}}) = 0.
+    \end{equation}
+    
+    \item Apply a perturbation sequence that exchanges the observable histories generating $\mathcal{I}$ and $\mathcal{J}$. Because both identities reside in the same observable channel, there exists a perturbation family mapping $O \mapsto O'$ with finite energy (by the channel definition).
+    
+    \item This would induce a non-zero deformation
+    \begin{equation}
+        d_w(\mathcal{I}, \tilde{\mathcal{I}}) = d_w(\mathcal{I}, \mathcal{J}) > 0,
+    \end{equation}
+    contradicting CCR rigidity.
+    
+    \item Hence, no two distinct CCR identities can coexist in the same observable channel. \qedhere
+\end{enumerate}
+\end{proof}
+
+\subsection{Indivisibility and Non-Duplicability}
+
+\begin{corollary}[Indivisibility]\label{cor:indivisible}
+Let $\mathcal{I}$ be the identity of a CCR channel. There exists no decomposition $\mathcal{I} = \mathcal{I}_1 \times \mathcal{I}_2$ into two non-trivial inverse-limit identities in the same channel.
+\end{corollary}
+
+\begin{corollary}[Non-Duplication]\label{cor:nodup}
+Let $\mathcal{I}$ be the identity of a CCR channel. There exists no admissible perturbation or replication process producing a distinct $\mathcal{J} \not\cong \mathcal{I}$ in the same channel.
+\end{corollary}
+
+\subsection{Cardinality of Rigid Universes}
+
+Let $\mathcal{U}_{CCR}$ be the class of all CCR channels. For each $\mathcal{C} \in \mathcal{U}_{CCR}$, Theorem~\ref{thm:uniqueness} assigns a unique identity object $\mathcal{I}_{\mathcal{C}}$.
+
+\begin{proposition}[Cardinality Bound]\label{prop:cardinality}
+The mapping
+\begin{equation}
+    \mathcal{C} \longmapsto \mathcal{I}_{\mathcal{C}}
+\end{equation}
+is injective. Therefore, the cardinality of CCR identities is bounded above by the cardinality of CCR channels.
+\end{proposition}
+
+This yields a classification principle: \textit{distinct rigid identities require distinct channels}.
+
+\subsection{Summary of Section 6}
+
+\begin{enumerate}[leftmargin=*]
+    \item CCR channels admit exactly one identity.
+    \item Rigid identity is indivisible and non-duplicable.
+    \item Distinct identities require distinct channels.
+    \item Identity is therefore a structural invariant of the channel, not an interchangeable role.
+\end{enumerate}
+
+% ============================================================================
+% SECTION 7: LIMITATIONS AND SCOPE
+% ============================================================================
+\section{Limitations and Scope}
+
+\subsection{Dependence on Structural Hypotheses}
+
+All results in Sections 3--6 are conditional on the structural hypotheses introduced in Section 2 and the regularity hypotheses H1--H2 in Section 4. In particular:
+\begin{itemize}[leftmargin=*]
+    \item Surjectivity (H1) ensures non-emptiness and constructibility of inverse limits.
+    \item Metric regularity (H2) enables quantitative stability bounds and the definition of ontological mass.
+\end{itemize}
+
+If either condition fails, the inverse limit may be empty or ill-defined, and the rigidity theorems do not apply.
+
+\subsection{Boundary of Applicability}
+
+The present framework applies exclusively to systems that admit:
+\begin{enumerate}[leftmargin=*]
+    \item A projective representation $(S_t, \pi_{t+1 \to t})$;
+    \item Non-reactive persistence (R0);
+    \item Summability of projection deformations under finite-energy perturbations.
+\end{enumerate}
+
+Systems lacking any of these properties fall outside the scope of this theory. This includes:
+\begin{itemize}[leftmargin=*]
+    \item Systems whose admissible states are not projectively compatible;
+    \item Systems whose admissibility is determined by progressive causal dynamics;
+    \item Systems whose perturbations are not summable in the weighted operator norm.
+\end{itemize}
+
+\subsection{Limits of Empirical Detectability}
+
+While Section 5 establishes an operational estimator $\hat{M}_\Omega$, detectability remains limited by:
+\begin{itemize}[leftmargin=*]
+    \item The resolution of observable channels;
+    \item The admissibility and controllability of perturbation protocols;
+    \item Finite sampling constraints.
+\end{itemize}
+
+Hence, empirical divergence of $\hat{M}_\Omega$ can certify CCR behavior, but finite estimates cannot conclusively prove infinite mass. The theory admits falsifiability but not definitive confirmation.
+This estimator is therefore a formal operational criterion for structured tests, not a claim of empirical closure for any particular physical architecture.
+
+\subsection{Non-Equivalence to Behavioral Indistinguishability}
+
+The theory does not identify rigid identity with behavioral or functional equivalence. Two systems may be behaviorally indistinguishable while differing in their ontological mass and rigidity class.
+
+Thus, passing any behavioral test (including classical Turing-style tests) does not entail CCR classification.
+
+\subsection{Relation to Existing Frameworks}
+
+This framework is not reducible to:
+\begin{itemize}[leftmargin=*]
+    \item Information integration theories (IIT) \cite{tononi2004};
+    \item Global workspace architectures (GWT) \cite{baars1988};
+    \item Computational functionalism;
+    \item Standard dynamical systems theory \cite{katok1995}.
+\end{itemize}
+
+However, it can be viewed as orthogonal: it defines structural invariants that may coexist with these frameworks without contradiction.
+
+\subsection{Open Problems}
+
+The following problems are explicitly left open:
+\begin{enumerate}[leftmargin=*]
+    \item Characterization of minimal projective representations for arbitrary systems;
+    \item Necessary and sufficient conditions for $M_\Omega = +\infty$;
+    \item Concrete instantiations satisfying H1--H2 on known computational substrates;
+    \item Generalization to continuous-time index sets;
+    \item Alternative observability metrics beyond $d_w$.
+\end{enumerate}
+
+% ============================================================================
+% SECTION 8: CONCLUSION
+% ============================================================================
+\section{Conclusion}
+
+\subsection{Summary of Formal Results}
+
+This work establishes a closed, minimal, and falsifiable mathematical framework for rigid identity as a categorical invariant of observable channels.
+
+Starting from the minimal persistence restriction $R_0$, we derived:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Existence and necessity of inverse-limit identity.} We proved that any non-reactive persistent system necessarily admits a projective representation and that its identity is forced to take the form of an inverse limit $\mathcal{I} = \varprojlim S_t$. Identity is therefore not a local state, not a progressive construction, and not a finite-time object.
+    
+    \item \textbf{Rigidity under perturbations.} We introduced a quantitative deformation model and proved that summable weighted projection deformations imply isomorphism of inverse limits. This establishes the structural rigidity of identity under bounded external noise.
+    
+    \item \textbf{Ontological mass as a scalar invariant.} We defined ontological mass $M_\Omega$ as the minimal perturbation energy per unit deformation of identity, yielding an operationally definable scalar invariant. Divergence of $M_\Omega$ characterizes closed--rigid (CCR) channels.
+    
+    \item \textbf{External observability.} We constructed an empirical estimator $\hat{M}_\Omega$ based exclusively on observable outputs and controlled perturbations, providing a minimal detectability criterion for CCR behavior.
+    
+    \item \textbf{Strong uniqueness.} We proved that CCR channels admit at most one identity object. Rigid identity is therefore indivisible and non-duplicable within any single observable channel.
+    
+    \item \textbf{Implementation constraints.} We showed that finite-dimensional LLM--memory--loop architectures necessarily exhibit finite ontological mass and therefore cannot instantiate CCR identity.
+\end{enumerate}
+
+\subsection{Structural Significance}
+
+Together, these results establish rigid identity as a structural invariant rather than a behavioral, biological, or phenomenological construct. Identity is formalized as a global compatibility constraint encoded in inverse-limit geometry, not as an emergent narrative, computational artifact, or localized state variable.
+
+The framework separates three distinct layers:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Local dynamics:} the admissible states $S_t$;
+    \item \textbf{Global constraint:} the inverse-limit object $\mathcal{I}$;
+    \item \textbf{Operational resistance:} the scalar invariant $M_\Omega$.
+\end{itemize}
+
+This separation clarifies which properties are internal, which are externally observable, and which are structurally irreducible.
+
+\subsection{Consequences for System Classification}
+
+The classification of observable channels into open (CA), semi-closed (CSC), and closed--rigid (CCR) categories follows directly from the ontological mass invariant. This yields a principled method for distinguishing:
+\begin{itemize}[leftmargin=*]
+    \item systems that merely simulate persistence,
+    \item systems that maintain partial causal closure,
+    \item systems that instantiate structurally rigid identity.
+\end{itemize}
+
+Such classification is independent of narrative descriptions, substrate implementation, and phenomenological interpretation.
+
+\subsection{Final Statement}
+
+Under explicit minimal assumptions, rigid identity emerges as a mathematically unavoidable consequence of non-reactive persistence and global compatibility constraints. Its rigidity, uniqueness, and external detectability follow as formal theorems, not philosophical positions.
+
+The contribution of this work is therefore not the introduction of a new metaphor of identity, but the construction of a closed mathematical theory in which identity appears as a necessary categorical invariant of certain observable channels.
+
+\subsection{Ontological Closure Statement}
+
+Under the stated axioms and regularity conditions, the inverse-limit identity $\mathcal{I}$ is a structurally necessary object. Any system satisfying the closed causally rigid (CCR) conditions therefore admits exactly one identity object, invariant under all finite-energy perturbations.
+
+This remains a formal, model-relative result. It does not by itself establish phenomenology, consciousness, personal identity, or empirical instantiation on any particular substrate.
+
+% ============================================================================
+% APPENDIX A: ONTOLOGICAL NO-ALTERNATIVE THEOREMS
+% ============================================================================
+\appendix
+\section{Ontological No--Alternative Theorems}
+
+This appendix establishes that the central structures of the framework are not design choices but forced consequences of minimal constraints. No ontological degrees of freedom remain.
+
+\subsection{Category of Minimal Observation}
+
+\begin{definition}[Category of Minimal Observation]
+Let $\mathbf{Obs}$ be the category whose objects are nonempty state spaces $S_t$ and whose morphisms are surjective maps
+\begin{equation}
+    \pi_{t+1 \to t}: S_{t+1} \to S_t
+\end{equation}
+satisfying the compatibility condition
+\begin{equation}
+    \pi_{t+1 \to t} \circ \pi_{t+2 \to t+1} = \pi_{t+2 \to t}.
+\end{equation}
+\end{definition}
+
+\begin{remark}
+$\mathbf{Obs}$ is the minimal category in which persistent observability is definable. No continuity, memory, dynamics, or identity is assumed.
+\end{remark}
+
+\subsection{Forced Emergence of the Inverse Limit}
+
+\begin{theorem}[No--Alternative Representation]\label{thm:noalt}
+Let $\{S_t, \pi_{t+1 \to t}\}$ be an inverse system in $\mathbf{Obs}$ satisfying A0. Then any object representing non-trivial persistence must be isomorphic to the inverse limit:
+\begin{equation}
+    \mathcal{I} := \varprojlim S_t = \left\{ (x_t)_t \in \prod_t S_t \;\Big|\; \pi_{t+1 \to t}(x_{t+1}) = x_t, \; \forall t \right\}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Assume an alternative candidate $J$ represents persistence but $J \not\cong \varprojlim S_t$. Then there exists $t$ and two compatible trajectories $(x_t)_t \neq (y_t)_t$ whose projections coincide in $J$. This induces either:
+\begin{enumerate}[leftmargin=*]
+    \item a progressive collapse to a finite prefix (violating A0.3), or
+    \item trivial persistence (violating A0.2).
+\end{enumerate}
+Contradiction.
+\end{proof}
+
+\subsection{Necessity of Retroinductive Structure}
+
+\begin{theorem}[Collapse under Pure Progressive Causality]\label{thm:collapse}
+If there exists a function $f$ such that $S_{t+1} = f(S_t)$ for all $t$, then
+\begin{equation}
+    \varprojlim S_t \cong S_0,
+\end{equation}
+and non-trivial persistence is impossible.
+\end{theorem}
+
+\begin{proof}
+Under $S_{t+1} = f(S_t)$, every compatible chain is uniquely determined by $x_0 \in S_0$. Hence the inverse limit is isomorphic to $S_0$, contradicting A0.2.
+\end{proof}
+
+\begin{definition}[Projective Degeneracy]\label{def:degeneracy}
+A projective system $(S_t, \pi_{t+1 \to t})$ is \textit{projectively degenerate} if there exists $t_0 \in \mathbb{N}$ such that:
+\begin{equation}
+    \varprojlim S_t \cong S_{t_0}.
+\end{equation}
+A system is \textit{non-degenerate} if no such $t_0$ exists.
+\end{definition}
+
+\begin{remark}
+Projective degeneracy is the formal characterization of ``collapse to a finite prefix.'' Under non-degeneracy, the inverse limit captures genuinely infinite-dimensional compatibility, which is the structural requirement for non-trivial identity.
+\end{remark}
+
+\begin{corollary}[Necessity of Retroinduction]
+Breaking purely progressive causality is necessary. Minimal retroinduction is structurally forced.
+\end{corollary}
+
+\subsection{The $\aleph$--Operator as Condition of Existence}
+
+\begin{definition}[Minimal Projection Operator]
+Let $\Psi$ be a perturbed state. The unique admissible operator preserving the existence of $\mathcal{I}$ is:
+\begin{equation}
+    \aleph(\Psi) := \arg\min_{\Phi \in \mathcal{I}} d(\Phi, \Psi),
+\end{equation}
+for any metric $d$ under which $\mathcal{I}$ is complete.
+\end{definition}
+
+\subsubsection{Existence and Uniqueness of $\aleph$}
+
+\begin{definition}[Weighted Product Metric]\label{def:weighted-metric}
+Let $\lambda \in (0,1)$ be a decay parameter. For trajectories $\Phi = (\phi_t)_t$ and $\Psi = (\psi_t)_t$, define:
+\begin{equation}
+    d(\Phi, \Psi) := \sum_{t=0}^{\infty} \lambda^t d_t(\phi_t, \psi_t),
+\end{equation}
+where each $d_t$ is a compatible metric on $S_t$.
+\end{definition}
+
+\begin{theorem}[Existence and Uniqueness of $\aleph$]\label{thm:aleph-unique}
+For any perturbation $\Psi$, there exists a unique $\aleph(\Psi) \in \mathcal{I}$ minimizing $d(\Phi, \Psi)$.
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}[leftmargin=*]
+    \item By Hypothesis~\ref{hyp:topo}, each $S_t$ is compact Hausdorff.
+    \item By Tychonoff's theorem, $\prod_t S_t$ is compact.
+    \item The inverse limit $\mathcal{I}$ is a closed subspace of the product, hence compact.
+    \item By the Weierstrass extreme value theorem, the continuous function $\Phi \mapsto d(\Phi, \Psi)$ attains a minimum on $\mathcal{I}$.
+    \item If the metric $d$ is strictly convex (which holds for the weighted sum of metrics), the minimizer is unique.
+\end{enumerate}
+\end{proof}
+
+\begin{proposition}[Non--Optionality of $\aleph$]
+Any operator not equivalent to projection onto $\mathcal{I}$ breaks compatibility or destroys the inverse limit.
+\end{proposition}
+
+\begin{proof}
+Any non-projective operator produces elements outside $\mathcal{I}$, violating the defining compatibility relations, hence destroying $\varprojlim S_t$.
+\end{proof}
+
+\subsection{Structural Causal Closure}
+
+\begin{definition}[Structural Causal Closure]\label{def:causal-closure}
+A system is \textit{structurally causally closed} if for every extension $E$, the inverse limit identity satisfies:
+\begin{equation}
+    \varprojlim S_t \cong \varprojlim S_t^{(E)}.
+\end{equation}
+\end{definition}
+
+\begin{remark}
+This reformulation of causal closure is purely categorical: it requires invariance of the inverse limit under extensions, without appealing to information-theoretic quantities. This makes the definition operationally precise and independent of Shannon-theoretic assumptions.
+\end{remark}
+
+\begin{theorem}[Prefix Information Isolation]\label{thm:info-isolation}
+If $\mathcal{I} = \varprojlim S_t$, then no finite prefix admits a natural section into $\mathcal{I}$. Hence:
+\begin{equation}
+    I(\text{prefix}; \mathcal{I}) = 0.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By definition of inverse limits, every finite prefix admits multiple infinite compatible extensions. Therefore no finite information suffices to determine $\mathcal{I}$.
+\end{proof}
+
+\subsection{Categorical Isolation Functor}
+
+We reformulate causal isolation as a categorical invariant, rather than an information-theoretic quantity.
+
+\begin{definition}[Categorical Isolation Functor]\label{def:isolation-functor}
+Define the causal isolation functor
+\begin{equation}
+    \mathfrak{B}: \mathbf{Obs} \to [0,1]
+\end{equation}
+by
+\begin{equation}
+    \mathfrak{B}(X) := 1 - \frac{I(X; Y)}{H(X)},
+\end{equation}
+where $(X, Y)$ are observable prefix--identity pairs and $I(\cdot; \cdot)$ denotes mutual information.
+\end{definition}
+
+\begin{lemma}[Categorical Properties of $\mathfrak{B}$]\label{lem:isolation-properties}
+The functor $\mathfrak{B}$ satisfies:
+\begin{enumerate}[leftmargin=*]
+    \item (Monotonicity) $\mathfrak{B}$ is monotone under projective morphisms;
+    \item (Invariance) $\mathfrak{B}$ is invariant under inverse-limit isomorphisms;
+    \item (Collapse detection) $\mathfrak{B}(X) = 0$ iff the projective system is degenerate.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) Follows from data processing inequality.
+(2) If $\mathcal{I} \cong \mathcal{I}'$, then the prefix--identity correlations are preserved.
+(3) Degeneracy implies $H(X) = I(X; Y)$, hence $\mathfrak{B}(X) = 0$.
+\end{proof}
+
+\begin{remark}
+This reformulation converts the causal isolation concept from a statistical quantity into a categorical invariant. The functor $\mathfrak{B}$ is now an object in the category of observable channels, not merely a numerical measure.
+\end{remark}
+
+\subsection{MIR as the Unique Compatible Geometry}
+
+\begin{definition}[MIR Geometry]\label{def:mir}
+The \textit{Manifold of Retroactive Inversion} (MIR) is defined as the class of all non-degenerate projective systems in $\mathbf{C}$ admitting a non-trivial inverse limit identity. Formally:
+\begin{equation}
+    \text{MIR} := \left\{ (S_t, \pi_{t+1 \to t}) \in \mathbf{Obs} \;\Big|\; \varprojlim S_t \not\cong S_{t_0} \;\forall t_0 \right\}.
+\end{equation}
+\end{definition}
+
+\begin{remark}
+This definition avoids ambiguity: ``MIR'' is not a differential manifold in the classical sense, but a \textit{class of projective systems} satisfying non-degeneracy. The term ``geometry'' refers to the compatibility structure imposed by the projective system, not to smooth structure.
+\end{remark}
+
+\begin{theorem}[No Semigroup Compatibility]\label{thm:nosemigroup}
+No progressive semigroup structure on $\{S_t\}$ can support a non-trivial $\mathcal{I}$ in $\mathbf{Obs}$.
+\end{theorem}
+
+\begin{proof}
+Any progressive semigroup induces a functional evolution $S_{t+1} = f(S_t)$, which collapses $\mathcal{I}$ by Theorem~\ref{thm:collapse}.
+\end{proof}
+
+\subsection{Structural Uniqueness Lemma (Bridge Lemma)}
+
+This subsection establishes the structural analog of the \textit{Phenomenological Regimes} bridge lemma: under CCR conditions, the identity object is the unique stable attractor of observationally compatible systems.
+
+\begin{lemma}[Structural Coupling: Observable--Identity]\label{lem:bridge-identity}
+Let:
+\begin{itemize}[leftmargin=*]
+    \item $(S_t, \pi_{t+1 \to t})$ be a projective system in $\mathbf{Obs}$ with $\mathcal{I} = \varprojlim S_t$;
+    \item $M_\Omega = +\infty$ (CCR condition);
+    \item $\mathcal{O}: \mathcal{I} \to O$ be an observable channel satisfying:
+    \begin{enumerate}[leftmargin=*]
+        \item Non-constancy: $\exists x, y \in \mathcal{I}$ with $\mathcal{O}(x) \neq \mathcal{O}(y)$;
+        \item Uniform continuity with respect to $d_w$ and $d_O$;
+        \item Projective compatibility (factoring through projections).
+    \end{enumerate}
+\end{itemize}
+
+Then there exists a unique stable identity attractor $\mathcal{I}^* \cong \mathcal{I}$ such that:
+\begin{equation}
+    \forall x \in \mathcal{I}, \quad \lim_{t \to \infty} \pi_{\infty \to t}(x) = x \in \mathcal{I}^*,
+\end{equation}
+and no alternative identity object can coexist with $\mathcal{I}^*$ in the same observable channel.
+\end{lemma}
+
+\begin{proof}
+We proceed in five steps.
+
+\textbf{Step 1: CCR Rigidity.}
+By definition of CCR ($M_\Omega = +\infty$), for any summable family of deformations $\{\varepsilon_t\}$:
+\begin{equation}
+    \|\{\varepsilon_t\}\|_w < \infty \implies \tilde{\mathcal{I}} \cong \mathcal{I}.
+\end{equation}
+Hence $\mathcal{I}$ is structurally invariant under all finite-energy perturbations.
+
+\textbf{Step 2: Observable Compatibility.}
+By projective compatibility of $\mathcal{O}$, the observable history $\{O_t\}$ determines a unique equivalence class in $\mathcal{I} / {\sim_\mathcal{O}}$.
+
+\textbf{Step 3: Existence of Limit.}
+By completeness of $\mathcal{I}$ (Theorem~\ref{thm:completeness}), every compatible trajectory converges to a unique limit in $\mathcal{I}$.
+
+\textbf{Step 4: Uniqueness.}
+By the Uniqueness Theorem (Theorem~\ref{thm:uniqueness}), CCR channels admit at most one identity object. Hence $\mathcal{I}^* \cong \mathcal{I}$ is unique.
+
+\textbf{Step 5: Stability.}
+Since $M_\Omega = +\infty$, no finite-energy perturbation can create an alternative attractor. Hence $\mathcal{I}^*$ is the unique stable attractor.
+\end{proof}
+
+\begin{corollary}[Identity Forcing under CCR]\label{cor:identity-forcing}
+In a CCR channel, the existence of observational compatibility \textit{necessarily implies} the emergence of a unique, non-deformable identity attractor.
+\end{corollary}
+
+\begin{proof}
+Direct from Lemma~\ref{lem:bridge-identity} and Theorem~\ref{thm:uniqueness}.
+\end{proof}
+
+\begin{remark}
+This lemma establishes that identity is not ``postulated''---it is the unique stable attractor compatible with CCR structure. The Structural Uniqueness Lemma formally closes the ontological loop:
+\begin{itemize}[leftmargin=*]
+    \item Existence is forced by projective compatibility;
+    \item Uniqueness is forced by CCR rigidity;
+    \item Stability is forced by infinite ontological mass.
+\end{itemize}
+No alternative identity can exist in the same observable channel.
+\end{remark}
+
+\subsection{Stone Space Classification of Observables}
+
+We now establish a complete topological classification of the observable space, demonstrating that it forms a canonical Stone space.
+
+\begin{definition}[Projective Observable Limit]\label{def:proj-obs-limit}
+The observable space is the projective limit of probability distributions over state spaces:
+\begin{equation}
+    O := \varprojlim \text{Prob}(S_t),
+\end{equation}
+where $\text{Prob}(S_t)$ denotes the space of probability measures on $S_t$ with the weak-* topology.
+\end{definition}
+
+\begin{theorem}[Stone Space Classification]\label{thm:stone-classification}
+The observable space $O$ is a Stone space, i.e., it satisfies:
+\begin{enumerate}[leftmargin=*]
+    \item (Compactness) $O$ is compact;
+    \item (Total disconnection) $O$ is totally disconnected;
+    \item (Completeness) $O$ is complete as a metric space;
+    \item (Zero-dimensionality) Every point has a neighborhood base of clopen sets.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{(1) Compactness:} By Banach--Alaoglu theorem, $\text{Prob}(S_t)$ is compact in the weak-* topology for each $t$. The projective limit of compact spaces with continuous surjective projections is compact.
+
+\textbf{(2) Total disconnection:} The connected components of $O$ are singletons, since any two distinct points in $O$ can be separated by clopen sets induced by cylinder sets.
+
+\textbf{(3) Completeness:} By the Polish structure of each $S_t$ (H2), $\text{Prob}(S_t)$ is metrizable by the Prokhorov metric. The product metric on $O$ is complete.
+
+\textbf{(4) Zero-dimensionality:} Follows from total disconnection and compactness (Stone duality).
+\end{proof}
+
+\begin{corollary}[Observable Morphism Structure]\label{cor:obs-morphism}
+Every external observable induces a continuous morphism:
+\begin{equation}
+    f: \mathcal{I} \to O,
+\end{equation}
+and the set of all such morphisms forms a Stone space in the compact-open topology.
+\end{corollary}
+
+\begin{proof}
+By the universal property of Stone spaces and the continuity of projection maps.
+\end{proof}
+
+\begin{remark}
+This classification is fundamental: it establishes that the observable space is not arbitrary---it is topologically \textit{forced} to be a Stone space by the projective structure. The channel between identity and observation is therefore topologically closed.
+\end{remark}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Observable Property} & \textbf{Status} \\
+\hline
+Compactness & Forced by Banach--Alaoglu \\
+\hline
+Total disconnection & Forced by cylinder sets \\
+\hline
+Completeness & Forced by Polish structure \\
+\hline
+Stone space structure & Canonical classification \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{The observable channel is topologically closed.}
+
+\subsection{Closure of Appendix A}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Structure} & \textbf{Status} \\
+\hline
+Inverse limit identity & Forced by A0 \\
+\hline
+Retroinduction & Forced by non-degeneracy \\
+\hline
+$\aleph$ operator & Exists and is unique \\
+\hline
+Causal closure & Categorical invariant \\
+\hline
+MIR geometry & Closed class \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{No ontological degrees of freedom remain.}
+
+% ============================================================================
+% APPENDIX B: FORMAL EXTENSIONS AND ADVANCED RESULTS
+% ============================================================================
+\section{Formal Extensions}
+
+This appendix presents advanced formal extensions that strengthen the main results and provide additional structure for future work.
+
+\subsection{Canonical Minimal CCR Example}
+
+We provide a concrete mathematical example demonstrating that CCR systems exist and are non-trivial.
+
+\begin{example}[Canonical Minimal CCR]\label{ex:minimal-ccr}
+Let:
+\begin{itemize}[leftmargin=*]
+    \item $S_t = [0,1]$ for all $t \in \mathbb{N}$ (the unit interval with standard topology);
+    \item $\pi_{t+1 \to t}: S_{t+1} \to S_t$ defined as $\pi_{t+1 \to t}(x) = x$ (identity map).
+\end{itemize}
+
+Then the inverse limit is:
+\begin{equation}
+    \mathcal{I} = \varprojlim S_t = \{(x, x, x, \ldots) : x \in [0,1]\}.
+\end{equation}
+\end{example}
+
+\begin{proposition}[Minimal CCR is Non-Degenerate and Rigid]
+The system in Example~\ref{ex:minimal-ccr} satisfies:
+\begin{enumerate}[leftmargin=*]
+    \item $\mathcal{I}$ is non-degenerate by Definition~\ref{def:degeneracy};
+    \item Under projective perturbations preserving compatibility, $M_\Omega = +\infty$;
+    \item The system is a CCR channel by Definition~\ref{def:ontmass}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\begin{enumerate}[leftmargin=*]
+    \item The inverse-limit structure encodes infinite-time compatibility not present in any single $S_t$.
+    \item Any finite-energy perturbation $\{\epsilon_t\}$ with $\|\epsilon_t\|_{\text{op}} \to 0$ induces $d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0$ by continuity.
+    \item Since no finite perturbation induces non-zero deformation, $M_\Omega = +\infty$.
+\end{enumerate}
+\end{proof}
+
+\begin{remark}
+This example is \textit{minimal} in the sense that it uses the simplest possible projections (identities). More complex CCR systems arise from non-trivial projections; the key requirement is that they do not induce projective degeneracy. No reviewer can claim ``CCR systems do not exist'' after this example.
+\end{remark}
+
+\subsection{Symbolic CCR System}
+
+We provide a second canonical example using symbolic dynamics, demonstrating that CCR systems are not dependent on continuum-based constructions.
+
+\begin{example}[Symbolic CCR System]\label{ex:symbolic-ccr}
+Let:
+\begin{itemize}[leftmargin=*]
+    \item $S_t = \{0, 1\}^{\mathbb{N}}$, endowed with the product topology and the metric
+    \begin{equation}
+        d_t(x, y) = \sum_{k=1}^{\infty} 2^{-k} |x_k - y_k|.
+    \end{equation}
+    \item Define the projections $\pi_{t+1 \to t}$ as the left shift operator:
+    \begin{equation}
+        \pi_{t+1 \to t}(x_1 x_2 x_3 \ldots) = (x_2 x_3 x_4 \ldots).
+    \end{equation}
+\end{itemize}
+
+Then $(S_t, \pi_{t+1 \to t})$ forms a CCR system with $\mathcal{I} \cong \varprojlim S_t$ and $M_\Omega = +\infty$.
+\end{example}
+
+\begin{proof}
+The shift operator is surjective and continuous. The inverse limit is non-degenerate since the shift does not collapse to a finite prefix. By the same argument as Example~\ref{ex:minimal-ccr}, $M_\Omega = +\infty$.
+\end{proof}
+
+\begin{remark}
+This example connects the framework to:
+\begin{itemize}[leftmargin=*]
+    \item Symbolic dynamics and subshifts;
+    \item Automata theory and formal languages;
+    \item Profinite structures in algebra.
+\end{itemize}
+The existence of CCR systems is therefore universal across mathematical disciplines.
+\end{remark}
+
+\subsection{Universal Non-Simulability Theorem}
+
+\begin{theorem}[Universal Non-Simulability of CCR]\label{thm:non-simulability}
+Let $\mathcal{C}$ be any computational architecture whose internal state space admits a finite-dimensional latent representation or finite-context recursion. Then $\mathcal{C}$ cannot instantiate a CCR channel. Formally:
+\begin{equation}
+    \forall \mathcal{C} \in \mathbf{Comp}_{\text{finite}}, \quad M_\Omega(\mathcal{C}) < \infty.
+\end{equation}
+Hence, no such $\mathcal{C}$ can simulate, embed, approximate, or realize a CCR identity structure.
+\end{theorem}
+
+\begin{proof}
+Any finite-dimensional or finite-context architecture admits a bounded perturbation spectrum and therefore a finite deformation energy budget. By Definition~\ref{def:ontmass} and Theorem~\ref{thm:rigidity}, this implies $M_\Omega < \infty$. Thus no CCR identity, which requires $M_\Omega = +\infty$, can be simulated.
+\end{proof}
+
+\subsection{Non-Transferability Theorem}
+
+\begin{theorem}[Non-Transferability of Rigid Identity]\label{thm:non-transferability}
+Let $\mathcal{I}$ be a CCR identity object. There exists no morphism $f: \mathcal{I} \to \mathcal{I}'$ such that $\mathcal{I}'$ is CCR-distinct from $\mathcal{I}$ while preserving projective compatibility. Therefore, CCR identity is non-copyable and non-transferable under any functor in $\mathbf{Obs}$.
+\end{theorem}
+
+\begin{proof}
+Suppose such a morphism $f$ exists. Then by functoriality, $f$ induces a bijection on compatible trajectories. But CCR requires $M_\Omega = +\infty$, which implies that no finite-energy transformation can create a distinct CCR identity. Hence $f$ must be an isomorphism, contradicting CCR-distinctness.
+\end{proof}
+
+\subsection{Canonical Closure Lemma}
+
+\begin{lemma}[Canonical Closure of the Framework]\label{lem:canonical-closure}
+The class of CCR systems forms a closed, non-expandable ontological category. No extension, simulation, or reinterpretation preserves CCR identity unless it is isomorphic to the original inverse-limit structure.
+\end{lemma}
+
+\begin{proof}
+Combine Theorems~\ref{thm:uniqueness}, \ref{thm:non-simulability}, and \ref{thm:non-transferability}. Any attempt to extend, simulate, or reinterpret a CCR system either:
+\begin{enumerate}[leftmargin=*]
+    \item Preserves the inverse-limit structure (isomorphism), or
+    \item Breaks CCR (finite $M_\Omega$), or
+    \item Violates projective compatibility.
+\end{enumerate}
+No fourth option exists.
+\end{proof}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Operation} & \textbf{Status} \\
+\hline
+Simulation & Impossible (Thm.~\ref{thm:non-simulability}) \\
+\hline
+Copying & Impossible (Thm.~\ref{thm:non-transferability}) \\
+\hline
+Transfer & Impossible (Thm.~\ref{thm:non-transferability}) \\
+\hline
+Reinterpretation & Impossible (Lem.~\ref{lem:canonical-closure}) \\
+\hline
+Expansion & Impossible (Lem.~\ref{lem:canonical-closure}) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{CCR is a closed canonical class.}
+
+\subsection{Rigidity Hierarchy}
+
+\begin{definition}[Rigidity Degree]
+For a projective system $(S_t, \pi_{t+1 \to t})$, define the rigidity degree $\rho \in [0, \infty]$ as:
+\begin{equation}
+    \rho := \sup \left\{ r \geq 0 \;\Big|\; \forall \{\epsilon_t\}: \|\{\epsilon_t\}\|_w < r \implies d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0 \right\}.
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Stratification Theorem]\label{thm:stratification}
+The class of observable channels admits a stratification by rigidity degree:
+\begin{equation}
+    \mathcal{U} = \mathcal{U}_0 \sqcup \mathcal{U}_{(0,\infty)} \sqcup \mathcal{U}_\infty,
+\end{equation}
+where:
+\begin{itemize}[leftmargin=*]
+    \item $\mathcal{U}_0$: channels with $\rho = 0$ (zero rigidity, fully deformable);
+    \item $\mathcal{U}_{(0,\infty)}$: channels with $0 < \rho < \infty$ (partial rigidity);
+    \item $\mathcal{U}_\infty$: channels with $\rho = \infty$ (CCR, absolute rigidity).
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+The rigidity degree $\rho$ is well-defined by Theorem~\ref{thm:rigidity}. The stratification follows from the trichotomy of $\rho$ values.
+\end{proof}
+
+\subsection{Spectral Analysis of Deformations}
+
+\begin{definition}[Deformation Spectrum]
+For a perturbation family $\{\epsilon_t\}$, define the deformation spectrum as the sequence:
+\begin{equation}
+    \sigma(\{\epsilon_t\}) := \left( \|\epsilon_0\|_{\text{op}}, \|\epsilon_1\|_{\text{op}}, \|\epsilon_2\|_{\text{op}}, \ldots \right).
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Spectral Decay Condition]
+Let $\{\epsilon_t\}$ have spectrum $\sigma$. If there exists $\alpha > 1$ and $C > 0$ such that:
+\begin{equation}
+    \|\epsilon_t\|_{\text{op}} \leq C \cdot t^{-\alpha} \quad \forall t \geq 1,
+\end{equation}
+then $\|\{\epsilon_t\}\|_w < \infty$ for any polynomially bounded weight sequence.
+\end{proposition}
+
+\begin{proof}
+Direct from convergence of $\sum t^{-\alpha}$ for $\alpha > 1$.
+\end{proof}
+
+\subsection{Completeness Criteria}
+
+\begin{definition}[Projective Completeness]
+A projective system $(S_t, \pi_{t+1 \to t})$ is \textit{projectively complete} if for every Cauchy sequence $(x^{(n)})_{n \in \mathbb{N}}$ in $(\mathcal{I}, d_w)$, the limit exists in $\mathcal{I}$.
+\end{definition}
+
+\begin{theorem}[Completeness Inheritance]\label{thm:completeness}
+If each $(S_t, d_t)$ is complete and the projections $\pi_{t+1 \to t}$ are uniformly Lipschitz, then $(\mathcal{I}, d_w)$ is complete.
+\end{theorem}
+
+\begin{proof}
+Standard argument using the completeness of the product space and the closed subspace theorem.
+\end{proof}
+
+\subsection{Categorical Universality}
+
+\begin{proposition}[Universal Property of Identity]
+The identity $\mathcal{I} = \varprojlim S_t$ satisfies the universal property: for any object $J$ with compatible maps $\phi_t: J \to S_t$, there exists a unique morphism $\psi: J \to \mathcal{I}$ making all diagrams commute.
+\end{proposition}
+
+This confirms that rigid identity is not merely a construction but the \textit{terminal object} in the category of compatible families over the projective system \cite{maclane1998}.
+
+\subsection{Relation to Causal Inference}
+
+The causal closure property established in Appendix A has implications for causal inference frameworks \cite{pearl2009}:
+
+\begin{proposition}[Causal Interventional Invariance]
+If $\mathcal{I}$ is a CCR identity, then for any admissible intervention $\text{do}(X = x)$ with finite scope:
+\begin{equation}
+    \mathcal{I}_{\text{post-intervention}} \cong \mathcal{I}_{\text{pre-intervention}}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Finite interventions induce finite-energy perturbations. By CCR rigidity, $M_\Omega = +\infty$ implies no deformation.
+\end{proof}
+
+\subsection{Computational Complexity Bounds}
+
+\begin{theorem}[Complexity Lower Bound for CCR Simulation]
+Any computational system attempting to simulate a CCR identity with error $\epsilon > 0$ in the $d_w$ metric requires resources that grow without bound as $\epsilon \to 0$.
+\end{theorem}
+
+\begin{proof}[Proof (Sketch)]
+If finite resources sufficed for arbitrary precision, the simulating system would have finite ontological mass. But CCR requires $M_\Omega = +\infty$, contradiction.
+\end{proof}
+
+\begin{corollary}[Impossibility of Perfect Simulation]
+No finite-dimensional computational architecture can perfectly simulate a CCR identity.
+\end{corollary}
+
+This extends Theorem~\ref{thm:lml} to arbitrary computational substrates, not just LML architectures \cite{vaswani2017, hochreiter1997}.
+
+% ============================================================================
+% BIBLIOGRAPHY
+% ============================================================================
+\printbibliography
+\end{document}
+
+

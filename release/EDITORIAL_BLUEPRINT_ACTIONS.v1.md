@@ -1,25 +1,40 @@
 # EDITORIAL_BLUEPRINT_ACTIONS.v1
 
-## Public-priority documents
+## Active base layer
 
-### Primary formal spine
-- canonical_core__3b77e7b20616cf25 (docId: 3b77e7b20616cf25, status: PASS_PDF_ONLY, source_path: rigid-identity-framework/CANONICAL_CORE.tex)
-- 6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468 (docId: 6968859f53621468, status: SOURCE_OK, source_path: rigid-identity-framework/paper1/main.tex)
-- 9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730 (docId: 9e4b83e44e669730, status: SOURCE_OK, source_path: rigid-identity-framework/paper2/main.tex)
-- dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47 (docId: dc23c9c9345aae47, status: SOURCE_OK, source_path: rigid-identity-framework/paper3/main.tex)
-- 44806ece96bbdae2_main_1c305418__44806ece96bbdae2 (docId: 44806ece96bbdae2, status: PASS_PDF_ONLY, source_path: rigid-identity-framework/paper4/main.tex)
-- 1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6 (docId: 1e1b2ec217a514f7, status: SOURCE_OK, source_path: rigid-identity-framework/paper5_operational_consciousness/main.tex)
-- b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d (docId: b41dfe1db695dad6, status: SOURCE_OK, source_path: rigid-identity-framework/paper6_predictions_falsation/main.tex)
-- b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805 (docId: b75ad19ed8032bf0, status: SOURCE_OK, source_path: rigid-identity-framework/paper7_operational_life_subjecthood/main.tex)
-- a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2 (docId: a8cbd1be2034253b, status: SOURCE_OK, source_path: rigid-identity-framework/paper8_first_person_subjectivity/main.tex)
+- BaseCore is the only active mathematical source package in the release.
 
-### Supporting public lineages
-- paper1.parallel_lineage (source_path: rigid-identity-paper/main.tex, role: supporting_parallel_lineage)
-- paper2.supporting_lineage (source_path: phenomenological-regimes-paper/main.tex, role: supporting_formal_lineage)
-- paper3.supporting_lineage (source_path: phenomenological-instability-paper/main.tex, role: supporting_formal_lineage)
+## Downstream public packages
+
+- paper1.rigid_identity -> rigid-identity-framework/paper1/main.tex
+- paper2.phenomenological_regimes -> rigid-identity-framework/paper2/main.tex
+- paper3.null_regime_instability -> rigid-identity-framework/paper3/main.tex
+- paper4.qicn_v45_protocol -> rigid-identity-framework/paper4/main.tex
+- paper5.operational_consciousness_criterion -> rigid-identity-framework/paper5_operational_consciousness/main.tex
+- paper6.predictions_and_failure_modes -> rigid-identity-framework/paper6_predictions_falsation/main.tex
+- paper7.operational_life_subjecthood -> rigid-identity-framework/paper7_operational_life_subjecthood/main.tex
+- paper8.first_person_subjectivity -> rigid-identity-framework/paper8_first_person_subjectivity/main.tex
+- paper9.phenomenal_bridge_organization -> rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex
+
+## Preserved lineage material
+
+- canonical_core.legacy_package -> rigid-identity-framework/canonical_core_legacy/CANONICAL_CORE.tex (supporting_legacy_package)
+- canonical_core.historical_frozen_pdf -> historical_release_surface_only (historical_frozen_variant)
+- paper1.parallel_lineage -> rigid-identity-paper/main.tex (supporting_parallel_lineage)
+- paper2.supporting_lineage -> phenomenological-regimes-paper/main.tex (supporting_formal_lineage)
+- paper3.supporting_lineage -> phenomenological-instability-paper/main.tex (supporting_formal_lineage)
+- core.reconstructed_lineage -> NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.tex (reconstructed_lineage)
+- core.notebooklm_lineage -> NotebookLM/LaTeX/CANONICAL_CORE.tex (mirror_lineage)
+- instability.notebooklm_mirror_a -> NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-instability.tex (mirror_lineage)
+- instability.notebooklm_mirror_b -> NotebookLM/LaTeX/phenomenological-instability.tex (mirror_lineage)
+- regimes.notebooklm_mirror_a -> NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-regimes.tex (mirror_lineage)
+- regimes.notebooklm_mirror_b -> NotebookLM/LaTeX/phenomenological-regimes.tex (mirror_lineage)
+- paper1.notebooklm_mirror_a -> NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/rigid-identity-paper.tex (mirror_lineage)
+- paper1.notebooklm_mirror_b -> NotebookLM/LaTeX/rigid-identity-paper.tex (mirror_lineage)
 
 ## Actions
 
-- maintain one canonical public spine through Paper VIII
-- keep non-spine supporting public lineages visible but explicitly classified as supporting
-- prevent runtime-facing wording from being misread as validation or subjectivity closure
+- keep one active public base layer
+- keep downstream packages visible but non-collapsed into the base
+- keep legacy and mirror material explicitly tagged
+- prevent runtime-facing wording from being misread as validation, bridge support, or phenomenality closure

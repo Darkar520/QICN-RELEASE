@@ -50,23 +50,29 @@
     "remaining_gap": null,
     "full_resolution_requirement": null
   },
-  "non_claim_boundary": "Historical freeze evidence remains provenance only. The live public trunk authority is main, and public canonicalization still does not imply external validation, theory confirmation, or subjectivity closure.",
+  "non_claim_boundary": "Historical freeze evidence remains provenance only. The live public trunk authority is main, the active base layer is BaseCore, and public alignment still does not imply external validation or phenomenality closure.",
   "live_public_trunk_authority": {
     "branch": "main",
     "sole_public_authority": true,
-    "trunk_canonicalization_date": "2026-03-28",
-    "public_primary_formal_spine": [
-      "Canonical Core",
-      "Paper I",
-      "Paper II",
-      "Paper III",
-      "Paper IV",
-      "Paper V",
-      "Paper VI",
-      "Paper VII",
-      "Paper VIII"
+    "trunk_canonicalization_date": "2026-04-22",
+    "active_base_layer": "BaseCore",
+    "public_downstream_packages": [
+      "Paper I - Rigid Identity",
+      "Paper II - Phenomenological Regimes",
+      "Paper III - Null-Regime Instability",
+      "Paper IV - QICN v4.5 Protocol",
+      "Paper V - Operational Consciousness Criterion",
+      "Paper VI - Predictions and Failure Modes",
+      "Paper VII - Operational Life, Structural Class, and Subjecthood",
+      "Paper VIII - First-Person Indexed Subjectivity",
+      "Paper IX - Phenomenal Bridge Organization"
     ],
-    "public_supporting_extensions": [],
-    "explicit_public_exclusions": []
+    "preserved_legacy_packages": [
+      "canonical_core_legacy"
+    ],
+    "explicit_public_exclusions": [
+      "release/_non_canonical/",
+      "QICN-SYSTEM runtime outputs as theory source"
+    ]
   }
 }

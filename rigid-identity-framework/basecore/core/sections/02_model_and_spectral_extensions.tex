@@ -1,0 +1,357 @@
+\part{Typed Computable Model and State Spectral Gap}
+\section{Typed Computable Model: Embedded Constant-Disk Witness}
+
+This section repairs the type leaks of the previous computable model. The purpose is narrow: provide a fully typed witness for the transition grammar and the state spectral gap. It does \emph{not} by itself certify parameterwise non-collapse; that burden is handled separately below.
+
+\subsection{Golden Mean Parameter Space}
+
+\begin{definition}[Golden Mean Shift Parameter Space]
+Let $\Sigma=\{0,1\}$ and
+\[
+A=
+\begin{pmatrix}
+1 & 1\\
+1 & 0
+\end{pmatrix}.
+\]
+The Golden Mean Shift $S_A\subset \Sigma^{\mathbb{N}}$ is the subshift of finite type consisting of all binary sequences that avoid the block $11$.
+\end{definition}
+
+\begin{definition}[Parameter Encoding]
+Define
+\[
+u(x)=\sum_{i=1}^{\infty} x_i\phi^{-i},
+\qquad
+\phi=\frac{1+\sqrt{5}}{2}.
+\]
+The image $\U:=u(S_A)\subset [0,1]$ is compact.
+\end{definition}
+
+\subsection{Typed Banach Witness}
+
+\begin{definition}[Ambient Space and Constant Embedding]
+Let
+\[
+X=[0,1],
+\qquad
+E=\mathbb{R}^2,
+\qquad
+\mathcal{B}=C(X,E)
+\]
+with norm
+\[
+\norm{f}_\infty:=\sup_{s\in X}\norm{f(s)}_2.
+\]
+Define the constant embedding
+\[
+j:E\to \mathcal{B},
+\qquad
+j(v)(s)=v.
+\]
+\end{definition}
+
+\begin{definition}[Invariant Constant Disk]
+Let
+\[
+D:=\{v\in E:\norm{v}_2\le 1\},
+\qquad
+\mathcal{I}_{\mathrm{c}}:=j(D)\subset \mathcal{B}.
+\]
+\end{definition}
+
+\begin{definition}[Averaging Operator]
+Define
+\[
+A:\mathcal{B}\to E,
+\qquad
+A(f):=\int_0^1 f(\tau)\,d\tau.
+\]
+\end{definition}
+
+\begin{definition}[Disk Projection]
+Define the Euclidean projection
+\[
+P_E:E\to D,
+\qquad
+P_E(v)=
+\begin{cases}
+v, & \norm{v}_2\le 1,\\[0.4em]
+\dfrac{v}{\norm{v}_2}, & \norm{v}_2>1.
+\end{cases}
+\]
+\end{definition}
+
+\begin{definition}[Typed Projection onto the Constant Disk]
+Define
+\[
+\aleph_{\mathcal B}:\mathcal{B}\to \mathcal{I}_{\mathrm{c}},
+\qquad
+\aleph_{\mathcal B}(f):=j(P_E(A(f))).
+\]
+\end{definition}
+
+\begin{definition}[Constant-Valued Contraction Operator]
+Define
+\[
+\widetilde K:\mathcal{B}\to\mathcal{B},
+\qquad
+(\widetilde K f)(s):=\frac{1}{2}\int_0^1 f(\tau)\,d\tau.
+\]
+\end{definition}
+
+\begin{definition}[Lifted Input Coupling]
+Let $\Gamma:\U\to E$ be
+\[
+\Gamma(u)=(u,0).
+\]
+Define its constant lift
+\[
+\Gamma_{\mathcal B}:\U\to \mathcal{B},
+\qquad
+\Gamma_{\mathcal B}(u):=j(\Gamma(u)).
+\]
+\end{definition}
+
+\begin{definition}[Typed Transition Operator]
+For each $u\in\U$, define
+\[
+T_u:\mathcal{B}\to \mathcal{I}_{\mathrm{c}},
+\qquad
+T_u(f):=\aleph_{\mathcal B}\bigl(\widetilde K f+\Gamma_{\mathcal B}(u)\bigr).
+\]
+\end{definition}
+
+\begin{remark}[Typing discipline]
+No unembedded element of $E$ is treated as an element of $\mathcal{B}$. The embedding $j$ is always written explicitly. This removes the earlier type leak in which a disk in $E$ was silently treated as a subset of a function space.
+\end{remark}
+
+\subsection{Basic Operator Properties}
+
+\begin{lemma}[The Embedding is Isometric]
+For every $v\in E$,
+\[
+\norm{j(v)}_\infty=\norm{v}_2.
+\]
+\end{lemma}
+
+\begin{proof}
+By definition,
+\[
+\norm{j(v)}_\infty=\sup_{s\in X}\norm{j(v)(s)}_2
+=\sup_{s\in X}\norm{v}_2
+=\norm{v}_2.
+\]
+\end{proof}
+
+\begin{lemma}[The Disk Projection is Non-Expansive]\label{lem:disk-projection}
+For all $v,w\in E$,
+\[
+\norm{P_E(v)-P_E(w)}_2\le \norm{v-w}_2.
+\]
+\end{lemma}
+
+\begin{proof}
+$P_E$ is the metric projection onto the closed convex set $D\subset \mathbb{R}^2$, so the standard Hilbert-space non-expansiveness property applies.
+\end{proof}
+
+\begin{lemma}[The Typed Projection is Non-Expansive]
+For all $f,g\in\mathcal{B}$,
+\[
+\norm{\aleph_{\mathcal B}(f)-\aleph_{\mathcal B}(g)}_\infty\le \norm{f-g}_\infty.
+\]
+\end{lemma}
+
+\begin{proof}
+Using the isometry of $j$, the non-expansiveness of $P_E$, and Jensen's inequality for the averaging operator,
+\begin{align*}
+\norm{\aleph_{\mathcal B}(f)-\aleph_{\mathcal B}(g)}_\infty
+&=
+\norm{P_E(A(f))-P_E(A(g))}_2 \\
+&\le \norm{A(f)-A(g)}_2 \\
+&=
+\left\|\int_0^1 (f(\tau)-g(\tau))\,d\tau\right\|_2 \\
+&\le \int_0^1 \norm{f(\tau)-g(\tau)}_2\,d\tau
+\le \norm{f-g}_\infty.
+\end{align*}
+\end{proof}
+
+\begin{lemma}[Norm of the Lifted Contraction]
+\[
+\norm{\widetilde K}\le \frac{1}{2}.
+\]
+\end{lemma}
+
+\begin{proof}
+For any $f\in\mathcal{B}$,
+\[
+\norm{\widetilde Kf}_\infty
+=
+\left\|\frac{1}{2}\int_0^1 f(\tau)\,d\tau\right\|_2
+\le \frac{1}{2}\int_0^1 \norm{f(\tau)}_2\,d\tau
+\le \frac{1}{2}\norm{f}_\infty.
+\]
+\end{proof}
+
+\begin{theorem}[Typed Contraction on the Computable Witness]
+For each $u\in\U$, the map $T_u:\mathcal{B}\to\mathcal{I}_{\mathrm c}$ is a strict contraction:
+\[
+\norm{T_u(f)-T_u(g)}_\infty\le \frac{1}{2}\norm{f-g}_\infty.
+\]
+\end{theorem}
+
+\begin{proof}
+Combine non-expansiveness of $\aleph_{\mathcal B}$ with the bound on $\widetilde K$:
+\[
+\norm{T_u(f)-T_u(g)}_\infty
+\le
+\norm{\widetilde K f-\widetilde K g}_\infty
+\le
+\frac{1}{2}\norm{f-g}_\infty.
+\]
+\end{proof}
+
+\begin{corollary}[Unique Fixed Point in the Typed Witness]
+For each $u\in\U$, there exists a unique $f_u^\ast\in\mathcal{I}_{\mathrm c}$ such that
+\[
+T_u(f_u^\ast)=f_u^\ast.
+\]
+\end{corollary}
+
+\begin{proof}
+The Banach fixed-point theorem applies on the complete metric space $(\mathcal{B},\norm{\cdot}_\infty)$.
+\end{proof}
+
+\begin{proposition}[Typed Non-Vacuity of the Computable Model]\label{prop:Q3verify}
+The embedded constant-disk Golden Mean model is a fully typed, non-vacuous witness of the transition grammar:
+\begin{enumerate}[leftmargin=*]
+\item every operator has explicit domain and codomain;
+\item the transition map $T_u$ is well-defined on $\mathcal{B}$;
+\item the family admits unique fixed points and a compact parameter image;
+\item the state contraction bound is explicit and computable.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Items (1)--(3) follow from the definitions above and the contraction theorem. Compactness of the parameter image follows because $\U$ is compact and $u\mapsto f_u^\ast$ is continuous under a uniform contraction constant.
+\end{proof}
+
+\begin{remark}[Why this witness does not certify H5]
+The image of $T_u$ lies in the constant subspace $\mathcal{I}_{\mathrm c}$. Therefore its fixed point is constant by construction. This witness is correct and useful for typing and state spectral analysis, but it cannot certify the parameterwise anti-constant hypothesis H5 from Section~\ref{sec:parameterwise-noncollapse}.
+\end{remark}
+
+\subsection{Separate Anti-Collapse Witness}
+
+\begin{definition}[Affine Non-Constant Witness Space]
+Let
+\[
+\Hilb_{\mathrm{ac}}:=L^2([0,1]),
+\qquad
+\mathcal{N}:=\{c\mathbf{1}:c\in\mathbb{R}\},
+\qquad
+h(s):=\sin(2\pi s).
+\]
+Choose $r$ with $0<r<\norm{h}_{L^2}$ and define the closed convex affine set
+\[
+\I_{\mathrm{ac}}:=h+\{g\in\Hilb_{\mathrm{ac}}:\norm{g}_{L^2}\le r\}.
+\]
+\end{definition}
+
+\begin{lemma}[The Anti-Collapse Witness Set Avoids Constants]
+\[
+\I_{\mathrm{ac}}\cap \mathcal{N}=\varnothing.
+\]
+\end{lemma}
+
+\begin{proof}
+The distance from $h$ to the constant subspace $\mathcal{N}$ equals $\norm{h}_{L^2}$ because $h$ has mean zero and is orthogonal to constants. Since $r<\norm{h}_{L^2}$, the radius-$r$ ball around $h$ does not intersect $\mathcal{N}$.
+\end{proof}
+
+\begin{definition}[Anti-Collapse Witness Dynamics]
+Let $\U=[0,1]$, choose $\beta\in(0,1/2)$, and define
+\[
+K_{\mathrm{ac}}f:=\beta f,
+\qquad
+\Gamma_{\mathrm{ac}}(u):=\frac{u}{4}h.
+\]
+Let $P_{\mathrm{ac}}$ denote the metric projection onto $\I_{\mathrm{ac}}$, and define
+\[
+T_u^{\mathrm{ac}}(f):=P_{\mathrm{ac}}(K_{\mathrm{ac}}f+\Gamma_{\mathrm{ac}}(u)).
+\]
+\end{definition}
+
+\begin{proposition}[Separate Witness for H5]
+The family $\{T_u^{\mathrm{ac}}\}_{u\in\U}$ satisfies Hypotheses~\ref{hyp:H1}--\ref{hyp:H5} of Section~1.
+\end{proposition}
+
+\begin{proof}
+\begin{enumerate}[leftmargin=*]
+\item $\Hilb_{\mathrm{ac}}$ is a Hilbert space and $\I_{\mathrm{ac}}$ is non-empty, closed, and convex.
+\item $\norm{K_{\mathrm{ac}}}=\beta<1$.
+\item Completeness is inherited from $L^2([0,1])$.
+\item $\U=[0,1]$ is compact and $\Gamma_{\mathrm{ac}}$ is continuous.
+\item For every constant $c\in\mathcal{N}$ and every $u\in\U$, the value $T_u^{\mathrm{ac}}(c)$ belongs to $\I_{\mathrm{ac}}$, while $\I_{\mathrm{ac}}\cap\mathcal{N}=\varnothing$. Hence $T_u^{\mathrm{ac}}(c)\neq c$.
+\end{enumerate}
+\end{proof}
+
+\begin{remark}
+BaseCore therefore distinguishes two roles cleanly: the Golden Mean witness certifies typed operator correctness and state contraction; the affine anti-collapse witness certifies the stronger H5 burden needed for parameterwise non-collapse.
+\end{remark}
+
+\section{State Spectral Gap and Parameter-Family Persistence}
+
+\begin{theorem}[State Spectral Gap]\label{thm:spectrum}
+Fix $u\in\U$ in the typed computable model. Assume $T_u$ is Fr\'echet differentiable at its fixed point $f_u^\ast$. Then
+\[
+\rho\!\left(DT_u(f_u^\ast)\right)
+\le
+\norm{DT_u(f_u^\ast)}
+\le
+\norm{\widetilde K}
+\le
+\frac{1}{2}.
+\]
+Consequently the state spectral gap satisfies
+\[
+\Delta_{\mathrm{state}}\ge 1-\norm{\widetilde K}\ge \frac{1}{2}.
+\]
+\end{theorem}
+
+\begin{proof}
+At every point where the projection $P_E$ is Fr\'echet differentiable, its derivative has operator norm at most $1$ because $P_E$ is non-expansive. Since $\aleph_{\mathcal B}=j\circ P_E\circ A$,
+\[
+DT_u(f_u^\ast)=
+D\aleph_{\mathcal B}\!\left(\widetilde K f_u^\ast+\Gamma_{\mathcal B}(u)\right)\circ \widetilde K,
+\]
+and therefore
+\[
+\norm{DT_u(f_u^\ast)}\le \norm{D\aleph_{\mathcal B}}\norm{\widetilde K}\le \frac{1}{2}.
+\]
+The spectral-radius bound follows from $\rho(L)\le \norm{L}$ for bounded linear operators.
+\end{proof}
+
+\begin{theorem}[Relaxation-Time Bound]\label{thm:relaxation}
+Under the hypotheses of Theorem~\ref{thm:spectrum}, any discrete-to-continuous relaxation convention of the form
+\[
+\tau_{\mathrm{state}}=-\frac{1}{\ln \rho}
+\]
+with $\rho=\rho(DT_u(f_u^\ast))$ gives
+\[
+\tau_{\mathrm{state}}\le \frac{1}{\ln 2}.
+\]
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:spectrum} gives $\rho\le 1/2$. Since $-\ln(\rho)\ge \ln 2$, the bound follows.
+\end{proof}
+
+\begin{proposition}[Parameter-Family Persistence is not State Spectrum]
+Let $F:\U\to\mathcal{B}$ be the fixed-point family $F(u)=f_u^\ast$. Any persistence of parameter labels or family coordinates belongs to the variation of $F$ over $\U$, not to the state-transition spectrum of $DT_u(f_u^\ast)$ for fixed $u$.
+\end{proposition}
+
+\begin{proof}
+The state-transition spectrum is defined for the linearization of $T_u$ at fixed parameter $u$. Family-level transport instead concerns the map $F$ between parameter space and fixed-point set. These are different operators on different domains. Therefore a family-persistence mode cannot be used to introduce a unit eigenvalue into the contraction spectrum of $DT_u(f_u^\ast)$.
+\end{proof}
+
+\begin{remark}[What has been removed]
+The previous text incorrectly mixed strict contraction with a state-spectrum eigenvalue $\lambda=1$. BaseCore no longer does that. Any neutral or persistent mode must now be interpreted as a parameter-family bookkeeping mode, not as an eigenmode of the contractive state Jacobian.
+\end{remark}

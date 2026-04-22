@@ -2,7 +2,7 @@
 
 ## Recommended public reading order
 
-- Canonical Core
+- BaseCore
 - Paper I
 - Paper II
 - Paper III
@@ -11,10 +11,12 @@
 - Paper VI
 - Paper VII
 - Paper VIII
+- Paper IX
 
 ## Editorial rules
 
-- one preferred public formal spine through Paper VIII
-- supporting public lineages stay classified as supporting, not primary
-- mirror lineages remain traceability material only
-- materials beyond Paper VIII remain outside the public release until accepted here
+- one active mathematical base layer: BaseCore
+- downstream papers remain downstream, even when public
+- canonical_core_legacy remains preserved but not active
+- mirror and reconstructed lineages remain traceability material only
+- bridge-facing materials must retain explicit non-claims

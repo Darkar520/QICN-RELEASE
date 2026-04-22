@@ -1,276 +1,38 @@
 {
-  "generated_at": "2026-03-28T22:43:04.496Z",
-  "source_files": [
-    "release/CANON_MAP.v1.json",
-    "release/claim_registry.v1.json",
-    "release/system_interface_boundary.v1.json"
-  ],
-  "policy_note": "Crosspaper links in the public release are limited to explicit upstream dependency, governance alignment, and runtime-interface relevance. No theory confirmation is inferred from linkage alone.",
-  "nodes": [
+  "artifact_role": "crosspaper_linkmap",
+  "schema_version": "2.0.0",
+  "active_base_layer": "basecore.active",
+  "downstream_dependencies": [
     {
-      "node_type": "document",
-      "doc_family_id": "core.v0",
-      "classification": "primary_formal_spine",
-      "release_pdf": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
-      "source_path": "rigid-identity-framework/CANONICAL_CORE.tex"
+      "from": "basecore.active",
+      "to": "paper1.rigid_identity",
+      "type": "formal_dependency"
     },
     {
-      "node_type": "document",
-      "doc_family_id": "paper1.rigid_identity",
-      "classification": "primary_formal_spine",
-      "release_pdf": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
-      "source_path": "rigid-identity-framework/paper1/main.tex"
+      "from": "basecore.active",
+      "to": "paper5.operational_consciousness_criterion",
+      "type": "formal_dependency"
     },
     {
-      "node_type": "document",
-      "doc_family_id": "paper2.phenomenological_regimes",
-      "classification": "primary_formal_spine",
-      "release_pdf": "corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730.pdf",
-      "source_path": "rigid-identity-framework/paper2/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper3.null_regime_instability",
-      "classification": "primary_formal_spine",
-      "release_pdf": "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf",
-      "source_path": "rigid-identity-framework/paper3/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper4.qicn_v45_protocol",
-      "classification": "primary_formal_spine",
-      "release_pdf": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
-      "source_path": "rigid-identity-framework/paper4/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper5.operational_consciousness_criterion",
-      "classification": "primary_formal_spine",
-      "release_pdf": "corpus/pdf_release/pdfs/1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6__1e1b2ec217a514f7.pdf",
-      "source_path": "rigid-identity-framework/paper5_operational_consciousness/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper6.predictions_and_failure_modes",
-      "classification": "primary_formal_spine",
-      "release_pdf": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
-      "source_path": "rigid-identity-framework/paper6_predictions_falsation/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper7.operational_life_subjecthood",
-      "classification": "primary_formal_spine",
-      "release_pdf": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
-      "source_path": "rigid-identity-framework/paper7_operational_life_subjecthood/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper8.first_person_subjectivity",
-      "classification": "primary_formal_spine",
-      "release_pdf": "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
-      "source_path": "rigid-identity-framework/paper8_first_person_subjectivity/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper1.parallel_lineage",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf",
-      "source_path": "rigid-identity-paper/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper2.supporting_lineage",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b933892715a.pdf",
-      "source_path": "phenomenological-regimes-paper/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper3.supporting_lineage",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d1cc6abf9c8c70.pdf",
-      "source_path": "phenomenological-instability-paper/main.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "core.reconstructed_lineage",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/canonical_core_74be3e__eead218e079c0ad2.pdf",
-      "source_path": "NotebookLM/LaTeX/CANONICAL_CORE_RECONSTRUCTED.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "core.notebooklm_lineage",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf",
-      "source_path": "NotebookLM/LaTeX/CANONICAL_CORE.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "instability.notebooklm_mirror_a",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_instability__04b40ecc9376767e.pdf",
-      "source_path": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-instability.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "instability.notebooklm_mirror_b",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_instability_2fe669__0b013024c06a2f7d.pdf",
-      "source_path": "NotebookLM/LaTeX/phenomenological-instability.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "regimes.notebooklm_mirror_a",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_regimes__9dab69286f9e9107.pdf",
-      "source_path": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/phenomenological-regimes.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "regimes.notebooklm_mirror_b",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/phenomenological_regimes_529d6b__39860a8a5035ed82.pdf",
-      "source_path": "NotebookLM/LaTeX/phenomenological-regimes.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper1.notebooklm_mirror_a",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/rigid_identity_paper__3e026c9275c59788.pdf",
-      "source_path": "NotebookLM/SISTEMA_CANON_PAPERS/LaTeX/rigid-identity-paper.tex"
-    },
-    {
-      "node_type": "document",
-      "doc_family_id": "paper1.notebooklm_mirror_b",
-      "classification": "supporting_lineage",
-      "release_pdf": "corpus/pdf_release/pdfs/rigid_identity_paper_8925ec__bb0cda8022f6c8ac.pdf",
-      "source_path": "NotebookLM/LaTeX/rigid-identity-paper.tex"
-    },
-    {
-      "node_type": "hub",
-      "hub_key": "METHODS_GOVERNANCE_HUB.v1",
-      "path": "release/METHODS_GOVERNANCE_HUB.v1.md"
-    },
-    {
-      "node_type": "hub",
-      "hub_key": "GLOSSARY_CANONICAL.v1",
-      "path": "release/GLOSSARY_CANONICAL.v1.md"
-    },
-    {
-      "node_type": "hub",
-      "hub_key": "THEORY_SYSTEM_INTERFACE",
-      "path": "docs/THEORY_SYSTEM_INTERFACE.md"
-    }
-  ],
-  "edges": [
-    {
-      "from": "paper4.qicn_v45_protocol",
+      "from": "basecore.active",
       "to": "paper6.predictions_and_failure_modes",
-      "type": "protocol_supports_prediction_layer",
-      "edge_basis": "declared_upstream_dependency"
+      "type": "formal_dependency"
     },
     {
-      "from": "paper5.operational_consciousness_criterion",
-      "to": "paper6.predictions_and_failure_modes",
-      "type": "criterion_to_prediction_layer",
-      "edge_basis": "declared_upstream_dependency"
-    },
-    {
-      "from": "paper5.operational_consciousness_criterion",
+      "from": "basecore.active",
       "to": "paper7.operational_life_subjecthood",
-      "type": "criterion_to_classificatory_extension",
-      "edge_basis": "declared_upstream_dependency"
+      "type": "formal_dependency"
     },
     {
-      "from": "paper6.predictions_and_failure_modes",
-      "to": "paper7.operational_life_subjecthood",
-      "type": "status_boundary_carries_forward",
-      "edge_basis": "declared_upstream_dependency"
-    },
-    {
-      "from": "paper4.qicn_v45_protocol",
+      "from": "basecore.active",
       "to": "paper8.first_person_subjectivity",
-      "type": "protocol_supports_subjectivity_runtime_path",
-      "edge_basis": "declared_upstream_dependency"
-    },
-    {
-      "from": "paper5.operational_consciousness_criterion",
-      "to": "paper8.first_person_subjectivity",
-      "type": "criterion_to_subjectivity_layer",
-      "edge_basis": "declared_upstream_dependency"
-    },
-    {
-      "from": "paper6.predictions_and_failure_modes",
-      "to": "paper8.first_person_subjectivity",
-      "type": "prediction_and_failure_burden_carries_forward",
-      "edge_basis": "declared_upstream_dependency"
-    },
-    {
-      "from": "paper7.operational_life_subjecthood",
-      "to": "paper8.first_person_subjectivity",
-      "type": "subjecthood_to_first_person_subjectivity",
-      "edge_basis": "declared_upstream_dependency"
-    },
-    {
-      "from": "paper4.qicn_v45_protocol",
-      "to": "METHODS_GOVERNANCE_HUB.v1",
-      "type": "governed_by_release_methods_hub",
-      "edge_basis": "policy"
-    },
-    {
-      "from": "paper4.qicn_v45_protocol",
-      "to": "GLOSSARY_CANONICAL.v1",
-      "type": "governed_by_canonical_term_policy",
-      "edge_basis": "policy"
-    },
-    {
-      "from": "paper5.operational_consciousness_criterion",
-      "to": "METHODS_GOVERNANCE_HUB.v1",
-      "type": "governed_by_release_methods_hub",
-      "edge_basis": "policy"
-    },
-    {
-      "from": "paper5.operational_consciousness_criterion",
-      "to": "GLOSSARY_CANONICAL.v1",
-      "type": "governed_by_canonical_term_policy",
-      "edge_basis": "policy"
-    },
-    {
-      "from": "paper6.predictions_and_failure_modes",
-      "to": "METHODS_GOVERNANCE_HUB.v1",
-      "type": "governed_by_release_methods_hub",
-      "edge_basis": "policy"
-    },
-    {
-      "from": "paper6.predictions_and_failure_modes",
-      "to": "GLOSSARY_CANONICAL.v1",
-      "type": "governed_by_canonical_term_policy",
-      "edge_basis": "policy"
-    },
-    {
-      "from": "paper7.operational_life_subjecthood",
-      "to": "METHODS_GOVERNANCE_HUB.v1",
-      "type": "governed_by_release_methods_hub",
-      "edge_basis": "policy"
-    },
-    {
-      "from": "paper7.operational_life_subjecthood",
-      "to": "GLOSSARY_CANONICAL.v1",
-      "type": "governed_by_canonical_term_policy",
-      "edge_basis": "policy"
+      "type": "formal_dependency"
     },
     {
       "from": "paper8.first_person_subjectivity",
-      "to": "METHODS_GOVERNANCE_HUB.v1",
-      "type": "governed_by_release_methods_hub",
-      "edge_basis": "policy"
-    },
-    {
-      "from": "paper8.first_person_subjectivity",
-      "to": "GLOSSARY_CANONICAL.v1",
-      "type": "governed_by_canonical_term_policy",
-      "edge_basis": "policy"
+      "to": "paper9.phenomenal_bridge_organization",
+      "type": "bridge_dependency"
     }
-  ]
+  ],
+  "non_claim_boundary": "This link map records declared dependency flow only. It does not collapse downstream ownership into BaseCore or convert bridge dependencies into closure."
 }

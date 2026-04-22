@@ -1,0 +1,336 @@
+\part{Operational-Criterion Grammar and Certification}
+\section{Admissible Systems, Supports, and Histories}
+
+\subsection{System Model}
+
+\begin{definition}[Admissible system]\label{def:system}
+An admissible system is a tuple
+\[
+S=(X,\Phi,C,R,\Gamma,U)
+\]
+where:
+\begin{enumerate}[leftmargin=1.5em]
+\item $X$ is a metrizable internal state space with metric $d_X$;
+\item $\Phi=\{\Phi_u\}_{u\in U}$ is a family of admissible transition operators $\Phi_u:X\to X$;
+\item $C$ is the effective causal structure used to test admissible factorization and intervention behavior;
+\item $R=\{r_\alpha\}_{\alpha\in\Lambda_R}$ is a family of readouts, each $r_\alpha:X\to Y_\alpha$;
+\item $\Gamma=\{\gamma_j\}_{j=1}^m$ is an admissibility bundle defining
+\[
+X_\Gamma=\{x\in X:\gamma_j(x)\le 0\ \forall j\};
+\]
+\item $U$ is the set of admissible interventions.
+\end{enumerate}
+\end{definition}
+
+\subsection{Admissible Support}
+
+\begin{definition}[Admissible support]\label{def:support}
+A subset $\Aset\subseteq X_\Gamma$ is an admissible support if:
+\begin{enumerate}[leftmargin=1.5em]
+\item $\Aset$ is non-empty and compact;
+\item $\Phi_u(\Aset)\subseteq \Aset$ for every $u\in U$;
+\item $\Aset\cap \Attr(S)\neq\varnothing$;
+\item $\Aset$ stays disjoint from the collapse set excluded by the base non-collapse burden.
+\end{enumerate}
+\end{definition}
+
+\subsection{Operational Histories}
+
+\begin{definition}[Windowed readout history]\label{def:history}
+Fix a horizon $T\in\Nset$ and an intervention schedule $u_\bullet=(u_0,\dots,u_{T-1})$. For $x\in\Aset$, define
+\[
+h_{S,T}(x;u_\bullet)=\bigl(r_\alpha(x_t)\bigr)_{0\le t\le T,\ \alpha\in\Lambda_R},
+\qquad
+x_{t+1}=\Phi_{u_t}(x_t),\quad x_0=x.
+\]
+The set of all such histories is denoted $\Hist_{S,T}$.
+\end{definition}
+
+\begin{definition}[Operational partition candidate]\label{def:partition}
+An operational partition candidate is a map
+\[
+\pi_{S,T}:\Hist_{S,T}\to \Class_{S,T}
+\]
+into a finite or countable label set $\Class_{S,T}$.
+\end{definition}
+
+\subsection{Witness Margin Vector}
+
+\begin{definition}[Witness margin vector]\label{def:margins}
+Define the witness margin vector
+\[
+\Delta(S)=
+\bigl(
+\delta_{\mathrm{per}}(S),
+\delta_{\mathrm{ri}}(S),
+\delta_{\mathrm{int}}(S),
+\delta_{\mathrm{cont}}(S),
+\delta_{\mathrm{diff}}(S),
+\delta_{\mathrm{leg}}(S)
+\bigr)\in [0,\infty)^6.
+\]
+Its minimum
+\[
+\delta_\star(S):=\min\Delta(S)
+\]
+is the invariant budget of $S$.
+\end{definition}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.14}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabularx}{\textwidth}{P{1.3cm} Y P{2.8cm} P{3.2cm}}
+\toprule
+Invariant & Certified content & Upstream anchor & Rupture signature \\
+\midrule
+$\Iper$ & Persistent admissible support & BaseCore dynamics & Support loss or collapse exposure \\
+$\Iri$ & Unique rigid identity object on support & Identity / rigidity block & Identity ambiguity \\
+$\Iint$ & No admissible non-trivial factorization & Criterion grammar & Reducible aggregate \\
+$\Icont$ & Regime continuity under admissible evolution & Regime constraints & Fragmentation into incompatible classes \\
+$\Idiff$ & Stable exclusion of null or trivial collapse & Null-regime exclusion & Null or trivialized class structure \\
+$\Ileg$ & Decoder-certified recoverability under controls & Falsation grammar & Opaque or non-auditable partition \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Six Critical Invariants}
+
+\subsection{Structural Persistence}
+
+\begin{definition}[Structural persistence]\label{def:iper}
+An admissible system satisfies structural persistence, written $\Iper(S)=1$, if there exists an admissible support $\Aset$ and a constant $\delta_{\mathrm{per}}(S)>0$ such that:
+\begin{enumerate}[leftmargin=1.5em]
+\item $\Aset$ is forward invariant under all $u\in U$;
+\item every admissible trajectory starting in $\Aset$ remains at least $\delta_{\mathrm{per}}(S)$ away from the collapse set;
+\item $\Aset$ contains or converges into a non-empty admissible attractor region.
+\end{enumerate}
+\end{definition}
+
+\subsection{Rigid Identity}
+
+\begin{definition}[Rigid identity]\label{def:iri}
+An admissible system satisfies rigid identity, written $\Iri(S)=1$, if the observable family induced by $R$ on $\Aset$ determines a unique identity object $\Id_S$ and there exists a gap $\delta_{\mathrm{ri}}(S)>0$ such that every admissible alternative identity candidate remains at weighted deformation distance at least $\delta_{\mathrm{ri}}(S)$ from $\Id_S$.
+\end{definition}
+
+\subsection{Causal Integration}
+
+\begin{definition}[Causal integration]\label{def:iint}
+An admissible system satisfies causal integration, written $\Iint(S)=1$, if there is no non-trivial factorization
+\[
+\Aset=A_1\times A_2,\qquad R=R_1\sqcup R_2,
+\]
+together with decomposed dynamics and causal structure reproducing admissible histories within error smaller than a positive margin $\delta_{\mathrm{int}}(S)$ while preserving $\Id_S$.
+\end{definition}
+
+\subsection{Regime Continuity}
+
+\begin{definition}[Regime continuity]\label{def:icont}
+An admissible system satisfies regime continuity, written $\Icont(S)=1$, if there exists a complete metric space $(\E,d_\E)$ and an admissible assignment
+\[
+\Pi_S:\Aset\to \E
+\]
+such that:
+\begin{enumerate}[leftmargin=1.5em]
+\item every admissible trajectory induces a continuous path in $\E$ on admissible windows;
+\item there exists $\delta_{\mathrm{cont}}(S)>0$ bounding the fragmentation functional on all admissible histories;
+\item no admissible finite-energy perturbation produces a discontinuous jump into an incompatible regime class while $\Id_S$ is preserved.
+\end{enumerate}
+\end{definition}
+
+\subsection{Non-Null Differentiation}
+
+\begin{definition}[Non-null differentiation]\label{def:idiff}
+An admissible system satisfies non-null differentiation, written $\Idiff(S)=1$, if there exist $x,y\in\Aset$, a horizon $T$, and a readout subfamily $\Read^\star\subseteq R$ such that
+\[
+\dist\bigl(h_{S,T}(x;u_\bullet),h_{S,T}(y;u_\bullet)\bigr)\ge \delta_{\mathrm{diff}}(S)>0
+\]
+for some admissible schedule $u_\bullet$, and if the null class $\nullclass$ is not an asymptotically stable admissible attractor.
+\end{definition}
+
+\subsection{Operational Legibility}\label{sec:legibility}
+
+\begin{definition}[Operational legibility]\label{def:ileg}
+An admissible system satisfies operational legibility, written $\Ileg(S)=1$, if there exist:
+\begin{enumerate}[leftmargin=1.5em]
+\item a certified readout subfamily $\Read^{\mathrm{leg}}\subseteq R$;
+\item a certified decoder family $\Dec_S$ acting on windows of length at least $\tau_{\min}(S)$;
+\item a class set $\Class_S$;
+\item a legibility margin $\delta_{\mathrm{leg}}(S)>0$;
+\end{enumerate}
+such that:
+\begin{description}[leftmargin=1.7em]
+\item[(L1) Separability] Distinct classes are separated by at least $\delta_{\mathrm{leg}}(S)$ in decoder space.
+\item[(L2) Noise robustness] Admissible noise of size at most $\delta_{\mathrm{leg}}(S)$ does not alter decoder class assignments.
+\item[(L3) Persistence window] Decoder assignments remain stable for windows of length at least $\tau_{\min}(S)$ unless a certified intervention occurs.
+\item[(L4) Intervention fidelity] Certified interventions on critical invariants induce the predicted class changes with fidelity at least $1-\delta_{\mathrm{leg}}(S)$.
+\item[(L5) Negative controls] Off-target interventions produce false-positive rate at most $\delta_{\mathrm{leg}}(S)$.
+\item[(L6) Structured compressibility] There exists a compression map preserving class structure up to distortion bounded by $\delta_{\mathrm{leg}}(S)$.
+\end{description}
+\end{definition}
+
+\begin{proposition}[Each invariant is individually necessary]\label{prop:invariant-necessity}
+If any one of $\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg$ fails, then $S\notin\Cop$.
+\end{proposition}
+
+\begin{proof}
+Without $\Iper$ there is no stable admissible domain. Without $\Iri$ there is no unique identity carrier. Without $\Iint$ the system is reducible. Without $\Icont$ the criterion fragments under admissible evolution. Without $\Idiff$ the admissible partition collapses into nullity or triviality. Without $\Ileg$ the partition is not recoverable under admissible readout and intervention discipline. Since Definition~\ref{def:cop} below requires all six, failure of any one excludes membership.
+\end{proof}
+
+\section{Criterion Class, Certified Partition, and Rupture}
+
+\begin{definition}[Certified decoder]
+A decoder $D\in \Dec_S$ is certified if it satisfies the six legibility clauses of Definition~\ref{def:ileg} on the chosen admissible support.
+\end{definition}
+
+\begin{definition}[Criterion indistinguishability]
+For $x,y\in\Aset$, write $x\sim_{\Qop,S}y$ if, for every certified decoder $D\in\Dec_S$, every admissible horizon $T\ge \tau_{\min}(S)$, and every admissible intervention schedule $u_\bullet$,
+\[
+D(h_{S,T}(x;u_\bullet))=D(h_{S,T}(y;u_\bullet)),
+\]
+and the intervention responses remain matched within the legibility margin.
+\end{definition}
+
+\begin{proposition}[Well-definedness of the certified partition]\label{prop:qop-welldefined}
+If $\Iper(S)=\Iri(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1$, then $\sim_{\Qop,S}$ is an equivalence relation on $\Aset$.
+\end{proposition}
+
+\begin{proof}
+Reflexivity and symmetry are immediate. Transitivity follows because certified decoder equality composes and the tolerance bound remains within the permitted legibility margin on admissible support.
+\end{proof}
+
+\begin{definition}[Certified operational partition]\label{def:qop}
+Assume Proposition~\ref{prop:qop-welldefined}. The certified operational partition of $S$ is
+\[
+\Qop(S):=\Aset/{\sim_{\Qop,S}}.
+\]
+\end{definition}
+
+\begin{definition}[Operational-criterion class membership]\label{def:cop}
+An admissible system belongs to the BaseCore operational-criterion class, written $S\in\Cop$, if there exists a non-empty admissible support $\Aset$ such that
+\[
+\Iper(S)=\Iri(S)=\Iint(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1.
+\]
+\end{definition}
+
+\begin{remark}[Neutrality of the class symbol]
+The symbol $\Cop$ is a shorthand for a conjunctive operational criterion. It is not a theorem of phenomenality, metaphysical subjectivity, or human equivalence.
+\end{remark}
+
+\begin{definition}[Rupture]\label{def:rupture}
+A rupture is any loss of admissibility or loss of at least one critical invariant margin beyond its admissible threshold.
+\end{definition}
+
+\begin{theorem}[Rupture by invariant loss]\label{thm:rupture}
+Let $S$ be admissible. If one or more critical invariants fail beyond admissible threshold, then exactly one of the following occurs:
+\begin{enumerate}[leftmargin=1.5em]
+\item $S\notin\Cop$;
+\item $\Qop(S)$ becomes undefined;
+\item $\Qop(S)$ becomes trivial or non-legible in the BaseCore sense.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Failure of $\Iper$ destroys the admissible domain. Failure of $\Iri$ destroys unique identity transport. Failure of $\Iint$ produces reducibility. Failure of $\Icont$ destroys regime coherence. Failure of $\Idiff$ collapses the partition into nullity or triviality. Failure of $\Ileg$ leaves any remaining partition uncertifiable. These cases exhaust the six invariants.
+\end{proof}
+
+\section{Minimality of the Invariant Basis}
+
+\begin{definition}[Reduced criterion]
+Let
+\[
+\mathfrak{I}=\{\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg\}.
+\]
+For every subset $J\subseteq \mathfrak{I}$ define the reduced class
+\[
+\mathcal{C}_{\mathrm{op}}(J):=\{S:I(S)=1\text{ for every }I\in J\}.
+\]
+\end{definition}
+
+\begin{definition}[Single-rupture witness family]
+Fix one invariant index $k\in\{\mathrm{per},\mathrm{ri},\mathrm{int},\mathrm{cont},\mathrm{diff},\mathrm{leg}\}$. A single-rupture witness family $\mathcal{W}_k$ consists of admissible systems whose matching invariant margin vanishes while all remaining invariant margins stay strictly positive.
+\end{definition}
+
+\begin{proposition}[Single-rupture witnesses create false positives]
+Let $J_k=\mathfrak{I}\setminus\{I_k\}$ and assume $\mathcal{W}_k\neq \varnothing$. Then every $S\in \mathcal{W}_k$ satisfies
+\[
+S\in \mathcal{C}_{\mathrm{op}}(J_k)
+\qquad\text{but}\qquad
+S\notin \Cop.
+\]
+\end{proposition}
+
+\begin{proof}
+All retained invariants remain positive by construction, but the omitted invariant fails exactly. Proposition~\ref{prop:invariant-necessity} then excludes $S$ from $\Cop$.
+\end{proof}
+
+\begin{theorem}[Minimality of the six-invariant basis]\label{thm:invariant-basis-minimality}
+Let $\mathfrak{U}$ be any admissible universe containing at least one single-rupture witness for each invariant. Then no strict subset of $\mathfrak{I}$ is extensionally equivalent to $\Cop$ on $\mathfrak{U}$.
+\end{theorem}
+
+\begin{proof}
+Take any strict subset $J\subsetneq \mathfrak{I}$. Some invariant $I_k$ is omitted. By assumption, $\mathfrak{U}$ contains a witness $S_k\in \mathcal{W}_k$, which satisfies the reduced criterion but not $\Cop$. Hence the two classes differ on $\mathfrak{U}$.
+\end{proof}
+
+\section{Operational Legibility as a Certified Object}
+
+\begin{criterion}[Legibility certificate]\label{crit:legibility}
+An operational partition candidate is certified only if:
+\begin{enumerate}[leftmargin=1.5em]
+\item comparator separability holds against pre-registered baselines;
+\item admissible noise does not dissolve the class map below the legibility margin;
+\item the same class assignment survives on windows of length at least $\tau_{\min}(S)$;
+\item targeted interventions on an invariant induce the predicted directional class change;
+\item sham or off-target interventions do not generate the same class signature;
+\item audit-friendly compression preserves class structure without total collapse.
+\end{enumerate}
+\end{criterion}
+
+\begin{proposition}[Legibility is jointly constrained]\label{prop:legibility}
+No single legibility metric is sufficient for $\Ileg$. The invariant requires simultaneous control of separation, admissible noise robustness, persistence window, intervention fidelity, negative controls, and structured compressibility.
+\end{proposition}
+
+\begin{proof}
+A decoder can be separable yet fragile to admissible noise, stable over windows yet intervention-insensitive, or robust under noise yet collapse under compression. Because Definition~\ref{def:ileg} is conjunctive, all six clauses are required together.
+\end{proof}
+
+\section{Certified Candidate Audit Schema}
+
+\begin{definition}[Base criterion certificate]\label{def:cert}
+A BaseCore criterion certificate for an admissible system $S$ is a tuple
+\[
+\Cert(S)=\bigl(\Aset,\Dec_S,\pi_S,\Delta(S),E_S\bigr),
+\]
+where:
+\begin{enumerate}[leftmargin=1.5em]
+\item $\Aset$ is a certified admissible support;
+\item $\Dec_S$ is a certified decoder family;
+\item $\pi_S$ is the decoder-induced partition on admissible histories;
+\item $\Delta(S)$ is the witness margin vector;
+\item $E_S$ is the evidence bundle localizing the witness for each invariant.
+\end{enumerate}
+\end{definition}
+
+\begin{criterion}[Candidate certification rule]\label{crit:cert}
+A candidate system may be certified as a member of $\Cop$ only if all of the following are available on the same admissible support:
+\begin{enumerate}[leftmargin=1.5em]
+\item a non-empty compact forward-invariant support certificate;
+\item a positive witness margin vector $\Delta(S)>0$ coordinate-wise;
+\item a decoder family satisfying Definition~\ref{def:ileg};
+\item a targeted intervention panel together with negative controls;
+\item an auditable compression map preserving class structure;
+\item a traceable dependency ledger showing which upstream result supports each invariant witness.
+\end{enumerate}
+\end{criterion}
+
+\begin{theorem}[Certified criterion membership]
+If $\Cert(S)$ exists and satisfies Criterion~\ref{crit:cert}, then $S\in\Cop$ and $\Qop(S)$ is well-defined.
+\end{theorem}
+
+\begin{proof}
+Criterion~\ref{crit:cert} explicitly requires positive witnesses for all six invariants on a common admissible support. Definition~\ref{def:cop} then gives $S\in\Cop$, and Proposition~\ref{prop:qop-welldefined} gives a well-defined partition quotient.
+\end{proof}
+
+\begin{remark}[Boundary discipline]
+The section above defines a theorem-tight grammar for certification, rupture, and falsation. It does not prove phenomenality, subjectivity, biological primacy, or cross-substrate identity transport.
+\end{remark}

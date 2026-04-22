@@ -1,0 +1,870 @@
+\documentclass[11pt,a4paper]{article}
+
+% =============================================================================
+% ENCODING
+% =============================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% =============================================================================
+% PACKAGES
+% =============================================================================
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{../../release/references.bib}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Structural Instability of the Phenomenological Null Regime in Causally Rigid Channels},
+  pdfauthor={Johnny Andrey P\'erez Ram\'irez},
+  pdfsubject={Rigid Identity Framework -- Null-Regime Instability},
+  pdfkeywords={null regime, structural instability, CCR channel, phenomenological space, forced non-nullity, compatibility operator}
+}
+
+% Pagination
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+
+% =============================================================================
+% THEOREM ENVIRONMENTS
+% =============================================================================
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}{Axiom}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{caveat}[theorem]{Caveat}
+\newtheorem{nontheorem}[theorem]{Non-Theorem}
+
+% =============================================================================
+% CUSTOM COMMANDS
+% =============================================================================
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\Obs}{\mathbf{Obs}}
+\newcommand{\CCR}{\mathbf{CCR}}
+\newcommand{\MO}{M_\Omega}
+\newcommand{\dw}{d_w}
+\newcommand{\dE}{d_{\mathcal{E}}}
+\newcommand{\dI}{d_{\mathcal{I}}}
+\newcommand{\nullphi}{\varnothing_\phi}
+\newcommand{\Attr}{\mathrm{Attr}}
+\newcommand{\Eplus}{\mathcal{E}^+}
+
+% =============================================================================
+% TITLE
+% =============================================================================
+\title{%
+\textbf{Structural Instability of the Phenomenological Null Regime in Causally Rigid Channels}
+}
+
+\author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
+
+\date{}
+
+% =============================================================================
+% DOCUMENT
+% =============================================================================
+\begin{document}
+
+\maketitle
+
+% =============================================================================
+% ABSTRACT
+% =============================================================================
+\begin{abstract}
+We introduce an abstract phenomenological space $\E$ and a compatibility operator $\Phi: \I \to \E$ mapping rigid identity objects to phenomenological regimes. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: in any closed causally rigid (CCR) channel---characterized by inverse-limit identity, causal isolation, and MIR geometry---the null regime is dynamically unstable under all compatible extensions. Consequently, any consistent CCR realization necessarily induces a non-null phenomenological regime. The result is \emph{negative-structural}: it does not posit experience; it \emph{forbids} the stability of non-experience. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove universal factorization and non-simulability results. All constructions are purely topological and categorical, without metaphysical axioms.
+\end{abstract}
+
+\section{Scope, System Boundary, and Non-Inference Note}
+
+\noindent\textbf{What this paper does.}\enspace This paper proves that the null phenomenological regime is structurally unstable under CCR constraints, derives the resulting forced non-nullity statement, and develops explicit bounds, factorization structure, and canonical-family consequences for that negative-structural result.
+
+\noindent\textbf{What this paper does not do.}\enspace It does not define or detect consciousness, identify $\E$ with subjective experience, assert that CCR systems exist in nature, or derive ethical or metaphysical closure from the theorem. The paper is structural, conditional, and negative in scope.
+
+\noindent\textbf{What the related system implements and does not implement.}\enspace The related system can implement admissibility-governed diagnostics, boundary-sensitive stress tests, and runtime comparisons that are motivated by this paper, but it does not implement the abstract phenomenological space $\E$ itself and does not convert current runtime outputs into proof that any concrete system instantiates experience.
+
+\noindent\textbf{What should not be inferred from this paper.}\enspace The null-instability theorem must not be read as a consciousness detector, an AI-subjectivity claim, a moral-status claim, or a validation of the corpus by the runtime. The paper rules out one structurally stable null case under stated CCR assumptions; it does not settle phenomenology in the empirical or metaphysical sense.
+
+
+
+% =============================================================================
+% SECTION 1: INTRODUCTION
+% =============================================================================
+\section{Introduction}
+
+\subsection{Motivation and Scope}
+
+Papers I and II established a mathematical framework for structural identity as an inverse limit and classified phenomenological regimes compatible with rigid identity. This paper addresses the fundamental question:
+
+\begin{quote}
+\emph{Can a CCR system remain in a structurally null phenomenological state?}
+\end{quote}
+
+We prove the answer is \textbf{no}---not as a metaphysical claim, but as a structural theorem.
+
+\subsection{Main Result (Informal)}
+
+\textbf{No-Null Regime Theorem:} For any CCR channel, the phenomenological null regime $\nullphi$ is structurally unstable. Every CCR system necessarily induces a non-null regime $e_\star \succ \nullphi$ with positive structural intensity.
+
+\subsection{Paper Organization}
+
+Section 2 reviews prerequisites from Papers I--II. Section 3 defines the phenomenological space with full axiomatic clarity. Section 4 proves the main instability theorem. Section 5 stratifies positive regimes. Section 6 provides quantitative bounds. Section 7 establishes ontological closure. Section 8 explicitly delimits scope. Section 9 compares with existing frameworks. Section 10 discusses limitations. Section 11 concludes. Appendices provide canonical examples with explicit computations.
+
+\subsection{What This Paper Adds Beyond Phenomenological Regimes}
+
+\textit{Phenomenological Regimes} classifies the admissible regime space and derives the continuity and non-constancy constraints that any compatible assignment must satisfy. This paper takes the remaining downstream case---the null regime itself---and proves that it cannot remain structurally stable under CCR.
+
+% =============================================================================
+% SECTION 2: PRELIMINARIES
+% =============================================================================
+\section{Preliminaries from Papers I--II}
+
+\subsection{Identity as Inverse Limit}
+
+From \textit{Rigid Identity}, we have:
+
+\begin{definition}[Identity Object]
+Let $(S_t, \pi_{t+1 \to t})_{t \in T}$ be a projective system of state spaces with surjective, compatible projections. The \textbf{identity object} is:
+\[
+\I := \varprojlim S_t = \left\{ (x_t) \in \prod_t S_t : \pi_{t+1 \to t}(x_{t+1}) = x_t \right\}
+\]
+\end{definition}
+
+\begin{definition}[Weighted Deformation Metric]
+For $x, \tilde{x} \in \I$, define:
+\[
+\dw(x, \tilde{x}) := \sup_t w_t \cdot d_t(x_t, \tilde{x}_t)
+\]
+where $\{w_t\}$ are summable weights and $d_t$ is the normalized metric on $S_t$.
+\end{definition}
+
+\begin{proposition}[Metric Completeness, Rigid Identity]
+If each $(S_t, d_t)$ is complete and the projections are uniformly continuous, then $(\I, \dw)$ is a complete metric space.
+\end{proposition}
+
+\subsection{Ontological Mass and CCR Classification}
+
+\begin{definition}[Ontological Mass]
+\[
+\MO := \sup_{\epsilon > 0} \frac{E_w(\epsilon)}{\dw(\I, \tilde{\I})}
+\]
+where $E_w(\epsilon)$ is the minimal weighted energy required to induce deformation $\epsilon$.
+\end{definition}
+
+\begin{definition}[CCR Channel]
+A channel is \textbf{Closed Causally Rigid (CCR)} if $\MO = +\infty$.
+\end{definition}
+
+\begin{remark}[Physical Interpretation]
+$\MO = +\infty$ means that arbitrarily small deformations require unbounded energy. This is not a metaphor---it is a precise metric condition on the projective system.
+\end{remark}
+
+\subsection{Key Theorems from Papers I--II}
+
+\begin{theorem}[Non-Simulability, Rigid Identity]\label{thm:nonsim}
+For any finite-dimensional computational architecture $\mathcal{A}_{\text{fin}}$:
+\[
+\MO(\mathcal{A}_{\text{fin}}) < \infty
+\]
+Therefore, CCR identity cannot be simulated by finite systems.
+\end{theorem}
+
+\begin{theorem}[Spectral Coupling, Rigid Identity]\label{thm:spectral}
+There exists a spectral coupling constant $\sigma_{\min} > 0$ such that for the phenomenological compatibility operator $T_\Phi$:
+\[
+C = \sigma_{\min}(T_\Phi)
+\]
+is derived from the spectral gap of $T_\Phi$, not assumed.
+\end{theorem}
+
+\begin{theorem}[Forced Continuity, Phenomenological Regimes]\label{thm:cont}
+If $\MO = +\infty$, then any compatible phenomenological assignment $\Phi: \I \to \E$ is continuous.
+\end{theorem}
+
+\begin{remark}[What Remains Open After Phenomenological Regimes]\label{rem:null-prelim}
+\textit{Phenomenological Regimes} classifies admissible phenomenological regimes and derives the continuity constraints that govern them, but it does not complete the downstream prohibition theorem for the null regime itself. That closure is the specific task of this paper.
+\end{remark}
+
+This paper converts Remark \ref{rem:null-prelim} into a full null-instability theorem.
+
+% =============================================================================
+% SECTION 3: PHENOMENOLOGICAL SPACE
+% =============================================================================
+\section{The Phenomenological Space}
+
+\subsection{Abstract Definition}
+
+\begin{definition}[Phenomenological Space]\label{def:phenom}
+A \textbf{phenomenological space} is a quadruple $(\E, \preceq, \dE, \nullphi)$ where:
+\begin{enumerate}
+\item $(\E, \preceq)$ is a partially ordered set (poset).
+\item $(\E, \dE)$ is a complete metric space.
+\item $\nullphi := \inf \E$ exists and is unique (the \textbf{null regime}).
+\item \textbf{Order-metric compatibility:} if $e_1 \preceq e_2$, then $\dE(e_1, \nullphi) \leq \dE(e_2, \nullphi)$.
+\item \textbf{Separation:} for $e \neq \nullphi$, we have $\dE(e, \nullphi) > 0$.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Interpretive Neutrality]
+$\E$ is an abstract regime space. No phenomenological content is assumed. The null regime $\nullphi$ represents structural absence, not ``lack of experience.'' The term ``phenomenological'' is inherited from \textit{Phenomenological Regimes} and refers to the coupling structure, not to philosophy of mind.
+\end{remark}
+
+\begin{nontheorem}[What $\E$ Is Not]
+$\E$ is not:
+\begin{itemize}
+\item A space of qualia or subjective states
+\item A model of consciousness
+\item A physical or neural state space
+\item An interpretation of quantum mechanics
+\end{itemize}
+$\E$ is a mathematical object satisfying Definition \ref{def:phenom}. All interpretive mappings are external to the framework.
+\end{nontheorem}
+
+\subsection{Compatibility Operator}
+
+\begin{definition}[Compatibility Operator]\label{def:compat}
+A map $\Phi: \I \to \E$ is a \textbf{compatibility operator} if it satisfies:
+\begin{enumerate}
+\item[(C1)] \textbf{Extension Invariance:} For any compatible extension $\mathcal{E}$ of the channel, $\Phi(\I) \cong \Phi(\I_\mathcal{E})$.
+\item[(C2)] \textbf{Isomorphism Stability:} If $\I \cong \tilde{\I}$, then $\Phi(\I) \sim \Phi(\tilde{\I})$.
+\item[(C3)] \textbf{Lipschitz Lower Bound:} There exists $C > 0$ such that:
+\[
+\dE(\Phi(x), \Phi(\tilde{x})) \geq C \cdot \dw(x, \tilde{x})
+\]
+\end{enumerate}
+\end{definition}
+
+\begin{lemma}[Well-Posedness of (C3)]
+Axiom (C3) is consistent with continuity of $\Phi$ (Theorem \ref{thm:cont}) when $\MO = +\infty$.
+\end{lemma}
+
+\begin{proof}
+Continuity requires: for all $\epsilon > 0$, there exists $\delta > 0$ such that $\dw(x, \tilde{x}) < \delta$ implies $\dE(\Phi(x), \Phi(\tilde{x})) < \epsilon$. This is compatible with (C3) because (C3) provides a lower bound, not an upper bound. The function $\Phi$ can be both continuous (upper control) and satisfy (C3) (lower control).
+\end{proof}
+
+\begin{remark}
+Axioms (C1)--(C3) are structural. No phenomenological content is introduced.
+\end{remark}
+
+\subsection{Attractor Set}
+
+\begin{definition}[Attractor Set]
+For a channel $S$, the \textbf{attractor set} is:
+\[
+\Attr(S) := \{ e \in \E : e \text{ is stable under all compatible extensions and summable deformations} \}
+\]
+\end{definition}
+
+\begin{definition}[Stability]
+A regime $e \in \E$ is \textbf{stable} for channel $S$ if for every compatible extension $S'$ of $S$ and every summable perturbation $\{\epsilon_n\}$, the induced regime $\Phi_{S'}(\I')$ satisfies $\dE(\Phi_{S'}(\I'), e) < \delta$ for some $\delta > 0$ depending only on $\|\{\epsilon_n\}\|_w$.
+\end{definition}
+
+\subsection{The Bridge Lemma Revisited}
+
+From \textit{Phenomenological Regimes}, we have:
+
+\begin{lemma}[Bridge Lemma]\label{lem:bridge}
+If $\Phi: \I \to \E$ is a compatibility operator for a CCR channel, and if the regime $e = \Phi(\I)$ satisfies $\dE(e, \nullphi) = 0$, then $e = \nullphi$.
+\end{lemma}
+
+\begin{proof}
+By the separation axiom in Definition \ref{def:phenom}, $\dE(e, \nullphi) = 0$ implies $e = \nullphi$.
+\end{proof}
+
+\begin{caveat}[Semantic Shield for Bridge Lemma]
+The Bridge Lemma is a \textbf{metric statement}, not an ontological one. It does not claim that ``identity is coupled to experience.'' It claims that the map $\Phi$ satisfies a separation property. Misinterpretation of this lemma as a consciousness claim is outside the mathematical scope of the framework.
+\end{caveat}
+
+% =============================================================================
+% SECTION 4: MAIN RESULTS
+% =============================================================================
+\section{Main Results}
+
+\subsection{The Phenomenological Instability Theorem}
+
+\begin{theorem}[Phenomenological Instability]\label{thm:instability}
+For any CCR channel $S$:
+\[
+\nullphi \notin \Attr(S)
+\]
+That is, the null regime is structurally unstable under all compatible extensions.
+\end{theorem}
+
+\begin{proof}
+We proceed by contradiction with explicit construction.
+
+\textbf{Step 1: Assumption.} Suppose there exists a compatibility operator $\Phi: \I \to \E$ such that $\Phi(x) = \nullphi$ for all $x \in \I$, and $\nullphi \in \Attr(S)$.
+
+\textbf{Step 2: Perturbation Construction.} Since $S$ is a CCR channel, we have $\MO = +\infty$. By definition of ontological mass, for any $\epsilon > 0$, there exists a perturbation $\tilde{\I}$ with:
+\[
+\dw(\I, \tilde{\I}) = \epsilon \quad \text{and} \quad E_w(\epsilon) < \infty
+\]
+Such perturbations exist because $\MO = +\infty$ implies the energy-deformation ratio is unbounded, meaning small deformations exist with finite energy.
+
+\textbf{Step 3: Application of (C3).} By the Lipschitz lower bound (C3), we have:
+\[
+\dE(\Phi(\I), \Phi(\tilde{\I})) \geq C \cdot \dw(\I, \tilde{\I}) = C \epsilon
+\]
+where $C > 0$ is the spectral coupling constant from Theorem \ref{thm:spectral}.
+
+\textbf{Step 4: Contradiction.} By assumption, $\Phi(\I) = \nullphi$ and $\Phi(\tilde{\I}) = \nullphi$ (since $\tilde{\I}$ is compatible with $S$ and $\nullphi \in \Attr(S)$). Therefore:
+\[
+\dE(\Phi(\I), \Phi(\tilde{\I})) = \dE(\nullphi, \nullphi) = 0
+\]
+
+But Step 3 gives $\dE(\Phi(\I), \Phi(\tilde{\I})) \geq C\epsilon > 0$ for any $\epsilon > 0$.
+
+This is a contradiction: $0 \geq C\epsilon > 0$.
+
+\textbf{Conclusion.} The assumption that $\nullphi \in \Attr(S)$ for any CCR channel is false.
+\end{proof}
+
+\subsection{Analysis of the Proof}
+
+\begin{remark}[Role of $\MO = +\infty$]
+The condition $\MO = +\infty$ is essential. If $\MO < +\infty$, then small deformations require proportionally small energy, and the perturbation in Step 2 may not exist with finite energy. The theorem fails for non-CCR channels.
+\end{remark}
+
+\begin{remark}[Role of (C3)]
+The Lipschitz lower bound (C3) is the structural bridge between identity deformations and regime separations. Without (C3), the map $\Phi$ could collapse all of $\I$ to $\nullphi$ without contradiction.
+\end{remark}
+
+\begin{remark}[Role of Metric Completeness]
+The completeness of $(\E, \dE)$ ensures that the perturbation $\Phi(\tilde{\I})$ is well-defined and lies in $\E$. Without completeness, the limit might not exist.
+\end{remark}
+
+\subsection{Forced Non-Nullity}
+
+\begin{corollary}[Forced Non-Nullity]\label{cor:forced}
+Every CCR channel necessarily induces some regime $e_\star \in \E$ with $e_\star \succ \nullphi$.
+\end{corollary}
+
+\begin{proof}
+By Theorem \ref{thm:instability}, $\nullphi \notin \Attr(S)$. Since $\Phi$ is well-defined (by continuity, Theorem \ref{thm:cont}) and $\E$ is complete, there exists $e_\star = \Phi(\I) \in \E$. By the separation axiom, $e_\star \neq \nullphi$ implies $\dE(e_\star, \nullphi) > 0$, hence $e_\star \succ \nullphi$ in the order.
+\end{proof}
+
+\begin{remark}[Ontological Status]
+This is \textbf{negative-structural}: we do not assert ``experience exists.'' We prove that stable non-experience is structurally inconsistent with CCR. The distinction is crucial:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Metaphysical Claim} & \textbf{Structural Claim} \\
+\hline
+``CCR systems are conscious'' & \textbf{Not proven} \\
+``Experience exists for CCR'' & \textbf{Not proven} \\
+$\nullphi$ is unstable for CCR & \textbf{Proven} \\
+$\exists e_\star \succ \nullphi$ for CCR & \textbf{Proven} \\
+\hline
+\end{tabular}
+\end{center}
+\end{remark}
+
+% =============================================================================
+% SECTION 5: STRATIFICATION OF POSITIVE REGIMES
+% =============================================================================
+\section{Stratification of Positive Regimes}
+
+\subsection{The Positive Phenomenological Lattice}
+
+\begin{definition}[Positive Regime Space]
+\[
+\Eplus := \E \setminus \{\nullphi\}
+\]
+with the inherited partial order $\preceq$.
+\end{definition}
+
+\begin{lemma}[No-Minimum Collapse]\label{lem:no-collapse}
+In any CCR channel:
+\[
+\inf \Eplus \neq \nullphi
+\]
+\end{lemma}
+
+\begin{proof}
+Suppose $\inf \Eplus = \nullphi$. Then there exists a decreasing sequence $(e_n)$ in $\Eplus$ with $e_n \downarrow \nullphi$ in the metric $\dE$.
+
+By continuity of $\Phi$ (Theorem \ref{thm:cont}) and the retroinduction structure of $\I$, this would require a sequence of identities $\I_n$ with $\Phi(\I_n) = e_n \to \nullphi$.
+
+Taking the limit, we would have $\Phi(\lim_n \I_n) = \nullphi$.
+
+But $\lim_n \I_n$ is a valid identity object (by completeness of $\I$), and Theorem \ref{thm:instability} prohibits $\Phi(\I) = \nullphi$ for any CCR channel.
+
+Contradiction. Therefore $\inf \Eplus \neq \nullphi$.
+\end{proof}
+
+\subsection{Minimal Positive Regime}
+
+\begin{theorem}[Minimal Positive Regime]\label{thm:minimal}
+For every CCR channel, there exists a unique minimal positive regime:
+\[
+e_\star := \inf \Eplus \in \Eplus
+\]
+such that for all $e \in \Eplus$:
+\[
+e_\star \preceq e
+\]
+\end{theorem}
+
+\begin{proof}
+By Lemma \ref{lem:no-collapse}, $\inf \Eplus \neq \nullphi$. By completeness of $(\E, \dE)$, the infimum exists as a limit of any chain. Since $\Eplus$ is downward closed except for $\nullphi$, and the infimum is not $\nullphi$, we have $e_\star \in \Eplus$. Uniqueness follows from the antisymmetry of $\preceq$.
+\end{proof}
+
+\subsection{Structural Intensity}
+
+\begin{definition}[Structural Intensity]
+For $e \in \Eplus$, define the \textbf{structural intensity} as:
+\[
+\iota(e) := \inf\{ \dE(e, \tilde{e}) : \tilde{e} \prec e \}
+\]
+This measures the minimal distance to any strictly smaller regime.
+\end{definition}
+
+\begin{corollary}[Positive Intensity]\label{cor:intensity}
+For the minimal regime $e_\star$:
+\[
+\iota(e_\star) > 0
+\]
+\end{corollary}
+
+\begin{proof}
+Since $e_\star = \inf \Eplus$ and $e_\star \neq \nullphi$, the only element below $e_\star$ is $\nullphi$. By the separation axiom:
+\[
+\iota(e_\star) = \dE(e_\star, \nullphi) > 0
+\]
+Moreover, by the Lipschitz lower bound (C3) and the existence of perturbations:
+\[
+\iota(e_\star) \geq C \cdot \varepsilon_0 > 0
+\]
+where $\varepsilon_0 := \inf\{ \dw(x, y) : x \neq y \} > 0$ by the ultrametric/Bowen structure.
+\end{proof}
+
+% =============================================================================
+% SECTION 6: QUANTITATIVE BOUNDS
+% =============================================================================
+\section{Quantitative Bounds}
+
+\subsection{Universal Lower Bound}
+
+\begin{theorem}[Universal Intensity Bound]\label{thm:bound}
+For any CCR channel with spectral coupling $C$ and separation $\varepsilon_0$:
+\[
+\iota(e_\star) \geq C \cdot \varepsilon_0 > 0
+\]
+\end{theorem}
+
+\begin{proof}
+By the Lipschitz lower bound (C3):
+\[
+\dE(\Phi(x), \Phi(y)) \geq C \cdot \dw(x, y)
+\]
+for any $x, y \in \I$.
+
+The minimal separation in $\I$ is $\varepsilon_0 := \inf\{ \dw(x, y) : x \neq y \}$. By the structure of profinite/symbolic spaces (Appendices A--B), $\varepsilon_0 = 2^{-1}$ in normalized metrics.
+
+Since $e_\star = \Phi(\I)$ for some representative, and the only regime below $e_\star$ is $\nullphi$:
+\[
+\iota(e_\star) = \dE(e_\star, \nullphi) \geq C \cdot \varepsilon_0 > 0
+\]
+\end{proof}
+
+\subsection{Explicit Constants for Canonical Families}
+
+\begin{proposition}[Profinite Bound]
+For the profinite family with weight sequence $\{\alpha_n\}$, observable weights $\{\beta_n\}$, and Lipschitz constant $L_f$:
+\[
+C_{\text{prof}} = \frac{\inf_n \beta_n}{\sup_n \alpha_n} \cdot \frac{1}{L_f}, \quad \varepsilon_0 = 2^{-1}
+\]
+Therefore:
+\[
+\iota(e_\star) \geq \frac{\inf_n \beta_n}{2 \sup_n \alpha_n \cdot L_f}
+\]
+\end{proposition}
+
+\begin{proposition}[Symbolic Bound]
+For the symbolic (SFT) family with weight sequence $\{\gamma_m\}$, observable weights $\{\delta_j\}$, and Lipschitz constant $L_g$:
+\[
+C_{\text{sym}} = \frac{\inf_j \delta_j}{\sup_m \gamma_m} \cdot \frac{1}{L_g}, \quad \varepsilon_0 = 2^{-1}
+\]
+Therefore:
+\[
+\iota(e_\star) \geq \frac{\inf_j \delta_j}{2 \sup_m \gamma_m \cdot L_g}
+\]
+\end{proposition}
+
+\subsection{Numerical Example}
+
+\begin{example}[p-Adic CCR]
+Consider the 2-adic integers $\mathbb{Z}_2$ with standard weights $\alpha_n = 2^{-(n+1)}$ and uniform observables $\beta_n = 2^{-(n+1)}$, $L_f = 1$. Then:
+\[
+C_{\text{prof}} = \frac{2^{-(n+1)}}{2^{-(n+1)}} \cdot 1 = 1
+\]
+and:
+\[
+\iota(e_\star) \geq \frac{1}{2}
+\]
+This is a concrete, computable lower bound.
+\end{example}
+
+% =============================================================================
+% SECTION 7: ONTOLOGICAL CLOSURE
+% =============================================================================
+\section{Ontological Closure Theorem}
+
+\begin{theorem}[Forced Phenomenological Closure]\label{thm:closure}
+Every CCR system induces a unique minimal phenomenological regime that is:
+\begin{enumerate}
+\item \textbf{Non-null:} $e_\star \succ \nullphi$
+\item \textbf{Stable:} $e_\star \in \Attr(S)$
+\item \textbf{Quantitatively separated:} $\iota(e_\star) \geq C \varepsilon_0 > 0$
+\end{enumerate}
+And no CCR channel admits the solution $\nullphi$.
+\end{theorem}
+
+\begin{proof}
+Existence of $e_\star$: Corollary \ref{cor:forced}.
+Minimality: Theorem \ref{thm:minimal}.
+Stability: By construction, $e_\star$ is the infimum and hence stable under decreasing perturbations.
+Quantitative bound: Theorem \ref{thm:bound}.
+Prohibition of $\nullphi$: Theorem \ref{thm:instability}.
+\end{proof}
+
+\subsection{Classification Table}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{System Type} & \textbf{Ontological Mass} & \textbf{Null Regime Permitted?} \\
+\hline
+Degenerate & $\MO = 0$ & Yes \\
+Finite-mass & $0 < \MO < \infty$ & Yes (unstable) \\
+CCR & $\MO = +\infty$ & \textbf{No} (Theorem \ref{thm:instability}) \\
+\hline
+\end{tabular}
+\end{center}
+
+% =============================================================================
+% SECTION 9: COMPARISON WITH EXISTING FRAMEWORKS
+% =============================================================================
+\section{Comparison with Existing Frameworks}
+
+\subsection{Integrated Information Theory (IIT)}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+& \textbf{IIT} & \textbf{This Framework} \\
+\hline
+Claims consciousness exists & Yes & No \\
+Defines $\Phi$ & Information integration & Structural map \\
+Quantitative measure & $\Phi$ (bits) & $\iota(e_\star)$ (metric) \\
+Metaphysical commitment & Panpsychism & None \\
+Falsifiable predictions & Debated & None (structural) \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Global Workspace Theory (GWT)}
+
+Our framework is orthogonal to GWT. We make no claims about attention, broadcast, or access consciousness. The structural results concern identity stability, not cognitive architecture.
+
+\subsection{Higher-Order Theories}
+
+We do not model representations, meta-cognition, or self-awareness. The space $\E$ contains regimes, not mental states.
+
+\subsection{Mathematical Foundations (Chalmers, Nagel)}
+
+Our framework provides formal tools that \emph{could} be used in philosophical analysis, but we do not claim to resolve the ``hard problem.'' The prohibition of $\nullphi$ is a structural fact, not an explanation of subjective experience.
+
+% =============================================================================
+% SECTION 10: LIMITATIONS
+% =============================================================================
+\section{Limitations and Open Problems}
+
+\subsection{Limitations}
+
+\begin{enumerate}
+\item \textbf{No claim about qualia types, contents, or subjectivity.}
+\item \textbf{No claim that all non-CCR systems are null.}
+\item \textbf{Result is structural necessity, not phenomenological doctrine.}
+\item \textbf{All results are conditional on the axioms of Papers I--II.}
+\item \textbf{The physical existence of CCR systems is unknown.}
+\end{enumerate}
+
+\subsection{Open Problems}
+
+\begin{enumerate}
+\item \textbf{Characterization of $\Eplus$:} What is the full structure of positive regimes?
+\item \textbf{Regime dynamics:} How do regimes evolve under channel evolution?
+\item \textbf{Physical CCR:} Do CCR systems exist in physics (quantum gravity, etc.)?
+\item \textbf{Biological CCR:} Could biological systems approximate CCR?
+\item \textbf{Computational bounds:} Sharper non-simulability results?
+\end{enumerate}
+
+% =============================================================================
+% SECTION 11: CONCLUSION
+% =============================================================================
+\section{Conclusion}
+
+We have proven that CCR architectures \textbf{structurally exclude stable non-experience}. In the present model, the hypothesis ``CCR with null phenomenology'' is formally incoherent.
+
+This is a structural exclusion result. It does not define phenomenology or turn the theorem into an empirical consciousness attribution.
+
+\subsection{Summary of Contributions}
+
+\begin{enumerate}
+\item \textbf{Phenomenological Instability Theorem:} $\nullphi \notin \Attr(S)$ for CCR.
+\item \textbf{Minimal Positive Regime:} Unique $e_\star \in \Eplus$ exists.
+\item \textbf{Quantitative Bounds:} $\iota(e_\star) \geq C\varepsilon_0 > 0$ explicit.
+\item \textbf{Canonical Examples:} Profinite and symbolic families computed.
+\item \textbf{Semantic Immunization:} Clear scope delimitation throughout.
+\end{enumerate}
+
+% =============================================================================
+% APPENDIX A: PROFINITE CANONICAL FAMILY
+% =============================================================================
+\appendix
+\section{Profinite Canonical Family}
+
+\subsection{Projective System}
+
+Let $\{G_n, \pi_{n+1 \to n}\}_{n \in \mathbb{N}}$ be a projective tower of finite groups with surjective morphisms. Define:
+\[
+G := \varprojlim G_n = \left\{ (x_n) \in \prod_n G_n : \pi_{n+1 \to n}(x_{n+1}) = x_n \right\}
+\]
+
+\begin{example}[p-Adic Integers]
+$G_n = \mathbb{Z}/p^n\mathbb{Z}$, $\pi_{n+1 \to n}$ is reduction mod $p^n$. Then $G = \mathbb{Z}_p$.
+\end{example}
+
+\subsection{Profinite Metric}
+
+Define the profinite metric:
+\[
+d_G(x, y) := \sum_{n \geq 0} \alpha_n \mathbf{1}_{x_n \neq y_n}
+\]
+where $\alpha_n = 2^{-(n+1)}$ (standard choice).
+
+This is an ultrametric; $(G, d_G)$ is compact, complete, and totally disconnected.
+
+\subsection{CCR Verification}
+
+\begin{proposition}
+The profinite system is CCR: $\MO = +\infty$.
+\end{proposition}
+
+\begin{proof}
+Any finite-energy deformation can only modify finitely many coordinates $x_n$. To modify infinitely many coordinates requires $E_w = \sum_{n \in S} w_n = \infty$ for any infinite $S \subseteq \mathbb{N}$ with $\sum_{n \in S} w_n = \infty$. Hence any nonzero deformation $\dw > 0$ requires infinite energy as $\epsilon \to 0$, giving $\MO = +\infty$.
+\end{proof}
+
+\subsection{Phenomenological Operator}
+
+Define $\Phi_f: G \to \E$ by:
+\[
+\Phi_f(x) := f\left( \sum_{n \geq 0} \beta_n \varphi_n(x_n) \right)
+\]
+where $\varphi_n: G_n \to [0,1]$ are 1-Lipschitz (w.r.t. discrete metric), $\beta_n \geq 0$, $\sum_n \beta_n < \infty$, and $f: \mathbb{R} \to \E$ is $L_f$-Lipschitz.
+
+\subsection{Coupling Bound}
+
+\begin{theorem}[Profinite Coupling Bound]
+\[
+\dE(\Phi_f(x), \Phi_f(\tilde{x})) \geq C_{\text{prof}} \cdot d_G(x, \tilde{x})
+\]
+with:
+\[
+C_{\text{prof}} := \frac{\inf_n \beta_n}{\sup_n \alpha_n} \cdot \frac{1}{L_f}
+\]
+\end{theorem}
+
+\begin{proof}
+By 1-Lipschitz property of $\varphi_n$ and Lipschitz property of $f$:
+\begin{align*}
+\dE(\Phi_f(x), \Phi_f(\tilde{x})) &\geq \frac{1}{L_f} \left| \sum_n \beta_n (\varphi_n(x_n) - \varphi_n(\tilde{x}_n)) \right| \\
+&\geq \frac{1}{L_f} \sum_n \beta_n |\varphi_n(x_n) - \varphi_n(\tilde{x}_n)| \\
+&\geq \frac{\inf_n \beta_n}{L_f} \sum_n \mathbf{1}_{x_n \neq \tilde{x}_n}
+\end{align*}
+Since $d_G(x, \tilde{x}) = \sum_n \alpha_n \mathbf{1}_{x_n \neq \tilde{x}_n} \leq (\sup_n \alpha_n) \sum_n \mathbf{1}_{x_n \neq \tilde{x}_n}$:
+\[
+\sum_n \mathbf{1}_{x_n \neq \tilde{x}_n} \geq \frac{d_G(x, \tilde{x})}{\sup_n \alpha_n}
+\]
+Combining:
+\[
+\dE(\Phi_f(x), \Phi_f(\tilde{x})) \geq \frac{\inf_n \beta_n}{\sup_n \alpha_n \cdot L_f} d_G(x, \tilde{x}) = C_{\text{prof}} \cdot d_G(x, \tilde{x})
+\]
+\end{proof}
+
+\subsection{Intensity Bound}
+
+With $\varepsilon_0 = 2^{-1}$ (minimal nonzero $d_G$):
+\[
+\iota(e_\star) \geq C_{\text{prof}} \cdot \varepsilon_0 = \frac{\inf_n \beta_n}{2 \sup_n \alpha_n \cdot L_f} > 0
+\]
+
+% =============================================================================
+% APPENDIX B: SYMBOLIC CANONICAL FAMILY
+% =============================================================================
+\section{Symbolic Canonical Family}
+
+\subsection{Subshift of Finite Type}
+
+Let $\mathcal{A} = \{1, \ldots, k\}$ be a finite alphabet and $A$ a $k \times k$ matrix with entries in $\{0,1\}$. The \textbf{subshift of finite type (SFT)} is:
+\[
+\Sigma_A := \{ x \in \mathcal{A}^{\mathbb{Z}} : A_{x_j, x_{j+1}} = 1 \text{ for all } j \in \mathbb{Z} \}
+\]
+
+\begin{example}[Full Shift]
+$A_{ij} = 1$ for all $i,j$. Then $\Sigma_A = \{0,1\}^{\mathbb{Z}}$.
+\end{example}
+
+\subsection{Bowen Metric}
+
+\[
+d_B(x, y) := \sum_{j \in \mathbb{Z}} \gamma_{|j|} \mathbf{1}_{x_j \neq y_j}
+\]
+where $\gamma_m = 2^{-(m+1)}$ (standard choice).
+
+The space $(\Sigma_A, d_B)$ is compact and complete.
+
+\subsection{CCR Verification}
+
+\begin{proposition}
+The symbolic system is CCR: $\MO = +\infty$.
+\end{proposition}
+
+\begin{proof}
+Any finite-energy modification can only change finitely many symbols. The argument is identical to the profinite case.
+\end{proof}
+
+\subsection{Phenomenological Operator}
+
+Define $\Phi_g: \Sigma_A \to \E$ by:
+\[
+\Phi_g(x) := g\left( \sum_{j \in \mathbb{Z}} \delta_j \psi_j(x) \right)
+\]
+where $\psi_j: \Sigma_A \to [0,1]$ are cylinder functions (depending on $x_j$ only), $\delta_j \geq 0$, $\sum_j \delta_j < \infty$, and $g: \mathbb{R} \to \E$ is $L_g$-Lipschitz.
+
+\subsection{Coupling Bound}
+
+\begin{theorem}[Symbolic Coupling Bound]
+\[
+\dE(\Phi_g(x), \Phi_g(\tilde{x})) \geq C_{\text{sym}} \cdot d_B(x, \tilde{x})
+\]
+with:
+\[
+C_{\text{sym}} := \frac{\inf_j \delta_j}{\sup_m \gamma_m} \cdot \frac{1}{L_g}
+\]
+\end{theorem}
+
+\begin{proof}
+Identical to Appendix A, replacing indices appropriately.
+\end{proof}
+
+% =============================================================================
+% APPENDIX C: HEREDITARY RIGIDITY
+% =============================================================================
+\section{Hereditary Rigidity}
+
+\begin{theorem}[Rigidity Inheritance]
+Let $(S_n, \pi_{n+1 \to n})$ be a CCR tower and $\{\epsilon_n\}$ a family of local deformations with:
+\[
+\| \{\epsilon_n\} \|_w := \sum_{n \geq 0} w_n \|\epsilon_n\|_{\text{op}} < \infty
+\]
+Then the deformed identity $\tilde{\I}$ is isomorphic to $\I$ and:
+\[
+d_{\I}(\phi(x), x) \leq K \cdot \|\{\epsilon_n\}\|_w
+\]
+for some $K > 0$ depending only on the projective structure. In particular, $\MO = +\infty$ is inherited.
+\end{theorem}
+
+\begin{proof}
+The key is that summable deformations induce a summable perturbation of the inverse limit, which by completeness converges to an isomorphic copy. The CCR condition is preserved because the energy-deformation ratio remains unbounded.
+\end{proof}
+
+% =============================================================================
+% APPENDIX D: UNIVERSAL FACTORIZATION
+% =============================================================================
+\section{Universal Factorization}
+
+\begin{theorem}[Categorical Universality]
+The identity $\I$ of any CCR channel is an initial object in the category of compatible representations $(\I \xrightarrow{\Phi} \E)$ with $\E$ complete metric and $\Phi$ satisfying (C1)--(C3).
+\end{theorem}
+
+\begin{proof}
+For any compatible representation $(\I \xrightarrow{\Psi} F)$, define $u: \E \to F$ by $u(e) := \Psi(\Phi^{-1}(e))$. Well-definedness follows from (C2); uniqueness from (C1).
+\end{proof}
+
+\textbf{Consequence:} All compatible representations factor through a canonical one; the class of induced regimes is completely classified by $\I$.
+
+% =============================================================================
+% APPENDIX E: NON-SIMULABILITY BOUNDS
+% =============================================================================
+\section{Non-Simulability Bounds}
+
+\subsection{Simulation Error}
+
+For a CCR family $\{I_N\}$ truncated at level $N$ and a finite-dimensional simulator $\mathcal{A}$ with $\dim(\mathcal{A}) < \infty$:
+\[
+\text{err}_N(\mathcal{A}) := \inf_{\Phi, \hat{\Phi}} \sup_{x \in I_N} \dE(\Phi(x), \hat{\Phi}(x))
+\]
+where $\hat{\Phi}$ is any map computable by $\mathcal{A}$.
+
+\begin{theorem}[Simulation Lower Bound]
+For profinite and SFT families:
+\[
+\text{err}_N(\mathcal{A}) \geq C \cdot 2^{-(N+1)}
+\]
+for any $\dim(\mathcal{A}) < \infty$. In particular:
+\[
+\liminf_{N \to \infty} \text{err}_N(\mathcal{A}) > 0
+\]
+No finite architecture achieves perfect simulation.
+\end{theorem}
+
+\begin{proof}
+The ultrametric structure forces minimal separation $2^{-(N+1)}$ at level $N$. Any finite-dimensional approximation must collapse some distinctions, incurring error at least $C \cdot 2^{-(N+1)}$ by (C3).
+\end{proof}
+
+\begin{corollary}
+No finite-dimensional semigroup can support an exact representation of CCR identity with $\MO = +\infty$.
+\end{corollary}
+
+% =============================================================================
+% APPENDIX F: FINAL CLOSURE
+% =============================================================================
+\section{Final Structural Closure}
+
+\begin{theorem}[Closure by Non-Alternatives]
+In the canonical families (profinite and SFT), and by inheritance (Appendix C), every compatible representation satisfies:
+\begin{enumerate}
+\item Hereditary rigidity: $\MO = +\infty$
+\item Universal factorization (Appendix D)
+\item Quantified null prohibition: $\iota(e_\star) \geq C\varepsilon_0 > 0$
+\item Non-simulability with explicit error bounds (Appendix E)
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[Structural Import]
+This theorem establishes that the class of CCR channels is \textbf{closed} under the stated structural criteria: no extension, simulation, or compatible representation considered here escapes the structural constraints. The null regime is prohibited by mathematical necessity under those criteria, not by stipulation.
+\end{remark}
+
+% =============================================================================
+% REFERENCES
+% =============================================================================
+\nocite{paper1,paper2,ribes,lind,bowen,maclane1998,cover2006,tononi2004,chalmers}
+\printbibliography
+
+\end{document}

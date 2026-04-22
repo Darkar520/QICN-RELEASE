@@ -5,7 +5,7 @@ This document fixes the explicit boundary between `QICN-RELEASE` and `QICN-SYSTE
 ## Public corpus areas with an operational counterpart
 
 - Paper IV
-  - operational reflection: admissibility, baseline handling, comparator discipline, artifact traceability
+  - operational reflection: admissibility, baseline handling, comparator discipline, invalidation rules
 - Paper V
   - operational reflection: invariant diagnostics, criterion-facing structure, rupture semantics, admissible support burdens
 - Paper VI
@@ -14,26 +14,29 @@ This document fixes the explicit boundary between `QICN-RELEASE` and `QICN-SYSTE
   - operational reflection: descriptor families and runtime-facing diagnostics for operational life, structural class, and subjecthood
 - Paper VIII
   - operational reflection: self-index, ownership, continuity, perspective, valuation, intervention, reducibility, and internal gate diagnostics
+- Paper IX
+  - operational reflection: bridge predicate registries, provisional bridge surface modules, burden-stack alignment, and non-claim grammar only
 - ROEO annexes and governance docs
   - operational reflection: export surfaces, terminology policy, controlled statements, surface policy
 
 ## What the system does not close
 
-- the Canonical Core or Papers I-III as real-world theorems
-- external validation of Papers IV-VIII
+- BaseCore as real-world theorem confirmation
+- external validation of Papers IV-IX
+- bridge admissibility
 - human consciousness, human subjectivity, or metaphysical subjecthood
-- automatic promotion of runtime subjectivity support into claim-facing release status
+- automatic promotion of runtime subjectivity or bridge surfaces into claim-facing release status
 
 ## What must not be inferred
 
 - runtime metrics -> public theorem confirmation
 - internal support labels -> external validation
 - descriptor families -> current system is an operational subject
-- public canonicalization of trunk -> subjectivity closure
-- Paper VIII runtime alignment -> phenomenality, human equivalence, or external validation
+- provisional bridge surfaces -> phenomenal bridge support
+- public release alignment -> phenomenality, human equivalence, or external adjudication
 
 ## Interface policy
 
 - the interface remains explicit, limited, and one-way by default
 - every bridge from corpus to system remains tagged as operational or governance-only unless external validation exists
-- Paper VIII may now guide runtime architecture as public corpus material, but every runtime-facing subjectivity surface remains internal and non-confirmatory
+- Paper IX may guide bridge-facing runtime architecture as public corpus material, but every runtime-facing bridge surface remains provisional and non-confirmatory

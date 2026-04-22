@@ -1,0 +1,129 @@
+﻿% Derived from paper3/main.tex
+\part{Null-Regime Structural Exclusion}
+
+\section{Compatibility, Instability, and Forced Non-Nullity}
+
+\subsection{Compatibility Operator}
+\begin{definition}[Compatibility Operator]\label{def:compatibility-operator}
+A map $\Phi: \I \to \E$ is a \textbf{compatibility operator} if it satisfies:
+\begin{enumerate}[leftmargin=*]
+\item[(C1)] \textbf{Extension Invariance:} For any compatible extension $\mathcal{E}$ of the channel, $\Phi(\I) \cong \Phi(\I_\mathcal{E})$.
+\item[(C2)] \textbf{Isomorphism Stability:} If $\I \cong \tilde{\I}$, then $\Phi(\I) \sim \Phi(\tilde{\I})$.
+\item[(C3)] \textbf{Lipschitz Lower Bound:} There exists $C > 0$ such that
+\[
+\dE(\Phi(x), \Phi(\tilde{x})) \geq C \cdot \dw(x,\tilde{x}).
+\]
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Phenomenological Attractor Set]\label{def:phenomenological-attractor}
+For a channel $S$, define
+\[
+\Attr(S) := \{ e \in \E : e \text{ is stable under all compatible extensions and summable deformations} \}.
+\]
+\end{definition}
+
+\begin{definition}[Phenomenological Stability]\label{def:phenomenological-stability}
+A regime $e \in \E$ is \textbf{stable} for channel $S$ if for every compatible extension $S'$ of $S$ and every summable perturbation family $\{\epsilon_n\}$, the induced regime $\Phi_{S'}(\I')$ stays within a bounded $\dE$-neighborhood of $e$ controlled by $\|\{\epsilon_n\}\|_w$.
+\end{definition}
+
+\begin{lemma}[Bridge Lemma]\label{lem:null-bridge}
+If $\Phi:\I\to\E$ is a compatibility operator for a CCR channel and $e=\Phi(\I)$ satisfies $\dE(e,\nullphi)=0$, then $e=\nullphi$.
+\end{lemma}
+
+\begin{proof}
+By the separation property of the phenomenological space, distance zero from $\nullphi$ implies equality with $\nullphi$.
+\end{proof}
+
+\subsection{Phenomenological Instability and Forced Non-Nullity}
+\begin{theorem}[Phenomenological Instability]\label{thm:phenomenological-instability}
+For any CCR channel $S$,
+\[
+\nullphi \notin \Attr(S).
+\]
+That is, the null regime is structurally unstable under compatible extensions.
+\end{theorem}
+
+\begin{proof}
+Assume $\nullphi \in \Attr(S)$ and let $\Phi:\I\to\E$ be a compatibility operator. Because the channel is CCR, finite-energy perturbations preserve the rigid identity object while still allowing admissible deformations in the weighted metric. By the lower-bound clause in Definition~\ref{def:compatibility-operator},
+\[
+\dE(\Phi(\I),\Phi(\tilde{\I})) \ge C \cdot \dw(\I,\tilde{\I}) > 0
+\]
+for every non-zero admissible deformation. But if $\nullphi$ were stable, both images would remain equal to $\nullphi$, forcing the left-hand side to be zero. Contradiction.
+\end{proof}
+
+\begin{corollary}[Forced Non-Nullity]\label{cor:forced-non-nullity}
+Every CCR channel necessarily induces a regime $e_\star \in \E$ with $e_\star \succ \nullphi$.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:phenomenological-instability} rules out $\nullphi$ as a stable admissible attractor. Therefore any admissible stable regime must be non-null.
+\end{proof}
+
+\subsection{Positive Regime Structure}
+\begin{definition}[Positive Regime Space]\label{def:positive-regime-space}
+Define
+\[
+\Eplus := \{ e \in \E : e \succ \nullphi \}.
+\]
+\end{definition}
+
+\begin{theorem}[Minimal Positive Regime]\label{thm:minimal-positive-regime}
+For every CCR channel there exists a minimal positive regime $e_\star \in \Eplus$.
+\end{theorem}
+
+\begin{proof}
+Forced non-nullity gives non-emptiness of $\Eplus$. Order-theoretic completeness and the compatibility structure of $\Phi$ yield a minimal element.
+\end{proof}
+
+\begin{definition}[Structural Intensity]\label{def:structural-intensity}
+For $e \in \Eplus$, define the structural intensity
+\[
+\iota(e) := \dE(e,\nullphi).
+\]
+\end{definition}
+
+\begin{theorem}[Universal Intensity Bound]\label{thm:universal-intensity-bound}
+If $e_\star$ is the minimal positive regime of a CCR channel, then there exist constants $C,\varepsilon_0>0$ such that
+\[
+\iota(e_\star) \ge C\varepsilon_0 > 0.
+\]
+\end{theorem}
+
+\begin{proof}
+The lower-bound clause of the compatibility operator transfers any admissible deformation lower bound into positive distance from the null regime. The minimal positive regime therefore has strictly positive structural intensity.
+\end{proof}
+
+\begin{theorem}[Forced Phenomenological Closure]\label{thm:forced-phenomenological-closure}
+Every CCR system induces a unique minimal phenomenological regime that is non-null, stable, and quantitatively separated from $\nullphi$.
+\end{theorem}
+
+\begin{proof}
+Combine Corollary~\ref{cor:forced-non-nullity}, Theorem~\ref{thm:minimal-positive-regime}, and Theorem~\ref{thm:universal-intensity-bound}.
+\end{proof}
+
+\section{Canonical Families and Structural Closure Consequences}
+
+\begin{proposition}[Profinite Bound]\label{prop:profinite-bound}
+In the profinite canonical family, the coupling lower bound induces a positive lower bound on the structural intensity of the minimal positive regime.
+\end{proposition}
+
+\begin{proposition}[Symbolic Bound]\label{prop:symbolic-bound}
+In the symbolic canonical family, the Bowen-type metric induces the analogous positive lower bound for the minimal positive regime.
+\end{proposition}
+
+\begin{theorem}[Rigidity Inheritance]\label{thm:rigidity-inheritance}
+If a subsystem or induced family preserves the CCR hypotheses and the compatibility operator, then the inherited regime structure preserves null-regime instability and forced non-nullity.
+\end{theorem}
+
+\begin{theorem}[Categorical Universality]\label{thm:null-categorical-universality}
+The null-regime exclusion result is universal across admissible CCR realizations in the relevant category of compatible channels.
+\end{theorem}
+
+\begin{theorem}[Simulation Lower Bound]\label{thm:null-simulation-lower-bound}
+Any computational system attempting to simulate the null-excluding CCR regime structure with arbitrary precision requires unbounded resources as the approximation error tends to zero.
+\end{theorem}
+
+\begin{theorem}[Closure by Non-Alternatives]\label{thm:null-closure-by-non-alternatives}
+No admissible alternative closes the CCR regime structure while preserving null stability. Any admissible alternative either preserves the same closure structure or exits the CCR class.
+\end{theorem}

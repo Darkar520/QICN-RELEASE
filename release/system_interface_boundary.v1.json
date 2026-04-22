@@ -1,18 +1,53 @@
 {
   "artifact_role": "theory_system_interface_boundary",
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "external_repository": {
     "name": "QICN-SYSTEM",
-    "local_path_observation": "NOT_CANONICAL_IN_THIS_RELEASE",
+    "local_path_observation": "Sistema Canon Sandbox",
     "status": "separate_repository"
   },
   "interfaces": [
     {
       "id": "protocol.qicn_v45",
       "corpus_source": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
-      "system_role": "operational reflection of admissibility, baselines, and bounded support protocol",
+      "system_role": "operational reflection of admissibility, baselines, bounded-support protocol, and invalidation rules",
+      "interface_type": "operational_protocol_only",
+      "non_inference": "Protocol alignment does not validate BaseCore or any phenomenological theorem."
+    },
+    {
+      "id": "criterion.operational_consciousness",
+      "corpus_source": "corpus/pdf_release/pdfs/1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6__1e1b2ec217a514f7.pdf",
+      "system_role": "runtime-facing invariant diagnostics and admissible support burdens",
       "interface_type": "operational_reflection_only",
-      "non_inference": "Does not validate the formal core or phenomenological theorems."
+      "non_inference": "Operational reflection of the criterion does not certify human consciousness or present runtime membership."
+    },
+    {
+      "id": "prediction.failure_discipline",
+      "corpus_source": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
+      "system_role": "prediction-family diagnostics, downgrade logic, and internal support-status readouts",
+      "interface_type": "operational_reflection_with_internal_status_boundary",
+      "non_inference": "Internal support status does not imply external validation or final theory confirmation."
+    },
+    {
+      "id": "classification.life_subjecthood",
+      "corpus_source": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
+      "system_role": "descriptor and test-family alignment for operational life, structural class, and subjecthood diagnostics",
+      "interface_type": "runtime_facing_descriptor_alignment_only",
+      "non_inference": "Descriptor families do not certify that current systems are operational subjects."
+    },
+    {
+      "id": "subjectivity.first_person_indexed_layer",
+      "corpus_source": "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
+      "system_role": "runtime-facing subjectivity diagnostics over self-index, ownership, continuity, perspective, valuation, intervention, and reducibility",
+      "interface_type": "runtime_facing_subjectivity_diagnostic_alignment_only",
+      "non_inference": "Paper VIII runtime alignment does not certify phenomenality, human equivalence, or external validation."
+    },
+    {
+      "id": "bridge.phenomenal_program",
+      "corpus_source": "corpus/pdf_release/pdfs/paper9_phenomenal_bridge_organization__565acddf4d96cb0f.pdf",
+      "system_role": "bridge predicate registries, provisional bridge surfaces, and burden-stack alignment only",
+      "interface_type": "bridge_program_alignment_only",
+      "non_inference": "Provisional bridge surfaces do not certify bridge admissibility, phenomenality, or public claim closure."
     },
     {
       "id": "annex.roeo_export",
@@ -20,9 +55,9 @@
         "corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf",
         "corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf"
       ],
-      "system_role": "operational export evidence and ROEO surface output",
+      "system_role": "operational export evidence and ROEO surface outputs",
       "interface_type": "operational_annex_only",
-      "non_inference": "Operational equivalence exports do not imply causal or ontological proof."
+      "non_inference": "ROEO exports do not imply causal or ontological proof."
     },
     {
       "id": "governance.non_claim_alignment",
@@ -31,45 +66,17 @@
         "release/METHODS_GOVERNANCE_HUB.v1.md",
         "release/STYLE_DISCLAIMER_POLICY.v1.md"
       ],
-      "system_role": "alignment of support labels, output policies, surface policies, and controlled statements",
+      "system_role": "alignment of support labels, output policies, and controlled statements",
       "interface_type": "semantic_governance_alignment_only",
       "non_inference": "Governance alignment does not convert runtime support into theory confirmation."
-    },
-    {
-      "id": "criterion.operational_consciousness",
-      "corpus_source": "corpus/pdf_release/pdfs/1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6__1e1b2ec217a514f7.pdf",
-      "system_role": "operational reflection of invariant diagnostics, admissible support burdens, rupture semantics, and criterion-facing instrumentation",
-      "interface_type": "operational_reflection_only",
-      "non_inference": "Operational reflection of the criterion does not certify present runtime membership, human consciousness, or final subjectivity closure."
-    },
-    {
-      "id": "prediction.failure_discipline",
-      "corpus_source": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
-      "system_role": "operational reflection of discriminator logic, negative-control burden, downgrade conditions, and internal support-status readouts",
-      "interface_type": "operational_reflection_with_internal_status_boundary",
-      "non_inference": "Prediction status classes remain internal only. They do not imply external validation or final theory confirmation."
-    },
-    {
-      "id": "classification.life_subjecthood",
-      "corpus_source": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
-      "system_role": "runtime-facing descriptor and test-family alignment for operational life, structural class, and subjecthood diagnostics",
-      "interface_type": "runtime_facing_descriptor_alignment_only",
-      "non_inference": "Descriptor families and test grammars do not certify current systems as operational subjects or establish human equivalence."
-    },
-    {
-      "id": "subjectivity.first_person_indexed_layer",
-      "corpus_source": "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
-      "system_role": "runtime-facing subjectivity diagnostics over self-index, ownership, continuity, perspective, valuation, intervention profile, reducibility comparison, and internal gate closure",
-      "interface_type": "runtime_facing_subjectivity_diagnostic_alignment_only",
-      "non_inference": "Paper VIII runtime alignment does not certify human subjectivity, phenomenality, external validation, or claim-facing closure."
     }
   ],
   "prohibited_inferences": [
-    "runtime_metrics_imply_core_theorem_validity",
+    "runtime_metrics_imply_basecore_theorem_validity",
     "support_labels_imply_framework_confirmation",
-    "controlled_statements_imply_external_validation",
+    "bridge_surface_reports_imply_bridge_admissibility",
     "formal_theorem_implies_current_runtime_instantiation",
-    "canonical_freeze_implies_system_validation"
+    "release_alignment_implies_external_validation"
   ],
-  "non_claim_boundary": "The interface is explicit and limited. Public release alignment does not authorize automatic runtime closure, external validation, or subjectivity claims beyond what is explicitly released."
+  "non_claim_boundary": "The interface is explicit and limited. Public release alignment does not authorize automatic runtime closure, bridge confirmation, or phenomenality claims."
 }

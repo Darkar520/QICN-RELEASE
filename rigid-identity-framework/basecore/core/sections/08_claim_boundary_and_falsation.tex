@@ -1,0 +1,91 @@
+\part{Claim Boundary and Falsation Grammar}
+
+\section{Forensic Admissibility and Integrity Grammar}
+
+\begin{definition}[Forensic packet]\label{def:forensic-packet}
+Each operational run emits a packet
+\[
+K=(\mathrm{tick},\mathrm{seed},\mathrm{versionHash},H_v,\mathrm{metrics},\mathrm{sensorSummary},\mathrm{checksum}).
+\]
+\end{definition}
+
+\begin{assumption}[Packet admissibility]\label{ass:packet-admissibility}
+A run is admissible only if checksum, schema, seed consistency, version hash, and $H_v$ consistency all pass.
+\end{assumption}
+
+\begin{definition}[Severe violation]\label{def:severe-violation}
+A run has a severe violation if any of the following holds: checksum mismatch, schema failure, seed/version inconsistency, or critical-state replay mismatch.
+\end{definition}
+
+\begin{criterion}[Integrity gate]\label{crit:integrity-gate}
+Severely violated runs are excluded from support counting and marked as hard failures.
+\end{criterion}
+
+\begin{proposition}[Integrity-first inference]\label{prop:integrity-first}
+If admissibility fails, inferential significance is non-actionable.
+\end{proposition}
+
+\section{Certification, Comparison, and Rupture}
+
+\begin{definition}[Operational certification]\label{def:operational-certification}
+For an admissible system $S$, define
+\[
+\Cert(S)=1
+\quad\Longleftrightarrow\quad
+\Iper(S),\Iri(S),\Iint(S),\Icont(S),\Idiff(S),\Ileg(S)>0
+\]
+on a non-empty admissible support under the integrity grammar above.
+\end{definition}
+
+\begin{definition}[Equivalence discriminator]\label{def:equivalence-discriminator}
+For two admissible systems $S_1,S_2$, define
+\[
+\Eq_{\Gamma,\eps}(S_1,S_2)=1
+\]
+when the relevant signatures, admissibility bundle, decoder behavior, and invariant deltas match within the allowed comparison regime.
+\end{definition}
+
+\begin{definition}[Rupture event]\label{def:rupture-event}
+For a targeted invariant family $J$, define
+\[
+\Rupt_J(S)=1
+\]
+when an admissible intervention or perturbation drives at least one invariant in $J$ below its certification margin so that class membership becomes invalidated, destroyed, or undefined.
+\end{definition}
+
+\section{Prediction and Falsation Grammar}
+
+\begin{proposition}[Complexity-only negative control prediction]\label{prop:complexity-only-negative-control}
+If a candidate system exhibits high connectivity, high entropy, or rich activity while failing one or more critical invariants, then
+\[
+\Cert(S)=0,
+\qquad
+S\notin\Cop\text{ in certified form},
+\qquad
+\Qop(S)\text{ is not certified}.
+\]
+\end{proposition}
+
+\begin{proposition}[Ablation prediction]\label{prop:ablation-prediction}
+If a system is initially certified and a targeted admissible intervention destroys one or more invariants, then the framework predicts loss of certification or transition to an ambiguity-boundary regime.
+\end{proposition}
+
+\begin{proposition}[Exact grammar-transport prediction]\label{prop:grammar-transport-prediction}
+If two realizations preserve the relevant signatures, admissibility conditions, decoder behavior, and six critical invariants up to the allowed comparison regime, then the framework predicts preserved BaseCore criterion membership.
+\end{proposition}
+
+\begin{proposition}[Threshold-sensitive boundary behavior]\label{prop:threshold-sensitive-boundary}
+The framework predicts stable pass/fail regions together with narrow transition bands near critical margins. It predicts neither global threshold collapse nor perfect flat insensitivity.
+\end{proposition}
+
+\begin{proposition}[Legibility dependence prediction]\label{prop:legibility-dependence}
+Criterion membership becomes inadmissible if readouts cease to be separable, noise-robust, intervention-sensitive, or compressible without total collapse.
+\end{proposition}
+
+\begin{proposition}[Continuity and non-null relevance]\label{prop:continuity-nonnull-relevance}
+Regime continuity and non-null differentiation are constitutive. Systems that preserve rich activity while losing continuity or collapsing toward effective null structure fail the operational criterion or leave it undefined.
+\end{proposition}
+
+\begin{remark}[What stays outside BaseCore]
+Runtime status classes, Stage 2 / Stage 3 comparative programs, human comparator campaigns, Papers 7--9, and bridge-facing burden architectures remain downstream artifacts. BaseCore absorbs only the falsation grammar and claim-boundary semantics needed to keep theorem ownership honest.
+\end{remark}

@@ -1,48 +1,63 @@
 {
   "artifact_role": "layer_boundaries",
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "layers": [
     {
-      "id": "ontology",
+      "id": "base_mathematical_source",
       "includes": [
-        "claims about what exists",
-        "claims about what identity is in reality",
-        "claims about phenomenology in itself"
+        "BaseCore source tree",
+        "typed operators",
+        "theorems",
+        "claim-boundary ledgers"
       ],
       "excludes": [
-        "theorem proofs",
-        "runtime metrics",
-        "release governance docs"
+        "runtime validation",
+        "human comparators",
+        "phenomenality claims"
       ],
       "valid_assertions": [
-        "only conditional ontology-language already present in the papers"
+        "formal derivation inside stated assumptions"
       ],
       "prohibited_inferences": [
-        "theorem_proved_implies_ontology_confirmed",
-        "runtime_support_implies_ontology_confirmed"
+        "basecore_in_release_implies_runtime_instantiation",
+        "basecore_implies_external_validation"
       ]
     },
     {
-      "id": "mathematical_formalization",
+      "id": "downstream_formal_packages",
       "includes": [
-        "hypotheses",
-        "operators",
-        "theorems",
-        "corollaries",
-        "invariants",
-        "formal protocols"
+        "Papers I-IX",
+        "downstream theorem ownership",
+        "bridge burden architecture"
       ],
       "excludes": [
-        "implementation success",
-        "external validation",
-        "publication status"
+        "active base ownership",
+        "public empirical closure"
       ],
       "valid_assertions": [
-        "internal formal derivation inside stated assumptions"
+        "downstream formal extension under explicit dependence"
       ],
       "prohibited_inferences": [
-        "formal_derivation_implies_runtime_instantiation",
-        "formal_derivation_implies_empirical_truth"
+        "downstream_package_implies_base_ownership",
+        "paper9_implies_bridge_completion"
+      ]
+    },
+    {
+      "id": "legacy_and_lineage_material",
+      "includes": [
+        "canonical_core_legacy",
+        "historical frozen core PDFs",
+        "parallel lineages",
+        "NotebookLM mirrors"
+      ],
+      "excludes": [
+        "active source-of-truth authority"
+      ],
+      "valid_assertions": [
+        "archival provenance and editorial traceability only"
+      ],
+      "prohibited_inferences": [
+        "legacy_or_mirror_material_implies_active_source_of_truth"
       ]
     },
     {
@@ -51,7 +66,7 @@
         "QICN-SYSTEM",
         "runtime artifacts",
         "support labels",
-        "surface and export policies"
+        "surface policy"
       ],
       "excludes": [
         "theorem closure",
@@ -63,76 +78,59 @@
       ],
       "prohibited_inferences": [
         "implementation_exists_implies_theory_validated",
-        "system_metrics_imply_phenomenological_theorem_confirmation"
+        "runtime_metrics_imply_phenomenality"
       ]
     },
     {
-      "id": "interpretation",
+      "id": "interpretation_and_language",
       "includes": [
-        "explanatory readings",
-        "structural-ethics remarks",
-        "non-claim language policy"
+        "reading rules",
+        "non-claims",
+        "controlled terminology",
+        "bridge caution"
       ],
       "excludes": [
         "theorem proofs",
-        "external validation"
+        "public validation"
       ],
       "valid_assertions": [
-        "disciplined restatement of what a formal result may suggest"
+        "disciplined restatement of what the formal layers do and do not license"
       ],
       "prohibited_inferences": [
         "interpretation_implies_closed_theorem",
-        "interpretation_implies_scientific_confirmation"
-      ]
-    },
-    {
-      "id": "internal_evidence",
-      "includes": [
-        "admissible runtime outputs",
-        "support labels",
-        "controlled statements",
-        "operational exports"
-      ],
-      "excludes": [
-        "external replication",
-        "publication-grade confirmation"
-      ],
-      "valid_assertions": [
-        "internal support posture only"
-      ],
-      "prohibited_inferences": [
-        "internal_support_implies_external_validation",
-        "exportable_with_boundary_implies_claim_safe_release"
+        "bridge_language_implies_bridge_support"
       ]
     },
     {
       "id": "external_validation",
       "includes": [
         "independent replication",
-        "independent methodological review",
-        "external empirical confirmation"
+        "external empirical adjudication",
+        "independent methodological review"
       ],
       "excludes": [
         "local release bundles",
-        "local smoke suites",
-        "release governance docs"
+        "local runtime exports",
+        "governance docs"
       ],
       "valid_assertions": [
-        "none are granted by this hardening phase"
+        "none are granted by this release reconstruction alone"
       ],
       "prohibited_inferences": [
-        "freeze_or_registry_implies_external_validation"
+        "release_sync_implies_external_validation"
       ]
     }
   ],
   "allowed_bridges": [
-    "formal_to_system_only_via_explicit_interface_docs",
+    "base_to_downstream_via_explicit_dependency",
+    "corpus_to_system_only_via_explicit_interface_docs",
     "system_to_internal_evidence_only_via_policy_governed_artifacts"
   ],
   "blocked_automatic_bridges": [
-    "system_to_ontology",
-    "internal_evidence_to_theorem_closure",
-    "release_freeze_to_framework_confirmation"
+    "legacy_to_active_base",
+    "mirror_to_source_of_truth",
+    "system_to_phenomenality",
+    "internal_evidence_to_public_claim_closure"
   ],
-  "non_claim_boundary": "Layer separation is a governance device. It does not settle theory, ontology, or validation."
+  "non_claim_boundary": "Layer separation is a governance device. It does not settle ontology, empirical truth, or public validation."
 }

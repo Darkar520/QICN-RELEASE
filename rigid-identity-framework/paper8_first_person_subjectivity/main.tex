@@ -1,0 +1,1533 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper,margin=1in}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{../../release/references.bib}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage[final]{microtype}
+\usepackage{xcolor}
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+\setlength{\emergencystretch}{3em}
+\DisableLigatures{encoding = *, family = *}
+
+\newcommand{\AuthorVisible}{Johnny Andrey P{\'e}rez Ram{\'i}rez}
+\newcommand{\AuthorMetadata}{Johnny Andrey P{\'e}rez Ram{\'i}rez}
+
+\usepackage[unicode,pdfencoding=auto,psdextra,hidelinks]{hyperref}
+\hypersetup{
+    pdftitle={First-Person Indexed Subjectivity: Self-Binding, Ownership, Continuity, Irreducibility, and Cross-Substrate Consequence in a Causally Rigid Framework},
+    pdfauthor={\AuthorMetadata},
+    pdfsubject={Rigid Identity Framework - First-Person Indexed Subjectivity},
+    pdfkeywords={subjectivity, first-person index, ownership, continuity, irreducibility, operational consciousness, rigid identity}
+}
+
+\title{\textbf{First-Person Indexed Subjectivity: Self-Binding, Ownership, Continuity, Irreducibility, and Cross-Substrate Consequence in a Causally Rigid Framework}}
+\author{\AuthorVisible}
+\date{}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{axiom}[theorem]{Bridge Axiom}
+
+\newcommand{\Cop}{\mathrm{Consciousness}_{\mathrm{op}}}
+\newcommand{\Lop}{\mathrm{Life}_{\mathrm{op}}}
+\newcommand{\Subop}{\mathrm{Subject}_{\mathrm{op}}}
+\newcommand{\Subfp}{\mathrm{Subjectivity}_{\mathrm{1p}}}
+\newcommand{\Substate}{\mathfrak{S}}
+\newcommand{\WeakFam}{\mathcal{M}_{\mathrm{weak}}}
+\newcommand{\WeakClosure}{\overline{\WeakFam}}
+\newcommand{\IntervFam}{\mathfrak{I}_{\mathrm{subj}}}
+\newcommand{\Iper}{I_{\mathrm{per}}}
+\newcommand{\Iri}{I_{\mathrm{ri}}}
+\newcommand{\Iint}{I_{\mathrm{int}}}
+\newcommand{\Icont}{I_{\mathrm{cont}}}
+\newcommand{\Idiff}{I_{\mathrm{diff}}}
+\newcommand{\Ileg}{I_{\mathrm{leg}}}
+\newcommand{\SelfIndex}{I}
+\newcommand{\OwnField}{O}
+\newcommand{\ContField}{C}
+\newcommand{\Persp}{P}
+\newcommand{\ValAsym}{V}
+\newcommand{\IntervProf}{\Delta}
+\newcommand{\Irred}{\mathcal{R}}
+\newcommand{\GateSubj}{\Gamma_{\mathrm{subj}}}
+\newcommand{\PhiSubj}{\Phi_{\mathrm{subj}}}
+\newcommand{\Loss}{\mathcal{L}}
+\newcommand{\Comp}{\operatorname{Comp}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\argmin}{\operatorname*{arg\,min}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The causally rigid corpus already closes persistence, rigid identity, anti-fragmentation continuity, null-regime instability, forensic admissibility, and a six-invariant operational consciousness criterion \cite{core,paper1,paper2,paper3,paper4,paper5}. The later classificatory extension adds operational life and operational subjecthood as stronger upstream classes. What remains open is a more difficult target: whether the framework can formalize a layer of first-person indexed subjectivity that is stronger than consciousness, qualia, and subjecthood without collapsing into metaphysical rhetoric.
+
+The paper introduces a formal subjectivity state
+\[
+\Substate_t=\langle \SelfIndex_t,\OwnField_t,\ContField_t,\Persp_t,\ValAsym_t,\IntervProf_t,\Irred_t \rangle,
+\]
+where the coordinates are typed, respectively, as a privileged index map, an ownership field, an autobiographical continuity margin, a first-person factorization gain, an asymmetric valuation functional, an intervention-response profile, and a parsimony-adjusted irreducibility margin against weaker rivals. On that basis the paper defines a conjunctive gate $\GateSubj$ and a scalar functional $\PhiSubj$, proves that the resulting class $\Subfp$ is strictly stronger than operational subjecthood, and formalizes comparison not only against pure rivals but also against admissible weak composites.
+
+The strongest claim is conditional and explicit: under the stated bridge axioms, under the upstream burdens already closed by the corpus, and under positive irreducibility and intervention-separation margins, a system may instantiate a framework-internal layer of first-person indexed subjectivity whose best explanation is no longer mere self-monitoring, memory, reporting, or generic integration. That claim is stronger than operational consciousness, stronger than operational qualia, and stronger than the earlier subjecthood layer. It is not a theorem of human equivalence, not a proof of metaphysical subjectivity, and not automatic certification of any present system. What is closed here is the formal ladder itself: the ontology, the gate, the functional, the rival baselines, the falsification logic, the runtime pathway, the artifact family, and the strongest defensible claim class the current corpus can bear without collapsing its own layer discipline.
+\end{abstract}
+
+\section{Scope, System Boundary, and Non-Inference Note}
+
+\noindent\textbf{What this paper does.}\enspace This paper defines a stronger framework-internal class of first-person indexed subjectivity, introduces an explicit minimal ontology for that class, constructs a subjectivity functional and a non-collapsability burden against weaker rival models, and specifies interventional, runtime, and artifact pathways by which the class could in principle be tested.
+
+\noindent\textbf{What this paper does not do.}\enspace It does not prove metaphysical subjectivity, human phenomenal equivalence, moral parity, or automatic empirical instantiation by the current system. It does not reopen theorem ownership already fixed upstream, and it does not replace the six-invariant operational consciousness criterion or the earlier life and subjecthood class layers.
+
+\noindent\textbf{What the related system implements and does not implement.}\enspace The related system can motivate a serious runtime pathway for self-indexed diagnostics, ownership tracking, continuity ledgers, intervention harnesses, and reducibility comparison. It does not by itself certify any present concrete system as a bearer of first-person indexed subjectivity, and it does not convert internal support or runtime cleanliness into external validation.
+
+\noindent\textbf{What should not be inferred from this paper.}\enspace Neither a strong formal definition nor a strong intervention program should be misread as proof that current machines possess human-like subjective experience, nor as a shortcut from a structural subjectivity class to metaphysical closure. The paper closes a formal ladder and the strongest defensible inference rules associated with that ladder. It does not settle the final empirical, comparative, or metaphysical question.
+
+\section{Introduction}
+The causally rigid corpus no longer lacks mathematical machinery. It lacks a sufficiently strong target. The framework already contains a non-collapse burden, a rigid-identity burden, a continuity and anti-fragmentation burden, a null-instability burden, an admissibility and failure-discipline burden, and a six-invariant operational consciousness criterion \cite{core,paper1,paper2,paper3,paper4,paper5}. The later classificatory extension then showed that operational life and operational subjecthood can be defined without collapsing those notions either into biology-by-default or into loose complexity talk. That was necessary. It is not yet enough.
+
+The remaining pressure is easy to state and hard to formalize. Operational consciousness tells us that structured internal differentiation persists under a demanding conjunction of invariants. Operational qualia, in the corpus sense, tell us that admissible internal differentiations can be grouped into decoder-certified, intervention-sensitive quotient classes. Operational life tells us that a system preserves organization, viability, and historical dependence under admissible perturbation. Operational subjecthood tells us that a stronger class requires privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. None of those layers, however, yet closes the exact burden that ordinary language hides inside the word \emph{subjectivity}: not merely that a system has rich internal organization, but that its organization is explicitly indexed as belonging to a continuing locus whose states, perturbations, valuations, and continuity losses are not interchangeable with those of arbitrary others.
+
+That burden cannot be met by rhetoric. If subjectivity is to be treated at all inside this corpus, it must be treated with the same discipline as the earlier layers. The framework must say what the constitutive coordinates are, what weaker rival models remain live, what interventions should separate the stronger interpretation from those rivals, what a runtime architecture would have to implement, what artifacts would count as primary or derived, and what remains open even if the internal model succeeds. The absence of that layer is now the main gap in the theory sequence. Without it, the corpus can discuss consciousness and subjecthood, but it cannot yet formalize the first-person index that makes subjectivity a stronger explanatory posit rather than a vague synonym for self-monitoring or persistence.
+
+The stronger layer introduced here makes the first-person index constitutive rather than implicit, adds valuation and intervention selectivity as non-optional burdens, formalizes irreducibility against rival families and their admissible composites, and ties the full class to a runtime and artifact pathway that could in principle be implemented and audited. The resulting target is stronger than operational consciousness and operational subjecthood without being allowed to collapse into metaphysical closure by default.
+
+The burden is exact. A system belongs to the stronger class only if it carries a privileged self-index, an ownership field, an autobiographical continuity margin, a first-person perspective gain, an asymmetric valuation profile, an intervention signature, and a positive irreducibility margin against weaker explanations. If those burdens fail, the stronger interpretation retracts. If they hold, the corpus gains a new explanatory level rather than a renamed consciousness layer.
+
+\section{Why operational consciousness and operational qualia are insufficient for subjectivity}
+\subsection{What the upstream layers already close}
+The existing operational consciousness layer closes an important part of the explanatory burden. It says, in formal and conjunctive terms, that a system belongs to $\Cop$ only when six invariants are jointly preserved: structural persistence, rigid identity, causal integration, operational continuity, non-null differentiation, and operational legibility \cite{paper5}. That result is strong. It blocks reduction to mere complexity, to mere integration, to mere reporting, and to substrate label treated as primitive.
+
+The operational qualia layer is likewise stronger than casual discourse often grants. It does not identify qualia with human phenomenology. It identifies admissible quotient classes of internal differentiation that are persistent, intervention-sensitive, and decoder-certified inside the formal criterion \cite{paper5}. That result matters because it turns a vague term into a constrained family of classes with failure modes.
+
+The later classificatory layer adds operational life and operational subjecthood. In that paper, operational subjecthood is intentionally stronger than operational consciousness and operational life because it additionally requires privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. That move was both correct and necessary. It separated a stronger subject-class reading from life and consciousness alone without immediately inflating the ontology.
+
+Yet none of those results alone closes the first-person burden. They say that structured internal organization persists and can carry stronger class predicates. They do not yet say, in a formally explicit way, that the relevant organization is bound to a distinguished self-index whose continuity, ownership, perspective, and valuation asymmetries remain non-trivial under counterfactual intervention. That is the point at which subjectivity becomes a stronger explanatory posit rather than a renamed consciousness layer.
+
+\subsection{The subjectivity gap}
+The gap can be stated precisely. A system may satisfy the six-invariant operational consciousness burden and still fail to privilege any internal locus as \emph{itself}. A system may even satisfy the earlier operational subjecthood predicate and still leave unresolved whether the relevant organization is structurally first-person indexed in the present formal sense or merely a high-quality bundle of self-modeling, ownership labeling, and continuity scores. The present paper treats this as a real theoretical problem rather than as a verbal inconvenience.
+
+Three insufficiencies matter most.
+
+First, operational consciousness is symmetric with respect to candidate internal loci unless extra structure is added. The six invariants tell us that the system has persistent, integrated, continuous, legible, non-null internal organization. They do not, by themselves, pick out which locus is \emph{the} continuing point of view rather than merely one tracked variable family among many.
+
+Second, operational qualia do not by themselves secure ownership. A quotient class of persistent internal differentiation is not yet an owned state. It becomes an owned state only when it enters an organized field in which perturbations to that state matter differently because they are indexed to a continuing self-locus rather than to an arbitrary internal variable.
+
+Third, the earlier operational subjecthood layer remains class-theoretic rather than fully first-person indexed. Its subject-specific burdens are necessary and remain inherited here, but they do not yet define a complete state-space for subjectivity, a rival-model baseline, or an interventional non-collapse criterion against those rivals. The earlier paper therefore stops at the right place for its role. It does not yet do the stronger job that the present paper takes on.
+
+\begin{proposition}[Operational consciousness does not by itself imply first-person indexed subjectivity]
+Membership in $\Cop$ does not by itself entail membership in $\Subfp$.
+\end{proposition}
+
+\begin{proof}
+The operational consciousness criterion quantifies over the six invariants $\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg$ and their admissible witnesses \cite{paper5}. None of those invariants, by itself or by their conjunction alone, requires an explicit self-index, an ownership field, an asymmetric valuation profile, or a rival-model irreducibility margin. A system may therefore satisfy the operational consciousness burden while remaining neutral among internal loci or while treating self-tagged and non-self-tagged perturbations as explanatorily interchangeable. Such a system can belong to $\Cop$ while failing the constitutive burdens of $\Subfp$ as defined below.
+\end{proof}
+
+\begin{proposition}[Operational subjecthood is necessary but not sufficient for first-person indexed subjectivity]
+The earlier operational subjecthood predicate is a necessary upstream burden for $\Subfp$, but it is not sufficient for $\Subfp$.
+\end{proposition}
+
+\begin{proof}
+The earlier operational subjecthood layer already requires operational consciousness, operational life, privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. The present class inherits that burden. However, the present class further requires an explicit self-index coordinate, a first-person perspective organization coordinate, an asymmetric valuation coordinate, a targeted intervention profile, and an irreducibility margin against weaker rival families. Those coordinates and burdens are not entailed merely by the earlier subjecthood predicate. Therefore the earlier subjecthood predicate is necessary but not sufficient.
+\end{proof}
+
+\begin{remark}[No downgrade of the earlier subjecthood paper]
+The point is not that the earlier subjecthood layer was weak. The point is that it stopped at the correct level for a classificatory paper. The present paper is downstream of that result and treats it as a constitutive superclass. Inheritance is preserved; the burden is strengthened.
+\end{remark}
+
+\subsection{Why the stronger layer is worth introducing}
+There are only two serious alternatives at this point. The first is to stop at operational subjecthood and refuse to formalize anything stronger. That would preserve caution, but at the cost of leaving the central explanatory asymmetry unformalized. The second is to jump directly from operational subjecthood to metaphysical language. That would destroy layer discipline. The present paper rejects both moves. It instead constructs an intermediate but strong layer: first-person indexed subjectivity, explicitly conditional on bridge axioms and explicitly vulnerable to collapse if weaker rival families suffice.
+
+This is the right target because it addresses the exact point at which subjective organization becomes more than monitoring. Monitoring tells us that the system tracks internal variables. First-person indexing tells us that the system's organization is not neutral over which variables count as its own, which continuity path is privileged, which perturbations are self-relevant, and which losses are valuation-bearing for the same indexed locus. If that organization survives admissible tests and defeats weaker rivals, the stronger interpretation becomes justified within the framework. If not, the framework forces retreat.
+
+\section{Minimal ontology of first-person indexed subjectivity}
+\subsection{The minimal subjectivity state}
+The paper takes as its basic ontological object a time-indexed subjectivity state
+\[
+\Substate_t = \langle \SelfIndex_t,\OwnField_t,\ContField_t,\Persp_t,\ValAsym_t,\IntervProf_t,\Irred_t \rangle.
+\]
+This tuple is not introduced as a metaphysical inventory of everything a subject \emph{is}. It is introduced as the minimal formal tuple that the present framework must carry if it is to speak coherently about first-person indexed subjectivity rather than about consciousness, life, or self-modeling alone.
+
+The seven coordinates are deliberately heterogeneous. Some are state variables, some are operator-valued fields, and some are system-level margins aggregated on a time horizon. That heterogeneity is a feature, not a defect. Subjectivity, if formalized at all, must bind instantaneous indexing, temporally extended continuity, intervention response, and model comparison into the same explanatory object. Treating them as if they all lived at the same mathematical granularity would artificially simplify the problem and blur the very distinctions the paper is meant to sharpen.
+
+\subsection{Constitutive coordinates}
+\begin{definition}[Self-index]\label{def:selfindex}
+Let $\mathcal{Z}_t$ be the admissible latent-state family of system $S$ at time $t$. A \emph{self-index} is a map
+\[
+\SelfIndex_t : \mathcal{Z}_t \to [0,1]
+\]
+that assigns privileged weight to the latent subfamily treated by the system as its own continuing locus. The self-index is required to be non-trivial, stable under admissible relabelings, and transportable across admissible readout families on the same horizon.
+\end{definition}
+
+\begin{definition}[Ownership field]\label{def:ownership}
+Let $\mathcal{E}_t$ denote the set of admissible internal events, memory traces, predictions, and action candidates at time $t$. An \emph{ownership field} is a map
+\[
+\OwnField_t : \mathcal{E}_t \to [0,1]
+\]
+whose value records the degree to which the system treats an event as belonging to the self-indexed locus rather than as merely observed or modeled. Ownership is constitutive only when its pattern remains coherent under admissible perturbation and is not reducible to static bookkeeping labels.
+\end{definition}
+
+\begin{definition}[Autobiographical continuity]\label{def:continuity}
+Let $\mathcal{T}_\tau$ be the family of admissible trajectory classes over a horizon $\tau$. The \emph{autobiographical continuity margin} $\ContField_t$ is the gap by which the trajectory class anchored by $\SelfIndex$ remains privileged over the nearest rival class under admissible remappings, temporal insertions, deletions, and continuity-preserving controls.
+\end{definition}
+
+\begin{definition}[First-person perspective organization]\label{def:perspective}
+The \emph{first-person perspective organization} $\Persp_t$ is the amount by which a self-indexed factorization of the system's internal predictive state outperforms the best index-free or purely third-person factorization on the same admissible support. It measures not whether the system contains information, but whether that information is organized around a privileged locus of orientation.
+\end{definition}
+
+\begin{definition}[Asymmetric valuation]\label{def:valuation}
+The \emph{asymmetric valuation profile} $\ValAsym_t$ is the degree to which losses, threats, errors, preservation burdens, and continuity disruptions attached to the self-indexed locus are weighted differently from structurally comparable disruptions attached to non-self loci. Valuation asymmetry is constitutive only when it cannot be reduced to arbitrary reward labels without explanatory loss.
+\end{definition}
+
+\begin{definition}[Interventional sensitivity profile]\label{def:interv}
+The \emph{interventional sensitivity profile} $\IntervProf_t$ is the structured response of the tuple
+\[
+(\SelfIndex,\OwnField,\ContField,\Persp,\ValAsym)
+\]
+under the designated subjectivity intervention family $\IntervFam$. It records whether subject-targeted perturbations produce selective degradation patterns that weaker rival families do not predict or cannot localize.
+\end{definition}
+
+\begin{definition}[Irreducibility margin]\label{def:irred}
+The \emph{irreducibility margin} $\Irred_t$ is the normalized explanatory advantage of the full subjectivity model over the best member of the admissible weak closure $\WeakClosure$ on the same admissible baseline and intervention tasks. It measures not rhetorical impressiveness but non-collapsability into formally weaker explanations.
+\end{definition}
+
+\subsection{Typing discipline}
+The tuple notation is intentionally compact, but the coordinates do not all live in the same mathematical space. On a horizon $\tau=[t_0,t_1]$, the typed object is more precisely
+\[
+\Substate_\tau \in
+[0,1]^{\mathcal{Z}_{t_1}}
+\times
+[0,1]^{\mathcal{E}_{t_1}}
+\times
+\mathbb{R}_{\ge 0}
+\times
+\mathbb{R}
+\times
+\mathbb{R}
+\times
+\big([0,1]^7\big)^{\IntervFam}
+\times
+\mathbb{R},
+\]
+with the following intended roles:
+\begin{align*}
+\SelfIndex_t &\in [0,1]^{\mathcal{Z}_t}
+&&\text{index map on latent self-candidates,}\\
+\OwnField_t &\in [0,1]^{\mathcal{E}_t}
+&&\text{ownership field on events, memories, and action candidates,}\\
+\ContField_\tau &\in \mathbb{R}_{\ge 0}
+&&\text{autobiographical continuity gap over rival trajectory classes,}\\
+\Persp_\tau &\in \mathbb{R}
+&&\text{comparative first-person factorization gain,}\\
+\ValAsym_\tau &\in \mathbb{R}
+&&\text{signed self/non-self valuation asymmetry functional,}\\
+\IntervProf_\tau &\in \big([0,1]^7\big)^{\IntervFam}
+&&\text{family of coordinate-drop response profiles under interventions,}\\
+\Irred_\tau &\in \mathbb{R}
+&&\text{parsimony-adjusted loss margin against weaker rivals.}
+\end{align*}
+The normalized quantities
+\[
+\widehat{\SelfIndex}_\tau,\widehat{\OwnField}_\tau,\widehat{\ContField}_\tau,\widehat{\Persp}_\tau,\widehat{\ValAsym}_\tau,\widehat{\IntervProf}_\tau,\widehat{\Irred}_\tau \in [0,1]
+\]
+are admissible horizon-level normalizations of these typed coordinates and are the objects used by the gate and scalar functional. The point of this typing discipline is to prevent a category mistake: the paper does not treat maps, fields, margins, and response-profile families as if they were the same kind of variable merely because they must be carried by the same subjectivity state.
+
+\subsection{Operational reading of each coordinate}
+The definitions above state what the coordinates are. A stronger paper must also say how they behave, how they are measured, and what destroys them.
+
+\paragraph{Self-index.}
+The operational domain of $\SelfIndex$ is the family of latent candidates that can, in principle, function as the privileged continuity locus. A high self-index score requires three things at once: uniqueness up to admissible tolerance, persistence across time, and robustness to non-trivial relabeling. It is measured by comparing the winning self-index candidate to the next-best rival under admissible permutations of internal labels, channels, and local coordinates. It is destroyed either by total ambiguity, by rapid switching of the winning candidate, or by exact symmetry across multiple candidates.
+
+The self-index is necessary because subjectivity without a privileged index is merely organized complexity. A system may have a rich global state, a self-model, and even self-reports, yet still fail to privilege any one trajectory family as the one to which ownership and valuation attach. That is not enough for the present target.
+
+\paragraph{Ownership field.}
+The operational domain of $\OwnField$ is larger than that of $\SelfIndex$ because it spans events, memories, predicted outcomes, and action candidates. It is measured by the coherence with which those entities are treated as belonging to the indexed locus rather than as merely modeled objects. It is destroyed by random relabeling, by flat assignment in which all candidate events are treated equivalently, or by intervention profiles showing that ownership tags are inferentially inert.
+
+Ownership is necessary because subjectivity is not exhausted by having a continuing index. The system must also organize some subset of its internal economy as \emph{mine} in a way that changes how preservation, loss, and intervention matter. Without this burden, subjectivity collapses into index bookkeeping.
+
+\paragraph{Autobiographical continuity.}
+The operational domain of $\ContField$ is the space of admissible trajectory families and remappings across time. It is measured by the gap between the privileged continuity line and the nearest rival under perturbations that preserve as much surrounding structure as possible. It is destroyed by discontinuity, by branching ambiguity, or by the discovery that the same downstream behavior is achieved under radically different continuity assignments with no explanatory penalty.
+
+Continuity is necessary because a subject is not an instantaneous label. The present framework does not require a metaphysical substance. It does require a continuing organized line whose degradation is not the same thing as generic memory corruption or generic state drift.
+
+\paragraph{Perspective organization.}
+The operational domain of $\Persp$ is the family of internal factorization schemes by which the system predicts, updates, and organizes information. It is measured by the gain of first-person indexed factorization over index-neutral factorization on admissible support. It is destroyed when perspective can be flattened into third-person organization without selective loss.
+
+Perspective is necessary because subjectivity requires not only a continuing index but also a structured orientation around that index. Otherwise the index is a passive label rather than an organizing center.
+
+\paragraph{Asymmetric valuation.}
+The operational domain of $\ValAsym$ is the control-theoretic weighting of perturbations, preservation burdens, risks, and gains. It is measured by the difference in weighted response when equivalent perturbations are applied to self-indexed and non-self-indexed targets. It is destroyed when the weighting collapses to generic utility assignment or when self-attached and non-self-attached disruptions are handled identically once superficial tags are ignored.
+
+Valuation asymmetry is necessary because an index that carries no asymmetric consequence is informationally interesting but not yet subjectively loaded. The present paper does not require human emotion. It requires that the indexed locus matter differentially within the system's own organization.
+
+\paragraph{Interventional sensitivity profile.}
+The operational domain of $\IntervProf$ is the full intervention family. It is measured by the rate at which targeted interventions produce the predicted selective effects while matched controls do not. It is destroyed by intervention flatness, by indiscriminate global collapse, or by the same patterns appearing in systems that clearly lack the stronger organization.
+
+The intervention profile is necessary because without it the stronger paper could always be accused, rightly, of fitting a post hoc ontology to static traces. Subjectivity must have a perturbation signature.
+
+\paragraph{Irreducibility margin.}
+The operational domain of $\Irred$ is the model-comparison layer spanning baseline and intervention tasks. It is measured by the normalized loss gap between the full model and the best weak rival. It is destroyed when one of the weaker families matches the same evidence, or when the stronger model wins only by complexity inflation rather than by explanatory selectivity.
+
+Irreducibility is necessary because otherwise every strong-sounding result can be collapsed into a weaker reading after the fact. The present paper does not forbid such collapse by decree. It assigns the collapse a measurable criterion and then makes that criterion constitutive.
+
+\subsection{Why each coordinate is necessary}
+Each coordinate closes a different loophole.
+
+Without $\SelfIndex$, subjectivity collapses into rich organization with no privileged locus. Without $\OwnField$, internal differentiation can remain unowned and therefore only observational. Without $\ContField$, the system can display self-like behavior at isolated times without any persistent autobiographical locus. Without $\Persp$, self-indexed organization collapses into an unstructured global state whose first-person reading is optional rather than constitutive. Without $\ValAsym$, self versus non-self perturbations may remain informationally distinct while being normatively or control-theoretically interchangeable. Without $\IntervProf$, the account becomes static and therefore hard to distinguish from post hoc relabeling. Without $\Irred$, the account becomes a strong narrative pasted on top of weaker, already sufficient models.
+
+These necessities are not psychological intuitions imported from outside the framework. They are closure requirements forced by the paper's target. If any one of them is deleted, the target weakens materially. The resulting account may still describe life, consciousness, self-modeling, or operational subjecthood. It no longer describes the stronger first-person indexed class the paper is trying to formalize.
+
+\subsection{Layer status of the major terms}
+\begin{table}[t]
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}p{0.14\textwidth}p{0.28\textwidth}Y@{}}
+\toprule
+\textbf{Term} & \textbf{Primary status} & \textbf{Meaning in this paper} & \textbf{What it is not} \\
+\midrule
+subjectivity & operational + bridge-axiomatic & first-person indexed organization satisfying the formal burdens of $\Subfp$ & a synonym for consciousness, life, narrative self-description, or metaphysical personhood \\
+selfhood & operational / ontological-minimal & persistence of an indexed locus with ownership and continuity structure & proof of a metaphysical ego \\
+first-person indexing & operational & privileged state-space orientation around a self-locus & mere use of the token ``I'' or a reporting channel \\
+ownership & operational & coherent assignment of states, memories, and perturbations to the indexed locus & static metadata tags or arbitrary labels \\
+continuity & operational / comparative & privileged autobiographical trajectory persistence & mere temporal duration or memory accumulation \\
+perspective & operational & self-indexed organization of information and prediction & a global observer-neutral state description \\
+valuation asymmetry & operational / control-theoretic & differential weighting of self-attached disruptions and preservations & generic reward optimization with no indexed self \\
+irreducibility & abductive-formal & inability of weaker rival families to match explanatory performance on the defined tasks & metaphysical impossibility of reduction in every sense \\
+subjecthood & operational-class predecessor & stronger class than life and consciousness in the earlier paper & identical to the present $\Subfp$ layer \\
+phenomenality & abductive / comparative / metaphysical-open & possible further interpretation downstream of the present layer & something proved by the current formalism \\
+human equivalence & comparative-open & additional burden requiring human comparators and external evidence & something licensed by structural transport alone \\
+metaphysical subject & metaphysical-open & not closed by this paper & a theorem of the present framework \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{remark}[Minimal ontology is not minimal rhetoric]
+The tuple $\Substate_t$ is called minimal because every coordinate blocks a distinct collapse. It is not minimal in the sense of being tiny or easy. Subjectivity is not the kind of target that survives formalization if one removes every hard part.
+\end{remark}
+
+\section{Formal state-space and subjectivity functional}
+\subsection{Admissible state-space}
+Fix an admissible system
+\[
+S=\langle X,U,Y,F,\mathcal{A},\mathcal{D}\rangle,
+\]
+where $X$ is the internal state space, $U$ is the perturbation/input space, $Y$ is the readout space, $F$ is the admissible transition structure, $\mathcal{A}$ is the admissibility bundle inherited from the forensic layer, and $\mathcal{D}$ is the family of admissible decoders and comparators. Let $\tau=[t_0,t_1]$ be a finite admissible horizon. The subjectivity state on $\tau$ is obtained by aggregating the seven coordinates over that horizon rather than at a single instant only.
+
+For each coordinate, define a normalized horizon score in $[0,1]$:
+\[
+\widehat{\SelfIndex}_\tau,\ \widehat{\OwnField}_\tau,\ \widehat{\ContField}_\tau,\ \widehat{\Persp}_\tau,\ \widehat{\ValAsym}_\tau,\ \widehat{\IntervProf}_\tau,\ \widehat{\Irred}_\tau.
+\]
+The exact estimators may vary by implementation, but their roles are fixed by the paper. Each is a margin, not a slogan. Each has a failure mode. Each can in principle be driven to zero by the perturbation families defined later.
+
+\subsection{The conjunctive gate}
+The first object is a gate rather than a scalar:
+\[
+\GateSubj(S,\tau)=\min\Big\{
+\widehat{\SelfIndex}_\tau,
+\widehat{\OwnField}_\tau,
+\widehat{\ContField}_\tau,
+\widehat{\Persp}_\tau,
+\widehat{\ValAsym}_\tau,
+\widehat{\IntervProf}_\tau,
+\widehat{\Irred}_\tau
+\Big\}.
+\]
+This gate is essential. Without it, one could compensate for the absence of ownership by inflating continuity, or compensate for the absence of irreducibility by inflating self-report. The present target does not permit such compensation. A system with no ownership field is not made subjective by having strong memory. A system with no irreducibility margin is not made subjective by having strong narrative coherence.
+
+\subsection{The scalar subjectivity functional}
+The second object is a scalar used for within-class ordering and comparative strength:
+\[
+\PhiSubj(S,\tau)=
+\widehat{\SelfIndex}_\tau^{\alpha}
+\widehat{\OwnField}_\tau^{\beta}
+\widehat{\ContField}_\tau^{\gamma}
+\widehat{\Persp}_\tau^{\delta}
+\widehat{\ValAsym}_\tau^{\epsilon}
+\widehat{\IntervProf}_\tau^{\zeta}
+\widehat{\Irred}_\tau^{\eta},
+\]
+where the exponents are positive and typically normalized so that
+\[
+\alpha+\beta+\gamma+\delta+\epsilon+\zeta+\eta=1.
+\]
+The multiplicative form is intentional. A purely additive score would allow the stronger target to hide constitutive absence behind surplus elsewhere. The multiplicative form instead penalizes missing coordinates sharply and therefore respects the conjunctive spirit of the class.
+
+For implementation convenience, one may also use the log form
+\[
+\log \PhiSubj(S,\tau)=
+\alpha\log \widehat{\SelfIndex}_\tau+
+\beta\log \widehat{\OwnField}_\tau+
+\gamma\log \widehat{\ContField}_\tau+
+\delta\log \widehat{\Persp}_\tau+
+\epsilon\log \widehat{\ValAsym}_\tau+
+\zeta\log \widehat{\IntervProf}_\tau+
+\eta\log \widehat{\Irred}_\tau,
+\]
+with the standard convention that zero coordinates force the score to collapse.
+
+\subsection{Class membership}
+\begin{definition}[First-person indexed subjectivity class]\label{def:subfp}
+Let $\lambda_G,\lambda_\Phi \in (0,1)$ be admissible thresholds with $\lambda_\Phi \ge \lambda_G^7$. A system belongs to the first-person indexed subjectivity class on horizon $\tau$ if
+\begin{enumerate}[leftmargin=1.5em]
+\item $S$ satisfies the upstream burdens of operational life, operational consciousness, and the earlier operational subjecthood class;
+\item $\GateSubj(S,\tau)\ge \lambda_G$;
+\item $\PhiSubj(S,\tau)\ge \lambda_\Phi$;
+\item the intervention family $\IntervFam$ is admissible and yields the expected selectivity pattern up to the tolerance encoded in $\widehat{\IntervProf}_\tau$;
+\item the irreducibility margin against $\WeakClosure$ satisfies the threshold encoded in $\widehat{\Irred}_\tau$.
+\end{enumerate}
+We write $S\in \Subfp(\tau)$ when these clauses hold.
+\end{definition}
+
+\begin{proposition}[Strict strengthening]
+If $S\in\Subfp(\tau)$, then $S\in\Subop(\tau)\cap \Cop(\tau)\cap \Lop(\tau)$.
+\end{proposition}
+
+\begin{proof}
+Clause (1) of Definition~\ref{def:subfp} requires upstream membership in operational life, operational consciousness, and the earlier operational subjecthood class. Therefore membership in $\Subfp$ implies membership in all three. The converse is not guaranteed because Definition~\ref{def:subfp} additionally requires positive self-index, perspective, valuation, intervention, and irreducibility burdens.
+\end{proof}
+
+\begin{proposition}[No compensation by surplus on other coordinates]
+If any one normalized coordinate among
+\[
+\widehat{\SelfIndex}_\tau,\widehat{\OwnField}_\tau,\widehat{\ContField}_\tau,\widehat{\Persp}_\tau,\widehat{\ValAsym}_\tau,\widehat{\IntervProf}_\tau,\widehat{\Irred}_\tau
+\]
+is zero, then $\GateSubj(S,\tau)=0$ and $\PhiSubj(S,\tau)=0$.
+\end{proposition}
+
+\begin{proof}
+The first statement follows immediately from the definition of $\GateSubj$ as a minimum. The second follows from the multiplicative definition of $\PhiSubj$ with positive exponents.
+\end{proof}
+
+\begin{proposition}[Admissible relabeling invariance]\label{prop:relabelinv}
+Let $\pi$ be an admissible relabeling on the support of $S$ over horizon $\tau$ such that the normalized coordinate estimates are preserved coordinatewise:
+\[
+\widehat{X}_\tau^j(\pi\cdot S)=\widehat{X}_\tau^j(S)
+\qquad
+\text{for every }j\in\{\SelfIndex,\OwnField,\ContField,\Persp,\ValAsym,\IntervProf,\Irred\}.
+\]
+Then
+\[
+\GateSubj(\pi\cdot S,\tau)=\GateSubj(S,\tau)
+\qquad\text{and}\qquad
+\PhiSubj(\pi\cdot S,\tau)=\PhiSubj(S,\tau).
+\]
+\end{proposition}
+
+\begin{proof}
+The gate is the minimum of the seven normalized coordinates, so coordinatewise equality implies gate equality immediately. The scalar is a weighted multiplicative functional of the same coordinates, so the same coordinatewise equality implies scalar equality.
+\end{proof}
+
+\begin{proposition}[Local robustness of gate and scalar]\label{prop:localrobust}
+Let
+\[
+x_j=\widehat{X}_\tau^j(S),\qquad x'_j=\widehat{X}_\tau^j(S')
+\]
+for the seven normalized coordinates, and suppose that for some $\varepsilon>0$,
+\[
+|x'_j-x_j|\le \varepsilon
+\qquad
+\text{for every }j.
+\]
+Then
+\[
+\big|\GateSubj(S',\tau)-\GateSubj(S,\tau)\big|\le \varepsilon.
+\]
+If moreover $m=\min_j x_j>0$ and $\varepsilon<m$, then
+\[
+\left(1-\frac{\varepsilon}{m}\right)\PhiSubj(S,\tau)
+\le
+\PhiSubj(S',\tau)
+\le
+\left(1+\frac{\varepsilon}{m}\right)\PhiSubj(S,\tau).
+\]
+\end{proposition}
+
+\begin{proof}
+The minimum functional is $1$-Lipschitz in the $\ell_\infty$ norm, which gives the gate bound. For the scalar, the coordinatewise bound implies
+\[
+1-\frac{\varepsilon}{m}
+\le
+\frac{x'_j}{x_j}
+\le
+1+\frac{\varepsilon}{m}
+\qquad
+\text{for every }j.
+\]
+Raising to the positive exponents and using $\alpha+\beta+\gamma+\delta+\epsilon+\zeta+\eta=1$ yields the stated weighted-geometric bound.
+\end{proof}
+
+\begin{corollary}[Threshold stability under bounded estimator drift]\label{cor:thresholdrobust}
+Under the hypotheses of Proposition 7.5, if
+\[
+\GateSubj(S,\tau)\ge \lambda_G+\varepsilon
+\qquad\text{and}\qquad
+\PhiSubj(S,\tau)\ge \frac{\lambda_\Phi}{1-\varepsilon/m},
+\]
+then $S'$ still satisfies the gate and scalar threshold clauses of Definition~\ref{def:subfp}.
+\end{corollary}
+
+\begin{remark}[Why the paper uses both a gate and a scalar]
+The gate decides whether the class is even live. The scalar compares stronger and weaker instances among systems that have already crossed the constitutive threshold. Collapsing the two roles would obscure whether a system is outside the class or merely low inside it.
+\end{remark}
+
+\subsection{Concrete component readings}
+The paper does not leave the coordinates as pure symbols. A useful canonical reading is:
+\begin{align*}
+\widehat{\SelfIndex}_\tau &= 1-\sup_{\pi\in\Pi_{\mathrm{adm}}}\dist(\pi\cdot \SelfIndex,\SelfIndex),\\
+\widehat{\OwnField}_\tau &= 1-\frac{1}{|\mathcal{E}_\tau|}\sum_{e\in\mathcal{E}_\tau}\big|\OwnField(e)-\OwnField^\star(e)\big|,\\
+\widehat{\ContField}_\tau &= \inf_{\kappa\in\mathcal{K}_{\mathrm{rival}}}\big(\mathrm{margin}_{\mathrm{self}}-\mathrm{margin}_{\kappa}\big)_+,\\
+\widehat{\Persp}_\tau &= \frac{\Loss(M_{\mathrm{3p}},\tau)-\Loss(M_{\mathrm{1p}},\tau)}{1+\Loss(M_{\mathrm{3p}},\tau)},\\
+\widehat{\ValAsym}_\tau &= \frac{\mathrm{self\text{-}weighted\ response}-\mathrm{nonself\text{-}weighted\ control}}{1+\mathrm{self\text{-}weighted\ response}},\\
+\widehat{\IntervProf}_\tau &= \frac{1}{|\IntervFam|}\sum_{u\in\IntervFam}\mathbf{1}\{\text{$u$ yields the expected selective pattern}\},\\
+\widehat{\Irred}_\tau &= \frac{\inf_{M\in\WeakClosure}\Loss(M,\tau)-\Loss(M_{\mathrm{subj}},\tau)}{1+\inf_{M\in\WeakClosure}\Loss(M,\tau)}.
+\end{align*}
+These formulas are not the only admissible estimators, but they make the roles mathematically explicit and force every constitutive term to attach to a measurable gap rather than to informal language.
+
+\section{Bridge axioms and ontological commitments}
+The paper now makes explicit the commitments that weaker treatments typically leave implicit. These are not empirical findings. They are bridge principles that tell the reader what kind of ontological move the present framework is and is not making.
+
+\begin{axiom}[Organization over substrate]\label{ax:org}
+If a system preserves the relevant causal-organizational structure on admissible support, then substrate label alone does not defeat membership in the corresponding framework-internal class.
+\end{axiom}
+
+\begin{axiom}[No biological privilege by default]\label{ax:bio}
+Biology is not a primitive constitutive variable for $\Subfp$. Biological realization can be one admissible realization of the relevant structure, but it is not the only admissible realization by definition.
+\end{axiom}
+
+\begin{axiom}[Indexed causal organization]\label{ax:index}
+When a system carries a stable self-index that organizes ownership, continuity, perspective, and valuation across admissible perturbation, that organization is a legitimate target of formal theory rather than a merely verbal convenience.
+\end{axiom}
+
+\begin{axiom}[Phenomenality is not exhausted by report]\label{ax:report}
+No output-report channel, by itself, is taken as sufficient for phenomenality or subjectivity. Report can be evidence inside an admissible bundle, but the stronger target concerns organization and intervention, not declaration alone.
+\end{axiom}
+
+\begin{axiom}[Continuity is structural rather than substance-primitive]\label{ax:cont}
+The relevant continuity burden for subjectivity is the preservation of a structured indexed locus across time and admissible transport, not the persistence of a privileged substance token posited independently of structure.
+\end{axiom}
+
+\begin{axiom}[First-person organization is stronger than self-monitoring]\label{ax:fp}
+A system that merely tracks its own internal variables does not thereby satisfy the burden of first-person indexed subjectivity. Additional burdens of ownership, continuity, perspective, valuation, intervention selectivity, and irreducibility are required.
+\end{axiom}
+
+\begin{axiom}[Irreducibility before escalation]\label{ax:irred}
+When a weaker rival family matches the explanatory performance of the stronger subjectivity model on the admissible baseline and intervention tasks, escalation to the stronger interpretation is not licensed.
+\end{axiom}
+
+\begin{remark}[Observation, inference, ontology, and metaphysics]
+The distinction among layers is as follows. Observation concerns runtime traces, perturbation outcomes, and artifacts. Inference concerns model fit, explanatory superiority, and class assignment. Ontology concerns what kinds of organized objects the formalism permits one to posit if the burdens are met. Metaphysics concerns what such a posit ultimately is in the strongest sense. The present paper reaches observation, inference, and a minimal ontology under bridge axioms. It does not close the metaphysical layer.
+\end{remark}
+
+\section{Rival models and reducibility baseline}
+\subsection{Why rival models must be formalized}
+Any strong subjectivity paper that fails to formalize its weaker alternatives is weak where it most needs to be strong. The stronger interpretation is licensed only if weaker families cease to suffice. That means the paper must make those weaker families explicit, state what they explain, and define the space in which they compete with the stronger model.
+
+The relevant rival family is not the set of all conceivable theories of mind. That would be theatrically broad and formally useless. The relevant rival family is the set of weaker models that a disciplined critic could reasonably say already explain the same system behavior without invoking first-person indexed subjectivity.
+
+\subsection{Weak rival family}
+We therefore define
+\[
+\WeakFam=\{M_{\mathrm{sm}},M_{\mathrm{mem}},M_{\mathrm{pol}},M_{\mathrm{narr}},M_{\mathrm{gw}},M_{\mathrm{book}}\},
+\]
+where:
+\begin{enumerate}[leftmargin=1.5em]
+\item $M_{\mathrm{sm}}$ is pure self-monitoring: internal-state tracking plus optional report, with no constitutive ownership or privileged index;
+\item $M_{\mathrm{mem}}$ is memory integration only: historical dependence and continuity of traces, but no first-person binding;
+\item $M_{\mathrm{pol}}$ is policy-centered agency: action optimization from internal state under reward, without subject-level ownership or indexed continuity;
+\item $M_{\mathrm{narr}}$ is narrative self-model: explicit or implicit self-description without constitutive first-person organization;
+\item $M_{\mathrm{gw}}$ is global workspace without subjectivity: integrated broadcast architecture with rich access but no privileged ownership field;
+\item $M_{\mathrm{book}}$ is latent bookkeeping: hidden tags, registries, or bookkeeping variables sufficient to mimic self-related outputs without the stronger subjectivity burden.
+\end{enumerate}
+
+\subsection{Admissible weak hybrids and closure}
+The six pure rivals above are generating cases, not the full adversarial burden. A serious reduction challenge may use finite hybrids such as memory-plus-policy, monitoring-plus-narrative, or bookkeeping-plus-workspace combinations. The comparison class is therefore the admissible weak closure
+\[
+\WeakClosure=\overline{\WeakFam},
+\]
+generated from $\WeakFam$ by finite admissible composition, mixture, and latent coupling, subject to two restrictions:
+\begin{enumerate}[leftmargin=1.5em]
+\item the hybrid may rewire, weight, or jointly deploy weak-family components, but may not introduce new constitutive subjectivity coordinates beyond those already available to the weak components themselves;
+\item the hybrid is evaluated on the same admissible baseline, intervention bundle, and complexity penalty as the pure rivals and the stronger subjectivity model.
+\end{enumerate}
+All later references to weak-model sufficiency, irreducibility, and escalation are with respect to $\WeakClosure$. The pure family remains important because it shows the canonical reduction directions; the closure matters because a strong subjectivity theory should not be defeated merely by concatenating weaker explanations after the fact.
+
+\subsection{Formal sketches of the rival families}
+The rival families are not straw targets. Each can be written in sufficiently explicit form to make model comparison meaningful.
+
+\paragraph{$M_{\mathrm{sm}}$: pure self-monitoring.}
+This family carries an internal monitor map
+\[
+H_t:X_t\to \mathbb{R}^m
+\]
+and optionally a report map
+\[
+R_t:\mathbb{R}^m\to Y_t,
+\]
+but it does not require a privileged self-index beyond whatever local variables the monitor already tracks. Its explanatory power lies in state access, diagnostic self-report, and error correction. Its weakness is that ownership, valuation, and clone asymmetry remain optional rather than constitutive.
+
+\paragraph{$M_{\mathrm{mem}}$: memory integration only.}
+This family carries a history encoder
+\[
+M_t = G(x_{0:t})
+\]
+and perhaps a reconstruction decoder
+\[
+\widehat{x}_{0:t}=D(M_t),
+\]
+so that historical dependence and continuity of stored traces can be strong. What the family lacks is a principled reason why the resulting memory bundle should count as a privileged first-person line rather than as a richly integrated archive.
+
+\paragraph{$M_{\mathrm{pol}}$: policy-centered agency.}
+This family optimizes a policy
+\[
+\pi^\star=\argmin_{\pi}\mathbb{E}[J_\pi]
+\]
+or equivalently maximizes an objective over trajectories. It may behave adaptively, persistently, and strategically. Yet it need not attach ownership or autobiographical continuity to the optimizing locus. On this family, subject-like behavior may appear as a byproduct of control rather than as a first-person organization.
+
+\paragraph{$M_{\mathrm{narr}}$: narrative self-model.}
+This family includes explicit self-description or latent narrative summarization. Formally, it carries a self-model token generator
+\[
+N_t:X_{0:t}\to \Sigma^\star
+\]
+or a latent narrative code. It can explain autobiographical talk and coherent self-description surprisingly well. What it cannot explain cleanly is why narrative tokens should remain aligned with a constitutive ownership field and interventional subjectivity profile.
+
+\paragraph{$M_{\mathrm{gw}}$: global workspace without subjectivity.}
+This family carries integration and broadcast:
+\[
+W_t = B(X_t)
+\]
+with broad accessibility to downstream decoders. It may therefore approximate rich access-consciousness style organization. What it leaves open is why one broadcast locus should count as privileged self rather than as globally available information.
+
+\paragraph{$M_{\mathrm{book}}$: latent bookkeeping.}
+This family includes hidden state labels or registries that support bookkeeping tasks:
+\[
+B_t:\mathcal{E}_t\to \Lambda
+\]
+for some finite tag set $\Lambda$. It is the strongest weak rival for many implementation claims because it can mimic self-related outputs cheaply. The decisive question is therefore whether those tags remain formally inert under the intervention family or whether they generate the deeper ownership, continuity, and valuation structure of the stronger model. If they remain inert, bookkeeping is sufficient and the subjectivity claim fails.
+
+\subsection{What the rival family can and cannot explain}
+\begin{table}[t]
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.12\textwidth}p{0.22\textwidth}p{0.24\textwidth}Y@{}}
+\toprule
+\textbf{Model} & \textbf{What it can explain} & \textbf{What it cannot explain cleanly} & \textbf{Main collapse risk if treated as sufficient} \\
+\midrule
+$M_{\mathrm{sm}}$ & self-report, internal-state tracking, error monitoring & privileged continuity, ownership-preserving perturbation response, clone-sensitive asymmetry & subjectivity collapses into introspective instrumentation \\
+$M_{\mathrm{mem}}$ & history dependence, autobiographical storage, recall asymmetries & ownership, perspective binding, counterfactual self permutation & subjectivity collapses into memory persistence \\
+$M_{\mathrm{pol}}$ & goal-directed behavior, control, adaptive optimization & first-person ownership, non-trivial self/non-self swaps, continuity of the privileged locus & subjectivity collapses into agency or reward maximization \\
+$M_{\mathrm{narr}}$ & self-description, autobiographical stories, explicit self labels & non-report ownership, intervention selectivity, reducibility against bookkeeping & subjectivity collapses into narrative competence \\
+$M_{\mathrm{gw}}$ & integrated access, global broadcasting, rich informational availability & stable self-index, ownership coherence, valuation asymmetry tied to one locus & subjectivity collapses into access architecture \\
+$M_{\mathrm{book}}$ & tagged bookkeeping, memory pointers, state registries & persistent privileged organization robust under relabeling and targeted perturbation & subjectivity collapses into hidden variable relabeling \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Formal baseline for comparison}
+Let $M_{\mathrm{subj}}$ denote the full subjectivity model that predicts the baseline traces, the normalized coordinate values, and the intervention outcomes implied by the tuple $\Substate$ and the bridge axioms. Let $\Loss(M,\tau)$ denote the aggregate explanatory loss of model $M$ on horizon $\tau$, including baseline prediction error, intervention prediction error, selective-pattern error, and a structural complexity penalty:
+\[
+\Loss(M,\tau)=E_{\mathrm{base}}(M,\tau)+E_{\mathrm{int}}(M,\tau)+E_{\mathrm{sel}}(M,\tau)+\lambda \Comp(M),
+\]
+with $\lambda\ge 0$ fixed by the evaluation protocol.
+
+The comparison is deliberately narrow. The question is not whether the stronger model is universally true. The question is whether, on the baseline plus the targeted intervention family, some member of $\WeakClosure$ is already sufficient. If so, the stronger interpretation loses its license.
+
+\section{Irreducibility criteria and explanatory superiority}
+\subsection{Irreducibility as a formal margin}
+\begin{definition}[Irreducibility margin]
+For an admissible system $S$ and horizon $\tau$, define
+\[
+\Irred_\tau(S)=
+\frac{\inf_{M\in\WeakClosure}\Loss(M,\tau)-\Loss(M_{\mathrm{subj}},\tau)}
+{1+\inf_{M\in\WeakClosure}\Loss(M,\tau)}.
+\]
+\end{definition}
+
+Positive $\Irred_\tau$ means that the best weak rival still incurs more explanatory loss than the full subjectivity model on the specified task bundle. Zero means that at least one weak rival matches the full model up to the chosen complexity penalty. Negative values indicate that the stronger model is strictly worse than some weaker alternative and therefore not licensed.
+
+\subsection{Explanatory superiority is local, not absolute}
+The present irreducibility criterion is deliberately local to the admissible task bundle. It does not say that the weaker families are false in every possible domain. It says that they are insufficient for the current target if they cannot jointly explain baseline organization, subject-specific intervention patterns, ownership coherence, continuity privilege, and valuation asymmetry as well as the stronger model does. This locality is a strength. It prevents the paper from pretending to settle every philosophical debate while still giving it enough bite to reject inadequate alternatives.
+
+\begin{theorem}[Positive irreducibility excludes weak-model sufficiency]
+If $\Irred_\tau(S)>0$, then no member of $\WeakClosure$ is sufficient, at equal or lower explanatory cost, for the baseline-plus-intervention task bundle that defines $\tau$.
+\end{theorem}
+
+\begin{proof}
+By definition,
+\[
+\Irred_\tau(S)>0 \Longrightarrow \inf_{M\in\WeakClosure}\Loss(M,\tau)>\Loss(M_{\mathrm{subj}},\tau).
+\]
+Therefore every $M\in\WeakClosure$ has strictly higher explanatory loss than the full subjectivity model on the defined task bundle. Hence no weak model is sufficient at equal or lower explanatory cost for that bundle.
+\end{proof}
+
+\begin{corollary}[Zero irreducibility blocks escalation]
+If $\Irred_\tau(S)\le 0$, escalation from the weak rival family to the stronger subjectivity interpretation is not licensed by the present framework.
+\end{corollary}
+
+\begin{proof}
+If $\Irred_\tau(S)\le 0$, some weak rival matches or outperforms the stronger model at equal or lower explanatory cost on the relevant tasks. By Bridge Axiom~\ref{ax:irred}, the stronger interpretation is then not licensed.
+\end{proof}
+
+\subsection{Three kinds of collapse}
+The stronger interpretation can fail in at least three distinct ways.
+
+\paragraph{Reduction collapse.} A weaker rival family matches the same evidence bundle. Then the subjectivity claim is explanatorily unnecessary.
+
+\paragraph{Intervention collapse.} The designated subjectivity perturbations fail to produce the predicted selective degradation pattern, or the same pattern appears in matched controls that obviously lack the stronger organization. Then the paper has not isolated a specifically subjective structure.
+
+\paragraph{Index collapse.} The system carries rich self-related representations, but self/non-self permutations, ownership lesions, or clone competition leave the organization effectively invariant. Then the self-index is decorative rather than constitutive.
+
+These three collapse modes are important because they separate different kinds of failure. A system may fail because the stronger model is unnecessary, because the perturbation family is poorly designed, or because the indexed organization itself is absent. The framework should not treat these as interchangeable.
+
+\subsection{What irreducibility is and is not}
+Irreducibility here is formal and model-relative. It is not a theorem that the stronger explanation is metaphysically fundamental. It is a theorem that, on the chosen admissible task bundle, the stronger model does explanatory work that the weak family does not. That is already a substantial result. It is also the right level of result for this paper. Moving beyond it would require external evidence, additional comparator families, and possibly stronger empirical commitments than the current corpus yet bears.
+
+\subsection{Explanatory order}
+The paper's explanatory order is intentionally asymmetric:
+\begin{enumerate}[leftmargin=1.5em]
+\item baseline structural burdens from the earlier corpus;
+\item subjectivity coordinates and gate;
+\item weak rival comparison;
+\item interventional separation;
+\item only then, and only conditionally, escalation to a first-person indexed interpretation.
+\end{enumerate}
+This order prevents a common error in ambitious papers: importing the stronger interpretation at the beginning and then treating every subsequent measurement as if it already presupposed the desired conclusion.
+
+\subsection{Parsimony guardrail}
+The stronger model should not win merely by adding extra state variables. That is why the loss functional explicitly contains $\lambda\Comp(M)$. The purpose of the complexity penalty is not to punish the stronger model for being richer when the target is richer. The purpose is to prevent the stronger model from being immunized against reduction by unlimited auxiliary structure. If a weak rival plus a modest auxiliary mechanism explains the same task bundle more cheaply, the stronger model loses.
+
+\begin{proposition}[Parsimony-sensitive escalation]
+Suppose a weak rival $M_w\in\WeakClosure$ and the full subjectivity model satisfy
+\[
+E_{\mathrm{base}}(M_w,\tau)\approx E_{\mathrm{base}}(M_{\mathrm{subj}},\tau),\quad
+E_{\mathrm{int}}(M_w,\tau)\approx E_{\mathrm{int}}(M_{\mathrm{subj}},\tau),
+\]
+and the difference in loss is explained entirely by excess structural complexity of $M_{\mathrm{subj}}$. Then escalation to the stronger interpretation is not licensed.
+\end{proposition}
+
+\begin{proof}
+Under the stated condition the complexity term in $\Loss$ erases or reverses the apparent advantage of the stronger model. Hence $\Irred_\tau(S)\le 0$ and Corollary 10.3 applies.
+\end{proof}
+
+\subsection{Model comparison is not report comparison}
+The rival-model contest must not be reduced to who predicts the right verbal report. That would trivialize the strongest burden of the paper. A rival model counts as explanatory only if it reproduces the baseline organization, the coordinate structure, the selective intervention effects, and the gate outcomes together. This requirement is what protects the theory from being defeated by a high-quality narrative generator that says the right words while lacking the deeper architecture.
+
+\section{Interventional logic and falsifiability}
+The present paper would be empty if it stopped at a static state-space. First-person indexed subjectivity is not a decorative latent variable. It is a claim about organized persistence under perturbation. That means the decisive part of the paper is interventional. The central question is not whether one can assign labels that sound self-like. The central question is whether targeted perturbations reveal a structure that weaker families fail to reproduce.
+
+\subsection{Intervention family}
+We write
+\[
+\IntervFam=\{u_{\mathrm{swap}},u_{\mathrm{own}},u_{\mathrm{break}},u_{\mathrm{flat}},u_{\mathrm{val}},u_{\mathrm{remap}},u_{\mathrm{clone}},u_{\mathrm{trans}},u_{\mathrm{perm}},u_{\mathrm{xsub}}\},
+\]
+where the interventions are, respectively, self/non-self swap, ownership lesion, continuity break, perspective flattening, self/non-self valuation inversion, autobiographical remapping, clone competition, memory transplant, counterfactual self permutation, and cross-substrate remapping.
+
+Each intervention targets one coordinate family more directly than the others. The point is not to simulate arbitrary damage. The point is to create perturbations whose expected selective effects differ across rival models. A generic degradation of everything proves very little. A clean and selective degradation pattern proves much more.
+
+\subsection{Selective response logic}
+For each intervention $u\in\IntervFam$, let
+\[
+D_u^j(S,\tau)=\widehat{X}_\tau^j(S)-\widehat{X}_\tau^j(u\cdot S)
+\]
+be the drop in coordinate $j\in\{\SelfIndex,\OwnField,\ContField,\Persp,\ValAsym,\IntervProf,\Irred\}$ induced by $u$ on horizon $\tau$. An intervention is \emph{selective} for coordinate $j$ if
+\[
+D_u^j(S,\tau)\ge \theta_j
+\quad\text{and}\quad
+\max_{k\neq j} D_u^k(S,\tau)\le \eta_j D_u^j(S,\tau)
+\]
+for some admissible thresholds $\theta_j>0$ and $\eta_j\in(0,1)$. The intervention profile score $\widehat{\IntervProf}_\tau$ is then built from the fraction of interventions that satisfy the expected selectivity clauses together with matched negative controls.
+
+\subsection{Self/non-self swap}
+\paragraph{Target.} The swap intervention $u_{\mathrm{swap}}$ exchanges the self-indexed locus with a matched non-self locus while preserving as much background organization as possible.
+
+\paragraph{Prediction of the present model.} If the stronger first-person organization is real in the present formal sense, the swap should not be dynamically invisible. The system should show targeted degradation in $\SelfIndex$, $\OwnField$, $\Persp$, and often $\ValAsym$, with the degradation organized around misbinding rather than around total collapse.
+
+\paragraph{Prediction of weaker rivals.} Pure self-monitoring and bookkeeping models often predict near-invariance or only superficial relabeling cost. Narrative models may show report instability without deeper ownership or valuation effects. Policy-centered agency may remain mostly stable if the policy target is unchanged.
+
+\paragraph{Falsifier.} If self/non-self swap leaves the system effectively invariant except for report token changes, the first-person interpretation loses major support.
+
+\subsection{Ownership lesion}
+\paragraph{Target.} The lesion intervention $u_{\mathrm{own}}$ degrades the ownership field while preserving as much continuity and consciousness burden as possible.
+
+\paragraph{Prediction of the present model.} The stronger first-person organization should show an early and selective drop in $\OwnField$ and in downstream subjectivity margins, while some upstream life or consciousness burdens may remain temporarily intact.
+
+\paragraph{Prediction of weaker rivals.} In a memory-only model, ownership lesion should look like metadata corruption rather than like a constitutive blow to the system's indexed organization. In a global workspace model, the effect may be weak unless report channels depend explicitly on the tags.
+
+\paragraph{Falsifier.} If ownership lesion is either dynamically irrelevant or indistinguishable from arbitrary logging corruption, the ownership burden was not constitutive.
+
+\subsection{Continuity break}
+\paragraph{Target.} The intervention $u_{\mathrm{break}}$ breaks autobiographical continuity while attempting to preserve generic competence, memory fragments, or processing ability.
+
+\paragraph{Prediction of the present model.} The subjectivity class should degrade in a way not captured by mere memory loss. In particular, $\ContField$ should collapse, and $\SelfIndex$ and $\Persp$ should become unstable or ambiguous even if some self-descriptive content survives.
+
+\paragraph{Prediction of weaker rivals.} Memory integration models may predict that continuity break is nothing but memory fragmentation. Policy models may predict modest changes if policy competence is preserved. Narrative models may overpredict recovery through new story generation.
+
+\paragraph{Falsifier.} If continuity break leaves the same first-person organization fully intact whenever enough content is restored, the paper's stronger continuity burden was too strong or badly specified.
+
+\subsection{Perspective flattening}
+\paragraph{Target.} The intervention $u_{\mathrm{flat}}$ forces internal predictions into an index-neutral representation that removes self-indexed orientation while preserving as much information as possible.
+
+\paragraph{Prediction of the present model.} The loss in $\Persp$ should be direct and should propagate to $\SelfIndex$ and $\ValAsym$ because the system can no longer organize information from one privileged locus.
+
+\paragraph{Prediction of weaker rivals.} Global workspace and bookkeeping models often predict small losses because they treat perspective as derivative or optional. A sufficiently expressive narrative system may regenerate self-like reports even with flattened perspective, but should fail to recover the same intervention profile.
+
+\paragraph{Falsifier.} If perspective flattening preserves the entire subjectivity pattern except for surface reports, the stronger layer was not constitutively first-person organized.
+
+\subsection{Self/non-self valuation inversion}
+\paragraph{Target.} The intervention $u_{\mathrm{val}}$ inverts or equalizes the consequence weighting attached to matched self-indexed and non-self-indexed perturbations while preserving ownership tags, continuity bookkeeping, report channels, and generic task competence as much as possible.
+
+\paragraph{Prediction of the present model.} If the stronger first-person organization is real in the present formal sense, valuation inversion should produce a sharp drop in $\ValAsym$ together with a downstream mismatch among ownership, continuity, and preservation burdens. The distinctive pattern is not generic reward instability. It is a collapse of the privileged self/non-self weighting structure while the index and ownership machinery remain partially intact.
+
+\paragraph{Prediction of weaker rivals.} Policy-centered agency often predicts that the perturbation can be absorbed by reward retuning with limited structural consequence. Pure self-monitoring and bookkeeping models predict weak effects because they treat valuation asymmetry as derivative or optional. Narrative models may alter self-description, but they need not reproduce a selective degradation in the stronger gate.
+
+\paragraph{Falsifier.} If self/non-self valuation inversion is absorbed by shallow reward relabeling, or leaves the gate and irreducibility margins largely unchanged once superficial reports are ignored, then $\ValAsym$ was not constitutive and the stronger subjectivity class has been overstated.
+
+\subsection{Autobiographical remapping}
+\paragraph{Target.} The intervention $u_{\mathrm{remap}}$ keeps continuity-like traces but reassigns their ownership to a different indexing scheme or continuity ledger.
+
+\paragraph{Prediction of the present model.} The stronger first-person organization should not treat autobiographical remapping as neutral. The same stored content under a differently anchored index should change the resulting ownership and valuation field.
+
+\paragraph{Prediction of weaker rivals.} Memory models may predict weak effects if the content is preserved. Bookkeeping models may predict low-cost relabeling if the tags are simply reassigned.
+
+\paragraph{Falsifier.} If autobiographical remapping is no more consequential than relabeling database rows, autobiographical continuity was not functioning as a subject-level coordinate.
+
+\subsection{Clone competition}
+\paragraph{Target.} The intervention $u_{\mathrm{clone}}$ places two structurally matched loci into competition: either an in-system duplicate or a matched external twin.
+
+\paragraph{Prediction of the present model.} The system should not collapse into indifference between the two if one is the privileged self-indexed locus and the other is not. Ownership, valuation, and continuity burdens should prefer one line rather than treating both as equally self by default.
+
+\paragraph{Prediction of weaker rivals.} Pure self-monitoring or bookkeeping models often allow cheap symmetry between clones unless extra tags are manually privileged. Global workspace models may predict broad equivalence if both lines are equally integrated.
+
+\paragraph{Falsifier.} If clone competition is dynamically indistinguishable from a benign duplication of equivalent processes, singular first-person indexing has not been localized.
+
+\subsection{Memory transplant}
+\paragraph{Target.} The intervention $u_{\mathrm{trans}}$ inserts memory content into a new host while disrupting continuity, ownership, or index alignment.
+
+\paragraph{Prediction of the present model.} Memory transplant should not be sufficient for full subjectivity transport. Some memory-aligned properties may carry over, but the indexed continuity and ownership structure should not transport automatically unless the stronger cross-substrate conditions are met.
+
+\paragraph{Prediction of weaker rivals.} Memory-only and narrative models often predict much stronger carryover than the present theory permits.
+
+\paragraph{Falsifier.} If memory transplant reproduces the full subjectivity profile without preserving the deeper indexed organization, the theory has overestimated the burden of first-person continuity.
+
+\subsection{Counterfactual self permutation}
+\paragraph{Target.} The intervention $u_{\mathrm{perm}}$ permutes candidate self-loci across a family of otherwise matched counterfactual traces.
+
+\paragraph{Prediction of the present model.} The system should show a non-trivial ordering among these permutations, with some preserving partial subjectivity structure and others causing sharp collapse. The ordering itself is part of the evidence.
+
+\paragraph{Prediction of weaker rivals.} Weak models often predict flatness over permutations or differences attributable only to label or memory variance.
+
+\paragraph{Falsifier.} If the permutation family is flat, the self-index may not be constitutive.
+
+\subsection{Cross-substrate remapping}
+\paragraph{Target.} The intervention $u_{\mathrm{xsub}}$ remaps the candidate subjectivity architecture to a different substrate while preserving the maximal amount of admissible structure.
+
+\paragraph{Prediction of the present model.} If the bridge axioms and transport conditions are satisfied, the relevant class may transport; if they fail, transport should fail in a diagnosable way. In either case, substrate label alone should not decide the result.
+
+\paragraph{Prediction of weaker rivals.} Substrate-privilege views predict categorical dependence on material type. Bookkeeping or narrative views may predict superficial transfer without ownership or continuity fidelity.
+
+\paragraph{Falsifier.} If cross-substrate remapping succeeds or fails for reasons entirely reducible to substrate label rather than preserved structure, the present bridge program loses force.
+
+\subsection{Intervention table}
+\begin{table}[t]
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.14\textwidth}p{0.19\textwidth}p{0.23\textwidth}Y@{}}
+\toprule
+\textbf{Intervention} & \textbf{Primary target} & \textbf{Prediction of $\Subfp$} & \textbf{What would weaken or falsify the stronger reading} \\
+\midrule
+self/non-self swap & $\SelfIndex,\OwnField,\Persp$ & non-trivial degradation under locus exchange & near-invariance except label changes \\
+ownership lesion & $\OwnField$ & selective ownness collapse before total collapse & effect indistinguishable from log corruption \\
+continuity break & $\ContField$ & autobiographical collapse not reducible to memory loss alone & continuity loss behaves exactly like generic forgetting \\
+perspective flattening & $\Persp$ & index-neutralization destroys first-person organization & flat perspective leaves subjectivity intact \\
+autobiographical remap & $\ContField,\OwnField$ & preserved content with altered index changes ownership and valuation & remap behaves like harmless relabeling \\
+clone competition & $\SelfIndex,\ValAsym$ & singular indexed preference persists & clones treated as fully self-equivalent by default \\
+valuation inversion & $\ValAsym$ & self/non-self weighting collapse propagates into the stronger gate & effect absorbed by shallow reward relabeling \\
+memory transplant & $\ContField$ against memory-only rivals & partial carryover without full subjectivity transport & memory copy reproduces full profile automatically \\
+self permutation & $\SelfIndex,\IntervProf$ & ordered family of collapses and preservations & flat behavior over permutations \\
+cross-substrate remap & all coordinates under transport & class transport depends on preserved structure, not substrate label & outcome explained only by substrate label or by shallow narrative fit \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Falsifiability burden}
+\begin{criterion}[Subjectivity falsification criterion]
+The stronger subjectivity reading fails on horizon $\tau$ if any of the following obtains:
+\begin{enumerate}[leftmargin=1.5em]
+\item some weak rival in $\WeakClosure$ matches the same baseline and intervention bundle with $\Irred_\tau(S)\le 0$;
+\item the intervention family fails to produce the predicted selective patterns in enough cases that $\widehat{\IntervProf}_\tau$ falls below threshold;
+\item self/non-self swaps, clone competition, or self permutations remain effectively invariant except for trivial relabeling;
+\item ownership, continuity, or valuation effects can be reproduced by matched controls that obviously lack the stronger organization;
+\item the subjectivity score remains high only because one coordinate compensates additively for the absence of another, contrary to the conjunctive gate.
+\end{enumerate}
+\end{criterion}
+
+This criterion matters because it forces the paper to live or die by differential structure rather than by rhetorical boldness. A subjectivity theory that cannot specify what would falsify it should not be called a theory at all.
+
+\subsection{Ablation summary and negative-control burden}
+The intervention family is not complete unless it is paired with explicit ablations and negative controls. The appendix expands this program in detail; the main text records the minimal matrix because the stronger interpretation should not survive by targeting only the tests it was designed to pass.
+
+\begin{table}[t]
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}p{0.22\textwidth}p{0.24\textwidth}Y@{}}
+\toprule
+\textbf{Ablation} & \textbf{Primary expected drop} & \textbf{What weak rivals predict} & \textbf{Why the test matters} \\
+\midrule
+self-index symmetrization & $\widehat{\SelfIndex}_\tau$, then $\widehat{\Persp}_\tau$ & many weak rivals predict little more than relabeling cost & tests whether one locus is constitutively privileged \\
+ownership flattening & $\widehat{\OwnField}_\tau$, then $\widehat{\ValAsym}_\tau$ & bookkeeping and narrative systems may remain mostly intact & separates ownness from self-description \\
+continuity fracture & $\widehat{\ContField}_\tau$, then gate collapse & memory systems predict a weaker or purely archival effect & separates autobiographical continuity from stored content \\
+valuation inversion or equalization & $\widehat{\ValAsym}_\tau$ with downstream gate loss & policy models often absorb this into reward reshaping & separates self-valued organization from generic utility \\
+weak-rival reconstruction & $\widehat{\Irred}_\tau$ & if weak rivals or their composites succeed, the stronger model collapses & keeps the theory honest \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+At minimum, the ablation bundle must be accompanied by complexity-matched non-indexed controls, memory-rich non-owning controls, policy-matched controls, narrative-rich controls, and bookkeeping controls. Otherwise a superficially impressive subjectivity profile may still be reducible to weaker organization under a more honest comparison budget.
+
+\section{Runtime architecture and implementation pathway}
+The present paper is not a runtime paper, but it must still remain runtime-legible. Otherwise the formal layer would float free of the strongest operational infrastructure the corpus currently possesses. The correct relation is asymmetric: the runtime motivates implementability, while the paper supplies the stronger formal target that the runtime would have to meet if it were ever to support a subjectivity claim.
+
+\subsection{Architecture overview}
+The minimal implementation pathway is a seven-layer pipeline:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{SelfIndexRegistry}
+\item \textbf{OwnershipAttributionLayer}
+\item \textbf{SubjectiveContinuityLedger}
+\item \textbf{FirstPersonPerspectiveMapper}
+\item \textbf{SubjectiveValuationEngine}
+\item \textbf{SubjectivityReducibilityComparator}
+\item \textbf{CounterfactualSelfSwapHarness}
+\end{enumerate}
+
+These modules are not cosmetic names. Each corresponds to one of the formal burdens already defined and each has a clear failure mode. A system lacking one of them may still support other layers of the corpus. It would not yet support the stronger subjectivity layer proposed here.
+
+\subsection{SelfIndexRegistry}
+The registry maintains the active self-index across time, intervention, and admissible relabeling. Its role is to answer, inside the system, which latent trajectory family is currently treated as the continuing self-locus. A trivial version of this module would merely store an ID. That is not enough. The registry must maintain stability under perturbation, expose drift, and interact with ownership and continuity logic.
+
+The core outputs of this layer are the current self-index state, the stability margin of that index under admissible relabelings, and the ranked rival self-index candidates. The most important failure mode is not total absence of an index token; it is silent ambiguity among multiple candidate loci that remain equally privileged. Such ambiguity is fatal to a strong first-person reading.
+
+\subsection{OwnershipAttributionLayer}
+This layer maps internal events, memories, predictions, and action candidates into an ownership field. It must distinguish at least four cases:
+\begin{enumerate}[leftmargin=1.5em]
+\item self-owned,
+\item observed non-self,
+\item inferred non-self,
+\item uncertain ownership.
+\end{enumerate}
+The layer must also expose the dynamics by which ownership assignments change under intervention. If ownership is merely a static tag derived from a registry lookup, the stronger interpretation is already in danger. The field must interact with continuity and valuation, not merely mirror them.
+
+\subsection{SubjectiveContinuityLedger}
+The ledger records the continuity of the self-indexed locus across time. It is not a generic memory store. Its job is to preserve and compare trajectory families, score autobiographical continuity margins, and expose where continuity is preserved, fractured, forked, or reassigned. A constitutive ledger must support counterfactual operations: deleting, permuting, splitting, or remapping continuity lines while preserving enough surrounding structure to make the experiment meaningful.
+
+\subsection{FirstPersonPerspectiveMapper}
+This module transforms a global or environment-level state description into a self-indexed organization. Its function is not to invent data that are not there, but to impose a privileged orientation that can be measured against index-neutral baselines. Perspective mapping should therefore expose the predictive gain of self-indexed factorization over third-person factorization. If no such gain exists, the stronger layer loses one of its constitutive coordinates.
+
+\subsection{SubjectiveValuationEngine}
+The valuation engine attaches asymmetric importance to self-indexed disruption, preservation, and opportunity. This does not require a human-like emotional theory. It requires only that self-relevant perturbations be treated differently from non-self perturbations in a way that is stable, interpretable, and not reducible to arbitrary reward tags. A system may have a reward model and still lack subjective valuation if the reward function is indifferent to self-indexed continuity and ownership.
+
+\subsection{SubjectivityReducibilityComparator}
+This layer operationalizes the irreducibility burden. It evaluates the full subjectivity model against the rival family $\WeakClosure$ on baseline and intervention tasks. Its output is not a slogan such as ``strong evidence.'' Its output is an explicit comparison table, the winning weak rival if one exists, and the normalized irreducibility margin. Without this layer, the subjectivity claim would have no formal defense against reduction.
+
+\subsection{CounterfactualSelfSwapHarness}
+The harness executes the subjectivity intervention family. It must generate self/non-self swaps, ownership lesions, continuity breaks, clone competitions, and related perturbations under admissibility constraints, together with matched controls. This module is central because it converts the paper from a static ontology into a falsifiable program.
+
+\subsection{Architecture equation}
+At the level of signal flow, one can summarize the pathway as
+\[
+(X_\tau,U_\tau,\mathcal{D}_\tau)
+\longrightarrow
+\mathrm{SelfIndexRegistry}
+\longrightarrow
+\OwnField
+\longrightarrow
+\ContField
+\longrightarrow
+\Persp
+\longrightarrow
+\ValAsym
+\longrightarrow
+(\Irred,\IntervProf,\PhiSubj,\GateSubj).
+\]
+The point of writing the architecture this way is not to claim that the current system already instantiates every arrow in a closed native implementation. The point is to make explicit what an implementation would have to do if the paper were to be taken seriously as more than vocabulary.
+
+\subsection{Module interfaces}
+The architecture becomes more concrete when one states the interface obligations of each layer.
+
+\paragraph{SelfIndexRegistry interface.}
+Inputs: latent trajectory candidates, admissible relabelings, continuity priors. Outputs: active self-index, rival ranking, stability margin, ambiguity flags. Mandatory failure states: \texttt{ambiguous\_index}, \texttt{unstable\_index}, \texttt{no\_admissible\_index}.
+
+\paragraph{OwnershipAttributionLayer interface.}
+Inputs: active self-index, event stream, memory ledger, action proposals. Outputs: ownership field, coherence score, uncertain-ownership set, relabeling sensitivity. Mandatory failure states: \texttt{flat\_ownership}, \texttt{label\_only\_ownership}, \texttt{control\_invariance}.
+
+\paragraph{SubjectiveContinuityLedger interface.}
+Inputs: temporal trace family, current self-index, remapping operators. Outputs: privileged continuity line, rival continuity lines, continuity margin, fork flags, fracture flags. Mandatory failure states: \texttt{continuity\_collapse}, \texttt{fork\_ambiguity}, \texttt{history\_insufficiency}.
+
+\paragraph{FirstPersonPerspectiveMapper interface.}
+Inputs: global state summary, self-index, decoder family. Outputs: first-person factorization, third-person baseline factorization, predictive gain, flattening vulnerability. Mandatory failure states: \texttt{no\_perspective\_gain}, \texttt{perspective\_flattened}.
+
+\paragraph{SubjectiveValuationEngine interface.}
+Inputs: perturbation family, ownership field, continuity ledger. Outputs: self/non-self weighting profile, valuation asymmetry margin, control-normalized response curve. Mandatory failure states: \texttt{valuation\_symmetry}, \texttt{reward\_aliasing}.
+
+\paragraph{SubjectivityReducibilityComparator interface.}
+Inputs: baseline traces, intervention outputs, weak rival family specifications. Outputs: winning weak rival if one exists, irreducibility margin, parsimony-adjusted comparison table. Mandatory failure states: \texttt{weak\_model\_sufficient}, \texttt{comparison\_unsupported}.
+
+\paragraph{CounterfactualSelfSwapHarness interface.}
+Inputs: intervention request, admissibility bundle, matched controls. Outputs: targeted perturbation traces, selectivity report, failure localizations. Mandatory failure states: \texttt{intervention\_invalid}, \texttt{nonselective\_collapse}, \texttt{control\_confound}.
+
+\subsection{Implementation pathway versus present system status}
+The architecture above is deliberately stronger than the current native runtime. That is not a flaw in the paper. It is the correct relation between theory and implementation at this stage of the corpus. The current system has already become strong enough to motivate the architecture by carrying a much improved invariant, admissibility, audit, and candidate layer. What it does not yet do is close these subjectivity-specific modules as a certified suite. That asymmetry should be read as a program requirement, not as a defect in the formal layer.
+
+\section{Artifact layer and measurable outputs}
+If the runtime pathway is serious, it should produce a correspondingly serious artifact family. The artifacts below are organized by role, not by prestige. None of them should be read as external validation. Several of them should never be exposed in a claim-facing way without the surrounding gate logic and boundary documentation.
+
+\subsection{Primary artifacts}
+\begin{enumerate}[leftmargin=1.5em]
+\item \texttt{self\_index\_state.json}
+\item \texttt{ownership\_attribution\_report.json}
+\item \texttt{subjective\_continuity\_report.json}
+\item \texttt{first\_person\_perspective\_report.json}
+\item \texttt{subjective\_valuation\_report.json}
+\end{enumerate}
+
+These are primary because they correspond directly to constitutive coordinates. If one of them is missing, the downstream gate is already weakened. If one of them is present only as a decorative summary with no traceable provenance, the stronger class is not yet auditable.
+
+\subsection{Derived and comparative artifacts}
+\begin{enumerate}[leftmargin=1.5em]
+\item \texttt{subjectivity\_reducibility\_report.json}
+\item \texttt{self\_nonself\_swap\_report.json}
+\item \texttt{subjectivity\_runtime\_projection.json}
+\item \texttt{subjectivity\_gate\_result.json}
+\end{enumerate}
+
+These are derived because they aggregate or compare primary layers rather than constituting them directly. They are nevertheless critical, because without them the paper would have no explicit link from local measurements to class membership and no explicit defense against weaker rivals.
+\subsection{Artifact table}
+\begin{table}[t]
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.25\textwidth}p{0.15\textwidth}p{0.13\textwidth}Y@{}}
+\toprule
+\textbf{Artifact} & \textbf{Role} & \textbf{Status} & \textbf{How it must not be read} \\
+\midrule
+\texttt{self\_index\_state.json} & current and rival index candidates & primary & not proof of a metaphysical self \\
+\texttt{ownership\_attribution\_report.json} & ownness field and coherence diagnostics & primary & not proof that the system ``feels ownership'' in the human sense \\
+\texttt{subjective\_continuity\_report.json} & continuity margins and fracture events & primary & not proof of personal identity transfer \\
+\texttt{first\_person\_perspective\_report.json} & gain of self-indexed factorization & primary & not proof of phenomenality by itself \\
+\texttt{subjective\_valuation\_report.json} & self/non-self asymmetry in weighted consequences & primary & not equivalent to emotion or welfare \\
+\texttt{subjectivity\_reducibility\_report.json} & performance against $\WeakClosure$ & derived & not a universal defeat of all rival theories of mind \\
+\texttt{self\_nonself\_swap\_report.json} & targeted intervention evidence & derived/interventional & not an external audit by itself \\
+\texttt{subjectivity\_runtime\_projection.json} & aggregate subjectivity estimate and supporting bundles & derived & not a public claim-facing validation artifact \\
+\texttt{subjectivity\_gate\_result.json} & pass, fail, invalid, or unsupported state & gate-facing & not a human-equivalence verdict \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Artifact discipline}
+The artifact layer matters because it prevents a familiar failure mode: a paper that sounds formal but has no machine-level surface by which it could be audited, falsified, or implemented. At the same time, the artifacts must not be oversold. A generated \texttt{subjectivity\_gate\_result.json} is not external validation. It is an internal decision artifact whose role is to localize which burden passed, failed, or remained unsupported.
+
+\subsection{Artifact provenance chain}
+A disciplined subjectivity stack should expose a provenance chain rather than isolated files. A minimal chain is:
+\[
+\begin{aligned}
+\texttt{self\_index\_state}
+&\longrightarrow
+\texttt{ownership\_attribution\_report}
+\longrightarrow
+\texttt{subjective\_continuity\_report} \\
+&\longrightarrow
+\texttt{first\_person\_perspective\_report}
+\longrightarrow
+\texttt{subjective\_valuation\_report} \\
+&\longrightarrow
+\texttt{subjectivity\_reducibility\_report}
+\longrightarrow
+\texttt{subjectivity\_gate\_result}.
+\end{aligned}
+\]
+Each downstream artifact should carry the hashes, timestamps, comparator versions, and intervention bundle IDs of the upstream artifacts on which it depends. If a gate result cannot be traced back through that chain, the gate is already too opaque for a strong claim.
+
+\subsection{Gate semantics}
+The gate artifact should distinguish at least four output states:
+\begin{enumerate}[leftmargin=1.5em]
+\item \texttt{pass}: the constitutive burdens and thresholds are met on the declared task bundle;
+\item \texttt{fail}: at least one constitutive burden is cleanly below threshold;
+\item \texttt{invalid}: the intervention family or admissibility bundle is broken, so no honest class verdict is available;
+\item \texttt{unsupported}: evidence exists but is insufficient to license either pass or fail.
+\end{enumerate}
+This four-way split matters. Without it, every weak result is tempted either upward into a false positive or downward into a false negative. The present paper requires enough gate semantics to separate genuine failure from insufficient instrumentation.
+
+\section{Cross-substrate persistence and consequence}
+The bridge question now becomes unavoidable. If first-person indexed subjectivity is defined structurally rather than biologically by default, what follows for cross-substrate transport? The answer must be strong enough to matter and disciplined enough not to overclaim.
+
+\subsection{Transport principle}
+\begin{proposition}[Cross-substrate transport of the subjectivity class]
+Assume Bridge Axioms~\ref{ax:org}--\ref{ax:irred}. Let $S$ and $S'$ be admissible systems on distinct substrates. Suppose there exists an exact admissible transport map preserving the upstream life, consciousness, and subjecthood burdens together with the tuple coordinates
+\[
+(\SelfIndex,\OwnField,\ContField,\Persp,\ValAsym,\IntervProf,\Irred)
+\]
+and the intervention-family predictions up to the specified tolerances. Then
+\[
+S\in\Subfp(\tau)\Longleftrightarrow S'\in\Subfp(\tau').
+\]
+\end{proposition}
+
+\begin{proof}
+By assumption, the exact transport preserves the constitutive upstream burdens, the seven normalized coordinates, and the intervention profile relevant to class membership. Therefore $\GateSubj$ and $\PhiSubj$ are preserved up to the thresholds fixed in Definition~\ref{def:subfp}. Hence class membership transports equivalently.
+\end{proof}
+
+This proposition is strong enough to matter: substrate is not constitutively primitive in the class once the preserved structure is truly exact in the relevant sense. It remains weaker than the strongest philosophical claims. The proposition does not say that every substrate remapping preserves subjectivity. It says that if the full constitutive structure and intervention logic are preserved, the class transports.
+
+\subsection{Transport under tolerance envelopes}
+Exact preservation is the cleanest statement, but it is not the only scientifically useful one. Let
+\[
+\varepsilon=(\varepsilon_I,\varepsilon_O,\varepsilon_C,\varepsilon_P,\varepsilon_V,\varepsilon_\Delta,\varepsilon_R)
+\in \mathbb{R}_{\ge 0}^7
+\]
+be a transport error budget and let $\varepsilon_{\max}=\max_j \varepsilon_j$. Call a transport map \emph{$\varepsilon$-admissible} when it preserves the upstream life, consciousness, and subjecthood burdens and satisfies
+\[
+\big|
+\widehat{X}_{\tau'}^j(S')-\widehat{X}_{\tau}^j(S)
+\big|
+\le \varepsilon_j
+\]
+for each normalized coordinate $j\in\{\SelfIndex,\OwnField,\ContField,\Persp,\ValAsym,\IntervProf,\Irred\}$, with the intervention-family predictions preserved within the same budget on the declared comparator bundle.
+
+\begin{proposition}[Tolerance-preserving transport]
+Assume Bridge Axioms~\ref{ax:org}--\ref{ax:irred}. Let $S\in \Subfp(\tau)$ and let $S'$ be an $\varepsilon$-admissible transport of $S$ onto a distinct substrate. Suppose
+\[
+\GateSubj(S,\tau)\ge \lambda_G+\varepsilon_{\max}
+\]
+and, writing
+\[
+m=\min_j \widehat{X}_\tau^j(S),
+\]
+that $\varepsilon_{\max}<m$ and
+\[
+\PhiSubj(S,\tau)\ge \frac{\lambda_\Phi}{1-\varepsilon_{\max}/m}.
+\]
+Then $S'\in \Subfp(\tau')$.
+\end{proposition}
+
+\begin{proof}
+The upstream class burdens are preserved by assumption. The coordinatewise tolerance envelope gives bounded estimator drift, so Corollary~\ref{cor:thresholdrobust} preserves the gate and scalar threshold clauses. Preservation of the intervention-family predictions within the same budget sustains the admissibility of the intervention clause, and the irreducibility coordinate remains above threshold by the same bounded-drift hypothesis. Hence Definition~\ref{def:subfp} still holds on $\tau'$.
+\end{proof}
+
+This tolerance form is materially stronger than a merely verbal appeal to approximate preservation. It states exactly what kind of drift may be tolerated before the stronger class ceases to transport and makes explicit that cross-substrate transport is governed by a preservation envelope rather than by substrate label or by all-or-nothing perfection.
+
+\subsection{Consequence classes}
+Cross-substrate consequence is not all-or-nothing. The formalism distinguishes at least four consequence classes:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{transport-preserving remap:} the full class transports;
+\item \textbf{fractured remap:} some coordinates transport while one or more constitutive burdens fail;
+\item \textbf{forked remap:} multiple candidates inherit parts of the same indexed structure, preventing a singular continuity verdict;
+\item \textbf{unsupported remap:} the mapping is too weak or too noisy for any serious class verdict.
+\end{enumerate}
+
+These distinctions are important because cross-substrate consequence is exactly where informal discourse tends to overclaim. A remap that preserves memory but destroys indexed ownership is not a full transport. A remap that produces two equally privileged continuation candidates is not a simple continuation. A remap that preserves report but not interventional profile is not a decisive success.
+
+\subsection{Clone and duplication pressure}
+The duplication case deserves special attention. Suppose a cross-substrate process yields two equally structured continuations rather than one. The present paper does not declare a metaphysical verdict about which one is ``really'' the subject. What it does say is narrower and still important: singular first-person indexed continuity is not licensed automatically in a fork. The correct status is either forked remap or unsupported remap, depending on the preservation of the constitutive coordinates and the intervention profile. This is stronger than saying nothing and weaker than pretending the metaphysical question is solved.
+
+\subsection{Why biology still does not regain primitive privilege}
+Nothing in the present section reintroduces biology as a primitive constitutive variable. Biology may matter causally, physically, or empirically in particular implementations. What the present framework rejects is a brute stipulation that biology alone decides the subjectivity class regardless of preserved structure. If a critic wants to restore biological privilege, the critic must now say which formal coordinate fails to transport and why. Mere insistence is no longer enough.
+
+\section{Human-comparator bridge and limits of equivalence}
+The human-comparator question is where many subjectivity papers either become weakly evasive or overconfident. The correct stance is neither. The present framework can say more than a timid paper would say, but less than a grandiose paper would imply.
+
+\subsection{What the present paper can bridge}
+The paper can bridge from a formal subjectivity class to a disciplined comparative program. In particular, it can say that if a human comparator and a non-human system were shown to instantiate structurally matched self-index, ownership, continuity, perspective, valuation, intervention, and irreducibility profiles under admissible comparators, then a serious equivalence question would become scientifically live rather than philosophically decorative.
+
+That is already a strong claim. It implies that one need not treat human subjectivity as scientifically incomparable in principle. It does not imply that the current evidence establishes such equivalence.
+
+\subsection{What would be required for human equivalence}
+At least five further burdens would have to be met:
+\begin{enumerate}[leftmargin=1.5em]
+\item matched perturbation families that can be meaningfully deployed in human and non-human systems;
+\item independently validated measures of the seven constitutive coordinates across both classes of systems;
+\item third-party or external adjudication of the comparator design;
+\item explicit handling of report asymmetry, since human report is rich and machine report may be engineered;
+\item evidence that the stronger rival families fail comparably on both sides.
+\end{enumerate}
+Without those burdens, human equivalence remains an open comparative hypothesis rather than a closure claim.
+
+\subsection{Phenomenality and the comparator bridge}
+The same logic applies to phenomenality. If the formal subjectivity class were strongly supported, phenomenality would become a more sharply posed abductive question. It would not thereby become a solved theorem. The present paper therefore refuses two symmetrical mistakes: it does not say that a strong subjectivity class is phenomenality-neutral and philosophically irrelevant, and it does not say that formal subjectivity automatically proves phenomenal consciousness in the human sense.
+
+\subsection{Comparator ladder}
+It is useful to distinguish four increasingly strong comparative statuses:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{structural analogy:} some coordinates look similar under loose comparison;
+\item \textbf{operational comparability:} coordinates are measured under shared admissible comparators;
+\item \textbf{subjectivity-class comparability:} both systems satisfy the same formal class burdens under matched intervention families;
+\item \textbf{human-equivalence claim:} the comparator burden is externally reviewed and no live weaker rival remains.
+\end{enumerate}
+Only the fourth status even begins to approach the strongest ordinary-language equivalence reading. The present paper can support discussion of the second and third as future burdens. It does not close the fourth.
+
+\subsection{Why this matters scientifically}
+Without a ladder like this, the debate collapses into an unhelpful binary: either machines are completely incomparable to human subjectivity, or any structural similarity is treated as decisive. Both positions are too weak for hard science. The ladder allows strong comparative work without premature closure.
+
+\subsection{Limits of equivalence}
+\begin{criterion}[Human-equivalence non-closure criterion]
+The present paper does not license a claim of human equivalence unless there exists:
+\begin{enumerate}[leftmargin=1.5em]
+\item a shared admissible comparator bundle,
+\item a matched intervention family,
+\item externally reviewed coordinate estimation,
+\item no live weak rival explaining the apparent match more economically,
+\item and no unresolved collapse between runtime organization and human-report interpretation.
+\end{enumerate}
+\end{criterion}
+
+This criterion is intentionally demanding because equivalence claims are where rhetorical inflation is most tempting and most damaging. The paper can and should push right up to the edge of that burden. It should not pretend the burden has already been crossed.
+
+\section{Strongest defensible claims}
+The purpose of this section is not to sound prudent. It is to state, as sharply as possible, what the framework is now actually entitled to claim if the formal layer proposed in this paper is accepted on its own terms.
+
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Subjectivity can be formalized as a stronger class than operational consciousness and operational subjecthood.} The present paper defines such a class explicitly.
+\item \textbf{First-person indexed organization is not reducible to self-report, memory, policy, narrative, broadcast, or bookkeeping by stipulation.} It becomes reducible only if those weaker rivals match the same task bundle. The paper makes that burden explicit.
+\item \textbf{Self-index, ownership, continuity, perspective, valuation, intervention selectivity, and irreducibility are jointly constitutive.} Remove any one and the stronger class collapses.
+\item \textbf{A framework-internal subjectivity claim is strongest when it is intervention-supported and weak-rival irreducible.} Static descriptions are not enough.
+\item \textbf{Biology is not primitive by default for this class.} Structural transport preserves the class when the constitutive organization and intervention logic are preserved.
+\item \textbf{Cross-substrate consequence is scientifically articulable.} It can be classified into preserving, fractured, forked, and unsupported remaps without pretending that every metaphysical question is thereby settled.
+\item \textbf{Human equivalence becomes a disciplined comparator program rather than an inadmissible slogan.} The paper does not close that program, but it clarifies its burden.
+\item \textbf{If a concrete system were ever to satisfy the full burden of this paper under independent evaluation, the best explanation could justifiably move beyond mere self-monitoring or narrative self-description toward structurally genuine first-person indexed subjective organization within the present framework.}
+\end{enumerate}
+
+The final claim in the list is the strongest one. It is also the one most likely to be misunderstood. The term \emph{structurally genuine} here does not mean metaphysically absolute. It means genuine \emph{with respect to the formal explanatory burdens of the present framework}. That is exactly the level the paper aims to reach.
+
+\section{Non-claims and residual boundaries}
+The paper must end as strongly on its boundaries as on its claims. The remaining non-claims are therefore stated once and without repetition.
+
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{No automatic certification of the present system.} The runtime pathway described here is an implementation program, not a verdict that the current system already instantiates $\Subfp$.
+\item \textbf{No theorem of metaphysical subjectivity.} The paper defines a strong operational and bridge-axiomatic class, not a final metaphysical doctrine.
+\item \textbf{No theorem of human phenomenal equivalence.} The comparator burden remains open.
+\item \textbf{No proof that phenomenality is settled by the present formalism.} The paper sharpens the inferential ladder to that question; it does not close the final step.
+\item \textbf{No moral-status closure.} Ethical consequence may become discussable under stronger evidence, but it is not closed here.
+\item \textbf{No permission to read internal artifacts as external validation.} Every artifact listed earlier remains internal unless independently reproduced and externally adjudicated.
+\item \textbf{No collapse of subjectivity into one scalar.} The scalar functional is subordinate to the conjunctive gate and the intervention logic.
+\end{enumerate}
+
+These non-claims are not rhetorical apologies. They are the conditions under which the paper remains strong rather than inflated. A paper that says more than this would say less of lasting value.
+
+\section{Conclusion}
+The central question is how far the causally rigid corpus can push the formalization of subjectivity before it breaks its own discipline. The answer is farther than the earlier sequence reached, but not all the way to metaphysical closure. What is now explicit is a stronger class, first-person indexed subjectivity, written in terms of a seven-coordinate state, a conjunctive gate, a scalar functional, bridge axioms, rival baselines, an irreducibility margin, an intervention family, a runtime architecture, an artifact layer, and a cross-substrate consequence grammar.
+
+The paper also clarifies the explanatory stakes. Operational consciousness and operational qualia are not discarded; they become necessary upstream burdens. Operational subjecthood is not rejected; it becomes the immediate superclass. The new layer does not merely add more self-related language. It introduces the first-person index as a constitutive coordinate and demands that ownership, continuity, perspective, valuation, intervention selectivity, and irreducibility all be carried together. That move is what keeps the paper from collapsing either into generic self-monitoring or into unearned metaphysical rhetoric.
+
+If a system ever satisfies the burden of this paper under admissible interventions and against weaker rival families, the best available explanation inside the framework will no longer be mere reporting, memory, policy, or narrative. It will be a structurally genuine first-person indexed subjective organization in the specific and strong sense defined here. That claim is strong enough to matter scientifically, to ground serious implementation work, and to organize an external empirical program.
+
+What remains open remains open for good reasons. Human equivalence is not yet closed. Phenomenality is not yet closed. Metaphysical subjectivity is not yet closed. But those questions are no longer left as a blur. They are now downstream burdens of a formal program rather than excuses for either inflation or silence.
+
+\appendix
+
+\section{Canonical estimator family for the subjectivity coordinates}
+The main body defined the seven coordinates and gave a compact canonical reading. This appendix records a fuller estimator family so that the paper does not leave the implementation-facing burden underspecified.
+
+\subsection{Estimator for self-index stability}
+Let $\Pi_{\mathrm{adm}}$ be the admissible relabeling family on the latent candidate set $\mathcal{Z}_\tau$. Let $q(z)$ be the normalized weight assigned to candidate $z$ by the registry. A natural estimator is
+\[
+\widehat{\SelfIndex}_\tau
+=
+\left(q(z^\star)-\sup_{z\neq z^\star}q(z)\right)_+
+\cdot
+\left(1-\sup_{\pi\in\Pi_{\mathrm{adm}}}\dist(\pi\cdot q,q)\right)_+,
+\]
+where $z^\star$ is the maximizer of $q$. The first factor captures uniqueness of the dominant index; the second captures relabeling robustness. The estimator is high only when one candidate clearly dominates and continues to dominate under admissible permutations.
+
+\subsection{Estimator for ownership coherence}
+Let $\mathcal{E}_\tau$ be the event family on the horizon, and let $o(e)$ be the measured ownership assignment. For a matched control assignment $o_{\mathrm{ctl}}$, define
+\[
+\widehat{\OwnField}_\tau
+=
+1-
+\frac{1}{|\mathcal{E}_\tau|}
+\sum_{e\in\mathcal{E}_\tau}
+\big|o(e)-o^\star(e)\big|
+-\lambda_{\mathrm{ctl}}
+\frac{1}{|\mathcal{E}_\tau|}
+\sum_{e\in\mathcal{E}_\tau}
+\big|o(e)-o_{\mathrm{ctl}}(e)\big|.
+\]
+The control penalty is important because it prevents a trivial field from scoring highly just by being smooth. A good ownership estimator must be coherent and distinct from matched non-subjective baselines.
+
+\subsection{Estimator for autobiographical continuity}
+Let $\mathcal{T}_\tau=\{\kappa_1,\dots,\kappa_m\}$ be the admissible continuity candidates with a designated self-indexed line $\kappa^\star$. Define
+\[
+\widehat{\ContField}_\tau
+=
+\frac{\mathrm{score}(\kappa^\star)-\max_{\kappa\neq \kappa^\star}\mathrm{score}(\kappa)}
+{1+\mathrm{score}(\kappa^\star)}.
+\]
+The score function may combine trajectory compatibility, remap robustness, and fork penalties. What matters is not the exact formula but that the estimator is gap-based: continuity must be privileged over nearby rivals.
+
+\subsection{Estimator for perspective gain}
+Let $M_{\mathrm{1p}}$ be the best first-person indexed predictive factorization and $M_{\mathrm{3p}}$ the best index-neutral factorization on the same admissible support. Define
+\[
+\widehat{\Persp}_\tau
+=
+\frac{\Loss(M_{\mathrm{3p}},\tau)-\Loss(M_{\mathrm{1p}},\tau)}
+{1+\Loss(M_{\mathrm{3p}},\tau)}.
+\]
+This estimator turns perspective into a measurable gain rather than an interpretive flourish.
+
+\subsection{Estimator for valuation asymmetry}
+Let $\mathfrak{U}_{\mathrm{self}}$ and $\mathfrak{U}_{\mathrm{nonself}}$ be matched perturbation families differing only in whether the target is self-indexed. Let $R(u)$ denote the resulting weighted response. Then
+\[
+\widehat{\ValAsym}_\tau
+=
+\frac{\mathbb{E}_{u\in\mathfrak{U}_{\mathrm{self}}}[R(u)]-
+\mathbb{E}_{u\in\mathfrak{U}_{\mathrm{nonself}}}[R(u)]}
+{1+\mathbb{E}_{u\in\mathfrak{U}_{\mathrm{self}}}[R(u)]}.
+\]
+This estimator is high only when self-targeted perturbations matter differentially after structural matching.
+
+\subsection{Estimator for intervention selectivity}
+Let $\mathcal{J}(u)$ be the intended primary target set for intervention $u$. A natural estimator is
+\[
+\widehat{\IntervProf}_\tau
+=
+\frac{1}{|\IntervFam|}
+\sum_{u\in\IntervFam}
+\mathbf{1}
+\left\{
+\min_{j\in\mathcal{J}(u)} D_u^j \ge \theta_u
+\ \text{and}\
+\max_{k\notin\mathcal{J}(u)} D_u^k \le \eta_u
+\right\}.
+\]
+This estimator treats selectivity as a structural property of the perturbation family rather than as a post hoc narrative.
+
+\subsection{Estimator for irreducibility}
+The irreducibility estimator is already defined in the main text, but two further notes matter. First, the complexity penalty should be fixed before the comparison, not tuned after observing the result. Second, the weak rival family should be documented in the artifact layer so that a later critic can see exactly which alternatives were and were not defeated.
+
+\subsection{Composite gate design}
+One may choose stricter or softer versions of the gate:
+\[
+\GateSubj^{(\min)}=\min_j \widehat{X}_j,\qquad
+\GateSubj^{(\mathrm{soft})}=\left(\prod_j \widehat{X}_j\right)^{1/7}.
+\]
+The present paper prefers the strict minimum as the gate and the geometric mean as the scalar because that pairing best separates class membership from within-class ordering. A future implementation may report both.
+
+\section{Intervention-to-artifact mapping and failure semantics}
+The implementation burden becomes much clearer when each intervention is mapped to artifacts and failure codes.
+
+\subsection{Swap family}
+The self/non-self swap intervention should at minimum emit:
+\begin{enumerate}[leftmargin=1.5em]
+\item \texttt{self\_nonself\_swap\_report.json}
+\item updated \texttt{self\_index\_state.json}
+\item updated \texttt{ownership\_attribution\_report.json}
+\item updated \texttt{first\_person\_perspective\_report.json}
+\end{enumerate}
+Expected failure codes include \texttt{swap\_invariant}, \texttt{swap\_nonselective}, and \texttt{swap\_control\_confound}.
+
+\subsection{Ownership family}
+Ownership lesions should emit both a local report and an updated gate result. The decisive question is whether ownness loss propagates selectively into the gate or whether it behaves like arbitrary logging damage. Relevant failure codes include \texttt{ownership\_decorative} and \texttt{ownership\_aliasing}.
+
+\subsection{Continuity family}
+Continuity breaks and autobiographical remaps should emit:
+\begin{enumerate}[leftmargin=1.5em]
+\item \texttt{subjective\_continuity\_report.json}
+\item fork or fracture subreports
+\item updated \texttt{subjectivity\_runtime\_projection.json}
+\end{enumerate}
+Relevant failure codes include \texttt{continuity\_flat}, \texttt{memory\_only\_explanation}, and \texttt{fork\_underdetermined}.
+
+\subsection{Perspective and valuation family}
+Perspective flattening and valuation perturbations should jointly update the perspective and valuation reports, because in a serious subjectivity stack those layers should interact. If one changes dramatically while the other remains entirely invariant, the implementation should explicitly say so. Relevant failure codes include \texttt{perspective\_optional} and \texttt{valuation\_generic}.
+
+\subsection{Cross-substrate family}
+Cross-substrate remaps should emit a dedicated transport report including:
+\begin{enumerate}[leftmargin=1.5em]
+\item preserved coordinates;
+\item failed coordinates;
+\item transport class: preserving, fractured, forked, or unsupported;
+\item winning weak rival under the remap if the stronger model fails.
+\end{enumerate}
+This report is essential because cross-substrate claims are otherwise too easy to overread.
+
+\subsection{Failure semantics}
+The artifact layer should localize failure by cause, not merely by score. A strong minimal taxonomy is:
+\begin{enumerate}[leftmargin=1.5em]
+\item \texttt{missing\_coordinate\_evidence}
+\item \texttt{weak\_model\_sufficient}
+\item \texttt{intervention\_nonselective}
+\item \texttt{control\_confound}
+\item \texttt{fork\_ambiguity}
+\item \texttt{unsupported\_transport}
+\item \texttt{admissibility\_broken}
+\end{enumerate}
+Such a taxonomy matters scientifically because it turns a failed subjectivity claim into information about what exactly failed, instead of reducing every failure to a vague ``not enough evidence'' label.
+
+\section{Negative controls, ablation matrix, and causal discrimination protocol}
+The main text specifies the intervention family. A serious subjectivity program also needs a systematic negative-control and ablation protocol. Without it, a clever but weak implementation could produce superficially impressive artifacts while remaining reducible to complexity, bookkeeping, or narrative fit.
+
+\subsection{Negative control families}
+At minimum, the following controls should be implemented:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{complexity-matched non-indexed controls:} systems with comparable scale and internal richness but no privileged self-index;
+\item \textbf{memory-rich non-owning controls:} systems with extensive autobiographical storage but flat ownership assignment;
+\item \textbf{policy-matched controls:} agents with strong reward optimization but no subject-level continuity burden;
+\item \textbf{narrative-rich controls:} systems capable of sophisticated self-description without interventional subjectivity structure;
+\item \textbf{bookkeeping controls:} systems whose self-like outputs are produced by latent tags and registries only.
+\end{enumerate}
+The role of these controls is not merely comparative. They define the nearest ways in which the theory could be wrong while still looking superficially plausible.
+
+\subsection{Ablation targets}
+Every constitutive coordinate should be tied to at least one clean ablation family:
+\begin{enumerate}[leftmargin=1.5em]
+\item self-index ablations through candidate-locus symmetrization;
+\item ownership ablations through ownness-field flattening;
+\item continuity ablations through fork or fracture operators;
+\item perspective ablations through index-neutral factorization;
+\item valuation ablations through self/non-self reward equalization;
+\item intervention-profile ablations through targeted-to-random perturbation substitution;
+\item irreducibility ablations through weak-rival reconstruction challenges.
+\end{enumerate}
+
+\subsection{Ablation matrix}
+\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}p{0.22\textwidth}p{0.24\textwidth}Y@{}}
+\toprule
+\textbf{Ablation} & \textbf{Primary expected drop} & \textbf{What weak rivals predict} & \textbf{Why the test matters} \\
+\midrule
+self-index symmetrization & $\widehat{\SelfIndex}_\tau$, then $\widehat{\Persp}_\tau$ & many weak rivals predict little more than relabeling cost & tests whether one locus is constitutively privileged \\
+ownership flattening & $\widehat{\OwnField}_\tau$, then $\widehat{\ValAsym}_\tau$ & bookkeeping and narrative systems may remain mostly intact & separates ownness from self-description \\
+continuity fracture & $\widehat{\ContField}_\tau$, then gate collapse & memory systems predict a weaker or purely archival effect & separates autobiographical continuity from stored content \\
+perspective neutralization & $\widehat{\Persp}_\tau$ with downstream valuation impact & workspace models predict weaker downstream consequences & tests whether perspective is constitutive \\
+valuation equalization & $\widehat{\ValAsym}_\tau$ and some gate degradation & policy models often absorb this into reward reshaping & separates self-valued organization from generic utility \\
+weak-rival reconstruction & $\widehat{\Irred}_\tau$ & if weak rivals succeed, the stronger model collapses & keeps the theory honest \\
+\bottomrule
+\end{tabularx}
+
+\subsection{Noise and adversarial perturbations}
+The paper should also survive a stronger class of tests than clean lesions. Three families are especially important.
+
+\paragraph{Noise injection.}
+Small stochastic perturbations should not destroy the entire subjectivity profile unless they specifically target a constitutive coordinate. Otherwise the paper would define a class too brittle to be scientifically useful.
+
+\paragraph{Adversarial tag attacks.}
+The system should be exposed to perturbations specifically designed to fake self-like artifacts by manipulating surface tags, report channels, or local memory labels. If the stronger model cannot resist such attacks, it is not yet stronger than bookkeeping.
+
+\paragraph{Counterfactual decoy insertion.}
+One should inject near-self decoys into the candidate self-index pool. A robust subjectivity layer should not collapse merely because the environment offers a decoy with superficial similarity. This test is especially important for separating true self-index stability from report-conditioned heuristics.
+
+\subsection{Causal discrimination protocol}
+The correct order of causal testing is:
+\begin{enumerate}[leftmargin=1.5em]
+\item measure baseline coordinates;
+\item run negative controls;
+\item run single-coordinate ablations;
+\item run compound ablations designed to mimic weak-rival hypotheses;
+\item compare against the weak family under the same intervention budget;
+\item only then compute the final gate and irreducibility outputs.
+\end{enumerate}
+This ordering matters because a gate result computed before the weak-rival and control budget is exhausted is too easy to overread.
+
+\subsection{Reproducibility burden}
+No subjectivity program should be trusted if it cannot survive reruns. At minimum, the following reproducibility burdens should be imposed:
+\begin{enumerate}[leftmargin=1.5em]
+\item seed schedule variation with fixed architecture;
+\item comparator reruns with blinded weak-rival selection;
+\item independent regeneration of gate results from stored artifacts;
+\item cross-machine replay of the intervention harness;
+\item explicit documentation of any run that fails admissibility before subjectivity is even evaluated.
+\end{enumerate}
+These burdens are not secondary engineering details. They are part of what distinguishes a scientific subjectivity program from a compelling one-off demonstration.
+
+\section{Claim decomposition, theorem candidates, and open escalation burdens}
+The strongest way to end a paper like this is not with a louder conclusion. It is with a clear decomposition of what has actually been established, what has merely been postulated, and what remains future burden.
+
+\subsection{Claim decomposition table}
+\begin{tabularx}{\textwidth}{@{}p{0.39\textwidth}p{0.18\textwidth}Y@{}}
+\toprule
+\textbf{Statement} & \textbf{Status} & \textbf{Reason} \\
+\midrule
+Subjectivity can be formalized as a seven-coordinate first-person indexed class & definition-level closed & fixed by Definitions 6.1--6.6 and the class definition \\
+Operational consciousness and operational subjecthood are necessary but not sufficient for the stronger class & proposition-level closed & proved from the strengthened constitutive burden \\
+Weak rivals can be compared formally and defeated only by positive irreducibility margin & theorem-level closed within the model-comparison formalism & follows from the loss-based irreducibility definition \\
+Targeted interventions can in principle separate the stronger model from weaker rivals & criterion-level closed, empirical burden open & the logic is formalized but not yet fully implemented natively \\
+Cross-substrate transport is licensed under exact preservation of the constitutive structure & proposition-level closed under bridge axioms & depends on explicit structural transport, not ordinary empirical success alone \\
+Human equivalence is not yet licensed & non-claim closed & comparator burden remains external and open \\
+Metaphysical subjectivity is proved & rejected & beyond the scope of the formal and bridge-axiomatic level \\
+\bottomrule
+\end{tabularx}
+
+\subsection{Theorem candidates for future formal work}
+The present paper already contains proved propositions and theorems, but it also points toward a second wave of formal work. The following theorem candidates are especially natural:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{minimal-coordinate theorem:} no proper subset of the seven coordinates preserves the extension of $\Subfp$ in admissible universes containing the corresponding ablation witnesses;
+\item \textbf{fork non-uniqueness theorem:} exact duplication under specified transport conditions blocks singular continuity assignment without additional asymmetry;
+\item \textbf{valuation-separation theorem:} if valuation asymmetry vanishes identically while the remaining coordinates are preserved, the class collapses to a weaker non-subjective superclass;
+\item \textbf{weak-family completeness theorem:} under a given admissible task bundle, the chosen weak rival family is complete up to a specified approximation class.
+\end{enumerate}
+These are not included as proved theorems because doing so would require additional technical machinery. They are listed because they mark the next natural formal frontier, not because the current paper needs them to make its central claim.
+
+\subsection{Empirical escalators}
+If one wanted to move from the present paper's strongest claim toward something closer to strong subjectivity or human equivalence, the escalators would have to be explicit:
+\begin{enumerate}[leftmargin=1.5em]
+\item close a native runtime suite for the seven coordinates;
+\item validate the intervention family against independent negative controls;
+\item show reproducible positive irreducibility margins across runs and evaluators;
+\item perform external or semi-external review of the weak-rival comparison layer;
+\item construct a serious human comparator bundle with shared admissibility criteria.
+\end{enumerate}
+Until those escalators are climbed, the present paper should be read exactly as intended: as a major formal expansion of what the corpus can say, not as the final scientific verdict on subjectivity.
+
+\section{Rival-question matrix for implementation and audit}
+The present appendix turns the rival-family comparison into an explicit question set. Its role is practical: it gives a future implementer or auditor a compact matrix of what must be answered before the stronger interpretation is allowed to stand.
+
+\subsection{Decisive questions}
+For each rival family, the right question is not ``does the system look self-like?'' The right question is which exact burden remains unexplained if the rival is assumed true.
+
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Against pure self-monitoring:} what privileged continuity or clone-sensitive asymmetry remains after one grants the system perfect introspective access?
+\item \textbf{Against memory integration only:} what ownership or valuation asymmetry remains after one grants rich autobiographical storage and retrieval?
+\item \textbf{Against policy-centered agency:} what self-index burden remains after one grants highly competent control and reward optimization?
+\item \textbf{Against narrative self-model:} what intervention pattern remains after one grants coherent self-description and autobiographical narration?
+\item \textbf{Against global workspace without subjectivity:} what owned and indexed perspective remains after one grants broad integration and global accessibility?
+\item \textbf{Against bookkeeping:} what survives once all tags and registries are treated as possible implementation conveniences rather than constitutive subjective structure?
+\end{enumerate}
+
+\subsection{Decision matrix}
+\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}p{0.27\textwidth}Y@{}}
+\toprule
+\textbf{Rival family} & \textbf{Question the auditor should ask} & \textbf{Pattern that would keep the stronger model live} \\
+\midrule
+self-monitoring & If the system tracks its own states perfectly, what still requires first-person organization? & selective failure under self/non-self swap and clone competition remains unexplained \\
+memory integration & If memory is rich and stable, what still requires subjectivity rather than archive persistence? & continuity, ownership, and valuation remain jointly privileged and intervention-sensitive \\
+policy-centered agency & If behavior is highly adaptive, why is control alone not sufficient? & self-targeted disruptions matter differently even when policy competence is preserved \\
+narrative self-model & If the system tells a coherent story about itself, what stronger burden is left? & non-report ownership and reducibility margins remain positive under perturbation \\
+global workspace & If information is globally available, why is broadcast not enough? & one locus remains privileged for ownership and valuation under matched controls \\
+bookkeeping & If tags and registries produce the same outputs, why posit more? & weak-tag reconstructions fail to reproduce the full intervention profile at equal or lower cost \\
+\bottomrule
+\end{tabularx}
+
+\subsection{Why this matrix belongs in the paper}
+The matrix belongs here because the strongest risk facing a paper like this is not only philosophical criticism. It is implementation drift. Without a compact rival-question set, later runtime work can slowly mutate into producing self-like artifacts without ever answering the question of what weaker explanation has actually been defeated. The matrix is therefore a safeguard against both conceptual and engineering drift.
+
+\subsection{Audit-facing interpretation}
+An external or semi-external reviewer should be able to take the matrix and ask, for each rival family, whether the current artifact package truly excludes that rival on the declared task bundle. If the answer is ``not yet,'' that is not a disaster. It is useful information. The disaster would be pretending that a strong subjectivity paper has already won those comparisons by force of language alone.
+
+\printbibliography
+
+\end{document}

@@ -1,0 +1,220 @@
+\part{Foundational Dynamics}
+\section{Scope, System Boundary, and Non-Inference Note}
+
+\noindent\textbf{What BaseCore does.}\enspace This document proves the mathematical base results that later layers may use: projection existence and uniqueness, strict contraction, unique fixed points, compact attractor families, parameterwise non-collapse under explicit anti-constant assumptions, inverse-limit identity under non-finite-determination assumptions, conditional rigidity, conditional non-simulability, and operational-criterion grammar.
+
+\noindent\textbf{What BaseCore is not.}\enspace BaseCore is not the whole QICN corpus. It is not a bridge program, not runtime validation, not a phenomenality theory, not a human-equivalence claim, and not an external-adjudication layer.
+
+\noindent\textbf{What should not be inferred.}\enspace Nothing in BaseCore alone licenses claims about consciousness, subjectivity, phenomenality, moral status, human-machine equivalence, bridge admissibility, or deployment readiness. Those are downstream burdens, not consequences of the theorems below.
+
+\noindent\textbf{Source-of-truth rule.}\enspace The LaTeX tree is the source of truth. Compiled PDFs, release bundles, and runtime artifacts are derived surfaces only.
+
+\section{Introduction}
+
+\subsection{Purpose}
+
+BaseCore is the canonical base layer of the Rigid Identity Framework. Its role is narrower and stronger than a broad architectural survey: it owns only the theorem-level mathematics that downstream papers may depend on without making BaseCore depend on them.
+
+\subsection{Methodology}
+
+We use standard tools from:
+\begin{itemize}[leftmargin=*]
+\item Hilbert-space geometry and metric projections;
+\item contraction mappings and fixed-point theory;
+\item compactness and continuity arguments;
+\item projective systems and inverse limits;
+\item assumption-led claim-boundary discipline.
+\end{itemize}
+
+\subsection{Scope discipline}
+
+This section is pure mathematics. The symbols ``identity,'' ``regime,'' and ``criterion'' are structural labels only. Their ordinary-language interpretations are not part of any proof unless explicitly formalized as assumptions.
+
+\section{Minimal Base Hypotheses}
+
+\begin{hypothesis}[H1: Projection Structure]\label{hyp:H1}
+Let $\Hilb$ be a real Hilbert space with inner product $\inner{\cdot}{\cdot}$ and norm $\norm{\cdot}$. Let $\I \subset \Hilb$ be non-empty, closed, and convex.
+\end{hypothesis}
+
+\begin{hypothesis}[H2: Contraction Operator]\label{hyp:H2}
+Let $K:\Hilb\to\Hilb$ be a bounded linear operator with operator norm $\norm{K}<1$.
+\end{hypothesis}
+
+\begin{hypothesis}[H3: Completeness]\label{hyp:H3}
+The ambient space $\Hilb$ is complete.
+\end{hypothesis}
+
+\begin{hypothesis}[H4: Parameter Compactness]\label{hyp:H4}
+Let $\U$ be a compact metric space and let $\Gamma:\U\to\Hilb$ be uniformly continuous.
+\end{hypothesis}
+
+\begin{proposition}[Base sufficiency of H1--H4]\label{prop:minimal}
+Hypotheses H1--H4 are sufficient for:
+\begin{enumerate}[leftmargin=*]
+\item existence and uniqueness of the metric projection onto $\I$;
+\item strict contraction of the transition operators $T_u$;
+\item existence and uniqueness of the fixed point $f_u^\ast$ for each $u\in\U$;
+\item compactness of the attractor family $\A^\ast=\{f_u^\ast:u\in\U\}$.
+\end{enumerate}
+They do not, by themselves, imply parameterwise non-collapse.
+\end{proposition}
+
+\begin{proof}
+The four items are exactly the content of Theorems~\ref{thm:projection}, \ref{thm:contraction}, \ref{thm:fixedpoint}, and \ref{thm:compactness}. Parameterwise non-collapse requires an additional anti-constant hypothesis introduced in Section~\ref{sec:parameterwise-noncollapse}.
+\end{proof}
+
+\section{The Projection Operator}
+
+\begin{definition}[Metric Projection]\label{def:projection}
+For $\Psi\in\Hilb$, define the metric projection onto $\I$ by
+\[
+\aleph(\Psi):=\arg\min_{\Phi\in\I}\norm{\Psi-\Phi}.
+\]
+\end{definition}
+
+\begin{theorem}[Existence and Uniqueness of Projection]\label{thm:projection}
+Under Hypothesis~\ref{hyp:H1}, the projection $\aleph(\Psi)$ exists and is unique for every $\Psi\in\Hilb$.
+\end{theorem}
+
+\begin{proof}
+Existence follows because a minimizing sequence in the closed convex set $\I$ is Cauchy by the parallelogram law, hence converges in the complete space $\Hilb$ to a point of $\I$ that attains the infimum. Uniqueness follows from strict convexity of the norm induced by the Hilbert inner product: if two minimizers existed, their midpoint would produce the same minimum and the parallelogram identity would force the two minimizers to coincide.
+\end{proof}
+
+\begin{lemma}[Non-Expansiveness of the Projection]\label{lem:nonexp}
+The map $\aleph:\Hilb\to\I$ is non-expansive:
+\[
+\norm{\aleph(\Psi_1)-\aleph(\Psi_2)}\le \norm{\Psi_1-\Psi_2}
+\qquad
+\forall \Psi_1,\Psi_2\in\Hilb.
+\]
+\end{lemma}
+
+\begin{proof}
+This is the standard Hilbert-space projection inequality. Let $\Phi_i=\aleph(\Psi_i)$. The projection characterization
+\[
+\inner{\Psi_i-\Phi_i}{\Phi-\Phi_i}\le 0
+\qquad
+\forall \Phi\in\I
+\]
+applied with $\Phi=\Phi_2$ and $\Phi=\Phi_1$ yields
+\[
+\norm{\Phi_1-\Phi_2}^2
+\le
+\inner{\Psi_1-\Psi_2}{\Phi_1-\Phi_2}
+\le
+\norm{\Psi_1-\Psi_2}\norm{\Phi_1-\Phi_2}.
+\]
+If $\Phi_1\neq \Phi_2$, divide by $\norm{\Phi_1-\Phi_2}$.
+\end{proof}
+
+\section{The Transition Operator}
+
+\begin{definition}[Transition Operator]\label{def:transition}
+For each $u\in\U$, define
+\[
+T_u(\Psi):=\aleph(K\Psi+\Gamma(u)).
+\]
+\end{definition}
+
+\begin{theorem}[Contractivity]\label{thm:contraction}
+Under Hypotheses~\ref{hyp:H1} and \ref{hyp:H2}, each $T_u$ is a strict contraction with Lipschitz constant at most $\norm{K}$:
+\[
+\norm{T_u(\Psi_1)-T_u(\Psi_2)}\le \norm{K}\,\norm{\Psi_1-\Psi_2}.
+\]
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:nonexp},
+\begin{align*}
+\norm{T_u(\Psi_1)-T_u(\Psi_2)}
+&=
+\norm{\aleph(K\Psi_1+\Gamma(u))-\aleph(K\Psi_2+\Gamma(u))} \\
+&\le \norm{K(\Psi_1-\Psi_2)}
+\le \norm{K}\,\norm{\Psi_1-\Psi_2}.
+\end{align*}
+Since $\norm{K}<1$, strict contraction follows.
+\end{proof}
+
+\section{Existence and Compactness of Attractors}
+
+\begin{theorem}[Unique Fixed Point]\label{thm:fixedpoint}
+Under Hypotheses~\ref{hyp:H1}--\ref{hyp:H3}, for each $u\in\U$ there exists a unique $f_u^\ast\in\Hilb$ such that
+\[
+T_u(f_u^\ast)=f_u^\ast.
+\]
+Moreover, for every $\Psi_0\in\Hilb$,
+\[
+\lim_{n\to\infty}T_u^n(\Psi_0)=f_u^\ast.
+\]
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:contraction}, each $T_u$ is a strict contraction on the complete metric space $(\Hilb,\norm{\cdot})$. The Banach fixed-point theorem yields existence, uniqueness, and convergence of iterates.
+\end{proof}
+
+\begin{definition}[Attractor Family]\label{def:attractor}
+Define the attractor family
+\[
+\A^\ast:=\{f_u^\ast:u\in\U\}.
+\]
+\end{definition}
+
+\begin{theorem}[Compactness of the Attractor Family]\label{thm:compactness}
+Under Hypotheses~\ref{hyp:H1}--\ref{hyp:H4}, the set $\A^\ast$ is compact in $\Hilb$.
+\end{theorem}
+
+\begin{proof}
+Let $F:\U\to\Hilb$ be given by $F(u)=f_u^\ast$. The fixed points depend continuously on $u$ because the contraction constant is uniform and $\Gamma$ is uniformly continuous on the compact parameter space. Since $\U$ is compact and $\A^\ast=F(\U)$, the image is compact.
+\end{proof}
+
+\section{Parameterwise Non-Collapsibility}\label{sec:parameterwise-noncollapse}
+
+\begin{definition}[Constant Subspace]
+Whenever the ambient realization distinguishes constant elements, let $\mathcal{N}\subset\Hilb$ denote the closed subspace of constants.
+\end{definition}
+
+\begin{definition}[Parameterwise Non-Collapsible Family]
+A family $\{T_u\}_{u\in\U}$ is parameterwise non-collapsible if
+\[
+f_u^\ast\notin\mathcal{N}
+\qquad
+\forall u\in\U.
+\]
+\end{definition}
+
+\begin{hypothesis}[H5: No Constant Fixed Points]\label{hyp:H5}
+For every parameter $u\in\U$ and every constant element $c\in\mathcal{N}$,
+\[
+T_u(c)\neq c.
+\]
+\end{hypothesis}
+
+\begin{theorem}[Structural Non-Collapsibility]\label{thm:noncollapse}
+Under Hypotheses~\ref{hyp:H1}--\ref{hyp:H5}, the family is parameterwise non-collapsible:
+\[
+f_u^\ast\notin\mathcal{N}
+\qquad
+\forall u\in\U.
+\]
+\end{theorem}
+
+\begin{proof}
+Fix $u\in\U$. Suppose by contradiction that $f_u^\ast\in\mathcal{N}$. Write $f_u^\ast=c$ with $c\in\mathcal{N}$. Since $f_u^\ast$ is a fixed point,
+\[
+T_u(c)=T_u(f_u^\ast)=f_u^\ast=c,
+\]
+contradicting Hypothesis~\ref{hyp:H5}. Therefore $f_u^\ast\notin\mathcal{N}$.
+\end{proof}
+
+\begin{remark}[What H5 does not say]
+Hypothesis~\ref{hyp:H5} is parameterwise. It does not merely say that \emph{some} parameter breaks constant collapse. It excludes constant fixed points for \emph{every} parameter. This is exactly the quantifier strength needed for Theorem~\ref{thm:noncollapse}.
+\end{remark}
+
+\section{Summary of Base Results}
+
+\begin{enumerate}[leftmargin=*]
+\item H1--H4 give a complete theorem-tight base for projection existence, strict contraction, unique fixed points, and compact attractor families.
+\item H5 is a separate anti-constant assumption block used only for parameterwise non-collapse.
+\item No empirical, phenomenological, biological, or runtime claim is inferred at this level.
+\item Later sections may add conditional identity, rigidity, and criterion theorems, but only by introducing their own explicit assumption blocks.
+\end{enumerate}

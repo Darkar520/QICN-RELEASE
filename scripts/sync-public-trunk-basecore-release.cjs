@@ -80,14 +80,19 @@ const PRESERVED_VARIANTS = [
 }));
 
 const OPERATIONAL_ANNEXES = [
-  ['roeo.batch_campaign', 'corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf', 'Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex'],
-  ['roeo.final_paper', 'corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf', 'Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex']
+  ['roeo.batch_campaign', 'corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf', 'QICN-SYSTEM/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex'],
+  ['roeo.final_paper', 'corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf', 'QICN-SYSTEM/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex']
 ].map(([doc_family_id, release_pdf, source_path]) => ({
   doc_family_id,
   release_pdf,
   source_path,
   role: 'operational_annex_not_formal_source'
 }));
+
+const OPERATIONAL_ANNEX_PATH_REWRITES = new Map([
+  ['Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex', 'QICN-SYSTEM/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex'],
+  ['Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex', 'QICN-SYSTEM/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex']
+]);
 
 const GOV_DOCS = [
   'release/GLOSSARY_CANONICAL.v1.md',
@@ -208,6 +213,27 @@ function normalizeExistingIndexPaths(index) {
     entry.source_rel_path_bundle = `PDF_BUNDLE/pdfs/${actual}`;
   }
   index.count = index.entries.length;
+}
+
+function rewriteExternalPathReferences(manifest, index) {
+  for (const entry of manifest.entries) {
+    if (OPERATIONAL_ANNEX_PATH_REWRITES.has(entry.relPath)) {
+      entry.relPath = OPERATIONAL_ANNEX_PATH_REWRITES.get(entry.relPath);
+    }
+  }
+  for (const entry of index.entries) {
+    if (OPERATIONAL_ANNEX_PATH_REWRITES.has(entry.manifest_rel_path)) {
+      const nextPath = OPERATIONAL_ANNEX_PATH_REWRITES.get(entry.manifest_rel_path);
+      entry.manifest_rel_path = nextPath;
+      if (Array.isArray(entry.metadata_candidates)) {
+        entry.metadata_candidates = entry.metadata_candidates.map((candidate) =>
+          candidate && candidate.relPath && OPERATIONAL_ANNEX_PATH_REWRITES.has(candidate.relPath)
+            ? { ...candidate, relPath: OPERATIONAL_ANNEX_PATH_REWRITES.get(candidate.relPath) }
+            : candidate
+        );
+      }
+    }
+  }
 }
 
 function findIndexByManifestRelPath(index, manifestRelPath) {
@@ -500,6 +526,7 @@ function main() {
   const index = readJson('release/INDEX_PDFS.json');
   const freeze = readJson('release/release_freeze_manifest.json');
   normalizeExistingIndexPaths(index);
+  rewriteExternalPathReferences(corpusManifest, index);
 
   const baseEntry = buildNewPdfEntry(ACTIVE_BASE);
   const legacyEntry = buildNewPdfEntry(LEGACY_PACKAGE);
@@ -592,7 +619,7 @@ function main() {
       { path_prefix: 'phenomenological-regimes-paper/', classification: 'supporting_formal_lineage' },
       { path_prefix: 'phenomenological-instability-paper/', classification: 'supporting_formal_lineage' },
       { path_prefix: 'NotebookLM/', classification: 'mirror_or_reconstructed_lineage' },
-      { path_prefix: 'Sistema Canon Sandbox/artifacts/paper_exports/', classification: 'operational_annex' }
+      { path_prefix: 'QICN-SYSTEM/artifacts/paper_exports/', classification: 'operational_annex' }
     ],
     active_base_layer: baseDoc,
     primary_formal_spine: [baseDoc],
@@ -654,7 +681,7 @@ function main() {
   const systemInterface = {
     artifact_role: 'theory_system_interface_boundary',
     schema_version: '2.0.0',
-    external_repository: { name: 'QICN-SYSTEM', local_path_observation: 'Sistema Canon Sandbox', status: 'separate_repository' },
+    external_repository: { name: 'QICN-SYSTEM', repository_reference: 'QICN-SYSTEM', status: 'separate_repository' },
     interfaces: [
       { id: 'protocol.qicn_v45', corpus_source: downstreamDocs.find((doc) => doc.doc_family_id === 'paper4.qicn_v45_protocol').release_pdf, system_role: 'operational reflection of admissibility, baselines, bounded-support protocol, and invalidation rules', interface_type: 'operational_protocol_only', non_inference: 'Protocol alignment does not validate BaseCore or any phenomenological theorem.' },
       { id: 'criterion.operational_consciousness', corpus_source: downstreamDocs.find((doc) => doc.doc_family_id === 'paper5.operational_consciousness_criterion').release_pdf, system_role: 'runtime-facing invariant diagnostics and admissible support burdens', interface_type: 'operational_reflection_only', non_inference: 'Operational reflection of the criterion does not certify human consciousness or present runtime membership.' },

@@ -108,10 +108,10 @@ This document summarizes what belongs to the live public release package.
 ## Operational annexes
 
 - `corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf`
-  - source path: `Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex`
+  - source path: `QICN-SYSTEM/artifacts/paper_exports/roeo_batch_campaign_v1/main.tex`
   - role: `operational_annex_not_formal_source`
 - `corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf`
-  - source path: `Sistema Canon Sandbox/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex`
+  - source path: `QICN-SYSTEM/artifacts/paper_exports/roeo_batch_final_paper_v1/main.tex`
   - role: `operational_annex_not_formal_source`
 
 ## Out of canon

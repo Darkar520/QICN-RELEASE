@@ -20,12 +20,12 @@ date_frozen, source, and modification_log.
 
 | Invariant | Formal role | Measurement slot | Candidate estimator | Threshold status | Main false-positive risk | Required controls/artifacts |
 |---|---|---|---|---|---|---|
-| `I_per` | Persistent admissible support; support stays away from collapse set. | Persistence margin `delta_per(S)`. | Fraction or minimum distance of admissible windows remaining inside a forward-invariant support under the perturbation panel. | `not_frozen` | Stable-looking traces caused by too short a horizon or weak perturbations. | support certificate, collapse-distance report, horizon sensitivity control. |
+| `I_per` | Persistent admissible support; support stays away from collapse set. | Persistence margin `delta_per(S)`. | Fraction or minimum distance of admissible windows remaining inside a forward-invariant support under the perturbation panel; see `docs/measurement_specs/I_per_spec_v1.md`. | `not_frozen` | Stable-looking traces caused by too short a horizon or weak perturbations. | support certificate, collapse-distance report, horizon sensitivity control. |
 | `I_ri` | Unique rigid identity object on support. | Identity-gap margin `delta_ri(S)`. | Gap between winning identity candidate and nearest admissible rival under remapping/deformation. | `not_frozen` | Narrative or memory continuity mistaken for rigid identity; unresolved ties hidden by coarse scoring. | identity rival ranking, tie detector, remapping control. |
 | `I_int` | No admissible non-trivial factorization preserving operational histories. | Non-factorization margin `delta_int(S)`. | Penalized loss gap between full model and best admissible product/factorized rival. | `not_frozen` | Complexity or activity preserved while true integration is absent; gross collapse confounded with integration loss. | factorized-rival report, complexity-preservation report, gross-collapse control. |
 | `I_cont` | Continuous admissible regime evolution. | Fragmentation/continuity margin `delta_cont(S)`. | Fragmentation functional under matched disturbance and continuity trace stability. | `not_frozen` | Apparent continuity from smoothing, interpolation, or history-blind decoding. | matched disturbance manifest, history-aware vs history-blind decoder control. |
 | `I_diff` | Stable exclusion of null/trivial collapse. | Non-null separation margin `delta_diff(S)`. | Minimum recoverable separation between at least two admissible histories/readout classes. | `not_frozen` | Noise, labels, or arbitrary partitions mistaken for non-null differentiation. | null-class control, label-only control, noise-only control. |
-| `I_leg` | Decoder-certified recoverability under controls. | Legibility margin `delta_leg(S)`. | Joint bundle: separability, noise robustness, persistence window, intervention fidelity, negative-control false-positive rate, compression distortion. | `formal_not_numeric` | Decoder artifact, overfit class labels, or compression preserving labels while destroying structure. | certified decoder record, noise report, intervention fidelity report, negative-control report, compression report. |
+| `I_leg` | Decoder-certified recoverability under controls. | Legibility margin `delta_leg(S)`. | Joint bundle: separability, noise robustness, persistence window, intervention fidelity, negative-control false-positive rate, compression distortion; see `docs/measurement_specs/I_leg_spec_v1.md`. | `formal_not_numeric` | Decoder artifact, overfit class labels, or compression preserving labels while destroying structure. | certified decoder record, noise report, intervention fidelity report, negative-control report, compression report. |
 
 ## Paper 5 Legibility Submetrics
 
@@ -57,7 +57,8 @@ date_frozen, source, and modification_log.
 - It cannot execute experiments.
 - It cannot choose final thresholds without a preregistration artifact.
 - It cannot bind QICN-SYSTEM runtime fields unless those fields are present,
-  versioned, and mapped in a future execution package.
+  versioned, and mapped in a future execution package. Current candidate
+  bindings are listed in `docs/measurement_specs/RUNTIME_BINDING_GAP.md`.
 - It cannot distinguish semantic dependence that is not represented in the FCR
   or in a measurement manifest.
 

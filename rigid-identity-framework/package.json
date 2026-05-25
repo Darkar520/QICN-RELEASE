@@ -8,8 +8,13 @@
     "extract:registry": "node scripts/extract-registry.js",
     "verify:corpus-registry": "node scripts/validate-corpus.js",
     "verify:macro-registry": "node scripts/validate-macros.js",
+    "verify:prediction-registry": "node scripts/validate-prediction-registry.js",
+    "lint:nonclaims": "node scripts/lint-nonclaims.js",
+    "extract:claim-ledger": "node scripts/extract-claim-ledger.js",
+    "resync:macro-cache": "node scripts/resync-macro-cache.js",
     "analyze:impact": "node scripts/fcr-impact-analyzer.js",
     "audit:monolithic-risk": "node scripts/verify-monolithic-risk.js",
+    "test:tamper-prereg": "node scripts/tamper-inject.js --self-test",
     "report:corpus-health": "node scripts/generate-report.js"
   }
 }

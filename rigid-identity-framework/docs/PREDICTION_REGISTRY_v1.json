@@ -29,8 +29,17 @@
       "support_condition": "The two implementations preserve all registered invariant margins and remain class-equivalent under frozen geometry tolerance.",
       "weakening_condition": "Equivalence holds only after changing tolerance, using non-matched implementations, or ignoring an unresolved identity-margin ambiguity.",
       "destruction_condition": "Class divergence or Qop geometry mismatch appears despite verified preserved structure.",
-      "required_artifacts": ["pair_manifest", "invariant_margin_report", "qop_geometry_report", "equivalence_decision_record"],
-      "minimum_negative_controls": ["substrate_label_control", "near_identity_ambiguity_control", "geometry_mismatch_control"],
+      "required_artifacts": [
+        "pair_manifest",
+        "invariant_margin_report",
+        "qop_geometry_report",
+        "equivalence_decision_record"
+      ],
+      "minimum_negative_controls": [
+        "substrate_label_control",
+        "near_identity_ambiguity_control",
+        "geometry_mismatch_control"
+      ],
       "thresholds": [
         {
           "name": "geometry_tolerance_epsilon",
@@ -44,7 +53,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "Cross-substrate operational equivalence is not human equivalence or identity transfer."
+      "epistemic_limit": "Cross-substrate operational equivalence is not human equivalence or identity transfer.",
+      "linked_rivals": [
+        "RIVAL-SUBSTRATE-01"
+      ]
     },
     {
       "id": "PRED-02",
@@ -58,8 +70,19 @@
       "support_condition": "The targeted invariant loss is verified, the sham/off-target controls do not produce the same pattern, and the class exits, contracts, or becomes undefined according to frozen rules.",
       "weakening_condition": "The class changes only under global degradation, ambiguous threshold tuning, or nonselective damage that also affects matched controls.",
       "destruction_condition": "The system remains certified without downgrade after verified invariant loss.",
-      "required_artifacts": ["pre_ablation_certificate", "post_ablation_certificate", "invariant_loss_proof", "sham_control_result", "off_target_control_result", "decision_record"],
-      "minimum_negative_controls": ["sham_ablation", "off_target_ablation", "global_noise_degradation"],
+      "required_artifacts": [
+        "pre_ablation_certificate",
+        "post_ablation_certificate",
+        "invariant_loss_proof",
+        "sham_control_result",
+        "off_target_control_result",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "sham_ablation",
+        "off_target_ablation",
+        "global_noise_degradation"
+      ],
       "thresholds": [
         {
           "name": "critical_invariant_loss_boundary",
@@ -73,7 +96,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "No new empirical execution is implied by this registry entry."
+      "epistemic_limit": "No new empirical execution is implied by this registry entry.",
+      "linked_rivals": [
+        "RIVAL-COMPLEXITY-01"
+      ]
     },
     {
       "id": "PRED-03",
@@ -87,8 +113,18 @@
       "support_condition": "The complexity-matched baseline fails under frozen certification while the invariant-preserving candidate passes.",
       "weakening_condition": "The baseline fails only because of poor implementation quality, non-matched scale, or an excluded artifact rather than missing invariants.",
       "destruction_condition": "A scale-only or activity-only control passes certification despite missing required invariants.",
-      "required_artifacts": ["candidate_certificate", "complexity_matched_control_manifest", "control_certificate_attempt", "matching_report", "decision_record"],
-      "minimum_negative_controls": ["complexity_only_control", "activity_rich_no_integration_control", "report_rich_no_invariant_control"],
+      "required_artifacts": [
+        "candidate_certificate",
+        "complexity_matched_control_manifest",
+        "control_certificate_attempt",
+        "matching_report",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "complexity_only_control",
+        "activity_rich_no_integration_control",
+        "report_rich_no_invariant_control"
+      ],
       "thresholds": [
         {
           "name": "complexity_match_tolerance",
@@ -102,7 +138,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "Internal support in the corpus must not be read as external matched-baseline validation."
+      "epistemic_limit": "Internal support in the corpus must not be read as external matched-baseline validation.",
+      "linked_rivals": [
+        "RIVAL-COMPLEXITY-01"
+      ]
     },
     {
       "id": "PRED-04a",
@@ -116,8 +155,17 @@
       "support_condition": "The run remains inside tolerance across the preregistered perturbation panel.",
       "weakening_condition": "Stability holds only for cherry-picked perturbations or after threshold changes.",
       "destruction_condition": "Response falls outside tolerance in the frozen pass-region panel.",
-      "required_artifacts": ["pass_region_manifest", "tolerance_manifest", "perturbation_panel", "response_trace", "decision_record"],
-      "minimum_negative_controls": ["near_boundary_pass_control", "random_micro_perturbation_control"],
+      "required_artifacts": [
+        "pass_region_manifest",
+        "tolerance_manifest",
+        "perturbation_panel",
+        "response_trace",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "near_boundary_pass_control",
+        "random_micro_perturbation_control"
+      ],
       "thresholds": [
         {
           "name": "pass_region_tolerance",
@@ -131,7 +179,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "This is a boundary-behavior test, not a consciousness or phenomenality test."
+      "epistemic_limit": "This is a boundary-behavior test, not a consciousness or phenomenality test.",
+      "linked_rivals": [
+        "RIVAL-NULL-DYNAMICS-01"
+      ]
     },
     {
       "id": "PRED-04b",
@@ -145,8 +196,17 @@
       "support_condition": "The run remains outside tolerance under the preregistered fail-region panel.",
       "weakening_condition": "Fail behavior depends on non-reproducible seeds or untracked local tuning.",
       "destruction_condition": "Response falls within tolerance in the frozen fail-region panel.",
-      "required_artifacts": ["fail_region_manifest", "tolerance_manifest", "perturbation_panel", "response_trace", "decision_record"],
-      "minimum_negative_controls": ["near_boundary_fail_control", "random_micro_perturbation_control"],
+      "required_artifacts": [
+        "fail_region_manifest",
+        "tolerance_manifest",
+        "perturbation_panel",
+        "response_trace",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "near_boundary_fail_control",
+        "random_micro_perturbation_control"
+      ],
       "thresholds": [
         {
           "name": "fail_region_tolerance",
@@ -160,7 +220,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "This tests boundary classification only."
+      "epistemic_limit": "This tests boundary classification only.",
+      "linked_rivals": [
+        "RIVAL-NULL-DYNAMICS-01"
+      ]
     },
     {
       "id": "PRED-04c",
@@ -174,8 +237,18 @@
       "support_condition": "The ambiguous band is reproducibly below the frozen width threshold.",
       "weakening_condition": "The band is narrow only under favorable sampling or post-hoc scan boundaries.",
       "destruction_condition": "The band occupies more than 10 percent of the scanned parameter space or no transition is detected.",
-      "required_artifacts": ["scan_manifest", "frozen_step_size", "tolerance_manifest", "band_width_report", "decision_record"],
-      "minimum_negative_controls": ["coarse_scan_control", "randomized_scan_order", "posthoc_boundary_detection_check"],
+      "required_artifacts": [
+        "scan_manifest",
+        "frozen_step_size",
+        "tolerance_manifest",
+        "band_width_report",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "coarse_scan_control",
+        "randomized_scan_order",
+        "posthoc_boundary_detection_check"
+      ],
       "thresholds": [
         {
           "name": "transition_band_fraction",
@@ -199,7 +272,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "The 10 percent threshold is corpus-stated; scan design remains unfrozen."
+      "epistemic_limit": "The 10 percent threshold is corpus-stated; scan design remains unfrozen.",
+      "linked_rivals": [
+        "RIVAL-NULL-DYNAMICS-01"
+      ]
     },
     {
       "id": "PRED-05",
@@ -213,8 +289,18 @@
       "support_condition": "Rigid and deformable regimes show the preregistered differential response under matched disturbance.",
       "weakening_condition": "Differential response appears only under unmatched disturbance strength or unbalanced observability.",
       "destruction_condition": "No differential continuity pattern appears under matched disturbance.",
-      "required_artifacts": ["regime_pair_manifest", "matched_disturbance_manifest", "continuity_trace", "fragmentation_report", "decision_record"],
-      "minimum_negative_controls": ["matched_deformable_control", "noise_matched_control", "history_blind_decoder_control"],
+      "required_artifacts": [
+        "regime_pair_manifest",
+        "matched_disturbance_manifest",
+        "continuity_trace",
+        "fragmentation_report",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "matched_deformable_control",
+        "noise_matched_control",
+        "history_blind_decoder_control"
+      ],
       "thresholds": [
         {
           "name": "matched_disturbance_tolerance",
@@ -228,7 +314,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "The result would support a structural regime claim, not phenomenal experience."
+      "epistemic_limit": "The result would support a structural regime claim, not phenomenal experience.",
+      "linked_rivals": [
+        "RIVAL-LEGIBILITY-DECODER-01"
+      ]
     },
     {
       "id": "PRED-06",
@@ -242,8 +331,18 @@
       "support_condition": "Every preregistered tamper case is rejected or quarantined by the admissibility gate.",
       "weakening_condition": "Tamper is detected but downstream claim projection remains ambiguous or inconsistent.",
       "destruction_condition": "A tampered or malformed run is promoted to evidential support.",
-      "required_artifacts": ["tamper_manifest", "malformed_log_sample", "admissibility_verdict", "quarantine_record", "decision_record"],
-      "minimum_negative_controls": ["valid_hash_control", "sham_tamper_control", "malformed_log_control"],
+      "required_artifacts": [
+        "tamper_manifest",
+        "malformed_log_sample",
+        "admissibility_verdict",
+        "quarantine_record",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "valid_hash_control",
+        "sham_tamper_control",
+        "malformed_log_control"
+      ],
       "thresholds": [
         {
           "name": "tamper_acceptance_tolerance",
@@ -257,7 +356,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "This is an integrity/admissibility test, not evidence for consciousness."
+      "epistemic_limit": "This is an integrity/admissibility test, not evidence for consciousness.",
+      "linked_rivals": [
+        "RIVAL-ADMISSIBILITY-NAIVE-01"
+      ]
     },
     {
       "id": "PRED-07",
@@ -271,8 +373,18 @@
       "support_condition": "Sub-critical perturbations preserve membership and geometry across the frozen perturbation panel.",
       "weakening_condition": "Stability appears only in a narrow or hand-selected subset of perturbations.",
       "destruction_condition": "Class flips under sub-critical admissible perturbations across otherwise stable positive cases.",
-      "required_artifacts": ["delta_star_certificate", "perturbation_panel", "class_membership_trace", "geometry_trace", "decision_record"],
-      "minimum_negative_controls": ["subcritical_noise_control", "near_margin_control", "randomized_order_control"],
+      "required_artifacts": [
+        "delta_star_certificate",
+        "perturbation_panel",
+        "class_membership_trace",
+        "geometry_trace",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "subcritical_noise_control",
+        "near_margin_control",
+        "randomized_order_control"
+      ],
       "thresholds": [
         {
           "name": "delta_star_budget",
@@ -286,7 +398,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "Approximate stability remains internal unless externally replicated."
+      "epistemic_limit": "Approximate stability remains internal unless externally replicated.",
+      "linked_rivals": [
+        "RIVAL-STABILITY-TRIVIAL-01"
+      ]
     },
     {
       "id": "PRED-08",
@@ -300,8 +415,18 @@
       "support_condition": "A full certificate with positive margins yields a recoverable non-empty, non-trivial Qop structure.",
       "weakening_condition": "Qop is recoverable only under a decoder choice not justified by the certification bundle.",
       "destruction_condition": "Certification passes while no non-trivial operational class is recoverable.",
-      "required_artifacts": ["full_certification_bundle", "qop_recovery_report", "decoder_choice_record", "nontriviality_witness", "decision_record"],
-      "minimum_negative_controls": ["decoder_artifact_control", "null_class_control", "trivial_partition_control"],
+      "required_artifacts": [
+        "full_certification_bundle",
+        "qop_recovery_report",
+        "decoder_choice_record",
+        "nontriviality_witness",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "decoder_artifact_control",
+        "null_class_control",
+        "trivial_partition_control"
+      ],
       "thresholds": [
         {
           "name": "positive_margin_requirement",
@@ -315,7 +440,11 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "Non-empty Qop is an operational class result, not phenomenal consciousness."
+      "epistemic_limit": "Non-empty Qop is an operational class result, not phenomenal consciousness.",
+      "linked_rivals": [
+        "RIVAL-MEMORY-01",
+        "RIVAL-NARRATIVE-01"
+      ]
     },
     {
       "id": "PRED-09",
@@ -329,8 +458,18 @@
       "support_condition": "Budget violation triggers the frozen invalidation or downgrade rule.",
       "weakening_condition": "Budget violation is detected but downgrade behavior is inconsistent or discretionary.",
       "destruction_condition": "Strong claims remain active after a preregistered budget violation.",
-      "required_artifacts": ["budget_manifest", "stress_run_log", "admissibility_verdict", "claim_downgrade_record", "decision_record"],
-      "minimum_negative_controls": ["within_budget_control", "sham_stress_control", "malformed_log_control"],
+      "required_artifacts": [
+        "budget_manifest",
+        "stress_run_log",
+        "admissibility_verdict",
+        "claim_downgrade_record",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "within_budget_control",
+        "sham_stress_control",
+        "malformed_log_control"
+      ],
       "thresholds": [
         {
           "name": "latency_compute_budget",
@@ -344,7 +483,11 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "This is an admissibility and governance test."
+      "epistemic_limit": "This is an admissibility and governance test.",
+      "linked_rivals": [
+        "RIVAL-REWARD-01",
+        "RIVAL-SEMANTIC-01"
+      ]
     },
     {
       "id": "PRED-10",
@@ -358,8 +501,18 @@
       "support_condition": "Legibility metrics remain within frozen bounds when Ileg is positive and fail/degrade when Ileg crosses its frozen boundary.",
       "weakening_condition": "Legibility changes are explained by decoder fragility unrelated to the registered Ileg clauses.",
       "destruction_condition": "Generic observability remains stable with no specific dependence on Ileg, or Ileg failure does not affect certification.",
-      "required_artifacts": ["noise_manifest", "compression_manifest", "legibility_metric_report", "intervention_fidelity_report", "decision_record"],
-      "minimum_negative_controls": ["noise_only_control", "compression_only_control", "decoder_fragility_control"],
+      "required_artifacts": [
+        "noise_manifest",
+        "compression_manifest",
+        "legibility_metric_report",
+        "intervention_fidelity_report",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "noise_only_control",
+        "compression_only_control",
+        "decoder_fragility_control"
+      ],
       "thresholds": [
         {
           "name": "legibility_margin_delta_leg",
@@ -373,7 +526,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "Legibility is an operational audit condition, not semantic transparency or phenomenality."
+      "epistemic_limit": "Legibility is an operational audit condition, not semantic transparency or phenomenality.",
+      "linked_rivals": [
+        "RIVAL-LEGIBILITY-DECODER-01"
+      ]
     },
     {
       "id": "PRED-11",
@@ -387,8 +543,18 @@
       "support_condition": "The integration-destroyed, complexity-preserved system fails certification under frozen rules.",
       "weakening_condition": "Failure is confounded by gross collapse, non-matched complexity, or measurement loss unrelated to integration.",
       "destruction_condition": "The system passes certification despite verified loss of integration.",
-      "required_artifacts": ["integration_loss_manifest", "complexity_preservation_report", "certification_attempt", "matched_control_result", "decision_record"],
-      "minimum_negative_controls": ["complexity_preserved_integration_destroyed_control", "activity_preserved_integration_destroyed_control", "gross_collapse_control"],
+      "required_artifacts": [
+        "integration_loss_manifest",
+        "complexity_preservation_report",
+        "certification_attempt",
+        "matched_control_result",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "complexity_preserved_integration_destroyed_control",
+        "activity_preserved_integration_destroyed_control",
+        "gross_collapse_control"
+      ],
       "thresholds": [
         {
           "name": "integration_loss_boundary",
@@ -402,7 +568,10 @@
         }
       ],
       "current_status": "formalized_pending_preregistration",
-      "epistemic_limit": "This can falsify a complexity-only rival; it does not prove consciousness."
+      "epistemic_limit": "This can falsify a complexity-only rival; it does not prove consciousness.",
+      "linked_rivals": [
+        "RIVAL-COMPLEXITY-01"
+      ]
     }
   ]
 }

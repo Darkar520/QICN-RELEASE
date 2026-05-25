@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QICN FCR Prediction Registry Schema",
+  "schema_version": "1.0.0",
+  "status": "business-rule schema plus native validator",
+  "required_top_level": [
+    "schema_version",
+    "predictions"
+  ],
+  "patterns": {
+    "schema_version": "^\\d+\\.\\d+\\.\\d+$",
+    "prediction_id": "^PRED-(\\d+[a-z]?)$",
+    "iso_date": "^\\d{4}-\\d{2}-\\d{2}$",
+    "rival_id": "^RIVAL-[A-Z0-9-]+$"
+  },
+  "threshold_status_enum": [
+    "not_frozen",
+    "formal_not_numeric",
+    "frozen_from_corpus_text",
+    "frozen_from_claim_logic"
+  ],
+  "prediction_required_fields": [
+    "id",
+    "source_paper",
+    "claim_target",
+    "claim_family",
+    "observable",
+    "manipulation",
+    "framework_prediction",
+    "rival_prediction",
+    "support_condition",
+    "weakening_condition",
+    "destruction_condition",
+    "required_artifacts",
+    "minimum_negative_controls",
+    "thresholds",
+    "current_status",
+    "epistemic_limit"
+  ],
+  "threshold_required_fields": [
+    "name",
+    "status",
+    "value",
+    "unit",
+    "source",
+    "rationale",
+    "date_frozen",
+    "modification_log"
+  ],
+  "business_rules": [
+    "prediction ids must be unique",
+    "required_artifacts and minimum_negative_controls must be non-empty arrays",
+    "epistemic_limit must contain at least 20 non-whitespace characters",
+    "if thresholds[].status starts with frozen_, thresholds[].value must not be null",
+    "if thresholds[].status starts with frozen_, thresholds[].date_frozen must match YYYY-MM-DD",
+    "if thresholds[].status starts with frozen_, thresholds[].rationale must contain at least 10 non-whitespace characters",
+    "linked_rivals, when present, must be a non-empty array of RIVAL-* ids"
+  ],
+  "boundary": "This schema validates registry structure only. It does not validate empirical truth, theorem truth, consciousness, phenomenality, identity transfer, or external adjudication."
+}

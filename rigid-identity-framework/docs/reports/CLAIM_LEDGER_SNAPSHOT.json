@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-25T21:24:50.223Z",
+  "source": "docs/THEORY_CLAIM_LEDGER.md",
+  "status_boundary": "Machine-readable claim ledger snapshot only; does not promote claims.",
+  "entries": [
+    {
+      "id": "claim-rigid-identity",
+      "claim_family": "Rigid identity as inverse-limit structure",
+      "corpus_locus": "Paper 1 / BaseCore",
+      "permitted_formulation": "Conditional structural identity over observable channels.",
+      "required_burden": "Projective compatibility, persistence, non-triviality, identity-gap evidence.",
+      "primary_falsifier": "Multiple incompatible identity candidates fit the same support without penalty.",
+      "current_status": "formal-only"
+    },
+    {
+      "id": "claim-regime-structure",
+      "claim_family": "Phenomenological regime structure",
+      "corpus_locus": "Paper 2 / BaseCore",
+      "permitted_formulation": "Abstract codomain/regime constraints under stated hypotheses.",
+      "required_burden": "Phi-regularity as explicit hypothesis, continuity/fragmentation proof obligations.",
+      "primary_falsifier": "Regime boundaries collapse or fragment under conditions predicted rigid.",
+      "current_status": "formal-only"
+    },
+    {
+      "id": "claim-null-regime",
+      "claim_family": "Null-regime instability",
+      "corpus_locus": "Paper 3 / BaseCore",
+      "permitted_formulation": "Structural non-nullity under CCR-like assumptions.",
+      "required_burden": "Stated assumptions plus non-nullity proof chain.",
+      "primary_falsifier": "Stable null regime under all declared assumptions.",
+      "current_status": "formal-only"
+    },
+    {
+      "id": "claim-forensic-discipline",
+      "claim_family": "Forensic prediction discipline",
+      "corpus_locus": "Paper 4",
+      "permitted_formulation": "Admissibility, baselines, ablations, statistics, gates.",
+      "required_burden": "Frozen protocol, negative controls, real non-synthetic execution.",
+      "primary_falsifier": "Tampered or inadmissible run promoted to support.",
+      "current_status": "preregistered-test"
+    },
+    {
+      "id": "claim-cop-class",
+      "claim_family": "Operational consciousness class `Cop`",
+      "corpus_locus": "Paper 5",
+      "permitted_formulation": "Framework-internal six-invariant operational class.",
+      "required_burden": "Positive `I_per`, `I_ri`, `I_int`, `I_cont`, `I_diff`, `I_leg` plus certificate.",
+      "primary_falsifier": "Any missing invariant still permits certification.",
+      "current_status": "formal-only"
+    },
+    {
+      "id": "claim-prediction-falsation",
+      "claim_family": "Prediction/falsation layer",
+      "corpus_locus": "Paper 6",
+      "permitted_formulation": "Internal prediction and failure-mode ledger.",
+      "required_burden": "Frozen observables, rivals, support/weakening/destruction decisions.",
+      "primary_falsifier": "Rival or control meets destruction condition without downgrade.",
+      "current_status": "preregistered-test"
+    },
+    {
+      "id": "claim-life-subjecthood",
+      "claim_family": "Operational life/subjecthood",
+      "corpus_locus": "Paper 7",
+      "permitted_formulation": "Higher-order operational class labels.",
+      "required_burden": "Life and subjecthood descriptors, self/non-self tests, controls.",
+      "primary_falsifier": "Inert persistence or complexity-only systems pass.",
+      "current_status": "formal-only"
+    },
+    {
+      "id": "claim-first-person-index",
+      "claim_family": "First-person indexed subjectivity",
+      "corpus_locus": "Paper 8",
+      "permitted_formulation": "Framework-internal indexed subjectivity class.",
+      "required_burden": "Seven-coordinate state, interventions, weak-rival defeat.",
+      "primary_falsifier": "Weak rival or label-only system matches evidence.",
+      "current_status": "formal-only"
+    },
+    {
+      "id": "claim-phenomenal-bridge",
+      "claim_family": "Phenomenal bridge organization",
+      "corpus_locus": "Paper 9",
+      "permitted_formulation": "Burden architecture for bridge predicates.",
+      "required_burden": "BPF-2/BPF-3/BPF-4 interventions, comparators, gates, governance.",
+      "primary_falsifier": "Bridge predicate reducible to semantic density, reward, report, or upstream proxy.",
+      "current_status": "formal-only"
+    },
+    {
+      "id": "claim-external-adjudication",
+      "claim_family": "External adjudication",
+      "corpus_locus": "Paper 10",
+      "permitted_formulation": "Architecture for future external evidence.",
+      "required_burden": "Preregistration, independent adjudicators, datasets, controls, decision records.",
+      "primary_falsifier": "Internal artifacts treated as external validation.",
+      "current_status": "implementation-support"
+    }
+  ]
+}

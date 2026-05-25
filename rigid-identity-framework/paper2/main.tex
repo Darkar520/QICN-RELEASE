@@ -138,6 +138,41 @@ This work maintains strict ontological neutrality:
 
 The framework is therefore a theory of \textit{structural possibility}, not a theory of \textit{phenomenal reality}.
 
+\subsection{Terminological Alignment: Structural Regime Assignments}
+
+The phrase ``phenomenological regime'' is retained for continuity with the
+published corpus, but the demonstrated object in this paper is more precisely a
+\emph{structural regime assignment}. The mathematical content is a constrained
+map from identity structure into an abstract codomain. No semantic clause in
+this paper identifies that codomain with experience.
+
+\begin{definition}[Structural regime alias]\label{def:structural-regime-alias}
+Whenever the paper writes a phenomenological space $\mathcal{E}$ or a
+phenomenological assignment $\Phi:\mathcal{I}\to\mathcal{E}$, the strictly
+demonstrated reading is:
+\[
+\mathcal{E}_{\mathrm{str}}:=\mathcal{E},
+\qquad
+\Phi_{\mathrm{str}}:=\Phi,
+\]
+where $\mathcal{E}_{\mathrm{str}}$ is an abstract structural regime codomain and
+$\Phi_{\mathrm{str}}$ is a compatibility assignment into that codomain.
+\end{definition}
+
+\begin{proposition}[No identification with experience]\label{prop:no-experience-identification}
+The formal apparatus of this paper does not define a map from
+$\mathcal{E}_{\mathrm{str}}$ to human experience, phenomenal consciousness,
+qualia, or subjective reports.
+\end{proposition}
+
+\begin{proof}
+Definitions in this paper specify an abstract codomain, compatibility
+conditions, and rigidity-dependent constraints. They do not introduce a
+measurement channel from $\mathcal{E}_{\mathrm{str}}$ to biological reports,
+human psychophysics, phenomenal properties, or moral status. Therefore no such
+identification is present in the formal language of the paper.
+\end{proof}
+
 % ============================================================================
 % SECTION 2: FORMAL SETUP
 % ============================================================================
@@ -519,12 +554,12 @@ We have established:
 % ============================================================================
 \section{Impossibility Theorems}
 
-\subsection{$\Phi$-Regularity Theorem}
+\subsection{$\Phi$-Regularity Hypothesis}
 
-Before proving the main impossibility results, we establish a fundamental regularity condition that derives the coupling constant $C$ geometrically, rather than assuming it axiomatically.
+Before proving the main impossibility results, we isolate the global lower-bound regularity condition used by the fragmentation argument. Properness, local Lipschitz regularity, and non-collapse do not imply this bound in general, so the bound is carried as an explicit hypothesis.
 
-\begin{theorem}[$\Phi$-Regularity]\label{thm:phi-regularity}
-Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Identity} and let $(\mathcal{E}, d_\mathcal{E})$ be the abstract phenomenological metric space. Suppose that $\Phi: \mathcal{I} \to \mathcal{E}$ satisfies:
+\begin{hypothesis}[$\Phi$-Regularity Lower Bound]\label{hyp:phi-paper2}
+Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Identity} and let $(\mathcal{E}, d_\mathcal{E})$ be the abstract phenomenological metric space. A phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is said to satisfy $\Phi$-regularity when it satisfies:
 \begin{enumerate}[leftmargin=*]
     \item (Properness) For every compact $K \subset \mathcal{E}$, $\Phi^{-1}(K)$ is compact in $\mathcal{I}$.
     \item (Local Lipschitz regularity) For every $x \in \mathcal{I}$, there exist $\varepsilon > 0$ and $L_x > 0$ such that for all $y, z \in B_\varepsilon(x)$:
@@ -532,44 +567,24 @@ Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Ident
         d_\mathcal{E}(\Phi(y), \Phi(z)) \leq L_x \cdot d_w(y, z).
     \end{equation}
     \item (Non-collapse) For every $x \in \mathcal{I}$ and every $r > 0$, the restriction of $\Phi$ to $B_r(x)$ is not constant.
+    \item (Global lower Lipschitz bound) There exists a constant $C>0$ such that for all $x,y\in\mathcal{I}$,
+    \begin{equation}
+        d_\mathcal{E}(\Phi(x),\Phi(y)) \geq C\cdot d_w(x,y).
+    \end{equation}
 \end{enumerate}
+\end{hypothesis}
 
-Then there exists a constant $C > 0$ such that for all $x, y \in \mathcal{I}$:
-\begin{equation}
-    d_\mathcal{E}(\Phi(x), \Phi(y)) \geq C \cdot d_w(x, y).
-\end{equation}
-\end{theorem}
-
-\begin{proof}
-We proceed by contradiction. Assume the conclusion fails.
-
-\textbf{Step 1.} Then there exist sequences $(x_n, y_n)$ with $d_w(x_n, y_n) = 1$ and $d_\mathcal{E}(\Phi(x_n), \Phi(y_n)) \to 0$.
-
-\textbf{Step 2.} By properness, the image $\{\Phi(x_n)\}$ lies in a relatively compact subset of $\mathcal{E}$. Extract a convergent subsequence with $\Phi(x_n) \to e \in \mathcal{E}$.
-
-\textbf{Step 3.} Since $d_\mathcal{E}(\Phi(x_n), \Phi(y_n)) \to 0$, we have $\Phi(y_n) \to e$ as well.
-
-\textbf{Step 4.} By properness, the preimages $\Phi^{-1}(\overline{B_\delta(e)})$ are compact for small $\delta$. Hence $x_n$ and $y_n$ lie in a compact subset of $\mathcal{I}$. Extract convergent subsequences $x_n \to x$ and $y_n \to y$.
-
-\textbf{Step 5.} Since $d_w(x_n, y_n) = 1$ and $d_w$ is continuous, $d_w(x, y) = 1$, so $x \neq y$.
-
-\textbf{Step 6.} But $\Phi(x_n) \to \Phi(x) = e$ and $\Phi(y_n) \to \Phi(y) = e$ by continuity. Hence $\Phi(x) = \Phi(y)$ for $x \neq y$ with $d_w(x, y) = 1$.
-
-\textbf{Step 7.} This means $\Phi$ is constant on sets of positive $d_w$-diameter, contradicting non-collapse.
-
-Hence a global lower bound $C > 0$ must exist.
-\end{proof}
-
-\begin{remark}
-This theorem is fundamental: it converts the coupling constant $C$ from an \textit{axiom} into a \textit{geometric consequence} of regularity conditions. All subsequent impossibility results that use $C$ are therefore derived, not assumed.
+\begin{remark}[Why this is a hypothesis]
+The map $\Phi(x)=\arctan(x)$ from $\mathbb{R}$ to $(-\pi/2,\pi/2)$ is proper as a map into the open interval, locally Lipschitz, and non-constant on every nonempty ball, but it has no global lower Lipschitz constant because $|\arctan(x+1)-\arctan(x)|\to0$ as $x\to\infty$. Therefore the lower-bound clause above is an assumption, not a theorem derived from the first three clauses.
 \end{remark}
 
 \subsection{Fragmentation Theorem}
 
 \begin{theorem}[Fragmentation Theorem]\label{thm:fragmentation}
-Let $\mathcal{I}$ be an identity object with $M_\Omega < \infty$. Then every phenomenological assignment $\Phi \in \mathcal{P}(M_\Omega)$ is fragmentable. That is:
+Let $\mathcal{I}$ be an identity object with $M_\Omega < \infty$. If a phenomenological assignment $\Phi \in \mathcal{P}(M_\Omega)$ satisfies Hypothesis~\ref{hyp:phi-paper2}, then $\Phi$ is fragmentable. That is:
 \begin{equation}
-    M_\Omega < \infty \implies \mathcal{P}(M_\Omega) \subseteq \mathcal{E}_{\text{frag}},
+    M_\Omega < \infty \ \wedge\ \Phi\text{ satisfies Hypothesis~\ref{hyp:phi-paper2}}
+    \implies \Phi \in \mathcal{E}_{\text{frag}},
 \end{equation}
 where $\mathcal{E}_{\text{frag}}$ denotes the class of fragmentable phenomenological assignments.
 \end{theorem}
@@ -584,11 +599,11 @@ By Axiom E1, the phenomenological assignment $\Phi$ is projectively compatible w
 
 By Axiom E2, $\Phi$ cannot be determined by any finite-time state. Therefore, the deformation of identity trajectories induces a corresponding deformation of phenomenological assignments.
 
-Since the identity deformation is non-zero ($d_w > 0$) and $\Phi$ is globally determined by identity trajectories, by Theorem~\ref{thm:phi-regularity} ($\Phi$-Regularity), we have:
+Since the identity deformation is non-zero ($d_w > 0$) and $\Phi$ is globally determined by identity trajectories, by Hypothesis~\ref{hyp:phi-paper2} ($\Phi$-regularity), we have:
 \begin{equation}
     d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) \geq C \cdot d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0
 \end{equation}
-where $C > 0$ is the regularity constant derived in Theorem~\ref{thm:phi-regularity}.
+where $C > 0$ is the lower-bound constant supplied by Hypothesis~\ref{hyp:phi-paper2}.
 
 Thus, $\Phi$ is fragmentable under finite-energy perturbations.
 \end{proof}
@@ -633,7 +648,7 @@ In CCR systems, any admissible phenomenological assignment is invariant under al
 \subsection{Dichotomy Theorem}
 
 \begin{theorem}[Phenomenological Dichotomy]\label{thm:dichotomy}
-Let $\Phi: \mathcal{I} \to \mathcal{E}$ be an admissible phenomenological assignment. Then exactly one of the following holds:
+Let $\Phi: \mathcal{I} \to \mathcal{E}$ be an admissible phenomenological assignment. In the finite-mass branch assume $\Phi$ satisfies Hypothesis~\ref{hyp:phi-paper2}. Then exactly one of the following holds:
 \begin{enumerate}[leftmargin=*]
     \item $M_\Omega < \infty$ and $\Phi$ is fragmentable;
     \item $M_\Omega = +\infty$ and $\Phi$ is structurally continuous.
@@ -678,7 +693,7 @@ If $M_\Omega = 0$, identity cannot persist under any perturbation. Axiom E1 requ
 \end{proof}
 
 \begin{proposition}[Deformable Identity Admits Only Fragmentable Phenomenology]
-If $0 < M_\Omega < \infty$, every admissible phenomenological assignment is fragmentable under some finite-energy perturbation.
+If $0 < M_\Omega < \infty$ and $\Phi$ satisfies Hypothesis~\ref{hyp:phi-paper2}, then $\Phi$ is fragmentable under some finite-energy perturbation.
 \end{proposition}
 
 \begin{proof}
@@ -712,7 +727,7 @@ This measures the maximal phenomenological deformation achievable under finite-e
 
 \begin{theorem}[Loss Capacity by Rigidity Class]\label{thm:loss}
 \begin{enumerate}[leftmargin=*]
-    \item If $M_\Omega < \infty$, then $R(\Phi) > 0$.
+    \item If $M_\Omega < \infty$ and $\Phi$ satisfies Hypothesis~\ref{hyp:phi-paper2}, then $R(\Phi) > 0$.
     \item If $M_\Omega = +\infty$, then $R(\Phi) = 0$.
 \end{enumerate}
 \end{theorem}
@@ -945,7 +960,7 @@ The result of this paper is the classification boundary: if a compatible phenome
 \subsection{Proof of Fragmentation Theorem (Extended)}
 
 \begin{proof}[Full Proof of Theorem~\ref{thm:fragmentation}]
-Let $M_\Omega < \infty$ and let $\Phi: \mathcal{I} \to \mathcal{E}$ satisfy E0--E2.
+Let $M_\Omega < \infty$ and let $\Phi: \mathcal{I} \to \mathcal{E}$ satisfy E0--E2 and Hypothesis~\ref{hyp:phi-paper2}.
 
 \textbf{Step 1.} By definition of $M_\Omega$, there exists $\{\delta E_t\}$ with $E_w < \infty$ such that $d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0$.
 
@@ -958,7 +973,7 @@ Let $M_\Omega < \infty$ and let $\Phi: \mathcal{I} \to \mathcal{E}$ satisfy E0--
 
 \textbf{Step 4.} By E1, $\Phi$ is projectively compatible. The deformation of projections induces a corresponding deformation of the phenomenological limit.
 
-\textbf{Step 5.} By the coupling hypothesis, there exists $C > 0$ such that:
+\textbf{Step 5.} By Hypothesis~\ref{hyp:phi-paper2}, there exists $C > 0$ such that:
 \begin{equation}
     d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) \geq C \cdot d_w(x, \tilde{x}).
 \end{equation}
@@ -1009,6 +1024,13 @@ By E1, $\Phi$ is determined by identity trajectories. By CCR, identity trajector
 \section{Editorial Boundary to Null-Regime Instability}
 
 The downstream bridge from classification to null-instability is intentionally moved to \textit{Null-Regime Instability} in the canonical corpus. Appendix A remains as the extended proof layer for the classification theorems proved here; the downstream null-regime theorem, attractor closure, and canonical examples now live only in \textit{Null-Regime Instability}.
+
+\section*{What This Paper Does Not Claim}
+\begin{enumerate}
+\item This paper does not claim external validation, empirical confirmation, or philosophical closure.
+\item The formal results are conditional on the hypotheses stated; they do not establish truth outside the assumed structures.
+\item No interpretive-layer conclusion (consciousness, phenomenality, moral status) is derived from terminology alone.
+\end{enumerate}
 
 \printbibliography
 \end{document}

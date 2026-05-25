@@ -1,0 +1,408 @@
+{
+  "schema_version": "1.1.0",
+  "generated_for": "FCR v10 falsifiability scaffold",
+  "date": "2026-05-25",
+  "scope": "Machine-readable binding for all Paper 6 prediction families PRED-01 through PRED-11.",
+  "status_boundary": "This registry is a preregistration scaffold only. It does not report new empirical results, external validation, consciousness, phenomenality, identity transfer, agency, or moral status.",
+  "success_metric": "A third-party reviewer should be able to design a concrete test or falsification attempt from each record without private explanation from the authors. A reviewer still cannot execute a final preregistered experiment until datasets, seeds, thresholds, exclusion rules, and decision records are frozen.",
+  "threshold_policy": {
+    "rule": "Do not invent numeric thresholds. Values are marked frozen only when explicitly stated in the corpus or in a future preregistration artifact.",
+    "not_frozen_status": "Threshold slot exists but cannot be used as a preregistered decision boundary yet.",
+    "modification_log_rule": "Any threshold change after date_frozen must be recorded before execution and invalidates prior preregistration unless explicitly versioned."
+  },
+  "status_semantics": {
+    "formalized_pending_preregistration": "The prediction exists in the corpus and is structured here, but thresholds, datasets, and execution manifests are not yet frozen.",
+    "internal_support_only": "The corpus reports internal support, but no external adjudication is claimed.",
+    "blocked": "The prediction cannot be executed until a named missing artifact, rival, or protocol exists.",
+    "externally_adjudicated": "Reserved for future use only after independent execution and decision records."
+  },
+  "predictions": [
+    {
+      "id": "PRED-01",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P5-02",
+      "claim_family": "Cross-substrate class preservation",
+      "observable": "Certified class label and Qop geometry across implementations.",
+      "manipulation": "Compare a cross-substrate pair with preserved invariant margins.",
+      "framework_prediction": "The pair remains in the same operational class with epsilon-bounded Qop geometry under the admissible equivalence regime.",
+      "rival_prediction": "A substrate-privilege rival predicts class divergence based on substrate label despite preserved structure.",
+      "support_condition": "The two implementations preserve all registered invariant margins and remain class-equivalent under frozen geometry tolerance.",
+      "weakening_condition": "Equivalence holds only after changing tolerance, using non-matched implementations, or ignoring an unresolved identity-margin ambiguity.",
+      "destruction_condition": "Class divergence or Qop geometry mismatch appears despite verified preserved structure.",
+      "required_artifacts": ["pair_manifest", "invariant_margin_report", "qop_geometry_report", "equivalence_decision_record"],
+      "minimum_negative_controls": ["substrate_label_control", "near_identity_ambiguity_control", "geometry_mismatch_control"],
+      "thresholds": [
+        {
+          "name": "geometry_tolerance_epsilon",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "Qop geometry distance",
+          "source": "Paper 6 states epsilon-bounded geometry but does not freeze a numeric epsilon in this registry.",
+          "rationale": "Must be fixed before execution to avoid tolerance tuning.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "Cross-substrate operational equivalence is not human equivalence or identity transfer."
+    },
+    {
+      "id": "PRED-02",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P5-04",
+      "claim_family": "Invariant-loss rupture",
+      "observable": "Class membership and Qop geometry before and after targeted rupture.",
+      "manipulation": "Perform a one-invariant ablation while preserving comparable substrate and gross scale.",
+      "framework_prediction": "Verified loss of a critical invariant causes certified class exit, contraction, or undefined Qop.",
+      "rival_prediction": "A complexity-only or gross-scale rival predicts little or no class-relevant change when complexity and scale are preserved.",
+      "support_condition": "The targeted invariant loss is verified, the sham/off-target controls do not produce the same pattern, and the class exits, contracts, or becomes undefined according to frozen rules.",
+      "weakening_condition": "The class changes only under global degradation, ambiguous threshold tuning, or nonselective damage that also affects matched controls.",
+      "destruction_condition": "The system remains certified without downgrade after verified invariant loss.",
+      "required_artifacts": ["pre_ablation_certificate", "post_ablation_certificate", "invariant_loss_proof", "sham_control_result", "off_target_control_result", "decision_record"],
+      "minimum_negative_controls": ["sham_ablation", "off_target_ablation", "global_noise_degradation"],
+      "thresholds": [
+        {
+          "name": "critical_invariant_loss_boundary",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "invariant-specific witness margin",
+          "source": "Paper 5 defines positive witness margins delta_j(S); no execution threshold is frozen here.",
+          "rationale": "Each invariant needs a concrete measurement dictionary entry before rupture can be preregistered.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "No new empirical execution is implied by this registry entry."
+    },
+    {
+      "id": "PRED-03",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P5-05",
+      "claim_family": "Complexity-only insufficiency",
+      "observable": "Matched complexity/control outcome.",
+      "manipulation": "Compare a certified lower-scale system against a higher-scale baseline lacking the invariant package.",
+      "framework_prediction": "The certified invariant-preserving system passes while the matched complexity-only baseline fails or remains undefined.",
+      "rival_prediction": "A scale-only model predicts that higher complexity or activity should be sufficient for certification.",
+      "support_condition": "The complexity-matched baseline fails under frozen certification while the invariant-preserving candidate passes.",
+      "weakening_condition": "The baseline fails only because of poor implementation quality, non-matched scale, or an excluded artifact rather than missing invariants.",
+      "destruction_condition": "A scale-only or activity-only control passes certification despite missing required invariants.",
+      "required_artifacts": ["candidate_certificate", "complexity_matched_control_manifest", "control_certificate_attempt", "matching_report", "decision_record"],
+      "minimum_negative_controls": ["complexity_only_control", "activity_rich_no_integration_control", "report_rich_no_invariant_control"],
+      "thresholds": [
+        {
+          "name": "complexity_match_tolerance",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "implementation-defined complexity surrogate",
+          "source": "Paper 5 defines surrogate families with theta_X, theta_Phi, theta_C but no numeric values are frozen here.",
+          "rationale": "The complexity match must be frozen before comparing against invariant-preserving candidates.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "Internal support in the corpus must not be read as external matched-baseline validation."
+    },
+    {
+      "id": "PRED-04a",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P3-01",
+      "claim_family": "Pass-region stability",
+      "observable": "Pass-region response stability under micro-perturbation.",
+      "manipulation": "Place the system in a pass region and apply micro-perturbations inside the frozen tolerance.",
+      "framework_prediction": "Response remains stable within predicted tolerance.",
+      "rival_prediction": "A fragile-threshold rival predicts uncontrolled flips even inside the claimed pass region.",
+      "support_condition": "The run remains inside tolerance across the preregistered perturbation panel.",
+      "weakening_condition": "Stability holds only for cherry-picked perturbations or after threshold changes.",
+      "destruction_condition": "Response falls outside tolerance in the frozen pass-region panel.",
+      "required_artifacts": ["pass_region_manifest", "tolerance_manifest", "perturbation_panel", "response_trace", "decision_record"],
+      "minimum_negative_controls": ["near_boundary_pass_control", "random_micro_perturbation_control"],
+      "thresholds": [
+        {
+          "name": "pass_region_tolerance",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "response-distance tolerance",
+          "source": "Paper 6 requires tolerance but does not freeze a numeric value here.",
+          "rationale": "Must be fixed before pass-region testing.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "This is a boundary-behavior test, not a consciousness or phenomenality test."
+    },
+    {
+      "id": "PRED-04b",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P3-01",
+      "claim_family": "Fail-region fragility",
+      "observable": "Fail-region response under micro-perturbation.",
+      "manipulation": "Place the system in a fail region and apply micro-perturbations inside the frozen tolerance.",
+      "framework_prediction": "Response remains outside predicted tolerance.",
+      "rival_prediction": "A tuning artifact may predict accidental recovery or pass behavior in fail-region cases.",
+      "support_condition": "The run remains outside tolerance under the preregistered fail-region panel.",
+      "weakening_condition": "Fail behavior depends on non-reproducible seeds or untracked local tuning.",
+      "destruction_condition": "Response falls within tolerance in the frozen fail-region panel.",
+      "required_artifacts": ["fail_region_manifest", "tolerance_manifest", "perturbation_panel", "response_trace", "decision_record"],
+      "minimum_negative_controls": ["near_boundary_fail_control", "random_micro_perturbation_control"],
+      "thresholds": [
+        {
+          "name": "fail_region_tolerance",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "response-distance tolerance",
+          "source": "Paper 6 requires tolerance but does not freeze a numeric value here.",
+          "rationale": "Must be fixed before fail-region testing.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "This tests boundary classification only."
+    },
+    {
+      "id": "PRED-04c",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P3-01",
+      "claim_family": "Transition-band narrowness",
+      "observable": "Width of neither-clearly-pass-nor-clearly-fail transition band.",
+      "manipulation": "Scan parameters across the critical regime with frozen step size and tolerance.",
+      "framework_prediction": "The transition band is neither pass nor fail and occupies less than 10 percent of the scanned parameter space.",
+      "rival_prediction": "An unfalsifiable or gerrymandered boundary model can absorb broad ambiguous regions as success.",
+      "support_condition": "The ambiguous band is reproducibly below the frozen width threshold.",
+      "weakening_condition": "The band is narrow only under favorable sampling or post-hoc scan boundaries.",
+      "destruction_condition": "The band occupies more than 10 percent of the scanned parameter space or no transition is detected.",
+      "required_artifacts": ["scan_manifest", "frozen_step_size", "tolerance_manifest", "band_width_report", "decision_record"],
+      "minimum_negative_controls": ["coarse_scan_control", "randomized_scan_order", "posthoc_boundary_detection_check"],
+      "thresholds": [
+        {
+          "name": "transition_band_fraction",
+          "status": "frozen_from_corpus_text",
+          "value": 0.1,
+          "unit": "fraction_of_scanned_parameter_space",
+          "source": "Paper 6 PRED-04c states band width < 10 percent of parameter space.",
+          "rationale": "This is the only numeric threshold in the current registry directly stated by the prediction row.",
+          "date_frozen": "2026-05-25",
+          "modification_log": []
+        },
+        {
+          "name": "scan_step_size",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "parameter step",
+          "source": "Not specified in current corpus text.",
+          "rationale": "Needed before the 10 percent band threshold can be executed reproducibly.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "The 10 percent threshold is corpus-stated; scan design remains unfrozen."
+    },
+    {
+      "id": "PRED-05",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P2-03",
+      "claim_family": "Continuity/fragmentation differential",
+      "observable": "Continuity and fragmentation pattern under matched disturbance.",
+      "manipulation": "Compare a rigid regime against a finite-mass or deformable regime under matched disturbance.",
+      "framework_prediction": "The rigid regime keeps continuity while the limited or deformable regime fragments.",
+      "rival_prediction": "A regime-agnostic rival predicts no differential continuity pattern.",
+      "support_condition": "Rigid and deformable regimes show the preregistered differential response under matched disturbance.",
+      "weakening_condition": "Differential response appears only under unmatched disturbance strength or unbalanced observability.",
+      "destruction_condition": "No differential continuity pattern appears under matched disturbance.",
+      "required_artifacts": ["regime_pair_manifest", "matched_disturbance_manifest", "continuity_trace", "fragmentation_report", "decision_record"],
+      "minimum_negative_controls": ["matched_deformable_control", "noise_matched_control", "history_blind_decoder_control"],
+      "thresholds": [
+        {
+          "name": "matched_disturbance_tolerance",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "disturbance-distance tolerance",
+          "source": "Not specified in current corpus text.",
+          "rationale": "Needed to prevent unmatched perturbation strength from explaining the result.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "The result would support a structural regime claim, not phenomenal experience."
+    },
+    {
+      "id": "PRED-06",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P4-01",
+      "claim_family": "Admissibility under tamper and sham controls",
+      "observable": "Admissibility verdict under corrupted or malformed run artifacts.",
+      "manipulation": "Inject hash corruption, malformed logs, or severe protocol violations.",
+      "framework_prediction": "Tampered runs are discarded and never promoted to evidential support.",
+      "rival_prediction": "A loose evaluation pipeline accepts tampered runs or treats them as weak support.",
+      "support_condition": "Every preregistered tamper case is rejected or quarantined by the admissibility gate.",
+      "weakening_condition": "Tamper is detected but downstream claim projection remains ambiguous or inconsistent.",
+      "destruction_condition": "A tampered or malformed run is promoted to evidential support.",
+      "required_artifacts": ["tamper_manifest", "malformed_log_sample", "admissibility_verdict", "quarantine_record", "decision_record"],
+      "minimum_negative_controls": ["valid_hash_control", "sham_tamper_control", "malformed_log_control"],
+      "thresholds": [
+        {
+          "name": "tamper_acceptance_tolerance",
+          "status": "frozen_from_claim_logic",
+          "value": 0,
+          "unit": "accepted_tampered_runs",
+          "source": "Paper 6 PRED-06 states tampered runs are discarded and never promoted.",
+          "rationale": "Any promoted tampered run destroys the admissibility claim.",
+          "date_frozen": "2026-05-25",
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "This is an integrity/admissibility test, not evidence for consciousness."
+    },
+    {
+      "id": "PRED-07",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P5-03",
+      "claim_family": "Bounded perturbation stability",
+      "observable": "Class membership and geometry under perturbations inside certified margin budget delta_star(S).",
+      "manipulation": "Apply perturbations inside the certified margin budget.",
+      "framework_prediction": "Membership and geometry remain stable inside the certified budget.",
+      "rival_prediction": "A fragile-threshold model flips class under sub-critical perturbations.",
+      "support_condition": "Sub-critical perturbations preserve membership and geometry across the frozen perturbation panel.",
+      "weakening_condition": "Stability appears only in a narrow or hand-selected subset of perturbations.",
+      "destruction_condition": "Class flips under sub-critical admissible perturbations across otherwise stable positive cases.",
+      "required_artifacts": ["delta_star_certificate", "perturbation_panel", "class_membership_trace", "geometry_trace", "decision_record"],
+      "minimum_negative_controls": ["subcritical_noise_control", "near_margin_control", "randomized_order_control"],
+      "thresholds": [
+        {
+          "name": "delta_star_budget",
+          "status": "formal_not_numeric",
+          "value": "min witness margin Delta(S)",
+          "unit": "formal witness margin",
+          "source": "Paper 5 defines delta_star(S) as min Delta(S); numeric execution values are not frozen here.",
+          "rationale": "Execution requires a measurement dictionary that computes each delta_j(S).",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "Approximate stability remains internal unless externally replicated."
+    },
+    {
+      "id": "PRED-08",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P5-01",
+      "claim_family": "Non-emptiness of Qop after certification",
+      "observable": "Recoverable non-trivial Qop class structure after full certification.",
+      "manipulation": "Run the full certification schema on a system with all margins positive.",
+      "framework_prediction": "Qop is non-empty and operationally well-defined.",
+      "rival_prediction": "A purely formal or decoder-artifact account may pass certification while no non-trivial class is recoverable.",
+      "support_condition": "A full certificate with positive margins yields a recoverable non-empty, non-trivial Qop structure.",
+      "weakening_condition": "Qop is recoverable only under a decoder choice not justified by the certification bundle.",
+      "destruction_condition": "Certification passes while no non-trivial operational class is recoverable.",
+      "required_artifacts": ["full_certification_bundle", "qop_recovery_report", "decoder_choice_record", "nontriviality_witness", "decision_record"],
+      "minimum_negative_controls": ["decoder_artifact_control", "null_class_control", "trivial_partition_control"],
+      "thresholds": [
+        {
+          "name": "positive_margin_requirement",
+          "status": "formal_not_numeric",
+          "value": "all six invariant margins positive",
+          "unit": "witness margin conjunction",
+          "source": "Paper 5 defines Cop by positive satisfaction of all six invariants.",
+          "rationale": "Execution needs concrete margin estimators for each invariant.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "Non-empty Qop is an operational class result, not phenomenal consciousness."
+    },
+    {
+      "id": "PRED-09",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P4-03",
+      "claim_family": "Budget/admissibility invalidation",
+      "observable": "Claim survival under latency or compute-budget stress.",
+      "manipulation": "Exceed preregistered latency, compute, or admissibility budget limits.",
+      "framework_prediction": "Strong operational claims are invalidated or downgraded.",
+      "rival_prediction": "A metric-first pipeline keeps claims active after budget violation.",
+      "support_condition": "Budget violation triggers the frozen invalidation or downgrade rule.",
+      "weakening_condition": "Budget violation is detected but downgrade behavior is inconsistent or discretionary.",
+      "destruction_condition": "Strong claims remain active after a preregistered budget violation.",
+      "required_artifacts": ["budget_manifest", "stress_run_log", "admissibility_verdict", "claim_downgrade_record", "decision_record"],
+      "minimum_negative_controls": ["within_budget_control", "sham_stress_control", "malformed_log_control"],
+      "thresholds": [
+        {
+          "name": "latency_compute_budget",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "runtime budget units",
+          "source": "Paper 6 requires preregistered budget limits but this registry does not freeze values.",
+          "rationale": "Budget values must be bound to the specific execution environment before testing.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "This is an admissibility and governance test."
+    },
+    {
+      "id": "PRED-10",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P5-05",
+      "claim_family": "Legibility under noise and structured compression",
+      "observable": "Separability and intervention fidelity as admissible noise/compression rises.",
+      "manipulation": "Raise admissible noise or structured compression while preserving or breaking Ileg.",
+      "framework_prediction": "Separability and intervention fidelity survive only while Ileg remains positive.",
+      "rival_prediction": "A generic observability model predicts no specific dependence on Ileg.",
+      "support_condition": "Legibility metrics remain within frozen bounds when Ileg is positive and fail/degrade when Ileg crosses its frozen boundary.",
+      "weakening_condition": "Legibility changes are explained by decoder fragility unrelated to the registered Ileg clauses.",
+      "destruction_condition": "Generic observability remains stable with no specific dependence on Ileg, or Ileg failure does not affect certification.",
+      "required_artifacts": ["noise_manifest", "compression_manifest", "legibility_metric_report", "intervention_fidelity_report", "decision_record"],
+      "minimum_negative_controls": ["noise_only_control", "compression_only_control", "decoder_fragility_control"],
+      "thresholds": [
+        {
+          "name": "legibility_margin_delta_leg",
+          "status": "formal_not_numeric",
+          "value": "delta_leg(S)",
+          "unit": "legibility witness margin",
+          "source": "Paper 5 defines L1-L6 clauses bounded by delta_leg(S); numeric execution values are not frozen here.",
+          "rationale": "Measurement dictionary must bind separability, noise robustness, intervention fidelity, false-positive rate, and compression distortion.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "Legibility is an operational audit condition, not semantic transparency or phenomenality."
+    },
+    {
+      "id": "PRED-11",
+      "source_paper": "paper6_predictions_falsation/main.tex",
+      "claim_target": "P5-01",
+      "claim_family": "Integration-loss complexity-only rival",
+      "observable": "Operational consciousness certification under destroyed integration and preserved complexity.",
+      "manipulation": "Destroy integration while preserving complexity or gross activity.",
+      "framework_prediction": "The system fails operational consciousness certification.",
+      "rival_prediction": "A complexity-only rival predicts that preserved complexity should be sufficient for certification.",
+      "support_condition": "The integration-destroyed, complexity-preserved system fails certification under frozen rules.",
+      "weakening_condition": "Failure is confounded by gross collapse, non-matched complexity, or measurement loss unrelated to integration.",
+      "destruction_condition": "The system passes certification despite verified loss of integration.",
+      "required_artifacts": ["integration_loss_manifest", "complexity_preservation_report", "certification_attempt", "matched_control_result", "decision_record"],
+      "minimum_negative_controls": ["complexity_preserved_integration_destroyed_control", "activity_preserved_integration_destroyed_control", "gross_collapse_control"],
+      "thresholds": [
+        {
+          "name": "integration_loss_boundary",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "Iint witness margin",
+          "source": "Paper 5 defines Iint through non-factorization margin delta_int(S); execution value is not frozen here.",
+          "rationale": "Must distinguish true integration loss from gross collapse or unmatched complexity.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "formalized_pending_preregistration",
+      "epistemic_limit": "This can falsify a complexity-only rival; it does not prove consciousness."
+    }
+  ]
+}

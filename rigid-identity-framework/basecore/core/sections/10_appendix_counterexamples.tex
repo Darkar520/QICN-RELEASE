@@ -25,6 +25,24 @@ Let $\U = (0, 1)$ (open interval) and $\Gamma(u) = 1/u$.
 
 As $u \to 0$, attractors escape to infinity; $\A^*$ is not compact.
 
+\subsection{\texorpdfstring{Why $\Phi$-Regularity Is a Hypothesis}{Why Phi-Regularity Is a Hypothesis}}\label{app:phi-regularity-counterexample}
+
+Let $\mathcal{I}=\mathbb{R}$ with the Euclidean metric, let $\mathcal{E}=(-\pi/2,\pi/2)$ with the Euclidean metric, and define
+\[
+\Phi(x)=\arctan(x).
+\]
+The map $\Phi$ is proper as a map into the open interval $\mathcal{E}$, locally Lipschitz, and non-constant on every nonempty ball. However, no constant $C>0$ can satisfy
+\[
+|\arctan(x)-\arctan(y)|\geq C|x-y|
+\qquad\forall x,y\in\mathbb{R}.
+\]
+Indeed, with $y=x+1$,
+\[
+|\arctan(x+1)-\arctan(x)|\to0
+\quad\text{as }x\to\infty,
+\]
+while $|x-y|=1$. Thus properness, local Lipschitz regularity, and non-collapse do not imply a global lower Lipschitz bound. Any theorem using such a bound must carry it as an explicit hypothesis or prove stronger coercive hypotheses.
+
 % =============================================================================
 % REFERENCES
 % =============================================================================

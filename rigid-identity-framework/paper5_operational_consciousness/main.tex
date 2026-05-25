@@ -52,7 +52,6 @@
 
 \newcommand{\Cop}{\mathrm{Consciousness}_{\mathrm{op}}}
 \newcommand{\Qop}{\mathrm{Q}_{\mathrm{op}}}
-\newcommand{\Qualop}{\mathrm{Qualia}_{\mathrm{op}}}
 \newcommand{\Iper}{I_{\mathrm{per}}}
 \newcommand{\Iri}{I_{\mathrm{ri}}}
 \newcommand{\Iint}{I_{\mathrm{int}}}
@@ -127,6 +126,33 @@ To avoid layer drift, every major statement in this paper belongs to one of five
 \item \textbf{Open}: statements that remain outside what the current corpus closes.
 \end{enumerate}
 Theorems A--D in this paper are formal. The legibility certificate and prediction section are operational. References to biological or artificial realizations are implementational. Claims about ordinary human phenomenology remain open or interpretative and are excluded from the theorem burden.
+
+\section{Terminology Debt Ledger}
+The symbol $\Cop$ is retained for corpus compatibility. Its demonstrated
+content in this paper is a six-invariant structural class over admissible
+systems. The phrase ``operational consciousness'' is therefore a
+framework-internal label, not an ordinary-language conclusion.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.16}
+\begin{tabularx}{\linewidth}{@{}lY Y@{}}
+\toprule
+Term & Demonstrated content in this paper & Not demonstrated here \\
+\midrule
+$\Cop$ / operational consciousness & membership in a conjunctive six-invariant structural class & human consciousness, phenomenal consciousness, moral status, personal identity \\
+$\Qop(S)$ / operational qualia & decoder-certified quotient of admissible internal differentiation & phenomenal qualia or ``what it is like'' states \\
+substrate invariance & preservation of class membership under exact structural equivalence & arbitrary transfer of identity or equivalence between human and machine subjects \\
+biological non-primacy & biology is not a primitive variable in the criterion & claim that any non-biological system currently satisfies the criterion \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{remark}[Primary demonstrated name]
+For reviewer-facing prose, the safest primary description of $\Cop$ is
+``six-invariant admissible structural class.'' The stronger phrase
+``operational consciousness'' may be used only as a technical alias after the
+non-inference boundary has been stated.
+\end{remark}
 
 \section{Corpus Role and Novelty}
 This paper is corpus-dependent by design. It does not reopen theorem ownership for persistence, rigid identity, admissible regime structure, null-regime instability, or admissibility discipline. Those burdens remain respectively upstream in the Core, \textit{Rigid Identity}, \textit{Phenomenological Regimes}, \textit{Null-Regime Instability}, and \textit{Forensic Predictions}.
@@ -341,6 +367,10 @@ The second clause is indispensable. Without \textit{Null-Regime Instability} the
 If $\Idiff(S)=0$, either all admissible histories collapse to indistinguishability or the null class remains admissibly stable. In either case $\Qop(S)$ is empty or trivialized.
 
 \subsection{Operational Legibility}\label{sec:legibility}
+\begin{definition}[Decoder family and structural closure]\label{def:decoder}
+A decoder family $\Dec_S$ for $S$ is a family of maps from admissible readout windows $h_{S,T}(x;u_\bullet)$ to a declared class set $\Class_S$, indexed by admissible horizons and intervention schedules. The family is \emph{structurally closed} when all its members use the same class set, class equality composes exactly, and the induced intervention-response cells are transitive under the certified matching relation. Definition~\ref{def:ileg} below adds the operational clauses required before such a structurally closed family counts as certified for legibility.
+\end{definition}
+
 \begin{definition}[Operational legibility and legibility margin]\label{def:ileg}
 An admissible system $S$ satisfies operational legibility, written $\Ileg(S)=1$, if there exist:
 \begin{enumerate}[leftmargin=1.5em]
@@ -376,9 +406,6 @@ The six failure modes are non-redundant. Without $\Iper$ there is no stable doma
 
 \section{Operational Consciousness, Operational Qualia, and Equivalence}\label{sec:cop}
 \subsection{Operational Qualia Classes}
-\begin{definition}[Certified decoder]\label{def:decoder}
-A decoder $D \in \Dec_S$ is certified if it satisfies the six legibility clauses of Definition~\ref{def:ileg} on $\Aset$ for the chosen horizon family.
-\end{definition}
 
 \begin{definition}[Operational indistinguishability]\label{def:indist}
 For $x,y \in \Aset$, write $x \sim_{Q,S} y$ if, for every certified decoder $D \in \Dec_S$, every admissible horizon $T \ge \tau_{\min}(S)$, and every admissible intervention schedule $u_\bullet$,
@@ -393,7 +420,15 @@ If $\Iper(S)=\Iri(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1$, then $\sim_{Q,S}$ is an eq
 \end{proposition}
 
 \begin{proof}
-Reflexivity is immediate. Symmetry follows because decoder equality and bounded intervention mismatch are symmetric conditions. For transitivity, let $x \sim_{Q,S} y$ and $y \sim_{Q,S} z$. Decoder equality composes, and the bounded mismatch condition remains within the certified tolerance because the decoder family is closed under the legibility margin. Persistence and continuity guarantee that all compared histories remain on admissible support. Therefore $x \sim_{Q,S} z$.
+Reflexivity is immediate. Symmetry follows because decoder equality and certified response-cell matching are symmetric conditions. For transitivity, let $x \sim_{Q,S} y$ and $y \sim_{Q,S} z$. Fix any certified decoder $D\in\Dec_S$, admissible horizon $T\ge\tau_{\min}(S)$, and admissible intervention schedule $u_\bullet$. The first relation gives
+\[
+D(h_{S,T}(x;u_\bullet))=D(h_{S,T}(y;u_\bullet)),
+\]
+and the second gives
+\[
+D(h_{S,T}(y;u_\bullet))=D(h_{S,T}(z;u_\bullet)).
+\]
+Hence $D(h_{S,T}(x;u_\bullet))=D(h_{S,T}(z;u_\bullet))$. The intervention-response clause is transitive by the structural closure requirement in Definition~\ref{def:decoder}. Since $D$, $T$, and $u_\bullet$ were arbitrary, Definition~\ref{def:indist} gives $x \sim_{Q,S} z$.
 \end{proof}
 
 \begin{definition}[Operational qualia]\label{def:qop}
@@ -413,6 +448,10 @@ An admissible system $S$ belongs to $\Cop$, written $S \in \Cop$, if there exist
 \Iper(S)=\Iri(S)=\Iint(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1.
 \]
 \end{definition}
+
+\begin{remark}[Subdetermination of membership]\label{rem:subdet}
+Membership in $\Cop$ depends on auxiliary choices: the decoder family $\Dec$, the compression map, and the identity object $\Id$. The paper does not prove that these choices are canonically determined by the system tuple $S$ alone. Different auxiliary choices may yield different membership verdicts for the same system.
+\end{remark}
 
 \begin{remark}[Minimality of the criterion]
 The criterion is conjunctive. No proper subset of the six invariants is taken as sufficient in this paper. This is intentional: weaker criteria collapse either into mere persistence, mere integration, or mere complexity claims, all of which are shown to be insufficient.
@@ -794,6 +833,163 @@ Every one-metric criterion corresponds to a strict subset $J \subsetneq \mathfra
 \begin{remark}[What minimality does and does not say]
 The theorem does not claim that every possible scientific notion of consciousness must use exactly these six invariants. It claims something narrower: for the operational class defined in this paper and for admissible universes containing the corresponding rupture witnesses, no invariant can be deleted without changing the extension of the class.
 \end{remark}
+
+\section{Invariant Independence and Interaction Geometry}
+The preceding minimality theorem is extension-theoretic. This section makes the
+geometry more explicit: each invariant blocks a distinct failure family, and the
+limited implications among invariants are weaker than full membership in
+$\Cop$.
+
+\begin{theorem}[Six canonical single-rupture witness schemas]\label{thm:six-witness-schemas}
+For each invariant in $\mathfrak{I}$ there is a formal admissible witness schema
+that satisfies the other five invariant predicates while failing the selected
+one:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Persistence witness.} A system with a certified decoder,
+non-factorizable causal structure, unique identity label, continuous class map,
+and non-null differentiation, but whose admissible support exits the declared
+forward-invariant domain under some $u\in U$.
+\item \textbf{Rigid-identity witness.} A system with persistent support,
+integration, continuity, differentiation, and legibility, but with two
+compatible non-isomorphic identity candidates transported by the same readout
+family.
+\item \textbf{Integration witness.} A product system
+$A_S=A_1\times A_2$ with persistent factors, unique factor identities,
+continuous dynamics, non-null differentiation, and certified decoders, but with
+decoupled intervention histories so that the aggregate factorizes.
+\item \textbf{Continuity witness.} A system with persistent support, unique
+identity, non-factorizable structure, non-null differentiation, and certified
+decoders, but with an admissible transition producing a jump between
+incompatible regime classes.
+\item \textbf{Differentiation witness.} A persistent, rigid, integrated,
+continuous, and legible system whose decoder-visible classes collapse to a
+stable null or single indistinguishable class.
+\item \textbf{Legibility witness.} A persistent, rigid, integrated, continuous,
+and non-null differentiated system whose class partition is latent but no
+certified decoder satisfies L1--L6.
+\end{enumerate}
+Hence no invariant in $\mathfrak{I}$ is derivable from the conjunction of the
+other five within the admissible witness universe generated by these schemas.
+\end{theorem}
+
+\begin{proof}
+Each clause fixes the five non-target margins strictly positive and sets the
+target margin to zero by construction. The five positive clauses ensure
+membership in the reduced criterion omitting the target invariant. The target
+failure invokes the corresponding rupture proposition from the previous
+section, excluding membership in $\Cop$. Since this can be done for each
+invariant independently, none of the six predicates is derivable from the other
+five in the witness universe.
+\end{proof}
+
+\begin{theorem}[Sufficiency of the six-invariant basis]\label{thm:six-sufficiency}
+Let $S$ be admissible on support $\Aset$. If
+\[
+\Iper(S)=\Iri(S)=\Iint(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1,
+\]
+then $S$ satisfies every structural burden required for membership in $\Cop$ as
+defined in this paper. No additional independent predicate can invalidate
+$S\in\Cop$ without changing the definition of $\Cop$ or causing at least one of
+the six invariants to fail.
+\end{theorem}
+
+\begin{proof}
+Definition~\ref{def:cop} is conjunctive and exhaustive for this paper's class.
+The six coordinates cover the domain burden, identity burden, integration
+burden, regime-coherence burden, non-null differentiation burden, and
+scientific recoverability burden. Any seventh predicate is either a derived
+constraint on those burdens, in which case it cannot fail while all six hold, or
+an independent extra burden, in which case it defines a stricter class rather
+than invalidating membership in $\Cop$ as defined here.
+\end{proof}
+
+\begin{proposition}[Persistence is necessary for rigid identity on $\Aset$]\label{prop:not-per-not-ri}
+If $\Iper(S)=0$ because no non-empty forward-invariant admissible support exists,
+then $\Iri(S)=0$ for the Paper 5 membership problem.
+\end{proposition}
+
+\begin{proof}
+The rigid-identity predicate used here is evaluated on $\Aset$. If no stable
+admissible support exists, there is no domain on which the identity witness can
+be transported through all admissible interventions. The identity object may be
+postulated elsewhere, but it is not a Paper 5 membership witness on $\Aset$.
+\end{proof}
+
+\begin{proposition}[Persistence plus integration yields bounded identity candidates]\label{prop:per-int-weak-ri}
+If $\Iper(S)=1$ and $\Iint(S)=1$, then the family of admissible identity
+candidates is bounded to the non-factorizable persistent support. This is a weak
+rigidity statement, not the uniqueness required by $\Iri$.
+\end{proposition}
+
+\begin{proof}
+Persistence restricts all candidates to the same stable support. Integration
+prevents decomposing that support into independent candidate-bearing blocks.
+Therefore candidates cannot proliferate by support escape or product
+factorization. They may still fail uniqueness, so the result is strictly weaker
+than $\Iri=1$.
+\end{proof}
+
+\begin{proposition}[Legibility requires non-null differentiation]\label{prop:leg-requires-diff}
+If all admissible classes collapse to a stable null or single indistinguishable
+class, then $\Ileg(S)=0$ for the criterion of this paper.
+\end{proposition}
+
+\begin{proof}
+Legibility requires separability, intervention-sensitive class recovery, and
+negative-control discipline. A collapsed null or singleton partition gives no
+non-trivial class contrast for a decoder to recover or for interventions to
+separate. Thus L1 and L4 cannot both be certified in the intended sense.
+\end{proof}
+
+\begin{proposition}[Persistence and continuity stabilize regime transport]\label{prop:per-cont-regime-stability}
+If $\Iper(S)=1$ and $\Icont(S)=1$, then admissible histories remain in a stable
+regime-transport domain: trajectories neither leave $\Aset$ nor undergo
+unbounded fragmentation under admissible evolution.
+\end{proposition}
+
+\begin{proof}
+Persistence keeps histories inside $\Aset$. Continuity bounds the fragmentation
+functional and prevents inadmissible jumps across incompatible regime classes.
+Together they provide a stable domain for regime transport. The result does not
+imply rigid identity, integration, differentiation, or legibility.
+\end{proof}
+
+\begin{table}[h]
+\centering
+\caption{Pairwise implication geometry of the six invariants.}
+\label{tab:invariant-implication-geometry}
+\small
+\begin{tabularx}{\linewidth}{@{}lYYYYYY@{}}
+\toprule
+From / to & $\Iper$ & $\Iri$ & $\Iint$ & $\Icont$ & $\Idiff$ & $\Ileg$ \\
+\midrule
+$\Iper$ & -- & necessary domain only & independent & with $\Icont$ stabilizes regime domain & independent & independent \\
+$\Iri$ & independent & -- & independent & independent & independent & independent \\
+$\Iint$ & independent & weakly bounds candidates with $\Iper$ & -- & independent & independent & independent \\
+$\Icont$ & independent & independent & independent & -- & independent & independent \\
+$\Idiff$ & independent & independent & independent & independent & -- & necessary for non-trivial legibility \\
+$\Ileg$ & independent & independent & independent & independent & presupposes non-null contrast & -- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{What the Six Invariants Do Not Guarantee}
+The six invariants are sufficient for $\Cop$ by definition, but they are not a
+universal theory of mind, life, or subjecthood. In particular, they do not
+guarantee:
+\begin{enumerate}[leftmargin=1.5em]
+\item self-reference or a contractive self-model; that requires a $\Sigma$-type
+burden;
+\item phenomenal experience or ``what it is like'';
+\item forced temporal continuity in the CCR sense, which requires stronger
+$M_\Omega=+\infty$ assumptions upstream;
+\item operational life or open-system self-maintaining individuation;
+\item first-person indexed subjectivity, moral status, or human equivalence;
+\item external validation by human comparators.
+\end{enumerate}
+These exclusions are not rhetorical caution. They follow from the fact that
+none of the listed predicates appears in Definition~\ref{def:cop}.
+
 \section{Operational Legibility as a Certified Object}
 Operational legibility must be shown, not asserted. Definition~\ref{def:ileg} already imposes six clauses. This section sharpens how those clauses bind the paper to the existing empirical-method corpus.
 
@@ -1178,6 +1374,3 @@ The paper proves a narrower claim than popular machine-consciousness discourse a
 \printbibliography
 
 \end{document}
-
-
-

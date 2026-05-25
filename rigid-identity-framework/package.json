@@ -1,0 +1,15 @@
+{
+  "name": "qicn-rigid-identity-framework",
+  "version": "0.0.0-fcr",
+  "private": true,
+  "description": "Local validation tooling for the QICN Rigid Identity Framework Formal Corpus Registry.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "extract:registry": "node scripts/extract-registry.js",
+    "verify:corpus-registry": "node scripts/validate-corpus.js",
+    "verify:macro-registry": "node scripts/validate-macros.js",
+    "analyze:impact": "node scripts/fcr-impact-analyzer.js",
+    "audit:monolithic-risk": "node scripts/verify-monolithic-risk.js",
+    "report:corpus-health": "node scripts/generate-report.js"
+  }
+}

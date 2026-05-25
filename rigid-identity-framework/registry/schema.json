@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qicn.local/schemas/fcr.schema.json",
+  "title": "QICN Formal Corpus Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "theorem_entry": {
+      "$ref": "#/$defs/formalEntry"
+    },
+    "macro_entry": {
+      "$ref": "#/$defs/macroEntry"
+    }
+  },
+  "$defs": {
+    "location": {
+      "type": "object",
+      "required": ["file", "line_start", "line_end"],
+      "additionalProperties": false,
+      "properties": {
+        "file": { "type": "string", "minLength": 1 },
+        "line_start": { "type": "integer", "minimum": 1 },
+        "line_end": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "counterexample": {
+      "type": ["object", "null"],
+      "required": ["description", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "description": { "type": "string", "minLength": 1 },
+        "mathematical_object": { "type": "string" },
+        "source": { "type": "string", "minLength": 1 },
+        "verified_by": { "type": "string" },
+        "date_verified": { "type": "string" }
+      }
+    },
+    "historyItem": {
+      "type": "object",
+      "required": ["date", "action", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "date": { "type": "string" },
+        "action": { "type": "string" },
+        "reason": { "type": "string" }
+      }
+    },
+    "curation": {
+      "type": "object",
+      "required": ["status", "by", "date", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": ["draft_extracted", "under_review", "curated", "disputed", "rejected"]
+        },
+        "by": { "type": ["string", "null"] },
+        "date": { "type": ["string", "null"] },
+        "reason": { "type": ["string", "null"] }
+      }
+    },
+    "formalEntry": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "paper",
+        "statement_tex",
+        "proof_status",
+        "depends_on",
+        "location",
+        "epistemic_status",
+        "curation_status",
+        "curation"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_-]+:[a-z]+:[a-z0-9_.-]+$"
+        },
+        "type": {
+          "enum": [
+            "theorem",
+            "hypothesis",
+            "conjecture",
+            "lemma",
+            "proposition",
+            "corollary",
+            "definition",
+            "remark",
+            "caveat",
+            "nontheorem",
+            "assumption",
+            "axiom",
+            "example",
+            "observation",
+            "criterion",
+            "prediction",
+            "protocol",
+            "principle",
+            "claim",
+            "openproblem"
+          ]
+        },
+        "paper": { "type": "string", "minLength": 1 },
+        "section": { "type": ["string", "null"] },
+        "title": { "type": ["string", "null"] },
+        "label": { "type": ["string", "null"] },
+        "statement": { "type": "string" },
+        "statement_tex": { "type": "string", "minLength": 1 },
+        "proof_status": {
+          "enum": [
+            "present",
+            "missing",
+            "sketch",
+            "heuristic",
+            "invalid",
+            "unknown",
+            "not_expected",
+            "not_applicable"
+          ]
+        },
+        "proof": { "type": ["string", "null"] },
+        "depends_on": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "location": { "$ref": "#/$defs/location" },
+        "epistemic_status": {
+          "enum": [
+            "canonical",
+            "conditional",
+            "conjectural",
+            "deprecated",
+            "false",
+            "proved",
+            "tautology",
+            "heuristic"
+          ]
+        },
+        "audit_status": { "type": "string" },
+        "registry_version": { "type": "string" },
+        "counterexample": { "$ref": "#/$defs/counterexample" },
+        "curation_status": {
+          "enum": ["draft_extracted", "audit_overlaid", "human_curated", "deprecated"]
+        },
+        "curation": { "$ref": "#/$defs/curation" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "history": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/historyItem" }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "epistemic_status": { "const": "false" } },
+            "required": ["epistemic_status"]
+          },
+          "then": {
+            "required": ["counterexample"],
+            "properties": {
+              "counterexample": { "$ref": "#/$defs/counterexample" }
+            }
+          }
+        }
+      ]
+    },
+    "macroEntry": {
+      "type": "object",
+      "required": [
+        "name",
+        "latex_name",
+        "definition",
+        "arity",
+        "owner",
+        "canonical",
+        "aliases",
+        "collision_risk",
+        "location"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "latex_name": { "type": "string", "pattern": "^\\\\([A-Za-z]+|begin\\{[^}]+\\})$" },
+        "definition": { "type": "string" },
+        "arity": { "type": "integer", "minimum": 0 },
+        "owner": { "type": "string", "minLength": 1 },
+        "command": {
+          "enum": ["newcommand", "renewcommand", "providecommand", "def", "DeclareMathOperator", "newenvironment", "newtheorem"]
+        },
+        "canonical": { "type": "boolean" },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "collision_risk": {
+          "enum": ["low", "medium", "high"]
+        },
+        "notes": { "type": "string" },
+        "location": { "$ref": "#/$defs/location" },
+        "registry_version": { "type": "string" }
+      }
+    }
+  }
+}

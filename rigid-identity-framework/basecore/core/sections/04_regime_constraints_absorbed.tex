@@ -378,12 +378,12 @@ We have established:
 % ============================================================================
 \section{Impossibility Theorems}
 
-\subsection{\texorpdfstring{$\Phi$}{Phi}-Regularity Theorem}
+\subsection{\texorpdfstring{$\Phi$}{Phi}-Regularity Hypothesis}
 
-Before proving the main impossibility results, we establish a fundamental regularity condition that derives the coupling constant $C$ geometrically, rather than assuming it axiomatically.
+Before proving the main impossibility results, we isolate the global lower-bound regularity condition used by the fragmentation argument. The condition is not derived from properness, local Lipschitz regularity, and non-collapse alone; it is carried as an explicit hypothesis.
 
-\begin{theorem}[$\Phi$-Regularity]\label{thm:phi-regularity}
-Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Identity} and let $(\mathcal{E}, d_\mathcal{E})$ be the abstract phenomenological metric space. Suppose that $\Phi: \mathcal{I} \to \mathcal{E}$ satisfies:
+\begin{hypothesis}[$\Phi$-Regularity Lower Bound]\label{hyp:phi-regularity}
+Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Identity} and let $(\mathcal{E}, d_\mathcal{E})$ be the abstract phenomenological metric space. A phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is said to satisfy $\Phi$-regularity when it satisfies:
 \begin{enumerate}[leftmargin=*]
     \item (Properness) For every compact $K \subset \mathcal{E}$, $\Phi^{-1}(K)$ is compact in $\mathcal{I}$.
     \item (Local Lipschitz regularity) For every $x \in \mathcal{I}$, there exist $\varepsilon > 0$ and $L_x > 0$ such that for all $y, z \in B_\varepsilon(x)$:
@@ -391,44 +391,24 @@ Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Ident
         d_\mathcal{E}(\Phi(y), \Phi(z)) \leq L_x \cdot d_w(y, z).
     \end{equation}
     \item (Non-collapse) For every $x \in \mathcal{I}$ and every $r > 0$, the restriction of $\Phi$ to $B_r(x)$ is not constant.
+    \item (Global lower Lipschitz bound) There exists a constant $C>0$ such that for all $x,y\in\mathcal{I}$,
+    \begin{equation}
+        d_\mathcal{E}(\Phi(x),\Phi(y)) \geq C\cdot d_w(x,y).
+    \end{equation}
 \end{enumerate}
+\end{hypothesis}
 
-Then there exists a constant $C > 0$ such that for all $x, y \in \mathcal{I}$:
-\begin{equation}
-    d_\mathcal{E}(\Phi(x), \Phi(y)) \geq C \cdot d_w(x, y).
-\end{equation}
-\end{theorem}
-
-\begin{proof}
-We proceed by contradiction. Assume the conclusion fails.
-
-\textbf{Step 1.} Then there exist sequences $(x_n, y_n)$ with $d_w(x_n, y_n) = 1$ and $d_\mathcal{E}(\Phi(x_n), \Phi(y_n)) \to 0$.
-
-\textbf{Step 2.} By properness, the image $\{\Phi(x_n)\}$ lies in a relatively compact subset of $\mathcal{E}$. Extract a convergent subsequence with $\Phi(x_n) \to e \in \mathcal{E}$.
-
-\textbf{Step 3.} Since $d_\mathcal{E}(\Phi(x_n), \Phi(y_n)) \to 0$, we have $\Phi(y_n) \to e$ as well.
-
-\textbf{Step 4.} By properness, the preimages $\Phi^{-1}(\overline{B_\delta(e)})$ are compact for small $\delta$. Hence $x_n$ and $y_n$ lie in a compact subset of $\mathcal{I}$. Extract convergent subsequences $x_n \to x$ and $y_n \to y$.
-
-\textbf{Step 5.} Since $d_w(x_n, y_n) = 1$ and $d_w$ is continuous, $d_w(x, y) = 1$, so $x \neq y$.
-
-\textbf{Step 6.} But $\Phi(x_n) \to \Phi(x) = e$ and $\Phi(y_n) \to \Phi(y) = e$ by continuity. Hence $\Phi(x) = \Phi(y)$ for $x \neq y$ with $d_w(x, y) = 1$.
-
-\textbf{Step 7.} This means $\Phi$ is constant on sets of positive $d_w$-diameter, contradicting non-collapse.
-
-Hence a global lower bound $C > 0$ must exist.
-\end{proof}
-
-\begin{remark}
-This theorem is fundamental: it converts the coupling constant $C$ from an \textit{axiom} into a \textit{geometric consequence} of regularity conditions. All subsequent impossibility results that use $C$ are therefore derived, not assumed.
-\end{remark}
+\begin{caveat}[Status of $\Phi$-regularity]
+The fourth clause is an additional structural assumption, not a consequence of the first three clauses. The counterexample in Appendix~\ref{app:phi-regularity-counterexample} shows that properness, local Lipschitz regularity, and non-collapse do not imply any uniform lower Lipschitz constant.
+\end{caveat}
 
 \subsection{Fragmentation Theorem}
 
 \begin{theorem}[Fragmentation Theorem]\label{thm:fragmentation}
-Let $\mathcal{I}$ be an identity object with $M_\Omega < \infty$. Then every phenomenological assignment $\Phi \in \mathcal{P}(M_\Omega)$ is fragmentable. That is:
+Let $\mathcal{I}$ be an identity object with $M_\Omega < \infty$. If a phenomenological assignment $\Phi \in \mathcal{P}(M_\Omega)$ satisfies Hypothesis~\ref{hyp:phi-regularity}, then $\Phi$ is fragmentable. That is:
 \begin{equation}
-    M_\Omega < \infty \implies \mathcal{P}(M_\Omega) \subseteq \mathcal{E}_{\text{frag}},
+    M_\Omega < \infty \ \wedge\ \Phi\text{ satisfies Hypothesis~\ref{hyp:phi-regularity}}
+    \implies \Phi \in \mathcal{E}_{\text{frag}},
 \end{equation}
 where $\mathcal{E}_{\text{frag}}$ denotes the class of fragmentable phenomenological assignments.
 \end{theorem}
@@ -443,11 +423,11 @@ By Axiom E1, the phenomenological assignment $\Phi$ is projectively compatible w
 
 By Axiom E2, $\Phi$ cannot be determined by any finite-time state. Therefore, the deformation of identity trajectories induces a corresponding deformation of phenomenological assignments.
 
-Since the identity deformation is non-zero ($d_w > 0$) and $\Phi$ is globally determined by identity trajectories, by Theorem~\ref{thm:phi-regularity} ($\Phi$-Regularity), we have:
+Since the identity deformation is non-zero ($d_w > 0$) and $\Phi$ is globally determined by identity trajectories, by Hypothesis~\ref{hyp:phi-regularity} ($\Phi$-regularity), we have:
 \begin{equation}
     d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) \geq C \cdot d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0
 \end{equation}
-where $C > 0$ is the regularity constant derived in Theorem~\ref{thm:phi-regularity}.
+where $C > 0$ is the lower-bound constant supplied by Hypothesis~\ref{hyp:phi-regularity}.
 
 Thus, $\Phi$ is fragmentable under finite-energy perturbations.
 \end{proof}

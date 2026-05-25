@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const ROOT = path.resolve(__dirname, "..");
 const LEDGER_PATH = path.join(ROOT, "docs", "THEORY_CLAIM_LEDGER.md");
@@ -87,8 +88,9 @@ function run() {
   }
   const snapshot = {
     schema_version: "1.0.0",
-    generated_at: new Date().toISOString(),
+    generated_at: "deterministic-from-source",
     source: "docs/THEORY_CLAIM_LEDGER.md",
+    source_sha256: crypto.createHash("sha256").update(markdown).digest("hex"),
     status_boundary: "Machine-readable claim ledger snapshot only; does not promote claims.",
     entries
   };

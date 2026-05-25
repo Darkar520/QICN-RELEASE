@@ -22,6 +22,8 @@ function normalizePath(value) {
 function parseArgs(argv) {
   const args = {
     dryRun: false,
+    frameworkRoot: path.resolve(__dirname, ".."),
+    registryPath: null,
     targets: DEFAULT_TARGETS,
   };
 
@@ -29,6 +31,14 @@ function parseArgs(argv) {
     const arg = argv[index];
     if (arg === "--dry-run") {
       args.dryRun = true;
+      continue;
+    }
+    if (arg === "--root") {
+      args.frameworkRoot = path.resolve(argv[++index]);
+      continue;
+    }
+    if (arg === "--registry") {
+      args.registryPath = path.resolve(argv[++index]);
       continue;
     }
     if (arg === "--target") {
@@ -81,68 +91,104 @@ function sortMacros(macros) {
   });
 }
 
-function main() {
-  const frameworkRoot = path.resolve(__dirname, "..");
-  const registryPath = path.join(frameworkRoot, "registry", "macros.jsonl");
-  const args = parseArgs(process.argv.slice(2));
+function withSingleResyncNote(notes) {
+  const marker = "Source-scoped cache resync from primary TeX declaration.";
+  const stripped = String(notes || "")
+    .replace(new RegExp(`(?:\\s*${marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})+`, "g"), "")
+    .trim();
+  return `${stripped} ${marker}`.trim();
+}
+
+function resyncMacroCache(options = {}) {
+  const frameworkRoot = options.frameworkRoot || path.resolve(__dirname, "..");
+  const registryPath = options.registryPath || path.join(frameworkRoot, "registry", "macros.jsonl");
+  const targets = options.targets || DEFAULT_TARGETS;
+  const dryRun = Boolean(options.dryRun);
   const { records: macros, errors } = readJsonl(registryPath);
 
   if (errors.length > 0) {
-    console.error(`Cannot resync macro cache because macros.jsonl has parse errors:\n${errors.join("\n")}`);
-    process.exit(1);
+    throw new Error(`Cannot resync macro cache because macros.jsonl has parse errors:\n${errors.join("\n")}`);
   }
 
   const updates = [];
 
-  for (const target of args.targets) {
+  for (const target of targets) {
     const relativeFile = normalizePath(target.file);
     const sourcePath = path.join(frameworkRoot, relativeFile);
     if (!fs.existsSync(sourcePath)) {
-      console.error(`Missing primary source for target: ${relativeFile}`);
-      process.exit(1);
+      throw new Error(`Missing primary source for target: ${relativeFile}`);
     }
 
     const declarations = extractNewtheoremDeclarations(sourcePath);
     const sourceDeclaration = declarations.get(target.latexName);
     if (!sourceDeclaration) {
-      console.error(`Primary source ${relativeFile} does not declare ${target.latexName}`);
-      process.exit(1);
+      throw new Error(`Primary source ${relativeFile} does not declare ${target.latexName}`);
     }
 
     const matches = macros.filter(
       (macro) => normalizePath(macro.location?.file || "") === relativeFile && macro.latex_name === target.latexName,
     );
     if (matches.length !== 1) {
-      console.error(`Expected exactly one registry entry for ${target.latexName} in ${relativeFile}; found ${matches.length}`);
-      process.exit(1);
+      throw new Error(`Expected exactly one registry entry for ${target.latexName} in ${relativeFile}; found ${matches.length}`);
     }
 
     const entry = matches[0];
-    if (entry.definition !== sourceDeclaration.definition) {
+    const sourceLineChanged =
+      entry.location?.line_start !== sourceDeclaration.line || entry.location?.line_end !== sourceDeclaration.line;
+    const normalizedNotes = withSingleResyncNote(entry.notes);
+    const notesChanged = entry.notes !== normalizedNotes;
+    if (entry.definition !== sourceDeclaration.definition || sourceLineChanged || notesChanged) {
       updates.push({
         file: relativeFile,
         latexName: target.latexName,
         from: entry.definition,
         to: sourceDeclaration.definition,
+        line_from: entry.location?.line_start,
+        line_to: sourceDeclaration.line,
         sourceLine: sourceDeclaration.line,
       });
       entry.definition = sourceDeclaration.definition;
-      entry.notes = `${entry.notes || ""} Source-scoped cache resync from primary TeX declaration.`.trim();
+      if (entry.location) {
+        entry.location.line_start = sourceDeclaration.line;
+        entry.location.line_end = sourceDeclaration.line;
+      }
+      entry.notes = normalizedNotes;
     }
   }
 
-  if (!args.dryRun && updates.length > 0) {
+  if (!dryRun && updates.length > 0) {
     writeJsonl(registryPath, sortMacros(macros));
   }
 
-  console.log(JSON.stringify({
-    target_count: args.targets.length,
+  return {
+    target_count: targets.length,
     updates,
-    dry_run: args.dryRun,
+    dry_run: dryRun,
     boundary: "Source-scoped derived-artifact resync. This does not regenerate theorem entries or certify monolithic compilation.",
-  }, null, 2));
+  };
+}
+
+function main() {
+  const args = parseArgs(process.argv.slice(2));
+  const result = resyncMacroCache({
+    frameworkRoot: args.frameworkRoot,
+    registryPath: args.registryPath,
+    targets: args.targets,
+    dryRun: args.dryRun,
+  });
+  console.log(JSON.stringify(result, null, 2));
 }
 
 if (require.main === module) {
-  main();
+  try {
+    main();
+  } catch (error) {
+    console.error(error.message);
+    process.exit(1);
+  }
 }
+
+module.exports = {
+  extractNewtheoremDeclarations,
+  resyncMacroCache,
+};

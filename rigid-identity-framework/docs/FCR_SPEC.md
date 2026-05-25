@@ -1,6 +1,6 @@
 # QICN Formal Corpus Registry Specification
 
-Status: executable implementation, v10 impact-analysis hardening.
+Status: executable implementation, v12 reproducibility hardening.
 
 This document specifies the Formal Corpus Registry (FCR) added to the Rigid
 Identity Framework. The FCR is not a mathematical proof assistant and does not
@@ -78,6 +78,16 @@ volume without preamble work. Local formatting declarations, theorem
 environment declarations, and paper-local preambles still require a separate
 monolithic-compilation audit before any unified-volume claim.
 
+Whole-registry extraction is also a distinct reproducibility claim. The
+committed registry can be cleaner than a fresh extraction when primary `.tex`
+files referenced by the registry are absent from the checkout. FCR v12 therefore
+adds `npm run audit:extractor-reproducibility` to report whether
+`extract-registry.js` can safely reproduce the committed registry from the
+currently present primary sources. If that audit is not reproducible,
+source-scoped derived-artifact resync is allowed only when the changed primary
+files are present, the intended diff is explicit, and validation gates remain
+clean afterward.
+
 Accessibility-related report structure is likewise limited. Markdown tables,
 headings, and text-first reports improve sequential reviewability, but they are
 not a WCAG AAA certification unless a dedicated accessibility audit is run and
@@ -116,6 +126,11 @@ mathematically false, empirically supported, or externally validated.
 - `scripts/generate-report.js`: Writes report artifacts under `docs/reports/`.
 - `scripts/fcr-impact-analyzer.js`: Read-only impact analyzer for explicit
   downstream dependency sensitivity.
+- `scripts/resync-macro-cache.js`: Source-scoped derived macro-cache resync for
+  explicitly targeted primary `.tex` changes.
+- `scripts/probe-extractor-reproducibility.js`: Read-only audit of whether the
+  global extractor can reproduce committed registry counts from present primary
+  sources.
 
 ## Registry Entry Contract
 

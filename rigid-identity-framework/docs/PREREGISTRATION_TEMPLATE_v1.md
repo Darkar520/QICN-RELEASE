@@ -23,6 +23,9 @@ exploratory or internal support only.
 - Execution environment:
 - Repository commit:
 - Data/source manifest:
+- External replicability: true|false
+- External protocol path:
+- External execution class allowed:
 
 ## Hypothesis And Rival
 
@@ -89,6 +92,7 @@ After execution, record:
 | Threshold deviations | |
 | Exclusions applied | |
 | Reproducibility status | |
+| External replication status | |
 | Claim ledger update required | |
 | FCR update required | |
 

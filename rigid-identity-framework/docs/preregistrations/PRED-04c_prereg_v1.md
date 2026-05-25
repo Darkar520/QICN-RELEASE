@@ -18,6 +18,8 @@ parameter-panel test. It does not report support.
 | Exclusion rule | Exclude `theta_i` points with `NaN` response only if `NaN` rate is `<= 0.01`; abort if `NaN` rate is `> 0.01`. |
 | Rival | `RIVAL-NULL-DYNAMICS-01` |
 | Negative controls | `CTRL-NEAR-NULL-NOISE`, `CTRL-HISTORY-BLIND` |
+| External replicability | `true` as protocol readiness; execution remains `blocked_no_runner` until a runner exists. |
+| External protocol path | `docs/EXTERNAL_REPLICATION_PROTOCOL.md` |
 
 ## Resolution Rationale
 
@@ -52,6 +54,8 @@ Future execution must write:
   "threshold": 0.10,
   "seeds_used": [42, 12345, 99999, 20250525],
   "exclusions_applied": null,
+  "external_protocol_path": "docs/EXTERNAL_REPLICATION_PROTOCOL.md",
+  "external_execution_class": "blocked_no_runner|executed_support|executed_destruction|executed_inconclusive|pipeline_demo",
   "artifact_hashes": {}
 }
 ```

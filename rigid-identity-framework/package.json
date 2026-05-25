@@ -12,6 +12,8 @@
     "lint:nonclaims": "node scripts/lint-nonclaims.js",
     "extract:claim-ledger": "node scripts/extract-claim-ledger.js",
     "resync:macro-cache": "node scripts/resync-macro-cache.js",
+    "test:resync-macro-cache": "node scripts/test-resync-macro-cache.js",
+    "audit:extractor-reproducibility": "node scripts/probe-extractor-reproducibility.js",
     "analyze:impact": "node scripts/fcr-impact-analyzer.js",
     "audit:monolithic-risk": "node scripts/verify-monolithic-risk.js",
     "test:tamper-prereg": "node scripts/tamper-inject.js --self-test",

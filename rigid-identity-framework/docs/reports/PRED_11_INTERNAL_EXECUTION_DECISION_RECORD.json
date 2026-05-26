@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "PRED-11",
+  "run_id": "pred-11-v1-internal-execution-001",
+  "date_executed": "2026-05-26",
+  "execution_class": "internal_synthetic_execution",
+  "status": "executed_internal_synthetic",
+  "verdict": "internal_synthetic_support",
+  "boundary": "Internal synthetic integration-loss execution only; no empirical support or external adjudication.",
+  "freeze": {
+    "schema_version": "1.0.0",
+    "prediction_id": "PRED-11",
+    "freeze_id": "pred-11-integration-loss-freeze-v1",
+    "date_frozen": "2026-05-26",
+    "status": "frozen_for_internal_synthetic_execution",
+    "execution_class": "internal_synthetic_execution",
+    "boundary": "This freeze tests an internal synthetic integration-loss complexity-preservation harness. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "integration_loss_boundary": 0.5,
+    "complexity_preservation_epsilon": 0.02,
+    "certification_threshold": 0.5,
+    "support_rule": [
+      "integration_drop >= integration_loss_boundary",
+      "complexity_delta <= complexity_preservation_epsilon",
+      "certification_post < certification_threshold"
+    ],
+    "destruction_rule": "If certification_post >= certification_threshold after verified integration loss and preserved complexity, the integration-loss claim is a destruction candidate.",
+    "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the integration-loss harness."
+  },
+  "result": {
+    "pre": {
+      "integration_margin": 0.76,
+      "complexity_units": 120,
+      "activity_budget": 0.81,
+      "certification_score": 0.74
+    },
+    "post": {
+      "integration_margin": 0.11,
+      "complexity_units": 121,
+      "activity_budget": 0.8,
+      "certification_score": 0.34
+    },
+    "integration_drop": 0.65,
+    "complexity_delta": 0.008333333333333333,
+    "activity_delta": 0.010000000000000009,
+    "verdict": "support_rule_satisfied",
+    "support_rule_satisfied": true,
+    "complexity_only_rival_prediction": "certification_persists_when_complexity_is_preserved"
+  },
+  "artifact_hashes": {
+    "freeze_sha256": "deb09b39a6247b9be270289628434a668c8667e96d41352869f8a6e98cfbe38e",
+    "result_sha256": "3b52ff6d0bdc81e6b104db1e1077d8f6208c50fdfd2477a141e53a7ba95b5c49"
+  }
+}

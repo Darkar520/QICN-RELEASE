@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_for": "FCR v15 falsifiability scaffold plus internal synthetic pilot",
+  "generated_for": "FCR v16 execution scaffold plus clean-room synthetic runs",
   "date": "2026-05-26",
   "scope": "Machine-readable binding for Paper 6 prediction families PRED-01 through PRED-11 plus explicitly marked external candidate predictions.",
   "status_boundary": "This registry is a preregistration scaffold plus internal synthetic pilot ledger. It does not report external adjudication, consciousness, phenomenality, identity transfer, agency, or moral status.",
@@ -16,7 +16,8 @@
     "blocked": "The prediction cannot be executed until a named missing artifact, rival, or protocol exists.",
     "externally_adjudicated": "Reserved for future use only after independent execution and decision records.",
     "external_candidate_not_executed": "The prediction has a non-framework-facing observable candidate, but no frozen runner, dataset, threshold, or decision record yet.",
-    "internal_synthetic_pilot_executed": "A frozen internal synthetic pilot has executed with decision records, but no external adjudication or empirical validation is claimed."
+    "internal_synthetic_pilot_executed": "A frozen internal synthetic pilot has executed with decision records, but no external adjudication or empirical validation is claimed.",
+    "clean_room_synthetic_executed": "A seeded clean-room synthetic execution has run with negative controls and reviewer quarantine, but no empirical support or external adjudication is claimed."
   },
   "predictions": [
     {
@@ -88,27 +89,27 @@
       ],
       "thresholds": [
         {
-          "name": "critical_invariant_loss_boundary",
-          "status": "not_frozen",
-          "value": null,
-          "unit": "invariant-specific witness margin",
-          "source": "Paper 5 defines positive witness margins delta_j(S); no execution threshold is frozen here.",
-          "rationale": "Each invariant needs a concrete measurement dictionary entry before rupture can be preregistered.",
-          "date_frozen": null,
+          "name": "delta_amb",
+          "status": "frozen_from_claim_logic",
+          "value": 0.05,
+          "unit": "certification margin",
+          "source": "docs/preregistrations/PRED-02_freeze_v1.json",
+          "rationale": "Ambiguity margin for invariant-rupture support.",
+          "date_frozen": "2026-05-26",
           "modification_log": []
         },
         {
-          "name": "pre_ablation_ambiguity_margin_delta_amb",
-          "status": "not_frozen",
-          "value": null,
-          "unit": "minimum invariant headroom before ablation",
-          "source": "FCR v13 hardening of Paper 6 PRED-02 requires this margin before execution; no numeric value is frozen here.",
-          "rationale": "The ambiguity margin must be declared before any rupture campaign so boundary cases become weakening states rather than post-hoc support.",
-          "date_frozen": null,
+          "name": "rho_rupture",
+          "status": "frozen_from_claim_logic",
+          "value": 0.5,
+          "unit": "relative rupture ratio",
+          "source": "docs/preregistrations/PRED-02_freeze_v1.json",
+          "rationale": "Minimum relative certification drop under invariant ablation.",
+          "date_frozen": "2026-05-26",
           "modification_log": []
         }
       ],
-      "current_status": "formalized_pending_preregistration",
+      "current_status": "internal_synthetic_executed",
       "epistemic_limit": "No new empirical execution is implied by this registry entry.",
       "linked_rivals": [
         "RIVAL-COMPLEXITY-01"
@@ -264,27 +265,27 @@
       ],
       "thresholds": [
         {
-          "name": "transition_band_fraction",
-          "status": "frozen_from_corpus_text",
+          "name": "eps_equiv",
+          "status": "frozen_from_claim_logic",
           "value": 0.1,
-          "unit": "fraction_of_scanned_parameter_space",
-          "source": "Paper 6 PRED-04c states band width < 10 percent of parameter space.",
-          "rationale": "This is the only numeric threshold in the current registry directly stated by the prediction row.",
-          "date_frozen": "2026-05-25",
+          "unit": "equivalence distance",
+          "source": "docs/preregistrations/PRED-04c_freeze_v2.json",
+          "rationale": "Maximum tolerated cross-substrate structural distance.",
+          "date_frozen": "2026-05-26",
           "modification_log": []
         },
         {
-          "name": "scan_step_size",
-          "status": "not_frozen",
-          "value": null,
-          "unit": "parameter step",
-          "source": "Not specified in current corpus text.",
-          "rationale": "Needed before the 10 percent band threshold can be executed reproducibly.",
-          "date_frozen": null,
+          "name": "eps_invariant",
+          "status": "frozen_from_claim_logic",
+          "value": 0.05,
+          "unit": "invariant delta",
+          "source": "docs/preregistrations/PRED-04c_freeze_v2.json",
+          "rationale": "Maximum tolerated invariant bundle deviation.",
+          "date_frozen": "2026-05-26",
           "modification_log": []
         }
       ],
-      "current_status": "formalized_pending_preregistration",
+      "current_status": "internal_synthetic_executed",
       "epistemic_limit": "The 10 percent threshold is corpus-stated; scan design remains unfrozen.",
       "linked_rivals": [
         "RIVAL-NULL-DYNAMICS-01"
@@ -571,16 +572,26 @@
       "thresholds": [
         {
           "name": "integration_loss_boundary",
-          "status": "not_frozen",
-          "value": null,
-          "unit": "Iint witness margin",
-          "source": "Paper 5 defines Iint through non-factorization margin delta_int(S); execution value is not frozen here.",
-          "rationale": "Must distinguish true integration loss from gross collapse or unmatched complexity.",
-          "date_frozen": null,
+          "status": "frozen_from_claim_logic",
+          "value": 0.5,
+          "unit": "Iint witness margin drop",
+          "source": "docs/preregistrations/PRED-11_freeze_v1.json",
+          "rationale": "Minimum integration loss while preserving complexity.",
+          "date_frozen": "2026-05-26",
+          "modification_log": []
+        },
+        {
+          "name": "complexity_preservation_epsilon",
+          "status": "frozen_from_claim_logic",
+          "value": 0.02,
+          "unit": "relative complexity delta",
+          "source": "docs/preregistrations/PRED-11_freeze_v1.json",
+          "rationale": "Maximum tolerated gross complexity drift.",
+          "date_frozen": "2026-05-26",
           "modification_log": []
         }
       ],
-      "current_status": "formalized_pending_preregistration",
+      "current_status": "internal_synthetic_executed",
       "epistemic_limit": "This can falsify a complexity-only rival; it does not prove consciousness.",
       "linked_rivals": [
         "RIVAL-COMPLEXITY-01"
@@ -666,7 +677,7 @@
           ]
         }
       ],
-      "current_status": "internal_synthetic_pilot_executed",
+      "current_status": "clean_room_synthetic_executed",
       "epistemic_limit": "This is an external finite-trace prediction seed with one internal synthetic pilot. It can test a transition-selectivity claim on a toy-scale system, but it cannot prove consciousness, phenomenality, personal identity, or external adjudication of the full framework.",
       "linked_rivals": [
         "RIVAL-TRACE-MEMORY-01"

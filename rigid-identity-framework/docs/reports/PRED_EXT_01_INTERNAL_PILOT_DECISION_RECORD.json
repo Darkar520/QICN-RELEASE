@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "prediction_id": "PRED-EXT-01",
-  "run_id": "pred-ext-01-v1-internal-pilot-001",
+  "run_id": "pred-ext-01-v1-internal-pilot-002",
   "date_executed": "2026-05-26",
   "execution_class": "internal_synthetic_pilot",
   "status": "executed_internal_synthetic_pilot",
-  "verdict": "internal_synthetic_support_with_negative_control_passed",
+  "verdict": "internal_synthetic_support_with_negative_controls_passed",
   "boundary": "This is an internal synthetic pilot only. It is not empirical support, not external adjudication, not validation of consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
   "freeze": {
     "schema_version": "1.0.0",
@@ -93,19 +93,19 @@
         }
       }
     },
-    "memory_only_negative_control": {
-      "scenario": "memory_only_negative_control",
+    "memory_perturbed_negative_control": {
+      "scenario": "memory_perturbed_negative_control",
       "verdict": "support_rule_not_satisfied",
       "support_rule_satisfied": false,
       "metrics": {
-        "tv_targeted": 0,
-        "tv_sham": 0,
-        "tv_off_target": 0,
-        "control_max": 0.001,
-        "rho_selective": 0,
-        "rival_tv_loss": 0.015949546789590208,
+        "tv_targeted": 0.24691358024691357,
+        "tv_sham": 0.24691358024691357,
+        "tv_off_target": 0.24691358024691357,
+        "control_max": 0.24691358024691357,
+        "rho_selective": 1,
+        "rival_tv_loss": 0.30211857252804375,
         "complexity_penalty": 0.0008333333333333334,
-        "penalized_rival_loss": 0.01678288012292354,
+        "penalized_rival_loss": 0.3029519058613771,
         "rival_parameter_count": 16,
         "rival_training_entropy_bits": 1.8193134823229071
       },
@@ -117,41 +117,289 @@
           "D": 0.12757201646090535
         },
         "targeted_post": {
-          "A": 0.37037037037037035,
-          "B": 0.37448559670781895,
-          "C": 0.12757201646090535,
-          "D": 0.12757201646090535
+          "A": 0.24691358024691357,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.25102880658436216
         },
         "sham_post": {
-          "A": 0.37037037037037035,
-          "B": 0.37448559670781895,
-          "C": 0.12757201646090535,
-          "D": 0.12757201646090535
+          "A": 0.24691358024691357,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.25102880658436216
         },
         "off_target_post": {
+          "A": 0.24691358024691357,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.25102880658436216
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.3982150721199449,
+          "B": 0.40184588723937453,
+          "C": 0.10021361677577267,
+          "D": 0.0997254238649079
+        }
+      }
+    },
+    "stochastic_noise_negative_control": {
+      "scenario": "stochastic_noise_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0.08230452674897118,
+        "tv_sham": 0.08230452674897118,
+        "tv_off_target": 0.08230452674897118,
+        "control_max": 0.08230452674897118,
+        "rho_selective": 1,
+        "rival_tv_loss": 0.09516190217128653,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.09599523550461987,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.8193134823229071
+      },
+      "distributions": {
+        "baseline": {
           "A": 0.37037037037037035,
           "B": 0.37448559670781895,
           "C": 0.12757201646090535,
           "D": 0.12757201646090535
         },
+        "targeted_post": {
+          "A": 0.3004115226337449,
+          "B": 0.36213991769547327,
+          "C": 0.16872427983539096,
+          "D": 0.16872427983539096
+        },
+        "sham_post": {
+          "A": 0.3004115226337449,
+          "B": 0.36213991769547327,
+          "C": 0.16872427983539096,
+          "D": 0.16872427983539096
+        },
+        "off_target_post": {
+          "A": 0.3004115226337449,
+          "B": 0.36213991769547327,
+          "C": 0.16872427983539096,
+          "D": 0.16872427983539096
+        },
         "trace_memory_rival_prediction": {
-          "A": 0.3623937061291526,
-          "B": 0.3665127141594465,
-          "C": 0.13557550708575147,
-          "D": 0.13551807262564944
+          "A": 0.3955734248050314,
+          "B": 0.3569286483255908,
+          "C": 0.11310922970084608,
+          "D": 0.13438869716853175
+        }
+      }
+    },
+    "high_order_markov_drift_negative_control": {
+      "scenario": "high_order_markov_drift_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0,
+        "tv_sham": 0,
+        "tv_off_target": 0,
+        "control_max": 0.001,
+        "rho_selective": 0,
+        "rival_tv_loss": 0.0000792897483390953,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.0009126230816724287,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.999963250476072
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.24691358024691357,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.25102880658436216
+        },
+        "targeted_post": {
+          "A": 0.24691358024691357,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.25102880658436216
+        },
+        "sham_post": {
+          "A": 0.24691358024691357,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.25102880658436216
+        },
+        "off_target_post": {
+          "A": 0.24691358024691357,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.25102880658436216
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.24696465929467976,
+          "B": 0.2510429119346486,
+          "C": 0.25094951683602307,
+          "D": 0.2510429119346486
+        }
+      }
+    },
+    "complexity_only_negative_control": {
+      "scenario": "complexity_only_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0.0041152263374485964,
+        "tv_sham": 0.0041152263374485964,
+        "tv_off_target": 0.0041152263374485964,
+        "control_max": 0.0041152263374485964,
+        "rho_selective": 1,
+        "rival_tv_loss": 0.00414343703802135,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.004976770371354683,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.999963250476072
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.24691358024691357,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.25102880658436216
+        },
+        "targeted_post": {
+          "A": 0.25102880658436216,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.24691358024691357
+        },
+        "sham_post": {
+          "A": 0.25102880658436216,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.24691358024691357
+        },
+        "off_target_post": {
+          "A": 0.25102880658436216,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.24691358024691357
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.2507938583383138,
+          "B": 0.2471203177923891,
+          "C": 0.2510429119346485,
+          "D": 0.2510429119346485
+        }
+      }
+    },
+    "narrative_only_negative_control": {
+      "scenario": "narrative_only_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0,
+        "tv_sham": 0,
+        "tv_off_target": 0,
+        "control_max": 0.001,
+        "rho_selective": 0,
+        "rival_tv_loss": 0.015393193439600989,
+        "complexity_penalty": 0.0006250000000000001,
+        "penalized_rival_loss": 0.016018193439600988,
+        "rival_parameter_count": 12,
+        "rival_training_entropy_bits": 1.5364305009074504
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.49382716049382713,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.00411522633744856
+        },
+        "targeted_post": {
+          "A": 0.49382716049382713,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.00411522633744856
+        },
+        "sham_post": {
+          "A": 0.49382716049382713,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.00411522633744856
+        },
+        "off_target_post": {
+          "A": 0.49382716049382713,
+          "B": 0.25102880658436216,
+          "C": 0.25102880658436216,
+          "D": 0.00411522633744856
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.47843396705422614,
+          "B": 0.25483793305867813,
+          "C": 0.25483793305867813,
+          "D": 0.0118901668284176
+        }
+      }
+    },
+    "reward_bookkeeping_negative_control": {
+      "scenario": "reward_bookkeeping_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0,
+        "tv_sham": 0,
+        "tv_off_target": 0,
+        "control_max": 0.001,
+        "rho_selective": 0,
+        "rival_tv_loss": 0.026077092508971292,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.026910425842304624,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.802155021955384
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.49382716049382713,
+          "B": 0.16872427983539096,
+          "C": 0.16872427983539096,
+          "D": 0.16872427983539096
+        },
+        "targeted_post": {
+          "A": 0.49382716049382713,
+          "B": 0.16872427983539096,
+          "C": 0.16872427983539096,
+          "D": 0.16872427983539096
+        },
+        "sham_post": {
+          "A": 0.49382716049382713,
+          "B": 0.16872427983539096,
+          "C": 0.16872427983539096,
+          "D": 0.16872427983539096
+        },
+        "off_target_post": {
+          "A": 0.49382716049382713,
+          "B": 0.16872427983539096,
+          "C": 0.16872427983539096,
+          "D": 0.16872427983539096
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.46775006798485586,
+          "B": 0.17741664400504806,
+          "C": 0.17741664400504806,
+          "D": 0.17741664400504806
         }
       }
     }
   },
-  "negative_control": {
-    "id": "memory_only_negative_control",
-    "passed": true,
-    "rule": "A negative control passes only when the same support rule is false under the frozen decision rule."
+  "control_summary": {
+    "positive_scenario": "qicn_synthetic_positive",
+    "controls_total": 6,
+    "controls_passed": 6,
+    "controls_failed": 0,
+    "invalid_controls_rejected": 0,
+    "destruction_risk": false
   },
   "claim_ledger_update_required": "Record as internal_synthetic_support only; do not promote to external evidence.",
   "artifact_hashes": {
     "freeze_sha256": "4593ea03ead18aac1986d6e3e3db4b710b008901724a6a19b61d604e8c6faec5",
-    "trace_bundle_sha256": "4eb812c80d4d361798ad5a9eb8071884987338ff7c715d6c1b1218b5911220e3",
-    "scenario_results_sha256": "67288dd2c4ec267c73e759dc1dc921f9d92860292961f398534523fa6a2d704d"
+    "trace_bundle_sha256": "204671e7c727dbc62215dd0b4d0bd41d2d44577426ec8b76134dfa550ea4f696",
+    "scenario_results_sha256": "3608b9fd9fbd9ed3332a542d70256ebe9d6a2dee4fed54cbbf6342726269c54a"
   }
 }

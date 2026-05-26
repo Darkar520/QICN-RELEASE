@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "PRED-02",
+  "run_id": "pred-02-v1-internal-execution-001",
+  "date_executed": "2026-05-26",
+  "execution_class": "internal_synthetic_execution",
+  "status": "executed_internal_synthetic",
+  "verdict": "internal_synthetic_support_with_boundary_control_passed",
+  "boundary": "Internal synthetic invariant-ablation execution only; no empirical support or external adjudication.",
+  "freeze": {
+    "schema_version": "1.0.0",
+    "prediction_id": "PRED-02",
+    "freeze_id": "pred-02-invariant-rupture-freeze-v1",
+    "date_frozen": "2026-05-26",
+    "status": "frozen_for_internal_synthetic_execution",
+    "execution_class": "internal_synthetic_execution",
+    "boundary": "This freeze tests an internal synthetic invariant-ablation harness. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "delta_amb": 0.05,
+    "rho_rupture": 0.5,
+    "support_rule": [
+      "certification_drop > delta_amb",
+      "pre_ablation_headroom > delta_amb",
+      "relative_rupture >= rho_rupture"
+    ],
+    "weakening_rule": "If certification_drop is positive but <= delta_amb, or pre_ablation_headroom <= delta_amb, the result is weakening or boundary-ambiguous, not support.",
+    "destruction_rule": "If certification_post >= certification_pre after verified invariant loss, the invariant-rupture claim is a destruction candidate.",
+    "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the rupture harness."
+  },
+  "panel_results": {
+    "invariant_loss_positive": {
+      "certification_pre": 0.82,
+      "certification_post": 0.24,
+      "pre_ablation_headroom": 0.17,
+      "invariant_loss_verified": true,
+      "certification_drop": 0.58,
+      "relative_rupture": 0.7073170731707317,
+      "verdict": "support_rule_satisfied",
+      "support_rule_satisfied": true
+    },
+    "boundary_ambiguous_control": {
+      "certification_pre": 0.54,
+      "certification_post": 0.5,
+      "pre_ablation_headroom": 0.03,
+      "invariant_loss_verified": true,
+      "certification_drop": 0.040000000000000036,
+      "relative_rupture": 0.07407407407407414,
+      "verdict": "weakening_or_boundary_ambiguous",
+      "support_rule_satisfied": false
+    }
+  },
+  "artifact_hashes": {
+    "freeze_sha256": "8151b49085ad802e948355e5333d7d95561e67ee6fa927f2b1d6343496500fb9",
+    "panel_results_sha256": "4e16c29550af8ed946312017b42c2592ae98a9e8b1bfaa86cb5285b19e47aa0e"
+  }
+}

@@ -125,6 +125,14 @@ does not satisfy the support rule (`rho_selective = 0.0`). This is useful
 internal evidence that the harness can apply frozen rules and reject a negative
 control. It is not empirical support, not external adjudication, and not
 support for consciousness, phenomenality, personal identity, agency, moral
-status, or the full QICN framework. The candidate remains blocked for external
-adjudication until an external dataset, external threshold freeze, exclusion
-rules, adjudicator, and clean-room decision record exist.
+status, or the full QICN framework.
+
+FCR v16 adds a seeded clean-room synthetic run
+(`npm run cleanroom:pred-ext-01`) with a generator separated from the evaluator
+and a reviewer quarantine gate (`npm run review:cleanroom-pred-ext-01`). The
+clean-room synthetic run passes the positive panel and five negative controls.
+This closes the v15 trivial-control objection at the harness level, but still
+does not count as empirical support or external adjudication. The candidate
+remains blocked for external adjudication until a non-synthetic dataset,
+external threshold freeze, exclusion rules, independent adjudicator, and
+clean-room decision record exist.

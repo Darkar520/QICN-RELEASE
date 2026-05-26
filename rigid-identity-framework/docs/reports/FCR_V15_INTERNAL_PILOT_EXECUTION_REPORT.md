@@ -15,6 +15,13 @@ or proof of the full QICN framework. A positive internal synthetic pilot may
 support only the claim that the current harness can apply frozen rules to a toy
 finite trace panel and reject a specified negative control.
 
+## Supersession Note
+
+FCR v16 supersedes the exact v15 pilot decision-record schema and the single
+`memory_only_negative_control` result. The current runner now evaluates multiple
+negative controls and emits `internal_synthetic_support_with_negative_controls_passed`.
+This v15 report remains historical context, not the current pilot output.
+
 ## 1. Hybrid Audit Verdict
 
 The AntiGravity and OpenCode audits converged on five real gaps:

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "PRED-04c",
+  "run_id": "pred-04c-v2-internal-execution-001",
+  "date_executed": "2026-05-26",
+  "execution_class": "internal_synthetic_execution",
+  "status": "executed_internal_synthetic",
+  "verdict": "internal_synthetic_support",
+  "boundary": "Internal synthetic cross-substrate execution only; no empirical support or external adjudication.",
+  "freeze": {
+    "schema_version": "2.0.0",
+    "prediction_id": "PRED-04c",
+    "freeze_id": "pred-04c-cross-substrate-freeze-v2",
+    "date_frozen": "2026-05-26",
+    "status": "frozen_for_internal_synthetic_execution",
+    "execution_class": "internal_synthetic_execution",
+    "boundary": "This freeze tests an internal synthetic cross-substrate class-preservation harness. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "eps_equiv": 0.1,
+    "eps_invariant": 0.05,
+    "support_rule": [
+      "equiv_distance < eps_equiv",
+      "invariant_delta < eps_invariant",
+      "class_agreement === true"
+    ],
+    "destruction_rule": "If class_agreement is false despite equiv_distance < eps_equiv and invariant_delta < eps_invariant, cross-substrate preservation is a destruction candidate.",
+    "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the cross-substrate harness."
+  },
+  "result": {
+    "equiv_distance": 0.04,
+    "invariant_delta": 0.020000000000000018,
+    "class_agreement": true,
+    "substrate_label_rival_prediction": "divergence_by_substrate_label",
+    "verdict": "support_rule_satisfied",
+    "support_rule_satisfied": true,
+    "invariant_vectors": {
+      "profinite": {
+        "Iper": 0.72,
+        "Iri": 0.69,
+        "Iint": 0.66,
+        "Icont": 0.71,
+        "Idiff": 0.63,
+        "Ileg": 0.68
+      },
+      "sft": {
+        "Iper": 0.7,
+        "Iri": 0.68,
+        "Iint": 0.64,
+        "Icont": 0.7,
+        "Idiff": 0.62,
+        "Ileg": 0.66
+      }
+    }
+  },
+  "artifact_hashes": {
+    "freeze_sha256": "73efebd72c2a1625143b63e0ddded7c61f450a7b835f3a41667b26c1a0a88bef",
+    "result_sha256": "c9f9b10e2f1e9259cde67016132594c117438dc2c172b7dc1939c04b6b8d2584"
+  }
+}

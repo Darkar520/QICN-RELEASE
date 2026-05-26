@@ -1,0 +1,18 @@
+{
+  "schema_version": "2.0.0",
+  "prediction_id": "PRED-04c",
+  "freeze_id": "pred-04c-cross-substrate-freeze-v2",
+  "date_frozen": "2026-05-26",
+  "status": "frozen_for_internal_synthetic_execution",
+  "execution_class": "internal_synthetic_execution",
+  "boundary": "This freeze tests an internal synthetic cross-substrate class-preservation harness. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "eps_equiv": 0.1,
+  "eps_invariant": 0.05,
+  "support_rule": [
+    "equiv_distance < eps_equiv",
+    "invariant_delta < eps_invariant",
+    "class_agreement === true"
+  ],
+  "destruction_rule": "If class_agreement is false despite equiv_distance < eps_equiv and invariant_delta < eps_invariant, cross-substrate preservation is a destruction candidate.",
+  "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the cross-substrate harness."
+}

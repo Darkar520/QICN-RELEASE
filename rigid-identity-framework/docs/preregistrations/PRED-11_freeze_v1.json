@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "PRED-11",
+  "freeze_id": "pred-11-integration-loss-freeze-v1",
+  "date_frozen": "2026-05-26",
+  "status": "frozen_for_internal_synthetic_execution",
+  "execution_class": "internal_synthetic_execution",
+  "boundary": "This freeze tests an internal synthetic integration-loss complexity-preservation harness. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "integration_loss_boundary": 0.5,
+  "complexity_preservation_epsilon": 0.02,
+  "certification_threshold": 0.5,
+  "support_rule": [
+    "integration_drop >= integration_loss_boundary",
+    "complexity_delta <= complexity_preservation_epsilon",
+    "certification_post < certification_threshold"
+  ],
+  "destruction_rule": "If certification_post >= certification_threshold after verified integration loss and preserved complexity, the integration-loss claim is a destruction candidate.",
+  "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the integration-loss harness."
+}

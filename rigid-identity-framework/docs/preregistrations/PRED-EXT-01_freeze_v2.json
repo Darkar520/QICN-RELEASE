@@ -1,0 +1,42 @@
+{
+  "schema_version": "2.0.0",
+  "prediction_id": "PRED-EXT-01",
+  "freeze_id": "pred-ext-01-cleanroom-synthetic-freeze-v2",
+  "date_frozen": "2026-05-26",
+  "status": "frozen_for_clean_room_synthetic_execution",
+  "execution_class": "clean_room_synthetic_execution",
+  "boundary": "This freeze is for a clean-room synthetic execution with a seeded generator separated from the evaluator. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "state_alphabet": ["A", "B", "C", "D"],
+  "trace_length": 240,
+  "seed_policy": "deterministic_seed_required",
+  "required_seeds": ["cleanroom_seed_001"],
+  "epsilon_floor": 0.001,
+  "rho_selective_threshold": 2.0,
+  "rival_loss_floor": 0.05,
+  "penalized_loss_alpha": 0.05,
+  "rival_complexity_normalizer": "trace_length_times_state_count",
+  "trace_memory_rival_policy": {
+    "id": "RIVAL-TRACE-MEMORY-01",
+    "memory_depth": 1,
+    "minimum_trace_length": 200,
+    "laplace_smoothing": 1
+  },
+  "scenario_manifest": [
+    { "id": "qicn_seeded_positive", "role": "positive" },
+    { "id": "stochastic_noise_negative_control", "role": "negative_control" },
+    { "id": "memory_drift_negative_control", "role": "negative_control" },
+    { "id": "high_entropy_negative_control", "role": "negative_control" },
+    { "id": "narrative_only_negative_control", "role": "negative_control" },
+    { "id": "reward_bookkeeping_negative_control", "role": "negative_control" }
+  ],
+  "support_rule": [
+    "rho_selective >= rho_selective_threshold",
+    "tv_targeted > max(tv_sham, tv_off_target, epsilon_floor)",
+    "penalized_rival_loss >= rival_loss_floor"
+  ],
+  "negative_control_rule": "Every negative control must fail the same support rule or the run becomes a destruction candidate or quarantine candidate.",
+  "destruction_rule": "If any valid negative control satisfies the support rule, the selectivity claim is a destruction candidate unless the reviewer quarantines the run for a protocol violation.",
+  "anti_inflation_rule": "A positive clean-room synthetic run may be recorded only as clean_room_synthetic_support. It must not be promoted to empirical support or external adjudication.",
+  "reviewer_blinding": true,
+  "quarantine_on_protocol_violation": true
+}

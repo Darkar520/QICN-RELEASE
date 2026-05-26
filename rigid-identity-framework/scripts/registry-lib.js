@@ -421,7 +421,7 @@ function walkFiles(dirPath, predicate, options = {}) {
 function activeTexFiles(frameworkRoot, options = {}) {
   const skipDirs = options.includeLegacy
     ? ["node_modules"]
-    : ["node_modules", "canonical_core_legacy", "archive", "assets", "submission"];
+    : ["node_modules", "canonical_core_legacy", "archive", "assets", "submission", "monolithic", "reports"];
   return walkFiles(
     frameworkRoot,
     (filePath) => filePath.toLowerCase().endsWith(".tex"),

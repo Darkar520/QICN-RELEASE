@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "PRED-02",
+  "freeze_id": "pred-02-invariant-rupture-freeze-v1",
+  "date_frozen": "2026-05-26",
+  "status": "frozen_for_internal_synthetic_execution",
+  "execution_class": "internal_synthetic_execution",
+  "boundary": "This freeze tests an internal synthetic invariant-ablation harness. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "delta_amb": 0.05,
+  "rho_rupture": 0.5,
+  "support_rule": [
+    "certification_drop > delta_amb",
+    "pre_ablation_headroom > delta_amb",
+    "relative_rupture >= rho_rupture"
+  ],
+  "weakening_rule": "If certification_drop is positive but <= delta_amb, or pre_ablation_headroom <= delta_amb, the result is weakening or boundary-ambiguous, not support.",
+  "destruction_rule": "If certification_post >= certification_pre after verified invariant loss, the invariant-rupture claim is a destruction candidate.",
+  "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the rupture harness."
+}

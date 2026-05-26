@@ -1,25 +1,27 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "prediction_id": "PRED-EXT-01",
-  "run_id": "pred-ext-01-v2-cleanroom-synthetic-001",
+  "run_id": "pred-ext-01-v3-cleanroom-synthetic-001",
   "date_executed": "2026-05-26",
   "execution_class": "clean_room_synthetic_execution",
   "status": "executed_clean_room_synthetic",
-  "verdict": "clean_room_synthetic_support_with_negative_controls_passed",
-  "boundary": "This is a clean-room synthetic execution using a seeded trace generator separated from the evaluator. It is not empirical support, not external adjudication, not validation of consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "verdict": "clean_room_synthetic_support_with_holdout_controls_passed",
+  "boundary": "This is a clean-room synthetic execution using freeze-declared scenario models interpreted by a generic seeded trace generator separated from the evaluator. It is not empirical support, not external adjudication, not validation of consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
   "reviewer_blinding": {
     "scenario_labels_declared_in_freeze": true,
     "evaluator_uses_freeze_only": true,
-    "seed_declared_before_execution": true
+    "seed_declared_before_execution": true,
+    "holdout_seed_declared_before_execution": true,
+    "generator_has_no_scenario_specific_distribution_table": true
   },
   "freeze": {
-    "schema_version": "2.0.0",
+    "schema_version": "3.0.0",
     "prediction_id": "PRED-EXT-01",
-    "freeze_id": "pred-ext-01-cleanroom-synthetic-freeze-v2",
+    "freeze_id": "pred-ext-01-cleanroom-synthetic-freeze-v3",
     "date_frozen": "2026-05-26",
     "status": "frozen_for_clean_room_synthetic_execution",
     "execution_class": "clean_room_synthetic_execution",
-    "boundary": "This freeze is for a clean-room synthetic execution with a seeded generator separated from the evaluator. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "boundary": "This freeze is for a clean-room synthetic execution with scenario models declared in the freeze artifact and interpreted by a generic seeded generator. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
     "state_alphabet": [
       "A",
       "B",
@@ -27,10 +29,13 @@
       "D"
     ],
     "trace_length": 240,
-    "seed_policy": "deterministic_seed_required",
+    "seed_policy": "deterministic_holdout_seeds_required",
     "required_seeds": [
-      "cleanroom_seed_001"
+      "cleanroom_seed_001",
+      "cleanroom_holdout_002"
     ],
+    "primary_seed": "cleanroom_seed_001",
+    "holdout_seed": "cleanroom_holdout_002",
     "epsilon_floor": 0.001,
     "rho_selective_threshold": 2,
     "rival_loss_floor": 0.05,
@@ -42,44 +47,1271 @@
       "minimum_trace_length": 200,
       "laplace_smoothing": 1
     },
+    "trace_memory_rival_suite": [
+      {
+        "id": "RIVAL-TRACE-MEMORY-01-depth1",
+        "memory_depth": 1,
+        "minimum_trace_length": 200,
+        "laplace_smoothing": 1
+      },
+      {
+        "id": "RIVAL-TRACE-MEMORY-01-depth2",
+        "memory_depth": 2,
+        "minimum_trace_length": 200,
+        "laplace_smoothing": 1
+      },
+      {
+        "id": "RIVAL-TRACE-MEMORY-01-depth3",
+        "memory_depth": 3,
+        "minimum_trace_length": 200,
+        "laplace_smoothing": 1
+      }
+    ],
     "scenario_manifest": [
       {
         "id": "qicn_seeded_positive",
-        "role": "positive"
+        "role": "positive",
+        "generative_model": "seeded_weighted_panel_v2",
+        "role_models": {
+          "baseline": {
+            "weights": {
+              "A": 0.38,
+              "B": 0.34,
+              "C": 0.15,
+              "D": 0.13
+            }
+          },
+          "targeted_post": {
+            "weights": {
+              "A": 0.14,
+              "B": 0.16,
+              "C": 0.56,
+              "D": 0.14
+            }
+          },
+          "sham_post": {
+            "weights": {
+              "A": 0.37,
+              "B": 0.33,
+              "C": 0.16,
+              "D": 0.14
+            }
+          },
+          "off_target_post": {
+            "weights": {
+              "A": 0.35,
+              "B": 0.26,
+              "C": 0.17,
+              "D": 0.22
+            }
+          }
+        }
       },
       {
         "id": "stochastic_noise_negative_control",
-        "role": "negative_control"
+        "role": "negative_control",
+        "generative_model": "seeded_weighted_panel_v2",
+        "role_models": {
+          "baseline": {
+            "weights": {
+              "A": 0.38,
+              "B": 0.34,
+              "C": 0.15,
+              "D": 0.13
+            }
+          },
+          "targeted_post": {
+            "weights": {
+              "A": 0.27,
+              "B": 0.26,
+              "C": 0.24,
+              "D": 0.23
+            }
+          },
+          "sham_post": {
+            "weights": {
+              "A": 0.27,
+              "B": 0.26,
+              "C": 0.24,
+              "D": 0.23
+            }
+          },
+          "off_target_post": {
+            "weights": {
+              "A": 0.27,
+              "B": 0.26,
+              "C": 0.24,
+              "D": 0.23
+            }
+          }
+        }
       },
       {
         "id": "memory_drift_negative_control",
-        "role": "negative_control"
+        "role": "negative_control",
+        "generative_model": "seeded_weighted_panel_v2",
+        "role_models": {
+          "baseline": {
+            "weights": {
+              "A": 0.38,
+              "B": 0.34,
+              "C": 0.15,
+              "D": 0.13
+            }
+          },
+          "targeted_post": {
+            "weights": {
+              "A": 0.23,
+              "B": 0.33,
+              "C": 0.25,
+              "D": 0.19
+            }
+          },
+          "sham_post": {
+            "weights": {
+              "A": 0.23,
+              "B": 0.33,
+              "C": 0.25,
+              "D": 0.19
+            }
+          },
+          "off_target_post": {
+            "weights": {
+              "A": 0.23,
+              "B": 0.33,
+              "C": 0.25,
+              "D": 0.19
+            }
+          }
+        }
       },
       {
         "id": "high_entropy_negative_control",
-        "role": "negative_control"
+        "role": "negative_control",
+        "generative_model": "seeded_weighted_panel_v2",
+        "role_models": {
+          "baseline": {
+            "weights": {
+              "A": 0.38,
+              "B": 0.34,
+              "C": 0.15,
+              "D": 0.13
+            }
+          },
+          "targeted_post": {
+            "weights": {
+              "A": 0.25,
+              "B": 0.25,
+              "C": 0.25,
+              "D": 0.25
+            }
+          },
+          "sham_post": {
+            "weights": {
+              "A": 0.25,
+              "B": 0.25,
+              "C": 0.25,
+              "D": 0.25
+            }
+          },
+          "off_target_post": {
+            "weights": {
+              "A": 0.25,
+              "B": 0.25,
+              "C": 0.25,
+              "D": 0.25
+            }
+          }
+        }
       },
       {
         "id": "narrative_only_negative_control",
-        "role": "negative_control"
+        "role": "negative_control",
+        "generative_model": "seeded_weighted_panel_v2",
+        "role_models": {
+          "baseline": {
+            "weights": {
+              "A": 0.38,
+              "B": 0.34,
+              "C": 0.15,
+              "D": 0.13
+            }
+          },
+          "targeted_post": {
+            "weights": {
+              "A": 0.38,
+              "B": 0.34,
+              "C": 0.15,
+              "D": 0.13
+            }
+          },
+          "sham_post": {
+            "weights": {
+              "A": 0.38,
+              "B": 0.34,
+              "C": 0.15,
+              "D": 0.13
+            }
+          },
+          "off_target_post": {
+            "weights": {
+              "A": 0.38,
+              "B": 0.34,
+              "C": 0.15,
+              "D": 0.13
+            }
+          }
+        }
       },
       {
         "id": "reward_bookkeeping_negative_control",
-        "role": "negative_control"
+        "role": "negative_control",
+        "generative_model": "seeded_weighted_panel_v2",
+        "role_models": {
+          "baseline": {
+            "weights": {
+              "A": 0.38,
+              "B": 0.34,
+              "C": 0.15,
+              "D": 0.13
+            }
+          },
+          "targeted_post": {
+            "weights": {
+              "A": 0.42,
+              "B": 0.19,
+              "C": 0.18,
+              "D": 0.21
+            }
+          },
+          "sham_post": {
+            "weights": {
+              "A": 0.42,
+              "B": 0.19,
+              "C": 0.18,
+              "D": 0.21
+            }
+          },
+          "off_target_post": {
+            "weights": {
+              "A": 0.42,
+              "B": 0.19,
+              "C": 0.18,
+              "D": 0.21
+            }
+          }
+        }
       }
     ],
     "support_rule": [
       "rho_selective >= rho_selective_threshold",
       "tv_targeted > max(tv_sham, tv_off_target, epsilon_floor)",
-      "penalized_rival_loss >= rival_loss_floor"
+      "min_penalized_loss_over_trace_memory_depths_1_2_3 >= rival_loss_floor"
     ],
-    "negative_control_rule": "Every negative control must fail the same support rule or the run becomes a destruction candidate or quarantine candidate.",
+    "negative_control_rule": "Every negative control must fail the same support rule on both primary and holdout seeds, or the run becomes a destruction candidate or quarantine candidate.",
     "destruction_rule": "If any valid negative control satisfies the support rule, the selectivity claim is a destruction candidate unless the reviewer quarantines the run for a protocol violation.",
     "anti_inflation_rule": "A positive clean-room synthetic run may be recorded only as clean_room_synthetic_support. It must not be promoted to empirical support or external adjudication.",
     "reviewer_blinding": true,
     "quarantine_on_protocol_violation": true
   },
-  "seed": "cleanroom_seed_001",
+  "seeds": [
+    "cleanroom_seed_001",
+    "cleanroom_holdout_002"
+  ],
+  "primary_seed": "cleanroom_seed_001",
+  "holdout_seed": "cleanroom_holdout_002",
+  "seed_results": {
+    "cleanroom_seed_001": {
+      "seed": "cleanroom_seed_001",
+      "verdict": "clean_room_synthetic_support_with_negative_controls_passed",
+      "scenario_results": {
+        "qicn_seeded_positive": {
+          "scenario": "qicn_seeded_positive",
+          "verdict": "support_rule_satisfied",
+          "support_rule_satisfied": true,
+          "metrics": {
+            "tv_targeted": 0.48559670781893,
+            "tv_sham": 0.06584362139917696,
+            "tv_off_target": 0.16049382716049382,
+            "control_max": 0.16049382716049382,
+            "rho_selective": 3.0256410256410255,
+            "rival_tv_loss": 0.424421855322755,
+            "complexity_penalty": 0.010625,
+            "penalized_rival_loss": 0.435046855322755,
+            "rival_parameter_count": 204,
+            "rival_training_entropy_bits": 1.8086822278031254,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+            "strongest_rival_memory_depth": 3,
+            "rival_suite_min_penalized_loss": 0.435046855322755,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.49976717441982454,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.5006005077531579,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.805541104293273
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.45079716303842265,
+              "complexity_penalty": 0.003125,
+              "penalized_rival_loss": 0.45392216303842264,
+              "rival_parameter_count": 60,
+              "rival_training_entropy_bits": 1.8071259792393515
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.424421855322755,
+              "complexity_penalty": 0.010625,
+              "penalized_rival_loss": 0.435046855322755,
+              "rival_parameter_count": 204,
+              "rival_training_entropy_bits": 1.8086822278031254
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.37448559670781895,
+              "B": 0.3786008230452675,
+              "C": 0.13168724279835392,
+              "D": 0.11522633744855967
+            },
+            "targeted_post": {
+              "A": 0.10699588477366255,
+              "B": 0.16049382716049382,
+              "C": 0.5637860082304527,
+              "D": 0.16872427983539096
+            },
+            "sham_post": {
+              "A": 0.35390946502057613,
+              "B": 0.3333333333333333,
+              "C": 0.16049382716049382,
+              "D": 0.1522633744855967
+            },
+            "off_target_post": {
+              "A": 0.35802469135802467,
+              "B": 0.2345679012345679,
+              "C": 0.1728395061728395,
+              "D": 0.2345679012345679
+            }
+          }
+        },
+        "stochastic_noise_negative_control": {
+          "scenario": "stochastic_noise_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.13580246913580246,
+            "tv_sham": 0.11111111111111115,
+            "tv_off_target": 0.12345679012345678,
+            "control_max": 0.12345679012345678,
+            "rho_selective": 1.1,
+            "rival_tv_loss": 0.06902043065707127,
+            "complexity_penalty": 0.012083333333333335,
+            "penalized_rival_loss": 0.0811037639904046,
+            "rival_parameter_count": 232,
+            "rival_training_entropy_bits": 1.9171093952572609,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+            "strongest_rival_memory_depth": 3,
+            "rival_suite_min_penalized_loss": 0.0811037639904046,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.13045237765221368,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.131285710985547,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.9196729954632297
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.10677173682651651,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.11010507015984984,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.9167869429821431
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.06902043065707127,
+              "complexity_penalty": 0.012083333333333335,
+              "penalized_rival_loss": 0.0811037639904046,
+              "rival_parameter_count": 232,
+              "rival_training_entropy_bits": 1.9171093952572609
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.37448559670781895,
+              "B": 0.27983539094650206,
+              "C": 0.1646090534979424,
+              "D": 0.18106995884773663
+            },
+            "targeted_post": {
+              "A": 0.29218106995884774,
+              "B": 0.22633744855967078,
+              "C": 0.20987654320987653,
+              "D": 0.2716049382716049
+            },
+            "sham_post": {
+              "A": 0.2962962962962963,
+              "B": 0.24691358024691357,
+              "C": 0.1934156378600823,
+              "D": 0.26337448559670784
+            },
+            "off_target_post": {
+              "A": 0.25102880658436216,
+              "B": 0.29218106995884774,
+              "C": 0.22633744855967078,
+              "D": 0.23045267489711935
+            }
+          }
+        },
+        "memory_drift_negative_control": {
+          "scenario": "memory_drift_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.17695473251028807,
+            "tv_sham": 0.14814814814814814,
+            "tv_off_target": 0.20987654320987653,
+            "control_max": 0.20987654320987653,
+            "rho_selective": 0.8431372549019608,
+            "rival_tv_loss": 0.06603640817759548,
+            "complexity_penalty": 0.010625,
+            "penalized_rival_loss": 0.07666140817759548,
+            "rival_parameter_count": 204,
+            "rival_training_entropy_bits": 1.8111197958697103,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+            "strongest_rival_memory_depth": 3,
+            "rival_suite_min_penalized_loss": 0.07666140817759548,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.16047871958147328,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.1613120529148066,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.8079042517744164
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.10522287433815472,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.10855620767148805,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.8092293944623523
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.06603640817759548,
+              "complexity_penalty": 0.010625,
+              "penalized_rival_loss": 0.07666140817759548,
+              "rival_parameter_count": 204,
+              "rival_training_entropy_bits": 1.8111197958697103
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.35802469135802467,
+              "B": 0.39094650205761317,
+              "C": 0.1440329218106996,
+              "D": 0.10699588477366255
+            },
+            "targeted_post": {
+              "A": 0.25102880658436216,
+              "B": 0.32098765432098764,
+              "C": 0.23868312757201646,
+              "D": 0.18930041152263374
+            },
+            "sham_post": {
+              "A": 0.22633744855967078,
+              "B": 0.37448559670781895,
+              "C": 0.1934156378600823,
+              "D": 0.205761316872428
+            },
+            "off_target_post": {
+              "A": 0.2345679012345679,
+              "B": 0.3045267489711934,
+              "C": 0.2345679012345679,
+              "D": 0.22633744855967078
+            }
+          }
+        },
+        "high_entropy_negative_control": {
+          "scenario": "high_entropy_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.25925925925925924,
+            "tv_sham": 0.2263374485596708,
+            "tv_off_target": 0.2674897119341564,
+            "control_max": 0.2674897119341564,
+            "rho_selective": 0.9692307692307691,
+            "rival_tv_loss": 0.13294280468561243,
+            "complexity_penalty": 0.011041666666666667,
+            "penalized_rival_loss": 0.1439844713522791,
+            "rival_parameter_count": 212,
+            "rival_training_entropy_bits": 1.7924202984834703,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+            "strongest_rival_memory_depth": 3,
+            "rival_suite_min_penalized_loss": 0.1439844713522791,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.2308231723240795,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.23165650565741283,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.7966108708570288
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.1766541060822391,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.17998743941557244,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.7984166834555668
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.13294280468561243,
+              "complexity_penalty": 0.011041666666666667,
+              "penalized_rival_loss": 0.1439844713522791,
+              "rival_parameter_count": 212,
+              "rival_training_entropy_bits": 1.7924202984834703
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.39094650205761317,
+              "B": 0.3662551440329218,
+              "C": 0.13580246913580246,
+              "D": 0.10699588477366255
+            },
+            "targeted_post": {
+              "A": 0.23045267489711935,
+              "B": 0.2674897119341564,
+              "C": 0.22633744855967078,
+              "D": 0.2757201646090535
+            },
+            "sham_post": {
+              "A": 0.24691358024691357,
+              "B": 0.2839506172839506,
+              "C": 0.24279835390946503,
+              "D": 0.22633744855967078
+            },
+            "off_target_post": {
+              "A": 0.25102880658436216,
+              "B": 0.23868312757201646,
+              "C": 0.23868312757201646,
+              "D": 0.2716049382716049
+            }
+          }
+        },
+        "narrative_only_negative_control": {
+          "scenario": "narrative_only_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.06584362139917696,
+            "tv_sham": 0.06172839506172842,
+            "tv_off_target": 0.02880658436213994,
+            "control_max": 0.06172839506172842,
+            "rho_selective": 1.0666666666666664,
+            "rival_tv_loss": 0.0617124787818568,
+            "complexity_penalty": 0.0008333333333333334,
+            "penalized_rival_loss": 0.06254581211519014,
+            "rival_parameter_count": 16,
+            "rival_training_entropy_bits": 1.8756222264237041,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+            "strongest_rival_memory_depth": 1,
+            "rival_suite_min_penalized_loss": 0.06254581211519014,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.0617124787818568,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.06254581211519014,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.8756222264237041
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.08071029690976753,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.08404363024310085,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.8772957205225205
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.10776523319678652,
+              "complexity_penalty": 0.011666666666666667,
+              "penalized_rival_loss": 0.11943189986345319,
+              "rival_parameter_count": 224,
+              "rival_training_entropy_bits": 1.8732602557722051
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.34156378600823045,
+              "B": 0.36213991769547327,
+              "C": 0.15637860082304528,
+              "D": 0.13991769547325103
+            },
+            "targeted_post": {
+              "A": 0.3991769547325103,
+              "B": 0.32510288065843623,
+              "C": 0.1646090534979424,
+              "D": 0.1111111111111111
+            },
+            "sham_post": {
+              "A": 0.40329218106995884,
+              "B": 0.3333333333333333,
+              "C": 0.13580246913580246,
+              "D": 0.12757201646090535
+            },
+            "off_target_post": {
+              "A": 0.35390946502057613,
+              "B": 0.35390946502057613,
+              "C": 0.13580246913580246,
+              "D": 0.15637860082304528
+            }
+          }
+        },
+        "reward_bookkeeping_negative_control": {
+          "scenario": "reward_bookkeeping_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.1234567901234568,
+            "tv_sham": 0.13580246913580246,
+            "tv_off_target": 0.14814814814814814,
+            "control_max": 0.14814814814814814,
+            "rho_selective": 0.8333333333333335,
+            "rival_tv_loss": 0.11559824460653628,
+            "complexity_penalty": 0.0008333333333333334,
+            "penalized_rival_loss": 0.11643157793986962,
+            "rival_parameter_count": 16,
+            "rival_training_entropy_bits": 1.8802244306884022,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+            "strongest_rival_memory_depth": 1,
+            "rival_suite_min_penalized_loss": 0.11643157793986962,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.11559824460653628,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.11643157793986962,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.8802244306884022
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.13394339908112063,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.13727673241445396,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.8821834272755895
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.14991019406815215,
+              "complexity_penalty": 0.012083333333333335,
+              "penalized_rival_loss": 0.16199352740148548,
+              "rival_parameter_count": 232,
+              "rival_training_entropy_bits": 1.8831115710516866
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.3786008230452675,
+              "B": 0.3168724279835391,
+              "C": 0.16872427983539096,
+              "D": 0.13580246913580246
+            },
+            "targeted_post": {
+              "A": 0.43621399176954734,
+              "B": 0.205761316872428,
+              "C": 0.15637860082304528,
+              "D": 0.20164609053497942
+            },
+            "sham_post": {
+              "A": 0.38271604938271603,
+              "B": 0.18106995884773663,
+              "C": 0.20987654320987653,
+              "D": 0.22633744855967078
+            },
+            "off_target_post": {
+              "A": 0.4279835390946502,
+              "B": 0.16872427983539096,
+              "C": 0.18518518518518517,
+              "D": 0.21810699588477367
+            }
+          }
+        }
+      },
+      "control_summary": {
+        "positive_scenario": "qicn_seeded_positive",
+        "controls_total": 5,
+        "controls_passed": 5,
+        "controls_failed": 0,
+        "invalid_controls_rejected": 0,
+        "destruction_risk": false
+      },
+      "trace_bundle_sha256": "c89a9dd8db06396213cc89d237c24ec46c8dac27b7e2fcad1cc58d095bf535c5"
+    },
+    "cleanroom_holdout_002": {
+      "seed": "cleanroom_holdout_002",
+      "verdict": "clean_room_synthetic_support_with_negative_controls_passed",
+      "scenario_results": {
+        "qicn_seeded_positive": {
+          "scenario": "qicn_seeded_positive",
+          "verdict": "support_rule_satisfied",
+          "support_rule_satisfied": true,
+          "metrics": {
+            "tv_targeted": 0.45679012345679015,
+            "tv_sham": 0.09465020576131687,
+            "tv_off_target": 0.1440329218106996,
+            "control_max": 0.1440329218106996,
+            "rho_selective": 3.1714285714285713,
+            "rival_tv_loss": 0.4249159108276596,
+            "complexity_penalty": 0.0033333333333333335,
+            "penalized_rival_loss": 0.42824924416099297,
+            "rival_parameter_count": 64,
+            "rival_training_entropy_bits": 1.8506253735233602,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
+            "strongest_rival_memory_depth": 2,
+            "rival_suite_min_penalized_loss": 0.42824924416099297,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.4785332310378645,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.47936656437119785,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.8486047103484111
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.4249159108276596,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.42824924416099297,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.8506253735233602
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.42780784846194464,
+              "complexity_penalty": 0.010416666666666668,
+              "penalized_rival_loss": 0.4382245151286113,
+              "rival_parameter_count": 200,
+              "rival_training_entropy_bits": 1.85165284435112
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.39094650205761317,
+              "B": 0.3292181069958848,
+              "C": 0.12345679012345678,
+              "D": 0.15637860082304528
+            },
+            "targeted_post": {
+              "A": 0.1522633744855967,
+              "B": 0.1440329218106996,
+              "C": 0.5802469135802469,
+              "D": 0.12345679012345678
+            },
+            "sham_post": {
+              "A": 0.3168724279835391,
+              "B": 0.30864197530864196,
+              "C": 0.20987654320987653,
+              "D": 0.1646090534979424
+            },
+            "off_target_post": {
+              "A": 0.3374485596707819,
+              "B": 0.23868312757201646,
+              "C": 0.18106995884773663,
+              "D": 0.24279835390946503
+            }
+          }
+        },
+        "stochastic_noise_negative_control": {
+          "scenario": "stochastic_noise_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.1810699588477366,
+            "tv_sham": 0.18930041152263374,
+            "tv_off_target": 0.16872427983539096,
+            "control_max": 0.18930041152263374,
+            "rho_selective": 0.9565217391304347,
+            "rival_tv_loss": 0.09964313524570967,
+            "complexity_penalty": 0.012083333333333335,
+            "penalized_rival_loss": 0.111726468579043,
+            "rival_parameter_count": 232,
+            "rival_training_entropy_bits": 1.8888649346267643,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+            "strongest_rival_memory_depth": 3,
+            "rival_suite_min_penalized_loss": 0.111726468579043,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.1754379581265842,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.17627129145991752,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.886314982724857
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.1396781786082603,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.14301151194159362,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.8876091735182463
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.09964313524570967,
+              "complexity_penalty": 0.012083333333333335,
+              "penalized_rival_loss": 0.111726468579043,
+              "rival_parameter_count": 232,
+              "rival_training_entropy_bits": 1.8888649346267643
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.3374485596707819,
+              "B": 0.35802469135802467,
+              "C": 0.1522633744855967,
+              "D": 0.1522633744855967
+            },
+            "targeted_post": {
+              "A": 0.26337448559670784,
+              "B": 0.25102880658436216,
+              "C": 0.21810699588477367,
+              "D": 0.2674897119341564
+            },
+            "sham_post": {
+              "A": 0.2839506172839506,
+              "B": 0.2222222222222222,
+              "C": 0.27983539094650206,
+              "D": 0.2139917695473251
+            },
+            "off_target_post": {
+              "A": 0.2962962962962963,
+              "B": 0.23045267489711935,
+              "C": 0.22633744855967078,
+              "D": 0.24691358024691357
+            }
+          }
+        },
+        "memory_drift_negative_control": {
+          "scenario": "memory_drift_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.15637860082304528,
+            "tv_sham": 0.13991769547325106,
+            "tv_off_target": 0.1440329218106996,
+            "control_max": 0.1440329218106996,
+            "rho_selective": 1.0857142857142856,
+            "rival_tv_loss": 0.10164780955292851,
+            "complexity_penalty": 0.011666666666666667,
+            "penalized_rival_loss": 0.11331447621959519,
+            "rival_parameter_count": 224,
+            "rival_training_entropy_bits": 1.8706957014389802,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+            "strongest_rival_memory_depth": 3,
+            "rival_suite_min_penalized_loss": 0.11331447621959519,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.15432454426289527,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.1551578775962286,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.8681495877507739
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.12518605690343426,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.1285193902367676,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.8694414185570125
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.10164780955292851,
+              "complexity_penalty": 0.011666666666666667,
+              "penalized_rival_loss": 0.11331447621959519,
+              "rival_parameter_count": 224,
+              "rival_training_entropy_bits": 1.8706957014389802
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.36213991769547327,
+              "B": 0.34156378600823045,
+              "C": 0.17695473251028807,
+              "D": 0.11934156378600823
+            },
+            "targeted_post": {
+              "A": 0.205761316872428,
+              "B": 0.34156378600823045,
+              "C": 0.2551440329218107,
+              "D": 0.19753086419753085
+            },
+            "sham_post": {
+              "A": 0.2222222222222222,
+              "B": 0.3662551440329218,
+              "C": 0.2716049382716049,
+              "D": 0.13991769547325103
+            },
+            "off_target_post": {
+              "A": 0.21810699588477367,
+              "B": 0.3868312757201646,
+              "C": 0.18518518518518517,
+              "D": 0.20987654320987653
+            }
+          }
+        },
+        "high_entropy_negative_control": {
+          "scenario": "high_entropy_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.24279835390946503,
+            "tv_sham": 0.2674897119341564,
+            "tv_off_target": 0.2839506172839506,
+            "control_max": 0.2839506172839506,
+            "rho_selective": 0.855072463768116,
+            "rival_tv_loss": 0.11350942643104854,
+            "complexity_penalty": 0.010416666666666668,
+            "penalized_rival_loss": 0.12392609309771521,
+            "rival_parameter_count": 200,
+            "rival_training_entropy_bits": 1.751737415266566,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+            "strongest_rival_memory_depth": 3,
+            "rival_suite_min_penalized_loss": 0.12392609309771521,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.2359898692341923,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.23682320256752562,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.7560772776361608
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.15668898588646996,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.16002231921980328,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.7579019113263357
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.11350942643104854,
+              "complexity_penalty": 0.010416666666666668,
+              "penalized_rival_loss": 0.12392609309771521,
+              "rival_parameter_count": 200,
+              "rival_training_entropy_bits": 1.751737415266566
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.3786008230452675,
+              "B": 0.40329218106995884,
+              "C": 0.1111111111111111,
+              "D": 0.10699588477366255
+            },
+            "targeted_post": {
+              "A": 0.2674897119341564,
+              "B": 0.2716049382716049,
+              "C": 0.205761316872428,
+              "D": 0.2551440329218107
+            },
+            "sham_post": {
+              "A": 0.2222222222222222,
+              "B": 0.29218106995884774,
+              "C": 0.2222222222222222,
+              "D": 0.26337448559670784
+            },
+            "off_target_post": {
+              "A": 0.24691358024691357,
+              "B": 0.25102880658436216,
+              "C": 0.2222222222222222,
+              "D": 0.27983539094650206
+            }
+          }
+        },
+        "narrative_only_negative_control": {
+          "scenario": "narrative_only_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.053497942386831254,
+            "tv_sham": 0.041152263374485604,
+            "tv_off_target": 0.061728395061728406,
+            "control_max": 0.061728395061728406,
+            "rho_selective": 0.8666666666666661,
+            "rival_tv_loss": 0.05044297954572246,
+            "complexity_penalty": 0.0008333333333333334,
+            "penalized_rival_loss": 0.05127631287905579,
+            "rival_parameter_count": 16,
+            "rival_training_entropy_bits": 1.798698953672214,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+            "strongest_rival_memory_depth": 1,
+            "rival_suite_min_penalized_loss": 0.05127631287905579,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.05044297954572246,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.05127631287905579,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.798698953672214
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.05743656283710019,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.060769896170433525,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.7941500691133228
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.10600466019829388,
+              "complexity_penalty": 0.011041666666666667,
+              "penalized_rival_loss": 0.11704632686496055,
+              "rival_parameter_count": 212,
+              "rival_training_entropy_bits": 1.7950919397569343
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.4156378600823045,
+              "B": 0.3374485596707819,
+              "C": 0.1111111111111111,
+              "D": 0.13580246913580246
+            },
+            "targeted_post": {
+              "A": 0.3991769547325103,
+              "B": 0.35390946502057613,
+              "C": 0.14814814814814814,
+              "D": 0.09876543209876543
+            },
+            "sham_post": {
+              "A": 0.43209876543209874,
+              "B": 0.3333333333333333,
+              "C": 0.13580246913580246,
+              "D": 0.09876543209876543
+            },
+            "off_target_post": {
+              "A": 0.3662551440329218,
+              "B": 0.32510288065843623,
+              "C": 0.15637860082304528,
+              "D": 0.1522633744855967
+            }
+          }
+        },
+        "reward_bookkeeping_negative_control": {
+          "scenario": "reward_bookkeeping_negative_control",
+          "verdict": "support_rule_not_satisfied",
+          "support_rule_satisfied": false,
+          "metrics": {
+            "tv_targeted": 0.18106995884773663,
+            "tv_sham": 0.12757201646090535,
+            "tv_off_target": 0.12345679012345678,
+            "control_max": 0.12757201646090535,
+            "rho_selective": 1.4193548387096775,
+            "rival_tv_loss": 0.06959002940871024,
+            "complexity_penalty": 0.010416666666666668,
+            "penalized_rival_loss": 0.08000669607537692,
+            "rival_parameter_count": 200,
+            "rival_training_entropy_bits": 1.7283966470157464,
+            "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+            "strongest_rival_memory_depth": 3,
+            "rival_suite_min_penalized_loss": 0.08000669607537692,
+            "rival_suite_depths_tested": [
+              1,
+              2,
+              3
+            ]
+          },
+          "rival_suite": [
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "memory_depth": 1,
+              "rival_tv_loss": 0.15087574836565307,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.1517090816989864,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.7346875705921148
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "memory_depth": 2,
+              "rival_tv_loss": 0.1161851136206431,
+              "complexity_penalty": 0.003125,
+              "penalized_rival_loss": 0.1193101136206431,
+              "rival_parameter_count": 60,
+              "rival_training_entropy_bits": 1.7346575925310979
+            },
+            {
+              "id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "memory_depth": 3,
+              "rival_tv_loss": 0.06959002940871024,
+              "complexity_penalty": 0.010416666666666668,
+              "penalized_rival_loss": 0.08000669607537692,
+              "rival_parameter_count": 200,
+              "rival_training_entropy_bits": 1.7283966470157464
+            }
+          ],
+          "distributions": {
+            "baseline": {
+              "A": 0.4773662551440329,
+              "B": 0.3004115226337449,
+              "C": 0.11522633744855967,
+              "D": 0.10699588477366255
+            },
+            "targeted_post": {
+              "A": 0.3950617283950617,
+              "B": 0.20164609053497942,
+              "C": 0.22633744855967078,
+              "D": 0.17695473251028807
+            },
+            "sham_post": {
+              "A": 0.43209876543209874,
+              "B": 0.21810699588477367,
+              "C": 0.18518518518518517,
+              "D": 0.1646090534979424
+            },
+            "off_target_post": {
+              "A": 0.48148148148148145,
+              "B": 0.17695473251028807,
+              "C": 0.15637860082304528,
+              "D": 0.18518518518518517
+            }
+          }
+        }
+      },
+      "control_summary": {
+        "positive_scenario": "qicn_seeded_positive",
+        "controls_total": 5,
+        "controls_passed": 5,
+        "controls_failed": 0,
+        "invalid_controls_rejected": 0,
+        "destruction_risk": false
+      },
+      "trace_bundle_sha256": "bd23b1396571114d18092c629c346520a55309a0c9fe3e0f1169474d6893daf4"
+    }
+  },
   "scenario_results": {
     "qicn_seeded_positive": {
       "scenario": "qicn_seeded_positive",
@@ -87,16 +1319,53 @@
       "support_rule_satisfied": true,
       "metrics": {
         "tv_targeted": 0.48559670781893,
-        "tv_sham": 0.03703703703703702,
+        "tv_sham": 0.06584362139917696,
         "tv_off_target": 0.16049382716049382,
         "control_max": 0.16049382716049382,
         "rho_selective": 3.0256410256410255,
-        "rival_tv_loss": 0.49976717441982454,
-        "complexity_penalty": 0.0008333333333333334,
-        "penalized_rival_loss": 0.5006005077531579,
-        "rival_parameter_count": 16,
-        "rival_training_entropy_bits": 1.805541104293273
+        "rival_tv_loss": 0.424421855322755,
+        "complexity_penalty": 0.010625,
+        "penalized_rival_loss": 0.435046855322755,
+        "rival_parameter_count": 204,
+        "rival_training_entropy_bits": 1.8086822278031254,
+        "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+        "strongest_rival_memory_depth": 3,
+        "rival_suite_min_penalized_loss": 0.435046855322755,
+        "rival_suite_depths_tested": [
+          1,
+          2,
+          3
+        ]
       },
+      "rival_suite": [
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth1",
+          "memory_depth": 1,
+          "rival_tv_loss": 0.49976717441982454,
+          "complexity_penalty": 0.0008333333333333334,
+          "penalized_rival_loss": 0.5006005077531579,
+          "rival_parameter_count": 16,
+          "rival_training_entropy_bits": 1.805541104293273
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth2",
+          "memory_depth": 2,
+          "rival_tv_loss": 0.45079716303842265,
+          "complexity_penalty": 0.003125,
+          "penalized_rival_loss": 0.45392216303842264,
+          "rival_parameter_count": 60,
+          "rival_training_entropy_bits": 1.8071259792393515
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth3",
+          "memory_depth": 3,
+          "rival_tv_loss": 0.424421855322755,
+          "complexity_penalty": 0.010625,
+          "penalized_rival_loss": 0.435046855322755,
+          "rival_parameter_count": 204,
+          "rival_training_entropy_bits": 1.8086822278031254
+        }
+      ],
       "distributions": {
         "baseline": {
           "A": 0.37448559670781895,
@@ -111,22 +1380,16 @@
           "D": 0.16872427983539096
         },
         "sham_post": {
-          "A": 0.3662551440329218,
-          "B": 0.3497942386831276,
-          "C": 0.14814814814814814,
-          "D": 0.13580246913580246
+          "A": 0.35390946502057613,
+          "B": 0.3333333333333333,
+          "C": 0.16049382716049382,
+          "D": 0.1522633744855967
         },
         "off_target_post": {
           "A": 0.35802469135802467,
           "B": 0.2345679012345679,
           "C": 0.1728395061728395,
           "D": 0.2345679012345679
-        },
-        "trace_memory_rival_prediction": {
-          "A": 0.3628988350931202,
-          "B": 0.40435805126086066,
-          "C": 0.08466689276267278,
-          "D": 0.1480762208833462
         }
       }
     },
@@ -135,23 +1398,60 @@
       "verdict": "support_rule_not_satisfied",
       "support_rule_satisfied": false,
       "metrics": {
-        "tv_targeted": 0.04115226337448562,
-        "tv_sham": 0.06584362139917693,
-        "tv_off_target": 0.08641975308641976,
-        "control_max": 0.08641975308641976,
-        "rho_selective": 0.4761904761904764,
-        "rival_tv_loss": 0.04423935468479717,
-        "complexity_penalty": 0.0008333333333333334,
-        "penalized_rival_loss": 0.045072688018130504,
-        "rival_parameter_count": 16,
-        "rival_training_entropy_bits": 1.9821776072145367
+        "tv_targeted": 0.13580246913580246,
+        "tv_sham": 0.11111111111111115,
+        "tv_off_target": 0.12345679012345678,
+        "control_max": 0.12345679012345678,
+        "rho_selective": 1.1,
+        "rival_tv_loss": 0.06902043065707127,
+        "complexity_penalty": 0.012083333333333335,
+        "penalized_rival_loss": 0.0811037639904046,
+        "rival_parameter_count": 232,
+        "rival_training_entropy_bits": 1.9171093952572609,
+        "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+        "strongest_rival_memory_depth": 3,
+        "rival_suite_min_penalized_loss": 0.0811037639904046,
+        "rival_suite_depths_tested": [
+          1,
+          2,
+          3
+        ]
       },
+      "rival_suite": [
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth1",
+          "memory_depth": 1,
+          "rival_tv_loss": 0.13045237765221368,
+          "complexity_penalty": 0.0008333333333333334,
+          "penalized_rival_loss": 0.131285710985547,
+          "rival_parameter_count": 16,
+          "rival_training_entropy_bits": 1.9196729954632297
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth2",
+          "memory_depth": 2,
+          "rival_tv_loss": 0.10677173682651651,
+          "complexity_penalty": 0.0033333333333333335,
+          "penalized_rival_loss": 0.11010507015984984,
+          "rival_parameter_count": 64,
+          "rival_training_entropy_bits": 1.9167869429821431
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth3",
+          "memory_depth": 3,
+          "rival_tv_loss": 0.06902043065707127,
+          "complexity_penalty": 0.012083333333333335,
+          "penalized_rival_loss": 0.0811037639904046,
+          "rival_parameter_count": 232,
+          "rival_training_entropy_bits": 1.9171093952572609
+        }
+      ],
       "distributions": {
         "baseline": {
-          "A": 0.2551440329218107,
-          "B": 0.2222222222222222,
-          "C": 0.20987654320987653,
-          "D": 0.31275720164609055
+          "A": 0.37448559670781895,
+          "B": 0.27983539094650206,
+          "C": 0.1646090534979424,
+          "D": 0.18106995884773663
         },
         "targeted_post": {
           "A": 0.29218106995884774,
@@ -170,12 +1470,6 @@
           "B": 0.29218106995884774,
           "C": 0.22633744855967078,
           "D": 0.23045267489711935
-        },
-        "trace_memory_rival_prediction": {
-          "A": 0.25258387819218947,
-          "B": 0.2216952856415319,
-          "C": 0.21468990137761182,
-          "D": 0.31103093478866684
         }
       }
     },
@@ -184,23 +1478,60 @@
       "verdict": "support_rule_not_satisfied",
       "support_rule_satisfied": false,
       "metrics": {
-        "tv_targeted": 0.03703703703703706,
-        "tv_sham": 0.057613168724279865,
-        "tv_off_target": 0.05761316872427984,
-        "control_max": 0.057613168724279865,
-        "rho_selective": 0.642857142857143,
-        "rival_tv_loss": 0.035622253072751284,
-        "complexity_penalty": 0.0008333333333333334,
-        "penalized_rival_loss": 0.036455586406084615,
-        "rival_parameter_count": 16,
-        "rival_training_entropy_bits": 1.958933666397467
+        "tv_targeted": 0.17695473251028807,
+        "tv_sham": 0.14814814814814814,
+        "tv_off_target": 0.20987654320987653,
+        "control_max": 0.20987654320987653,
+        "rho_selective": 0.8431372549019608,
+        "rival_tv_loss": 0.06603640817759548,
+        "complexity_penalty": 0.010625,
+        "penalized_rival_loss": 0.07666140817759548,
+        "rival_parameter_count": 204,
+        "rival_training_entropy_bits": 1.8111197958697103,
+        "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+        "strongest_rival_memory_depth": 3,
+        "rival_suite_min_penalized_loss": 0.07666140817759548,
+        "rival_suite_depths_tested": [
+          1,
+          2,
+          3
+        ]
       },
+      "rival_suite": [
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth1",
+          "memory_depth": 1,
+          "rival_tv_loss": 0.16047871958147328,
+          "complexity_penalty": 0.0008333333333333334,
+          "penalized_rival_loss": 0.1613120529148066,
+          "rival_parameter_count": 16,
+          "rival_training_entropy_bits": 1.8079042517744164
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth2",
+          "memory_depth": 2,
+          "rival_tv_loss": 0.10522287433815472,
+          "complexity_penalty": 0.0033333333333333335,
+          "penalized_rival_loss": 0.10855620767148805,
+          "rival_parameter_count": 64,
+          "rival_training_entropy_bits": 1.8092293944623523
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth3",
+          "memory_depth": 3,
+          "rival_tv_loss": 0.06603640817759548,
+          "complexity_penalty": 0.010625,
+          "penalized_rival_loss": 0.07666140817759548,
+          "rival_parameter_count": 204,
+          "rival_training_entropy_bits": 1.8111197958697103
+        }
+      ],
       "distributions": {
         "baseline": {
-          "A": 0.2222222222222222,
-          "B": 0.345679012345679,
-          "C": 0.25102880658436216,
-          "D": 0.18106995884773663
+          "A": 0.35802469135802467,
+          "B": 0.39094650205761317,
+          "C": 0.1440329218106996,
+          "D": 0.10699588477366255
         },
         "targeted_post": {
           "A": 0.25102880658436216,
@@ -219,12 +1550,6 @@
           "B": 0.3045267489711934,
           "C": 0.2345679012345679,
           "D": 0.22633744855967078
-        },
-        "trace_memory_rival_prediction": {
-          "A": 0.2212501019999715,
-          "B": 0.3453058514701117,
-          "C": 0.24998718349564364,
-          "D": 0.1834568630342731
         }
       }
     },
@@ -233,23 +1558,60 @@
       "verdict": "support_rule_not_satisfied",
       "support_rule_satisfied": false,
       "metrics": {
-        "tv_targeted": 0.07818930041152265,
-        "tv_sham": 0.04526748971193416,
-        "tv_off_target": 0.053497942386831254,
-        "control_max": 0.053497942386831254,
-        "rho_selective": 1.4615384615384626,
-        "rival_tv_loss": 0.06645585554847949,
-        "complexity_penalty": 0.0008333333333333334,
-        "penalized_rival_loss": 0.06728918888181283,
-        "rival_parameter_count": 16,
-        "rival_training_entropy_bits": 1.995178612568498
+        "tv_targeted": 0.25925925925925924,
+        "tv_sham": 0.2263374485596708,
+        "tv_off_target": 0.2674897119341564,
+        "control_max": 0.2674897119341564,
+        "rho_selective": 0.9692307692307691,
+        "rival_tv_loss": 0.13294280468561243,
+        "complexity_penalty": 0.011041666666666667,
+        "penalized_rival_loss": 0.1439844713522791,
+        "rival_parameter_count": 212,
+        "rival_training_entropy_bits": 1.7924202984834703,
+        "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+        "strongest_rival_memory_depth": 3,
+        "rival_suite_min_penalized_loss": 0.1439844713522791,
+        "rival_suite_depths_tested": [
+          1,
+          2,
+          3
+        ]
       },
+      "rival_suite": [
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth1",
+          "memory_depth": 1,
+          "rival_tv_loss": 0.2308231723240795,
+          "complexity_penalty": 0.0008333333333333334,
+          "penalized_rival_loss": 0.23165650565741283,
+          "rival_parameter_count": 16,
+          "rival_training_entropy_bits": 1.7966108708570288
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth2",
+          "memory_depth": 2,
+          "rival_tv_loss": 0.1766541060822391,
+          "complexity_penalty": 0.0033333333333333335,
+          "penalized_rival_loss": 0.17998743941557244,
+          "rival_parameter_count": 64,
+          "rival_training_entropy_bits": 1.7984166834555668
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth3",
+          "memory_depth": 3,
+          "rival_tv_loss": 0.13294280468561243,
+          "complexity_penalty": 0.011041666666666667,
+          "penalized_rival_loss": 0.1439844713522791,
+          "rival_parameter_count": 212,
+          "rival_training_entropy_bits": 1.7924202984834703
+        }
+      ],
       "distributions": {
         "baseline": {
-          "A": 0.2674897119341564,
-          "B": 0.24691358024691357,
-          "C": 0.2674897119341564,
-          "D": 0.21810699588477367
+          "A": 0.39094650205761317,
+          "B": 0.3662551440329218,
+          "C": 0.13580246913580246,
+          "D": 0.10699588477366255
         },
         "targeted_post": {
           "A": 0.23045267489711935,
@@ -268,12 +1630,6 @@
           "B": 0.23868312757201646,
           "C": 0.23868312757201646,
           "D": 0.2716049382716049
-        },
-        "trace_memory_rival_prediction": {
-          "A": 0.26023121940547533,
-          "B": 0.25522866050185744,
-          "C": 0.26301475959979426,
-          "D": 0.22152536049287294
         }
       }
     },
@@ -291,8 +1647,45 @@
         "complexity_penalty": 0.0008333333333333334,
         "penalized_rival_loss": 0.06254581211519014,
         "rival_parameter_count": 16,
-        "rival_training_entropy_bits": 1.8756222264237041
+        "rival_training_entropy_bits": 1.8756222264237041,
+        "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+        "strongest_rival_memory_depth": 1,
+        "rival_suite_min_penalized_loss": 0.06254581211519014,
+        "rival_suite_depths_tested": [
+          1,
+          2,
+          3
+        ]
       },
+      "rival_suite": [
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth1",
+          "memory_depth": 1,
+          "rival_tv_loss": 0.0617124787818568,
+          "complexity_penalty": 0.0008333333333333334,
+          "penalized_rival_loss": 0.06254581211519014,
+          "rival_parameter_count": 16,
+          "rival_training_entropy_bits": 1.8756222264237041
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth2",
+          "memory_depth": 2,
+          "rival_tv_loss": 0.08071029690976753,
+          "complexity_penalty": 0.0033333333333333335,
+          "penalized_rival_loss": 0.08404363024310085,
+          "rival_parameter_count": 64,
+          "rival_training_entropy_bits": 1.8772957205225205
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth3",
+          "memory_depth": 3,
+          "rival_tv_loss": 0.10776523319678652,
+          "complexity_penalty": 0.011666666666666667,
+          "penalized_rival_loss": 0.11943189986345319,
+          "rival_parameter_count": 224,
+          "rival_training_entropy_bits": 1.8732602557722051
+        }
+      ],
       "distributions": {
         "baseline": {
           "A": 0.34156378600823045,
@@ -317,12 +1710,6 @@
           "B": 0.35390946502057613,
           "C": 0.13580246913580246,
           "D": 0.15637860082304528
-        },
-        "trace_memory_rival_prediction": {
-          "A": 0.34236829211967396,
-          "B": 0.3546211342548758,
-          "C": 0.15970523732892192,
-          "D": 0.14330533629652834
         }
       }
     },
@@ -331,23 +1718,60 @@
       "verdict": "support_rule_not_satisfied",
       "support_rule_satisfied": false,
       "metrics": {
-        "tv_targeted": 0.05761316872427984,
-        "tv_sham": 0.04115226337448562,
-        "tv_off_target": 0.020576131687242816,
-        "control_max": 0.04115226337448562,
-        "rho_selective": 1.3999999999999992,
-        "rival_tv_loss": 0.06499487830242304,
+        "tv_targeted": 0.1234567901234568,
+        "tv_sham": 0.13580246913580246,
+        "tv_off_target": 0.14814814814814814,
+        "control_max": 0.14814814814814814,
+        "rho_selective": 0.8333333333333335,
+        "rival_tv_loss": 0.11559824460653628,
         "complexity_penalty": 0.0008333333333333334,
-        "penalized_rival_loss": 0.06582821163575638,
+        "penalized_rival_loss": 0.11643157793986962,
         "rival_parameter_count": 16,
-        "rival_training_entropy_bits": 1.890546072474992
+        "rival_training_entropy_bits": 1.8802244306884022,
+        "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+        "strongest_rival_memory_depth": 1,
+        "rival_suite_min_penalized_loss": 0.11643157793986962,
+        "rival_suite_depths_tested": [
+          1,
+          2,
+          3
+        ]
       },
+      "rival_suite": [
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth1",
+          "memory_depth": 1,
+          "rival_tv_loss": 0.11559824460653628,
+          "complexity_penalty": 0.0008333333333333334,
+          "penalized_rival_loss": 0.11643157793986962,
+          "rival_parameter_count": 16,
+          "rival_training_entropy_bits": 1.8802244306884022
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth2",
+          "memory_depth": 2,
+          "rival_tv_loss": 0.13394339908112063,
+          "complexity_penalty": 0.0033333333333333335,
+          "penalized_rival_loss": 0.13727673241445396,
+          "rival_parameter_count": 64,
+          "rival_training_entropy_bits": 1.8821834272755895
+        },
+        {
+          "id": "RIVAL-TRACE-MEMORY-01-depth3",
+          "memory_depth": 3,
+          "rival_tv_loss": 0.14991019406815215,
+          "complexity_penalty": 0.012083333333333335,
+          "penalized_rival_loss": 0.16199352740148548,
+          "rival_parameter_count": 232,
+          "rival_training_entropy_bits": 1.8831115710516866
+        }
+      ],
       "distributions": {
         "baseline": {
-          "A": 0.42386831275720166,
-          "B": 0.16049382716049382,
-          "C": 0.205761316872428,
-          "D": 0.20987654320987653
+          "A": 0.3786008230452675,
+          "B": 0.3168724279835391,
+          "C": 0.16872427983539096,
+          "D": 0.13580246913580246
         },
         "targeted_post": {
           "A": 0.43621399176954734,
@@ -366,12 +1790,6 @@
           "B": 0.16872427983539096,
           "C": 0.18518518518518517,
           "D": 0.21810699588477367
-        },
-        "trace_memory_rival_prediction": {
-          "A": 0.41178302325377336,
-          "B": 0.16519740708577887,
-          "C": 0.21496802715718033,
-          "D": 0.20805154250326735
         }
       }
     }
@@ -386,8 +1804,9 @@
   },
   "quarantine_required": false,
   "artifact_hashes": {
-    "freeze_sha256": "d841423547c1d99bc6de5be3d586497d1f71410fba6da49d9cac6dd577dd9a5e",
-    "trace_bundle_sha256": "a1e3b04a22c36f27d22c2245011a817529efb2d3c14a9b924e3fd9d8b575c08f",
-    "scenario_results_sha256": "a545f68cfcc436fb08c3a5eb310d6aef52f0658b33e08902d2900779f24f8cdc"
+    "freeze_sha256": "527ed0e1bc171e8e57762ea1dd30fec9c512738ee0a1d74a342b2f0c0fd58c89",
+    "seed_results_sha256": "38958b3247a64504724e7c40d6d1fae52af888b7b14dfe4cee74d651ab7f5968",
+    "primary_trace_bundle_sha256": "c89a9dd8db06396213cc89d237c24ec46c8dac27b7e2fcad1cc58d095bf535c5",
+    "holdout_trace_bundle_sha256": "bd23b1396571114d18092c629c346520a55309a0c9fe3e0f1169474d6893daf4"
   }
 }

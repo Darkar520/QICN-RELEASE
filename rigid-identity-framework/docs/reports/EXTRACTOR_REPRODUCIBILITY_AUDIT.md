@@ -16,7 +16,7 @@ npm run audit:extractor-reproducibility
 
 | Surface | Committed registry | Fresh global extraction | Registry minus extraction |
 | --- | --- | --- | --- |
-| Formal registry entries | 696 | 696 | 0 |
+| Formal registry entries | 699 | 699 | 0 |
 | Macro registry entries | 377 | 377 | 0 |
 
 ## Macro Owner Comparison

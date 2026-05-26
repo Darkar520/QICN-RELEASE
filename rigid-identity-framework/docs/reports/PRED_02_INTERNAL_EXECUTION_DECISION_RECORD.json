@@ -5,51 +5,191 @@
   "date_executed": "2026-05-26",
   "execution_class": "internal_synthetic_execution",
   "status": "executed_internal_synthetic",
-  "verdict": "internal_synthetic_support_with_boundary_control_passed",
+  "verdict": "internal_synthetic_support_with_negative_controls_passed",
   "boundary": "Internal synthetic invariant-ablation execution only; no empirical support or external adjudication.",
   "freeze": {
-    "schema_version": "1.0.0",
+    "schema_version": "2.0.0",
     "prediction_id": "PRED-02",
-    "freeze_id": "pred-02-invariant-rupture-freeze-v1",
+    "freeze_id": "pred-02-invariant-rupture-freeze-v2",
     "date_frozen": "2026-05-26",
     "status": "frozen_for_internal_synthetic_execution",
     "execution_class": "internal_synthetic_execution",
-    "boundary": "This freeze tests an internal synthetic invariant-ablation harness. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "boundary": "This freeze tests an internal synthetic invariant-ablation simulator with seeded invariant vectors and negative controls. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "seed": "pred02_seed_v2",
+    "target_invariant": "Iint",
     "delta_amb": 0.05,
     "rho_rupture": 0.5,
+    "certification_weights": {
+      "Iper": 0.14,
+      "Iri": 0.18,
+      "Iint": 0.22,
+      "Icont": 0.14,
+      "Idiff": 0.14,
+      "Ileg": 0.18
+    },
+    "scenario_manifest": [
+      {
+        "id": "invariant_loss_positive",
+        "role": "positive",
+        "ablation_severity": 0.68,
+        "invariant_loss_verified": true
+      },
+      {
+        "id": "boundary_ambiguous_control",
+        "role": "negative_control",
+        "ablation_severity": 0.04,
+        "invariant_loss_verified": true
+      },
+      {
+        "id": "sham_ablation_control",
+        "role": "negative_control",
+        "ablation_severity": 0,
+        "invariant_loss_verified": false
+      },
+      {
+        "id": "noise_only_control",
+        "role": "negative_control",
+        "ablation_severity": 0.03,
+        "invariant_loss_verified": false
+      }
+    ],
     "support_rule": [
+      "invariant_loss_verified === true",
       "certification_drop > delta_amb",
       "pre_ablation_headroom > delta_amb",
       "relative_rupture >= rho_rupture"
     ],
-    "weakening_rule": "If certification_drop is positive but <= delta_amb, or pre_ablation_headroom <= delta_amb, the result is weakening or boundary-ambiguous, not support.",
+    "negative_control_rule": "Every negative control must fail the same support rule.",
     "destruction_rule": "If certification_post >= certification_pre after verified invariant loss, the invariant-rupture claim is a destruction candidate.",
     "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the rupture harness."
   },
   "panel_results": {
     "invariant_loss_positive": {
-      "certification_pre": 0.82,
-      "certification_post": 0.24,
-      "pre_ablation_headroom": 0.17,
+      "pre_invariant_vector": {
+        "Iper": 0.7253559244447387,
+        "Iri": 0.712061194924172,
+        "Iint": 0.6703742115478962,
+        "Icont": 0.742270858043339,
+        "Idiff": 0.6326922027789987,
+        "Ileg": 0.699649896165356
+      },
+      "post_invariant_vector": {
+        "Iper": 0.6937129114751703,
+        "Iri": 0.6832182768589816,
+        "Iint": 0,
+        "Icont": 0.7110698479364626,
+        "Idiff": 0.6043140953124501,
+        "Ileg": 0.6704304828911088
+      },
+      "certification_pre": 0.695634980874043,
+      "certification_post": 0.524930336416388,
+      "pre_ablation_headroom": 0.6203742115478962,
+      "target_invariant_drop": 0.6703742115478962,
       "invariant_loss_verified": true,
-      "certification_drop": 0.58,
-      "relative_rupture": 0.7073170731707317,
+      "ablation_severity": 0.68,
+      "target_invariant": "Iint",
+      "certification_drop": 0.17070464445765499,
+      "relative_rupture": 1,
       "verdict": "support_rule_satisfied",
       "support_rule_satisfied": true
     },
     "boundary_ambiguous_control": {
-      "certification_pre": 0.54,
-      "certification_post": 0.5,
-      "pre_ablation_headroom": 0.03,
+      "pre_invariant_vector": {
+        "Iper": 0.6931019576219841,
+        "Iri": 0.6967638188856653,
+        "Iint": 0.6666757530579343,
+        "Icont": 0.7102724293316715,
+        "Idiff": 0.6912677404121494,
+        "Ileg": 0.7116841576388105
+      },
+      "post_invariant_vector": {
+        "Iper": 0.6942379596401936,
+        "Iri": 0.6974701368544249,
+        "Iint": 0.6278433543327263,
+        "Icont": 0.7136257069712504,
+        "Idiff": 0.6917422417822292,
+        "Ileg": 0.7070890028975904
+      },
+      "certification_pre": 0.693439199278364,
+      "certification_post": 0.6848910102836768,
+      "pre_ablation_headroom": 0.6166757530579342,
+      "target_invariant_drop": 0.03883239872520794,
       "invariant_loss_verified": true,
-      "certification_drop": 0.040000000000000036,
-      "relative_rupture": 0.07407407407407414,
+      "ablation_severity": 0.04,
+      "target_invariant": "Iint",
+      "certification_drop": 0.008548188994687123,
+      "relative_rupture": 0.05824780419430283,
+      "verdict": "weakening_or_boundary_ambiguous",
+      "support_rule_satisfied": false
+    },
+    "sham_ablation_control": {
+      "pre_invariant_vector": {
+        "Iper": 0.7214007786940783,
+        "Iri": 0.7123952024267055,
+        "Iint": 0.6703865885059349,
+        "Icont": 0.764300603910815,
+        "Idiff": 0.6942960403161123,
+        "Ileg": 0.726578755727969
+      },
+      "post_invariant_vector": {
+        "Iper": 0.725570830637589,
+        "Iri": 0.7076681379508227,
+        "Iint": 0.6731911883200519,
+        "Icont": 0.7679190426971764,
+        "Idiff": 0.6957446373952552,
+        "Ileg": 0.7313737493846565
+      },
+      "certification_pre": 0.7117000011480878,
+      "certification_post": 0.7136224326530005,
+      "pre_ablation_headroom": 0.6203865885059349,
+      "target_invariant_drop": -0.0028045998141169592,
+      "invariant_loss_verified": false,
+      "ablation_severity": 0,
+      "target_invariant": "Iint",
+      "certification_drop": -0.0019224315049126695,
+      "relative_rupture": -0.004183555969351153,
+      "verdict": "no_support",
+      "support_rule_satisfied": false
+    },
+    "noise_only_control": {
+      "pre_invariant_vector": {
+        "Iper": 0.726207801529672,
+        "Iri": 0.7285272236843593,
+        "Iint": 0.680605291626416,
+        "Icont": 0.7149076431198046,
+        "Idiff": 0.6501656826003454,
+        "Ileg": 0.7240212448243982
+      },
+      "post_invariant_vector": {
+        "Iper": 0.7248517021734268,
+        "Iri": 0.7295048633601516,
+        "Iint": 0.6551579803321509,
+        "Icont": 0.7159312595834024,
+        "Idiff": 0.6492954211739822,
+        "Ileg": 0.7224852555000223
+      },
+      "certification_pre": 0.703971246304363,
+      "certification_post": 0.6981039506782181,
+      "pre_ablation_headroom": 0.630605291626416,
+      "target_invariant_drop": 0.02544731129426514,
+      "invariant_loss_verified": false,
+      "ablation_severity": 0.03,
+      "target_invariant": "Iint",
+      "certification_drop": 0.005867295626144964,
+      "relative_rupture": 0.037389235151925854,
       "verdict": "weakening_or_boundary_ambiguous",
       "support_rule_satisfied": false
     }
   },
+  "control_summary": {
+    "positive_scenario": "invariant_loss_positive",
+    "controls_total": 3,
+    "controls_passed": 3,
+    "controls_failed": 0,
+    "destruction_risk": false
+  },
   "artifact_hashes": {
-    "freeze_sha256": "8151b49085ad802e948355e5333d7d95561e67ee6fa927f2b1d6343496500fb9",
-    "panel_results_sha256": "4e16c29550af8ed946312017b42c2592ae98a9e8b1bfaa86cb5285b19e47aa0e"
+    "freeze_sha256": "b345b158c7ae26d7a0d62ceb18a7bd4edd7eaebb947dd3d25ce838d02d78088c",
+    "panel_results_sha256": "be3bff69a6345e5625e19936a43928aa838533e96a4a231a9177a518a3c64a93"
   }
 }

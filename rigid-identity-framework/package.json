@@ -25,6 +25,7 @@
     "test:external-trace-generator": "node scripts/test-external-trace-generator.js",
     "cleanroom:pred-ext-01": "node scripts/run-pred-ext-01-cleanroom.js",
     "review:cleanroom-pred-ext-01": "node scripts/cleanroom-reviewer-quarantine.js",
+    "audit:generator-independence": "node scripts/audit-generator-independence.js",
     "execute:pred-02": "node scripts/run-pred-02-execution.js",
     "execute:pred-04c": "node scripts/run-pred-04c-execution.js",
     "execute:pred-11": "node scripts/run-pred-11-execution.js",

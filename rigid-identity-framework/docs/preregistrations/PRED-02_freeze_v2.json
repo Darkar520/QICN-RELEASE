@@ -1,0 +1,36 @@
+{
+  "schema_version": "2.0.0",
+  "prediction_id": "PRED-02",
+  "freeze_id": "pred-02-invariant-rupture-freeze-v2",
+  "date_frozen": "2026-05-26",
+  "status": "frozen_for_internal_synthetic_execution",
+  "execution_class": "internal_synthetic_execution",
+  "boundary": "This freeze tests an internal synthetic invariant-ablation simulator with seeded invariant vectors and negative controls. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "seed": "pred02_seed_v2",
+  "target_invariant": "Iint",
+  "delta_amb": 0.05,
+  "rho_rupture": 0.5,
+  "certification_weights": {
+    "Iper": 0.14,
+    "Iri": 0.18,
+    "Iint": 0.22,
+    "Icont": 0.14,
+    "Idiff": 0.14,
+    "Ileg": 0.18
+  },
+  "scenario_manifest": [
+    { "id": "invariant_loss_positive", "role": "positive", "ablation_severity": 0.68, "invariant_loss_verified": true },
+    { "id": "boundary_ambiguous_control", "role": "negative_control", "ablation_severity": 0.04, "invariant_loss_verified": true },
+    { "id": "sham_ablation_control", "role": "negative_control", "ablation_severity": 0.0, "invariant_loss_verified": false },
+    { "id": "noise_only_control", "role": "negative_control", "ablation_severity": 0.03, "invariant_loss_verified": false }
+  ],
+  "support_rule": [
+    "invariant_loss_verified === true",
+    "certification_drop > delta_amb",
+    "pre_ablation_headroom > delta_amb",
+    "relative_rupture >= rho_rupture"
+  ],
+  "negative_control_rule": "Every negative control must fail the same support rule.",
+  "destruction_rule": "If certification_post >= certification_pre after verified invariant loss, the invariant-rupture claim is a destruction candidate.",
+  "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the rupture harness."
+}

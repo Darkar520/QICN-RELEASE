@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1.0",
   "date": "2026-05-26",
-  "status": "materialized_with_v16_factorization_burden_spec",
-  "boundary": "This overlay has been materialized through the source-aware AUDIT_OVERRIDES path in scripts/registry-lib.js and regenerated into registry/theorems.jsonl. It does not prove I_int; it records that prop:integration-transfer remains an open formal burden until the factorization-triviality lemma is supplied and independently reviewed.",
+  "status": "materialized_with_v17_conditional_factorization_theorem",
+  "boundary": "This overlay has been materialized through the source-aware AUDIT_OVERRIDES path in scripts/registry-lib.js and regenerated into registry/theorems.jsonl. FCR v17 proves a conditional factorization-triviality theorem under an explicit atomic-separator hypothesis, but it does not prove the unconditional Paper 5 transfer proposition until that atomicity hypothesis is derived from upstream commitments and independently reviewed.",
   "overlays": [
     {
       "target_id": "paper5:proposition:prop-integration-transfer",
@@ -13,15 +13,14 @@
       "materialized": true,
       "materialized_by": "scripts/registry-lib.js AUDIT_OVERRIDES",
       "recommended_claim_class": "conditional_consolidation_invariant",
-      "reason": "The current proposition argues verbally that exact admissible factorization would contradict rigidity, continuity, or intervention fidelity, but the admissible factorization class and disjunction-elimination proof are not yet typed as a standalone theorem.",
+      "reason": "FCR v17 closes the conditional theorem: atomic identity/history/response separators imply factorization triviality. The remaining burden is deriving separator atomicity from upstream rigidity, continuity, and intervention fidelity rather than assuming it.",
       "required_for_reupgrade": [
         "define admissible factorization category as in docs/reports/I_INT_FACTORIZATION_CATEGORY_SPEC.md",
         "define trivial up to admissible isomorphism without smuggling integration into the definition",
-        "prove that admissible systems and factorization morphisms form a category",
-        "prove that history and response preservation are functorial",
-        "prove that upstream rigidity, continuity, and intervention fidelity imply the strong faithfulness condition used in docs/reports/I_INT_FACTORIZATION_LEMMA_DRAFT.tex",
+        "treat paper5:theorem:thm-iint-faithful-factorization-triviality as a conditional theorem only",
+        "prove that upstream rigidity, continuity, and intervention fidelity imply atomicity of the operational separator family Theta_S",
         "rule out weakly coupled product counterexamples",
-        "refactor prop:integration-transfer to cite the completed lemma after human mathematical review"
+        "refactor prop:integration-transfer to cite both the atomicity derivation and the completed conditional theorem after human mathematical review"
       ],
       "blocked_actions": [
         "cite prop:integration-transfer as an independent proof of causal integration",

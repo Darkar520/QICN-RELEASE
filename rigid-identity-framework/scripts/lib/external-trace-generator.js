@@ -48,52 +48,72 @@ function generateWeightedTrace({ seed, traceLength, stateAlphabet, weights }) {
   return trace;
 }
 
-function distributionForScenario(kind, role) {
-  const base = { A: 0.38, B: 0.34, C: 0.15, D: 0.13 };
-  if (kind === "qicn_seeded_positive" && role === "targeted_post") return { A: 0.14, B: 0.16, C: 0.56, D: 0.14 };
-  if (kind === "qicn_seeded_positive" && role === "off_target_post") return { A: 0.35, B: 0.26, C: 0.17, D: 0.22 };
-  if (kind === "stochastic_noise_negative_control") return { A: 0.27, B: 0.26, C: 0.24, D: 0.23 };
-  if (kind === "memory_drift_negative_control") return { A: 0.23, B: 0.33, C: 0.25, D: 0.19 };
-  if (kind === "high_entropy_negative_control") return { A: 0.25, B: 0.25, C: 0.25, D: 0.25 };
-  if (kind === "reward_bookkeeping_negative_control") return { A: 0.42, B: 0.19, C: 0.18, D: 0.21 };
-  if (kind === "narrative_only_negative_control") return base;
-  return base;
+function defaultScenarioSpec() {
+  const baseline = { A: 0.38, B: 0.34, C: 0.15, D: 0.13 };
+  return {
+    id: "default_seeded_panel",
+    generative_model: "seeded_weighted_panel_v2",
+    role_models: {
+      baseline: { weights: baseline },
+      targeted_post: { weights: baseline },
+      sham_post: { weights: baseline },
+      off_target_post: { weights: baseline }
+    }
+  };
+}
+
+function validateWeights(weights, alphabet, label) {
+  if (!weights || typeof weights !== "object" || Array.isArray(weights)) {
+    throw new Error(`${label} must provide a weights object.`);
+  }
+  const unknown = Object.keys(weights).filter((state) => !alphabet.includes(state));
+  if (unknown.length > 0) throw new Error(`${label} has state(s) outside declared alphabet: ${unknown.join(", ")}`);
+  const total = alphabet.reduce((sum, state) => sum + (weights[state] || 0), 0);
+  if (total <= 0) throw new Error(`${label} weights must have positive total mass.`);
+}
+
+function roleWeightsFromSpec(scenarioSpec, role, alphabet) {
+  const spec = scenarioSpec || defaultScenarioSpec();
+  if (spec.generative_model && spec.generative_model !== "seeded_weighted_panel_v2") {
+    throw new Error(`Unsupported generative_model: ${spec.generative_model}`);
+  }
+  const roleModels = spec.role_models || {};
+  const model = roleModels[role] || roleModels.baseline;
+  if (!model) throw new Error(`Scenario ${spec.id || "unknown"} is missing role model for ${role}.`);
+  validateWeights(model.weights, alphabet, `${spec.id || "scenario"}.${role}`);
+  return model.weights;
 }
 
 function generateTracePanel({ seed, traceLength, stateAlphabet, scenarioSpec }) {
   if (!seed) throw new Error("seed is required.");
   if (!Number.isInteger(traceLength) || traceLength <= 0) throw new Error("traceLength must be positive integer.");
   if (!Array.isArray(stateAlphabet) || stateAlphabet.length === 0) throw new Error("stateAlphabet is required.");
-  const kind = scenarioSpec?.kind || "qicn_seeded_positive";
+  const spec = scenarioSpec || defaultScenarioSpec();
   const roles = ["baseline", "targeted_post", "sham_post", "off_target_post"];
   const panel = {};
   roles.forEach((role) => {
-    const roleForWeights =
-      kind === "qicn_seeded_positive"
-        ? role
-        : role === "baseline"
-          ? "baseline"
-          : "targeted_post";
     panel[role] = generateWeightedTrace({
-      seed: `${seed}:${kind}:${role}`,
+      seed: `${seed}:${spec.id || "anonymous"}:${role}`,
       traceLength,
       stateAlphabet,
-      weights: distributionForScenario(kind, roleForWeights)
+      weights: roleWeightsFromSpec(spec, role, stateAlphabet)
     });
   });
   return panel;
 }
 
-function validateGeneratorDeterminism(seed, traceLength, stateAlphabet, scenarioSpec = { kind: "qicn_seeded_positive" }) {
+function validateGeneratorDeterminism(seed, traceLength, stateAlphabet, scenarioSpec = defaultScenarioSpec()) {
   const first = generateTracePanel({ seed, traceLength, stateAlphabet, scenarioSpec });
   const second = generateTracePanel({ seed, traceLength, stateAlphabet, scenarioSpec });
   return JSON.stringify(first) === JSON.stringify(second);
 }
 
 module.exports = {
+  defaultScenarioSpec,
   generateTracePanel,
   generateWeightedTrace,
   mulberry32,
+  roleWeightsFromSpec,
   seedToUint32,
   validateGeneratorDeterminism
 };

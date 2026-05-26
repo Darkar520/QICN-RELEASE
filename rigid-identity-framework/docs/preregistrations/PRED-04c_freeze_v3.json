@@ -1,0 +1,26 @@
+{
+  "schema_version": "3.0.0",
+  "prediction_id": "PRED-04c",
+  "freeze_id": "pred-04c-cross-substrate-freeze-v3",
+  "date_frozen": "2026-05-26",
+  "status": "frozen_for_internal_synthetic_execution",
+  "execution_class": "internal_synthetic_execution",
+  "boundary": "This freeze tests an internal synthetic cross-substrate simulator with seeded latent invariant vectors and negative controls. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "seed": "pred04c_seed_v3",
+  "eps_equiv": 0.1,
+  "eps_invariant": 0.05,
+  "scenario_manifest": [
+    { "id": "cross_substrate_positive", "role": "positive", "left_noise": 0.008, "right_noise": 0.012, "force_class_disagreement": false },
+    { "id": "substrate_label_only_control", "role": "negative_control", "left_noise": 0.008, "right_noise": 0.012, "force_class_disagreement": true },
+    { "id": "non_equivalent_control", "role": "negative_control", "left_noise": 0.008, "right_noise": 0.18, "force_class_disagreement": false },
+    { "id": "invariant_drift_control", "role": "negative_control", "left_noise": 0.008, "right_noise": 0.09, "force_class_disagreement": false }
+  ],
+  "support_rule": [
+    "equiv_distance < eps_equiv",
+    "invariant_delta < eps_invariant",
+    "class_agreement === true"
+  ],
+  "negative_control_rule": "Every negative control must fail the same support rule.",
+  "destruction_rule": "If class_agreement is false despite equiv_distance < eps_equiv and invariant_delta < eps_invariant, cross-substrate preservation is a destruction candidate.",
+  "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the cross-substrate harness."
+}

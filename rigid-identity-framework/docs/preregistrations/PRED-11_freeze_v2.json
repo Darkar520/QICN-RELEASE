@@ -1,0 +1,27 @@
+{
+  "schema_version": "2.0.0",
+  "prediction_id": "PRED-11",
+  "freeze_id": "pred-11-integration-loss-freeze-v2",
+  "date_frozen": "2026-05-26",
+  "status": "frozen_for_internal_synthetic_execution",
+  "execution_class": "internal_synthetic_execution",
+  "boundary": "This freeze tests an internal synthetic integration-loss simulator with seeded pre/post profiles and negative controls. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "seed": "pred11_seed_v2",
+  "integration_loss_boundary": 0.5,
+  "complexity_preservation_epsilon": 0.02,
+  "certification_threshold": 0.5,
+  "scenario_manifest": [
+    { "id": "integration_loss_positive", "role": "positive", "integration_drop": 0.64, "complexity_delta": 0.008, "activity_delta": 0.01 },
+    { "id": "complexity_loss_control", "role": "negative_control", "integration_drop": 0.04, "complexity_delta": 0.21, "activity_delta": 0.03 },
+    { "id": "weak_integration_loss_control", "role": "negative_control", "integration_drop": 0.18, "complexity_delta": 0.008, "activity_delta": 0.01 },
+    { "id": "complexity_preserved_no_integration_loss_control", "role": "negative_control", "integration_drop": 0.02, "complexity_delta": 0.006, "activity_delta": 0.05 }
+  ],
+  "support_rule": [
+    "integration_drop >= integration_loss_boundary",
+    "complexity_delta <= complexity_preservation_epsilon",
+    "certification_post < certification_threshold"
+  ],
+  "negative_control_rule": "Every negative control must fail the same support rule.",
+  "destruction_rule": "If certification_post >= certification_threshold after verified integration loss and preserved complexity, the integration-loss claim is a destruction candidate.",
+  "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the integration-loss harness."
+}

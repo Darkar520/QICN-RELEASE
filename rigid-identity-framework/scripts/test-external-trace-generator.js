@@ -1,5 +1,6 @@
 const assert = require("assert");
 const {
+  defaultScenarioSpec,
   generateTracePanel,
   validateGeneratorDeterminism
 } = require("./lib/external-trace-generator");
@@ -16,19 +17,29 @@ function assertPanel(panel, alphabet, traceLength) {
 function run() {
   const alphabet = ["A", "B", "C", "D"];
   const traceLength = 240;
-  assert.ok(validateGeneratorDeterminism("cleanroom_seed_001", traceLength, alphabet));
+  const scenarioSpec = {
+    ...defaultScenarioSpec(),
+    id: "unit_test_panel",
+    role_models: {
+      baseline: { weights: { A: 0.4, B: 0.3, C: 0.2, D: 0.1 } },
+      targeted_post: { weights: { A: 0.1, B: 0.2, C: 0.6, D: 0.1 } },
+      sham_post: { weights: { A: 0.39, B: 0.31, C: 0.2, D: 0.1 } },
+      off_target_post: { weights: { A: 0.35, B: 0.3, C: 0.2, D: 0.15 } }
+    }
+  };
+  assert.ok(validateGeneratorDeterminism("cleanroom_seed_001", traceLength, alphabet, scenarioSpec));
   const panel = generateTracePanel({
     seed: "cleanroom_seed_001",
     traceLength,
     stateAlphabet: alphabet,
-    scenarioSpec: { kind: "qicn_seeded_positive" }
+    scenarioSpec
   });
   assertPanel(panel, alphabet, traceLength);
   const rerun = generateTracePanel({
     seed: "cleanroom_seed_001",
     traceLength,
     stateAlphabet: alphabet,
-    scenarioSpec: { kind: "qicn_seeded_positive" }
+    scenarioSpec
   });
   assert.deepStrictEqual(panel, rerun);
 

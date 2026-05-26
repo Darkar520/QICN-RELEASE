@@ -81,7 +81,11 @@ the toy runner does not treat short-trace variance or unseen states as
 evidential defeat. FCR v15 freezes those same values for the internal synthetic
 pilot, together with trace length `240`, state alphabet `A/B/C/D`,
 `penalized_loss_alpha = 0.05`, and `rival_loss_floor = 0.05`. They remain
-internal synthetic pilot parameters, not external adjudication parameters.
+internal synthetic pilot parameters, not external adjudication parameters. FCR
+v17 adds a stronger internal clean-room synthetic criterion: scenario models are
+declared in `PRED-EXT-01_freeze_v3.json`, the generator is generic over those
+models, a holdout seed is required, and the rival suite tests Markov depths
+`1`, `2`, and `3`.
 
 ### Support Condition
 
@@ -136,3 +140,11 @@ does not count as empirical support or external adjudication. The candidate
 remains blocked for external adjudication until a non-synthetic dataset,
 external threshold freeze, exclusion rules, independent adjudicator, and
 clean-room decision record exist.
+
+FCR v17 hardens that result against two adversarial objections. First, the
+generator no longer stores scenario-specific distribution branches; it reads
+generic role models from the freeze, and `npm run audit:generator-independence`
+checks that frozen scenario IDs do not leak into generator source. Second, the
+support rule is evaluated against trace-memory rivals with memory depth `1`,
+`2`, and `3`, and must pass both the primary seed and the holdout seed. This is
+stronger synthetic support, not empirical support.

@@ -1,58 +1,228 @@
 {
   "schema_version": "1.0.0",
   "prediction_id": "PRED-04c",
-  "run_id": "pred-04c-v2-internal-execution-001",
+  "run_id": "pred-04c-v3-internal-execution-001",
   "date_executed": "2026-05-26",
   "execution_class": "internal_synthetic_execution",
   "status": "executed_internal_synthetic",
-  "verdict": "internal_synthetic_support",
+  "verdict": "internal_synthetic_support_with_negative_controls_passed",
   "boundary": "Internal synthetic cross-substrate execution only; no empirical support or external adjudication.",
   "freeze": {
-    "schema_version": "2.0.0",
+    "schema_version": "3.0.0",
     "prediction_id": "PRED-04c",
-    "freeze_id": "pred-04c-cross-substrate-freeze-v2",
+    "freeze_id": "pred-04c-cross-substrate-freeze-v3",
     "date_frozen": "2026-05-26",
     "status": "frozen_for_internal_synthetic_execution",
     "execution_class": "internal_synthetic_execution",
-    "boundary": "This freeze tests an internal synthetic cross-substrate class-preservation harness. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "boundary": "This freeze tests an internal synthetic cross-substrate simulator with seeded latent invariant vectors and negative controls. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "seed": "pred04c_seed_v3",
     "eps_equiv": 0.1,
     "eps_invariant": 0.05,
+    "scenario_manifest": [
+      {
+        "id": "cross_substrate_positive",
+        "role": "positive",
+        "left_noise": 0.008,
+        "right_noise": 0.012,
+        "force_class_disagreement": false
+      },
+      {
+        "id": "substrate_label_only_control",
+        "role": "negative_control",
+        "left_noise": 0.008,
+        "right_noise": 0.012,
+        "force_class_disagreement": true
+      },
+      {
+        "id": "non_equivalent_control",
+        "role": "negative_control",
+        "left_noise": 0.008,
+        "right_noise": 0.18,
+        "force_class_disagreement": false
+      },
+      {
+        "id": "invariant_drift_control",
+        "role": "negative_control",
+        "left_noise": 0.008,
+        "right_noise": 0.09,
+        "force_class_disagreement": false
+      }
+    ],
     "support_rule": [
       "equiv_distance < eps_equiv",
       "invariant_delta < eps_invariant",
       "class_agreement === true"
     ],
+    "negative_control_rule": "Every negative control must fail the same support rule.",
     "destruction_rule": "If class_agreement is false despite equiv_distance < eps_equiv and invariant_delta < eps_invariant, cross-substrate preservation is a destruction candidate.",
     "anti_inflation_rule": "A positive internal synthetic run may be recorded only as internal_synthetic_support for the cross-substrate harness."
   },
   "result": {
-    "equiv_distance": 0.04,
-    "invariant_delta": 0.020000000000000018,
+    "scenario": "cross_substrate_positive",
+    "equiv_distance": 0.008638691718210103,
+    "invariant_delta": 0.012153049381449788,
     "class_agreement": true,
+    "class_labels": {
+      "profinite": "certified_candidate",
+      "sft": "certified_candidate"
+    },
     "substrate_label_rival_prediction": "divergence_by_substrate_label",
     "verdict": "support_rule_satisfied",
     "support_rule_satisfied": true,
     "invariant_vectors": {
       "profinite": {
-        "Iper": 0.72,
-        "Iri": 0.69,
-        "Iint": 0.66,
-        "Icont": 0.71,
-        "Idiff": 0.63,
-        "Ileg": 0.68
+        "Iper": 0.7209579800548963,
+        "Iri": 0.7293711856091394,
+        "Iint": 0.6760052252770401,
+        "Icont": 0.6939499159147963,
+        "Idiff": 0.6713302161642349,
+        "Ileg": 0.7317299814545549
       },
       "sft": {
-        "Iper": 0.7,
-        "Iri": 0.68,
-        "Iint": 0.64,
-        "Icont": 0.7,
-        "Idiff": 0.62,
-        "Ileg": 0.66
+        "Iper": 0.7144300358439796,
+        "Iri": 0.7172181362276896,
+        "Iint": 0.6640823166840709,
+        "Icont": 0.68727745143231,
+        "Idiff": 0.6793912838813848,
+        "Ileg": 0.729323124915827
       }
     }
   },
+  "scenario_results": {
+    "cross_substrate_positive": {
+      "scenario": "cross_substrate_positive",
+      "equiv_distance": 0.008638691718210103,
+      "invariant_delta": 0.012153049381449788,
+      "class_agreement": true,
+      "class_labels": {
+        "profinite": "certified_candidate",
+        "sft": "certified_candidate"
+      },
+      "substrate_label_rival_prediction": "divergence_by_substrate_label",
+      "verdict": "support_rule_satisfied",
+      "support_rule_satisfied": true,
+      "invariant_vectors": {
+        "profinite": {
+          "Iper": 0.7209579800548963,
+          "Iri": 0.7293711856091394,
+          "Iint": 0.6760052252770401,
+          "Icont": 0.6939499159147963,
+          "Idiff": 0.6713302161642349,
+          "Ileg": 0.7317299814545549
+        },
+        "sft": {
+          "Iper": 0.7144300358439796,
+          "Iri": 0.7172181362276896,
+          "Iint": 0.6640823166840709,
+          "Icont": 0.68727745143231,
+          "Idiff": 0.6793912838813848,
+          "Ileg": 0.729323124915827
+        }
+      }
+    },
+    "substrate_label_only_control": {
+      "scenario": "substrate_label_only_control",
+      "equiv_distance": 0.010458254841905835,
+      "invariant_delta": 0.013411273544654212,
+      "class_agreement": false,
+      "class_labels": {
+        "profinite": "certified_candidate",
+        "sft": "certified_candidate_forced_rival"
+      },
+      "substrate_label_rival_prediction": "divergence_by_substrate_label",
+      "verdict": "destruction_candidate",
+      "support_rule_satisfied": false,
+      "invariant_vectors": {
+        "profinite": {
+          "Iper": 0.7232527469214983,
+          "Iri": 0.7175988695849664,
+          "Iint": 0.7037385243573225,
+          "Icont": 0.7201322798719629,
+          "Idiff": 0.6350315267005935,
+          "Ileg": 0.6831190476054325
+        },
+        "sft": {
+          "Iper": 0.7291124384389259,
+          "Iri": 0.7271918765348382,
+          "Iint": 0.716633730948437,
+          "Icont": 0.7153936450006441,
+          "Idiff": 0.6484428002452477,
+          "Ileg": 0.6958188715195283
+        }
+      }
+    },
+    "non_equivalent_control": {
+      "scenario": "non_equivalent_control",
+      "equiv_distance": 0.08242028958440147,
+      "invariant_delta": 0.13000456026382734,
+      "class_agreement": true,
+      "class_labels": {
+        "profinite": "certified_candidate",
+        "sft": "certified_candidate"
+      },
+      "substrate_label_rival_prediction": "divergence_by_substrate_label",
+      "verdict": "no_support",
+      "support_rule_satisfied": false,
+      "invariant_vectors": {
+        "profinite": {
+          "Iper": 0.6904917280483059,
+          "Iri": 0.7216517927390523,
+          "Iint": 0.6792403020909987,
+          "Icont": 0.7550870720259846,
+          "Idiff": 0.6521726749013177,
+          "Ileg": 0.7036682763276622
+        },
+        "sft": {
+          "Iper": 0.7454434973071329,
+          "Iri": 0.6589987750933506,
+          "Iint": 0.8092448623548261,
+          "Icont": 0.6711503325216472,
+          "Idiff": 0.6203845412540249,
+          "Ileg": 0.7977771487971768
+        }
+      }
+    },
+    "invariant_drift_control": {
+      "scenario": "invariant_drift_control",
+      "equiv_distance": 0.05279665359511889,
+      "invariant_delta": 0.08438948515430089,
+      "class_agreement": true,
+      "class_labels": {
+        "profinite": "certified_candidate",
+        "sft": "certified_candidate"
+      },
+      "substrate_label_rival_prediction": "divergence_by_substrate_label",
+      "verdict": "no_support",
+      "support_rule_satisfied": false,
+      "invariant_vectors": {
+        "profinite": {
+          "Iper": 0.7206274319188669,
+          "Iri": 0.7068473085043951,
+          "Iint": 0.6442865989953279,
+          "Icont": 0.7588590977177955,
+          "Idiff": 0.6392745837876573,
+          "Ileg": 0.7397837093616835
+        },
+        "sft": {
+          "Iper": 0.7694049561955034,
+          "Iri": 0.6429404665715992,
+          "Iint": 0.7286760841496288,
+          "Icont": 0.710209005747456,
+          "Idiff": 0.6201787124015391,
+          "Ileg": 0.7195718438527546
+        }
+      }
+    }
+  },
+  "control_summary": {
+    "positive_scenario": "cross_substrate_positive",
+    "controls_total": 3,
+    "controls_passed": 3,
+    "controls_failed": 0,
+    "destruction_risk": false
+  },
   "artifact_hashes": {
-    "freeze_sha256": "73efebd72c2a1625143b63e0ddded7c61f450a7b835f3a41667b26c1a0a88bef",
-    "result_sha256": "c9f9b10e2f1e9259cde67016132594c117438dc2c172b7dc1939c04b6b8d2584"
+    "freeze_sha256": "d1b0568db4a32ebbf6866781048ccb19c534a06b0648214f711d23451acc71a2",
+    "result_sha256": "9ea2c7ebcf3c8394a4a0eac2e6561f05d18bf5f1f8a50170473904416b4a32bb"
   }
 }

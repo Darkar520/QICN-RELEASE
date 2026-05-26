@@ -93,7 +93,7 @@
           "status": "frozen_from_claim_logic",
           "value": 0.05,
           "unit": "certification margin",
-          "source": "docs/preregistrations/PRED-02_freeze_v1.json",
+          "source": "docs/preregistrations/PRED-02_freeze_v2.json",
           "rationale": "Ambiguity margin for invariant-rupture support.",
           "date_frozen": "2026-05-26",
           "modification_log": []
@@ -103,7 +103,7 @@
           "status": "frozen_from_claim_logic",
           "value": 0.5,
           "unit": "relative rupture ratio",
-          "source": "docs/preregistrations/PRED-02_freeze_v1.json",
+          "source": "docs/preregistrations/PRED-02_freeze_v2.json",
           "rationale": "Minimum relative certification drop under invariant ablation.",
           "date_frozen": "2026-05-26",
           "modification_log": []
@@ -269,7 +269,7 @@
           "status": "frozen_from_claim_logic",
           "value": 0.1,
           "unit": "equivalence distance",
-          "source": "docs/preregistrations/PRED-04c_freeze_v2.json",
+          "source": "docs/preregistrations/PRED-04c_freeze_v3.json",
           "rationale": "Maximum tolerated cross-substrate structural distance.",
           "date_frozen": "2026-05-26",
           "modification_log": []
@@ -279,7 +279,7 @@
           "status": "frozen_from_claim_logic",
           "value": 0.05,
           "unit": "invariant delta",
-          "source": "docs/preregistrations/PRED-04c_freeze_v2.json",
+          "source": "docs/preregistrations/PRED-04c_freeze_v3.json",
           "rationale": "Maximum tolerated invariant bundle deviation.",
           "date_frozen": "2026-05-26",
           "modification_log": []
@@ -575,7 +575,7 @@
           "status": "frozen_from_claim_logic",
           "value": 0.5,
           "unit": "Iint witness margin drop",
-          "source": "docs/preregistrations/PRED-11_freeze_v1.json",
+          "source": "docs/preregistrations/PRED-11_freeze_v2.json",
           "rationale": "Minimum integration loss while preserving complexity.",
           "date_frozen": "2026-05-26",
           "modification_log": []
@@ -585,7 +585,7 @@
           "status": "frozen_from_claim_logic",
           "value": 0.02,
           "unit": "relative complexity delta",
-          "source": "docs/preregistrations/PRED-11_freeze_v1.json",
+          "source": "docs/preregistrations/PRED-11_freeze_v2.json",
           "rationale": "Maximum tolerated gross complexity drift.",
           "date_frozen": "2026-05-26",
           "modification_log": []
@@ -633,7 +633,7 @@
           "status": "frozen_from_claim_logic",
           "value": 2,
           "unit": "ratio of targeted total-variation shift to maximum sham/off-target shift",
-          "source": "docs/preregistrations/PRED-EXT-01_freeze_v1.json; internal synthetic pilot only.",
+          "source": "docs/preregistrations/PRED-EXT-01_freeze_v3.json; clean-room synthetic holdout only.",
           "rationale": "A targeted intervention must produce at least twice the maximum sham/off-target TV shift to count as selective in the internal synthetic pilot.",
           "date_frozen": "2026-05-26",
           "modification_log": [
@@ -649,7 +649,7 @@
           "status": "frozen_from_claim_logic",
           "value": 0.05,
           "unit": "complexity penalty coefficient",
-          "source": "docs/preregistrations/PRED-EXT-01_freeze_v1.json; internal synthetic pilot only.",
+          "source": "docs/preregistrations/PRED-EXT-01_freeze_v3.json; clean-room synthetic holdout only.",
           "rationale": "Small complexity penalty over trace-length-times-state-count normalization for the trace-memory rival in the internal synthetic pilot.",
           "date_frozen": "2026-05-26",
           "modification_log": [
@@ -665,7 +665,7 @@
           "status": "frozen_from_claim_logic",
           "value": 0.05,
           "unit": "penalized total-variation loss",
-          "source": "docs/preregistrations/PRED-EXT-01_freeze_v1.json; internal synthetic pilot only.",
+          "source": "docs/preregistrations/PRED-EXT-01_freeze_v3.json; clean-room synthetic holdout only.",
           "rationale": "The rival must have non-trivial loss on the targeted observable before the pilot can record internal synthetic support.",
           "date_frozen": "2026-05-26",
           "modification_log": [

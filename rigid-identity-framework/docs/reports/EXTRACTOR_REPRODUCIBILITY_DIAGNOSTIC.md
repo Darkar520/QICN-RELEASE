@@ -14,7 +14,7 @@ identity transfer, agency, moral status, or external adjudication.
 
 | Quantity | Count |
 |---|---:|
-| Registry formal entries | 696 |
+| Registry formal entries | 699 |
 | Registry macro entries | 377 |
 | Formal entries whose source file is missing | 0 |
 | Macro entries whose source file is missing | 0 |

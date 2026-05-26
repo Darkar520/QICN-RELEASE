@@ -32,7 +32,7 @@ without using post-hoc threshold changes.
 | `RIVAL-LEGIBILITY-DECODER-01` | PRED-05, PRED-10 legibility | Decoder fragility: observed legibility changes are artifacts of decoder choice. | Alternate decoder family with frozen architecture, noise schedule, and compression schedule. | Noise/compression effects track decoder fragility, not `I_leg`. | Same or better prediction of legibility failures without invariant bundle. | PRED-05/PRED-10 destruction: generic observability explains the pattern. |
 | `RIVAL-ADMISSIBILITY-NAIVE-01` | PRED-06 tamper/admissibility | Naive pipeline: accepts artifacts if superficial schema parses. | JSON-presence checker without hash/protocol/quarantine validation. | Some tampered runs are accepted. | Any tampered run promoted under frozen tamper suite. | PRED-06 destruction: tamper acceptance tolerance violated. |
 | `RIVAL-STABILITY-TRIVIAL-01` | PRED-07 perturbation stability | Trivial stability: unchanged output caused by saturation or dead dynamics. | Constant/saturated response model under perturbation panel. | Stability appears without invariant preservation. | Matches response stability while failing invariant margin report. | PRED-07 destruction: stability survives despite invariant loss. |
-| `RIVAL-TRACE-MEMORY-01` | PRED-EXT-01 finite trace selectivity | Trace-memory rival: predicts intervention effects from trace length, entropy, and memory buffer continuity without identity-coupled transition structure. | Order-1 finite trace-memory baseline in `scripts/lib/trace-memory-rival.js`, matched on state alphabet, trace length, empirical next-state distribution, buffer depth, minimum trace-length guard, and Laplace smoothing in rehearsal mode. | Target-channel intervention does not produce selective transition-distribution change beyond memory/entropy-matched controls. | Equal or lower penalized prediction loss on external transition traces. | PRED-EXT-01 destruction: the memory/entropy rival predicts the external selectivity observable at equal or lower penalized loss. |
+| `RIVAL-TRACE-MEMORY-01` | PRED-EXT-01 finite trace selectivity | Trace-memory rival: predicts intervention effects from trace length, entropy, and memory buffer continuity without identity-coupled transition structure. | Finite trace-memory baseline in `scripts/lib/trace-memory-rival.js`. FCR v17 evaluates a depth suite (`1`, `2`, `3`) with matched state alphabet, trace length, empirical next-state distribution, minimum trace-length guard, and Laplace smoothing. | Target-channel intervention does not produce selective transition-distribution change beyond memory/entropy-matched controls. | Equal or lower penalized prediction loss on external transition traces. | PRED-EXT-01 destruction: the memory/entropy rival suite predicts the external selectivity observable at equal or lower penalized loss. |
 
 ## Frozen-Parameter Slots
 
@@ -56,7 +56,11 @@ FCR v15 binds `RIVAL-TRACE-MEMORY-01` for the internal synthetic
 `PRED-EXT-01` pilot with alphabet `A/B/C/D`, trace length `240`, minimum trace
 length `200`, memory depth `1`, Laplace smoothing `lambda = 1`,
 `penalized_loss_alpha = 0.05`, and complexity normalized by
-`trace_length * state_count`. This binding is an internal synthetic pilot
+`trace_length * state_count`.
+
+FCR v17 strengthens the clean-room synthetic binding by requiring the positive
+scenario to defeat the best penalized loss across memory depths `1`, `2`, and
+`3` on both primary and holdout seeds. This is still an internal synthetic
 contract only. It does not freeze external adjudication parameters.
 
 ## Update Rule

@@ -93,13 +93,34 @@ The current burden decomposes into five obligations:
 5. Exhibit or rule out counterexamples where two weakly coupled factors
    jointly preserve histories while neither factor is individually trivial.
 
-## 6. Current Verdict
+## 6. FCR v17 Conditional Closure
 
-The lemma is plausible only under strengthened preservation assumptions. Under
-weak preservation, counterexample candidates remain open. Therefore the correct
-registry status for `paper5:proposition:prop-integration-transfer` remains:
+FCR v17 adds a conditional theorem to Paper 5:
+
+```text
+paper5:theorem:thm-iint-faithful-factorization-triviality
+```
+
+The theorem proves factorization triviality under an atomic
+identity/history/response separator. This closes the internal proof step that
+was previously only sketched in the lemma draft. The remaining unsolved step is
+the upstream derivation:
+
+```text
+rigid identity + continuity + intervention fidelity
+  => atomic operational separator Theta_S
+```
+
+That implication is the exact mathematical target for a future upgrade of
+`prop:integration-transfer`.
+
+## 7. Current Verdict
+
+The conditional lemma is now proved under an explicit atomicity assumption.
+Under weak preservation, counterexample candidates remain open. Therefore the
+correct registry status for `paper5:proposition:prop-integration-transfer`
+remains:
 
 ```text
 epistemic_status = open_burden
 ```
-

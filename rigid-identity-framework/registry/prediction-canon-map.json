@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0.0",
+  "policy_version": "1.1.0",
+  "date": "2026-05-25",
+  "status": "active_v13_1_reconciliation_map",
+  "boundary": "This map reconciles Paper 6 LaTeX prediction IDs with the machine-readable prediction registry. It is a source-alignment artifact only; it does not report empirical validation, external adjudication, consciousness, phenomenality, identity transfer, agency, or moral status.",
+  "policy": {
+    "latex_matrix_source": "paper6_predictions_falsation/main.tex",
+    "registry_source": "docs/PREDICTION_REGISTRY_v1.json",
+    "no_global_extraction": "Do not run whole-registry extraction to resolve prediction drift until docs/reports/EXTRACTOR_REPRODUCIBILITY_AUDIT.md reports reproducible extraction from the current primary TeX set.",
+    "allowed_statuses": [
+      "latex_canonical",
+      "split_in_registry",
+      "registry_extension_not_in_latex_matrix"
+    ]
+  },
+  "latex_canonical_predictions": [
+    {
+      "latex_id": "PRED-01",
+      "registry_ids": [
+        "PRED-01"
+      ],
+      "status": "latex_canonical",
+      "note": "One-to-one Paper 6 matrix entry."
+    },
+    {
+      "latex_id": "PRED-02",
+      "registry_ids": [
+        "PRED-02"
+      ],
+      "status": "latex_canonical",
+      "note": "One-to-one Paper 6 matrix entry."
+    },
+    {
+      "latex_id": "PRED-03",
+      "registry_ids": [
+        "PRED-03"
+      ],
+      "status": "latex_canonical",
+      "note": "One-to-one Paper 6 matrix entry."
+    },
+    {
+      "latex_id": "PRED-04",
+      "registry_ids": [
+        "PRED-04a",
+        "PRED-04b",
+        "PRED-04c"
+      ],
+      "status": "split_in_registry",
+      "note": "Paper 6 matrix has a single PRED-04 null-regime family; the registry splits it into three falsification subfamilies from the v10/v11 prediction scaffold."
+    },
+    {
+      "latex_id": "PRED-05",
+      "registry_ids": [
+        "PRED-05"
+      ],
+      "status": "latex_canonical",
+      "note": "One-to-one Paper 6 matrix entry."
+    },
+    {
+      "latex_id": "PRED-06",
+      "registry_ids": [
+        "PRED-06"
+      ],
+      "status": "latex_canonical",
+      "note": "One-to-one Paper 6 matrix entry."
+    },
+    {
+      "latex_id": "PRED-07",
+      "registry_ids": [
+        "PRED-07"
+      ],
+      "status": "latex_canonical",
+      "note": "One-to-one Paper 6 matrix entry."
+    },
+    {
+      "latex_id": "PRED-08",
+      "registry_ids": [
+        "PRED-08"
+      ],
+      "status": "latex_canonical",
+      "note": "One-to-one Paper 6 matrix entry."
+    },
+    {
+      "latex_id": "PRED-09",
+      "registry_ids": [
+        "PRED-09"
+      ],
+      "status": "latex_canonical",
+      "note": "One-to-one Paper 6 matrix entry."
+    },
+    {
+      "latex_id": "PRED-10",
+      "registry_ids": [
+        "PRED-10"
+      ],
+      "status": "latex_canonical",
+      "note": "One-to-one Paper 6 matrix entry."
+    },
+    {
+      "latex_id": "PRED-11",
+      "registry_ids": [
+        "PRED-11"
+      ],
+      "status": "latex_canonical",
+      "note": "FCR v13.1 promoted the integration-loss complexity-only rival prediction into the Paper 6 LaTeX matrix."
+    }
+  ],
+  "registry_extensions": [
+    {
+      "registry_id": "PRED-EXT-01",
+      "status": "registry_extension_not_in_latex_matrix",
+      "note": "FCR v13 external-prediction seed. It is intentionally outside the active Paper 6 matrix until Paper 6 is revised or an external-prediction appendix is added."
+    }
+  ],
+  "preregistration_files": [
+    {
+      "prediction_id": "PRED-04c",
+      "path": "docs/preregistrations/PRED-04c_prereg_v1.md",
+      "status": "registered_preregistration_scaffold"
+    },
+    {
+      "prediction_id": "PRED-06",
+      "path": "docs/preregistrations/PRED-06_prereg_v1.md",
+      "status": "registered_preregistration_scaffold"
+    },
+    {
+      "prediction_id": "PRED-11",
+      "path": "docs/preregistrations/PRED-11_prereg_v0.md",
+      "status": "draft_preregistration_scaffold_not_frozen"
+    },
+    {
+      "prediction_id": "PRED-EXT-01",
+      "path": "docs/preregistrations/PRED-EXT-01_prereg_v0.md",
+      "status": "external_candidate_preregistration_draft"
+    }
+  ]
+}

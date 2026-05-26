@@ -17,6 +17,10 @@
     "analyze:impact": "node scripts/fcr-impact-analyzer.js",
     "audit:monolithic-risk": "node scripts/verify-monolithic-risk.js",
     "test:tamper-prereg": "node scripts/tamper-inject.js --self-test",
-    "report:corpus-health": "node scripts/generate-report.js"
+    "report:corpus-health": "node scripts/generate-report.js",
+    "verify:coordinate-specs": "node scripts/verify-coordinate-specs.js",
+    "rehearse:pred-ext-01": "node scripts/run-pred-ext-01-rehearsal.js",
+    "audit:extractor-diagnostic": "node scripts/verify-registry-reproducibility.js",
+    "verify:curation-overlays": "node scripts/verify-curation-overlays.js"
   }
 }

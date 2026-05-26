@@ -2,7 +2,7 @@
   "schema_version": "1.1.0",
   "generated_for": "FCR v10 falsifiability scaffold",
   "date": "2026-05-25",
-  "scope": "Machine-readable binding for all Paper 6 prediction families PRED-01 through PRED-11.",
+  "scope": "Machine-readable binding for Paper 6 prediction families PRED-01 through PRED-11 plus explicitly marked external candidate predictions.",
   "status_boundary": "This registry is a preregistration scaffold only. It does not report new empirical results, external validation, consciousness, phenomenality, identity transfer, agency, or moral status.",
   "success_metric": "A third-party reviewer should be able to design a concrete test or falsification attempt from each record without private explanation from the authors. A reviewer still cannot execute a final preregistered experiment until datasets, seeds, thresholds, exclusion rules, and decision records are frozen.",
   "threshold_policy": {
@@ -14,7 +14,8 @@
     "formalized_pending_preregistration": "The prediction exists in the corpus and is structured here, but thresholds, datasets, and execution manifests are not yet frozen.",
     "internal_support_only": "The corpus reports internal support, but no external adjudication is claimed.",
     "blocked": "The prediction cannot be executed until a named missing artifact, rival, or protocol exists.",
-    "externally_adjudicated": "Reserved for future use only after independent execution and decision records."
+    "externally_adjudicated": "Reserved for future use only after independent execution and decision records.",
+    "external_candidate_not_executed": "The prediction has a non-framework-facing observable candidate, but no frozen runner, dataset, threshold, or decision record yet."
   },
   "predictions": [
     {
@@ -65,15 +66,16 @@
       "claim_family": "Invariant-loss rupture",
       "observable": "Class membership and Qop geometry before and after targeted rupture.",
       "manipulation": "Perform a one-invariant ablation while preserving comparable substrate and gross scale.",
-      "framework_prediction": "Verified loss of a critical invariant causes certified class exit, contraction, or undefined Qop.",
+      "framework_prediction": "Verified loss of a critical invariant causes certified class exit, contraction, or undefined Qop when the pre-ablation invariant headroom exceeds the registered ambiguity margin delta_amb. If the pre-ablation headroom is at or below delta_amb, the result is classified as boundary-ambiguous weakening rather than support.",
       "rival_prediction": "A complexity-only or gross-scale rival predicts little or no class-relevant change when complexity and scale are preserved.",
-      "support_condition": "The targeted invariant loss is verified, the sham/off-target controls do not produce the same pattern, and the class exits, contracts, or becomes undefined according to frozen rules.",
-      "weakening_condition": "The class changes only under global degradation, ambiguous threshold tuning, or nonselective damage that also affects matched controls.",
-      "destruction_condition": "The system remains certified without downgrade after verified invariant loss.",
+      "support_condition": "The targeted invariant loss is verified, the pre-ablation headroom exceeds the registered ambiguity margin delta_amb, sham/off-target controls do not produce the same pattern, and the class exits, contracts, or becomes undefined according to frozen rules.",
+      "weakening_condition": "The result falls inside the pre-declared boundary-ambiguous margin, changes only under global degradation, or depends on nonselective damage that also affects matched controls.",
+      "destruction_condition": "The system remains certified without downgrade after verified invariant loss outside the registered ambiguity margin.",
       "required_artifacts": [
         "pre_ablation_certificate",
         "post_ablation_certificate",
         "invariant_loss_proof",
+        "ambiguity_margin_manifest",
         "sham_control_result",
         "off_target_control_result",
         "decision_record"
@@ -91,6 +93,16 @@
           "unit": "invariant-specific witness margin",
           "source": "Paper 5 defines positive witness margins delta_j(S); no execution threshold is frozen here.",
           "rationale": "Each invariant needs a concrete measurement dictionary entry before rupture can be preregistered.",
+          "date_frozen": null,
+          "modification_log": []
+        },
+        {
+          "name": "pre_ablation_ambiguity_margin_delta_amb",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "minimum invariant headroom before ablation",
+          "source": "FCR v13 hardening of Paper 6 PRED-02 requires this margin before execution; no numeric value is frozen here.",
+          "rationale": "The ambiguity margin must be declared before any rupture campaign so boundary cases become weakening states rather than post-hoc support.",
           "date_frozen": null,
           "modification_log": []
         }
@@ -571,6 +583,62 @@
       "epistemic_limit": "This can falsify a complexity-only rival; it does not prove consciousness.",
       "linked_rivals": [
         "RIVAL-COMPLEXITY-01"
+      ]
+    },
+    {
+      "id": "PRED-EXT-01",
+      "source_paper": "FCR v13 external prediction seed",
+      "claim_target": "external_trace_selectivity",
+      "claim_family": "External finite-trace intervention selectivity",
+      "observable": "Total-variation change in externally observed transition distributions after a targeted channel intervention, compared with sham and off-target interventions.",
+      "manipulation": "Run a finite controlled transition system under a frozen baseline trace protocol, then apply a targeted perturbation to the declared identity-continuity channel while preserving trace length, state alphabet, and gross activity budget.",
+      "framework_prediction": "If the QICN-linked identity-continuity channel is carrying non-trivial transition structure, the targeted intervention produces a selective transition-distribution shift larger than sham and off-target controls under the frozen selectivity ratio.",
+      "rival_prediction": "A trace-memory or entropy-only rival predicts that transition-distribution shifts are explained by trace length, entropy, or buffer continuity and therefore should be matched by memory/entropy controls at equal or lower penalized loss.",
+      "support_condition": "The targeted intervention produces a reproducible selectivity ratio above the frozen threshold, sham/off-target controls remain below threshold, and the trace-memory rival has higher penalized loss on the same external observable.",
+      "weakening_condition": "The selective shift appears only under favorable seeds, unstable estimator choices, unmatched entropy, or post-hoc adjustment of the perturbation panel.",
+      "destruction_condition": "The memory/entropy rival predicts the external transition-distribution observable at equal or lower penalized loss, or the targeted intervention fails to separate from sham/off-target controls under frozen rules.",
+      "required_artifacts": [
+        "finite_transition_system_manifest",
+        "baseline_trace_panel",
+        "intervention_trace_panel",
+        "sham_trace_panel",
+        "off_target_trace_panel",
+        "rival_trace_memory_result",
+        "selectivity_ratio_report",
+        "decision_record"
+      ],
+      "minimum_negative_controls": [
+        "sham_intervention_control",
+        "off_target_channel_control",
+        "entropy_matched_memory_control",
+        "state_alphabet_matched_random_control"
+      ],
+      "thresholds": [
+        {
+          "name": "transition_selectivity_ratio",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "ratio of targeted total-variation shift to maximum sham/off-target shift",
+          "source": "FCR v13 external prediction seed; no numeric value is frozen until PRED-EXT-01 preregistration is completed.",
+          "rationale": "The threshold must be frozen before execution so the prediction cannot be rescued by post-hoc selectivity tuning.",
+          "date_frozen": null,
+          "modification_log": []
+        },
+        {
+          "name": "penalized_loss_alpha",
+          "status": "not_frozen",
+          "value": null,
+          "unit": "complexity penalty coefficient",
+          "source": "Rival model registry requires alpha before a rival defeat claim can be made.",
+          "rationale": "The rival comparison is meaningless unless empirical loss and model complexity are traded off by a frozen rule.",
+          "date_frozen": null,
+          "modification_log": []
+        }
+      ],
+      "current_status": "external_candidate_not_executed",
+      "epistemic_limit": "This is an external finite-trace prediction seed. It can test a transition-selectivity claim on a toy-scale system, but it cannot prove consciousness, phenomenality, personal identity, or external validation of the full framework.",
+      "linked_rivals": [
+        "RIVAL-TRACE-MEMORY-01"
       ]
     }
   ]

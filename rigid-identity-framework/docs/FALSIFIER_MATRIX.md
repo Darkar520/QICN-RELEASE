@@ -1,6 +1,6 @@
 # QICN Falsifier Matrix v1
 
-Status: FCR v10 scaffold. This file translates selected Paper 6 predictions
+Status: FCR v13 scaffold. This file translates selected Paper 6 predictions
 into third-party-testable falsifier shapes. It does not report new experiments,
 external validation, consciousness, phenomenality, identity transfer, agency, or
 moral status.
@@ -16,7 +16,7 @@ it must be rewritten before it is treated as preregistration material.
 | Prediction | Claim Family | Support Condition | Weakening Condition | Destruction Condition | Required Rival/Control |
 |---|---|---|---|---|---|
 | PRED-01 | Cross-substrate class preservation | Preserved invariant margins imply same class and epsilon-bounded Qop geometry. | Equivalence depends on changed tolerance or unresolved identity ambiguity. | Class divergence or geometry mismatch despite preserved structure. | Substrate-label control, near-identity ambiguity control, geometry-mismatch control. |
-| PRED-02 | Invariant-loss rupture | Verified invariant loss causes class exit, contraction, or undefined Qop while sham/off-target controls do not. | The effect appears only under global damage, ambiguous thresholds, or nonselective degradation. | Verified invariant loss occurs and certification remains active without downgrade. | Sham ablation, off-target ablation, global-noise degradation. |
+| PRED-02 | Invariant-loss rupture | Verified invariant loss outside the registered ambiguity margin causes class exit, contraction, or undefined Qop while sham/off-target controls do not. | The result falls inside the pre-declared boundary-ambiguous margin, or appears only under global damage/nonselective degradation. | Verified invariant loss occurs outside the registered ambiguity margin and certification remains active without downgrade. | Sham ablation, off-target ablation, global-noise degradation, ambiguity-margin manifest. |
 | PRED-03 | Complexity-only insufficiency | Invariant-preserving candidate passes and a matched complexity-only baseline fails. | Baseline failure is caused by poor matching or implementation defects rather than missing invariants. | Complexity-only or activity-only control passes certification despite missing invariants. | Complexity-only, activity-rich/no-integration, report-rich/no-invariants. |
 | PRED-04a | Pass-region stability | Frozen pass-region perturbation panel remains within tolerance. | Stability holds only after cherry-picked perturbations or threshold edits. | Response falls outside tolerance under frozen pass-region perturbations. | Near-boundary pass control, randomized micro-perturbation control. |
 | PRED-04b | Fail-region fragility | Frozen fail-region perturbation panel remains outside tolerance. | Failure depends on non-reproducible seeds or local tuning. | Response falls within tolerance under frozen fail-region perturbations. | Near-boundary fail control, randomized micro-perturbation control. |
@@ -28,6 +28,7 @@ it must be rewritten before it is treated as preregistration material.
 | PRED-09 | Budget/admissibility invalidation | Budget violation triggers frozen invalidation or downgrade. | Downgrade behavior is inconsistent or discretionary. | Strong claims remain active after a preregistered budget violation. | Within-budget control, sham stress control, malformed-log control. |
 | PRED-10 | Legibility under noise/compression | Legibility metrics track Ileg positivity under noise/compression. | Changes are explained by decoder fragility unrelated to Ileg clauses. | Ileg failure does not affect certification or generic observability explains the pattern. | Noise-only control, compression-only control, decoder-fragility control. |
 | PRED-11 | Integration-loss complexity-only rival | Integration-destroyed, complexity-preserved system fails certification. | Failure is confounded by gross collapse or non-matched complexity. | System passes certification despite verified integration loss. | Complexity-preserved integration-destroyed control, activity-preserved integration-destroyed control, gross-collapse control. |
+| PRED-EXT-01 | External finite-trace intervention selectivity | Targeted intervention produces a reproducible transition-selectivity ratio above frozen threshold, controls remain below threshold, and trace-memory rival loses under penalized loss. | Effect appears only under favorable seeds, unstable estimators, unmatched entropy, or post-hoc perturbation choices. | Trace-memory rival predicts the external transition-distribution observable at equal/lower penalized loss, or targeted intervention fails to separate from sham/off-target controls. | Sham intervention, off-target channel control, entropy-matched memory control, state-alphabet matched random control. |
 
 ## Anti-Inflation Rules
 

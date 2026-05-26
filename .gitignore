@@ -66,3 +66,10 @@ release/**/logs/
 !corpus/pdf_release/pdf_corpus.zip
 !corpus/pdf_release/pdf_corpus.zip.sha256.txt
 !release/_non_canonical/README.md
+
+# Agent tools and temporary artifacts
+.claude/
+.kilocode/
+artifacts/
+**/artifacts/
+nul

@@ -108,7 +108,7 @@ This paper therefore has four narrow tasks:
 \begin{enumerate}[leftmargin=1.5em]
 \item extract the main experimentally relevant consequences of the canon;
 \item distinguish those consequences from what weaker alternatives would predict;
-\item state explicit failure modes, downgrade conditions, and non-claims;
+\item state explicit failure modes, weakening conditions, and non-claims;
 \item report the current internal support status after the completed internal cycles, without inflating it.
 \end{enumerate}
 
@@ -198,10 +198,10 @@ If a candidate system exhibits high connectivity, high entropy, or rich activity
 
 \subsection{Prediction Family 2: Invariant-Loss Rupture}
 \begin{proposition}[Ablation prediction]
-If a system is initially certified and a critical intervention selectively destroys one or more invariants, then the framework predicts either loss of certification or a transition to an ambiguous boundary regime, depending on how close the pre-ablation margins were to zero.
+If a system is initially certified and a critical intervention selectively destroys one or more invariants, then the framework predicts a margin-governed outcome fixed before execution. If the pre-ablation invariant headroom exceeds the registered ambiguity margin $\delta_{\mathrm{amb}}$, verified invariant loss must cause certification loss, class contraction, or undefined $\Qop$. If the pre-ablation headroom is at or below $\delta_{\mathrm{amb}}$, the result is classified as boundary-ambiguous and weakens the rupture claim rather than supporting it.
 \end{proposition}
 
-\noindent\textit{Operational consequence.} Ablations are not ornamental. If the criterion is serious, the loss of invariant headroom must show up as loss of class membership, legibility loss, or boundary-sensitive ambiguity. No-change ablations would count against the framework.
+\noindent\textit{Operational consequence.} Ablations are not ornamental. If the criterion is serious, the loss of invariant headroom must show up as loss of class membership, legibility loss, or a pre-declared boundary-ambiguous downgrade. No-change ablations outside the registered ambiguity margin count against the framework.
 
 \subsection{Prediction Family 3: Substrate-Preserved Class Membership}
 \begin{proposition}[Substrate-preserved equivalence prediction]
@@ -285,7 +285,7 @@ The canonical prediction matrix can be read as a compressed execution contract f
 \setlength{\tabcolsep}{3.5pt}
 \begin{tabularx}{\linewidth}{@{}P{0.10\linewidth}P{0.11\linewidth}Y Y Y Y@{}}
 \toprule
-ID & Claim & Observable & Manipulation & Framework-side result & Failure / rival divergence \\
+ID & Claim & Observable & Manipulation & Support condition & Destruction condition / rival divergence \\
 \midrule
 PRED-01 & `P5-02` & certified class label and $\Qop$ geometry across implementations & cross-substrate pair with preserved invariant margins & same operational class and $\eps$-bounded geometry under the admissible equivalence regime & class divergence or geometry mismatch despite preserved structure; substrate-privilege rival survives \\
 PRED-02 & `P5-04` & class membership before and after targeted rupture & one-invariant ablation with comparable substrate and gross scale & certified class exit, contraction, or undefined $\Qop$ after rupture & no class change after verified invariant loss; complexity-only rival survives \\
@@ -302,13 +302,14 @@ PRED-05 & `P2-03` & continuity/\allowbreak fragmentation pattern & compare rigid
 \setlength{\tabcolsep}{3.5pt}
 \begin{tabularx}{\linewidth}{@{}P{0.10\linewidth}P{0.11\linewidth}Y Y Y Y@{}}
 \toprule
-ID & Claim & Observable & Manipulation & Framework-side result & Failure / rival divergence \\
+ID & Claim & Observable & Manipulation & Support condition & Destruction condition / rival divergence \\
 \midrule
 PRED-06 & `P4-01` & admissibility verdict under tamper and sham controls & inject hash corruption, malformed logs, or severe protocol violations & tampered runs are discarded and never promoted to evidential support & loose evaluation pipeline accepts tampered runs \\
 PRED-07 & `P5-03` & stability of class membership under bounded perturbation & apply perturbations inside the certified margin budget $\delta_\ast(S)$ & membership and geometry remain stable inside the certified budget & fragile-threshold model flips class under sub-critical perturbations \\
 PRED-08 & `P5-01` & non-emptiness of $\Qop$ after successful certification & run the full certification schema on a system with all margins positive & $\Qop$ is non-empty and operationally well-defined & certification passes while no non-trivial class is recoverable \\
 PRED-09 & `P4-03` & claim survival under latency / compute-budget stress & exceed pre-registered budget limits & strong operational claims are invalidated or downgraded & metric-first pipeline keeps claims active after budget violation \\
 PRED-10 & `P5-05` & legibility under noise and structured compression & raise admissible noise/compression while preserving or breaking $\Ileg$ & separability and intervention fidelity survive only while $\Ileg$ remains positive & generic observability model predicts no specific dependence on $\Ileg$ \\
+PRED-11 & `P5-01` & certification under destroyed integration and preserved complexity & destroy integration while preserving complexity or gross activity & integration-destroyed, complexity-preserved control fails certification under frozen rules & certification persists after verified integration loss; complexity-only rival survives \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -324,7 +325,7 @@ The relevant failure modes are not all equally strong. Some would refute a stron
 \setlength{\tabcolsep}{5pt}
 \begin{tabularx}{\linewidth}{@{}p{0.15\linewidth}Y Y Y@{}}
 \toprule
-Claim target & Strong refutation condition & Downgrade condition & Current blocker class \\
+Claim target & Destruction condition & Weakening condition & Current blocker class \\
 \midrule
 `P5-01` & a system satisfies the full criterion yet fails to define the claimed operational class & boundary-family convergence would downgrade if it failed outside the present frozen internal contract & epistemic-level \\
 `P5-02` & a structurally preserved pair falls into different classes under the same admissible comparison regime & one legacy raw continuous/discrete positive pair remains ambiguous on $\Iri$ handling & metric/tolerance-level \\
@@ -544,7 +545,7 @@ Claim & Status & Current blocker & Next step \\
 \end{center}
 
 \section{Conclusion}
-The canon now has a prediction layer and a failure-mode ledger with explicit discriminators, explicit downgrade conditions, and explicit support classes.
+The canon now has a prediction layer and a failure-mode ledger with explicit discriminators, explicit weakening conditions, and explicit support classes.
 
 The current internal picture is sharp enough to summarize without inflation. The complexity/connectivity insufficiency claim has robust internal support. Substrate-preserved class membership and biological non-primacy now have robust support with localized caveats. Approximate stability is provisionally supported with a localized threshold caveat. Boundary-sensitive stress of existence and rupture now has robust support with localized caveats under convergent internal probe families and a more independent judge path. All of this nevertheless remains internal-only.
 

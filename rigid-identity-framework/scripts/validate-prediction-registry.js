@@ -4,6 +4,7 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 const REGISTRY_PATH = path.join(ROOT, "docs", "PREDICTION_REGISTRY_v1.json");
 const SCHEMA_PATH = path.join(ROOT, "registry", "prediction-schema.json");
+const CANON_MAP_PATH = path.join(ROOT, "registry", "prediction-canon-map.json");
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -11,6 +12,83 @@ function readJson(filePath) {
 
 function isNonEmptyString(value) {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function validateCanonMap(registry, errors) {
+  if (!fs.existsSync(CANON_MAP_PATH)) {
+    errors.push("prediction-canon-map: missing registry/prediction-canon-map.json");
+    return;
+  }
+
+  const canonMap = readJson(CANON_MAP_PATH);
+  const registryIds = new Set(registry.predictions.map((prediction) => prediction.id));
+  const allowedRegistryIds = new Set();
+  const extensionIds = new Set();
+
+  if (!Array.isArray(canonMap.latex_canonical_predictions)) {
+    errors.push("prediction-canon-map.latex_canonical_predictions: must be an array");
+    return;
+  }
+
+  canonMap.latex_canonical_predictions.forEach((entry, index) => {
+    const basePath = `prediction-canon-map.latex_canonical_predictions[${index}]`;
+    if (!isNonEmptyString(entry.latex_id)) {
+      errors.push(`${basePath}.latex_id: must be a non-empty string`);
+    }
+    if (!Array.isArray(entry.registry_ids) || entry.registry_ids.length === 0) {
+      errors.push(`${basePath}.registry_ids: must be a non-empty array`);
+      return;
+    }
+
+    entry.registry_ids.forEach((id, idIndex) => {
+      if (!isNonEmptyString(id)) {
+        errors.push(`${basePath}.registry_ids[${idIndex}]: must be a non-empty string`);
+        return;
+      }
+      allowedRegistryIds.add(id);
+      if (!registryIds.has(id)) {
+        errors.push(`${basePath}.registry_ids[${idIndex}]: registry id ${id} is missing from docs/PREDICTION_REGISTRY_v1.json`);
+      }
+    });
+  });
+
+  if (Array.isArray(canonMap.registry_extensions)) {
+    canonMap.registry_extensions.forEach((entry, index) => {
+      const basePath = `prediction-canon-map.registry_extensions[${index}]`;
+      if (!isNonEmptyString(entry.registry_id)) {
+        errors.push(`${basePath}.registry_id: must be a non-empty string`);
+        return;
+      }
+      allowedRegistryIds.add(entry.registry_id);
+      extensionIds.add(entry.registry_id);
+      if (!registryIds.has(entry.registry_id)) {
+        errors.push(`${basePath}.registry_id: registry extension ${entry.registry_id} is missing from docs/PREDICTION_REGISTRY_v1.json`);
+      }
+    });
+  }
+
+  registry.predictions.forEach((prediction, index) => {
+    if (!allowedRegistryIds.has(prediction.id)) {
+      errors.push(`predictions[${index}].id: ${prediction.id} is not declared in registry/prediction-canon-map.json`);
+    }
+  });
+
+  if (Array.isArray(canonMap.preregistration_files)) {
+    canonMap.preregistration_files.forEach((entry, index) => {
+      const basePath = `prediction-canon-map.preregistration_files[${index}]`;
+      if (!registryIds.has(entry.prediction_id)) {
+        errors.push(`${basePath}.prediction_id: preregistration target ${entry.prediction_id} is absent from registry`);
+      }
+      if (!isNonEmptyString(entry.path) || !fs.existsSync(path.join(ROOT, entry.path))) {
+        errors.push(`${basePath}.path: preregistration file is missing`);
+      }
+    });
+  }
+
+  registry.__canonMapSummary = {
+    latexRows: canonMap.latex_canonical_predictions.length,
+    registryExtensions: extensionIds.size
+  };
 }
 
 function validate() {
@@ -116,6 +194,8 @@ function validate() {
     });
   });
 
+  validateCanonMap(registry, errors);
+
   return errors;
 }
 
@@ -130,7 +210,10 @@ if (require.main === module) {
       process.exit(1);
     }
     const registry = readJson(REGISTRY_PATH);
+    const canonMap = readJson(CANON_MAP_PATH);
+    const extensionCount = Array.isArray(canonMap.registry_extensions) ? canonMap.registry_extensions.length : 0;
     console.log(`Validated ${registry.predictions.length} predictions, 0 errors.`);
+    console.log(`Prediction canon map: ${canonMap.latex_canonical_predictions.length} LaTeX rows, ${extensionCount} registry extension(s).`);
   } catch (error) {
     console.error(`Prediction registry validation failed: ${error.message}`);
     process.exit(1);

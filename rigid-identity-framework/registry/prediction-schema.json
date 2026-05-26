@@ -9,7 +9,7 @@
   ],
   "patterns": {
     "schema_version": "^\\d+\\.\\d+\\.\\d+$",
-    "prediction_id": "^PRED-(\\d+[a-z]?)$",
+    "prediction_id": "^(PRED-(\\d+[a-z]?)|PRED-EXT-\\d+)$",
     "iso_date": "^\\d{4}-\\d{2}-\\d{2}$",
     "rival_id": "^RIVAL-[A-Z0-9-]+$"
   },

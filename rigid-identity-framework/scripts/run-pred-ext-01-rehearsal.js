@@ -13,6 +13,14 @@ const OUTPUT_PATH = path.join(OUTPUT_DIR, "decision_record.json");
 
 const EXECUTION_DATE = "2026-05-26";
 const EPSILON_FLOOR = 0.001;
+const STATE_ALPHABET = ["A", "B", "C", "D"];
+const REHEARSAL_TRACE_LENGTH = 240;
+const TRACE_MEMORY_RIVAL_POLICY = {
+  memoryDepth: 1,
+  minTraceLength: 200,
+  laplaceSmoothing: 1,
+  alphabet: STATE_ALPHABET
+};
 
 function stableJson(value, seen = new WeakSet()) {
   if (Array.isArray(value)) {
@@ -47,18 +55,18 @@ function repeatPattern(pattern, length) {
 
 function buildRehearsalRecord() {
   const traces = {
-    baseline: repeatPattern(["A", "B", "A", "C", "A", "B", "D", "B"], 100),
-    targeted_post: repeatPattern(["A", "C", "C", "B", "C", "D", "C", "B"], 100),
-    sham_post: repeatPattern(["A", "B", "A", "C", "A", "B", "D", "B"], 100),
-    off_target_post: repeatPattern(["A", "B", "A", "C", "A", "D", "D", "B"], 100)
+    baseline: repeatPattern(["A", "B", "A", "C", "A", "B", "D", "B"], REHEARSAL_TRACE_LENGTH),
+    targeted_post: repeatPattern(["A", "C", "C", "B", "C", "D", "C", "B"], REHEARSAL_TRACE_LENGTH),
+    sham_post: repeatPattern(["A", "B", "A", "C", "A", "B", "D", "B"], REHEARSAL_TRACE_LENGTH),
+    off_target_post: repeatPattern(["A", "B", "A", "C", "A", "D", "D", "B"], REHEARSAL_TRACE_LENGTH)
   };
 
-  const rival = fitTraceMemoryRival(traces.baseline, { memoryDepth: 1 });
+  const rival = fitTraceMemoryRival(traces.baseline, TRACE_MEMORY_RIVAL_POLICY);
   const distributions = {
-    baseline: transitionDistribution(traces.baseline),
-    targeted_post: transitionDistribution(traces.targeted_post),
-    sham_post: transitionDistribution(traces.sham_post),
-    off_target_post: transitionDistribution(traces.off_target_post),
+    baseline: transitionDistribution(traces.baseline, TRACE_MEMORY_RIVAL_POLICY),
+    targeted_post: transitionDistribution(traces.targeted_post, TRACE_MEMORY_RIVAL_POLICY),
+    sham_post: transitionDistribution(traces.sham_post, TRACE_MEMORY_RIVAL_POLICY),
+    off_target_post: transitionDistribution(traces.off_target_post, TRACE_MEMORY_RIVAL_POLICY),
     trace_memory_rival_prediction: rival.predictAggregateDistribution(traces.targeted_post)
   };
 
@@ -75,13 +83,21 @@ function buildRehearsalRecord() {
     rho_selective: targetedTv / denominator,
     rival_tv_loss: totalVariation(distributions.targeted_post, distributions.trace_memory_rival_prediction),
     rival_parameter_count: rival.parameterCount,
-    rival_training_entropy_bits: rival.trainingEntropy
+    rival_training_entropy_bits: rival.trainingEntropy,
+    trace_memory_min_trace_length: rival.minTraceLength,
+    trace_memory_laplace_smoothing: rival.laplaceSmoothing
   };
 
   const traceBundle = {
-    state_alphabet: ["A", "B", "C", "D"],
-    trace_length: 100,
+    state_alphabet: STATE_ALPHABET,
+    trace_length: REHEARSAL_TRACE_LENGTH,
     seed_policy: "deterministic_synthetic_patterns_no_random_seed",
+    rival_rehearsal_policy: {
+      memory_depth: TRACE_MEMORY_RIVAL_POLICY.memoryDepth,
+      minimum_trace_length: TRACE_MEMORY_RIVAL_POLICY.minTraceLength,
+      laplace_smoothing: TRACE_MEMORY_RIVAL_POLICY.laplaceSmoothing,
+      alphabet: STATE_ALPHABET
+    },
     traces,
     distributions
   };
@@ -97,8 +113,10 @@ function buildRehearsalRecord() {
     observable: "Total-variation change in externally observed transition distributions after targeted, sham, and off-target interventions.",
     rival_model: {
       id: rival.id,
-      implementation: "order-1 finite trace-memory baseline trained on baseline trace only",
+      implementation: "order-1 finite trace-memory baseline trained on baseline trace only with preregistration-style minimum length and Laplace smoothing in rehearsal mode",
       memory_depth: rival.memoryDepth,
+      minimum_trace_length: rival.minTraceLength,
+      laplace_smoothing: rival.laplaceSmoothing,
       state_count: rival.stateCount,
       context_count: rival.contextCount,
       parameter_count: rival.parameterCount,

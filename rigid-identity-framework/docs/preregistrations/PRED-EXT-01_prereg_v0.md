@@ -58,6 +58,8 @@ moral status.
 | Frozen threshold | `not_frozen` |
 | Threshold rationale | Must be frozen before execution to prevent post-hoc selectivity tuning |
 | Date frozen | `null` |
+| Rehearsal minimum trace length | `N_min = 200` for the synthetic rehearsal only |
+| Rehearsal rival smoothing | Laplace smoothing `lambda = 1` for `RIVAL-TRACE-MEMORY-01` rehearsal only |
 | Allowed transformation | pre-declared smoothing or binning only |
 | Disallowed post-hoc transformation | changing state bins, trace windows, epsilon floor, or rival matching after inspecting results |
 
@@ -70,6 +72,8 @@ moral status.
   alphabet after baseline, or altered trace length budget.
 - Random seeds: `not_frozen`
 - Run count / sample size: `not_frozen`
+- Minimum trace length: `not_frozen` for evidential execution; the rehearsal
+  runner uses `N_min = 200` only to block short-trace variance artifacts.
 - Primary negative controls: sham intervention; off-target channel
   intervention; entropy-matched memory control; state-alphabet matched random
   control.
@@ -77,7 +81,10 @@ moral status.
 - Off-target controls: perturb non-identity channel under matched budget.
 - Rival model/control implementation: `RIVAL-TRACE-MEMORY-01` rehearsal
   implementation exists as an order-1 finite trace-memory baseline; parameters
-  are not frozen for evidential execution.
+  are not frozen for evidential execution. Rehearsal mode uses memory depth
+  `1`, minimum trace length `200`, fixed state alphabet `A/B/C/D`, and Laplace
+  smoothing `lambda = 1` to avoid zero-probability artifacts in short synthetic
+  traces.
 - Matching criteria for rivals: state count, trace length, empirical entropy,
   buffer depth, estimator family, and complexity penalty coefficient `alpha`.
 
@@ -93,11 +100,13 @@ moral status.
 - Outlier rule: not frozen.
 - Runtime/admissibility budget: synthetic rehearsal runner exists with an
   executable trace-memory rival; evidential runtime remains blocked until
-  threshold, dataset, rival parameters, alpha, and exclusions are frozen.
+  threshold, dataset, rival parameters, alpha, minimum trace length, smoothing
+  policy, and exclusions are frozen.
 - Contamination checks: verify no intervention labels leak into rival training
   or estimator selection.
 - Abort conditions: changed threshold after traces are generated; missing rival
-  result; non-matched entropy; untracked seed change.
+  result; non-matched entropy; untracked seed change; trace length below the
+  frozen admissibility budget; smoothing policy changed after observing traces.
 
 ## Decision Record
 

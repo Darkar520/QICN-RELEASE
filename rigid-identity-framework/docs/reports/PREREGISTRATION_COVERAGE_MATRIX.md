@@ -28,7 +28,7 @@ the QICN framework externally.
 | `PRED-09` | LaTeX canonical | none | missing |
 | `PRED-10` | LaTeX canonical | none | missing |
 | `PRED-11` | LaTeX canonical | `docs/preregistrations/PRED-11_prereg_v0.md` | draft scaffold, not frozen |
-| `PRED-EXT-01` | registry extension | `docs/preregistrations/PRED-EXT-01_prereg_v0.md` | external-candidate draft, rehearsal only |
+| `PRED-EXT-01` | registry extension | `docs/preregistrations/PRED-EXT-01_prereg_v0.md` | external-candidate draft, rehearsal only; v14-final-prep adds `N_min = 200` and Laplace `lambda = 1` safeguards |
 
 ## v14 Priority
 

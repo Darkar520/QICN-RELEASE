@@ -71,6 +71,12 @@ preserving:
 `RIVAL-TRACE-MEMORY-01`: a trace-memory / entropy-only rival matched on state
 count, trace length, empirical entropy, and buffer depth.
 
+FCR v14-final-prep hardens the rehearsal version of this rival with a minimum
+trace-length guard (`N_min = 200`) and Laplace smoothing (`lambda = 1`) so that
+the toy runner does not treat short-trace variance or unseen states as
+evidential defeat. These values are rehearsal safeguards only; they are not
+frozen evidential parameters.
+
 ### Support Condition
 
 The targeted intervention produces a reproducible selectivity ratio above the
@@ -103,7 +109,8 @@ sham/off-target controls under frozen rules.
 (`npm run rehearse:pred-ext-01`) that writes a blocked decision record for the
 observable pipeline. FCR v14-core upgrades the rehearsal from a static rival
 distribution to an executable order-1 finite trace-memory rival trained on the
-baseline trace only. That rehearsal is still not evidence and cannot be cited
-as support. The candidate remains non-executable as a scientific test until a
-frozen threshold, dataset, frozen rival parameters, external protocol, and
-evidential decision record exist.
+baseline trace only. FCR v14-final-prep adds the short-trace guard, smoothing
+policy, and a unit test gate for that rival. That rehearsal is still not
+evidence and cannot be cited as support. The candidate remains non-executable
+as a scientific test until a frozen threshold, dataset, frozen rival
+parameters, external protocol, and evidential decision record exist.

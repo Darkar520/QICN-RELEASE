@@ -82,12 +82,16 @@ function build() {
     const fullPath = path.join(ROOT, relPath);
     const content = fs.readFileSync(fullPath, "utf8");
     packages.push(...gatherPreambleLine(content, /^\\usepackage/));
-    setup.push(...gatherPreambleLine(content, /^\\(newcommand|renewcommand|DeclareMathOperator|DeclareRobustCommand|newtheorem|theoremstyle|numberwithin)/));
+    setup.push(...gatherPreambleLine(content, /^\\(newcommand|renewcommand|DeclareMathOperator|DeclareRobustCommand|newtheorem|theoremstyle|numberwithin|newcolumntype)/));
     const sectionName = `${String(index + 1).padStart(2, "0")}-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.tex`;
     try {
+      let body = bodyOf(content);
+      if (title === "BaseCore") {
+        body = body.replace(/core\/sections\//g, "../basecore/core/sections/");
+      }
       fs.writeFileSync(
         path.join(SECTION_DIR, sectionName),
-        `\\chapter*{${title}}\n\\addcontentsline{toc}{chapter}{${title}}\n${bodyOf(content)}\n`,
+        `\\chapter*{${title}}\n\\addcontentsline{toc}{chapter}{${title}}\n${body}\n`,
         "utf8"
       );
       sections.push({ title, relPath, sectionName, status: "extracted" });
@@ -96,12 +100,66 @@ function build() {
     }
   });
 
-  fs.writeFileSync(path.join(PREAMBLE_DIR, "packages.tex"), `${dedupePackages(packages).join("\n")}\n`, "utf8");
+  const dedupped = dedupePackages(packages);
+  const biblatexIndex = dedupped.findIndex((line) => line.includes("biblatex"));
+  if (biblatexIndex !== -1) {
+    dedupped.splice(biblatexIndex + 1, 0, "\\addbibresource{../release/references.bib}");
+  } else {
+    dedupped.push("\\addbibresource{../release/references.bib}");
+  }
+
+  fs.writeFileSync(path.join(PREAMBLE_DIR, "packages.tex"), `${dedupped.join("\n")}\n`, "utf8");
+
+  const cleanSetup = uniqueLines(setup)
+    .filter((line) => !line.includes("\\AuthorVisible") && !line.includes("\\AuthorMetadata"))
+    .filter((line) => !line.includes("\\blockedresultstatus") && !line.includes("\\codestate") && !line.includes("\\sectionstatus"))
+    .filter((line) => !line.includes("\\newtheorem") && !line.includes("\\theoremstyle") && !line.includes("\\arraystretch"));
+
+  const customTheorems = [
+    "",
+    "\\theoremstyle{plain}",
+    "\\newtheorem{theorem}{Theorem}[section]",
+    "\\newtheorem{proposition}[theorem]{Proposition}",
+    "\\newtheorem{lemma}[theorem]{Lemma}",
+    "\\newtheorem{corollary}[theorem]{Corollary}",
+    "\\newtheorem{criterion}[theorem]{Criterion}",
+    "\\newtheorem{axiom}[theorem]{Axiom}",
+    "\\newtheorem{nontheorem}[theorem]{Non-Theorem}",
+    "\\newtheorem{conjecture}[theorem]{Conjecture}",
+    "",
+    "\\theoremstyle{definition}",
+    "\\newtheorem{definition}[theorem]{Definition}",
+    "\\newtheorem{example}[theorem]{Example}",
+    "\\newtheorem{assumption}[theorem]{Assumption}",
+    "\\newtheorem{caveat}[theorem]{Caveat}",
+    "\\newtheorem{prediction}[theorem]{Prediction}",
+    "\\newtheorem{protocol}[theorem]{Protocol}",
+    "\\newtheorem{hypothesis}[theorem]{Hypothesis}",
+    "",
+    "\\theoremstyle{remark}",
+    "\\newtheorem{remark}[theorem]{Remark}",
+    "",
+    "\\newenvironment{abstract}%",
+    "{\\begin{quotation}\\noindent\\textbf{Abstract.} }%",
+    "{\\end{quotation}}",
+    "",
+    "\\newcommand{\\sectionstatus}[1]{\\paragraph{Section status.}\\texttt{\\detokenize{#1}}.}",
+    "\\newcommand{\\codestate}[1]{\\texttt{\\detokenize{#1}}}",
+    "\\newenvironment{blocked_until_execution}%",
+    "{\\par\\medskip\\noindent\\begin{minipage}{0.96\\textwidth}\\textbf{\\texttt{blocked\\_until\\_execution}.}\\enspace}%",
+    "{\\end{minipage}\\par\\medskip}",
+    "\\newcommand{\\blockedresultstatus}{%",
+    "\\begin{blocked_until_execution}%",
+    "This section requires executed campaigns with human participants, frozen external filing records, populated admissible datasets, actual reviewer and adjudicator assignments, reviewer-governed evidence assessment, real collection-start events, and later adjudicator-layer completion. It contains no results and must remain non-result-bearing until those artifacts exist.%",
+    "\\end{blocked_until_execution}%",
+    "}",
+    "",
+    "\\renewcommand{\\arraystretch}{1.18}"
+  ].join("\n");
+
   fs.writeFileSync(
     path.join(PREAMBLE_DIR, "setup.tex"),
-    `${uniqueLines(setup)
-      .filter((line) => !line.includes("\\AuthorVisible") && !line.includes("\\AuthorMetadata"))
-      .join("\n")}\n`,
+    `${cleanSetup.join("\n")}\n${customTheorems}\n`,
     "utf8"
   );
 
@@ -122,19 +180,41 @@ function build() {
     ""
   ].join("\n");
   fs.writeFileSync(path.join(MONO_DIR, "QICN_MONOLITHIC.tex"), root, "utf8");
-  fs.writeFileSync(
-    path.join(MONO_DIR, "compile.ps1"),
-    "pdflatex -interaction=nonstopmode -halt-on-error QICN_MONOLITHIC.tex\n",
-    "utf8"
-  );
+
+  const compileScript = [
+    "pdflatex -interaction=nonstopmode QICN_MONOLITHIC.tex",
+    "biber QICN_MONOLITHIC",
+    "pdflatex -interaction=nonstopmode QICN_MONOLITHIC.tex",
+    "pdflatex -interaction=nonstopmode QICN_MONOLITHIC.tex"
+  ].join("\n") + "\n";
+
+  fs.writeFileSync(path.join(MONO_DIR, "compile.ps1"), compileScript, "utf8");
   return { sections, failures };
 }
 
 function compile() {
-  const result = childProcess.spawnSync("pdflatex", ["-interaction=nonstopmode", "-halt-on-error", "QICN_MONOLITHIC.tex"], {
+  console.log("Running pdflatex (Pass 1)...");
+  let result = childProcess.spawnSync("pdflatex", ["-interaction=nonstopmode", "-halt-on-error", "QICN_MONOLITHIC.tex"], {
     cwd: MONO_DIR,
     encoding: "utf8"
   });
+  if (result.status === 0) {
+    console.log("Running biber...");
+    childProcess.spawnSync("biber", ["QICN_MONOLITHIC"], {
+      cwd: MONO_DIR,
+      encoding: "utf8"
+    });
+    console.log("Running pdflatex (Pass 2)...");
+    childProcess.spawnSync("pdflatex", ["-interaction=nonstopmode", "-halt-on-error", "QICN_MONOLITHIC.tex"], {
+      cwd: MONO_DIR,
+      encoding: "utf8"
+    });
+    console.log("Running pdflatex (Pass 3)...");
+    result = childProcess.spawnSync("pdflatex", ["-interaction=nonstopmode", "-halt-on-error", "QICN_MONOLITHIC.tex"], {
+      cwd: MONO_DIR,
+      encoding: "utf8"
+    });
+  }
   return {
     status: result.status === 0 ? "compiled" : "failed",
     exit_code: result.status,

@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+﻿\documentclass[11pt,a4paper]{article}
 
 \input{glyphtounicode}
 \pdfgentounicode=1
@@ -54,7 +54,7 @@
 \newcommand{\Cop}{\mathrm{Consciousness}_{\mathrm{op}}}
 \newcommand{\Lop}{\mathrm{Life}_{\mathrm{op}}}
 \newcommand{\Subop}{\mathrm{Subject}_{\mathrm{op}}}
-\newcommand{\Class}{\mathscr{K}}
+\newcommand{\LifeStructClass}{\mathscr{K}}
 \newcommand{\Struct}{\mathscr{T}}
 \newcommand{\PsiVec}{\Psi}
 \newcommand{\Aset}{A_S}
@@ -339,7 +339,7 @@ Operational life is not defined purely by persistence and self-maintenance. With
 \begin{definition}[Structural class]
 Fix a descriptor map $\PsiVec_\tau$ and a tolerance $\eps>0$. The structural class of $S$ at tolerance $\eps$ is
 \[
-\Class_{\PsiVec,\eps}[S]
+\LifeStructClass_{\PsiVec,\eps}[S]
 =
 \left\{
 T \;:\; d_{\Psi}\bigl(\PsiVec_\tau(T),\PsiVec_\tau(S)\bigr)\le \eps
@@ -411,7 +411,7 @@ Define the following system classes:
 \SubClass &= \{S : \Subop(S,\tau)=1\}.
 \end{aligned}
 \]
-Structural classes $\Class_{\PsiVec,\eps}[S]$ provide the ambient geometry in which these predicates live.
+Structural classes $\LifeStructClass_{\PsiVec,\eps}[S]$ provide the ambient geometry in which these predicates live.
 
 \subsection{Proved Relations}
 \begin{proposition}[Subjecthood is stronger than life and consciousness]
@@ -459,7 +459,7 @@ and all relevant margins exceed $\eps$ implies
 \end{definition}
 
 \begin{proposition}[Structural-class invariance under preserved margins]
-If $\mathcal{P}$ depends only on a subset of descriptor margins appearing in $\PsiVec_\tau$ and those margins are preserved above their thresholds by more than $\eps$, then $\mathcal{P}$ is transport-stable across $\Class_{\PsiVec,\eps}$.
+If $\mathcal{P}$ depends only on a subset of descriptor margins appearing in $\PsiVec_\tau$ and those margins are preserved above their thresholds by more than $\eps$, then $\mathcal{P}$ is transport-stable across $\LifeStructClass_{\PsiVec,\eps}$.
 \end{proposition}
 
 \begin{proof}

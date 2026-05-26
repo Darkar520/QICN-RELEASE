@@ -151,7 +151,7 @@ function run() {
   console.log(`Wrote ${path.relative(ROOT, OUTPUT_PATH)}`);
   console.log(`Status: ${record.status}`);
   console.log(`Verdict: ${record.verdict}`);
-  console.log("Boundary: rehearsal only; no empirical support or external validation.");
+  console.log("Boundary: rehearsal only; no empirical support or external adjudication.");
 }
 
 if (require.main === module) {

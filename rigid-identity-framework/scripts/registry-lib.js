@@ -344,6 +344,28 @@ const AUDIT_OVERRIDES = [
       "docs/AUDIT_MASTER_v5.md reports that setting all ten bits to 1 is formally non-empty but gives no realizability evidence.",
     tags: ["audit-v5", "paper9", "vacuity"],
   },
+  {
+    match: { paper: "paper5", label: "prop:integration-transfer" },
+    proof_status: "heuristic",
+    epistemic_status: "open_burden",
+    audit_status: "iint_factorization_burden_open",
+    counterexample: {
+      description:
+        "I_INT_FORMAL_BURDEN_REVIEW.md reports that prop:integration-transfer is a plausible prose consolidation argument, but not yet a typed standalone factorization-triviality theorem.",
+      mathematical_object:
+        "An admissible factorization category preserving histories, identity maps, and intervention responses has not yet been defined and ruled out up to trivial isomorphism.",
+      source: "../docs/reports/I_INT_FORMAL_BURDEN_REVIEW.md",
+      verified_by: "audit-agent-v15",
+      date_verified: "2026-05-26",
+    },
+    curation: {
+      status: "curated_open_burden",
+      by: "audit-agent-v15",
+      date: "2026-05-26",
+      reason: "Materialized I_int overlay: no independent factorization-triviality lemma is present.",
+    },
+    tags: ["audit-v15", "i-int", "factorization", "open-burden", "paper5"],
+  },
 ];
 
 const REQUIRED_AUDIT_COVERAGE = [

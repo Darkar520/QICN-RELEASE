@@ -1,9 +1,9 @@
 {
   "schema_version": "1.1.0",
-  "generated_for": "FCR v10 falsifiability scaffold",
-  "date": "2026-05-25",
+  "generated_for": "FCR v15 falsifiability scaffold plus internal synthetic pilot",
+  "date": "2026-05-26",
   "scope": "Machine-readable binding for Paper 6 prediction families PRED-01 through PRED-11 plus explicitly marked external candidate predictions.",
-  "status_boundary": "This registry is a preregistration scaffold only. It does not report new empirical results, external validation, consciousness, phenomenality, identity transfer, agency, or moral status.",
+  "status_boundary": "This registry is a preregistration scaffold plus internal synthetic pilot ledger. It does not report external adjudication, consciousness, phenomenality, identity transfer, agency, or moral status.",
   "success_metric": "A third-party reviewer should be able to design a concrete test or falsification attempt from each record without private explanation from the authors. A reviewer still cannot execute a final preregistered experiment until datasets, seeds, thresholds, exclusion rules, and decision records are frozen.",
   "threshold_policy": {
     "rule": "Do not invent numeric thresholds. Values are marked frozen only when explicitly stated in the corpus or in a future preregistration artifact.",
@@ -15,7 +15,8 @@
     "internal_support_only": "The corpus reports internal support, but no external adjudication is claimed.",
     "blocked": "The prediction cannot be executed until a named missing artifact, rival, or protocol exists.",
     "externally_adjudicated": "Reserved for future use only after independent execution and decision records.",
-    "external_candidate_not_executed": "The prediction has a non-framework-facing observable candidate, but no frozen runner, dataset, threshold, or decision record yet."
+    "external_candidate_not_executed": "The prediction has a non-framework-facing observable candidate, but no frozen runner, dataset, threshold, or decision record yet.",
+    "internal_synthetic_pilot_executed": "A frozen internal synthetic pilot has executed with decision records, but no external adjudication or empirical validation is claimed."
   },
   "predictions": [
     {
@@ -605,7 +606,9 @@
         "off_target_trace_panel",
         "rival_trace_memory_result",
         "selectivity_ratio_report",
-        "decision_record"
+        "decision_record",
+        "internal_synthetic_pilot_decision_record",
+        "freeze_artifact_hash"
       ],
       "minimum_negative_controls": [
         "sham_intervention_control",
@@ -616,27 +619,55 @@
       "thresholds": [
         {
           "name": "transition_selectivity_ratio",
-          "status": "not_frozen",
-          "value": null,
+          "status": "frozen_from_claim_logic",
+          "value": 2,
           "unit": "ratio of targeted total-variation shift to maximum sham/off-target shift",
-          "source": "FCR v13 external prediction seed; no numeric value is frozen until PRED-EXT-01 preregistration is completed.",
-          "rationale": "The threshold must be frozen before execution so the prediction cannot be rescued by post-hoc selectivity tuning.",
-          "date_frozen": null,
-          "modification_log": []
+          "source": "docs/preregistrations/PRED-EXT-01_freeze_v1.json; internal synthetic pilot only.",
+          "rationale": "A targeted intervention must produce at least twice the maximum sham/off-target TV shift to count as selective in the internal synthetic pilot.",
+          "date_frozen": "2026-05-26",
+          "modification_log": [
+            {
+              "date": "2026-05-26",
+              "action": "frozen_for_internal_synthetic_pilot",
+              "reason": "FCR v15-pilot freeze before committed pilot record."
+            }
+          ]
         },
         {
           "name": "penalized_loss_alpha",
-          "status": "not_frozen",
-          "value": null,
+          "status": "frozen_from_claim_logic",
+          "value": 0.05,
           "unit": "complexity penalty coefficient",
-          "source": "Rival model registry requires alpha before a rival defeat claim can be made.",
-          "rationale": "The rival comparison is meaningless unless empirical loss and model complexity are traded off by a frozen rule.",
-          "date_frozen": null,
-          "modification_log": []
+          "source": "docs/preregistrations/PRED-EXT-01_freeze_v1.json; internal synthetic pilot only.",
+          "rationale": "Small complexity penalty over trace-length-times-state-count normalization for the trace-memory rival in the internal synthetic pilot.",
+          "date_frozen": "2026-05-26",
+          "modification_log": [
+            {
+              "date": "2026-05-26",
+              "action": "frozen_for_internal_synthetic_pilot",
+              "reason": "FCR v15-pilot freeze before committed pilot record."
+            }
+          ]
+        },
+        {
+          "name": "rival_loss_floor",
+          "status": "frozen_from_claim_logic",
+          "value": 0.05,
+          "unit": "penalized total-variation loss",
+          "source": "docs/preregistrations/PRED-EXT-01_freeze_v1.json; internal synthetic pilot only.",
+          "rationale": "The rival must have non-trivial loss on the targeted observable before the pilot can record internal synthetic support.",
+          "date_frozen": "2026-05-26",
+          "modification_log": [
+            {
+              "date": "2026-05-26",
+              "action": "frozen_for_internal_synthetic_pilot",
+              "reason": "FCR v15-pilot freeze before committed pilot record."
+            }
+          ]
         }
       ],
-      "current_status": "external_candidate_not_executed",
-      "epistemic_limit": "This is an external finite-trace prediction seed. It can test a transition-selectivity claim on a toy-scale system, but it cannot prove consciousness, phenomenality, personal identity, or external validation of the full framework.",
+      "current_status": "internal_synthetic_pilot_executed",
+      "epistemic_limit": "This is an external finite-trace prediction seed with one internal synthetic pilot. It can test a transition-selectivity claim on a toy-scale system, but it cannot prove consciousness, phenomenality, personal identity, or external adjudication of the full framework.",
       "linked_rivals": [
         "RIVAL-TRACE-MEMORY-01"
       ]

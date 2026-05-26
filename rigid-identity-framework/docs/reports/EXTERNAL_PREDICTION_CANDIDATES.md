@@ -1,6 +1,6 @@
 # External Prediction Candidates v1
 
-Status: FCR v13 candidate registry.
+Status: FCR v15 candidate registry with internal synthetic pilot.
 
 Date: 2026-05-25
 
@@ -23,7 +23,7 @@ enter `docs/PREDICTION_REGISTRY_v1.json`:
 4. Support, weakening, and destruction conditions are stated before execution.
 5. Thresholds are either frozen or explicitly marked `not_frozen`.
 6. The epistemic limit states that a positive result is not proof of
-   consciousness, phenomenality, personal identity, or external validation.
+   consciousness, phenomenality, personal identity, or external adjudication.
 
 ## Accepted Candidate: PRED-EXT-01
 
@@ -53,7 +53,11 @@ rho_selective =
   / max(TV(sham_pre, sham_post), TV(off_target_pre, off_target_post), epsilon_floor)
 ```
 
-No numeric threshold for `rho_selective` is frozen in this artifact.
+For the v15 internal synthetic pilot only, `rho_selective_threshold = 2.0`
+is frozen in `docs/preregistrations/PRED-EXT-01_freeze_v1.json`. This value
+does not freeze an external adjudication threshold. It is a low-inference
+internal harness threshold used to test whether the pipeline can produce a
+clean support/destruction decision under fixed rules.
 
 ### Manipulation
 
@@ -74,8 +78,10 @@ count, trace length, empirical entropy, and buffer depth.
 FCR v14-final-prep hardens the rehearsal version of this rival with a minimum
 trace-length guard (`N_min = 200`) and Laplace smoothing (`lambda = 1`) so that
 the toy runner does not treat short-trace variance or unseen states as
-evidential defeat. These values are rehearsal safeguards only; they are not
-frozen evidential parameters.
+evidential defeat. FCR v15 freezes those same values for the internal synthetic
+pilot, together with trace length `240`, state alphabet `A/B/C/D`,
+`penalized_loss_alpha = 0.05`, and `rival_loss_floor = 0.05`. They remain
+internal synthetic pilot parameters, not external adjudication parameters.
 
 ### Support Condition
 
@@ -104,13 +110,21 @@ sham/off-target controls under frozen rules.
 
 ## Current Decision
 
-`PRED-EXT-01` is admitted into the prediction registry only as
-`external_candidate_not_executed`. FCR v13.1 adds a synthetic rehearsal runner
-(`npm run rehearse:pred-ext-01`) that writes a blocked decision record for the
-observable pipeline. FCR v14-core upgrades the rehearsal from a static rival
-distribution to an executable order-1 finite trace-memory rival trained on the
-baseline trace only. FCR v14-final-prep adds the short-trace guard, smoothing
-policy, and a unit test gate for that rival. That rehearsal is still not
-evidence and cannot be cited as support. The candidate remains non-executable
-as a scientific test until a frozen threshold, dataset, frozen rival
-parameters, external protocol, and evidential decision record exist.
+`PRED-EXT-01` is admitted into the prediction registry as an external candidate
+with one executed internal synthetic pilot. FCR v13.1 adds a synthetic rehearsal
+runner (`npm run rehearse:pred-ext-01`) that writes a blocked decision record
+for the observable pipeline. FCR v14-core upgrades the rehearsal from a static
+rival distribution to an executable order-1 finite trace-memory rival trained
+on the baseline trace only. FCR v14-final-prep adds the short-trace guard,
+smoothing policy, and a unit test gate for that rival.
+
+FCR v15 adds a frozen internal synthetic pilot (`npm run pilot:pred-ext-01`).
+The pilot satisfies the support rule on the positive synthetic panel
+(`rho_selective = 3.0`, threshold `2.0`) and the memory-only negative control
+does not satisfy the support rule (`rho_selective = 0.0`). This is useful
+internal evidence that the harness can apply frozen rules and reject a negative
+control. It is not empirical support, not external adjudication, and not
+support for consciousness, phenomenality, personal identity, agency, moral
+status, or the full QICN framework. The candidate remains blocked for external
+adjudication until an external dataset, external threshold freeze, exclusion
+rules, adjudicator, and clean-room decision record exist.

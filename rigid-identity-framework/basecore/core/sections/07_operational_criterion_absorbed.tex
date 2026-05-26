@@ -1,4 +1,4 @@
-\part{Operational-Criterion Grammar and Certification}
+﻿\part{Operational-Criterion Grammar and Certification}
 \section{Admissible Systems, Supports, and Histories}
 
 \subsection{System Model}
@@ -170,7 +170,7 @@ such that:
 \end{definition}
 
 \begin{proposition}[Each invariant is individually necessary]\label{prop:invariant-necessity}
-If any one of $\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg$ fails, then $S\notin\Cop$.
+If any one of $\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg$ fails, then $S\notin\Critop$.
 \end{proposition}
 
 \begin{proof}
@@ -184,7 +184,7 @@ A decoder $D\in \Dec_S$ is certified if it satisfies the six legibility clauses 
 \end{definition}
 
 \begin{definition}[Criterion indistinguishability]
-For $x,y\in\Aset$, write $x\sim_{\Qop,S}y$ if, for every certified decoder $D\in\Dec_S$, every admissible horizon $T\ge \tau_{\min}(S)$, and every admissible intervention schedule $u_\bullet$,
+For $x,y\in\Aset$, write $x\sim_{\Partop,S}y$ if, for every certified decoder $D\in\Dec_S$, every admissible horizon $T\ge \tau_{\min}(S)$, and every admissible intervention schedule $u_\bullet$,
 \[
 D(h_{S,T}(x;u_\bullet))=D(h_{S,T}(y;u_\bullet)),
 \]
@@ -192,7 +192,7 @@ and the intervention responses remain matched within the legibility margin.
 \end{definition}
 
 \begin{proposition}[Well-definedness of the certified partition]\label{prop:qop-welldefined}
-If $\Iper(S)=\Iri(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1$, then $\sim_{\Qop,S}$ is an equivalence relation on $\Aset$.
+If $\Iper(S)=\Iri(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1$, then $\sim_{\Partop,S}$ is an equivalence relation on $\Aset$.
 \end{proposition}
 
 \begin{proof}
@@ -202,19 +202,19 @@ Reflexivity and symmetry are immediate. Transitivity follows because certified d
 \begin{definition}[Certified operational partition]\label{def:qop}
 Assume Proposition~\ref{prop:qop-welldefined}. The certified operational partition of $S$ is
 \[
-\Qop(S):=\Aset/{\sim_{\Qop,S}}.
+\Partop(S):=\Aset/{\sim_{\Partop,S}}.
 \]
 \end{definition}
 
 \begin{definition}[Operational-criterion class membership]\label{def:cop}
-An admissible system belongs to the BaseCore operational-criterion class, written $S\in\Cop$, if there exists a non-empty admissible support $\Aset$ such that
+An admissible system belongs to the BaseCore operational-criterion class, written $S\in\Critop$, if there exists a non-empty admissible support $\Aset$ such that
 \[
 \Iper(S)=\Iri(S)=\Iint(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1.
 \]
 \end{definition}
 
 \begin{remark}[Neutrality of the class symbol]
-The symbol $\Cop$ is a shorthand for a conjunctive operational criterion. It is not a theorem of phenomenality, metaphysical subjectivity, or human equivalence.
+The symbol $\Critop$ is a shorthand for a conjunctive operational criterion. It is not a theorem of phenomenality, metaphysical subjectivity, or human equivalence.
 \end{remark}
 
 \begin{definition}[Rupture]\label{def:rupture}
@@ -224,9 +224,9 @@ A rupture is any loss of admissibility or loss of at least one critical invarian
 \begin{theorem}[Rupture by invariant loss]\label{thm:rupture}
 Let $S$ be admissible. If one or more critical invariants fail beyond admissible threshold, then exactly one of the following occurs:
 \begin{enumerate}[leftmargin=1.5em]
-\item $S\notin\Cop$;
-\item $\Qop(S)$ becomes undefined;
-\item $\Qop(S)$ becomes trivial or non-legible in the BaseCore sense.
+\item $S\notin\Critop$;
+\item $\Partop(S)$ becomes undefined;
+\item $\Partop(S)$ becomes trivial or non-legible in the BaseCore sense.
 \end{enumerate}
 \end{theorem}
 
@@ -256,20 +256,20 @@ Let $J_k=\mathfrak{I}\setminus\{I_k\}$ and assume $\mathcal{W}_k\neq \varnothing
 \[
 S\in \mathcal{C}_{\mathrm{op}}(J_k)
 \qquad\text{but}\qquad
-S\notin \Cop.
+S\notin \Critop.
 \]
 \end{proposition}
 
 \begin{proof}
-All retained invariants remain positive by construction, but the omitted invariant fails exactly. Proposition~\ref{prop:invariant-necessity} then excludes $S$ from $\Cop$.
+All retained invariants remain positive by construction, but the omitted invariant fails exactly. Proposition~\ref{prop:invariant-necessity} then excludes $S$ from $\Critop$.
 \end{proof}
 
 \begin{theorem}[Minimality of the six-invariant basis]\label{thm:invariant-basis-minimality}
-Let $\mathfrak{U}$ be any admissible universe containing at least one single-rupture witness for each invariant. Then no strict subset of $\mathfrak{I}$ is extensionally equivalent to $\Cop$ on $\mathfrak{U}$.
+Let $\mathfrak{U}$ be any admissible universe containing at least one single-rupture witness for each invariant. Then no strict subset of $\mathfrak{I}$ is extensionally equivalent to $\Critop$ on $\mathfrak{U}$.
 \end{theorem}
 
 \begin{proof}
-Take any strict subset $J\subsetneq \mathfrak{I}$. Some invariant $I_k$ is omitted. By assumption, $\mathfrak{U}$ contains a witness $S_k\in \mathcal{W}_k$, which satisfies the reduced criterion but not $\Cop$. Hence the two classes differ on $\mathfrak{U}$.
+Take any strict subset $J\subsetneq \mathfrak{I}$. Some invariant $I_k$ is omitted. By assumption, $\mathfrak{U}$ contains a witness $S_k\in \mathcal{W}_k$, which satisfies the reduced criterion but not $\Critop$. Hence the two classes differ on $\mathfrak{U}$.
 \end{proof}
 
 \section{Operational Legibility as a Certified Object}
@@ -312,7 +312,7 @@ where:
 \end{definition}
 
 \begin{criterion}[Candidate certification rule]\label{crit:cert}
-A candidate system may be certified as a member of $\Cop$ only if all of the following are available on the same admissible support:
+A candidate system may be certified as a member of $\Critop$ only if all of the following are available on the same admissible support:
 \begin{enumerate}[leftmargin=1.5em]
 \item a non-empty compact forward-invariant support certificate;
 \item a positive witness margin vector $\Delta(S)>0$ coordinate-wise;
@@ -324,11 +324,11 @@ A candidate system may be certified as a member of $\Cop$ only if all of the fol
 \end{criterion}
 
 \begin{theorem}[Certified criterion membership]
-If $\Cert(S)$ exists and satisfies Criterion~\ref{crit:cert}, then $S\in\Cop$ and $\Qop(S)$ is well-defined.
+If $\Cert(S)$ exists and satisfies Criterion~\ref{crit:cert}, then $S\in\Critop$ and $\Partop(S)$ is well-defined.
 \end{theorem}
 
 \begin{proof}
-Criterion~\ref{crit:cert} explicitly requires positive witnesses for all six invariants on a common admissible support. Definition~\ref{def:cop} then gives $S\in\Cop$, and Proposition~\ref{prop:qop-welldefined} gives a well-defined partition quotient.
+Criterion~\ref{crit:cert} explicitly requires positive witnesses for all six invariants on a common admissible support. Definition~\ref{def:cop} then gives $S\in\Critop$, and Proposition~\ref{prop:qop-welldefined} gives a well-defined partition quotient.
 \end{proof}
 
 \begin{remark}[Boundary discipline]

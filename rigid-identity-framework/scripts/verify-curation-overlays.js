@@ -35,11 +35,21 @@ function validateOverlay(overlayPath, entryMap) {
     }
 
     const registryEntry = entryMap.get(item.target_id);
-    if (item.current_registry_epistemic_status !== registryEntry.epistemic_status) {
-      errors.push(`${base}.current_registry_epistemic_status: expected ${registryEntry.epistemic_status}, got ${item.current_registry_epistemic_status}.`);
-    }
-    if (!item.recommended_epistemic_status || item.recommended_epistemic_status === registryEntry.epistemic_status) {
-      errors.push(`${base}.recommended_epistemic_status: must be present and differ from current status.`);
+    const materialized = item.materialized === true || String(overlay.status || "").startsWith("materialized");
+    if (materialized) {
+      if (item.recommended_epistemic_status !== registryEntry.epistemic_status) {
+        errors.push(`${base}.recommended_epistemic_status: materialized overlay expects registry status ${item.recommended_epistemic_status}, got ${registryEntry.epistemic_status}.`);
+      }
+      if (item.current_registry_epistemic_status !== registryEntry.epistemic_status) {
+        errors.push(`${base}.current_registry_epistemic_status: materialized overlay must match registry status ${registryEntry.epistemic_status}.`);
+      }
+    } else {
+      if (item.current_registry_epistemic_status !== registryEntry.epistemic_status) {
+        errors.push(`${base}.current_registry_epistemic_status: expected ${registryEntry.epistemic_status}, got ${item.current_registry_epistemic_status}.`);
+      }
+      if (!item.recommended_epistemic_status || item.recommended_epistemic_status === registryEntry.epistemic_status) {
+        errors.push(`${base}.recommended_epistemic_status: must be present and differ from current status.`);
+      }
     }
     if (!Array.isArray(item.required_for_reupgrade) || item.required_for_reupgrade.length === 0) {
       errors.push(`${base}.required_for_reupgrade: must list concrete re-upgrade requirements.`);

@@ -9,6 +9,7 @@
     "verify:corpus-registry": "node scripts/validate-corpus.js",
     "verify:macro-registry": "node scripts/validate-macros.js",
     "verify:prediction-registry": "node scripts/validate-prediction-registry.js",
+    "generate:prereg-scaffolds": "node scripts/generate-preregistration-scaffolds.js",
     "lint:nonclaims": "node scripts/lint-nonclaims.js",
     "extract:claim-ledger": "node scripts/extract-claim-ledger.js",
     "resync:macro-cache": "node scripts/resync-macro-cache.js",
@@ -20,6 +21,7 @@
     "report:corpus-health": "node scripts/generate-report.js",
     "verify:coordinate-specs": "node scripts/verify-coordinate-specs.js",
     "rehearse:pred-ext-01": "node scripts/run-pred-ext-01-rehearsal.js",
+    "pilot:pred-ext-01": "node scripts/run-pred-ext-01-pilot.js",
     "audit:extractor-diagnostic": "node scripts/verify-registry-reproducibility.js",
     "verify:curation-overlays": "node scripts/verify-curation-overlays.js",
     "test:trace-memory-rival": "node scripts/test-trace-memory-rival.js"

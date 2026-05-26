@@ -2,7 +2,7 @@
 
 Status: FCR v11 static rival registry.  
 Boundary: this file defines falsification comparators. It does not report
-empirical support, external validation, consciousness, phenomenality, identity
+empirical support, external adjudication, consciousness, phenomenality, identity
 transfer, agency, moral status, or bridge confirmation.
 
 ## Penalized Comparison Rule
@@ -49,6 +49,15 @@ without using post-hoc threshold changes.
 | `RIVAL-ADMISSIBILITY-NAIVE-01` | Accepted fields, parser behavior, hash policy, quarantine policy, `alpha`. |
 | `RIVAL-STABILITY-TRIVIAL-01` | Saturation threshold, constant-output rule, perturbation panel, invariant-margin check, `alpha`. |
 | `RIVAL-TRACE-MEMORY-01` | State alphabet, trace length, minimum trace length, entropy-matching tolerance, buffer depth, transition estimator, Laplace smoothing `lambda`, total-variation estimator, `alpha`. |
+
+## Internal Pilot Binding
+
+FCR v15 binds `RIVAL-TRACE-MEMORY-01` for the internal synthetic
+`PRED-EXT-01` pilot with alphabet `A/B/C/D`, trace length `240`, minimum trace
+length `200`, memory depth `1`, Laplace smoothing `lambda = 1`,
+`penalized_loss_alpha = 0.05`, and complexity normalized by
+`trace_length * state_count`. This binding is an internal synthetic pilot
+contract only. It does not freeze external adjudication parameters.
 
 ## Update Rule
 

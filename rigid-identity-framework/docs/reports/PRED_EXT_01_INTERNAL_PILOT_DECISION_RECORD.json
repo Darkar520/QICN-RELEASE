@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "PRED-EXT-01",
+  "run_id": "pred-ext-01-v1-internal-pilot-001",
+  "date_executed": "2026-05-26",
+  "execution_class": "internal_synthetic_pilot",
+  "status": "executed_internal_synthetic_pilot",
+  "verdict": "internal_synthetic_support_with_negative_control_passed",
+  "boundary": "This is an internal synthetic pilot only. It is not empirical support, not external adjudication, not validation of consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "freeze": {
+    "schema_version": "1.0.0",
+    "prediction_id": "PRED-EXT-01",
+    "freeze_id": "pred-ext-01-internal-synthetic-freeze-v1",
+    "date_frozen": "2026-05-26",
+    "status": "frozen_for_internal_synthetic_pilot_only",
+    "execution_class": "internal_synthetic_pilot",
+    "boundary": "This freeze is admissible only for the internal synthetic pilot. It is not an external adjudication freeze and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "state_alphabet": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "trace_length": 240,
+    "seed_policy": "deterministic_synthetic_patterns_no_random_seed",
+    "epsilon_floor": 0.001,
+    "rho_selective_threshold": 2,
+    "rival_loss_floor": 0.05,
+    "penalized_loss_alpha": 0.05,
+    "rival_complexity_normalizer": "trace_length_times_state_count",
+    "trace_memory_rival_policy": {
+      "id": "RIVAL-TRACE-MEMORY-01",
+      "memory_depth": 1,
+      "minimum_trace_length": 200,
+      "laplace_smoothing": 1
+    },
+    "support_rule": [
+      "rho_selective >= rho_selective_threshold",
+      "tv_targeted > max(tv_sham, tv_off_target, epsilon_floor)",
+      "penalized_rival_loss >= rival_loss_floor"
+    ],
+    "negative_control_rule": "A negative control passes only when the same support rule is false under the frozen decision rule.",
+    "destruction_rule": "If the negative control satisfies the support rule, the pilot is a destruction candidate for the selectivity claim or a harness failure requiring quarantine.",
+    "anti_inflation_rule": "A positive internal synthetic pilot may be recorded only as internal_synthetic_support. It must not be promoted to empirical support or external adjudication."
+  },
+  "scenario_results": {
+    "qicn_synthetic_positive": {
+      "scenario": "qicn_synthetic_positive",
+      "verdict": "support_rule_satisfied",
+      "support_rule_satisfied": true,
+      "metrics": {
+        "tv_targeted": 0.37037037037037035,
+        "tv_sham": 0,
+        "tv_off_target": 0.1234567901234568,
+        "control_max": 0.1234567901234568,
+        "rho_selective": 2.9999999999999996,
+        "rival_tv_loss": 0.49862598273119224,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.4994593160645256,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.8193134823229071
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.37037037037037035,
+          "B": 0.37448559670781895,
+          "C": 0.12757201646090535,
+          "D": 0.12757201646090535
+        },
+        "targeted_post": {
+          "A": 0.12345679012345678,
+          "B": 0.25102880658436216,
+          "C": 0.49794238683127573,
+          "D": 0.12757201646090535
+        },
+        "sham_post": {
+          "A": 0.37037037037037035,
+          "B": 0.37448559670781895,
+          "C": 0.12757201646090535,
+          "D": 0.12757201646090535
+        },
+        "off_target_post": {
+          "A": 0.37037037037037035,
+          "B": 0.25102880658436216,
+          "C": 0.12757201646090535,
+          "D": 0.25102880658436216
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.6220827728546491,
+          "B": 0.21332571819962384,
+          "C": 0.06250958296782219,
+          "D": 0.10208192597790501
+        }
+      }
+    },
+    "memory_only_negative_control": {
+      "scenario": "memory_only_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0,
+        "tv_sham": 0,
+        "tv_off_target": 0,
+        "control_max": 0.001,
+        "rho_selective": 0,
+        "rival_tv_loss": 0.015949546789590208,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.01678288012292354,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.8193134823229071
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.37037037037037035,
+          "B": 0.37448559670781895,
+          "C": 0.12757201646090535,
+          "D": 0.12757201646090535
+        },
+        "targeted_post": {
+          "A": 0.37037037037037035,
+          "B": 0.37448559670781895,
+          "C": 0.12757201646090535,
+          "D": 0.12757201646090535
+        },
+        "sham_post": {
+          "A": 0.37037037037037035,
+          "B": 0.37448559670781895,
+          "C": 0.12757201646090535,
+          "D": 0.12757201646090535
+        },
+        "off_target_post": {
+          "A": 0.37037037037037035,
+          "B": 0.37448559670781895,
+          "C": 0.12757201646090535,
+          "D": 0.12757201646090535
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.3623937061291526,
+          "B": 0.3665127141594465,
+          "C": 0.13557550708575147,
+          "D": 0.13551807262564944
+        }
+      }
+    }
+  },
+  "negative_control": {
+    "id": "memory_only_negative_control",
+    "passed": true,
+    "rule": "A negative control passes only when the same support rule is false under the frozen decision rule."
+  },
+  "claim_ledger_update_required": "Record as internal_synthetic_support only; do not promote to external evidence.",
+  "artifact_hashes": {
+    "freeze_sha256": "4593ea03ead18aac1986d6e3e3db4b710b008901724a6a19b61d604e8c6faec5",
+    "trace_bundle_sha256": "4eb812c80d4d361798ad5a9eb8071884987338ff7c715d6c1b1218b5911220e3",
+    "scenario_results_sha256": "67288dd2c4ec267c73e759dc1dc921f9d92860292961f398534523fa6a2d704d"
+  }
+}

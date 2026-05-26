@@ -1,41 +1,37 @@
-# Preregistration Coverage Matrix v1
+# Preregistration Coverage Matrix v2
 
-Status: FCR v14-core coverage audit.
+Status: FCR v15-pilot coverage audit.
 
 Date: 2026-05-26
 
 ## Boundary
 
-This matrix records preregistration coverage only. It does not execute any
-prediction, freeze new thresholds, report empirical support, validate
-consciousness, validate phenomenality, validate identity transfer, or adjudicate
-the QICN framework externally.
+This matrix records preregistration coverage only. It does not execute every
+prediction, report empirical support, validate consciousness, validate
+phenomenality, validate identity transfer, or adjudicate the QICN framework
+externally. Only PRED-EXT-01 has an executed internal synthetic pilot.
 
 ## Coverage
 
-| Prediction | Canon status | Preregistration artifact | Coverage status |
-|---|---|---|---|
-| `PRED-01` | LaTeX canonical | none | missing |
-| `PRED-02` | LaTeX canonical | none | missing |
-| `PRED-03` | LaTeX canonical | none | missing |
-| `PRED-04a` | split from Paper 6 `PRED-04` | none | missing |
-| `PRED-04b` | split from Paper 6 `PRED-04` | none | missing |
-| `PRED-04c` | split from Paper 6 `PRED-04` | `docs/preregistrations/PRED-04c_prereg_v1.md` | scaffold frozen, not executed |
-| `PRED-05` | LaTeX canonical | none | missing |
-| `PRED-06` | LaTeX canonical | `docs/preregistrations/PRED-06_prereg_v1.md` | scaffold frozen, harness self-test only |
-| `PRED-07` | LaTeX canonical | none | missing |
-| `PRED-08` | LaTeX canonical | none | missing |
-| `PRED-09` | LaTeX canonical | none | missing |
-| `PRED-10` | LaTeX canonical | none | missing |
-| `PRED-11` | LaTeX canonical | `docs/preregistrations/PRED-11_prereg_v0.md` | draft scaffold, not frozen |
-| `PRED-EXT-01` | registry extension | `docs/preregistrations/PRED-EXT-01_prereg_v0.md` | external-candidate draft, rehearsal only; v14-final-prep adds `N_min = 200` and Laplace `lambda = 1` safeguards |
+| Prediction | Preregistration artifact | Coverage status |
+|---|---|---|
+| `PRED-01` | `docs/preregistrations/PRED-01_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-02` | `docs/preregistrations/PRED-02_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-03` | `docs/preregistrations/PRED-03_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-04a` | `docs/preregistrations/PRED-04a_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-04b` | `docs/preregistrations/PRED-04b_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-04c` | `docs/preregistrations/PRED-04c_prereg_v1.md` | registered_preregistration_scaffold |
+| `PRED-05` | `docs/preregistrations/PRED-05_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-06` | `docs/preregistrations/PRED-06_prereg_v1.md` | registered_preregistration_scaffold |
+| `PRED-07` | `docs/preregistrations/PRED-07_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-08` | `docs/preregistrations/PRED-08_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-09` | `docs/preregistrations/PRED-09_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-10` | `docs/preregistrations/PRED-10_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-11` | `docs/preregistrations/PRED-11_prereg_v0.md` | draft_preregistration_scaffold_not_frozen |
+| `PRED-EXT-01` | `docs/preregistrations/PRED-EXT-01_prereg_v1.md` | frozen_internal_synthetic_pilot_executed |
 
-## v14 Priority
+## Interpretation
 
-The next preregistration target should be either:
-
-1. `PRED-EXT-01`, because it is the first external-facing candidate; or
-2. `PRED-11`, because it attacks the integration/complexity rival boundary.
-
-No missing preregistration should be treated as evidence against the framework,
-but no uncovered prediction should be cited as executable.
+Every registered prediction now has at least a preregistration scaffold. Most
+are still draft, not frozen, and not executed. This closes the documentation
+gap; it does not close the evidential gap.

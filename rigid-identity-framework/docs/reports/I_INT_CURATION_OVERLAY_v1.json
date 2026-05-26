@@ -1,14 +1,17 @@
 {
   "schema_version": "0.1.0",
   "date": "2026-05-26",
-  "status": "proposed_curation_overlay_not_applied_to_jsonl",
-  "boundary": "This overlay does not edit registry/theorems.jsonl and does not prove I_int. It records the governance action required if the factorization-triviality lemma is not supplied.",
+  "status": "materialized_by_fcr_v15_pilot",
+  "boundary": "This overlay has been materialized through the source-aware AUDIT_OVERRIDES path in scripts/registry-lib.js and regenerated into registry/theorems.jsonl. It does not prove I_int; it records that prop:integration-transfer remains an open formal burden until the factorization-triviality lemma is supplied.",
   "overlays": [
     {
       "target_id": "paper5:proposition:prop-integration-transfer",
       "target_file": "paper5_operational_consciousness/main.tex",
-      "current_registry_epistemic_status": "proved",
+      "previous_registry_epistemic_status": "proved",
+      "current_registry_epistemic_status": "open_burden",
       "recommended_epistemic_status": "open_burden",
+      "materialized": true,
+      "materialized_by": "scripts/registry-lib.js AUDIT_OVERRIDES",
       "recommended_claim_class": "conditional_consolidation_invariant",
       "reason": "The current proposition argues verbally that exact admissible factorization would contradict rigidity, continuity, or intervention fidelity, but the admissible factorization class and disjunction-elimination proof are not yet typed as a standalone theorem.",
       "required_for_reupgrade": [

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "PRED-EXT-01",
+  "freeze_id": "pred-ext-01-internal-synthetic-freeze-v1",
+  "date_frozen": "2026-05-26",
+  "status": "frozen_for_internal_synthetic_pilot_only",
+  "execution_class": "internal_synthetic_pilot",
+  "boundary": "This freeze is admissible only for the internal synthetic pilot. It is not an external adjudication freeze and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "state_alphabet": ["A", "B", "C", "D"],
+  "trace_length": 240,
+  "seed_policy": "deterministic_synthetic_patterns_no_random_seed",
+  "epsilon_floor": 0.001,
+  "rho_selective_threshold": 2.0,
+  "rival_loss_floor": 0.05,
+  "penalized_loss_alpha": 0.05,
+  "rival_complexity_normalizer": "trace_length_times_state_count",
+  "trace_memory_rival_policy": {
+    "id": "RIVAL-TRACE-MEMORY-01",
+    "memory_depth": 1,
+    "minimum_trace_length": 200,
+    "laplace_smoothing": 1
+  },
+  "support_rule": [
+    "rho_selective >= rho_selective_threshold",
+    "tv_targeted > max(tv_sham, tv_off_target, epsilon_floor)",
+    "penalized_rival_loss >= rival_loss_floor"
+  ],
+  "negative_control_rule": "A negative control passes only when the same support rule is false under the frozen decision rule.",
+  "destruction_rule": "If the negative control satisfies the support rule, the pilot is a destruction candidate for the selectivity claim or a harness failure requiring quarantine.",
+  "anti_inflation_rule": "A positive internal synthetic pilot may be recorded only as internal_synthetic_support. It must not be promoted to empirical support or external adjudication."
+}

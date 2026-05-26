@@ -1,0 +1,179 @@
+\part{Discrete-to-Continuous Bridge}
+\section{From Node Networks to Hilbert Space Dynamics}
+
+\noindent\textbf{Boundary of this bridge.}\enspace This part states a conditional approximation theorem between a finite node-network transition and the abstract BaseCore transition operator from Definition~\ref{def:transition}. It does not prove that any particular runtime execution belongs to an operational-consciousness class, and it does not convert finite tests into external validation.
+
+\begin{definition}[Discrete State Space]
+Let $N\in\mathbb{N}$ and let a node network be indexed by $i\in\{1,\dots,N\}$. Each node carries:
+\begin{itemize}[leftmargin=*]
+\item a local coherence state $x_i(t)\in[0,1]$;
+\item an energy coordinate $e_i(t)\in[0,1]$;
+\item a phase coordinate $\phi_i(t)\in[0,2\pi)$.
+\end{itemize}
+The discrete state space is
+\[
+\mathcal{S}_N=[0,1]^N\times[0,1]^N\times[0,2\pi)^N.
+\]
+\end{definition}
+
+\begin{definition}[Mean Coherence Observable]
+For a discrete state $s(t)=((x_i(t))_i,(e_i(t))_i,(\phi_i(t))_i)\in\mathcal{S}_N$, define
+\[
+X_N(t):=\frac{1}{N}\sum_{i=1}^N x_i(t)\in[0,1].
+\]
+This is an observable of the coherence coordinate only; it is not a complete state descriptor.
+\end{definition}
+
+\begin{definition}[Finite Hilbert Embedding]
+Let
+\[
+\Hilb_N:=\mathbb{R}^N,\qquad
+\inner{\mathbf{a}}{\mathbf{b}}_N:=\frac{1}{N}\sum_{i=1}^N a_i b_i.
+\]
+The coherence embedding
+\[
+\iota_N:\mathcal{S}_N\to\Hilb_N
+\]
+is
+\[
+\iota_N((x_i)_i,(e_i)_i,(\phi_i)_i)=(x_1,\dots,x_N).
+\]
+Thus $\iota_N$ forgets energy and phase except where they enter the transition rule below.
+\end{definition}
+
+\begin{definition}[Piecewise-Constant Isometry]
+Let $\Hilb=L^2([0,1])$ and partition $[0,1]$ into intervals
+\[
+I_{N,i}=\left[\frac{i-1}{N},\frac{i}{N}\right),\qquad i=1,\dots,N.
+\]
+Define $J_N:\Hilb_N\hookrightarrow \Hilb$ by
+\[
+(J_N\mathbf{x})(s)=x_i\quad\text{for }s\in I_{N,i}.
+\]
+Then $J_N$ is an isometry from $(\Hilb_N,\norm{\cdot}_N)$ into $L^2([0,1])$. Its adjoint $J_N^\dagger:\Hilb\to\Hilb_N$ is the cell-averaging map
+\[
+(J_N^\dagger f)_i=N\int_{I_{N,i}}f(s)\,ds.
+\]
+\end{definition}
+
+\begin{definition}[Discrete Transition Operator]
+Fix auxiliary energy and phase coordinates $(e_i)_i$ and $(\phi_i)_i$, a graph with incoming neighborhoods $\operatorname{conn}(i)$, and a control $u\in\U$. Let $d_N:=\max_i|\operatorname{conn}(i)|$. The coherence-coordinate transition
+\[
+\widehat T_{N,u}^{e,\phi}:\Hilb_N\to\Hilb_N
+\]
+is defined componentwise by
+\[
+\bigl(\widehat T_{N,u}^{e,\phi}\mathbf{x}\bigr)_i
+=
+\operatorname{clamp}_{[0,1]}\!\left(
+x_i+\eta R_i(\mathbf{x};e,\phi)+\alpha\,B_i(\mathbf{x})+\Gamma_{N,i}(u)
+\right),
+\]
+where
+\[
+R_i(\mathbf{x};e,\phi)
+=
+\sum_{j\in\operatorname{conn}(i)}
+I_j(x_j)
+\frac{\exp(-|e_i-e_j|/(kT))}
+{\theta\cos(\phi_i-\phi_j)}.
+\]
+Here $I_j:[0,1]\to[0,1]$ is the intensity readout, $B_i$ is the finite retro-inductive feedback term, $\Gamma_N(u)$ is the finite input coupling, and $k,T,\theta,\eta,\alpha$ are runtime parameters.
+\end{definition}
+
+\begin{assumption}[Discrete Regularity Conditions]\label{ass:discrete-regularity}
+For a fixed parameter region, assume:
+\begin{enumerate}[leftmargin=*]
+\item $I_j$ is $L_I$-Lipschitz for every node $j$.
+\item The phase denominator is uniformly separated from zero: there exists $c_\phi>0$ such that $|\cos(\phi_i-\phi_j)|\ge c_\phi$ on every active edge.
+\item $B:\Hilb_N\to\Hilb_N$ is $L_B$-Lipschitz.
+\item $\Gamma_N(u)$ is independent of $\mathbf{x}$ for fixed $u$.
+\item The parameters satisfy
+\[
+\rho_N:=\eta\,d_N\,L_I\,\frac{\exp(1/(kT))}{\theta c_\phi}+\alpha L_B<1.
+\]
+\end{enumerate}
+\end{assumption}
+
+\begin{remark}[Relation to the runtime guard]
+The runtime resonance function sets the contribution to zero when the denominator is numerically singular or when the Boltzmann exponent is beyond the accepted range. Assumption~\ref{ass:discrete-regularity} is the mathematical version of that guard: without a lower bound on $|\cos(\phi_i-\phi_j)|$, the resonance quotient is not uniformly Lipschitz and no contraction theorem follows from $\theta>1/2$ alone.
+\end{remark}
+
+\begin{theorem}[Discrete Operator Contractivity]\label{thm:discrete-contraction}
+Under Assumption~\ref{ass:discrete-regularity}, for fixed $u,e,\phi$ the operator $\widehat T_{N,u}^{e,\phi}$ is a strict contraction on $\Hilb_N$:
+\[
+\norm{\widehat T_{N,u}^{e,\phi}(\mathbf{x})-\widehat T_{N,u}^{e,\phi}(\mathbf{y})}_N
+\le
+\rho_N\norm{\mathbf{x}-\mathbf{y}}_N
+\qquad
+\forall \mathbf{x},\mathbf{y}\in\Hilb_N.
+\]
+\end{theorem}
+
+\begin{proof}
+The clamp map on $[0,1]^N$ is non-expansive componentwise. For each active edge, the energy-phase coefficient is bounded in absolute value by
+\[
+\frac{\exp(1/(kT))}{\theta c_\phi}.
+\]
+Since each $I_j$ is $L_I$-Lipschitz and each row has at most $d_N$ incoming edges, the resonance part has Lipschitz constant at most
+\[
+d_N L_I\frac{\exp(1/(kT))}{\theta c_\phi}
+\]
+in the normalized finite Hilbert norm. The feedback part contributes at most $\alpha L_B$, and the input coupling contributes no state-dependent term. Multiplying by $\eta$ and using non-expansiveness of the clamp gives the displayed bound. The assumed inequality $\rho_N<1$ makes the contraction strict.
+\end{proof}
+
+\begin{assumption}[Bridge Consistency]\label{ass:bridge-consistency}
+Let $T_u=\aleph(K\cdot+\Gamma(u))$ be the BaseCore transition operator from Definition~\ref{def:transition} on $\Hilb=L^2([0,1])$. Assume there are constants $C_1,C_2>0$ and a parameter approximation regime such that
+\[
+\norm{J_N\widehat T_{N,u}^{e,\phi}J_N^\dagger-T_u}_{\operatorname{op}}
+\le
+\eps_N,
+\]
+with
+\[
+\eps_N=
+\frac{C_1}{\sqrt{N}}+
+C_2\max\{0,\rho_N-\norm{K}\}.
+\]
+This is a finite-rank consistency assumption, not a consequence of H1--H5 alone.
+\end{assumption}
+
+\begin{theorem}[Hilbert--Discrete Bridge]\label{thm:bridge}
+Assume Hypotheses~\ref{hyp:H1}--\ref{hyp:H4}, Assumptions~\ref{ass:discrete-regularity} and~\ref{ass:bridge-consistency}, and $\rho_N<1$. Then the embedded finite transition approximates the abstract BaseCore transition by
+\[
+\norm{J_N\widehat T_{N,u}^{e,\phi}J_N^\dagger-T_u}_{\operatorname{op}}
+\le
+\frac{C_1}{\sqrt{N}}+
+C_2\max\{0,\rho_N-\norm{K}\}.
+\]
+In particular, if $N\to\infty$, the Galerkin/quadrature term tends to zero, and the discrete parameter regime is chosen so that $\limsup_N\rho_N\le\norm{K}$, then the finite transition converges to $T_u$ in operator norm.
+\end{theorem}
+
+\begin{proof}
+The displayed estimate is exactly Assumption~\ref{ass:bridge-consistency}. The convergence statement follows because $C_1/\sqrt{N}\to0$ and the second term vanishes under $\limsup_N\rho_N\le\norm{K}$. The theorem is therefore a bridge theorem under explicit discretization consistency, not an unconditional runtime-instantiation result.
+\end{proof}
+
+\begin{corollary}[Convergence of Fixed Points]\label{cor:bridge-fixed-points}
+Let $f_u^\ast$ be the unique fixed point of $T_u$ from Theorem~\ref{thm:fixedpoint}. Let $\widehat f_{N,u}^\ast$ be the unique fixed point of $\widehat T_{N,u}^{e,\phi}$ from Theorem~\ref{thm:discrete-contraction}. If the assumptions of Theorem~\ref{thm:bridge} hold and
+\[
+q_N:=\max\{\norm{K},\rho_N\}<1,
+\]
+then
+\[
+\norm{J_N\widehat f_{N,u}^\ast-f_u^\ast}_{\Hilb}
+\le
+\frac{\eps_N}{1-q_N}.
+\]
+Consequently, if $\eps_N\to0$ and $\sup_N q_N<1$, then
+\[
+\lim_{N\to\infty}\norm{J_N\widehat f_{N,u}^\ast-f_u^\ast}_{\Hilb}=0.
+\]
+\end{corollary}
+
+\begin{proof}
+This is the standard perturbation bound for fixed points of strict contractions. Insert and subtract $T_u(J_N\widehat f_{N,u}^\ast)$, use the operator discrepancy bound from Theorem~\ref{thm:bridge}, and then use the contraction constant of $T_u$ from Theorem~\ref{thm:contraction}. Moving the contraction term to the left gives the stated estimate.
+\end{proof}
+
+\begin{remark}[Applicability to the Current QICN Runtime]\label{rem:bridge-applicability}
+The theorem is asymptotic and conditional. The current runtime configuration has $N_{\mathrm{sample}}=1500$ for heavy processing and connection count between $3$ and $8$, so a typical mean degree is about $5.5$. The full configured potential network size is $10{,}000{,}000$, but the certified finite computation uses the processing sample. Therefore the error bound is not negligible by declaration. It is a hypothesis-driven approximation bridge from finite node dynamics toward the BaseCore operator, not automatic validation of a finite execution and not evidence of phenomenality, subjecthood, or external adjudication.
+\end{remark}

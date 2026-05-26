@@ -115,7 +115,7 @@ function generateReport(groups) {
     "",
     "## Governance Boundary",
     "",
-    "This audit records lexical and preamble-level risks for possible monolithic LaTeX compilation. It does not certify theorem truth, empirical validation, consciousness, phenomenality, identity transfer, agency, moral status, accessibility compliance, or external validation.",
+    "This audit records lexical and preamble-level risks for possible monolithic LaTeX compilation. It does not certify theorem truth, empirical support, consciousness, phenomenality, identity transfer, agency, moral status, accessibility compliance, or external adjudication.",
     "",
     "A clean FCR macro gate means there are no active semantic macro-collision warnings under the current policy. It does not mean a unified LaTeX volume can be compiled without a shared preamble, local grouping, or manual review of repeated theorem environments.",
     "",

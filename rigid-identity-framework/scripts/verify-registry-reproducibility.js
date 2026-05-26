@@ -171,24 +171,54 @@ function runDiagnostic() {
     lines.push(`| \`${row.file}\` | ${row.formal} | ${row.macros} | ${existsInBackup ? "yes" : "not_verified"} |`);
   });
 
-  lines.push(
-    "",
-    "## Interpretation",
-    "",
-    "The missing-source files explain a large part of the extractor mismatch, but",
-    "they do not explain the entire mismatch when compared with the latest",
-    "`audit:extractor-reproducibility` counts. The residual delta must remain an",
-    "open infrastructure burden until it is traced to extractor behavior, source",
-    "changes, intentionally curated registry entries, or another documented cause.",
-    "",
-    "## Required v14 Action",
-    "",
-    "1. Restore or formally retire each missing source file.",
-    "2. Re-run `npm run audit:extractor-reproducibility`.",
-    "3. Re-run this diagnostic.",
-    "4. Treat the extractor as authoritative only when both missing-source and",
-    "   residual deltas are zero, or every residual entry has a curated reason."
-  );
+  const isResolved =
+    extractorAudit &&
+    missingFormalTotal === 0 &&
+    missingMacroTotal === 0 &&
+    formalDelta === 0 &&
+    macroDelta === 0 &&
+    residualFormal === 0 &&
+    residualMacros === 0;
+
+  lines.push("", "## Interpretation", "");
+
+  if (isResolved) {
+    lines.push(
+      "The active checkout has no missing-source delta and no residual extractor",
+      "delta. The current FCR registry is reproducible from the primary `.tex`",
+      "files present in this tree.",
+      "",
+      "This closes the infrastructure mismatch identified by the v14-final-prep",
+      "audits, but it does not certify theorem truth, external adjudication,",
+      "monolithic LaTeX compilation, or human mathematical curation. It only",
+      "establishes that the current registry is synchronized with the current",
+      "source corpus under the current extractor.",
+      "",
+      "## Required v14 Action",
+      "",
+      "1. Keep `npm run audit:extractor-reproducibility` in the release gate.",
+      "2. Do not treat registry reproducibility as proof correctness.",
+      "3. Track restored or retired sources through explicit decision records.",
+      "4. Keep macro-collision and monolithic-compile risk separate from extractor",
+      "   reproducibility."
+    );
+  } else {
+    lines.push(
+      "The missing-source files explain a large part of the extractor mismatch, but",
+      "they do not explain the entire mismatch when compared with the latest",
+      "`audit:extractor-reproducibility` counts. The residual delta must remain an",
+      "open infrastructure burden until it is traced to extractor behavior, source",
+      "changes, intentionally curated registry entries, or another documented cause.",
+      "",
+      "## Required v14 Action",
+      "",
+      "1. Restore or formally retire each missing source file.",
+      "2. Re-run `npm run audit:extractor-reproducibility`.",
+      "3. Re-run this diagnostic.",
+      "4. Treat the extractor as authoritative only when both missing-source and",
+      "   residual deltas are zero, or every residual entry has a curated reason."
+    );
+  }
 
   fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true });
   fs.writeFileSync(REPORT_PATH, `${lines.join("\n")}\n`, "utf8");

@@ -58,6 +58,7 @@ moral status.
 | Frozen threshold | `not_frozen` |
 | Threshold rationale | Must be frozen before execution to prevent post-hoc selectivity tuning |
 | Date frozen | `null` |
+| Rehearsal trace length | `240` synthetic states per trace in `run-pred-ext-01-rehearsal.js` |
 | Rehearsal minimum trace length | `N_min = 200` for the synthetic rehearsal only |
 | Rehearsal rival smoothing | Laplace smoothing `lambda = 1` for `RIVAL-TRACE-MEMORY-01` rehearsal only |
 | Allowed transformation | pre-declared smoothing or binning only |
@@ -72,8 +73,9 @@ moral status.
   alphabet after baseline, or altered trace length budget.
 - Random seeds: `not_frozen`
 - Run count / sample size: `not_frozen`
-- Minimum trace length: `not_frozen` for evidential execution; the rehearsal
-  runner uses `N_min = 200` only to block short-trace variance artifacts.
+- Trace length and minimum trace length: `not_frozen` for evidential execution;
+  the rehearsal runner uses trace length `240` and `N_min = 200` only to block
+  short-trace variance artifacts.
 - Primary negative controls: sham intervention; off-target channel
   intervention; entropy-matched memory control; state-alphabet matched random
   control.

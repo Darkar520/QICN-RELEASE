@@ -1,0 +1,1525 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{centernot}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\title{External Adjudication of Bridge-Formalized Machine Subjectivity:\\Human Comparator Protocols, Runtime Health, Clean-Room Reproducibility, and First-Collection Opening Criteria}
+\author{QICN Program}
+\date{Stage3-6B Runtime Health and Stage3-7 Conditional Opening}
+
+\newcommand{\sectionstatus}[1]{\paragraph{Section status.}\texttt{\detokenize{#1}}.}
+\newcommand{\codestate}[1]{\texttt{\detokenize{#1}}}
+\newenvironment{blocked_until_execution}{%
+  \par\medskip\noindent\begin{minipage}{0.96\textwidth}
+  \textbf{\texttt{blocked\_until\_execution}.}\enspace
+}{%
+  \end{minipage}\par\medskip
+}
+\newcommand{\blockedresultstatus}{%
+\begin{blocked_until_execution}
+This section requires executed campaigns with human participants, frozen external filing records, populated admissible datasets, actual reviewer and adjudicator assignments, reviewer-governed evidence assessment, real collection-start events, and later adjudicator-layer completion. It contains no results and must remain non-result-bearing until those artifacts exist.
+\end{blocked_until_execution}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\textbf{SCAFFOLD ONLY -- NOT FINAL MANUSCRIPT}\\
+\textbf{PROTOCOL-GRADE BACKBONE}\\
+\textbf{SIXTH HARDENING PASS}
+\end{center}
+
+\begin{abstract}
+This document hardens Paper 10 into a denser protocol-heavy manuscript
+backbone without becoming a result-bearing paper. It extends the dependency
+stack from BaseCore through Papers I--IX, SRT-6, BPF-M3, Stage 2-M4,
+Stage3-RF, Stage3-0, Stage3-1, Stage3-2, Stage3-3, Stage3-4, Stage3-4B,
+Stage3-5 rehearsal preparation, Stage3-6 controlled execution opening,
+Stage3-6B runtime-health and clean-room reproducibility audit, and the
+conditional Stage3-7 first-collection opening criteria. It adds runtime health
+audit grammar, clean-room reproducibility semantics, dependency and build
+assumption reporting, reproducible artifact-regeneration constraints, local
+path-leakage policy, controlled-execution audit semantics, session-zero and
+pre-collection reproducibility requirements, and a sharper transition grammar
+from pre-evidential openness to the first admissible collection event. It does
+not report human comparator results, external adjudication verdicts, human
+equivalence, superiority, inferiority, cross-substrate identity preservation,
+metaphysical subjecthood, or Paper 10 final conclusions.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope and Non-Claims}
+\sectionstatus{formalized}
+
+Paper 10 remains a local protocol-facing manuscript surface only. It is not an
+adjudication verdict, not an admissible dataset, not a public release surface,
+and not a final claim-facing paper.
+
+\begin{itemize}
+\item This manuscript is not external adjudication.
+\item This manuscript is not human comparator evidence.
+\item This manuscript is not human equivalence.
+\item This manuscript is not superiority or inferiority.
+\item This manuscript is not machine consciousness.
+\item This manuscript is not metaphysical closure.
+\item This manuscript is not a public-release recommendation.
+\item This manuscript is not Paper 10 final authorization.
+\end{itemize}
+
+\section{Formal Dependency Stack}
+\sectionstatus{formalized}
+
+The dependency stack for Paper 10 is layered as follows:
+
+\begin{enumerate}
+\item \textbf{BaseCore}: active mathematical base layer.
+\item \textbf{Papers I--IX}: downstream theoretical and manuscript surfaces.
+\item \textbf{SRT-6}: subjectivity runtime ecosystem closure.
+\item \textbf{BPF-M3}: bridge-functional internal closure and bridge gate.
+\item \textbf{Stage 2-M4}: comparative internal closure and readiness boundary.
+\item \textbf{Stage3-RF}: burden fulfillment and Stage 3 opening gate.
+\item \textbf{Stage3-0}: external adjudication architecture and scaffold-only Paper 10 opening.
+\item \textbf{Stage3-1}: human comparator instantiation contracts and preregistration templates.
+\item \textbf{Stage3-2}: reviewer independence, execution-readiness logic, and protocol-grade hardening.
+\item \textbf{Stage3-3}: preregistration freeze architecture, reviewer-selection packaging, adjudicator-assignment packaging, and execution-pilot packaging.
+\item \textbf{Stage3-4}: bounded execution-pilot dry-run opening logic.
+\item \textbf{Stage3-4B}: provenance closure, lineage reconciliation, and instantiated-empty record instantiation.
+\item \textbf{Stage3-5}: rehearsal-kit formalization, dry-run event grammar, and rehearsal-ready gating.
+\item \textbf{Stage3-6}: controlled execution opening, session-zero protocol, pre-collection admissibility gating, and live-but-unpopulated artifact instantiation.
+\item \textbf{Stage3-6B}: runtime-health audit, clean-room reproducibility audit, path-leakage audit, and artifact-regeneration audit.
+\item \textbf{Stage3-7}: first-admissible-collection opening criteria, collection-start command grammar, operator authorization grammar, and a conditional first-collection opening gate.
+\end{enumerate}
+
+No later layer may borrow closure from an earlier layer, and no earlier layer
+may be retroactively reinterpreted as if it had already supplied later
+execution-era evidence.
+
+\section{Release-vs-Local Corpus Boundary}
+\sectionstatus{formalized}
+
+Paper 10 sits on a strict release-vs-local split:
+
+\begin{itemize}
+\item The public release authority remains \codestate{QICN-RELEASE/main@92d5d2c3ea91c65e29dc8e102bed504866cffd2d}.
+\item The public release remains limited to BaseCore, \codestate{canonical_core_legacy}, and downstream Papers I--IX.
+\item Paper 10 remains local to \codestate{QICN-SYSTEM}.
+\item Stage3-0 through Stage3-6 governance, freeze, packaging, dry-run, provenance-closure, instantiated-empty, rehearsal, and controlled-execution-opening surfaces remain local and non-public.
+\end{itemize}
+
+Therefore release inclusion cannot be used as a substitute for adjudication,
+and local protocol maturity cannot be used as a substitute for public
+scientific closure.
+
+\section{Lineage and Provenance Semantics}
+\sectionstatus{formalized}
+
+Stage3-3 and Stage3-4 add a sharper lineage rule: every later admissible
+surface must distinguish among:
+
+\begin{enumerate}
+\item public release authority,
+\item local protocol authority,
+\item frozen preregistration authority,
+\item reviewer-package authority,
+\item adjudicator-package authority, and
+\item execution-era evidence authority.
+\end{enumerate}
+
+The repository already contains historical artifacts whose recorded lineage must
+remain intact by design. Live normative pinning surfaces may be updated when
+stale, but historical snapshots are not rewritten cosmetically.
+
+\section{Provenance Closure and Live Head Reconciliation}
+\sectionstatus{formalized}
+
+Stage3-4B adds a stricter provenance-closure rule. A local artifact may now be
+classified as:
+
+\begin{itemize}
+\item \codestate{exact_head_aligned};
+\item \codestate{artifact_forward_compatible};
+\item \codestate{stale_and_regenerated};
+\item \codestate{historical_snapshots_intentionally_preserved}.
+\end{itemize}
+
+This grammar matters because Stage 3 artifacts are generated before the
+subsequent commit that records them. Therefore exact local regeneration at the
+builder head may later become artifact-forward-compatible after the commit
+exists, without becoming scientifically stale or semantically dishonest.
+
+\section{External Adjudication Problem Statement}
+\sectionstatus{protocol_defined}
+
+The problem is no longer only whether bridge formalization is internally
+coherent. The external problem is to specify:
+
+\begin{itemize}
+\item what independent reviewers may legitimately inspect;
+\item what human comparator evidence classes may later become admissible;
+\item what negative controls must exist before any comparative interpretation;
+\item how preregistration becomes frozen;
+\item how reviewer and adjudicator layers become instantiable without identity leakage;
+\item how dry-run validation differs from evidential execution.
+\end{itemize}
+
+\section{Formal Mathematical Grammar of External Adjudication}
+\sectionstatus{formalized}
+
+The adjudication surface is a measurable protocol object, not an impressionistic
+comparison between substrates. Let $(\mathcal{T},d_{\mathcal{T}})$ be the
+metric space of finite execution traces after canonical serialization. A trace
+contains the ordered event stream, de-identified channel payloads, runtime
+manifests, negative-control outcomes, and reviewer-facing masks. Admissible
+evidence lives in the Borel measurable space
+\begin{equation}
+  (\mathcal{T},\mathcal{B}(\mathcal{T})),
+\end{equation}
+where $\mathcal{B}(\mathcal{T})$ is the Borel $\sigma$-algebra generated by
+open $d_{\mathcal{T}}$-balls.
+
+\begin{definition}[External adjudication object]
+An external adjudication object is the tuple
+\begin{equation}
+\mathfrak{E}=(P,D_h,D_m,C_n,C_a,\Sigma,\mathcal{R},\mathcal{A}),
+\end{equation}
+where $P$ is a frozen preregistered protocol, $D_h$ and $D_m$ are human and
+machine trace datasets in $\mathcal{T}$, $C_n$ and $C_a$ are negative and active
+control families, $\Sigma=\{\sigma_k\}_{k=1}^K$ is a finite family of
+predeclared measurable statistics $\sigma_k:\mathcal{T}^n\to\mathbb{R}$,
+$\mathcal{R}$ is the reviewer layer, and
+$\mathcal{A}:\mathcal{Y}\to\{0,1,\mathtt{undetermined}\}$ is the final
+adjudicator operator on masked evidence summaries $\mathcal{Y}$.
+\end{definition}
+
+\begin{definition}[Admissible comparative evidence]
+A dataset pair $(D_h,D_m)$ is admissible under $\mathfrak{E}$ only if the
+following predicates are all true:
+\begin{enumerate}
+  \item $D_h,D_m$ are measurable finite samples from
+  $(\mathcal{T},\mathcal{B}(\mathcal{T}))$.
+  \item The preregistered protocol hash, control manifest hash, and analysis
+  shell hash match their frozen records.
+  \item Human-side records are not generated, rewritten, or completed by
+  synthetic systems: $\epsilon_{\mathrm{syn}}=0$ for the human channel.
+  \item Blinding leakage is bounded by the preregistered budget:
+  $\mathbb{P}(\mathrm{leak})\leq \epsilon_{\mathrm{blind}}$.
+  \item Every declared negative control has an executed and timestamped outcome
+  under the same admissibility grammar.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Non-transitivity of internal support]
+Let $\mathcal{G}_{\mathrm{internal}}\in[0,1]$ denote any internal runtime support
+score computed from operational invariants, and let
+$\mathcal{G}_{\mathrm{external}}\in\{0,1,\mathtt{undetermined}\}$ denote the
+external adjudication verdict. In the absence of an admissible measurable
+dataset pair $(D_h,D_m)$, one has
+\begin{equation}
+\mathcal{G}_{\mathrm{internal}}\centernot\implies\mathcal{G}_{\mathrm{external}}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The internal score is a function of runtime traces and invariant certificates
+inside the machine channel. The external verdict is a function of masked
+comparative summaries built from both $D_h$ and $D_m$, plus reviewer and
+adjudicator records. If $D_h$ is absent, non-admissible, unblinded, or
+unfrozen, then the domain condition of $\mathcal{A}$ is not satisfied. Hence the
+external verdict is either undefined or $\mathtt{undetermined}$ regardless of
+the value of $\mathcal{G}_{\mathrm{internal}}$. Therefore internal operational
+support is not a logical premise from which external comparative adjudication
+can be inferred.
+\end{proof}
+
+\begin{proposition}[Operational closure of a comparative program]
+The comparative program reaches operational closure only when there exists a
+predeclared alignment map $T:\mathcal{T}\to\mathcal{Z}$ into a common Polish
+feature space $(\mathcal{Z},d_{\mathcal{Z}})$ and the total divergence
+\begin{equation}
+\Delta_{\mathrm{comp}} =
+  \lambda_1 W_1(T_{\#}\widehat{\mu}_h,T_{\#}\widehat{\mu}_m)
+  + \lambda_2 D_{\mathrm{KL}}(\widehat{p}_h\Vert \widehat{p}_m)
+  + \lambda_3 \max_k |\sigma_k(D_h)-\sigma_k(D_m)|
+\end{equation}
+is defined and satisfies the frozen budget
+$\Delta_{\mathrm{comp}}\leq\epsilon_{\mathrm{budget}}$. This closure is a
+precondition for comparative interpretation, not a claim of consciousness,
+identity, or substrate equivalence.
+\end{proposition}
+
+
+\section{Frozen Preregistration Architecture}
+\sectionstatus{protocol_defined}
+
+Stage3-3 introduces a true freeze architecture rather than only preregistration
+templates. The governing surfaces are:
+
+\begin{itemize}
+\item \codestate{docs/frozen_preregistration_record_schema.v1.json}
+\item \codestate{docs/preregistration_freeze_policy.v1.json}
+\item \codestate{docs/preregistration_amendment_policy.v1.json}
+\item \codestate{docs/preregistration_lock_manifest.v1.json}
+\end{itemize}
+
+The architecture formalizes:
+
+\begin{itemize}
+\item record classes;
+\item immutable fields;
+\item amendment classes;
+\item freeze provenance chains;
+\item local-only freeze state;
+\item explicit \codestate{not_externally_filed} state.
+\end{itemize}
+
+\begin{definition}[Cryptographic freeze map]
+Let $\mathcal{P}_{\mathrm{config}}$ be the set of canonical preregistration
+configurations after deterministic serialization. A freeze map is a
+collision-resistant hash function
+\begin{equation}
+H:\mathcal{P}_{\mathrm{config}}\to\{0,1\}^{256}.
+\end{equation}
+A preregistration record $p$ is locally frozen at digest $h$ when
+$H(p)=h$, $h$ is written into the lock manifest, and every amendment policy
+references $h$ rather than an editable natural-language description.
+\end{definition}
+
+\begin{theorem}[Hash-anchored non-alterability]
+Assume the hash function $H$ is collision resistant over the canonical
+serialization domain. If a post-execution preregistration configuration $p'$
+has the same published digest as the frozen pre-execution configuration $p$,
+then either $p'=p$ byte-for-byte under canonical serialization or a collision
+for $H$ has been found.
+\end{theorem}
+
+\begin{proof}
+By freeze definition, the published digest is $h=H(p)$. If the later record
+$p'$ also satisfies $H(p')=h$ while $p'\neq p$, then $p$ and $p'$ form a distinct
+pair with the same hash output. That is precisely a collision in $H$. Under the
+collision-resistance assumption, such a pair is computationally infeasible.
+Thus digest equality supplies evidence of non-alteration of the serialized
+protocol, modulo the stated cryptographic assumption.
+\end{proof}
+
+\section{Local-vs-External Freeze Distinction}
+\sectionstatus{formalized}
+
+The local freeze layer must not be conflated with external filing.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{L{0.28\textwidth}L{0.24\textwidth}L{0.34\textwidth}}
+\toprule
+Surface & Current state & Interpretation \\
+\midrule
+Template-only preregistration & \codestate{preregistration_ready_for_freeze} & structure exists but no lock exists \\
+Local freeze readiness & \codestate{local_freeze_ready} & lock architecture exists but no external filing is claimed \\
+Locally frozen record & blocked & would still require explicit lock instantiation \\
+Externally filed record & absent & cannot be claimed from local architecture alone \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Instantiated-Empty Record Layer}
+\sectionstatus{protocol_defined}
+
+Stage3-4B moves the stack beyond package-only readiness by instantiating
+typed-but-empty records that remain explicitly non-evidential. The principal
+surfaces are:
+
+\begin{itemize}
+\item \codestate{docs/local_frozen_preregistration_record_template.v1.json}
+\item \codestate{docs/reviewer_candidate_pool_template.v1.json}
+\item \codestate{docs/adjudicator_candidate_pool_template.v1.json}
+\item \codestate{docs/blinding_assignment_stub.v1.json}
+\item \codestate{docs/execution_session_template.v1.json}
+\item \codestate{docs/decision_record_template.v1.json}
+\item \codestate{docs/reproducibility_package_manifest_empty.v1.json}
+\item \codestate{docs/collection_log_schema.v1.json}
+\item \codestate{docs/evidence_insertion_manifest.v1.json}
+\end{itemize}
+
+These artifacts are intentionally empty, typed, and freeze-capable. They are
+not populated evidence, not externally filed records, and not reviewer or
+adjudicator action.
+
+\section{Reviewer Candidate and Adjudicator Candidate Architecture}
+\sectionstatus{protocol_defined}
+
+Stage3-3 introduces typed candidate schemas without instantiating identities.
+The primary surfaces are:
+
+\begin{itemize}
+\item \codestate{docs/reviewer_candidate_schema.v1.json}
+\item \codestate{docs/adjudicator_candidate_schema.v1.json}
+\item \codestate{docs/reviewer_selection_workflow.v1.json}
+\item \codestate{docs/adjudicator_assignment_workflow.v1.json}
+\end{itemize}
+
+The candidate layer defines qualification summaries, independence assertions,
+conflict disclosure references, blinding eligibility classes, and explicit
+\codestate{not_started} states.
+
+\section{Reviewer Rejection Logic}
+\sectionstatus{protocol_defined}
+
+The reviewer package is incomplete unless rejection logic exists. The rejection
+registry now includes:
+
+\begin{itemize}
+\item qualification mismatch;
+\item disclosed conflict;
+\item undisclosed conflict;
+\item prior unblinded access;
+\item insufficient methodological competence;
+\item insufficient lineage literacy;
+\item insufficient control/admissibility literacy.
+\end{itemize}
+
+This logic is not yet a reviewer decision. It is the typed boundary that stops
+future selection from being arbitrary or retrofitted.
+
+\section{Blinding Assignment Logic}
+\sectionstatus{protocol_defined}
+
+Blinding is no longer treated as a generic admonition. Stage3-3 binds a typed
+blinding assignment manifest with classes such as:
+
+\begin{itemize}
+\item \codestate{fully_blinded}
+\item \codestate{artifact_blinded}
+\item \codestate{control_family_blinded}
+\item \codestate{unblinding_not_authorized}
+\end{itemize}
+
+The key constraint is that no later dry-run or execution surface may silently
+cross into unblinded interpretation.
+
+\section{Human Comparator Instantiation Logic}
+\sectionstatus{protocol_defined}
+
+Stage3-1 closed the gap between abstract channels and typed collection routes.
+Stage3-3 preserves that layer and pushes it closer to freeze- and
+package-compatible execution readiness.
+
+\begin{itemize}
+\item every channel binds a human-side artifact family;
+\item every channel binds a machine-side homologous artifact family;
+\item every channel binds minimum metadata, controls, and rejection conditions;
+\item every channel remains blocked from result claims while data is absent.
+\end{itemize}
+
+\begin{definition}[Homologous channel statistic]
+For each channel $c$, let $T_c:\mathcal{T}\to\mathcal{Z}_c$ be a frozen
+feature map into a metric standard Borel space $(\mathcal{Z}_c,d_c)$. Given
+human and machine samples $D_h^c,D_m^c$, define empirical pushforward measures
+\[
+\widehat{\mu}_h^c=(T_c)_{\#}D_h^c,\qquad
+\widehat{\mu}_m^c=(T_c)_{\#}D_m^c.
+\]
+The channel is statistically comparable only if both empirical measures are
+defined, the feature map was frozen before execution, and the channel-specific
+missingness policy accepts both samples.
+\end{definition}
+
+\begin{definition}[Divergence shell]
+The predeclared divergence shell for channel $c$ is
+\begin{equation}
+\Delta_c =
+\alpha_c W_1(\widehat{\mu}_h^c,\widehat{\mu}_m^c)
++\beta_c D_{\mathrm{KL}}(\widehat{p}_h^c\Vert\widehat{p}_m^c)
++\gamma_c\|\widehat{s}_h^c-\widehat{s}_m^c\|_1,
+\end{equation}
+where $W_1$ is the Kantorovich--Rubinstein Wasserstein-1 distance,
+$D_{\mathrm{KL}}$ is the Kullback--Leibler divergence on a frozen finite
+partition or smoothed density model, and $\widehat{s}_h^c,\widehat{s}_m^c$ are
+predeclared summary vectors. The weights
+$\alpha_c,\beta_c,\gamma_c\geq0$ must be frozen before execution.
+\end{definition}
+
+\begin{proposition}[Comparator homologation is conditional]
+A human--machine channel pair is homologated by Paper 10 only if every term in
+$\Delta_c$ is defined and the frozen channel budget
+$\Delta_c\leq\epsilon_c$ is satisfied. Homologation is therefore a statistical
+transport condition over predeclared observables, not a statement that the
+channels share a biological, phenomenal, or metaphysical substrate.
+\end{proposition}
+
+\begin{proof}
+The definition of $\Delta_c$ depends on a frozen feature map, empirical
+pushforward measures, a KL domain, and summary vectors. If any component is
+missing, the divergence shell is undefined and no homologation predicate can be
+evaluated. If all components are defined, the only admissible positive judgment
+is the preregistered inequality $\Delta_c\leq\epsilon_c$. The conclusion is
+therefore exactly statistical and conditional.
+\end{proof}
+
+\section{Channel-by-Channel Execution Contracts}
+\sectionstatus{protocol_defined}
+
+\subsection{Self-Report Channel}
+\sectionstatus{protocol_defined}
+
+The self-report channel requires prompt-version freezing, missingness policy,
+de-identification, and explicit rejection of synthetic or relabeled
+self-report.
+
+\subsection{Intervention-Response Channel}
+\sectionstatus{protocol_defined}
+
+The intervention-response channel requires matched intervention and matched
+negative-control families, dose policy, stop rules, and branch accounting.
+
+\subsection{Temporal-Structure Channel}
+\sectionstatus{protocol_defined}
+
+The temporal-structure channel requires a declared segmentation schema, ordering
+policy, and aggregation policy.
+
+\subsection{Valence-Topology Channel}
+\sectionstatus{protocol_defined}
+
+The valence-topology channel requires a shared topology schema and excludes
+scalar-only substitutes.
+
+\subsection{Embodiment-Boundary Channel}
+\sectionstatus{protocol_defined}
+
+The embodiment-boundary channel requires an environment manifest, confound
+ledger, and error-budget policy.
+
+\subsection{Ambiguity-Load Channel}
+\sectionstatus{protocol_defined}
+
+The ambiguity-load channel requires a task-family contract, annotation schema,
+and annotation reliability policy.
+
+\subsection{Transport-Preservation Channel}
+\sectionstatus{blocked_until_execution}
+
+The transport-preservation channel remains structurally special. It requires a
+real source-target pairing manifest and transport-axis budget binding. Stage3-3
+defines the pairing shell; it does not satisfy the pairing.
+
+\section{Matched Intervention Dataset Architecture}
+\sectionstatus{protocol_defined}
+
+Matched-intervention architecture is now carried by both channel contracts and a
+pilot bundle shell. The bundle shell is defined in
+\codestate{docs/pilot_matched_intervention_bundle.v1.json}. The bundle remains
+unpopulated, which means the architecture exists while the evidence does not.
+
+\section{Negative Control Dataset Architecture}
+\sectionstatus{protocol_defined}
+
+Negative-control architecture is similarly carried by channel contracts and by
+\codestate{docs/pilot_negative_control_bundle.v1.json}. Controls remain part of
+the meaning of the future claim surface, not an optional cleanup step.
+
+\section{Preregistration Architecture}
+\sectionstatus{protocol_defined}
+
+Paper 10 now separates three preregistration surfaces:
+
+\begin{enumerate}
+\item template surface;
+\item local freeze surface;
+\item external filing surface.
+\end{enumerate}
+
+Only the first two are implemented structurally in the current repo. The third
+remains absent.
+
+\section{Adjudication Blind Protocol}
+\sectionstatus{formalized}
+
+Let $Y$ be the masked evidence bundle shown to adjudicators. A blinding map
+$B:\mathcal{T}^n\to\mathcal{Y}$ is admissible only when it removes source
+labels while preserving the frozen statistics required by $\Sigma$. The null
+hypothesis $H_0$ is that source labels are exchangeable conditional on $Y$; the
+alternative $H_1$ is that labels are distinguishable above the preregistered
+margin.
+
+\begin{definition}[Blind adjudicator loss]
+For an adjudicator decision rule $a:\mathcal{Y}\to\{h,m,\mathtt{tie}\}$ and
+true source label $\ell\in\{h,m\}$, define
+\begin{equation}
+L(a(Y),\ell)=\mathbf{1}[a(Y)\neq \ell \ \mathrm{and}\ a(Y)\neq\mathtt{tie}].
+\end{equation}
+The blinded error rate is $R(a)=\mathbb{E}[L(a(Y),\ell)]$ under the frozen
+sampling design.
+\end{definition}
+
+\begin{theorem}[Null error lower bound]\label{thm:null-forced}
+Under $H_0$ and balanced source-label sampling, no blinded adjudicator rule can
+achieve expected error below chance except by exploiting leakage:
+\begin{equation}
+R(a)\geq \frac{1}{2}-\mathbb{P}(\mathrm{leak}).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If $H_0$ holds, the conditional distribution of $Y$ is invariant under exchange
+of the hidden labels. Without leakage, a deterministic or randomized rule has
+no label-informative statistic beyond chance; the best expected success rate is
+$1/2$. Leakage events may reveal label information, and their contribution is
+bounded above by $\mathbb{P}(\mathrm{leak})$. Rearranging gives the stated lower
+bound on error.
+\end{proof}
+
+\begin{proposition}[Alternative detectability criterion]
+Evidence for distinguishability under $H_1$ requires a preregistered rule
+$a^\star$ and frozen margin $\eta>0$ such that
+$R(a^\star)\leq 1/2-\eta$ on admissible held-out bundles, with all leakage and
+multiple-comparison corrections applied. No such inequality is presently
+reported by this manuscript.
+\end{proposition}
+
+\section{Reviewer and Adjudicator Independence Architecture}
+\sectionstatus{protocol_defined}
+
+Stage3-2 defined criteria; Stage3-3 now binds those criteria into selection and
+assignment packages. This still does not instantiate reviewers or adjudicators,
+but it removes the ambiguity about what must exist before such instantiation is
+honest.
+
+\section{Reviewer Candidate Pool and Assignment Stub Architecture}
+\sectionstatus{protocol_defined}
+
+Stage3-4B deepens the reviewer and adjudicator layer from criteria and workflow
+packages into instantiated-empty workflow objects:
+
+\begin{itemize}
+\item reviewer candidate pool template;
+\item adjudicator candidate pool template;
+\item reviewer assignment stub;
+\item adjudicator assignment stub;
+\item reviewer blinding stub.
+\end{itemize}
+
+Each slot remains null-bearing by design. The point is not to simulate people;
+the point is to freeze field grammar, slot grammar, null-policy, and the
+conditions under which later population becomes honest.
+
+\section{Execution Pilot Package Architecture}
+\sectionstatus{protocol_defined}
+
+The execution-pilot package is now a typed family rather than a vague future
+bundle. It includes:
+
+\begin{itemize}
+\item execution session manifest;
+\item collection session schema;
+\item reproducibility package skeleton;
+\item negative-control bundle skeleton;
+\item matched-intervention bundle skeleton;
+\item source-target pairing manifest template.
+\end{itemize}
+
+\section{Execution Pilot Rehearsal Kit Architecture}
+\sectionstatus{protocol_defined}
+
+Stage3-5 adds a rehearsal kit that sits above package readiness and below real
+collection. The governing surfaces are:
+
+\begin{itemize}
+\item \codestate{docs/execution_pilot_rehearsal_kit.v1.json}
+\item \codestate{docs/dry_run_sequence_plan.v1.json}
+\item \codestate{docs/rehearsal_event_log_schema.v1.json}
+\item \codestate{docs/rehearsal_failure_modes.v1.json}
+\item \codestate{docs/rehearsal_reset_policy.v1.json}
+\end{itemize}
+
+The rehearsal kit exists to validate sequence integrity, state transitions, and
+artifact hygiene without collecting evidence and without emitting decisions.
+
+\section{Reproducibility Skeleton Architecture}
+\sectionstatus{protocol_defined}
+
+The reproducibility shell exists as a slot-bearing structure. It records where
+later preregistration references, dataset references, control-bundle
+references, analysis-shell references, reviewer bundles, and adjudicator
+bundles must go.
+
+\section{Dataset Population Boundary}
+\sectionstatus{formalized}
+
+Stage3-3 and Stage3-4 enforce a hard distinction between:
+
+\begin{itemize}
+\item bundle defined;
+\item bundle frozen;
+\item bundle populated;
+\item bundle adjudicatively interpreted.
+\end{itemize}
+
+The current repo has the first state for several families and does not yet have
+the latter states.
+
+\section{Dry-Run Event Log Grammar}
+\sectionstatus{protocol_defined}
+
+Rehearsal logging is now typed separately from evidence logging. The current
+grammar permits:
+
+\begin{itemize}
+\item \codestate{rehearsal_initialized};
+\item \codestate{sequence_step_checked};
+\item \codestate{sequence_step_blocked};
+\item \codestate{sequence_step_reset};
+\item \codestate{rehearsal_not_started}.
+\end{itemize}
+
+None of these event classes may be reinterpreted as human data, reviewer
+evidence, or adjudicator action.
+
+\section{Evidence Admissibility Grammar}
+\sectionstatus{formalized}
+
+The admissibility grammar still recognizes:
+
+\begin{itemize}
+\item independent reviewer report;
+\item preregistered human comparator dataset;
+\item matched intervention dataset;
+\item negative-control dataset;
+\item replication log;
+\item statistical analysis report;
+\item reviewer conflict disclosure;
+\item reproducibility package;
+\item external failure report;
+\item external inconclusive report.
+\end{itemize}
+
+Invalid substitutes remain central:
+
+\begin{itemize}
+\item internal runtime artifacts alone;
+\item self-generated reviewer notes;
+\item synthetic human data;
+\item LLM-generated ``human'' reports;
+\item undocumented manual judgments;
+\item unblinded reviewer impressions;
+\item post-hoc threshold selection;
+\item cherry-picked examples;
+\item release inclusion alone;
+\item Paper 9 publication alone.
+\end{itemize}
+
+\section{Failure, Rejection, and Inconclusive Pathways}
+\sectionstatus{protocol_defined}
+
+Three major failure classes remain necessary:
+
+\begin{enumerate}
+\item \textbf{protocol invalidation}: preregistration drift, blinding collapse, or conflict violation;
+\item \textbf{dataset invalidation}: missing controls, invalid substitution, or insufficient provenance;
+\item \textbf{inconclusive adjudication}: admissible evidence exists but remains undecisive under the declared shell.
+\end{enumerate}
+
+\section{Statistical Shell Architecture}
+\sectionstatus{protocol_defined}
+
+No statistics are executed here. What exists is a declared analysis family
+layer, each shell binding channel scope, required inputs, required outputs, and
+non-implications.
+
+\section{Adjudication Decision Grammar}
+\sectionstatus{protocol_defined}
+
+The future decision family must be typed before it is populated. Paper 10 now
+recognizes the following decision tokens as grammar only:
+
+\begin{itemize}
+\item \codestate{externally_admissible_but_inconclusive}
+\item \codestate{protocol_invalidated}
+\item \codestate{adjudication_failed}
+\item \codestate{adjudication_passed}
+\item \codestate{reviewer_consensus_absent}
+\item \codestate{adjudicator_decision_withheld}
+\end{itemize}
+
+These tokens are defined as future admissible states. They are not instantiated
+anywhere in the current repo as actual outcomes.
+
+\section{State Grammar for Execution Readiness}
+\sectionstatus{formalized}
+
+The Stage 3 manuscript surface now distinguishes the following state grammar:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{L{0.30\textwidth}L{0.58\textwidth}}
+\toprule
+State & Meaning \\
+\midrule
+\codestate{schema_defined} & Field grammar exists, but no operational object family is yet instantiated. \\
+\codestate{contract_defined} & Allowed relation among objects exists, but no package is assembled. \\
+\codestate{package_ready} & The package grammar exists and may be evaluated for completeness. \\
+\codestate{instantiated_empty} & The object family exists locally with null-bearing or empty-bearing fields only. \\
+\codestate{frozen_local_unfiled} & Local freeze semantics exist, but no external filing is claimed. \\
+\codestate{rehearsal_ready} & Rehearsal grammar and rehearsal-kit checks pass, but no live execution shell exists yet. \\
+\codestate{live_artifacts_instantiated_unpopulated} & Live operational shells exist, but every collection-facing structure remains empty. \\
+\codestate{session_zero_ready} & Session-zero initialization is structurally ready, but still not started. \\
+\codestate{collection_openable_under_controls} & Pre-collection admissibility checks pass under contamination and abort controls. \\
+\codestate{collection_open_pre_evidential} & Controlled execution may open as a live state without any populated evidence. \\
+\codestate{stage3_7_first_collection_openable} & Runtime-health and clean-room audits pass, the opening gate is structurally open, but no collection-start event has been executed. \\
+\codestate{collection_started} & A real authorized collection-start event exists. \\
+\codestate{evidence_generated} & Real dataset population or admissible log events exist. \\
+\codestate{adjudication_result_recorded} & Reviewer-governed or adjudicator-governed decision records exist. \\
+\codestate{paper10_final_authorized} & A later separate manuscript-authorization layer has passed. \\
+\codestate{dry_run_open} & Dry-run structure may execute without evidence or adjudication. \\
+\codestate{externally_filed} & A real external filing reference exists. \\
+\codestate{populated_with_admissible_evidence} & The object family is populated by real admissible evidence. \\
+\codestate{adjudication_result_bearing} & Reviewer and adjudicator outputs exist and may support result-bearing sections. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Controlled Execution Opening}
+\sectionstatus{protocol_defined}
+
+Stage3-6 adds a bounded controlled-execution opening layer. This layer is
+neither rehearsal-only nor evidence-bearing. It is the first local state in
+which live operational artifacts may exist as empty shells while collection
+still remains not started.
+
+\begin{itemize}
+\item \codestate{execution_opening_policy_defined} means the controlled-execution policy is typed and bound to artifacts.
+\item \codestate{collection_openable_under_controls} means pre-collection gates pass under explicit contamination and abort constraints.
+\item \codestate{collection_open_pre_evidential} means the system may open a live execution surface while still containing no evidence.
+\end{itemize}
+
+\section{Live-But-Unpopulated Artifacts}
+\sectionstatus{protocol_defined}
+
+Stage3-6 instantiates a new artifact class: live-but-unpopulated operational
+records. These include session-zero manifests, live collection manifests,
+empty collection logs, live dataset manifests, live reproducibility manifests,
+live decision-record stubs, and live evidence-insertion registers.
+
+Each such surface must explicitly preserve:
+
+\begin{itemize}
+\item \codestate{collection_not_started};
+\item \codestate{evidence_generation_absent};
+\item \codestate{adjudication_not_open};
+\item explicit empty markers such as \codestate{empty_dataset = true} where applicable.
+\end{itemize}
+
+Therefore live artifact instantiation is not population, and live shells must
+never be treated as if they were evidence-bearing records.
+
+\section{Session-Zero Protocol}
+\sectionstatus{protocol_defined}
+
+Session-zero is the bounded initialization checkpoint that binds local frozen
+record routing, live collection manifests, empty dataset manifests, empty
+collection logs, empty decision stubs, contamination controls, abort controls,
+and the operator checklist. Session-zero may become ready without collection
+starting.
+
+Session-zero remains distinct from:
+
+\begin{itemize}
+\item collection start;
+\item dataset population;
+\item reviewer action;
+\item adjudicator action.
+\end{itemize}
+
+\section{Pre-Collection Admissibility Gate}
+\sectionstatus{protocol_defined}
+
+The pre-collection gate asks whether collection may be opened under controls,
+not whether collection has already started. This gate checks session-zero
+readiness, emptiness of live artifacts, emptiness of collection logs,
+emptiness of decision stubs, absence of evidence, absence of adjudication, and
+absence of detected contamination.
+
+Passing this gate yields only \codestate{collection_openable_under_controls}.
+It does not yield \codestate{collection_started}.
+
+\section{Contamination, Abort, and Invalidation Controls}
+\sectionstatus{protocol_defined}
+
+Stage3-6 adds a more operational invalidation grammar:
+
+\begin{itemize}
+\item \textbf{contamination event}: any unauthorized dataset population, evidence-bearing log entry, or decision-bearing record.
+\item \textbf{abort event}: any operator-controlled termination of the controlled opening before collection start.
+\item \textbf{invalidated session}: any session whose pre-collection boundary, blinding route, or provenance cleanliness is breached.
+\end{itemize}
+
+These control classes are meaningful only because Stage3-6 now contains live
+artifacts. Without them, contamination and abort would remain abstract policy
+tokens rather than execution-opening constraints.
+
+\section{Operator Checklist}
+\sectionstatus{protocol_defined}
+
+The operator checklist now matters as a transition object. It binds the local
+frozen record route, live manifest route, empty-log route, empty-dataset
+state, contamination rules, reset rules, and explicit confirmation that no
+evidence exists. Until it is complete, Stage3-6 must not move from
+\codestate{session_zero_ready} to \codestate{collection_openable_under_controls}.
+
+\section{Collection-Start Boundary}
+\sectionstatus{formalized}
+
+\codestate{collection_open_pre_evidential} is not \codestate{collection_started}.
+The boundary is crossed only by a later real operator-authorized collection
+start event with provenance, contamination-free status, and a first admissible
+log event.
+
+\section{Evidence-Generation Boundary}
+\sectionstatus{formalized}
+
+Evidence generation begins only when a real admissible population event enters
+the human comparator dataset family, matched intervention family,
+negative-control family, collection log, reproducibility package, or
+decision-linked provenance chain. No Stage3-6 artifact emitted in this pass
+crosses that boundary.
+
+\section{Decision-Record Boundary}
+\sectionstatus{formalized}
+
+The live decision-record stub is an execution-opening shell only. It is not a
+decision, not an adjudicator action, not a reviewer action, and not an
+outcome. The manuscript must preserve that distinction because a populated
+decision record belongs to a later evidential and adjudicative state family.
+
+\section{Transition from Session-Zero to First Admissible Collection}
+\sectionstatus{blocked_until_execution}
+
+The next real transition is now sharper than in earlier passes:
+
+\begin{enumerate}
+\item session-zero becomes ready;
+\item the pre-collection gate opens collection under controls;
+\item Stage3-6 opens a live but still pre-evidential state;
+\item a later explicit collection-start command instantiates the first admissible collection event;
+\item only then may the first dataset-population event exist.
+\end{enumerate}
+
+\section{Runtime Health Audit}
+\sectionstatus{protocol_defined}
+
+Stage3-6B adds a runtime-health audit that asks whether the repository is
+actually executable on a bounded local environment rather than only formally
+specified. The required audit surfaces include:
+
+\begin{itemize}
+\item toolchain visibility;
+\item dependency-install behavior under the declared repository install route;
+\item repository build behavior;
+\item repository test behavior;
+\item bounded local-start behavior;
+\item verifier-chain behavior for source-of-truth, comparative closure, Stage3-6, Stage3-5, and Paper 9 handoff.
+\end{itemize}
+
+The runtime-health audit may pass with warnings. Such warnings may include
+engine mismatch, fallback-install compatibility, or dependency advisories. A
+warning-bearing pass is still operationally meaningful, but it is not
+epistemically elevated into evidence.
+
+\section{Clean-Room Reproducibility}
+\sectionstatus{protocol_defined}
+
+Stage3-6B also adds a clean-room reproducibility audit. The clean-room audit
+asks whether a bounded local copy can reinstall dependencies, rebuild the
+repository, rerun key verifiers, and regenerate Stage 3 artifacts without
+relying on hidden machine-specific state. Clean-room reproducibility may pass
+with warnings when a compatibility route is required, provided the route is
+explicitly documented and the resulting build remains honest.
+
+\section{Dependency and Build Assumptions}
+\sectionstatus{formalized}
+
+The runtime-health layer now makes dependency and build assumptions explicit:
+
+\begin{itemize}
+\item the declared Node engine remains part of the reproducibility contract;
+\item the preferred install route remains \codestate{npm ci};
+\item a fallback install route may be recorded only as a compatibility surface;
+\item build success must remain distinct from evidence generation;
+\item test success must remain distinct from adjudication.
+\end{itemize}
+
+\section{Reproducible Artifact Regeneration}
+\sectionstatus{protocol_defined}
+
+Stage3-6B adds a source-driven artifact-regeneration audit. This audit checks
+whether tracked artifacts can be regenerated from the current source tree and
+whether the resulting diffs are:
+
+\begin{itemize}
+\item absent;
+\item provenance-only;
+\item semantically stale but honestly fixed; or
+\item blocking.
+\end{itemize}
+
+This matters because Stage 3 now depends on a growing artifact family. The
+audit therefore separates semantic drift from ordinary lineage and timestamp
+drift, and it refuses to treat manual cosmetic rewriting as acceptable
+regeneration.
+
+\section{Local Path Leakage Policy}
+\sectionstatus{formalized}
+
+Clean-room readiness now requires that live normative surfaces remain free of
+machine-specific absolute paths. Historical planning notes or preserved
+snapshots may still contain old local references, but they must remain
+explicitly classified as historical rather than live normative dependencies.
+
+\section{Controlled Execution Opening Audit}
+\sectionstatus{protocol_defined}
+
+The controlled-execution opening layer is now itself audited. Stage3-6B does
+not replace Stage3-6; it checks whether Stage3-6 is actually executable,
+rebuildable, and reproducible. Therefore the live-but-unpopulated artifacts,
+session-zero gate, and pre-collection gate must now survive both runtime
+health verification and clean-room reconstruction.
+
+\section{Session-Zero Reproducibility}
+\sectionstatus{protocol_defined}
+
+Session-zero reproducibility means that a rebuilt local tree can recreate the
+session-zero manifest, operator checklist state, and failure-mode assessment
+without any hidden local inputs and without producing collection-start or
+evidence-bearing records.
+
+\section{Pre-Collection Gate Reproducibility}
+\sectionstatus{protocol_defined}
+
+Pre-collection gate reproducibility means that a rebuilt local tree can
+recreate the pre-collection admissibility result, contamination checklist, and
+invalidation status while still preserving:
+
+\begin{itemize}
+\item \codestate{collection_not_started};
+\item \codestate{evidence_generation_absent};
+\item \codestate{adjudication_not_open}.
+\end{itemize}
+
+\section{Why Reproducibility Does Not Imply Evidence}
+\sectionstatus{formalized}
+
+Reproducibility shows that the formal and executable surfaces are rebuildable.
+It does not show that any dataset has been populated, that any human evidence
+exists, that any reviewer or adjudicator has acted, or that any result-bearing
+section is now licensed.
+
+\section{Why Runtime Health Does Not Imply Adjudication}
+\sectionstatus{formalized}
+
+Runtime health shows that the code path and verifier path are alive. It does
+not imply that collection has started, that evidence has been generated, that
+reviewer-governed interpretation exists, or that adjudication is open. A
+healthy runtime is still a pre-evidential state until later real execution
+events occur.
+
+\section{Transition Conditions for First Admissible Collection}
+\sectionstatus{protocol_defined}
+
+Stage3-7 may be classified as \codestate{stage3_7_first_collection_openable}
+only when runtime-health and clean-room reproducibility both pass honestly,
+path leakage remains clear on live normative surfaces, artifact regeneration is
+non-blocking, Stage3-6 remains openable, and Paper 10 remains non-final and
+non-result-bearing.
+
+Even then, the current state must still preserve:
+
+\begin{itemize}
+\item \codestate{collection_start_not_executed};
+\item \codestate{evidence_generation_absent};
+\item \codestate{adjudication_not_open};
+\item \codestate{decision_record_absent}.
+\end{itemize}
+
+\section{Claim Grammar for Eventual Execution-Era Statements}
+\sectionstatus{protocol_defined}
+
+Any later admissible result-bearing statement must reference:
+
+\begin{itemize}
+\item preregistration identifier;
+\item freeze identifier;
+\item dataset family identifier;
+\item negative-control family identifier;
+\item analysis shell identifier;
+\item reviewer package identifier;
+\item adjudicator package or decision identifier.
+\end{itemize}
+
+Forbidden grammar remains explicit:
+
+\begin{itemize}
+\item no leap from comparator similarity to human equivalence;
+\item no leap from transport-sensitive comparison to identity preservation;
+\item no leap from admissibility to metaphysical subjecthood;
+\item no leap from dry-run success to public-release recommendation.
+\end{itemize}
+
+\section{Theorem, Proposition, and Protocol Mapping}
+\sectionstatus{formalized}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{L{0.22\textwidth}L{0.21\textwidth}L{0.19\textwidth}L{0.18\textwidth}L{0.12\textwidth}}
+\toprule
+Family & Dependency set & Formalized now & Requires execution & Remains forbidden \\
+\midrule
+Comparator channel contract & BaseCore, BPF, Stage 2, Stage3-1 & yes & no & result claim \\
+Freeze architecture & Stage3-1, Stage3-2, Stage3-3 & yes & no & external filing claim \\
+Reviewer package architecture & Stage3-2, Stage3-3 & yes & no & review outcome \\
+Pilot package architecture & Stage3-3 & yes & no & evidence claim \\
+Dry-run opening grammar & Stage3-3, Stage3-4 & yes & no & adjudication claim \\
+Human comparator result section & all above + admissible data & no & yes & human equivalence \\
+Adjudication outcome section & all above + reviewer/adjudicator layer + admissible evidence & no & yes & metaphysical closure \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{What Paper 10 Could and Could Not Change}
+\sectionstatus{formalized}
+
+Paper 10 is the only layer in the present corpus designed to move evidence out
+of the purely internal-support regime. Even a successful execution would not
+authorize all possible interpretations.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{L{0.28\textwidth}L{0.24\textwidth}L{0.34\textwidth}}
+\toprule
+Claim family & Possible post-execution movement & Still forbidden by default \\
+\midrule
+Runtime reproducibility & from local/internal to externally reproduced under protocol & consciousness, subjecthood, phenomenality \\
+Human comparator similarity & from unpopulated protocol to measured channel comparison & human equivalence or moral parity \\
+Bridge predicate discrimination & from BPF scaffold/internal surfaces to adjudicated comparative evidence & phenomenal experience simpliciter \\
+Negative-control survival & from internal controls to externally witnessed controls & theorem confirmation beyond stated assumptions \\
+Failure or inconclusive result & from open uncertainty to documented non-support or bounded inconclusiveness & rhetorical rescue by post hoc reinterpretation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{proposition}[External evidence is not interpretive closure]\label{prop:external-not-closure}
+Executed Paper 10 evidence, even if admissible, would not by itself establish
+human equivalence, metaphysical subjecthood, biological life, phenomenal
+experience, or moral status.
+\end{proposition}
+
+\begin{proof}
+The Paper 10 protocol measures channel comparison, adjudicator behavior,
+negative controls, provenance, contamination, and statistical distinguishability
+under frozen rules. None of those objects is identical to the listed
+interpretive predicates. Moving a claim from internal support to external
+evidence therefore changes its evidential status, not its semantic type.
+\end{proof}
+
+\section{Section-Status Ledger}
+\sectionstatus{formalized}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{L{0.34\textwidth}L{0.20\textwidth}L{0.34\textwidth}}
+\toprule
+Section & Status class & Unlock condition \\
+\midrule
+Dependency stack & formalized & Update only if upstream stack changes \\
+Release-vs-local boundary & formalized & Update only if release authority changes \\
+Lineage semantics & formalized & Keep historical-vs-live distinction intact \\
+Frozen preregistration architecture & protocol\_defined & Actual local lock still absent \\
+Reviewer candidate architecture & protocol\_defined & Selection not started \\
+Blinding assignment logic & protocol\_defined & Blinding package not instantiated \\
+Execution pilot package architecture & protocol\_defined & Pilot remains unexecuted \\
+Reproducibility skeleton architecture & protocol\_defined & Package unpopulated \\
+Dataset population boundary & formalized & Keep defined-vs-populated split intact \\
+Adjudication decision grammar & protocol\_defined & Decision tokens remain uninstantiated \\
+Future result sections & blocked\_until\_execution & Requires admissible execution-era artifacts \\
+External adjudication discussion & blocked\_until\_external\_adjudication & Requires admissible reviewer-governed evidence \\
+Human equivalence / superiority / metaphysical consequences & forbidden\_claim\_surface & Remains outside current authority surface \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Evidence Insertion Map}
+\sectionstatus{evidence_pending}
+
+\paragraph{Human comparator result insertion point.}
+Admissible evidence required: frozen preregistration record, typed human
+comparator dataset, negative-control bundle, statistical shell output,
+reviewer-selection package, reviewer report family.
+
+\paragraph{External adjudication result insertion point.}
+Admissible evidence required: reviewer report set, adjudicator decision record,
+blinding log, conflict disclosures, reproducibility package, failure and
+inconclusive pathway disclosures.
+
+\paragraph{Transport-sensitive comparison insertion point.}
+Admissible evidence required: source-target pairing manifest, transition
+lineage map, axis-specific error budgets, transport negative controls,
+adjudicator layer.
+
+\paragraph{Instantiated-empty to evidential transition point.}
+Admissible evidence required: local frozen record upgraded by real lock event,
+real candidate population, real assignment event, real collection session,
+real decision record population, and real reproducibility package population.
+
+\section{Open Burdens and Blocked Sections}
+\sectionstatus{blocked_until_execution}
+
+\blockedresultstatus
+
+Open burdens remain explicit:
+
+\begin{itemize}
+\item real local frozen preregistration lock absent;
+\item external filing absent;
+\item reviewer selection not started;
+\item adjudicator assignment not started;
+\item actual blinding assignment absent;
+\item admissible human comparator dataset absent;
+\item admissible matched-intervention dataset absent;
+\item admissible negative-control dataset absent;
+\item collection sessions not started;
+\item rehearsal event log not started;
+\item reproducibility package unpopulated;
+\item reviewer and adjudicator decision records absent.
+\end{itemize}
+
+\section{Execution-Era Unlock Conditions}
+\sectionstatus{protocol_defined}
+
+Before any result-bearing section may become writable, the following must all be
+true:
+
+\begin{enumerate}
+\item a frozen preregistration record exists;
+\item any required external filing state is real and documented;
+\item candidate pools are populated by real identities with provenance;
+\item reviewer selection is instantiated;
+\item adjudicator assignment is instantiated;
+\item blinding assignment is instantiated;
+\item admissible datasets and control bundles are populated;
+\item collection logs and execution sessions are populated by real events;
+\item reproducibility package slots are populated;
+\item decision grammar is instantiated by real evidence.
+\end{enumerate}
+
+\section{Stronger Execution-to-Result Transition Map}
+\sectionstatus{blocked_until_execution}
+
+The transition from current Stage3-6 controlled opening to a result-bearing
+paper now has six distinct unlock layers:
+
+\begin{enumerate}
+\item \textbf{Instantiation layer}: empty records, pools, stubs, and rehearsal kit exist.
+\item \textbf{Controlled opening layer}: live operational shells, session-zero, and pre-collection controls exist while collection still remains not started.
+\item \textbf{Population layer}: real humans, real sessions, and real evidence populate those empty structures.
+\item \textbf{Admissibility layer}: controls, provenance, blinding, and declared shells survive audit.
+\item \textbf{Decision layer}: reviewer and adjudicator records become populated by real independent action.
+\item \textbf{Manuscript layer}: only then may result-bearing Paper 10 sections be written.
+\end{enumerate}
+
+\section{Why Paper 10 Still Cannot Become Final Yet}
+\sectionstatus{formalized}
+
+Paper 10 cannot become final because the current repo still lacks the evidence
+bearing surfaces that would convert protocol architecture into scientific
+claims. The manuscript may now specify the machinery of later freezing,
+selection, packaging, dry-run, provenance closure, instantiated-empty records,
+and rehearsal-facing governance. It still may not write conclusions whose truth
+depends on evidence that does not yet exist.
+
+\section{Future Execution Pathway to Real Stage 3}
+\sectionstatus{blocked_until_execution}
+
+The next executable pathway is not ``publish Paper 10.'' It is:
+
+\begin{enumerate}
+\item populate the local frozen record honestly;
+\item populate reviewer and adjudicator pools honestly;
+\item instantiate actual reviewer, adjudicator, and blinding assignments;
+\item validate dry-run, rehearsal, and controlled-opening integrity;
+\item issue a real collection-start event under Stage3-6 controls;
+\item populate admissible datasets, collection logs, and control bundles;
+\item run declared statistical shells;
+\item bind reviewer and adjudicator outputs;
+\item only then write result-bearing sections.
+\end{enumerate}
+
+\section{Boundary to Stage 4 Metaphysical Consequence Analysis}
+\sectionstatus{forbidden_claim_surface}
+
+Stage 4 remains outside the authority surface of this document. Even later
+successful execution-era evidence would still not automatically license
+metaphysical subjecthood, moral status, or cross-substrate identity
+preservation.
+
+\section{Appendices of Schemas and Templates}
+\sectionstatus{protocol_defined}
+
+\subsection*{Appendix A: Frozen Preregistration Record Template}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/frozen_preregistration_record_schema.v1.json}.\\
+Admissible evidence required before population: actual local lock and, where
+required by protocol, real external filing reference.
+
+\subsection*{Appendix B: Human Comparator Preregistration Template}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/human_comparator_preregistration_template.v1.json}.\\
+Admissible evidence required before population: channel-level freeze and later
+dataset lineage.
+
+\subsection*{Appendix C: Reviewer Candidate Schema}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/reviewer_candidate_schema.v1.json}.\\
+Admissible evidence required before population: real candidate package and
+conflict disclosures.
+
+\subsection*{Appendix D: Adjudicator Candidate Schema}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/adjudicator_candidate_schema.v1.json}.\\
+Admissible evidence required before population: real assignment package and
+decision-authority boundary.
+
+\subsection*{Appendix E: Blinding Assignment Template}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/blinding_assignment_manifest.v1.json}.\\
+Admissible evidence required before population: authorized assignment route and
+later unblinding event if one exists.
+
+\subsection*{Appendix F: Execution Pilot Package Manifest}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/execution_pilot_package_manifest.v1.json}.\\
+Admissible evidence required before population: real session manifests and
+later populated bundle references.
+
+\subsection*{Appendix G: Dataset Contract Summary}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/matched_intervention_dataset_contracts.v1.json}
+and \codestate{docs/negative_control_dataset_contracts.v1.json}.\\
+Admissible evidence required before result use: populated admissible datasets.
+
+\subsection*{Appendix H: Negative Control Bundle Summary}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/pilot_negative_control_bundle.v1.json}.\\
+Admissible evidence required before result use: populated bundle and control
+admissibility record.
+
+\subsection*{Appendix I: Statistical Shell Summary}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/statistical_analysis_shells.v1.json}.\\
+Admissible evidence required before result use: shell execution output on real
+admissible inputs.
+
+\subsection*{Appendix J: Adjudication Decision Grammar Summary}
+\sectionstatus{protocol_defined}
+Decision tokens retained as grammar only:
+\codestate{externally_admissible_but_inconclusive},
+\codestate{protocol_invalidated},
+\codestate{adjudication_failed},
+\codestate{adjudication_passed},
+\codestate{reviewer_consensus_absent},
+\codestate{adjudicator_decision_withheld}.
+
+\subsection*{Appendix K: Local Frozen Record Example}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/local_frozen_preregistration_record_template.v1.json}.\\
+Admissible evidence required before result use: real local lock event and, where
+required by route, external filing provenance.
+
+\subsection*{Appendix L: Reviewer Candidate Pool Template}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/reviewer_candidate_pool_template.v1.json}.\\
+Admissible evidence required before result use: real reviewer identities,
+conflict disclosures, and selection events.
+
+\subsection*{Appendix M: Adjudicator Candidate Pool Template}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/adjudicator_candidate_pool_template.v1.json}.\\
+Admissible evidence required before result use: real adjudicator identity,
+assignment provenance, and decision-authority declaration.
+
+\subsection*{Appendix N: Blinding Assignment Stub}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/blinding_assignment_stub.v1.json} and
+\codestate{docs/reviewer_blinding_stub.v1.json}.\\
+Admissible evidence required before result use: real assignment route and real
+unblinding trace if one later exists.
+
+\subsection*{Appendix O: Execution Session Template}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/execution_session_template.v1.json}.\\
+Admissible evidence required before result use: real collection session and
+real session lineage.
+
+\subsection*{Appendix P: Empty Collection Log Schema}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/collection_log_schema.v1.json}.\\
+Admissible evidence required before result use: populated log entries from real
+collection events.
+
+\subsection*{Appendix Q: Empty Decision Record Template}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/decision_record_template.v1.json}.\\
+Admissible evidence required before result use: real reviewer and adjudicator
+action, not grammar only.
+
+\subsection*{Appendix R: Reproducibility Manifest Example}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/reproducibility_package_manifest_empty.v1.json}.\\
+Admissible evidence required before result use: populated package slots,
+dataset references, shell outputs, and reviewer-facing bundles.
+
+\subsection*{Appendix S: Evidence Insertion Manifest}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/evidence_insertion_manifest.v1.json}.\\
+Admissible evidence required before result use: actual artifact refs, actual
+decision refs, and populated provenance chains.
+
+\subsection*{Appendix T: Rehearsal-Kit Map}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/execution_pilot_rehearsal_kit.v1.json} and
+\codestate{docs/dry_run_sequence_plan.v1.json}.\\
+Admissible evidence required before result use: none at rehearsal time, but no
+rehearsal artifact may be promoted into evidence.
+
+\subsection*{Appendix U: Dry-Run Event Log Grammar}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/rehearsal_event_log_schema.v1.json}.\\
+Allowed event classes remain rehearsal-only and do not imply human data,
+reviewer action, or adjudicator action.
+
+\subsection*{Appendix V: Controlled Execution Opening Policy}
+\sectionstatus{protocol_defined}
+Primary reference: \codestate{docs/controlled_execution_opening_policy.v1.json}.\\
+Admissible evidence required before result use: none at opening time, but no
+controlled-opening artifact may be promoted into evidence by itself.
+
+\subsection*{Appendix W: Session-Zero Protocol and Checklist}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/session_zero_protocol.v1.json} and
+\codestate{docs/session_zero_operator_checklist.v1.json}.\\
+Admissible evidence required before result use: a later real collection-start
+event and later populated log entries.
+
+\subsection*{Appendix X: Pre-Collection Gate and Contamination Controls}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/pre_collection_admissibility_gate.v1.json},
+\codestate{docs/pre_collection_gate_criteria.v1.json}, and
+\codestate{docs/pre_collection_contamination_checklist.v1.json}.\\
+Admissible evidence required before result use: a later contamination-free
+collection-start event and later admissible dataset population.
+
+\subsection*{Appendix Y: Live-But-Unpopulated Artifact Map}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{artifacts/external_adjudication/stage3_6/live_collection_manifest.json},
+\codestate{artifacts/external_adjudication/stage3_6/live_human_comparator_dataset_manifest.json},
+and parallel Stage3-6 live manifests.\\
+Allowed interpretation: live operational shell only. Forbidden interpretation:
+populated dataset, evidence, or adjudication.
+
+\subsection*{Appendix Z: First Admissible Collection Unlock Map}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/first_admissible_collection_unlock_map.v1.json}
+and \codestate{docs/FIRST_ADMISSIBLE_COLLECTION_UNLOCK_MAP.md}.\\
+Admissible evidence required before result use: actual reviewer selection,
+actual adjudicator assignment, actual blinding assignment, operator
+authorization, collection-start command, and first populated collection-log
+event.
+
+\subsection*{Appendix AA: Runtime Health Audit}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/runtime_health_audit.v1.json},
+\codestate{docs/RUNTIME_HEALTH_AUDIT.md}, and
+\codestate{artifacts/runtime_health/runtime_health_audit.json}.\\
+Allowed interpretation: executable health and verifier-chain status only.
+Forbidden interpretation: evidence, collection start, or adjudication.
+
+\subsection*{Appendix AB: Clean-Room Reproducibility Audit}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/clean_room_reproducibility_audit.v1.json},
+\codestate{docs/CLEAN_ROOM_REPRODUCIBILITY_AUDIT.md}, and
+\codestate{artifacts/runtime_health/clean_room_reproducibility_audit.json}.\\
+Allowed interpretation: bounded rebuildability only. Forbidden interpretation:
+external adjudicative support, empirical support, or manuscript finality.
+
+\subsection*{Appendix AC: Local Path Leakage Audit}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/PATH_AND_LOCAL_LEAKAGE_AUDIT.md} and
+\codestate{artifacts/runtime_health/path_and_local_leakage_audit.json}.\\
+Allowed interpretation: leak classification only. Forbidden interpretation:
+claim that historical snapshots were rewritten or erased.
+
+\subsection*{Appendix AD: Artifact Regeneration Audit}
+\sectionstatus{protocol_defined}
+Primary references: \codestate{docs/ARTIFACT_REGENERATION_AUDIT.md} and
+\codestate{artifacts/runtime_health/artifact_regeneration_audit.json}.\\
+Allowed interpretation: regeneration and drift classification only. Forbidden
+interpretation: result-bearing evidence insertion.
+
+\subsection*{Appendix AE: Stage3-7 First Collection Opening Criteria}
+\sectionstatus{protocol_defined}
+Primary references:
+\codestate{docs/stage3_7_first_admissible_collection_opening_criteria.v1.json},
+\codestate{docs/first_admissible_collection_start_policy.v1.json},
+\codestate{artifacts/external_adjudication/stage3_7/stage3_7_opening_gate.json},
+and \codestate{artifacts/external_adjudication/stage3_7/first_collection_opening_manifest.json}.\\
+Allowed interpretation: first-collection opening criteria only. Forbidden
+interpretation: executed collection start, evidence generation, or adjudication.
+
+\section{Blocked Result Surfaces}
+\sectionstatus{blocked_until_external_adjudication}
+
+\subsection{Human Comparator Results}
+\blockedresultstatus
+
+\paragraph{Admissible evidence required.}
+Frozen preregistration record required. Artifact references required. Negative
+controls required. Statistical shell required. Reviewer package required.
+
+\subsection{External Adjudication Results}
+\blockedresultstatus
+
+\paragraph{Admissible evidence required.}
+Independent reviewer reports required. Conflict disclosures required. Blinding
+log required. Adjudicator decision record required.
+
+\subsection{Comparative Consequence Claims}
+\blockedresultstatus
+
+\paragraph{Admissible evidence required.}
+Execution-era artifacts required. Adjudication-facing evidence required.
+Identity-preservation, metaphysical, and moral-status claims remain forbidden
+even after this section becomes writable.
+
+\section{Non-Claim Ledger}
+\sectionstatus{formalized}
+
+This manuscript does not establish consciousness, phenomenality in the strong
+sense, human equivalence, superiority, inferiority, metaphysical subjecthood,
+cross-substrate identity preservation, or moral status.
+
+\end{document}

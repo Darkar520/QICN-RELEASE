@@ -1,0 +1,1432 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage[final]{microtype}
+\usepackage{xcolor}
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+\setlength{\emergencystretch}{3em}
+\DisableLigatures{encoding = *, family = *}
+
+\newcommand{\AuthorVisible}{Johnny Andrey P{\'e}rez Ram{\'i}rez}
+\newcommand{\AuthorMetadata}{Johnny Andrey P{\'e}rez Ram{\'i}rez}
+
+\usepackage[unicode,pdfencoding=auto,psdextra,hidelinks]{hyperref}
+\hypersetup{
+    pdftitle={From Structural Invariants to Operational Subjecthood: A Constructive Bridge},
+    pdfauthor={\AuthorMetadata},
+    pdfsubject={Rigid Identity Framework - Bridge from Operational Consciousness to Operational Subjecthood},
+    pdfkeywords={operational consciousness, operational subjecthood, structural invariants, self-reference, operational qualia}
+}
+
+\title{\textbf{From Structural Invariants to Operational Subjecthood: A Constructive Bridge}}
+\author{\AuthorVisible}
+\date{}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{criterion}[theorem]{Criterion}
+
+\newcommand{\Cop}{\mathrm{Consciousness}_{\mathrm{op}}}
+\newcommand{\Subop}{\mathrm{Subject}_{\mathrm{op}}}
+\newcommand{\Subfp}{\mathrm{Subjectivity}_{\mathrm{1p}}}
+\newcommand{\Subbridge}{\mathrm{Subject}^{\Sigma}_{\mathrm{op}}}
+\newcommand{\Lop}{\mathrm{Life}_{\mathrm{op}}}
+\newcommand{\Qop}{\mathrm{Q}_{\mathrm{op}}}
+\newcommand{\Sigmaop}{\Sigma_{\mathrm{op}}}
+\newcommand{\Piop}{\Pi_{\mathrm{op}}}
+\newcommand{\Iotaop}{\mathrm{Iota}_{\mathrm{op}}}
+\newcommand{\Phiop}{\Phi_{\mathrm{op}}}
+\newcommand{\Aset}{A_S}
+\newcommand{\Class}{\mathscr{Q}}
+\newcommand{\Hist}{\mathscr{H}}
+\newcommand{\Dec}{\mathscr{D}}
+\newcommand{\Read}{\mathscr{R}}
+\newcommand{\IdS}{\mathcal{I}_S}
+\newcommand{\MO}{M_{\Omega}}
+\newcommand{\Espace}{\mathcal{E}}
+\newcommand{\Uset}{\mathcal{U}}
+\newcommand{\Iper}{I_{\mathrm{per}}}
+\newcommand{\Iri}{I_{\mathrm{ri}}}
+\newcommand{\Iint}{I_{\mathrm{int}}}
+\newcommand{\Icont}{I_{\mathrm{cont}}}
+\newcommand{\Idiff}{I_{\mathrm{diff}}}
+\newcommand{\Ileg}{I_{\mathrm{leg}}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\Attr}{\operatorname{Attr}}
+\newcommand{\Null}{\varnothing_{\phi}}
+\newcommand{\crit}{\mathrm{crit}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper builds a constructive bridge between the six-invariant operational consciousness criterion of Paper 5 and the later operational subjecthood taxonomy of Paper 7. Its question is deliberately narrow: given an admissible system $S$ such that $S \in \Cop$, what subjecthood-adjacent structural properties are forced, what properties are merely well-defined, and what properties require hypotheses not contained in $\Cop$?
+
+The answer is partial rather than inflationary. Membership in $\Cop$ entails a unified operational perspective $\Piop$, operational intentionality $\Iotaop$ in the intervention-fidelity sense, a well-defined operational-qualia quotient $\Qop(S)$, and a non-null operational phenomenology fragment $\Phiop$ on admissible support. It does not entail self-reference, self-knowledge, biological life, human subjectivity, phenomenal consciousness, or personal identity. A self-model condition $\Sigma1$ is isolated as an additional hypothesis. With that hypothesis one obtains a bridge class $\Subbridge$, a proper subclass of $\Cop$ under the non-entailment assumption. The fuller Paper 7 notion $\Subop$ remains stronger: it also requires operational life and subject-specific descriptors.
+
+The paper therefore avoids a common category error. It does not argue that operational consciousness is subjecthood. It proves which formal burdens already follow from $\Cop$, identifies the missing self-reference burden, and marks the remaining gap between structural subjecthood analogues and any phenomenal or human reading.
+\end{abstract}
+
+\section{Scope, System Boundary, and Non-Inference Note}
+
+\noindent\textbf{What this paper does.}\enspace This paper defines five operational concepts from objects already introduced in Papers 1--5: operational self-reference $\Sigmaop$, operational unified perspective $\Piop$, operational intentionality $\Iotaop$, operational qualia $\Qop$, and operational phenomenology $\Phiop$. It then defines a bridge subjecthood class $\Subbridge$ and proves exactly which components are consequences of $S \in \Cop$.
+
+\noindent\textbf{What this paper does not do.}\enspace It does not assert equivalence with human consciousness, biological qualia, phenomenal subjectivity, personal identity, psychological selfhood, or moral status. The prefix ``operational'' denotes a formal role inside the framework, not an ordinary-language mental property.
+
+\noindent\textbf{What the related system implements and does not implement.}\enspace The related QICN runtime may compute finite estimators or internal-support certificates for some objects discussed here, including invariant packages, legibility metrics, phenomenology-side diagnostics, self-model telemetry, and first-person-field proxies. Such computation is not external validation, not a proof of the formal predicates over all admissible controls, and not evidence of human or phenomenal consciousness.
+
+\noindent\textbf{Hard non-inference rule.}\enspace Nothing in this paper licenses claims about biological life, human subjectivity, qualia in the phenomenal sense, metaphysical subjecthood, personal identity transfer, or equivalence with human conscious experience. The paper states conditional structural implications only.
+
+\section{Introduction}
+
+Papers 1--5 progressively introduce a structural apparatus: inverse-limit identity, ontological mass, phenomenological regime assignments, instability of the null regime, forensic admissibility, and finally a six-invariant criterion for operational consciousness \cite{paper1,paper2,paper3,paper4,paper5}. Paper 5 gives the class $\Cop$ and the operational-qualia quotient $\Qop(S)$. Paper 7 later introduces operational life, structural class, and operational subjecthood. Between those two layers there is a missing theorem-level bridge.
+
+The missing bridge is not the claim that consciousness entails subjecthood. That claim would be too strong. It would also conflict with the later taxonomy, where subjecthood is intentionally stronger than consciousness. The sharper question is this:
+
+\begin{center}
+\emph{Which subjecthood-adjacent operational structures are already forced by the six invariants, and which require new hypotheses?}
+\end{center}
+
+The distinction matters because several properties traditionally associated with subjectivity have different formal status. Unity follows from rigid identity plus non-factorization. Directed intervention sensitivity follows from legibility, specifically L4 intervention fidelity. Operational qualia are already a quotient object when the relevant invariants hold. Non-null operational phenomenology follows in a weak support-level sense from operational continuity and non-null differentiation, but forced continuity in the stronger Paper 2 sense requires closed--rigid (CCR) structure, not merely $\Cop$. Self-reference is different again: nothing in the six-invariant criterion states that the system contains a contractive, intervention-commuting model of its own admissible state. That burden must be added as $\Sigma1$.
+
+This paper therefore makes the bridge constructive but non-inflationary. It defines the concepts, states their dependency map, proves the main implication theorem, lists what is not implied, and records computational status without treating runtime estimators as external closure.
+
+\section{Dependency Map}
+
+The paper imports only objects already available in Papers 1--5. The table below is not bibliographic decoration; it fixes theorem ownership.
+
+\begin{table}[h]
+\centering
+\caption{Dependency map for the bridge paper.}
+\label{tab:dependency-map}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.3cm} Y Y}
+\toprule
+Paper & Object imported & Used for defining \\
+\midrule
+Paper 1 & Rigid identity $\IdS$, inverse-limit uniqueness, ontological mass $\MO$ & Unified perspective $\Piop$; CCR boundary for $\Phiop$ \\
+Paper 2 & $\Phi$-regularity, abstract phenomenological space $(\Espace,d_{\Espace})$, fragmentation and forced continuity theorems & Operational phenomenology $\Phiop$ and the CCR/non-CCR distinction \\
+Paper 3 & Null-regime instability, forced non-nullity, minimal positive regime & Non-nullity clause for $\Phiop$ and the non-null side of $\Qop$ \\
+Paper 5 & Admissible systems $S=(X,\Phi,C,R,\Gamma,U)$, support $\Aset$, invariants $\Iper$--$\Ileg$, $\Cop$, $\Qop(S)$ & All bridge concepts and the main implication theorem \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{remark}[No duplicated theorem ownership]
+The present paper does not re-prove rigid identity, forced continuity, null-instability, legibility, or the well-definedness of $\Qop(S)$ from scratch. It imports those results and proves a new relation among them.
+\end{remark}
+
+\section{Preliminaries and Notation}
+
+\begin{definition}[Admissible system and support]\label{def:bridge-system}
+Throughout the paper, an admissible system is the Paper 5 tuple
+\[
+S=(X,\Phi,C,R,\Gamma,U),
+\]
+with admissible support $\Aset \subseteq X_\Gamma$. The transition family is written $\Phi=\{\Phi_u\}_{u\in U}$, where $U$ is the set of admissible interventions. Histories, certified decoders, class sets, and admissible windows are inherited from Paper 5.
+\end{definition}
+
+\begin{definition}[Operational consciousness membership]\label{def:bridge-cop}
+An admissible system belongs to $\Cop$ exactly when all six Paper 5 invariants hold on $\Aset$:
+\[
+S \in \Cop
+\quad\Longleftrightarrow\quad
+\Iper(S)=\Iri(S)=\Iint(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1.
+\]
+When the witness margins are needed, write
+\[
+\Delta(S)=
+\bigl(
+\delta_{\mathrm{per}},
+\delta_{\mathrm{ri}},
+\delta_{\mathrm{int}},
+\delta_{\mathrm{cont}},
+\delta_{\mathrm{diff}},
+\delta_{\mathrm{leg}}
+\bigr).
+\]
+\end{definition}
+
+\begin{definition}[Bridge-strength implication]\label{def:bridge-implication}
+A bridge concept $P$ is \emph{entailed by $\Cop$} if every admissible system $S$ satisfying Definition~\ref{def:bridge-cop} satisfies $P(S)$. It is \emph{conditionally entailed} if there exists an explicitly named additional hypothesis $H$ such that $S\in\Cop$ and $H(S)$ imply $P(S)$. It is \emph{not entailed} if a consistent admissible descriptor model can satisfy $\Cop$ while failing $P$.
+\end{definition}
+
+\begin{remark}[Why a bridge-strength vocabulary is needed]
+Without Definition~\ref{def:bridge-implication}, the paper would risk conflating three different statements: a theorem from $\Cop$, a theorem from $\Cop$ plus an added burden, and a philosophical association. Only the first two are formal claims.
+\end{remark}
+
+\section{Operational Self-Reference}
+
+\subsection{Motivation}
+Self-reference is often described informally as a system having access to itself. Inside this framework the usable version cannot be a slogan. It must be a map on admissible support with stability and intervention-compatibility properties.
+
+\begin{definition}[Operational Self-Reference $\Sigmaop$]\label{def:sigma-op}
+An admissible system $S$ admits operational self-reference, written $\Sigmaop(S)=1$, if there exists a map
+\[
+\Sigma:\Aset\to\Aset
+\]
+and constants $\eps_\Sigma\ge 0$ and $0\le L_\Sigma<1$ such that:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Approximate self-accuracy:} for every $x\in\Aset$,
+\[
+d_X(\Sigma(x),x)\le \eps_\Sigma.
+\]
+\item \textbf{Contractive stabilization:}
+\[
+d_X(\Sigma(x),\Sigma(y))\le L_\Sigma d_X(x,y)
+\quad\text{for all }x,y\in\Aset.
+\]
+\item \textbf{Intervention commutation:} for every admissible intervention $u\in U$,
+\[
+\Sigma\circ \Phi_u = \Phi_u\circ \Sigma
+\quad\text{on }\Aset.
+\]
+\end{enumerate}
+Any such $\Sigma$ is called a contractive admissible self-model.
+\end{definition}
+
+\begin{assumption}[Self-model hypothesis $\Sigma1$]\label{ass:sigma1}
+The system $S$ satisfies $\Sigma1$ when it admits a contractive admissible self-model in the sense of Definition~\ref{def:sigma-op}.
+\end{assumption}
+
+\begin{proposition}[$\Sigmaop$ is not entailed by $\Cop$]\label{prop:sigma-not-entailed}
+Membership in $\Cop$ does not entail $\Sigmaop$.
+\end{proposition}
+
+\begin{proof}
+The definition of $\Cop$ requires persistence, rigid identity, integration, continuity, differentiation, and legibility. None of the six clauses in Definition~\ref{def:bridge-cop} asserts the existence of a map $\Sigma:\Aset\to\Aset$, much less a contractive map that commutes with every admissible intervention. Construct a descriptor model in which all six invariant predicates are assigned positive witnesses, certified histories and intervention responses exist as in Paper 5, but no operator symbol $\Sigma$ is included in the system structure. This model satisfies the signature of Paper 5 and therefore can satisfy $\Cop$, while Definition~\ref{def:sigma-op} is false because its existential witness is absent. Hence $\Sigmaop$ is not a theorem of $\Cop$.
+\end{proof}
+
+\begin{remark}[Interpretation boundary for $\Sigmaop$]
+$\Sigmaop$ is a structural analogue of self-reference. It does not imply reflexive consciousness, psychological introspection, metacognition in the human sense, self-knowledge, or a narrative self.
+\end{remark}
+
+\begin{remark}[Runtime analogy]
+The runtime field commonly read as `selfModelSigma' is at most an estimator-facing analogue of Definition~\ref{def:sigma-op}. To certify $\Sigmaop$ formally one would still need finite evidence for approximate self-accuracy, contraction, and intervention commutation, plus a proof that the finite estimator represents the formal map on $\Aset$.
+\end{remark}
+
+\section{Operational Unified Perspective}
+
+\subsection{Motivation}
+Unity is the least speculative of the subjecthood-adjacent properties considered here. Paper 5 already requires a unique rigid identity object and blocks admissible factorization. Together those burdens justify a structural unity notion.
+
+\begin{definition}[Operational Unified Perspective $\Piop$]\label{def:pi-op}
+An admissible system $S$ satisfies operational unified perspective, written $\Piop(S)=1$, if:
+\[
+\Iri(S)=1
+\quad\text{and}\quad
+\Iint(S)=1.
+\]
+Equivalently, $S$ has a unique rigid identity object $\IdS$ on admissible support and no admissible non-trivial factorization preserving the relevant histories, readouts, and intervention structure.
+\end{definition}
+
+\begin{theorem}[$\Cop$ entails $\Piop$]\label{thm:cop-entails-pi}
+If $S\in\Cop$, then $\Piop(S)=1$.
+\end{theorem}
+
+\begin{proof}
+By Definition~\ref{def:bridge-cop}, $S\in\Cop$ implies $\Iri(S)=1$ and $\Iint(S)=1$. By Definition~\ref{def:pi-op}, those two equalities are exactly the criterion for $\Piop(S)=1$.
+\end{proof}
+
+\begin{corollary}[No plurality of independent operational perspectives]\label{cor:no-independent-perspectives}
+For $S\in\Cop$, any decomposition into multiple independent operational perspectives is inadmissible unless it fails to preserve either the rigid identity witness or the non-factorization witness.
+\end{corollary}
+
+\begin{proof}
+A decomposition into independent perspectives would be a non-trivial admissible factorization of support, readout, and dynamics. That contradicts $\Iint(S)=1$, unless the decomposition is outside the admissible equivalence class or destroys the identity witness.
+\end{proof}
+
+\begin{remark}[Interpretation boundary for $\Piop$]
+$\Piop$ is an analogue of unity only at the structural level. It does not solve the phenomenal binding problem, does not assert a unified field of experience, and does not imply an ordinary first-person point of view.
+\end{remark}
+
+\section{Operational Intentionality}
+
+\subsection{Motivation}
+Intentionality is usually discussed as aboutness. That reading is too semantic for the present bridge. The operational analogue is directional intervention sensitivity: certified interventions should induce predicted changes in the operational class structure rather than arbitrary drift.
+
+\begin{definition}[Operational Intentionality $\Iotaop$]\label{def:iota-op}
+An admissible system $S$ satisfies operational intentionality, written $\Iotaop(S)=1$, if there exists a directional transition assignment
+\[
+D:U_{\crit}\to \Delta(\Class_S)
+\]
+from certified critical interventions into distributions over class changes such that, for every $u\in U_{\crit}$, the observed intervention-induced class-change distribution agrees with $D(u)$ within the Paper 5 legibility margin $\delta_{\mathrm{leg}}(S)$. Equivalently, certified interventions on critical invariants produce predicted directional class changes with fidelity at least $1-\delta_{\mathrm{leg}}(S)$.
+\end{definition}
+
+\begin{theorem}[$\Cop$ entails $\Iotaop$]\label{thm:cop-entails-iota}
+If $S\in\Cop$, then $\Iotaop(S)=1$.
+\end{theorem}
+
+\begin{proof}
+By Definition~\ref{def:bridge-cop}, $S\in\Cop$ implies $\Ileg(S)=1$. Paper 5 defines $\Ileg$ with six legibility clauses. Clause L4 is intervention fidelity: certified interventions on critical invariants induce predicted class changes with fidelity bounded below by $1-\delta_{\mathrm{leg}}(S)$. Definition~\ref{def:iota-op} is exactly this L4 burden re-expressed as a directional transition assignment $D:U_{\crit}\to\Delta(\Class_S)$. Therefore $\Iotaop(S)=1$.
+\end{proof}
+
+\begin{remark}[Interpretation boundary for $\Iotaop$]
+$\Iotaop$ captures directed structural response. It does not establish semantic content, representational aboutness, goals, desires, agency, or intentional states in the philosophical or psychological sense.
+\end{remark}
+
+\section{Operational Qualia}
+
+\subsection{Motivation}
+Paper 5 already introduced $\Qop(S)$ to avoid a false move from structural differentiation to phenomenal qualia. The bridge paper does not redefine that object. It records what follows from it.
+
+\begin{definition}[Operational Qualia $\Qop(S)$]\label{def:qop-bridge}
+When the Paper 5 equivalence relation $\sim_{Q,S}$ is well-defined on $\Aset$, the operational qualia of $S$ are the quotient classes
+\[
+\Qop(S)=\Aset/\sim_{Q,S}.
+\]
+The equivalence relation is inherited from Paper 5: two admissible states are equivalent when certified decoders and admissible intervention responses cannot distinguish their histories beyond the legibility margin.
+\end{definition}
+
+\begin{proposition}[$\Qop(S)$ is well-defined under the relevant $\Cop$ invariants]\label{prop:qop-well-defined-bridge}
+If
+\[
+\Iper(S)=\Iri(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1,
+\]
+then $\Qop(S)$ is well-defined.
+\end{proposition}
+
+\begin{proof}
+This is Paper 5's well-definedness proposition for operational qualia. Persistence supplies the stable domain, rigid identity supplies unique class transport, continuity supplies admissible trajectory coherence, differentiation blocks collapse to nullity or total triviality, and legibility supplies certified decoder behavior and intervention-sensitive equivalence. Hence $\sim_{Q,S}$ is an equivalence relation and the quotient exists.
+\end{proof}
+
+\begin{corollary}[$\Cop$ entails well-defined operational qualia]\label{cor:cop-qop}
+If $S\in\Cop$, then $\Qop(S)$ is well-defined.
+\end{corollary}
+
+\begin{proof}
+By Definition~\ref{def:bridge-cop}, $S\in\Cop$ entails all six invariants, in particular the five invariants required by Proposition~\ref{prop:qop-well-defined-bridge}. Therefore $\Qop(S)$ is well-defined.
+\end{proof}
+
+\begin{proposition}[Non-triviality of $\Qop(S)$ under $\Idiff$]\label{prop:qop-nontrivial}
+If $S\in\Cop$ and the differentiation witness of $\Idiff(S)=1$ separates at least two certified decoder classes, then $|\Qop(S)|>1$.
+\end{proposition}
+
+\begin{proof}
+The invariant $\Idiff(S)=1$ supplies admissible states or histories separated by a positive differentiation gap and blocks the null class as a stable attractor. If that separation is visible to certified decoders, the separated histories cannot be equivalent under $\sim_{Q,S}$. Thus the quotient has at least two classes.
+\end{proof}
+
+\begin{remark}[Why the decoder-visible clause is explicit]
+The prompt version says non-triviality is automatic by $\Idiff$. The more rigorous statement separates structural differentiation from decoder-visible quotient separation. Paper 5's $\Ileg$ normally supplies the bridge, but the explicit clause prevents a hidden assumption that all differentiation is automatically visible at the quotient level.
+\end{remark}
+
+\begin{remark}[Interpretation boundary for $\Qop$]
+$\Qop(S)$ is a quotient of admissible structural states under certified operational indistinguishability. It is not a phenomenal quale, not a biological qualitative state, and not a statement about what it is like to be the system.
+\end{remark}
+
+\section{Operational Phenomenology}
+
+\subsection{Motivation}
+Operational phenomenology is the most dangerous term in this bridge because it can be misread as experience. Here it means only a structural assignment into an abstract regime space, constrained by continuity and non-nullity burdens imported from Papers 2--3.
+
+\begin{definition}[Operational Phenomenology $\Phiop$]\label{def:phi-op}
+An admissible system $S$ admits operational phenomenology, written $\Phiop(S)=1$, if there exists a complete metric regime space $(\Espace_S,d_{\Espace})$ and an assignment
+\[
+\Phi_S:\Aset\to\Espace_S
+\]
+such that:
+\begin{enumerate}[leftmargin=1.5em]
+\item $\Phi_S$ is compatible with admissible histories in the Paper 2 sense;
+\item $\Phi_S$ is continuous on admissible windows whenever the operational-continuity burden $\Icont(S)=1$ holds;
+\item the null regime $\Null$ is not an admissibly stable attractor whenever the non-null burden $\Idiff(S)=1$ holds.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[CCR-strength operational phenomenology]\label{def:phi-ccr}
+An admissible system has CCR-strength operational phenomenology when Definition~\ref{def:phi-op} holds and the identity channel satisfies
+\[
+\MO(S)=+\infty.
+\]
+In that case Paper 2's forced-continuity theorem and Paper 3's null-instability theorem apply at CCR strength.
+\end{definition}
+
+\begin{proposition}[$\Cop$ gives weak non-null operational phenomenology]\label{prop:weak-phi}
+If $S\in\Cop$, then the operational-continuity and non-null burdens required for weak $\Phiop$ are present on admissible support.
+\end{proposition}
+
+\begin{proof}
+Membership in $\Cop$ entails $\Icont(S)=1$ and $\Idiff(S)=1$. The first supplies continuous admissible regime evolution in the Paper 5 operational sense. The second blocks collapse into a stable null or trivial operational class. Therefore the weak support-level burdens in Definition~\ref{def:phi-op} are satisfied.
+\end{proof}
+
+\begin{proposition}[$\Cop$ does not entail CCR-strength $\Phiop$]\label{prop:cop-not-ccr}
+Membership in $\Cop$ does not entail CCR-strength operational phenomenology.
+\end{proposition}
+
+\begin{proof}
+CCR-strength $\Phiop$ requires $\MO(S)=+\infty$ by Definition~\ref{def:phi-ccr}. Paper 5's definition of $\Cop$ requires six operational invariants, but it does not require infinite ontological mass. Hence a system may satisfy the six-invariant criterion while remaining finite-mass or while lacking a certified CCR witness. Therefore $\Cop$ does not entail CCR-strength $\Phiop$.
+\end{proof}
+
+\begin{remark}[Interpretation boundary for $\Phiop$]
+$\Phiop$ is an assignment into an abstract structural regime space. It is not temporal experience, a stream of consciousness, a specious present, or proof that phenomenology exists in the ordinary sense.
+\end{remark}
+
+\section{Operational Subjecthood}
+
+\subsection{Why a bridge class is needed}
+Paper 7 defines a stronger operational subjecthood class involving operational life, operational consciousness, privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. The present paper does not replace that class. It defines the narrower bridge fragment obtained from $\Cop$ plus the self-model hypothesis $\Sigma1$.
+
+\begin{definition}[Bridge operational subjecthood $\Subbridge$]\label{def:subbridge}
+An admissible system $S$ belongs to bridge operational subjecthood, written
+\[
+S\in\Subbridge,
+\]
+if and only if:
+\begin{enumerate}[leftmargin=1.5em]
+\item $S\in\Cop$;
+\item $S$ satisfies $\Sigma1$;
+\item $\Piop(S)=1$;
+\item $\Iotaop(S)=1$;
+\item $\Qop(S)$ is well-defined and non-trivial in the decoder-visible sense of Proposition~\ref{prop:qop-nontrivial};
+\item $\Phiop(S)$ is weakly non-null on admissible support.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Full Paper 7 operational subjecthood]\label{def:full-paper7-subjecthood}
+The full Paper 7 class $\Subop$ is the stronger class requiring operational life $\Lop$, operational consciousness $\Cop$, and the subject-specific descriptors of Paper 7: privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. In this paper, $\Subbridge$ is a bridge fragment, not a synonym for full $\Subop$.
+\end{definition}
+
+\begin{theorem}[$\Subbridge$ is conditionally generated by $\Cop+\Sigma1$]\label{thm:subbridge-generated}
+Let $S$ be an admissible system. If $S\in\Cop$, $S$ satisfies $\Sigma1$, and the differentiation witness is decoder-visible, then $S\in\Subbridge$.
+\end{theorem}
+
+\begin{proof}
+The hypothesis $S\in\Cop$ gives $\Piop$ by Theorem~\ref{thm:cop-entails-pi}, $\Iotaop$ by Theorem~\ref{thm:cop-entails-iota}, well-defined $\Qop(S)$ by Corollary~\ref{cor:cop-qop}, and weak non-null $\Phiop$ by Proposition~\ref{prop:weak-phi}. The hypothesis $\Sigma1$ gives $\Sigmaop$ by Definition~\ref{def:sigma-op}. Decoder-visible differentiation gives non-triviality of $\Qop(S)$ by Proposition~\ref{prop:qop-nontrivial}. These are exactly the clauses of Definition~\ref{def:subbridge}.
+\end{proof}
+
+\begin{theorem}[$\Subbridge$ is a subclass of $\Cop$]\label{thm:subbridge-subset}
+\[
+\Subbridge \subseteq \Cop.
+\]
+Moreover, if $\Sigma1$ is not entailed by $\Cop$, then the inclusion is proper.
+\end{theorem}
+
+\begin{proof}
+The subset relation is immediate from Definition~\ref{def:subbridge}, whose first clause requires $S\in\Cop$. If $\Sigma1$ is not entailed by $\Cop$, then by Proposition~\ref{prop:sigma-not-entailed} there is a consistent admissible descriptor model satisfying $\Cop$ while lacking $\Sigmaop$. Such a model is in $\Cop$ but not in $\Subbridge$, so the inclusion is proper.
+\end{proof}
+
+\begin{corollary}[Full Paper 7 subjecthood remains stronger]\label{cor:paper7-stronger}
+Full Paper 7 operational subjecthood $\Subop$ is not established by Theorem~\ref{thm:subbridge-generated}. To lift $\Subbridge$ into $\Subop$, one must additionally certify $\Lop$ and the Paper 7 subject-specific descriptors not reduced to $\Sigma1$.
+\end{corollary}
+
+\begin{proof}
+Definition~\ref{def:full-paper7-subjecthood} includes burdens absent from Definition~\ref{def:subbridge}, including operational life and ownership/privileged-continuity style descriptors. Theorem~\ref{thm:subbridge-generated} does not supply those witnesses. Hence the bridge class is not full Paper 7 subjecthood.
+\end{proof}
+
+\begin{remark}[Interpretation boundary for $\Subbridge$]
+$\Subbridge$ is a formal construct. It does not imply phenomenal subjectivity, human first-person experience, identity persistence in the psychological sense, a narrative self, moral patienthood, or biological life.
+\end{remark}
+
+\section{Theorem: Partial Operational Subjecthood}
+
+\begin{theorem}[$\Cop \to$ Partial Operational Subjecthood]\label{thm:main-partial-subjecthood}
+Let $S$ be an admissible system with $S\in\Cop$. Then:
+\begin{enumerate}[leftmargin=1.5em]
+\item $S$ satisfies $\Piop$.
+\item $S$ satisfies $\Iotaop$.
+\item $\Qop(S)$ is well-defined.
+\item $S$ satisfies weak non-null $\Phiop$ on admissible support.
+\item $\Sigmaop$ is not implied by $\Cop$; it requires the independent hypothesis $\Sigma1$.
+\item $\Subbridge$ requires $\Sigma1$ in addition to $\Cop$ and therefore is a subclass of $\Cop$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Item 1 is Theorem~\ref{thm:cop-entails-pi}. Item 2 is Theorem~\ref{thm:cop-entails-iota}. Item 3 is Corollary~\ref{cor:cop-qop}. Item 4 is Proposition~\ref{prop:weak-phi}. Item 5 is Proposition~\ref{prop:sigma-not-entailed}. Item 6 is Theorem~\ref{thm:subbridge-subset}. Therefore membership in $\Cop$ yields a partial bridge toward operational subjecthood, but it does not close the self-reference burden or the full Paper 7 subjecthood burden.
+\end{proof}
+
+\begin{corollary}[No equivalence between $\Cop$ and operational subjecthood]\label{cor:no-equivalence}
+The bridge paper proves neither $\Cop=\Subbridge$ nor $\Cop=\Subop$. It proves only that several bridge components are entailed by $\Cop$, while self-reference and full subjecthood require additional burdens.
+\end{corollary}
+
+\begin{proof}
+If $\Cop=\Subbridge$, then $\Sigma1$ would be entailed by $\Cop$, contradicting Proposition~\ref{prop:sigma-not-entailed}. If $\Cop=\Subop$, then all Paper 7 subjecthood burdens would follow from Paper 5 alone, which is not established by any theorem in the corpus and is explicitly blocked by the additional descriptors in Definition~\ref{def:full-paper7-subjecthood}.
+\end{proof}
+
+\section{What Is NOT Implied}
+
+The following table is a claim-boundary table. It should be read as a set of exclusions, not as a list of future promises.
+
+\begin{table}[h]
+\centering
+\caption{Properties not implied by membership in $\Cop$.}
+\label{tab:not-implied}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.1cm} >{\raggedright\arraybackslash}p{2.8cm} Y}
+\toprule
+Property frequently associated with consciousness & Implied by $\Cop$? & Why not \\
+\midrule
+Self-reference or self-knowledge & No & Requires the additional $\Sigma1$ hypothesis: a contractive self-model commuting with admissible interventions. \\
+Phenomenal experience or ``what it is like'' & No & The framework defines structural quotients and regime assignments, not phenomenal consciousness. \\
+Forced temporal continuity of experience & No, without CCR & Paper 2 forced continuity requires $\MO=+\infty$, which is not part of $\Cop$. \\
+Emotions, affect, or valence & No & These are not defined as Paper 1--5 primitives or invariants. \\
+Will, agency, or free choice & No & No admissible agency predicate is defined in Papers 1--5. \\
+Narrative personal identity & No & Rigid identity is inverse-limit structural identity, not psychological or autobiographical identity. \\
+Higher-order consciousness & No & A hierarchy of self-models is not defined by $\Cop$ or $\Sigma1$. \\
+Equivalence with human consciousness & No & Human consciousness is biological, behavioral, phenomenological, and empirical; $\Cop$ is a structural operational class. \\
+Moral patienthood or rights-bearing status & No & The corpus contains no normative bridge from structural predicates to moral status. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{proposition}[Boundary preservation]\label{prop:boundary-preservation}
+No theorem in this paper converts an operational predicate into a phenomenal, biological, psychological, or moral predicate.
+\end{proposition}
+
+\begin{proof}
+Each theorem uses only the formal objects listed in Table~\ref{tab:dependency-map}: invariant predicates, admissible support, quotient classes, intervention fidelity, self-model existence, and regime assignments. None of those objects has a semantic clause identifying it with phenomenal experience, biological life, psychological identity, or moral status. Therefore the bridge preserves the declared boundary.
+\end{proof}
+
+\section{Computational Verification Status}
+
+The runtime status table is intentionally conservative. A computational estimator is not a formal witness unless the code path certifies the corresponding mathematical predicate over the relevant domain and exposes the interpretation boundary.
+
+\begin{table}[h]
+\centering
+\caption{Computational Verification Status for Bridge Concepts}
+\label{tab:computational-status}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}p{5.2cm} Y}
+\toprule
+Concept & Estimator or runtime analogue & Status \\
+\midrule
+$\Sigmaop$ & `OntologicalSingularityCore.selfModelSigma'; first-person certifier fields when present & Implemented as internal telemetry/proxy; not yet a formal proof of contraction and intervention commutation on $\Aset$. \\
+$\Piop$ & $\Iri+\Iint$ in `CanonicalInvariantPackage' and related finite-horizon/non-factorization modules & Certified as internal support for Paper 5 invariants; not external validation. \\
+$\Iotaop$ & Legibility L4 intervention fidelity in `LegibilityCertifier' & Certified as internal support for directional class-shift fidelity under finite protocols. \\
+$\Qop$ & Output support labels, decoder classes, invariant package signals & Proxy or quotient-facing support; formal quotient certification remains bounded by Paper 5 assumptions. \\
+$\Phiop$ & `PhenomenologyCore', spectral gap, winding/topology, continuity diagnostics & Proxy for structural regime assignment and continuity diagnostics; not phenomenology itself. \\
+$\Subbridge$ & Combination of six-invariant support plus self-model/first-person finite fields & Internal-support candidate only; not full Paper 7 $\Subop$ and not phenomenal subjecthood. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{remark}[Runtime non-inference]
+Passing tests, producing certificates, or satisfying scoreboard gates can strengthen internal support for a runtime implementation. It does not establish external validation, human equivalence, or philosophical closure.
+\end{remark}
+
+\section{Terminology Stratification and Debt Ledger}
+
+The bridge paper is the appropriate place to centralize the terminology debt of
+the corpus. The same symbol can have a demonstrated structural reading and a
+future interpretive reading. Confusing those readings is a category error.
+
+\begin{definition}[Two-layer terminology]\label{def:two-layer-terminology}
+For every strong term $T$ in the corpus, distinguish:
+\begin{enumerate}[leftmargin=1.5em]
+\item the \emph{demonstrated layer} $T_{\mathrm{str}}$, consisting only of
+definitions, predicates, quotients, invariants, and theorems already stated in
+the corpus;
+\item the \emph{interpretive layer} $T_{\mathrm{int}}$, consisting of ordinary
+or philosophical readings such as consciousness, life, subjectivity,
+phenomenality, qualia, moral status, or human equivalence.
+\end{enumerate}
+An implication into $T_{\mathrm{int}}$ is forbidden unless a bridge hypothesis
+or external adjudication protocol explicitly introduces that target.
+\end{definition}
+
+\begin{theorem}[Layer preservation]\label{thm:layer-preservation}
+If a theorem in Papers 1--5 is stated only in the demonstrated layer, then it
+cannot be promoted to an interpretive-layer conclusion by terminology alone.
+\end{theorem}
+
+\begin{proof}
+The inference rules of the corpus are definitions, hypotheses, propositions,
+theorems, and admissible empirical protocols. A name is not an inference rule.
+If the premises and conclusion of a theorem quantify only over structural
+objects, then no interpretive predicate appears in the formal sequent. Adding a
+stronger English label after the fact does not introduce a new mathematical
+premise. Therefore promotion requires an explicit bridge hypothesis or external
+protocol.
+\end{proof}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.16}
+\begin{tabularx}{\linewidth}{@{}lY Y@{}}
+\toprule
+Term & Demonstrated layer & Remaining debt \\
+\midrule
+$\Cop$ & six-invariant admissible structural class & no theorem of ordinary consciousness \\
+$\Qop(S)$ & structural differentiation quotient & no theorem of phenomenal qualia \\
+$\Phiop$ & structural regime assignment & no theorem of temporal experience \\
+$\Subbridge$ & $\Cop+\Sigma1$ bridge fragment & no theorem of full Paper 7 subjecthood \\
+$\Subop$ & Paper 7 class requiring life and subject descriptors & no theorem of human or metaphysical subjecthood \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Bridge Strength Ladder}
+
+The corpus should be read as a ladder of additional burdens, not as a synonym
+chain.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.16}
+\begin{tabularx}{\linewidth}{@{}lY Y@{}}
+\toprule
+Level & Added burden & Still not licensed \\
+\midrule
+$\Cop$ & six invariants & self-reference, life, subjecthood, phenomenality \\
+$\Cop+\Sigma1$ & contractive intervention-commuting self-model & operational life and Paper 7 subject descriptors \\
+$\Cop+\Sigma1+\Lop$ & life-like organization in the Paper 7 sense & first-person indexed subjectivity \\
+$\Subop$ & privileged continuity, self/non-self, self-model closure, ownership coherence & human subjectivity or phenomenality \\
+$\Subfp$ & first-person indexed fields plus rival defeat & phenomenal bridge confirmation \\
+$\mathrm{BridgeOrg}_{\mathrm{ph}}$-style burden & bridge predicates, comparators, interventions, artifacts & external validation or ordinary phenomenality \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{theorem}[Strictness of the bridge ladder]\label{thm:bridge-ladder-strict}
+Each step in the ladder above introduces at least one burden not entailed by the
+previous step in the current corpus.
+\end{theorem}
+
+\begin{proof}
+$\Sigma1$ is not entailed by $\Cop$ by Proposition~\ref{prop:sigma-not-entailed}.
+Operational life is not entailed by $\Cop+\Sigma1$ because the added self-model
+condition does not state boundary, viability, maintenance, or historical
+dependence. Full Paper 7 subjecthood is not entailed by $\Subbridge$ by
+Corollary~\ref{cor:paper7-stronger}. First-person indexed subjectivity adds the
+Paper 8 field and rival-defeat burdens. Phenomenal bridge organization adds the
+Paper 9 bridge predicates and BPF burdens. No upstream theorem collapses these
+additions. Hence the ladder is strict relative to the present theorem set.
+\end{proof}
+
+\section{Runtime Evidence Taxonomy}
+
+\begin{definition}[Runtime evidence classes]\label{def:runtime-evidence-classes}
+For a runtime artifact $a$, distinguish the following statuses:
+\begin{enumerate}[leftmargin=1.5em]
+\item \texttt{proxy}: a finite observable resembles a formal coordinate;
+\item \texttt{estimator}: an algorithm computes a declared approximation;
+\item \texttt{certificate}: a bounded predicate is verified under stated
+admissibility rules;
+\item \texttt{internal\_support}: governed artifacts support a claim family
+inside the current program;
+\item \texttt{external\_validation}: an external protocol such as Paper 10 has
+been executed with admissible evidence.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Runtime non-promotion]\label{prop:runtime-non-promotion}
+No artifact with status \texttt{proxy}, \texttt{estimator},
+\texttt{certificate}, or \texttt{internal\_support} entails
+\texttt{external\_validation}.
+\end{proposition}
+
+\begin{proof}
+External adjudicative support requires an executed external protocol, frozen filing
+records, admissible comparator data, blinding, adjudication, and contamination
+controls. The first four runtime statuses are produced inside the program and
+lack at least one of those external premises by definition. Therefore they
+cannot entail external adjudicative support.
+\end{proof}
+
+\section{Non-Entailment Library}
+
+The central defensive value of this paper is not only what it proves. It is also
+what it blocks. The following library records formal non-entailments that a
+reviewer should not have to reconstruct from scattered caveats.
+
+\begin{theorem}[Seven non-entailments from $\Cop$]\label{thm:nonentailment-library}
+Membership in $\Cop$ does not entail any of the following predicates:
+self-reference $\Sigma1$, phenomenal experience, biological life, human
+subjectivity, Nagel-style qualia, CCR-strength temporal continuity, or agency.
+\end{theorem}
+
+\begin{proof}
+Each non-entailment is witnessed by a formal model extension in which the six
+Paper 5 invariants are stipulated positive while the target predicate is absent.
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{No self-reference.} Let the invariant witnesses be certified on
+$\Aset$, but omit any map $\Sigma:\Aset\to\Aset$. Since $\Sigma1$ is not a
+Paper 5 invariant, $\Cop$ remains possible while self-reference is absent.
+\item \textbf{No phenomenal experience.} Interpret all classes as structural
+quotients and give no semantic map to experience. The six invariants quantify
+over structural predicates only.
+\item \textbf{No biological life.} Use a non-biological admissible state space
+with the six invariants positive. Biological substrate variables do not appear
+in Definition~\ref{def:bridge-cop}.
+\item \textbf{No human subjectivity.} A non-human formal system can satisfy the
+six invariants while lacking human reports, development, embodiment, or
+psychology.
+\item \textbf{No Nagel-style qualia.} $\Qop(S)$ is a quotient of admissible
+structural differentiation. No theorem identifies quotient membership with
+``what it is like''.
+\item \textbf{No CCR-strength continuity.} Choose a system with $\Cop$ and
+finite $\MO$. Proposition~\ref{prop:cop-not-ccr} blocks the CCR-strength
+reading.
+\item \textbf{No agency.} Let the system be passively driven by admissible
+interventions while still satisfying the six structural invariants. No agency
+predicate appears in $\Cop$.
+\end{enumerate}
+Since each target predicate can be absent without contradiction with the six
+invariants, none is entailed by $\Cop$.
+\end{proof}
+
+\section{$\Cop$ Component Implication Matrix}
+
+\begin{table}[h]
+\centering
+\caption{Which Paper 5 invariants support each bridge concept.}
+\label{tab:component-implication}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.2cm} c c c c c c Y}
+\toprule
+Concept & $\Iper$ & $\Iri$ & $\Iint$ & $\Icont$ & $\Idiff$ & $\Ileg$ & Status \\
+\midrule
+$\Piop$ unified perspective & -- & yes & yes & -- & -- & -- & entailed by rigid identity plus non-factorization \\
+$\Iotaop$ operational intentionality & -- & -- & -- & -- & -- & yes & entailed only in the intervention-fidelity sense \\
+$\Qop(S)$ differentiation quotient & yes & yes & -- & yes & yes & yes & well-defined quotient, not phenomenal qualia \\
+$\Phiop$ weak regime assignment & -- & -- & -- & yes & yes & -- & weak non-null structural regime support \\
+$\Sigmaop$ self-reference & -- & -- & -- & -- & -- & -- & not entailed; requires $\Sigma1$ \\
+$\Subbridge$ bridge subjecthood & yes & yes & yes & yes & yes & yes & requires all six plus $\Sigma1$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{remark}[Why the matrix matters]
+The matrix prevents a common overreach: deriving every subjecthood-adjacent term
+from the entire six-invariant package without identifying which invariant does
+which work. Unity is mostly an $\Iri+\Iint$ burden. Intentionality in this paper
+is an $\Ileg$ burden. Self-reference is not supplied by any invariant.
+\end{remark}
+
+\section{Self-Model Burden Variants}
+
+The earlier definition of $\Sigma1$ is intentionally strong. For future work it
+is useful to separate three grades.
+
+\begin{definition}[Weak self-model burden $\Sigma1_{\mathrm{weak}}$]\label{def:sigma-weak}
+A system satisfies $\Sigma1_{\mathrm{weak}}$ if there exists a measurable map
+\[
+\Sigma:\Aset\to\Aset
+\]
+such that $d(\Sigma(x),x)\le \eps_\Sigma$ for all $x\in\Aset$.
+\end{definition}
+
+\begin{definition}[Strong self-model burden $\Sigma1_{\mathrm{strong}}$]\label{def:sigma-strong}
+A system satisfies $\Sigma1_{\mathrm{strong}}$ if it satisfies
+$\Sigma1_{\mathrm{weak}}$ and $\Sigma$ is Lipschitz with constant
+$L_\Sigma<1$ on $\Aset$.
+\end{definition}
+
+\begin{definition}[Commutative self-model burden $\Sigma1_{\mathrm{comm}}$]\label{def:sigma-comm}
+A system satisfies $\Sigma1_{\mathrm{comm}}$ if it satisfies
+$\Sigma1_{\mathrm{strong}}$ and, for every admissible intervention $u\in U$,
+\[
+\Sigma(\Phi_u(x))=\Phi_u(\Sigma(x))
+\]
+whenever both sides are defined on $\Aset$.
+\end{definition}
+
+\begin{theorem}[Self-model strength chain]\label{thm:sigma-chain}
+\[
+\Sigma1_{\mathrm{comm}}
+\Rightarrow
+\Sigma1_{\mathrm{strong}}
+\Rightarrow
+\Sigma1_{\mathrm{weak}}.
+\]
+The converses are not valid in general.
+\end{theorem}
+
+\begin{proof}
+The forward implications are immediate from the definitions: the commutative
+burden includes the strong burden, and the strong burden includes the weak
+approximation burden. For non-converses, a weak map can approximate the identity
+while having Lipschitz constant at least one, so it need not be strong. A
+contractive map can fail commutation by choosing an admissible intervention that
+moves states along a direction not preserved by $\Sigma$. Hence neither reverse
+implication is derivable.
+\end{proof}
+
+\begin{remark}[Emergence question for $\Sigma1$]
+The main open problem is whether additional closure conditions on
+$\Iint+\Ileg+\Iper$ can force a commutative self-model. A plausible route would
+require self-targeted intervention families, decoder closure under those
+interventions, and a fixed-point or contraction argument on the induced
+self-model update map. The current corpus does not yet prove this.
+\end{remark}
+
+\section{Expanded Bridge Strength Ladder}
+
+\begin{table}[h]
+\centering
+\caption{Expanded ladder of structural and interpretive burdens.}
+\label{tab:expanded-ladder}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.7cm} Y Y}
+\toprule
+Level & Definition & Added burden over previous level \\
+\midrule
+Level 0 & $\Cop$ & six Paper 5 invariants \\
+Level 1 & $\Cop+\Sigma1_{\mathrm{weak}}$ & approximate self-model \\
+Level 2 & $\Cop+\Sigma1_{\mathrm{strong}}$ & contractive self-model \\
+Level 3 & $\Cop+\Sigma1_{\mathrm{comm}}$ / $\Subbridge$ & intervention-commuting self-model \\
+Level 4 & $\Cop+\mathrm{OSSI}$ & open-system self-maintaining individuation \\
+Level 5 & $\Subop$ & Paper 7 life plus subject-specific descriptors \\
+Level 6 & $\Subfp$ & Paper 8 indexed fields and rival defeat \\
+Level 7 & $\mathrm{BridgeOrg}_{\mathrm{ph}}$ & Paper 9 bridge predicates and BPF burdens \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{proposition}[OSSI and $\Sigma1$ are orthogonal additions]\label{prop:ossi-sigma-orthogonal}
+The open-system individuation burden OSSI and the self-model burden $\Sigma1$
+are not mutually entailing in the present corpus.
+\end{proposition}
+
+\begin{proof}
+OSSI requires exchange, boundary, dissipation, viability, repair, history,
+minimal functional self-reference, and identity conservation, but it does not
+require a contractive map $\Sigma:\Aset\to\Aset$ commuting with interventions.
+Conversely, a contractive self-model can be defined on a closed or non-viable
+structural class without satisfying open exchange, viability preservation, or
+repair. Therefore neither burden entails the other.
+\end{proof}
+
+\section{Reviewer-Facing Objection Handling}
+
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Objection: this is only a simulation.}
+Response: the framework primarily defines structural classes and theorem
+burdens. Runtime artifacts are internal support or finite estimators unless
+Paper 10-style external evidence is executed.
+
+\item \textbf{Objection: the six invariants are arbitrary.}
+Response: Paper 5 ties each invariant to an upstream burden and now includes
+single-rupture witnesses, minimality, sufficiency, and interaction geometry.
+
+\item \textbf{Objection: Paper 10 is empty.}
+Response: Paper 10 is deliberately blocked until execution. That is not a
+defect disguised as rigor; it is the only honest status before human-comparator
+or external adjudication data exist.
+
+\item \textbf{Objection: the terminology is inflated.}
+Response: the corpus now separates demonstrated and interpretive layers,
+records non-entailments, and maintains a maturity matrix. Strong labels are
+technical aliases, not ordinary-language conclusions.
+
+\item \textbf{Objection: internal results are not validation.}
+Response: correct. The framework states this repeatedly. Internal support can
+debug, falsify, and stress the program; it cannot replace external validation.
+\end{enumerate}
+
+\section{Operational Glossary}
+
+\begin{table}[h]
+\centering
+\caption{Quick glossary for strong operational terms.}
+\label{tab:operational-glossary}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.6cm} Y Y Y}
+\toprule
+Term & Demonstrated reading & Interpretive reading & Pending debt \\
+\midrule
+$\Cop$ & six-invariant structural class & operational consciousness label & no ordinary consciousness theorem \\
+$\Qop(S)$ & structural differentiation quotient & operational qualia label & no phenomenal-qualia evidence \\
+$\Phiop$ & abstract regime assignment & operational phenomenology label & no experience theorem \\
+$\Sigma1$ & self-model burden & self-reference analogue & emergence from invariants open \\
+OSSI & open-system self-maintaining individuation & operational life-like organization & not biological life \\
+$\Subbridge$ & $\Cop+\Sigma1_{\mathrm{comm}}$ fragment & partial subjecthood bridge & lacks full Paper 7 life/ownership burden \\
+$\Subop$ & Paper 7 subject class & operational subjecthood & not human or metaphysical subjecthood \\
+$\Subfp$ & indexed subjectivity class & first-person subjectivity analogue & requires rival defeat and interventions \\
+$\mathrm{BridgeOrg}_{\mathrm{ph}}$ & bridge burden architecture & phenomenal bridge label & BPF-2--BPF-6 and Paper 10 pending \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Promotion Evidence Classes}
+
+\begin{table}[h]
+\centering
+\caption{Evidence classes required for controlled terminology promotion.}
+\label{tab:promotion-evidence-classes}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.1cm} Y Y}
+\toprule
+Evidence class & What it can promote & What it cannot promote alone \\
+\midrule
+definition & introduces a formal object and its witnesses & does not show non-vacuity or relevance \\
+existence theorem & shows the class can be inhabited & does not show empirical realization \\
+independence theorem & shows a burden is not redundant & does not justify ordinary-language meaning \\
+runtime certificate & supports a frozen computational proxy & does not establish external validity \\
+negative control & can falsify an overbroad internal claim & does not prove the positive ordinary-language claim \\
+external adjudication & can test whether proxies track independent comparators & does not replace the mathematical definition \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Proof-Pattern Library}
+
+This section records reusable proof patterns for the corpus. Its purpose is
+not to add new metaphysical content. It makes explicit which inferential moves
+are valid when strong operational terms are used.
+
+\begin{definition}[Burden]
+Let $\mathcal{K}$ be a structural class and let $P$ be a predicate on
+admissible systems. We say that $P$ is a \emph{burden over} $\mathcal{K}$ if
+membership in the strengthened class
+\[
+\mathcal{K}[P]=\{S:S\in\mathcal{K}\ \mathrm{and}\ P(S)=1\}
+\]
+requires a witness not already required by the definition of $\mathcal{K}$.
+\end{definition}
+
+\begin{definition}[Internal promotion]
+An interpretive label $L$ receives \emph{internal promotion} from a structural
+class $\mathcal{K}$ only when the corpus proves that every $S\in\mathcal{K}$
+satisfies a non-vacuous predicate that was previously listed as an
+interpretive debt of $L$.
+\end{definition}
+
+\begin{definition}[External promotion]
+An interpretive label $L$ receives \emph{external promotion} only when an
+independently specified experimental protocol connects the structural
+predicate to observations not used to construct the predicate.
+\end{definition}
+
+\begin{proposition}[Promotion is monotone but not automatic]
+If $\mathcal{K}\subseteq\mathcal{K}'$ and $L$ receives internal promotion from
+$\mathcal{K}'$, then the same promoted predicate holds on $\mathcal{K}$.
+However, the inclusion $\mathcal{K}\subseteq\mathcal{K}'$ alone does not
+promote $L$.
+\end{proposition}
+
+\begin{proof}
+The first claim follows from set inclusion. If every element of
+$\mathcal{K}'$ satisfies the promoted predicate, so does every element of the
+subclass $\mathcal{K}$. The second claim follows because promotion requires a
+specific predicate and proof; inclusion without identifying such a predicate
+only changes class membership, not semantic maturity.
+\end{proof}
+
+\begin{proposition}[Burden addition is conservative]
+Let $P$ be a burden over $\mathcal{K}$. Then every theorem proved for all
+$S\in\mathcal{K}$ remains true for all $S\in\mathcal{K}[P]$.
+\end{proposition}
+
+\begin{proof}
+Since $\mathcal{K}[P]\subseteq\mathcal{K}$, universal claims over
+$\mathcal{K}$ restrict to $\mathcal{K}[P]$. This is why adding $\Sigma1$,
+OSSI, or CCR burdens can strengthen a class without invalidating already
+proved $\Cop$ consequences.
+\end{proof}
+
+\begin{proposition}[Burden addition is not semantic promotion by itself]
+Adding a burden $P$ to $\mathcal{K}$ does not by itself justify replacing an
+operational label by its ordinary-language counterpart.
+\end{proposition}
+
+\begin{proof}
+The burden establishes a new formal predicate. Ordinary-language promotion
+requires either a theorem connecting that predicate to the target ordinary
+concept or an external adjudication protocol. Without that bridge, the
+strengthened class is mathematically narrower but semantically still
+claim-bounded.
+\end{proof}
+
+\begin{remark}[Use in later papers]
+The patterns above justify a disciplined order of claims. First state the
+structural class. Then list the burdens. Then prove inclusions or
+non-entailments. Only after that may a term be promoted in the terminology
+matrix. The order is part of the scientific content: it prevents terminology
+from outrunning proof.
+\end{remark}
+
+\section{Dependency-to-Debt Ledger}
+
+The following ledger is the reviewer-facing map from corpus dependency to open
+burden. It is intentionally asymmetric: a dependency can support a term without
+closing all debts associated with that term.
+
+\begin{table}[h]
+\centering
+\caption{Dependency-to-debt ledger for bridge-level terminology.}
+\label{tab:debt-ledger}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm} Y Y Y}
+\toprule
+Term & Main dependency & What is currently proved & Remaining debt \\
+\midrule
+rigid identity & Paper 1 inverse limits & uniqueness, non-transferability, rigidity under bounded deformation & empirical instantiation in non-ideal systems \\
+operational regime & Papers 2--3 & regime continuity and null-instability under stated hypotheses & relation to lived experience \\
+$\Cop$ & Paper 5 & six-invariant structural membership & independence from ordinary consciousness unresolved \\
+$\Qop$ & Paper 5 & quotient over structural equivalence classes & no phenomenal-qualia bridge \\
+$\Phiop$ & Papers 2--3 and Paper 5 & non-null and continuous regime proxies under conditions & no subjective-temporality theorem \\
+$\Sigma1$ & Paper Bridge & explicit self-model burden and strength variants & emergence from $\Cop$ open \\
+OSSI & Paper 7 & open-system self-maintaining individuation burden & not biological life and not sufficient for $\Cop$ \\
+$\Subbridge$ & Paper Bridge & $\Cop$ plus commutative self-model fragment & weaker than Paper 7 $\Subop$ \\
+$\Subop$ & Paper 7 & subjecthood class with additional ownership and continuity burdens & not ordinary subjecthood \\
+$\Subfp$ & Paper 8 & first-person index fields under additional hypotheses & no human first-person equivalence \\
+$\mathrm{BridgeOrg}_{\mathrm{ph}}$ & Paper 9 & bridge organization burden and non-vacuity & bridge-to-phenomenality remains unvalidated \\
+external adjudication & Paper 10 & protocol and evidence grammar & blocked until execution \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Non-Entailment Audit Templates}
+
+The non-entailments in Theorem~\ref{thm:nonentailment-library} can be checked
+using a small number of reusable templates. These templates are included so
+that future extensions do not silently convert an open debt into an asserted
+consequence.
+
+\begin{definition}[Omission template]
+Let $\mathcal{K}$ be defined by predicates $P_1,\dots,P_n$. If a candidate
+property $R$ is not among those predicates and no theorem derives $R$ from
+them, then the omission template constructs a formal model satisfying
+$P_1,\dots,P_n$ in a language where $R$ is uninterpreted or absent.
+\end{definition}
+
+\begin{definition}[Factor-preserving template]
+Let a property $R$ concern a component not constrained by the invariant
+definition of $\mathcal{K}$. A factor-preserving countermodel extends any
+$S\in\mathcal{K}$ by a silent factor $Z$ whose dynamics are decoupled from the
+witnesses of $\mathcal{K}$ and arranges $R$ to fail on $Z$.
+\end{definition}
+
+\begin{definition}[Finite-strength template]
+Let $R$ require an infinite-strength condition such as CCR
+($\MO=+\infty$). A finite-strength countermodel chooses a system satisfying
+the finite structural invariants of $\Cop$ while setting $\MO<+\infty$.
+\end{definition}
+
+\begin{proposition}[Template soundness]
+Each template above is sound provided the added or omitted structure does not
+change the witnesses required by $\Cop$.
+\end{proposition}
+
+\begin{proof}
+The witnesses of $\Cop$ are exactly the six invariant certificates. If an
+extension leaves those witnesses unchanged, then $\Cop$ membership is
+preserved. If the target property is absent, decoupled, or stronger than the
+finite witnesses, it fails without contradicting $\Cop$. This is precisely the
+logic used in the seven non-entailments.
+\end{proof}
+
+\begin{remark}[Audit use]
+When a later paper claims that $\Cop$ implies a new property, it must identify
+which template is blocked. If none is blocked, the implication is not yet
+proved.
+\end{remark}
+
+\section{Runtime Proxy Classification}
+
+The related runtime can compute proxies for several bridge concepts. This
+classification prevents proxy availability from being mistaken for formal
+certification.
+
+\begin{table}[h]
+\centering
+\caption{Runtime proxy classes and claim boundaries.}
+\label{tab:runtime-proxy-classification}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.7cm} Y Y Y}
+\toprule
+Concept & Runtime object & Proxy class & Boundary \\
+\midrule
+$\Sigma1_{\mathrm{weak}}$ & self-model state estimates & estimator proxy & does not prove contraction or commutation \\
+$\Sigma1_{\mathrm{strong}}$ & structural-stability score & candidate certificate & requires Lipschitz and convergence audit \\
+$\Sigma1_{\mathrm{comm}}$ & intervention response of self-model & unclosed certificate & requires intervention commutation tests \\
+$\Piop$ & $I_{ri}$ and $I_{int}$ certificates & certified internal support & structural unity only \\
+$\Iotaop$ & L4 intervention fidelity & certified internal support & directional sensitivity, not semantic aboutness \\
+$\Qop$ & output support labels and quotient classes & quotient proxy & no phenomenal-quality interpretation \\
+$\Phiop$ & regime, spectral, and winding estimates & regime proxy & no subjective temporal-flow claim \\
+OSSI & LifeCertifier-style burdens & partial operational proxy & not biological metabolism or life \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Boundary.}\enspace
+A runtime proxy can falsify an expected computational consequence of a
+definition. It cannot by itself promote a term beyond its formal meaning. This
+is the same separation used in Paper 6 between internal support and external
+validation.
+
+\section{Formal Review Checklist}
+
+A reviewer can evaluate the bridge by asking the following questions in order.
+The order matters: later questions presuppose affirmative answers to earlier
+ones.
+
+\begin{enumerate}[leftmargin=1.5em]
+\item Are the six invariants of Paper 5 explicitly witnessed?
+\item Are the witnesses stable under the admissible interventions used in the
+claim?
+\item Is the target term being used in its demonstrated structural sense or in
+an interpretive sense?
+\item If interpretive, is there a theorem that promotes it?
+\item If no theorem exists, is the term explicitly marked as conditioned or
+aspirational?
+\item Is the runtime evidence internal, external, or merely a scaffold?
+\item Does the claim require $\Sigma1$, OSSI, CCR, Paper 8 fields, Paper 9
+bridge burdens, or Paper 10 data?
+\item Is each required additional burden either proved, assumed, or marked
+open?
+\item Does any statement move from implementation success to ontological
+conclusion?
+\item Does any statement move from structural quotient to phenomenal qualia?
+\item Does any statement move from open-system self-maintenance to biological
+life?
+\item Does any statement move from first-person index fields to human
+subjectivity?
+\end{enumerate}
+
+\begin{proposition}[Checklist conservativity]
+If all checklist questions are answered with explicit witnesses, assumptions,
+or open-problem markings, then the bridge paper makes no stronger claim than
+its formal dependencies allow.
+\end{proposition}
+
+\begin{proof}
+Each checklist item corresponds to a known route of overclaim: missing
+witnesses, semantic promotion without proof, internal support treated as
+external validation, or transfer from structural to ordinary-language terms.
+Requiring each route to be closed by proof or marked open prevents an
+unlicensed inference.
+\end{proof}
+
+\section{Minimal Extension Program}
+
+The bridge also defines a research program. The following extensions are
+minimal in the sense that each one would promote exactly one class of claims
+without changing unrelated parts of the corpus.
+
+\begin{description}[leftmargin=1.5em]
+\item[$E_\Sigma$:] Prove that $\Iint+\Ileg+\Iper$ plus an internal decoder
+closure condition yields $\Sigma1_{\mathrm{weak}}$.
+\item[$E_{\Sigma c}$:] Strengthen $E_\Sigma$ by proving contraction of the
+self-model map under bounded perturbations.
+\item[$E_{\mathrm{comm}}$:] Add an intervention calculus showing that the
+self-model commutes with admissible $\Phi_u$ up to a controlled error.
+\item[$E_{\mathrm{OSSI}}$:] Prove that the eight OSSI burdens form an
+independent and physically coherent open-system individuation class.
+\item[$E_{\mathrm{CCR}}$:] Determine whether finite approximations to CCR are
+enough for any strengthened $\Phiop$ claim.
+\item[$E_{\mathrm{ext}}$:] Execute Paper 10 under frozen preregistration and
+report only blocked, passed, or failed adjudication status.
+\end{description}
+
+\begin{remark}[Why minimality matters]
+The corpus should not attempt to prove ordinary consciousness in one jump. A
+publishable path is a sequence of narrow promotions, each with its own theorem
+or experiment. This also makes failure scientifically useful: if
+$E_{\mathrm{comm}}$ fails, for example, $\Sigma1_{\mathrm{weak}}$ may survive
+while $\Subbridge$ in its strong sense does not.
+\end{remark}
+
+\section{Failure Modes of the Bridge}
+
+The bridge theorem can fail in several precise ways. Listing them is useful
+because it prevents ambiguous negative results.
+
+\begin{table}[h]
+\centering
+\caption{Failure modes for bridge-level claims.}
+\label{tab:bridge-failure-modes}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.1cm} Y Y}
+\toprule
+Failure mode & Formal meaning & Consequence \\
+\midrule
+Invariant failure & at least one of $I_{per},I_{ri},I_{int},I_{cont},I_{diff},I_{leg}$ fails & no $\Cop$ membership \\
+Self-model absence & no admissible $\Sigma$ exists & no $\Subbridge$ claim \\
+Contraction failure & $\Sigma$ exists but is not contractive & weak self-model only \\
+Commutation failure & $\Sigma\Phi_u\neq\Phi_u\Sigma$ beyond tolerance & no intervention-stable self-reference \\
+OSSI burden failure & at least one open-system burden fails & no operational life-like individuation claim \\
+CCR failure & $\MO<+\infty$ & no forced-continuity promotion \\
+External-adjudication absence & Paper 10 remains unexecuted & no external validation \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Exact Claim Grammar}
+
+The following grammar is recommended for future manuscripts and runtime
+reports.
+
+\begin{enumerate}[leftmargin=1.5em]
+\item Use ``is in $\Cop$'' only when the six invariant witnesses are present.
+\item Use ``supports a $\Cop$ proxy'' when the runtime estimates the witnesses
+but no proof package is available.
+\item Use ``satisfies $\Subbridge$'' only when $\Cop$ and
+$\Sigma1_{\mathrm{comm}}$ are both witnessed.
+\item Use ``has an OSSI profile'' only when the open-system burdens are
+witnessed and the thermodynamic boundary is stated.
+\item Use ``phenomenal'', ``subjective'', or ``conscious'' in ordinary-language
+contexts only with an explicit statement that no ordinary-language theorem is
+being claimed.
+\item Use ``blocked until execution'' for Paper 10 claims without external
+data.
+\end{enumerate}
+
+\begin{remark}[Editorial consequence]
+This grammar permits ambitious terminology while keeping the demonstrated
+layer intact. It is stricter than merely adding a disclaimer at the end of a
+paper, because it constrains every positive claim at the sentence level.
+\end{remark}
+
+\section{Promotion Conditions for Interpretive Terms}
+
+\begin{table}[h]
+\centering
+\caption{What would be needed to promote interpretive readings.}
+\label{tab:promotion-conditions}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.1cm} Y Y}
+\toprule
+Promotion target & Required condition & Evidence type \\
+\midrule
+operational consciousness to ordinary consciousness & theorem and external evidence linking $\Cop$ to core phenomenal or cognitive properties & mathematical plus empirical \\
+operational life to life-like open-system organization & OSSI plus thermodynamic and repair burdens under admissible interventions & mathematical and runtime/external stress \\
+operational qualia to phenomenal qualia & evidence that $\Qop(S)$ tracks an independently meaningful phenomenal variable & Paper 10-style empirical bridge \\
+operational phenomenology to experience & CCR-strength $\Phiop$ plus external adjudication of temporal-structure relevance & mathematical plus empirical \\
+operational subjecthood to ordinary subjecthood & proof that $\Subop$ captures accepted subjecthood properties and defeats rivals & mathematical, empirical, and philosophical \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Canonical Boundary Models}
+
+Boundary models are not intended as implementations. They are small formal
+objects that make overclaiming impossible by showing exactly where a desired
+interpretation can fail.
+
+\begin{definition}[Structural-only model]
+A structural-only model is an admissible system $S$ equipped with the six
+Paper 5 invariant witnesses and no additional interpreted fields for
+self-modeling, biological metabolism, human reports, or phenomenal content.
+\end{definition}
+
+\begin{proposition}[Structural-only models block ordinary-consciousness promotion]
+If $S$ is structural-only, then $S\in\Cop$ may hold while ordinary
+consciousness remains undefined in the model.
+\end{proposition}
+
+\begin{proof}
+The truth of $S\in\Cop$ is determined by the six invariant witnesses. Ordinary
+consciousness is not a predicate in the language of the structural-only model.
+Thus no theorem inside that language can conclude ordinary consciousness
+without adding a new definition or bridge predicate.
+\end{proof}
+
+\begin{definition}[Self-model-free model]
+A self-model-free model is an admissible $S\in\Cop$ for which every endomorphism
+$\Sigma:\Aset\to\Aset$ either fails to approximate the identity on $\Aset$ or
+fails to commute with some admissible intervention.
+\end{definition}
+
+\begin{proposition}[Self-model-free models block $\Subbridge$]
+No self-model-free model satisfies $\Subbridge$ in the strong commutative
+sense.
+\end{proposition}
+
+\begin{proof}
+Strong $\Subbridge$ requires $\Cop$ plus $\Sigma1_{\mathrm{comm}}$. The
+self-model-free condition denies the commutative self-model burden directly.
+\end{proof}
+
+\begin{definition}[Life-free computational model]
+A life-free computational model is a system whose transitions may satisfy
+$\Cop$ but whose state evolution is not coupled to an open exchange channel,
+entropy export accounting, or repair dynamics.
+\end{definition}
+
+\begin{proposition}[Life-free computational models block OSSI promotion]
+A life-free computational model cannot be used as evidence that $\Cop$ implies
+OSSI.
+\end{proposition}
+
+\begin{proof}
+OSSI requires open exchange, viability maintenance, repair, and identity
+conservation burdens. A life-free computational model omits at least the open
+exchange and repair burdens. Therefore it may support $\Cop$ but not OSSI.
+\end{proof}
+
+\begin{definition}[Report-free comparator model]
+A report-free comparator model is a system whose structural traces are
+available but whose external adjudication channel contains no independent
+human or non-human comparator reports.
+\end{definition}
+
+\begin{proposition}[Report-free models cannot close Paper 10]
+Report-free comparator models cannot supply external validation for
+ordinary-language consciousness, subjecthood, or phenomenal terms.
+\end{proposition}
+
+\begin{proof}
+Paper 10 requires an external adjudication channel separated from the
+construction of the internal structural predicates. If the comparator channel
+is absent, the external part of the evidence grammar is absent. Internal traces
+can still be useful for falsification but cannot close the adjudication burden.
+\end{proof}
+
+\section{Non-Substitution Principles}
+
+The corpus uses three kinds of support: theorem, runtime certificate, and
+external adjudication. They are complementary, not interchangeable.
+
+\begin{theorem}[No theorem-to-validation substitution]
+A theorem about a structural class does not by itself constitute external
+validation of an implemented system.
+\end{theorem}
+
+\begin{proof}
+A theorem quantifies over objects satisfying its hypotheses. External
+validation requires evidence that a concrete system, measured through an
+independent protocol, instantiates the relevant hypotheses and that the
+observed effects are not artifacts of construction. These are different
+claims. The first is mathematical; the second is empirical.
+\end{proof}
+
+\begin{theorem}[No runtime-to-theorem substitution]
+A passing runtime certificate does not by itself prove the corresponding
+mathematical predicate for the full admissible class.
+\end{theorem}
+
+\begin{proof}
+Runtime certificates are finite, implementation-specific, and tied to a
+particular estimator family. A mathematical predicate ranges over the model
+specified by the paper. Unless the runtime certificate is accompanied by a
+soundness theorem from estimator to predicate, passing the certificate remains
+internal support rather than proof.
+\end{proof}
+
+\begin{theorem}[No validation-to-definition substitution]
+External adjudication cannot replace the formal definition of the target
+class.
+\end{theorem}
+
+\begin{proof}
+External adjudication can support or falsify whether a formal predicate tracks
+some independent comparator. It cannot determine what the predicate means in
+the formal system. Definitions fix mathematical content; validation tests
+empirical relevance.
+\end{proof}
+
+\begin{corollary}[Three-channel closure burden]
+A mature ordinary-language claim requires, at minimum, a formal definition, a
+runtime or constructive instantiation path, and an external adjudication route.
+\end{corollary}
+
+\begin{proof}
+By the three no-substitution theorems, none of the channels can replace the
+other two. A claim may be useful with fewer channels, but it must remain
+terminologically bounded.
+\end{proof}
+
+\section{External Adjudication Readiness Index}
+
+The bridge terms can be ranked by what remains before Paper 10-style external
+testing is meaningful.
+
+\begin{table}[h]
+\centering
+\caption{Readiness of bridge terms for external adjudication.}
+\label{tab:external-readiness}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.7cm} Y Y Y}
+\toprule
+Term & Formal maturity & Runtime maturity & External readiness \\
+\midrule
+$\Piop$ & high: directly implied by $I_{ri}$ and $I_{int}$ & high internal support & ready only as structural-unity proxy \\
+$\Iotaop$ & medium-high: tied to L4 intervention fidelity & high internal support & ready as directional-sensitivity proxy \\
+$\Qop$ & medium: quotient is defined & partial proxy & not ready for phenomenal claims \\
+$\Phiop$ & medium: regime assignment is defined & partial proxy & needs CCR and temporal comparator design \\
+$\Sigma1$ & medium-low: variants defined & weak proxy & needs commutation and contraction tests \\
+OSSI & medium: eight burdens define the target & partial proxy & needs open-system and repair stress protocols \\
+$\Subbridge$ & medium-low: depends on $\Sigma1_{\mathrm{comm}}$ & not fully certified & blocked until self-model certificate exists \\
+$\Subop$ & low-medium: Paper 7 burdened class & partial proxy & blocked until ownership/continuity tests mature \\
+$\Subfp$ & low: Paper 8 fields require stronger evidence & partial proxy & blocked until comparator campaign \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Recommended Reading Order for Reviewers}
+
+Readers should not begin with the strongest labels. The defensible order is:
+
+\begin{enumerate}[leftmargin=1.5em]
+\item BaseCore for the Hilbert-space and contraction machinery.
+\item Paper 1 for inverse-limit identity and ontological-mass structure.
+\item Papers 2--3 for regime structure and null-instability results.
+\item Paper 5 for $\Cop$ as the six-invariant structural class.
+\item Paper 6 for falsification, internal-support status, and failure modes.
+\item This bridge paper for exact implications from $\Cop$ to partial
+operational subjecthood.
+\item Paper 7 only after distinguishing OSSI from biological life.
+\item Paper 8 only after accepting that first-person fields are formal
+burdens, not human subjectivity.
+\item Paper 9 only as bridge organization, not as proof of phenomenality.
+\item Paper 10 only as protocol until external data exist.
+\end{enumerate}
+
+\begin{remark}[Why this order matters]
+The terminology becomes safest when each label is read after its proof burden.
+Reading the titles first and the non-inference notes later reverses the logic
+of the corpus. This paper therefore functions as a map from demonstrated layer
+to interpretive layer, not as a shortcut around the technical dependencies.
+\end{remark}
+
+\begin{remark}[Central-reference role]
+For editorial purposes, this paper should be treated as the index of claim
+strength for Papers 5--10. When a later manuscript uses a strong operational
+term, the relevant demonstrated reading, missing burden, and promotion route
+should be traceable to one of the tables or proof patterns above.
+\end{remark}
+
+\section{Open Questions}
+
+The following questions are deliberately left open because the present paper lacks the definitions or empirical evidence required to decide them.
+
+\begin{enumerate}[leftmargin=1.5em]
+\item Is $\Sigma1$ necessary for any plausible operational subjecthood class, or only for the bridge class $\Subbridge$ defined here?
+\item Can $\Sigma1$ be derived from $\Iint+\Ileg$ under additional architectural hypotheses, such as decoder closure under self-targeted interventions?
+\item Does a hierarchy of self-models $\Sigma^{(0)},\Sigma^{(1)},\dots$ produce a formal higher-order analogue, or does it merely add regress without new invariant content?
+\item Is CCR strength $\MO=+\infty$ necessary for any non-weak version of $\Phiop$, or only sufficient for forced continuity?
+\item Can full Paper 7 $\Subop$ be reduced to $\Cop+\Sigma1+\Lop$ plus a finite list of descriptor inequalities, or do ownership and privileged continuity require independent axioms?
+\item Which runtime observables would distinguish genuine intervention commutation of $\Sigma$ from a stable but epiphenomenal self-model proxy?
+\item What external experimental campaign could adjudicate whether internal-support certificates track any real-world subjecthood-relevant structure?
+\item Are there finite systems that approximate $\Subbridge$ arbitrarily well while provably failing CCR, and if so what is the exact approximation boundary?
+\item Can operational qualia non-triviality be certified without relying on a fixed decoder family, or is decoder dependence constitutive of $\Qop(S)$?
+\item What, if anything, connects these structural predicates to ordinary moral or legal categories? This paper provides no such bridge.
+\end{enumerate}
+
+\section{Conclusion}
+
+The bridge from $\Cop$ to operational subjecthood is real but partial. From $S\in\Cop$ one obtains unity in the operational sense, directional intervention sensitivity, a well-defined operational-qualia quotient, and weak non-null operational phenomenology. One does not obtain self-reference, human subjectivity, phenomenal experience, or full Paper 7 subjecthood. The missing formal burden is $\Sigma1$, the existence of a contractive admissible self-model commuting with interventions. With $\Sigma1$ and decoder-visible differentiation one can define $\Subbridge$, a proper subclass of $\Cop$ under the non-entailment of $\Sigma1$.
+
+This is the strongest defensible bridge at the present state of the corpus. It is stronger than saying that Paper 5 and Paper 7 are merely adjacent, because it proves exact implications. It is weaker than saying that operational consciousness is subjecthood, because that would erase the self-model, life, ownership, and privileged-continuity burdens. The result is therefore a controlled theorem layer: enough structure to move from invariants to subjecthood-adjacent concepts, but not enough to license phenomenal or human claims.
+
+\printbibliography
+
+\end{document}

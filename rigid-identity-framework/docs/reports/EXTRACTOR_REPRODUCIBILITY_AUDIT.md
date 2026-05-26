@@ -1,6 +1,6 @@
 # Extractor Reproducibility Audit v1
 
-Status: NOT_REPRODUCIBLE_FROM_CURRENT_PRIMARY_TEX_SET
+Status: REPRODUCIBLE
 
 ## Boundary
 
@@ -16,34 +16,30 @@ npm run audit:extractor-reproducibility
 
 | Surface | Committed registry | Fresh global extraction | Registry minus extraction |
 | --- | --- | --- | --- |
-| Formal registry entries | 745 | 585 | 160 |
-| Macro registry entries | 432 | 325 | 107 |
+| Formal registry entries | 696 | 696 | 0 |
+| Macro registry entries | 377 | 377 | 0 |
 
 ## Macro Owner Comparison
 
 | Owner | Committed macros | Fresh extracted macros | Delta |
 | --- | --- | --- | --- |
 | basecore | 58 | 58 | 0 |
-| bridge | 44 | 0 | 44 |
-| paper1 | 10 | 8 | 2 |
-| paper10 | 10 | 0 | 10 |
+| bridge | 43 | 43 | 0 |
+| paper1 | 8 | 8 | 0 |
+| paper10 | 9 | 9 | 0 |
 | paper2 | 8 | 8 | 0 |
-| paper3 | 22 | 21 | 1 |
+| paper3 | 21 | 21 | 0 |
 | paper4 | 10 | 10 | 0 |
 | paper5 | 35 | 35 | 0 |
 | paper6 | 44 | 44 | 0 |
-| paper7 | 50 | 48 | 2 |
-| paper8 | 45 | 38 | 7 |
-| paper9 | 56 | 55 | 1 |
-| shared | 40 | 0 | 40 |
+| paper7 | 48 | 48 | 0 |
+| paper8 | 38 | 38 | 0 |
+| paper9 | 55 | 55 | 0 |
 
 ## Registry Paths Missing From Current Checkout
 
-- basecore/core/sections/11_discrete_bridge.tex
-- paper10_external_adjudication/main.tex
-- paper_bridge_operational_subjecthood/main.tex
-- shared/preamble_qicn.tex
+None.
 
 ## Interpretation
 
-The current extractor is not a safe whole-registry regeneration gate in this checkout. Source-scoped derived-artifact resync is allowed only when the changed primary files are present, the intended diff is explicit, and corpus/macro gates remain clean afterward.
+The current extractor reproduces the committed registry counts from present primary sources.

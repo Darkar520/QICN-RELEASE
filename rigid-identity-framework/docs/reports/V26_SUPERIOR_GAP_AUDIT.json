@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This audit checks implementation gates only. It does not certify external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+  "checks": [
+    {
+      "id": "V26-01",
+      "description": "Formal bridge theorem exists as LaTeX with proof blocks and nonclaim firewall",
+      "result": "PASS",
+      "evidence": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v26.tex"
+    },
+    {
+      "id": "V26-02",
+      "description": "Promotion audit actually tokenizes sentences and adjacent sentence pairs",
+      "result": "PASS",
+      "evidence": "sentence_level_and_adjacent_sentence_pair_synonym_lexicon_plus_promotion_verb_scan_v26"
+    },
+    {
+      "id": "V26-03",
+      "description": "Runner blocks near-copy and affine-copy leakage, not only exact equality",
+      "result": "PASS",
+      "evidence": "near-copy + affine-copy diagnostics present"
+    },
+    {
+      "id": "V26-04",
+      "description": "Null threshold calibration report exists and is hash-bound by fixture",
+      "result": "PASS",
+      "evidence": "threshold calibration bound"
+    },
+    {
+      "id": "V26-05",
+      "description": "Free parameter identifiability probes are required and checked",
+      "result": "PASS",
+      "evidence": "sensitivity probes present"
+    },
+    {
+      "id": "V26-06",
+      "description": "Downgrade provenance verifies dataset and prediction bundle hashes",
+      "result": "PASS",
+      "evidence": "dataset/prediction provenance verified"
+    },
+    {
+      "id": "V26-07",
+      "description": "Human veto signature verification script exists and self-test passed without claiming human review",
+      "result": "PASS",
+      "evidence": "signature test vector only"
+    },
+    {
+      "id": "V26-08",
+      "description": "Runner emits temporal dependence diagnostic for Gaussian AIC assumptions",
+      "result": "PASS",
+      "evidence": "Durbin-Watson diagnostic present"
+    },
+    {
+      "id": "V26-09",
+      "description": "Fixture dataset and prediction bundle hashes are real SHA-256 values, not placeholders",
+      "result": "PASS",
+      "evidence": "actual SHA-256 format"
+    },
+    {
+      "id": "V26-10",
+      "description": "No known v25 generated artefact string remains in v26 gap audit script",
+      "result": "PASS",
+      "evidence": "no double-question artefact"
+    },
+    {
+      "id": "V26-11",
+      "description": "Synthetic fixture remains blocked from external support",
+      "result": "PASS",
+      "evidence": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY"
+    }
+  ],
+  "result": "PASS"
+}

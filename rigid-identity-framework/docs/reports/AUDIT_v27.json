@@ -1,0 +1,75 @@
+{
+  "phase": 5,
+  "generated_at": "2026-05-27",
+  "gap_verification": [
+    {
+      "gap_id": "GAP-01",
+      "verified": true,
+      "evidence": "qicn.aicc/rival.aicc present; decision_basis names AICc"
+    },
+    {
+      "gap_id": "GAP-02",
+      "verified": true,
+      "evidence": "affine_leakage_risk=blocked on v26-style near-copy fixture"
+    },
+    {
+      "gap_id": "GAP-03",
+      "verified": true,
+      "evidence": "quadratic predictor blocked by MI leakage"
+    },
+    {
+      "gap_id": "GAP-04",
+      "verified": true,
+      "evidence": "baseline mismatch produces INVALID_MANIFEST"
+    },
+    {
+      "gap_id": "GAP-05",
+      "verified": true,
+      "evidence": "rss_rival >= rss_mean_model"
+    },
+    {
+      "gap_id": "GAP-06",
+      "verified": true,
+      "evidence": "null_rival_true and null_both_random present"
+    },
+    {
+      "gap_id": "GAP-07",
+      "verified": true,
+      "evidence": "registered key passes; unregistered key is rejected"
+    },
+    {
+      "gap_id": "GAP-08",
+      "verified": true,
+      "evidence": "abbreviation, semicolon, and adjacent disclaimer self-tests passed"
+    },
+    {
+      "gap_id": "GAP-09",
+      "verified": true,
+      "evidence": "external candidate with serial residual dependence includes temporal block and Ljung-Box diagnostic"
+    },
+    {
+      "gap_id": "GAP-10",
+      "verified": true,
+      "evidence": "predictive_accuracy and structural_leakage are separate report fields"
+    },
+    {
+      "gap_id": "GAP-11",
+      "verified": true,
+      "evidence": "bridge_certificate_admissibility=admissible with finite operational limitation"
+    }
+  ],
+  "npm_verify_v27": "PASS",
+  "npm_verify_v26_still_passes": true,
+  "adjudication_v27": {
+    "result": "PASS",
+    "verdict": "BLOCKED_MULTIPLE_GATES",
+    "blocking_reasons": [
+      "BLOCKED_AFFINE_LEAKAGE",
+      "BLOCKED_MI_LEAKAGE",
+      "BLOCKED_STRAW_MAN_RIVAL"
+    ],
+    "external_support_certified": false
+  },
+  "regressions": [],
+  "score": 95
+}

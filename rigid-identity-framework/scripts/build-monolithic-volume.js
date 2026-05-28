@@ -89,9 +89,13 @@ function build() {
       if (title === "BaseCore") {
         body = body.replace(/core\/sections\//g, "../basecore/core/sections/");
       }
+      // BaseCore is unnumbered prologue; papers get numbered \chapter{}
+      const chapterLine = title === "BaseCore"
+        ? `\\chapter*{${title}}\n\\addcontentsline{toc}{chapter}{${title}}`
+        : `\\chapter{${title}}`;
       fs.writeFileSync(
         path.join(SECTION_DIR, sectionName),
-        `\\chapter*{${title}}\n\\addcontentsline{toc}{chapter}{${title}}\n${body}\n`,
+        `${chapterLine}\n${body}\n`,
         "utf8"
       );
       sections.push({ title, relPath, sectionName, status: "extracted" });
@@ -101,6 +105,13 @@ function build() {
   });
 
   const dedupped = dedupePackages(packages);
+
+  // Fix geometry: replace unconfigured \usepackage{geometry} with proper margins
+  const geoIdx = dedupped.findIndex((line) => /\{geometry\}/.test(line));
+  if (geoIdx !== -1) {
+    dedupped[geoIdx] = "\\usepackage[a4paper,margin=2.5cm,headheight=14pt]{geometry}";
+  }
+
   const biblatexIndex = dedupped.findIndex((line) => line.includes("biblatex"));
   if (biblatexIndex !== -1) {
     dedupped.splice(biblatexIndex + 1, 0, "\\addbibresource{../release/references.bib}");
@@ -117,8 +128,18 @@ function build() {
 
   const customTheorems = [
     "",
+    "% --- Layout hardening ---",
+    "\\raggedbottom",
+    "\\widowpenalty=10000",
+    "\\clubpenalty=10000",
+    "\\emergencystretch=3em",
+    "",
+    "% --- Professional volume numbering ---",
+    "\\renewcommand{\\chaptername}{Paper}",
+    "",
+    "% --- Theorem environments (counter per chapter) ---",
     "\\theoremstyle{plain}",
-    "\\newtheorem{theorem}{Theorem}[section]",
+    "\\newtheorem{theorem}{Theorem}[chapter]",
     "\\newtheorem{proposition}[theorem]{Proposition}",
     "\\newtheorem{lemma}[theorem]{Lemma}",
     "\\newtheorem{corollary}[theorem]{Corollary}",
@@ -139,10 +160,12 @@ function build() {
     "\\theoremstyle{remark}",
     "\\newtheorem{remark}[theorem]{Remark}",
     "",
+    "% --- Abstract environment (refined) ---",
     "\\newenvironment{abstract}%",
-    "{\\begin{quotation}\\noindent\\textbf{Abstract.} }%",
-    "{\\end{quotation}}",
+    "{\\begin{quotation}\\small\\noindent\\rule{\\linewidth}{0.4pt}\\\\[6pt]\\noindent\\textbf{Abstract.}\\enspace}%",
+    "{\\\\[6pt]\\noindent\\rule{\\linewidth}{0.4pt}\\end{quotation}}",
     "",
+    "% --- Paper 10 macros ---",
     "\\newcommand{\\sectionstatus}[1]{\\paragraph{Section status.}\\texttt{\\detokenize{#1}}.}",
     "\\newcommand{\\codestate}[1]{\\texttt{\\detokenize{#1}}}",
     "\\newenvironment{blocked_until_execution}%",
@@ -164,18 +187,32 @@ function build() {
   );
 
   const root = [
-    "\\documentclass[11pt,a4paper]{book}",
+    "\\documentclass[11pt,a4paper,openany]{book}",
     "\\input{preamble/packages}",
     "\\input{preamble/setup}",
-    "\\title{QICN: A Rigid Identity Framework}",
+    "",
+    "% --- Document metadata ---",
+    "\\title{\\textbf{QICN: A Rigid Identity Framework}}",
     "\\author{Johnny Andrey P{\\'e}rez Ram{\\'i}rez}",
-    "\\date{2026-05-26}",
+    "\\date{2026}",
+    "",
+    "\\hypersetup{%",
+    "  pdftitle={QICN: A Rigid Identity Framework},%",
+    "  pdfauthor={Johnny Andrey Pérez Ramírez},%",
+    "  pdfsubject={Operational Identity, Category Theory, Consciousness},%",
+    "  pdfkeywords={rigid identity, inverse limit, ontological mass, CCR, falsifiability},%",
+    "  pdfcreator={pdfLaTeX}%",
+    "}",
+    "",
     "\\begin{document}",
     "\\frontmatter",
     "\\maketitle",
     "\\tableofcontents",
     "\\mainmatter",
     ...sections.map((section) => `\\input{build/sections/${section.sectionName}}`),
+    "",
+    "\\backmatter",
+    "\\printbibliography[heading=bibintoc]",
     "\\end{document}",
     ""
   ].join("\n");

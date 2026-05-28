@@ -1,9 +1,20 @@
-\documentclass[11pt,a4paper]{book}
+\documentclass[11pt,a4paper,openany]{book}
 \input{preamble/packages}
 \input{preamble/setup}
-\title{QICN: A Rigid Identity Framework}
+
+% --- Document metadata ---
+\title{\textbf{QICN: A Rigid Identity Framework}}
 \author{Johnny Andrey P{\'e}rez Ram{\'i}rez}
-\date{2026-05-26}
+\date{2026}
+
+\hypersetup{%
+  pdftitle={QICN: A Rigid Identity Framework},%
+  pdfauthor={Johnny Andrey Pérez Ramírez},%
+  pdfsubject={Operational Identity, Category Theory, Consciousness},%
+  pdfkeywords={rigid identity, inverse limit, ontological mass, CCR, falsifiability},%
+  pdfcreator={pdfLaTeX}%
+}
+
 \begin{document}
 \frontmatter
 \maketitle
@@ -21,4 +32,7 @@
 \input{build/sections/10-paper-9.tex}
 \input{build/sections/11-paper-10.tex}
 \input{build/sections/12-bridge-paper.tex}
+
+\backmatter
+\printbibliography[heading=bibintoc]
 \end{document}

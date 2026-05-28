@@ -1,0 +1,22 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This v27 signature self-test verifies local Ed25519 mechanics and trusted-registry lookup only. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.",
+  "trusted_keys_registry_path": "docs/fixtures/TRUSTED_KEYS_REGISTRY_v27.json",
+  "trusted_keys_registry_sha256": "19e1b382ec251739878afd0f458bc4666a88873f4ee549550df9def4e0f29b09",
+  "registered_key_verification": {
+    "ok": true,
+    "reason": "signature_verified_with_trusted_registry_key",
+    "trusted": true,
+    "key_fingerprint_sha256": "528d991ae43cfac94b2768d7f212b21c8a34bb11cc36cb8c27d448b3318fe404"
+  },
+  "unregistered_key_rejection": {
+    "ok": false,
+    "reason": "UNTRUSTED_PUBLIC_KEY",
+    "trusted": false,
+    "key_fingerprint_sha256": "0fa786d920c9dbe889385425cfe8c818b0ef19d666a82932634f99efe3c9b8ca"
+  },
+  "result": "PASS",
+  "external_support_certified": false,
+  "human_review_signed": false
+}

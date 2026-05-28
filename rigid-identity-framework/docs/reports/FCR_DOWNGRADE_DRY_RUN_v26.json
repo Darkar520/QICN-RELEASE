@@ -1,0 +1,78 @@
+{
+  "schema_version": "4.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This dry-run emits downgrade proposals only. It does not modify the registry and does not certify external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+  "input_report": "docs\\reports\\SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v26.json",
+  "report_hash_verification": {
+    "ok": true,
+    "expected": "3b2c9d2d20713358ea9dce387363bdcef2547f68d6c54de32dfe45688a1f1a63",
+    "actual": "3b2c9d2d20713358ea9dce387363bdcef2547f68d6c54de32dfe45688a1f1a63",
+    "reason": "matched"
+  },
+  "provenance_verification": {
+    "ok": true,
+    "checks": [
+      {
+        "kind": "runner_sha256",
+        "ok": true,
+        "path": "scripts\\external-session-zero-adjudicator.js",
+        "expected": "b46ee78ae581439f3b46c751b7f14cde2177f2bbaa51a12e2c04042ccf88bfe9",
+        "actual": "b46ee78ae581439f3b46c751b7f14cde2177f2bbaa51a12e2c04042ccf88bfe9",
+        "reason": "matched"
+      },
+      {
+        "kind": "manifest_sha256",
+        "ok": true,
+        "path": "docs\\fixtures\\EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v26.json",
+        "expected": "4645cf2c8ab976cef98ebe93b2ba0f84594d93c5cf31c88a58faf6d011714708",
+        "actual": "4645cf2c8ab976cef98ebe93b2ba0f84594d93c5cf31c88a58faf6d011714708",
+        "reason": "matched"
+      },
+      {
+        "kind": "dataset_sha256",
+        "ok": true,
+        "path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_DATASET_v26.json",
+        "expected": "7b961316adedcb7bf5efdce59f03d15c0e3bc04f6d2055e5b694f4a0416fbc82",
+        "actual": "7b961316adedcb7bf5efdce59f03d15c0e3bc04f6d2055e5b694f4a0416fbc82",
+        "reason": "matched"
+      },
+      {
+        "kind": "prediction_bundle_sha256",
+        "ok": true,
+        "path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_PREDICTION_BUNDLE_v26.json",
+        "expected": "fa1af52c0e5c24cbe0d7d13bc2c66934384e973b34a6da856c7e3480ab142de4",
+        "actual": "fa1af52c0e5c24cbe0d7d13bc2c66934384e973b34a6da856c7e3480ab142de4",
+        "reason": "matched"
+      },
+      {
+        "kind": "threshold_calibration_report_sha256",
+        "ok": true,
+        "path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v26.json",
+        "expected": "d0e6eca33718012c78623c9e69593f6b1dfd795663ccf96dca36afe2e97d1a5a",
+        "actual": "d0e6eca33718012c78623c9e69593f6b1dfd795663ccf96dca36afe2e97d1a5a",
+        "reason": "matched"
+      }
+    ]
+  },
+  "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+  "registry_modified": false,
+  "proposals": [
+    {
+      "claim_id": "PRED-EXT-01",
+      "prediction_id": "PRED-EXT-01",
+      "source_adjudication_report": "docs\\reports\\SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v26.json",
+      "source_adjudication_report_sha256": "3b2c9d2d20713358ea9dce387363bdcef2547f68d6c54de32dfe45688a1f1a63",
+      "source_runner_sha256": "b46ee78ae581439f3b46c751b7f14cde2177f2bbaa51a12e2c04042ccf88bfe9",
+      "source_manifest_sha256": "4645cf2c8ab976cef98ebe93b2ba0f84594d93c5cf31c88a58faf6d011714708",
+      "source_dataset_sha256": "7b961316adedcb7bf5efdce59f03d15c0e3bc04f6d2055e5b694f4a0416fbc82",
+      "source_prediction_bundle_sha256": "fa1af52c0e5c24cbe0d7d13bc2c66934384e973b34a6da856c7e3480ab142de4",
+      "source_threshold_calibration_report_sha256": "d0e6eca33718012c78623c9e69593f6b1dfd795663ccf96dca36afe2e97d1a5a",
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "action": "no_registry_change_required_from_this_report",
+      "mode": "dry_run_only",
+      "human_review_required": true,
+      "human_veto_protocol": "docs/protocols/HUMAN_VETO_SIGNATURE_PROTOCOL_v26.md"
+    }
+  ],
+  "result": "PASS"
+}

@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{nonclaim}{Non-Claim}
+\title{QICN v26 Projection-Invariant Finite Bridge Theorem\\\large Formal Conditional Appendix}
+\author{QICN Formal Corpus Registry}
+\date{2026-05-27}
+\begin{document}
+\maketitle
+\noindent\textbf{Governance boundary.} This appendix does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review. It proves only a finite conditional representation statement under explicitly declared hypotheses. It does not derive $M_{\Omega}=+\infty$ from finite AIC scores and does not identify finite observables with a global inverse-limit identity object.
+
+\begin{definition}[Latent system and projection channel]
+Let $X$ be a latent state space and let $\pi:X\to Y$ be a finite observation channel into a measurable finite record space $Y$. The channel may be non-injective. Hence different latent states may share the same finite record.
+\end{definition}
+
+\begin{definition}[Projection-preserved invariant]
+Let $F:X\to Z$ be a latent predicate or invariant and let $G:Y\to Z$ be a finite estimator. For tolerance $\varepsilon\geq 0$, the pair $(F,G)$ is $\varepsilon$-preserved on $A\subseteq X$ when
+\[
+  d_Z\bigl(G(\pi(x)),F(x)\bigr)\leq \varepsilon \quad \text{for all } x\in A.
+\]
+This is an operational preservation claim, not a reconstruction claim for $X$.
+\end{definition}
+
+\begin{definition}[Finite bridge certificate]
+A finite bridge certificate is a tuple
+\[
+  \mathcal{B}=(\pi,Y,\mathcal{F},\mathcal{G},\varepsilon,\mathcal{R},\mathcal{N},\mathcal{C})
+\]
+where $\mathcal{F}=\{F_1,\ldots,F_k\}$ are latent invariants, $\mathcal{G}=\{G_1,\ldots,G_k\}$ are estimators on $Y$, $\mathcal{R}$ is a preregistered rival family, $\mathcal{N}$ is a family of negative controls, and $\mathcal{C}$ is a provenance and calibration record. The certificate is admissible only if: (i) estimator adequacy is documented; (ii) rival resistance is evaluated under the same record and thresholds; (iii) negative controls fail to satisfy the support criterion; and (iv) provenance binds data, predictions, calibration, and runner code.
+\end{definition}
+
+\begin{lemma}[No global reconstruction from finite preservation]
+If $\pi$ is not injective, then a finite bridge certificate cannot by itself reconstruct $X$ or prove any property that varies within a fiber $\pi^{-1}(y)$.
+\end{lemma}
+\begin{proof}
+If $\pi$ is not injective, there exist $x_1\neq x_2$ with $\pi(x_1)=\pi(x_2)=y$. Any estimator $G:Y\to Z$ has the same value $G(y)$ for both states. If a property $P$ differs between $x_1$ and $x_2$, no function of $y$ alone identifies $P$. Therefore finite preservation of selected invariants does not reconstruct the latent state or all latent properties.
+\end{proof}
+
+\begin{theorem}[Finite projection-invariant bridge theorem]
+Let $C:X\to\{0,1\}$ be a claim that factors through projection-preserved invariants on $A\subseteq X$:
+\[
+  C(x)=h\bigl(F_1(x),\ldots,F_k(x)\bigr).
+\]
+Suppose an admissible finite bridge certificate $\mathcal{B}$ provides estimators $G_i$ such that each $(F_i,G_i)$ is $\varepsilon_i$-preserved on $A$, and suppose the decision rule $\widehat C(y)=h(G_1(y),\ldots,G_k(y))$ is robust to the joint tolerance vector $\varepsilon=(\varepsilon_1,\ldots,\varepsilon_k)$. If the preregistered rival family and negative controls fail under the same calibration and provenance record, then $\widehat C(\pi(x))$ is an operationally adjudicable finite surrogate for $C(x)$ on $A$.
+\end{theorem}
+\begin{proof}
+By $\varepsilon_i$-preservation, each estimator $G_i(\pi(x))$ remains within its declared tolerance of $F_i(x)$ on $A$. By robustness of $h$ to the joint tolerance vector, replacing $F_i(x)$ with $G_i(\pi(x))$ does not change the value of the claim surrogate. Rival resistance and negative-control failure do not prove the latent ontology; they only rule out the preregistered finite alternatives under the same record. Provenance ensures that the finite record used for this comparison is the declared record. Thus the conclusion is an operational finite surrogate claim under the certificate assumptions.
+\end{proof}
+
+\begin{corollary}[QICN interpretation]
+A finite runner may support only claims that explicitly factor through projection-preserved invariants. It cannot prove $M_{\Omega}=+\infty$, global separator atomicity, external support, consciousness, phenomenality, identity transfer, or bridge-burden closure without additional external and mathematical premises.
+\end{corollary}
+
+\begin{nonclaim}[No hidden global bridge]
+The theorem above is not a derivation of the continuous topological theory from RSS, AIC, Gaussian likelihood, or a finite fixture. It is a conditional firewall: it states when a finite record can adjudicate a finite invariant claim and when it cannot.
+\end{nonclaim}
+\end{document}

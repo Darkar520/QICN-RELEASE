@@ -122,8 +122,18 @@
 \newcommand{\risk}{\operatorname{Risk}}
 \newcommand{\trace}{\operatorname{Tr}}
 
+% --- Layout hardening ---
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+\emergencystretch=3em
+
+% --- Professional volume numbering ---
+\renewcommand{\chaptername}{Paper}
+
+% --- Theorem environments (counter per chapter) ---
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -144,10 +154,12 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
+% --- Abstract environment (refined) ---
 \newenvironment{abstract}%
-{\begin{quotation}\noindent\textbf{Abstract.} }%
-{\end{quotation}}
+{\begin{quotation}\small\noindent\rule{\linewidth}{0.4pt}\\[6pt]\noindent\textbf{Abstract.}\enspace}%
+{\\[6pt]\noindent\rule{\linewidth}{0.4pt}\end{quotation}}
 
+% --- Paper 10 macros ---
 \newcommand{\sectionstatus}[1]{\paragraph{Section status.}\texttt{\detokenize{#1}}.}
 \newcommand{\codestate}[1]{\texttt{\detokenize{#1}}}
 \newenvironment{blocked_until_execution}%

@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This rules file does not certify external support, consciousness, phenomenality, identity transfer, or bridge-burden closure; it only governs language-promotion gates.",
+  "promotion_levels": [
+    {
+      "level": "metaphor_or_expository",
+      "allowed_claim_status": "non_claim",
+      "requirements": [
+        "explicit metaphor marker",
+        "no prediction or theorem status"
+      ]
+    },
+    {
+      "level": "operational_scaffold",
+      "allowed_claim_status": "scaffold",
+      "requirements": [
+        "observable named",
+        "measurement slot named",
+        "negative controls listed",
+        "death rule listed"
+      ]
+    },
+    {
+      "level": "formal_internal",
+      "allowed_claim_status": "internal_formal",
+      "requirements": [
+        "definition or theorem label",
+        "dependency boundary",
+        "counterexample/limitation section",
+        "machine-readable registry link"
+      ]
+    },
+    {
+      "level": "synthetic_internal_executed",
+      "allowed_claim_status": "internal_synthetic",
+      "requirements": [
+        "frozen manifest",
+        "deterministic report",
+        "adversarial controls",
+        "no external-support language"
+      ]
+    },
+    {
+      "level": "external_adjudicated",
+      "allowed_claim_status": "external_evidence_claim",
+      "requirements": [
+        "non-synthetic dataset hash",
+        "independent decision record",
+        "signed or archived adjudication",
+        "reproducible runner output"
+      ]
+    }
+  ],
+  "blocked_promotions": [
+    {
+      "term": "consciousness",
+      "blocked_until": "external_adjudicated plus bridge-burden adjudication",
+      "allowed_use": "negative boundary or object of future adjudication"
+    },
+    {
+      "term": "phenomenality",
+      "blocked_until": "external adjudication plus bridge-burden closure",
+      "allowed_use": "explicitly non-certified boundary"
+    },
+    {
+      "term": "identity transfer",
+      "blocked_until": "external adjudication plus non-branching identity protocol",
+      "allowed_use": "not certified"
+    },
+    {
+      "term": "proof of global atomicity",
+      "blocked_until": "global theorem closes product-separator obstruction",
+      "allowed_use": "not proved from weak premises"
+    },
+    {
+      "term": "empirical support",
+      "blocked_until": "external non-synthetic dataset and independent adjudication",
+      "allowed_use": "absent/pending"
+    }
+  ],
+  "required_death_rule_fields": [
+    "support_condition",
+    "weakening_condition",
+    "destruction_condition",
+    "downgrade_action"
+  ],
+  "machine_audit_targets": [
+    "docs/THEORY_CLAIM_LEDGER.md",
+    "docs/PREDICTION_REGISTRY_v1.json",
+    "docs/FALSIFIER_MATRIX.md",
+    "docs/ABLATION_MATRIX.md",
+    "docs/reports"
+  ]
+}

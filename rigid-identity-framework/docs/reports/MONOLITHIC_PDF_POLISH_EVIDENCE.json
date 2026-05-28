@@ -1,0 +1,36 @@
+{
+  "artifact": "QICN monolithic PDF polish",
+  "timestamp_utc": "2026-05-26T22:35:21Z",
+  "pdf_pages": 313,
+  "pdf_sha256": "344070c587af9b64145b32421586aea496420d536e587014fec41ae00dcc1cfc",
+  "build_script_sha256": "c4b86ff861b5a453cf144e26a2ffeeefc3e53731ff0de8918ab11d8298d6b7dd",
+  "question_mark_reference_tokens": 0,
+  "warning_counts": {
+    "latex_warning_reference_undefined": 0,
+    "latex_warning_citation_undefined": 0,
+    "latex_warning_label_multiply_defined": 0,
+    "latex_warning_undefined_summary": 0,
+    "latex_warning_multiply_summary": 0,
+    "hyperref_warning": 0,
+    "float_changed_warning": 0,
+    "biblatex_warning": 0,
+    "package_warning": 0,
+    "latex_warning": 0,
+    "font_warning": 0,
+    "overfull_hbox": 4,
+    "underfull_hbox": 0,
+    "overfull_vbox": 0,
+    "underfull_vbox": 0
+  },
+  "commands_verified": [
+    "node scripts/build-monolithic-volume.js --compile",
+    "npm run audit:monolithic-risk",
+    "npm run lint:nonclaims",
+    "pdftotext QICN_MONOLITHIC.pdf - | grep -o ?? | wc -l",
+    "pdfinfo QICN_MONOLITHIC.pdf"
+  ],
+  "known_residuals": {
+    "overfull_hbox_diagnostics": 4,
+    "note": "Remaining bad-box diagnostics are four table/paragraph line-width diagnostics. They are not LaTeX warnings; selected rendered pages were visually sampled for clipping."
+  }
+}

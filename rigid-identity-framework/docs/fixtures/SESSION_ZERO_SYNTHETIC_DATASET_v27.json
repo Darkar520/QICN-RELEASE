@@ -1,0 +1,106 @@
+{
+  "schema_version": "5.0.0",
+  "dataset_id": "SESSION_ZERO_SYNTHETIC_DATASET_v27",
+  "status": "synthetic_fixture_not_empirical",
+  "governance_boundary": "This dataset fixture is synthetic and does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review. v27 copy: internal diagnostic fixture only, not empirical evidence.",
+  "measurement_points": [
+    {
+      "id": "m01",
+      "timestamp": 1,
+      "separator_id": "theta_identity_channel_lock",
+      "response_coordinate": "trace_alignment_delta",
+      "observed_delta": 0.32,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.07
+    },
+    {
+      "id": "m02",
+      "timestamp": 2,
+      "separator_id": "theta_history_alignment",
+      "response_coordinate": "trace_alignment_delta",
+      "observed_delta": 0.28,
+      "noise_floor": 0.05,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.06
+    },
+    {
+      "id": "m03",
+      "timestamp": 3,
+      "separator_id": "theta_history_alignment",
+      "response_coordinate": "intervention_phase_delta",
+      "observed_delta": 0.24,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.05
+    },
+    {
+      "id": "m04",
+      "timestamp": 4,
+      "separator_id": "theta_response_phase",
+      "response_coordinate": "intervention_phase_delta",
+      "observed_delta": 0.3,
+      "noise_floor": 0.07,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.06
+    },
+    {
+      "id": "m05",
+      "timestamp": 5,
+      "separator_id": "theta_gauge_stability",
+      "response_coordinate": "gauge_response_delta",
+      "observed_delta": 0.34,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.07
+    },
+    {
+      "id": "m06",
+      "timestamp": 6,
+      "separator_id": "theta_intervention_fidelity",
+      "response_coordinate": "history_binding_delta",
+      "observed_delta": 0.29,
+      "noise_floor": 0.05,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.05
+    },
+    {
+      "id": "m07",
+      "timestamp": 7,
+      "separator_id": "theta_factorization_gap",
+      "response_coordinate": "factorization_probe_delta",
+      "observed_delta": 0.36,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.06
+    },
+    {
+      "id": "m08",
+      "timestamp": 8,
+      "separator_id": "theta_factorization_gap",
+      "response_coordinate": "trace_alignment_delta",
+      "observed_delta": 0.23,
+      "noise_floor": 0.05,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.05
+    },
+    {
+      "id": "m09",
+      "timestamp": 9,
+      "separator_id": "theta_identity_channel_lock",
+      "response_coordinate": "gauge_response_delta",
+      "observed_delta": 0.21,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.07
+    }
+  ],
+  "exclusion_log": [
+    {
+      "point_id": "m09",
+      "reason_code": "sensor_dropout_gt_5s",
+      "predeclared": true,
+      "observed_before_outcome_analysis": true
+    }
+  ]
+}

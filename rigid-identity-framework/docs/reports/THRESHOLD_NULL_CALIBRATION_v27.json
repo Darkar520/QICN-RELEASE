@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This v27 calibration record is an internal synthetic engineering calibration only. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.",
+  "manifest": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json",
+  "null_models": {
+    "null_rival_true": {
+      "iterations": 2000,
+      "gain_aicc_quantiles": {
+        "p50": -240.29001836134483,
+        "p90": -208.7460864725546,
+        "p95": -198.42547230932894,
+        "p99": -182.39522569611688
+      },
+      "mi_quantiles": {
+        "p50": 0.3236423315082535,
+        "p90": 0.5623351446188083,
+        "p95": 0.661563238157982,
+        "p99": 0.8010279577293631
+      }
+    },
+    "null_both_random": {
+      "iterations": 2000,
+      "gain_aicc_quantiles": {
+        "p50": -93.84902012436605,
+        "p90": -81.13678061725929,
+        "p95": -77.53106933855449,
+        "p99": -67.74444508798709
+      },
+      "mi_quantiles": {
+        "p50": 0.3236423315082535,
+        "p90": 0.5623351446188083,
+        "p95": 0.661563238157982,
+        "p99": 0.8010279577293631
+      }
+    }
+  },
+  "recommended_support_gain_aicc": 4,
+  "recommended_mi_leakage_threshold": 0.81,
+  "seed": "0xA1CC27",
+  "status": "dual_mode_internal_null_calibrated_synthetic_engineering_gate_not_external",
+  "external_support_allowed": false,
+  "report_sha256": "f6fab0a21b95181f3eef0c09c843e940b430740d2e50783496771873412646b3"
+}

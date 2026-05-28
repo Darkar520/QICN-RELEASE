@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "SESSION-ZERO-EXTERNAL-TEMPLATE",
+  "status": "external_dataset_required",
+  "governance_boundary": "This template is not a dataset and does not certify external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+  "preregistration_hash": "TO_BE_FILLED_BEFORE_DATA_COLLECTION",
+  "dataset_sha256": "TO_BE_FILLED_AFTER_FREEZE",
+  "dataset_origin": "non_synthetic_required",
+  "adjudicator": "independent_adjudicator_required",
+  "decision_thresholds": {
+    "support_gain_aic": 5.0,
+    "weakening_gain_aic": 0.0,
+    "minimum_ci_lower": 0.0,
+    "minimum_admissible_n": 8
+  },
+  "exclusion_rules": {
+    "max_noise_floor": 0.2,
+    "allowed_reason_codes": [
+      "sensor_dropout_gt_5s",
+      "timestamp_corruption",
+      "predeclared_hardware_failure"
+    ],
+    "max_exclusion_fraction": 0.2
+  },
+  "model_parameters": {
+    "qicn_parameter_count": 6,
+    "rival_parameter_count": 1,
+    "complexity_penalty_factor": 1.0
+  },
+  "measurement_points": [],
+  "exclusion_log": [],
+  "claims_under_test": [
+    {
+      "claim_id": "TO_BE_FILLED",
+      "downgrade_action_if_fail": "downgrade_to_open_burden_or_failed_prediction"
+    }
+  ]
+}

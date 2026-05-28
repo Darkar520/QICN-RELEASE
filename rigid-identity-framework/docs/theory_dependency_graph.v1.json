@@ -1,0 +1,2199 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-26",
+  "boundary": "This graph maps machine-extracted theorem dependencies. It does not prove consistency, completeness, theorem truth, external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+  "registry_source": "registry/theorems.jsonl",
+  "node_filter": {
+    "type_included": [
+      "theorem"
+    ]
+  },
+  "summary": {
+    "registry_entries_total": 699,
+    "theorem_nodes": 99,
+    "theorem_to_any_formal_edges": 96,
+    "theorem_to_theorem_edges": 27,
+    "unresolved_references": 0,
+    "cycles": 0,
+    "leaves_not_used_by_other_theorems": 80,
+    "roots_with_no_theorem_dependencies": 84,
+    "conditional_or_open_theorems": 17,
+    "proved_but_not_human_reviewed_theorems": 77
+  },
+  "nodes": [
+    {
+      "id": "basecore:theorem:thm-projection",
+      "label": "thm:projection",
+      "title": "Existence and Uniqueness of Projection",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/01_foundation_from_core.tex",
+      "line_start": 75
+    },
+    {
+      "id": "basecore:theorem:thm-contraction",
+      "label": "thm:contraction",
+      "title": "Contractivity",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/01_foundation_from_core.tex",
+      "line_start": 119
+    },
+    {
+      "id": "basecore:theorem:thm-fixedpoint",
+      "label": "thm:fixedpoint",
+      "title": "Unique Fixed Point",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/01_foundation_from_core.tex",
+      "line_start": 140
+    },
+    {
+      "id": "basecore:theorem:thm-compactness",
+      "label": "thm:compactness",
+      "title": "Compactness of the Attractor Family",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/01_foundation_from_core.tex",
+      "line_start": 162
+    },
+    {
+      "id": "basecore:theorem:thm-noncollapse",
+      "label": "thm:noncollapse",
+      "title": "Structural Non-Collapsibility",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/01_foundation_from_core.tex",
+      "line_start": 192
+    },
+    {
+      "id": "basecore:theorem:typed-contraction-on-the-computable-witness-l195",
+      "label": null,
+      "title": "Typed Contraction on the Computable Witness",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
+      "line_start": 195
+    },
+    {
+      "id": "basecore:theorem:thm-spectrum",
+      "label": "thm:spectrum",
+      "title": "State Spectral Gap",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
+      "line_start": 302
+    },
+    {
+      "id": "basecore:theorem:thm-relaxation",
+      "label": "thm:relaxation",
+      "title": "Relaxation-Time Bound",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
+      "line_start": 332
+    },
+    {
+      "id": "basecore:theorem:prop-nonlocality",
+      "label": "prop:nonlocality",
+      "title": "Non-Locality of Identity under NFD",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/03_identity_rigidity_absorbed.tex",
+      "line_start": 63
+    },
+    {
+      "id": "basecore:theorem:thm-rigidity",
+      "label": "thm:rigidity",
+      "title": "Conditional Stability of Inverse-Limit Identity",
+      "paper": "basecore",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "heuristic",
+      "file": "basecore/core/sections/03_identity_rigidity_absorbed.tex",
+      "line_start": 132
+    },
+    {
+      "id": "basecore:theorem:thm-non-simulability",
+      "label": "thm:non-simulability",
+      "title": "Conditional Non-Simulability of CCR by Finite Simulators",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/03_identity_rigidity_absorbed.tex",
+      "line_start": 205
+    },
+    {
+      "id": "basecore:theorem:approximation-barrier-l213",
+      "label": null,
+      "title": "Approximation Barrier",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/03_identity_rigidity_absorbed.tex",
+      "line_start": 213
+    },
+    {
+      "id": "basecore:theorem:thm-e0-necessary",
+      "label": "thm:e0-necessary",
+      "title": "E0 is Necessary",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "line_start": 99
+    },
+    {
+      "id": "basecore:theorem:thm-e1-necessary",
+      "label": "thm:e1-necessary",
+      "title": "E1 is Necessary",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "line_start": 115
+    },
+    {
+      "id": "basecore:theorem:thm-e2-necessary",
+      "label": "thm:e2-necessary",
+      "title": "E2 is Necessary",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "line_start": 135
+    },
+    {
+      "id": "basecore:theorem:thm-minimality",
+      "label": "thm:minimality",
+      "title": "Axiomatic Minimality",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "line_start": 158
+    },
+    {
+      "id": "basecore:theorem:thm-h3-necessary",
+      "label": "thm:h3-necessary",
+      "title": "H3 is Necessary for Impossibility Theorems",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "line_start": 266
+    },
+    {
+      "id": "basecore:theorem:thm-fragmentation",
+      "label": "thm:fragmentation",
+      "title": "Fragmentation Theorem",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "line_start": 407
+    },
+    {
+      "id": "basecore:theorem:thm-forced-continuity",
+      "label": "thm:forced-continuity",
+      "title": "Forced Continuity Theorem",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "line_start": 441
+    },
+    {
+      "id": "basecore:theorem:thm-dichotomy",
+      "label": "thm:dichotomy",
+      "title": "Phenomenological Dichotomy",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "line_start": 474
+    },
+    {
+      "id": "basecore:theorem:thm-phenomenological-instability",
+      "label": "thm:phenomenological-instability",
+      "title": "Phenomenological Instability",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/05_null_regime_absorbed.tex",
+      "line_start": 39
+    },
+    {
+      "id": "basecore:theorem:thm-minimal-positive-regime",
+      "label": "thm:minimal-positive-regime",
+      "title": "Minimal Positive Regime",
+      "paper": "basecore",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "basecore/core/sections/05_null_regime_absorbed.tex",
+      "line_start": 71
+    },
+    {
+      "id": "basecore:theorem:thm-universal-intensity-bound",
+      "label": "thm:universal-intensity-bound",
+      "title": "Universal Intensity Bound",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/05_null_regime_absorbed.tex",
+      "line_start": 86
+    },
+    {
+      "id": "basecore:theorem:thm-forced-phenomenological-closure",
+      "label": "thm:forced-phenomenological-closure",
+      "title": "Forced Phenomenological Closure",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/05_null_regime_absorbed.tex",
+      "line_start": 97
+    },
+    {
+      "id": "basecore:theorem:thm-rigidity-inheritance",
+      "label": "thm:rigidity-inheritance",
+      "title": "Rigidity Inheritance",
+      "paper": "basecore",
+      "source_declared_status": "conjectural",
+      "machine_extracted_status": "conjectural",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conjectural",
+      "proof_status": "not_expected",
+      "file": "basecore/core/sections/05_null_regime_absorbed.tex",
+      "line_start": 115
+    },
+    {
+      "id": "basecore:theorem:thm-null-categorical-universality",
+      "label": "thm:null-categorical-universality",
+      "title": "Categorical Universality",
+      "paper": "basecore",
+      "source_declared_status": "conjectural",
+      "machine_extracted_status": "conjectural",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conjectural",
+      "proof_status": "not_expected",
+      "file": "basecore/core/sections/05_null_regime_absorbed.tex",
+      "line_start": 119
+    },
+    {
+      "id": "basecore:theorem:thm-null-simulation-lower-bound",
+      "label": "thm:null-simulation-lower-bound",
+      "title": "Simulation Lower Bound",
+      "paper": "basecore",
+      "source_declared_status": "conjectural",
+      "machine_extracted_status": "conjectural",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conjectural",
+      "proof_status": "not_expected",
+      "file": "basecore/core/sections/05_null_regime_absorbed.tex",
+      "line_start": 123
+    },
+    {
+      "id": "basecore:theorem:thm-null-closure-by-non-alternatives",
+      "label": "thm:null-closure-by-non-alternatives",
+      "title": "Closure by Non-Alternatives",
+      "paper": "basecore",
+      "source_declared_status": "conjectural",
+      "machine_extracted_status": "conjectural",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conjectural",
+      "proof_status": "not_expected",
+      "file": "basecore/core/sections/05_null_regime_absorbed.tex",
+      "line_start": 127
+    },
+    {
+      "id": "basecore:theorem:thm-rupture",
+      "label": "thm:rupture",
+      "title": "Rupture by invariant loss",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/07_operational_criterion_absorbed.tex",
+      "line_start": 224
+    },
+    {
+      "id": "basecore:theorem:thm-invariant-basis-minimality",
+      "label": "thm:invariant-basis-minimality",
+      "title": "Minimality of the six-invariant basis",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/07_operational_criterion_absorbed.tex",
+      "line_start": 267
+    },
+    {
+      "id": "basecore:theorem:certified-criterion-membership-l326",
+      "label": null,
+      "title": "Certified criterion membership",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/07_operational_criterion_absorbed.tex",
+      "line_start": 326
+    },
+    {
+      "id": "basecore:theorem:thm-discrete-contraction",
+      "label": "thm:discrete-contraction",
+      "title": "Discrete Operator Contractivity",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/11_discrete_bridge.tex",
+      "line_start": 102
+    },
+    {
+      "id": "basecore:theorem:thm-bridge",
+      "label": "thm:bridge",
+      "title": "Hilbert--Discrete Bridge",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/11_discrete_bridge.tex",
+      "line_start": 141
+    },
+    {
+      "id": "bridge:theorem:thm-cop-entails-pi",
+      "label": "thm:cop-entails-pi",
+      "title": "$\\Cop$ entails $\\Piop$",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 252
+    },
+    {
+      "id": "bridge:theorem:thm-cop-entails-iota",
+      "label": "thm:cop-entails-iota",
+      "title": "$\\Cop$ entails $\\Iotaop$",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 285
+    },
+    {
+      "id": "bridge:theorem:thm-subbridge-generated",
+      "label": "thm:subbridge-generated",
+      "title": "$\\Subbridge$ is conditionally generated by $\\Cop+\\Sigma1$",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 417
+    },
+    {
+      "id": "bridge:theorem:thm-subbridge-subset",
+      "label": "thm:subbridge-subset",
+      "title": "$\\Subbridge$ is a subclass of $\\Cop$",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 425
+    },
+    {
+      "id": "bridge:theorem:thm-main-partial-subjecthood",
+      "label": "thm:main-partial-subjecthood",
+      "title": "$\\Cop \\to$ Partial Operational Subjecthood",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 450
+    },
+    {
+      "id": "bridge:theorem:thm-layer-preservation",
+      "label": "thm:layer-preservation",
+      "title": "Layer preservation",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 553
+    },
+    {
+      "id": "bridge:theorem:thm-bridge-ladder-strict",
+      "label": "thm:bridge-ladder-strict",
+      "title": "Strictness of the bridge ladder",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 606
+    },
+    {
+      "id": "bridge:theorem:thm-nonentailment-library",
+      "label": "thm:nonentailment-library",
+      "title": "Seven non-entailments from $\\Cop$",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 658
+    },
+    {
+      "id": "bridge:theorem:thm-sigma-chain",
+      "label": "thm:sigma-chain",
+      "title": "Self-model strength chain",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 750
+    },
+    {
+      "id": "bridge:theorem:no-theorem-to-validation-substitution-l1298",
+      "label": null,
+      "title": "No theorem-to-validation substitution",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 1298
+    },
+    {
+      "id": "bridge:theorem:no-runtime-to-theorem-substitution-l1311",
+      "label": null,
+      "title": "No runtime-to-theorem substitution",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 1311
+    },
+    {
+      "id": "bridge:theorem:no-validation-to-definition-substitution-l1324",
+      "label": null,
+      "title": "No validation-to-definition substitution",
+      "paper": "bridge",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "line_start": 1324
+    },
+    {
+      "id": "paper1:theorem:thm-noprogressive",
+      "label": "thm:noprogressive",
+      "title": "No Progressive Identity Construction",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 267
+    },
+    {
+      "id": "paper1:theorem:thm-minimal",
+      "label": "thm:minimal",
+      "title": "Minimal Representation",
+      "paper": "paper1",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "missing",
+      "file": "paper1/main.tex",
+      "line_start": 280
+    },
+    {
+      "id": "paper1:theorem:thm-rigidity",
+      "label": "thm:rigidity",
+      "title": "Rigidity of the Identity",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 405
+    },
+    {
+      "id": "paper1:theorem:thm-lml",
+      "label": "thm:lml",
+      "title": "No Infinite Mass for Finite Latent Systems",
+      "paper": "paper1",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "heuristic",
+      "file": "paper1/main.tex",
+      "line_start": 465
+    },
+    {
+      "id": "paper1:theorem:thm-detectability",
+      "label": "thm:detectability",
+      "title": "Minimal External Observability",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 561
+    },
+    {
+      "id": "paper1:theorem:thm-spectral-coupling",
+      "label": "thm:spectral-coupling",
+      "title": "Spectral Coupling Theorem",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 592
+    },
+    {
+      "id": "paper1:theorem:thm-uniqueness",
+      "label": "thm:uniqueness",
+      "title": "Strong Uniqueness",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 702
+    },
+    {
+      "id": "paper1:theorem:thm-noalt",
+      "label": "thm:noalt",
+      "title": "No--Alternative Representation",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 920
+    },
+    {
+      "id": "paper1:theorem:thm-collapse",
+      "label": "thm:collapse",
+      "title": "Collapse under Pure Progressive Causality",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 938
+    },
+    {
+      "id": "paper1:theorem:thm-aleph-unique",
+      "label": "thm:aleph-unique",
+      "title": "Existence and Uniqueness of $\\aleph$",
+      "paper": "paper1",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 986
+    },
+    {
+      "id": "paper1:theorem:thm-info-isolation",
+      "label": "thm:info-isolation",
+      "title": "Prefix Information Isolation",
+      "paper": "paper1",
+      "source_declared_status": "heuristic",
+      "machine_extracted_status": "heuristic",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "heuristic",
+      "proof_status": "not_applicable",
+      "file": "paper1/main.tex",
+      "line_start": 1021
+    },
+    {
+      "id": "paper1:theorem:thm-nosemigroup",
+      "label": "thm:nosemigroup",
+      "title": "No Semigroup Compatibility",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 1080
+    },
+    {
+      "id": "paper1:theorem:thm-stone-classification",
+      "label": "thm:stone-classification",
+      "title": "Stone Space Classification",
+      "paper": "paper1",
+      "source_declared_status": "heuristic",
+      "machine_extracted_status": "heuristic",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "heuristic",
+      "proof_status": "not_applicable",
+      "file": "paper1/main.tex",
+      "line_start": 1165
+    },
+    {
+      "id": "paper1:theorem:thm-non-simulability",
+      "label": "thm:non-simulability",
+      "title": "Universal Non-Simulability of CCR",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 1322
+    },
+    {
+      "id": "paper1:theorem:thm-non-transferability",
+      "label": "thm:non-transferability",
+      "title": "Non-Transferability of Rigid Identity",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 1336
+    },
+    {
+      "id": "paper1:theorem:thm-stratification",
+      "label": "thm:stratification",
+      "title": "Stratification Theorem",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 1389
+    },
+    {
+      "id": "paper1:theorem:thm-completeness",
+      "label": "thm:completeness",
+      "title": "Completeness Inheritance",
+      "paper": "paper1",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "heuristic",
+      "file": "paper1/main.tex",
+      "line_start": 1433
+    },
+    {
+      "id": "paper1:theorem:complexity-lower-bound-for-ccr-simulation-l1466",
+      "label": null,
+      "title": "Complexity Lower Bound for CCR Simulation",
+      "paper": "paper1",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "heuristic",
+      "file": "paper1/main.tex",
+      "line_start": 1466
+    },
+    {
+      "id": "paper10:theorem:non-transitivity-of-internal-support-l225",
+      "label": null,
+      "title": "Non-transitivity of internal support",
+      "paper": "paper10",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper10_external_adjudication/main.tex",
+      "line_start": 225
+    },
+    {
+      "id": "paper10:theorem:hash-anchored-non-alterability-l301",
+      "label": null,
+      "title": "Hash-anchored non-alterability",
+      "paper": "paper10",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper10_external_adjudication/main.tex",
+      "line_start": 301
+    },
+    {
+      "id": "paper10:theorem:thm-null-forced",
+      "label": "thm:null-forced",
+      "title": "Null error lower bound",
+      "paper": "paper10",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper10_external_adjudication/main.tex",
+      "line_start": 568
+    },
+    {
+      "id": "paper2:theorem:thm-e0-necessary",
+      "label": "thm:e0-necessary",
+      "title": "E0 is Necessary",
+      "paper": "paper2",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 275
+    },
+    {
+      "id": "paper2:theorem:thm-e1-necessary",
+      "label": "thm:e1-necessary",
+      "title": "E1 is Necessary",
+      "paper": "paper2",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 291
+    },
+    {
+      "id": "paper2:theorem:thm-e2-necessary",
+      "label": "thm:e2-necessary",
+      "title": "E2 is Necessary",
+      "paper": "paper2",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 311
+    },
+    {
+      "id": "paper2:theorem:thm-minimality",
+      "label": "thm:minimality",
+      "title": "Axiomatic Minimality",
+      "paper": "paper2",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 334
+    },
+    {
+      "id": "paper2:theorem:thm-h3-necessary",
+      "label": "thm:h3-necessary",
+      "title": "H3 is Necessary for Impossibility Theorems",
+      "paper": "paper2",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 442
+    },
+    {
+      "id": "paper2:theorem:thm-fragmentation",
+      "label": "thm:fragmentation",
+      "title": "Fragmentation Theorem",
+      "paper": "paper2",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 583
+    },
+    {
+      "id": "paper2:theorem:thm-forced-continuity",
+      "label": "thm:forced-continuity",
+      "title": "Forced Continuity Theorem",
+      "paper": "paper2",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 617
+    },
+    {
+      "id": "paper2:theorem:thm-dichotomy",
+      "label": "thm:dichotomy",
+      "title": "Phenomenological Dichotomy",
+      "paper": "paper2",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 650
+    },
+    {
+      "id": "paper2:theorem:thm-loss",
+      "label": "thm:loss",
+      "title": "Loss Capacity by Rigidity Class",
+      "paper": "paper2",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 728
+    },
+    {
+      "id": "paper2:theorem:thm-asymmetry",
+      "label": "thm:asymmetry",
+      "title": "Structural Asymmetry",
+      "paper": "paper2",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "missing",
+      "file": "paper2/main.tex",
+      "line_start": 794
+    },
+    {
+      "id": "paper3:theorem:thm-nonsim",
+      "label": "thm:nonsim",
+      "title": "Non-Simulability, Rigid Identity",
+      "paper": "paper3",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "missing",
+      "file": "paper3/main.tex",
+      "line_start": 177
+    },
+    {
+      "id": "paper3:theorem:thm-spectral",
+      "label": "thm:spectral",
+      "title": "Spectral Coupling, Rigid Identity",
+      "paper": "paper3",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "missing",
+      "file": "paper3/main.tex",
+      "line_start": 185
+    },
+    {
+      "id": "paper3:theorem:thm-cont",
+      "label": "thm:cont",
+      "title": "Forced Continuity, Phenomenological Regimes",
+      "paper": "paper3",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "missing",
+      "file": "paper3/main.tex",
+      "line_start": 193
+    },
+    {
+      "id": "paper3:theorem:thm-instability",
+      "label": "thm:instability",
+      "title": "Phenomenological Instability",
+      "paper": "paper3",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 298
+    },
+    {
+      "id": "paper3:theorem:thm-minimal",
+      "label": "thm:minimal",
+      "title": "Minimal Positive Regime",
+      "paper": "paper3",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 411
+    },
+    {
+      "id": "paper3:theorem:thm-bound",
+      "label": "thm:bound",
+      "title": "Universal Intensity Bound",
+      "paper": "paper3",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 462
+    },
+    {
+      "id": "paper3:theorem:thm-closure",
+      "label": "thm:closure",
+      "title": "Forced Phenomenological Closure",
+      "paper": "paper3",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 527
+    },
+    {
+      "id": "paper3:theorem:profinite-coupling-bound-l683",
+      "label": null,
+      "title": "Profinite Coupling Bound",
+      "paper": "paper3",
+      "source_declared_status": "conjectural",
+      "machine_extracted_status": "conjectural",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conjectural",
+      "proof_status": "not_expected",
+      "file": "paper3/main.tex",
+      "line_start": 683
+    },
+    {
+      "id": "paper3:theorem:symbolic-coupling-bound-l762",
+      "label": null,
+      "title": "Symbolic Coupling Bound",
+      "paper": "paper3",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 762
+    },
+    {
+      "id": "paper3:theorem:rigidity-inheritance-l781",
+      "label": null,
+      "title": "Rigidity Inheritance",
+      "paper": "paper3",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 781
+    },
+    {
+      "id": "paper3:theorem:categorical-universality-l802",
+      "label": null,
+      "title": "Categorical Universality",
+      "paper": "paper3",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 802
+    },
+    {
+      "id": "paper3:theorem:thm-sim-cond",
+      "label": "thm:sim-cond",
+      "title": "Simulation Lower Bound",
+      "paper": "paper3",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 825
+    },
+    {
+      "id": "paper3:theorem:closure-by-non-alternatives-l850",
+      "label": null,
+      "title": "Closure by Non-Alternatives",
+      "paper": "paper3",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "conditional",
+      "proof_status": "missing",
+      "file": "paper3/main.tex",
+      "line_start": 850
+    },
+    {
+      "id": "paper5:theorem:thm-iint-faithful-factorization-triviality",
+      "label": "thm:iint-faithful-factorization-triviality",
+      "title": "Factorization triviality under an atomic separator",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 343
+    },
+    {
+      "id": "paper5:theorem:thm-existence",
+      "label": "thm:existence",
+      "title": "Existence of operational consciousness",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 670
+    },
+    {
+      "id": "paper5:theorem:thm-substrate",
+      "label": "thm:substrate",
+      "title": "Substrate invariance",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 688
+    },
+    {
+      "id": "paper5:theorem:thm-stability",
+      "label": "thm:stability",
+      "title": "Approximate stability",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 716
+    },
+    {
+      "id": "paper5:theorem:thm-rupture",
+      "label": "thm:rupture",
+      "title": "Rupture by invariant loss",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 740
+    },
+    {
+      "id": "paper5:theorem:thm-minimality",
+      "label": "thm:minimality",
+      "title": "Minimality of the six-invariant basis",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 856
+    },
+    {
+      "id": "paper5:theorem:thm-six-witness-schemas",
+      "label": "thm:six-witness-schemas",
+      "title": "Six canonical single-rupture witness schemas",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 886
+    },
+    {
+      "id": "paper5:theorem:thm-six-sufficiency",
+      "label": "thm:six-sufficiency",
+      "title": "Sufficiency of the six-invariant basis",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 928
+    },
+    {
+      "id": "paper5:theorem:thm-intermediate",
+      "label": "thm:intermediate",
+      "title": "The structural criterion is strictly intermediate",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 1382
+    },
+    {
+      "id": "paper8:theorem:positive-irreducibility-excludes-weak-model-sufficiency-l707",
+      "label": null,
+      "title": "Positive irreducibility excludes weak-model sufficiency",
+      "paper": "paper8",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": "not_reviewed",
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper8_first_person_subjectivity/main.tex",
+      "line_start": 707
+    }
+  ],
+  "edges": [
+    {
+      "source": "basecore:theorem:thm-projection",
+      "target": "basecore:hypothesis:hyp-h1",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-contraction",
+      "target": "basecore:hypothesis:hyp-h1",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-contraction",
+      "target": "basecore:hypothesis:hyp-h2",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-contraction",
+      "target": "basecore:lemma:lem-nonexp",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-fixedpoint",
+      "target": "basecore:hypothesis:hyp-h1",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-fixedpoint",
+      "target": "basecore:hypothesis:hyp-h3-basecorecoresections01-foundation-from-core-l43",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-fixedpoint",
+      "target": "basecore:theorem:thm-contraction",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-compactness",
+      "target": "basecore:hypothesis:hyp-h1",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-compactness",
+      "target": "basecore:hypothesis:hyp-h4",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-noncollapse",
+      "target": "basecore:hypothesis:hyp-h1",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-noncollapse",
+      "target": "basecore:hypothesis:hyp-h5",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-relaxation",
+      "target": "basecore:theorem:thm-spectrum",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:prop-nonlocality",
+      "target": "basecore:hypothesis:hyp-nfd",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:prop-nonlocality",
+      "target": "basecore:hypothesis:hyp-topo",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:prop-nonlocality",
+      "target": "paper1:hypothesis:hyp-topo",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:approximation-barrier-l213",
+      "target": "basecore:theorem:thm-non-simulability",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:approximation-barrier-l213",
+      "target": "paper1:theorem:thm-non-simulability",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-fragmentation",
+      "target": "basecore:hypothesis:hyp-phi-regularity",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-dichotomy",
+      "target": "basecore:theorem:thm-forced-continuity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-dichotomy",
+      "target": "basecore:theorem:thm-fragmentation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-dichotomy",
+      "target": "paper2:theorem:thm-forced-continuity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-dichotomy",
+      "target": "paper2:theorem:thm-fragmentation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-phenomenological-instability",
+      "target": "basecore:definition:def-compatibility-operator",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-forced-phenomenological-closure",
+      "target": "basecore:corollary:cor-forced-non-nullity",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-forced-phenomenological-closure",
+      "target": "basecore:theorem:thm-minimal-positive-regime",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-forced-phenomenological-closure",
+      "target": "basecore:theorem:thm-universal-intensity-bound",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:certified-criterion-membership-l326",
+      "target": "basecore:criterion:crit-cert",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:certified-criterion-membership-l326",
+      "target": "basecore:definition:def-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:certified-criterion-membership-l326",
+      "target": "basecore:proposition:prop-qop-welldefined",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:certified-criterion-membership-l326",
+      "target": "paper5:criterion:crit-cert",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:certified-criterion-membership-l326",
+      "target": "paper7:definition:def-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:certified-criterion-membership-l326",
+      "target": "paper5:proposition:prop-qop-welldefined",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-discrete-contraction",
+      "target": "basecore:assumption:ass-discrete-regularity",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-bridge",
+      "target": "basecore:assumption:ass-bridge-consistency",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-bridge",
+      "target": "basecore:assumption:ass-discrete-regularity",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-bridge",
+      "target": "basecore:hypothesis:hyp-h1",
+      "target_is_theorem": false
+    },
+    {
+      "source": "basecore:theorem:thm-bridge",
+      "target": "basecore:hypothesis:hyp-h4",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-cop-entails-pi",
+      "target": "bridge:definition:def-bridge-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-cop-entails-pi",
+      "target": "bridge:definition:def-pi-op",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-cop-entails-iota",
+      "target": "bridge:definition:def-bridge-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-cop-entails-iota",
+      "target": "bridge:definition:def-iota-op",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-generated",
+      "target": "bridge:corollary:cor-cop-qop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-generated",
+      "target": "bridge:definition:def-sigma-op",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-generated",
+      "target": "bridge:definition:def-subbridge",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-generated",
+      "target": "bridge:proposition:prop-qop-nontrivial",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-generated",
+      "target": "bridge:proposition:prop-weak-phi",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-generated",
+      "target": "bridge:theorem:thm-cop-entails-iota",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-generated",
+      "target": "bridge:theorem:thm-cop-entails-pi",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-subset",
+      "target": "bridge:definition:def-subbridge",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-subset",
+      "target": "bridge:proposition:prop-sigma-not-entailed",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-main-partial-subjecthood",
+      "target": "bridge:corollary:cor-cop-qop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-main-partial-subjecthood",
+      "target": "bridge:proposition:prop-sigma-not-entailed",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-main-partial-subjecthood",
+      "target": "bridge:proposition:prop-weak-phi",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-main-partial-subjecthood",
+      "target": "bridge:theorem:thm-cop-entails-iota",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-main-partial-subjecthood",
+      "target": "bridge:theorem:thm-cop-entails-pi",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-main-partial-subjecthood",
+      "target": "bridge:theorem:thm-subbridge-subset",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-bridge-ladder-strict",
+      "target": "bridge:corollary:cor-paper7-stronger",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-bridge-ladder-strict",
+      "target": "bridge:proposition:prop-sigma-not-entailed",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-nonentailment-library",
+      "target": "bridge:definition:def-bridge-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "bridge:theorem:thm-nonentailment-library",
+      "target": "bridge:proposition:prop-cop-not-ccr",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper1:theorem:thm-rigidity",
+      "target": "paper1:lemma:lem-stability",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper1:theorem:thm-detectability",
+      "target": "paper1:definition:def-ontmass",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper1:theorem:thm-detectability",
+      "target": "paper1:theorem:thm-rigidity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper1:theorem:thm-aleph-unique",
+      "target": "paper1:hypothesis:hyp-topo",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper1:theorem:thm-nosemigroup",
+      "target": "paper1:theorem:thm-collapse",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper1:theorem:thm-non-simulability",
+      "target": "paper1:definition:def-ontmass",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper1:theorem:thm-non-simulability",
+      "target": "paper1:theorem:thm-rigidity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper1:theorem:thm-stratification",
+      "target": "paper1:theorem:thm-rigidity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper2:theorem:thm-fragmentation",
+      "target": "paper2:hypothesis:hyp-phi-paper2",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper2:theorem:thm-dichotomy",
+      "target": "paper2:hypothesis:hyp-phi-paper2",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper2:theorem:thm-dichotomy",
+      "target": "paper2:theorem:thm-forced-continuity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper2:theorem:thm-dichotomy",
+      "target": "paper2:theorem:thm-fragmentation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper2:theorem:thm-loss",
+      "target": "paper2:hypothesis:hyp-phi-paper2",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper2:theorem:thm-loss",
+      "target": "paper2:theorem:thm-forced-continuity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper2:theorem:thm-loss",
+      "target": "paper2:theorem:thm-fragmentation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper3:theorem:thm-instability",
+      "target": "paper3:theorem:thm-spectral",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper3:theorem:thm-minimal",
+      "target": "paper3:lemma:lem-no-collapse",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper3:theorem:thm-closure",
+      "target": "paper3:corollary:cor-forced",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper3:theorem:thm-closure",
+      "target": "paper3:theorem:thm-bound",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper3:theorem:thm-closure",
+      "target": "paper3:theorem:thm-instability",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper3:theorem:thm-closure",
+      "target": "paper3:theorem:thm-minimal",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper5:theorem:thm-existence",
+      "target": "paper5:definition:def-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-existence",
+      "target": "paper5:proposition:prop-qop-welldefined",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-existence",
+      "target": "paper7:definition:def-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-substrate",
+      "target": "paper5:definition:def-equiv",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-stability",
+      "target": "paper5:definition:def-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-stability",
+      "target": "paper5:definition:def-equiv",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-stability",
+      "target": "paper7:definition:def-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-rupture",
+      "target": "paper5:proposition:prop-necessity",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-minimality",
+      "target": "paper5:proposition:prop-witness",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-six-sufficiency",
+      "target": "paper5:definition:def-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-six-sufficiency",
+      "target": "paper7:definition:def-cop",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-intermediate",
+      "target": "paper5:corollary:cor-onemetric",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-intermediate",
+      "target": "paper5:proposition:prop-baseline-insufficient",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-intermediate",
+      "target": "paper5:proposition:prop-functional-weak",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-intermediate",
+      "target": "paper5:proposition:prop-substrate-strong",
+      "target_is_theorem": false
+    }
+  ],
+  "theorem_edges": [
+    {
+      "source": "basecore:theorem:thm-fixedpoint",
+      "target": "basecore:theorem:thm-contraction",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-relaxation",
+      "target": "basecore:theorem:thm-spectrum",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:approximation-barrier-l213",
+      "target": "basecore:theorem:thm-non-simulability",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:approximation-barrier-l213",
+      "target": "paper1:theorem:thm-non-simulability",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-dichotomy",
+      "target": "basecore:theorem:thm-forced-continuity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-dichotomy",
+      "target": "basecore:theorem:thm-fragmentation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-dichotomy",
+      "target": "paper2:theorem:thm-forced-continuity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-dichotomy",
+      "target": "paper2:theorem:thm-fragmentation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-forced-phenomenological-closure",
+      "target": "basecore:theorem:thm-minimal-positive-regime",
+      "target_is_theorem": true
+    },
+    {
+      "source": "basecore:theorem:thm-forced-phenomenological-closure",
+      "target": "basecore:theorem:thm-universal-intensity-bound",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-generated",
+      "target": "bridge:theorem:thm-cop-entails-iota",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-subbridge-generated",
+      "target": "bridge:theorem:thm-cop-entails-pi",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-main-partial-subjecthood",
+      "target": "bridge:theorem:thm-cop-entails-iota",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-main-partial-subjecthood",
+      "target": "bridge:theorem:thm-cop-entails-pi",
+      "target_is_theorem": true
+    },
+    {
+      "source": "bridge:theorem:thm-main-partial-subjecthood",
+      "target": "bridge:theorem:thm-subbridge-subset",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper1:theorem:thm-detectability",
+      "target": "paper1:theorem:thm-rigidity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper1:theorem:thm-nosemigroup",
+      "target": "paper1:theorem:thm-collapse",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper1:theorem:thm-non-simulability",
+      "target": "paper1:theorem:thm-rigidity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper1:theorem:thm-stratification",
+      "target": "paper1:theorem:thm-rigidity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper2:theorem:thm-dichotomy",
+      "target": "paper2:theorem:thm-forced-continuity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper2:theorem:thm-dichotomy",
+      "target": "paper2:theorem:thm-fragmentation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper2:theorem:thm-loss",
+      "target": "paper2:theorem:thm-forced-continuity",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper2:theorem:thm-loss",
+      "target": "paper2:theorem:thm-fragmentation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper3:theorem:thm-instability",
+      "target": "paper3:theorem:thm-spectral",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper3:theorem:thm-closure",
+      "target": "paper3:theorem:thm-bound",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper3:theorem:thm-closure",
+      "target": "paper3:theorem:thm-instability",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper3:theorem:thm-closure",
+      "target": "paper3:theorem:thm-minimal",
+      "target_is_theorem": true
+    }
+  ],
+  "cycles": [],
+  "leaves_not_used_by_other_theorems": [
+    "basecore:theorem:thm-projection",
+    "basecore:theorem:thm-fixedpoint",
+    "basecore:theorem:thm-compactness",
+    "basecore:theorem:thm-noncollapse",
+    "basecore:theorem:typed-contraction-on-the-computable-witness-l195",
+    "basecore:theorem:thm-relaxation",
+    "basecore:theorem:prop-nonlocality",
+    "basecore:theorem:thm-rigidity",
+    "basecore:theorem:approximation-barrier-l213",
+    "basecore:theorem:thm-e0-necessary",
+    "basecore:theorem:thm-e1-necessary",
+    "basecore:theorem:thm-e2-necessary",
+    "basecore:theorem:thm-minimality",
+    "basecore:theorem:thm-h3-necessary",
+    "basecore:theorem:thm-dichotomy",
+    "basecore:theorem:thm-phenomenological-instability",
+    "basecore:theorem:thm-forced-phenomenological-closure",
+    "basecore:theorem:thm-rigidity-inheritance",
+    "basecore:theorem:thm-null-categorical-universality",
+    "basecore:theorem:thm-null-simulation-lower-bound",
+    "basecore:theorem:thm-null-closure-by-non-alternatives",
+    "basecore:theorem:thm-rupture",
+    "basecore:theorem:thm-invariant-basis-minimality",
+    "basecore:theorem:certified-criterion-membership-l326",
+    "basecore:theorem:thm-discrete-contraction",
+    "basecore:theorem:thm-bridge",
+    "bridge:theorem:thm-subbridge-generated",
+    "bridge:theorem:thm-main-partial-subjecthood",
+    "bridge:theorem:thm-layer-preservation",
+    "bridge:theorem:thm-bridge-ladder-strict",
+    "bridge:theorem:thm-nonentailment-library",
+    "bridge:theorem:thm-sigma-chain",
+    "bridge:theorem:no-theorem-to-validation-substitution-l1298",
+    "bridge:theorem:no-runtime-to-theorem-substitution-l1311",
+    "bridge:theorem:no-validation-to-definition-substitution-l1324",
+    "paper1:theorem:thm-noprogressive",
+    "paper1:theorem:thm-minimal",
+    "paper1:theorem:thm-lml",
+    "paper1:theorem:thm-detectability",
+    "paper1:theorem:thm-spectral-coupling",
+    "paper1:theorem:thm-uniqueness",
+    "paper1:theorem:thm-noalt",
+    "paper1:theorem:thm-aleph-unique",
+    "paper1:theorem:thm-info-isolation",
+    "paper1:theorem:thm-nosemigroup",
+    "paper1:theorem:thm-stone-classification",
+    "paper1:theorem:thm-non-transferability",
+    "paper1:theorem:thm-stratification",
+    "paper1:theorem:thm-completeness",
+    "paper1:theorem:complexity-lower-bound-for-ccr-simulation-l1466",
+    "paper10:theorem:non-transitivity-of-internal-support-l225",
+    "paper10:theorem:hash-anchored-non-alterability-l301",
+    "paper10:theorem:thm-null-forced",
+    "paper2:theorem:thm-e0-necessary",
+    "paper2:theorem:thm-e1-necessary",
+    "paper2:theorem:thm-e2-necessary",
+    "paper2:theorem:thm-minimality",
+    "paper2:theorem:thm-h3-necessary",
+    "paper2:theorem:thm-dichotomy",
+    "paper2:theorem:thm-loss",
+    "paper2:theorem:thm-asymmetry",
+    "paper3:theorem:thm-nonsim",
+    "paper3:theorem:thm-cont",
+    "paper3:theorem:thm-closure",
+    "paper3:theorem:profinite-coupling-bound-l683",
+    "paper3:theorem:symbolic-coupling-bound-l762",
+    "paper3:theorem:rigidity-inheritance-l781",
+    "paper3:theorem:categorical-universality-l802",
+    "paper3:theorem:thm-sim-cond",
+    "paper3:theorem:closure-by-non-alternatives-l850",
+    "paper5:theorem:thm-iint-faithful-factorization-triviality",
+    "paper5:theorem:thm-existence",
+    "paper5:theorem:thm-substrate",
+    "paper5:theorem:thm-stability",
+    "paper5:theorem:thm-rupture",
+    "paper5:theorem:thm-minimality",
+    "paper5:theorem:thm-six-witness-schemas",
+    "paper5:theorem:thm-six-sufficiency",
+    "paper5:theorem:thm-intermediate",
+    "paper8:theorem:positive-irreducibility-excludes-weak-model-sufficiency-l707"
+  ],
+  "roots_with_no_theorem_dependencies": [
+    "basecore:theorem:thm-projection",
+    "basecore:theorem:thm-contraction",
+    "basecore:theorem:thm-compactness",
+    "basecore:theorem:thm-noncollapse",
+    "basecore:theorem:typed-contraction-on-the-computable-witness-l195",
+    "basecore:theorem:thm-spectrum",
+    "basecore:theorem:prop-nonlocality",
+    "basecore:theorem:thm-rigidity",
+    "basecore:theorem:thm-non-simulability",
+    "basecore:theorem:thm-e0-necessary",
+    "basecore:theorem:thm-e1-necessary",
+    "basecore:theorem:thm-e2-necessary",
+    "basecore:theorem:thm-minimality",
+    "basecore:theorem:thm-h3-necessary",
+    "basecore:theorem:thm-fragmentation",
+    "basecore:theorem:thm-forced-continuity",
+    "basecore:theorem:thm-phenomenological-instability",
+    "basecore:theorem:thm-minimal-positive-regime",
+    "basecore:theorem:thm-universal-intensity-bound",
+    "basecore:theorem:thm-rigidity-inheritance",
+    "basecore:theorem:thm-null-categorical-universality",
+    "basecore:theorem:thm-null-simulation-lower-bound",
+    "basecore:theorem:thm-null-closure-by-non-alternatives",
+    "basecore:theorem:thm-rupture",
+    "basecore:theorem:thm-invariant-basis-minimality",
+    "basecore:theorem:certified-criterion-membership-l326",
+    "basecore:theorem:thm-discrete-contraction",
+    "basecore:theorem:thm-bridge",
+    "bridge:theorem:thm-cop-entails-pi",
+    "bridge:theorem:thm-cop-entails-iota",
+    "bridge:theorem:thm-subbridge-subset",
+    "bridge:theorem:thm-layer-preservation",
+    "bridge:theorem:thm-bridge-ladder-strict",
+    "bridge:theorem:thm-nonentailment-library",
+    "bridge:theorem:thm-sigma-chain",
+    "bridge:theorem:no-theorem-to-validation-substitution-l1298",
+    "bridge:theorem:no-runtime-to-theorem-substitution-l1311",
+    "bridge:theorem:no-validation-to-definition-substitution-l1324",
+    "paper1:theorem:thm-noprogressive",
+    "paper1:theorem:thm-minimal",
+    "paper1:theorem:thm-rigidity",
+    "paper1:theorem:thm-lml",
+    "paper1:theorem:thm-spectral-coupling",
+    "paper1:theorem:thm-uniqueness",
+    "paper1:theorem:thm-noalt",
+    "paper1:theorem:thm-collapse",
+    "paper1:theorem:thm-aleph-unique",
+    "paper1:theorem:thm-info-isolation",
+    "paper1:theorem:thm-stone-classification",
+    "paper1:theorem:thm-non-transferability",
+    "paper1:theorem:thm-completeness",
+    "paper1:theorem:complexity-lower-bound-for-ccr-simulation-l1466",
+    "paper10:theorem:non-transitivity-of-internal-support-l225",
+    "paper10:theorem:hash-anchored-non-alterability-l301",
+    "paper10:theorem:thm-null-forced",
+    "paper2:theorem:thm-e0-necessary",
+    "paper2:theorem:thm-e1-necessary",
+    "paper2:theorem:thm-e2-necessary",
+    "paper2:theorem:thm-minimality",
+    "paper2:theorem:thm-h3-necessary",
+    "paper2:theorem:thm-fragmentation",
+    "paper2:theorem:thm-forced-continuity",
+    "paper2:theorem:thm-asymmetry",
+    "paper3:theorem:thm-nonsim",
+    "paper3:theorem:thm-spectral",
+    "paper3:theorem:thm-cont",
+    "paper3:theorem:thm-minimal",
+    "paper3:theorem:thm-bound",
+    "paper3:theorem:profinite-coupling-bound-l683",
+    "paper3:theorem:symbolic-coupling-bound-l762",
+    "paper3:theorem:rigidity-inheritance-l781",
+    "paper3:theorem:categorical-universality-l802",
+    "paper3:theorem:thm-sim-cond",
+    "paper3:theorem:closure-by-non-alternatives-l850",
+    "paper5:theorem:thm-iint-faithful-factorization-triviality",
+    "paper5:theorem:thm-existence",
+    "paper5:theorem:thm-substrate",
+    "paper5:theorem:thm-stability",
+    "paper5:theorem:thm-rupture",
+    "paper5:theorem:thm-minimality",
+    "paper5:theorem:thm-six-witness-schemas",
+    "paper5:theorem:thm-six-sufficiency",
+    "paper5:theorem:thm-intermediate",
+    "paper8:theorem:positive-irreducibility-excludes-weak-model-sufficiency-l707"
+  ],
+  "conditional_or_open_theorems": [
+    "basecore:theorem:thm-rigidity",
+    "basecore:theorem:thm-minimal-positive-regime",
+    "paper1:theorem:thm-minimal",
+    "paper1:theorem:thm-lml",
+    "paper1:theorem:thm-aleph-unique",
+    "paper1:theorem:thm-info-isolation",
+    "paper1:theorem:thm-stone-classification",
+    "paper1:theorem:thm-completeness",
+    "paper1:theorem:complexity-lower-bound-for-ccr-simulation-l1466",
+    "paper10:theorem:thm-null-forced",
+    "paper2:theorem:thm-asymmetry",
+    "paper3:theorem:thm-nonsim",
+    "paper3:theorem:thm-spectral",
+    "paper3:theorem:thm-cont",
+    "paper3:theorem:thm-instability",
+    "paper3:theorem:thm-sim-cond",
+    "paper3:theorem:closure-by-non-alternatives-l850"
+  ],
+  "proved_but_not_human_reviewed_theorems": [
+    "basecore:theorem:thm-projection",
+    "basecore:theorem:thm-contraction",
+    "basecore:theorem:thm-fixedpoint",
+    "basecore:theorem:thm-compactness",
+    "basecore:theorem:thm-noncollapse",
+    "basecore:theorem:typed-contraction-on-the-computable-witness-l195",
+    "basecore:theorem:thm-spectrum",
+    "basecore:theorem:thm-relaxation",
+    "basecore:theorem:prop-nonlocality",
+    "basecore:theorem:thm-non-simulability",
+    "basecore:theorem:approximation-barrier-l213",
+    "basecore:theorem:thm-e0-necessary",
+    "basecore:theorem:thm-e1-necessary",
+    "basecore:theorem:thm-e2-necessary",
+    "basecore:theorem:thm-minimality",
+    "basecore:theorem:thm-h3-necessary",
+    "basecore:theorem:thm-fragmentation",
+    "basecore:theorem:thm-forced-continuity",
+    "basecore:theorem:thm-dichotomy",
+    "basecore:theorem:thm-phenomenological-instability",
+    "basecore:theorem:thm-universal-intensity-bound",
+    "basecore:theorem:thm-forced-phenomenological-closure",
+    "basecore:theorem:thm-rupture",
+    "basecore:theorem:thm-invariant-basis-minimality",
+    "basecore:theorem:certified-criterion-membership-l326",
+    "basecore:theorem:thm-discrete-contraction",
+    "basecore:theorem:thm-bridge",
+    "bridge:theorem:thm-cop-entails-pi",
+    "bridge:theorem:thm-cop-entails-iota",
+    "bridge:theorem:thm-subbridge-generated",
+    "bridge:theorem:thm-subbridge-subset",
+    "bridge:theorem:thm-main-partial-subjecthood",
+    "bridge:theorem:thm-layer-preservation",
+    "bridge:theorem:thm-bridge-ladder-strict",
+    "bridge:theorem:thm-nonentailment-library",
+    "bridge:theorem:thm-sigma-chain",
+    "bridge:theorem:no-theorem-to-validation-substitution-l1298",
+    "bridge:theorem:no-runtime-to-theorem-substitution-l1311",
+    "bridge:theorem:no-validation-to-definition-substitution-l1324",
+    "paper1:theorem:thm-noprogressive",
+    "paper1:theorem:thm-rigidity",
+    "paper1:theorem:thm-detectability",
+    "paper1:theorem:thm-spectral-coupling",
+    "paper1:theorem:thm-uniqueness",
+    "paper1:theorem:thm-noalt",
+    "paper1:theorem:thm-collapse",
+    "paper1:theorem:thm-nosemigroup",
+    "paper1:theorem:thm-non-simulability",
+    "paper1:theorem:thm-non-transferability",
+    "paper1:theorem:thm-stratification",
+    "paper10:theorem:non-transitivity-of-internal-support-l225",
+    "paper10:theorem:hash-anchored-non-alterability-l301",
+    "paper2:theorem:thm-e0-necessary",
+    "paper2:theorem:thm-e1-necessary",
+    "paper2:theorem:thm-e2-necessary",
+    "paper2:theorem:thm-minimality",
+    "paper2:theorem:thm-h3-necessary",
+    "paper2:theorem:thm-fragmentation",
+    "paper2:theorem:thm-forced-continuity",
+    "paper2:theorem:thm-dichotomy",
+    "paper2:theorem:thm-loss",
+    "paper3:theorem:thm-minimal",
+    "paper3:theorem:thm-bound",
+    "paper3:theorem:thm-closure",
+    "paper3:theorem:symbolic-coupling-bound-l762",
+    "paper3:theorem:rigidity-inheritance-l781",
+    "paper3:theorem:categorical-universality-l802",
+    "paper5:theorem:thm-iint-faithful-factorization-triviality",
+    "paper5:theorem:thm-existence",
+    "paper5:theorem:thm-substrate",
+    "paper5:theorem:thm-stability",
+    "paper5:theorem:thm-rupture",
+    "paper5:theorem:thm-minimality",
+    "paper5:theorem:thm-six-witness-schemas",
+    "paper5:theorem:thm-six-sufficiency",
+    "paper5:theorem:thm-intermediate",
+    "paper8:theorem:positive-irreducibility-excludes-weak-model-sufficiency-l707"
+  ],
+  "unresolved_references": []
+}

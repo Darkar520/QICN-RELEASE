@@ -1,0 +1,122 @@
+{
+  "phase": 4,
+  "generated_at": "2026-05-27",
+  "gaps_addressed": [
+    {
+      "gap_id": "GAP-01",
+      "description": "AICc is computed and used as the decision basis",
+      "test_result": "PASS",
+      "evidence": "qicn.aicc/rival.aicc present; decision_basis names AICc"
+    },
+    {
+      "gap_id": "GAP-02",
+      "description": "Affine structural leakage is blocked with a measurement-sigma threshold",
+      "test_result": "PASS",
+      "evidence": "affine_leakage_risk=blocked on v26-style near-copy fixture"
+    },
+    {
+      "gap_id": "GAP-03",
+      "description": "Mutual information leakage diagnostic detects nonlinear dependence",
+      "test_result": "PASS",
+      "evidence": "quadratic predictor blocked by MI leakage"
+    },
+    {
+      "gap_id": "GAP-04",
+      "description": "Sensitivity probes reject inconsistent baselines",
+      "test_result": "PASS",
+      "evidence": "baseline mismatch produces INVALID_MANIFEST"
+    },
+    {
+      "gap_id": "GAP-05",
+      "description": "Rival adequacy rejects a rival worse than the mean model",
+      "test_result": "PASS",
+      "evidence": "rss_rival >= rss_mean_model"
+    },
+    {
+      "gap_id": "GAP-06",
+      "description": "Calibration reports both null modes",
+      "test_result": "PASS",
+      "evidence": "null_rival_true and null_both_random present"
+    },
+    {
+      "gap_id": "GAP-07",
+      "description": "Ed25519 verification consults a trusted-key registry and rejects unregistered keys",
+      "test_result": "PASS",
+      "evidence": "registered key passes; unregistered key is rejected"
+    },
+    {
+      "gap_id": "GAP-08",
+      "description": "Promotion audit uses robust sentence segmentation and disclaimer propagation",
+      "test_result": "PASS",
+      "evidence": "abbreviation, semicolon, and adjacent disclaimer self-tests passed"
+    },
+    {
+      "gap_id": "GAP-09",
+      "description": "External data with Durbin-Watson outside [1.0,3.0] is blocked",
+      "test_result": "PASS",
+      "evidence": "external candidate with serial residual dependence includes temporal block and Ljung-Box diagnostic"
+    },
+    {
+      "gap_id": "GAP-10",
+      "description": "Leakage adjudication separates structural leakage from predictive accuracy",
+      "test_result": "PASS",
+      "evidence": "predictive_accuracy and structural_leakage are separate report fields"
+    },
+    {
+      "gap_id": "GAP-11",
+      "description": "Bridge certificate is present and operationally checked",
+      "test_result": "PASS",
+      "evidence": "bridge_certificate_admissibility=admissible with finite operational limitation"
+    }
+  ],
+  "new_files_created": [
+    {
+      "path": "scripts/external-session-zero-adjudicator-v27.js",
+      "sha256": "fec0bac5da877477bb540d692f04b37a54869ac6ff0ac01b14244e65cc39960b",
+      "size_bytes": 23413
+    },
+    {
+      "path": "scripts/calibrate-session-zero-thresholds-v27.js",
+      "sha256": "a8646eaaa082325424fd02f51b42a4f6fe69cfbb639505da7ca32d895e9317a4",
+      "size_bytes": 6680
+    },
+    {
+      "path": "scripts/audit-operational-term-promotions-v27.js",
+      "sha256": "8cab4a5ae9e18c5416c97eab5c662f54307a201bb8f63e0e5d9a36beffcaa868",
+      "size_bytes": 7465
+    },
+    {
+      "path": "scripts/verify-human-veto-signature-v27.js",
+      "sha256": "d9711f22ef1ddac24047513f6a5a3e3635e9f30db00670533a97256df006be0d",
+      "size_bytes": 6395
+    },
+    {
+      "path": "scripts/audit-v27-superior-gaps.js",
+      "sha256": "ebaa3f666be9bc54184a0f8461f4a3fe9c45be6e9ebbda4758283a4cb186950e",
+      "size_bytes": 7305
+    },
+    {
+      "path": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json",
+      "sha256": "e00b315df688934186ca148dd043b0d9495957be586a7477457219028d832f6a",
+      "size_bytes": 18192
+    },
+    {
+      "path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_DATASET_v27.json",
+      "sha256": "1b53322fcc239d0d84de32b6df356e512145ea0eac8647c5f79f1e26e184cfa7",
+      "size_bytes": 3132
+    },
+    {
+      "path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_PREDICTION_BUNDLE_v27.json",
+      "sha256": "73ac47219ad04e0e81fbee9cb557b335ea27620103a9cb25981dffffb9cd57e8",
+      "size_bytes": 2190
+    },
+    {
+      "path": "docs/fixtures/TRUSTED_KEYS_REGISTRY_v27.json",
+      "sha256": "a9658bb986480236e6b85760919669c873818f1f2cb43690c2142523b36d205e",
+      "size_bytes": 881
+    }
+  ],
+  "npm_verify_v27": "PASS",
+  "score": 93,
+  "implementation_boundary": "v27 hardens adjudication and blocks the v26-style fixture; it does not create empirical validation."
+}

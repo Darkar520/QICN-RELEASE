@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This v27 audit checks implementation gates only. It does not certify external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+  "checks": [
+    {
+      "id": "GAP-01",
+      "description": "AICc is computed and used as the decision basis",
+      "result": "PASS",
+      "evidence": "qicn.aicc/rival.aicc present; decision_basis names AICc"
+    },
+    {
+      "id": "GAP-02",
+      "description": "Affine structural leakage is blocked with a measurement-sigma threshold",
+      "result": "PASS",
+      "evidence": "affine_leakage_risk=blocked on v26-style near-copy fixture"
+    },
+    {
+      "id": "GAP-03",
+      "description": "Mutual information leakage diagnostic detects nonlinear dependence",
+      "result": "PASS",
+      "evidence": "quadratic predictor blocked by MI leakage"
+    },
+    {
+      "id": "GAP-03b",
+      "description": "MI del fixture real es reportado vs. threshold calibrado",
+      "result": "PASS",
+      "evidence": "mi_real=1.0821955300387671, mi_threshold=0.81"
+    },
+    {
+      "id": "GAP-04",
+      "description": "Sensitivity probes reject inconsistent baselines",
+      "result": "PASS",
+      "evidence": "baseline mismatch produces INVALID_MANIFEST"
+    },
+    {
+      "id": "GAP-05",
+      "description": "Rival adequacy rejects a rival worse than the mean model",
+      "result": "PASS",
+      "evidence": "rss_rival >= rss_mean_model"
+    },
+    {
+      "id": "GAP-06",
+      "description": "Calibration reports both null modes",
+      "result": "PASS",
+      "evidence": "null_rival_true and null_both_random present"
+    },
+    {
+      "id": "GAP-07",
+      "description": "Ed25519 verification consults a trusted-key registry and rejects unregistered keys",
+      "result": "PASS",
+      "evidence": "registered key passes; unregistered key is rejected"
+    },
+    {
+      "id": "GAP-08",
+      "description": "Promotion audit uses robust sentence segmentation and disclaimer propagation",
+      "result": "PASS",
+      "evidence": "abbreviation, semicolon, and adjacent disclaimer self-tests passed"
+    },
+    {
+      "id": "GAP-09",
+      "description": "External data with Durbin-Watson outside [1.0,3.0] is blocked",
+      "result": "PASS",
+      "evidence": "external candidate with serial residual dependence includes temporal block and Ljung-Box diagnostic"
+    },
+    {
+      "id": "GAP-10",
+      "description": "Leakage adjudication separates structural leakage from predictive accuracy",
+      "result": "PASS",
+      "evidence": "predictive_accuracy and structural_leakage are separate report fields"
+    },
+    {
+      "id": "GAP-11",
+      "description": "Bridge certificate is present and operationally checked",
+      "result": "PASS",
+      "evidence": "bridge_certificate_admissibility=admissible with finite operational limitation"
+    }
+  ],
+  "result": "PASS",
+  "external_support_certified": false
+}

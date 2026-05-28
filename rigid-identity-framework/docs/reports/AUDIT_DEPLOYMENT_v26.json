@@ -1,0 +1,30 @@
+{
+  "phase": 2,
+  "generated_at": "2026-05-27",
+  "npm_verify_v26": "PASS",
+  "reports_generated": [
+    "THRESHOLD_NULL_CALIBRATION_v26.json",
+    "SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v26.json",
+    "FCR_DOWNGRADE_DRY_RUN_v26.json",
+    "OPERATIONAL_TERM_PROMOTION_AUDIT_v26.json",
+    "HUMAN_VETO_SIGNATURE_SELF_TEST_v26.json",
+    "V26_SUPERIOR_GAP_AUDIT.json"
+  ],
+  "hash_cross_verification": {
+    "runner_sha256": "b46ee78ae581439f3b46c751b7f14cde2177f2bbaa51a12e2c04042ccf88bfe9",
+    "manifest_sha256": "4645cf2c8ab976cef98ebe93b2ba0f84594d93c5cf31c88a58faf6d011714708",
+    "dataset_sha256": "7b961316adedcb7bf5efdce59f03d15c0e3bc04f6d2055e5b694f4a0416fbc82",
+    "prediction_bundle_sha256": "fa1af52c0e5c24cbe0d7d13bc2c66934384e973b34a6da856c7e3480ab142de4",
+    "threshold_calibration_report_sha256": "d0e6eca33718012c78623c9e69593f6b1dfd795663ccf96dca36afe2e97d1a5a",
+    "all_reported_hashes_verified": true
+  },
+  "governance_boundaries_ok": true,
+  "external_support_blocked": true,
+  "issues_found": [
+    "v26 ZIP pipeline failed before patch on Windows after recalibration because threshold report path serialization changed the report hash"
+  ],
+  "issues_resolved": [
+    "calibration now writes slash-normalized manifest path and updates threshold_calibration_report_sha256 in the manifest"
+  ],
+  "score": 96
+}

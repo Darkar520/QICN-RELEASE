@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.1.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This matrix defines ablations and death rules only. It does not certify external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+  "entries": [
+    {
+      "id": "ABL-IDENTITY-CHANNEL-LOCK",
+      "prediction_ids": [
+        "PRED-01",
+        "PRED-EXT-01"
+      ],
+      "target_invariant": "identity_channel_lock",
+      "manipulation": "Remove or randomize identity-channel binding while preserving gross trace length, event count, and response-coordinate dimensionality.",
+      "primary_outcome": "drop in trace_alignment_delta and failure of identity-preserving certificate",
+      "negative_controls": [
+        "sham_identity_relabel",
+        "trace_length_matched_randomization",
+        "sensor_dropout_exclusion_control"
+      ],
+      "rivals": [
+        "memory_only",
+        "complexity_only",
+        "frequency_only"
+      ],
+      "support_rule": "QICN margin remains positive after complexity penalty and all negative controls remain below the frozen decision threshold.",
+      "weakening_rule": "QICN beats the rival only after post-hoc exclusion, threshold change, or unsupported tolerance widening.",
+      "destruction_rule": "A rival model beats QICN after predeclared exclusions and complexity penalty, or the sham control reproduces the same effect.",
+      "current_execution_status": "not_executed_external",
+      "frozen_decision_parameters_v24": {
+        "minimum_admissible_n": 8,
+        "max_exclusion_fraction": 0.2,
+        "ci_level": 0.95,
+        "statistical_test": "external_session_zero_v24_t_interval_and_aic_like_penalty",
+        "complexity_penalty_factor": 1.0,
+        "death_rule_frozen": true,
+        "support_gain_aic": 5.0,
+        "weakening_gain_aic": 0.0,
+        "minimum_ci_lower": 0.0,
+        "negative_control_max_gain_aic": 0.0
+      },
+      "destruction_rule_machine_readable": {
+        "if_any": [
+          "rival_gain_aic_greater_than_or_equal_support_gain",
+          "negative_control_reproduces_target_effect",
+          "posthoc_threshold_change_required_for_support",
+          "exclusion_log_violates_predeclared_rules"
+        ],
+        "then": "downgrade_associated_claim_to_open_burden_or_weakened_internal_only",
+        "registry_change": "dry_run_until_human_review"
+      }
+    },
+    {
+      "id": "ABL-HISTORY-ALIGNMENT",
+      "prediction_ids": [
+        "PRED-02",
+        "PRED-04c"
+      ],
+      "target_invariant": "history_alignment",
+      "manipulation": "Phase-shift the history-alignment channel while preserving local response energy and event counts.",
+      "primary_outcome": "selective contraction of history_binding_delta outside the ambiguity margin",
+      "negative_controls": [
+        "phase_sham",
+        "global_noise_degradation",
+        "latency_jitter_control"
+      ],
+      "rivals": [
+        "memory_only",
+        "null_dynamics"
+      ],
+      "support_rule": "Targeted history shift causes certified class exit/contraction while sham and global-noise controls do not.",
+      "weakening_rule": "Effect is present but indistinguishable from latency or global noise under 95% confidence interval propagation.",
+      "destruction_rule": "Verified history shift outside ambiguity margin produces no downgrade or the memory-only rival explains the response more parsimoniously.",
+      "current_execution_status": "internal_only",
+      "frozen_decision_parameters_v24": {
+        "minimum_admissible_n": 8,
+        "max_exclusion_fraction": 0.2,
+        "ci_level": 0.95,
+        "statistical_test": "external_session_zero_v24_t_interval_and_aic_like_penalty",
+        "complexity_penalty_factor": 1.0,
+        "death_rule_frozen": true,
+        "ambiguity_margin": 0.05,
+        "minimum_effect_delta_minus_noise": 0.05,
+        "minimum_ci_lower": 0.0,
+        "latency_control_max_delta": 0.03
+      },
+      "destruction_rule_machine_readable": {
+        "if_any": [
+          "rival_gain_aic_greater_than_or_equal_support_gain",
+          "negative_control_reproduces_target_effect",
+          "posthoc_threshold_change_required_for_support",
+          "exclusion_log_violates_predeclared_rules"
+        ],
+        "then": "downgrade_associated_claim_to_open_burden_or_weakened_internal_only",
+        "registry_change": "dry_run_until_human_review"
+      }
+    },
+    {
+      "id": "ABL-RESPONSE-PHASE",
+      "prediction_ids": [
+        "PRED-04a",
+        "PRED-04b"
+      ],
+      "target_invariant": "response_phase",
+      "manipulation": "Perturb response phase within predeclared pass/fail regions.",
+      "primary_outcome": "pass-region stability and fail-region non-recovery under frozen tolerance",
+      "negative_controls": [
+        "near_boundary_pass_control",
+        "random_micro_perturbation_control",
+        "response_coordinate_shuffle"
+      ],
+      "rivals": [
+        "fragile_threshold",
+        "null_dynamics"
+      ],
+      "support_rule": "Pass/fail behavior matches frozen region rules without threshold retuning.",
+      "weakening_rule": "Behavior depends on cherry-picked perturbations or collapses under held-out perturbation coordinates.",
+      "destruction_rule": "Fail-region cases recover or pass-region cases fail under the frozen panel at rates exceeding preregistered noise allowance.",
+      "current_execution_status": "not_executed_external",
+      "frozen_decision_parameters_v24": {
+        "minimum_admissible_n": 8,
+        "max_exclusion_fraction": 0.2,
+        "ci_level": 0.95,
+        "statistical_test": "external_session_zero_v24_t_interval_and_aic_like_penalty",
+        "complexity_penalty_factor": 1.0,
+        "death_rule_frozen": true,
+        "pass_region_failure_rate_max": 0.05,
+        "fail_region_recovery_rate_max": 0.05,
+        "noise_allowance_rate": 0.1
+      },
+      "destruction_rule_machine_readable": {
+        "if_any": [
+          "rival_gain_aic_greater_than_or_equal_support_gain",
+          "negative_control_reproduces_target_effect",
+          "posthoc_threshold_change_required_for_support",
+          "exclusion_log_violates_predeclared_rules"
+        ],
+        "then": "downgrade_associated_claim_to_open_burden_or_weakened_internal_only",
+        "registry_change": "dry_run_until_human_review"
+      }
+    },
+    {
+      "id": "ABL-GAUGE-STABILITY",
+      "prediction_ids": [
+        "PRED-EXT-01",
+        "PRED-11"
+      ],
+      "target_invariant": "gauge_stability",
+      "manipulation": "Apply admissible gauge transformations and gauge-breaking transformations under matched observation channels.",
+      "primary_outcome": "gauge_response_delta remains stable for admissible transformations and contracts under gauge-breaking perturbations",
+      "negative_controls": [
+        "gauge_label_shuffle",
+        "admissible_gauge_sham",
+        "complexity_matched_gauge_break"
+      ],
+      "rivals": [
+        "frequency_only",
+        "entropy_only",
+        "markov_depth_1_5"
+      ],
+      "support_rule": "Admissible gauge changes preserve the certificate while gauge-breaking changes fail, with adversarial controls below threshold.",
+      "weakening_rule": "Gauge response survives but only under a single seed, a single implementation, or non-frozen transformation family.",
+      "destruction_rule": "Gauge-breaking transformations preserve the certificate or admissible gauge transformations destroy it under frozen rules.",
+      "current_execution_status": "internal_synthetic_only",
+      "frozen_decision_parameters_v24": {
+        "minimum_admissible_n": 8,
+        "max_exclusion_fraction": 0.2,
+        "ci_level": 0.95,
+        "statistical_test": "external_session_zero_v24_t_interval_and_aic_like_penalty",
+        "complexity_penalty_factor": 1.0,
+        "death_rule_frozen": true,
+        "support_gain_aic": 5.0,
+        "weakening_gain_aic": 0.0,
+        "cross_seed_drift_max": 0.05,
+        "adversarial_control_max_rho_selective": 2.0
+      },
+      "destruction_rule_machine_readable": {
+        "if_any": [
+          "rival_gain_aic_greater_than_or_equal_support_gain",
+          "negative_control_reproduces_target_effect",
+          "posthoc_threshold_change_required_for_support",
+          "exclusion_log_violates_predeclared_rules"
+        ],
+        "then": "downgrade_associated_claim_to_open_burden_or_weakened_internal_only",
+        "registry_change": "dry_run_until_human_review"
+      }
+    },
+    {
+      "id": "ABL-FACTORISATION-GAP",
+      "prediction_ids": [
+        "I_INT_FINITE_WITNESS",
+        "PRED-EXT-01"
+      ],
+      "target_invariant": "factorization_gap",
+      "manipulation": "Construct factor-local product controls and compare them to connected response-separator incidence packages.",
+      "primary_outcome": "connected package has zero factor-local zero-crossing cuts; product control has disconnected components and nonzero zero-crossing cuts",
+      "negative_controls": [
+        "product_separator_control",
+        "edge_deleted_connectedness_control",
+        "catalog_selection_bias_control"
+      ],
+      "rivals": [
+        "product_separator",
+        "local_factor_model"
+      ],
+      "support_rule": "The positive package passes and the product separator negative control fails under the same enumerator and hash policy.",
+      "weakening_rule": "Positive package passes only after post-hoc catalog edits or after excluding a disconnected response coordinate.",
+      "destruction_rule": "A factor-local product control passes the same connected-incidence atomicity gate.",
+      "current_execution_status": "internal_formal_witness_only",
+      "frozen_decision_parameters_v24": {
+        "minimum_admissible_n": 8,
+        "max_exclusion_fraction": 0.2,
+        "ci_level": 0.95,
+        "statistical_test": "external_session_zero_v24_t_interval_and_aic_like_penalty",
+        "complexity_penalty_factor": 1.0,
+        "death_rule_frozen": true,
+        "enumerated_nontrivial_factor_cuts": 930,
+        "factor_local_zero_crossing_cuts_required": 0,
+        "negative_control_connected_components_min": 2
+      },
+      "destruction_rule_machine_readable": {
+        "if_any": [
+          "rival_gain_aic_greater_than_or_equal_support_gain",
+          "negative_control_reproduces_target_effect",
+          "posthoc_threshold_change_required_for_support",
+          "exclusion_log_violates_predeclared_rules"
+        ],
+        "then": "downgrade_associated_claim_to_open_burden_or_weakened_internal_only",
+        "registry_change": "dry_run_until_human_review"
+      }
+    }
+  ],
+  "v24_upgrade": "Adds machine-readable frozen death-rule parameters so ablation rules do not depend on informal or unfrozen margins."
+}

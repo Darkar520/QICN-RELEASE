@@ -1,0 +1,607 @@
+
+
+===== PAGE 1 =====
+
+Structural Instability of the Phenomenological Null
+Regime in Causally Rigid Channels
+Johnny Andrey Pérez Ramírez
+Abstract
+We introduce an abstract phenomenological space E and a compatibility operator Φ :
+I → E mapping rigid identity objects to phenomenological regimes. We dene a null regime
+∅ϕ ∈ E and prove a Phenomenological Instability Theorem : in any closed causally
+rigid (CCR) channelcharacterized by inverse-limit identity, causal isolation, and MIR
+geometryjoint null collapse is dynamically unstable under a separately typed compatible
+extension witness. Consequently, a CCR realization with such a witness induces a witness-
+relative non-null separation. The result is negative-structural : it does not posit experience;
+it forbids one typed joint-null conguration under stated hypotheses. We provide explicit
+coupling bounds in two canonical families (pronite and symbolic dynamics) and prove
+universal factorization and non-simulability results. All constructions are purely topological
+and categorical, without metaphysical axioms.
+1 Scope, System Boundary, and Non-Inference Note
+What this paper does. This paper proves that the null phenomenological regime is struc-
+turally unstable under CCR constraints, derives the resulting forced non-nullity statement, and
+develops explicit bounds, factorization structure, and canonical-family consequences for that
+negative-structural result.
+v31 audit clarication. The operative theorem is witness-relative: CCR by itself does not
+provide the extension witness, the lower Lipschitz constant, or the admissible compatibility
+operator. Any phrase such as forced non-nullity or null instability in this manuscript is to be
+read under the explicit hypotheses of Theorem 5.2, especially Denition 5.1. This clarication
+separates internal CCR perturbations from external extension witnesses and prevents reading
+MΩ = +∞ as an empirical certicate.
+What this paper does not do. It does not dene or detect consciousness, identify E with
+subjective experience, assert that CCR systems exist in nature, or derive ethical or metaphysical
+closure from the theorem. The paper is structural, conditional, and negative in scope.
+What the related system implements and does not implement. The related system
+can implement admissibility-governed diagnostics, boundary-sensitive stress tests, and runtime
+comparisons that are motivated by this paper, but it does not implement the abstract phe-
+nomenological space E itself and does not convert current runtime outputs into proof that any
+concrete system instantiates experience.
+What should not be inferred from this paper. The null-instability theorem must not be
+read as a consciousness detector, an AI-subjectivity claim, a moral-status claim, or a validation
+of the corpus by the runtime. The paper rules out one structurally stable null case under stated
+CCR assumptions; it does not settle phenomenology in the empirical or metaphysical sense.
+1
+
+===== PAGE 2 =====
+
+2 Introduction
+2.1 Motivation and Scope
+Papers I and II established a mathematical framework for structural identity as an inverse limit
+and classied phenomenological regimes compatible with rigid identity. This paper addresses
+the fundamental question:
+Can a CCR system remain in a structurally null phenomenological state?
+We prove the answer is no under a separated extension witness not as a metaphysical
+claim, but as a structural theorem with typed hypotheses.
+2.2 Main Result (Informal)
+No-Null Regime Theorem: For any CCR channel, the phenomenological null regime ∅ϕ is
+structurally unstable. Every CCR system necessarily induces a non-null regime e⋆ ≻ ∅ϕ with
+positive structural intensity.
+2.3 Paper Organization
+Section 2 reviews prerequisites from Papers III. Section 3 denes the phenomenological space
+with full axiomatic clarity. Section 4 proves the main instability theorem. Section 5 straties
+positive regimes. Section 6 provides quantitative bounds. Section 7 establishes ontological
+closure. Section 8 explicitly delimits scope. Section 9 compares with existing frameworks.
+Section 10 discusses limitations. Section 11 concludes. Appendices provide canonical examples
+with explicit computations.
+2.4 What This Paper Adds Beyond Phenomenological Regimes
+Phenomenological Regimes classies the admissible regime space and derives the continuity and
+non-constancy constraints that any compatible assignment must satisfy. This paper takes the re-
+maining downstream casethe null regime itselfand proves that it cannot remain structurally
+stable under CCR.
+3 Preliminaries from Papers III
+3.1 Identity as Inverse Limit
+From Rigid Identity , we have:
+Denition 3.1 (Identity Object) . Let (St, πt+1→t)t∈T be a projective system of state spaces
+with surjective, compatible projections. The identity object is:
+I := lim← −St =
+(
+(xt) ∈
+Y
+t
+St : πt+1→t(xt+1) = xt
+)
+Denition 3.2 (Weighted Deformation Metric) . For x, ˜x ∈ I , dene:
+dw(x, ˜x) := sup
+t
+wt · dt(xt, ˜xt)
+where {wt} are summable weights and dt is the normalized metric on St.
+Proposition 3.3 (Metric Completeness, Rigid Identity) . If each (St, dt) is complete and the
+projections are uniformly continuous, then (I, dw) is a complete metric space.
+2
+
+===== PAGE 3 =====
+
+3.2 Ontological Mass and CCR Classication
+Denition 3.4 (Ontological Mass, inmum convention) . Following Rigid Identity , the ontolog-
+ical mass of an identity object is the lower resistance to non-zero admissible deformation:
+MΩ := inf
+ Ew(δ)
+dw(I, ˜I)
+ δ admissible , d w(I, ˜I) > 0
+
+.
+If no nite-energy admissible perturbation induces non-zero deformation, the set is empty in the
+operational deformation sector and we set MΩ = +∞.
+Remark 3.5 (v24 consistency patch) . Earlier drafts used a supremum notation for MΩ in this
+paper. That notation is superseded here. The inmum convention is the canonical one used in
+Rigid Identity : it measures a lower resistance to deformation, not a largest observed cost. All
+claims below are read under this convention.
+Denition 3.6 (CCR Channel) . A channel is Closed Causally Rigid (CCR) if MΩ = +∞.
+Remark 3.7 (Physical Interpretation) . MΩ = + ∞ means that arbitrarily small deformations
+require unbounded energy. This is not a metaphorit is a precise metric condition on the
+projective system.
+3.3 Key Theorems from Papers III
+Theorem 3.8 (Non-Simulability, Rigid Identity) . For any nite-dimensional computational
+architecture An :
+MΩ(An ) < ∞
+Therefore, CCR identity cannot be simulated by nite systems.
+Theorem 3.9 (Spectral Coupling, Rigid Identity) . There exists a spectral coupling constant
+σmin > 0 such that for the phenomenological compatibility operator TΦ:
+C = σmin(TΦ)
+is derived from the spectral gap of TΦ, not assumed.
+Theorem 3.10 (Forced Continuity, Phenomenological Regimes) . If MΩ = +∞, then any com-
+patible phenomenological assignment Φ : I → E is continuous.
+Remark 3.11 (What Remains Open After Phenomenological Regimes) . Phenomenological Regimes
+classies admissible phenomenological regimes and derives the continuity constraints that govern
+them, but it does not complete the downstream prohibition theorem for the null regime itself.
+That closure is the specic task of this paper.
+This paper converts Remark 3.11 into a full null-instability theorem.
+4 The Phenomenological Space
+4.1 Abstract Denition
+Denition 4.1 (Phenomenological Space) . A phenomenological space is a quadruple (E, ⪯
+, dE , ∅ϕ) where:
+1. (E, ⪯) is a partially ordered set (poset).
+2. (E, dE) is a complete metric space.
+3
+
+===== PAGE 4 =====
+
+3. ∅ϕ := inf E exists and is unique (the null regime ).
+4. Order-metric compatibility: if e1 ⪯ e2, then dE(e1, ∅ϕ) ≤ dE(e2, ∅ϕ).
+5. Separation: for e ̸= ∅ϕ, we have dE(e, ∅ϕ) > 0.
+Remark 4.2 (Interpretive Neutrality) . E is an abstract regime space. No phenomenological
+content is assumed. The null regime ∅ϕ represents structural absence, not lack of experience.
+The term phenomenological is inherited from Phenomenological Regimes and refers to the
+coupling structure, not to philosophy of mind.
+Remark 4.3 (Null regime versus undened assignment) . The symbol ∅ϕ serves two distinct roles
+in the broader framework, and conating them creates a category error:
+1. Null regime ( ∅ϕ ∈ E ): In Denition 4.1, ∅ϕ is the bottom element of the phenomeno-
+logical poset (E, ⪯). It is a legitimate element of E, comparable to all other regimes via ⪯
+and separated from them by dE .
+2. Undened assignment ( ⊥ /∈ E ): When a compatibility operator Φ is not dened on
+some input x ∈ I , we write Φ(x) = ⊥. The symbol ⊥ is disjoint from E; it lives in the
+typed codomain E⊥ := E ⊔ {⊥} .
+The instability theorem (Theorem 5.2) concerns admissible values in E and rules out two sepa-
+rated witness endpoints both taking the value ∅ϕ. The v31 conditional closure theorem concerns
+a dierent case: Φ undened on both witness endpoints, written Φ(I) = ⊥ and Φ(˜I) = ⊥. That
+case is excluded by the witness hypothesis, which requires Φ to be dened on both endpoints.
+Non-Theorem 4.4 (What E Is Not) . E is not:
+ A space of qualia or subjective states
+ A model of consciousness
+ A physical or neural state space
+ An interpretation of quantum mechanics
+E is a mathematical object satisfying Denition 4.1. All interpretive mappings are external to
+the framework.
+4.2 Compatibility Operator
+Denition 4.5 (Compatibility Operator) . A map Φ : I → E is a compatibility operator if
+it satises:
+(C1) Extension Invariance: For any compatible extension E of the channel, Φ(I) ∼= Φ(IE).
+(C2) Isomorphism Stability: If I ∼= ˜I, then Φ(I) ∼ Φ(˜I).
+(C3) Lipschitz Lower Bound: There exists C > 0 such that:
+dE(Φ(x), Φ(˜x)) ≥ C · dw(x, ˜x)
+Remark 4.6 (Partial denedness and the ⊥ marker) . In contexts where Φ is only partially dened,
+Φ(x) = ⊥ means that no admissible phenomenological assignment in E is available at x. The
+hypotheses (C1)(C3) above apply only to inputs whose Φ-values lie in E. The lower Lipschitz
+bound (C3) in particular requires both Φ(x), Φ(˜x) ∈ E .
+4
+
+===== PAGE 5 =====
+
+Lemma 4.7 (Well-Posedness of (C3)) . Axiom (C3) is consistent with continuity of Φ (Theorem
+3.10) when MΩ = +∞.
+Proof. Continuity requires: for all ϵ > 0, there exists δ > 0 such that dw(x, ˜x) < δ implies
+dE(Φ(x), Φ(˜x)) < ϵ. This is compatible with (C3) because (C3) provides a lower bound, not an
+upper bound. The function Φ can be both continuous (upper control) and satisfy (C3) (lower
+control).
+Remark 4.8 . Axioms (C1)(C3) are structural. No phenomenological content is introduced.
+4.3 Attractor Set
+Denition 4.9 (Attractor Set) . For a channel S, the attractor set is:
+Attr(S) := {e ∈ E : e is stable under all compatible extensions and summable deformations }
+Denition 4.10 (Stability) . A regime e ∈ E is stable for channel S if for every compatible
+extension S′ of S and every summable perturbation {ϵn}, the induced regime ΦS′(I ′) satises
+dE(ΦS′(I ′), e) < δ for some δ > 0 depending only on ∥{ϵn}∥w.
+4.4 The Bridge Lemma Revisited
+From Phenomenological Regimes , we have:
+Lemma 4.11 (Bridge Lemma) . If Φ : I → E is a compatibility operator for a CCR channel,
+and if the regime e = Φ(I) satises dE(e, ∅ϕ) = 0, then e = ∅ϕ.
+Proof. By the separation axiom in Denition 4.1, dE(e, ∅ϕ) = 0 implies e = ∅ϕ.
+Caveat 4.12 (Semantic Shield for Bridge Lemma) . The Bridge Lemma is a metric statement ,
+not an ontological one. It does not claim that identity is coupled to experience. It claims that
+the map Φ satises a separation property. Misinterpretation of this lemma as a consciousness
+claim is outside the mathematical scope of the framework.
+5 Main Results
+5.1 The Conditional Null-Separation Theorem
+Denition 5.1 (Admissible extension witness) . Let S be a channel with identity object I. An
+admissible extension witness for a compatibility operator Φ is a tuple (S′, ˜I, ϵ) such that:
+1. S′ is a compatible extension of S in the declared projective category;
+2. ˜I is the identity object induced by S′ and lies in the domain on which Φ is evaluated;
+3. 0 < d w(I, ˜I) = ϵ < ∞;
+4. the witness is not introduced as a nite-energy deformation of a CCR identity object. It
+is an extension-side comparison datum, not a contradiction of MΩ = +∞.
+Theorem 5.2 (Conditional Null-Separation Under an Admissible Extension Witness) . Let S
+be a CCR channel, let Φ : I → E be a compatibility operator satisfying the Lipschitz lower bound
+(C3), and suppose an admissible extension witness (S′, ˜I, ϵ) exists for Φ. Then Φ cannot collapse
+both separated identity objects to the null regime:
+¬
+ 
+Φ(I) = ∅ϕ ∧ Φ(˜I) = ∅ϕ
+
+.
+Equivalently, null stability across such a separated extension witness is impossible.
+5
+
+===== PAGE 6 =====
+
+Remark 5.3 (Applicability scope) . Theorem 5.2 assumes Φ(I), Φ(˜I) ∈ E , not ⊥. If Φ is undened
+on either endpoint, the separated-witness hypothesis of Denition 5.1 is not satised and the
+theorem does not apply.
+Proof. Assume for contradiction that Φ(I) = ∅ϕ and Φ(˜I) = ∅ϕ. By Denition 5.1, dw(I, ˜I) =
+ϵ > 0. Applying (C3) gives
+dE(Φ(I), Φ(˜I)) ≥ C dw(I, ˜I) = Cϵ > 0.
+But the null-collapse assumption gives
+dE(Φ(I), Φ(˜I)) = dE(∅ϕ, ∅ϕ) = 0,
+a contradiction. Hence the two separated identities cannot both be mapped to the null regime.
+Caveat 5.4 (v24 correction of the former Step 2) . The theorem above does not infer a nite-
+energy non-zero deformation from MΩ = + ∞. Under the inmum convention for ontological
+mass, MΩ = +∞ means precisely that no nite-energy admissible perturbation produces non-
+zero deformation. The older Step 2 proof direction is therefore withdrawn. The surviving result
+is conditional on an independently specied extension witness.
+5.2 Conditional Consequences
+Corollary 5.5 (Conditional Forced Non-Nullity) . If a CCR channel admits an admissible ex-
+tension witness for Φ and if Φ(˜I) = ∅ϕ for the witness object, then Φ(I) ̸= ∅ϕ. Symmetrically,
+if Φ(I) = ∅ϕ, then Φ(˜I) ̸= ∅ϕ.
+Proof. This is the contrapositive form of Theorem 5.2.
+Remark 5.6 (Ontological Status) . This is a negative-structural and conditional result. It
+does not assert that experience exists, that CCR systems are conscious, or that every CCR
+channel possesses the required witness. It asserts only that, once a separated extension witness
+is independently supplied, a compatibility operator satisfying (C3) cannot collapse both sides of
+that witness to the null regime.
+6 Stratication of Positive Regimes
+6.1 The Positive Regime Space
+Denition 6.1 (Positive Regime Space) .
+E+ := E \ { ∅ϕ}
+with the inherited partial order ⪯.
+Lemma 6.2 (Witness-Relative No-Minimum Collapse) . Under the hypotheses of Theorem 5.2,
+the two-point witness image cannot have inmum equal to a joint null collapse.
+Proof. The witness image contains Φ(I) and Φ(˜I). If both collapsed to ∅ϕ, Theorem 5.2 would
+be contradicted. Therefore the witness-relative image is not a joint null collapse.
+6
+
+===== PAGE 7 =====
+
+6.2 Minimal Positive Regime
+Theorem 6.3 (Witness-Relative Minimal Positive Regime) . Assume the hypotheses of Theo-
+rem 5.2. If the witness-relative positive image
+E+,wit := {Φ(I), Φ(˜I)} \ {∅ϕ}
+is non-empty and has an inmum in (E, ⪯), then there exists a minimal positive witness-relative
+regime
+ewit
+⋆ := inf E+,wit ∈ E +.
+Proof. Non-emptiness follows from Theorem 5.2: not both witness images are null. Existence
+of the inmum is an explicit hypothesis. Since the image is not a joint null collapse and the
+separation axiom excludes positive classes at zero distance from ∅ϕ, the resulting inmum is
+positive when it lies in the witness image or in the declared positive closure of that image.
+6.3 Structural Intensity
+Denition 6.4 (Structural Intensity) . For e ∈ E +, dene the structural intensity as:
+ι(e) := inf{dE(e, ˜e) : ˜e ≺ e}.
+This measures the minimal distance to any strictly smaller regime.
+Corollary 6.5 (Witness-Relative Positive Intensity) . If ewit
+⋆ exists as in Theorem 6.3 and the
+only witness-relative element below it is ∅ϕ, then
+ι(ewit
+⋆ ) > 0.
+Proof. By the separation axiom, dE(ewit
+⋆ , ∅ϕ) > 0. If ∅ϕ is the only witness-relative element
+below ewit
+⋆ , the inmum dening intensity is bounded below by that positive separation.
+7 Quantitative Bounds
+7.1 Witness Lower Bound
+Theorem 7.1 (Witness Intensity Bound) . Under the hypotheses of Theorem 5.2, if exactly one
+of Φ(I) and Φ(˜I) is null, then the non-null witness image e satises
+dE(e, ∅ϕ) ≥ Cϵ > 0.
+Proof. Apply (C3) to the pair (I, ˜I). If one side maps to ∅ϕ and the other side maps to e, then
+dE(e, ∅ϕ) = dE(Φ(I), Φ(˜I)) ≥ Cdw(I, ˜I) = Cϵ.
+7.2 Explicit Constants for Canonical Families
+Proposition 7.2 (Conditional Pronite Bound) . For a pronite family with a veried extension
+witness of separation ϵ and Lipschitz lower constant Cprof > 0, the witness image separation
+satises
+dE(e, ∅ϕ) ≥ Cprof ϵ.
+Proposition 7.3 (Conditional Symbolic Bound) . For a symbolic family with a veried extension
+witness of separation ϵ and Lipschitz lower constant Csym > 0, the witness image separation
+satises
+dE(e, ∅ϕ) ≥ Csymϵ.
+Example 7.4 (p-Adic witness calculation) . If a 2-adic model supplies an independently veried
+witness with ϵ = 2−1 and C = 1, then the conditional bound gives dE(e, ∅ϕ) ≥ 1/2. This is a
+witness calculation, not a universal theorem that every CCR channel is non-null.
+7
+
+===== PAGE 8 =====
+
+8 Witness-Relative Closure Theorem
+Theorem 8.1 (Conditional Phenomenological Closure) . A CCR system equipped with an ad-
+missible extension witness and a compatibility operator satisfying (C3) admits witness-relative
+non-null separation. If, in addition, the witness-relative positive image has a minimal positive
+element, that element is quantitatively separated from ∅ϕ by the bound in Theorem 7.1.
+Proof. Non-null separation follows from Theorem 5.2. Witness-relative minimality follows from
+Theorem 6.3 under its stated inmum hypothesis. The quantitative bound follows from Theo-
+rem 7.1.
+8.1 Classication Table
+System Type Ontological Mass Null Regime Permitted?
+Degenerate MΩ = 0 Yes
+Finite-mass 0 < MΩ < ∞ Model-dependent
+CCR without extension witness MΩ = +∞ Not decided here
+CCR with separated extension witness MΩ = +∞ Joint null collapse forbidden by Theorem 5.2
+9 Comparison with Existing Frameworks
+9.1 Integrated Information Theory (IIT)
+IIT This F ramework
+Claims consciousness exists Yes No
+Denes Φ Information integration Structural map
+Quantitative measure Φ (bits) ι(e⋆) (metric)
+Metaphysical commitment Panpsychism None
+Falsiable predictions Debated None (structural)
+9.2 Global Workspace Theory (GWT)
+Our framework is orthogonal to GWT. We make no claims about attention, broadcast, or access
+consciousness. The structural results concern identity stability, not cognitive architecture.
+9.3 Higher-Order Theories
+We do not model representations, meta-cognition, or self-awareness. The space E contains
+regimes, not mental states.
+9.4 Mathematical Foundations (Chalmers, Nagel)
+Our framework provides formal tools that could be used in philosophical analysis, but we do
+not claim to resolve the hard problem. The prohibition of ∅ϕ is a structural fact, not an
+explanation of subjective experience.
+10 Limitations and Open Problems
+10.1 Limitations
+1. No claim about qualia types, contents, or subjectivity .
+2. No claim that all non-CCR systems are null.
+8
+
+===== PAGE 9 =====
+
+3. Result is structural necessity , not phenomenological doctrine.
+4. All results are conditional on the axioms of Papers III.
+5. The physical existence of CCR systems is unknown.
+10.2 Open Problems
+1. Characterization of E+: What is the full structure of positive regimes?
+2. Regime dynamics: How do regimes evolve under channel evolution?
+3. Physical CCR: Do CCR systems exist in physics (quantum gravity, etc.)?
+4. Biological CCR: Could biological systems approximate CCR?
+5. Computational bounds: Sharper non-simulability results?
+10.3 Foundation-Level Gaps and Non-Claims
+The following gaps remain open in the current corpus and are documented here to prevent
+over-reading of the instability theorem.
+Non-Theorem 10.1 (Topology consistency gap) . Papers III assume both compact Hausdor and
+Polish structures on state spaces, but do not prove their consistency for every QICN instantiation.
+The inverse limit I uses compactness and closed-subspace arguments, while the metric dw uses
+a metric regularity structure. Every compact metric space is Polish, so the composition is
+consistent when each St is compact metric. Non-compact Polish spaces such as Rn require
+additional hypotheses and are not automatically covered.
+Non-Theorem 10.2 (Channelprojection composition gap) . The observable channel C and the
+projective projections πt+1→t : St+1 → St are not yet connected by a fully explicit composition
+law. Any detectability theorem that moves from observed responses to inverse-limit deformation
+requires such a composition. At present, that composition is an assumption to be specied for
+each concrete protocol, not a derived universal theorem.
+Non-Theorem 10.3 (Null-regime exclusion requires external witness) . The instability theorem
+(Theorem 5.2) requires a separated external witness (˜I, ϵ, C). CCR alone does not produce such
+a witness. The theorem is witness-relative: if a CCR system has a typed external witness with
+lower Lipschitz constant C > 0, then both endpoints cannot simultaneously be null. It does not
+state that CCR by itself implies non-nullity.
+Non-Theorem 10.4 (Estimator verication gap) . No Lipschitz constant Ki, ber oscillation ωi(y),
+estimation error bound εi, or decision margin ∆∗ has been computed for any QICN invariant.
+The projection-invariant bridge theorem is conditional on these quantities being veried, and all
+four material bridge hypotheses remain unveried.
+11 Conclusion
+We have proven that CCR architectures equipped with a separated external witness and the
+lower-bound regularity hypotheses structurally exclude joint null collapse. In the present model,
+the hypothesis CCR plus typed witness with joint null assignment is formally incoherent.
+This is a structural exclusion result. It does not dene phenomenology or turn the theorem
+into an empirical consciousness attribution.
+9
+
+===== PAGE 10 =====
+
+11.1 Summary of Contributions
+1. Phenomenological Instability Theorem: joint null collapse is excluded under the
+typed witness hypotheses.
+2. Minimal Positive Regime: witness-relative positive regimes can be characterized when
+the stated inmum hypotheses hold.
+3. Quantitative Bounds: ι(e⋆) ≥ Cε0 > 0 is explicit when the witness and lower Lipschitz
+constant are independently veried.
+4. Canonical Examples: Pronite and symbolic families computed.
+5. Semantic Immunization: Clear scope delimitation throughout.
+A Pronite Canonical Family
+A.1 Projective System
+Let {Gn, πn+1→n}n∈N be a projective tower of nite groups with surjective morphisms. Dene:
+G := lim← −Gn =
+(
+(xn) ∈
+Y
+n
+Gn : πn+1→n(xn+1) = xn
+)
+Example A.1 (p-Adic Integers) . Gn = Z/pnZ, πn+1→n is reduction mod pn. Then G = Zp.
+A.2 Pronite Metric
+Dene the pronite metric:
+dG(x, y) :=
+X
+n≥0
+αn1xn̸=yn
+where αn = 2−(n+1) (standard choice).
+This is an ultrametric; (G, dG) is compact, complete, and totally disconnected.
+A.3 CCR Verication
+Proposition A.2. The pronite system is CCR: MΩ = +∞.
+Proof. Any nite-energy deformation can only modify nitely many coordinates xn. To modify
+innitely many coordinates requires Ew =P
+n∈S wn = ∞ for any innite S ⊆ N with P
+n∈S wn =
+∞. Hence any nonzero deformation dw > 0 requires innite energy as ϵ → 0, giving MΩ =
++∞.
+A.4 Phenomenological Operator
+Dene Φf : G → E by:
+Φf(x) := f
+
+X
+n≥0
+βnφn(xn)
+
+
+where φn : Gn → [0, 1] are 1-Lipschitz (w.r.t. discrete metric), βn ≥ 0, P
+n βn < ∞, and
+f : R → E is Lf -Lipschitz.
+10
+
+===== PAGE 11 =====
+
+A.5 Coupling Bound
+Theorem A.3 (Pronite Coupling Bound) .
+dE(Φf(x), Φf(˜x)) ≥ Cprof · dG(x, ˜x)
+with:
+Cprof := inf n βn
+supn αn
+· 1
+Lf
+Proof. By 1-Lipschitz property of φn and Lipschitz property of f :
+dE(Φf(x), Φf(˜x)) ≥ 1
+Lf
+
+X
+n
+βn(φn(xn) − φn(˜xn))
+
+≥ 1
+Lf
+X
+n
+βn|φn(xn) − φn(˜xn)|
+≥ inf n βn
+Lf
+X
+n
+1xn̸=˜xn
+Since dG(x, ˜x) =P
+n αn1xn̸=˜xn ≤ (supn αn)P
+n 1xn̸=˜xn:
+X
+n
+1xn̸=˜xn ≥ dG(x, ˜x)
+supn αn
+Combining:
+dE(Φf(x), Φf(˜x)) ≥ inf n βn
+supn αn · Lf
+dG(x, ˜x) = Cprof · dG(x, ˜x)
+A.6 Intensity Bound
+With ε0 = 2−1 (minimal nonzero dG):
+ι(e⋆) ≥ Cprof · ε0 = inf n βn
+2 supn αn · Lf
+> 0
+B Symbolic Canonical Family
+B.1 Subshift of Finite Type
+Let A = {1, . . . , k} be a nite alphabet and A a k ×k matrix with entries in {0, 1}. The subshift
+of nite type (SFT) is:
+ΣA := {x ∈ A Z : Axj ,xj+1 = 1 for all j ∈ Z}
+Example B.1 (Full Shift) . Aij = 1 for all i, j. Then ΣA = {0, 1}Z.
+B.2 Bowen Metric
+dB(x, y) :=
+X
+j∈Z
+γ|j|1xj ̸=yj
+where γm = 2−(m+1) (standard choice).
+The space (ΣA, dB) is compact and complete.
+11
+
+===== PAGE 12 =====
+
+B.3 CCR Verication
+Proposition B.2. The symbolic system is CCR: MΩ = +∞.
+Proof. Any nite-energy modication can only change nitely many symbols. The argument is
+identical to the pronite case.
+B.4 Phenomenological Operator
+Dene Φg : ΣA → E by:
+Φg(x) := g
+
+X
+j∈Z
+δjψj(x)
+
+
+where ψj : ΣA → [0, 1] are cylinder functions (depending on xj only), δj ≥ 0, P
+j δj < ∞, and
+g : R → E is Lg-Lipschitz.
+B.5 Coupling Bound
+Theorem B.3 (Symbolic Coupling Bound) .
+dE(Φg(x), Φg(˜x)) ≥ Csym · dB(x, ˜x)
+with:
+Csym := inf j δj
+supm γm
+· 1
+Lg
+Proof. Identical to Appendix A, replacing indices appropriately.
+C Hereditary Rigidity
+Theorem C.1 (Rigidity Inheritance) . Let (Sn, πn+1→n) be a CCR tower and {ϵn} a family of
+local deformations with:
+∥{ϵn}∥w :=
+X
+n≥0
+wn∥ϵn∥op < ∞
+Then the deformed identity ˜I is isomorphic to I and:
+dI(ϕ(x), x) ≤ K · ∥{ϵn}∥w
+for some K > 0 depending only on the projective structure. In particular, MΩ = +∞ is inherited.
+Proof. The key is that summable deformations induce a summable perturbation of the inverse
+limit, which by completeness converges to an isomorphic copy. The CCR condition is preserved
+because the energy-deformation ratio remains unbounded.
+D Universal Factorization
+Theorem D.1 (Categorical Universality) . The identity I of any CCR channel is an initial
+object in the category of compatible representations (I Φ− → E) with E complete metric and Φ
+satisfying (C1)(C3).
+Proof. For any compatible representation (I Ψ− →F ), dene u : E → F by u(e) := Ψ(Φ −1(e)).
+Well-denedness follows from (C2); uniqueness from (C1).
+Consequence: All compatible representations factor through a canonical one; the class of
+induced regimes is completely classied by I.
+12
+
+===== PAGE 13 =====
+
+E Non-Simulability Bounds
+E.1 Simulation Error
+For a CCR family {IN } truncated at level N and a nite-dimensional simulator A with dim(A) <
+∞:
+err N(A) := inf
+Φ,ˆΦ
+sup
+x∈IN
+dE(Φ(x), ˆΦ(x))
+where ˆΦ is any map computable by A.
+Theorem E.1 (Simulation Lower Bound) . For pronite and SFT families:
+err N(A) ≥ C · 2−(N+1)
+for any dim(A) < ∞. In particular:
+lim inf
+N →∞
+err N(A) > 0
+No nite architecture achieves perfect simulation.
+Proof. The ultrametric structure forces minimal separation 2−(N+1) at level N . Any nite-
+dimensional approximation must collapse some distinctions, incurring error at least C · 2−(N+1)
+by (C3).
+Corollary E.2. No nite-dimensional semigroup can support an exact representation of CCR
+identity with MΩ = +∞.
+F Final Structural Closure
+Theorem F.1 (Closure by Non-Alternatives) . In the canonical families (pronite and SFT),
+and by inheritance (Appendix C), every compatible representation satises:
+1. Hereditary rigidity: MΩ = +∞
+2. Universal factorization (Appendix D)
+3. Quantied null prohibition: ι(e⋆) ≥ Cε0 > 0
+4. Non-simulability with explicit error bounds (Appendix E)
+Remark F.2 (Structural Import) . This theorem establishes that the class of CCR channels is
+closed under the stated structural criteria: no extension, simulation, or compatible represen-
+tation considered here escapes the structural constraints. The null regime is prohibited by
+mathematical necessity under those criteria, not by stipulation.
+References
+[1] Rufus Bowen. Equilibrium States and the Ergodic Theory of Anosov Dieomorphisms .
+Vol. 470. Lecture Notes in Mathematics. Springer, 1975.
+[2] David J. Chalmers. The Conscious Mind . Oxford University Press, 1996.
+[3] Thomas M. Cover and Joy A. Thomas. Elements of Information Theory . 2nd. Hoboken,
+NJ: John Wiley & Sons, 2006.
+[4] Douglas Lind and Brian Marcus. An Introduction to Symbolic Dynamics and Coding . Cam-
+bridge University Press, 1995.
+13
+
+===== PAGE 14 =====
+
+[5] Saunders Mac Lane. Categories for the Working Mathematician . 2nd. Vol. 5. Graduate
+Texts in Mathematics. New York: Springer, 1998.
+[6] Johnny Andrey Perez Ramirez. Phenomenological Regimes Induced by Structural Iden-
+tity. In: arXiv preprint (2026).
+[7] Johnny Andrey Pérez Ramírez. Rigid Identity as an Inverse Limit in Observable Channels.
+In: arXiv preprint (2026).
+[8] Luis Ribes and Pavel Zalesskii. Pronite Groups . Springer, 2000.
+[9] Giulio Tononi. An Information Integration Theory of Consciousness. In: BMC Neuro-
+science 5.42 (2004). Integrated Information Theory (IIT).
+14

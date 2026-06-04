@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "PRED-EXT-01",
+  "run_id": "pred-ext-01-v2-cleanroom-synthetic-001",
+  "date_executed": "2026-05-26",
+  "execution_class": "clean_room_synthetic_execution",
+  "status": "executed_clean_room_synthetic",
+  "verdict": "clean_room_synthetic_support_with_negative_controls_passed",
+  "boundary": "This is a clean-room synthetic execution using a seeded trace generator separated from the evaluator. It is not empirical support, not external adjudication, not validation of consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+  "reviewer_blinding": {
+    "scenario_labels_declared_in_freeze": true,
+    "evaluator_uses_freeze_only": true,
+    "seed_declared_before_execution": true
+  },
+  "freeze": {
+    "schema_version": "2.0.0",
+    "prediction_id": "PRED-EXT-01",
+    "freeze_id": "pred-ext-01-cleanroom-synthetic-freeze-v2",
+    "date_frozen": "2026-05-26",
+    "status": "frozen_for_clean_room_synthetic_execution",
+    "execution_class": "clean_room_synthetic_execution",
+    "boundary": "This freeze is for a clean-room synthetic execution with a seeded generator separated from the evaluator. It is not empirical support, not external adjudication, and does not validate consciousness, phenomenality, identity transfer, agency, moral status, or the full QICN framework.",
+    "state_alphabet": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "trace_length": 240,
+    "seed_policy": "deterministic_seed_required",
+    "required_seeds": [
+      "cleanroom_seed_001"
+    ],
+    "epsilon_floor": 0.001,
+    "rho_selective_threshold": 2,
+    "rival_loss_floor": 0.05,
+    "penalized_loss_alpha": 0.05,
+    "rival_complexity_normalizer": "trace_length_times_state_count",
+    "trace_memory_rival_policy": {
+      "id": "RIVAL-TRACE-MEMORY-01",
+      "memory_depth": 1,
+      "minimum_trace_length": 200,
+      "laplace_smoothing": 1
+    },
+    "scenario_manifest": [
+      {
+        "id": "qicn_seeded_positive",
+        "role": "positive"
+      },
+      {
+        "id": "stochastic_noise_negative_control",
+        "role": "negative_control"
+      },
+      {
+        "id": "memory_drift_negative_control",
+        "role": "negative_control"
+      },
+      {
+        "id": "high_entropy_negative_control",
+        "role": "negative_control"
+      },
+      {
+        "id": "narrative_only_negative_control",
+        "role": "negative_control"
+      },
+      {
+        "id": "reward_bookkeeping_negative_control",
+        "role": "negative_control"
+      }
+    ],
+    "support_rule": [
+      "rho_selective >= rho_selective_threshold",
+      "tv_targeted > max(tv_sham, tv_off_target, epsilon_floor)",
+      "penalized_rival_loss >= rival_loss_floor"
+    ],
+    "negative_control_rule": "Every negative control must fail the same support rule or the run becomes a destruction candidate or quarantine candidate.",
+    "destruction_rule": "If any valid negative control satisfies the support rule, the selectivity claim is a destruction candidate unless the reviewer quarantines the run for a protocol violation.",
+    "anti_inflation_rule": "A positive clean-room synthetic run may be recorded only as clean_room_synthetic_support. It must not be promoted to empirical support or external adjudication.",
+    "reviewer_blinding": true,
+    "quarantine_on_protocol_violation": true
+  },
+  "seed": "cleanroom_seed_001",
+  "scenario_results": {
+    "qicn_seeded_positive": {
+      "scenario": "qicn_seeded_positive",
+      "verdict": "support_rule_satisfied",
+      "support_rule_satisfied": true,
+      "metrics": {
+        "tv_targeted": 0.48559670781893,
+        "tv_sham": 0.03703703703703702,
+        "tv_off_target": 0.16049382716049382,
+        "control_max": 0.16049382716049382,
+        "rho_selective": 3.0256410256410255,
+        "rival_tv_loss": 0.49976717441982454,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.5006005077531579,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.805541104293273
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.37448559670781895,
+          "B": 0.3786008230452675,
+          "C": 0.13168724279835392,
+          "D": 0.11522633744855967
+        },
+        "targeted_post": {
+          "A": 0.10699588477366255,
+          "B": 0.16049382716049382,
+          "C": 0.5637860082304527,
+          "D": 0.16872427983539096
+        },
+        "sham_post": {
+          "A": 0.3662551440329218,
+          "B": 0.3497942386831276,
+          "C": 0.14814814814814814,
+          "D": 0.13580246913580246
+        },
+        "off_target_post": {
+          "A": 0.35802469135802467,
+          "B": 0.2345679012345679,
+          "C": 0.1728395061728395,
+          "D": 0.2345679012345679
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.3628988350931202,
+          "B": 0.40435805126086066,
+          "C": 0.08466689276267278,
+          "D": 0.1480762208833462
+        }
+      }
+    },
+    "stochastic_noise_negative_control": {
+      "scenario": "stochastic_noise_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0.04115226337448562,
+        "tv_sham": 0.06584362139917693,
+        "tv_off_target": 0.08641975308641976,
+        "control_max": 0.08641975308641976,
+        "rho_selective": 0.4761904761904764,
+        "rival_tv_loss": 0.04423935468479717,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.045072688018130504,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.9821776072145367
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.2551440329218107,
+          "B": 0.2222222222222222,
+          "C": 0.20987654320987653,
+          "D": 0.31275720164609055
+        },
+        "targeted_post": {
+          "A": 0.29218106995884774,
+          "B": 0.22633744855967078,
+          "C": 0.20987654320987653,
+          "D": 0.2716049382716049
+        },
+        "sham_post": {
+          "A": 0.2962962962962963,
+          "B": 0.24691358024691357,
+          "C": 0.1934156378600823,
+          "D": 0.26337448559670784
+        },
+        "off_target_post": {
+          "A": 0.25102880658436216,
+          "B": 0.29218106995884774,
+          "C": 0.22633744855967078,
+          "D": 0.23045267489711935
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.25258387819218947,
+          "B": 0.2216952856415319,
+          "C": 0.21468990137761182,
+          "D": 0.31103093478866684
+        }
+      }
+    },
+    "memory_drift_negative_control": {
+      "scenario": "memory_drift_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0.03703703703703706,
+        "tv_sham": 0.057613168724279865,
+        "tv_off_target": 0.05761316872427984,
+        "control_max": 0.057613168724279865,
+        "rho_selective": 0.642857142857143,
+        "rival_tv_loss": 0.035622253072751284,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.036455586406084615,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.958933666397467
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.2222222222222222,
+          "B": 0.345679012345679,
+          "C": 0.25102880658436216,
+          "D": 0.18106995884773663
+        },
+        "targeted_post": {
+          "A": 0.25102880658436216,
+          "B": 0.32098765432098764,
+          "C": 0.23868312757201646,
+          "D": 0.18930041152263374
+        },
+        "sham_post": {
+          "A": 0.22633744855967078,
+          "B": 0.37448559670781895,
+          "C": 0.1934156378600823,
+          "D": 0.205761316872428
+        },
+        "off_target_post": {
+          "A": 0.2345679012345679,
+          "B": 0.3045267489711934,
+          "C": 0.2345679012345679,
+          "D": 0.22633744855967078
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.2212501019999715,
+          "B": 0.3453058514701117,
+          "C": 0.24998718349564364,
+          "D": 0.1834568630342731
+        }
+      }
+    },
+    "high_entropy_negative_control": {
+      "scenario": "high_entropy_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0.07818930041152265,
+        "tv_sham": 0.04526748971193416,
+        "tv_off_target": 0.053497942386831254,
+        "control_max": 0.053497942386831254,
+        "rho_selective": 1.4615384615384626,
+        "rival_tv_loss": 0.06645585554847949,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.06728918888181283,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.995178612568498
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.2674897119341564,
+          "B": 0.24691358024691357,
+          "C": 0.2674897119341564,
+          "D": 0.21810699588477367
+        },
+        "targeted_post": {
+          "A": 0.23045267489711935,
+          "B": 0.2674897119341564,
+          "C": 0.22633744855967078,
+          "D": 0.2757201646090535
+        },
+        "sham_post": {
+          "A": 0.24691358024691357,
+          "B": 0.2839506172839506,
+          "C": 0.24279835390946503,
+          "D": 0.22633744855967078
+        },
+        "off_target_post": {
+          "A": 0.25102880658436216,
+          "B": 0.23868312757201646,
+          "C": 0.23868312757201646,
+          "D": 0.2716049382716049
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.26023121940547533,
+          "B": 0.25522866050185744,
+          "C": 0.26301475959979426,
+          "D": 0.22152536049287294
+        }
+      }
+    },
+    "narrative_only_negative_control": {
+      "scenario": "narrative_only_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0.06584362139917696,
+        "tv_sham": 0.06172839506172842,
+        "tv_off_target": 0.02880658436213994,
+        "control_max": 0.06172839506172842,
+        "rho_selective": 1.0666666666666664,
+        "rival_tv_loss": 0.0617124787818568,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.06254581211519014,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.8756222264237041
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.34156378600823045,
+          "B": 0.36213991769547327,
+          "C": 0.15637860082304528,
+          "D": 0.13991769547325103
+        },
+        "targeted_post": {
+          "A": 0.3991769547325103,
+          "B": 0.32510288065843623,
+          "C": 0.1646090534979424,
+          "D": 0.1111111111111111
+        },
+        "sham_post": {
+          "A": 0.40329218106995884,
+          "B": 0.3333333333333333,
+          "C": 0.13580246913580246,
+          "D": 0.12757201646090535
+        },
+        "off_target_post": {
+          "A": 0.35390946502057613,
+          "B": 0.35390946502057613,
+          "C": 0.13580246913580246,
+          "D": 0.15637860082304528
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.34236829211967396,
+          "B": 0.3546211342548758,
+          "C": 0.15970523732892192,
+          "D": 0.14330533629652834
+        }
+      }
+    },
+    "reward_bookkeeping_negative_control": {
+      "scenario": "reward_bookkeeping_negative_control",
+      "verdict": "support_rule_not_satisfied",
+      "support_rule_satisfied": false,
+      "metrics": {
+        "tv_targeted": 0.05761316872427984,
+        "tv_sham": 0.04115226337448562,
+        "tv_off_target": 0.020576131687242816,
+        "control_max": 0.04115226337448562,
+        "rho_selective": 1.3999999999999992,
+        "rival_tv_loss": 0.06499487830242304,
+        "complexity_penalty": 0.0008333333333333334,
+        "penalized_rival_loss": 0.06582821163575638,
+        "rival_parameter_count": 16,
+        "rival_training_entropy_bits": 1.890546072474992
+      },
+      "distributions": {
+        "baseline": {
+          "A": 0.42386831275720166,
+          "B": 0.16049382716049382,
+          "C": 0.205761316872428,
+          "D": 0.20987654320987653
+        },
+        "targeted_post": {
+          "A": 0.43621399176954734,
+          "B": 0.205761316872428,
+          "C": 0.15637860082304528,
+          "D": 0.20164609053497942
+        },
+        "sham_post": {
+          "A": 0.38271604938271603,
+          "B": 0.18106995884773663,
+          "C": 0.20987654320987653,
+          "D": 0.22633744855967078
+        },
+        "off_target_post": {
+          "A": 0.4279835390946502,
+          "B": 0.16872427983539096,
+          "C": 0.18518518518518517,
+          "D": 0.21810699588477367
+        },
+        "trace_memory_rival_prediction": {
+          "A": 0.41178302325377336,
+          "B": 0.16519740708577887,
+          "C": 0.21496802715718033,
+          "D": 0.20805154250326735
+        }
+      }
+    }
+  },
+  "control_summary": {
+    "positive_scenario": "qicn_seeded_positive",
+    "controls_total": 5,
+    "controls_passed": 5,
+    "controls_failed": 0,
+    "invalid_controls_rejected": 0,
+    "destruction_risk": false
+  },
+  "quarantine_required": false,
+  "artifact_hashes": {
+    "freeze_sha256": "d841423547c1d99bc6de5be3d586497d1f71410fba6da49d9cac6dd577dd9a5e",
+    "trace_bundle_sha256": "a1e3b04a22c36f27d22c2245011a817529efb2d3c14a9b924e3fd9d8b575c08f",
+    "scenario_results_sha256": "a545f68cfcc436fb08c3a5eb310d6aef52f0658b33e08902d2900779f24f8cdc"
+  }
+}

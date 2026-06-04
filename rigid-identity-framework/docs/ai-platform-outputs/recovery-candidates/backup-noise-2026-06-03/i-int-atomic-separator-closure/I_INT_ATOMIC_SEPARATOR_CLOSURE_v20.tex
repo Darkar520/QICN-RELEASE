@@ -1,0 +1,303 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xr-hyper}
+\usepackage[backend=biber,style=alphabetic,maxbibnames=8]{biblatex}
+\externaldocument[mono-]{../../monolithic/QICN_MONOLITHIC}
+\addbibresource{../../release/references.bib}
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{assumption}[definition]{Assumption}
+\newtheorem{remark}[definition]{Remark}
+
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\Hist}{\operatorname{Hist}}
+\newcommand{\Resp}{\operatorname{Resp}}
+\newcommand{\Adm}{\operatorname{Adm}}
+\newcommand{\QGauge}{\operatorname{Gauge}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Iint}{I_{\mathrm{int}}}
+\newcommand{\ThetaS}{\Theta_S}
+\newcommand{\Aset}{\mathcal{A}}
+\newcommand{\Fset}{\mathcal{F}}
+\newcommand{\R}{\mathbb{R}}
+
+\title{QICN v20 Internal Note: Product-Separator Counterexample and Conditional Closure of \texorpdfstring{$I_{\mathrm{int}}$}{I_int}}
+\author{QICN internal formal-audit scaffold}
+\date{2026-05-26}
+
+\begin{document}
+\maketitle
+
+\section*{Governance boundary}
+This document does not certify external support, consciousness, phenomenality, identity transfer, or bridge-burden closure. It is an internal mathematical scaffold. Its assertions are limited to the formal definitions and conditional results stated below. It does not report human-subject data, external adjudication, reviewer certification, or empirical validation.
+
+\section{Scope and separation of layers}
+The purpose of this note is to close the internal $\Iint$ gap as far as the present formal resources allow, without inflating the public status of the framework.
+
+\begin{description}[leftmargin=2.6cm]
+  \item[Ontology.] A system $S$ is treated as an admissible object with identity data, histories, interventions, and response observations. No consciousness, agency, subjecthood, or phenomenal identity is attributed by this note.
+  \item[Mathematical model.] The model is a category-like typed setting with admissible systems, admissible factorizations, separator families, and gauge transformations preserving the declared data.
+  \item[Implementation.] No source paper is edited by this note. The note can be compiled independently and linked from reports or registries.
+  \item[Language.] Terms such as ``atomic'', ``separator'', and ``integration'' are formal predicates or functionals defined below. Any intuitive reading is non-operative unless it reduces to these predicates.
+  \item[Interpretation.] The strongest closed result below is conditional: $\Iint$ is closed under an explicit atomic or prime-separator hypothesis. The product-separator construction proves that the original weaker assumptions do not imply atomicity by themselves.
+\end{description}
+
+
+\section{Corpus anchors and external references}
+This note is not an isolated theorem island. It is anchored to the Paper 5 integration burden in the monolithic build: Proposition~\ref{mono-06-paper5:prop:integration-transfer} states the original integration-transfer claim, while Theorem~\ref{mono-06-paper5:thm:iint-faithful-factorization-triviality} states the already closed conditional result under an atomic separator. The same objects are recorded in the registry as \texttt{paper5:proposition:prop-integration-transfer} and \texttt{paper5:theorem:thm-iint-faithful-factorization-triviality}. This v20 note therefore functions as a dependency-bearing auxiliary argument, not as a replacement for the source paper.
+
+The categorical and factorization language follows the framework's Paper 5 reference surface~\cite{paper5} and standard categorical background~\cite{maclane1998}. The finite incidence witness is a graph-theoretic formalization of intervention-response dependence; it is compatible with, but does not rely on, causal-graph terminology in the sense of Pearl~\cite{pearl2009}. These citations are orientation anchors only. They do not constitute external validation of QICN.
+
+\section{Typed setting}
+
+\begin{definition}[Admissible system package]
+An admissible system package is a tuple
+\[
+  S = (X,\mathcal{U},\Hist_S,\Id_S,\Resp_S,\Theta_S),
+\]
+where $X$ is a state space, $\mathcal{U}$ is a set of admissible interventions, $\Hist_S$ is the admissible history family, $\Id_S$ is the rigid identity datum, $\Resp_S$ is the intervention-response assignment, and $\Theta_S$ is a family of separators used to distinguish identity/history/response alternatives.
+\end{definition}
+
+\begin{definition}[Exact admissible factorization]
+An exact admissible factorization of $S$ is a tuple
+\[
+  F:S\longrightarrow S_1\times S_2
+\]
+with non-terminal factors $S_1,S_2$ such that the state, intervention, history, identity, and response data decompose as
+\[
+  X\cong X_1\times X_2,
+  \quad
+  \mathcal U\cong \mathcal U_1\times\mathcal U_2,
+  \quad
+  \Hist_S\cong \Hist_{S_1}\times\Hist_{S_2},
+\]
+\[
+  \Id_S \cong (\Id_{S_1},\Id_{S_2}),
+  \quad
+  \Resp_S(u_1,u_2,x_1,x_2)=(\Resp_{S_1}(u_1,x_1),\Resp_{S_2}(u_2,x_2)).
+\]
+The factorization is non-trivial when neither factor is isomorphic to the terminal admissible system.
+\end{definition}
+
+\begin{definition}[Factor-local separator partition]
+A separator partition for a factorization $F:S\to S_1\times S_2$ is a disjoint union
+\[
+  \Theta_S = \Theta_1\sqcup\Theta_2
+\]
+such that every $\theta\in\Theta_i$ is pulled back from factor $S_i$ and separates only identity/history/response alternatives visible in that factor.
+\end{definition}
+
+\begin{definition}[Atomic separator]
+The separator family $\Theta_S$ is atomic for $S$ when there is no exact non-trivial admissible factorization $F:S\to S_1\times S_2$ admitting a factor-local separator partition that preserves $\Id_S$, $\Hist_S$, and $\Resp_S$ simultaneously.
+\end{definition}
+
+\begin{remark}[Non-circularity convention]
+The phrase ``atomic separator'' is a formal non-decomposition predicate. A later axiom that merely restates this definition under another name would be circular. A useful additional condition must instead be stated in terms of checkable intervention support, response coupling, commutants, graph connectivity, or perturbation behavior, and only then shown to imply atomicity.
+\end{remark}
+
+\section{Product-separator counterexample}
+
+\begin{proposition}[Product separator blocks the global derivation]
+Rigid identity, product-topological continuity, and componentwise intervention fidelity do not imply atomicity of $\Theta_S$.
+\end{proposition}
+
+\begin{proof}
+Let $S_1$ and $S_2$ be two admissible system packages and form the product package
+\[
+  S = S_1\times S_2.
+\]
+Set
+\[
+  X=X_1\times X_2,
+  \quad
+  \mathcal U=\mathcal U_1\times\mathcal U_2,
+  \quad
+  \Hist_S=\Hist_{S_1}\times\Hist_{S_2},
+\]
+\[
+  \Id_S=(\Id_{S_1},\Id_{S_2}),
+  \quad
+  \Resp_S((u_1,u_2),(x_1,x_2))=(\Resp_{S_1}(u_1,x_1),\Resp_{S_2}(u_2,x_2)).
+\]
+Give $X$ the product topology. If the component response maps are continuous, the product response map is continuous. If each component is intervention-faithful relative to its own data, the product is faithful componentwise: equality of product responses implies equality in each coordinate at the relevant observational resolution.
+
+Now take
+\[
+  \Theta_S = \pi_1^*\Theta_{S_1}\sqcup \pi_2^*\Theta_{S_2},
+\]
+where $\pi_i$ are the coordinate projections. This separator family preserves identity, histories, and responses by construction, but it decomposes into factor-local separator families. Therefore the product factorization is non-trivial and admits a factor-local separator partition. Hence $\Theta_S$ is not atomic.
+
+The construction satisfies the upstream rigid-identity, continuity, and componentwise fidelity requirements, yet violates separator atomicity. Thus the global implication from the weaker assumptions to atomicity is false in this model class.
+\end{proof}
+
+\begin{corollary}[Exact remaining burden]
+Any proof of a global $I_{\mathrm{int}}$ theorem must add a condition that excludes product-separator systems or must restrict the admissible system class so that the product construction is inadmissible.
+\end{corollary}
+
+\section{Candidate strengthening conditions}
+
+\begin{definition}[No-cloning of intervention channels]
+An admissible system satisfies intervention no-cloning when no non-trivial factorization $S\cong S_1\times S_2$ admits two factor-local intervention subfamilies $\mathcal U_1,\mathcal U_2$ whose pulled-back response maps reproduce the full response assignment while preserving $\Id_S$ and $\Hist_S$.
+\end{definition}
+
+\begin{definition}[Connected response-support graph]
+Let $G_S$ be the bipartite graph whose left vertices are elementary separator tests, whose right vertices are elementary intervention-response coordinates, and whose edges indicate that a separator test changes under a perturbation of that coordinate within the admissible response model. The system has connected response support when $G_S$ is connected after deleting isolated non-operative vertices.
+\end{definition}
+
+\begin{definition}[Kernel robustness under local perturbations]
+Let $D\Resp_S$ be the linearized response operator in a chosen admissible chart. The system has locally robust kernel coupling when every sufficiently small factor-local perturbation preserving $\ker(D\Resp_S)$ also preserves the full coupled response-support graph. Equivalently, there is no local perturbation that splits $\ker(D\Resp_S)$ into two invariant factor kernels while preserving $\Id_S$ and $\Hist_S$.
+\end{definition}
+
+\begin{definition}[Prime intervention-response coupling]
+A system has prime intervention-response coupling when, for every exact non-trivial admissible factorization candidate $F:S\to S_1\times S_2$, at least one of the following fails:
+\begin{enumerate}[label=(\roman*)]
+  \item response support decomposes as a disjoint union of factor supports;
+  \item the separator family is the pullback union of factor-local separators;
+  \item the gauge group preserving identity, histories, and responses splits as a product of factor gauge groups;
+  \item the linearized response operator has an invariant block decomposition compatible with the same factorization.
+\end{enumerate}
+\end{definition}
+
+\begin{lemma}[Connected support blocks product separators]
+If $S$ has connected response support and every separator in $\Theta_S$ is response-operative, then no product-separator partition can preserve the full response support.
+\end{lemma}
+
+\begin{proof}
+Assume a product-separator partition $\Theta_S=\Theta_1\sqcup\Theta_2$ exists for a non-trivial factorization. Since each separator is factor-local, perturbations of response coordinates in factor $S_1$ can affect only tests in $\Theta_1$, and perturbations in factor $S_2$ can affect only tests in $\Theta_2$. The response-support graph then decomposes into the disjoint union of the $S_1$ and $S_2$ support graphs. Because all separators are response-operative, both subgraphs contain at least one edge. This contradicts connectedness of $G_S$.
+\end{proof}
+
+\begin{lemma}[Prime coupling implies separator atomicity]
+If $S$ has prime intervention-response coupling, then $\Theta_S$ is atomic.
+\end{lemma}
+
+\begin{proof}
+Suppose $\Theta_S$ is not atomic. Then by definition there exists an exact non-trivial admissible factorization admitting a factor-local separator partition preserving identity, histories, and responses. Such a factorization satisfies separator pullback decomposition. Because the factorization is exact and intervention-faithful, it also gives a response-support decomposition, a compatible split gauge action, and an invariant block decomposition of the linearized response operator. This contradicts prime intervention-response coupling, which requires at least one of these four clauses to fail for every non-trivial factorization candidate.
+\end{proof}
+
+\begin{description}[leftmargin=2.8cm]
+  \item[No-cloning.] Blocks product separators when stated over response reproduction rather than separator names. Circularity risk: medium, because it becomes too strong if it only says that no duplicated separator exists. Audit status: useful, but requires operational tests.
+  \item[Connected support.] Blocks product separators under the response-operative separator assumption. Circularity risk: low to medium, because it is a graph-theoretic condition testable on a presented model. Audit status: strongest non-verbal candidate.
+  \item[Kernel robustness.] Blocks product separators when factor kernels are excluded under perturbation. Circularity risk: medium, because the condition depends on chart and linearization choices. Audit status: useful analytic supplement, not sufficient alone.
+  \item[Prime coupling.] Blocks product separators by requiring that at least one response, separator, gauge, or operator decomposition clause fail for every non-trivial factorization candidate. Circularity risk: medium-high, because it is close to atomicity but not phrased as atomicity. Audit status: aggressive v20 conditional axiom.
+\end{description}
+
+\section{Conditional closure of I\_int}
+
+\begin{definition}[$I_{\mathrm{int}}$ as a factorization-gap functional]
+For an admissible system $S$, define the exact factorization gap
+\[
+  \Delta_{\mathrm{int}}(S)=\inf_{F\in\mathcal F_{\mathrm{nt}}(S)}
+  \Bigl[\mathcal L_{\mathrm{hist}}(F)+\mathcal L_{\mathrm{id}}(F)+\mathcal L_{\mathrm{resp}}(F)+\mathcal P_{\mathrm{gauge}}(F)\Bigr],
+\]
+where $\mathcal F_{\mathrm{nt}}(S)$ is the class of non-trivial admissible factorizations, the loss terms vanish exactly when histories, identity, and responses are preserved, and $\mathcal P_{\mathrm{gauge}}$ vanishes exactly when the factorization is compatible with the admissible gauge action. Then
+\[
+  \Iint(S)=1 \quad\Longleftrightarrow\quad \Delta_{\mathrm{int}}(S)>0.
+\]
+If $\mathcal F_{\mathrm{nt}}(S)$ is empty, set $\Delta_{\mathrm{int}}(S)=+\infty$.
+\end{definition}
+
+\begin{theorem}[Conditional on $\Theta_S$ atomic: existence of $I_{\mathrm{int}}$]
+If $\Theta_S$ is atomic and the loss terms above are faithful to history, identity, response, and gauge preservation, then $\Iint(S)$ exists as a well-defined binary invariant of the admissible isomorphism class of $S$.
+\end{theorem}
+
+\begin{proof}
+The functional $\Delta_{\mathrm{int}}$ is defined as an infimum over a class determined by the admissible isomorphism class of $S$. The loss terms are also invariant under admissible isomorphism because they are expressed only in terms of preserved histories, identity, responses, and gauge compatibility. Thus $\Delta_{\mathrm{int}}(S)$ is well-defined on admissible isomorphism classes.
+
+Atomicity of $\Theta_S$ rules out exact non-trivial factorizations with zero loss. Faithfulness of the loss terms implies that zero loss is equivalent to preserving the four relevant structures. Therefore the zero-loss case is impossible for non-trivial factorizations. The predicate $\Delta_{\mathrm{int}}(S)>0$ is consequently a well-defined formal invariant whenever a positive margin is part of the admissibility criterion. The binary value $\Iint(S)$ is that predicate.
+\end{proof}
+
+\begin{theorem}[Conditional on $\Theta_S$ atomic: uniqueness under gauge]
+Assume $\Theta_S$ is atomic and the admissible gauge group $\QGauge(S)$ acts by preserving histories, identity, responses, and separator membership. Then any binary invariant $J(S)$ that is zero exactly on systems admitting a zero-loss non-trivial factorization and is invariant under $\QGauge(S)$ agrees with $\Iint(S)$.
+\end{theorem}
+
+\begin{proof}
+By definition, $\Iint(S)=0$ exactly when $\Delta_{\mathrm{int}}(S)=0$, which is exactly the existence of a zero-loss non-trivial factorization. The invariant $J$ is stipulated to have the same zero-set. Both $J$ and $\Iint$ are binary. Therefore they agree pointwise. Gauge invariance ensures that the value is not changed by reparameterizations of the separator or response presentation.
+\end{proof}
+
+\begin{corollary}[Aggressive but bounded v20 closure]
+Under prime intervention-response coupling, or under separator-complete connected finite incidence, together with response-operative separators and faithful factorization losses, $\Iint$ is conditionally closed as a unique gauge-invariant binary factorization-gap invariant.
+\end{corollary}
+
+\begin{proof}
+Prime intervention-response coupling implies separator atomicity. Separately, separator-complete connected finite incidence implies separator atomicity by the finite connected-incidence theorem. In either route, the two conditional theorems then give existence and uniqueness of $\Iint$ as a gauge-invariant binary invariant.
+\end{proof}
+
+
+\section{Aggressive finite-witness closure: a non-circular sufficient theorem}
+
+\begin{definition}[Finite response-separator incidence package]
+A finite response-separator incidence package for $S$ is a finite bipartite graph
+\[
+  G_S=(V_\Theta\sqcup V_R,E),
+\]
+The vertex set $V_\Theta$ indexes response-operative elementary separators in $\Theta_S$. The vertex set $V_R$ indexes elementary intervention-response coordinates. An edge $(\theta,r)\in E$ is present exactly when an admissible perturbation of coordinate $r$ changes the truth value or margin of separator test $\theta$ while preserving the declared identity and history typing.
+\end{definition}
+
+\begin{definition}[Separator-complete incidence]
+The incidence package is separator-complete when every separator in $\Theta_S$ is represented by at least one vertex in $V_\Theta$, every represented separator is response-operative, and every exact admissible factorization $S\to S_1\times S_2$ induces a partition
+\[
+  V_\Theta=V_{\Theta,1}\sqcup V_{\Theta,2},\qquad V_R=V_{R,1}\sqcup V_{R,2}
+\]
+whenever $\Theta_S$ is a pullback union of factor-local separators and the response assignment is componentwise factor-local.
+\end{definition}
+
+
+\begin{remark}[Circularity-risk audit for separator-complete incidence]
+A reviewer should verify that separator-complete incidence can be established operationally without presupposing atomicity. The intended operational route is: first construct $V_\Theta$, $V_R$, and $E$ from declared separator tests and admissible perturbation-response records; then verify separator coverage, response-operativity, and induced factor partitions for candidate factorizations; only after that apply graph connectedness. If the construction of $G_S$ requires already knowing that no factor-local separator partition exists, the condition collapses into a disguised restatement of atomicity and must be rejected. This is an explicit \texttt{REVIEWER\_BURDEN}, not a certified theorem of the present note.
+\end{remark}
+
+\begin{theorem}[Finite connected-incidence atomicity theorem]
+Assume $S$ admits a separator-complete finite response-separator incidence package $G_S$. If $G_S$ is connected, then $\Theta_S$ is atomic.
+\end{theorem}
+
+\begin{proof}
+Assume for contradiction that $\Theta_S$ is not atomic. Then there is an exact non-trivial admissible factorization $F:S\to S_1\times S_2$ admitting a factor-local separator partition that preserves identity, histories, and responses. Since the factorization is componentwise factor-local, perturbing a response coordinate in factor $S_1$ can affect only separators pulled back from $S_1$, and perturbing a response coordinate in factor $S_2$ can affect only separators pulled back from $S_2$.
+
+By separator-completeness, this induces a partition of the incidence vertices
+\[
+  V_\Theta=V_{\Theta,1}\sqcup V_{\Theta,2},\qquad V_R=V_{R,1}\sqcup V_{R,2}
+\]
+with no edge from $V_{R,1}$ to $V_{\Theta,2}$ and no edge from $V_{R,2}$ to $V_{\Theta,1}$. Because the factorization is non-trivial and the represented separators are response-operative, both sides contain at least one incident edge. Therefore $G_S$ decomposes as a disjoint union of two non-empty subgraphs. This contradicts connectedness. Hence no such factor-local separator partition exists, so $\Theta_S$ is atomic.
+\end{proof}
+
+\begin{corollary}[Finite-witness conditional closure of I\_int]
+If $S$ has a separator-complete finite response-separator incidence package whose graph is connected, and if the factorization-loss terms are faithful to history, identity, response, and gauge preservation, then $\Iint(S)$ exists and is unique as a gauge-invariant binary factorization-gap invariant.
+\end{corollary}
+
+\begin{proof}
+The finite connected-incidence theorem gives separator atomicity from a graph-theoretic condition that is stated without naming atomicity. The conditional existence and uniqueness theorems for $\Iint$ under atomic separator then apply.
+\end{proof}
+
+\begin{remark}[Why this is stronger than merely assuming atomicity]
+The connected-incidence condition is not a semantic synonym for atomicity. It is a finite graph predicate over observable separator-response incidences. It may fail for some genuinely non-factorized systems if the chosen incidence package is incomplete, and it may be difficult to construct in infinite systems. Therefore it is a sufficient witness condition, not a necessary characterization and not a global proof from rigid identity plus continuity plus fidelity alone.
+\end{remark}
+
+\section{What is closed and what remains open}
+
+\begin{description}[leftmargin=4.2cm]
+  \item[Product-separator counterexample.] Closed in this note. It explicitly satisfies the weaker assumptions and fails atomicity.
+  \item[Global derivation.] Not closed. Atomicity from rigid identity plus continuity plus fidelity is blocked by the counterexample.
+  \item[$\Iint$ under atomic separator.] Conditionally closed. Existence and uniqueness follow from atomicity plus faithful factorization losses.
+  \item[$\Iint$ under prime coupling.] Conditionally closed. Prime coupling implies atomicity, then the conditional theorem applies.
+  \item[Empirical or external support.] Not claimed. No external campaign, human review, or adjudication is executed here.
+  \item[Registry integration.] Improved in v20. This note cross-references Paper 5 anchors and cites the release bibliography; promotion still requires human curation.
+\end{description}
+
+\section{Implementation note}
+This note is intentionally not inserted into the original Paper 5 source. It is a v20 scaffold that can be reviewed, criticized, or promoted by a later human mathematical curation process. Promotion into the theorem registry would require explicit registry overlay, human mathematical review, and a decision about whether prime intervention-response coupling or separator-complete finite incidence is an acceptable new hypothesis rather than a disguised restatement of separator atomicity.
+
+\printbibliography
+
+\end{document}

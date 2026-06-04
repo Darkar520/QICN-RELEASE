@@ -614,3 +614,73 @@ Residual risks:
 
 Next step:
 - Prepare a phase-scoped commit only after staged diff review. The approved `QICN_MONOLITHIC_v26.pdf` deletion may be included only in that scoped commit, not in a broad workspace sweep.
+
+---
+
+## 2026-06-04 - Codex - Workspace Clean Closure
+
+Agent/platform: Codex
+
+User request: Dejar el workspace completamente limpio, sin regresiones, sin dejar archivos importantes afuera y sin conservar archivos que ensucien el marco teorico.
+
+Operational objective: Convertir el dirty workspace clasificado en un estado limpio mediante commits por fase, preservando archivos canonicos/importantes en historial y removiendo solo untracked backup/noise/extracts previamente verificados dentro del workspace.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `git status --short`
+- `git diff --stat`
+- `git diff --name-only`
+- `git diff --cached --name-status`
+- `git clean -nd`
+- `git log --oneline -5`
+- `git rev-parse HEAD`
+
+Files committed by phase:
+- Commit `fe962ca`: `chore: record phase 5d governance cleanup`
+- Commit `198fa30`: `docs: close phase 5 pdf reproducibility canon`
+- Commit `0fbb172`: `chore: preserve verification and legacy audit artifacts`
+- Commit `98ad418`: `docs: preserve ai output recovery trace`
+
+Files/directories removed from workspace after verification:
+- `TEORIA QICN`
+- `_audit_v21_extract`
+- `_audit_v23_extract`
+- `_audit_v26_extract`
+- `rigid-identity-framework-backup-noise`
+- `rigid-identity-framework/docs/plans`
+- `rigid-identity-framework/package.json.v35-precentralization.bak`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short` | Inspect dirty state before and after each phase | Final pre-ledger status was clean |
+| `git diff --stat` / `git diff --name-only` | Classify tracked changes | Used to split Phase 5 canon from verification/legacy artifacts |
+| `git add -- <exact paths>` | Stage scoped phase sets only | Completed; no `git add -A` used |
+| `git diff --cached --name-status` / `--stat` | Review staged sets before commit | Completed before each commit |
+| `git commit -m ...` | Create phase-scoped commits | Four commits created |
+| `git clean -nd` | Dry-run untracked cleanup | Used only for inventory; no global clean executed |
+| `Resolve-Path` + `Remove-Item -LiteralPath` | Verify and remove exact untracked backup/noise paths | Removed only paths inside workspace |
+| `git log --oneline -5` | Verify commit sequence | Confirmed four new cleanup commits |
+| `git rev-parse HEAD` | Capture HEAD before final ledger note | `98ad418878e7ed67affa5d1ce5310ed4a351e2c9` |
+
+Implementation summary:
+- Preserved governance, Phase 5 canon, PDF/LaTeX outputs, reports, scripts, fixtures, theory artifacts, CI/config files, and AI output recovery candidates through scoped commits.
+- Accepted the user-approved canonical removal of `rigid-identity-framework/monolithic/QICN_MONOLITHIC_v26.pdf`.
+- Removed only untracked backup/noise/extract artifacts after path verification.
+- Avoided broad staging, broad revert, global `git clean`, and any restore of deleted historical PDFs.
+
+Verification:
+- `git status --short` after removing untracked backup/noise returned no output before this final ledger update.
+- Final verification after committing this ledger closure must confirm `git status --short` is empty again.
+
+Regression checks:
+- No tracked canon file was deleted during the untracked cleanup step.
+- Backup/noise deletion was limited to exact paths verified to resolve under `C:\Users\irisp\OneDrive\Escritorio\QICN-FRAMEWORK`.
+- Recovery candidates from the backup/noise audit were preserved in `docs/ai-platform-outputs/recovery-candidates/` before removing the external backup/noise folder from the workspace.
+
+Residual risks:
+- Commit `0fbb172` intentionally preserved a broad legacy/verification artifact set; this keeps evidence from being lost but may deserve later documentation consolidation.
+- Push still needs to be executed after this final ledger commit.
+
+Next step:
+- Commit this ledger closure, verify `git status --short` is empty, then push `main`.

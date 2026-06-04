@@ -1,0 +1,287 @@
+{
+  "schema_version": "6.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This v28 adjudication report is an internal diagnostic gate. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.",
+  "strict_mode": true,
+  "validation_summary": {
+    "ok": true,
+    "is_synthetic_fixture": true,
+    "failures": [],
+    "warnings": [],
+    "dataset_hash_verified": true,
+    "prediction_bundle_hash_verified": true,
+    "threshold_calibration_hash_verified": true,
+    "parameter_identifiability": {
+      "checked": 7,
+      "nonzero": 7,
+      "min_l2_effect": 0.001,
+      "consistent_baselines_by_model": true,
+      "details": [
+        {
+          "parameter_id": "theta_identity_channel_lock_weight",
+          "model": "qicn",
+          "l2_effect": 0.0073484692283495405,
+          "perturbation_size": 0.01,
+          "suspicious_large_effect": false
+        },
+        {
+          "parameter_id": "theta_history_alignment_weight",
+          "model": "qicn",
+          "l2_effect": 0.01469693845669907,
+          "perturbation_size": 0.01,
+          "suspicious_large_effect": false
+        },
+        {
+          "parameter_id": "theta_response_phase_weight",
+          "model": "qicn",
+          "l2_effect": 0.022045407685048587,
+          "perturbation_size": 0.01,
+          "suspicious_large_effect": false
+        },
+        {
+          "parameter_id": "theta_gauge_stability_weight",
+          "model": "qicn",
+          "l2_effect": 0.029393876913398106,
+          "perturbation_size": 0.01,
+          "suspicious_large_effect": false
+        },
+        {
+          "parameter_id": "theta_intervention_fidelity_weight",
+          "model": "qicn",
+          "l2_effect": 0.03674234614174764,
+          "perturbation_size": 0.01,
+          "suspicious_large_effect": false
+        },
+        {
+          "parameter_id": "theta_factorization_gap_weight",
+          "model": "qicn",
+          "l2_effect": 0.044090815370097174,
+          "perturbation_size": 0.01,
+          "suspicious_large_effect": false
+        },
+        {
+          "parameter_id": "rival_constant_noise_floor_offset",
+          "model": "rival",
+          "l2_effect": 0.012000000000000005,
+          "perturbation_size": 0.01,
+          "suspicious_large_effect": false
+        }
+      ]
+    },
+    "bridge_certificate_admissibility": {
+      "status": "admissible",
+      "issues": [],
+      "checked_estimators": 6,
+      "max_qicn_abs_residual": 0.030000000000000027,
+      "max_declared_tolerance": 0.05,
+      "limitation": "This is an operational coverage check only; it is not a proof of the bridge conjecture or of latent-state preservation."
+    }
+  },
+  "counts": {
+    "total_points": 9,
+    "admissible_points": 8,
+    "qicn_free_parameter_count": 6,
+    "rival_free_parameter_count": 1
+  },
+  "effect_estimate": {
+    "weighted_mean_delta_minus_noise": 0.23750000000000004,
+    "standard_error": 0.02331844763272204,
+    "ci95": [
+      0.18235187134861242,
+      0.2926481286513877
+    ],
+    "method": "weighted_mean_declared_sigma_plus_hc1_residual_sandwich_diagnostic_not_blue_claim"
+  },
+  "model_comparison": {
+    "method": "ar1_corrected_aicc_default_strict",
+    "decision_basis": "AICc controls the support threshold. AIC remains reported as a diagnostic only.",
+    "qicn_iid_diagnostic_only": {
+      "aic": -19.148699845589093,
+      "aicc": 64.85130015441091,
+      "nll": -15.574349922794546,
+      "sse": 0.005199999999999998,
+      "residuals": [
+        0.030000000000000027,
+        0.030000000000000027,
+        0.01999999999999999,
+        0.019999999999999962,
+        0.020000000000000018,
+        0.019999999999999962,
+        0.02999999999999997,
+        0.03
+      ],
+      "overparameterized": false,
+      "aicc_correction": 84
+    },
+    "rival_iid_diagnostic_only": {
+      "aic": 151.77130015441088,
+      "aicc": 152.43796682107754,
+      "nll": 74.88565007720544,
+      "sse": 0.4575,
+      "residuals": [
+        0.25,
+        0.22000000000000003,
+        0.19,
+        0.24,
+        0.27,
+        0.24,
+        0.3,
+        0.18
+      ],
+      "overparameterized": false,
+      "aicc_correction": 0.6666666666666572
+    },
+    "qicn_ar1_corrected": {
+      "aic": -29.62318476577606,
+      "aicc": 54.37681523422394,
+      "overparameterized": false,
+      "aicc_correction": 84,
+      "nll": -20.81159238288803,
+      "sse": 0.0025281250000000017,
+      "sigma2_profile": 0.0003160156250000002,
+      "residuals": [
+        0.027810744326608763,
+        0.018750000000000024,
+        0.008749999999999989,
+        0.012499999999999971,
+        0.012500000000000037,
+        0.01249999999999996,
+        0.022499999999999992,
+        0.018750000000000017
+      ],
+      "raw_residuals": [
+        0.030000000000000027,
+        0.030000000000000027,
+        0.01999999999999999,
+        0.019999999999999962,
+        0.020000000000000018,
+        0.019999999999999962,
+        0.02999999999999997,
+        0.03
+      ],
+      "raw_sse": 0.005199999999999998,
+      "jacobian_correction": 0.07577494906360034,
+      "rho": 0.3749999999999997,
+      "rho_estimator": "centered_yule_walker_lag1_clamped",
+      "correction_method": "prais_winsten_profile_gaussian_with_jacobian",
+      "governance_note": "rho is centered; uncentered rho diagnostics are not used as autocorrelation evidence. The Prais-Winsten Jacobian correction is included for consistency with the GLS diagnostic path."
+    },
+    "rival_ar1_corrected": {
+      "aic": 5.028297908466486,
+      "aicc": 5.694964575133153,
+      "overparameterized": false,
+      "aicc_correction": 0.666666666666667,
+      "nll": 1.5141489542332431,
+      "sse": 0.6784677885533191,
+      "sigma2_profile": 0.08480847356916489,
+      "residuals": [
+        0.2421072866600832,
+        0.28232224118316274,
+        0.2448435722411832,
+        0.28736490329920367,
+        0.3298293515358362,
+        0.3073080204778157,
+        0.3598293515358362,
+        0.2547866894197952
+      ],
+      "raw_residuals": [
+        0.25,
+        0.22000000000000003,
+        0.19,
+        0.24,
+        0.27,
+        0.24,
+        0.3,
+        0.18
+      ],
+      "raw_sse": 0.4575,
+      "jacobian_correction": 0.03207995664260604,
+      "rho": -0.24928896473265083,
+      "rho_estimator": "centered_yule_walker_lag1_clamped",
+      "correction_method": "prais_winsten_profile_gaussian_with_jacobian",
+      "governance_note": "rho is centered; uncentered rho diagnostics are not used as autocorrelation evidence. The Prais-Winsten Jacobian correction is included for consistency with the GLS diagnostic path."
+    },
+    "iid_gain_aicc_biased_diagnostic": 87.58666666666663,
+    "ar1_corrected_gain_aicc": -48.681850659090784,
+    "decision_gain_aicc": -48.681850659090784,
+    "complexity_adjusted_gain_aic": 170.91999999999996,
+    "autocorrelation_detected": false,
+    "rho_qicn": 0.3749999999999997,
+    "rho_rival": -0.24928896473265083
+  },
+  "leakage_adjudication": {
+    "predictive_accuracy": {
+      "pearson_observed_vs_qicn_prediction": 0.9930555555555556,
+      "reduced_chi_squared_against_declared_sigma": 1.0399999999999998
+    },
+    "structural_leakage": {
+      "affine_fit_qicn_prediction_from_observed_delta": {
+        "slope": 0.9930555555555556,
+        "intercept": -0.022951388888888924,
+        "maxAbsResidual": 0.005451388888888853,
+        "block_threshold_2x_max_measurement_sigma": 0.1,
+        "residual_abs_vs_sigma_pearson": 0
+      },
+      "mutual_information_binned_deprecated": 1.0821955300387671,
+      "mutual_information_miller_madow": 1.2071955300387671,
+      "mutual_information_decision": 1.2071955300387671,
+      "mutual_information_method": "miller_madow",
+      "mutual_information_threshold": 0.81,
+      "structural_leakage_detected": true
+    },
+    "affine_leakage_risk": "blocked"
+  },
+  "rival_adequacy": {
+    "rival_model_class": "constant_noise_floor_placeholder_control_known_straw_man_for_v27_block_test",
+    "rss_rival": 0.4575,
+    "rss_mean_model": 0.0144,
+    "adequate": false,
+    "rule": "rival RSS must be lower than the observed-delta mean model RSS"
+  },
+  "temporal_dependence_diagnostic": {
+    "durbin_watson": 0.03846153846153865,
+    "durbin_watson_policy": "block_on_violation_for_all_data_synthetic_and_external_strict_v28",
+    "ljung_box": {
+      "statistic": 4.690476190476176,
+      "lags": 3,
+      "p_value_rough": 0.09582438408462918,
+      "caveat": "rough diagnostic approximation, not a replacement for an externally reviewed time-series model"
+    }
+  },
+  "decision_thresholds": {
+    "support_gain_aic": 5,
+    "weakening_gain_aic": 0,
+    "minimum_ci_lower": 0,
+    "minimum_admissible_n": 8,
+    "threshold_calibration_status": "dual_mode_internal_null_calibrated_synthetic_engineering_gate",
+    "threshold_calibration_report_path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v27.json",
+    "threshold_calibration_report_sha256": "bf3c61cdc50786883adc71d2ef238d039405443766efdfd5db294fccc37244ac",
+    "external_support_allowed": false,
+    "support_gain_aicc": 4,
+    "mi_leakage_threshold": 0.81
+  },
+  "blocking_reasons": [
+    "BLOCKED_AFFINE_LEAKAGE",
+    "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+    "BLOCKED_STRAW_MAN_RIVAL",
+    "BLOCKED_TEMPORAL_DEPENDENCE_STRICT"
+  ],
+  "verdict": "BLOCKED_MULTIPLE_GATES",
+  "result": "PASS",
+  "external_support_certified": false,
+  "nonclaim_boundary": "A v28 PASS here means the adjudication gate executed and enforced its blockers; it is not evidence for QICN, consciousness, identity transfer, phenomenality, or bridge closure.",
+  "input_manifest": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json",
+  "provenance": {
+    "runner_path": "scripts/external-session-zero-adjudicator-v28.js",
+    "runner_sha256": "954a14745976254c5e83a8d67eb16fbe615e94223c1a012ef05a8e28a722e2f9",
+    "manifest_path": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json",
+    "manifest_sha256": "e00b315df688934186ca148dd043b0d9495957be586a7477457219028d832f6a",
+    "dataset_path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_DATASET_v27.json",
+    "dataset_sha256": "1b53322fcc239d0d84de32b6df356e512145ea0eac8647c5f79f1e26e184cfa7",
+    "prediction_bundle_path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_PREDICTION_BUNDLE_v27.json",
+    "prediction_bundle_sha256": "73ac47219ad04e0e81fbee9cb557b335ea27620103a9cb25981dffffb9cd57e8",
+    "threshold_calibration_report_path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v27.json",
+    "threshold_calibration_report_sha256": "bf3c61cdc50786883adc71d2ef238d039405443766efdfd5db294fccc37244ac"
+  },
+  "report_sha256": "8d30ba1801152cd6243008bc0b61d95c5112f4019218122eb76be0302a33f5c8"
+}

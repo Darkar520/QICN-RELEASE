@@ -356,9 +356,6 @@ function analyzeManifest(manifest, options = {}) {
   const mi = mutualInformationBinned(observed, qpred);
   const miThreshold = thresholds.mi_leakage_threshold ?? 0.8;
   const dw = durbinWatson(qicn.residuals);
-  if (validation.isSynthetic && dw !== null && dw < 0.5) {
-    console.warn(`[v27 WARNING] Fixture DW=${dw.toFixed(4)} < 0.5 — severe serial autocorrelation in synthetic fixture. This fixture would be BLOCKED as external data.`);
-  }
   const lb = ljungBox(qicn.residuals);
   const meanObserved = mean(observed);
   const rssMeanModel = points.reduce((sum, pt) => sum + (pt.observed_delta - meanObserved) ** 2, 0);

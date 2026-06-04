@@ -1,0 +1,602 @@
+{
+  "schema_version": "5.0.0",
+  "manifest_id": "EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v34",
+  "status": "synthetic_fixture",
+  "governance_boundary": "This v27 synthetic fixture is a hardening test case. It intentionally preserves v26 leakage and rival-adequacy weaknesses so the v27 runner can block them. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.",
+  "preregistration_hash": "fixture_prereg_hash_not_external_v26",
+  "dataset_path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_DATASET_v27.json",
+  "dataset_sha256": "1b53322fcc239d0d84de32b6df356e512145ea0eac8647c5f79f1e26e184cfa7",
+  "dataset_origin": "synthetic_fixture_not_empirical",
+  "adjudicator": "local_runner_self_test_not_independent",
+  "prediction_bundle": {
+    "bundle_id": "fixture_qicn_predictions_v27",
+    "prediction_path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_PREDICTION_BUNDLE_v27.json",
+    "prediction_sha256": "73ac47219ad04e0e81fbee9cb557b335ea27620103a9cb25981dffffb9cd57e8",
+    "generation_protocol": "fixture_apriori_closed_form_values_declared_before_scoring_no_result_access",
+    "frozen_timestamp_utc": "2026-05-27T00:00:00Z",
+    "frozen_before_outcome_analysis": true
+  },
+  "decision_thresholds": {
+    "support_gain_aic": 5,
+    "weakening_gain_aic": 0,
+    "minimum_ci_lower": 0,
+    "minimum_admissible_n": 8,
+    "threshold_calibration_status": "dual_mode_internal_null_calibrated_synthetic_engineering_gate",
+    "threshold_calibration_report_path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v27.json",
+    "threshold_calibration_report_sha256": "bf3c61cdc50786883adc71d2ef238d039405443766efdfd5db294fccc37244ac",
+    "external_support_allowed": false,
+    "support_gain_aicc": 4,
+    "mi_leakage_threshold": 0.81
+  },
+  "temporal_dependence_policy": {
+    "method": "durbin_watson_residual_diagnostic",
+    "action_on_violation": "diagnostic_only_for_synthetic_fixture_block_external_until_dependence_model",
+    "acceptable_range": [
+      0.5,
+      3.5
+    ]
+  },
+  "exclusion_rules": {
+    "max_noise_floor": 0.2,
+    "allowed_reason_codes": [
+      "sensor_dropout_gt_5s",
+      "timestamp_corruption",
+      "predeclared_hardware_failure"
+    ],
+    "max_exclusion_fraction": 0.2
+  },
+  "model_parameters": {
+    "complexity_penalty_factor": 1,
+    "qicn_free_parameters": [
+      {
+        "parameter_id": "theta_identity_channel_lock_weight",
+        "free": true,
+        "preregistration_binding": "PRED-EXT-01:identity_channel_lock"
+      },
+      {
+        "parameter_id": "theta_history_alignment_weight",
+        "free": true,
+        "preregistration_binding": "PRED-EXT-01:history_alignment"
+      },
+      {
+        "parameter_id": "theta_response_phase_weight",
+        "free": true,
+        "preregistration_binding": "PRED-EXT-01:response_phase"
+      },
+      {
+        "parameter_id": "theta_gauge_stability_weight",
+        "free": true,
+        "preregistration_binding": "PRED-EXT-01:gauge_stability"
+      },
+      {
+        "parameter_id": "theta_intervention_fidelity_weight",
+        "free": true,
+        "preregistration_binding": "PRED-EXT-01:intervention_fidelity"
+      },
+      {
+        "parameter_id": "theta_factorization_gap_weight",
+        "free": true,
+        "preregistration_binding": "PRED-EXT-01:factorization_gap"
+      }
+    ],
+    "rival_free_parameters": [
+      {
+        "parameter_id": "rival_constant_noise_floor_offset",
+        "free": true,
+        "preregistration_binding": "PRED-EXT-01:constant_baseline_rival"
+      }
+    ],
+    "identifiability_min_l2_effect": 0.001,
+    "parameter_sensitivity_probes": [
+      {
+        "parameter_id": "theta_identity_channel_lock_weight",
+        "model": "qicn",
+        "perturbation_size": 0.01,
+        "baseline_predictions": [
+          0.29,
+          0.25,
+          0.22,
+          0.28,
+          0.32,
+          0.27,
+          0.33,
+          0.2,
+          0.2
+        ],
+        "perturbed_predictions": [
+          0.287,
+          0.25,
+          0.223,
+          0.277,
+          0.32,
+          0.273,
+          0.327,
+          0.2,
+          0.203
+        ],
+        "probe_protocol": "v27 finite-difference fixture probe: hold all declared fixture coordinates fixed, perturb theta_identity_channel_lock_weight by 0.01, recompute the declared prediction vector from the frozen synthetic table; this is an internal consistency check only, not a generative derivation."
+      },
+      {
+        "parameter_id": "theta_history_alignment_weight",
+        "model": "qicn",
+        "perturbation_size": 0.01,
+        "baseline_predictions": [
+          0.29,
+          0.25,
+          0.22,
+          0.28,
+          0.32,
+          0.27,
+          0.33,
+          0.2,
+          0.2
+        ],
+        "perturbed_predictions": [
+          0.284,
+          0.25,
+          0.226,
+          0.274,
+          0.32,
+          0.276,
+          0.324,
+          0.2,
+          0.206
+        ],
+        "probe_protocol": "v27 finite-difference fixture probe: hold all declared fixture coordinates fixed, perturb theta_history_alignment_weight by 0.01, recompute the declared prediction vector from the frozen synthetic table; this is an internal consistency check only, not a generative derivation."
+      },
+      {
+        "parameter_id": "theta_response_phase_weight",
+        "model": "qicn",
+        "perturbation_size": 0.01,
+        "baseline_predictions": [
+          0.29,
+          0.25,
+          0.22,
+          0.28,
+          0.32,
+          0.27,
+          0.33,
+          0.2,
+          0.2
+        ],
+        "perturbed_predictions": [
+          0.281,
+          0.25,
+          0.229,
+          0.271,
+          0.32,
+          0.279,
+          0.321,
+          0.2,
+          0.209
+        ],
+        "probe_protocol": "v27 finite-difference fixture probe: hold all declared fixture coordinates fixed, perturb theta_response_phase_weight by 0.01, recompute the declared prediction vector from the frozen synthetic table; this is an internal consistency check only, not a generative derivation."
+      },
+      {
+        "parameter_id": "theta_gauge_stability_weight",
+        "model": "qicn",
+        "perturbation_size": 0.01,
+        "baseline_predictions": [
+          0.29,
+          0.25,
+          0.22,
+          0.28,
+          0.32,
+          0.27,
+          0.33,
+          0.2,
+          0.2
+        ],
+        "perturbed_predictions": [
+          0.278,
+          0.25,
+          0.232,
+          0.268,
+          0.32,
+          0.282,
+          0.318,
+          0.2,
+          0.212
+        ],
+        "probe_protocol": "v27 finite-difference fixture probe: hold all declared fixture coordinates fixed, perturb theta_gauge_stability_weight by 0.01, recompute the declared prediction vector from the frozen synthetic table; this is an internal consistency check only, not a generative derivation."
+      },
+      {
+        "parameter_id": "theta_intervention_fidelity_weight",
+        "model": "qicn",
+        "perturbation_size": 0.01,
+        "baseline_predictions": [
+          0.29,
+          0.25,
+          0.22,
+          0.28,
+          0.32,
+          0.27,
+          0.33,
+          0.2,
+          0.2
+        ],
+        "perturbed_predictions": [
+          0.275,
+          0.25,
+          0.235,
+          0.265,
+          0.32,
+          0.285,
+          0.315,
+          0.2,
+          0.215
+        ],
+        "probe_protocol": "v27 finite-difference fixture probe: hold all declared fixture coordinates fixed, perturb theta_intervention_fidelity_weight by 0.01, recompute the declared prediction vector from the frozen synthetic table; this is an internal consistency check only, not a generative derivation."
+      },
+      {
+        "parameter_id": "theta_factorization_gap_weight",
+        "model": "qicn",
+        "perturbation_size": 0.01,
+        "baseline_predictions": [
+          0.29,
+          0.25,
+          0.22,
+          0.28,
+          0.32,
+          0.27,
+          0.33,
+          0.2,
+          0.2
+        ],
+        "perturbed_predictions": [
+          0.272,
+          0.25,
+          0.238,
+          0.262,
+          0.32,
+          0.288,
+          0.312,
+          0.2,
+          0.218
+        ],
+        "probe_protocol": "v27 finite-difference fixture probe: hold all declared fixture coordinates fixed, perturb theta_factorization_gap_weight by 0.01, recompute the declared prediction vector from the frozen synthetic table; this is an internal consistency check only, not a generative derivation."
+      },
+      {
+        "parameter_id": "rival_constant_noise_floor_offset",
+        "model": "rival",
+        "perturbation_size": 0.01,
+        "baseline_predictions": [
+          0.07,
+          0.06,
+          0.05,
+          0.06,
+          0.07,
+          0.05,
+          0.06,
+          0.05,
+          0.07
+        ],
+        "perturbed_predictions": [
+          0.066,
+          0.064,
+          0.046,
+          0.064,
+          0.066,
+          0.054,
+          0.056,
+          0.054,
+          0.066
+        ],
+        "probe_protocol": "v27 finite-difference fixture probe: hold all declared fixture coordinates fixed, perturb rival_constant_noise_floor_offset by 0.01, recompute the declared prediction vector from the frozen synthetic table; this is an internal consistency check only, not a generative derivation."
+      }
+    ]
+  },
+  "claims_under_test": [
+    {
+      "claim_id": "PRED-EXT-01",
+      "prediction_id": "PRED-EXT-01",
+      "downgrade_action_if_fail": "downgrade_internal_synthetic_support_to_open_burden_for_external_support"
+    }
+  ],
+  "measurement_points": [
+    {
+      "id": "m01",
+      "timestamp": 1,
+      "separator_id": "theta_identity_channel_lock",
+      "response_coordinate": "trace_alignment_delta",
+      "observed_delta": 0.32,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.07,
+      "qicn_prediction": 0.29,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis",
+      "identity_channel_lock_estimate": 0.29,
+      "history_alignment_estimate": 0.26,
+      "response_phase_estimate": 0.21999999999999997,
+      "gauge_stability_estimate": 0.9523809523809523,
+      "intervention_fidelity_estimate": 0.32,
+      "factorization_gap_estimate": 0.030000000000000027
+    },
+    {
+      "id": "m02",
+      "timestamp": 2,
+      "separator_id": "theta_history_alignment",
+      "response_coordinate": "trace_alignment_delta",
+      "observed_delta": 0.28,
+      "noise_floor": 0.05,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.06,
+      "qicn_prediction": 0.25,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis",
+      "identity_channel_lock_estimate": 0.25,
+      "history_alignment_estimate": 0.23000000000000004,
+      "response_phase_estimate": 0.19,
+      "gauge_stability_estimate": 0.9523809523809523,
+      "intervention_fidelity_estimate": 0.28,
+      "factorization_gap_estimate": 0.030000000000000027
+    },
+    {
+      "id": "m03",
+      "timestamp": 3,
+      "separator_id": "theta_history_alignment",
+      "response_coordinate": "intervention_phase_delta",
+      "observed_delta": 0.24,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.05,
+      "qicn_prediction": 0.22,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis",
+      "identity_channel_lock_estimate": 0.22,
+      "history_alignment_estimate": 0.18,
+      "response_phase_estimate": 0.16999999999999998,
+      "gauge_stability_estimate": 0.9523809523809523,
+      "intervention_fidelity_estimate": 0.24,
+      "factorization_gap_estimate": 0.01999999999999999
+    },
+    {
+      "id": "m04",
+      "timestamp": 4,
+      "separator_id": "theta_response_phase",
+      "response_coordinate": "intervention_phase_delta",
+      "observed_delta": 0.3,
+      "noise_floor": 0.07,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.06,
+      "qicn_prediction": 0.28,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis",
+      "identity_channel_lock_estimate": 0.28,
+      "history_alignment_estimate": 0.22999999999999998,
+      "response_phase_estimate": 0.22000000000000003,
+      "gauge_stability_estimate": 0.9523809523809523,
+      "intervention_fidelity_estimate": 0.3,
+      "factorization_gap_estimate": 0.019999999999999962
+    },
+    {
+      "id": "m05",
+      "timestamp": 5,
+      "separator_id": "theta_gauge_stability",
+      "response_coordinate": "gauge_response_delta",
+      "observed_delta": 0.34,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.07,
+      "qicn_prediction": 0.32,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis",
+      "identity_channel_lock_estimate": 0.32,
+      "history_alignment_estimate": 0.28,
+      "response_phase_estimate": 0.25,
+      "gauge_stability_estimate": 0.9523809523809523,
+      "intervention_fidelity_estimate": 0.34,
+      "factorization_gap_estimate": 0.020000000000000018
+    },
+    {
+      "id": "m06",
+      "timestamp": 6,
+      "separator_id": "theta_intervention_fidelity",
+      "response_coordinate": "history_binding_delta",
+      "observed_delta": 0.29,
+      "noise_floor": 0.05,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.05,
+      "qicn_prediction": 0.27,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis",
+      "identity_channel_lock_estimate": 0.27,
+      "history_alignment_estimate": 0.24,
+      "response_phase_estimate": 0.22000000000000003,
+      "gauge_stability_estimate": 0.9523809523809523,
+      "intervention_fidelity_estimate": 0.29,
+      "factorization_gap_estimate": 0.019999999999999962
+    },
+    {
+      "id": "m07",
+      "timestamp": 7,
+      "separator_id": "theta_factorization_gap",
+      "response_coordinate": "factorization_probe_delta",
+      "observed_delta": 0.36,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.06,
+      "qicn_prediction": 0.33,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis",
+      "identity_channel_lock_estimate": 0.33,
+      "history_alignment_estimate": 0.3,
+      "response_phase_estimate": 0.27,
+      "gauge_stability_estimate": 0.9523809523809523,
+      "intervention_fidelity_estimate": 0.36,
+      "factorization_gap_estimate": 0.02999999999999997
+    },
+    {
+      "id": "m08",
+      "timestamp": 8,
+      "separator_id": "theta_factorization_gap",
+      "response_coordinate": "trace_alignment_delta",
+      "observed_delta": 0.23,
+      "noise_floor": 0.05,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.05,
+      "qicn_prediction": 0.2,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis",
+      "identity_channel_lock_estimate": 0.2,
+      "history_alignment_estimate": 0.18,
+      "response_phase_estimate": 0.15000000000000002,
+      "gauge_stability_estimate": 0.9523809523809523,
+      "intervention_fidelity_estimate": 0.23,
+      "factorization_gap_estimate": 0.03
+    },
+    {
+      "id": "m09",
+      "timestamp": 9,
+      "separator_id": "theta_identity_channel_lock",
+      "response_coordinate": "gauge_response_delta",
+      "observed_delta": 0.21,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.07,
+      "qicn_prediction": 0.2,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis",
+      "identity_channel_lock_estimate": 0.2,
+      "history_alignment_estimate": 0.15,
+      "response_phase_estimate": 0.13,
+      "gauge_stability_estimate": 0.9523809523809523,
+      "intervention_fidelity_estimate": 0.21,
+      "factorization_gap_estimate": 0.009999999999999981
+    }
+  ],
+  "exclusion_log": [
+    {
+      "point_id": "m09",
+      "reason_code": "sensor_dropout_gt_5s",
+      "predeclared": true,
+      "observed_before_outcome_analysis": true
+    }
+  ],
+  "qicn_predictions_frozen_before_outcome_analysis": true,
+  "rival_model_class": "constant_noise_floor_placeholder_control_known_straw_man_for_v27_block_test",
+  "bridge_certificate": {
+    "certificate_id": "BRIDGE-CERT-SESSION-ZERO-v27-SYNTHETIC",
+    "governance_boundary": "Operational coverage certificate only; this does not prove latent preservation, continuous-topology bridge closure, phenomenality, or identity transfer.",
+    "latent_invariants": [
+      "identity_channel_lock",
+      "history_alignment",
+      "response_phase",
+      "gauge_stability",
+      "intervention_fidelity",
+      "factorization_gap"
+    ],
+    "estimators": [
+      {
+        "estimator_id": "G_identity_channel_lock",
+        "invariant_id": "identity_channel_lock",
+        "dataset_column": "identity_channel_lock_estimate"
+      },
+      {
+        "estimator_id": "G_history_alignment",
+        "invariant_id": "history_alignment",
+        "dataset_column": "history_alignment_estimate"
+      },
+      {
+        "estimator_id": "G_response_phase",
+        "invariant_id": "response_phase",
+        "dataset_column": "response_phase_estimate"
+      },
+      {
+        "estimator_id": "G_gauge_stability",
+        "invariant_id": "gauge_stability",
+        "dataset_column": "gauge_stability_estimate"
+      },
+      {
+        "estimator_id": "G_intervention_fidelity",
+        "invariant_id": "intervention_fidelity",
+        "dataset_column": "intervention_fidelity_estimate"
+      },
+      {
+        "estimator_id": "G_factorization_gap",
+        "invariant_id": "factorization_gap",
+        "dataset_column": "factorization_gap_estimate"
+      }
+    ],
+    "factorization_claim": "C(x) is treated as a finite operational surrogate h(F_1,...,F_6) only for this synthetic manifest; the runner verifies estimator coverage and tolerances, not the theorem.",
+    "tolerance_vector": [
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05
+    ],
+    "latent_invariant_definitions": [
+      {
+        "invariant_id": "identity_channel_lock",
+        "domain": "measurement_point_sequence",
+        "codomain": "[0,1] with d(a,b)=|a-b|",
+        "field_source": "identity_channel_lock_estimate",
+        "interpretation": "Degree to which the channel preserves identity across perturbations; 1=perfect lock, 0=complete drift.",
+        "theoretical_K_i_upper_bound": 1,
+        "theoretical_omega_i_max": 0.1,
+        "declared_epsilon_i": 0.05
+      },
+      {
+        "invariant_id": "history_alignment",
+        "domain": "measurement_point_sequence",
+        "codomain": "[-1,1] with d(a,b)=|a-b|",
+        "field_source": "history_alignment_estimate",
+        "interpretation": "Alignment of observed trajectory with internal history model; 1=perfect alignment, -1=anti-aligned.",
+        "theoretical_K_i_upper_bound": 2,
+        "theoretical_omega_i_max": 0.1,
+        "declared_epsilon_i": 0.05
+      },
+      {
+        "invariant_id": "response_phase",
+        "domain": "measurement_point_sequence",
+        "codomain": "[0,2*pi) with circular distance min(|a-b|, 2*pi-|a-b|)",
+        "field_source": "response_phase_estimate",
+        "interpretation": "Phase of the system response to perturbation, modulo 2*pi.",
+        "theoretical_K_i_upper_bound": 1,
+        "theoretical_omega_i_max": 0.1,
+        "declared_epsilon_i": 0.05
+      },
+      {
+        "invariant_id": "gauge_stability",
+        "domain": "measurement_point_sequence",
+        "codomain": "[0,infinity) with d(a,b)=|a-b|",
+        "field_source": "gauge_stability_estimate",
+        "interpretation": "Stability of the internal calibration gauge under perturbation; higher means more stable.",
+        "theoretical_K_i_upper_bound": 0.5,
+        "theoretical_omega_i_max": 0.1,
+        "declared_epsilon_i": 0.05
+      },
+      {
+        "invariant_id": "intervention_fidelity",
+        "domain": "measurement_point_sequence",
+        "codomain": "[0,1] with d(a,b)=|a-b|",
+        "field_source": "intervention_fidelity_estimate",
+        "interpretation": "Fidelity of the intervention protocol; 1=perfect fidelity, 0=complete distortion.",
+        "theoretical_K_i_upper_bound": 1,
+        "theoretical_omega_i_max": 0.1,
+        "declared_epsilon_i": 0.05
+      },
+      {
+        "invariant_id": "factorization_gap",
+        "domain": "measurement_point_sequence",
+        "codomain": "[0,infinity) with d(a,b)=|a-b|",
+        "field_source": "factorization_gap_estimate",
+        "interpretation": "Operational gap between the finite claim surrogate and its declared invariant factorization; 0=perfect finite factorization.",
+        "theoretical_K_i_upper_bound": 0.5,
+        "theoretical_omega_i_max": 0.1,
+        "declared_epsilon_i": 0.05
+      }
+    ],
+    "operational_H2_verification": {
+      "status": "theoretically_bounded_operational_surrogate",
+      "note": "K_i are operational upper bounds from declared codomain ranges, not computed topological constants. omega_i_max = 2*epsilon_i from tolerance_vector. These bounds are internal synthetic diagnostics only.",
+      "verified_for_fixture": true,
+      "generalizes_to_external": false
+    },
+    "operational_H4_verification": {
+      "status": "failed_operationally",
+      "robustness_condition": false,
+      "delta_star": 0.15,
+      "L_h": 2,
+      "epsilon_sum": 0.3,
+      "L_h_epsilon_sum": 0.6,
+      "margin_excess": -0.44999999999999996,
+      "note": "H4 fails: the finite decision margin is too small for the declared estimator-error budget."
+    }
+  },
+  "derived_from_manifest_id": "SESSION-ZERO-SYNTHETIC-FIXTURE-v27"
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-29",
+  "governance_boundary": "This v31 report is a foundation-first internal diagnostic wrapper over v30. It blocks untyped, circular, or under-specified synthetic fixtures. It distinguishes the null regime (∅_φ ∈ E, bottom element) from undefined assignment (⊥ ∉ E). It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human review.",
+  "gaps": [
+    {
+      "gap_id": "L0-1",
+      "description": "v30 missing statistical helper modules",
+      "status": "gate_enforced_gap_remains_open",
+      "evidence": "gate_enforced: advanced-statistics.js and gls-statistics.js are required and present; foundation mathematics still needs external review"
+    },
+    {
+      "gap_id": "L0-2",
+      "description": "centered rho separates serial dependence from nonzero residual mean",
+      "status": "gate_enforced_gap_remains_open",
+      "evidence": "gate_enforced: estimateRho uses centered lag-1 Yule-Walker and documents small-sample bias"
+    },
+    {
+      "gap_id": "L0-3",
+      "description": "exact GLS profile likelihood available",
+      "status": "gate_enforced_gap_remains_open",
+      "evidence": "gate_enforced: glsGaussianInformation uses the AR(1) covariance quadratic form; statistical validity gap remains open for real data"
+    },
+    {
+      "gap_id": "L1-1",
+      "description": "compact Hausdorff versus Polish relationship remains manuscript-level open",
+      "status": "open_or_blocked",
+      "evidence": "paper1 now documents typed perturbations, but compact-metric instantiation remains open"
+    },
+    {
+      "gap_id": "L1-2",
+      "description": "internal perturbation versus external witness typed in runner",
+      "status": "open_or_blocked",
+      "evidence": "manifest must separately declare internal perturbations and external extension witnesses"
+    },
+    {
+      "gap_id": "L2-1",
+      "description": "Paper 3 restored from local recovery artifact",
+      "status": "gate_enforced_gap_remains_open",
+      "evidence": "gate_enforced: paper3/main.tex present and compilation is verified separately"
+    },
+    {
+      "gap_id": "L3-1",
+      "description": "iid-only AICc blocked by temporal dependence",
+      "status": "gate_enforced_gap_remains_open",
+      "evidence": "gate_enforced: v30 strict DW gate blocks the synthetic fixture; no external dataset is supplied"
+    },
+    {
+      "gap_id": "L4-1",
+      "description": "Bridge H1-H4 not accepted without material certificates",
+      "status": "open_or_blocked",
+      "evidence": "H1 topology, H2 constants, H3 factorization, and H4 margin must be materially referenced"
+    },
+    {
+      "gap_id": "L4-2",
+      "description": "Bridge H2-H4 estimator verification",
+      "status": "open_or_blocked",
+      "evidence": "H2 requires K_i, omega_i, epsilon_i, and omega_i <= 2 epsilon_i for all six invariants; H4 requires Delta* > L_h * sum(epsilon_i)"
+    },
+    {
+      "gap_id": "L5-1",
+      "description": "rival variance straw-man gate",
+      "status": "open_or_blocked",
+      "evidence": "rival predictions must have at least 10 percent of observed variance unless a preregistered constant model is justified"
+    },
+    {
+      "gap_id": "L6-1",
+      "description": "fixture-blind calibration lineage",
+      "status": "open_or_blocked",
+      "evidence": "threshold calibration must be fixture-blind, generated before scoring, and tied to an external holdout before it can support inference"
+    },
+    {
+      "gap_id": "L7-1",
+      "description": "external credibility boundary preserved",
+      "status": "gate_enforced_gap_remains_open",
+      "evidence": "external_support_certified must remain false"
+    }
+  ],
+  "result": "PASS",
+  "external_support_certified": false
+}

@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.1.0",
+  "package_id": "FSCI-QICN-v22-product-separator-negative-control",
+  "generated_at": "2026-05-27",
+  "status": "internal_synthetic_witness",
+  "governance_boundary": "This finite incidence package does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review. It is an internal synthetic formal witness only.",
+  "independence_boundary": "The package is constructed from a declared finite separator catalog, finite response-coordinate catalog, predeclared admission rules, and typed perturbation records. The construction does not assume separator atomicity; atomicity is only inferred later if the independently declared incidence graph passes the connectedness and completeness audit.",
+  "construction_protocol_reference": "docs/protocols/INDEPENDENT_SEPARATOR_CATALOG_CONSTRUCTION_PROTOCOL_v22.md",
+  "intended_theorem_use": "Negative control: this package should fail connected-incidence atomicity because it is a product-separator incidence graph with two disconnected factors.",
+  "finite_universe_policy": {
+    "factorization_cut_policy": "exhaustive_binary_cuts_over_separator_and_response_vertices",
+    "factor_nontriviality_rule": "each factor side must contain at least one response-operative separator and at least one response coordinate",
+    "zero_crossing_factor_locality_rule": "a factor-local decomposition has no incidence edge crossing the cut",
+    "anti_selection_rule": "separator and response vertices are deliberately factor-local in this negative control"
+  },
+  "separator_catalog": [
+    "theta_a_identity",
+    "theta_a_response",
+    "theta_b_identity",
+    "theta_b_response"
+  ],
+  "separators": [
+    {
+      "id": "theta_a_identity",
+      "test": "Factor A identity separator",
+      "admission_rule": "Admit as a factor-A local identity separator before graph analysis.",
+      "declared_source": "v22 product negative control catalog"
+    },
+    {
+      "id": "theta_a_response",
+      "test": "Factor A response separator",
+      "admission_rule": "Admit as a factor-A local response separator before graph analysis.",
+      "declared_source": "v22 product negative control catalog"
+    },
+    {
+      "id": "theta_b_identity",
+      "test": "Factor B identity separator",
+      "admission_rule": "Admit as a factor-B local identity separator before graph analysis.",
+      "declared_source": "v22 product negative control catalog"
+    },
+    {
+      "id": "theta_b_response",
+      "test": "Factor B response separator",
+      "admission_rule": "Admit as a factor-B local response separator before graph analysis.",
+      "declared_source": "v22 product negative control catalog"
+    }
+  ],
+  "responses": [
+    {
+      "id": "r_a_trace",
+      "coordinate": "factor_a_trace_delta",
+      "admission_rule": "Admit as a factor-A local response coordinate before graph analysis.",
+      "declared_source": "v22 product negative control catalog"
+    },
+    {
+      "id": "r_a_probe",
+      "coordinate": "factor_a_probe_delta",
+      "admission_rule": "Admit as a factor-A local probe coordinate before graph analysis.",
+      "declared_source": "v22 product negative control catalog"
+    },
+    {
+      "id": "r_b_trace",
+      "coordinate": "factor_b_trace_delta",
+      "admission_rule": "Admit as a factor-B local response coordinate before graph analysis.",
+      "declared_source": "v22 product negative control catalog"
+    },
+    {
+      "id": "r_b_probe",
+      "coordinate": "factor_b_probe_delta",
+      "admission_rule": "Admit as a factor-B local probe coordinate before graph analysis.",
+      "declared_source": "v22 product negative control catalog"
+    }
+  ],
+  "incidence_edges": [
+    {
+      "id": "n01",
+      "separator_id": "theta_a_identity",
+      "response_id": "r_a_trace",
+      "evidence_id": "ev_n01"
+    },
+    {
+      "id": "n02",
+      "separator_id": "theta_a_response",
+      "response_id": "r_a_probe",
+      "evidence_id": "ev_n02"
+    },
+    {
+      "id": "n03",
+      "separator_id": "theta_a_response",
+      "response_id": "r_a_trace",
+      "evidence_id": "ev_n03"
+    },
+    {
+      "id": "n04",
+      "separator_id": "theta_b_identity",
+      "response_id": "r_b_trace",
+      "evidence_id": "ev_n04"
+    },
+    {
+      "id": "n05",
+      "separator_id": "theta_b_response",
+      "response_id": "r_b_probe",
+      "evidence_id": "ev_n05"
+    },
+    {
+      "id": "n06",
+      "separator_id": "theta_b_response",
+      "response_id": "r_b_trace",
+      "evidence_id": "ev_n06"
+    }
+  ],
+  "perturbation_records": [
+    {
+      "id": "ev_n01",
+      "separator_id": "theta_a_identity",
+      "response_id": "r_a_trace",
+      "perturbation_id": "u_n01",
+      "perturbation_source": "synthetic_internal_finite_witness_v22",
+      "predeclared_measurement_rule": "Record the signed delta on the stated response coordinate under a typed perturbation while preserving identity/history typing; admit the edge only if the delta margin is strictly positive before graph connectivity is inspected.",
+      "delta_margin": 0.3,
+      "identity_typing_preserved": true,
+      "history_typing_preserved": true,
+      "note": "Positive margin change under an admissible typed perturbation. This is synthetic internal evidence, not empirical data."
+    },
+    {
+      "id": "ev_n02",
+      "separator_id": "theta_a_response",
+      "response_id": "r_a_probe",
+      "perturbation_id": "u_n02",
+      "perturbation_source": "synthetic_internal_finite_witness_v22",
+      "predeclared_measurement_rule": "Record the signed delta on the stated response coordinate under a typed perturbation while preserving identity/history typing; admit the edge only if the delta margin is strictly positive before graph connectivity is inspected.",
+      "delta_margin": 0.33,
+      "identity_typing_preserved": true,
+      "history_typing_preserved": true,
+      "note": "Positive margin change under an admissible typed perturbation. This is synthetic internal evidence, not empirical data."
+    },
+    {
+      "id": "ev_n03",
+      "separator_id": "theta_a_response",
+      "response_id": "r_a_trace",
+      "perturbation_id": "u_n03",
+      "perturbation_source": "synthetic_internal_finite_witness_v22",
+      "predeclared_measurement_rule": "Record the signed delta on the stated response coordinate under a typed perturbation while preserving identity/history typing; admit the edge only if the delta margin is strictly positive before graph connectivity is inspected.",
+      "delta_margin": 0.21,
+      "identity_typing_preserved": true,
+      "history_typing_preserved": true,
+      "note": "Positive margin change under an admissible typed perturbation. This is synthetic internal evidence, not empirical data."
+    },
+    {
+      "id": "ev_n04",
+      "separator_id": "theta_b_identity",
+      "response_id": "r_b_trace",
+      "perturbation_id": "u_n04",
+      "perturbation_source": "synthetic_internal_finite_witness_v22",
+      "predeclared_measurement_rule": "Record the signed delta on the stated response coordinate under a typed perturbation while preserving identity/history typing; admit the edge only if the delta margin is strictly positive before graph connectivity is inspected.",
+      "delta_margin": 0.34,
+      "identity_typing_preserved": true,
+      "history_typing_preserved": true,
+      "note": "Positive margin change under an admissible typed perturbation. This is synthetic internal evidence, not empirical data."
+    },
+    {
+      "id": "ev_n05",
+      "separator_id": "theta_b_response",
+      "response_id": "r_b_probe",
+      "perturbation_id": "u_n05",
+      "perturbation_source": "synthetic_internal_finite_witness_v22",
+      "predeclared_measurement_rule": "Record the signed delta on the stated response coordinate under a typed perturbation while preserving identity/history typing; admit the edge only if the delta margin is strictly positive before graph connectivity is inspected.",
+      "delta_margin": 0.37,
+      "identity_typing_preserved": true,
+      "history_typing_preserved": true,
+      "note": "Positive margin change under an admissible typed perturbation. This is synthetic internal evidence, not empirical data."
+    },
+    {
+      "id": "ev_n06",
+      "separator_id": "theta_b_response",
+      "response_id": "r_b_trace",
+      "perturbation_id": "u_n06",
+      "perturbation_source": "synthetic_internal_finite_witness_v22",
+      "predeclared_measurement_rule": "Record the signed delta on the stated response coordinate under a typed perturbation while preserving identity/history typing; admit the edge only if the delta margin is strictly positive before graph connectivity is inspected.",
+      "delta_margin": 0.24,
+      "identity_typing_preserved": true,
+      "history_typing_preserved": true,
+      "note": "Positive margin change under an admissible typed perturbation. This is synthetic internal evidence, not empirical data."
+    }
+  ],
+  "declared_limitations": [
+    "This negative control intentionally has disconnected factor-local incidence components.",
+    "The audit must reject it as an atomicity witness."
+  ],
+  "package_hash_method": "sha256(stable_json(package_without_top_level_package_sha256))",
+  "declared_audit_metadata": {
+    "counts": {
+      "separators": 4,
+      "responses": 4,
+      "incidence_edges": 6,
+      "perturbation_records": 6,
+      "connected_components": 2,
+      "enumerated_binary_cuts": 127,
+      "enumerated_nontrivial_factor_cuts": 98,
+      "factor_local_zero_crossing_cuts": 1
+    },
+    "graph_connected": false,
+    "factor_local_zero_crossing_cuts": 1,
+    "enumerator": "scripts/lib/finite-separator-incidence.js::summarizeFiniteSeparatorPackage",
+    "interpretation_boundary": "Metadata is derived from the finite declared graph only; it is not empirical support and not global separator completeness."
+  },
+  "package_sha256": "f5855fd9c6724ce4617f21600f8d5868564dce28a6a910112d800d1a1165a93d"
+}

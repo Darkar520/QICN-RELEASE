@@ -120,10 +120,9 @@ function calibrationRun(manifest, mode, rng, iterations) {
 function main() {
   const manifest = readJson(MANIFEST);
   const iterations = 2000;
-  const rngRivalTrue = mulberry32(0xA1CC27);
-  const rngBothRandom = mulberry32(0xB2DD38);
-  const nullRivalTrue = calibrationRun(manifest, "null_rival_true", rngRivalTrue, iterations);
-  const nullBothRandom = calibrationRun(manifest, "null_both_random", rngBothRandom, iterations);
+  const rng = mulberry32(0xA1CC27);
+  const nullRivalTrue = calibrationRun(manifest, "null_rival_true", rng, iterations);
+  const nullBothRandom = calibrationRun(manifest, "null_both_random", rng, iterations);
   const supportGainAicc = Math.max(4.0, Math.ceil(Math.max(nullRivalTrue.gain_aicc_quantiles.p95, nullBothRandom.gain_aicc_quantiles.p95) * 10) / 10);
   const miLeakageThreshold = Math.max(0.5, Math.ceil(Math.max(nullRivalTrue.mi_quantiles.p99, nullBothRandom.mi_quantiles.p99) * 100) / 100);
   const reportBase = {

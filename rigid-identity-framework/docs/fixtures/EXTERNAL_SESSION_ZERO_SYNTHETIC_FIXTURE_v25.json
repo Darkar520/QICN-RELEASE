@@ -1,0 +1,172 @@
+{
+  "schema_version": "3.0.0",
+  "manifest_id": "SESSION-ZERO-SYNTHETIC-FIXTURE-v25",
+  "status": "synthetic_fixture",
+  "governance_boundary": "This synthetic fixture tests the runner only. It does not certify external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+  "preregistration_hash": "fixture_prereg_hash_not_external_v25",
+  "dataset_sha256": "fixture_dataset_hash_not_external_v25",
+  "dataset_origin": "synthetic_fixture_not_empirical",
+  "adjudicator": "local_runner_self_test_not_independent",
+  "prediction_bundle": {
+    "bundle_id": "fixture_qicn_predictions_v25",
+    "prediction_sha256": "fixture_prediction_bundle_hash_not_external_v25",
+    "generation_protocol": "fixture_apriori_closed_form_values_declared_before_scoring",
+    "frozen_before_outcome_analysis": true
+  },
+  "decision_thresholds": {
+    "support_gain_aic": 5.0,
+    "weakening_gain_aic": 0.0,
+    "minimum_ci_lower": 0.0,
+    "minimum_admissible_n": 8,
+    "threshold_calibration_status": "synthetic_engineering_gate"
+  },
+  "exclusion_rules": {
+    "max_noise_floor": 0.2,
+    "allowed_reason_codes": [
+      "sensor_dropout_gt_5s",
+      "timestamp_corruption",
+      "predeclared_hardware_failure"
+    ],
+    "max_exclusion_fraction": 0.2
+  },
+  "model_parameters": {
+    "complexity_penalty_factor": 1.0,
+    "qicn_free_parameters": [
+      { "parameter_id": "theta_identity_channel_lock_weight", "free": true, "preregistration_binding": "PRED-EXT-01:identity_channel_lock" },
+      { "parameter_id": "theta_history_alignment_weight", "free": true, "preregistration_binding": "PRED-EXT-01:history_alignment" },
+      { "parameter_id": "theta_response_phase_weight", "free": true, "preregistration_binding": "PRED-EXT-01:response_phase" },
+      { "parameter_id": "theta_gauge_stability_weight", "free": true, "preregistration_binding": "PRED-EXT-01:gauge_stability" },
+      { "parameter_id": "theta_intervention_fidelity_weight", "free": true, "preregistration_binding": "PRED-EXT-01:intervention_fidelity" },
+      { "parameter_id": "theta_factorization_gap_weight", "free": true, "preregistration_binding": "PRED-EXT-01:factorization_gap" }
+    ],
+    "rival_free_parameters": [
+      { "parameter_id": "rival_constant_noise_floor_offset", "free": true, "preregistration_binding": "PRED-EXT-01:constant_baseline_rival" }
+    ]
+  },
+  "claims_under_test": [
+    {
+      "claim_id": "PRED-EXT-01",
+      "prediction_id": "PRED-EXT-01",
+      "downgrade_action_if_fail": "downgrade_internal_synthetic_support_to_open_burden_for_external_support"
+    }
+  ],
+  "measurement_points": [
+    {
+      "id": "m01",
+      "timestamp": 1,
+      "separator_id": "theta_identity_channel_lock",
+      "response_coordinate": "trace_alignment_delta",
+      "observed_delta": 0.32,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.07,
+      "qicn_prediction": 0.29,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis"
+    },
+    {
+      "id": "m02",
+      "timestamp": 2,
+      "separator_id": "theta_history_alignment",
+      "response_coordinate": "trace_alignment_delta",
+      "observed_delta": 0.28,
+      "noise_floor": 0.05,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.06,
+      "qicn_prediction": 0.25,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis"
+    },
+    {
+      "id": "m03",
+      "timestamp": 3,
+      "separator_id": "theta_history_alignment",
+      "response_coordinate": "intervention_phase_delta",
+      "observed_delta": 0.24,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.05,
+      "qicn_prediction": 0.22,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis"
+    },
+    {
+      "id": "m04",
+      "timestamp": 4,
+      "separator_id": "theta_response_phase",
+      "response_coordinate": "intervention_phase_delta",
+      "observed_delta": 0.30,
+      "noise_floor": 0.07,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.06,
+      "qicn_prediction": 0.28,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis"
+    },
+    {
+      "id": "m05",
+      "timestamp": 5,
+      "separator_id": "theta_gauge_stability",
+      "response_coordinate": "gauge_response_delta",
+      "observed_delta": 0.34,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.07,
+      "qicn_prediction": 0.32,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis"
+    },
+    {
+      "id": "m06",
+      "timestamp": 6,
+      "separator_id": "theta_intervention_fidelity",
+      "response_coordinate": "history_binding_delta",
+      "observed_delta": 0.29,
+      "noise_floor": 0.05,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.05,
+      "qicn_prediction": 0.27,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis"
+    },
+    {
+      "id": "m07",
+      "timestamp": 7,
+      "separator_id": "theta_factorization_gap",
+      "response_coordinate": "factorization_probe_delta",
+      "observed_delta": 0.36,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.06,
+      "qicn_prediction": 0.33,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis"
+    },
+    {
+      "id": "m08",
+      "timestamp": 8,
+      "separator_id": "theta_factorization_gap",
+      "response_coordinate": "trace_alignment_delta",
+      "observed_delta": 0.23,
+      "noise_floor": 0.05,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.05,
+      "qicn_prediction": 0.20,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis"
+    },
+    {
+      "id": "m09",
+      "timestamp": 9,
+      "separator_id": "theta_identity_channel_lock",
+      "response_coordinate": "gauge_response_delta",
+      "observed_delta": 0.21,
+      "noise_floor": 0.06,
+      "measurement_sigma": 0.05,
+      "rival_prediction": 0.07,
+      "qicn_prediction": 0.20,
+      "qicn_prediction_source": "fixture_apriori_prediction_column_frozen_before_measurement_analysis"
+    }
+  ],
+  "exclusion_log": [
+    {
+      "point_id": "m09",
+      "reason_code": "sensor_dropout_gt_5s",
+      "predeclared": true,
+      "observed_before_outcome_analysis": true
+    }
+  ],
+  "qicn_predictions_frozen_before_outcome_analysis": true
+}

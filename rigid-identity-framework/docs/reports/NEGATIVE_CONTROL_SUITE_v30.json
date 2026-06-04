@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-29",
+  "governance_boundary": "This negative-control suite verifies that local synthetic hardening gates reject known adversarial fixtures. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human review.",
+  "fixture": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json",
+  "cases": [
+    {
+      "name": "baseline_fixture_blocks_known_v27_failures",
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "result": "PASS",
+      "validation_failures": [],
+      "expected_blockers": [
+        "BLOCKED_AFFINE_LEAKAGE",
+        "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+        "BLOCKED_STRAW_MAN_RIVAL",
+        "BLOCKED_TEMPORAL_DEPENDENCE_STRICT"
+      ],
+      "actual_blockers": [
+        "BLOCKED_AFFINE_LEAKAGE",
+        "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+        "BLOCKED_STRAW_MAN_RIVAL",
+        "BLOCKED_TEMPORAL_DEPENDENCE_STRICT"
+      ],
+      "pass": true,
+      "missing": []
+    },
+    {
+      "name": "affine_near_copy_control",
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "result": "PASS",
+      "validation_failures": [],
+      "expected_blockers": [
+        "BLOCKED_AFFINE_LEAKAGE"
+      ],
+      "actual_blockers": [
+        "BLOCKED_AFFINE_LEAKAGE",
+        "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+        "BLOCKED_STRAW_MAN_RIVAL",
+        "BLOCKED_TEMPORAL_DEPENDENCE_STRICT"
+      ],
+      "pass": true,
+      "missing": []
+    },
+    {
+      "name": "inconsistent_sensitivity_baseline_control",
+      "verdict": "INVALID_MANIFEST",
+      "result": "FAIL",
+      "validation_failures": [
+        "INCONSISTENT_SENSITIVITY_BASELINE for model qicn."
+      ],
+      "expected_blockers": [],
+      "actual_blockers": [],
+      "pass": true,
+      "missing": []
+    },
+    {
+      "name": "missing_bridge_certificate_control",
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "result": "PASS",
+      "validation_failures": [],
+      "expected_blockers": [
+        "BLOCKED_BRIDGE_CERTIFICATE"
+      ],
+      "actual_blockers": [
+        "BLOCKED_AFFINE_LEAKAGE",
+        "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+        "BLOCKED_STRAW_MAN_RIVAL",
+        "BLOCKED_BRIDGE_CERTIFICATE",
+        "BLOCKED_TEMPORAL_DEPENDENCE_STRICT"
+      ],
+      "pass": true,
+      "missing": []
+    },
+    {
+      "name": "v31_type_confusion_positive",
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "expected_absent_blocker": "BLOCKED_TYPE_CONFUSION",
+      "actual_foundation_blockers": [
+        "BLOCKED_CIRCULAR_CALIBRATION",
+        "BLOCKED_BRIDGE_HYPOTHESES_UNVERIFIED",
+        "BLOCKED_ESTIMATOR_UNVERIFIED",
+        "BLOCKED_STRAW_MAN_RIVAL_VARIANCE"
+      ],
+      "pass": true,
+      "note": "Positive v31 gate test only; the adversarial fixture may still be blocked by unrelated v30/v31 gates."
+    },
+    {
+      "name": "v31_circular_calibration_positive",
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "expected_absent_blocker": "BLOCKED_CIRCULAR_CALIBRATION",
+      "actual_foundation_blockers": [
+        "BLOCKED_TYPE_CONFUSION",
+        "BLOCKED_BRIDGE_HYPOTHESES_UNVERIFIED",
+        "BLOCKED_ESTIMATOR_UNVERIFIED",
+        "BLOCKED_STRAW_MAN_RIVAL_VARIANCE"
+      ],
+      "pass": true,
+      "note": "Positive v31 gate test only; the adversarial fixture may still be blocked by unrelated v30/v31 gates."
+    }
+  ],
+  "result": "PASS",
+  "external_support_certified": false
+}

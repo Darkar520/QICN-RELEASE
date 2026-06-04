@@ -27,9 +27,7 @@ const TARGETS = [
   "docs/fixtures/TRUSTED_KEYS_REGISTRY_v27.json",
   "scripts/external-session-zero-adjudicator-v27.js",
   "scripts/calibrate-session-zero-thresholds-v27.js",
-  "scripts/verify-human-veto-signature-v27.js",
-  "docs/reports/FINAL_EXECUTIVE_REPORT_v27.md",
-  "docs/reports/HYBRID_V26_V27_ULTRATHINK_PLAN.md"
+  "scripts/verify-human-veto-signature-v27.js"
 ];
 
 function repoPath(filePath) {

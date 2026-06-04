@@ -1,0 +1,576 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-01T06:08:59.262Z",
+  "governance_boundary": "This v35 manifest records local versioned artifacts for codebase hygiene only. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, peer review, or human mathematical review.",
+  "source_roots": [
+    "scripts",
+    "docs/fixtures",
+    "docs/reports",
+    "docs/theory"
+  ],
+  "artifact_count": 89,
+  "by_kind": {
+    "scripts": 16,
+    "fixtures": 9,
+    "reports": 44,
+    "theory": 20
+  },
+  "git_status": {
+    "ok": true,
+    "lines": [
+      " M ../.gitignore",
+      " M docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json",
+      " M docs/fixtures/TRUSTED_KEYS_REGISTRY_v27.json",
+      " M docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v27.json",
+      " M docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v26.json",
+      " M docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v26.md",
+      " M docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v27.json",
+      " M docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v27.json",
+      " M docs/reports/THRESHOLD_NULL_CALIBRATION_v27.json",
+      " M docs/reports/THRESHOLD_NULL_CALIBRATION_v27.md",
+      " M docs/reports/V27_SUPERIOR_GAP_AUDIT.json",
+      " M docs/reports/V27_SUPERIOR_GAP_AUDIT.md",
+      " M monolithic/preamble/packages.tex",
+      " M monolithic/preamble/setup.tex",
+      " M package.json",
+      " M paper1/main.pdf",
+      " M paper1/main.tex",
+      " M paper2/main.pdf",
+      " M paper2/main.tex",
+      " M paper3/main.pdf",
+      " M paper3/main.tex",
+      " M paper3/references.bib",
+      " M paper6_predictions_falsation/main.tex",
+      " M scripts/audit-operational-term-promotions-v27.js",
+      " M scripts/audit-v25-superior-gaps.js",
+      " M scripts/audit-v27-superior-gaps.js",
+      " M scripts/build-monolithic-volume.js",
+      " M scripts/calibrate-session-zero-thresholds-v27.js",
+      " M scripts/external-session-zero-adjudicator-v27.js",
+      "?? ../AUDIT_FORMAL_PROFUNDO_QICN_v28.md",
+      "?? \"../TEORIA QICN/\"",
+      "?? ../_audit_v21_extract/",
+      "?? ../_audit_v23_extract/",
+      "?? ../_audit_v26_extract/",
+      "?? ../rigid-identity-framework-backup-noise/",
+      "?? VERSION.md",
+      "?? docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v25.json",
+      "?? docs/fixtures/TRUSTED_KEYS_REGISTRY_v28_selftest.json",
+      "?? docs/reports/AR1_CORRECTION_CLINICAL_SUMMARY_v28.json",
+      "?? docs/reports/AR1_CORRECTION_CLINICAL_SUMMARY_v28.md",
+      "?? docs/reports/CODEX_IMPLEMENTATION_AUDIT_DEEP.md",
+      "?? docs/reports/FINITE_SEPARATOR_COMPLETE_PACKAGE_v22_AUDIT.json",
+      "?? docs/reports/FINITE_SEPARATOR_COMPLETE_PACKAGE_v22_REPORT.md",
+      "?? docs/reports/GAP_CLOSURE_STATUS_v31.json",
+      "?? docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v28.json",
+      "?? docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v28.md",
+      "?? docs/reports/MONOLITHIC_BUILD_QUALITY_GATE_v20.json",
+      "?? docs/reports/NEGATIVE_CONTROL_SUITE_v30.json",
+      "?? docs/reports/NEGATIVE_CONTROL_SUITE_v30.md",
+      "?? docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v28.json",
+      "?? docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v28.md",
+      "?? docs/reports/PROMOTION_RULE_VALIDATION_v30.json",
+      "?? docs/reports/PROMOTION_RULE_VALIDATION_v30.md",
+      "?? docs/reports/QICN_CRITICAL_GAPS_AUDIT.md",
+      "?? docs/reports/QICN_HARDENING_PROMPT_v30.md",
+      "?? docs/reports/QICN_V30_V31_HYBRID_AUDIT_AND_IMPLEMENTATION_REPORT.md",
+      "?? docs/reports/QICN_V32_IMPLEMENTATION_REPORT.md",
+      "?? docs/reports/QICN_V32_REPORTE_DE_IMPLEMENTACION_Y_AUDITORIA.md",
+      "?? docs/reports/QICN_V33_AUDITORIA_DE_INTEGRACION_CODEX.md",
+      "?? docs/reports/QICN_V33_IMPLEMENTATION_REPORT.md",
+      "?? docs/reports/QICN_V35_VERSION_CENTRALIZATION_PREFLIGHT.md",
+      "?? docs/reports/QICN_V35_VERSION_CENTRALIZATION_REPORT.md",
+      "?? docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v25.json",
+      "?? docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v25.md",
+      "?? docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v28.json",
+      "?? docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v28.md",
+      "?? docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v30.json",
+      "?? docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v30.md",
+      "?? docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v31.json",
+      "?? docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v31.md",
+      "?? docs/reports/SUPERIOR_GAP_AUDIT_CURRENT.json",
+      "?? docs/reports/V25_SUPERIOR_GAP_AUDIT.json",
+      "?? docs/reports/V25_SUPERIOR_GAP_AUDIT.md",
+      "?? docs/reports/V32_INDEPENDENT_AUDIT_OPENCODE.md",
+      "?? docs/reports/V33_INDEPENDENT_AUDIT_OPENCODE.md",
+      "?? docs/reports/V35_ALL_LEGACY_VERIFICATION.json",
+      "?? docs/reports/V35_V30_V31_PARITY_CHECK.json",
+      "?? docs/reports/V35_VERSIONED_ARTIFACT_MANIFEST.json",
+      "?? docs/superpowers/",
+      "?? docs/theory/CCR_NULL_REGIME_CONDITIONAL_CLOSURE_v31.pdf",
+      "?? docs/theory/CCR_NULL_REGIME_CONDITIONAL_CLOSURE_v31.tex",
+      "?? docs/theory/FINITE_SEPARATOR_COMPLETE_PACKAGE_PRODUCT_NEGATIVE_CONTROL_v22.json",
+      "?? docs/theory/FINITE_SEPARATOR_COMPLETE_PACKAGE_v22.json",
+      "?? docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v28.tex",
+      "?? docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v29.pdf",
+      "?? docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v29.tex",
+      "?? docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v30.pdf",
+      "?? docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v30.tex",
+      "?? monolithic/QICN_MONOLITHIC.pdf",
+      "?? package.json.v35-precentralization.bak",
+      "?? paper3/main-3.pdf",
+      "?? scripts/ar1-correction-clinical-summary-v28.js",
+      "?? scripts/audit-operational-term-promotions-v28.js",
+      "?? scripts/audit-superior-gaps.js",
+      "?? scripts/external-session-zero-adjudicator-v28.js",
+      "?? scripts/external-session-zero-adjudicator-v30.js",
+      "?? scripts/external-session-zero-adjudicator-v31.js",
+      "?? scripts/generate-versioned-artifact-manifest.js",
+      "?? scripts/legacy/",
+      "?? scripts/lib/advanced-statistics.js",
+      "?? scripts/lib/gls-statistics.js",
+      "?? scripts/negative-control-suite.js",
+      "?? scripts/validate-promotion-rules.js",
+      "?? scripts/verify-human-veto-signature-v28.js"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v25.json",
+      "size_bytes": 6593,
+      "sha256": "64db74b879cdd77aa342af6deffede962ea5d1601f5731c701c97e649d755e8b"
+    },
+    {
+      "path": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v26.json",
+      "size_bytes": 11313,
+      "sha256": "4645cf2c8ab976cef98ebe93b2ba0f84594d93c5cf31c88a58faf6d011714708"
+    },
+    {
+      "path": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json",
+      "size_bytes": 18192,
+      "sha256": "e00b315df688934186ca148dd043b0d9495957be586a7477457219028d832f6a"
+    },
+    {
+      "path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_DATASET_v26.json",
+      "size_bytes": 3064,
+      "sha256": "7b961316adedcb7bf5efdce59f03d15c0e3bc04f6d2055e5b694f4a0416fbc82"
+    },
+    {
+      "path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_DATASET_v27.json",
+      "size_bytes": 3132,
+      "sha256": "1b53322fcc239d0d84de32b6df356e512145ea0eac8647c5f79f1e26e184cfa7"
+    },
+    {
+      "path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_PREDICTION_BUNDLE_v26.json",
+      "size_bytes": 2106,
+      "sha256": "fa1af52c0e5c24cbe0d7d13bc2c66934384e973b34a6da856c7e3480ab142de4"
+    },
+    {
+      "path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_PREDICTION_BUNDLE_v27.json",
+      "size_bytes": 2190,
+      "sha256": "73ac47219ad04e0e81fbee9cb557b335ea27620103a9cb25981dffffb9cd57e8"
+    },
+    {
+      "path": "docs/fixtures/TRUSTED_KEYS_REGISTRY_v27.json",
+      "size_bytes": 881,
+      "sha256": "b4103b60382062c24f41a53963aae13235e7108798bb29fed17fc55a578a5852"
+    },
+    {
+      "path": "docs/fixtures/TRUSTED_KEYS_REGISTRY_v28_selftest.json",
+      "size_bytes": 1146,
+      "sha256": "4f12d3c2acdf2a89de68045c6e2bf1da3b6b0002e52986d97ca3cc931455c4d2"
+    },
+    {
+      "path": "docs/reports/AR1_CORRECTION_CLINICAL_SUMMARY_v28.json",
+      "size_bytes": 3992,
+      "sha256": "adf1c955aa737d9137c79113461fd2d80f8f24333d594e5be85af56fa43de9fc"
+    },
+    {
+      "path": "docs/reports/AR1_CORRECTION_CLINICAL_SUMMARY_v28.md",
+      "size_bytes": 1463,
+      "sha256": "084239e134a6229da3003acdfc6335070248240098cc0319bc54b3309e3f232a"
+    },
+    {
+      "path": "docs/reports/AUDIT_DEPLOYMENT_v26.json",
+      "size_bytes": 1342,
+      "sha256": "52e35af70e06c32265d81a7c91092e48fde5bc34fa25875bf35d0bf69184e032"
+    },
+    {
+      "path": "docs/reports/AUDIT_v27.json",
+      "size_bytes": 1992,
+      "sha256": "f4b7e750c883b8a42f10df5cebf7582e75c51bbf6f4ac2d74f27e0e27b2d60a5"
+    },
+    {
+      "path": "docs/reports/DEPLOYMENT_LOG_v26.json",
+      "size_bytes": 5548,
+      "sha256": "b9323f32396c2b47beb6d498d401e39adbb1e9a4658213e05f23d502bd394713"
+    },
+    {
+      "path": "docs/reports/FCR_DOWNGRADE_DRY_RUN_v26.json",
+      "size_bytes": 3686,
+      "sha256": "2ae518df228d87e5365e42469a16724e93dfacd77629bb66c87798fd9c104ad9"
+    },
+    {
+      "path": "docs/reports/FCR_DOWNGRADE_DRY_RUN_v26.md",
+      "size_bytes": 501,
+      "sha256": "3bd3a2202ed25e70a26a1e55dcda15af41e1bd07ca72a216d42be7b8445c9d20"
+    },
+    {
+      "path": "docs/reports/FINAL_EXECUTIVE_REPORT_v27.md",
+      "size_bytes": 3409,
+      "sha256": "31c28063d049df5e9616fa3b69a0af3d1525f28508db4e595794994ed647d83d"
+    },
+    {
+      "path": "docs/reports/FULL_MODIFIED_TEXT_FILE_CONTENTS_v26.md",
+      "size_bytes": 390852,
+      "sha256": "fbf6159d3738790dc62f77b3b27eff823f94470ab668e21ad69d1ca377ff6878"
+    },
+    {
+      "path": "docs/reports/GAP_CLOSURE_STATUS_v31.json",
+      "size_bytes": 3541,
+      "sha256": "ec3e8b8d383db254773065b56b70154df35ceb40341edac707e0a4eafb506693"
+    },
+    {
+      "path": "docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v26.json",
+      "size_bytes": 596,
+      "sha256": "a5756d820c9115acb58a92eb02bf69d8d2688be140b34730af106faad78e02df"
+    },
+    {
+      "path": "docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v27.json",
+      "size_bytes": 1050,
+      "sha256": "6422bce64beb5ebd80e300309f39085d9964515981fcf09ead44ad3f1e36b382"
+    },
+    {
+      "path": "docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v27.md",
+      "size_bytes": 389,
+      "sha256": "9dc9b7b06f6a8f818ae9e812b9647ae68b1d9cacb31c8b188e9c18a5a9d790ab"
+    },
+    {
+      "path": "docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v28.json",
+      "size_bytes": 1909,
+      "sha256": "fc88b0211aff4d94c9418b01d9404dcee09c272adf5cea9baf523b73250396f5"
+    },
+    {
+      "path": "docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v28.md",
+      "size_bytes": 573,
+      "sha256": "0535c602bdcaa9e45317918b61c2df8d3df794bb04f309bbb206e4178d309b1d"
+    },
+    {
+      "path": "docs/reports/IMPLEMENTATION_LOG_v27.json",
+      "size_bytes": 4538,
+      "sha256": "62cb62a329af7ed20f9cff77fbb2714be77b7a0500d05e264088f656844f7117"
+    },
+    {
+      "path": "docs/reports/INITIAL_STATE_AUDIT_v26_v27.json",
+      "size_bytes": 1158,
+      "sha256": "978e29b32c3eac2f6e9bc266d1c91621a7f98b817f38bc6534b3f09c89fd8e41"
+    },
+    {
+      "path": "docs/reports/NEGATIVE_CONTROL_SUITE_v30.json",
+      "size_bytes": 3345,
+      "sha256": "babe4023134a2a7490aa6565d243068fc9176dff54fb85a181453825c43b34e6"
+    },
+    {
+      "path": "docs/reports/NEGATIVE_CONTROL_SUITE_v30.md",
+      "size_bytes": 343,
+      "sha256": "a5b9fb718b9d5da04e2b8565668fe9679127cbe7ba5853f92296c38d457092ee"
+    },
+    {
+      "path": "docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v26.json",
+      "size_bytes": 325065,
+      "sha256": "213ae246844f9a7ec516da178d4006df3b7183806ae4277e5e88330e0648c3bd"
+    },
+    {
+      "path": "docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v26.md",
+      "size_bytes": 391,
+      "sha256": "28a8218a7e31c4aa6b8006a780bca55d90435866a14241d9bb61e67a5e79ef60"
+    },
+    {
+      "path": "docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v27.json",
+      "size_bytes": 2541,
+      "sha256": "dd65b010e25c3369cd150fa63374f0c06edf8360b4510e6459e1679c8aa190f6"
+    },
+    {
+      "path": "docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v27.md",
+      "size_bytes": 309,
+      "sha256": "f3ed5dde6ea0bd370bb90448c0b572e58b05b1eaf0df72d10706cbfbaa3bb256"
+    },
+    {
+      "path": "docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v28.json",
+      "size_bytes": 6682,
+      "sha256": "56b6de5ec726a0151c3f55f77c8f279120fcc0e55993b1d973e559fd595aea15"
+    },
+    {
+      "path": "docs/reports/OPERATIONAL_TERM_PROMOTION_AUDIT_v28.md",
+      "size_bytes": 400,
+      "sha256": "8a2a91aa091072222e0e77f5cc97b2e78e4ba30912895c7445fdd68259605f16"
+    },
+    {
+      "path": "docs/reports/PROMOTION_RULE_VALIDATION_v30.json",
+      "size_bytes": 2088,
+      "sha256": "f3fc0046318f790c3f5402cab4904d5c51340fe89cd633bc663f27224389186e"
+    },
+    {
+      "path": "docs/reports/PROMOTION_RULE_VALIDATION_v30.md",
+      "size_bytes": 309,
+      "sha256": "24403c5f908a0634f4bcfd7480a293e297b77cba812406bd58640d734d3629e5"
+    },
+    {
+      "path": "docs/reports/QICN_HARDENING_PROMPT_v30.md",
+      "size_bytes": 12595,
+      "sha256": "1c2e5a673e097fbf065a8ea267d0d177abf2a83d6c3e64b46e86ba7d48594cbc"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v25.json",
+      "size_bytes": 3575,
+      "sha256": "9fb20802039040fe5549b5426959051900e3fbbae4c543a61626d524b3257402"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v25.md",
+      "size_bytes": 1237,
+      "sha256": "2ea7506c60f7c3ad99a96a241b33c3419e115a03bbdf761915010b0ec2999fd6"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v26.json",
+      "size_bytes": 4806,
+      "sha256": "0214f4686b4fb2fb6bb36af0270125f6626b2e83c60ee11b18392e0d88d518b7"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v26.md",
+      "size_bytes": 515,
+      "sha256": "61ea755dc9011d7be3d1a7b16695406dec93f03ef052c4bf60ed482172c59136"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v27.json",
+      "size_bytes": 7831,
+      "sha256": "a399310559da01db3797b5f3fa872a104cea08cc548423633597f9390908de4e"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v27.md",
+      "size_bytes": 413,
+      "sha256": "67913393f3fecd4d8f896c0bb5b1211323cf3b8f3f6569e911983f35bf783210"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v28.json",
+      "size_bytes": 10737,
+      "sha256": "fc7094d066d2b9b6e5dc18e9cf233ab4bd8c621a5e3d7804937aeb813ace3120"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v28.md",
+      "size_bytes": 486,
+      "sha256": "59e889da2419ba1bc5b48cb005c7f12f8797efe6e2a54505611fd3af48e80f16"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v30.json",
+      "size_bytes": 12516,
+      "sha256": "62986937e1258a277acb28e69e71bc89b783f964004dd0af6ff2d5cc52d39f12"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v30.md",
+      "size_bytes": 562,
+      "sha256": "ccd789d5c27e5c9630c6b72fab399023cc8d12959b0a3488b20c32dd0745ae8b"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v31.json",
+      "size_bytes": 3109,
+      "sha256": "b6d2ca770fed3f86ec0cccef4be54e8a8cd881fa3b2fdf33235c4c7d0019fc5c"
+    },
+    {
+      "path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v31.md",
+      "size_bytes": 769,
+      "sha256": "fe69d94a11a036a95009a2865f484a4599db96a148eb32505497ed9cf21c21ce"
+    },
+    {
+      "path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v26.json",
+      "size_bytes": 1108,
+      "sha256": "d0e6eca33718012c78623c9e69593f6b1dfd795663ccf96dca36afe2e97d1a5a"
+    },
+    {
+      "path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v26.md",
+      "size_bytes": 393,
+      "sha256": "2fac667a1cb9feb614e01d9229d6cef82cf7106e11d6e971fc3db7ec3421d229"
+    },
+    {
+      "path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v27.json",
+      "size_bytes": 1554,
+      "sha256": "bf3c61cdc50786883adc71d2ef238d039405443766efdfd5db294fccc37244ac"
+    },
+    {
+      "path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v27.md",
+      "size_bytes": 489,
+      "sha256": "f361d0d20cd750f2852bf28b7d6df865c1b7586b35ab7f6bf24843a948d9e094"
+    },
+    {
+      "path": "docs/theory/CCR_NULL_REGIME_CONDITIONAL_CLOSURE_v31.aux",
+      "size_bytes": 32,
+      "sha256": "fbabe80c887f95a1ede6847f22dd91b380bda9d17ae8bfaa72e1741b16aa41e9"
+    },
+    {
+      "path": "docs/theory/CCR_NULL_REGIME_CONDITIONAL_CLOSURE_v31.log",
+      "size_bytes": 9300,
+      "sha256": "4ada05a30befc3618686b35012411844b63572568dbb7e45f069640d3f1a2f7e"
+    },
+    {
+      "path": "docs/theory/CCR_NULL_REGIME_CONDITIONAL_CLOSURE_v31.pdf",
+      "size_bytes": 123016,
+      "sha256": "bbcd5e36a5684dc1f81b63f84f755a665a71ff7d06da37c0c34bcec927181a69"
+    },
+    {
+      "path": "docs/theory/CCR_NULL_REGIME_CONDITIONAL_CLOSURE_v31.tex",
+      "size_bytes": 3714,
+      "sha256": "14bc3021ff2b114766679c7e13bf1db42d4f804ff9eaeaad1fa01a6e3c26b5cf"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v28.tex",
+      "size_bytes": 8232,
+      "sha256": "e4ed732a983b89f54ca395094a4a85a3c2fcba78a9ea5b514b552255f338bf4d"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v29.aux",
+      "size_bytes": 2784,
+      "sha256": "bcaa24557b4c8179c8a348949288e639c00ae0db89c34721d7c5905ae060bc1a"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v29.log",
+      "size_bytes": 20276,
+      "sha256": "ccd57e158e49f669b63ca5ec73e467ffba3580551eeb338abe419f18d428df1f"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v29.out",
+      "size_bytes": 1796,
+      "sha256": "84862d10fc745f00801a26d2a76c8758c48d72faf611bb5d58140a07e8ea0ae6"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v29.pdf",
+      "size_bytes": 295742,
+      "sha256": "b0102afff0351a8ba8eda068d1b5b066ee9ab9dcc5ab6794f5f0a020cb212b08"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v29.tex",
+      "size_bytes": 30777,
+      "sha256": "732221bfc5c4d933125584f0ec18469b3c3fb45710943207ec903a2297e5a8cc"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_CONJECTURE_v29.toc",
+      "size_bytes": 637,
+      "sha256": "c67012b2ee06623d32bfb4814c6f9b86685308a956281638fb6c51f676b1c9bd"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v26.md",
+      "size_bytes": 789,
+      "sha256": "09da32024af154bd85192a98826e00639822e10b26684bcc0ed5b4f8457661ac"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v26.pdf",
+      "size_bytes": 142073,
+      "sha256": "863443dd3dab163f3b7e24e8d8cc606a1de4144977bb65d032de6d226e3b3fa2"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v26.tex",
+      "size_bytes": 5101,
+      "sha256": "63015217a0fbd136ecb12779d52c5ed06e3116093a21a956fd07e7c8e3d608e8"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v30.aux",
+      "size_bytes": 5731,
+      "sha256": "0a7cc9af90ffe992e14d0cd05b2a8aa6fad2bbdbcbd0f615c0d070bebd79be97"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v30.log",
+      "size_bytes": 20150,
+      "sha256": "7cb5fd4497f93ac83fe0a0fd15bff330f3137ea0c78bbf788ded017a276b42a3"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v30.out",
+      "size_bytes": 2129,
+      "sha256": "f378b51e7623807ca87ffa26bfbb384a60d2c66ee5fe07684285a819ad0ca832"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v30.pdf",
+      "size_bytes": 367540,
+      "sha256": "5eeb9eb39a730492bdaaedd4e7b2dea6a110841a7cf11bc63ca31a2d990edb0c"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v30.tex",
+      "size_bytes": 48853,
+      "sha256": "1f35c278f5d8cc865b9d0722422228ba4f3f8278ecb937499e176937b0178545"
+    },
+    {
+      "path": "docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v30.toc",
+      "size_bytes": 751,
+      "sha256": "495f80f4d5ab10ce350744c161d8b54ec7f0ea18aa6b8c985ef014078b75e0ec"
+    },
+    {
+      "path": "scripts/ar1-correction-clinical-summary-v28.js",
+      "size_bytes": 7439,
+      "sha256": "56101ce1c2795df49b63c5f2bbcecaa340167495f924b83b9aace333286e8e78"
+    },
+    {
+      "path": "scripts/audit-operational-term-promotions-v27.js",
+      "size_bytes": 7465,
+      "sha256": "8cab4a5ae9e18c5416c97eab5c662f54307a201bb8f63e0e5d9a36beffcaa868"
+    },
+    {
+      "path": "scripts/audit-operational-term-promotions-v28.js",
+      "size_bytes": 13325,
+      "sha256": "303c8f712aa07fb67b5748c0a7e4c729c13427af5adcebcb2f4b7b390095d3c4"
+    },
+    {
+      "path": "scripts/audit-v23-roadmap-gates.js",
+      "size_bytes": 4845,
+      "sha256": "6a416bc36fe7b704dad7da342da13e4e714baf233c819d456b182916d6010b13"
+    },
+    {
+      "path": "scripts/audit-v24-critical-gaps.js",
+      "size_bytes": 7266,
+      "sha256": "c9381c7e714871ca83ad598a55278323adcd3dee501f6204592e281315121815"
+    },
+    {
+      "path": "scripts/audit-v25-superior-gaps.js",
+      "size_bytes": 7859,
+      "sha256": "ba382b465d8cf6649d43f5d073dfb9c9474bb80a87b38a71e8d9872822b4daa8"
+    },
+    {
+      "path": "scripts/audit-v26-superior-gaps.js",
+      "size_bytes": 6007,
+      "sha256": "ed0fa18e9e38bfd2bea174650ae40c4b9c98ceda7c9991cff1eec44f4399a72b"
+    },
+    {
+      "path": "scripts/audit-v27-superior-gaps.js",
+      "size_bytes": 7305,
+      "sha256": "ebaa3f666be9bc54184a0f8461f4a3fe9c45be6e9ebbda4758283a4cb186950e"
+    },
+    {
+      "path": "scripts/calibrate-session-zero-thresholds-v26.js",
+      "size_bytes": 4936,
+      "sha256": "ed523bb54639ed02e04d967dc807d1ced446931322d78bfc310e1876712b8b3a"
+    },
+    {
+      "path": "scripts/calibrate-session-zero-thresholds-v27.js",
+      "size_bytes": 6680,
+      "sha256": "a8646eaaa082325424fd02f51b42a4f6fe69cfbb639505da7ca32d895e9317a4"
+    },
+    {
+      "path": "scripts/external-session-zero-adjudicator-v27.js",
+      "size_bytes": 23413,
+      "sha256": "fec0bac5da877477bb540d692f04b37a54869ac6ff0ac01b14244e65cc39960b"
+    },
+    {
+      "path": "scripts/external-session-zero-adjudicator-v28.js",
+      "size_bytes": 26827,
+      "sha256": "954a14745976254c5e83a8d67eb16fbe615e94223c1a012ef05a8e28a722e2f9"
+    },
+    {
+      "path": "scripts/external-session-zero-adjudicator-v30.js",
+      "size_bytes": 28924,
+      "sha256": "ea42de486391d87942cbe09131b4ab4349d13ffaac0efa154cc2c89808cdff25"
+    },
+    {
+      "path": "scripts/external-session-zero-adjudicator-v31.js",
+      "size_bytes": 9982,
+      "sha256": "4cbb7740d962c5cb13c5e41847818ef056591963d5c654ac326b672d1a6d3ad1"
+    },
+    {
+      "path": "scripts/verify-human-veto-signature-v27.js",
+      "size_bytes": 6395,
+      "sha256": "d9711f22ef1ddac24047513f6a5a3e3635e9f30db00670533a97256df006be0d"
+    },
+    {
+      "path": "scripts/verify-human-veto-signature-v28.js",
+      "size_bytes": 12411,
+      "sha256": "360b0ae950e02fd3e9b2f72ae8b58070a20ffd631ef40ce6ba6124e53ec872a5"
+    }
+  ],
+  "result": "PASS",
+  "external_support_certified": false
+}

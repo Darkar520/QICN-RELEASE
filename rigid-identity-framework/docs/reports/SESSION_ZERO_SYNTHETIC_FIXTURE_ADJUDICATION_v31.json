@@ -1,0 +1,138 @@
+{
+  "schema_version": "8.0.0",
+  "generated_at": "2026-05-29",
+  "governance_boundary": "This v31 report is a foundation-first internal diagnostic wrapper over v30. It blocks untyped, circular, or under-specified synthetic fixtures. It distinguishes the null regime (∅_φ ∈ E, bottom element) from undefined assignment (⊥ ∉ E). It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human review.",
+  "strict_mode": true,
+  "input_manifest": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json",
+  "v30_verdict": "BLOCKED_MULTIPLE_GATES",
+  "v30_blocking_reasons": [
+    "BLOCKED_AFFINE_LEAKAGE",
+    "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+    "BLOCKED_STRAW_MAN_RIVAL",
+    "BLOCKED_TEMPORAL_DEPENDENCE_STRICT"
+  ],
+  "foundation_checks": {
+    "typed_perturbation_separation": {
+      "ok": false,
+      "rule": "manifest must separately declare internal perturbations and external extension witnesses",
+      "status_if_failed": "BLOCKED_TYPE_CONFUSION"
+    },
+    "calibration_lineage": {
+      "ok": false,
+      "rule": "threshold calibration must be fixture-blind, generated before scoring, and tied to an external holdout before it can support inference",
+      "status_if_failed": "BLOCKED_CIRCULAR_CALIBRATION"
+    },
+    "bridge_hypotheses": {
+      "ok": false,
+      "v30_bridge_status": "admissible",
+      "rule": "H1 topology, H2 constants, H3 factorization, and H4 margin must be materially referenced",
+      "status_if_failed": "BLOCKED_BRIDGE_HYPOTHESES_UNVERIFIED"
+    },
+    "bridge_estimator_verification": {
+      "ok": false,
+      "H2_status": "missing_or_invalid",
+      "H4_status": "not_evaluable",
+      "H4_details": {
+        "robustness_condition": false,
+        "delta_star": 0.15,
+        "L_h": 2,
+        "epsilon_sum": 0,
+        "L_h_epsilon_sum": null,
+        "margin_excess": null,
+        "note": "H4 is not evaluable because declared epsilon_i values are missing or invalid."
+      },
+      "decision_margin": {
+        "delta_star": 0.15,
+        "L_h": 2,
+        "margin_computation": "rivalDist - qicnDist; L_h = 2 for a difference of two absolute-value distance terms",
+        "points_evaluated": 8,
+        "points_favoring_qicn": 8,
+        "margins": [
+          {
+            "point_id": "m01",
+            "rival_distance": 0.25,
+            "qicn_distance": 0.030000000000000027,
+            "margin": 0.21999999999999997
+          },
+          {
+            "point_id": "m02",
+            "rival_distance": 0.22000000000000003,
+            "qicn_distance": 0.030000000000000027,
+            "margin": 0.19
+          },
+          {
+            "point_id": "m03",
+            "rival_distance": 0.19,
+            "qicn_distance": 0.01999999999999999,
+            "margin": 0.17
+          },
+          {
+            "point_id": "m04",
+            "rival_distance": 0.24,
+            "qicn_distance": 0.019999999999999962,
+            "margin": 0.22000000000000003
+          },
+          {
+            "point_id": "m05",
+            "rival_distance": 0.27,
+            "qicn_distance": 0.020000000000000018,
+            "margin": 0.25
+          },
+          {
+            "point_id": "m06",
+            "rival_distance": 0.24,
+            "qicn_distance": 0.019999999999999962,
+            "margin": 0.22000000000000003
+          },
+          {
+            "point_id": "m07",
+            "rival_distance": 0.3,
+            "qicn_distance": 0.02999999999999997,
+            "margin": 0.27
+          },
+          {
+            "point_id": "m08",
+            "rival_distance": 0.18,
+            "qicn_distance": 0.03,
+            "margin": 0.15
+          }
+        ],
+        "operational_note": "This is a finite operational computation, not a topological invariant."
+      },
+      "H3_status": "not_proved_by_this_gate",
+      "rule": "H2 requires K_i, omega_i, epsilon_i, and omega_i <= 2 epsilon_i for all six invariants; H4 requires Delta* > L_h * sum(epsilon_i)",
+      "status_if_failed": "BLOCKED_ESTIMATOR_UNVERIFIED"
+    },
+    "rival_variance": {
+      "ok": false,
+      "observed_variance": 0.002057142857142857,
+      "rival_prediction_variance": 0.00006964285714285716,
+      "variance_ratio": 0.03385416666666667,
+      "rule": "rival predictions must have at least 10 percent of observed variance unless a preregistered constant model is justified",
+      "status_if_failed": "BLOCKED_STRAW_MAN_RIVAL_VARIANCE"
+    }
+  },
+  "blocking_reasons": [
+    "BLOCKED_AFFINE_LEAKAGE",
+    "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+    "BLOCKED_STRAW_MAN_RIVAL",
+    "BLOCKED_TEMPORAL_DEPENDENCE_STRICT",
+    "BLOCKED_TYPE_CONFUSION",
+    "BLOCKED_CIRCULAR_CALIBRATION",
+    "BLOCKED_BRIDGE_HYPOTHESES_UNVERIFIED",
+    "BLOCKED_ESTIMATOR_UNVERIFIED",
+    "BLOCKED_STRAW_MAN_RIVAL_VARIANCE"
+  ],
+  "verdict": "BLOCKED_FOUNDATION_FIRST_GATES",
+  "result": "PASS",
+  "external_support_certified": false,
+  "provenance": {
+    "runner_path": "scripts/external-session-zero-adjudicator-v31.js",
+    "runner_sha256": "e9dfefbf7023c5e8533e1232b657bdb7d4508c9d3d92f2edb1d91e3747c2e722",
+    "manifest_path": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json",
+    "manifest_sha256": "e00b315df688934186ca148dd043b0d9495957be586a7477457219028d832f6a",
+    "v30_runner_sha256": "ea42de486391d87942cbe09131b4ab4349d13ffaac0efa154cc2c89808cdff25"
+  },
+  "nonclaim_boundary": "A v31 PASS means the foundation-first gate executed; blocked verdicts are expected on current synthetic fixtures and are not evidence for QICN.",
+  "report_sha256": "c6dbc7ae31b49060752276aa7d0e516445703c65056ca4e565364c30c9a02c7b"
+}

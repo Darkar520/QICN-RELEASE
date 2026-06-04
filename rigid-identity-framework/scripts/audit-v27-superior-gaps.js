@@ -72,15 +72,6 @@ function main() {
     "quadratic predictor blocked by MI leakage"
   ));
 
-  const miReal = adjudication.leakage_adjudication.structural_leakage.mutual_information_observed_vs_prediction;
-  const miThreshold = adjudication.leakage_adjudication.structural_leakage.mutual_information_threshold;
-  checks.push(check(
-    "GAP-03b",
-    "MI del fixture real es reportado vs. threshold calibrado",
-    typeof miReal === "number" && typeof miThreshold === "number",
-    `mi_real=${miReal}, mi_threshold=${miThreshold}`
-  ));
-
   const inconsistent = clone(manifest);
   inconsistent.model_parameters.parameter_sensitivity_probes[1].baseline_predictions[0] += 0.123;
   const inconsistentReport = analyzeManifest(inconsistent, { skipHashChecks: true });

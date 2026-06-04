@@ -4,6 +4,12 @@ Status: FCR v10 Pass 2 claim-surface scaffold.
 Purpose: list strong claim families, their burden, falsifier, and current
 epistemic status.
 
+Active status note: this ledger is not superseded by
+`NON_CLAIM_LEDGER_CANONICAL.md`. The non-claim ledger records prohibited
+inflations; this theory ledger records claim families, burdens, falsifiers, and
+current statuses. Both must remain synchronized when new claim-boundary
+language is introduced.
+
 ## Boundary
 
 This ledger does not promote any claim. It exists to prevent drift from formal
@@ -21,6 +27,7 @@ or operational statements into ordinary-language overclaims.
 | <a id="claim-first-person-index"></a>First-person indexed subjectivity | Paper 8 | Framework-internal indexed subjectivity class. | Seven-coordinate state, interventions, weak-rival defeat. | Weak rival or label-only system matches evidence. | formal-only |
 | <a id="claim-phenomenal-bridge"></a>Phenomenal bridge organization | Paper 9 | Burden architecture for bridge predicates. | BPF-2/BPF-3/BPF-4 interventions, comparators, gates, governance. | Bridge predicate reducible to semantic density, reward, report, or upstream proxy. | formal-only |
 | <a id="claim-external-adjudication"></a>External adjudication | Paper 10 | Architecture for future external evidence. | Preregistration, independent adjudicators, datasets, controls, decision records. | Internal artifacts treated as external validation. | implementation-support |
+| <a id="claim-dimensional-reduction"></a>Dimensional reduction / inferior instrument | v30 Bridge Theorem / v36 prompt / v37 hardening | Finite runtime projections are non-injective witnesses with irrecoverable projection loss. | Formal topological or linear statement of non-injectivity; explicit non-claim that proxy output is not certification. | Any document treats finite proxy equality as theoretical-state equality or treats a demonstration module as a certificate. | boundary-theorem |
 
 ## Update Rule
 

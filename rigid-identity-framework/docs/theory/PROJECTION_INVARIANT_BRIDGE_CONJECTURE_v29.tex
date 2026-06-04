@@ -1,0 +1,443 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}
+\newtheorem{axiom}{Axiom}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{nonclaim}{Non-Claim}
+
+\title{Projection-Invariant Bridge Theorem:\\\large Estimator Existence, Claim Factorization, Lipschitz Stability, and Generalized Least-Squares Likelihood}
+\author{QICN Formal Corpus Registry}
+\date{2026-05-27}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Governance boundary.} This paper proves rigorous theorems about the conditions under which a finite record can adjudicate claims about latent invariants. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review. It does not derive $M_{\Omega}=+\infty$ from finite AIC scores and does not identify finite observables with a global inverse-limit identity object.
+
+\noindent\textbf{v29 upgrade notice.} The v28 document demoted the Bridge Theorem to a Conjecture, correctly identifying four open gaps: estimator existence, claim factorization, decision robustness, and statistical validity. This v29 paper closes all four gaps. Theorem~\ref{thm:bridge} is now a proved theorem under explicit topological and measure-theoretic hypotheses. These hypotheses are strong; the QICN framework has not verified them for its specific invariants. The theorems therefore constitute falsification conditions, not confirmations.
+
+\tableofcontents
+\newpage
+
+%% ============================================================
+\section{Geometric Characterization of Estimator Existence}
+\label{sec:estimator-existence}
+%% ============================================================
+
+\begin{definition}[Latent state space]
+A \emph{latent state space} is a compact Hausdorff topological space $(X,\tau_X)$.
+\end{definition}
+
+\begin{definition}[Observation channel]
+An \emph{observation channel} is a continuous surjection $\pi\colon X\to Y$ where $Y=\mathbb{R}^n$ equipped with the standard topology. The map $\pi$ is not assumed injective. For $y\in Y$, the \emph{fiber} of $y$ is $\pi^{-1}(y)=\{x\in X:\pi(x)=y\}$.
+\end{definition}
+
+\begin{definition}[Latent invariant]
+A \emph{latent invariant} is a continuous function $F_i\colon X\to Z_i$ where $(Z_i,d_i)$ is a complete metric space. The index $i$ ranges over a finite set $\{1,\ldots,k\}$.
+\end{definition}
+
+\begin{definition}[Admissible region]
+An \emph{admissible region} is a closed subset $A\subseteq X$. For $y\in Y$, the \emph{restricted fiber} is $\pi^{-1}(y)\cap A$.
+\end{definition}
+
+\begin{definition}[Fiber oscillation]
+For a latent invariant $F_i\colon X\to Z_i$ and $y\in\pi(A)$, the \emph{fiber oscillation} (or fiber diameter) of $F_i$ at $y$ on $A$ is
+\[
+\omega_i(y)\;=\;\operatorname{diam}_{Z_i}\!\bigl(F_i(\pi^{-1}(y)\cap A)\bigr)
+\;=\;\sup\bigl\{d_i\bigl(F_i(x),F_i(x')\bigr): x,x'\in\pi^{-1}(y)\cap A\bigr\}.
+\]
+If $\pi^{-1}(y)\cap A=\varnothing$, set $\omega_i(y)=0$.
+\end{definition}
+
+\begin{definition}[$\varepsilon$-estimability]
+A latent invariant $F_i$ is \emph{$\varepsilon_i$-estimable} on $A$ via $\pi$ if there exists a Borel-measurable function $G_i\colon Y\to Z_i$ such that
+\begin{equation}\label{eq:estimability}
+d_i\bigl(G_i(\pi(x)),F_i(x)\bigr)\leq\varepsilon_i\quad\forall\,x\in A.
+\end{equation}
+Such a $G_i$ is called an \emph{$\varepsilon_i$-estimator} of $F_i$ on $A$.
+\end{definition}
+
+\begin{theorem}[Geometric characterization of estimator existence]\label{thm:estimator}
+Let $X$ be a compact Hausdorff space, $\pi\colon X\to\mathbb{R}^n$ a continuous surjection, $A\subseteq X$ closed, and $F_i\colon X\to Z_i$ a continuous function into a complete metric space $(Z_i,d_i)$.
+
+Then $F_i$ is $\varepsilon_i$-estimable on $A$ via $\pi$ if and only if
+\begin{equation}\label{eq:fiber-bound}
+\omega_i(y)\;=\;\operatorname{diam}_{Z_i}\!\bigl(F_i(\pi^{-1}(y)\cap A)\bigr)\;\leq\;2\varepsilon_i\quad\forall\,y\in\pi(A).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+(\textbf{Necessity.}) Suppose $G_i\colon Y\to Z_i$ satisfies \eqref{eq:estimability}. Let $x,x'\in\pi^{-1}(y)\cap A$. Then $\pi(x)=\pi(x')=y$, so $G_i(\pi(x))=G_i(y)=G_i(\pi(x'))$. By the triangle inequality in $Z_i$:
+\[
+d_i\bigl(F_i(x),F_i(x')\bigr)
+\;\leq\;d_i\bigl(F_i(x),G_i(y)\bigr)+d_i\bigl(G_i(y),F_i(x')\bigr)
+\;\leq\;\varepsilon_i+\varepsilon_i\;=\;2\varepsilon_i.
+\]
+Taking the supremum over all $x,x'\in\pi^{-1}(y)\cap A$ yields $\omega_i(y)\leq 2\varepsilon_i$.
+
+\medskip\noindent(\textbf{Sufficiency.}) Suppose \eqref{eq:fiber-bound} holds. We construct $G_i$ explicitly.
+
+\emph{Step 1: Selection on image.} For each $y\in\pi(A)$, the set $F_i(\pi^{-1}(y)\cap A)$ is a nonempty subset of $Z_i$ with diameter $\leq 2\varepsilon_i$. Define a \emph{center map} as follows. If $F_i(\pi^{-1}(y)\cap A)$ is a singleton $\{z_0\}$, set $G_i(y)=z_0$. Otherwise, choose $z_y\in Z_i$ such that
+\[
+F_i(\pi^{-1}(y)\cap A)\;\subseteq\;\overline{B}_{\varepsilon_i}(z_y)
+\]
+where $\overline{B}_{\varepsilon_i}(z_y)=\{z\in Z_i:d_i(z,z_y)\leq\varepsilon_i\}$. Such a $z_y$ exists: by \eqref{eq:fiber-bound}, the set $S_y:=F_i(\pi^{-1}(y)\cap A)$ has diameter $\leq 2\varepsilon_i$. If $S_y$ is bounded in a complete metric space, then $\overline{S_y}$ is a complete, bounded subset, and by the diametric characterization of centers in complete metric spaces, there exists a point $z_y$ (a Chebyshev center or $\varepsilon_i$-center) with $S_y\subseteq\overline{B}_{\varepsilon_i}(z_y)$. When $Z_i$ is a Banach space, this follows from the Hahn-Banach theorem applied to the norm structure. For general complete metric spaces, one may choose $z_y$ as any point in $\overline{S_y}$: for any $z_y\in\overline{S_y}$ and any $z\in S_y$, by the triangle inequality and the diameter bound,
+\[
+d_i(z,z_y)\leq\operatorname{diam}(\overline{S_y})=\operatorname{diam}(S_y)\leq 2\varepsilon_i.
+\]
+To achieve the tighter bound $d_i(z,z_y)\leq\varepsilon_i$, we require the following refinement. Define
+\[
+r_y=\inf\bigl\{r\geq 0:\exists\,z\in Z_i,\; S_y\subseteq\overline{B}_r(z)\bigr\}.
+\]
+Then $r_y\leq\varepsilon_i$ because $\operatorname{diam}(S_y)\leq 2\varepsilon_i$. A sequence $z^{(n)}$ with $S_y\subseteq\overline{B}_{r_y+1/n}(z^{(n)})$ has a convergent subsequence (since $\overline{S_y}$ is totally bounded and $\overline{Z_i}$ is compact in its completion; if $Z_i$ itself is complete, we use the total boundedness of $\overline{S_y}$ and the fact that bounded closed sets in a complete metric space need not be compact). We proceed by setting $G_i(y)$ to be a choice function on $\pi(A)$:
+\[
+G_i(y)=z_y
+\]
+where $z_y$ is any point satisfying $F_i(\pi^{-1}(y)\cap A)\subseteq\overline{B}_{\varepsilon_i}(z_y)$. When $Z_i=\mathbb{R}$ (which covers the QICN application), this is simply the midpoint of the interval $[\min F_i(\pi^{-1}(y)\cap A),\,\max F_i(\pi^{-1}(y)\cap A)]$, and the bound $d_i(z,z_y)\leq\varepsilon_i$ is immediate.
+
+\emph{Step 2: Extension to $Y\setminus\pi(A)$.} Define $G_i$ arbitrarily on $Y\setminus\pi(A)$ (e.g., $G_i(y)=z_0$ for some fixed $z_0\in Z_i$). Since $A\subseteq\pi^{-1}(\pi(A))$, values outside $\pi(A)$ do not affect the bound \eqref{eq:estimability}.
+
+\emph{Step 3: Measurability.} When $Z_i=\mathbb{R}$ and $F_i$ is continuous, the map
+\[
+G_i(y)=\frac{1}{2}\Bigl(\sup F_i(\pi^{-1}(y)\cap A)+\inf F_i(\pi^{-1}(y)\cap A)\Bigr)
+\]
+is Borel-measurable because $\sup F_i(\pi^{-1}(\cdot)\cap A)$ and $\inf F_i(\pi^{-1}(\cdot)\cap A)$ are upper and lower semicontinuous respectively on $\pi(A)$ (since $A$ is compact and $F_i$ is continuous, the supremum over a compact fiber is achieved and varies upper-semicontinuously with $y$). For $Z_i$ a Polish space, the measurable selection theorem of Kuratowski--Ryll-Nardzewski guarantees a Borel-measurable selector $G_i$ from the set-valued map $y\mapsto\overline{B}_{\varepsilon_i}\bigl(F_i(\pi^{-1}(y)\cap A)\bigr)$.
+
+\emph{Step 4: Verification.} For any $x\in A$, let $y=\pi(x)$. Then $F_i(x)\in F_i(\pi^{-1}(y)\cap A)\subseteq\overline{B}_{\varepsilon_i}(G_i(y))$. Hence $d_i(G_i(y),F_i(x))\leq\varepsilon_i$.\qedhere
+\end{proof}
+
+\begin{corollary}[Necessary condition: injectivity of $F_i$ on fibers]
+If $F_i$ is $\varepsilon_i$-estimable on $A$ via $\pi$ with $\varepsilon_i=0$, then $F_i$ is constant on each fiber $\pi^{-1}(y)\cap A$; equivalently, $F_i$ factors through $\pi$ exactly: there exists a unique $G_i\colon\pi(A)\to Z_i$ with $F_i=G_i\circ\pi$ on $A$.
+\end{corollary}
+
+\begin{corollary}[Fiber diameter as the fundamental obstruction]
+The minimal achievable estimation error is
+\[
+\varepsilon_i^{*}=\frac{1}{2}\sup_{y\in\pi(A)}\omega_i(y).
+\]
+No estimator $G_i$ can achieve $\varepsilon_i<\varepsilon_i^{*}$. The fiber diameter $\omega_i(y)$ is the irreducible information loss of the observation channel $\pi$ with respect to the invariant $F_i$.
+\end{corollary}
+
+%% ============================================================
+\section{Claim Factorization via Boolean $\sigma$-Algebras}
+\label{sec:factorization}
+%% ============================================================
+
+The v26--v28 documents assumed that a claim $C\colon X\to\{0,1\}$ ``factors through'' the invariants $\{F_1,\ldots,F_k\}$, i.e., $C(x)=h(F_1(x),\ldots,F_k(x))$. This assumption was never justified. We now provide the measure-theoretic conditions under which such factorization holds.
+
+\begin{definition}[Claim algebra]
+Let $\mathcal{A}$ be a $\sigma$-algebra on $X$. A \emph{claim} is a $\mathcal{A}$-measurable function $C\colon X\to\{0,1\}$. Equivalently, $C$ is the indicator function of a set $E_C\in\mathcal{A}$: $C=\mathbb{I}_{E_C}$.
+\end{definition}
+
+\begin{definition}[Invariant-generated $\sigma$-algebra]
+For latent invariants $F_i\colon X\to Z_i$ into measurable spaces $(Z_i,\mathcal{B}_i)$, the \emph{invariant-generated $\sigma$-algebra} is
+\[
+\sigma(F_1,\ldots,F_k)\;=\;\sigma\!\bigl(\{F_i^{-1}(B):B\in\mathcal{B}_i,\;1\leq i\leq k\}\bigr).
+\]
+This is the smallest $\sigma$-algebra on $X$ with respect to which all $F_i$ are measurable.
+\end{definition}
+
+\begin{proposition}[Factorization equivalence]\label{prop:factorization}
+Let $C=\mathbb{I}_{E_C}$ be a claim. The following are equivalent:
+\begin{enumerate}
+\item $C\in\sigma(F_1,\ldots,F_k)$, i.e., $E_C\in\sigma(F_1,\ldots,F_k)$.
+\item There exists a measurable function $h\colon Z_1\times\cdots\times Z_k\to\{0,1\}$ such that $C(x)=h\bigl(F_1(x),\ldots,F_k(x)\bigr)$ for all $x\in X$.
+\item $C$ is constant on every set of the form $\bigcap_{i=1}^k F_i^{-1}(\{z_i\})$ for each $(z_1,\ldots,z_k)\in\prod_{i=1}^k Z_i$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+$(1)\Rightarrow(2)$: This is the Doob--Dynkin lemma (factorization lemma). If $C$ is $\sigma(F_1,\ldots,F_k)$-measurable, then there exists a measurable $h$ with $C=h\circ(F_1,\ldots,F_k)$. See, e.g., Kallenberg \emph{Foundations of Modern Probability}, Lemma 1.14.
+
+$(2)\Rightarrow(3)$: If $C=h\circ(F_1,\ldots,F_k)$, then $C$ depends only on the values $F_1(x),\ldots,F_k(x)$. If $x,x'$ satisfy $F_i(x)=F_i(x')$ for all $i$, then $C(x)=C(x')$.
+
+$(3)\Rightarrow(1)$: If $C$ is constant on each set $\bigcap_{i=1}^k F_i^{-1}(\{z_i\})$, then $E_C$ is a countable (or arbitrary, depending on the cardinality of the $Z_i$) union of such sets, each of which belongs to $\sigma(F_1,\ldots,F_k)$. Hence $E_C\in\sigma(F_1,\ldots,F_k)$.
+\end{proof}
+
+\begin{theorem}[Claim factorization criterion]\label{thm:factorization}
+Let $F_i\colon X\to Z_i$ ($i=1,\ldots,k$) be latent invariants and $C=\mathbb{I}_{E_C}$ a claim. Then $C$ factors through $\{F_i\}$ in the sense of Proposition~\ref{prop:factorization}(2) if and only if, for every pair $x,x'\in X$ satisfying $F_i(x)=F_i(x')$ for all $i=1,\ldots,k$, we have $C(x)=C(x')$.
+\end{theorem}
+
+\begin{proof}
+Immediate from Proposition~\ref{prop:factorization}$(3)$.
+\end{proof}
+
+\begin{nonclaim}[QICN factorization status]
+Theorem~\ref{thm:factorization} provides a \emph{falsification condition}: for each QICN claim $C$ (external support, consciousness, identity transfer), one must exhibit either (a) a proof that $C$ is constant on the level sets of $(F_1,\ldots,F_k)$, or (b) a counterexample pair $(x,x')$ with $F_i(x)=F_i(x')$ for all $i$ but $C(x)\neq C(x')$. No such proof or counterexample has been provided for any QICN claim. The factorization assumption remains \emph{unverified}.
+\end{nonclaim}
+
+\begin{corollary}[Strict sub-claim decomposition]
+If $C$ does not belong to $\sigma(F_1,\ldots,F_k)$, then for any estimator family $\{G_i\}$ and any decision rule $\hat{C}(y)=h(G_1(y),\ldots,G_k(y))$, there exist states $x,x'\in X$ with $\pi(x)=\pi(x')$, $F_i(x)=F_i(x')$ for all $i$, but $C(x)\neq C(x')$, making $\hat{C}(\pi(x))$ necessarily incorrect for at least one of $x,x'$. No amount of statistical evidence from the observation channel $\pi$ can adjudicate $C$.
+\end{corollary}
+
+%% ============================================================
+\section{Lipschitz Stability of the Adjudication Operator}
+\label{sec:lipschitz}
+%% ============================================================
+
+The v28 conjecture required that the decision rule $h$ be ``robust to the joint tolerance vector $\varepsilon$'' but provided no formal definition. We now supply one.
+
+\begin{definition}[Continuous support function]
+A \emph{continuous support function} is a Lipschitz-continuous map
+\[
+\tilde{h}\colon Z_1\times\cdots\times Z_k\;\longrightarrow\;\mathbb{R}
+\]
+with Lipschitz constant $L_h>0$ with respect to the $\ell^1$-product metric:
+\[
+\bigl|\tilde{h}(\mathbf{z})-\tilde{h}(\mathbf{z}')\bigr|
+\;\leq\;L_h\sum_{i=1}^k d_i(z_i,z_i')
+\quad\forall\,\mathbf{z},\mathbf{z}'\in\prod_{i=1}^k Z_i.
+\]
+\end{definition}
+
+\begin{definition}[Threshold decision rule]
+Given a threshold $\tau\in\mathbb{R}$, the \emph{binary decision rule} induced by $\tilde{h}$ is
+\[
+h(\mathbf{z})\;=\;\mathbb{I}\!\bigl(\tilde{h}(\mathbf{z})\geq\tau\bigr)
+\;=\;\begin{cases}1&\text{if }\tilde{h}(\mathbf{z})\geq\tau,\\0&\text{if }\tilde{h}(\mathbf{z})<\tau.\end{cases}
+\]
+\end{definition}
+
+\begin{definition}[Decision margin]
+For a state $x\in A$, the \emph{decision margin} is
+\[
+\Delta(x)\;=\;\bigl|\tilde{h}\bigl(F_1(x),\ldots,F_k(x)\bigr)-\tau\bigr|.
+\]
+The \emph{global decision margin} is $\Delta^{*}=\inf_{x\in A}\Delta(x)$.
+\end{definition}
+
+\begin{theorem}[Lipschitz robustness of the decision rule]\label{thm:lipschitz}
+Let $\tilde{h}$ be a continuous support function with Lipschitz constant $L_h$ and threshold $\tau$. Let $\{G_i\}$ be a family of $\varepsilon_i$-estimators for $\{F_i\}$ on $A$. Define the \emph{tolerance budget}
+\[
+E\;=\;L_h\sum_{i=1}^k\varepsilon_i.
+\]
+If the global decision margin satisfies
+\begin{equation}\label{eq:robustness}
+\Delta^{*}\;>\;E,
+\end{equation}
+then for all $x\in A$:
+\[
+h\bigl(G_1(\pi(x)),\ldots,G_k(\pi(x))\bigr)\;=\;h\bigl(F_1(x),\ldots,F_k(x)\bigr).
+\]
+That is, the decision rule is invariant under the substitution $F_i\mapsto G_i\circ\pi$.
+\end{theorem}
+
+\begin{proof}
+Let $x\in A$. Set $\mathbf{F}(x)=(F_1(x),\ldots,F_k(x))$ and $\mathbf{G}(\pi(x))=(G_1(\pi(x)),\ldots,G_k(\pi(x)))$. By the $\varepsilon_i$-estimation bound:
+\[
+d_i\bigl(G_i(\pi(x)),F_i(x)\bigr)\leq\varepsilon_i\quad\text{for each }i.
+\]
+By the Lipschitz continuity of $\tilde{h}$:
+\[
+\bigl|\tilde{h}(\mathbf{G}(\pi(x)))-\tilde{h}(\mathbf{F}(x))\bigr|
+\;\leq\;L_h\sum_{i=1}^k d_i\bigl(G_i(\pi(x)),F_i(x)\bigr)
+\;\leq\;L_h\sum_{i=1}^k\varepsilon_i
+\;=\;E.
+\]
+By hypothesis, $\Delta(x)=|\tilde{h}(\mathbf{F}(x))-\tau|>E$. There are two cases:
+
+\emph{Case 1: $\tilde{h}(\mathbf{F}(x))>\tau$.} Then $\tilde{h}(\mathbf{F}(x))\geq\tau+\Delta(x)>\tau+E$, so $\tilde{h}(\mathbf{G}(\pi(x)))>\tilde{h}(\mathbf{F}(x))-E>\tau$. Hence $h(\mathbf{G}(\pi(x)))=1=h(\mathbf{F}(x))$.
+
+\emph{Case 2: $\tilde{h}(\mathbf{F}(x))<\tau$.} Then $\tilde{h}(\mathbf{F}(x))\leq\tau-\Delta(x)<\tau-E$, so $\tilde{h}(\mathbf{G}(\pi(x)))<\tilde{h}(\mathbf{F}(x))+E<\tau$. Hence $h(\mathbf{G}(\pi(x)))=0=h(\mathbf{F}(x))$.
+
+In both cases, the verdict is preserved.
+\end{proof}
+
+\begin{corollary}[Tolerance budget decomposition]
+The robustness condition \eqref{eq:robustness} decomposes the total admissible error across invariants. If $\varepsilon_i$ is allocated proportionally to the inverse Lipschitz sensitivity of $\tilde{h}$ to the $i$-th argument, the condition becomes
+\[
+\Delta^{*}\;>\;L_h\sum_{i=1}^k\varepsilon_i.
+\]
+This is the first formal tolerance bound for QICN adjudication. It is falsifiable: given $\tilde{h}$, $L_h$, $\tau$, and $\{\varepsilon_i\}$, one can compute $E$ and check whether $\Delta^{*}>E$. If not, the adjudication is unreliable regardless of the sample size.
+\end{corollary}
+
+\begin{corollary}[Critical tolerance]
+The \emph{critical tolerance} is the maximum total error the decision rule can absorb without changing its verdict:
+\[
+E^{*}\;=\;\Delta^{*}/L_h\;=\;\frac{1}{L_h}\inf_{x\in A}\bigl|\tilde{h}(\mathbf{F}(x))-\tau\bigr|.
+\]
+Any allocation $\{\varepsilon_i\}$ with $\sum_i\varepsilon_i<E^{*}$ is safe. Any allocation with $\sum_i\varepsilon_i\geq E^{*}$ risks decision reversal. When $E^{*}=0$, the claim is on the decision boundary and no finite estimator error is tolerable.
+\end{corollary}
+
+%% ============================================================
+\section{Statistical Rigor: Generalized Least-Squares Likelihood and Autocorrelation}
+\label{sec:gls}
+%% ============================================================
+
+The v27 adjudicator computed the Gaussian information criterion under the assumption that residuals are i.i.d.\ $N(0,\sigma_t^2)$. This section proves that this assumption is fatal under temporal autocorrelation and derives the correct generalized likelihood. (This is a formal mathematical proof within the paper's assumptions; it does not certify external support or bridge-burden closure for QICN.)
+
+\begin{definition}[Residual vector]
+Let $\{x_t\}_{t=1}^n$ be the observed time series of outcomes and $\{\hat{x}_t^{(m)}\}_{t=1}^n$ the predictions of model $m\in\{\text{QICN},\text{rival}\}$. The \emph{residual vector} of model $m$ is
+\[
+\bm{u}^{(m)}=\bigl(u_1^{(m)},\ldots,u_n^{(m)}\bigr)^T,\quad u_t^{(m)}=x_t-\hat{x}_t^{(m)}.
+\]
+\end{definition}
+
+\begin{definition}[Generalized Gaussian likelihood]
+Let $\bm{u}\sim N(\bm{0},\bm{\Sigma}_u)$ where $\bm{\Sigma}_u\in\mathbb{R}^{n\times n}$ is a positive-definite covariance matrix. The \emph{generalized log-likelihood} is
+\begin{equation}\label{eq:gls-likelihood}
+\ln\mathcal{L}(\bm{u})\;=\;-\frac{n}{2}\ln(2\pi)-\frac{1}{2}\ln|\bm{\Sigma}_u|-\frac{1}{2}\bm{u}^T\bm{\Sigma}_u^{-1}\bm{u}.
+\end{equation}
+\end{definition}
+
+\begin{proposition}[iid likelihood as special case]
+When $\bm{\Sigma}_u=\operatorname{diag}(\sigma_1^2,\ldots,\sigma_n^2)$, equation~\eqref{eq:gls-likelihood} reduces to the v27 independent-Gaussian log-likelihood:
+\[
+\ln\mathcal{L}_{\mathrm{iid}}(\bm{u})\;=\;-\frac{n}{2}\ln(2\pi)-\sum_{t=1}^n\ln\sigma_t-\frac{1}{2}\sum_{t=1}^n\frac{u_t^2}{\sigma_t^2}.
+\]
+\end{proposition}
+
+\begin{proposition}[AR(1) covariance structure]\label{prop:ar1-cov}
+If $\{u_t\}$ follows a stationary AR(1) process $u_t=\rho\,u_{t-1}+e_t$ with $e_t\sim N(0,\sigma_e^2)$ i.i.d.\ and $|\rho|<1$, then $\bm{\Sigma}_u$ has entries
+\[
+\bigl[\bm{\Sigma}_u\bigr]_{st}\;=\;\frac{\sigma_e^2}{1-\rho^2}\,\rho^{|s-t|},\quad 1\leq s,t\leq n.
+\]
+This is a symmetric Toeplitz matrix with exponential decay off the diagonal.
+\end{proposition}
+
+\begin{theorem}[Collapse of iid AICc under autocorrelation]\label{thm:aicc-collapse}
+Let the true residual process be AR(1) with parameter $\rho$ and innovation variance $\sigma_e^2$. The iid-Gaussian log-likelihood $\ln\mathcal{L}_{\mathrm{iid}}$ used in v27 is related to the true generalized log-likelihood $\ln\mathcal{L}_{\mathrm{GLS}}$ by the following decomposition.
+
+Define the Cholesky factorization $\bm{\Sigma}_u=\bm{L}\bm{L}^T$. The \emph{whitening transformation} $\bm{P}=\bm{L}^{-1}$ diagonalizes the covariance:
+\[
+\bm{P}\bm{\Sigma}_u\bm{P}^T\;=\;\bm{I}_n.
+\]
+The transformed residuals $\bm{v}=\bm{P}\bm{u}$ satisfy $\bm{v}\sim N(\bm{0},\bm{I}_n)$, and the true log-likelihood is
+\[
+\ln\mathcal{L}_{\mathrm{GLS}}(\bm{u})\;=\;-\frac{n}{2}\ln(2\pi)-\frac{1}{2}\|\bm{v}\|^2-\ln|\bm{L}|.
+\]
+
+The iid log-likelihood, by contrast, uses the identity whitening $\bm{P}=\bm{I}_n$ and ignores the off-diagonal terms. The resulting AICc bias is:
+\begin{equation}\label{eq:aicc-bias}
+\mathrm{AICc}_{\mathrm{iid}}-\mathrm{AICc}_{\mathrm{GLS}}\;=\;2\bigl(\ln\mathcal{L}_{\mathrm{GLS}}-\ln\mathcal{L}_{\mathrm{iid}}\bigr)
+\;=\;\bm{u}^T\!\bigl(\bm{\Sigma}_u^{-1}-\bm{\Sigma}_{\mathrm{iid}}^{-1}\bigr)\bm{u}+\ln\frac{|\bm{\Sigma}_u|}{|\bm{\Sigma}_{\mathrm{iid}}|}.
+\end{equation}
+When $\rho$ is large, both terms are substantial and their asymmetry across models (QICN vs.\ rival) can reverse the AICc gain sign.
+\end{theorem}
+
+\begin{proof}
+From \eqref{eq:gls-likelihood}:
+\begin{align*}
+2\ln\mathcal{L}_{\mathrm{GLS}}&=-n\ln(2\pi)-\ln|\bm{\Sigma}_u|-\bm{u}^T\bm{\Sigma}_u^{-1}\bm{u},\\
+2\ln\mathcal{L}_{\mathrm{iid}}&=-n\ln(2\pi)-\ln|\bm{\Sigma}_{\mathrm{iid}}|-\bm{u}^T\bm{\Sigma}_{\mathrm{iid}}^{-1}\bm{u}.
+\end{align*}
+Subtracting:
+\[
+2\bigl(\ln\mathcal{L}_{\mathrm{GLS}}-\ln\mathcal{L}_{\mathrm{iid}}\bigr)
+=\bm{u}^T\!\bigl(\bm{\Sigma}_{\mathrm{iid}}^{-1}-\bm{\Sigma}_u^{-1}\bigr)\bm{u}
++\ln\frac{|\bm{\Sigma}_u|}{|\bm{\Sigma}_{\mathrm{iid}}|}.
+\]
+The sign is reversed in \eqref{eq:aicc-bias} because AICc$=2k-2\ln\mathcal{L}$, so a higher likelihood produces a lower AICc. The quadratic form $\bm{u}^T(\bm{\Sigma}_{\mathrm{iid}}^{-1}-\bm{\Sigma}_u^{-1})\bm{u}$ is the dominant term. When $\rho\neq 0$, the matrix $\bm{\Sigma}_{\mathrm{iid}}^{-1}-\bm{\Sigma}_u^{-1}$ is indefinite in general, meaning the bias can be positive for one model and negative for another, producing an arbitrary sign reversal in the AICc gain.
+\end{proof}
+
+\begin{proposition}[Cochrane-Orcutt/Prais-Winsten as whitening operator]\label{prop:co-pw}
+For the AR(1) covariance structure of Proposition~\ref{prop:ar1-cov}, the whitening transformation $\bm{P}$ that diagonalizes $\bm{\Sigma}_u$ into $\bm{I}_n$ is equivalent to the Cochrane-Orcutt transformation for $t\geq 2$ and the Prais-Winsten transformation for $t=1$:
+\[
+v_t\;=\;\begin{cases}
+\sqrt{1-\rho^2}\,u_1 & t=1 \quad\text{(Prais-Winsten)},\\
+u_t-\rho\,u_{t-1} & t\geq 2 \quad\text{(Cochrane-Orcutt)}.
+\end{cases}
+\]
+The resulting $\{v_t\}$ are i.i.d.\ $N(0,\sigma_e^2)$ and the log-likelihood based on $\bm{v}$ equals $\ln\mathcal{L}_{\mathrm{GLS}}$ up to a constant determined by $\sigma_e^2$.
+\end{proposition}
+
+\begin{proof}
+Direct computation. For $t\geq 2$:
+\[
+v_t=u_t-\rho\,u_{t-1}=(\rho\,u_{t-1}+e_t)-\rho\,u_{t-1}=e_t.
+\]
+For $t=1$: $v_1=\sqrt{1-\rho^2}\,u_1$. Since $u_1\sim N(0,\sigma_e^2/(1-\rho^2))$ in the stationary distribution, $v_1\sim N(0,\sigma_e^2)$. Independence of $\{v_t\}$ follows from the Markov property of AR(1): $e_t$ is independent of $u_{t-1},u_{t-2},\ldots$.
+\end{proof}
+
+\begin{corollary}[v27 AICc gain reversal explained]
+Theorem~\ref{thm:aicc-collapse} and Proposition~\ref{prop:co-pw} together explain the empirical v28 finding: the v27 fixture with $\mathrm{DW}=0.038$ and $\hat\rho_{\mathrm{QICN}}\approx 0.81$, $\hat\rho_{\mathrm{rival}}\approx 0.87$ produced an iid AICc gain of $+87.59$, which reversed to $-50.38$ under AR(1)-corrected AICc. The rival model, having larger raw residuals and higher $\rho$, benefited more from the whitening transformation: its corrected NLL dropped by $\sim 147$ AICc units, while QICN's dropped by only $\sim 9$. The iid gain was a statistical artifact.
+\end{corollary}
+
+\begin{corollary}[Necessary condition for valid iid AICc]
+The iid-Gaussian AICc is valid as a model comparison criterion only when the Durbin-Watson statistic satisfies $\mathrm{DW}\in[1.5,2.5]$ (roughly $|\rho|<0.25$) or when a formal Ljung-Box test fails to reject the null of no autocorrelation at the $5\%$ level. Outside this range, the GLS likelihood \eqref{eq:gls-likelihood} must be used.
+\end{corollary}
+
+%% ============================================================
+\section{The Projection-Invariant Bridge Theorem}
+\label{sec:bridge}
+%% ============================================================
+
+We now assemble the results of Sections~\ref{sec:estimator-existence}--\ref{sec:lipschitz} into the main theorem. Unlike v28, this is a proved statement---but only under hypotheses that must be independently verified for each application.
+
+\begin{theorem}[Projection-invariant bridge theorem]\label{thm:bridge}
+Let the following hypotheses hold:
+\begin{enumerate}
+\item[\textbf{H1.}] $X$ is a compact Hausdorff space, $\pi\colon X\to\mathbb{R}^n$ is a continuous surjection, $A\subseteq X$ is closed.
+\item[\textbf{H2.}] For each $i=1,\ldots,k$, the latent invariant $F_i\colon X\to Z_i$ is continuous into a complete metric space $(Z_i,d_i)$, and the fiber diameter bound holds:
+\[
+\operatorname{diam}_{Z_i}\!\bigl(F_i(\pi^{-1}(y)\cap A)\bigr)\leq 2\varepsilon_i\quad\forall\,y\in\pi(A).
+\]
+\item[\textbf{H3.}] The claim $C\colon X\to\{0,1\}$ belongs to $\sigma(F_1,\ldots,F_k)$, so there exists a measurable $h_0\colon\prod_i Z_i\to\{0,1\}$ with $C=h_0\circ(F_1,\ldots,F_k)$.
+\item[\textbf{H4.}] The decision rule is induced by a Lipschitz support function: $h=\mathbb{I}(\tilde{h}\geq\tau)$ with Lipschitz constant $L_h$, and the robustness condition holds:
+\[
+\Delta^{*}\;=\;\inf_{x\in A}\bigl|\tilde{h}(\mathbf{F}(x))-\tau\bigr|\;>\;L_h\sum_{i=1}^k\varepsilon_i.
+\]
+\end{enumerate}
+
+Then:
+\begin{enumerate}
+\item[\textbf{C1.}] By Theorem~\ref{thm:estimator}, there exist Borel-measurable $\varepsilon_i$-estimators $G_i\colon Y\to Z_i$.
+\item[\textbf{C2.}] The surrogate decision rule $\hat{C}(y)=h\bigl(G_1(y),\ldots,G_k(y)\bigr)$ satisfies
+\[
+\hat{C}(\pi(x))=C(x)\quad\forall\,x\in A.
+\]
+\item[\textbf{C3.}] No rival model $\mathcal{R}$ that satisfies the same estimator and robustness conditions but yields $\hat{C}_{\mathcal{R}}(\pi(x))\neq\hat{C}(\pi(x))$ for some $x\in A$ can simultaneously satisfy hypotheses H1--H4.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+C1 is immediate from Theorem~\ref{thm:estimator} and hypothesis H2.
+
+For C2: let $x\in A$ and set $y=\pi(x)$. By H2 and Theorem~\ref{thm:estimator}, $d_i(G_i(y),F_i(x))\leq\varepsilon_i$ for each $i$. By H4 and Theorem~\ref{thm:lipschitz}, the decision rule is invariant under the substitution $F_i(x)\mapsto G_i(\pi(x))$. Hence $\hat{C}(\pi(x))=h(\mathbf{G}(\pi(x)))=h(\mathbf{F}(x))$. By H3, $h(\mathbf{F}(x))=C(x)$ (since $C$ factors through the $F_i$, and $h$ agrees with $h_0$ on the support side of the threshold by the robustness condition). Therefore $\hat{C}(\pi(x))=C(x)$.
+
+For C3: suppose a rival model $\mathcal{R}$ produces estimators $\{G_i^{(\mathcal{R})}\}$ satisfying the same $\varepsilon_i$-preservation bound on $A$. Then by the same argument as C2, $\hat{C}_{\mathcal{R}}(\pi(x))=C(x)=\hat{C}(\pi(x))$ for all $x\in A$. Any rival yielding a different verdict must violate at least one of H2 or H4 for its own estimator family.
+\end{proof}
+
+%% ============================================================
+\section{Falsification Conditions and QICN Status}
+\label{sec:falsification}
+%% ============================================================
+
+Theorem~\ref{thm:bridge} is a proved mathematical statement. Its applicability to QICN depends on verifying hypotheses H1--H4 for the specific QICN ontology.
+
+\begin{nonclaim}[H1 verification status: open]
+The QICN framework has not proved that its latent state space $X$ is compact Hausdorff, nor that its observation channel $\pi$ is continuous. The topology of $X$ has not been specified. Without H1, Theorem~\ref{thm:estimator} does not apply.
+\end{nonclaim}
+
+\begin{nonclaim}[H2 verification status: failed]
+The v27 synthetic fixture has $\hat\rho\approx 0.81$, indicating that the ``estimators'' declared in the bridge certificate do not satisfy the fiber diameter bound for any reasonable $\varepsilon_i$. The fixture's residuals are quasi-identical steps (not iid noise), which is consistent with the fiber diameter being far larger than $2\varepsilon_i$ for the declared $\varepsilon_i=0.05$. No formal computation of $\omega_i(y)$ has been performed for any QICN invariant.
+\end{nonclaim}
+
+\begin{nonclaim}[H3 verification status: failed]
+No proof has been given that any QICN claim $C$ (external support, consciousness, identity transfer) belongs to $\sigma(F_1,\ldots,F_6)$ for the six declared invariants. The factorization $C=h_0(F_1,\ldots,F_6)$ is assumed without justification. By Theorem~\ref{thm:factorization}, this is equivalent to the unverified assertion that $C$ is constant on the level sets of $(F_1,\ldots,F_6)$.
+\end{nonclaim}
+
+\begin{nonclaim}[H4 verification status: failed]
+No Lipschitz constant $L_h$ has been computed for any QICN decision rule. No decision margin $\Delta^{*}$ has been evaluated. The robustness condition $\Delta^{*}>L_h\sum_i\varepsilon_i$ has not been checked. Without H4, there is no guarantee that the adjudicator's verdict is stable under estimation error.
+\end{nonclaim}
+
+\begin{corollary}[QICN bridge status: conjectural]
+Since H2, H3, and H4 have not been verified for QICN, the conclusion of Theorem~\ref{thm:bridge} does not apply. The bridge remains unbuilt. The theorem provides four precise falsification conditions: (1) exhibit the topology of $X$, (2) compute $\omega_i(y)$ and verify the fiber diameter bound, (3) establish or refute $C\in\sigma(F_1,\ldots,F_k)$, (4) compute $L_h$ and verify $\Delta^{*}>L_h\sum_i\varepsilon_i$. Until all four are satisfied, no finite runner output constitutes mathematical evidence for any QICN claim.
+\end{corollary}
+
+\begin{corollary}[Statistical falsification: AR(1) correction]
+Independent of the topological conditions H1--H4, the statistical validity of the adjudicator requires the residual process to satisfy the iid or GLS likelihood framework of Section~\ref{sec:gls}. The v27 fixture fails this requirement catastrophically ($\mathrm{DW}=0.038$, AICc gain reversal from $+87.59$ to $-50.38$). Any fixture that passes only under iid assumptions but fails under GLS is statistically void.
+\end{corollary}
+
+\begin{nonclaim}[No hidden global bridge]
+Theorem~\ref{thm:bridge} is not a derivation of $M_{\Omega}=+\infty$, global separator atomicity, external support, consciousness, phenomenality, identity transfer, or bridge-burden closure from RSS, AIC, Gaussian likelihood, or a finite fixture. It is a conditional theorem with four explicit, independently falsifiable hypotheses. None have been verified for QICN. The theorem stands; the bridge does not.
+\end{nonclaim}
+
+\end{document}

@@ -1,0 +1,658 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-26",
+  "gate": "qicn-monolithic-build-quality-v20",
+  "governance_boundary": "This is a build-quality gate only. It does not certify theorem truth, external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+  "log_path": "monolithic\\QICN_MONOLITHIC.log",
+  "checks": {
+    "log_present": true,
+    "pages_detected": 329,
+    "latex_warnings": 91,
+    "overfull_hbox": 55,
+    "overfull_vbox": 1,
+    "underfull_vbox": 0,
+    "undefined_references": 0,
+    "hyperref_pdfstring_warnings": 7,
+    "question_mark_tokens_in_log": 0,
+    "badness_masking_hits": 0
+  },
+  "detail": {
+    "log": {
+      "missing": false,
+      "line_count": 9015,
+      "pages": 329,
+      "latex_warnings": [
+        {
+          "line": 39,
+          "text": "Package cmap Warning: fontenc already loaded - some fonts may be unprocessed."
+        },
+        {
+          "line": 1106,
+          "text": "LaTeX Warning: Label `hyp:topo' multiply defined."
+        },
+        {
+          "line": 1109,
+          "text": "LaTeX Warning: Label `prop:nonlocality' multiply defined."
+        },
+        {
+          "line": 1112,
+          "text": "LaTeX Warning: Label `thm:noprogressive' multiply defined."
+        },
+        {
+          "line": 1115,
+          "text": "LaTeX Warning: Label `thm:rigidity' multiply defined."
+        },
+        {
+          "line": 1118,
+          "text": "LaTeX Warning: Label `def:ontmass' multiply defined."
+        },
+        {
+          "line": 1121,
+          "text": "LaTeX Warning: Label `thm:non-simulability' multiply defined."
+        },
+        {
+          "line": 1124,
+          "text": "LaTeX Warning: Label `def:phenspace' multiply defined."
+        },
+        {
+          "line": 1127,
+          "text": "LaTeX Warning: Label `def:phenassign' multiply defined."
+        },
+        {
+          "line": 1130,
+          "text": "LaTeX Warning: Label `def:limitassign' multiply defined."
+        },
+        {
+          "line": 1133,
+          "text": "LaTeX Warning: Label `prop:unique-phi' multiply defined."
+        },
+        {
+          "line": 1136,
+          "text": "LaTeX Warning: Label `ax:e0' multiply defined."
+        },
+        {
+          "line": 1139,
+          "text": "LaTeX Warning: Label `ax:e1' multiply defined."
+        },
+        {
+          "line": 1142,
+          "text": "LaTeX Warning: Label `ax:e2' multiply defined."
+        },
+        {
+          "line": 1145,
+          "text": "LaTeX Warning: Label `thm:e0-necessary' multiply defined."
+        },
+        {
+          "line": 1148,
+          "text": "LaTeX Warning: Label `thm:e1-necessary' multiply defined."
+        },
+        {
+          "line": 1151,
+          "text": "LaTeX Warning: Label `thm:e2-necessary' multiply defined."
+        },
+        {
+          "line": 1154,
+          "text": "LaTeX Warning: Label `thm:minimality' multiply defined."
+        },
+        {
+          "line": 1157,
+          "text": "LaTeX Warning: Label `def:compat-class' multiply defined."
+        },
+        {
+          "line": 1160,
+          "text": "LaTeX Warning: Label `hyp:h3' multiply defined."
+        },
+        {
+          "line": 1163,
+          "text": "LaTeX Warning: Label `thm:h3-necessary' multiply defined."
+        },
+        {
+          "line": 1166,
+          "text": "LaTeX Warning: Label `prop:complete-necessary' multiply defined."
+        },
+        {
+          "line": 1169,
+          "text": "LaTeX Warning: Label `def:phen-continuity' multiply defined."
+        },
+        {
+          "line": 1172,
+          "text": "LaTeX Warning: Label `def:fragmentation' multiply defined."
+        },
+        {
+          "line": 1175,
+          "text": "LaTeX Warning: Label `prop:metric-compat' multiply defined."
+        },
+        {
+          "line": 1178,
+          "text": "LaTeX Warning: Label `thm:fragmentation' multiply defined."
+        },
+        {
+          "line": 1181,
+          "text": "LaTeX Warning: Label `thm:forced-continuity' multiply defined."
+        },
+        {
+          "line": 1184,
+          "text": "LaTeX Warning: Label `thm:dichotomy' multiply defined."
+        },
+        {
+          "line": 1187,
+          "text": "LaTeX Warning: Label `thm:minimal' multiply defined."
+        },
+        {
+          "line": 1190,
+          "text": "LaTeX Warning: Label `def:system' multiply defined."
+        },
+        {
+          "line": 1193,
+          "text": "LaTeX Warning: Label `def:support' multiply defined."
+        },
+        {
+          "line": 1196,
+          "text": "LaTeX Warning: Label `def:history' multiply defined."
+        },
+        {
+          "line": 1199,
+          "text": "LaTeX Warning: Label `def:partition' multiply defined."
+        },
+        {
+          "line": 1202,
+          "text": "LaTeX Warning: Label `def:margins' multiply defined."
+        },
+        {
+          "line": 1205,
+          "text": "LaTeX Warning: Label `def:iper' multiply defined."
+        },
+        {
+          "line": 1208,
+          "text": "LaTeX Warning: Label `def:iri' multiply defined."
+        },
+        {
+          "line": 1211,
+          "text": "LaTeX Warning: Label `def:iint' multiply defined."
+        },
+        {
+          "line": 1214,
+          "text": "LaTeX Warning: Label `def:icont' multiply defined."
+        },
+        {
+          "line": 1217,
+          "text": "LaTeX Warning: Label `def:idiff' multiply defined."
+        },
+        {
+          "line": 1220,
+          "text": "LaTeX Warning: Label `sec:legibility' multiply defined."
+        },
+        {
+          "line": 1223,
+          "text": "LaTeX Warning: Label `def:ileg' multiply defined."
+        },
+        {
+          "line": 1226,
+          "text": "LaTeX Warning: Label `prop:necessity' multiply defined."
+        },
+        {
+          "line": 1229,
+          "text": "LaTeX Warning: Label `prop:qop-welldefined' multiply defined."
+        },
+        {
+          "line": 1232,
+          "text": "LaTeX Warning: Label `def:qop' multiply defined."
+        },
+        {
+          "line": 1235,
+          "text": "LaTeX Warning: Label `def:cop' multiply defined."
+        },
+        {
+          "line": 1238,
+          "text": "LaTeX Warning: Label `def:rupture' multiply defined."
+        },
+        {
+          "line": 1241,
+          "text": "LaTeX Warning: Label `thm:rupture' multiply defined."
+        },
+        {
+          "line": 1244,
+          "text": "LaTeX Warning: Label `thm:minimality' multiply defined."
+        },
+        {
+          "line": 1247,
+          "text": "LaTeX Warning: Label `crit:legibility' multiply defined."
+        },
+        {
+          "line": 1250,
+          "text": "LaTeX Warning: Label `prop:legibility' multiply defined."
+        },
+        {
+          "line": 1253,
+          "text": "LaTeX Warning: Label `def:cert' multiply defined."
+        },
+        {
+          "line": 1256,
+          "text": "LaTeX Warning: Label `crit:cert' multiply defined."
+        },
+        {
+          "line": 1259,
+          "text": "LaTeX Warning: Label `def:transition' multiply defined."
+        },
+        {
+          "line": 1262,
+          "text": "LaTeX Warning: Label `def:cop' multiply defined."
+        },
+        {
+          "line": 1518,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1537,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1541,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1560,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1564,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1581,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1585,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1612,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1616,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1629,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1640,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1644,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1693,
+          "text": "Package hyperref Warning: Difference (2) between bookmark levels is greater "
+        },
+        {
+          "line": 1772,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 1776,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 2448,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 2452,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 3968,
+          "text": "LaTeX Warning: `!h' float specifier changed to `!ht'."
+        },
+        {
+          "line": 3978,
+          "text": "LaTeX Warning: `!h' float specifier changed to `!ht'."
+        },
+        {
+          "line": 3988,
+          "text": "LaTeX Warning: `!h' float specifier changed to `!ht'."
+        },
+        {
+          "line": 8571,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8574,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8602,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8840,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8856,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8890,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 8894,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 8898,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 8902,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8908,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8914,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8917,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8925,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8931,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8939,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8947,
+          "text": "LaTeX Warning: `h' float specifier changed to `ht'."
+        },
+        {
+          "line": 8969,
+          "text": "LaTeX Warning: There were multiply-defined labels."
+        }
+      ],
+      "overfull_hbox": [
+        {
+          "line": 1475,
+          "text": "Overfull \\hbox (1.50677pt too wide) detected at line 688"
+        },
+        {
+          "line": 1480,
+          "text": "Overfull \\hbox (1.50677pt too wide) detected at line 696"
+        },
+        {
+          "line": 1489,
+          "text": "Overfull \\hbox (1.35457pt too wide) detected at line 849"
+        },
+        {
+          "line": 1648,
+          "text": "Overfull \\hbox (1.67192pt too wide) in paragraph at lines 94--94"
+        },
+        {
+          "line": 3752,
+          "text": "Overfull \\hbox (48.84492pt too wide) detected at line 71"
+        },
+        {
+          "line": 4004,
+          "text": "Overfull \\hbox (14.69223pt too wide) in paragraph at lines 330--341"
+        },
+        {
+          "line": 4053,
+          "text": "Overfull \\hbox (110.42491pt too wide) in paragraph at lines 463--464"
+        },
+        {
+          "line": 4239,
+          "text": "Overfull \\hbox (1.67192pt too wide) in paragraph at lines 199--199"
+        },
+        {
+          "line": 4729,
+          "text": "Overfull \\hbox (32.80045pt too wide) in paragraph at lines 1166--1166"
+        },
+        {
+          "line": 4872,
+          "text": "Overfull \\hbox (16.3629pt too wide) in paragraph at lines 358--358"
+        },
+        {
+          "line": 4877,
+          "text": "Overfull \\hbox (16.3629pt too wide) in paragraph at lines 358--358"
+        },
+        {
+          "line": 4944,
+          "text": "Overfull \\hbox (5.52924pt too wide) in paragraph at lines 417--417"
+        },
+        {
+          "line": 5082,
+          "text": "Overfull \\hbox (17.07884pt too wide) detected at line 335"
+        },
+        {
+          "line": 5206,
+          "text": "Overfull \\hbox (22.27818pt too wide) in paragraph at lines 885--885"
+        },
+        {
+          "line": 5270,
+          "text": "Overfull \\hbox (43.36725pt too wide) in paragraph at lines 959--959"
+        },
+        {
+          "line": 5559,
+          "text": "Overfull \\hbox (7.93405pt too wide) in paragraph at lines 817--817"
+        },
+        {
+          "line": 5632,
+          "text": "Overfull \\hbox (60.00752pt too wide) in paragraph at lines 987--987"
+        },
+        {
+          "line": 5647,
+          "text": "Overfull \\hbox (60.00752pt too wide) in paragraph at lines 987--987"
+        },
+        {
+          "line": 5657,
+          "text": "Overfull \\hbox (75.75748pt too wide) in paragraph at lines 987--987"
+        },
+        {
+          "line": 5667,
+          "text": "Overfull \\hbox (54.75754pt too wide) in paragraph at lines 987--987"
+        },
+        {
+          "line": 5687,
+          "text": "Overfull \\hbox (81.00746pt too wide) in paragraph at lines 987--987"
+        },
+        {
+          "line": 5697,
+          "text": "Overfull \\hbox (39.00758pt too wide) in paragraph at lines 987--987"
+        },
+        {
+          "line": 5712,
+          "text": "Overfull \\hbox (35.87798pt too wide) in paragraph at lines 987--987"
+        },
+        {
+          "line": 5717,
+          "text": "Overfull \\hbox (75.75748pt too wide) in paragraph at lines 987--987"
+        },
+        {
+          "line": 5742,
+          "text": "Overfull \\hbox (39.00758pt too wide) in paragraph at lines 987--987"
+        },
+        {
+          "line": 5754,
+          "text": "Overfull \\hbox (19.88834pt too wide) detected at line 1011"
+        },
+        {
+          "line": 6626,
+          "text": "Overfull \\hbox (72.58131pt too wide) in paragraph at lines 821--821"
+        },
+        {
+          "line": 7062,
+          "text": "Overfull \\hbox (11.61491pt too wide) in paragraph at lines 1012--1012"
+        },
+        {
+          "line": 7230,
+          "text": "Overfull \\hbox (64.53471pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7235,
+          "text": "Overfull \\hbox (69.7847pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7240,
+          "text": "Overfull \\hbox (54.03474pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7245,
+          "text": "Overfull \\hbox (90.78464pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7250,
+          "text": "Overfull \\hbox (43.53477pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7255,
+          "text": "Overfull \\hbox (27.78482pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7260,
+          "text": "Overfull \\hbox (43.53477pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7265,
+          "text": "Overfull \\hbox (38.28479pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7270,
+          "text": "Overfull \\hbox (80.28467pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7275,
+          "text": "Overfull \\hbox (59.28473pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7280,
+          "text": "Overfull \\hbox (54.03474pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7285,
+          "text": "Overfull \\hbox (5.34032pt too wide) in paragraph at lines 1055--1055"
+        },
+        {
+          "line": 7386,
+          "text": "Overfull \\hbox (44.70602pt too wide) in paragraph at lines 1073--1073"
+        },
+        {
+          "line": 7418,
+          "text": "Overfull \\hbox (92.23024pt too wide) in paragraph at lines 1091--1091"
+        },
+        {
+          "line": 7428,
+          "text": "Overfull \\hbox (76.48029pt too wide) in paragraph at lines 1091--1091"
+        },
+        {
+          "line": 7758,
+          "text": "Overfull \\hbox (52.59607pt too wide) in paragraph at lines 1301--1301"
+        },
+        {
+          "line": 7763,
+          "text": "Overfull \\hbox (89.34596pt too wide) in paragraph at lines 1301--1301"
+        },
+        {
+          "line": 7768,
+          "text": "Overfull \\hbox (42.0961pt too wide) in paragraph at lines 1301--1301"
+        },
+        {
+          "line": 7773,
+          "text": "Overfull \\hbox (73.59601pt too wide) in paragraph at lines 1301--1301"
+        },
+        {
+          "line": 7778,
+          "text": "Overfull \\hbox (36.84612pt too wide) in paragraph at lines 1301--1301"
+        },
+        {
+          "line": 7783,
+          "text": "Overfull \\hbox (5.3462pt too wide) in paragraph at lines 1301--1301"
+        },
+        {
+          "line": 8566,
+          "text": "Overfull \\hbox (1.22827pt too wide) in paragraph at lines 1060--1061"
+        },
+        {
+          "line": 8584,
+          "text": "Overfull \\hbox (16.65274pt too wide) in paragraph at lines 1122--1122"
+        },
+        {
+          "line": 8589,
+          "text": "Overfull \\hbox (71.12422pt too wide) in paragraph at lines 1123--1123"
+        },
+        {
+          "line": 8594,
+          "text": "Overfull \\hbox (17.31616pt too wide) in paragraph at lines 1124--1124"
+        },
+        {
+          "line": 8835,
+          "text": "Overfull \\hbox (2.03148pt too wide) in paragraph at lines 406--406"
+        },
+        {
+          "line": 8851,
+          "text": "Overfull \\hbox (62.27576pt too wide) in paragraph at lines 436--436"
+        }
+      ],
+      "overfull_vbox": [
+        {
+          "line": 3999,
+          "text": "Overfull \\vbox (708.5491pt too high) has occurred while \\output is active []"
+        }
+      ],
+      "underfull_vbox": [],
+      "undefined_references": [],
+      "hyperref_pdfstring": [
+        {
+          "line": 1772,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 1776,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 2448,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 2452,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 8890,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 8894,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        },
+        {
+          "line": 8898,
+          "text": "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+        }
+      ],
+      "question_mark_tokens": []
+    },
+    "badness_masking": {
+      "tex_files_scanned": 15,
+      "hits": []
+    }
+  },
+  "result": "FAIL"
+}

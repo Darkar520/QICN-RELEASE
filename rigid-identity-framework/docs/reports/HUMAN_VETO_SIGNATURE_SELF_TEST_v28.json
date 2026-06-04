@@ -1,0 +1,43 @@
+{
+  "schema_version": "3.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This v28 signature self-test verifies local Ed25519 mechanics, trusted-registry lookup, replay protection, and immutable-registry enforcement only. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.",
+  "strict_mode": true,
+  "immutable_registry": true,
+  "temp_registry_path": "docs/fixtures/TRUSTED_KEYS_REGISTRY_v28_selftest.json",
+  "temp_registry_sha256": "967f7449d3e8ec0dd86b87cccc0dc3d79d4ddb051409e99498e4a6ebf06c6d77",
+  "registered_key_verification": {
+    "ok": true,
+    "reason": "signature_verified_with_trusted_registry_key_plus_replay_protection",
+    "trusted": true,
+    "key_fingerprint_sha256": "6aa4d867643e89dd5f28dc3d7de535d3e67c7a7d3484e183ba0879a445800152"
+  },
+  "unregistered_key_rejection": {
+    "ok": false,
+    "reason": "UNTRUSTED_PUBLIC_KEY",
+    "trusted": false,
+    "key_fingerprint_sha256": "c64800590023e68ba733dd8e2e3605e6f00793a96800c410a795cfb328d16109"
+  },
+  "replay_attack_rejection": {
+    "ok": false,
+    "reason": "REPLAY_DETECTED",
+    "report_sha256": "c07a360e5823b39645d710316f7af4524860ef10c5e0c38873313db93db8ef8c",
+    "trusted": true,
+    "key_fingerprint_sha256": "6aa4d867643e89dd5f28dc3d7de535d3e67c7a7d3484e183ba0879a445800152"
+  },
+  "missing_timestamp_rejection": {
+    "ok": false,
+    "reason": "MISSING_TIMESTAMP_TOKEN",
+    "trusted": true,
+    "key_fingerprint_sha256": "6aa4d867643e89dd5f28dc3d7de535d3e67c7a7d3484e183ba0879a445800152"
+  },
+  "missing_report_sha256_rejection": {
+    "ok": false,
+    "reason": "MISSING_OR_INVALID_REPORT_SHA256",
+    "trusted": true,
+    "key_fingerprint_sha256": "6aa4d867643e89dd5f28dc3d7de535d3e67c7a7d3484e183ba0879a445800152"
+  },
+  "result": "PASS",
+  "external_support_certified": false,
+  "human_review_signed": false
+}

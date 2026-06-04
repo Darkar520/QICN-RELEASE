@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-01T06:08:59.560Z",
+  "governance_boundary": "This v35 parity check compares internal synthetic reports only. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, peer review, or human mathematical review.",
+  "runs": [
+    {
+      "command": "node scripts/external-session-zero-adjudicator-v30.js",
+      "status": 0,
+      "stdout": "External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false",
+      "stderr": "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED."
+    },
+    {
+      "command": "node scripts/external-session-zero-adjudicator-v31.js",
+      "status": 0,
+      "stdout": "External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=8; external_support_certified=false",
+      "stderr": "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED."
+    }
+  ],
+  "v30": {
+    "report_path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v30.json",
+    "sha256": "62986937e1258a277acb28e69e71bc89b783f964004dd0af6ff2d5cc52d39f12",
+    "result": "PASS",
+    "verdict": "BLOCKED_MULTIPLE_GATES",
+    "blocking_reasons": [
+      "BLOCKED_AFFINE_LEAKAGE",
+      "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+      "BLOCKED_STRAW_MAN_RIVAL",
+      "BLOCKED_TEMPORAL_DEPENDENCE_STRICT"
+    ]
+  },
+  "v31": {
+    "report_path": "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v31.json",
+    "sha256": "b6d2ca770fed3f86ec0cccef4be54e8a8cd881fa3b2fdf33235c4c7d0019fc5c",
+    "result": "PASS",
+    "verdict": "BLOCKED_FOUNDATION_FIRST_GATES",
+    "blocking_reasons": [
+      "BLOCKED_AFFINE_LEAKAGE",
+      "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+      "BLOCKED_STRAW_MAN_RIVAL",
+      "BLOCKED_TEMPORAL_DEPENDENCE_STRICT",
+      "BLOCKED_TYPE_CONFUSION",
+      "BLOCKED_CIRCULAR_CALIBRATION",
+      "BLOCKED_BRIDGE_HYPOTHESES_UNVERIFIED",
+      "BLOCKED_STRAW_MAN_RIVAL_VARIANCE"
+    ]
+  },
+  "sha256_equal": false,
+  "verdict_equal": false,
+  "interpretation": "Different report hashes are expected if v31 adds foundation-first wrapping over v30. For centralization, v31 must be treated as current strict behavior rather than as a byte-identical v30 alias.",
+  "result": "PASS",
+  "external_support_certified": false
+}

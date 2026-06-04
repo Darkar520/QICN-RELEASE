@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{nonclaim}{Non-Claim}
+\title{QICN v28 Projection-Invariant Finite Bridge Conjecture\\\large Degrading from Theorem to Conjecture with Constructive Incompleteness Criterion}
+\author{QICN Formal Corpus Registry}
+\date{2026-05-27}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Governance boundary.} This appendix does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review. It states only a finite conditional representation \emph{conjecture} under explicitly declared hypotheses. It does not derive $M_{\Omega}=+\infty$ from finite AIC scores and does not identify finite observables with a global inverse-limit identity object.
+
+\noindent\textbf{v28 demotion notice.} The v26 statement was titled ``Theorem.'' It has been demoted to ``Conjecture'' because the existence proof for the estimator family $\{G_i\}$ satisfying the $\varepsilon_i$-preservation condition is absent. The original ``proof'' only showed that \emph{if} such estimators exist, then the conclusion follows---which is a tautology, not a theorem. A valid theorem requires either (a) a constructive proof that $G_i$ exist for the specific $F_i$ declared in the QICN ontology, or (b) an existence proof via compactness, Hahn-Banach, or a comparable non-constructive principle. Neither has been provided. Until one is, the statement remains an unproved conjecture.
+
+\begin{definition}[Latent system and projection channel]
+Let $X$ be a latent state space and let $\pi:X\to Y$ be a finite observation channel into a measurable finite record space $Y$. The channel may be non-injective. Hence different latent states may share the same finite record.
+\end{definition}
+
+\begin{definition}[Projection-preserved invariant]
+Let $F:X\to Z$ be a latent predicate or invariant and let $G:Y\to Z$ be a finite estimator. For tolerance $\varepsilon\geq 0$, the pair $(F,G)$ is $\varepsilon$-preserved on $A\subseteq X$ when
+\[
+d_Z\bigl(G(\pi(x)),F(x)\bigr)\leq \varepsilon \quad \text{for all } x\in A.
+\]
+This is an operational preservation claim, not a reconstruction claim for $X$.
+\end{definition}
+
+\begin{definition}[Finite bridge certificate]
+A finite bridge certificate is a tuple
+\[
+\mathcal{B}=(\pi,Y,\mathcal{F},\mathcal{G},\varepsilon,\mathcal{R},\mathcal{N},\mathcal{C})
+\]
+where $\mathcal{F}=\{F_1,\ldots,F_k\}$ are latent invariants, $\mathcal{G}=\{G_1,\ldots,G_k\}$ are estimators on $Y$, $\mathcal{R}$ is a preregistered rival family, $\mathcal{N}$ is a family of negative controls, and $\mathcal{C}$ is a provenance and calibration record. The certificate is admissible only if: (i) estimator adequacy is documented; (ii) rival resistance is evaluated under the same record and thresholds; (iii) negative controls fail to satisfy the support criterion; and (iv) provenance binds data, predictions, calibration, and runner code.
+\end{definition}
+
+\begin{lemma}[No global reconstruction from finite preservation]
+If $\pi$ is not injective, then a finite bridge certificate cannot by itself reconstruct $X$ or prove any property that varies within a fiber $\pi^{-1}(y)$.
+\end{lemma}
+\begin{proof}
+If $\pi$ is not injective, there exist $x_1\neq x_2$ with $\pi(x_1)=\pi(x_2)=y$. Any estimator $G:Y\to Z$ has the same value $G(y)$ for both states. If a property $P$ differs between $x_1$ and $x_2$, no function of $y$ alone identifies $P$. Therefore finite preservation of selected invariants does not reconstruct the latent state or all latent properties.
+\end{proof}
+
+\begin{conjecture}[Finite projection-invariant bridge conjecture --- formerly Theorem, demoted v28]
+Let $C:X\to\{0,1\}$ be a claim that factors through projection-preserved invariants on $A\subseteq X$:
+\[
+C(x)=h\bigl(F_1(x),\ldots,F_k(x)\bigr).
+\]
+Suppose an admissible finite bridge certificate $\mathcal{B}$ provides estimators $G_i$ such that each $(F_i,G_i)$ is $\varepsilon_i$-preserved on $A$, and suppose the decision rule $\widehat C(y)=h(G_1(y),\ldots,G_k(y))$ is robust to the joint tolerance vector $\varepsilon=(\varepsilon_1,\ldots,\varepsilon_k)$. If the preregistered rival family and negative controls fail under the same calibration and provenance record, then $\widehat C(\pi(x))$ is an operationally adjudicable finite surrogate for $C(x)$ on $A$.
+
+\medskip\noindent\textbf{Open proof obligation.} The existence of the estimator family $\{G_i\}$ satisfying the $\varepsilon_i$-preservation condition for the specific latent invariants $\{F_i\}$ declared in the QICN ontology has not been established. The original v26 ``proof'' assumed existence and derived the consequence---a valid conditional argument, but not a theorem until existence is proven. This is the constructive incompleteness of the bridge certificate.
+\end{conjecture}
+
+\begin{nonclaim}[Constructive incompleteness criterion]
+The conjecture above is \emph{constructively incomplete} in the following precise sense:
+
+\begin{enumerate}
+\item \textbf{Estimator existence is unproved.} No proof has been given that estimators $G_i: Y \to Z$ satisfying $d_Z(G_i(\pi(x)), F_i(x)) \leq \varepsilon_i$ for all $x \in A$ exist for the six declared QICN latent invariants (identity channel lock, history alignment, response phase, gauge stability, intervention fidelity, factorization gap). The certificate \emph{declares} estimator columns in the fixture, but declaration is not existence.
+
+\item \textbf{Factorization assumption is unverified.} The claim $C(x) = h(F_1(x), \ldots, F_k(x))$ assumes the claim factors through the declared invariants. No proof shows that the QICN claims under test (external support, consciousness, identity transfer) admit such a factorization. If the claim depends on latent structure not captured by $\{F_i\}$, the bridge certificate is irrelevant regardless of estimator quality.
+
+\item \textbf{Robustness of $h$ to $\varepsilon$ is unanalyzed.} The conjecture requires $h$ to be robust to the joint tolerance vector $\varepsilon = (\varepsilon_1, \ldots, \varepsilon_k)$. No sensitivity analysis has been performed to determine whether the decision rule $h$ changes its output when each $F_i(x)$ is perturbed by up to $\varepsilon_i$.
+
+\item \textbf{The v27 fixture provides no evidence.} The synthetic fixture with DW$\,{=}\,0.038$ (extreme autocorrelation), a straw-man rival, and circular calibration provides no empirical constraint on any of the three gaps above. A synthetic fixture that passes its own calibration loop proves nothing about external reality.
+\end{enumerate}
+
+Until these four gaps are closed, the statement remains a conjecture. Its conditional structure---``if estimators exist and factorization holds and $h$ is robust, then\ldots''---is a tautological firewall, not a bridge.
+\end{nonclaim}
+
+\begin{corollary}[QICN interpretation under demotion]
+Because the bridge statement is now a conjecture, not a theorem, a finite runner may support \emph{at most} claims that explicitly factor through projection-preserved invariants \emph{and} for which estimator existence has been independently proved. It cannot prove $M_{\Omega}=+\infty$, global separator atomicity, external support, consciousness, phenomenality, identity transfer, or bridge-burden closure without additional external and mathematical premises. The demotion from theorem to conjecture strengthens, not weakens, this corollary: the burden of proof is now explicitly on the framework, not on the skeptic.
+\end{corollary}
+
+\begin{nonclaim}[No hidden global bridge]
+The conjecture above is not a derivation of the continuous topological theory from RSS, AIC, Gaussian likelihood, or a finite fixture. It is a conditional firewall: it states when a finite record \emph{could} adjudicate a finite invariant claim---provided the estimators exist, the factorization holds, and the decision rule is robust. None of these provisions have been proved. The firewall remains standing; the bridge has not been built.
+\end{nonclaim}
+
+\end{document}

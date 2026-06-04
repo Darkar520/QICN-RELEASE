@@ -1,0 +1,22 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This trusted-keys registry is a local v28 test registry only. It does not establish reviewer independence, production PKI, external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+  "trusted_keys": [
+    {
+      "reviewer_id": "v28-self-test-registered-reviewer-not-human-review",
+      "key_fingerprint_sha256": "6aa4d867643e89dd5f28dc3d7de535d3e67c7a7d3484e183ba0879a445800152",
+      "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAA5uX4kmveRfI1aA7+t78/QpVF2dHzNvv25UWGXf8hOk=\n-----END PUBLIC KEY-----\n",
+      "status": "active",
+      "scope": "self_test_only"
+    }
+  ],
+  "used_replay_protection_entries": [
+    {
+      "report_sha256": "c07a360e5823b39645d710316f7af4524860ef10c5e0c38873313db93db8ef8c",
+      "timestamp_token_rfc3161": "2026-05-27T00:00:00Z",
+      "recorded_at": "2026-06-01T06:11:26.843Z"
+    }
+  ],
+  "production_note": "A real deployment requires an external key server, certificate authority, revocation policy, RFC 3161 TSA, and independent reviewer identity checks."
+}

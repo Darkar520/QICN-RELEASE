@@ -124,10 +124,12 @@ function main() {
         exists("../Dockerfile"),
         exists("../.dockerignore"),
         hasText("package.json", /verify:v22/),
+        hasText("package.json", /verify:release/),
         hasText("package.json", /audit:finite-separator-package/),
-        hasText("../Dockerfile", /npm run verify:v22/)
+        hasText("../Dockerfile", /verify-canonical-integrity\.cjs/),
+        hasText("../Dockerfile", /npm run verify:release/)
       ], 3),
-      evidence: "Dockerfile, .dockerignore, and npm verify:v22 script"
+      evidence: "Dockerfile, .dockerignore, npm verify:v22 preservation, and npm verify:release script"
     }
   };
 
@@ -143,7 +145,8 @@ function main() {
       max: 15,
       score: boolScore([
         exists("../Dockerfile"),
-        hasText("package.json", /verify:v22/),
+        hasText("package.json", /verify:release/),
+        hasText("../Dockerfile", /verify-canonical-release\.cjs/),
         finiteAudit.result === "PASS"
       ], 3),
       evidence: "packaging exists, but no independent third-party rerun is recorded"

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This clinical summary documents the mathematical degradation of the v27 synthetic fixture's AICc gain under AR(1) correction. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.",
+  "title": "Clinical Summary: Centered AR(1) Reanalysis Changes Synthetic Fixture AICc Gain from 87.59 to -48.68",
+  "executive_summary": "The v27 synthetic fixture reported an iid-AICc gain of 87.59 favoring QICN over the rival. Under the current centered AR(1)-corrected AICc implementation, the gain is -48.68. This report is generated from executable code at runtime; older hardcoded summaries that claimed a fixed +87.59 to -50.38 reversal are treated as stale unless reproduced by the current estimator. The fixture remains blocked under strict mode by independent leakage, rival adequacy, and temporal-dependence gates.",
+  "quantitative_comparison": {
+    "iid_aicc_v27": {
+      "qicn_aicc": 64.85130015441091,
+      "rival_aicc": 152.43796682107754,
+      "gain_rival_minus_qicn": 87.58666666666663,
+      "interpretation": "v27 reported strong support for QICN. This was mathematically invalid because the iid-Gaussian NLL assumes independent residuals, which this fixture grossly violates."
+    },
+    "ar1_corrected_aicc_v28": {
+      "qicn_aicc": 54.37681523422394,
+      "rival_aicc": 5.694964575133153,
+      "gain_rival_minus_qicn": -48.681850659090784,
+      "interpretation": "After AR(1) correction, the rival has lower corrected AICc than QICN."
+    },
+    "sign_reversal": true,
+    "degradation_magnitude": 136.26851732575741
+  },
+  "root_cause_analysis": {
+    "durbin_watson": 0.03846153846153865,
+    "durbin_watson_interpretation": "DW=0.0385 is far below the lower critical value of ~1.1 for n=8 at the 5% level. The residuals exhibit extreme positive serial autocorrelation. The QICN residuals are quasi-identical steps of 0.02-0.03, not iid noise.",
+    "rho_qicn": 0.3749999999999997,
+    "rho_rival": -0.24928896473265083,
+    "rho_interpretation": "The current rho values (0.3750 for QICN, -0.2493 for rival) are centered lag-1 estimates. They should not be compared with older uncentered rho diagnostics.",
+    "why_gain_reversed": "Under the current estimator the corrected gain is negative."
+  },
+  "mutual_information_comparison": {
+    "binned_v27": 1.0821955300387671,
+    "miller_madow_v28": 1.2071955300387671,
+    "increase_from_bias_correction": 0.125,
+    "interpretation": "Miller-Madow bias correction increases the MI estimate from 1.0822 to 1.2072 nats. Both exceed the v27 threshold of 0.81. The binned estimator with ceil(sqrt(8))=3 bins was already sufficient to detect leakage here, but Miller-Madow provides a theoretically principled upper bound that resists evasion by smooth nonlinear transforms under small-n conditions."
+  },
+  "v28_blocking_gates": [
+    "BLOCKED_AFFINE_LEAKAGE",
+    "BLOCKED_MI_LEAKAGE_MILLER_MADOW",
+    "BLOCKED_STRAW_MAN_RIVAL",
+    "BLOCKED_TEMPORAL_DEPENDENCE_STRICT"
+  ],
+  "verdict_v27": "BLOCKED_MULTIPLE_GATES",
+  "verdict_v28": "BLOCKED_MULTIPLE_GATES",
+  "conclusion": "The v27 fixture remains statistically void as external evidence: DW=0.0385 violates iid assumptions, structural leakage is detected, and the rival is inadequate. The current centered AR(1) gain is -48.68, so fixed numeric sign-reversal claims from older uncentered diagnostics must not be repeated as current evidence.",
+  "popperian_assessment": "A framework that only passes its own tests by using an invalid statistical model (iid-Gaussian on autocorrelated data) is unfalsifiable in the Popperian sense: it can manufacture 'support' from any sufficiently autocorrelated dataset. The v28 AR(1) correction restores falsifiability by requiring that support claims survive a model that actually fits the data's dependence structure. The fixture fails this test decisively."
+}

@@ -1,9 +1,9 @@
-# QICN v22 reproducibility container
+# QICN canonical release reproducibility container
 # Governance boundary: this image supports repository-local verification only. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, human mathematical review, or empirical validation.
 FROM node:20-bookworm-slim
 
-LABEL org.opencontainers.image.title="QICN v22 finite separator package verification"
-LABEL org.opencontainers.image.description="Runs repository-local QICN v22 formal/software verification gates."
+LABEL org.opencontainers.image.title="QICN canonical release verification"
+LABEL org.opencontainers.image.description="Runs repository-local QICN canonical release and framework release gates."
 LABEL qicn.governance_boundary="internal verification only; no external empirical or human-review certification"
 
 WORKDIR /workspace/qicn
@@ -19,4 +19,4 @@ WORKDIR /workspace/qicn/rigid-identity-framework
 ENV QICN_GOVERNANCE_BLINDED=true
 ENV QICN_CONTAINER_REPLICATION=true
 
-CMD ["npm", "run", "verify:v22"]
+CMD ["sh", "-lc", "cd /workspace/qicn && node scripts/verify-canonical-integrity.cjs && node scripts/verify-claim-registry.cjs && node scripts/verify-canonical-release.cjs && node scripts/audit-public-release-reproducibility.cjs && cd rigid-identity-framework && npm run verify:release"]

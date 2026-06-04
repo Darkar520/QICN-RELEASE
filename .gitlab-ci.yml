@@ -1,0 +1,42 @@
+stages:
+  - verify
+  - audit
+
+default:
+  image: node:20-bookworm-slim
+  before_script:
+    - node --version
+
+canonical_integrity:
+  stage: verify
+  script:
+    - node scripts/verify-canonical-integrity.cjs
+    - node scripts/verify-claim-registry.cjs
+    - node scripts/verify-canonical-release.cjs
+  artifacts:
+    when: always
+    expire_in: 30 days
+    paths:
+      - _build/canonical_hardening/
+
+framework_release_gate:
+  stage: verify
+  script:
+    - cd rigid-identity-framework
+    - npm run verify:release
+  artifacts:
+    when: always
+    expire_in: 30 days
+    paths:
+      - rigid-identity-framework/docs/reports/
+
+release_reproducibility_audit:
+  stage: audit
+  script:
+    - node scripts/audit-public-release-reproducibility.cjs
+  artifacts:
+    when: always
+    expire_in: 30 days
+    paths:
+      - _build/canonical_hardening/public_release_reproducibility_audit.json
+      - _build/canonical_hardening/public_release_reproducibility_audit.md

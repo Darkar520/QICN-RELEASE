@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.1.0",
+  "generated_at": "2026-05-27",
+  "gate": "finite-separator-complete-incidence-v22",
+  "governance_boundary": "This audit checks finite formal certificates only. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.",
+  "verified_v21_gaps_closed": {
+    "self_referential_sha256_bug": true,
+    "explicit_positive_cut_count_metadata": true,
+    "explicit_negative_cut_count_metadata": true,
+    "product_negative_control_rejected": true
+  },
+  "positive_package_path": "docs\\theory\\FINITE_SEPARATOR_COMPLETE_PACKAGE_v22.json",
+  "negative_control_path": "docs\\theory\\FINITE_SEPARATOR_COMPLETE_PACKAGE_PRODUCT_NEGATIVE_CONTROL_v22.json",
+  "positive": {
+    "package_id": "FSCI-QICN-v22-connected-finite-witness",
+    "package_sha256": "2d3f519f857d6989e96c1b0129f6ee4cede27c9791a8f90424e5b95269e57422",
+    "declared_package_sha256": "2d3f519f857d6989e96c1b0129f6ee4cede27c9791a8f90424e5b95269e57422",
+    "package_hash_method": "sha256(stable_json(package_without_top_level_package_sha256))",
+    "hash_verified": true,
+    "result": "PASS",
+    "failures": [],
+    "warnings": [],
+    "counts": {
+      "separators": 6,
+      "responses": 5,
+      "incidence_edges": 12,
+      "perturbation_records": 12,
+      "connected_components": 1,
+      "enumerated_binary_cuts": 1023,
+      "enumerated_nontrivial_factor_cuts": 930,
+      "factor_local_zero_crossing_cuts": 0
+    },
+    "graph": {
+      "connected": true,
+      "components": [
+        [
+          "r_factorization_probe",
+          "r_gauge_response",
+          "r_history_binding",
+          "r_intervention_phase",
+          "r_trace_alignment",
+          "theta_factorization_gap",
+          "theta_gauge_stability",
+          "theta_history_alignment",
+          "theta_identity_channel_lock",
+          "theta_intervention_fidelity",
+          "theta_response_phase"
+        ]
+      ],
+      "factor_local_zero_crossing_cuts": []
+    },
+    "certificate_interpretation": "The finite package is separator-complete relative to its declared separator catalog and finite response-coordinate universe; connectedness blocks factor-local decomposition over the enumerated finite cuts. This is a conditional finite witness, not empirical validation or a global theorem over undeclared systems."
+  },
+  "negative_control": {
+    "package_id": "FSCI-QICN-v22-product-separator-negative-control",
+    "package_sha256": "f5855fd9c6724ce4617f21600f8d5868564dce28a6a910112d800d1a1165a93d",
+    "declared_package_sha256": "f5855fd9c6724ce4617f21600f8d5868564dce28a6a910112d800d1a1165a93d",
+    "package_hash_method": "sha256(stable_json(package_without_top_level_package_sha256))",
+    "hash_verified": true,
+    "result": "FAIL",
+    "failures": [
+      "incidence graph is not connected.",
+      "at least one nontrivial factor-local zero-crossing cut exists."
+    ],
+    "warnings": [],
+    "counts": {
+      "separators": 4,
+      "responses": 4,
+      "incidence_edges": 6,
+      "perturbation_records": 6,
+      "connected_components": 2,
+      "enumerated_binary_cuts": 127,
+      "enumerated_nontrivial_factor_cuts": 98,
+      "factor_local_zero_crossing_cuts": 1
+    },
+    "graph": {
+      "connected": false,
+      "components": [
+        [
+          "r_a_probe",
+          "r_a_trace",
+          "theta_a_identity",
+          "theta_a_response"
+        ],
+        [
+          "r_b_probe",
+          "r_b_trace",
+          "theta_b_identity",
+          "theta_b_response"
+        ]
+      ],
+      "factor_local_zero_crossing_cuts": [
+        {
+          "left": [
+            "r_a_probe",
+            "r_a_trace",
+            "theta_a_identity",
+            "theta_a_response"
+          ],
+          "right": [
+            "r_b_probe",
+            "r_b_trace",
+            "theta_b_identity",
+            "theta_b_response"
+          ]
+        }
+      ]
+    },
+    "certificate_interpretation": "The finite package does not support the connected-incidence atomicity certificate."
+  },
+  "negative_control_expected_rejection_observed": true,
+  "result": "PASS"
+}

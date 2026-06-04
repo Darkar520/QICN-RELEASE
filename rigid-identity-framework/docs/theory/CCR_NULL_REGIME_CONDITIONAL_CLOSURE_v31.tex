@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\MO}{M_\Omega}
+\newcommand{\nullphi}{\varnothing_\phi}
+\newcommand{\Omegaint}{\Omega_{\mathrm{int}}}
+\newcommand{\Ext}{\mathrm{Ext}}
+
+\title{CCR Null-Regime Conditional Closure v31}
+\author{QICN Internal Hardening Artifact}
+\date{2026-05-29}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Governance boundary.}
+This document is an internal mathematical hardening artifact. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.
+
+\begin{definition}[Typed perturbation boundary]
+For a system $S$ with identity object $\I(S)$, let $\Omegaint(S)$ denote finite-energy perturbations whose domain and codomain remain inside the admissible identity structure of $S$. Let $\Ext(S)$ denote extension-side witnesses that compare $\I(S)$ with an independently specified object $\tilde{\I}$ not introduced as an element of $\Omegaint(S)$.
+\end{definition}
+
+\begin{definition}[Undefined-assignment marker and separated external witness]
+The symbol $\bot$ (``bottom'') denotes absence of an admissible phenomenological assignment. It is disjoint from $\E$, so $\bot\notin\E$. This is distinct from the null regime $\nullphi\in\E$, which is the bottom element of the phenomenological poset in Paper~3. A separated external witness for a phenomenological assignment $\Phi$ is a tuple $(\tilde{\I},\epsilon,C)$ such that:
+\begin{enumerate}[leftmargin=*]
+\item $\tilde{\I}\in\Ext(S)$ and $d_{\I}(\I(S),\tilde{\I})=\epsilon>0$;
+\item $C>0$ is a lower Lipschitz constant on the declared two-point witness domain; and
+\item $\Phi$ is defined and admissible on both $\I(S)$ and $\tilde{\I}$, so $\Phi(\I(S)),\Phi(\tilde{\I})\in\E$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Witness-relative undefined-assignment exclusion]
+Let $S$ be a CCR channel with $\MO=+\infty$. Let $\Phi$ be a declared compatibility operator satisfying the lower Lipschitz condition on the separated witness domain. Suppose a separated external witness $(\tilde{\I},\epsilon,C)$ exists for $\Phi$. Then $\Phi$ cannot be undefined on both witness endpoints:
+\[
+  \neg(\Phi(\I(S))=\bot \wedge \Phi(\tilde{\I})=\bot).
+\]
+\end{theorem}
+
+\begin{proof}
+Suppose for contradiction that both $\Phi(\I(S))=\bot$ and $\Phi(\tilde{\I})=\bot$.
+By the definition of $\bot$, neither endpoint has an admissible $\E$-valued phenomenological assignment. This contradicts the separated-witness hypothesis, which requires $\Phi$ to be defined and admissible on both endpoints, so that $\Phi(\I(S)),\Phi(\tilde{\I})\in\E$ and the lower Lipschitz condition is meaningful there.
+
+The case where both endpoints are assigned the null regime $\nullphi\in\E$ is a different typed statement: it is governed by the Paper~3 instability theorem and uses the metric on $\E$. The present theorem concerns only the absence marker $\bot\notin\E$.
+\end{proof}
+
+\begin{remark}[Non-claim]
+CCR alone does not produce a witness, does not prove that a compatibility operator exists, and does not imply consciousness or experience. The theorem is conditional on a typed external witness and a checked lower Lipschitz bound. In particular, $\bot$ is not a point in $\E$; it marks absence of assignment. The null regime $\nullphi\in\E$ is a separate concept: it is the bottom element of the phenomenological poset, not the absence of a value.
+\end{remark}
+
+\end{document}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-02T21:15:00.594Z",
+  "governance_boundary": "This unified superior-gap audit only orchestrates existing internal gap audits. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, peer review, or human mathematical review.",
+  "checks": [
+    {
+      "script": "scripts/audit-v25-superior-gaps.js",
+      "status": 0,
+      "pass": true,
+      "stdout_tail": [
+        "V25 superior gap audit: PASS; pass=15/15"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "scripts/audit-v26-superior-gaps.js",
+      "status": 0,
+      "pass": true,
+      "stdout_tail": [
+        "V26 superior gap audit: PASS; checks=11; failures=0"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "script": "scripts/audit-v27-superior-gaps.js",
+      "status": 0,
+      "pass": true,
+      "stdout_tail": [
+        "V27 superior gap audit: PASS; checks=11; failures=0"
+      ],
+      "stderr_tail": []
+    }
+  ],
+  "result": "PASS",
+  "external_support_certified": false
+}

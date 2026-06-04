@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-02T20:14:26.576Z",
+  "governance_boundary": "This v35 legacy verification runner checks backward-compatible internal gates only. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, peer review, or human mathematical review.",
+  "steps": [
+    {
+      "name": "verify:v25",
+      "command": "npm run verify:v25",
+      "started_at": "2026-06-02T20:13:18.637Z",
+      "finished_at": "2026-06-02T20:13:29.203Z",
+      "status": 0,
+      "error": null,
+      "pass": true,
+      "stdout_tail": [
+        "> qicn-rigid-identity-framework@0.0.0-fcr adjudicate:external-session-zero-self-test",
+        "> node scripts/external-session-zero-adjudicator.js --self-test",
+        "External Session Zero adjudicator v26: PASS; verdict=INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY; external_support_certified=false",
+        "> qicn-rigid-identity-framework@0.0.0-fcr propose:fcr-downgrades:self-test",
+        "> node scripts/propose-fcr-downgrades-from-adjudication.js",
+        "FCR downgrade dry run v26: PASS; proposals=1; registry_modified=false",
+        "> qicn-rigid-identity-framework@0.0.0-fcr audit:operational-term-promotions",
+        "> node scripts/audit-operational-term-promotions.js",
+        "Operational term promotion audit v26: PASS; failures=0",
+        "> qicn-rigid-identity-framework@0.0.0-fcr audit:v25-superior-gaps",
+        "> node scripts/audit-v25-superior-gaps.js",
+        "V25 superior gap audit: PASS; pass=15/15"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "name": "verify:v26",
+      "command": "npm run verify:v26",
+      "started_at": "2026-06-02T20:13:29.204Z",
+      "finished_at": "2026-06-02T20:13:44.023Z",
+      "status": 0,
+      "error": null,
+      "pass": true,
+      "stdout_tail": [
+        "> qicn-rigid-identity-framework@0.0.0-fcr propose:fcr-downgrades:self-test",
+        "> node scripts/propose-fcr-downgrades-from-adjudication.js",
+        "FCR downgrade dry run v26: PASS; proposals=1; registry_modified=false",
+        "> qicn-rigid-identity-framework@0.0.0-fcr audit:operational-term-promotions",
+        "> node scripts/audit-operational-term-promotions.js",
+        "Operational term promotion audit v26: PASS; failures=0",
+        "> qicn-rigid-identity-framework@0.0.0-fcr verify:human-veto-signature",
+        "> node scripts/verify-human-veto-signature.js --self-test",
+        "Human veto signature self-test v26: PASS",
+        "> qicn-rigid-identity-framework@0.0.0-fcr audit:v26-superior-gaps",
+        "> node scripts/audit-v26-superior-gaps.js",
+        "V26 superior gap audit: PASS; checks=11; failures=0"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "name": "verify:v27",
+      "command": "npm run verify:v27",
+      "started_at": "2026-06-02T20:13:44.023Z",
+      "finished_at": "2026-06-02T20:13:57.406Z",
+      "status": 0,
+      "error": null,
+      "pass": true,
+      "stdout_tail": [
+        "> qicn-rigid-identity-framework@0.0.0-fcr adjudicate:external-session-zero-v27",
+        "> node scripts/external-session-zero-adjudicator-v27.js --self-test",
+        "External Session Zero adjudicator v27: PASS; verdict=BLOCKED_MULTIPLE_GATES; blockers=3; external_support_certified=false",
+        "> qicn-rigid-identity-framework@0.0.0-fcr audit:operational-term-promotions:v27",
+        "> node scripts/audit-operational-term-promotions-v27.js",
+        "Operational term promotion audit v27: PASS; findings=0; self_tests=3/3",
+        "> qicn-rigid-identity-framework@0.0.0-fcr verify:human-veto-signature:v27",
+        "> node scripts/verify-human-veto-signature-v27.js --self-test",
+        "Human veto signature self-test v27: PASS; registered=true; unregistered_rejected=true",
+        "> qicn-rigid-identity-framework@0.0.0-fcr audit:v27-superior-gaps",
+        "> node scripts/audit-v27-superior-gaps.js",
+        "V27 superior gap audit: PASS; checks=11; failures=0"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "name": "adjudicate:v28",
+      "command": "npm run adjudicate:external-session-zero-v28",
+      "started_at": "2026-06-02T20:13:57.406Z",
+      "finished_at": "2026-06-02T20:13:59.145Z",
+      "status": 0,
+      "error": null,
+      "pass": true,
+      "stdout_tail": [
+        "> qicn-rigid-identity-framework@0.0.0-fcr adjudicate:external-session-zero-v28",
+        "> node scripts/external-session-zero-adjudicator-v28.js",
+        "External Session Zero adjudicator v28: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; blockers=4; external_support_certified=false"
+      ],
+      "stderr_tail": [
+        "[v28 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED."
+      ]
+    },
+    {
+      "name": "verify:v30",
+      "command": "npm run verify:v30",
+      "started_at": "2026-06-02T20:13:59.146Z",
+      "finished_at": "2026-06-02T20:14:11.184Z",
+      "status": 0,
+      "error": null,
+      "pass": true,
+      "stdout_tail": [
+        "> qicn-rigid-identity-framework@0.0.0-fcr adjudicate:external-session-zero-v30",
+        "> node scripts/external-session-zero-adjudicator-v30.js",
+        "External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false",
+        "> qicn-rigid-identity-framework@0.0.0-fcr summary:ar1-correction:v28",
+        "> node scripts/ar1-correction-clinical-summary-v28.js",
+        "Clinical summary v28: gain_iid=87.59 -> gain_ar1=-48.68; sign_reversal=true; verdict_v27=BLOCKED_MULTIPLE_GATES; verdict_v28=BLOCKED_MULTIPLE_GATES",
+        "> qicn-rigid-identity-framework@0.0.0-fcr test:negative-control-suite",
+        "> node scripts/negative-control-suite.js",
+        "Negative-control suite v30: PASS; cases=6/6; external_support_certified=false",
+        "> qicn-rigid-identity-framework@0.0.0-fcr validate:promotion-rules",
+        "> node scripts/validate-promotion-rules.js",
+        "Promotion-rule validation v30: PASS; source_checks=5/5; self_tests=8/8"
+      ],
+      "stderr_tail": [
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v28 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v28 WARNING] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation in synthetic fixture. This fixture would be BLOCKED as external data.",
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v30 STRICT] Fixture DW=0.0000 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED."
+      ]
+    },
+    {
+      "name": "verify:v31",
+      "command": "npm run verify:v31",
+      "started_at": "2026-06-02T20:14:11.184Z",
+      "finished_at": "2026-06-02T20:14:26.575Z",
+      "status": 0,
+      "error": null,
+      "pass": true,
+      "stdout_tail": [
+        "> qicn-rigid-identity-framework@0.0.0-fcr summary:ar1-correction:v28",
+        "> node scripts/ar1-correction-clinical-summary-v28.js",
+        "Clinical summary v28: gain_iid=87.59 -> gain_ar1=-48.68; sign_reversal=true; verdict_v27=BLOCKED_MULTIPLE_GATES; verdict_v28=BLOCKED_MULTIPLE_GATES",
+        "> qicn-rigid-identity-framework@0.0.0-fcr test:negative-control-suite",
+        "> node scripts/negative-control-suite.js",
+        "Negative-control suite v30: PASS; cases=6/6; external_support_certified=false",
+        "> qicn-rigid-identity-framework@0.0.0-fcr validate:promotion-rules",
+        "> node scripts/validate-promotion-rules.js",
+        "Promotion-rule validation v30: PASS; source_checks=5/5; self_tests=8/8",
+        "> qicn-rigid-identity-framework@0.0.0-fcr adjudicate:external-session-zero-v31",
+        "> node scripts/external-session-zero-adjudicator-v31.js",
+        "External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false"
+      ],
+      "stderr_tail": [
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v28 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v28 WARNING] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation in synthetic fixture. This fixture would be BLOCKED as external data.",
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v30 STRICT] Fixture DW=0.0000 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED.",
+        "[v30 STRICT] Fixture DW=0.0385 < 0.5 — severe serial autocorrelation. BLOCKED."
+      ]
+    }
+  ],
+  "result": "PASS",
+  "external_support_certified": false
+}

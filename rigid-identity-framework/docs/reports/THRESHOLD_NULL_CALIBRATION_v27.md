@@ -4,7 +4,7 @@ This v27 calibration record is an internal synthetic engineering calibration onl
 
 - Result: PASS
 - null_rival_true p95 AICc gain: -198.42547230932894
-- null_both_random p95 AICc gain: -77.53106933855449
+- null_both_random p95 AICc gain: -77.58612366361457
 - Recommended support_gain_aicc: 4
 - Recommended MI leakage threshold: 0.81
 - External support allowed: false

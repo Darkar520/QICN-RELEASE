@@ -38,3 +38,48 @@ Paper 7 operational life / subjecthood, Paper 8 indexed subjectivity, Paper 9 ph
 \begin{remark}[Why the earlier material was removed from BaseCore ownership]
 Previous versions mixed theorem-tight base results with runtime-like numerics, non-convex extension classes, and bridge-facing vocabulary. That blurred the mathematical base layer. BaseCore now keeps only the theorem ownership that survives the stricter release gate.
 \end{remark}
+
+\section{Admissible Structural Extensions}
+
+\begin{definition}[BaseCore export object]
+A BaseCore export object is a tuple
+\[
+  \mathfrak{E}=(\mathcal{O},\mathcal{H},\mathcal{R},\mathcal{B})
+\]
+where $\mathcal{O}$ is a typed mathematical object defined in BaseCore, $\mathcal{H}$ is the finite list of hypotheses under which it is used, $\mathcal{R}$ is the list of results actually proved from those hypotheses, and $\mathcal{B}$ is a boundary list of claims not entailed by $\mathcal{R}$.
+\end{definition}
+
+\begin{definition}[Downstream admissible extension]
+A downstream layer is an admissible extension of a BaseCore export object $\mathfrak{E}$ only if it supplies:
+\begin{enumerate}[leftmargin=*]
+\item an explicit target predicate $P$ not already contained in $\mathcal{R}$;
+\item a typed construction or estimator witnessing the objects on which $P$ is evaluated;
+\item a proof, reduction, or reproducible protocol connecting $\mathcal{H}$ to $P$;
+\item negative controls or failure modes under which $P$ must not be asserted;
+\item a provenance statement distinguishing theorem, implementation, internal support, and external adjudication.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[No automatic downstream promotion]
+Let $\mathfrak{E}=(\mathcal{O},\mathcal{H},\mathcal{R},\mathcal{B})$ be a BaseCore export object and let $P$ be a predicate introduced outside BaseCore. If $P\notin\mathcal{R}$, then BaseCore does not entail $P$ unless an admissible extension supplies an additional bridge from $\mathcal{H}$ to $P$.
+\end{proposition}
+
+\begin{proof}
+By definition, $\mathcal{R}$ records the results proved from $\mathcal{H}$ inside BaseCore. A predicate $P$ introduced downstream is not in that result set. Therefore asserting $P$ from BaseCore alone would add an unstated inference. The missing inference must be supplied as a separate bridge, proof, reduction, or reproducible protocol.
+\end{proof}
+
+\begin{criterion}[Runtime-use admissibility]
+A runtime measurement may instantiate a BaseCore export object only as an implementation-level witness when all of the following are recorded: the measured state space, the estimator or update rule, the finite horizon, the calibration regime, the controls under which the measurement fails, and the claim class being asserted. Such a measurement is not a BaseCore theorem and is not external validation by itself.
+\end{criterion}
+
+\begin{remark}[Open-load placement for $I_{\mathrm{int}}$ and atomic separators]
+Quantities such as $I_{\mathrm{int}}$ and any atomic-separator condition may be treated as downstream target predicates or estimator families only after their carrier objects, separator class, invariance target, and negative controls are specified. Until a proof or reproducible adversarial protocol closes that burden, BaseCore may export the ambient structural language but not the separator conclusion.
+\end{remark}
+
+\begin{proposition}[Boundary preservation under finite implementations]
+Suppose a finite implementation produces diagnostics for a downstream predicate $P$ over a bounded horizon. If the implementation does not prove that the diagnostics are invariant over the relevant mathematical class, then the diagnostics remain implementation evidence for $P$ and do not promote $P$ to a BaseCore result.
+\end{proposition}
+
+\begin{proof}
+The implementation supplies finite observations or computations. Promotion to a BaseCore result requires a class-level implication from the stated hypotheses to the predicate. Without that implication, the observations can support, falsify, or calibrate a downstream claim, but they do not alter the theorem inventory of BaseCore.
+\end{proof}

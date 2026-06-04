@@ -1,137 +1,171 @@
+\geometry{a4paper, margin=1in}
+\raggedbottom
+\let\cleardoublepage\clearpage
+\widowpenalty=10000
+\clubpenalty=10000
+\setlength{\emergencystretch}{8em}
+\renewcommand{\chaptername}{}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{2.2ex}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+\setlength{\cftsecnumwidth}{4.8em}
+\setlength{\cftsubsecnumwidth}{5.8em}
+\setlength{\headheight}{23pt}
+\allowdisplaybreaks
+\setlist{nosep,leftmargin=*}
+\Urlmuskip=0mu plus 2mu
+\makeatletter
+\g@addto@macro\UrlBreaks{\do\_\do\-\do\/\do\.\do\:\do\;\do\<\do\>\do\=}
+\makeatother
+\captionsetup{font=small,labelfont=bf}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\small\thepage}
+\fancyhead[LO]{\small\nouppercase{\rightmark}}
+\fancyhead[RE]{\small\nouppercase{\leftmark}}
+\hypersetup{pdftitle={QICN: A Rigid Identity Framework},pdfauthor={Johnny Andrey Perez Ramirez}}
+\pdfstringdefDisableCommands{%
+  \def\texttt#1{#1}\def\textbf#1{#1}\def\emph#1{#1}%
+  \def\mathbb#1{#1}\def\mathcal#1{#1}\def\mathrm#1{#1}\def\mathbf#1{#1}%
+  \def\operatorname#1{#1}\def\Sigma{Sigma}\def\Omega{Omega}\def\Phi{Phi}\def\Pi{Pi}%
+}
+\addbibresource{../release/references.bib}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-\newcommand{\Aset}{A_S}
-\newcommand{\Attr}{\operatorname{Attr}}
-\newcommand{\A}{\mathcal{A}}
-\newcommand{\Bound}{\beta_{\mathrm{op}}}
-\newcommand{\BridgeAdm}{\mathrm{Bridge}_{\mathrm{adm}}}
-\newcommand{\BridgeArtifacts}{\mathcal{A}_{\mathrm{bpf}}}
-\newcommand{\BridgeClass}{\mathrm{BridgeOrg}_{\mathrm{ph}}}
-\newcommand{\BridgeIntervFam}{\mathfrak{I}_{\mathrm{bpf}}}
-\newcommand{\BridgeLoss}{\mathcal{L}_{\mathrm{b}}}
-\newcommand{\BridgeMargin}{\mathcal{R}_{\mathrm{b}}}
-\newcommand{\BridgeState}{\mathfrak{B}}
-\newcommand{\BridgeStatus}{\operatorname{Status}}
-\newcommand{\BridgeStrong}{\mathrm{Bridge}_{\mathrm{strong}}}
-\newcommand{\BridgeWeakClosure}{\overline{\BridgeWeakFam}}
-\newcommand{\BridgeWeakFam}{\mathcal{M}_{\mathrm{b,weak}}}
-\newcommand{\CCR}{\mathbf{CCR}}
-\newcommand{\Cert}{\mathrm{Cert}}
-\newcommand{\Class}{\mathscr{Q}}
-\newcommand{\Comp}{\operatorname{Comp}}
-\newcommand{\ConClass}{\mathfrak{C}}
-\newcommand{\ContField}{C}
-\newcommand{\Cop}{\mathrm{Consciousness}_{\mathrm{op}}}
-\newcommand{\Critop}{\mathrm{Crit}_{\mathrm{op}}}
-\newcommand{\Dec}{\mathscr{D}}
-\newcommand{\DualTableStatus}[2]{\shortstack[l]{\scriptsize\ttfamily #1\\\scriptsize\ttfamily #2}}
-\newcommand{\Eplus}{\mathcal{E}^+}
-\newcommand{\Eq}{\mathrm{Eq}}
-\newcommand{\Espace}{\mathcal{E}}
-\newcommand{\E}{\mathcal{E}}
-\newcommand{\GateBridge}{\Gamma_{\mathrm{bpf}}}
-\newcommand{\GateSubj}{\Gamma_{\mathrm{subj}}}
-\newcommand{\Hilb}{\mathcal{H}}
-\newcommand{\HistDep}{\eta_{\mathrm{op}}}
-\newcommand{\Hist}{\mathscr{H}}
-\newcommand{\Icont}{I_{\mathrm{cont}}}
-\newcommand{\IdS}{\mathcal{I}_S}
-\newcommand{\Idiff}{I_{\mathrm{diff}}}
-\newcommand{\Id}{\mathcal{I}}
-\newcommand{\Iint}{I_{\mathrm{int}}}
-\newcommand{\Ileg}{I_{\mathrm{leg}}}
-\newcommand{\IntervFam}{\mathfrak{I}_{\mathrm{subj}}}
-\newcommand{\IntervProf}{\Delta}
-\newcommand{\Iotaop}{\mathrm{Iota}_{\mathrm{op}}}
-\newcommand{\Iper}{I_{\mathrm{per}}}
-\newcommand{\Iri}{I_{\mathrm{ri}}}
-\newcommand{\Irred}{\mathcal{R}}
-\newcommand{\I}{\mathcal{I}}
-\newcommand{\LifeClass}{\mathfrak{L}}
-\newcommand{\LifeStructClass}{\mathscr{K}}
-\newcommand{\Lip}{\operatorname{Lip}}
-\newcommand{\Lop}{\mathrm{Life}_{\mathrm{op}}}
-\newcommand{\Loss}{\mathcal{L}}
-\newcommand{\MO}{M_\Omega}
-\newcommand{\Maint}{\mu_{\mathrm{op}}}
-\newcommand{\Nset}{\mathbb{N}}
-\newcommand{\Null}{\varnothing_{\phi}}
-\newcommand{\Obs}{\mathbf{Obs}}
-\newcommand{\OwnField}{O}
-\newcommand{\Own}{\chi_{\mathrm{own}}}
-\newcommand{\Partop}{\mathrm{Part}_{\mathrm{op}}}
-\newcommand{\Part}{\mathscr{P}}
-\newcommand{\Persist}{\rho_{\mathrm{op}}}
-\newcommand{\Persp}{P}
-\newcommand{\PhiBridge}{\Phi_{\mathrm{bpf}}}
-\newcommand{\PhiSubj}{\Phi_{\mathrm{subj}}}
-\newcommand{\Phiop}{\Phi_{\mathrm{op}}}
-\newcommand{\PiA}{\Pi_{\mathrm{A}}}
-\newcommand{\PiD}{\Pi_{\mathrm{D}}}
-\newcommand{\PiE}{\Pi_{\mathrm{E}}}
-\newcommand{\PiT}{\Pi_{\mathrm{T}}}
-\newcommand{\PiV}{\Pi_{\mathrm{V}}}
-\newcommand{\PiW}{\Pi_{\mathrm{W}}}
-\newcommand{\Piop}{\Pi_{\mathrm{op}}}
-\newcommand{\Priv}{\chi_{\mathrm{pc}}}
-\newcommand{\PsiVec}{\Psi}
-\newcommand{\Qop}{\mathrm{Q}_{\mathrm{op}}}
-\newcommand{\Qualop}{\mathrm{Class}_{\mathrm{op}}}
-\newcommand{\Read}{\mathscr{R}}
-\newcommand{\Rupt}{\mathrm{Rupt}}
-\newcommand{\SelfDisc}{\chi_{\mathrm{sd}}}
-\newcommand{\SelfIndex}{I}
-\newcommand{\SelfModel}{\chi_{\mathrm{sm}}}
-\newcommand{\Sigmaop}{\Sigma_{\mathrm{op}}}
-\newcommand{\StatusAmbiguousCell}{\shortstack[l]{\footnotesize\ttfamily STILL\\\footnotesize\ttfamily AMBIGUOUS}}
-\newcommand{\StatusImplementationCell}{\shortstack[l]{\footnotesize\ttfamily IMPLEMENTATION\\\footnotesize\ttfamily LIMIT}}
-\newcommand{\StatusInternalCell}{\shortstack[l]{\footnotesize\ttfamily INTERNAL\\\footnotesize\ttfamily SUPPORT ONLY}}
-\newcommand{\StatusMetricCell}{\shortstack[l]{\footnotesize\ttfamily METRIC OR\\\footnotesize\ttfamily TOLERANCE LIMIT}}
-\newcommand{\StatusProvisionalCell}{\shortstack[l]{\footnotesize\ttfamily PROVISIONAL\\\footnotesize\ttfamily SUPPORT\\\footnotesize\ttfamily LOCALIZED}}
-\newcommand{\StatusRobustCell}{\shortstack[l]{\footnotesize\ttfamily ROBUST\\\footnotesize\ttfamily INTERNAL\\\footnotesize\ttfamily SUPPORT}}
-\newcommand{\StatusRobustLocalizedCell}{\shortstack[l]{\footnotesize\ttfamily ROBUST\\\footnotesize\ttfamily SUPPORT W/\\\footnotesize\ttfamily LOCALIZED\\\footnotesize\ttfamily CAVEAT}}
-\newcommand{\Status}[1]{\texttt{#1}}
-\newcommand{\Struct}{\mathscr{T}}
-\newcommand{\SubClass}{\mathfrak{U}}
-\newcommand{\Subbridge}{\mathrm{Subject}^{\Sigma}_{\mathrm{op}}}
-\newcommand{\Subfp}{\mathrm{Subjectivity}_{\mathrm{1p}}}
-\newcommand{\Subop}{\mathrm{Subject}_{\mathrm{op}}}
-\newcommand{\Substate}{\mathfrak{S}}
-\newcommand{\SurfaceMap}{\Sigma}
-\newcommand{\TableStatus}[1]{{\footnotesize\ttfamily #1}}
-\newcommand{\Thresholds}{\Theta_{\mathrm{bpf}}}
-\newcommand{\Uset}{\mathcal{U}}
-\newcommand{\U}{\mathcal{U}}
-\newcommand{\ValAsym}{V}
-\newcommand{\Viab}{\nu_{\mathrm{op}}}
-\newcommand{\Vset}{\mathcal{V}_S}
-\newcommand{\WeakClosure}{\overline{\WeakFam}}
-\newcommand{\WeakFam}{\mathcal{M}_{\mathrm{weak}}}
-\newcommand{\argmin}{\operatorname*{arg\,min}}
-\newcommand{\crit}{\mathrm{crit}}
-\newcommand{\dE}{d_{\mathcal{E}}}
-\newcommand{\dI}{d_{\mathcal{I}}}
-\newcommand{\dist}{\operatorname{dist}}
-\newcommand{\dw}{d_w}
-\newcommand{\eps}{\varepsilon}
-\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
-\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
-\newcommand{\nullclass}{\mathbf{0}}
-\newcommand{\nullphi}{\varnothing_\phi}
-\newcommand{\risk}{\operatorname{Risk}}
-\newcommand{\trace}{\operatorname{Tr}}
-
-% --- Layout hardening ---
-\raggedbottom
-\widowpenalty=10000
-\clubpenalty=10000
-\emergencystretch=3em
-
-% --- Professional volume numbering ---
-\renewcommand{\chaptername}{Paper}
-
-% --- Theorem environments (counter per chapter) ---
+\providecommand{\Aset}{A_S}
+\providecommand{\Attr}{\operatorname{Attr}}
+\providecommand{\A}{\mathcal{A}}
+\providecommand{\Bound}{\beta_{\mathrm{op}}}
+\providecommand{\BridgeAdm}{\mathrm{Bridge}_{\mathrm{adm}}}
+\providecommand{\BridgeArtifacts}{\mathcal{A}_{\mathrm{bpf}}}
+\providecommand{\BridgeClass}{\mathrm{BridgeOrg}_{\mathrm{ph}}}
+\providecommand{\BridgeIntervFam}{\mathfrak{I}_{\mathrm{bpf}}}
+\providecommand{\BridgeLoss}{\mathcal{L}_{\mathrm{b}}}
+\providecommand{\BridgeMargin}{\mathcal{R}_{\mathrm{b}}}
+\providecommand{\BridgeState}{\mathfrak{B}}
+\providecommand{\BridgeStatus}{\operatorname{Status}}
+\providecommand{\BridgeStrong}{\mathrm{Bridge}_{\mathrm{strong}}}
+\providecommand{\BridgeWeakClosure}{\overline{\BridgeWeakFam}}
+\providecommand{\BridgeWeakFam}{\mathcal{M}_{\mathrm{b,weak}}}
+\providecommand{\CCR}{\mathbf{CCR}}
+\providecommand{\Cert}{\mathrm{Cert}}
+\providecommand{\Class}{\mathscr{Q}}
+\providecommand{\Comp}{\operatorname{Comp}}
+\providecommand{\ConClass}{\mathfrak{C}}
+\providecommand{\ContField}{C}
+\providecommand{\Cop}{\mathrm{Consciousness}_{\mathrm{op}}}
+\providecommand{\Critop}{\mathrm{Crit}_{\mathrm{op}}}
+\providecommand{\Dec}{\mathscr{D}}
+\providecommand{\DualTableStatus}[2]{\shortstack[l]{\scriptsize\ttfamily #1\\\scriptsize\ttfamily #2}}
+\providecommand{\Eplus}{\mathcal{E}^+}
+\providecommand{\Eq}{\mathrm{Eq}}
+\providecommand{\Espace}{\mathcal{E}}
+\providecommand{\E}{\mathcal{E}}
+\providecommand{\GateBridge}{\Gamma_{\mathrm{bpf}}}
+\providecommand{\GateSubj}{\Gamma_{\mathrm{subj}}}
+\providecommand{\Hilb}{\mathcal{H}}
+\providecommand{\HistDep}{\eta_{\mathrm{op}}}
+\providecommand{\Hist}{\mathscr{H}}
+\providecommand{\Icont}{I_{\mathrm{cont}}}
+\providecommand{\IdS}{\mathcal{I}_S}
+\providecommand{\Idiff}{I_{\mathrm{diff}}}
+\providecommand{\Id}{\mathcal{I}}
+\providecommand{\Iint}{I_{\mathrm{int}}}
+\providecommand{\Ileg}{I_{\mathrm{leg}}}
+\providecommand{\IntervFam}{\mathfrak{I}_{\mathrm{subj}}}
+\providecommand{\IntervProf}{\Delta}
+\providecommand{\Iotaop}{\mathrm{Iota}_{\mathrm{op}}}
+\providecommand{\Iper}{I_{\mathrm{per}}}
+\providecommand{\Iri}{I_{\mathrm{ri}}}
+\providecommand{\Irred}{\mathcal{R}}
+\providecommand{\I}{\mathcal{I}}
+\providecommand{\LifeClass}{\mathfrak{L}}
+\providecommand{\LifeStructClass}{\mathscr{K}}
+\providecommand{\Lip}{\operatorname{Lip}}
+\providecommand{\Lop}{\mathrm{Life}_{\mathrm{op}}}
+\providecommand{\Loss}{\mathcal{L}}
+\providecommand{\MO}{M_\Omega}
+\providecommand{\Maint}{\mu_{\mathrm{op}}}
+\providecommand{\Nset}{\mathbb{N}}
+\providecommand{\Null}{\varnothing_{\phi}}
+\providecommand{\Obs}{\mathbf{Obs}}
+\providecommand{\OwnField}{O}
+\providecommand{\Own}{\chi_{\mathrm{own}}}
+\providecommand{\Partop}{\mathrm{Part}_{\mathrm{op}}}
+\providecommand{\Part}{\mathscr{P}}
+\providecommand{\Persist}{\rho_{\mathrm{op}}}
+\providecommand{\Persp}{P}
+\providecommand{\PhiBridge}{\Phi_{\mathrm{bpf}}}
+\providecommand{\PhiSubj}{\Phi_{\mathrm{subj}}}
+\providecommand{\Phiop}{\Phi_{\mathrm{op}}}
+\providecommand{\PiA}{\Pi_{\mathrm{A}}}
+\providecommand{\PiD}{\Pi_{\mathrm{D}}}
+\providecommand{\PiE}{\Pi_{\mathrm{E}}}
+\providecommand{\PiT}{\Pi_{\mathrm{T}}}
+\providecommand{\PiV}{\Pi_{\mathrm{V}}}
+\providecommand{\PiW}{\Pi_{\mathrm{W}}}
+\providecommand{\Piop}{\Pi_{\mathrm{op}}}
+\providecommand{\Priv}{\chi_{\mathrm{pc}}}
+\providecommand{\PsiVec}{\Psi}
+\providecommand{\Qop}{\mathrm{Q}_{\mathrm{op}}}
+\providecommand{\Qualop}{\mathrm{Class}_{\mathrm{op}}}
+\providecommand{\Read}{\mathscr{R}}
+\providecommand{\Rupt}{\mathrm{Rupt}}
+\providecommand{\SelfDisc}{\chi_{\mathrm{sd}}}
+\providecommand{\SelfIndex}{I}
+\providecommand{\SelfModel}{\chi_{\mathrm{sm}}}
+\providecommand{\Sigmaop}{\Sigma_{\mathrm{op}}}
+\providecommand{\StatusAmbiguousCell}{\shortstack[l]{\footnotesize\ttfamily STILL\\\footnotesize\ttfamily AMBIGUOUS}}
+\providecommand{\StatusImplementationCell}{\shortstack[l]{\footnotesize\ttfamily IMPLEMENTATION\\\footnotesize\ttfamily LIMIT}}
+\providecommand{\StatusInternalCell}{\shortstack[l]{\footnotesize\ttfamily INTERNAL\\\footnotesize\ttfamily SUPPORT ONLY}}
+\providecommand{\StatusMetricCell}{\shortstack[l]{\footnotesize\ttfamily METRIC OR\\\footnotesize\ttfamily TOLERANCE LIMIT}}
+\providecommand{\StatusProvisionalCell}{\shortstack[l]{\footnotesize\ttfamily PROVISIONAL\\\footnotesize\ttfamily SUPPORT\\\footnotesize\ttfamily LOCALIZED}}
+\providecommand{\StatusRobustCell}{\shortstack[l]{\footnotesize\ttfamily ROBUST\\\footnotesize\ttfamily INTERNAL\\\footnotesize\ttfamily SUPPORT}}
+\providecommand{\StatusRobustLocalizedCell}{\shortstack[l]{\footnotesize\ttfamily ROBUST\\\footnotesize\ttfamily SUPPORT W/\\\footnotesize\ttfamily LOCALIZED\\\footnotesize\ttfamily CAVEAT}}
+\providecommand{\Status}[1]{\texttt{#1}}
+\providecommand{\Struct}{\mathscr{T}}
+\providecommand{\SubClass}{\mathfrak{U}}
+\providecommand{\Subbridge}{\mathrm{Subject}^{\Sigma}_{\mathrm{op}}}
+\providecommand{\Subfp}{\mathrm{Subjectivity}_{\mathrm{1p}}}
+\providecommand{\Subop}{\mathrm{Subject}_{\mathrm{op}}}
+\providecommand{\Substate}{\mathfrak{S}}
+\providecommand{\SurfaceMap}{\Sigma}
+\providecommand{\TableStatus}[1]{{\footnotesize\ttfamily #1}}
+\providecommand{\Thresholds}{\Theta_{\mathrm{bpf}}}
+\providecommand{\Uset}{\mathcal{U}}
+\providecommand{\U}{\mathcal{U}}
+\providecommand{\ValAsym}{V}
+\providecommand{\Viab}{\nu_{\mathrm{op}}}
+\providecommand{\Vset}{\mathcal{V}_S}
+\providecommand{\WeakClosure}{\overline{\WeakFam}}
+\providecommand{\WeakFam}{\mathcal{M}_{\mathrm{weak}}}
+\providecommand{\argmin}{\operatorname*{arg\,min}}
+\providecommand{\crit}{\mathrm{crit}}
+\providecommand{\dE}{d_{\mathcal{E}}}
+\providecommand{\dI}{d_{\mathcal{I}}}
+\providecommand{\dist}{\operatorname{dist}}
+\providecommand{\dw}{d_w}
+\providecommand{\eps}{\varepsilon}
+\providecommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\providecommand{\nullclass}{\mathbf{0}}
+\providecommand{\nullphi}{\varnothing_\phi}
+\providecommand{\risk}{\operatorname{Risk}}
+\providecommand{\sectionstatus}[1]{\paragraph{Section status.}\texttt{\detokenize{#1}}.}
+\providecommand{\trace}{\operatorname{Tr}}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\tabcolsep}{1.5pt}
+\providecommand{\codepath}[1]{\ifmmode\mathtt{#1}\else\nolinkurl{#1}\fi}
+\providecommand{\codestate}[1]{{\scriptsize\nolinkurl{#1}}}
+\newenvironment{abstract}{%
+  \par\medskip\begin{quotation}\small\noindent\textbf{Abstract.}\enspace%
+}{\end{quotation}\medskip}
+\newenvironment{blocked_until_execution}{\par\medskip\noindent\begin{minipage}{0.96\textwidth}\small\textbf{\texttt{blocked\_until\_execution}.}\enspace}{\end{minipage}\par\medskip}
+\providecommand{\blockedresultstatus}{\begin{blocked_until_execution}This section requires executed campaigns with human participants, frozen external filing records, populated admissible datasets, actual reviewer and adjudicator assignments, reviewer-governed evidence assessment, real collection-start events, and later adjudicator-layer completion. It contains no results and must remain non-result-bearing until those artifacts exist.\end{blocked_until_execution}}
+\renewcommand{\sectionstatus}[1]{\paragraph{Section status.}\nolinkurl{#1}.}
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -141,34 +175,18 @@
 \newtheorem{axiom}[theorem]{Axiom}
 \newtheorem{nontheorem}[theorem]{Non-Theorem}
 \newtheorem{conjecture}[theorem]{Conjecture}
-
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{prediction}[theorem]{Prediction}
+\newtheorem{protocol}[theorem]{Protocol}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{nonclaim}[theorem]{Non-Claim}
+\newtheorem{openproblem}[theorem]{Open Problem}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
-\newtheorem{assumption}[theorem]{Assumption}
-\newtheorem{caveat}[theorem]{Caveat}
-\newtheorem{prediction}[theorem]{Prediction}
-\newtheorem{protocol}[theorem]{Protocol}
-\newtheorem{hypothesis}[theorem]{Hypothesis}
-
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
-
-% --- Abstract environment (refined) ---
-\newenvironment{abstract}%
-{\begin{quotation}\small\noindent\rule{\linewidth}{0.4pt}\\[6pt]\noindent\textbf{Abstract.}\enspace}%
-{\\[6pt]\noindent\rule{\linewidth}{0.4pt}\end{quotation}}
-
-% --- Paper 10 macros ---
-\newcommand{\sectionstatus}[1]{\paragraph{Section status.}\texttt{\detokenize{#1}}.}
-\newcommand{\codestate}[1]{\texttt{\detokenize{#1}}}
-\newenvironment{blocked_until_execution}%
-{\par\medskip\noindent\begin{minipage}{0.96\textwidth}\textbf{\texttt{blocked\_until\_execution}.}\enspace}%
-{\end{minipage}\par\medskip}
-\newcommand{\blockedresultstatus}{%
-\begin{blocked_until_execution}%
-This section requires executed campaigns with human participants, frozen external filing records, populated admissible datasets, actual reviewer and adjudicator assignments, reviewer-governed evidence assessment, real collection-start events, and later adjudicator-layer completion. It contains no results and must remain non-result-bearing until those artifacts exist.%
-\end{blocked_until_execution}%
-}
-
-\renewcommand{\arraystretch}{1.18}
+\newtheorem{caveat}[theorem]{Caveat}
+\newtheorem{observation}[theorem]{Observation}

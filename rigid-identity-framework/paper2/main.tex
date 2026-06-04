@@ -40,6 +40,7 @@
 
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{nonclaim}[theorem]{Non-Claim}
 
 % Pagination
 \raggedbottom
@@ -577,6 +578,10 @@ Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Ident
 \begin{remark}[Why this is a hypothesis]
 The map $\Phi(x)=\arctan(x)$ from $\mathbb{R}$ to $(-\pi/2,\pi/2)$ is proper as a map into the open interval, locally Lipschitz, and non-constant on every nonempty ball, but it has no global lower Lipschitz constant because $|\arctan(x+1)-\arctan(x)|\to0$ as $x\to\infty$. Therefore the lower-bound clause above is an assumption, not a theorem derived from the first three clauses.
 \end{remark}
+
+\begin{nonclaim}[Global lower Lipschitz bound is an assumption]\label{nonclaim:hphi-lower-bound}
+Hypothesis~\ref{hyp:phi-paper2} clause~(4) requires the existence of a global $C>0$ such that $d_{\mathcal{E}}(\Phi(x),\Phi(y))\geq C\cdot d_w(x,y)$ for all $x,y\in\mathcal{I}$. This is not a theorem derived from clauses~(1)--(3). The map $\Phi(x)=\arctan(x)$ from $\mathbb{R}$ to $(-\pi/2,\pi/2)$ satisfies the first three clauses in the local/proper sense described above but has no such global $C$. Therefore the Fragmentation Theorem (Theorem~\ref{thm:fragmentation}) is conditional on clause~(4). For any specific phenomenological assignment, one must independently verify that a global lower Lipschitz constant exists. QICN has not performed this verification for any concrete assignment.
+\end{nonclaim}
 
 \subsection{Fragmentation Theorem}
 

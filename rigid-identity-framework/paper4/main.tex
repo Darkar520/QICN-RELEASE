@@ -139,6 +139,84 @@ K=(\text{tick},\text{seed},\text{versionHash},H_v,\text{metrics},\text{sensorSum
 \]
 \end{definition}
 
+\subsection{Admissibility Layers}
+The forensic packet is not a decorative log. It is the object on which the evaluation
+depends. A run is admissible only after passing three distinct layers:
+\begin{enumerate}
+\item \textbf{Physical integrity:} the packet is present, parseable, hash-consistent,
+and bound to the declared executable, configuration, seed, and version hash.
+\item \textbf{Protocol integrity:} the run obeys the frozen scenario, actuator,
+workspace, and metric contracts without unregistered intervention.
+\item \textbf{Inferential integrity:} the accepted packet belongs to the
+pre-registered comparison cell and has not been selected because of its outcome.
+\end{enumerate}
+Failure at the first layer invalidates the packet. Failure at the second layer
+invalidates the cell unless the protocol declares a narrower exclusion rule before
+execution. Failure at the third layer invalidates the corresponding inference even
+when the raw metrics look favorable.
+
+\begin{definition}[Admissible Evidence Cell]
+For system $s$, scenario $c$, and seed subset $\Sigma_c$, an evidence cell
+$E(s,c,\Sigma_c)$ is admissible when every included packet satisfies physical and
+protocol integrity, every exclusion is logged before metric aggregation, and the
+cell still meets the pre-registered minimum effective sample size after exclusions.
+\end{definition}
+
+\begin{criterion}[No Rescue by Favorable Metrics]
+Let $m(r)$ be any primary or secondary metric for run $r$. If $r$ fails the
+forensic gate, then $m(r)$ may be archived for debugging but cannot contribute to
+support, effect-size estimation, or tier movement.
+\end{criterion}
+
+\subsection{Tamper and Sham Controls}
+The protocol must include deliberately invalid artifacts. These controls are not
+stress tests of QICN behavior; they test whether the evaluation machinery refuses
+inadmissible evidence.
+
+\begin{longtable}{p{0.24\linewidth}p{0.34\linewidth}p{0.32\linewidth}}
+\toprule
+Control & Injected defect & Required evaluator response \\
+\midrule
+Hash tamper & modify one metric field after packet emission & packet rejected before aggregation \\
+Seed mismatch & replay packet under a seed not matching the manifest & packet rejected or quarantined as non-comparable \\
+Scenario alias & relabel a hard scenario as nominal & protocol-integrity failure \\
+Clock distortion & violate declared tick or latency envelope & runtime-budget invalidation for the affected cell \\
+Outcome-selected replay & keep only successful runs from a larger hidden set & inferential-integrity failure \\
+Malformed sensor summary & remove sensor fields needed by a primary metric & packet rejected for incomplete observability \\
+\bottomrule
+\end{longtable}
+
+\begin{proposition}[Evaluator Specificity]
+A forensic evaluator is specific enough for this protocol only if it rejects every
+tamper and sham control above while still accepting a clean replay of the same
+scenario family under the frozen manifest.
+\end{proposition}
+
+\begin{proof}
+The first condition prevents a permissive evaluator from converting arbitrary
+artifacts into evidence. The second condition prevents an over-strict evaluator
+from becoming a trivial rejection machine. Together they define a minimal
+specificity requirement: admissible evidence must be accepted for the right
+reason, and inadmissible evidence must be rejected for the right reason.
+\end{proof}
+
+\subsection{Audit Trail and Chain of Custody}
+Each accepted cell must expose a chain of custody:
+\[
+\mathcal{C}(E)=
+(\text{source commit},\text{manifest hash},\text{runner hash},
+\text{packet hashes},\text{exclusion ledger},\text{analysis script hash}).
+\]
+The chain is part of the evidence. A result with a missing analysis script hash or
+missing exclusion ledger is not equivalent to a fully traceable result, even if the
+visible table is numerically identical.
+
+\begin{criterion}[Traceability Completeness]
+An accepted result table must be reproducible from its packet set and analysis
+script without manual row editing. If manual correction is needed, the correction
+must be represented as a signed ledger entry with the original packet preserved.
+\end{criterion}
+
 \begin{assumption}[Packet Admissibility]
 A run is admissible only if checksum, schema, seed consistency, version hash, and $H_v$ consistency all pass.
 \end{assumption}
@@ -200,6 +278,48 @@ A claim without these contrasts is inadmissible for tier upgrade.
 If QICN FULL does not reliably exceed ABLATION QICN POLICY OFF, integration-level claims are weakened and cannot be escalated.
 \end{corollary}
 
+\subsection{Comparator Adequacy}
+The comparator set is adequate only if each alternative removes or weakens a
+different explanatory ingredient while preserving enough task exposure to make the
+contrast meaningful. A weak comparator that cannot perform the task at all is a
+sanity check, not a discriminating baseline. A strong comparator that reproduces
+the task but lacks one frozen ingredient is more valuable because it places
+pressure on the claimed necessity of that ingredient.
+
+\begin{definition}[Comparator Coverage Vector]
+For a comparator $s_i$, define
+\[
+V(s_i)=(v_A,v_J,v_W,v_M,v_P),
+\]
+where $v_A$ records actuator coverage, $v_J$ objective compatibility, $v_W$
+workspace compatibility, $v_M$ memory/model access, and $v_P$ planning access.
+Each coordinate is reported as \texttt{full}, \texttt{restricted}, or
+\texttt{absent}.
+\end{definition}
+
+\begin{criterion}[Non-Trivial Comparator]
+A comparator is non-trivial for a prediction $P_k$ only if it has enough coverage
+to attempt the target scenario while lacking at least one ingredient that the
+prediction treats as structurally relevant.
+\end{criterion}
+
+\subsection{Negative-Control Acceptance}
+Negative controls have a different success condition from positive runs. A
+negative control succeeds scientifically when it exposes whether the pipeline can
+withhold support from a superficially attractive but structurally defective case.
+
+\begin{definition}[Negative-Control Pass]
+A negative control passes the evaluation when the evaluator correctly withholds
+the target claim despite high activity, high fluency, high connectivity, or high
+surface task performance.
+\end{definition}
+
+\begin{remark}
+The strongest negative controls are not intentionally broken systems. They are
+near-plausible alternatives that preserve enough surface competence to make false
+promotion tempting.
+\end{remark}
+
 \section{Statistical Inference Specification}
 \subsection{Primary Metrics First (Anti p-hacking)}
 \begin{protocol}[Analysis Lock]
@@ -222,6 +342,46 @@ Holm correction is applied within endpoint families; in addition, each accepted 
 \subsection{Decision Semantics}
 A prediction counts as supported iff directionality, integrity gate, multiplicity-corrected significance, and effect-size floor all hold.
 
+\subsection{Hierarchical Decision Rule}
+The protocol uses hierarchical decisions because not all failures have the same
+meaning. The gate order is:
+\[
+\text{integrity} \rightarrow \text{eligibility} \rightarrow
+\text{primary direction} \rightarrow \text{effect size} \rightarrow
+\text{multiplicity} \rightarrow \text{secondary description}.
+\]
+No later stage can repair an earlier failure.
+
+\begin{protocol}[Cell-Level Decision]
+For each system-scenario family, compute:
+\[
+\Delta_{i0} = \hat{\mu}(s_1,c)-\hat{\mu}(s_i,c),
+\]
+where $s_1$ is QICN FULL and $s_i$ is the comparator. The cell is supportive only
+if the admissible packet set passes integrity, $\Delta_{i0}$ has the
+pre-registered direction, the confidence interval excludes the practical
+irrelevance band, and the family survives multiplicity correction.
+\end{protocol}
+
+\begin{definition}[Practical Irrelevance Band]
+For endpoint $e$, let $\tau_e>0$ be the smallest effect regarded as scientifically
+meaningful before execution. A contrast inside $[-\tau_e,\tau_e]$ is reported as
+inconclusive for support even if a large sample makes the numerical difference
+statistically detectable.
+\end{definition}
+
+\subsection{Missingness and Exclusion Accounting}
+Every missing packet has evidentiary meaning. The protocol therefore separates:
+\begin{enumerate}
+\item \textbf{structural missingness}, caused by scenario infeasibility or runner
+failure;
+\item \textbf{forensic exclusion}, caused by integrity failure;
+\item \textbf{budget exclusion}, caused by runtime or latency violation;
+\item \textbf{analysis exclusion}, caused by a pre-registered endpoint rule.
+\end{enumerate}
+The final table must report counts for all four classes. A favorable result with
+unexplained missingness is not admissible for escalation.
+
 \section{Acceptance Criteria}
 \begin{criterion}[Intermediate Claim Gate]
 Support at intermediate tier requires:
@@ -235,6 +395,32 @@ Support at intermediate tier requires:
 \begin{criterion}[Latency/Tick Budget Invalidation]
 If runtime exceeds budget envelope (e.g., persistent $p99$ overflow above pre-registered tolerance), the corresponding runs are invalid for cognitive-operational claims.
 \end{criterion}
+
+\begin{criterion}[Escalation Block]
+A result cannot move beyond methodological readiness if any of the following hold:
+\begin{enumerate}
+\item a primary endpoint is computed from packets that failed integrity;
+\item a comparator has no declared coverage vector;
+\item negative controls are absent for the claim family;
+\item the practical irrelevance band was chosen after looking at outcomes;
+\item exclusion counts cannot be reconstructed from the artifact set.
+\end{enumerate}
+\end{criterion}
+
+\subsection{Claim Classes Produced by the Protocol}
+The protocol distinguishes four output classes:
+\begin{enumerate}
+\item \texttt{PIPELINE\_READY}: artifacts and gates work, but evidence is pilot or
+synthetic.
+\item \texttt{INTERNAL\_COMPARATIVE\_SUPPORT}: frozen internal runs support a
+bounded contrast against declared comparators.
+\item \texttt{WEAKENED}: one or more primary contrasts fail or become
+inconclusive.
+\item \texttt{INVALID}: integrity, eligibility, or traceability fails before
+scientific interpretation.
+\end{enumerate}
+Only the second class can support a bounded internal scientific reading, and even
+there the support is limited to the declared systems, scenarios, seeds, and gates.
 
 \section{Preliminary Results}
 \subsection{Status of Preliminary Data}
@@ -492,8 +678,8 @@ Accept claim iff integrity gate passes and support score exceeds threshold under
 \subsection{Comparator Misspecification}
 Mitigation: heterogeneous comparators + mandatory ablations.
 
-\subsection{Metric Circularity Risk}
-Mitigation: endpoint separation and frozen analysis lock.
+\subsection{Endpoint Contamination Risk}
+Mitigation: endpoint separation, frozen analysis lock, and judge-side artifact review.
 
 \subsection{Environment and Runtime Drift}
 Mitigation: fixed seeds, version/hash checks, replay checks.

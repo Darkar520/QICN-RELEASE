@@ -276,6 +276,71 @@ Threshold/tuning\\artifact explanation & local success on a narrow parameter ban
 
 This compression table matters because it blocks a common overreading. The current support does not show that every rival is false. It shows something narrower and more useful: if a rival explanation ignores the invariant package or treats only one coarse feature as constitutive, then it does not reproduce the present decision structure of the canon.
 
+\subsection{Discriminator Strength and Identifiability}
+A discriminator is useful only when a positive or negative outcome changes the
+status of at least one rival explanation. The framework therefore treats
+discriminators as identifiable contrasts, not as loose examples.
+
+\begin{definition}[Identifiable Discriminator]
+A discriminator $D$ for claim $C$ is identifiable when it specifies:
+\begin{enumerate}[leftmargin=1.5em]
+\item an observable decision variable $Y_D$;
+\item a manipulation or matched comparison $M_D$;
+\item a framework-side expected region $R_Q$;
+\item a rival-side expected region $R_R$;
+\item a destruction condition $F_D$ under which the claim is weakened or rejected.
+\end{enumerate}
+The discriminator is strong when $R_Q\cap R_R$ is small under the declared
+measurement tolerance.
+\end{definition}
+
+\begin{criterion}[Discriminator Usefulness]
+A test does not materially discriminate the framework from a rival if both the
+framework and the rival predict the same admissible region for the tested
+observable. Such a test can still debug the pipeline, but it cannot upgrade a
+claim.
+\end{criterion}
+
+\begin{proposition}[Near-Miss Value]
+Near-miss cases carry more diagnostic value than easy positive cases when they
+are constructed by perturbing one binding coordinate while holding gross
+complexity, task exposure, and observability approximately fixed.
+\end{proposition}
+
+\begin{proof}
+If a case is far from the decision boundary, many rival accounts can agree on the
+outcome. A near-miss case forces the judge to expose which coordinate controls
+the transition. Holding gross complexity and task exposure approximately fixed
+reduces the chance that the result is explained by scale, generic performance, or
+obvious incompetence rather than by the claimed invariant structure.
+\end{proof}
+
+\subsection{Prediction Severity}
+The predictions in this paper have different severity. A severe prediction is
+one whose failure would damage a central operational reading rather than merely
+requesting a better implementation.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.16}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{0.13\linewidth}Y Y Y@{}}
+\toprule
+Prediction family & Severe failure & Mild weakening & Typical confound \\
+\midrule
+Complexity-only failure & complexity-rich invariant-broken controls certify reliably & controls fail only under narrow judge settings & underpowered or trivial control construction \\
+Invariant-loss rupture & verified invariant loss leaves class membership unchanged & rupture appears only for oversized perturbations & perturbation changes multiple coordinates at once \\
+Substrate-preserved class membership & preserved structure is rejected solely by substrate label & one metric-coordinate remains ambiguous & measurement mismatch across implementations \\
+Threshold-sensitive boundary behavior & decisions flip arbitrarily across broad stable regions & narrow knife-edge instability remains localized & tolerance grid too coarse near the boundary \\
+Legibility dependence & certification survives loss of separability or intervention readability & legibility margin becomes noisy but still binding & observability channel too weak or over-compressed \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Severity matters for reporting. A mild weakening narrows the claim or sends a
+test back to probe design. A severe failure changes what the framework is allowed
+to assert under the operational criterion.
+
 \section{Prediction Matrix}
 The canonical prediction matrix can be read as a compressed execution contract for the framework. It matters because each row names an observable, an intervention class, a rival baseline, and an explicit failure condition. That structure prevents the canon from floating as a theorem-only object.
 
@@ -351,6 +416,56 @@ Within the current scientific program, a result belongs to:
 
 This taxonomy is not part of the ontology of the framework. It is part of the scientific discipline around how internal evidence is reported.
 
+\subsection{Refutation Classes}
+For publication-level evaluation, failures should be classified by what they
+touch. The same failed run can be decisive, ambiguous, or merely technical
+depending on whether the packet was admissible and whether the manipulation was
+specific.
+
+\begin{definition}[Doctrinal Refutation Candidate]
+A result is a doctrinal refutation candidate for a claim family when it satisfies
+all admissibility gates, uses the frozen definitions, targets the declared
+binding coordinate, and reaches the claim's destruction condition without relying
+on a protocol violation.
+\end{definition}
+
+\begin{definition}[Methodological Defeat]
+A result is a methodological defeat when the experiment is admissible but shows
+that the current test design, judge, threshold, comparator, or observable cannot
+support the intended claim. It weakens the evidence program without by itself
+showing the formal claim false.
+\end{definition}
+
+\begin{definition}[Artifact Failure]
+A result is an artifact failure when the packet, manifest, runner, exclusion
+ledger, or analysis path fails before interpretation. Artifact failures can be
+important engineering evidence, but they are not positive or negative scientific
+support for the theoretical claim.
+\end{definition}
+
+\begin{criterion}[Specificity of Failure]
+A failure is specific only if the failed coordinate is identifiable after
+controlling for gross task failure, missing observability, manifest drift, and
+runtime-budget violation. Non-specific failures are reported as methodological or
+artifact failures according to the earliest failed gate.
+\end{criterion}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.16}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{0.20\linewidth}Y Y@{}}
+\toprule
+Failure class & Minimum evidence required & Scientific consequence \\
+\midrule
+Doctrinal refutation candidate & admissible packet set, frozen definitions, specific manipulation, destruction condition reached & claim family must be rejected, downgraded, or formally restricted \\
+Methodological defeat & admissible packet set but non-decisive target, weak comparator, unstable threshold, or inadequate observable & evidence program must be repaired before support can be claimed \\
+Artifact failure & packet, manifest, build, judge, or analysis trace fails before interpretation & no claim-side inference; engineering repair required \\
+Ambiguous boundary result & admissible but falls inside a pre-declared uncertainty band & no escalation; boundary sampling or metric refinement required \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
 \section{Claim-to-Test Binding Ledger}
 The tables above state what would count as success or failure in broad terms. The ledger below binds the main \textit{Operational Consciousness Criterion} claim families to the narrowest concrete test classes that currently matter for publication-level assessment.
 
@@ -392,6 +507,42 @@ Refined negative substrate families & clean fail across both the legacy and seco
 \end{tabularx}
 \end{center}
 
+\subsection{Boundary Geometry}
+Boundary results are not just pass/fail outcomes. They should describe the local
+shape of the decision surface. Let $z$ denote a controlled perturbation coordinate
+and let $Q(z)$ denote the operational certification score or verdict. Three
+patterns are scientifically distinct:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{stable interior:} $Q(z)$ remains inside the certified region for a
+non-trivial interval;
+\item \textbf{localized transition:} $Q(z)$ crosses the decision boundary in a
+narrow interval tied to a declared coordinate;
+\item \textbf{diffuse instability:} small unrelated perturbations cause broad and
+unstructured verdict changes.
+\end{enumerate}
+
+\begin{criterion}[Boundary Adequacy]
+A boundary probe is adequate only if it can distinguish localized transition from
+diffuse instability. A probe that only reports a binary verdict without the
+perturbation coordinate and margin behavior is insufficient for boundary
+diagnosis.
+\end{criterion}
+
+\begin{proposition}[Localized Transition Reading]
+If a family shows a stable interior, a localized transition, and a reproducible
+first-binding coordinate under the frozen judge, then the result supports a
+boundary-sensitive reading more strongly than a single binary pass/fail run.
+\end{proposition}
+
+\begin{proof}
+A binary run can be explained by threshold accident, scenario difficulty, or
+implementation noise. A localized transition with a reproducible first-binding
+coordinate adds structure: it identifies where the decision changes and which
+coordinate controls the change. That additional structure constrains rival
+explanations that would predict arbitrary flips or no coordinate-specific
+transition.
+\end{proof}
+
 \section{Minimal Reproducibility and Admissibility Discipline}
 The prediction layer is only credible if the judgment path is at least partly insulated from the generator and if the evidentiary artifacts are frozen before judgment. The current program does not yet have an external judge or an external lab replication, but it does have a stricter internal protocol than it had at the start of the program.
 
@@ -413,6 +564,29 @@ Judge code path & more independent than in Cycle 1; it no longer calls live gene
 \end{center}
 
 The point of this section is not to inflate rigor. It is to keep the reader from mistaking internal hardening for external confirmation.
+
+\subsection{Artifact Contract for Prediction Claims}
+Every prediction claim should be backed by a finite artifact bundle:
+\[
+\mathcal{B}=(\mathcal{M},\mathcal{P},\mathcal{J},\mathcal{R},\mathcal{A}),
+\]
+where $\mathcal{M}$ is the manifest set, $\mathcal{P}$ the packet set,
+$\mathcal{J}$ the judge code and threshold files, $\mathcal{R}$ the run/exclusion
+ledger, and $\mathcal{A}$ the analysis scripts. The bundle is part of the claim
+surface. A table without the bundle is a summary, not independently checkable
+evidence.
+
+\begin{criterion}[Bundle Sufficiency]
+For any status stronger than \Status{STILL\_AMBIGUOUS}, the artifact bundle must
+allow an evaluator to reconstruct the reported verdicts from frozen inputs without
+manual row selection.
+\end{criterion}
+
+\begin{criterion}[Externalization Readiness]
+A prediction family is ready for external evaluation only when its bundle,
+thresholds, exclusions, and decision rules are exportable without access to live
+generator state or informal operator knowledge.
+\end{criterion}
 
 \section{Current Status of Internal Support}
 \subsection{Interpretive Discipline}
@@ -460,7 +634,7 @@ The scientific program itself also has a status, distinct from the doctrine and 
 \toprule
 Program element & Current status & Why it matters \\
 \midrule
-Generator/judge separation & materially improved & reduces direct circularity relative to Cycle 1 \\
+Generator/judge separation & materially improved & reduces live-state dependence relative to Cycle 1 \\
 Frozen manifests and thresholds & active & prevents live-state leakage during judgment \\
 Semi-blind evaluation & active but partial & reduces bias; does not equal full blind evaluation \\
 Threshold stress testing & localized caveat & shows local knife-edge behavior instead of broad collapse \\
@@ -508,7 +682,7 @@ Priority target & Why it matters now & What the next narrow result would change 
 Independent external-style rerun of the two boundary families & current rupture/existence support is now robust internally but still lacks outside-program confirmation & an outside reproduction would test whether the family convergence is program-specific or genuinely portable & `P5-01`, `P5-04` \\
 Independent external-style rerun of both substrate families & current strongest positive equivalence path is robust internally but still carries a localized legacy $\Iri$ caveat & an outside reproduction would test whether the strengthened equivalence path survives beyond the current judge lineage & `P5-02`, `P5-06` \\
 Matched external-style complexity baselines & the complexity-only result is internally strong but still lacks cross-program baseline pressure & a matched baseline campaign would turn the strongest present internal discriminator into a more externally credible one & `P5-05` \\
-Independent maintained judge implementation & current hardening is substantial but still same-program & a separately maintained judge would reduce the remaining circularity objection without touching doctrine & all operational readings \\
+Independent maintained judge implementation & current hardening is substantial but still same-program & a separately maintained judge would reduce same-lineage measurement dependence without touching doctrine & all operational readings \\
 \bottomrule
 \end{tabularx}
 \end{center}

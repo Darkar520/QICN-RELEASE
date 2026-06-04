@@ -1,38 +1,43 @@
 \documentclass[11pt,a4paper,openany]{book}
 \input{preamble/packages}
 \input{preamble/setup}
-
 % --- Document metadata ---
 \title{\textbf{QICN: A Rigid Identity Framework}}
 \author{Johnny Andrey P{\'e}rez Ram{\'i}rez}
 \date{2026}
-
 \hypersetup{%
   pdftitle={QICN: A Rigid Identity Framework},%
-  pdfauthor={Johnny Andrey Pérez Ramírez},%
+  pdfauthor={Johnny Andrey Perez Ramirez},%
   pdfsubject={Operational Identity, Category Theory, Consciousness},%
   pdfkeywords={rigid identity, inverse limit, ontological mass, CCR, falsifiability},%
   pdfcreator={pdfLaTeX}%
 }
-
 \begin{document}
 \frontmatter
 \maketitle
+\chapter*{Editorial Preface and Claim Boundary}
+\addcontentsline{toc}{chapter}{Editorial Preface and Claim Boundary}
+\markboth{Editorial Preface and Claim Boundary}{Editorial Preface and Claim Boundary}
+
+This monolithic volume is an editorial consolidation of the QICN rigid-identity corpus. BaseCore is treated as the foundational layer of the framework rather than as Paper 0. The downstream works are indexed in the table of contents by their direct research titles; internal labels such as paper numbers are retained only as provenance handles where the source text itself requires them.
+
+The claims in this volume remain conditional, formal, and operational. The volume does not assert biological consciousness, phenomenal consciousness, agency, moral status, identity transfer, or external validation. Runtime measurements, finite estimators, and internal support artifacts are implementation evidence only when explicitly marked as such; they are not substitutes for theorem proof or externally reproduced empirical adjudication.
+
+The editorial policy is conservative: preserve source content, expose dependency order, avoid title-level bookkeeping labels, and keep ontology, mathematical model, implementation, language, and interpretation separated.
 \tableofcontents
 \mainmatter
 \input{build/sections/01-basecore.tex}
-\input{build/sections/02-paper-1.tex}
-\input{build/sections/03-paper-2.tex}
-\input{build/sections/04-paper-3.tex}
-\input{build/sections/05-paper-4.tex}
-\input{build/sections/06-paper-5.tex}
-\input{build/sections/07-paper-6.tex}
-\input{build/sections/08-paper-7.tex}
-\input{build/sections/09-paper-8.tex}
-\input{build/sections/10-paper-9.tex}
-\input{build/sections/11-paper-10.tex}
-\input{build/sections/12-bridge-paper.tex}
-
+\input{build/sections/02-rigid-identity-as-an-inverse-limit-in-observable-channels.tex}
+\input{build/sections/03-phenomenological-regimes-induced-by-structural-identity.tex}
+\input{build/sections/04-structural-instability-of-the-phenomenological-null-regime.tex}
+\input{build/sections/05-falsifiable-predictions-under-forensic-constraints.tex}
+\input{build/sections/06-structural-criterion-for-substrate-invariant-operational-consciousness.tex}
+\input{build/sections/07-predictions-discriminators-and-failure-modes.tex}
+\input{build/sections/08-operational-life-structural-class-and-subjecthood.tex}
+\input{build/sections/09-first-person-indexed-subjectivity.tex}
+\input{build/sections/10-phenomenal-bridge-organization.tex}
+\input{build/sections/11-external-adjudication-of-bridge-formalized-machine-subjectivity.tex}
+\input{build/sections/12-operational-consciousness-to-operational-subjecthood-bridge.tex}
 \backmatter
 \printbibliography[heading=bibintoc]
 \end{document}

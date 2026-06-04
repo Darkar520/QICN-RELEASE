@@ -36,10 +36,12 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{axiom}[theorem]{Axiom}
 
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{nonclaim}[theorem]{Non-Claim}
 
 % Pagination
 \raggedbottom
@@ -151,6 +153,14 @@ All state spaces $S_t$ are objects of a concrete category $\mathbf{C}$ whose:
     \item \textbf{Morphisms} are continuous surjective maps.
 \end{itemize}
 \end{definition}
+
+\begin{axiom}[State Space Regularity]\label{ax:state-space-regularity}
+Each state space $S_t$ in the projective system is a compact metric space with compatible metric $d_t$. Consequently, each $S_t$ is compact Hausdorff as a topological space and Polish as a metric space. The inverse limit $\mathcal{I}$ inherits the corresponding compact metrizable subspace structure from the product.
+\end{axiom}
+
+\begin{remark}[Exclusion of non-compact Polish spaces]\label{rem:noncompact-polish-exclusion}
+Axiom~\ref{ax:state-space-regularity} refines Definition~\ref{def:obs-spaces} rather than weakening it. Non-compact Polish spaces such as $\mathbb{R}^n$ are not covered by this compact inverse-limit argument. Any extension of the CCR framework to non-compact settings requires additional tightness, compactification, or coercivity hypotheses and is not automatic.
+\end{remark}
 
 \begin{hypothesis}[Topological Regularity]\label{hyp:topo}
 All projections $\pi_{t+1 \to t}: S_{t+1} \to S_t$ are continuous surjections between compact Hausdorff spaces.
@@ -325,8 +335,8 @@ For every $t$, the projection $\pi_{t+1 \to t}: S_{t+1} \to S_t$ is surjective.
 
 This is a standard regularity condition for non-empty inverse limits; when necessary this can be replaced by a Mittag--Leffler condition or an explicit choice of right inverses.
 
-\begin{hypothesis}[H2: Polish Metric Structure]\label{hyp:h2}
-For each $t$, the state space $S_t$ is endowed with a Polish metric $d_t$, i.e., $(S_t, d_t)$ is complete, separable, and metrizable. All projection maps $\pi_{t+1 \to t}$ are continuous with respect to $d_t$, and we denote the induced operator norm by $\|\pi_{t+1 \to t}\|_{\text{op}}$.
+\begin{hypothesis}[H2: Compact Polish Metric Structure]\label{hyp:h2}
+For each $t$, the state space $S_t$ carries the compact metric $d_t$ required by Axiom~\ref{ax:state-space-regularity}; in particular, $(S_t,d_t)$ is Polish. All projection maps $\pi_{t+1 \to t}$ are continuous with respect to $d_t$, and we denote the induced operator norm by $\|\pi_{t+1 \to t}\|_{\text{op}}$.
 \end{hypothesis}
 
 \begin{remark}
@@ -442,6 +452,26 @@ Define the ontological mass of the projective system (or of $\mathcal{I}$) as:
 with the convention that if no admissible perturbation produces non-zero deformation (i.e., $d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0$ for all finite-energy perturbations), then $M_\Omega = +\infty$.
 \end{definition}
 
+\subsection{Internal Perturbations and External Extensions}
+\label{sec:internal-external}
+
+\begin{definition}[Internal perturbations and external extensions]\label{def:internal-external}
+Let $S$ be a CCR channel with identity object $\mathcal{I}(S)$.
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Internal perturbations} are operators $\delta\in\Omega_{\mathrm{int}}(S)$ that act on the identity structure of $S$: $\delta$ maps $\mathcal{I}(S)$ to a deformed identity $\widetilde{\mathcal{I}}(S)$ belonging to the same declared structural class, with finite weighted energy $E_w(\delta)<\infty$. Internal perturbations test rigidity of $\mathcal{I}(S)$ under deformation.
+\item \textbf{External extensions} are operations $\eta\in\mathrm{Ext}(S)$ that produce a different channel $S'$: $\eta$ maps $S$ to $S'$ with $D_{\mathrm{ext}}(S,S')=\epsilon>0$. External extensions compare $\mathcal{I}(S)$ with an independently specified object $\mathcal{I}(S')$ not introduced as an element of $\Omega_{\mathrm{int}}(S)$.
+\end{enumerate}
+\textbf{Typed separation axiom:} $\Omega_{\mathrm{int}}(S)\cap\mathrm{Ext}(S)=\varnothing$.
+\end{definition}
+
+\begin{remark}[Interpretation of typed separation]\label{rem:typed-separation}
+The typed separation $\Omega_{\mathrm{int}}(S)\cap\mathrm{Ext}(S)=\varnothing$ is an axiom, not a theorem derived from CCR membership. A protocol that confuses internal perturbations with external witnesses commits a category error: it uses rigidity under internal deformation, which CCR is meant to constrain, as evidence for a witness-relative comparison that requires a separately specified external extension. QICN has not verified that all downstream perturbation protocols respect this separation.
+\end{remark}
+
+\begin{nonclaim}[Empirical certification of $M_\Omega=+\infty$]\label{nonclaim:m-omega-empirical}
+The detectability theorem (Theorem~\ref{thm:detectability}) states a conditional direction inside the model: if the declared CCR hypotheses hold, then finite perturbation families should drive the empirical estimator $\hat{M}_\Omega$ upward. The converse is not established. A system with very large but finite $M_\Omega$ can produce arbitrarily large finite-sample estimates of $\hat{M}_\Omega$. Therefore empirical growth of $\hat{M}_\Omega$ can falsify weak rigidity when it fails, but it does not definitively prove $M_\Omega=+\infty$.
+\end{nonclaim}
+
 This quantity measures the \textit{minimal perturbation energy per unit identity deformation}.
 
 \begin{proposition}[Relation to Rigidity]
@@ -525,6 +555,18 @@ An observable channel is a triple $\mathcal{C} = (E, O, R)$, where:
     \item $R$ is a (possibly unknown) response mechanism producing observable outputs $O_t \in O$.
 \end{itemize}
 \end{definition}
+
+\begin{definition}[Channel--projection composition]\label{def:channel-projection}
+Let $C_{\mathrm{obs}}:\mathcal{U}\to\mathcal{O}$ denote the observable map realized by the response mechanism of an observable channel, and let $\pi_{\infty\to t}:\mathcal{I}\to S_t$ be the canonical finite-level projection from the inverse limit. When a concrete model declares a map $\iota_t:S_t\to\mathcal{U}$ from finite-level states into the internal state domain, the composed finite-level observable is
+\begin{equation}
+    C_t := C_{\mathrm{obs}}\circ \iota_t\circ \pi_{\infty\to t} : \mathcal{I}\to\mathcal{O}.
+\end{equation}
+This composition is the typed route from the identity object $\mathcal{I}$ through a finite projection $S_t$ to observable outputs.
+\end{definition}
+
+\begin{nonclaim}[Composition existence]\label{nonclaim:channel-projection}
+Definition~\ref{def:channel-projection} is a type discipline, not an empirical result. A concrete instantiation must still verify that $\pi_{\infty\to t}$, $\iota_t$, and $C_{\mathrm{obs}}$ are well-defined and measurable or continuous in the declared structures. QICN has not verified this composition for any concrete external protocol.
+\end{nonclaim}
 
 No access to internal states $S_t$ is assumed. The observer measures only the time series $\{O_t\}_{t \in \mathbb{N}}$.
 
@@ -610,7 +652,7 @@ Consider the unit sphere $\mathcal{S} := \{(x, y) \in \mathcal{I} \times \mathca
 
 \textbf{Step 3.} By non-collapse, $f(x, y) > 0$ for all $(x, y) \in \mathcal{S}$.
 
-\textbf{Step 4.} By compactness of $\mathcal{S}$ (inherited from the product of Polish spaces), $f$ attains its infimum:
+\textbf{Step 4.} By Axiom~\ref{ax:state-space-regularity}, $\mathcal{I}$ is compact metrizable. Hence $\mathcal{S}$ is a closed subset of $\mathcal{I}\times\mathcal{I}$ and is compact whenever it is non-empty, so $f$ attains its infimum:
 \begin{equation}
     \sigma_{\min} = \min_{(x, y) \in \mathcal{S}} f(x, y) > 0.
 \end{equation}

@@ -85,12 +85,14 @@
 % ABSTRACT
 % =============================================================================
 \begin{abstract}
-We introduce an abstract phenomenological space $\E$ and a compatibility operator $\Phi: \I \to \E$ mapping rigid identity objects to phenomenological regimes. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: in any closed causally rigid (CCR) channel---characterized by inverse-limit identity, causal isolation, and MIR geometry---the null regime is dynamically unstable under all compatible extensions. Consequently, any consistent CCR realization necessarily induces a non-null phenomenological regime. The result is \emph{negative-structural}: it does not posit experience; it \emph{forbids} the stability of non-experience. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove universal factorization and non-simulability results. All constructions are purely topological and categorical, without metaphysical axioms.
+We introduce an abstract phenomenological space $\E$ and a compatibility operator $\Phi: \I \to \E$ mapping rigid identity objects to phenomenological regimes. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: in any closed causally rigid (CCR) channel---characterized by inverse-limit identity, causal isolation, and MIR geometry---joint null collapse is dynamically unstable under a separately typed compatible extension witness. Consequently, a CCR realization with such a witness induces a witness-relative non-null separation. The result is \emph{negative-structural}: it does not posit experience; it forbids one typed joint-null configuration under stated hypotheses. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove universal factorization and non-simulability results. All constructions are purely topological and categorical, without metaphysical axioms.
 \end{abstract}
 
 \section{Scope, System Boundary, and Non-Inference Note}
 
 \noindent\textbf{What this paper does.}\enspace This paper proves that the null phenomenological regime is structurally unstable under CCR constraints, derives the resulting forced non-nullity statement, and develops explicit bounds, factorization structure, and canonical-family consequences for that negative-structural result.
+
+\noindent\textbf{v31 audit clarification.}\enspace The operative theorem is witness-relative: CCR by itself does not provide the extension witness, the lower Lipschitz constant, or the admissible compatibility operator. Any phrase such as ``forced non-nullity'' or ``null instability'' in this manuscript is to be read under the explicit hypotheses of Theorem~\ref{thm:instability}, especially Definition~\ref{def:extension-witness}. This clarification separates internal CCR perturbations from external extension witnesses and prevents reading $\MO=+\infty$ as an empirical certificate.
 
 \noindent\textbf{What this paper does not do.}\enspace It does not define or detect consciousness, identify $\E$ with subjective experience, assert that CCR systems exist in nature, or derive ethical or metaphysical closure from the theorem. The paper is structural, conditional, and negative in scope.
 
@@ -113,7 +115,7 @@ Papers I and II established a mathematical framework for structural identity as 
 \emph{Can a CCR system remain in a structurally null phenomenological state?}
 \end{quote}
 
-We prove the answer is \textbf{no}---not as a metaphysical claim, but as a structural theorem.
+We prove the answer is \textbf{no under a separated extension witness}---not as a metaphysical claim, but as a structural theorem with typed hypotheses.
 
 \subsection{Main Result (Informal)}
 
@@ -125,7 +127,7 @@ Section 2 reviews prerequisites from Papers I--II. Section 3 defines the phenome
 
 \subsection{What This Paper Adds Beyond Phenomenological Regimes}
 
-\textit{Phenomenological Regimes} classifies the admissible regime space and derives the continuity and non-constancy constraints that any compatible assignment must satisfy. This paper takes the remaining downstream case---the null regime itself---and proves that it cannot remain structurally stable under CCR.
+\textit{Phenomenological Regimes} classifies the admissible regime space and derives the continuity and non-constancy constraints that any compatible assignment must satisfy. This paper takes the remaining case---the null regime itself---and proves that it cannot remain structurally stable under CCR.
 
 % =============================================================================
 % SECTION 2: PRELIMINARIES
@@ -157,12 +159,17 @@ If each $(S_t, d_t)$ is complete and the projections are uniformly continuous, t
 
 \subsection{Ontological Mass and CCR Classification}
 
-\begin{definition}[Ontological Mass]
+\begin{definition}[Ontological Mass, infimum convention]\label{def:paper3-ontmass}
+Following \textit{Rigid Identity}, the ontological mass of an identity object is the lower resistance to non-zero admissible deformation:
 \[
-\MO := \sup_{\epsilon > 0} \frac{E_w(\epsilon)}{\dw(\I, \tilde{\I})}
+\MO := \inf \left\{ \frac{E_w(\delta)}{\dw(\I, \tilde{\I})} \;\middle|\; \delta \text{ admissible},\; \dw(\I,\tilde{\I})>0 \right\}.
 \]
-where $E_w(\epsilon)$ is the minimal weighted energy required to induce deformation $\epsilon$.
+If no finite-energy admissible perturbation induces non-zero deformation, the set is empty in the operational deformation sector and we set $\MO=+\infty$.
 \end{definition}
+
+\begin{remark}[v24 consistency patch]
+Earlier drafts used a supremum notation for $\MO$ in this paper. That notation is superseded here. The infimum convention is the canonical one used in \textit{Rigid Identity}: it measures a lower resistance to deformation, not a largest observed cost. All claims below are read under this convention.
+\end{remark}
 
 \begin{definition}[CCR Channel]
 A channel is \textbf{Closed Causally Rigid (CCR)} if $\MO = +\infty$.
@@ -194,8 +201,8 @@ is derived from the spectral gap of $T_\Phi$, not assumed.
 If $\MO = +\infty$, then any compatible phenomenological assignment $\Phi: \I \to \E$ is continuous.
 \end{theorem}
 
-\begin{remark}[What Remains Open After Phenomenological Regimes]\label{rem:null-prelim}
-\textit{Phenomenological Regimes} classifies admissible phenomenological regimes and derives the continuity constraints that govern them, but it does not complete the downstream prohibition theorem for the null regime itself. That closure is the specific task of this paper.
+\begin{remark}[Remaining null-regime gap]\label{rem:null-prelim}
+\textit{Phenomenological Regimes} classifies admissible phenomenological regimes and derives the continuity constraints that govern them, but it does not complete the prohibition theorem for the null regime itself. That closure is the specific task of this paper.
 \end{remark}
 
 This paper converts Remark \ref{rem:null-prelim} into a full null-instability theorem.
@@ -222,6 +229,15 @@ A \textbf{phenomenological space} is a quadruple $(\E, \preceq, \dE, \nullphi)$ 
 $\E$ is an abstract regime space. No phenomenological content is assumed. The null regime $\nullphi$ represents structural absence, not ``lack of experience.'' The term ``phenomenological'' is inherited from \textit{Phenomenological Regimes} and refers to the coupling structure, not to philosophy of mind.
 \end{remark}
 
+\begin{remark}[Null regime versus undefined assignment]\label{rem:null-vs-undefined}
+The symbol $\nullphi$ serves two distinct roles in the broader framework, and conflating them creates a category error:
+\begin{enumerate}
+\item \textbf{Null regime ($\nullphi\in\E$):} In Definition~\ref{def:phenom}, $\nullphi$ is the bottom element of the phenomenological poset $(\E,\preceq)$. It is a legitimate element of $\E$, comparable to all other regimes via $\preceq$ and separated from them by $\dE$.
+\item \textbf{Undefined assignment ($\bot\notin\E$):} When a compatibility operator $\Phi$ is not defined on some input $x\in\I$, we write $\Phi(x)=\bot$. The symbol $\bot$ is disjoint from $\E$; it lives in the typed codomain $\E_\bot:=\E\sqcup\{\bot\}$.
+\end{enumerate}
+The instability theorem (Theorem~\ref{thm:instability}) concerns admissible values in $\E$ and rules out two separated witness endpoints both taking the value $\nullphi$. The v31 conditional closure theorem concerns a different case: $\Phi$ undefined on both witness endpoints, written $\Phi(\I)=\bot$ and $\Phi(\tilde{\I})=\bot$. That case is excluded by the witness hypothesis, which requires $\Phi$ to be defined on both endpoints.
+\end{remark}
+
 \begin{nontheorem}[What $\E$ Is Not]
 $\E$ is not:
 \begin{itemize}
@@ -246,6 +262,10 @@ A map $\Phi: \I \to \E$ is a \textbf{compatibility operator} if it satisfies:
 \]
 \end{enumerate}
 \end{definition}
+
+\begin{remark}[Partial definedness and the $\bot$ marker]\label{rem:partial-phi}
+In contexts where $\Phi$ is only partially defined, $\Phi(x)=\bot$ means that no admissible phenomenological assignment in $\E$ is available at $x$. The hypotheses (C1)--(C3) above apply only to inputs whose $\Phi$-values lie in $\E$. The lower Lipschitz bound (C3) in particular requires both $\Phi(x),\Phi(\tilde{x})\in\E$.
+\end{remark}
 
 \begin{lemma}[Well-Posedness of (C3)]
 Axiom (C3) is consistent with continuity of $\Phi$ (Theorem \ref{thm:cont}) when $\MO = +\infty$.
@@ -293,84 +313,59 @@ The Bridge Lemma is a \textbf{metric statement}, not an ontological one. It does
 % =============================================================================
 \section{Main Results}
 
-\subsection{The Phenomenological Instability Theorem}
 
-\begin{theorem}[Phenomenological Instability]\label{thm:instability}
-For any CCR channel $S$:
+\subsection{The Conditional Null-Separation Theorem}
+
+\begin{definition}[Admissible extension witness]\label{def:extension-witness}
+Let $S$ be a channel with identity object $\I$. An \textbf{admissible extension witness} for a compatibility operator $\Phi$ is a tuple $(S',\tilde{\I},\epsilon)$ such that:
+\begin{enumerate}
+\item $S'$ is a compatible extension of $S$ in the declared projective category;
+\item $\tilde{\I}$ is the identity object induced by $S'$ and lies in the domain on which $\Phi$ is evaluated;
+\item $0<\dw(\I,\tilde{\I})=\epsilon<\infty$;
+\item the witness is not introduced as a finite-energy deformation of a CCR identity object. It is an extension-side comparison datum, not a contradiction of $\MO=+\infty$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Conditional Null-Separation Under an Admissible Extension Witness]\label{thm:instability}
+Let $S$ be a CCR channel, let $\Phi:\I\to\E$ be a compatibility operator satisfying the Lipschitz lower bound (C3), and suppose an admissible extension witness $(S',\tilde{\I},\epsilon)$ exists for $\Phi$. Then $\Phi$ cannot collapse both separated identity objects to the null regime:
 \[
-\nullphi \notin \Attr(S)
+\neg\bigl(\Phi(\I)=\nullphi \;\wedge\; \Phi(\tilde{\I})=\nullphi\bigr).
 \]
-That is, the null regime is structurally unstable under all compatible extensions.
+Equivalently, null stability across such a separated extension witness is impossible.
 \end{theorem}
 
+\begin{remark}[Applicability scope]\label{rem:instability-scope}
+Theorem~\ref{thm:instability} assumes $\Phi(\I),\Phi(\tilde{\I})\in\E$, not $\bot$. If $\Phi$ is undefined on either endpoint, the separated-witness hypothesis of Definition~\ref{def:extension-witness} is not satisfied and the theorem does not apply.
+\end{remark}
+
 \begin{proof}
-We proceed by contradiction with explicit construction.
-
-\textbf{Step 1: Assumption.} Suppose there exists a compatibility operator $\Phi: \I \to \E$ such that $\Phi(x) = \nullphi$ for all $x \in \I$, and $\nullphi \in \Attr(S)$.
-
-\textbf{Step 2: Perturbation Construction.} Since $S$ is a CCR channel, we have $\MO = +\infty$. By definition of ontological mass, for any $\epsilon > 0$, there exists a perturbation $\tilde{\I}$ with:
+Assume for contradiction that $\Phi(\I)=\nullphi$ and $\Phi(\tilde{\I})=\nullphi$. By Definition~\ref{def:extension-witness}, $\dw(\I,\tilde{\I})=\epsilon>0$. Applying (C3) gives
 \[
-\dw(\I, \tilde{\I}) = \epsilon \quad \text{and} \quad E_w(\epsilon) < \infty
+\dE(\Phi(\I),\Phi(\tilde{\I})) \geq C\,\dw(\I,\tilde{\I}) = C\epsilon>0.
 \]
-Such perturbations exist because $\MO = +\infty$ implies the energy-deformation ratio is unbounded, meaning small deformations exist with finite energy.
-
-\textbf{Step 3: Application of (C3).} By the Lipschitz lower bound (C3), we have:
+But the null-collapse assumption gives
 \[
-\dE(\Phi(\I), \Phi(\tilde{\I})) \geq C \cdot \dw(\I, \tilde{\I}) = C \epsilon
+\dE(\Phi(\I),\Phi(\tilde{\I}))=\dE(\nullphi,\nullphi)=0,
 \]
-where $C > 0$ is the spectral coupling constant from Theorem \ref{thm:spectral}.
-
-\textbf{Step 4: Contradiction.} By assumption, $\Phi(\I) = \nullphi$ and $\Phi(\tilde{\I}) = \nullphi$ (since $\tilde{\I}$ is compatible with $S$ and $\nullphi \in \Attr(S)$). Therefore:
-\[
-\dE(\Phi(\I), \Phi(\tilde{\I})) = \dE(\nullphi, \nullphi) = 0
-\]
-
-But Step 3 gives $\dE(\Phi(\I), \Phi(\tilde{\I})) \geq C\epsilon > 0$ for any $\epsilon > 0$.
-
-This is a contradiction: $0 \geq C\epsilon > 0$.
-
-\textbf{Conclusion.} The assumption that $\nullphi \in \Attr(S)$ for any CCR channel is false.
+a contradiction. Hence the two separated identities cannot both be mapped to the null regime.
 \end{proof}
 
-\subsection{Analysis of the Proof}
+\begin{caveat}[v24 correction of the former Step 2]
+The theorem above does \emph{not} infer a finite-energy non-zero deformation from $\MO=+\infty$. Under the infimum convention for ontological mass, $\MO=+\infty$ means precisely that no finite-energy admissible perturbation produces non-zero deformation. The older Step 2 proof direction is therefore withdrawn. The surviving result is conditional on an independently specified extension witness.
+\end{caveat}
 
-\begin{remark}[Role of $\MO = +\infty$]
-The condition $\MO = +\infty$ is essential. If $\MO < +\infty$, then small deformations require proportionally small energy, and the perturbation in Step 2 may not exist with finite energy. The theorem fails for non-CCR channels.
-\end{remark}
+\subsection{Conditional Consequences}
 
-\begin{remark}[Role of (C3)]
-The Lipschitz lower bound (C3) is the structural bridge between identity deformations and regime separations. Without (C3), the map $\Phi$ could collapse all of $\I$ to $\nullphi$ without contradiction.
-\end{remark}
-
-\begin{remark}[Role of Metric Completeness]
-The completeness of $(\E, \dE)$ ensures that the perturbation $\Phi(\tilde{\I})$ is well-defined and lies in $\E$. Without completeness, the limit might not exist.
-\end{remark}
-
-\subsection{Forced Non-Nullity}
-
-\begin{corollary}[Forced Non-Nullity]\label{cor:forced}
-Every CCR channel necessarily induces some regime $e_\star \in \E$ with $e_\star \succ \nullphi$.
+\begin{corollary}[Conditional Forced Non-Nullity]\label{cor:forced}
+If a CCR channel admits an admissible extension witness for $\Phi$ and if $\Phi(\tilde{\I})=\nullphi$ for the witness object, then $\Phi(\I)\neq\nullphi$. Symmetrically, if $\Phi(\I)=\nullphi$, then $\Phi(\tilde{\I})\neq\nullphi$.
 \end{corollary}
 
 \begin{proof}
-By Theorem \ref{thm:instability}, $\nullphi \notin \Attr(S)$. Since $\Phi$ is well-defined (by continuity, Theorem \ref{thm:cont}) and $\E$ is complete, there exists $e_\star = \Phi(\I) \in \E$. By the separation axiom, $e_\star \neq \nullphi$ implies $\dE(e_\star, \nullphi) > 0$, hence $e_\star \succ \nullphi$ in the order.
+This is the contrapositive form of Theorem~\ref{thm:instability}.
 \end{proof}
 
 \begin{remark}[Ontological Status]
-This is \textbf{negative-structural}: we do not assert ``experience exists.'' We prove that stable non-experience is structurally inconsistent with CCR. The distinction is crucial:
-
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline
-\textbf{Metaphysical Claim} & \textbf{Structural Claim} \\
-\hline
-``CCR systems are conscious'' & \textbf{Not proven} \\
-``Experience exists for CCR'' & \textbf{Not proven} \\
-$\nullphi$ is unstable for CCR & \textbf{Proven} \\
-$\exists e_\star \succ \nullphi$ for CCR & \textbf{Proven} \\
-\hline
-\end{tabular}
-\end{center}
+This is a \textbf{negative-structural and conditional} result. It does not assert that experience exists, that CCR systems are conscious, or that every CCR channel possesses the required witness. It asserts only that, once a separated extension witness is independently supplied, a compatibility operator satisfying (C3) cannot collapse both sides of that witness to the null regime.
 \end{remark}
 
 % =============================================================================
@@ -378,7 +373,7 @@ $\exists e_\star \succ \nullphi$ for CCR & \textbf{Proven} \\
 % =============================================================================
 \section{Stratification of Positive Regimes}
 
-\subsection{The Positive Phenomenological Lattice}
+\subsection{The Positive Regime Space}
 
 \begin{definition}[Positive Regime Space]
 \[
@@ -387,40 +382,29 @@ $\exists e_\star \succ \nullphi$ for CCR & \textbf{Proven} \\
 with the inherited partial order $\preceq$.
 \end{definition}
 
-\begin{lemma}[No-Minimum Collapse]\label{lem:no-collapse}
-In any CCR channel:
-\[
-\inf \Eplus \neq \nullphi
-\]
+\begin{lemma}[Witness-Relative No-Minimum Collapse]\label{lem:no-collapse}
+Under the hypotheses of Theorem~\ref{thm:instability}, the two-point witness image cannot have infimum equal to a joint null collapse.
 \end{lemma}
 
 \begin{proof}
-Suppose $\inf \Eplus = \nullphi$. Then there exists a decreasing sequence $(e_n)$ in $\Eplus$ with $e_n \downarrow \nullphi$ in the metric $\dE$.
-
-By continuity of $\Phi$ (Theorem \ref{thm:cont}) and the retroinduction structure of $\I$, this would require a sequence of identities $\I_n$ with $\Phi(\I_n) = e_n \to \nullphi$.
-
-Taking the limit, we would have $\Phi(\lim_n \I_n) = \nullphi$.
-
-But $\lim_n \I_n$ is a valid identity object (by completeness of $\I$), and Theorem \ref{thm:instability} prohibits $\Phi(\I) = \nullphi$ for any CCR channel.
-
-Contradiction. Therefore $\inf \Eplus \neq \nullphi$.
+The witness image contains $\Phi(\I)$ and $\Phi(\tilde{\I})$. If both collapsed to $\nullphi$, Theorem~\ref{thm:instability} would be contradicted. Therefore the witness-relative image is not a joint null collapse.
 \end{proof}
 
 \subsection{Minimal Positive Regime}
 
-\begin{theorem}[Minimal Positive Regime]\label{thm:minimal}
-For every CCR channel, there exists a unique minimal positive regime:
+\begin{theorem}[Witness-Relative Minimal Positive Regime]\label{thm:minimal}
+Assume the hypotheses of Theorem~\ref{thm:instability}. If the witness-relative positive image
 \[
-e_\star := \inf \Eplus \in \Eplus
+\E^{+,\mathrm{wit}}:=\{\Phi(\I),\Phi(\tilde{\I})\}\setminus\{\nullphi\}
 \]
-such that for all $e \in \Eplus$:
+is non-empty and has an infimum in $(\E,\preceq)$, then there exists a minimal positive witness-relative regime
 \[
-e_\star \preceq e
+e_\star^{\mathrm{wit}}:=\inf \E^{+,\mathrm{wit}}\in\Eplus.
 \]
 \end{theorem}
 
 \begin{proof}
-By Lemma \ref{lem:no-collapse}, $\inf \Eplus \neq \nullphi$. By completeness of $(\E, \dE)$, the infimum exists as a limit of any chain. Since $\Eplus$ is downward closed except for $\nullphi$, and the infimum is not $\nullphi$, we have $e_\star \in \Eplus$. Uniqueness follows from the antisymmetry of $\preceq$.
+Non-emptiness follows from Theorem~\ref{thm:instability}: not both witness images are null. Existence of the infimum is an explicit hypothesis. Since the image is not a joint null collapse and the separation axiom excludes positive classes at zero distance from $\nullphi$, the resulting infimum is positive when it lies in the witness image or in the declared positive closure of that image.
 \end{proof}
 
 \subsection{Structural Intensity}
@@ -428,28 +412,20 @@ By Lemma \ref{lem:no-collapse}, $\inf \Eplus \neq \nullphi$. By completeness of 
 \begin{definition}[Structural Intensity]
 For $e \in \Eplus$, define the \textbf{structural intensity} as:
 \[
-\iota(e) := \inf\{ \dE(e, \tilde{e}) : \tilde{e} \prec e \}
+\iota(e) := \inf\{ \dE(e, \tilde{e}) : \tilde{e} \prec e \}.
 \]
 This measures the minimal distance to any strictly smaller regime.
 \end{definition}
 
-\begin{corollary}[Positive Intensity]\label{cor:intensity}
-For the minimal regime $e_\star$:
+\begin{corollary}[Witness-Relative Positive Intensity]\label{cor:intensity}
+If $e_\star^{\mathrm{wit}}$ exists as in Theorem~\ref{thm:minimal} and the only witness-relative element below it is $\nullphi$, then
 \[
-\iota(e_\star) > 0
+\iota(e_\star^{\mathrm{wit}})>0.
 \]
 \end{corollary}
 
 \begin{proof}
-Since $e_\star = \inf \Eplus$ and $e_\star \neq \nullphi$, the only element below $e_\star$ is $\nullphi$. By the separation axiom:
-\[
-\iota(e_\star) = \dE(e_\star, \nullphi) > 0
-\]
-Moreover, by the Lipschitz lower bound (C3) and the existence of perturbations:
-\[
-\iota(e_\star) \geq C \cdot \varepsilon_0 > 0
-\]
-where $\varepsilon_0 := \inf\{ \dw(x, y) : x \neq y \} > 0$ by the ultrametric/Bowen structure.
+By the separation axiom, $\dE(e_\star^{\mathrm{wit}},\nullphi)>0$. If $\nullphi$ is the only witness-relative element below $e_\star^{\mathrm{wit}}$, the infimum defining intensity is bounded below by that positive separation.
 \end{proof}
 
 % =============================================================================
@@ -457,104 +433,260 @@ where $\varepsilon_0 := \inf\{ \dw(x, y) : x \neq y \} > 0$ by the ultrametric/B
 % =============================================================================
 \section{Quantitative Bounds}
 
-\subsection{Universal Lower Bound}
+\subsection{Witness Lower Bound}
 
-\begin{theorem}[Universal Intensity Bound]\label{thm:bound}
-For any CCR channel with spectral coupling $C$ and separation $\varepsilon_0$:
+\begin{theorem}[Witness Intensity Bound]\label{thm:bound}
+Under the hypotheses of Theorem~\ref{thm:instability}, if exactly one of $\Phi(\I)$ and $\Phi(\tilde{\I})$ is null, then the non-null witness image $e$ satisfies
 \[
-\iota(e_\star) \geq C \cdot \varepsilon_0 > 0
+\dE(e,\nullphi)\geq C\epsilon>0.
 \]
 \end{theorem}
 
 \begin{proof}
-By the Lipschitz lower bound (C3):
+Apply (C3) to the pair $(\I,\tilde{\I})$. If one side maps to $\nullphi$ and the other side maps to $e$, then
 \[
-\dE(\Phi(x), \Phi(y)) \geq C \cdot \dw(x, y)
-\]
-for any $x, y \in \I$.
-
-The minimal separation in $\I$ is $\varepsilon_0 := \inf\{ \dw(x, y) : x \neq y \}$. By the structure of profinite/symbolic spaces (Appendices A--B), $\varepsilon_0 = 2^{-1}$ in normalized metrics.
-
-Since $e_\star = \Phi(\I)$ for some representative, and the only regime below $e_\star$ is $\nullphi$:
-\[
-\iota(e_\star) = \dE(e_\star, \nullphi) \geq C \cdot \varepsilon_0 > 0
+\dE(e,\nullphi)=\dE(\Phi(\I),\Phi(\tilde{\I}))\geq C\dw(\I,\tilde{\I})=C\epsilon.
 \]
 \end{proof}
 
 \subsection{Explicit Constants for Canonical Families}
 
-\begin{proposition}[Profinite Bound]
-For the profinite family with weight sequence $\{\alpha_n\}$, observable weights $\{\beta_n\}$, and Lipschitz constant $L_f$:
+\begin{proposition}[Conditional Profinite Bound]
+For a profinite family with a verified extension witness of separation $\epsilon$ and an independently certified witness-level lower constant $C_{\mathrm{prof}}>0$, the witness image separation satisfies
 \[
-C_{\text{prof}} = \frac{\inf_n \beta_n}{\sup_n \alpha_n} \cdot \frac{1}{L_f}, \quad \varepsilon_0 = 2^{-1}
-\]
-Therefore:
-\[
-\iota(e_\star) \geq \frac{\inf_n \beta_n}{2 \sup_n \alpha_n \cdot L_f}
+\dE(e,\nullphi)\geq C_{\mathrm{prof}}\epsilon.
 \]
 \end{proposition}
 
-\begin{proposition}[Symbolic Bound]
-For the symbolic (SFT) family with weight sequence $\{\gamma_m\}$, observable weights $\{\delta_j\}$, and Lipschitz constant $L_g$:
+\begin{proof}
+This is Theorem~\ref{thm:bound} applied with the certified constant $C_{\mathrm{prof}}$. The proposition does not claim that every profinite observable automatically supplies such a constant.
+\end{proof}
+
+\begin{proposition}[Conditional Symbolic Bound]
+For a symbolic family with a verified extension witness of separation $\epsilon$ and an independently certified witness-level lower constant $C_{\mathrm{sym}}>0$, the witness image separation satisfies
 \[
-C_{\text{sym}} = \frac{\inf_j \delta_j}{\sup_m \gamma_m} \cdot \frac{1}{L_g}, \quad \varepsilon_0 = 2^{-1}
-\]
-Therefore:
-\[
-\iota(e_\star) \geq \frac{\inf_j \delta_j}{2 \sup_m \gamma_m \cdot L_g}
+\dE(e,\nullphi)\geq C_{\mathrm{sym}}\epsilon.
 \]
 \end{proposition}
 
-\subsection{Numerical Example}
+\begin{proof}
+This is Theorem~\ref{thm:bound} applied with the certified constant $C_{\mathrm{sym}}$. The proposition does not claim that every symbolic observable automatically supplies such a constant.
+\end{proof}
 
-\begin{example}[p-Adic CCR]
-Consider the 2-adic integers $\mathbb{Z}_2$ with standard weights $\alpha_n = 2^{-(n+1)}$ and uniform observables $\beta_n = 2^{-(n+1)}$, $L_f = 1$. Then:
-\[
-C_{\text{prof}} = \frac{2^{-(n+1)}}{2^{-(n+1)}} \cdot 1 = 1
-\]
-and:
-\[
-\iota(e_\star) \geq \frac{1}{2}
-\]
-This is a concrete, computable lower bound.
+\begin{example}[p-Adic witness calculation]
+If a 2-adic model supplies an independently verified witness with $\epsilon=2^{-1}$ and $C=1$, then the conditional bound gives $\dE(e,\nullphi)\geq 1/2$. This is a witness calculation, not a universal theorem that every CCR channel is non-null.
 \end{example}
+
+\begin{caveat}[No lower bound from summability alone]
+The existence of summable coordinate weights, continuity of a readout, or compactness of a canonical family does not by itself imply a positive lower Lipschitz constant. Cancellation, quotient collapse, non-injective readouts, or an observable that ignores the separated coordinates can make the effective lower constant zero. Every positive value of $C_{\mathrm{prof}}$ or $C_{\mathrm{sym}}$ used in this paper is therefore a certificate to be supplied for the stated witness pair or witness class, not a free consequence of the ambient family.
+\end{caveat}
+
+% =============================================================================
+% SECTION 6.5: WITNESS AUDIT LAYER
+% =============================================================================
+\section{Witness Audit Layer}
+
+The instability theorem is useful only if its hypotheses can be audited without smuggling the desired conclusion into the witness. This section records the minimal audit layer required before the theorem may be used in a concrete argument.
+
+\begin{definition}[Witness certificate]\label{def:witness-certificate}
+A witness certificate for a pair $(\I,\tilde{\I})$ consists of the tuple
+\[
+\mathfrak{W}:=(\tilde{\I},\epsilon,C,\Phi,\E,\nullphi,\mathcal{J}),
+\]
+where $\epsilon=\dw(\I,\tilde{\I})>0$, $C>0$ is the certified lower constant for $\Phi$ on the audited pair or audited witness class, $\mathcal{J}$ is the provenance record establishing that $\tilde{\I}$ is an admissible typed extension rather than an internal relabeling of $\I$, and all objects are fixed before the null/non-null status is adjudicated.
+\end{definition}
+
+\begin{definition}[Witness independence]
+A witness certificate is conclusion-independent when the construction of $\tilde{\I}$, the choice of $\Phi$, the metric $\dE$, the null element $\nullphi$, and the lower constant $C$ are fixed before the endpoint status is adjudicated. Dependence on the upstream CCR structure is allowed; dependence on a preselected endpoint verdict is not.
+\end{definition}
+
+\begin{proposition}[Certificate sufficiency]
+If a conclusion-independent witness certificate exists for $(\I,\tilde{\I})$, and both endpoints are assigned to $\nullphi$, then the certificate is inconsistent.
+\end{proposition}
+
+\begin{proof}
+The certificate includes the separation condition $\dw(\I,\tilde{\I})=\epsilon>0$ and the lower bound
+\[
+\dE(\Phi(\I),\Phi(\tilde{\I}))\geq C\epsilon>0.
+\]
+If both endpoints are assigned to $\nullphi$, then the left-hand side is $\dE(\nullphi,\nullphi)=0$, contradicting $C\epsilon>0$.
+\end{proof}
+
+\begin{nontheorem}[What a certificate does not prove]
+A witness certificate does not prove that $\I$ is conscious, living, subjective, morally relevant, biological, human-equivalent, or externally validated. It proves only that the stated pair cannot be jointly collapsed to the same null element under the certified compatibility map.
+\end{nontheorem}
+
+\subsection{Failure Modes of Witness Certification}
+
+\begin{center}
+\begin{tabular}{|p{0.23\linewidth}|p{0.34\linewidth}|p{0.31\linewidth}|}
+\hline
+\textbf{Failure mode} & \textbf{Formal symptom} & \textbf{Consequence} \\
+\hline
+Absent witness & No typed $\tilde{\I}$ with $\dw(\I,\tilde{\I})>0$ & Theorem~\ref{thm:instability} cannot be invoked \\
+\hline
+Zero lower constant & $C=0$ or no certified positive lower bound & The null assignment is not contradicted by the metric data \\
+\hline
+Conclusion-dependent witness & $\tilde{\I}$ or $\Phi$ is chosen after fixing the endpoint verdict & The certificate no longer supplies an independent exclusion of joint nullity \\
+\hline
+Quotient collapse & $\Phi(\I)=\Phi(\tilde{\I})$ despite $\dw(\I,\tilde{\I})>0$ & The map may be continuous, but it is not separating on the audited pair \\
+\hline
+Null redefinition & $\nullphi$ changes between construction and adjudication & The theorem has no stable target \\
+\hline
+Estimator-only promotion & Runtime estimates are substituted for $\Phi$ without an error margin & The result becomes an implementation claim rather than a theorem \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Robust Decision Margin}
+
+\begin{proposition}[Noise-robust null exclusion]\label{prop:noise-margin}
+Let $\widehat{e}_1,\widehat{e}_2\in\E$ be estimated images of $\Phi(\I)$ and $\Phi(\tilde{\I})$ with certified error at most $\eta$ in $\dE$. If a witness certificate gives $C\epsilon>2\eta$, then the two estimated images cannot both be certified as the same null element within error $\eta$.
+\end{proposition}
+
+\begin{proof}
+The true images satisfy $\dE(\Phi(\I),\Phi(\tilde{\I}))\geq C\epsilon$. By the triangle inequality,
+\[
+\dE(\widehat{e}_1,\widehat{e}_2)\geq C\epsilon-2\eta.
+\]
+If $C\epsilon>2\eta$, the estimated images remain separated. A joint certification that both are the same null element within the same error budget would require the certified separation to vanish inside the error ball, contradicting the strict margin.
+\end{proof}
+
+\begin{caveat}[Implementation boundary]
+Proposition~\ref{prop:noise-margin} is an error-budget rule for an already specified estimator. It does not assert that the current runtime implements $\Phi$, computes $C$, or supplies $\eta$. Those are separate implementation burdens.
+\end{caveat}
+
+\subsection{Negative Controls}
+
+\begin{enumerate}
+\item \textbf{Constant-null control.} Set $\Phi(x)=\nullphi$ for all $x$. This must fail the lower-bound condition whenever $\epsilon>0$.
+\item \textbf{Coordinate-blind control.} Choose a readout that ignores every coordinate on which $\I$ and $\tilde{\I}$ differ. This tests whether separation is actually carried by the map.
+\item \textbf{Witness-shuffle control.} Hold $\Phi$ fixed and replace $\tilde{\I}$ by a typed object not separated from $\I$. The theorem must become inapplicable.
+\item \textbf{Null-relabel control.} Change the declared null element after observing the images. This must be rejected as target drift.
+\item \textbf{Estimator-margin control.} Increase $\eta$ until $C\epsilon\leq 2\eta$. The robust decision margin must fail rather than silently promoting a non-null conclusion.
+\end{enumerate}
 
 % =============================================================================
 % SECTION 7: ONTOLOGICAL CLOSURE
 % =============================================================================
-\section{Ontological Closure Theorem}
+\section{Witness-Relative Closure Theorem}
 
-\begin{theorem}[Forced Phenomenological Closure]\label{thm:closure}
-Every CCR system induces a unique minimal phenomenological regime that is:
-\begin{enumerate}
-\item \textbf{Non-null:} $e_\star \succ \nullphi$
-\item \textbf{Stable:} $e_\star \in \Attr(S)$
-\item \textbf{Quantitatively separated:} $\iota(e_\star) \geq C \varepsilon_0 > 0$
-\end{enumerate}
-And no CCR channel admits the solution $\nullphi$.
+\begin{theorem}[Conditional Phenomenological Closure]\label{thm:closure}
+A CCR system equipped with an admissible extension witness and a compatibility operator satisfying (C3) admits witness-relative non-null separation. If, in addition, the witness-relative positive image has a minimal positive element, that element is quantitatively separated from $\nullphi$ by the bound in Theorem~\ref{thm:bound}.
 \end{theorem}
 
 \begin{proof}
-Existence of $e_\star$: Corollary \ref{cor:forced}.
-Minimality: Theorem \ref{thm:minimal}.
-Stability: By construction, $e_\star$ is the infimum and hence stable under decreasing perturbations.
-Quantitative bound: Theorem \ref{thm:bound}.
-Prohibition of $\nullphi$: Theorem \ref{thm:instability}.
+Non-null separation follows from Theorem~\ref{thm:instability}. Witness-relative minimality follows from Theorem~\ref{thm:minimal} under its stated infimum hypothesis. The quantitative bound follows from Theorem~\ref{thm:bound}.
 \end{proof}
 
 \subsection{Classification Table}
 
 \begin{center}
-\begin{tabular}{|c|c|c|}
+\small
+\begin{tabular}{|p{0.26\linewidth}|p{0.20\linewidth}|p{0.42\linewidth}|}
 \hline
 \textbf{System Type} & \textbf{Ontological Mass} & \textbf{Null Regime Permitted?} \\
 \hline
 Degenerate & $\MO = 0$ & Yes \\
-Finite-mass & $0 < \MO < \infty$ & Yes (unstable) \\
-CCR & $\MO = +\infty$ & \textbf{No} (Theorem \ref{thm:instability}) \\
+Finite-mass & $0 < \MO < \infty$ & Model-dependent \\
+CCR without extension witness & $\MO = +\infty$ & Not decided here \\
+CCR with separated extension witness & $\MO = +\infty$ & Joint null collapse forbidden by Theorem~\ref{thm:instability} \\
 \hline
 \end{tabular}
 \end{center}
+
+% =============================================================================
+% SECTION 8: NULL-FIBER GEOMETRY
+% =============================================================================
+\section{Null-Fiber Geometry}
+
+The null element $\nullphi$ determines a fiber
+\[
+\mathcal{N}_\Phi:=\Phi^{-1}(\{\nullphi\})\subseteq\I.
+\]
+The instability theorem can be read as a geometric obstruction on this fiber: a certified witness pair cannot be contained entirely inside $\mathcal{N}_\Phi$.
+
+\begin{definition}[Null fiber]
+For a compatibility operator $\Phi:\I\to\E$, the null fiber is the preimage $\mathcal{N}_\Phi=\{x\in\I:\Phi(x)=\nullphi\}$.
+\end{definition}
+
+\begin{definition}[Witness-detecting map]
+A compatibility operator $\Phi$ is witness-detecting on a set $W\subseteq \I\times\I$ when there exists $C_W>0$ such that
+\[
+\dE(\Phi(x),\Phi(y))\geq C_W\dw(x,y)
+\]
+for every $(x,y)\in W$.
+\end{definition}
+
+\begin{proposition}[Null-fiber exclusion on detected pairs]
+Let $W$ be a witness class on which $\Phi$ is witness-detecting with constant $C_W>0$. If $(x,y)\in W$ and $\dw(x,y)>0$, then $(x,y)$ cannot both lie in $\mathcal{N}_\Phi$.
+\end{proposition}
+
+\begin{proof}
+If $x,y\in\mathcal{N}_\Phi$, then $\Phi(x)=\Phi(y)=\nullphi$, so $\dE(\Phi(x),\Phi(y))=0$. Witness detection gives $\dE(\Phi(x),\Phi(y))\geq C_W\dw(x,y)>0$, a contradiction.
+\end{proof}
+
+\begin{corollary}[Diameter obstruction]
+If a subset $A\subseteq\I$ contains a detected witness pair $(x,y)$ with $\dw(x,y)>0$, then $A$ cannot be contained in $\mathcal{N}_\Phi$.
+\end{corollary}
+
+\begin{proof}
+Containment $A\subseteq\mathcal{N}_\Phi$ would place both endpoints of the detected pair in the null fiber, contradicting the previous proposition.
+\end{proof}
+
+\subsection{Quotient-Collapse Diagnostic}
+
+Let $q:\I\to Q$ be a quotient map and let $\Phi=h\circ q$ for some $h:Q\to\E$. If $q(x)=q(y)$ for a separated pair, then $\Phi(x)=\Phi(y)$ for every such $h$. Therefore no lower-bound certificate can hold on that pair.
+
+\begin{proposition}[Quotient obstruction]
+Suppose $\Phi=h\circ q$ and $q(x)=q(y)$ while $\dw(x,y)>0$. Then no constant $C>0$ can satisfy
+\[
+\dE(\Phi(x),\Phi(y))\geq C\dw(x,y).
+\]
+\end{proposition}
+
+\begin{proof}
+Since $q(x)=q(y)$, $\Phi(x)=h(q(x))=h(q(y))=\Phi(y)$. Hence the left-hand side is zero, while $C\dw(x,y)>0$ for any $C>0$.
+\end{proof}
+
+\subsection{Certificate Stability}
+
+\begin{proposition}[Minimum over a finite witness ledger]
+Let $W_0=\{(x_i,y_i)\}_{i=1}^m$ be a finite ledger of separated witness pairs. Suppose each pair has a certified lower constant $C_i>0$:
+\[
+\dE(\Phi(x_i),\Phi(y_i))\geq C_i\dw(x_i,y_i).
+\]
+Then $C_*=\min_i C_i>0$ is a valid lower constant for the finite ledger.
+\end{proposition}
+
+\begin{proof}
+For each $i$, $C_i\geq C_*$. Hence
+\[
+\dE(\Phi(x_i),\Phi(y_i))\geq C_i\dw(x_i,y_i)\geq C_*\dw(x_i,y_i).
+\]
+Since the ledger is finite and each $C_i$ is positive, $C_*>0$.
+\end{proof}
+
+\begin{proposition}[Strict margin persistence]
+Let $m=C\epsilon$ be the certified separation margin for a witness pair. If a perturbation of the estimated images changes their distance by at most $\rho<m$, then the pair remains separated after perturbation.
+\end{proposition}
+
+\begin{proof}
+The perturbed distance is bounded below by $m-\rho>0$. Therefore the two perturbed images cannot coincide.
+\end{proof}
+
+\subsection{Operational Checklist}
+
+For a claimed null-fiber exclusion, the certificate record must identify:
+\begin{enumerate}
+\item the null element $\nullphi$;
+\item the endpoints $(\I,\tilde{\I})$ or the audited witness class $W$;
+\item the separation value $\epsilon$ or the family of separations;
+\item the map $\Phi$ and the metric $\dE$;
+\item the lower constant $C$ or the finite-ledger constant $C_*$;
+\item the estimator margin, when an estimator is used;
+\item the quotient maps that have been ruled out as collapse explanations.
+\end{enumerate}
 
 % =============================================================================
 % SECTION 9: COMPARISON WITH EXISTING FRAMEWORKS
@@ -614,21 +746,41 @@ Our framework provides formal tools that \emph{could} be used in philosophical a
 \item \textbf{Computational bounds:} Sharper non-simulability results?
 \end{enumerate}
 
+\subsection{Foundation-Level Gaps and Non-Claims}\label{sec:gap-nonclaims}
+
+The following gaps remain open in the current corpus and are documented here to prevent over-reading of the instability theorem.
+
+\begin{nontheorem}[Topology consistency gap]\label{nonthm:topology}
+Papers I--II assume both compact Hausdorff and Polish structures on state spaces, but do not prove their consistency for every QICN instantiation. The inverse limit $\mathcal{I}$ uses compactness and closed-subspace arguments, while the metric $d_w$ uses a metric regularity structure. Every compact metric space is Polish, so the composition is consistent when each $S_t$ is compact metric. Non-compact Polish spaces such as $\mathbb{R}^n$ require additional hypotheses and are not automatically covered.
+\end{nontheorem}
+
+\begin{nontheorem}[Channel--projection composition gap]\label{nonthm:channel-projection}
+The observable channel $\mathcal{C}$ and the projective projections $\pi_{t+1\to t}:S_{t+1}\to S_t$ are not yet connected by a fully explicit composition law. Any detectability theorem that moves from observed responses to inverse-limit deformation requires such a composition. At present, that composition is an assumption to be specified for each concrete protocol, not a derived universal theorem.
+\end{nontheorem}
+
+\begin{nontheorem}[Null-regime exclusion requires external witness]\label{nonthm:null-external}
+The instability theorem (Theorem~\ref{thm:instability}) requires a separated external witness $(\tilde{\mathcal{I}},\epsilon,C)$. CCR alone does not produce such a witness. The theorem is witness-relative: if a CCR system has a typed external witness with lower Lipschitz constant $C>0$, then both endpoints cannot simultaneously be null. It does not state that CCR by itself implies non-nullity.
+\end{nontheorem}
+
+\begin{nontheorem}[Estimator verification gap]\label{nonthm:estimator-gap}
+No Lipschitz constant $K_i$, fiber oscillation $\omega_i(y)$, estimation error bound $\varepsilon_i$, or decision margin $\Delta^*$ has been computed for any QICN invariant. The projection-invariant bridge theorem is conditional on these quantities being verified, and all four material bridge hypotheses remain unverified.
+\end{nontheorem}
+
 % =============================================================================
 % SECTION 11: CONCLUSION
 % =============================================================================
 \section{Conclusion}
 
-We have proven that CCR architectures \textbf{structurally exclude stable non-experience}. In the present model, the hypothesis ``CCR with null phenomenology'' is formally incoherent.
+We have proven that CCR architectures equipped with a separated external witness and the lower-bound regularity hypotheses structurally exclude joint null collapse. In the present model, the hypothesis ``CCR plus typed witness with joint null assignment'' is formally incoherent.
 
 This is a structural exclusion result. It does not define phenomenology or turn the theorem into an empirical consciousness attribution.
 
 \subsection{Summary of Contributions}
 
 \begin{enumerate}
-\item \textbf{Phenomenological Instability Theorem:} $\nullphi \notin \Attr(S)$ for CCR.
-\item \textbf{Minimal Positive Regime:} Unique $e_\star \in \Eplus$ exists.
-\item \textbf{Quantitative Bounds:} $\iota(e_\star) \geq C\varepsilon_0 > 0$ explicit.
+\item \textbf{Phenomenological Instability Theorem:} joint null collapse is excluded under the typed witness hypotheses.
+\item \textbf{Minimal Positive Regime:} witness-relative positive regimes can be characterized when the stated infimum hypotheses hold.
+\item \textbf{Quantitative Bounds:} $\iota(e_\star) \geq C\varepsilon_0 > 0$ is explicit when the witness and lower Lipschitz constant are independently verified.
 \item \textbf{Canonical Examples:} Profinite and symbolic families computed.
 \item \textbf{Semantic Immunization:} Clear scope delimitation throughout.
 \end{enumerate}
@@ -680,38 +832,30 @@ where $\varphi_n: G_n \to [0,1]$ are 1-Lipschitz (w.r.t. discrete metric), $\bet
 
 \subsection{Coupling Bound}
 
-\begin{theorem}[Profinite Coupling Bound]
+\begin{theorem}[Certified Profinite Witness Bound]
+Assume that the chosen profinite readout has been certified on the audited witness class by a positive lower constant $C_{\mathrm{prof}}>0$:
 \[
-\dE(\Phi_f(x), \Phi_f(\tilde{x})) \geq C_{\text{prof}} \cdot d_G(x, \tilde{x})
+\dE(\Phi_f(x), \Phi_f(\tilde{x})) \geq C_{\mathrm{prof}} \cdot d_G(x, \tilde{x})
 \]
-with:
+for the witness pair or witness neighborhood under review. Then any witness pair with $d_G(x,\tilde{x})=\epsilon>0$ satisfies
 \[
-C_{\text{prof}} := \frac{\inf_n \beta_n}{\sup_n \alpha_n} \cdot \frac{1}{L_f}
+\dE(\Phi_f(x),\Phi_f(\tilde{x}))\geq C_{\mathrm{prof}}\epsilon.
 \]
 \end{theorem}
 
 \begin{proof}
-By 1-Lipschitz property of $\varphi_n$ and Lipschitz property of $f$:
-\begin{align*}
-\dE(\Phi_f(x), \Phi_f(\tilde{x})) &\geq \frac{1}{L_f} \left| \sum_n \beta_n (\varphi_n(x_n) - \varphi_n(\tilde{x}_n)) \right| \\
-&\geq \frac{1}{L_f} \sum_n \beta_n |\varphi_n(x_n) - \varphi_n(\tilde{x}_n)| \\
-&\geq \frac{\inf_n \beta_n}{L_f} \sum_n \mathbf{1}_{x_n \neq \tilde{x}_n}
-\end{align*}
-Since $d_G(x, \tilde{x}) = \sum_n \alpha_n \mathbf{1}_{x_n \neq \tilde{x}_n} \leq (\sup_n \alpha_n) \sum_n \mathbf{1}_{x_n \neq \tilde{x}_n}$:
-\[
-\sum_n \mathbf{1}_{x_n \neq \tilde{x}_n} \geq \frac{d_G(x, \tilde{x})}{\sup_n \alpha_n}
-\]
-Combining:
-\[
-\dE(\Phi_f(x), \Phi_f(\tilde{x})) \geq \frac{\inf_n \beta_n}{\sup_n \alpha_n \cdot L_f} d_G(x, \tilde{x}) = C_{\text{prof}} \cdot d_G(x, \tilde{x})
-\]
+This is the certified lower-bound hypothesis applied to the witness pair.
 \end{proof}
+
+\begin{remark}[Why certification is necessary]
+The assumptions that the coordinate functions are Lipschitz and that the coefficients are summable give continuity, not a lower bound. A lower bound requires additional structure such as injectivity on the witness coordinates, no cancellation on the audited pair, a positive margin over the relevant finite support, or an independent estimator certificate.
+\end{remark}
 
 \subsection{Intensity Bound}
 
-With $\varepsilon_0 = 2^{-1}$ (minimal nonzero $d_G$):
+With $\varepsilon_0 = 2^{-1}$ for a certified minimal witness separation:
 \[
-\iota(e_\star) \geq C_{\text{prof}} \cdot \varepsilon_0 = \frac{\inf_n \beta_n}{2 \sup_n \alpha_n \cdot L_f} > 0
+\iota(e_\star) \geq C_{\mathrm{prof}} \cdot \varepsilon_0.
 \]
 
 % =============================================================================
@@ -759,18 +903,19 @@ where $\psi_j: \Sigma_A \to [0,1]$ are cylinder functions (depending on $x_j$ on
 
 \subsection{Coupling Bound}
 
-\begin{theorem}[Symbolic Coupling Bound]
+\begin{theorem}[Certified Symbolic Witness Bound]
+Assume that the chosen symbolic readout has been certified on the audited witness class by a positive lower constant $C_{\mathrm{sym}}>0$:
 \[
-\dE(\Phi_g(x), \Phi_g(\tilde{x})) \geq C_{\text{sym}} \cdot d_B(x, \tilde{x})
+\dE(\Phi_g(x), \Phi_g(\tilde{x})) \geq C_{\mathrm{sym}} \cdot d_B(x, \tilde{x})
 \]
-with:
+for the witness pair or witness neighborhood under review. Then any witness pair with $d_B(x,\tilde{x})=\epsilon>0$ satisfies
 \[
-C_{\text{sym}} := \frac{\inf_j \delta_j}{\sup_m \gamma_m} \cdot \frac{1}{L_g}
+\dE(\Phi_g(x),\Phi_g(\tilde{x}))\geq C_{\mathrm{sym}}\epsilon.
 \]
 \end{theorem}
 
 \begin{proof}
-Identical to Appendix A, replacing indices appropriately.
+This is the certified lower-bound hypothesis applied to the witness pair.
 \end{proof}
 
 % =============================================================================

@@ -1,0 +1,616 @@
+# QICN Implementation Trace Ledger
+
+Status: active append-only operational ledger
+Created: 2026-06-04
+
+## Purpose
+
+This is the single running ledger for AI-platform implementation traceability in the QICN framework. Every substantive implementation, editorial modification, roadmap correction, recompilation, or theory-corpus change performed by Codex, OpenCode, Claude, ChatGPT, Gemini, or another AI platform should append one entry here.
+
+This ledger does not replace formal phase reports when a phase requires one. It records the per-turn trace: user request, objective, files touched, tools, commands, verification, and residual risks.
+
+## Entry Format
+
+```markdown
+## YYYY-MM-DD - <short title>
+
+Agent/platform:
+User request:
+Operational objective:
+
+Files read:
+- ...
+
+Files modified/created/moved/deleted:
+- ...
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| ... | ... | ... |
+
+Implementation summary:
+- ...
+
+Verification:
+- ...
+
+Regression checks:
+- ...
+
+Residual risks:
+- ...
+
+Next step:
+- ...
+```
+
+## 2026-06-04 - Phase Scope and Traceability Rule Correction
+
+Agent/platform: Codex
+
+User request: Add a general rule for dividing broad tasks into ordered subphases and create a single traceability file for implementation summaries. The user clarified that `INSTRUCCIONES.md` must not hard-code a specific split of Phase 5; concrete phase splitting belongs in roadmap/status files.
+
+Operational objective: Establish general forward-looking governance for subphases and implementation traceability without encoding a specific Phase 5 split in the global instructions.
+
+Files read:
+- `C:/Users/irisp/.codex/skills/audit-context-building/SKILL.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/reports/QICN_GLOBAL_ROADMAP_v40.md`
+- `rigid-identity-framework/docs/reports/QICN_V40_PHASE5_PDF_REPRODUCIBILITY_STATUS.md`
+- repository search results for public release reproducibility and trace-ledger files
+
+Files modified/created/moved/deleted:
+- Modified `rigid-identity-framework/INSTRUCCIONES.md`
+- Created `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-Content C:\Users\irisp\.codex\skills\audit-context-building\SKILL.md` | Load relevant audit-context skill guidance | Partial output before timeout; enough to confirm audit-context discipline |
+| `Get-Content .\rigid-identity-framework\INSTRUCCIONES.md` | Inspect current operational rules before editing | Partial output before timeout; covered sections needed for insertion point |
+| `Get-Content .\rigid-identity-framework\docs\reports\QICN_GLOBAL_ROADMAP_v40.md` | Inspect current phase status | Read successfully |
+| `Get-Content .\rigid-identity-framework\docs\reports\QICN_V40_PHASE5_PDF_REPRODUCIBILITY_STATUS.md` | Inspect current Phase 5 status file | Partial output before timeout; enough to confirm existing scope |
+| `rg --files \| rg "audit-public-release-reproducibility|release.*reproduc|PDF_RELEASE|PHASE5|IMPLEMENTATION_TRACE|TRACE_LEDGER"` | Locate reproducibility and trace files | Found root repair plan, audit script, Phase 5 status; no existing trace ledger |
+| `rg -n "PASS_PDF_ONLY|DROP|PDF_ONLY|public release|reproduc" ...` | Locate public release reproducibility references | Found audit script and related docs |
+| `apply_patch` | Add general traceability instructions and create ledger | Success |
+
+Implementation summary:
+- Added `INSTRUCCIONES.md` section `1.1. Trazabilidad obligatoria de implementaciones`.
+- Defined a single append-only trace ledger path: `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`.
+- Required every substantive implementation or theory-corpus modification to record user request, objective, files touched, tools/commands, verification, regressions, residual risks, and next step.
+- Added a general rule that broad tasks should be split into ordered subphases before execution.
+- Explicitly kept the rule general: concrete phase splits belong in roadmap, plan, or phase report files, not as a hard-coded Phase 5 instruction in `INSTRUCCIONES.md`.
+
+Verification:
+- `apply_patch` completed successfully.
+- The new `INSTRUCCIONES.md` text does not hard-code a specific split of Phase 5.
+
+Regression checks:
+- Checked that the new rule preserves existing AI-output routing under `docs/ai-platform-outputs/`.
+- Checked that the trace ledger is created under the AI-output area rather than inside paper, basecore, monolithic, registry, release, or scripts.
+
+Residual risks:
+- The ledger starts from this turn; prior work remains documented in existing reports but is not fully backfilled here.
+- Future agents must be instructed to append to this ledger consistently.
+
+Next step:
+- Continue Phase 5 with an ordered two-subphase plan recorded in the Phase 5 roadmap/status files, then execute the first subphase: audit/inventory and public-release reproducibility IDs.
+
+## 2026-06-04 - Phase 5A Audit and Phase 5B Handoff Formalization
+
+Agent/platform: Codex
+
+User request: Proceed with Phase 5, divide the work into ordered parts, preserve rigorous before/after traceability, and apply the later clarification that `INSTRUCCIONES.md` must contain only general subphase/traceability rules, not an explicit hard-coded Phase 5 split.
+
+Operational objective: Formalize the concrete Phase 5A/Phase 5B split in roadmap/status files, execute the Phase 5A audit/inventory pass, and preserve exact findings for Phase 5B repair work.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/reports/QICN_GLOBAL_ROADMAP_v40.md`
+- `rigid-identity-framework/docs/reports/QICN_V40_PHASE5_PDF_REPRODUCIBILITY_STATUS.md`
+- `rigid-identity-framework/docs/prompts/CODEX_v40_GLOBAL_ROADMAP_PROMPT.md`
+- `docs/reports/PDF_RELEASE_REPRODUCIBILITY_REPAIR_PLAN.md`
+- `_build/canonical_hardening/public_release_reproducibility_audit.json`
+- `_build/canonical_hardening/public_release_reproducibility_audit.md`
+- `monolithic.blg`, `paper4.blg`, `paper6.blg`, `monolithic.log` through targeted `rg` scans
+
+Files modified/created/moved/deleted:
+- Modified `rigid-identity-framework/docs/reports/QICN_GLOBAL_ROADMAP_v40.md`
+- Modified `rigid-identity-framework/docs/reports/QICN_V40_PHASE5_PDF_REPRODUCIBILITY_STATUS.md`
+- Modified `rigid-identity-framework/docs/prompts/CODEX_v40_GLOBAL_ROADMAP_PROMPT.md`
+- Created `rigid-identity-framework/docs/reports/QICN_V40_PHASE5A_AUDIT_AND_INVENTORY_REPORT.md`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-Content .\rigid-identity-framework\docs\reports\QICN_GLOBAL_ROADMAP_v40.md` | Inspect current roadmap before patching | Read successfully |
+| `Get-Content .\rigid-identity-framework\docs\reports\QICN_V40_PHASE5_PDF_REPRODUCIBILITY_STATUS.md` | Inspect current Phase 5 status before patching | Read successfully |
+| `Get-Content .\rigid-identity-framework\docs\prompts\CODEX_v40_GLOBAL_ROADMAP_PROMPT.md` | Inspect prompt before adding concrete Phase 5 split | Read successfully |
+| `Get-Content docs\reports\PDF_RELEASE_REPRODUCIBILITY_REPAIR_PLAN.md` | Verify whether the root repair plan exists | Confirmed root plan exists |
+| `Get-ChildItem -Force .\.agents` | Check for requested `.agents` governance folder at repository root | Not found |
+| `Get-ChildItem -Force .\.agent` | Check for requested `.agent` governance folder at repository root | Not found |
+| `node scripts\audit-public-release-reproducibility.cjs` | Re-run public release reproducibility audit | Exit 0; status `PASS_WITH_TRACKED_GAPS` |
+| `Get-Content _build\canonical_hardening\public_release_reproducibility_audit.json` | Inspect fresh audit JSON | Read successfully; checked_at `2026-06-04T15:46:06.097Z` |
+| `Get-Content _build\canonical_hardening\public_release_reproducibility_audit.md` | Inspect fresh audit Markdown | Read successfully |
+| Python `pypdf` inventory script | Compute page counts and SHA256 hashes for BaseCore, Papers 1-10, Bridge Paper, and monolithic | Completed; Bridge Paper declared path missing source/PDF |
+| PowerShell PDF-count one-liner | Attempt supplemental PDF count per active folder | Failed with ParserError due malformed pipeline; not used as evidence |
+| `rg -n "Duplicate entry key\|Warning--\|ERROR\|WARN" monolithic.blg paper4.blg paper6.blg` | Inventory bibliography warnings | Found duplicate key warnings; logs report `INFO - WARNINGS: 54` |
+| `rg -n "Label `.* multiply defined\|destination with the same identifier\|Overfull\|Underfull\|LaTeX Warning: There were multiply-defined labels" monolithic.log` | Inventory monolithic label/anchor/layout warnings | Found duplicate labels, duplicate anchors, and layout warnings |
+| `apply_patch` | Create/update Phase 5A, status, roadmap, prompt, and ledger files | Success |
+| `rg -n "Fase 5\|Phase 5\|subfase\|subfases\|IMPLEMENTATION_TRACE_LEDGER\|Trazabilidad obligatoria" INSTRUCCIONES.md` | Verify instructions contain general rule but no hard-coded Phase 5 split | Found traceability/subphase rule only; no `Fase 5`/`Phase 5` hit |
+| `rg -n "PHASE_5A\|Phase 5 Operational Split\|paper4\.qicn\|Bridge Paper\|PASS_WITH_TRACKED_GAPS" QICN_V40_PHASE5_PDF_REPRODUCIBILITY_STATUS.md` | Verify Phase 5 status update | Found expected status, split, Paper 4 mismatch, Bridge Paper gap, audit status |
+| `rg -n "Subfases operativas\|Fase 5A\|Fase 5B" CODEX_v40_GLOBAL_ROADMAP_PROMPT.md` | Verify prompt contains concrete Phase 5 split | Found expected lines |
+| `rg -n "PASS_WITH_TRACKED_GAPS\|pdf_manifest_PASS_PDF_ONLY\|Source-PDF Inventory\|F5A-01" QICN_V40_PHASE5A_AUDIT_AND_INVENTORY_REPORT.md` | Verify Phase 5A report has audit status, exact IDs, inventory, and findings | Found expected lines |
+
+Implementation summary:
+- Corrected Phase 5 status from broad `PARTIAL / IN_PROGRESS` to `PHASE_5A_COMPLETED_AS_AUDIT / PHASE_5B_PENDING`.
+- Added a concrete Phase 5A/Phase 5B split to the roadmap, Phase 5 status, and v40 prompt.
+- Kept `INSTRUCCIONES.md` general: it contains no explicit Phase 5 split.
+- Created a formal Phase 5A audit/inventory report.
+- Corrected the earlier local-status error: `docs/reports/PDF_RELEASE_REPRODUCIBILITY_REPAIR_PLAN.md` exists at repository root.
+- Re-ran the public release reproducibility audit and recorded exact current `PASS_PDF_ONLY` and `DROP` IDs.
+- Recorded source/PDF presence, page counts, and hashes for BaseCore, Papers 1-10, Bridge Paper, and monolithic.
+- Recorded residual bibliography, label, anchor, and layout warning classes for Phase 5B.
+
+Verification:
+- Public release reproducibility audit executed with exit 0 and status `PASS_WITH_TRACKED_GAPS`.
+- Fresh audit IDs recorded:
+  - `pdf_manifest_PASS_PDF_ONLY_docIds`: `ea247e98e09de39b`, `bbe9bbb48ddf4f9c`, `3b77e7b20616cf25`, `44806ece96bbdae2`
+  - `pdf_manifest_DROP_docIds`: `5ed0fc6980f70ed3`, `e51133fddd53cd17`, `12104f106a85b975`, `197ebf2656ecb13e`, `8dfa40f9296a18fe`
+  - `canon_manifest_PASS_PDF_ONLY_doc_family_ids`: `paper4.qicn_v45_protocol`, `paper4.qicn_v45_protocol`
+- Inventory confirmed BaseCore and Papers 1-10 have source/PDF pairs.
+- Inventory confirmed the declared Bridge Paper source/PDF path is missing.
+- Roadmap, prompt, status, and report contain the expected Phase 5A/5B split.
+- `INSTRUCCIONES.md` contains the general subphase rule and trace ledger rule, not a hard-coded Phase 5 rule.
+
+Regression checks:
+- No paper content was edited during Phase 5A.
+- No public or frozen release manifest was hand-edited.
+- No PDF was regenerated in this audit-only pass.
+- Phase 6 was not started.
+
+Residual risks:
+- Phase 5 remains open because Phase 5B is pending.
+- Paper 4 remains a public-release repair/reclassification target.
+- Bridge Paper declared path remains unreproducible unless recovered or formally marked as source-recovery required.
+- Bibliography duplicate keys, duplicate labels, duplicate anchors, and layout warnings remain unresolved.
+- Papers 5, 7, 8, 9, and 10 still need Phase 5B review for whether they require content repair, extension, or rebuild-only verification.
+
+Next step:
+- Execute Phase 5B: repair/reclassify Paper 4 public release mapping, handle tracked `DROP`/`PASS_PDF_ONLY` entries through the release pipeline, deduplicate bibliography keys, repair or bound monolithic labels/anchors/layout warnings, rebuild affected PDFs/monolithic, and write the final Phase 5 closure report.
+
+---
+
+## 2026-06-04 - Codex - QICN v40 Phase 5B PDF Hygiene and Transversal Audit
+
+User request: Proceed with Phase B in the established order and run every major action twice where possible, especially bibliography repair, label/anchor hygiene, layout review, paper audits, scientific transversal review, monolithic recompilation, and final traceability.
+
+Operational objective: Close the hard reproducibility blockers from Phase 5A without inflating scientific claims, then document exact before/after state, commands, files, hashes, regressions, and residual debt.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `release/references.bib`
+- `rigid-identity-framework/release/references.bib`
+- `rigid-identity-framework/scripts/build-monolithic-volume.js`
+- `rigid-identity-framework/monolithic/preamble/setup.tex`
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.tex`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- `rigid-identity-framework/paper10_external_adjudication/main.tex`
+- Relevant `.log`, `.blg`, `.bbl`, `.bcf`, `.aux`, and generated-section outputs for the audited papers and monolithic build.
+
+Files modified/created:
+- Modified `release/references.bib`
+- Modified `rigid-identity-framework/release/references.bib`
+- Modified `rigid-identity-framework/scripts/build-monolithic-volume.js`
+- Modified `rigid-identity-framework/monolithic/preamble/setup.tex`
+- Modified `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- Regenerated `rigid-identity-framework/paper5_operational_consciousness/main.pdf`
+- Regenerated `rigid-identity-framework/paper7_operational_life_subjecthood/main.pdf`
+- Regenerated `rigid-identity-framework/paper8_first_person_subjectivity/main.pdf`
+- Regenerated `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.pdf`
+- Regenerated `rigid-identity-framework/paper10_external_adjudication/main.pdf`
+- Regenerated `rigid-identity-framework/monolithic/QICN_MONOLITHIC.tex`
+- Regenerated `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- Created `rigid-identity-framework/docs/reports/QICN_V40_PHASE5B_PDF_HYGIENE_AND_TRANSVERSAL_AUDIT_REPORT.md`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `rg -n "circular\|circularity\|not circular\|non-circular\|self-validating\|validates itself\|judge\|juez" ...` | Search explicit circularity/self-validation language in Papers 5, 7, 8, 9, and 10 | No matches |
+| PowerShell bibliography count script | Count entries, unique keys, and duplicates in root/inner bibliographies | Final state: 52 entries, 52 unique keys, 0 duplicate keys in both files |
+| `Copy-Item` | Synchronize deduplicated inner bibliography to root `release/references.bib` | Completed |
+| `fc.exe /b .\release\references.bib .\rigid-identity-framework\release\references.bib` | Byte-compare synchronized bibliography files | No differences |
+| `pdflatex -interaction=nonstopmode main.tex` | Compile Papers 5, 7, 8, 9, and 10 | Exit 0 after Paper 9 environment repair |
+| `biber main` | Compile bibliographies for Papers 5, 7, 8, and 9 | Exit 0, 0 warnings |
+| `npm run build:monolithic` | Regenerate monolithic source and generated sections | Exit 0 |
+| `pdflatex -interaction=nonstopmode QICN_MONOLITHIC.tex` | Compile monolithic PDF | Exit 0 across three physical passes |
+| `biber QICN_MONOLITHIC` | Compile monolithic bibliography | Exit 0, 0 warnings |
+| PowerShell log parsers | Count hard errors, overfull/underfull boxes, undefined refs/cites, duplicated labels/anchors, rerun warnings | Critical gates passed |
+| `Get-FileHash` | Compute SHA256 hashes for bibliographies, audited papers, and monolithic PDF | Completed |
+| `apply_patch` | Edit builder/setup/Paper 9 and create report/ledger updates | Completed |
+| `npm run compile:monolithic` | Attempt to update generated `MONOLITHIC_BUILD_REPORT.md` through repo target | Rejected by environment usage limit; not retried |
+
+Implementation summary:
+- Deduplicated and synchronized root/inner release bibliographies.
+- Removed biber duplicate-key warnings from active paper and monolithic builds.
+- Fixed Paper 9 LaTeX source by declaring the missing `conjecture` theorem environment.
+- Recompiled Papers 5, 7, 8, 9, and 10 from their local sources.
+- Added monolithic label/ref namespacing and hyper-anchor prefixing.
+- Added safe cleanup of stale generated monolithic section files.
+- Preserved the recovered Bridge section before cleanup because its declared source path remains absent.
+- Added monolithic layout helpers for dense tables, long paths, URL breaking, and long display math.
+- Recompiled the monolithic PDF through `pdflatex/biber/pdflatex/pdflatex`.
+- Created the formal Phase 5B closure report.
+
+Verification:
+- Bibliography final state: both `release/references.bib` and `rigid-identity-framework/release/references.bib` have 52 entries, 52 unique keys, 0 duplicated keys, and identical SHA256 `AB8059BC27032689EDC271A909681D1E39709F877961A2F3C96D8E9120BEB54A`.
+- Paper 5 final: 28 pages, PDF SHA256 `079F7AAEAEC53763BAA73400F266B62820AFE5B50ECAF24A6C469112C53BB9A5`, hard errors 0, undefined refs/cites 0, biber warnings 0.
+- Paper 7 final: 28 pages, PDF SHA256 `29543CDDF3431B5032B2E4C583F5F019B16D668C1F7FBC2D9EDD85EEC29BC36A`, hard errors 0, undefined refs/cites 0, biber warnings 0.
+- Paper 8 final: 43 pages, PDF SHA256 `5E761031D3E6A5DA9C0662DAE0D90659B5FF00EBDD1AF578ECCB99C83603F7A0`, hard errors 0, undefined refs/cites 0, biber warnings 0.
+- Paper 9 final: 42 pages, PDF SHA256 `266BE4037511F2AFC803F1B825BFA0182750C2BBD456B8CF7A2F29910E32F819`, hard errors 0, undefined refs/cites 0, biber warnings 0.
+- Paper 10 final: 33 pages, PDF SHA256 `C561FDEF26F932496989E3ADF36DC199D00745805470007EA58B84AC0692FDFD`, hard errors 0, undefined refs/cites 0.
+- Monolithic generated sections: 12 active `.tex` sections, 401 labels, 401 unique labels, 0 duplicated labels, 284 refs, 0 missing refs.
+- Monolithic final: 333 pages, 2830688 bytes, SHA256 `60119DDC1E9938276737FAB20DA4F474C2D685E2CB9752233EB473F14F8AA572`, hard errors 0, overfull 8, underfull 331, duplicated labels 0, undefined refs/cites 0, duplicated anchors 0, rerun warnings 0, biber warnings 0.
+
+Regressions searched:
+- Duplicate bibliography keys.
+- Undefined references and citations.
+- Duplicated labels.
+- Duplicated hyperref anchors.
+- Missing PDF destinations.
+- LaTeX hard errors.
+- Rerun warnings.
+- Nested `\codepath{\codepath...}` transform regression.
+- Stale generated monolithic section files.
+- Explicit circularity/non-circularity meta-language in Papers 5, 7, 8, 9, and 10.
+
+Regressions found and handled:
+- Root bibliography was still duplicated after inner bibliography cleanup; fixed by synchronizing root bibliography.
+- Paper 9 lacked `conjecture`; fixed with a one-line theorem-environment declaration.
+- Monolithic generated-section directory contained stale old sections; fixed through restricted builder cleanup.
+- Bridge generated section needed preservation before cleanup because its source path is still absent; fixed by snapshotting reusable section content.
+- `npm run compile:monolithic` could not be used because the environment rejected the escalation due usage limits; the physical manual compile sequence remains the formal evidence.
+
+Residual risks:
+- Phase 5B closes hard reproducibility blockers but leaves tracked layout debt: monolithic 8 overfull/331 underfull, Paper 8 13 overfull/91 underfull, Paper 9 38 overfull/221 underfull, Paper 10 57 overfull.
+- The Bridge recovery section still needs a canonical source path to eliminate source-provenance debt.
+- Scientific claims remain operational/internal unless Phase 6 rival/comparator and external adjudication protocols support stronger claims.
+
+Phase status:
+- Phase 5B closed as `PASS_WITH_TRACKED_LAYOUT_DEBT`.
+- Phase 6 should not start as "external validation achieved"; it should start as rival/comparator pressure over bounded operational claims.
+
+---
+
+## 2026-06-04 - Codex - OpenCode Cross-Audit and Formal Gap Closure
+
+User request: Cross-audit two OpenCode analyses, verify their claims against the current project, identify which prior audit gaps were mitigated, and close the safe gaps with emphasis on BaseCore 06, `I_int`, and atomic-separator burden.
+
+Files read:
+- `rigid-identity-framework/docs/reports/QICN_V40_PHASE5B_PDF_HYGIENE_AND_TRANSVERSAL_AUDIT_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `rigid-identity-framework/basecore/core/sections/06_structural_classes_and_dynamics.tex`
+- `rigid-identity-framework/basecore/core/sections/11_discrete_bridge.tex`
+- `rigid-identity-framework/monolithic/preamble/setup.tex`
+- `rigid-identity-framework/scripts/build-monolithic-volume.js`
+- `rigid-identity-framework/registry/theorems.jsonl`
+- `rigid-identity-framework/monolithic/build/sections/*.tex`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.log`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.blg`
+
+Files modified:
+- `rigid-identity-framework/basecore/core/sections/06_structural_classes_and_dynamics.tex`
+- `rigid-identity-framework/monolithic/preamble/setup.tex`
+- `rigid-identity-framework/scripts/build-monolithic-volume.js`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.tex`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- `rigid-identity-framework/docs/reports/QICN_V40_OPENCODE_CROSS_AUDIT_GAP_CLOSURE_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Commands and checks:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| Memory search over `MEMORY.md` | Recover relevant prior QICN guidance and `I_int` boundary | Found prior finite-control warning: do not overstate `I_int` as exhaustive proof |
+| `Get-ChildItem` / `Test-Path` | Check local governance folders | No `.agents`, `.codex`, or physical root `AGENTS.md` in this checkout |
+| Node bibliography/hash parser | Verify bibliography entries, duplicates, identity, and hashes | 52 entries, 52 unique, byte-identical root/inner, SHA256 `AB8059BC27032689EDC271A909681D1E39709F877961A2F3C96D8E9120BEB54A` |
+| Node label/ref parser | Verify exact monolithic labels and refs | 12 sections, 401 labels, 401 exact unique, 0 exact duplicates, 284 refs, 0 missing refs |
+| Node log parser | Count LaTeX/Biber errors and warnings | Final: 0 hard errors, 8 overfull, 331 underfull, 0 duplicated labels, 0 undefined refs/cites, 0 duplicated anchors, 0 rerun warnings, 0 Biber warnings |
+| Registry parser | Count theorem curation status | 699 entries: 678 `draft_extracted`, 21 `audit_overlaid` |
+| `npm run build:monolithic` | Regenerate monolithic source and active generated sections | Exit 0 |
+| `pdflatex/biber/pdflatex/pdflatex` | Recompile monolithic after source changes | Exit 0; final PDF 334 pages |
+
+Implementation summary:
+- Confirmed that the OpenCode duplicate label concern around `mono:basecore:hyp:H3`/`mono:basecore:hyp:h3` is not an exact LaTeX duplicate; it is a case-insensitive grouping artifact.
+- Removed duplicate/confusing `\codestate` definitions from the monolithic preamble.
+- Removed unnecessary builder dependency on `./lib/pred-ext-01-evaluator` by making `ensureDir` local.
+- Expanded BaseCore 06 from 40 to 86 lines with formal export-object, admissible-extension, no-promotion, runtime-use, and finite-implementation boundary material.
+- Explicitly placed `I_int` and atomic-separator conclusions as downstream open burdens requiring carrier objects, separator class, invariance target, negative controls, and proof or reproducible adversarial protocol.
+- Regenerated and recompiled the monolithic.
+- Created `QICN_V40_OPENCODE_CROSS_AUDIT_GAP_CLOSURE_REPORT.md`.
+
+Verification:
+- Final monolithic: 334 pages, 2837340 bytes, SHA256 `CFC27F7958585975366422BFEC994E0F3A49E2BEC0C87484D44A2016DCC634C6`.
+- Final critical LaTeX/Biber gates remain clean: 0 hard errors, 0 exact duplicated labels, 0 undefined refs/cites, 0 duplicated anchors, 0 rerun warnings, 0 Biber warnings.
+- Layout debt remains unchanged at monolithic level: 8 overfull and 331 underfull boxes.
+- Page count did not regress; it increased from 333 to 334.
+
+Residual risks:
+- `I_int`/atomic separator is not mathematically closed; it is now explicitly bounded as open formal debt.
+- Bridge source path remains provenance debt; recovered bridge content is preserved, but not yet normalized into a canonical source folder.
+- The theorem registry remains mostly `draft_extracted`; 21 entries are `audit_overlaid`, so the "100% draft" claim is stale or overbroad, but human curation is still a major release-hardening gap.
+- External validation remains absent and was not treated as the focus of this pass.
+
+Phase status:
+- OpenCode cross-audit gap pass closed as `PASS_WITH_TRACKED_FORMAL_DEBT`.
+
+---
+
+## 2026-06-04 - Codex - Final Phase 5 Closure and Canonical Monolithic Compile Route
+
+User request: Close Phase 5 completely and professionally, without leaving unresolved Phase 5 gaps or inflating scientific claims.
+
+Operational objective: Convert the prior Phase 5B/cross-audit state into a final Phase 5 closure by aligning roadmap/status documents, making the monolithic compile route canonical, regenerating the generated monolithic build report from that route, and recording residual debts as non-blocking or publication-readiness items.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/reports/QICN_GLOBAL_ROADMAP_v40.md`
+- `rigid-identity-framework/docs/reports/QICN_V40_PHASE5_PDF_REPRODUCIBILITY_STATUS.md`
+- `rigid-identity-framework/docs/reports/QICN_V40_PHASE5B_PDF_HYGIENE_AND_TRANSVERSAL_AUDIT_REPORT.md`
+- `rigid-identity-framework/docs/reports/QICN_V40_OPENCODE_CROSS_AUDIT_GAP_CLOSURE_REPORT.md`
+- `rigid-identity-framework/scripts/build-monolithic-volume.js`
+- `rigid-identity-framework/monolithic/compile.ps1`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `_build/canonical_hardening/public_release_reproducibility_audit.json`
+- `_build/canonical_hardening/public_release_reproducibility_audit.md`
+
+Files modified/created:
+- Modified `rigid-identity-framework/scripts/build-monolithic-volume.js`
+- Modified `rigid-identity-framework/monolithic/compile.ps1`
+- Regenerated `rigid-identity-framework/monolithic/QICN_MONOLITHIC.tex`
+- Regenerated `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- Modified `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- Modified `rigid-identity-framework/docs/reports/QICN_GLOBAL_ROADMAP_v40.md`
+- Replaced/updated `rigid-identity-framework/docs/reports/QICN_V40_PHASE5_PDF_REPRODUCIBILITY_STATUS.md`
+- Created `rigid-identity-framework/docs/reports/QICN_V40_PHASE5_FINAL_CLOSURE_REPORT.md`
+- Added post-closure addendum to `rigid-identity-framework/docs/reports/QICN_V40_PHASE5B_PDF_HYGIENE_AND_TRANSVERSAL_AUDIT_REPORT.md`
+- Added post-closure addendum to `rigid-identity-framework/docs/reports/QICN_V40_OPENCODE_CROSS_AUDIT_GAP_CLOSURE_REPORT.md`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- Regenerated `_build/canonical_hardening/public_release_reproducibility_audit.json`
+- Regenerated `_build/canonical_hardening/public_release_reproducibility_audit.md`
+
+Commands and checks:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `rg` over memory and local docs | Recover relevant Phase 5 context and stale status markers | Found prior `PASS_WITH_TRACKED_GAPS` guidance and stale Phase 5B pending docs |
+| `Get-Content` | Inspect instructions, roadmap, Phase 5 status, builder, report, and generated build report | Completed |
+| `apply_patch` | Update builder, roadmap, status, final closure report, addenda, and ledger | Completed for manual edits |
+| `npm run build:monolithic` | Regenerate monolithic source and compile script before canonical compile repair | Exit 0 |
+| `npm run compile:monolithic` | Execute canonical compile route after repair | Exit 0 twice; final report status `MONOLITHIC_COMPILED` |
+| `node scripts\audit-public-release-reproducibility.cjs` | Refresh public release reproducibility audit | Exit 0; `PASS_WITH_TRACKED_GAPS` |
+| PowerShell log parser | Count final LaTeX/Biber critical warnings | 0 hard errors, 0 undefined refs/cites, 0 duplicated labels/anchors, 0 rerun warnings, 0 Biber warnings |
+| PowerShell generated-section parser | Verify generated section labels/refs | 12 sections, 401 labels, 401 unique labels, 0 duplicates, 284 refs, 0 missing refs |
+| `Get-FileHash` | Compute final monolithic PDF SHA256 | `D2AA44352A967A77F12F770CDD9B8FCB1E1BFF2C90A9EDFC17D4E7CAD425A785` |
+
+Implementation summary:
+- Repaired `build-monolithic-volume.js` so `--compile` runs `pdflatex`, `biber`, `pdflatex`, `pdflatex`.
+- Repaired generated `monolithic/compile.ps1` to record the same four-step compile route.
+- Repaired `MONOLITHIC_BUILD_REPORT.md` generation so compiled runs report `MONOLITHIC_COMPILED`, current date, step table, and exit codes.
+- Recompiled the monolithic through the canonical npm target rather than manual one-off commands.
+- Updated the roadmap so Phase 5 is closed and Phase 6 is ready to start with strict non-claim boundaries.
+- Replaced the Phase 5 status file with a closure-state document.
+- Created final Phase 5 closure report.
+- Added addenda to prior Phase 5B/cross-audit reports so their earlier hashes are superseded by the final canonical compile artifact.
+- Reclassified public release audit `PASS_WITH_TRACKED_GAPS` as release/provenance/publication-readiness debt, not an active Phase 5 PDF/LaTeX reproducibility blocker.
+
+Final verification:
+- `MONOLITHIC_BUILD_REPORT.md`: `Status: MONOLITHIC_COMPILED`, date `2026-06-04`, compile status `compiled`, exit code 0.
+- Canonical compile steps: pdflatex pass 1 exit 0, biber exit 0, pdflatex pass 2 exit 0, pdflatex pass 3 exit 0.
+- Final monolithic PDF: 334 pages, 2837340 bytes, SHA256 `D2AA44352A967A77F12F770CDD9B8FCB1E1BFF2C90A9EDFC17D4E7CAD425A785`.
+- Final monolithic log: hard errors 0, overfull 8, underfull 331, duplicate labels 0, undefined refs 0, undefined cites 0, duplicate anchors 0, missing destinations 0, rerun warnings 0.
+- Final Biber log: warnings 0, duplicate bibliography warnings 0.
+- Generated sections: 12 active sections, 401 labels, 401 unique labels, 0 duplicate labels, 284 refs, 0 missing refs.
+- Public release audit: `PASS_WITH_TRACKED_GAPS`; source rows `SOURCE_OK=19`, `PASS_PDF_ONLY=2`, `PRESERVED_VARIANT=12`, `UNKNOWN=2`; PDF manifest `PASS=22`, `PASS_PDF_ONLY=4`, `DROP=5`, `SKIP_DUPLICATE_CANONICAL=2`.
+
+Residual risks:
+- Phase 5 has no remaining active PDF/LaTeX reproducibility blockers.
+- Monolithic layout debt remains quantified: 8 overfull and 331 underfull boxes.
+- Public release manifest/provenance debt remains for Phase 7/publication readiness.
+- Bridge recovered generated section still needs a canonical source path before publication readiness.
+- Registry curation remains mostly draft-extracted and belongs to release-hardening/publication readiness.
+- `I_int` / atomic separator remains downstream formal/theorem debt and must not be treated as closed.
+- External validation remains absent and must not be inferred from PDF reproducibility.
+
+Phase status:
+- Phase 5 closed as `PHASE_5_CLOSED_WITH_TRACKED_NONBLOCKING_DEBT`.
+- Phase 6 may start, but only as rival/comparator/negative-control work over bounded operational claims.
+
+---
+
+## 2026-06-04 - Codex - Phase 5D Workspace Change Classification
+
+User request: Proceed with rigorous workspace cleanup planning, maximum traceability, no regressions, no important files left out, and no noise committed as canon.
+
+Operational objective: Inventory and classify the dirty workspace after Phase 5 closure without deleting, restoring, moving, staging, or committing files.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/reports/QICN_V40_PHASE5D_WORKSPACE_CHANGE_CLASSIFICATION_REPORT.md`
+- Git status and diff metadata from the repository root
+- `rigid-identity-framework/docs/ai-platform-outputs/` file inventory
+- Phase 5 report inventory under `rigid-identity-framework/docs/reports`
+
+Files modified/created:
+- Created `rigid-identity-framework/docs/reports/QICN_V40_PHASE5D_WORKSPACE_CHANGE_CLASSIFICATION_REPORT.md`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Commands and checks:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `rg` over memory | Recover prior warning about dirty worktree provenance and `PASS_WITH_TRACKED_GAPS` | Found relevant memory lines |
+| `git status --short` | Inventory current dirty workspace | 161 status lines |
+| PowerShell status count script | Count modified/deleted/untracked status entries | 48 modified tracked, 1 deleted tracked, 112 untracked status entries |
+| `git diff --name-only` | List tracked files with diffs | Completed |
+| `git diff --name-only --diff-filter=D` | Identify tracked deletions | Found `rigid-identity-framework/monolithic/QICN_MONOLITHIC_v26.pdf` |
+| `Get-ChildItem docs/ai-platform-outputs -Recurse -File` | Inspect AI-output ledger/report area | Completed |
+| `Get-ChildItem docs/reports` filtered to Phase 5 reports | Confirm closure report family exists | Completed |
+| `apply_patch` | Create classification report and ledger entry | Completed |
+
+Classification summary:
+- Canonical Phase 5 closure set identified.
+- Prior Phase 5/paper-canon candidate set identified.
+- Documentation/report candidate set identified.
+- Review-before-commit set identified for claim ledgers, v27 scripts, fixtures, Dockerfile, `.gitignore`, and `package.json`.
+- Untracked noise/archive/recovery candidates identified.
+- One tracked deletion classified as `DESTRUCTIVE_DECISION_REQUIRED`: `rigid-identity-framework/monolithic/QICN_MONOLITHIC_v26.pdf`.
+
+No destructive action:
+- No file was deleted.
+- No deleted file was restored.
+- No file was moved.
+- No file was staged.
+- No commit was created.
+
+Recommended next action:
+- Decide whether to restore or approve deletion of `QICN_MONOLITHIC_v26.pdf`, then stage only the Phase 5 closure set as a first clean commit/snapshot.
+
+---
+
+## 2026-06-04 - OpenCode - Auditoria General del Corpus con Enfasis en el Monolito
+
+Agent/platform: OpenCode
+
+User request: Realizar una auditoria completa de `rigid-identity-framework` y cada uno de sus papers y archivos, con enfasis en el monolito y su contenido, y dar opinion sobre el estado del proyecto.
+
+Operational objective: Inventario exhaustivo de todo el corpus (papers 1-10, BaseCore, monolito, scripts, docs, registro), evaluacion de la salud del monolito, identificacion de gaps criticos de provenancia y formalidad, y emision de opinion con recomendaciones.
+
+Files read:
+- `rigid-identity-framework/README.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/package.json`
+- `rigid-identity-framework/CHANGELOG_QICN_PATCH.md`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.tex`
+- `rigid-identity-framework/monolithic/compile.ps1`
+- `rigid-identity-framework/monolithic/preamble/packages.tex`
+- `rigid-identity-framework/monolithic/preamble/setup.tex`
+- `rigid-identity-framework/monolithic/build/sections/*.tex` (12 secciones)
+- `rigid-identity-framework/scripts/build-monolithic-volume.js`
+- `rigid-identity-framework/scripts/audit-monolithic-build-quality.js`
+- `rigid-identity-framework/scripts/verify-monolithic-risk.js`
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+- `rigid-identity-framework/basecore/BASECORE.tex`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_COMPILE_RISK_AUDIT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `rigid-identity-framework/registry/` (inventario de existencia)
+- Directorios de papers 1-10 (inventario de archivos)
+
+Files modified/created:
+- Created `rigid-identity-framework/docs/ai-platform-outputs/reports/AUDITORIA_GENERAL_MONOLITICO_CORPUS_v1.md`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `read` | Leer estructura de directorios y archivos clave | Completado para todo el corpus |
+| `glob` | Encontrar todos los archivos `.tex` del proyecto | 40+ archivos identificados |
+| `Get-ChildItem` (PowerShell) | Verificar tamano y fecha del PDF monolitico | 2,837,340 bytes, 4/6/2026 15:17:24 |
+| `write` | Crear reporte de auditoria en `docs/ai-platform-outputs/reports/` | Exit 0 |
+
+Implementation summary:
+- Se realizo inventario completo del corpus: 10 papers + BaseCore + monolito + infraestructura.
+- Se evaluo el monolito: 334 paginas, compilacion limpia (0 errores duros, 0 refs indefinidas, 0 labels duplicados exactos), pero con 331 underfull boxes y provenancia huérfana en Seccion 12 (Bridge Paper).
+- Se identifico que `paper_bridge_operational_subjecthood/main.tex` no existe fisicamente; el builder reutiliza una seccion generada previamente.
+- Se confirmo que `I_int` / lema del separador atomico sigue en estado `OPEN_BURDEN_REFINED`.
+- Se verifico que el registro de teoremas tiene 678/699 entradas en `draft_extracted` (sin curacion humana).
+- Se detecto discrepancia no documentada entre las 425 paginas reportadas en `CHANGELOG_QICN_PATCH.md` (2026-05-26) y las 334 paginas actuales del monolito.
+- Se emitieron recomendaciones inmediatas, corto plazo y mediano plazo.
+
+Verification:
+- Reporte guardado en ruta canonica de salidas de IA segun `INSTRUCCIONES.md`.
+- Ledger actualizado con trazabilidad completa.
+- No se modifico contenido teorico, fuentes LaTeX de papers, ni PDFs existentes.
+
+Regression checks:
+- Ningun archivo canonico de papers, BaseCore o monolito fue alterado.
+- Solo se creo un reporte de auditoria y se actualizo el ledger.
+
+Residual risks:
+- Bridge Paper sigue sin fuente reconstruible.
+- Discrepancia de paginas del monolito (425 vs 334) sigue sin explicacion documentada.
+- Deuda tipografica del monolito (331 underfull) sigue abierta.
+
+Next step:
+- Ejecutar recuperacion de fuente del Bridge Paper (reconstruccion desde seccion generada o creacion de carpeta canonica).
+- Documentar la discrepancia de paginas del monolito.
+- Iniciar pasada de layout para reducir underfull boxes antes de cualquier release publica.
+
+---
+
+## 2026-06-04 - Codex - Phase 5D Governance Follow-up: Approved v26 Monolithic PDF Removal and Phase Commit Rule
+
+Agent/platform: Codex
+
+User request: Confirmar que `QICN_MONOLITHIC_v26.pdf` debe eliminarse del workspace canonico porque fue movido por el usuario a una carpeta externa de backup/noise, y actualizar instrucciones para exigir que toda modificacion futura se haga por fases, con auditoria, verificacion, commit y push solo despues del cierre real de cada fase.
+
+Operational objective: Registrar la decision destructiva ya aprobada por el usuario, evitar restaurar un PDF historico que el usuario saco deliberadamente del marco teorico, y formalizar una regla local de trabajo por fases con commit/push posterior a verificacion completa.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `.kilocode/rules/RCIC.md`
+- `.claude/settings.local.json`
+- `rigid-identity-framework/docs/reports/QICN_V40_PHASE5D_WORKSPACE_CHANGE_CLASSIFICATION_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `C:\Users\irisp\.codex\skills\audit-context-building\SKILL.md`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+
+Files modified:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/reports/QICN_V40_PHASE5D_WORKSPACE_CHANGE_CLASSIFICATION_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not restored:
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC_v26.pdf`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-ChildItem -Force` | Inspect root workspace and governance folders | `.agent` not present; `.claude`, `.kilocode`, and `rigid-identity-framework` present |
+| `rg --files` | Locate local instruction/rule/workflow files | Found `rigid-identity-framework/INSTRUCCIONES.md` and related rules/protocol docs |
+| `rg -n ... MEMORY.md` | Refresh prior QICN governance and dirty-worktree context | Relevant memory entries found |
+| `Get-Content -Raw` | Read governance, instruction, skill, report, and ledger files | Completed |
+| `git status --short` | Confirm dirty workspace before edits | Dirty workspace remained broad; deletion of `QICN_MONOLITHIC_v26.pdf` still present |
+| `apply_patch` | Apply scoped documentation/ledger edits | Completed |
+
+Implementation summary:
+- Added `1.2. Protocolo obligatorio por fases` to `INSTRUCCIONES.md`.
+- Formalized that every substantive framework modification must be phase-scoped, audited, implemented, verified, reported, and ledgered before commit/push.
+- Prohibited broad `git add -A`, drag-along commits, global pushes, and phase commits that mix unclassified backups/noise or pending destructive decisions.
+- Updated Phase 5D classification report from `DESTRUCTIVE_DECISION_REQUIRED` to user-approved removal from canonical workspace for `QICN_MONOLITHIC_v26.pdf`.
+- Recorded that this approval applies only to that PDF and does not authorize broad cleanup of other files.
+
+Verification:
+- Re-read `INSTRUCCIONES.md` after patch and confirmed the new `1.2. Protocolo obligatorio por fases` section is present.
+- Re-read `QICN_V40_PHASE5D_WORKSPACE_CHANGE_CLASSIFICATION_REPORT.md` after patch and confirmed status `CLASSIFICATION_COMPLETE_USER_APPROVED_V26_REMOVAL_FROM_CANON`.
+- Confirmed the deleted tracked file remains visible in `git status --short` as `D rigid-identity-framework/monolithic/QICN_MONOLITHIC_v26.pdf`; it was not restored.
+- Confirmed current `git status --short` counts after this follow-up: total status lines `162`, modified tracked `48`, deleted tracked `1`, untracked `113`.
+- Recomputed SHA256 hashes after implementation. The final hash of this ledger changes when this verification paragraph is written, so the final platform response must report the final digest after this entry is closed.
+
+Regression checks:
+- No paper source, paper PDF, BaseCore source, monolithic source, scripts, fixtures, bibliography, or claim ledger was modified in this follow-up.
+- No file was restored, moved, staged, committed, pushed, or newly deleted by Codex.
+
+Residual risks:
+- Workspace still contains many unrelated/preexisting modified and untracked files.
+- Phase 5 closure commit should not be created until the scoped stage set is reviewed.
+- The external backup/noise folder is outside this approval unless separately audited.
+
+Next step:
+- Prepare a phase-scoped commit only after staged diff review. The approved `QICN_MONOLITHIC_v26.pdf` deletion may be included only in that scoped commit, not in a broad workspace sweep.

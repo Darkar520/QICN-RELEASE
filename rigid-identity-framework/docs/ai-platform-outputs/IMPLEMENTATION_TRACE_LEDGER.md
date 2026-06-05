@@ -1091,3 +1091,90 @@ Residual risks:
 
 Next step:
 - Review documentation-only diff and commit the addendum locally.
+
+---
+
+## 2026-06-05 - Codex - Roadmap Phase 2 Iteration 2
+
+Agent/platform: Codex
+
+User request: Proceed with Phase 2 Iteration 2 under the prior review recommendation: start with Paper 6 opening consolidation, review Paper 1 appendix/title/proof-local `forced` risk where authorized, keep Paper 2/BaseCore ownership for a dedicated later subphase, and preserve the Phase 2 rules.
+
+Operational objective: Apply a scoped Phase 2 Iteration 2 cleanup with no more than three `.tex` edits, no macro/label renames, no deletion of non-claim boundaries without replacement, and recompilation of every touched paper.
+
+Files read:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION1_REPORT.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper6_predictions_falsation/main.tex`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+
+Files modified:
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper1/main.pdf`
+- `rigid-identity-framework/paper6_predictions_falsation/main.tex`
+- `rigid-identity-framework/paper6_predictions_falsation/main.pdf`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION2_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- Paper 2/BaseCore ownership surfaces
+- Papers 7, 8, and 9
+- `monolithic/`
+- registry files
+- bibliography files
+- scripts
+- macros and labels
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status -sb` | Preflight and post-compile state checks | Started clean relative to `origin/main`; final modified files are scoped to Paper 1, Paper 6, report, and ledger. |
+| `git diff -- ...main.tex` | Review source diff before compile | Confirmed only Paper 1 and Paper 6 `.tex` files were edited. |
+| `apply_patch` | Source/report/ledger edits | Completed. |
+| `pdflatex -interaction=nonstopmode main.tex` | Recompile Paper 1 and Paper 6 | Paper 1 final: 26 pages; Paper 6 final: 22 pages. |
+| `biber main` | Rebuild bibliographies for touched papers | Both Paper 1 and Paper 6 exit code 0. |
+| `Start-Sleep -Seconds 3` | Wait out transient Paper 1 PDF write lock | Completed; subsequent compile succeeded. |
+| `Select-String` log scans | Check hard LaTeX/reference/citation/rerun and biber warnings | 0 final hard/rerun matches; 0 biber warning/error/fatal matches. |
+| `Get-FileHash -Algorithm SHA256` | Record source/PDF hashes | Completed. |
+
+Implementation summary:
+- Paper 6: consolidated three defensive/system-boundary paragraphs into one `Scope and admissible reading` paragraph while preserving the positive `What this paper does.` statement.
+- Paper 1: changed the appendix framing from ontological/no-alternative language to model-relative necessity language and neutralized selected meta-forcing prose.
+- No theorem labels, macros, theorem environments, or proof structures were renamed or rewritten.
+- Paper 2/BaseCore duplication and Papers 7--9 high-risk interpretation surfaces were deliberately deferred.
+
+Verification:
+- Final Paper 1 PDF: `26 pages`, `464977 bytes`.
+- Final Paper 6 PDF: `22 pages`, `437138 bytes`.
+- Final hard LaTeX/reference/citation/rerun scan: `0 matches`.
+- Final biber warning/error/fatal scan: `0 matches`.
+- Combined Paper 1/Paper 6 layout scan: `3` overfull and `38` underfull warnings, localized as tracked layout debt.
+
+Hashes:
+| File | SHA256 |
+|---|---|
+| `paper1/main.tex` | `467C89B0B9A10EE643BB9B31980F57651EABD44B93CD16FB2A4EA4224D0F2ED7` |
+| `paper1/main.pdf` | `D09DFEAD0A1D3CF8B8B4F14555E95F1FBCEA645CEBD2ED9A32F5756ECA002E30` |
+| `paper6_predictions_falsation/main.tex` | `616967D310C6B83980C402EE5290534A3C0B0A436D9C75EBD43F4D6CD3459DC3` |
+| `paper6_predictions_falsation/main.pdf` | `548B7D2265D36740AB6C5E765A0C1A488DE79F3410C61AF9C1D252FF8584D37C` |
+
+Incident / correction:
+- One Paper 1 `pdflatex` pass failed because `main.pdf` was temporarily not writable.
+- The issue resolved after a short wait and sequential retry.
+- Final recompilation and verification passed.
+
+Regression checks:
+- No more than three `.tex` files edited: PASS, only two.
+- No macros or labels renamed: PASS.
+- No non-claims deleted without replacement: PASS.
+- No monolithic sources changed: PASS.
+- No bibliography, registry, or script files changed: PASS.
+
+Residual risks:
+- Paper 2/BaseCore ownership and duplication remain open for a dedicated subphase.
+- Papers 7, 8, and 9 remain high-risk Phase 2 surfaces.
+- Monolithic rebuild remains deferred until the Phase 2 paper batch is ready.
+- Paper 6 layout debt remains open for a later layout-polish pass.
+
+Status: `PASS_WITH_TRACKED_LAYOUT_AND_SCOPE_DEBT`.

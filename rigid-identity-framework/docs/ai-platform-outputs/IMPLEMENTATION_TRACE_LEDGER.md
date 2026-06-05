@@ -1736,6 +1736,101 @@ Residual risks:
 
 Status: `PHASE2_CLOSED_WITH_TRACKED_PHASE3_DEBT`.
 
+## 2026-06-05 - Codex - Roadmap v3 Phase 3 Iteration 1 Language Aliases
+
+User request: Proceed with Phase 3.
+
+Operational objective: Start Phase 3 by reducing semantic inflation in high-impact prose while preserving historical aliases and internal compatibility. Limit the implementation to three theoretical `.tex` files and avoid macro, label, registry, script, theorem, proof, and technical-body churn.
+
+Files read:
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_CLOSURE_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- touched paper logs and Biber logs
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.log`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.aux`
+- `rigid-identity-framework/monolithic/build/sections/*.tex`
+
+Files modified:
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper1/main.pdf`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.pdf`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.pdf`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE3_ITERATION1_LANGUAGE_ALIAS_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- BaseCore
+- Paper 2, Paper 3, Paper 4, Paper 5, Paper 6, Paper 7, Paper 10
+- registry, release, scripts, bibliography
+- macros, labels, theorem environments, theorem statements, proof bodies, technical bodies outside high-impact prose
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Confirm preflight state | Clean; `main...origin/main`. |
+| `Get-Content` | Read roadmap, instructions, Phase 2 closure, ledger, and target passages | Completed. |
+| `rg -n -i` | Audit alias terms across corpus | Identified Paper 1, Paper 8, and Paper 9 high-impact targets. |
+| `Get-FileHash -Algorithm SHA256` | Record baseline and final hashes | Completed. |
+| `git diff --check` | Validate diff hygiene | No diff-check errors; LF-to-CRLF warnings only. |
+| Label comparison against `HEAD` | Verify label preservation | Paper 1 `57 -> 57`; Paper 8 `21 -> 21`; Paper 9 `3 -> 3`; diff count 0. |
+| `pdflatex; biber; pdflatex; pdflatex` in each touched paper | Recompile affected PDFs | All exit code 0. |
+| `Select-String` log scans | Check LaTeX/Biber gates | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings. |
+| `npm run compile:monolithic` | Rebuild monolithic PDF | First attempt failed due MiKTeX AppData access denial under sandbox. |
+| `npm run compile:monolithic` with elevated permission | Repeat canonical monolithic build | Success; compiled. |
+| Case-sensitive label/ref scans | Verify monolithic labels/refs/aux labels | 401 labels, 401 exact unique, 0 duplicates, 286 refs, 0 missing refs. |
+| `rg` spot-checks in monolithic generated sections | Confirm alias edits entered monolithic | Confirmed. |
+
+Implementation summary:
+- Paper 1: reframed `ontological mass` high-impact prose as deformation-rigidity invariant/modulus while preserving the historical alias and blocking physical-ontology reading.
+- Paper 8: reframed `first-person indexed subjectivity` as a framework-internal indexed structural class in abstract/scope.
+- Paper 9: reframed `phenomenal bridge` as a bridge-organization predicate-family burden and clarified that the phrase is not phenomenality adjudication.
+- No macros, labels, theorem/proof bodies, scripts, registry IDs, file names, or bibliography entries were renamed or changed.
+- Recompiled the three touched papers and the monolithic PDF.
+
+Verification:
+- Paper 1 `.tex` SHA256: `928E374A29A3DAB9A03AA3AEA56E6BE58FA6FA08CC5DA761527E167769F1F3DA`.
+- Paper 1 PDF SHA256: `BB00E67D14BC10472378988122D2F85A519F0E6D90BC0A42EC65CEE7378CB290`; `26 pages`, `465072 bytes`.
+- Paper 8 `.tex` SHA256: `ACE733450CF9FC0958C4D90270419AC2B192CA2BEA388B06ECB1D2E670E518CC`.
+- Paper 8 PDF SHA256: `687AEE7491A342B9A29CE0CFF7ABB50B4E7389ACFD176D5FC1AFC3C8C837DB60`; `43 pages`, `545625 bytes`.
+- Paper 9 `.tex` SHA256: `9D1CFA8283C87E3257F7040B4C28AE7167457ACAA41C78344034383B07AAECFB`.
+- Paper 9 PDF SHA256: `98B92354FDA01404223ACC120804145920E3EBA425096655F59C2C3AE8F66029`; `42 pages`, `522338 bytes`.
+- Monolithic PDF SHA256: `7D7A3C2B2557AEE37A5CED5C80AC238A3C0F5D8C3C894AB6D4565B1C99472257`; `335 pages`, `2836613 bytes`.
+- Final `QICN_MONOLITHIC.tex` SHA256: `306B3771298B9027A590F5CE88E5597A450E60F4D4264F5131090827FF78CE0F`.
+- Final `MONOLITHIC_BUILD_REPORT.md` SHA256: `FD420FB2C8BB478CD581C29BF62323ADFDE6F1560B468CFC298D7C6F1F94F92D`.
+- Hard gates: 0 hard LaTeX errors, 0 undefined control sequences, 0 undefined refs/cites, 0 rerun warnings, 0 duplicate hyperref destinations, 0 biber WARN/ERROR/FATAL.
+- Layout debt: Paper 1 `0/0`; Paper 8 `13 overfull / 91 underfull`; Paper 9 `38 overfull / 221 underfull`; monolithic `7 overfull / 331 underfull`.
+
+Regressions searched:
+- accidental edits outside the three target paper sources;
+- macro, label, theorem environment, theorem statement, proof, registry, script, and bibliography churn;
+- source/PDF desynchronization;
+- undefined refs/cites or rerun warnings;
+- duplicate labels or anchors;
+- semantic promotion from aliases to ontology, phenomenality, human equivalence, or external validation;
+- monolithic build failure or source extraction regression.
+
+Regressions found:
+- No hard regression found.
+- The first monolithic compile failed due MiKTeX AppData filesystem access under sandbox; the same command succeeded with elevated permission.
+- Layout debt remains tracked and was not repaired in this alias pass.
+
+Residual risks:
+- Phase 3 can continue with Paper 5 and Paper 7 alias terminology if desired.
+- Phase 3/editorial layout debt remains for Papers 8, 9, 10, and monolithic.
+- Body-level scientific review of Papers 8 and 9 remains pending; this pass targeted high-impact alias framing only.
+
+Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.
+
 ## 2026-06-05 - Codex - Roadmap v3 Phase 2 Iteration 5B Paper 8 and Paper 9 High-Risk Openings
 
 User request: Complete the remaining targets Paper 1, Paper 3, Paper 8, and Paper 9 before moving to the next phase.

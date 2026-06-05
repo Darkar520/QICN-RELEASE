@@ -1399,3 +1399,87 @@ Post-sync review addendum:
 - Paper 10 standalone layout debt remains significant: `57` overfull warnings over `33` pages.
 - The monolithic volume changed from `334` to `335` pages after synchronization. This is an expected small pagination delta after Paper 7/Paper 10 reflow and does not indicate content loss.
 - Paper 2/BaseCore ownership is the recommended Phase 2 Iteration 4 target because the duplicated material is the largest remaining corpus-level editorial risk.
+
+## 2026-06-05 - Codex - Roadmap v3 Phase 2 Iteration 4 Ownership Audit
+
+User request: Review the post-Iteration 3 observations, preserve the monolithic sync commit, and begin the next Phase 2 action with Paper 2/BaseCore ownership as the priority target; Paper 1 opening remains a lower-risk alternate.
+
+Operational objective: Audit the Paper 2/BaseCore exact-overlap surface before any `.tex` edit, decide canonical ownership under local BaseCore governance, and register the safe next implementation unit without deleting theorem/proof material.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `.kilocode/rules/RCIC.md`
+- `rigid-identity-framework/basecore/README.md`
+- `rigid-identity-framework/basecore/BASECORE.tex`
+- `rigid-identity-framework/basecore/core_meta/editorial_architecture_plan.md`
+- `rigid-identity-framework/basecore/core/sections/04_regime_constraints_absorbed.tex`
+- `rigid-identity-framework/paper2/main.tex`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE1_AUDIT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_POST_ITERATION3_MONOLITHIC_SYNC_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION4_OWNERSHIP_AUDIT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `rigid-identity-framework/paper2/main.tex`
+- `rigid-identity-framework/basecore/core/sections/04_regime_constraints_absorbed.tex`
+- `rigid-identity-framework/basecore/BASECORE.tex`
+- Paper PDFs
+- BaseCore PDF
+- Monolithic source/PDF
+- scripts, macros, labels, and bibliographies
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-ChildItem -Force` | Inspect workspace root and local rule folders | Root inspected; `.agent/.agents/.codex` not present at workspace root. |
+| `git status --short --branch` | Confirm preflight state | Clean; `main...origin/main [ahead 3]`. |
+| `rg --files` | Locate local rules, reports, roadmap, BaseCore metadata, and AI-output surfaces | Completed. |
+| `Get-Content` | Read instructions, BaseCore governance, Paper 2, and BaseCore section 04 | Completed. |
+| `rg -n` | Locate prior Paper 2/BaseCore duplication findings and residual-debt entries | Completed. |
+| PowerShell paragraph normalizer | Recompute exact duplicated paragraph groups between Paper 2 and BaseCore 04 | Broader audit found `83` exact groups over 120 normalized characters. |
+| PowerShell section summarizer | Group duplicated paragraphs by BaseCore section | First two attempts failed due regex escaping; final non-regex version succeeded. |
+| `Get-FileHash -Algorithm SHA256` | Record hashes of audited ownership files | Completed. |
+| `git diff --stat` | Confirm no local diff before writing audit report | Empty before report/ledger edits. |
+
+Implementation summary:
+- Confirmed the earlier monolithic synchronization is locally committed.
+- Re-audited Paper 2/BaseCore duplication and found that the overlap is broader than the Phase 1 conservative count when theorem/proof and extended-proof paragraphs are included.
+- Recorded the ownership decision: BaseCore owns the canonical dependency-facing theorem export for the absorbed Paper 2 formal core; Paper 2 remains the standalone expository paper and should not be collapsed into a pointer-only document.
+- Declined destructive `.tex` edits in this iteration because deleting or compacting either side would create a larger regression without a separate normalization pass.
+- Created the formal ownership audit report and updated the ledger.
+
+Verification:
+- Preflight git state: clean, branch ahead 3.
+- Exact duplicate paragraph audit: `83` groups over 120 normalized characters between `paper2/main.tex` and `basecore/core/sections/04_regime_constraints_absorbed.tex`.
+- No `.tex`, PDF, macro, label, bibliography, script, or monolithic file was touched.
+- No recompilation required because no LaTeX source was changed.
+
+Hashes:
+| File | SHA256 |
+|---|---|
+| `paper2/main.tex` | `26304FEA9BFBF54EA90BF56C5E386E853DD8A530A0724B23AAB1EFCC51A81871` |
+| `basecore/core/sections/04_regime_constraints_absorbed.tex` | `94333C38DE2385A1A00D44F37C2793201E65DEF9958D778E7262A1A0B5EA2EDF` |
+| `basecore/BASECORE.tex` | `4A8F92DC4E47272E3C3A8D502D9748FA1FA4FD50789B931B9D297C0DD417FF0D` |
+| `basecore/README.md` | `871B8E863849EEEBC083DDCEC3190669ABFB1A8E9314A0A5B07E8D4C6010BAAB` |
+
+Regressions searched:
+- uncommitted monolithic sync files before starting Iteration 4;
+- accidental `.tex` edits during ownership audit;
+- BaseCore autonomy regression;
+- Paper 2 standalone-readability regression;
+- macro/label/bibliography churn.
+
+Regressions found:
+- No corpus regression found.
+- One command-quality incident occurred: two section-summary scripts failed due PowerShell regex escaping. They did not modify files; a non-regex section summarizer was then used successfully.
+
+Residual risks:
+- Literal Paper 2/BaseCore paragraph duplication remains open and tracked.
+- The next safe unit is `Phase 2 Iteration 4B - Paper 2 Normalization Pass`, limited to `paper2/main.tex` plus report/ledger updates, followed by Paper 2 recompilation.
+- Paper 1 opening consistency remains lower priority than Paper 2 normalization.
+- Local branch remains ahead of `origin/main`; push requires explicit approval.
+
+Status: `OWNERSHIP_DECISION_RECORDED_WITH_LITERAL_OVERLAP_DEBT_TRACKED`.

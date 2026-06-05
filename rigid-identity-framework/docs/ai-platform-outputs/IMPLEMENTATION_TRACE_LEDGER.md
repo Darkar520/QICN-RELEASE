@@ -1031,3 +1031,63 @@ Residual risks:
 
 Next step:
 - Review staged diff, commit Phase 2 Iteration 1 locally, then request explicit remote push approval if synchronization to `origin/main` is desired.
+
+---
+
+## 2026-06-05 - Codex - Roadmap Phase 2 Iteration 1 Post-Review Addendum
+
+Agent/platform: Codex
+
+User request: Register post-review observations about Phase 2 Iteration 1: Papers 4 and 5 now differ structurally from later papers, the monolithic volume was not recompiled after Paper 1 edits, and Paper 1 still has theorem/proof-local `forced` and appendix-title risk. Also record the recommended next Phase 2 iteration order.
+
+Operational objective: Update Phase 2 Iteration 1 documentation and ledger only, without editing `.tex`, PDFs, monolithic files, scripts, labels, macros, or registries.
+
+Files read:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION1_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION1_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- All `.tex` files
+- All PDFs
+- `monolithic/`
+- registry files
+- bibliography files
+- scripts
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status -sb` | Verify clean state before documentation addendum | `main...origin/main [ahead 5]`; clean |
+| `Get-Content ... -Tail` | Read Phase 2 report and ledger context | Completed |
+| `Select-String MEMORY.md` | Reconfirm phasewise QICN governance context | Completed |
+| `apply_patch` | Add report addendum and ledger entry | Completed |
+
+Implementation summary:
+- Added a `Post-Iteration Review Addendum` to the Phase 2 Iteration 1 report.
+- Registered structural consistency debt: Papers 4 and 5 use consolidated `Scope and admissible reading`, while Papers 6, 7, 8, and 9 still use the older four-part opening pattern.
+- Registered monolithic synchronization debt: Paper 1 was edited and recompiled, but monolithic was correctly excluded and still needs a later synchronization rebuild.
+- Registered Paper 1 appendix/title risk: `Ontological No--Alternative Theorems` and theorem/proof-local `forced` wording may need a dedicated authorized review.
+- Recorded recommended Phase 2 Iteration 2 order: Paper 6 opening consolidation, optional Paper 1 title/proof-local review if authorized, then Paper 2/BaseCore ownership subphase.
+
+Verification:
+- Documentation-only change.
+- Post-patch verification must confirm only the Phase 2 report and ledger changed before commit.
+
+Regression checks:
+- No `.tex` content edited.
+- No PDF regenerated.
+- No monolithic source/PDF touched.
+- No macros, labels, theorem environments, scripts, registry, or bibliography modified.
+
+Residual risks:
+- The monolithic synchronization debt remains open.
+- Style consistency across Papers 4--9 remains open until later Phase 2 iterations.
+- Local branch remains ahead of `origin/main`; push requires explicit approval for `git push origin main`.
+
+Next step:
+- Review documentation-only diff and commit the addendum locally.

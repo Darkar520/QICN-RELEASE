@@ -113,6 +113,61 @@ No final `main.aux` change remains in `git status`.
 - Paper 4 and Paper 5 retain inherited layout debt; this iteration was a claim-boundary prose pass, not a layout-polish phase.
 - The local branch remains ahead of `origin/main`; remote push requires explicit approval for `git push origin main`.
 
+## Post-Iteration Review Addendum
+
+Date: 2026-06-05
+
+This addendum records a post-iteration review of style consistency and synchronization debt. It does not change the Phase 2 Iteration 1 implementation result.
+
+### A. Structural Consistency Debt
+
+Papers 4 and 5 now use a consolidated `Scope and admissible reading` paragraph instead of the earlier four-part opening pattern:
+
+- `What this paper does.`
+- `What this paper does not do.`
+- `What the related system implements and does not implement.`
+- `What should not be inferred.`
+
+This improves readability and reduces defensive repetition, but it creates a style-consistency debt because Papers 6, 7, 8, and 9 still retain the four-part pattern. This is not a scientific regression, but it should be handled deliberately in later Phase 2 sub-iterations.
+
+Recommended decision for later Phase 2 work:
+
+- Either apply the same consolidation style to Papers 6, 7, 8, and 9 as each paper is edited; or
+- Keep Papers 4 and 5 as intentional methodological/criterion-paper exceptions if the more interpretive papers need the four-part pattern for reader safety.
+
+No immediate `.tex` change is required by this addendum.
+
+### B. Monolithic Synchronization Debt
+
+Paper 1 was edited and recompiled, but the monolithic volume was not rebuilt in Iteration 1. This was correct for the iteration scope, because `monolithic` was explicitly excluded. However, if the monolithic volume assembles Paper 1 source content, the monolithic PDF is now a synchronization target.
+
+Required later action:
+
+- Rebuild the monolithic volume in a dedicated synchronization iteration after the relevant Phase 2 paper edits are stable.
+- Verify that Paper 1, Paper 4, and Paper 5 prose changes propagate into the monolithic PDF.
+- Record monolithic page count, compile status, warnings, and SHA256 after rebuild.
+
+### C. Paper 1 Appendix Title / Theorem-Local Language
+
+Iteration 1 intentionally avoided theorem/proof-local rewrites and did not rename the appendix title `Ontological No--Alternative Theorems`. The report already notes that some local uses of `forced` remain where mathematical or theorem-local context may justify them.
+
+Reviewer-facing risk:
+
+- A reviewer may still object to the appendix title or theorem-local "forced" language if it appears ontological rather than model-relative.
+
+Recommended later action:
+
+- Revisit the Paper 1 appendix title and proof-local `forced` wording only in a dedicated sub-iteration, and only if the roadmap explicitly authorizes title/theorem-prose neutralization.
+- Do not rename labels, theorem environments, macros, or references as part of that review.
+
+### D. Updated Phase 2 Iteration 2 Recommendation
+
+Recommended next iteration order:
+
+1. Paper 6 opening boundary consolidation, because it is structurally closest to Papers 4 and 5.
+2. Paper 1 appendix/title and theorem-local `forced` review, only if authorized as prose/title neutralization without label or theorem-environment changes.
+3. Paper 2/BaseCore duplication ownership subphase, because it requires a dedicated canonical-source decision.
+
 ## Phase 2 Iteration 1 Closure
 
 This iteration is closed because it implemented the three lowest-risk Phase 2 targets, preserved all claim boundaries in condensed form, avoided macro/label/theorem changes, recompiled every touched paper, and left a bounded list of deferred higher-risk work.

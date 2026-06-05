@@ -1576,3 +1576,80 @@ Post-commit push note:
 - Push result: blocked by approval reviewer because publishing commit `6372111` to external default branch `origin/main` requires explicit approval for this exact push destination and commit.
 - No workaround was attempted.
 - Current required user action: explicitly approve `git push origin main` for the pending Phase 2 Iteration 4B local commits, including the implementation commit and this push-block ledger commit, if remote publication is desired.
+
+## 2026-06-05 - Codex - Roadmap v3 Phase 2 Iteration 5A Paper 1 and Paper 3 Openings
+
+User request: Complete the remaining targets Paper 1, Paper 3, Paper 8, and Paper 9 before moving to the next phase.
+
+Operational objective: Split the remaining work into sub-iterations, start with low-risk Paper 1 and Paper 3 opening normalization, preserve labels and theorem structures, recompile touched PDFs, and leave Papers 8 and 9 for a separate high-risk iteration.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE1_AUDIT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper3/main.tex`
+- `rigid-identity-framework/paper1/main.log`
+- `rigid-identity-framework/paper3/main.log`
+- `rigid-identity-framework/paper1/main.blg`
+- `rigid-identity-framework/paper3/main.blg`
+
+Files modified:
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper1/main.pdf`
+- `rigid-identity-framework/paper3/main.tex`
+- `rigid-identity-framework/paper3/main.pdf`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION5A_PAPER1_3_OPENINGS_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- Papers 8 and 9
+- BaseCore
+- Monolithic source/PDF
+- macros, labels, theorem environments, theorem statements, bibliography, scripts, registry, and release files
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Confirm preflight state | Clean; `main...origin/main`. |
+| `Get-Content` and `rg -n` | Inspect local rules, Phase 1/ledger targets, and Paper 1/3/8/9 openings | Completed. |
+| `Get-FileHash -Algorithm SHA256` | Record baseline and final hashes | Completed. |
+| Label comparison against `HEAD` | Verify labels unchanged | Paper 1 `57 -> 57`; Paper 3 `27 -> 27`; diff count 0. |
+| `git diff --check` | Whitespace/diff sanity for touched `.tex` | No diff-check errors; LF-to-CRLF warning only. |
+| `pdflatex; biber; pdflatex; pdflatex` in `paper1` | Recompile Paper 1 sequentially | Exit code 0; final PDF 26 pages. |
+| `pdflatex; biber; pdflatex; pdflatex` in `paper3` | Recompile Paper 3 sequentially | Exit code 0; final PDF 17 pages. |
+| `Select-String` log scans | Check hard LaTeX/Biber gates | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings. |
+
+Implementation summary:
+- Paper 1: consolidated the old four-part opening into one `Scope and admissible reading` paragraph while preserving limits on phenomenology, substrate realization, CCR certification, runtime evidence, consciousness, and claim closure.
+- Paper 3: consolidated the opening into one scope paragraph plus a witness-relative clarification.
+- Paper 3: rewrote the informal No-Null Regime statement so it explicitly requires the separated extension witness and regularity hypotheses from Theorem~\ref{thm:instability}.
+- No labels, macros, theorem environments, theorem statements, or proof bodies were changed.
+
+Verification:
+- Paper 1 `.tex` SHA256: `67EA7029512511A6E09038ACAF920A769D314FC126D27E5F8EF5F8FE7DF8F1D0`.
+- Paper 1 PDF SHA256: `93CF5E8648FE5DDE335E3186AEF6C5331315D08C88B3D3D44B9BAFA33B3FB0D3`.
+- Paper 1 PDF: `26 pages`, `464662 bytes`.
+- Paper 3 `.tex` SHA256: `F6D7DB4EB4FD404B53C9EE1F2AB6101BB758D63EDD5A372309E212605E90AAB0`.
+- Paper 3 PDF SHA256: `0C4E2C8AA33B4DF4ED1A2C90DDEF7CF72EF8647E8EBB152CA47C913A6E903C0F`.
+- Paper 3 PDF: `17 pages`, `441391 bytes`.
+- Final hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings.
+- Layout debt: Paper 3 has 5 underfull warnings; Paper 1 had no overfull/underfull matches in the final scan.
+
+Regressions searched:
+- accidental Paper 8/9 edits;
+- BaseCore or monolithic edits;
+- label/macro/theorem environment churn;
+- theorem/proof edits;
+- undefined refs/cites or rerun warnings;
+- loss of source/PDF synchronization.
+
+Regressions found:
+- No hard regression found.
+- Paper 3 layout debt remains: 5 underfull warnings.
+
+Residual risks:
+- Papers 8 and 9 remain high-risk Phase 2 targets and should be handled next.
+- Monolithic synchronization is open after Papers 1 and 3 changed; rebuild should wait until Papers 8 and 9 are also handled.
+
+Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.

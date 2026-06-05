@@ -1653,3 +1653,83 @@ Residual risks:
 - Monolithic synchronization is open after Papers 1 and 3 changed; rebuild should wait until Papers 8 and 9 are also handled.
 
 Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.
+
+## 2026-06-05 - Codex - Roadmap v3 Phase 2 Iteration 5B Paper 8 and Paper 9 High-Risk Openings
+
+User request: Complete the remaining targets Paper 1, Paper 3, Paper 8, and Paper 9 before moving to the next phase.
+
+Operational objective: Close the high-risk opening-format targets after Iteration 5A, preserving formal labels and theorem/proof surfaces while reducing repetitive defensive framing around first-person subjectivity and phenomenal bridge language.
+
+Files read:
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.log`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.log`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.blg`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.blg`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION5A_PAPER1_3_OPENINGS_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.pdf`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.pdf`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION5B_PAPER8_9_HIGH_RISK_OPENINGS_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- Paper 1 and Paper 3, already closed in Iteration 5A
+- Paper 2/BaseCore ownership surfaces
+- Monolithic source/PDF
+- macros, labels, theorem environments, theorem statements, proof bodies, bibliography, scripts, registry, and release files
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Confirm preflight state | Only expected 5B files changed; branch ahead by Iteration 5A commit. |
+| `Get-ChildItem` | Check local governance folders and repo layout | No `.agent/.agents/.codex` folder found at root; proceeded under provided `AGENTS.md` and repo-local instructions. |
+| `Get-FileHash -Algorithm SHA256` | Record baseline and final hashes | Completed for Paper 8/9 `.tex` and PDF files. |
+| Label comparison against `HEAD:rigid-identity-framework/<paper>/main.tex` | Verify labels unchanged | Paper 8 `21 -> 21`; Paper 9 `3 -> 3`; diff count 0. |
+| `git diff --check` | Whitespace/diff sanity for touched `.tex` | No diff-check errors; LF-to-CRLF warning only. |
+| `pdflatex; biber; pdflatex; pdflatex` in `paper8_first_person_subjectivity` | Recompile Paper 8 sequentially | Exit code 0; final PDF 43 pages. |
+| `pdflatex; biber; pdflatex; pdflatex` in `paper9_phenomenal_bridge_organization` | Recompile Paper 9 sequentially | Exit code 0; final PDF 42 pages. |
+| `Select-String` log scans | Check hard LaTeX/Biber gates | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings. |
+| `pdfinfo main.pdf` | Attempt independent page count | Non-blocking failure: MiKTeX setup incomplete; final log page counts used instead. |
+
+Implementation summary:
+- Paper 8: consolidated the four-part opening into one `Scope and admissible reading` paragraph while preserving limits around metaphysical subjectivity, human phenomenal equivalence, moral parity, automatic empirical instantiation, present-system certification, upstream theorem ownership, and external validation.
+- Paper 9: consolidated the opening into `Scope and admissible reading` plus `Formal bridge closure boundary`.
+- Paper 9: preserved and sharpened the boundary between formal bridge closure, runtime closure, empirical closure, and phenomenality adjudication.
+- No labels, macros, theorem environments, theorem statements, proof bodies, bibliography entries, scripts, registry files, or release files were changed.
+
+Verification:
+- Paper 8 `.tex` SHA256: `63A94FB4B77745A099EBA94BFF89847AF8CC54E35216164A89D9C9601713D957`.
+- Paper 8 PDF SHA256: `96D45FFBCCBA5CA1C79FD537F0932C13F165E8B16642E9EFD434851BD74F05B1`.
+- Paper 8 PDF: `43 pages`, `545608 bytes`.
+- Paper 9 `.tex` SHA256: `DADF8D624F905AAD3B3AACD1257E649AC3A97202E41DFC76373C94EC299C2284`.
+- Paper 9 PDF SHA256: `55FD8009440E6E093C39C1D98D24F730EFC88ECF034D3FEB32DAD95E558573C0`.
+- Paper 9 PDF: `42 pages`, `522251 bytes`.
+- Labels: Paper 8 `21 -> 21`, Paper 9 `3 -> 3`, no label differences.
+- Final hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings.
+- Layout debt: Paper 8 has 13 overfull and 91 underfull warnings; Paper 9 has 38 overfull and 221 underfull warnings.
+
+Regressions searched:
+- accidental edits outside Papers 8 and 9;
+- label, macro, theorem environment, theorem statement, proof, and bibliography churn;
+- undefined refs/cites or rerun warnings;
+- deletion of non-claims without replacement;
+- promotion of bridge or subjectivity language into runtime, empirical, metaphysical, or phenomenality closure;
+- source/PDF desynchronization.
+
+Regressions found:
+- No hard regression found.
+- Layout debt remains significant, especially in Paper 9 dense tables and long artifact names.
+- Monolithic synchronization remains open after Iterations 5A and 5B.
+
+Residual risks:
+- Monolithic PDF should be rebuilt in a dedicated sync pass after the 5B commit.
+- Paper 8 and Paper 9 still require later body-level scientific review because this iteration targeted opening/boundary structure only.
+- Paper 9 layout debt should be prioritized before publication readiness.
+
+Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.

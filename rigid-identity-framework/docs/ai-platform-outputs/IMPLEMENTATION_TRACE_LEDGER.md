@@ -741,3 +741,67 @@ Residual risks:
 
 Next step:
 - Recompute final hashes, review `git status`, then commit/push this roadmap phase if verification remains clean.
+
+---
+
+## 2026-06-05 - Codex - Roadmap Phase 0 Baseline
+
+Agent/platform: Codex
+
+User request: Iniciar la implementacion del `rigid-identity-framework/ROADMAP.md`.
+
+Operational objective: Ejecutar la Fase 0 del roadmap principal: baseline, inventario, hashes, paginas, estado Git, archivos intocables, alcance permitido y riesgos iniciales, sin editar contenido teorico.
+
+Files read:
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+- `rigid-identity-framework/registry/*`
+- `rigid-identity-framework/release/references.bib`
+- `release/*`
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE0_BASELINE.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-Content -Raw` | Read roadmap and instructions | Completed |
+| `git status --short` | Verify dirty state before baseline | Empty before report creation |
+| `git status -sb` | Verify branch/remote relation | `main...origin/main [ahead 1]` |
+| `git rev-parse HEAD` | Capture baseline HEAD | `19a3b75ad29377a8235a126bc3e8288c67cf3332` |
+| `git branch --show-current` | Capture branch | `main` |
+| `rg --files rigid-identity-framework` | Count files and extensions | 422 files found |
+| `Get-ChildItem` | Inventory corpus directories, registry, release, docs | Completed |
+| `Get-FileHash -Algorithm SHA256` | Hash critical roadmap, instruction, source, PDF, registry, bibliography files | Completed |
+| Bundled Python + `pypdf` | Count PDF pages because MiKTeX `pdfinfo` failed with AppData permission/setup error | Completed |
+| `apply_patch` | Create Phase 0 baseline report and update ledger | Completed |
+
+Implementation summary:
+- Created the formal Phase 0 baseline report at the roadmap-requested AI-output report path.
+- Recorded clean local worktree baseline before report creation.
+- Recorded the current push state: local `main` was ahead of `origin/main` by one prior roadmap commit.
+- Inventoried `rigid-identity-framework`: 422 files, including 37 `.tex`, 24 `.pdf`, 186 `.md`, 84 `.json`, 74 `.js`, 7 `.bib`, and 2 `.jsonl`.
+- Confirmed BaseCore, Papers 1-10, and monolithic all have active `.tex` and `.pdf` pairs.
+- Recorded source/PDF hashes and PDF page counts for BaseCore, Papers 1-10, and monolithic.
+- Defined Phase 1 as audit-only and identified intocables for Iteration 1.
+
+Verification:
+- Phase 0 report says no theoretical content was edited.
+- `pypdf` page counts succeeded after `pdfinfo` failed due MiKTeX setup/permission issue.
+- Final hashes must be recomputed after this ledger entry is closed.
+
+Regression checks:
+- No paper source, PDF, monolithic source, registry, release artifact, script, bibliography, macro, label, or prior roadmap was modified.
+- New report is under `docs/ai-platform-outputs/reports/`, consistent with `INSTRUCCIONES.md`.
+
+Residual risks:
+- Previous roadmap commit remains unpushed unless explicit push approval is given.
+- Phase 1 may become too broad and must split if the matrix grows beyond the roadmap limits.
+- Prior roadmaps remain references and should not be overwritten by this baseline.
+
+Next step:
+- Verify final hashes/status, commit Phase 0 baseline locally, and request explicit push approval if remote synchronization is desired.

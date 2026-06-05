@@ -204,3 +204,114 @@ Proceed to Phase 1 only as an audit pass:
 
 No content edits are allowed until Phase 1 produces a classified matrix of findings and the
 user approves the next edit scope.
+
+---
+
+## Addendum 2026-06-05 - Baseline Corrections And Clarifications
+
+Status: ADDENDUM_NO_REWRITE
+
+This addendum corrects and clarifies the Phase 0 baseline without rewriting the original
+report body.
+
+### A. File Count Boundary: 422 vs Full-Repository Counts
+
+The original `422` count was scoped to:
+
+```powershell
+rg --files rigid-identity-framework
+```
+
+That command intentionally counted only files under `rigid-identity-framework/`. It excluded
+root-level and sibling project surfaces such as:
+
+- root `docs/`;
+- root `release/`;
+- root `scripts/`;
+- root `corpus/`;
+- root changelog/readme/release-note files;
+- root Docker/GitLab files;
+- root audit reports.
+
+Fresh verification after Phase 0 report creation produced:
+
+| Count command | Current count | Interpretation |
+|---|---:|---|
+| `rg --files rigid-identity-framework` | 423 | Current framework-subtree count; it is 1 higher than the original baseline because this Phase 0 report now exists. |
+| `rg --files` | 531 | Current full repository count, including root-level docs, release, corpus, scripts, and repository metadata files tracked as ordinary files. |
+| `rg --files -g '!rigid-identity-framework/**'` | 108 | Current count of files outside `rigid-identity-framework/`. |
+
+If a `521` count is observed from another run, it should be treated as a full-repository or
+different-scope count rather than the framework-subtree count used by this Phase 0 report.
+The baseline's `422` was not a whole-repository claim.
+
+### B. HEAD Correction
+
+The original Git Baseline table captured the state before Phase 0 report creation:
+
+- pre-Phase-0-report HEAD: `19a3b75ad29377a8235a126bc3e8288c67cf3332`;
+- pre-Phase-0-report relation: `main...origin/main [ahead 1]`.
+
+The correct Phase 0 closure commit is:
+
+- Phase 0 closure commit: `78f4bdc`;
+- full Phase 0 closure HEAD: `78f4bdcc79a580c1a29f7276d1e8fb433b786ca8`.
+
+Therefore, any later reference to "the Phase 0 baseline commit" should use `78f4bdc`, not
+the pre-report HEAD.
+
+### C. Ledger Hash Boundary
+
+The ledger hash listed in the original Critical Hashes table:
+
+`619C584ADEE164BD6DB6DFB641731B264793C6F95F765D2B061666D4FF13A34D`
+
+was computed before the Phase 0 ledger entry was appended. It is a pre-entry digest, not the
+final post-entry ledger digest. Because the ledger records its own updates, a final ledger
+hash must always be computed after the entry is closed and should not be interpreted as a
+self-anchored immutable digest inside the same entry.
+
+The post-Phase-0-report/pre-addendum ledger hash observed during this correction pass was:
+
+`3402B4A10A65B218A168E5216E4296ABD4FCFAF0D0AC4099BFB4863DAFDF0E8A`
+
+This addendum and its ledger entry will necessarily change that hash again.
+
+### D. Bridge Paper Risk Added To Phase 0
+
+Bridge-related files exist, including:
+
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`;
+- `rigid-identity-framework/docs/BRIDGE_HYPOTHESIS_LEDGER.md`;
+- `rigid-identity-framework/docs/theory/PROJECTION_INVARIANT_BRIDGE_THEOREM_v30.tex`;
+- `rigid-identity-framework/basecore/core/sections/11_discrete_bridge.tex`;
+- `rigid-identity-framework/docs/protocols/PROJECTION_INVARIANT_BRIDGE_THEOREM_v25.md`;
+- `rigid-identity-framework/docs/reports/PAPER9_BRIDGE_BURDEN_NARROWING.md`;
+- `rigid-identity-framework/docs/reports/QICN_V40_PHASE2_BRIDGE_HYPOTHESIS_REPORT.md`.
+
+The monolithic build also contains:
+
+- `rigid-identity-framework/monolithic/build/sections/12-operational-consciousness-to-operational-subjecthood-bridge.tex`.
+
+However, no independent `paper_bridge_operational_subjecthood/` source directory is present
+in the active framework tree. This must be carried as a Phase 0 risk:
+
+| Risk | Baseline classification | Required handling |
+|---|---|---|
+| Bridge Paper source/canonical-folder ambiguity | SOURCE_PROVENANCE_RISK | Do not treat monolithic recovered/generated bridge content as an independently maintained paper source until a dedicated source-recovery or source-canonicalization phase resolves it. |
+
+### E. Optional Additional Hashes
+
+| Path | SHA256 |
+|---|---|
+| `rigid-identity-framework/CHANGELOG_QICN_PATCH.md` | `F216D855989FD28ED47867B97AD5487DF27F8C091982D0C83B14F8273020F685` |
+| `rigid-identity-framework/scripts/build-monolithic-volume.js` | `ACABA44C2E5AC652D5735380745C6214D7739E3A0A55537D441AE862CDF1799C` |
+
+### F. Addendum Closure
+
+This addendum does not alter Phase 0's substantive conclusion:
+
+- no theoretical content was edited;
+- Phase 1 remains audit-only;
+- no paper, PDF, registry, release artifact, bibliography, script, or macro should be edited
+  until Phase 1 produces a classified audit matrix and the user approves the next edit scope.

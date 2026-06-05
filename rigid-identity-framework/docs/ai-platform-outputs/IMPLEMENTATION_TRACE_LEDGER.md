@@ -805,3 +805,61 @@ Residual risks:
 
 Next step:
 - Verify final hashes/status, commit Phase 0 baseline locally, and request explicit push approval if remote synchronization is desired.
+
+---
+
+## 2026-06-05 - Codex - Roadmap Phase 0 Baseline Addendum
+
+Agent/platform: Codex
+
+User request: Corregir el reporte de baseline sin reescribirlo, mediante addendum: explicar conteo 422 vs 521/whole-repo count and exclusions, add Bridge Paper as detected risk, correct HEAD to `78f4bdc`, note ledger hash boundary, optionally add CHANGELOG and builder-script hashes, and recommit under the same Phase 0.
+
+Operational objective: Preserve the original Phase 0 baseline while adding a formal correction addendum that clarifies scope and provenance boundaries.
+
+Files read:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE0_BASELINE.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `rigid-identity-framework/CHANGELOG_QICN_PATCH.md`
+- `rigid-identity-framework/scripts/build-monolithic-volume.js`
+- bridge-related paths discovered by `rg --files rigid-identity-framework | Select-String`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE0_BASELINE.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status -sb` / `git rev-parse HEAD` | Verify current HEAD and branch state | HEAD `78f4bdcc79a580c1a29f7276d1e8fb433b786ca8`; branch ahead of origin |
+| `rg --files` | Recount full repository files | Current full-repo count `531` |
+| `rg --files rigid-identity-framework` | Recount framework subtree | Current subtree count `423`; original `422` was pre-report |
+| `rg --files -g '!rigid-identity-framework/**'` | Count files excluded by subtree-scoped baseline | Current excluded/outside-subtree count `108` |
+| `git ls-files` | Compare tracked-file count | Current tracked count `534`; not the same boundary as `rg --files` |
+| `rg --files ... bridge` | Locate Bridge-related paths | Found Paper 9, bridge ledgers/protocols/theory docs, and no independent bridge-paper directory |
+| `Get-ChildItem monolithic/build/sections` | Verify monolithic bridge generated section | Found `12-operational-consciousness-to-operational-subjecthood-bridge.tex` |
+| `Get-FileHash -Algorithm SHA256` | Hash changelog, builder, and ledger boundary | Completed |
+| `apply_patch` | Add report addendum and ledger entry | Completed |
+
+Implementation summary:
+- Added `Addendum 2026-06-05 - Baseline Corrections And Clarifications` to the Phase 0 baseline report.
+- Clarified that original `422` was a `rigid-identity-framework/` subtree count before the report existed.
+- Recorded current recounts: full repo `531`, framework subtree `423`, outside-subtree `108`.
+- Clarified that any observed `521` count is a different/full-repository scope and not the original subtree baseline.
+- Corrected Phase 0 closure HEAD to `78f4bdc` / `78f4bdcc79a580c1a29f7276d1e8fb433b786ca8`.
+- Added the Bridge Paper/source-provenance ambiguity as a Phase 0 risk.
+- Added ledger hash boundary note: pre-entry hash is not a final self-anchored digest.
+- Added optional hashes for `CHANGELOG_QICN_PATCH.md` and `scripts/build-monolithic-volume.js`.
+
+Verification:
+- Report and ledger anchors were verified after patching; final post-entry hashes are reported in the platform response because embedding the final ledger hash inside the ledger would mutate the ledger again.
+
+Regression checks:
+- No theory content, paper source, PDF, monolithic source, registry, release artifact, script, bibliography, macro, label, or prior roadmap was modified.
+- The correction is an addendum; the original report body was not rewritten.
+
+Residual risks:
+- The local branch remains ahead of `origin/main` until the user approves push.
+- Bridge Paper source/canonical-folder ambiguity remains open for a future source recovery/canonicalization phase.
+
+Next step:
+- Recompute hashes, review diff, commit the addendum under Phase 0.

@@ -1654,6 +1654,88 @@ Residual risks:
 
 Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.
 
+## 2026-06-05 - Codex - Roadmap v3 Phase 2 Closure and Monolithic Sync
+
+User request: Push commits `f52c792` and `2047cfc`, recompile the monolith, verify errors/refs/cites/biber/labels/anchors/pages/hash, create a formal `PHASE2_CLOSURE_REPORT`, commit the synchronized monolith and closure report, and leave layout/body-level review as Phase 3/editorial debt.
+
+Operational objective: Close Phase 2 without mixing remaining layout and body-level scientific review debt into the closure criteria.
+
+Files read:
+- `rigid-identity-framework/package.json`
+- `rigid-identity-framework/scripts/build-monolithic-volume.js`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.log`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.aux`
+- `rigid-identity-framework/monolithic/build/sections/*.tex`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files modified:
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_CLOSURE_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- paper `.tex` files
+- BaseCore source
+- monolithic root driver `QICN_MONOLITHIC.tex`
+- macros, labels, theorem environments, theorem statements, proof bodies, bibliography, scripts, registry, and release files
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git push origin main` | Push explicitly approved commits `f52c792` and `2047cfc` | Success: `4ff17f6..2047cfc main -> main`. |
+| `git status --short --branch` | Confirm clean state before monolithic sync | Clean; `main...origin/main`. |
+| `Get-FileHash -Algorithm SHA256` | Record baseline and final monolithic/report hashes | Completed. |
+| `npm run compile:monolithic` | Canonical monolithic build | First attempt failed due MiKTeX AppData access denial in sandbox. |
+| `npm run compile:monolithic` with elevated permission | Repeat same canonical build after operational filesystem failure | Success; compile status `compiled`. |
+| `Select-String` log scans | Check hard LaTeX/Biber gates and layout debt | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings; 7 overfull, 331 underfull. |
+| Case-sensitive label/ref scan over `monolithic/build/sections` | Verify exact labels/refs | 401 labels, 401 exact unique, 0 exact duplicates, 286 refs, 0 missing refs. |
+| Case-sensitive aux scan | Verify exact aux labels | 401 aux newlabels, 401 exact unique, 0 exact duplicates. |
+| `rg` spot-checks in `monolithic/build/sections` | Confirm Phase 2 openings present in generated sections | Paper 1, 2, 3, 8, and 9 Phase 2 text present. |
+
+Implementation summary:
+- Published the two pending Phase 2 Iteration 5 commits to `origin/main`.
+- Recompiled the monolithic PDF from current Phase 2 paper sources.
+- Verified that all expected sources from BaseCore and Papers 1--10 were extracted.
+- Confirmed the monolithic generated sections contain the updated Phase 2 openings and Paper 2/BaseCore ownership boundary.
+- Created the formal Phase 2 closure report.
+- Kept layout repair and body-level Paper 8/9 review as Phase 3/editorial debt.
+
+Verification:
+- Baseline monolithic PDF SHA256: `39E6E570B1C588972000632FCE576765E3EFA982B0E7777374FEEB3669E97B33`.
+- Final monolithic PDF SHA256: `7B0AF8954BCC01E5D95C49952D67C81C813A6670DC2E5D16A90504D0390ACCDE`.
+- Final `QICN_MONOLITHIC.tex` SHA256: `306B3771298B9027A590F5CE88E5597A450E60F4D4264F5131090827FF78CE0F`.
+- Final `MONOLITHIC_BUILD_REPORT.md` SHA256: `8486912AC5A11BAE5B48FFC38320706B02233D2F86BB01133D3C367A64A88986`.
+- Final monolithic PDF: `335 pages`, `2836592 bytes`.
+- Hard gates: 0 hard LaTeX errors, 0 undefined control sequences, 0 undefined refs/cites, 0 rerun warnings, 0 duplicate hyperref destinations, 0 biber WARN/ERROR/FATAL.
+- Labels/refs: 401 exact unique labels, 0 exact duplicate labels, 286 refs, 0 missing refs.
+- Aux labels: 401 exact unique aux newlabels, 0 exact duplicate aux newlabels.
+- Layout debt: 7 overfull and 331 underfull hbox warnings.
+
+Regressions searched:
+- accidental paper source edits;
+- missing Phase 2 source extraction into monolithic sections;
+- PDF/source desynchronization;
+- undefined refs/cites or rerun warnings;
+- exact duplicate labels or aux labels;
+- duplicate hyperref destinations;
+- Biber warnings/errors;
+- loss of monolithic page count.
+
+Regressions found:
+- No hard regression found.
+- A misleading case-insensitive grouping pass grouped `mono:basecore:hyp:H3` and `mono:basecore:hyp:h3`; exact ordinal verification returned 0 duplicate labels.
+- The first monolithic compile attempt failed due MiKTeX AppData filesystem access under sandbox; the same command succeeded with elevated permission.
+
+Residual risks:
+- Phase 3/editorial: Paper 8, Paper 9, Paper 10, and monolithic layout debt.
+- Phase 3/scientific review: body-level Paper 8 and Paper 9 review for high-risk subjectivity/bridge vocabulary.
+- Accepted Phase 2 residual: Paper 2/BaseCore theorem/proof overlap remains intentionally preserved under ownership separation.
+
+Status: `PHASE2_CLOSED_WITH_TRACKED_PHASE3_DEBT`.
+
 ## 2026-06-05 - Codex - Roadmap v3 Phase 2 Iteration 5B Paper 8 and Paper 9 High-Risk Openings
 
 User request: Complete the remaining targets Paper 1, Paper 3, Paper 8, and Paper 9 before moving to the next phase.

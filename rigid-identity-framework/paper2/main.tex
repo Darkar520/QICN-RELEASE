@@ -72,13 +72,7 @@ As a structural consequence, we derive that systems with finite ontological mass
 
 \section{Scope, System Boundary, and Non-Inference Note}
 
-\noindent\textbf{What this paper does.}\enspace This paper defines an abstract phenomenological space and derives structural admissibility, fragmentation, forced continuity, and regime classification as consequences of the rigidity classes established upstream.
-
-\noindent\textbf{What this paper does not do.}\enspace It does not assert that phenomenology exists, that CCR systems are conscious, that biology or computation instantiate the framework, or that identity structure causes experience. Every result remains conditional on the stated axioms and rigidity hypotheses.
-
-\noindent\textbf{What the related system implements and does not implement.}\enspace The related system can implement continuity-side diagnostics, anti-fragmentation checks, and admissibility-governed comparisons that are downstream of this paper, but it does not implement phenomenology itself and does not validate the regime classification as an empirically closed result.
-
-\noindent\textbf{What should not be inferred from this paper.}\enspace No runtime output, continuity proxy, or internal support artifact should be read as proof that phenomenology is present, that CCR is conscious, or that the structural-ethics layer has been externally validated. This paper states compatibility constraints, not a consciousness detector.
+\noindent\textbf{Scope and admissible reading.}\enspace This paper defines an abstract regime codomain and derives structural admissibility, fragmentation, forced-continuity, and classification results from upstream identity-rigidity assumptions. The results are conditional statements about mathematical compatibility. They do not assert that phenomenology exists, that CCR systems are conscious, that biology or computation instantiate the framework, or that identity structure causes experience. Related runtime diagnostics may instantiate continuity-side or anti-fragmentation checks downstream, but they do not implement phenomenology and do not externally validate the regime classification. No runtime output, continuity proxy, or internal support artifact should be read as proof that phenomenology is present or that the structural-ethics layer has empirical closure.
 
 % ============================================================================
 % SECTION 1: INTRODUCTION
@@ -174,6 +168,16 @@ human psychophysics, phenomenal properties, or moral status. Therefore no such
 identification is present in the formal language of the paper.
 \end{proof}
 
+\subsection{Relation to BaseCore}
+
+This paper is the standalone expository source for the regime-assignment
+development. The current BaseCore package also contains an absorbed,
+dependency-facing version of the formal core where those definitions and
+theorems function as base-layer exports for later papers. The two surfaces
+therefore have different editorial roles: Paper 2 gives the full local
+derivation and interpretation boundary, while BaseCore supplies the normalized
+theorem-export surface used by the corpus.
+
 % ============================================================================
 % SECTION 2: FORMAL SETUP
 % ============================================================================
@@ -247,7 +251,7 @@ By E1, $\phi_{t+1}(x_{t+1}) = \phi_t(x_t)$ for all $t$. Hence the sequence $\{\p
 
 \subsection{Axioms for Phenomenological Coherence}
 
-We introduce minimal axioms under which a phenomenological assignment is \textit{structurally admissible}. We will then prove that these axioms are not arbitrary choices but structurally forced conditions.
+We introduce minimal axioms under which a phenomenological assignment is \textit{structurally admissible}. The following results show which assumptions are required for the assignment to have non-trivial structural content.
 
 \begin{axiom}[E0: Non-Triviality]\label{ax:e0}
 The phenomenological space satisfies $|\mathcal{E}| \geq 2$, i.e., there exist at least two distinct phenomenological configurations.
@@ -267,11 +271,11 @@ There exists no function $f: S_t \to \mathcal{E}$ (for any fixed $t$) such that 
 \end{equation}
 \end{axiom}
 
-\subsection{Inevitability of the Axioms}
+\subsection{Structural Necessity of the Axioms}
 
-We now prove that axioms E0--E2 are \textit{not design choices} but structurally necessary conditions for any meaningful notion of phenomenological assignment.
+We now show that axioms E0--E2 are structurally necessary for the specific assignment class studied in this paper.
 
-\subsubsection{Inevitability of E0}
+\subsubsection{Structural Necessity of E0}
 
 \begin{theorem}[E0 is Necessary]\label{thm:e0-necessary}
 If $|\mathcal{E}| = 1$, then every phenomenological assignment is constant and no phenomenological classification is possible.
@@ -287,7 +291,7 @@ If $\mathcal{E} = \{e_0\}$, then $\Phi(x) = e_0$ for all $x \in \mathcal{I}$. He
 Thus, $|\mathcal{E}| \geq 2$ is necessary for the framework to have non-trivial content.
 \end{proof}
 
-\subsubsection{Inevitability of E1}
+\subsubsection{Structural Necessity of E1}
 
 \begin{theorem}[E1 is Necessary]\label{thm:e1-necessary}
 If E1 fails, then phenomenological assignments are incompatible with the inverse-limit structure of identity, and no coherent $\Phi: \mathcal{I} \to \mathcal{E}$ can be defined.
@@ -307,7 +311,7 @@ This means $\Phi$ cannot be factored through the inverse limit:
 Hence no well-defined limit assignment exists. Without E1, the phenomenological assignment is structurally incompatible with identity.
 \end{proof}
 
-\subsubsection{Inevitability of E2}
+\subsubsection{Structural Necessity of E2}
 
 \begin{theorem}[E2 is Necessary]\label{thm:e2-necessary}
 If E2 fails, then phenomenology is a local property of states, contradicting the global nature of identity as an inverse limit.
@@ -325,7 +329,7 @@ This implies:
     \item Identity as an inverse limit has no phenomenological content beyond $t_0$.
 \end{enumerate}
 
-But identity is defined as a \textit{global} object over infinite time. If phenomenology is local, it cannot reflect the global structure of identity. This contradicts the foundational premise that phenomenological assignments should be compatible with identity structure.
+But identity is defined as a \textit{global} object over infinite time. If the assignment is local, it no longer records the global inverse-limit structure. That failure is incompatible with the assignment class under study, whose purpose is to track identity-level structure rather than a single finite slice.
 
 Hence E2 is necessary for phenomenology to be structurally aligned with inverse-limit identity.
 \end{proof}
@@ -400,7 +404,7 @@ We have established:
     \item All alternative axioms considered were correctly rejected.
 \end{enumerate}
 
-\textbf{The formal setup is therefore not a design choice but a forced consequence of the requirement that phenomenological assignments be compatible with inverse-limit identity.}
+\textbf{The formal setup is therefore fixed by the requirement that regime assignments remain compatible with inverse-limit identity.}
 
 \subsection{Phenomenological Neutrality Clause}
 
@@ -432,7 +436,7 @@ The compatibility class $\mathcal{P}(M_\Omega)$ is the set of all phenomenologic
 
 \subsection{Necessity of Metric Structure on Phenomenological Space}
 
-To state rigorous results about phenomenological continuity and fragmentation, we must equip $\mathcal{E}$ with minimal structure. We now justify why this structure is \textit{necessary}, not merely convenient.
+To state rigorous results about continuity and fragmentation, $\mathcal{E}$ must carry enough structure for distances, limits, and loss bounds to be meaningful. The following arguments identify the minimal metric assumptions used by the classification theorem.
 
 \begin{hypothesis}[H3: Metric on $\mathcal{E}$]\label{hyp:h3}
 The phenomenological space $\mathcal{E}$ admits a metric $d_\mathcal{E}$ such that $(\mathcal{E}, d_\mathcal{E})$ is a complete metric space.
@@ -510,7 +514,7 @@ A phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is \textit{str
 \end{definition}
 
 \begin{remark}
-Structural continuity is not an axiom; it is a \textit{derived property} that follows from CCR conditions. This is the content of the Forced Continuity Theorem (Section 4).
+Structural continuity is not added as a primitive assumption. It is derived from the CCR conditions in Theorem~\ref{thm:forced-continuity}.
 \end{remark}
 
 \subsection{Phenomenological Fragmentation}
@@ -524,7 +528,7 @@ for corresponding identity trajectories $x \in \mathcal{I}$ and $\tilde{x} \in \
 \end{definition}
 
 \begin{remark}
-Fragmentation captures the vulnerability of phenomenological structure to perturbations. It is the phenomenological analog of identity deformability.
+Fragmentation measures whether an admissible regime assignment changes under finite-energy perturbations. It is the codomain-level counterpart of identity deformability.
 \end{remark}
 
 \subsection{Relationship Between Metrics}
@@ -548,7 +552,7 @@ We have established:
     \item Phenomenological continuity and fragmentation are well-defined under H3.
 \end{enumerate}
 
-\textbf{The compatibility structure is therefore a forced consequence of the requirement to state quantitative results about phenomenological dynamics.}
+\textbf{The compatibility structure is therefore required for the quantitative statements about regime dynamics made in the next section.}
 
 % ============================================================================
 % SECTION 4: IMPOSSIBILITY THEOREMS
@@ -600,9 +604,9 @@ By definition of finite ontological mass, there exists an admissible perturbatio
     d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0.
 \end{equation}
 
-By Axiom E1, the phenomenological assignment $\Phi$ is projectively compatible with $\mathcal{I}$. Under the perturbation, identity trajectories deform, inducing a deformed phenomenological assignment $\tilde{\Phi}$.
+By Axiom E1, the assignment $\Phi$ is projectively compatible with $\mathcal{I}$. Under the perturbation, identity trajectories deform, and the comparison assignment $\tilde{\Phi}$ is evaluated on the perturbed trajectory family.
 
-By Axiom E2, $\Phi$ cannot be determined by any finite-time state. Therefore, the deformation of identity trajectories induces a corresponding deformation of phenomenological assignments.
+By Axiom E2, $\Phi$ cannot be determined by any finite-time state. Therefore the relevant comparison is trajectory-level: changes in the inverse-limit object are assessed through the corresponding values of $\Phi$ and $\tilde{\Phi}$.
 
 Since the identity deformation is non-zero ($d_w > 0$) and $\Phi$ is globally determined by identity trajectories, by Hypothesis~\ref{hyp:phi-paper2} ($\Phi$-regularity), we have:
 \begin{equation}
@@ -909,9 +913,9 @@ The classification separates two regimes:
 
 This separation is derived purely from identity structure, without metaphysical commitments.
 
-\subsection{What This Work Forces}
+\subsection{Entailment Under Stated Assumptions}
 
-We do prove that:
+The results establish the following conditional entailment:
 \begin{itemize}[leftmargin=*]
     \item \textit{If} phenomenology exists and satisfies E0--E2;
     \item \textit{And} the system has identity structure classified by $M_\Omega$;
@@ -935,7 +939,7 @@ If one accepts that:
     \item Phenomenology (if present) must satisfy E0--E2;
 \end{enumerate}
 
-then one is \textit{forced} to conclude that CCR phenomenology, if it exists, is:
+then the stated assumptions entail that CCR phenomenology, if it exists, is:
 \begin{itemize}[leftmargin=*]
     \item Structurally continuous;
     \item Invariant under perturbation;
@@ -976,7 +980,7 @@ Let $M_\Omega < \infty$ and let $\Phi: \mathcal{I} \to \mathcal{E}$ satisfy E0--
     \Phi(x) \neq \Phi(\tilde{x}) \text{ in general}.
 \end{equation}
 
-\textbf{Step 4.} By E1, $\Phi$ is projectively compatible. The deformation of projections induces a corresponding deformation of the phenomenological limit.
+\textbf{Step 4.} By E1, $\Phi$ is projectively compatible. The deformed projections are compared through the corresponding value of the limit assignment.
 
 \textbf{Step 5.} By Hypothesis~\ref{hyp:phi-paper2}, there exists $C > 0$ such that:
 \begin{equation}

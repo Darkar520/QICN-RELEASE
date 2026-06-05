@@ -1490,3 +1490,82 @@ Post-commit push note:
 - Push result: blocked by approval reviewer because publishing the four pending Phase 2 commits to external default branch `origin/main` requires explicit approval for this exact push destination and commit set.
 - No workaround was attempted.
 - Current required user action: explicitly approve `git push origin main` for the pending local commits if remote publication is desired.
+
+## 2026-06-05 - Codex - Roadmap v3 Phase 2 Iteration 4B Paper 2 Normalization
+
+User request: Proceed with the next iteration after Phase 2 Iteration 4, using the tracked recommendation to start the Paper 2 normalization pass.
+
+Operational objective: Normalize Paper 2 against the Paper 2/BaseCore ownership decision while preserving standalone readability, formal labels, theorem inventory, and all claim boundaries; then recompile Paper 2 and record before/after evidence.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION4_OWNERSHIP_AUDIT.md`
+- `rigid-identity-framework/paper2/main.tex`
+- `rigid-identity-framework/basecore/core/sections/04_regime_constraints_absorbed.tex`
+- `rigid-identity-framework/paper2/main.log`
+- `rigid-identity-framework/paper2/main.blg`
+
+Files modified:
+- `rigid-identity-framework/paper2/main.tex`
+- `rigid-identity-framework/paper2/main.pdf`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION4B_PAPER2_NORMALIZATION_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- BaseCore `.tex` and PDF files
+- Monolithic source/PDF
+- Papers 1 and 3--10
+- macros, labels, theorem environments, bibliography, registry, scripts, and release files
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Confirm preflight state | Clean; `main...origin/main`. |
+| `Get-Content` | Read local instructions and prior ownership audit | Completed. |
+| `Get-FileHash -Algorithm SHA256` | Record baseline/final Paper 2 hashes | Completed. |
+| `rg -n` risky-term scans | Identify rhetorical `forced`/`inevitability` uses and provenance gaps | Completed. |
+| PowerShell paragraph normalizer | Count exact Paper 2/BaseCore duplicate groups before/after | `83 -> 72`. |
+| Label comparison against `HEAD` | Ensure labels unchanged | `34 -> 34`; no differences. |
+| `git diff --check -- paper2/main.tex` | Diff sanity | No diff-check errors; LF-to-CRLF warning only. |
+| `pdflatex -interaction=nonstopmode main.tex` | First Paper 2 compile | Exit code 0; rerun expected. |
+| `biber main` | Bibliography rebuild | Exit code 0; no warnings/errors/fatals. |
+| `pdflatex -interaction=nonstopmode main.tex` | Second compile | Exit code 0. |
+| `pdflatex -interaction=nonstopmode main.tex` | Final compile | Exit code 0; final PDF written. |
+| `Select-String main.log/main.blg` | Hard LaTeX/Biber scan | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings; 1 overfull. |
+
+Implementation summary:
+- Consolidated the Paper 2 opening boundary into a single `Scope and admissible reading` paragraph.
+- Added a `Relation to BaseCore` subsection identifying Paper 2 as the standalone expository source and BaseCore as the dependency-facing theorem-export surface.
+- Replaced broad rhetorical `forced` / `inevitability` wording with conditional structural-necessity and entailment language.
+- Rephrased selected remarks and proof-transition prose to reduce exact overlap with BaseCore without changing theorem content.
+- Recompiled Paper 2 and regenerated `paper2/main.pdf`.
+
+Verification:
+- Paper 2 `.tex` SHA256: `BB795D5D72AEC88FCA7F388F3C78C9EBED54C38F37FB2581D5EC45DCE120C363`.
+- Paper 2 PDF SHA256: `449384E4E2EEFBA1F481880D07B42FC3C5AB6BD6F6EC10FBB86C541BCB5CAF30`.
+- Paper 2 PDF: `17 pages`, `381899 bytes`.
+- Duplicate groups against BaseCore 04: `83 -> 72`.
+- Labels: `34 -> 34`, no label differences.
+- Final LaTeX/Biber hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings.
+- Layout debt: 1 overfull warning, 0 underfull warnings.
+
+Regressions searched:
+- label, macro, theorem-environment, theorem-statement, and bibliography churn;
+- BaseCore or monolithic accidental edits;
+- PDF/source desynchronization;
+- undefined refs/cites or rerun warnings;
+- deletion of non-claims without replacement;
+- collapse of Paper 2 into a pointer-only document.
+
+Regressions found:
+- No hard regression found.
+- Residual exact Paper 2/BaseCore overlap remains at `72` groups because theorem/proof-level material was deliberately preserved.
+- Minor Paper 2 layout debt remains: one 1.0272pt overfull hbox around lines 739--740.
+
+Residual risks:
+- Monolithic needs a later synchronized rebuild because Paper 2 changed.
+- Remaining Paper 2/BaseCore theorem/proof overlap should not be rewritten without a dedicated higher-risk theorem-prose normalization pass.
+- Papers 8 and 9 remain high-risk Phase 2 targets.
+- Paper 1 opening format remains lower-priority consistency debt.
+
+Status: `PASS_WITH_TRACKED_FORMAL_OVERLAP_DEBT`.

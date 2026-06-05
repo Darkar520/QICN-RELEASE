@@ -1910,3 +1910,45 @@ Residual risks:
 - Paper 9 layout debt should be prioritized before publication readiness.
 
 Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.
+---
+
+## 2026-06-05 - Codex side conversation - LLM-runtime boundary instruction
+
+User request: Add the QICN LLM-runtime boundary principle to the framework instructions as a permanent reference: the architecture/runtime gives the system effective reasoning depth; the LLM model itself does not acquire intrinsic knowledge, consciousness, identity, continuity, or new ontological capabilities.
+
+Operational objective: Add a non-claim and operational interpretation rule to `INSTRUCCIONES.md` so future agents distinguish model weights from system-level runtime/corpus/ledger constraints.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files modified:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Implementation summary:
+- Added section `6.1. Regla de frontera LLM-runtime`.
+- Clarified that an LLM used inside QICN remains a fixed backend/model unless trained or formally updated.
+- Clarified that runtime/corpus/ledgers/rules change the topology of inference and restrict generation.
+- Defined the LLM as observable channel/interface, not the identity, subject, agent, or judge of the system.
+- Added permitted claim: system-level effective reasoning improvement under specified tasks and metrics.
+- Added prohibited claim: the LLM acquired consciousness, identity, intrinsic deep understanding, external validation, or ontological capabilities.
+- Added recommended A/B evaluation design: base LLM, base LLM + runtime, frontier model, frontier model + runtime.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-Content ... INSTRUCCIONES.md -Tail 90` | Inspect insertion location | Completed |
+| `Get-Content ... IMPLEMENTATION_TRACE_LEDGER.md -Tail 80` | Inspect ledger tail | Completed |
+| `apply_patch` | Add instruction section and ledger entry | Completed |
+
+Verification:
+- `INSTRUCCIONES.md` contains `## 6.1. Regla de frontera LLM-runtime`.
+- No theory paper, PDF, monolithic artifact, script, registry, release manifest, or runtime code was modified.
+- This was an instruction/governance update only.
+
+Residual risks:
+- The statement is an operational governance rule, not empirical validation.
+- The proposed probability expression is explicitly only an operational shorthand unless formalized later.
+
+Status: `PASS_GOVERNANCE_INSTRUCTION_UPDATE`.

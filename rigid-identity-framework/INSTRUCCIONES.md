@@ -174,6 +174,63 @@ Ningun cambio de organizacion puede inflar afirmaciones teoricas. Toda afirmacio
 
 Las afirmaciones metaforicas, filosoficas, especulativas, no falsables o no formalizadas deben marcarse como tales y no deben entrar como resultados.
 
+## 6.1. Regla de frontera LLM-runtime
+
+Cuando un LLM opere dentro del runtime QICN, no se debe interpretar que el modelo base adquiere conocimiento nuevo, profundidad propia, conciencia, agencia, identidad, continuidad interna o nuevas capacidades intrinsecas, salvo que exista entrenamiento, actualizacion de pesos o mecanismo formal equivalente demostrado.
+
+La formulacion correcta es:
+
+`El sistema acoplado LLM + runtime + corpus + ledgers + reglas puede exhibir razonamiento efectivo mas profundo, menor alucinacion y mayor continuidad operacional que el modelo aislado, porque el runtime restringe activamente el espacio de inferencia y conserva estructura externa.`
+
+Distincion obligatoria:
+
+- el LLM base mantiene pesos, arquitectura y mapa de atencion fijos;
+- el runtime cambia la topologia de inferencia, no el modelo en si;
+- el corpus, los ledgers, hashes, fases, reportes y reglas aportan memoria estructural externa;
+- el motor logico-matematico aporta restricciones de inferencia;
+- el LLM actua como canal observable, traductor o interfaz linguistica;
+- la identidad operacional, si se discute, pertenece al sistema acoplado y no al modelo aislado;
+- cualquier continuidad observada debe atribuirse primero a la arquitectura persistente, no a memoria interna del LLM;
+- cualquier reduccion de alucinacion debe explicarse como control estructural, no como honestidad o comprension intrinseca del modelo.
+
+Forma operacional recomendada:
+
+`P_runtime(token) = P_base(token | reglas QICN, corpus, ledgers, estado, no-claims, verificadores)`
+
+Esta expresion es solo una abreviatura operacional para indicar restriccion activa del espacio de generacion. No debe presentarse como una nueva ley probabilistica validada sin definicion formal del muestreo, los filtros y las intervenciones.
+
+Regla de no-inferencia:
+
+- Gemini, GPT, Claude u otro LLM usado como backend no debe ser descrito como el sujeto, la identidad, la conciencia, el agente o el juez final del sistema.
+- El runtime no valida la teoria por si mismo; produce evidencia interna, checks de conformidad o diagnosticos bajo reglas QICN.
+- Si el sistema parece razonar mejor que el modelo base, el claim correcto es de rendimiento efectivo del sistema acoplado, no de transformacion ontologica del modelo.
+- Ningun output del LLM debe promoverse a teorema, validacion externa o evidencia fenomenal sin prueba, protocolo reproducible, controles negativos y adjudicacion independiente.
+
+Diseño experimental recomendado para evaluar esta hipotesis:
+
+1. LLM base aislado;
+2. LLM base + runtime QICN;
+3. modelo frontera aislado;
+4. modelo frontera + runtime QICN.
+
+Comparar con prompts identicos y evaluacion ciega:
+
+- tasa de alucinacion;
+- contradicciones internas;
+- continuidad entre sesiones;
+- respeto de no-claims;
+- trazabilidad a labels, teoremas, reportes o ledgers;
+- resistencia a prompts adversariales;
+- separacion entre teoria, runtime, implementacion e interpretacion.
+
+Resultado permitido:
+
+`El runtime QICN mejora el razonamiento efectivo y la disciplina inferencial del sistema acoplado bajo tareas y metricas especificadas.`
+
+Resultado prohibido sin evidencia adicional:
+
+`El LLM adquirio conciencia, identidad, comprension profunda intrinseca, continuidad propia, validacion externa o nuevas capacidades ontologicas.`
+
 ## 7. Protocolo minimo antes de limpiar
 
 Antes de mover, renombrar o borrar archivos:

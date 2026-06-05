@@ -684,3 +684,60 @@ Residual risks:
 
 Next step:
 - Commit this ledger closure, verify `git status --short` is empty, then push `main`.
+
+---
+
+## 2026-06-05 - Codex - Principal Roadmap Creation
+
+Agent/platform: Codex
+
+User request: Crear un archivo principal de roadmap, similar a `INSTRUCCIONES.md`, pegando literalmente dos versiones proporcionadas por el usuario, sin combinarlas. Mantener roadmaps anteriores como referencias porque pueden contener detalles no incluidos en el nuevo roadmap.
+
+Operational objective: Crear un roadmap principal activo para trabajo futuro, preservar ambas versiones completas en un solo archivo, no borrar ni mover roadmaps anteriores, y dejar clara la jerarquia: roadmap principal operativo + roadmaps previos como referencias historicas/complementarias.
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\7d25126b-8ed8-4137-9cb1-ab0dfe50dc96\pasted-text.txt`
+- `C:\Users\irisp\.codex\attachments\1a274617-7ab8-41f7-ae69-d6554b46bf79\pasted-text.txt`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/reports/QICN_GLOBAL_ROADMAP_v40.md`
+- `docs/reports/QICN_GLOBAL_ROADMAP_v40.md`
+
+Files created:
+- `rigid-identity-framework/ROADMAP.md`
+
+Files intentionally preserved as references:
+- `rigid-identity-framework/docs/reports/QICN_GLOBAL_ROADMAP_v40.md`
+- `docs/reports/QICN_GLOBAL_ROADMAP_v40.md`
+- Other roadmap and falsifiability roadmap artifacts under `docs/reports/`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-Content -Raw` | Read both pasted roadmap versions and local governance docs | Completed |
+| `rg -n "roadmap"` | Inventory existing roadmap references | Found prior roadmap artifacts |
+| `Set-Content` | Create `rigid-identity-framework/ROADMAP.md` from both literal pasted versions | Completed |
+| `apply_patch` | Clarify that previous roadmaps remain references | Completed |
+| `rg -n "ROADMAP PRINCIPAL|VERSION 1|VERSION 2"` | Verify expected section anchors | Found expected anchors |
+| `Get-FileHash -Algorithm SHA256` | Hash new roadmap | Pending final hash after ledger update |
+| `git status --short` | Check workspace state | New roadmap and ledger are pending |
+
+Implementation summary:
+- Created `rigid-identity-framework/ROADMAP.md` as the principal active roadmap.
+- Inserted Version 1 followed by Version 2, without merging or summarizing the two user-provided texts.
+- Added a governance note stating that prior roadmaps remain historical/complementary references and must not be deleted or moved automatically.
+- Did not modify or remove prior roadmap files.
+
+Verification:
+- Confirmed `ROADMAP.md` contains `ROADMAP PRINCIPAL QICN`, `VERSION 1`, `ROADMAP QICN - MITIGACION CIENTIFICA DEL MONOLITO SIN REGRESIONES`, `VERSION 2`, and `ROADMAP QICN v3`.
+- Confirmed line count before ledger update: `861`.
+- Final hash must be recomputed after this ledger entry is closed.
+
+Regression checks:
+- No paper, monolithic source, PDF, script, fixture, claim ledger, bibliography, or prior roadmap was modified.
+- Prior roadmaps remain available as references.
+
+Residual risks:
+- The pasted Version 2 contains some malformed Markdown fences/formatting inherited from the pasted source; preserved intentionally because the user requested literal inclusion, not cleanup or fusion.
+
+Next step:
+- Recompute final hashes, review `git status`, then commit/push this roadmap phase if verification remains clean.

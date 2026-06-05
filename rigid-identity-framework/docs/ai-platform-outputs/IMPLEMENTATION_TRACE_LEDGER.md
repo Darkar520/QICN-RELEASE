@@ -942,3 +942,92 @@ Residual risks:
 
 Next step:
 - If remote synchronization is desired, obtain explicit approval for `git push origin main`; otherwise proceed to Phase 2 from the local clean Phase 1 commit.
+
+---
+
+## 2026-06-05 - Codex - Roadmap Phase 2 Iteration 1 Claim Boundary Consolidation
+
+Agent/platform: Codex
+
+User request: Begin Phase 2 with the prioritized safe items, respecting no more than three `.tex` files per iteration, no macro/label renames, no deletion of non-claims without replacement, and recompilation if `.tex` is touched. Recommended first targets: Paper 4 opening triplet, Paper 5 opening triplet, and Paper 1 forced-language prose.
+
+Operational objective: Apply a conservative prose-only Phase 2 iteration to Papers 4, 5, and 1; regenerate PDFs; document verification and residual risks.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE1_AUDIT.md`
+- `rigid-identity-framework/paper4/main.tex`
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+- `rigid-identity-framework/paper1/main.tex`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+
+Files modified:
+- `rigid-identity-framework/paper4/main.tex`
+- `rigid-identity-framework/paper4/main.pdf`
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+- `rigid-identity-framework/paper5_operational_consciousness/main.pdf`
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper1/main.pdf`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION1_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `paper2/main.tex`
+- `basecore/core/sections/04_regime_constraints_absorbed.tex`
+- Papers 6, 7, 8, 9, and 10
+- macros, labels, theorem environments, registry, bibliography, scripts, and monolithic source
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status -sb` | Preflight state | Branch ahead of origin; clean before edits |
+| `Get-Content` targeted line reads | Inspect Phase 1 target lines | Completed |
+| `rg -n` targeted scans | Find residual dangerous phrases | Completed |
+| `apply_patch` | Edit prose in three `.tex` files and later create report/ledger entry | Completed |
+| `pdflatex -interaction=nonstopmode main.tex` | Compile touched papers | Final sequential runs passed |
+| `biber main` | Refresh bibliographies for touched papers | Passed, no Biber warnings/errors |
+| `Select-String main.log` | Search hard errors, undefined refs/cites, rerun warnings | No matches after final runs |
+| `Select-String main.blg` | Search WARN/ERROR/FATAL | No matches |
+| `Get-FileHash -Algorithm SHA256` | Hash edited `.tex` files and regenerated PDFs | Completed |
+
+Implementation summary:
+- Consolidated the Paper 4 opening triplet into one `Scope and admissible reading` paragraph while preserving limits on phenomenology, biological equivalence, metaphysical identity equivalence, subjective experience, external validation, and consciousness claims.
+- Consolidated the Paper 5 opening triplet into one `Scope and admissible reading` paragraph while preserving limits on human phenomenology, qualia, human-machine equivalence, personal identity transfer, moral parity, empirical instantiation, philosophical closure, and runtime-facing support.
+- Tightened Paper 1 prose from broad ontological/forced language to model-relative necessity under stated hypotheses.
+- Replaced Paper 1 `certify CCR behavior` with estimator-model support language.
+- Replaced a remaining Paper 1 absolute ontological-degrees sentence with model-bounded language.
+- Recompiled Papers 1, 4, and 5 and regenerated their PDFs.
+
+Verification:
+- Final PDFs: Paper 1 = 26 pages, Paper 4 = 16 pages, Paper 5 = 28 pages.
+- Final log scan found 0 hard LaTeX errors, 0 undefined refs/cites, 0 rerun warnings, and 0 Biber warnings/errors.
+- `git status --short` after recompilation shows only six changed paper source/PDF files plus this report and ledger.
+- No macros, labels, theorem environments, registry entries, bibliography files, scripts, or monolithic sources were modified.
+
+Incident / correction:
+- Two `pdflatex` commands were mistakenly launched in parallel against `paper1`, briefly corrupting `paper1/main.aux` with a stray `6}` line and causing one non-final compile attempt to fail. The auxiliary artifact was repaired, then Paper 1 was recompiled sequentially with `pdflatex`, `biber`, `pdflatex`, `pdflatex`. Final verification passed, and no final `main.aux` diff remains.
+
+Hashes:
+| File | SHA256 |
+|---|---|
+| `paper1/main.tex` | `C9074ED9F3915405BA9672631D42C7887AC4078D0FB3130D0E147F821502E193` |
+| `paper1/main.pdf` | `9ADC181096DAB65F1C7395C89DE940A230B0CE85A12932B645E36A6E4CE9D0ED` |
+| `paper4/main.tex` | `B36287FD5788932E0CB3A5AE5C9CD3273BCB32E5910079382C07DF06F59BD943` |
+| `paper4/main.pdf` | `C91A6C08EB381DEAACBE67533422CD1208B9A1C7948A766A869EF6B920BC42C5` |
+| `paper5_operational_consciousness/main.tex` | `E9E45A4149E0F03761065804B5B8FA4D91C528AA64EE6486E8BAAE3A44627A22` |
+| `paper5_operational_consciousness/main.pdf` | `927C24CDB5821FD91391EAB4D1959B7E86E8FEDDE94B534B9A2824FFA2B07343` |
+
+Regression checks:
+- No non-claim was deleted without replacement.
+- No theory theorem/proof was structurally changed.
+- No Paper 2/BaseCore ownership decision was made in this iteration.
+- No Papers 7, 8, or 9 runtime/subjectivity/phenomenal bridge language was touched.
+
+Residual risks:
+- Paper 2/BaseCore duplication still requires a dedicated ownership phase.
+- Papers 7, 8, and 9 remain the main high-risk Phase 2 surfaces.
+- Paper 4 and Paper 5 retain inherited layout warnings that belong to a later layout-polish pass.
+- Local branch remains ahead of `origin/main`; push requires explicit approval for `git push origin main`.
+
+Next step:
+- Review staged diff, commit Phase 2 Iteration 1 locally, then request explicit remote push approval if synchronization to `origin/main` is desired.

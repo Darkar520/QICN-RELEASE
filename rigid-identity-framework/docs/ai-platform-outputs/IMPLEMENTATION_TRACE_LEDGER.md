@@ -1178,3 +1178,138 @@ Residual risks:
 - Paper 6 layout debt remains open for a later layout-polish pass.
 
 Status: `PASS_WITH_TRACKED_LAYOUT_AND_SCOPE_DEBT`.
+
+---
+
+## 2026-06-05 - Codex - Phase 2 Iteration 2 Post-Review Addendum
+
+Agent/platform: Codex
+
+User request: Register post-review observations about Phase 2 Iteration 2 in the formal report and ledger, then proceed to Phase 2 Iteration 3 on Paper 7 and Paper 10, with monolithic recompilation after Iteration 3 closes.
+
+Operational objective: Record audit observations without changing paper content: appendix title compatibility, monolithic synchronization debt, opening-format consistency debt, and the intentional retention of the Paper 1 theorem title `No--Alternative Representation`.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION2_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION2_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- All `.tex` files
+- All PDFs
+- `monolithic/`
+- bibliography files
+- registry files
+- scripts
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status -sb` | Confirm starting branch state | `main...origin/main [ahead 1]`; no unstaged changes before this addendum. |
+| `Get-Content INSTRUCCIONES.md` | Reconfirm reporting and phase rules | Completed. |
+| `Select-String MEMORY.md` | Reconfirm phasewise QICN governance context | Completed. |
+| `Get-Content ... -Tail` | Read Iteration 2 report and ledger tail | Completed. |
+| `apply_patch` | Add the formal addendum and ledger entry | Completed. |
+
+Implementation summary:
+- Registered the Paper 1 appendix title change as a compatibility note rather than a regression.
+- Registered monolithic synchronization debt after Paper 1, Paper 4, Paper 5, and Paper 6 changes.
+- Registered opening-format consistency debt across Papers 4--10.
+- Registered the retained theorem title `No--Alternative Representation` as an intentional technical-name retention, not an ontological assertion.
+
+Verification:
+- Documentation-only addendum.
+- No paper source, PDF, monolithic source, bibliography, script, macro, or label was changed in this addendum step.
+
+Residual risks:
+- Phase 2 Iteration 3 still needs scoped edits for Paper 7 and Paper 10.
+- Monolithic recompilation remains pending until Iteration 3 closes.
+
+---
+
+## 2026-06-05 - Codex - Roadmap Phase 2 Iteration 3
+
+Agent/platform: Codex
+
+User request: Proceed with Phase 2 Iteration 3 on Paper 7 and Paper 10, then recompile the monolithic volume after Iteration 3 closes.
+
+Operational objective: Consolidate defensive/non-claim boundary language in Paper 7 and Paper 10 without weakening claim boundaries, touching more than three `.tex` files, renaming macros/labels, or changing theorem/proof structures. Recompile touched papers and prepare for a separate post-Iteration 3 monolithic synchronization.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION2_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.tex`
+- `rigid-identity-framework/paper10_external_adjudication/main.tex`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.log`
+- `rigid-identity-framework/paper10_external_adjudication/main.log`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+
+Files modified:
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.tex`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.pdf`
+- `rigid-identity-framework/paper10_external_adjudication/main.tex`
+- `rigid-identity-framework/paper10_external_adjudication/main.pdf`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE2_ITERATION3_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- Papers 8 and 9
+- Paper 2/BaseCore ownership surfaces
+- `monolithic/` during this paper-edit iteration
+- bibliography files
+- registry files
+- scripts
+- macros, labels, theorem environments, and proof structures
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status -sb` | Preflight state | Started from `main...origin/main [ahead 1]`. |
+| `rg` | Locate opening-boundary and high-risk terms | Completed. |
+| `Get-Content` | Read scoped source/report/ledger/log context | Completed. |
+| `apply_patch` | Apply Paper 7/Paper 10 edits and write report/ledger | Completed. |
+| `pdflatex -interaction=nonstopmode main.tex` | Recompile Paper 7 and Paper 10 | Paper 7: 28 pages; Paper 10: 33 pages. |
+| `biber main` | Rebuild Paper 7 bibliography | Exit code 0. |
+| `Select-String` log scans | Verify hard LaTeX/reference/citation/rerun and biber warnings | 0 final hard/rerun matches; 0 Paper 7 biber warning/error/fatal matches. |
+| `Get-FileHash -Algorithm SHA256` | Record source/PDF hashes | Completed. |
+
+Implementation summary:
+- Paper 7: consolidated the three defensive/system-boundary opening paragraphs into one `Scope and admissible reading` paragraph while preserving all non-claim boundaries.
+- Paper 10: compacted the repetitive eight-item non-claim list into one protocol-facing non-claim paragraph while preserving every boundary.
+- No theorem content, proof structure, labels, macros, registries, scripts, or bibliographies were changed.
+
+Verification:
+- Final Paper 7 PDF: `28 pages`, `401020 bytes`.
+- Final Paper 10 PDF: `33 pages`, `455843 bytes`.
+- Final hard LaTeX/reference/citation/rerun scan: `0 matches`.
+- Final Paper 7 biber warning/error/fatal scan: `0 matches`.
+- Layout debt: Paper 7 has `3` overfull and `29` underfull warnings; Paper 10 has `57` overfull warnings, `0` underfull warnings, and `4` float placement warnings.
+
+Hashes:
+| File | SHA256 |
+|---|---|
+| `paper7_operational_life_subjecthood/main.tex` | `B2EEDC5781101345C9F3B14CC86C9F4E881D6A61DC200DFE18DB2ABFFD0B3A28` |
+| `paper7_operational_life_subjecthood/main.pdf` | `4FDA83DAAD9B3E6D997A0C6A0F3E3DB4BE5852C1F53B98C67B8CBFC40C310A07` |
+| `paper10_external_adjudication/main.tex` | `5FEEE9EC8D99DAE9222D9274763E6B148AAEAA85DF07B81739AFBB577FE58CC9` |
+| `paper10_external_adjudication/main.pdf` | `73D217F6C3C3180FC6ADBA0B266C30190C8C541A5C0FA19C56BE9454B0E87D7A` |
+
+Regression checks:
+- `.tex` edit count: PASS, 2 files.
+- Macro/label rename: PASS, none.
+- Non-claim deletion without replacement: PASS, boundaries consolidated.
+- Paper 8/9 surfaces touched: PASS, not touched.
+- Monolithic changed during paper-edit iteration: PASS, not touched.
+
+Residual risks:
+- Papers 8 and 9 remain high-risk Phase 2 surfaces.
+- Paper 2/BaseCore ownership remains open.
+- Monolithic synchronization is now the next required step.
+- Layout polish remains open for Paper 7 and Paper 10.
+
+Status: `PASS_WITH_TRACKED_LAYOUT_AND_MONOLITHIC_SYNC_DEBT`.

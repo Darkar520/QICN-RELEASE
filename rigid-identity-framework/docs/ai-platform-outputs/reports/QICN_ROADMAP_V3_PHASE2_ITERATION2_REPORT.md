@@ -152,3 +152,46 @@ Rationale:
 - Final hard LaTeX and Biber verification passed.
 - The iteration respected the maximum `.tex` edit limit.
 - Remaining issues are either deliberately deferred ownership/interpretation subphases or layout-polish debt, not untracked regressions from this iteration.
+
+## 11. Post-Iteration Review Addendum
+
+Date: 2026-06-05
+
+The following observations were registered after external review of Iteration 2. They are not classified as errors in the iteration, but they are now tracked as compatibility and synchronization notes before Phase 2 continues.
+
+### 11.1 Appendix Title Compatibility Note
+
+The Paper 1 appendix title change from `Ontological No--Alternative Theorems` to `Model-Relative Necessity Theorems` is scientifically aligned with the Phase 2 mitigation, but it is more visible than a local prose replacement. A reader familiar with the previous version will notice the title change immediately.
+
+Classification: compatibility note, not regression.
+
+Recommended later handling: if a publication-structure or compatibility-model phase is opened, preserve a provenance note that the appendix was formerly framed under the ontological no-alternative title. That note should live in editorial compatibility documentation unless the publication model explicitly requires an in-paper historical note.
+
+### 11.2 Monolithic Synchronization Debt
+
+The monolithic volume was intentionally not recompiled in Iteration 2. This remains correct for a scoped paper iteration, but the monolithic PDF is now behind the paper sources touched in Phase 2:
+
+- Paper 1 appendix title/prose changes;
+- Paper 4 opening consolidation from Iteration 1;
+- Paper 5 opening consolidation from Iteration 1;
+- Paper 6 opening consolidation from Iteration 2.
+
+Classification: synchronization debt, not content regression.
+
+Recommended next handling: rebuild the monolithic volume after Iteration 3 so it reflects the Paper 1, Paper 4, Paper 5, Paper 6, and any Iteration 3 changes in a single synchronized pass.
+
+### 11.3 Opening-Format Consistency Debt
+
+Papers 4, 5, and 6 now share the newer consolidated opening style. Paper 1 still retains its original opening style, while Papers 7, 8, 9, and 10 were not touched by Iteration 2.
+
+Classification: structural style debt, not scientific error.
+
+Recommended next handling: Paper 7 and Paper 10 may be handled in Iteration 3. Papers 8 and 9 should remain for separate high-risk subphases because their subjectivity and phenomenal-bridge surfaces require narrower review.
+
+### 11.4 Paper 1 Theorem-Title Note
+
+Paper 1 still contains `No--Alternative Representation` as a theorem title. This is intentional. The theorem title is treated as a technical identifier for a model-relative mathematical result, not as an ontological assertion. It was not changed because renaming theorem titles would broaden Iteration 2 beyond the authorized appendix/prose cleanup.
+
+Classification: intentional retention with reviewer-facing explanation.
+
+Recommended next handling: keep this distinction visible in reports and compatibility notes. Do not rename theorem titles unless a dedicated theorem-heading phase authorizes that surface.

@@ -1810,6 +1810,113 @@ Residual risks:
 
 Status: `PASS_GOVERNANCE_RULE_INTEGRATED`.
 
+---
+
+## 2026-06-06 - Codex - Roadmap v3 Phase 4 Iteration 2 Paper 2 Mathematical Hardening
+
+User request: Proceed with the next iteration and analyze instructions before starting; then integrate the new instruction rule.
+
+Operational objective: Continue Phase 4 with a scoped Paper 2 hardening pass, after versioning the external-audit-before-push governance rule. Preserve mathematical strength while narrowing interpretive overclaim surfaces in high-impact Paper 2 prose.
+
+Preflight:
+- `INSTRUCCIONES.md`, `ROADMAP.md`, and the prior Phase 4 Iteration 1 report were reviewed before theory edits.
+- `.agents` and `.codex` directories were absent in the workspace root, so effective governance was repo documentation plus `AGENTS.md`.
+- The new `INSTRUCCIONES.md` section `1.3. Auditoria obligatoria antes de push` was treated as active.
+- Local commits before this iteration were `60b86de docs: integrate external audit push rule` and `a9c28b5 docs: apply roadmap phase 4 math hardening`.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE4_ITERATION1_MATH_HARDENING_REPORT.md`
+- `rigid-identity-framework/paper2/main.tex`
+- `rigid-identity-framework/paper2/main.log`
+- `rigid-identity-framework/paper2/main.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.log`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.aux`
+- `rigid-identity-framework/monolithic/build/sections/03-phenomenological-regimes-induced-by-structural-identity.tex`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/paper2/main.tex`
+- `rigid-identity-framework/paper2/main.pdf`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE4_ITERATION2_PAPER2_MATH_HARDENING_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- BaseCore
+- Papers 1 and 3--10
+- monolithic builder source
+- bibliography
+- macros
+- labels, theorem environments, theorem titles, theorem statements, proof bodies, proof topology
+- registry, release files, and runtime code
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Inspect branch and dirty state | Completed; repo was ahead 2 before Paper 2 edits. |
+| `git log --oneline origin/main..HEAD` | Identify local unpushed commits | `60b86de`, `a9c28b5`. |
+| `rg` over Paper 2, Paper 3, Paper 5 | Audit Phase 4 target candidates | Paper 2 selected as upstream local target. |
+| `Get-FileHash -Algorithm SHA256` | Capture baseline and final hashes | Completed. |
+| Structural count scan | Verify theorem/lemma/proposition/corollary/definition/proof/label counts | Paper 2 counts unchanged. |
+| `apply_patch` | Apply scoped Paper 2 prose edits and add report/ledger | Completed. |
+| `git diff --check` | Diff sanity | No diff-check errors; CRLF warnings only. |
+| `pdflatex -interaction=nonstopmode main.tex` | Paper 2 LaTeX pass 1 | Exit code 0. |
+| `biber main` | Paper 2 bibliography | Exit code 0. |
+| `pdflatex -interaction=nonstopmode main.tex` | Paper 2 LaTeX pass 2 | Exit code 0. |
+| `pdflatex -interaction=nonstopmode main.tex` | Paper 2 LaTeX pass 3 | Exit code 0. |
+| `npm run compile:monolithic` | Rebuild monolithic volume | Normal attempt failed from MiKTeX AppData permission; elevated rerun compiled. |
+| `Select-String` log scans | Verify LaTeX/Biber hard gates | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings. |
+| Phrase-count checks | Verify systematic source-to-monolith propagation | New phrases present in source and monolithic section; old target phrases absent from both. |
+| Case-sensitive label/ref scan | Verify exact labels and refs | 401 source labels, 401 aux labels, 0 exact duplicates, 0 missing refs. |
+| `npm run verify` | Run required v31 verification chain | PASS with `external_support_certified=false` and `BLOCKED_FOUNDATION_FIRST_GATES`. |
+
+Implementation summary:
+- Recast Paper 2 abstract theorem prose from broad impossibility/support language to conditional structural theorem language.
+- Bound finite-mass loss claims to stated regularity hypotheses.
+- Replaced two `absolute rigidity` glosses with `CCR rigidity`.
+- Recast `structurally possible or impossible` as `structurally compatible or incompatible`.
+- Replaced structural-ethics `foundation` language with `boundary condition` language.
+- Recast closing phrases around `completely determined`, `can only support`, `Impossible to fragment`, and `necessity...is proven` into model-relative assignment-class language.
+- Preserved the technical theorem title `Forced Continuity Theorem`.
+
+Verification:
+- Paper 2 structural counts unchanged: 10 theorems, 1 lemma, 9 propositions, 4 corollaries, 11 definitions, 21 proofs, 34 labels.
+- Paper 2 `.tex` SHA256: `96DA61132C37212BBBCC883D24BDA7F7D49B2DE24894C9A701FC903D46ADAC63`.
+- Paper 2 PDF SHA256: `5AB731FFB087B81D0FBBD42B2984924291228BB1FE5C797A5A3D16585F66CB3B`.
+- Paper 2 PDF: 17 pages, 382103 bytes.
+- Monolithic PDF SHA256: `49EA6055D09047A138CF52BE7AABF857F1CA973BB3FAF2046EE5F2A3B88B3C34`.
+- Monolithic PDF: 335 pages, 2837601 bytes.
+- `MONOLITHIC_BUILD_REPORT.md` SHA256: `EE68AC811873D0CD5064DA500647D41AE8F2787E6349A9FA1F751DF4837279A3`.
+- Paper 2 hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 duplicate destinations, 0 biber warnings.
+- Monolithic hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 duplicate destinations, 0 biber warnings.
+- Monolithic labels: 401 source labels, 401 exact unique source labels, 0 exact duplicates; 401 aux labels, 401 exact unique aux labels, 0 exact duplicates.
+- `npm run verify`: PASS while preserving `external_support_certified=false`; final verdict remains `BLOCKED_FOUNDATION_FIRST_GATES`.
+
+Regressions searched:
+- theorem/proof/label/macro churn;
+- theorem title or theorem statement weakening;
+- old high-risk phrases remaining in source or generated monolithic section;
+- new hardening phrases missing from monolithic section;
+- undefined refs/cites or biber warnings;
+- duplicate exact labels/anchors;
+- accidental external-validation promotion.
+
+Regressions found:
+- No hard regression found.
+- Layout debt remains tracked: Paper 2 has 1 overfull hbox warning; monolithic has 7 overfull and 330 underfull hbox warnings.
+- Push remains blocked pending external audit under `INSTRUCCIONES.md` section `1.3`.
+
+Residual risks:
+- Phase 4 is not globally closed.
+- Paper 3, Paper 5, Paper 8, and Paper 9 remain Phase 4 candidates with rising interpretive risk.
+- Layout debt should remain a separate editorial phase, not mixed into mathematical hardening.
+
+Status: `PASS_WITH_TRACKED_SCOPE_AND_LAYOUT_DEBT`.
+
 ## 2026-06-05 - Codex - Roadmap v3 Phase 2 Closure and Monolithic Sync
 
 User request: Push commits `f52c792` and `2047cfc`, recompile the monolith, verify errors/refs/cites/biber/labels/anchors/pages/hash, create a formal `PHASE2_CLOSURE_REPORT`, commit the synchronized monolith and closure report, and leave layout/body-level review as Phase 3/editorial debt.

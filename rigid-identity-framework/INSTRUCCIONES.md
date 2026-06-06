@@ -94,6 +94,31 @@ Despues de una fase verificada y cerrada, el flujo normal debe ser:
 
 Queda prohibido usar `git add -A`, commits amplios, commits de arrastre o pushes globales cuando el workspace contenga archivos no clasificados, backups, variantes historicas, outputs de IA fuera de ruta o eliminaciones pendientes de decision.
 
+## 1.3. Auditoria obligatoria antes de push
+
+Toda fase que modifique contenido teorico (.tex) o cierre iteracion debe pasar por auditoria externa antes de push. La auditoria debe verificar:
+
+1. **Preservacion de fuerza matematica**: comparacion estructural antes/despues que demuestre que los cambios no debilitan claims matematicos dentro del dominio formal. Debe incluir conteo de entradas formales (theorem, lemma, proposition, corollary, definition, proof, label) y verificacion de que la topologia theorem/proof permanece sin cambios.
+
+2. **Propagacion sistematica**: verificacion de propagacion monolitica mediante conteo de frases (no spot-checks). Las frases modificadas deben tener conteo 0 en la version anterior y conteo ≥1 en la nueva version, tanto en el paper fuente como en la seccion monolitica generada.
+
+3. **Ejecucion de cadena de verificacion completa**: ejecucion de `npm run verify` (o equivalente) con interpretacion correcta de resultados. El sistema de verificacion debe pasar manteniendo los bloqueos cientificos apropiados contra claims de validacion externa.
+
+4. **Documentacion de pendientes y alcance real**: lista completa y priorizada de papers/teoremas que requieren trabajo futuro en la fase, con clasificacion de riesgo y proxima accion recomendada.
+
+5. **Separacion explicita entre iteracion local y cierre global**: declaracion clara de que la iteracion es un pass local sobre N papers, no un cierre global de la fase. El estado del reporte debe reflejar este alcance limitado.
+
+**Proceso de auditoria:**
+
+- El agente que implementa (Codex, OpenCode, etc.) produce la implementacion inicial con verificacion basica.
+- Un auditor externo (otra plataforma, el usuario, o un proceso automatizado) revisa la implementacion contra los cinco criterios anteriores.
+- Si la auditoria identifica gaps, el agente implementador debe corregirlos mediante addendum formal al reporte de fase.
+- Solo despues de que la auditoria externa apruebe explicitamente la implementacion corregida, se autoriza push a origin/main.
+
+**Sin auditoria externa aprobada, no se autoriza push a origin/main.**
+
+Esta regla aplica especialmente a fases de hardening matematico (Phase 4), consolidation de claim-boundaries (Phase 2), y cualquier fase que modifique lenguaje interpretativo de alto impacto (abstracts, introductions, conclusions, claim-boundaries).
+
 ## 2. Regla de preservacion de papers
 
 Cada paper debe tener una carpeta propia con, como minimo:

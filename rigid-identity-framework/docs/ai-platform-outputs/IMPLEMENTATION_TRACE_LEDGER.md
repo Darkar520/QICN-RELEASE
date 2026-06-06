@@ -1765,6 +1765,51 @@ Residual risks:
 
 Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.
 
+---
+
+## 2026-06-05 - Codex - Governance Integration: Mandatory External Audit Before Push
+
+User request: Integrate the new instruction section before continuing the next roadmap iteration.
+
+Operational objective: Version the governance rule requiring external audit before push for phases that modify theory or close iterations, without mixing it into a theoretical `.tex` phase commit.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE4_ITERATION1_MATH_HARDENING_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Implementation summary:
+- Integrated section `1.3. Auditoria obligatoria antes de push` as active repository governance.
+- The rule requires mathematical-strength preservation checks, systematic monolithic propagation checks, full `npm run verify`, documented residual scope, and explicit distinction between local iteration closure and global phase closure.
+- The rule blocks `git push origin main` for theory-modifying or iteration-closing work until an external audit explicitly approves the corrected implementation.
+- The governance integration was isolated from the next Phase 4 theoretical iteration.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Inspect active branch and dirty state | Completed; repo was ahead 1 with modified `INSTRUCCIONES.md`. |
+| `git diff -- rigid-identity-framework\INSTRUCCIONES.md` | Inspect exact governance insertion | Completed; 25-line section reviewed. |
+| `rg --files ...` | Search local governance/rules/workflow files | `.agents` and `.codex` folders absent in this root; effective governance is repo docs. |
+| `Get-Content ... ROADMAP.md` | Confirm active roadmap phase rules | Completed. |
+| `git diff --check -- rigid-identity-framework\INSTRUCCIONES.md` | Sanity-check governance diff | No diff-check errors; CRLF warning only. |
+| `apply_patch` | Add ledger trace for governance integration | Completed. |
+
+Verification:
+- No `.tex`, PDF, monolithic artifact, script, registry, release manifest, bibliography, or runtime file was modified by this governance integration.
+- `INSTRUCCIONES.md` now records the external-audit-before-push requirement as active instruction.
+- The next theory iteration must obey the new Section 1.3 checks.
+
+Residual risks:
+- This governance commit does not by itself constitute the external audit required for later theory pushes.
+- Existing local unpushed Phase 4 Iteration 1 commit remains subject to external audit before push under the new rule.
+
+Status: `PASS_GOVERNANCE_RULE_INTEGRATED`.
+
 ## 2026-06-05 - Codex - Roadmap v3 Phase 2 Closure and Monolithic Sync
 
 User request: Push commits `f52c792` and `2047cfc`, recompile the monolith, verify errors/refs/cites/biber/labels/anchors/pages/hash, create a formal `PHASE2_CLOSURE_REPORT`, commit the synchronized monolith and closure report, and leave layout/body-level review as Phase 3/editorial debt.

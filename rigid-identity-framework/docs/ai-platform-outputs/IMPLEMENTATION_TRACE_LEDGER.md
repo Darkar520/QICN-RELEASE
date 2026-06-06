@@ -1991,3 +1991,97 @@ Residual risks:
 - The hypothesis still needs a dedicated empirical protocol if it is later promoted beyond governance guidance.
 
 Status: `PASS_GOVERNANCE_CAVEAT_CLARIFICATION`.
+
+---
+
+## 2026-06-05 - Codex - Roadmap v3 Phase 3 Iteration 2 Paper 7 Alias Terminology
+
+User request: Proceed with Phase 3 Iteration 2 after approving push of commit `ffdac25`; evaluate Paper 5 and Paper 7 alias terminology, with emphasis that Paper 5 already has strong terminology discipline and Paper 7 could benefit from clearer `operational life` / `operational subjecthood` aliases.
+
+Operational objective: Continue Phase 3 language formalization without semantic inflation, preserving historical terminology as aliases while preventing biological-life, human-subjectivity, phenomenality, ontology, agency, or external-validation overreads.
+
+Preflight:
+- The working tree initially contained unrelated governance changes in `INSTRUCCIONES.md` and this ledger.
+- Those changes were reviewed as preexisting and isolated into commit `41b84df docs: add llm runtime boundary instruction` before touching Paper 7.
+- Phase 3 Iteration 2 then proceeded with one theoretical `.tex` edit only.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/package.json`
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.tex`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.log`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.log`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.aux`
+- `rigid-identity-framework/monolithic/build/sections/08-operational-life-structural-class-and-subjecthood.tex`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE3_ITERATION1_LANGUAGE_ALIAS_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.tex`
+- `rigid-identity-framework/paper7_operational_life_subjecthood/main.pdf`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE3_ITERATION2_PAPER7_ALIAS_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `paper5_operational_consciousness/main.tex` and `main.pdf`
+- BaseCore
+- Papers 1, 2, 3, 4, 6, 8, 9, and 10
+- macros, labels, theorem environments, theorem statements, proof bodies, bibliography, scripts, registry, release files, and roadmap
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Confirm preflight and post-build state | Preexisting governance changes isolated; Phase 3 files then tracked separately. |
+| `Get-ChildItem` / `Get-Content` | Inspect governance and existing reports | Completed. |
+| `Get-FileHash -Algorithm SHA256` | Capture baseline and final hashes | Completed. |
+| `git diff -- rigid-identity-framework/paper7_operational_life_subjecthood/main.tex` | Review exact Paper 7 prose edit | 8 insertions, 8 deletions. |
+| Label comparison against `HEAD` | Verify labels unchanged | Paper 7 labels `8 -> 8`; diff count 0. |
+| `git diff --check` | Diff sanity | No diff-check errors; LF-to-CRLF warnings only. |
+| `pdflatex; biber; pdflatex; pdflatex` in `paper7_operational_life_subjecthood` | Recompile Paper 7 | Exit code 0; final PDF 28 pages. |
+| `npm run compile:monolithic` | Rebuild monolithic volume | First normal attempt returned failure; elevated rerun compiled. |
+| `Select-String` log scans | Check hard LaTeX/Biber gates | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings. |
+| exact label/ref scans over monolithic aux/build sections | Verify labels and refs | 401 labels, 401 exact unique, 0 duplicate exact groups; 214 refs, 0 missing refs. |
+
+Implementation summary:
+- Paper 5 was audited and not edited because its local terminology discipline already marks `operational consciousness` as a technical alias under six-invariant burden.
+- Paper 7 high-impact prose now states that `operational life` is boundary/viability class language, structural class membership is descriptor-relative class geometry, and `operational subjecthood` is a strengthened operational subject-class.
+- Paper 7 scope now binds `operational life` to `\Lop` and `operational subjecthood` to `\Subop`, without treating them as biological life or human subjectivity by default.
+- Paper 7 conclusion now describes life/consciousness/subjecthood terms as non-identical operational class aliases.
+- Monolithic PDF was rebuilt after Paper 7 recompilation.
+
+Verification:
+- Paper 7 `.tex` SHA256: `6E8D01E76058DB62EF1F3D0D56989F34033A436BB1AB3FD9531040E51A23A9BA`.
+- Paper 7 PDF SHA256: `B7DEB08985E3B5466F2642D0FF4252D1AABD268F6A1F610540C41CD3B15D724E`.
+- Paper 7 PDF: `28 pages`, `401761 bytes`.
+- Monolithic `.tex` SHA256: `306B3771298B9027A590F5CE88E5597A450E60F4D4264F5131090827FF78CE0F`.
+- Monolithic PDF SHA256: `918D47F438F8BFD638EBA22D5EF68D9574E670A4AFA074173B6982CB16F38AD5`.
+- Monolithic PDF: `335 pages`, `2837325 bytes`.
+- `MONOLITHIC_BUILD_REPORT.md` SHA256: `8A9C6FF8B60D19B2090BCB27DC7B34A2142869DB47FB68FE3840B2E64931A46E`.
+- Paper 7 hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings.
+- Monolithic hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 duplicate hyperref destinations, 0 biber warnings.
+- Monolithic labels: 401 source labels, 401 exact unique source labels, 0 exact duplicates; 401 aux labels, 401 exact unique aux labels, 0 exact duplicates.
+
+Regressions searched:
+- accidental Paper 5 edit after audit-only decision;
+- accidental edits outside Paper 7 and generated monolithic artifacts;
+- label, macro, theorem environment, theorem statement, proof, bibliography, registry, release, and script churn;
+- semantic promotion from alias terminology to ontology, biological life, human subjectivity, phenomenality, agency, or external validation;
+- source/PDF desynchronization;
+- monolithic sync failure.
+
+Regressions found:
+- No hard regression found.
+- Layout debt remains tracked: Paper 7 has 3 overfull and 28 underfull warnings; monolithic has 7 overfull and 330 underfull warnings.
+- The first monolithic compile attempt returned failure and was replaced by a successful elevated rerun using the same canonical command.
+
+Residual risks:
+- Commit `41b84df` remains a separate local governance commit pending push approval.
+- Phase 3 Iteration 2 commit remains local until explicitly approved for push.
+- Layout/body-level review remains a later phase or editorial subphase, not part of this alias-terminology iteration.
+
+Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.

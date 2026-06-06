@@ -176,9 +176,11 @@ Las afirmaciones metaforicas, filosoficas, especulativas, no falsables o no form
 
 ## 6.1. Regla de frontera LLM-runtime
 
+Esta seccion es una guia operacional e hipotesis de trabajo, no un resultado demostrado. Nada de lo descrito aqui debe tomarse como verdadero por defecto. Representa una interpretacion plausible de lo que se ha observado durante el trabajo con el sistema, pero debe mantenerse como supuesto pendiente de validacion hasta que existan metricas, protocolos reproducibles, controles negativos y adjudicacion independiente.
+
 Cuando un LLM opere dentro del runtime QICN, no se debe interpretar que el modelo base adquiere conocimiento nuevo, profundidad propia, conciencia, agencia, identidad, continuidad interna o nuevas capacidades intrinsecas, salvo que exista entrenamiento, actualizacion de pesos o mecanismo formal equivalente demostrado.
 
-La formulacion correcta es:
+La formulacion operacional de guia es:
 
 `El sistema acoplado LLM + runtime + corpus + ledgers + reglas puede exhibir razonamiento efectivo mas profundo, menor alucinacion y mayor continuidad operacional que el modelo aislado, porque el runtime restringe activamente el espacio de inferencia y conserva estructura externa.`
 
@@ -223,7 +225,7 @@ Comparar con prompts identicos y evaluacion ciega:
 - resistencia a prompts adversariales;
 - separacion entre teoria, runtime, implementacion e interpretacion.
 
-Resultado permitido:
+Resultado permitido solo si existe evaluacion reproducible:
 
 `El runtime QICN mejora el razonamiento efectivo y la disciplina inferencial del sistema acoplado bajo tareas y metricas especificadas.`
 

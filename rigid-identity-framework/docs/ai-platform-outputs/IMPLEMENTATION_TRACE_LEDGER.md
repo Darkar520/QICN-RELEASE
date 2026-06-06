@@ -1952,3 +1952,42 @@ Residual risks:
 - The proposed probability expression is explicitly only an operational shorthand unless formalized later.
 
 Status: `PASS_GOVERNANCE_INSTRUCTION_UPDATE`.
+
+---
+
+## 2026-06-05 - Codex side conversation - LLM-runtime caveat clarification
+
+User request: Clarify that the LLM-runtime boundary section is only a guide and working hypothesis. Nothing in that section should be treated as true by default; it reflects what appears to be happening during system work, but still requires validation.
+
+Operational objective: Prevent the instruction section from becoming an unvalidated claim about the runtime, the LLM, or the coupled system.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files modified:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Implementation summary:
+- Added an explicit caveat that section `6.1. Regla de frontera LLM-runtime` is a guide and working hypothesis, not a demonstrated result.
+- Added that nothing in the section should be treated as true by default.
+- Reframed the central statement from `formulacion correcta` to `formulacion operacional de guia`.
+- Tightened the permitted result so it is allowed only under reproducible evaluation.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-Content ... INSTRUCCIONES.md` | Inspect current section before edit | Completed |
+| `Get-Content ... IMPLEMENTATION_TRACE_LEDGER.md -Tail 70` | Inspect ledger tail before edit | Completed |
+| `apply_patch` | Add caveat and ledger entry | Completed |
+
+Verification:
+- Section `6.1` now explicitly states that it is not a validated truth.
+- The runtime-improvement claim is now gated by reproducible evaluation.
+- No theory paper, PDF, monolithic artifact, script, registry, release manifest, or runtime code was modified.
+
+Residual risks:
+- The hypothesis still needs a dedicated empirical protocol if it is later promoted beyond governance guidance.
+
+Status: `PASS_GOVERNANCE_CAVEAT_CLARIFICATION`.

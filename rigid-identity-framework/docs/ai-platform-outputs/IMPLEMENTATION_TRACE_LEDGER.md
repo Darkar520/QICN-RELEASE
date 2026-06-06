@@ -1670,6 +1670,117 @@ Status: `PASS_WITH_TRACKED_SCOPE_AND_LAYOUT_DEBT`.
 
 ---
 
+## 2026-06-06 - Codex - Roadmap v3 Phase 4 Iteration 3 Paper 5 Import-Language Hardening
+
+User request: Proceed with the next iteration.
+
+Operational objective: Continue Phase 4 with a scoped Paper 5 import-language pass, aligning imported Paper 2/Paper 3 burden language with the current hardened corpus while preserving mathematical strength and avoiding broad edits to high-risk subjectivity/bridge papers.
+
+Preflight:
+- Reviewed `INSTRUCCIONES.md`, especially section `1.3. Auditoria obligatoria antes de push`.
+- Confirmed clean workspace at start, with `main` ahead 3.
+- Local commits before this iteration: `d4a960d`, `60b86de`, `a9c28b5`.
+- Treated this as a local iteration, not global Phase 4 closure.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE4_ITERATION2_PAPER2_MATH_HARDENING_REPORT.md`
+- `rigid-identity-framework/paper3/main.tex`
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- `rigid-identity-framework/paper5_operational_consciousness/main.log`
+- `rigid-identity-framework/paper5_operational_consciousness/main.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.log`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.aux`
+- `rigid-identity-framework/monolithic/build/sections/06-structural-criterion-for-substrate-invariant-operational-consciousness.tex`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+- `rigid-identity-framework/paper5_operational_consciousness/main.pdf`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE4_ITERATION3_PAPER5_IMPORT_LANGUAGE_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `paper3/main.tex`
+- `paper8_first_person_subjectivity/main.tex`
+- `paper9_phenomenal_bridge_organization/main.tex`
+- BaseCore
+- Papers 1--4 and 6--10 as editable sources
+- bibliography, macros, labels, theorem statements, proof bodies, scripts, registry, release files, and runtime code
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Inspect workspace state | Clean at preflight; scoped files modified after edit/build. |
+| `git log --oneline origin/main..HEAD` | Record local commits ahead of origin | `d4a960d`, `60b86de`, `a9c28b5`. |
+| `Get-Content INSTRUCCIONES.md` | Read active governance | Section 1.3 confirmed active. |
+| `rg` over Papers 3, 5, 8, 9 | Audit remaining Phase 4 candidates | Paper 5 selected; Paper 3 audit-only; Papers 8/9 deferred. |
+| `Get-FileHash -Algorithm SHA256` | Capture baseline and final hashes | Completed. |
+| Structural count scan | Verify theorem/lemma/proposition/corollary/definition/proof/label counts | Paper 5 counts unchanged. |
+| `apply_patch` | Apply scoped Paper 5 prose edits and add report/ledger | Completed. |
+| `git diff --check` | Diff sanity | No diff-check errors; CRLF warnings only. |
+| `pdflatex -interaction=nonstopmode main.tex` | Paper 5 LaTeX pass 1 | Exit code 0. |
+| `biber main` | Paper 5 bibliography | Exit code 0. |
+| `pdflatex -interaction=nonstopmode main.tex` | Paper 5 LaTeX pass 2 | Exit code 0. |
+| `pdflatex -interaction=nonstopmode main.tex` | Paper 5 LaTeX pass 3 | Exit code 0. |
+| `npm run compile:monolithic` | Rebuild monolithic volume | Normal attempt failed from MiKTeX AppData permission; elevated rerun compiled. |
+| `Select-String` log scans | Verify LaTeX/Biber hard gates | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings. |
+| Phrase-count checks | Verify source-to-monolith propagation | New phrases present in source and monolithic section; old target phrases absent from both. |
+| Case-sensitive label/ref scan | Verify exact labels and refs | 401 labels, 0 exact duplicates, 134 refs, 0 missing refs. |
+| `npm run verify` | Run v31 verification chain | PASS with `external_support_certified=false` and `BLOCKED_FOUNDATION_FIRST_GATES`. |
+
+Implementation summary:
+- Paper 3 was audited and left untouched because its witness-relative boundary is already explicit.
+- Paper 5 abstract now says `framework-internal results` and `non-empty membership of the operational class`, avoiding ordinary-language consciousness overread.
+- Paper 5 imports Paper 2 as a classification of admissible CCR assignments rather than unqualified forced continuity language.
+- Paper 5 imports Paper 3 as witness-relative null-instability and conditional non-nullity under stated hypotheses.
+- Prediction table language changed from `forced to zero` to `driven to zero`.
+- Conclusion now states a framework-internal claim and refers to the operational class discussed here.
+
+Verification:
+- Paper 5 structural counts unchanged: 9 theorems, 2 lemmas, 34 propositions, 4 corollaries, 27 definitions, 49 proofs, 87 labels.
+- Paper 5 `.tex` SHA256: `A34AF5FE86BE5B6FC989F99BE0055DF829DF1A0C05E948196D106FDB0C0F00F7`.
+- Paper 5 PDF SHA256: `CA1520FAB347EA0BDF687A4B74257847CFAFF5BE0867ECE4891F37E8172193C9`.
+- Paper 5 PDF: 28 pages, 507843 bytes.
+- Monolithic section SHA256: `62964B377AD9CB2A6AF79849B2A71D16F7CC5275BC5C82887DD7EB52474C68DA`.
+- Monolithic PDF SHA256: `FA59ED167745B826EE5238FEC221B8FA273A33CBDB107DBD6B459AD39FE26E25`.
+- Monolithic PDF: 335 pages, 2837732 bytes.
+- `MONOLITHIC_BUILD_REPORT.md` SHA256: `9D3EFD364031F436377C83044A5859F70FFB1B5DA915F7BEAF93E61148746F90`.
+- Paper 5 hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 duplicate destinations, 0 biber warnings.
+- Monolithic hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 duplicate destinations, 0 biber warnings.
+- Monolithic labels: 401 source labels, 0 exact duplicate groups; 401 aux labels, 0 exact duplicate groups.
+- `npm run verify`: PASS while preserving `external_support_certified=false`; final verdict remains `BLOCKED_FOUNDATION_FIRST_GATES`.
+
+Regressions searched:
+- theorem/proof/label/macro churn;
+- theorem title or theorem statement weakening;
+- old target phrases remaining in source or generated monolithic section;
+- new phrases missing from monolithic section;
+- undefined refs/cites or biber warnings;
+- duplicate exact labels/anchors;
+- accidental external-validation promotion;
+- accidental edits to Papers 3, 8, or 9.
+
+Regressions found:
+- No hard regression found.
+- Layout debt remains tracked: Paper 5 has 4 overfull and 10 underfull hbox warnings; monolithic has 7 overfull and 330 underfull hbox warnings.
+- Push remains blocked pending external audit under `INSTRUCCIONES.md` section `1.3`.
+
+Residual risks:
+- Phase 4 is not globally closed.
+- Paper 8 and Paper 9 remain high-risk semantic/body-level candidates.
+- Paper 3 may receive an optional audit-only closure or tiny intro wording pass if external audit requests it.
+- Layout debt should remain a separate editorial phase.
+
+Status: `PASS_WITH_TRACKED_SCOPE_AND_LAYOUT_DEBT`.
+
+---
+
 ## 2026-06-05 - Codex - Roadmap v3 Phase 4 Iteration 1 Mathematical Hardening
 
 User request: Proceed with the next phase after Phase 3 Iteration 2 was pushed.

@@ -1,7 +1,7 @@
 # Monolithic Build Report v2
 
 Status: MONOLITHIC_COMPILED
-Date: 2026-06-05
+Date: 2026-06-06
 
 ## Boundary
 
@@ -60,7 +60,7 @@ mtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/iri
 sp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/ty
 pe1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (335 pages, 2837325 bytes).
+Output written on QICN_MONOLITHIC.pdf (335 pages, 2837381 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 [pdflatex pass 3]
@@ -76,7 +76,7 @@ mtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/iri
 sp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/ty
 pe1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (335 pages, 2837325 bytes).
+Output written on QICN_MONOLITHIC.pdf (335 pages, 2837381 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 ```

@@ -1652,6 +1652,117 @@ Residual risks:
 - Papers 8 and 9 remain high-risk Phase 2 targets and should be handled next.
 - Monolithic synchronization is open after Papers 1 and 3 changed; rebuild should wait until Papers 8 and 9 are also handled.
 
+Post-review addendum:
+- A later review correctly noted missing verification depth in the first Phase 4 Iteration 1 closure: mathematical-strength preservation, semantic regression comparison, `npm run verify`, and stronger monolithic propagation evidence.
+- Additional verification was performed without changing theoretical content.
+- Paper 1 formal structure comparison against `origin/main`: `207 -> 207`, diff `0` across theorem/lemma/proposition/corollary/definition/proof/label lines.
+- Paper 1 labels remained `57 -> 57`, diff `0`.
+- Paper 1 `.tex` delta remained `8 insertions`, `8 deletions`, `0 net` lines.
+- Word-level diff confirmed only interpretive/prose substitutions: `forced under` -> `determined within`; `absolute rigidity` -> `CCR rigidity`; `mathematically unavoidable` -> `model-determined`; `necessary categorical invariant` -> `canonical categorical invariant`; `closed, non-expandable ontological category` -> `closed canonical model class`; `No fourth option exists.` -> `No fourth option exists within the stated model class.`
+- Old targeted high-risk phrases are absent from both Paper 1 and generated monolithic Paper 1 section: `mathematically unavoidable`, `necessary categorical invariant`, `non-expandable ontological category`, `absolute rigidity`, `forced under minimal assumption`, `forced under the minimal restriction`.
+- New replacement phrases are present in both Paper 1 and generated monolithic Paper 1 section: `model-determined consequence`, `formal theorems within the stated model class`, `canonical categorical invariant`, `closed canonical model class`, `within the stated observable-channel model`, `CCR rigidity`.
+- `npm run verify` was executed and passed through `verify:v31`.
+- Verification result preserved scientific blockers: `External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false`.
+- Phase 4 scope status was corrected: this is a local Paper 1 hardening pass, not a full Phase 4 closure.
+- Remaining Phase 4 candidates: Paper 2 `Forced Continuity Theorem` and `absolute rigidity` glosses; Paper 3 `forced non-nullity`; Paper 5 inherited upstream forced-language; Paper 9 bridge ontology/validation surfaces.
+
+Status: `PASS_WITH_TRACKED_SCOPE_AND_LAYOUT_DEBT`.
+
+---
+
+## 2026-06-05 - Codex - Roadmap v3 Phase 4 Iteration 1 Mathematical Hardening
+
+User request: Proceed with the next phase after Phase 3 Iteration 2 was pushed.
+
+Operational objective: Start Phase 4 with a small, auditable mathematical-hardening pass: preserve mathematical strength inside the declared model class while reducing universal, metaphysical, or ontological overread risk in one priority paper.
+
+Files read:
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE3_ITERATION1_LANGUAGE_ALIAS_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE3_ITERATION2_PAPER7_ALIAS_REPORT.md`
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper2/main.tex`
+- `rigid-identity-framework/paper3/main.tex`
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+- `rigid-identity-framework/paper6_predictions_falsation/main.tex`
+- `rigid-identity-framework/paper1/main.log`
+- `rigid-identity-framework/paper1/main.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.log`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.blg`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.aux`
+- `rigid-identity-framework/monolithic/build/sections/02-rigid-identity-as-an-inverse-limit-in-observable-channels.tex`
+
+Files modified:
+- `rigid-identity-framework/paper1/main.tex`
+- `rigid-identity-framework/paper1/main.pdf`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE4_ITERATION1_MATH_HARDENING_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- BaseCore
+- Papers 2--10
+- theorem labels, theorem titles, theorem environments, proof structure, macros, bibliography, registry, release files, and scripts
+- runtime/estimator claim surfaces reserved for Phase 5
+- redundancy surfaces reserved for Phase 6
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Preflight workspace state | Clean relative to `origin/main` before edits. |
+| `Get-Content ROADMAP.md` / `INSTRUCCIONES.md` | Confirm phase rules and workflow | Phase 4 identified as next roadmap phase. |
+| `rg` over Papers 1--10 and BaseCore | Audit strong language: `forced`, `inevitable`, `no alternative`, `unavoidable`, `proves`, `validates`, `ontological` | Paper 1 selected as first Phase 4 target. |
+| `Get-FileHash -Algorithm SHA256` | Record baseline and final hashes | Completed. |
+| `apply_patch` | Apply Paper 1 prose hardening | Completed; 8 changed lines. |
+| label comparison against `HEAD` | Verify labels unchanged | Paper 1 labels `57 -> 57`, diff count 0. |
+| `git diff --check` | Diff sanity | No diff-check errors; LF-to-CRLF warnings only. |
+| `pdflatex; biber; pdflatex; pdflatex` in `paper1` | Recompile Paper 1 | Exit code 0; final PDF 26 pages. |
+| `npm run compile:monolithic` | Rebuild monolithic volume | First normal attempt returned failure; elevated rerun compiled. |
+| `Select-String` log scans | Check hard LaTeX/Biber gates | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings. |
+| exact label/ref scans over monolithic build sections | Verify labels and refs | 401 labels, 401 exact unique, 0 duplicate exact groups; 214 refs, 0 missing refs. |
+
+Implementation summary:
+- Replaced `forced under minimal restriction/assumption R0` with `determined within minimal restriction/assumption R0`.
+- Replaced `absolute rigidity` with `CCR rigidity` in high-impact summary/gloss surfaces.
+- Replaced `mathematically unavoidable consequence` with `model-determined consequence`.
+- Replaced `necessary categorical invariant` with `canonical categorical invariant`.
+- Replaced `closed, non-expandable ontological category` with `closed canonical model class`.
+- Added model-class qualifier to the closure proof: `No fourth option exists within the stated model class.`
+- Preserved theorem title `No--Alternative Representation` as a technical identifier.
+
+Verification:
+- Paper 1 `.tex` SHA256: `D93264E020F9058C2CA831A5DFF7EDD59B3E58454668FB080ECC17B9BCE0F803`.
+- Paper 1 PDF SHA256: `BC841D233B2C3968F290C2954BBAC07178127E3F6C84BF8941DB1D52E4787AF5`.
+- Paper 1 PDF: `26 pages`, `465108 bytes`.
+- Monolithic wrapper `.tex` SHA256: `306B3771298B9027A590F5CE88E5597A450E60F4D4264F5131090827FF78CE0F`.
+- Monolithic generated Paper 1 section SHA256: `A6C72EC1857AD0C5D802711C02B8A6C7DCA2D9B37714F32BC46919E7CB2BC497`.
+- Monolithic PDF SHA256: `92BAD43310F231DC40D7FE9F8EB5644E36316D03BAFCD3EF7801763C53090312`.
+- Monolithic PDF: `335 pages`, `2837381 bytes`.
+- `MONOLITHIC_BUILD_REPORT.md` SHA256: `9D68EB3BD5245514676BCBD66118A96886EB156E2BFFB5AA2AA8CB3908978221`.
+- Paper 1 hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings, 0 overfull, 0 underfull.
+- Monolithic hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 duplicate hyperref destinations, 0 biber warnings.
+- Monolithic labels: 401 source labels, 401 exact unique source labels, 0 exact duplicates; 214 refs, 0 missing refs.
+
+Regressions searched:
+- accidental edits outside Paper 1 and generated monolithic artifacts;
+- theorem title, theorem label, theorem environment, proof, macro, bibliography, registry, release, and script churn;
+- loss of model-internal mathematical strength;
+- promotion of model-relative results into ontology, metaphysics, or universal system claims;
+- source/PDF desynchronization;
+- monolithic sync failure.
+
+Regressions found:
+- No hard regression found.
+- The first monolithic compile attempt returned failure and was replaced by a successful elevated rerun using the same canonical command.
+- Monolithic layout debt remains tracked: 7 overfull and 330 underfull warnings.
+
+Residual risks:
+- Paper 2 `Forced Continuity Theorem` remains a future Phase 4 candidate requiring theorem-local care.
+- Paper 3 `forced non-nullity` remains on the audit list, though its witness-relative clarification reduces immediate risk.
+- Phase 5 runtime/estimator hardening remains separate.
+
 Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.
 
 ## 2026-06-05 - Codex - Roadmap v3 Phase 2 Closure and Monolithic Sync

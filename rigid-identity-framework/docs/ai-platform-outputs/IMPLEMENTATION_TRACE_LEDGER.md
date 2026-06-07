@@ -1878,6 +1878,87 @@ Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.
 
 ---
 
+## 2026-06-06 - Codex - Phase 4 Iteration 4 Paper 8/9 high-risk semantic audit
+
+User request:
+- Continue Phase 4 with Papers 8 and 9, recognizing both as high-risk and requiring deep semantic audit rather than broad keyword replacement.
+
+Operational objective:
+- Audit Paper 8 body-level subjectivity language and Paper 9 bridge-specific language before any `.tex` edits.
+- Classify safe future edits while preserving mathematical strength, theorem/proof topology, labels, macros, and claim-boundary discipline.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/package.json`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.pdf`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.pdf`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE4_ITERATION4_PAPER8_9_HIGH_RISK_SEMANTIC_AUDIT.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.pdf`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.pdf`
+- monolithic sources/PDF
+- BaseCore, Papers 1-7, Paper 10, macros, labels, theorem/proof bodies, bibliography, scripts, registry, and release files
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Confirm workspace baseline | Clean and synced: `## main...origin/main`. |
+| `Get-ChildItem -Force` | Check local rule/workflow folders | No literal `.agent`/`.agents` folder in root; repo-local `INSTRUCCIONES.md` used. |
+| `Get-Content INSTRUCCIONES.md` | Inspect active governance | Confirmed AI-output path, ledger, phased work, and external-audit-before-push rule. |
+| `rg -n ... paper8/main.tex` | Manual semantic surface audit | Located high-salience Paper 8 subjectivity/closure/runtime passages. |
+| `rg -n ... paper9/main.tex` | Manual bridge-specific semantic audit | Located high-salience Paper 9 bridge/closure/BPF/support passages. |
+| structural counts via `Select-String` | Count formal topology | Paper 8: 1 theorem, 9 propositions, 2 corollaries, 9 definitions, 11 proofs, 21 labels. Paper 9: 0 theorems, 5 propositions, 1 corollary, 6 definitions, 6 proofs, 3 labels. |
+| `Get-FileHash -Algorithm SHA256` | Capture source/PDF baselines | Hashes recorded in report. |
+| lexical count script with `Select-String -SimpleMatch` | Triage risk surfaces | Counts recorded in report; not used as replacement policy. |
+| `npm run verify` | Run v31 verification chain | PASS; scientific gates remain blocked with `external_support_certified=false`. |
+
+Implementation summary:
+- Created an audit-only Phase 4 Iteration 4 report for Papers 8 and 9.
+- Classified Paper 8 as bounded but reviewer-sensitive, with future micro-hardening candidates around `structurally genuine` and selected `formal ladder closed` wording.
+- Classified Paper 9 as bridge-risk dense but mostly protected by non-claims, blocked claim surfaces, and failure analysis; future work should focus on abstract/conclusion closure wording and BPF-0/BPF-1 implementation-frontier verification.
+- Explicitly rejected broad keyword replacement for both papers.
+
+Verification:
+- Paper 8 `.tex` SHA256: `ACE733450CF9FC0958C4D90270419AC2B192CA2BEA388B06ECB1D2E670E518CC`.
+- Paper 8 PDF SHA256: `687AEE7491A342B9A29CE0CFF7ABB50B4E7389ACFD176D5FC1AFC3C8C837DB60`.
+- Paper 9 `.tex` SHA256: `9D1CFA8283C87E3257F7040B4C28AE7167457ACAA41C78344034383B07AAECFB`.
+- Paper 9 PDF SHA256: `98B92354FDA01404223ACC120804145920E3EBA425096655F59C2C3AE8F66029`.
+- `npm run verify`: exit code 0.
+- `verify:v31`: PASS.
+- `external_support_certified=false` preserved.
+
+Regressions searched:
+- accidental `.tex` modification;
+- accidental PDF/source regeneration;
+- accidental monolithic changes;
+- theorem/proof/label/macro churn;
+- semantic promotion from formal subjectivity or bridge predicates to phenomenality, human equivalence, metaphysical subjecthood, moral parity, or external validation;
+- treating BPF-1 provisional surfaces as bridge support.
+
+Regressions found:
+- None in this audit-only iteration.
+
+Residual risks:
+- Paper 8 abstract/conclusion still contain bounded but high-salience language that may merit targeted micro-hardening.
+- Paper 9 abstract/conclusion still use dense closure language and should receive bridge-specific hardening.
+- Paper 9 BPF-0/BPF-1 implementation-frontier claims require artifact/code verification before edit.
+- External audit remains required before push for any later theory-modifying implementation.
+
+Status: `PASS_AUDIT_ONLY_WITH_TARGETED_PHASE4_QUEUE`.
+
+---
+
 ## 2026-06-05 - Codex - Governance Integration: Mandatory External Audit Before Push
 
 User request: Integrate the new instruction section before continuing the next roadmap iteration.

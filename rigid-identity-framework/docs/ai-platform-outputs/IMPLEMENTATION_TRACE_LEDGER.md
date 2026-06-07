@@ -1959,6 +1959,112 @@ Status: `PASS_AUDIT_ONLY_WITH_TARGETED_PHASE4_QUEUE`.
 
 ---
 
+## 2026-06-06 - Codex - Phase 4 Iteration 5 one-shot Paper 8/9 hardening
+
+User request:
+- Implement Paper 8 micro-pass and Paper 9 bridge-specific pass in one shot, while keeping them as separated subiterations.
+
+Operational objective:
+- Apply targeted semantic hardening to Paper 8 and Paper 9 without broad keyword replacement, theorem/proof edits, label changes, macro changes, or mathematical weakening.
+- Recompile Paper 8, Paper 9, and the monolithic PDF.
+- Verify structural preservation, source-to-monolith propagation, log gates, hashes, and `npm run verify`.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE4_ITERATION4_PAPER8_9_HIGH_RISK_SEMANTIC_AUDIT.md`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- `rigid-identity-framework/package.json`
+- `rigid-identity-framework/monolithic/build/sections/09-first-person-indexed-subjectivity.tex`
+- `rigid-identity-framework/monolithic/build/sections/10-phenomenal-bridge-organization.tex`
+- Paper 8, Paper 9, and monolithic `.log`/`.blg` files
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.pdf`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex`
+- `rigid-identity-framework/paper9_phenomenal_bridge_organization/main.pdf`
+- `rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf`
+- `rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE4_ITERATION5_ONE_SHOT_PAPER8_9_HARDENING_REPORT.md`
+
+Files intentionally not modified:
+- theorem/proof bodies;
+- theorem/proposition/definition/corollary environments;
+- labels;
+- macros;
+- bibliography;
+- registry;
+- scripts;
+- BaseCore;
+- Papers 1-7 and Paper 10.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Preflight and final scope checks | Started clean/synced; final changes scoped to Phase 4 Iteration 5 artifacts. |
+| `Get-Content INSTRUCCIONES.md` | Governance review | Confirmed phased work, ledger, report, and external-audit-before-push rule. |
+| `rg` over BPF/bridge terms | Check local BPF implementation-frontier evidence | Found manuscript/report references but no local active BPF runtime tree in framework workspace. |
+| `apply_patch` | Apply targeted prose edits and report/ledger additions | Completed. |
+| structural `Select-String` counts | Verify formal topology | Paper 8 and Paper 9 counts preserved. |
+| `pdflatex`, `biber`, `pdflatex`, `pdflatex` in Paper 8 | Recompile Paper 8 | Exit code 0; final PDF 43 pages. |
+| `pdflatex`, `biber`, `pdflatex`, `pdflatex` in Paper 9 | Recompile Paper 9 | Exit code 0; final PDF 42 pages. |
+| `npm run compile:monolithic` | Rebuild monolithic | Normal attempt hit MiKTeX AppData permission; elevated rerun timed out at tool boundary but child process finished; final build report shows compiled, exit code 0. |
+| log and `.blg` scans | Verify hard gates | 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings/errors. |
+| phrase count checks | Verify source-to-monolith propagation | All new tracked phrases appear in source and generated monolithic section with matching counts. |
+| `npm run verify` | Run v31 verification chain | PASS; `external_support_certified=false` preserved. |
+| `pdfinfo` | Page-count attempt | Failed due MiKTeX AppData permission; LaTeX logs used instead. |
+
+Implementation summary:
+- Paper 8: replaced high-salience `structurally genuine` and abstract/scope closure wording with framework-relative, formal-burden language.
+- Paper 9: replaced extractable closure language with formalization/definition language and narrowed BPF-0/BPF-1 claims into provenance-bound implementation-frontier language.
+- Paper 9: preserved `phenomenal bridge organization` as a historical bridge alias and predicate-family burden; no global replacement was performed.
+- Monolithic PDF was regenerated after Paper 8 and Paper 9 recompilation.
+
+Verification:
+- Paper 8 `.tex` SHA256: `CC76689B2E0FD8D55AB0CD5D3C94B1931E5F63ABA5FA989EC027636826F5BA11`.
+- Paper 8 PDF SHA256: `2489E9CAE54EE4AF912BC13D1F38ECFC236E7E442E71EAC7702832418EB794A5`.
+- Paper 8 PDF pages: 43.
+- Paper 9 `.tex` SHA256: `48A71544E90EB7CC5170A27D000EFA3096CD4BB0C3722170326491F8F2696B86`.
+- Paper 9 PDF SHA256: `BE66CD239F4B56FFB31D5705CFAE01EF622C647C4BB9E13F2B3BEDC08CDE6F86`.
+- Paper 9 PDF pages: 42.
+- Monolithic `.tex` SHA256: `306B3771298B9027A590F5CE88E5597A450E60F4D4264F5131090827FF78CE0F`.
+- Monolithic PDF SHA256: `16618EA1298C6FDAD715EC29FC271E786E1F527BDF05313CD98517E7CA748E99`.
+- Monolithic PDF pages: 335.
+- `MONOLITHIC_BUILD_REPORT.md` SHA256: `981CE0AED23B70458EEF2870C3DC22B0AA3DF920D82F02BFAA4D4D90A49077CB`.
+- Paper 8 hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings/errors; layout debt 13 overfull and 91 underfull.
+- Paper 9 hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings/errors; layout debt 38 overfull and 222 underfull.
+- Monolithic hard gates: 0 hard errors, 0 undefined refs/cites, 0 rerun warnings, 0 biber warnings/errors; layout debt 7 overfull and 330 underfull.
+- `npm run verify`: PASS; `external_support_certified=false` preserved.
+
+Regressions searched:
+- theorem/proof/definition/proposition/corollary topology changes;
+- label churn;
+- macro churn;
+- bibliography changes;
+- broad keyword replacement;
+- weakening of mathematical claims inside the formal domain;
+- semantic promotion to phenomenality, human equivalence, metaphysical subjecthood, moral parity, external validation, or BPF-1 bridge support;
+- source-to-monolith propagation failure;
+- PDF/source desynchronization.
+
+Regressions found:
+- No hard regression found.
+- `pdfinfo` is blocked by MiKTeX AppData permission in sandbox context; page counts came from LaTeX logs/build report.
+- Layout debt remains tracked and should be handled in a later editorial/layout phase.
+
+Residual risks:
+- External audit is required before push under `INSTRUCCIONES.md` section 1.3.
+- Paper 9 BPF program surfaces are now provenance-bound, but a future runtime/artifact audit should verify the companion implementation workspace before publication-readiness claims.
+
+Status: `PASS_WITH_TRACKED_LAYOUT_DEBT_AND_EXTERNAL_AUDIT_REQUIRED_BEFORE_PUSH`.
+
+---
+
 ## 2026-06-05 - Codex - Governance Integration: Mandatory External Audit Before Push
 
 User request: Integrate the new instruction section before continuing the next roadmap iteration.

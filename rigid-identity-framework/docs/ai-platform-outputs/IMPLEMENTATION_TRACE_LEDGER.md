@@ -1876,6 +1876,98 @@ Residual risks:
 
 Status: `PASS_WITH_TRACKED_LAYOUT_DEBT`.
 
+## 2026-06-07 - Codex - Roadmap v3 Phase 6 Rival/Comparator Limited Inventory
+
+User request:
+- Proceed after Phase 5B was verified as `PASS_WITH_TRACKED_LAYOUT_DEBT`.
+- Start the next phase as rival/comparator work, while preserving strict claim boundaries.
+
+Operational objective:
+- Start Phase 6 under the user's current naming as rivals/comparators.
+- Record the roadmap numbering caveat without rewriting `ROADMAP.md`: historical roadmap text labels duplicate reduction as Fase 6 and rivals as Fase 7, while the active user instruction now points the next phase to rivals/comparators.
+- Keep the pass audit/inventory-only: no `.tex`, PDF, registry, release, corpus, artifact, theorem, macro, label, or script changes.
+
+Files read:
+- `AGENTS.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `release/claim_registry.v1.json`
+- `release/layer_boundaries.v1.json`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/package.json`
+- `rigid-identity-framework/scripts/lib/trace-memory-rival.js`
+- `rigid-identity-framework/scripts/lib/adversarial-negative-controls.js`
+- `rigid-identity-framework/scripts/negative-control-suite.js`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_RIVALS_LIMITED_INVENTORY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- All `.tex` sources.
+- All PDFs.
+- `release/`, `corpus/`, and `artifacts/`.
+- Bibliography files.
+- Registries, manifests, scripts, labels, macros, theorem statements, proof bodies, and monolithic sources.
+- Preexisting untracked root files `AGENTS.md` and `opencode.jsonc`.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz'` | Record local timestamp | `2026-06-07 19:49:18 -06:00` |
+| `git status --short --branch` | Confirm worktree state | `main...origin/main`; only preexisting untracked `AGENTS.md` and `opencode.jsonc` before this pass. |
+| `Select-String` over memory | Recover relevant QICN governance and rival context | Found phasewise governance, external-support caution, and internal rival-suite caution. |
+| `Get-Content` on local governance docs | Apply source-of-truth rules | Completed. |
+| `Select-String` over `ROADMAP.md` | Locate rival/comparator rules and numbering mismatch | Confirmed operational alias required. |
+| `Select-String` over local bibliography files | Check IIT/GWT/HOT local source coverage | IIT/GWT found; HOT not found in local bibliography by searched terms. |
+| Web lookup over primary/canonical sources | Seed rival matrix responsibly | Located Tononi 2004 IIT, Baars/Dehaene-Naccache/Mashour et al. GWT/GNW, and Lau-Rosenthal HOT sources. |
+| `Get-Content` on comparator scripts | Audit internal rival/control harnesses | Found internal synthetic comparator tooling only; not public adjudication. |
+
+Implementation summary:
+- Created a Phase 6 rival/comparator limited inventory report.
+- Seeded a small matrix for IIT, GWT/GNW, and HOT with central claims, observables, QICN differences, separating predictions, rival-favoring results, and status.
+- Marked predictive processing, active inference, dynamical systems, and functionalism as deferred `LITERATURE_DEBT` / `REQUIRES_DOMAIN_EXPERT`.
+- Classified local `trace-memory-rival`, adversarial negative-control, and negative-control-suite scripts as internal falsification/comparator hygiene only.
+- Recorded priority gaps: HOT bibliography gap, rival scope gap, observable mapping gap, separating-test gap, and external adjudication gap.
+
+Verification pending at ledger-entry creation:
+- root canonical verification scripts;
+- final `git status` no-regression check;
+- scoped staging/commit of report and ledger only.
+
+Verification executed:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `node scripts\verify-canonical-integrity.cjs` | Root canonical integrity gate | PASS; provenance note `working_tree_not_clean_at_hardening_start`. |
+| `node scripts\verify-claim-registry.cjs` | Root claim registry gate | PASS; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` | Root canonical release gate | PASS. |
+| `npm run test:trace-memory-rival` | Local trace-memory rival unit tests | PASS. |
+| `npm run test:negative-controls` | Local v30/v31 negative-control suite | PASS; 6/6; external support certified false. |
+| `npm run test:adversarial-negative-controls` | Local adversarial negative-control search | FAIL: `Unsupported generative_model: seeded_weighted_panel_v3_explicit_salt`. |
+| `Select-String` over comparator scripts | Locate failure cause | `adversarial-negative-controls.js` emits v3 explicit-salt model; `external-trace-generator.js` accepts only v2. |
+| `git diff --check -- rigid-identity-framework\docs\ai-platform-outputs\IMPLEMENTATION_TRACE_LEDGER.md rigid-identity-framework\docs\ai-platform-outputs\reports\QICN_ROADMAP_V3_PHASE6_RIVALS_LIMITED_INVENTORY.md` | Check whitespace/diff sanity | No diff-check errors; LF-to-CRLF warning on ledger only. |
+| `git status --short --branch` | Confirm scoped worktree | Only ledger modified plus new Phase 6 report, with preexisting untracked `AGENTS.md` and `opencode.jsonc`. |
+| `Get-FileHash -Algorithm SHA256 <report>,<ledger>` | Capture artifact hashes externally | Run after final content stabilization; hashes are not self-embedded to avoid self-referential hash drift. |
+
+Verification summary:
+- Root canonical gates passed.
+- Trace-memory rival tests passed.
+- Standard negative-control suite passed.
+- Adversarial negative-control search is blocked by an internal generative-model compatibility gap.
+- The gap was not patched in this inventory pass because Phase 6.1 is audit/report-only.
+
+Residual risks:
+- `ADVERSARIAL_HARNESS_COMPATIBILITY_GAP`: resolve the v2/v3 generative-model mismatch before using the adversarial negative-control search as a verified Phase 6 artifact.
+- `HOT_BIB_GAP`: Higher-Order Theory source seed exists externally but was not found in local bibliography files.
+- `OBSERVABLE_MAPPING_GAP`: rival rows still need registry-backed operational observables before any theory prose is authored.
+- `EXTERNAL_ADJUDICATION_GAP`: no rival comparison is externally adjudicated.
+
+Status: `PASS_WITH_ADVERSARIAL_HARNESS_COMPATIBILITY_GAP`.
+
 ---
 
 ## 2026-06-06 - Codex - Phase 4 Iteration 4 Paper 8/9 high-risk semantic audit

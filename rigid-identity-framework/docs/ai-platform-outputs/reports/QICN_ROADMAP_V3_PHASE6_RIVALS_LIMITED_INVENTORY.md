@@ -2,7 +2,7 @@
 
 Date: 2026-06-07 19:49 -06:00
 
-Status: `PHASE6_RIVALS_INVENTORY_PASS_WITH_ADVERSARIAL_HARNESS_GAP_NO_TEX_EDITS`
+Status: `PHASE6_RIVALS_INVENTORY_PASS_WITH_EXTERNAL_AUDIT_ADDENDUM_AND_ADVERSARIAL_HARNESS_GAP_NO_TEX_EDITS`
 
 ## Scope
 
@@ -159,3 +159,107 @@ This pass is closed if:
 - any commit stages only this report and the ledger.
 
 Status after verification: `PASS_WITH_ADVERSARIAL_HARNESS_COMPATIBILITY_GAP`.
+
+## External Audit Addendum - 2026-06-10
+
+External audit input:
+
+- Audited commit: `1452a8c docs: start phase 6 rival inventory`.
+- Audit classification: functionally correct and honest, with one high-severity traceability concern about the `verify-*` command paths.
+- Scope of this addendum: documentation correction only. No `.tex`, PDF, release, corpus, artifact, registry, script, macro, label, theorem, proof, bibliography, or monolithic source was modified.
+
+### Resolution of `verify-*` Path Finding
+
+The external audit reported that the following commands were not independently reproducible from `rigid-identity-framework/scripts/`:
+
+- `node scripts\verify-canonical-integrity.cjs`
+- `node scripts\verify-claim-registry.cjs`
+- `node scripts\verify-canonical-release.cjs`
+
+This is a real documentation ambiguity in the original report, but not a missing-script failure. These gates are root-level release gates and were executed from:
+
+`C:\Users\irisp\OneDrive\Escritorio\QICN-FRAMEWORK`
+
+Verified root paths:
+
+- `scripts/verify-canonical-integrity.cjs`
+- `scripts/verify-claim-registry.cjs`
+- `scripts/verify-canonical-release.cjs`
+- `scripts/audit-public-release-reproducibility.cjs`
+
+Fresh verification from the root workspace:
+
+| Command | Working directory | Result |
+|---|---|---|
+| `node scripts\verify-canonical-integrity.cjs` | `QICN-FRAMEWORK/` | PASS; 25 canonical PDFs; 17 claim-registry entries; provenance note `working_tree_not_clean_at_hardening_start`. |
+| `node scripts\verify-claim-registry.cjs` | `QICN-FRAMEWORK/` | PASS; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` | `QICN-FRAMEWORK/` | PASS after elevated rerun; the first attempt was blocked by a Windows sandbox ACL helper error, not by the script. |
+
+Corrected reading:
+
+- The prior report should be read as using root-level canonical gates.
+- Future reports must specify the working directory for every command whose relative path could resolve differently from `QICN-FRAMEWORK/` versus `rigid-identity-framework/`.
+- The audit's recommendation is accepted as a traceability improvement.
+
+### Audit Rule 1.3 Interpretation
+
+The external audit noted that the Phase 6 commit was pushed before this external audit. The phase did not modify theoretical `.tex` content, high-impact interpretive prose inside papers, PDFs, scripts, release packages, or registries. Therefore the strictest reading of `INSTRUCCIONES.md` section 1.3 was not triggered in the same way as Phase 2/4 paper edits.
+
+However, because this report did close a phase inventory and was pushed, this addendum treats the external audit as a post-hoc governance correction and records it formally. Future phase-closing documentation should either:
+
+- receive external audit before push when it closes a substantive iteration; or
+- explicitly state why the phase is docs-only/non-theory and why post-commit audit is acceptable.
+
+### Local Bibliography Clarification
+
+The earlier report stated that IIT and GWT references already exist locally. The verified local coverage is more precise:
+
+- Tononi 2004 / IIT is locally present.
+- Baars 1988 / GWT is locally present.
+- Dehaene and Naccache 2001, Mashour et al. 2020, and Lau and Rosenthal 2011 were used as external source seeds but are not confirmed as local bibliography entries in this pass.
+- HOT remains `HOT_BIB_GAP` until a controlled bibliography seed is added.
+
+### `RIVAL-TRACE-MEMORY-01` Clarification
+
+`RIVAL-TRACE-MEMORY-01` is not a script name. It is the internal model id returned by:
+
+`rigid-identity-framework/scripts/lib/trace-memory-rival.js`
+
+The executable test surface is:
+
+`npm run test:trace-memory-rival`
+
+Fresh verification:
+
+- `npm run test:trace-memory-rival`: PASS.
+- `npm run test:negative-controls`: PASS, 6/6, `external_support_certified=false`.
+- `npm run test:adversarial-negative-controls`: FAIL with `Unsupported generative_model: seeded_weighted_panel_v3_explicit_salt`.
+
+### v2/v3 Harness Gap Clarification
+
+The adversarial harness gap remains open and correctly blocks using the adversarial negative-control search as verified support:
+
+- `scripts/lib/adversarial-negative-controls.js` emits `seeded_weighted_panel_v3_explicit_salt`.
+- `scripts/lib/external-trace-generator.js` accepts only `seeded_weighted_panel_v2`.
+
+Interpretation:
+
+- `seeded_weighted_panel_v2` is the currently accepted trace generator spec.
+- `seeded_weighted_panel_v3_explicit_salt` is the adversarial control spec currently emitted by the adversarial search harness.
+- The mismatch is tooling debt, not evidence for or against QICN.
+- Resolution belongs to a later Phase 6 harness audit/repair subiteration, not to this addendum.
+
+### Addendum Verdict
+
+The external audit is accepted with one correction:
+
+- The high-severity "missing scripts" finding is reclassified as `TRACEABILITY_AMBIGUITY_RESOLVED_BY_ROOT_CWD`.
+
+Residual tracked debts:
+
+- `ADVERSARIAL_HARNESS_COMPATIBILITY_GAP`
+- `HOT_BIB_GAP`
+- `OBSERVABLE_MAPPING_GAP`
+- `EXTERNAL_ADJUDICATION_GAP`
+
+Updated status: `PASS_WITH_EXTERNAL_AUDIT_ADDENDUM_AND_ADVERSARIAL_HARNESS_COMPATIBILITY_GAP`.

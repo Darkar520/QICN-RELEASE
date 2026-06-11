@@ -1968,6 +1968,86 @@ Residual risks:
 
 Status: `PASS_WITH_ADVERSARIAL_HARNESS_COMPATIBILITY_GAP`.
 
+## 2026-06-10 - Codex - Phase 6 External Audit Addendum
+
+User request:
+- Read and act on the attached implementation audit for Phase 6 rivals/comparators.
+- The audit reviewed commit `1452a8c docs: start phase 6 rival inventory` and recommended correcting the `verify-*` traceability issue before Phase 6.2.
+
+Operational objective:
+- Resolve the external audit's traceability findings without touching theory sources, PDFs, scripts, registries, release/corpus/artifacts, macros, labels, theorem statements, proof bodies, or monolithic sources.
+- Add a formal addendum to the Phase 6 report and ledger.
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\f540fee7-4aa0-40f6-aee4-d950b7b73974\pasted-text.txt`
+- `AGENTS.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_RIVALS_LIMITED_INVENTORY.md`
+- `rigid-identity-framework/scripts/lib/trace-memory-rival.js`
+- `rigid-identity-framework/scripts/lib/adversarial-negative-controls.js`
+- `rigid-identity-framework/scripts/lib/external-trace-generator.js`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_RIVALS_LIMITED_INVENTORY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- All `.tex` sources.
+- All PDFs.
+- `release/`, `corpus/`, `artifacts/`.
+- Scripts and fixtures.
+- Bibliography files.
+- Registries, manifests, macros, labels, theorem environments, theorem statements, proof bodies, and monolithic sources.
+- Preexisting untracked files: `AGENTS.md`, `opencode.jsonc`, `photoshop-mcp/`, and `rigid-identity-framework/.kiro/`.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-Content <attached pasted-text.txt>` | Read external audit | Audit accepted as input. |
+| `git status --short --branch` | Preflight worktree | `main...origin/main`; untracked `AGENTS.md`, `opencode.jsonc`, `photoshop-mcp/`, `rigid-identity-framework/.kiro/` outside scope. |
+| `Get-Content AGENTS.md` and required governance docs | Apply source-of-truth rules | Completed. |
+| `Get-ChildItem scripts -Filter verify-*.cjs` | Verify root-level canonical gate paths | Found `scripts/verify-canonical-integrity.cjs`, `scripts/verify-canonical-release.cjs`, `scripts/verify-claim-registry.cjs`, and `scripts/audit-public-release-reproducibility.cjs`. |
+| `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/` | Root canonical integrity gate | PASS; 25 canonical PDFs, 17 claim-registry entries; provenance note `working_tree_not_clean_at_hardening_start`. |
+| `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/` | Root claim registry gate | PASS; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/` | Root canonical release gate | First sandbox attempt failed with Windows ACL helper error; elevated rerun PASS. |
+| `git show --name-status --stat --oneline 1452a8c` | Verify audited commit scope | Exactly ledger modification and Phase 6 report creation. |
+| `npm run test:trace-memory-rival` from `rigid-identity-framework/` | Verify local trace-memory rival test | PASS. |
+| `npm run test:negative-controls` from `rigid-identity-framework/` | Verify local negative-control suite | PASS; 6/6; `external_support_certified=false`. |
+| `npm run test:adversarial-negative-controls` from `rigid-identity-framework/` | Reconfirm known harness gap | FAIL; `Unsupported generative_model: seeded_weighted_panel_v3_explicit_salt`. |
+| `Select-String` over comparator scripts | Locate ids and v2/v3 mismatch | `RIVAL-TRACE-MEMORY-01` is an internal id; v3 explicit-salt emitted by adversarial harness, v2 accepted by generator. |
+
+Implementation summary:
+- Added an external audit addendum to the Phase 6 rival/comparator inventory report.
+- Reclassified the audit's high-severity missing-script finding as `TRACEABILITY_AMBIGUITY_RESOLVED_BY_ROOT_CWD`.
+- Clarified that root canonical gates live under `QICN-FRAMEWORK/scripts/`, not `rigid-identity-framework/scripts/`.
+- Accepted the auditor's recommendation that future reports must state working directory for relative commands.
+- Clarified that `RIVAL-TRACE-MEMORY-01` is an internal model id, not a script name.
+- Clarified local bibliography coverage: Tononi 2004 and Baars 1988 are local; Dehaene/Naccache 2001, Mashour 2020, and Lau/Rosenthal 2011 remain external seeds or bibliography debt unless later added deliberately.
+- Preserved the adversarial negative-control v2/v3 mismatch as tracked Phase 6 tooling debt.
+
+Regressions searched:
+- accidental `.tex`, PDF, script, release, corpus, artifact, registry, bibliography, macro, label, theorem, proof, or monolithic changes;
+- accidental staging or mixing of preexisting untracked files;
+- promotion of internal tests into external validation;
+- silent claim inflation from post-hoc audit acceptance.
+
+Regressions found:
+- None in theory or corpus scope.
+- The Phase 6 report now explicitly documents the previously ambiguous root working directory.
+
+Residual risks:
+- `ADVERSARIAL_HARNESS_COMPATIBILITY_GAP` remains open.
+- `HOT_BIB_GAP` remains open.
+- `OBSERVABLE_MAPPING_GAP` and `EXTERNAL_ADJUDICATION_GAP` remain open.
+- Preexisting untracked files remain outside scope.
+
+Status: `PASS_WITH_EXTERNAL_AUDIT_ADDENDUM_AND_ADVERSARIAL_HARNESS_COMPATIBILITY_GAP`.
+
 ---
 
 ## 2026-06-06 - Codex - Phase 4 Iteration 4 Paper 8/9 high-risk semantic audit

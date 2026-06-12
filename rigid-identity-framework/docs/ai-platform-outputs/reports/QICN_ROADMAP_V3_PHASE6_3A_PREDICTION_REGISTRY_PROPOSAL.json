@@ -1,0 +1,113 @@
+{
+  "proposal_status": "NON_CANONICAL_AI_OUTPUT_PROPOSAL",
+  "integration_status": "requires_external_audit_and_explicit_user_approval_before_registry_or_release_edit",
+  "protocol_id": "QICN-P6.3A-P8-HOT-01",
+  "registry_target": "docs/PREDICTION_REGISTRY_v1.json",
+  "proposed_prediction": {
+    "id": "PRED-08a",
+    "source_paper": "paper8_first_person_subjectivity/main.tex",
+    "claim_target": "paper8.first_person_indexed_subjectivity_gate",
+    "claim_family": "First-person indexed subjectivity gate versus higher-order access",
+    "observable": "Dissociation between HOT-style higher-order access and QICN ownership, continuity, perspective, intervention-response, and irreducibility margins.",
+    "manipulation": "Run matched baseline, HOT-positive/QICN-ablated, QICN-structural/HOT-weak, label-only, memory-only, narrative-only, history-blind, sham, off-target, self/non-self swap, ownership-flattening, continuity-fracture, and decoy-insertion conditions under frozen seeds and hash manifest.",
+    "framework_prediction": "QICN receives bounded support only if first-person indexed gate variables add preregistered incremental value over HOT variables, all QICN thresholds pass, and all negative controls fail the QICN gate.",
+    "rival_prediction": "HOT is favored if higher-order access variables predict the target while QICN ownership, continuity, intervention, or irreducibility margins fail, are non-identifiable, or add no incremental value.",
+    "support_condition": "QICN variables produce at least 5 percent cross-validated loss reduction over HOT-only model, Delta BIC >= 10 or bootstrap-confirmed equivalent, all QICN thresholds pass, and CTRL_PASS_RATE = 0.",
+    "weakening_condition": "HOT_HOA predicts the target while QICN variables are unstable, threshold-dependent, autocorrelation-limited, or significant only after post-hoc transformations.",
+    "destruction_condition": "Any selected negative control passes the QICN gate, or HOT-only/weak-rival model matches or beats QICN at equal or lower cost while ownership and continuity margins fail.",
+    "required_artifacts": [
+      "protocol_report",
+      "versioned_trace_manifest",
+      "frozen_seed_manifest",
+      "hash_manifest",
+      "hot_model_report",
+      "qicn_gate_report",
+      "negative_control_report",
+      "autocorrelation_report",
+      "decision_record"
+    ],
+    "minimum_negative_controls": [
+      "CTRL-LABEL-ONLY-SELF",
+      "CTRL-MEMORY-ONLY",
+      "CTRL-NARRATIVE-ONLY",
+      "CTRL-HISTORY-BLIND"
+    ],
+    "thresholds": [
+      {
+        "name": "HOT_HOA",
+        "status": "not_frozen",
+        "value": "AUC >= 0.75 and ECE <= 0.10",
+        "unit": "cross-validated discrimination and calibration",
+        "source": "Phase 6.3A proposed protocol",
+        "rationale": "Requires higher-order access to be both discriminative and calibrated before it can act as HOT-positive condition.",
+        "date_frozen": null,
+        "modification_log": []
+      },
+      {
+        "name": "QICN_SIPM",
+        "status": "not_frozen",
+        "value": "median margin >= 0.20; bootstrap lower bound > 0",
+        "unit": "self-index privilege margin",
+        "source": "Phase 6.3A proposed protocol",
+        "rationale": "Separates privileged self-locus assignment from symmetric or decoy-sensitive assignment.",
+        "date_frozen": null,
+        "modification_log": []
+      },
+      {
+        "name": "QICN_OFIA",
+        "status": "not_frozen",
+        "value": "paired standardized effect d >= 0.50; block-bootstrap CI excludes 0",
+        "unit": "ownership-field intervention asymmetry",
+        "source": "Phase 6.3A proposed protocol",
+        "rationale": "Tests whether self-owned perturbations differ from matched non-self perturbations.",
+        "date_frozen": null,
+        "modification_log": []
+      },
+      {
+        "name": "QICN_CFS",
+        "status": "not_frozen",
+        "value": "fracture drop >= 0.25; sham/off-target drop <= 0.10",
+        "unit": "continuity fracture sensitivity",
+        "source": "Phase 6.3A proposed protocol",
+        "rationale": "Separates continuity burden from mere memory persistence or sham perturbation.",
+        "date_frozen": null,
+        "modification_log": []
+      },
+      {
+        "name": "QICN_FPPG",
+        "status": "not_frozen",
+        "value": "relative cross-validated loss reduction >= 5 percent",
+        "unit": "first-person perspective predictive gain",
+        "source": "Phase 6.3A proposed protocol",
+        "rationale": "Requires indexed model to outperform index-neutral factorized rival under matched intervention budget.",
+        "date_frozen": null,
+        "modification_log": []
+      },
+      {
+        "name": "QICN_WRI",
+        "status": "not_frozen",
+        "value": "Delta BIC >= 10 or cross-validated loss gain >= 5 percent",
+        "unit": "weak-rival irreducibility margin",
+        "source": "Phase 6.3A proposed protocol",
+        "rationale": "Prevents QICN gate from surviving when HOT-only or weak-rival reconstructions match it at equal or lower cost.",
+        "date_frozen": null,
+        "modification_log": []
+      },
+      {
+        "name": "CTRL_PASS_RATE",
+        "status": "frozen_from_claim_logic",
+        "value": 0,
+        "unit": "negative-control false-positive count",
+        "source": "QICN Negative Control Suite v1 and Phase 6.3A protocol",
+        "rationale": "Any selected negative control passing the QICN gate destroys the target-level claim.",
+        "date_frozen": "2026-06-11",
+        "modification_log": []
+      }
+    ],
+    "current_status": "proposed_ai_output_not_registered",
+    "epistemic_limit": "This proposed prediction tests a bounded operational dissociation target only. It does not validate consciousness, phenomenality, human equivalence, metaphysical subjecthood, runtime certification, or external adjudication.",
+    "linked_rivals": [
+      "RIVAL-HOT-01"
+    ]
+  }
+}

@@ -3161,3 +3161,80 @@ Files intentionally not modified:
 - Bibliography files, macros, labels, theorem statements, proof bodies, monolithic sources, and runtime files.
 
 Status: `ROADMAP_VERSION_3_AUDIT_OBS_3_4_CORRECTED_PENDING_EXTERNAL_RECHECK_NO_COMMIT_NO_PUSH`.
+
+---
+
+## 2026-06-11 - Codex - Roadmap v3 Phase 6.2 Claim-to-Rival Mapping
+
+User request:
+- Approve ROADMAP VERSION 3 and proceed with Phase 6.2.
+
+Operational objective:
+- Execute Phase 6.2 as claim-to-rival mapping.
+- Use `release/claim_registry.v1.json` and local governance docs as the claim boundary.
+- Compare only against IIT, GWT/GNW, and HOT as inherited from Phase 6.1.
+- Keep every comparison `NOT_YET_ADJUDICATED`.
+- Do not modify `.tex`, PDFs, bibliography, release, corpus, artifacts, registry, scripts, runtime, macros, labels, theorem statements, proof bodies, or monolithic sources.
+
+Files read:
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `release/claim_registry.v1.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_RIVALS_LIMITED_INVENTORY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_ITERATION2_CLAIM_TO_RIVAL_MAPPING.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- All `.tex` sources.
+- All PDFs.
+- Bibliography files.
+- `release/`, `corpus/`, `artifacts/`, `registry/`, `scripts/`.
+- Runtime code, macros, labels, theorem statements, proof bodies, and monolithic sources.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Preflight worktree check | `main...origin/main`; only preexisting untracked workspace files before this pass. |
+| `Get-Content audit-context-building/SKILL.md` | Apply audit-first workflow | Completed. |
+| Memory lookup | Recover prior Phase 6 comparator governance | Found guidance to keep internal rival work bounded and non-adjudicative. |
+| `Get-Content rigid-identity-framework/INSTRUCCIONES.md` | Apply AI-output and phase governance rules | Completed. |
+| `Select-String` over `ROADMAP.md` | Locate VERSION 3 Phase 6.2 requirements | Confirmed registry-backed mapping, `NOT_YET_ADJUDICATED`, and no harness repair. |
+| `ConvertFrom-Json release/claim_registry.v1.json` | Inspect registry claim surface | 17 entries inspected. |
+| `Get-Content` on canon docs | Confirm source-of-truth, layer, and theory-system boundaries | Completed. |
+| `Get-Content QICN_ROADMAP_V3_PHASE6_RIVALS_LIMITED_INVENTORY.md` | Use Phase 6.1 as input | Completed. |
+| `apply_patch` | Create Phase 6.2 report and append this ledger entry | Completed. |
+
+Implementation summary:
+- Created a registry-backed claim-to-rival matrix for IIT, GWT/GNW, and HOT.
+- Grouped the 17 registry entries into claim families instead of doing loose prose comparison.
+- Marked all rival-facing comparisons as non-adjudicated.
+- Explicitly listed claims that cannot yet be compared: runtime instantiation, phenomenality/human-equivalence, external validation, general non-simulability, and HOT local bibliography coverage.
+- Derived Phase 6.3 priorities from the highest-contact rows: Paper 5 operational criterion, Paper 8 first-person indexed gate, and Paper 9 bridge burden architecture.
+- Preserved `HOT_BIB_GAP`, `OBSERVABLE_MAPPING_GAP`, `EXTERNAL_ADJUDICATION_GAP`, `ADVERSARIAL_HARNESS_COMPATIBILITY_GAP`, and preregistration debt.
+
+Verification:
+- `node scripts\verify-canonical-integrity.cjs`: PASS; 25 canonical PDFs, 17 claim-registry entries, no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- `node scripts\verify-claim-registry.cjs`: PASS; 17 entries, 17 unique ids, no failures, no warnings.
+- `node scripts\verify-canonical-release.cjs`: PASS; no failures, no warnings.
+- `git diff --check -- rigid-identity-framework\docs\ai-platform-outputs\IMPLEMENTATION_TRACE_LEDGER.md rigid-identity-framework\docs\ai-platform-outputs\reports\QICN_ROADMAP_V3_PHASE6_ITERATION2_CLAIM_TO_RIVAL_MAPPING.md`: no diff-check errors; LF-to-CRLF warning on ledger only.
+- Report line count: 142.
+- Report SHA256: `BDC9A7A79A82ACB5EBFD939A36143D0725685754A422CF502DCC363CE41C5EAF`.
+- Ledger SHA256 is not self-embedded as a final value because writing that value into the ledger would change the ledger hash again; capture it externally in the final response or a later non-self-referential manifest.
+- `git status --short --branch`: only the intended ledger modification and new Phase 6.2 report among tracked/intended changes; unrelated untracked workspace files remain outside scope.
+
+Residual risks:
+- `HOT_BIB_GAP` remains open; HOT was mapped as a rival but local bibliography was not modified.
+- `OBSERVABLE_MAPPING_GAP` is narrowed but not closed; Phase 6.3 must define measurable variables.
+- `EXTERNAL_ADJUDICATION_GAP` remains open; no rival has been defeated or validated against QICN.
+- `ADVERSARIAL_HARNESS_COMPATIBILITY_GAP` remains open and is deferred to Phase 6.4.
+- No paper/report integration was attempted; that remains Phase 6.5 only if 6.2-6.4 pass.
+
+Status: `PHASE6_2_PASS_WITH_TRACKED_RIVAL_PROTOCOL_DEBT_NO_TEX_EDITS`.

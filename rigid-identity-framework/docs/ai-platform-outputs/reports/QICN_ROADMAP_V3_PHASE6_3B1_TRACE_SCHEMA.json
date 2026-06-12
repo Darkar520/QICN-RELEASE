@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QICN Phase 6.3B Candidate Trace Schema",
+  "schema_version": "0.1.0",
+  "status": "candidate_operationalization_non_canonical",
+  "human_review": "REQUIRED",
+  "human_curated_status": "not_reviewed",
+  "boundary": "This schema is an AI-output execution scaffold for Phase 6.3B only. It is not a canonical registry, release, paper, runtime, or external-validation artifact.",
+  "required_top_level": [
+    "schema_version",
+    "trace_id",
+    "world_id",
+    "seed",
+    "windows",
+    "interventions",
+    "negative_controls",
+    "budgets"
+  ],
+  "minimum_trace_shape": {
+    "schema_version": "string",
+    "trace_id": "string",
+    "world_id": "string",
+    "seed": "string",
+    "windows": [
+      {
+        "id": "string",
+        "t": "integer",
+        "condition": "baseline|targeted_post|sham_post|off_target_post|ownership_flattening|continuity_fracture|self_nonself_swap|decoy_insertion|label_only|memory_only|narrative_only|history_blind",
+        "awareness_target": "0|1",
+        "report_signal": "number in [0,1]",
+        "confidence": "number in [0,1]",
+        "state_monitoring": "number in [0,1]",
+        "loci": [
+          {
+            "id": "string",
+            "weight": "number in [0,1]"
+          }
+        ],
+        "relabeling_distance": "number in [0,1]",
+        "events": [
+          {
+            "id": "string",
+            "ownership": "number in [0,1]",
+            "expected_ownership": "number in [0,1]",
+            "control_ownership": "number in [0,1]"
+          }
+        ],
+        "continuity_candidates": [
+          {
+            "id": "string",
+            "score": "number >= 0",
+            "self_indexed": "boolean"
+          }
+        ],
+        "losses": {
+          "first_person": "number >= 0",
+          "third_person": "number >= 0",
+          "qicn_full": "number >= 0",
+          "hot_only": "number >= 0",
+          "best_weak_rival": "number >= 0"
+        },
+        "valuation": {
+          "self_response": "number >= 0",
+          "nonself_response": "number >= 0"
+        }
+      }
+    ],
+    "interventions": [
+      {
+        "id": "string",
+        "type": "targeted|sham|off_target|ownership_flattening|continuity_fracture|self_nonself_swap|decoy_insertion",
+        "target": "self|nonself|mixed",
+        "intended_coordinates": [
+          "SelfIndex|OwnField|ContField|Persp|ValAsym|IntervProf|Irred"
+        ],
+        "coordinate_drops": {
+          "SelfIndex": "number in [0,1]",
+          "OwnField": "number in [0,1]",
+          "ContField": "number in [0,1]",
+          "Persp": "number in [0,1]",
+          "ValAsym": "number in [0,1]",
+          "IntervProf": "number in [0,1]",
+          "Irred": "number in [0,1]"
+        },
+        "off_target_max": "number in [0,1]"
+      }
+    ],
+    "negative_controls": [
+      {
+        "id": "CTRL-LABEL-ONLY-SELF|CTRL-MEMORY-ONLY|CTRL-NARRATIVE-ONLY|CTRL-HISTORY-BLIND",
+        "expected": "must_fail_qicn_gate",
+        "trace_condition": "label_only|memory_only|narrative_only|history_blind"
+      }
+    ],
+    "budgets": {
+      "feature_budget": "integer",
+      "intervention_budget": "integer",
+      "seed_count": "integer"
+    }
+  }
+}

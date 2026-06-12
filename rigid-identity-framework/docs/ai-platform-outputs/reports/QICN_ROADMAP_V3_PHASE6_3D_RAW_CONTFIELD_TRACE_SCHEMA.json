@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QICN Phase 6.3D Raw ContField Trace Schema",
+  "schema_version": "0.1.0",
+  "status": "candidate_raw_contfield_trace_schema_non_canonical",
+  "human_review": "REQUIRED",
+  "human_curated_status": "not_reviewed",
+  "boundary": "This schema defines pre-segmented raw trajectory traces for a non-canonical Phase 6.3D ContField extractor. It is not a release artifact, registry artifact, external validation artifact, or consciousness evidence.",
+  "abstraction_boundary": {
+    "data_association": "out_of_scope",
+    "trajectory_segmentation": "provided_as_input",
+    "extractor_task": "rank pre-segmented candidate trajectories and compute baseline-vs-fracture continuity drop net of sham",
+    "canon_status": "not_canonical"
+  },
+  "information_boundary": {
+    "extractor_receives": [
+      "schema_version",
+      "trace_id",
+      "seed",
+      "trajectories[].id",
+      "trajectories[].observations[].t",
+      "trajectories[].observations[].condition",
+      "trajectories[].observations[].readout_alpha",
+      "trajectories[].observations[].readout_beta",
+      "trajectories[].observations[].temporal_binding",
+      "trajectories[].observations[].remap_coherence",
+      "trajectories[].observations[].recovery_signal",
+      "trajectories[].observations[].fork_divergence",
+      "trajectories[].observations[].perturbation_residual",
+      "trajectories[].observations[].memory_label_strength",
+      "trajectories[].observations[].history_token_strength"
+    ],
+    "extractor_does_not_receive": [
+      "latent_truth",
+      "true_self_trajectory_id",
+      "genuine_continuity",
+      "world_id",
+      "continuity_candidates[].score",
+      "self_indexed",
+      "precomputed_continuity_margin",
+      "precomputed_QICN_CFS",
+      "expected_result_class"
+    ]
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "trace_id",
+    "seed",
+    "trajectories"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "seed": {
+      "type": "string"
+    },
+    "trajectories": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "observations"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "observations": {
+            "type": "array",
+            "minItems": 30,
+            "items": {
+              "type": "object",
+              "required": [
+                "t",
+                "condition",
+                "readout_alpha",
+                "readout_beta",
+                "temporal_binding",
+                "remap_coherence",
+                "recovery_signal",
+                "fork_divergence",
+                "perturbation_residual"
+              ],
+              "properties": {
+                "t": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "condition": {
+                  "type": "string",
+                  "enum": [
+                    "baseline",
+                    "sham",
+                    "fracture",
+                    "memory_only",
+                    "history_blind",
+                    "symmetric_trajectory"
+                  ]
+                },
+                "readout_alpha": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "readout_beta": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "temporal_binding": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "remap_coherence": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "recovery_signal": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "fork_divergence": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "perturbation_residual": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "memory_label_strength": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1,
+                  "description": "Observable memory-label intensity. It is included for memory-only controls and is intentionally ignored by the extractor."
+                },
+                "history_token_strength": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1,
+                  "description": "Observable history-token intensity. It is included for history-blind controls and is intentionally ignored by the extractor."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

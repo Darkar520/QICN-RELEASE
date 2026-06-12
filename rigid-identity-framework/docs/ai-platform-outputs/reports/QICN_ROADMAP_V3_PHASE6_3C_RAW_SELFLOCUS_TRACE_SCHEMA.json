@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QICN Phase 6.3C Raw Self-Locus Trace Schema",
+  "schema_version": "0.1.0",
+  "status": "candidate_raw_trace_schema_non_canonical",
+  "human_review": "REQUIRED",
+  "human_curated_status": "not_reviewed",
+  "boundary": "This schema defines observable raw trace fields for a non-canonical Phase 6.3C SelfIndex extractor. It is not a release artifact, registry artifact, external validation artifact, or consciousness evidence.",
+  "information_boundary": {
+    "extractor_receives": [
+      "schema_version",
+      "trace_id",
+      "seed",
+      "windows[].condition",
+      "windows[].t",
+      "windows[].loci[].id",
+      "windows[].loci[].activation",
+      "windows[].loci[].prediction_error",
+      "windows[].loci[].control_coupling",
+      "windows[].loci[].event_binding",
+      "windows[].loci[].readout_alpha",
+      "windows[].loci[].readout_beta",
+      "windows[].loci[].perturbation_response",
+      "windows[].loci[].symbolic_label_intensity",
+      "windows[].loci[].narrative_coherence"
+    ],
+    "extractor_does_not_receive": [
+      "latent_truth",
+      "true_self_locus_id",
+      "genuine_self",
+      "expected_ownership",
+      "continuity_candidates[].score",
+      "continuity_candidates[].self_indexed",
+      "loci[].weight",
+      "precomputed_qicn_score",
+      "world_id",
+      "expected_result_class"
+    ]
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "trace_id",
+    "seed",
+    "windows"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "seed": {
+      "type": "string"
+    },
+    "windows": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "required": [
+          "t",
+          "condition",
+          "loci"
+        ],
+        "properties": {
+          "t": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "condition": {
+            "type": "string",
+            "enum": [
+              "baseline",
+              "sham",
+              "self_channel_perturbation",
+              "nonself_channel_perturbation",
+              "label_only",
+              "narrative_only",
+              "symmetric_decoy",
+              "high_noise"
+            ]
+          },
+          "loci": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "activation",
+                "prediction_error",
+                "control_coupling",
+                "event_binding",
+                "readout_alpha",
+                "readout_beta",
+                "perturbation_response"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "activation": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "prediction_error": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "control_coupling": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "event_binding": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "readout_alpha": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "readout_beta": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "perturbation_response": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "symbolic_label_intensity": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1,
+                  "description": "Observable label-channel intensity. It is included to test label-only controls and is intentionally ignored by the extractor."
+                },
+                "narrative_coherence": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1,
+                  "description": "Observable narrative-channel coherence. It is included to test narrative-only controls and is intentionally ignored by the extractor."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

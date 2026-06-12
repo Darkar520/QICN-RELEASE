@@ -2,7 +2,7 @@
 
 Date: 2026-06-11 18:58 -06:00
 
-Status: `PHASE6_2_CLAIM_TO_RIVAL_MAPPING_COMPLETE_NO_TEX_EDITS_NOT_ADJUDICATED`
+Status: `PHASE6_2_PASS_AFTER_HOT_BIB_SEED_NO_TEX_EDITS_NOT_ADJUDICATED`
 
 ## Scope
 
@@ -101,7 +101,7 @@ The next phase should not widen the rival set yet. The serious next move is to c
 
 | Debt | Status | Owner phase |
 |---|---|---|
-| `HOT_BIB_GAP` | Open. HOT seed exists externally but local bibliography was not modified in this pass. | Phase 6.3 or a dedicated bibliography subphase |
+| `HOT_BIB_GAP` | Closed at AI-output bibliography-seed level by Phase 6.2B addendum. Not yet integrated into canonical release or paper bibliographies. | Later bibliography integration only if explicitly approved |
 | `OBSERVABLE_MAPPING_GAP` | Partially reduced by this matrix, not closed. Each high-priority row still needs measurement definitions. | Phase 6.3 |
 | `EXTERNAL_ADJUDICATION_GAP` | Open. No rival has been adjudicated. | Later empirical/expert review phase |
 | `ADVERSARIAL_HARNESS_COMPATIBILITY_GAP` | Open and intentionally untouched. | Phase 6.4 |
@@ -139,4 +139,29 @@ Phase 6.2 is closed if:
 - root canonical gates still pass;
 - `git status` shows no unintended tracked modifications.
 
-Final status after verification: `PASS_WITH_TRACKED_RIVAL_PROTOCOL_DEBT`.
+Final status after verification: `PASS_WITH_TRACKED_RIVAL_PROTOCOL_DEBT_AFTER_6_2B_HOT_BIB_SEED`.
+
+## Phase 6.2B Addendum - HOT Bibliography Gap Closure
+
+External audit correctly identified that the first Phase 6.2 pass documented `HOT_BIB_GAP` but did not satisfy the ROADMAP deliverable "Bibliografia minima completada para HOT."
+
+Correction applied:
+
+- Added `QICN_ROADMAP_V3_PHASE6_2B_HOT_BIBLIOGRAPHY_SEED.bib` under AI-platform reports.
+- Kept the seed non-canonical: no `release/`, paper bibliography, `.tex`, PDF, script, registry, corpus, artifact, runtime, macro, label, theorem, proof, or monolithic source was modified.
+- Used the seed only to make HOT comparison bibliographically grounded enough for Phase 6.3 protocol design.
+
+Minimal HOT seed entries:
+
+1. Lau and Rosenthal 2011, `Trends in Cognitive Sciences`, DOI `10.1016/j.tics.2011.05.009`.
+2. Rosenthal and Weisberg 2008, `Scholarpedia`, DOI `10.4249/scholarpedia.4407`.
+3. Rosenthal 2004, "Varieties of Higher-Order Theory."
+4. Rosenthal 2005, `Consciousness and Mind`, DOI `10.1093/oso/9780198236979.001.0001`.
+5. Carruthers and Gennaro, Stanford Encyclopedia of Philosophy entry on higher-order theories.
+
+Revised closure reading:
+
+- Phase 6.2 is now closed at report/AI-output level.
+- HOT remains not adjudicated.
+- Canonical bibliography integration remains a later, explicitly approved bibliography phase if needed.
+- Phase 6.3 must still desegregate the grouped high-priority rows into measurable observables, metrics, thresholds, negative controls, and rival-favoring result classes.

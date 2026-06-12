@@ -3238,3 +3238,67 @@ Residual risks:
 - No paper/report integration was attempted; that remains Phase 6.5 only if 6.2-6.4 pass.
 
 Status: `PHASE6_2_PASS_WITH_TRACKED_RIVAL_PROTOCOL_DEBT_NO_TEX_EDITS`.
+
+---
+
+## 2026-06-11 - Codex - Phase 6.2B HOT Bibliography Gap Closure
+
+User/audit input:
+- External audit correctly noted that Phase 6.2 listed `HOT_BIB_GAP` as residual debt even though ROADMAP VERSION 3 names "Bibliografia minima completada para HOT" as a Phase 6.2 deliverable.
+- The audit also noted grouped registry rows, non-operationalized observables, verbose status names, and missing thresholds as valid Phase 6.3 risks.
+
+Operational objective:
+- Correct the Phase 6.2 closure boundary without rewriting theory or touching canonical release material.
+- Add a minimal HOT bibliography seed sufficient for Phase 6.3 protocol design.
+- Preserve all rival comparisons as `NOT_YET_ADJUDICATED`.
+
+Files read:
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_ITERATION2_CLAIM_TO_RIVAL_MAPPING.md`
+- Web sources for HOT bibliography metadata:
+  - ScienceDirect page for Lau and Rosenthal 2011.
+  - Stanford Encyclopedia of Philosophy entry on higher-order theories.
+  - Search/source snippets for Rosenthal/Weisberg and Rosenthal monograph metadata.
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_ITERATION2_CLAIM_TO_RIVAL_MAPPING.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files added:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_2B_HOT_BIBLIOGRAPHY_SEED.bib`
+
+Files intentionally not modified:
+- All `.tex` sources.
+- All PDFs.
+- Canonical and paper bibliography files.
+- `release/`, `corpus/`, `artifacts/`, `registry/`, `scripts/`.
+- Runtime code, macros, labels, theorem statements, proof bodies, and monolithic sources.
+
+Implementation summary:
+- Added a non-canonical AI-output BibTeX seed with five HOT references:
+  - Lau and Rosenthal 2011.
+  - Rosenthal and Weisberg 2008.
+  - Rosenthal 2004.
+  - Rosenthal 2005.
+  - Carruthers/Gennaro Stanford Encyclopedia of Philosophy entry.
+- Updated the Phase 6.2 report status to reflect closure after the HOT seed.
+- Reclassified `HOT_BIB_GAP` as closed at AI-output bibliography-seed level, while preserving the boundary that canonical release/paper bibliography integration requires a later explicit phase and approval.
+- Left grouped rows, observables, metrics, thresholds, and preregistration as Phase 6.3 work.
+
+Verification:
+- `node scripts\verify-canonical-integrity.cjs`: PASS; 25 canonical PDFs, 17 claim-registry entries, no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- `node scripts\verify-claim-registry.cjs`: PASS; 17 entries, 17 unique ids, no failures, no warnings.
+- `node scripts\verify-canonical-release.cjs`: PASS; no failures, no warnings.
+- `git diff --check -- <ledger> <Phase 6.2 report> <HOT bib seed>`: no diff-check errors; LF-to-CRLF warnings on markdown files only.
+- HOT seed line count: 63.
+- HOT seed SHA256: `88E5A60B46F51010ED43B00E84E81744C766DDEA13D2BA6CE515D35D8895ABE8`.
+- Updated Phase 6.2 report SHA256: `55F189D67F92DF3799649CAB75D741ECEE790AB153FB87EF263C22B05FA5C90D`.
+- Ledger hash is not self-embedded as final because writing it here would change the ledger hash.
+
+Residual risks:
+- HOT bibliography is complete only as a non-canonical AI-output seed.
+- Canonical/paper bibliography integration remains future work and requires explicit approval if `release/` is touched.
+- Phase 6.3 must desegregate grouped high-priority rows and define observables, metrics, thresholds, negative controls, preregistration, and rival-favoring result classes.
+- `EXTERNAL_ADJUDICATION_GAP`, `OBSERVABLE_MAPPING_GAP`, `PROTOCOL_PREREGISTRATION_GAP`, and `ADVERSARIAL_HARNESS_COMPATIBILITY_GAP` remain open.
+
+Status: `PHASE6_2B_PASS_HOT_BIB_GAP_CLOSED_AT_AI_OUTPUT_SEED_LEVEL`.

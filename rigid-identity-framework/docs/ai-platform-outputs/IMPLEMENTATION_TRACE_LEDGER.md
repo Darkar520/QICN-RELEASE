@@ -3302,3 +3302,1000 @@ Residual risks:
 - `EXTERNAL_ADJUDICATION_GAP`, `OBSERVABLE_MAPPING_GAP`, `PROTOCOL_PREREGISTRATION_GAP`, and `ADVERSARIAL_HARNESS_COMPATIBILITY_GAP` remain open.
 
 Status: `PHASE6_2B_PASS_HOT_BIB_GAP_CLOSED_AT_AI_OUTPUT_SEED_LEVEL`.
+
+---
+
+## 2026-06-11 - Codex - Roadmap v3 Phase 6.3A Preregistered HOT Comparator Protocol
+
+User request:
+- Execute the attached Phase 6.3A/6.3B prompt.
+- Integrate one adjustment: `npm run verify` should be interpreted as "no new failures relative to baseline", not as a naive binary pass/fail gate.
+
+Operational objective:
+- Execute Phase 6.3A only: produce one preregisterable, operational, falsifiable protocol for a high-contact Phase 6.2 row.
+- Select `paper8.first_person_indexed_subjectivity_gate` versus HOT as the target.
+- Do not edit `.tex`, PDFs, release, registry, scripts, corpus, artifacts, monolithic sources, macros, labels, theorem statements, or proof bodies.
+- Leave registry integration as AI-output proposal only.
+- Do not start 6.3B until 6.3A passes external audit.
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\c590278d-db00-4058-87d7-b098585d4e87\pasted-text.txt`
+- `C:\Users\irisp\.codex\skills\audit-context-building\SKILL.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_ITERATION2_CLAIM_TO_RIVAL_MAPPING.md`
+- `release/claim_registry.v1.json`
+- `rigid-identity-framework/docs/PREREGISTRATION_TEMPLATE_v1.md`
+- `rigid-identity-framework/docs/MEASUREMENT_DICTIONARY_v1.md`
+- `rigid-identity-framework/docs/NEGATIVE_CONTROL_SUITE.md`
+- `rigid-identity-framework/docs/FALSIFIER_MATRIX.md`
+- `rigid-identity-framework/docs/PREDICTION_REGISTRY_v1.json`
+- `rigid-identity-framework/registry/prediction-schema.json`
+- `rigid-identity-framework/registry/prediction-canon-map.json`
+- `rigid-identity-framework/docs/preregistrations/PRED-08_prereg_v0.md`
+- `rigid-identity-framework/docs/measurement_specs/I_leg_spec_v1.md`
+- `rigid-identity-framework/docs/measurement_specs/I_per_spec_v1.md`
+- `rigid-identity-framework/docs/measurement_specs/RUNTIME_BINDING_GAP.md`
+- `rigid-identity-framework/scripts/generate-preregistration-scaffolds.js`
+- `rigid-identity-framework/scripts/validate-preregistration-coverage.js`
+- `rigid-identity-framework/scripts/negative-control-suite.js`
+- `rigid-identity-framework/package.json`
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3A_PREREGISTERED_PROTOCOL.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3A_PREDICTION_REGISTRY_PROPOSAL.json`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- All `.tex` sources.
+- All PDFs.
+- Canonical and paper bibliography files.
+- `release/`, `corpus/`, `artifacts/`, `registry/`, `scripts/`.
+- Runtime code, macros, labels, theorem statements, proof bodies, and monolithic sources.
+
+Commands and tools before implementation:
+| Tool/command | Working directory | Purpose | Result |
+|---|---|---|---|
+| `Get-Content <attachment>` | `QICN-FRAMEWORK/` | Read Phase 6.3 prompt | Completed. |
+| `Get-Content audit-context-building/SKILL.md` | `QICN-FRAMEWORK/` | Apply audit-context discipline | Completed. |
+| `Get-Content` / `Select-String` on governance files | `QICN-FRAMEWORK/` | Read mandatory source-of-truth files | Completed. |
+| `Get-Content` on preregistration resources | `rigid-identity-framework/` | Preflight infrastructure | Completed; classified in report. |
+| `Get-Content scripts/generate-preregistration-scaffolds.js` | `rigid-identity-framework/` | Check if script is mutating | Confirmed it writes `registry/prediction-canon-map.json`; not executed. |
+| `npm run verify:preregistration-coverage` | `rigid-identity-framework/` | Baseline prereg coverage | PASS: 14/14 predictions have preregistration coverage. |
+| `npm run test:negative-controls` | `rigid-identity-framework/` | Baseline negative-control suite | PASS: 6/6; `external_support_certified=false`. |
+| `npm run verify` | `rigid-identity-framework/` | Baseline v31 verification | PASS exit 0 with expected scientific blockers preserved: `BLOCKED_*`, `external_support_certified=false`. |
+| `apply_patch` | `QICN-FRAMEWORK/` | Create Phase 6.3A protocol, registry proposal, and ledger entry | Completed. |
+
+Implementation summary:
+- Built a preregisterable protocol for `paper8.first_person_indexed_subjectivity_gate` versus HOT.
+- Operationalized HOT and QICN variables: `HOT_HOA`, `QICN_SIPM`, `QICN_OFIA`, `QICN_CFS`, `QICN_FPPG`, `QICN_WRI`, and `CTRL_PASS_RATE`.
+- Defined dissociation tests where HOT access can pass while QICN ownership/continuity burdens fail, and a limited converse that does not claim phenomenality.
+- Added thresholds, autocorrelation handling, negative controls, symmetric result classes, and explicit target-level falsification criterion.
+- Added a non-canonical registry proposal JSON under AI outputs instead of editing registry or release files; the proposed id uses schema-compatible form `PRED-08a`.
+- Integrated the user's verification adjustment: `npm run verify` must show no new failures relative to baseline, while preserving appropriate scientific blockers.
+
+Verification:
+- `npm run verify` from `rigid-identity-framework/`: PASS exit 0; baseline behavior preserved with expected scientific blockers (`BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`) and `external_support_certified=false`. No new failures relative to pre-6.3A baseline.
+- `npm run verify:preregistration-coverage` from `rigid-identity-framework/`: PASS; 14/14 predictions have preregistration coverage.
+- `npm run test:negative-controls` from `rigid-identity-framework/`: PASS; 6/6; `external_support_certified=false`.
+- JSON parse check for `QICN_ROADMAP_V3_PHASE6_3A_PREDICTION_REGISTRY_PROPOSAL.json`: PASS.
+- `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/`: PASS; no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/`: PASS; 17 entries, 17 unique ids, no failures, no warnings.
+- `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/`: PASS; no failures, no warnings.
+- `git diff --check -- <ledger> <6.3A report> <6.3A registry proposal>`: no diff-check errors; LF-to-CRLF warning on ledger only.
+- 6.3A protocol report line count: 291.
+- 6.3A registry proposal line count: 113.
+- 6.3A protocol report SHA256: `54D0396785FB25DB5D726808C28023C80FE704E8D4C1AE1072EAA64B4E720053`.
+- 6.3A registry proposal SHA256: `90E8D18E988841EFD78DAE6EC772E6637A60192469A61F6B3EF46E72F116CCDF`.
+- Ledger hash is not self-embedded as final because writing it here would change the ledger hash.
+
+Regressions searched:
+- accidental `.tex`, PDF, release, registry, script, corpus, artifact, monolith, macro, label, theorem, or proof edits;
+- accidental promotion of internal protocol to external validation;
+- accidental treatment of HOT as defeated;
+- accidental loss of expected scientific blockers in `npm run verify`;
+- invalid JSON in registry proposal;
+- untracked workspace noise entering scope.
+
+Regressions found:
+- None in intended Phase 6.3A scope.
+- Preexisting unrelated untracked files remain outside scope: root `AGENTS.md`, `opencode.jsonc`, `photoshop-mcp/`, `.kiro/`, and AI-output audit/extraction/prompt folders.
+
+Residual risks:
+- 6.3A is a preregistration protocol draft, not an executed protocol.
+- Thresholds are proposed and not canonically frozen.
+- Registry integration remains non-canonical and requires explicit approval.
+- 6.3B was not started.
+- External audit is required before push.
+
+Status: `PHASE6_3A_PROTOCOL_READY_FOR_EXTERNAL_AUDIT_NO_PUSH`.
+
+---
+
+## 2026-06-11 - Codex - Roadmap v3 Phase 6.3B Candidate Primitives, HOT Arm, and Discriminating Toy Simulator
+
+User request:
+- Execute the attached Phase 6.3B prompt to close the three gaps identified after Phase 6.3A:
+  - B1 numerical candidate operationalization of Paper 8 primitives.
+  - B2 minimal implementable HOT arm.
+  - B3 discriminating toy simulation.
+
+Operational objective:
+- Produce non-canonical AI-output machinery only.
+- Keep all outputs separated from `.tex`, PDFs, release, registry, production scripts, corpus, artifacts, and monolithic sources.
+- Demonstrate that the Phase 6.3A decision surface can emit QICN-bounded-support, HOT-favored, and QICN-falsified classes on synthetic worlds.
+- Preserve the boundary that toy simulation is not consciousness evidence, phenomenality evidence, external validation, or proof of QICN truth.
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\419689dc-2603-4669-b2bd-e3b8c36a56c9\pasted-text.txt`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3A_PREREGISTERED_PROTOCOL.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3A_PREDICTION_REGISTRY_PROPOSAL.json`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/docs/MEASUREMENT_DICTIONARY_v1.md`
+- `rigid-identity-framework/docs/NEGATIVE_CONTROL_SUITE.md`
+- `rigid-identity-framework/scripts/lib/external-trace-generator.js`
+- `rigid-identity-framework/scripts/lib/adversarial-negative-controls.js`
+- `rigid-identity-framework/scripts/negative-control-suite.js`
+- `rigid-identity-framework/registry/prediction-schema.json`
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3B1_QICN_PRIMITIVE_OPERATIONALIZATION.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3B1_TRACE_SCHEMA.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3b_hot_model.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3b_discrimination_sim.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3B_DISCRIMINATION_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- All `.tex` sources.
+- All PDFs.
+- Canonical and paper bibliography files.
+- `release/`, `corpus/`, `artifacts/`, `registry/`, production `scripts/`.
+- Runtime code, macros, labels, theorem statements, proof bodies, and monolithic sources.
+
+Implementation summary:
+- Extracted Paper 8 primitive anchors from definitions and estimator sections:
+  - definitions around lines 173-211;
+  - typing around lines 232-252;
+  - estimator family around lines 1271-1357;
+  - ablation/causal order around lines 1436-1472.
+- Created a non-canonical trace schema for the Paper 8/HOT protocol.
+- Created candidate numerical rules for `SelfIndex`, `OwnField`, `ContField`, `Persp`, `ValAsym`, `IntervProf`, `Irred`, and composite gate outputs.
+- Implemented a dependency-free CommonJS HOT model computing `HOT_HOA` via cross-validated logistic prediction of awareness/report target from report, confidence, and state-monitoring features.
+- Implemented a deterministic dependency-free simulator with `--self-test`.
+- First self-test failed; causes were recorded in the discrimination report.
+- Corrected toy generator defects without changing protocol result criteria.
+- Final self-test passed the three required worlds:
+  - `qicn_true`: `QICN_BOUNDED_SUPPORT_FOR_TARGET`.
+  - `hot_true`: `HOT_FAVORED_FOR_TARGET`.
+  - `control_leak`: `QICN_FALSIFIED_FOR_TARGET`.
+
+Verification:
+- `node docs\ai-platform-outputs\sims\qicn_phase6_3b_discrimination_sim.js --self-test` from `rigid-identity-framework/`: PASS exit 0.
+  - `qicn_true`: expected and obtained `QICN_BOUNDED_SUPPORT_FOR_TARGET`.
+  - `hot_true`: expected and obtained `HOT_FAVORED_FOR_TARGET`.
+  - `control_leak`: expected and obtained `QICN_FALSIFIED_FOR_TARGET`.
+- `Get-Content docs\ai-platform-outputs\reports\QICN_ROADMAP_V3_PHASE6_3B1_TRACE_SCHEMA.json -Raw | ConvertFrom-Json | Out-Null`: PASS.
+- `node -e "<HOT module import smoke check>"` from `rigid-identity-framework/`: PASS; HOT model module returns `HOT_MODEL_MODULE_PASS` on `hot_true`.
+- `npm run verify` from `rigid-identity-framework/`: PASS exit 0; baseline behavior preserved with expected scientific blockers (`BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`) and `external_support_certified=false`.
+- `npm run test:negative-controls` from `rigid-identity-framework/`: PASS; 6/6; `external_support_certified=false`.
+- `npm run verify:preregistration-coverage` from `rigid-identity-framework/`: PASS; 14/14 predictions have preregistration coverage.
+- `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/`: PASS; no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/`: PASS; 17 entries, 17 unique ids, no failures, no warnings.
+- `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/`: PASS; no failures, no warnings.
+- `git diff --check -- <6.3B files> <ledger>` from `QICN-FRAMEWORK/`: PASS; LF-to-CRLF warning on ledger only.
+
+Artifact counts and hashes:
+- `QICN_ROADMAP_V3_PHASE6_3B1_QICN_PRIMITIVE_OPERATIONALIZATION.md`: 87 lines; SHA256 `2664109224E3431CA3A7B4364F09EDA96F6A9B31FBAF8FB793C70561C5CFE7EE`.
+- `QICN_ROADMAP_V3_PHASE6_3B1_TRACE_SCHEMA.json`: 101 lines; SHA256 `0346E045B9B813D892936325046C61B226E8C6AE9A17EA5F7E9DCBB7C879C9AC`.
+- `qicn_phase6_3b_hot_model.js`: 98 lines; SHA256 `DACBC44965D029D12AB3534E59039FEF8957342CA8EE3A9178F79C6762891B9F`.
+- `qicn_phase6_3b_discrimination_sim.js`: 252 lines; SHA256 `A72E9254E53F300E9281D4C880F97588DACFF4C871622204A16CE52E5F703A28`.
+- `QICN_ROADMAP_V3_PHASE6_3B_DISCRIMINATION_REPORT.md`: 109 lines; SHA256 `23A1F2DE2626529BE419C616DEC816A0639ECA9652619BA53D8586460F80C99C`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regressions searched:
+- accidental `.tex`, PDF, release, canonical registry, production script, corpus, artifact, monolithic source, macro, label, theorem, proof, package, or runtime edits;
+- accidental promotion of toy simulation to external validation;
+- accidental attribution of consciousness, phenomenality, agency, or human equivalence;
+- accidental claim that HOT is defeated;
+- accidental loss of expected baseline blockers in `npm run verify`;
+- invalid trace-schema JSON;
+- non-discriminative simulator decision surface;
+- untracked workspace noise entering intended Phase 6.3B scope.
+
+Regressions found:
+- None in intended Phase 6.3B scope.
+- Preexisting unrelated untracked files remain outside scope: root `AGENTS.md`, `opencode.jsonc`, `photoshop-mcp/`, `.kiro/`, and AI-output audit/extraction/prompt folders.
+
+Residual risks:
+- 6.3B is non-canonical, synthetic, and requires external audit before commit/push.
+- Candidate primitive operationalizations are not frozen formal definitions.
+- Minimal HOT arm is a comparator arm for protocol testing, not a full HOT literature adjudication.
+- Toy worlds do not supply external data.
+- `ADVERSARIAL_HARNESS_COMPATIBILITY_GAP` remains open for later production-harness work.
+
+Status: `PHASE6_3B_PASS_NON_CANONICAL_READY_FOR_EXTERNAL_AUDIT_NO_PUSH`.
+
+---
+
+## 2026-06-11 - Codex - Roadmap v3 Phase 6.3C Raw Self-Locus Extractor and Hardened Power Simulator
+
+User request:
+- Execute the attached one-shot Phase 6.3C prompt:
+  - build a real raw-trace extractor for one primitive, `SelfIndex`;
+  - harden the 6.3B simulator with 6.3A statistics, borderline worlds, noise sweep, null world, and insufficient-effective-sample world;
+  - keep all outputs non-canonical under `docs/ai-platform-outputs/`;
+  - do not edit `.tex`, PDFs, release, canonical registry, production scripts, corpus, artifacts, monolith, or `package.json`;
+  - no commit or push before external audit.
+
+Operational objective:
+- Break the circularity in `QICN_SIPM` by separating raw trace, extractor input, and evaluation truth.
+- Preserve the 6.3A decision rules: `>=30` seeds per condition, AR(1)/Durbin-Watson, block bootstrap, effective sample size, Holm correction, BIC, destructive controls, and symmetric result classes.
+- Report power/error behavior, including negative or inconvenient outcomes.
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\bda0a890-1fdb-410b-bbc9-795fda5aa3b7\pasted-text.txt`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3A_PREREGISTERED_PROTOCOL.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3B1_QICN_PRIMITIVE_OPERATIONALIZATION.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3B1_TRACE_SCHEMA.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3b_discrimination_sim.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3b_hot_model.js`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/.kiro/steering/product.md`
+- `rigid-identity-framework/.kiro/steering/structure.md`
+- `rigid-identity-framework/.kiro/steering/tech.md`
+
+Preflight classification:
+- 6.3A protocol: `FUNCTIONAL_PROTOCOL_DRAFT`.
+- 6.3B-1 operationalization: `FUNCTIONAL_CANDIDATE_INPUT_WITH_CIRCULARITY_RISK`.
+- 6.3B trace schema: `FUNCTIONAL_COOKED_SCHEMA`; used as contrast only.
+- 6.3B simulator: `FUNCTIONAL_SMOKE_TEST_REFERENCE`; not overwritten.
+- 6.3B HOT arm: `FUNCTIONAL_MINIMAL_HOT_ARM`; reused.
+- Paper 8 source: `FUNCTIONAL_FORMAL_SOURCE`.
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3C_RAW_SELFLOCUS_TRACE_SCHEMA.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3c_selflocus_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3c_power_sim.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3C_SELFLOCUS_EXTRACTOR.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3C_POWER_AND_BORDERLINE_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `.tex` sources, PDFs, canonical bibliography files, `release/`, canonical `registry/`, `corpus/`, `artifacts/`, `monolithic/`, production `scripts/`, runtime code, macros, labels, theorem statements, proof bodies, and `package.json`.
+
+Implementation summary:
+- Created a raw self-locus trace schema whose extractor-visible fields exclude latent truth, true self id, world id, expected ownership, cooked continuity scores, `loci[].weight`, and precomputed QICN variables.
+- Implemented `extractSelfLocus(raw_trace)` as a dependency-free CommonJS extractor using only activation, prediction error, control coupling, event binding, readout agreement, and perturbation response.
+- Included label and narrative fields in raw traces as distractors; the extractor intentionally ignores them.
+- Added identifiability tests:
+  - genuine-self recovery against random baseline;
+  - label-only, narrative-only, and symmetric-decoy null controls;
+  - ablation of the signal family the extractor uses.
+- Implemented a hardened power simulator using the raw extractor for `QICN_SIPM` while marking `QICN_OFIA`, `QICN_CFS`, `QICN_FPPG`, and `QICN_WRI` as still synthetic/cooked.
+- Implemented condition-level 6.3A checks: seed count, Durbin-Watson, AR(1), block bootstrap, effective sample size, Holm correction, BIC against HOT-only and weak-rival, destructive controls, borderline worlds, noise sweep, null world, and insufficient-effective-sample world.
+- Preserved a negative finding: `noise_qicn_0_35` obtained `QICN_BOUNDED_SUPPORT_FOR_TARGET` though it was intended as borderline/inconclusive.
+
+Commands executed:
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3c_selflocus_extractor.js --self-test`
+  - PASS exit 0.
+  - Recovery accuracy `1.0000`; chance `0.2500`; AUC `1.0000`.
+  - Null false-self rate `0.0000`; aggregate null mean `QICN_SIPM=0.0074`.
+  - Ablation mean before `0.4362`, after `0.1936`, drop `0.2427`.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3c_power_sim.js --self-test`
+  - PASS exit 0 with status `PASS_WITH_REPORTED_POWER_METRICS`.
+  - Condition accuracy `0.9000`.
+  - False QICN support under `hot_true`/`null_world`/`control_leak`: `0.0000`.
+  - Correct falsification under `control_leak`: `true`.
+  - One mismatch retained as protocol debt: `noise_qicn_0_35` expected `INCONCLUSIVE`, obtained `QICN_BOUNDED_SUPPORT_FOR_TARGET`.
+- From `rigid-identity-framework/`: `Get-Content docs\ai-platform-outputs\reports\QICN_ROADMAP_V3_PHASE6_3C_RAW_SELFLOCUS_TRACE_SCHEMA.json -Raw | ConvertFrom-Json | Out-Null`
+  - PASS: raw schema JSON parses.
+- From `rigid-identity-framework/`: `npm run verify`
+  - PASS exit 0; expected scientific blockers preserved: `BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run test:negative-controls`
+  - PASS; 6/6; `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run verify:preregistration-coverage`
+  - PASS; 14/14 predictions have preregistration coverage.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-integrity.cjs`
+  - PASS; no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-claim-registry.cjs`
+  - PASS; 17 entries, 17 unique ids, no failures, no warnings.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-release.cjs`
+  - PASS; no failures, no warnings.
+- From `QICN-FRAMEWORK/`: `git diff --check -- <6.3C files> <ledger>`
+  - PASS; LF-to-CRLF warning on ledger only.
+
+Artifact counts and hashes:
+- `QICN_ROADMAP_V3_PHASE6_3C_RAW_SELFLOCUS_TRACE_SCHEMA.json`: 158 lines; SHA256 `F1E976BD70EABC0132FC230204ABB4F841F9FA87053DB1860D8A3732C9550CD6`.
+- `qicn_phase6_3c_selflocus_extractor.js`: 294 lines; SHA256 `492D9D89BDC927422F3A9AF4B730C1B803D6A217BAE651EE79C961A4A66E803F`.
+- `qicn_phase6_3c_power_sim.js`: 344 lines; SHA256 `437FCC71FEBDD0E1EC505376DBEF1DFA755CEB5087174FCEC69B6B90E87018FB`.
+- `QICN_ROADMAP_V3_PHASE6_3C_SELFLOCUS_EXTRACTOR.md`: 151 lines; SHA256 `101D7429B49708783A527F039FB809803DDCFB5AD312F4004BE11B9E25F33B56`.
+- `QICN_ROADMAP_V3_PHASE6_3C_POWER_AND_BORDERLINE_REPORT.md`: 148 lines; SHA256 `AD107B6CDA019621BA5CEFB7D0A3B1CD34CA4ED6807CE51C2CADEA3417841FA3`.
+- Line counts use `(Get-Content <path>).Count`; ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regressions searched:
+- accidental `.tex`, PDF, release, canonical registry, corpus, artifact, monolith, production script, macro, label, theorem, proof, or `package.json` edits;
+- extractor access to latent truth, true self id, world id, expected ownership, cooked weights, or precomputed QICN variables;
+- hidden promotion of synthetic support into external validation;
+- hidden consciousness, phenomenality, human-equivalence, agency, or HOT-defeat claims;
+- loss of expected `BLOCKED_*` / `external_support_certified=false` baseline behavior;
+- missing JSON parseability;
+- missing 30-seed condition execution;
+- missing AR(1), block bootstrap, effective-n, Holm, BIC, null, borderline, noise, or insufficient-sample cases.
+
+Regressions found:
+- None in intended file-boundary scope.
+- The simulator found a real protocol debt: `noise_qicn_0_35` over-supported QICN instead of returning `INCONCLUSIVE`.
+- Preexisting unrelated untracked files remain outside scope: root `AGENTS.md`, `opencode.jsonc`, `photoshop-mcp/`, `.kiro/`, and AI-output audit/extraction/prompt folders.
+
+Residual risks:
+- Only `SelfIndex`/`QICN_SIPM` is raw-extracted; the remaining QICN variables remain cooked synthetic candidates.
+- HOT arm is minimal and not a full HOT literature implementation.
+- BIC and power statistics are synthetic engineering checks, not external adjudication.
+- The clean extractor recovery score is not real-world evidence; the synthetic genuine-self worlds are deliberately separable.
+- Phase 6.3A/6.3B/6.3C outputs require external audit before commit/push.
+
+Status: `PHASE6_3C_PASS_WITH_REPORTED_PROTOCOL_DEBT_READY_FOR_EXTERNAL_AUDIT_NO_PUSH`.
+
+## 2026-06-11 - ROADMAP v3 Phase 6.3D raw ContField, SNR curve, and honest false-support metric
+
+User request:
+- Execute the corrected Phase 6.3D one-shot prompt and the inline external audit.
+- Close the dominant 6.3C limitations without overstating closure:
+  - only 1/5 QICN variables was raw-extracted in 6.3C;
+  - `QICN_SIPM` recovery was measured only in high-separation worlds;
+  - world outcomes and false-support summaries were partly calibrated/cooked;
+  - `false_qicn_support=0` excluded noise/borderline worlds;
+  - line-count hygiene needed explicit traceability.
+- Do not declare victory; extract a second raw variable, measure recovery under separation/noise, and make the false-support metric harder to flatter.
+
+Operational objective:
+- Add a second raw extractor for a Paper 8-compatible continuity primitive: `ContField` / `QICN_CFS`.
+- Preserve the 6.3A statistical harness and 6.3C raw `SelfIndex` extractor.
+- Add an honest recovery-vs-separation/SNR curve for `SelfIndex`.
+- Recompute false QICN support over non-supporting and borderline/noise worlds, not only the narrow set `{hot_true, null_world, control_leak}`.
+- Keep all outputs in `docs/ai-platform-outputs/` and leave canonical sources untouched.
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\d452146e-d688-462f-86be-941d5f3910e9\pasted-text.txt`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3C_RAW_SELFLOCUS_TRACE_SCHEMA.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3c_selflocus_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3c_power_sim.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3b_hot_model.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3B1_QICN_PRIMITIVE_OPERATIONALIZATION.md`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/.kiro/steering/product.md`
+- `rigid-identity-framework/.kiro/steering/structure.md`
+- `rigid-identity-framework/.kiro/steering/tech.md`
+
+Preflight classification:
+- 6.3C self-locus extractor: `FUNCTIONAL_RAW_EXTRACTOR_FOR_ONE_VARIABLE`.
+- 6.3C power simulator: `FUNCTIONAL_BUT_PARTLY_COOKED_GATE_REFERENCE`.
+- 6.3B HOT arm: `FUNCTIONAL_MINIMAL_RIVAL_ARM`, not a full HOT model.
+- 6.3B-1 operationalization: `FUNCTIONAL_CANDIDATE_INPUT_WITH_REMAINING_SYNTHETIC_VARIABLES`.
+- Paper 8 source: `FUNCTIONAL_FORMAL_SOURCE_FOR_CONTINUITY_PRIMITIVE`.
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3D_RAW_CONTFIELD_TRACE_SCHEMA.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3d_contfield_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3d_power_sim.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3D_CONTFIELD_EXTRACTOR.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3D_SNR_AND_HONEST_ERROR_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `.tex` sources, PDFs, canonical bibliography files, `release/`, canonical `registry/`, `corpus/`, `artifacts/`, `monolithic/`, production `scripts/`, runtime code, macros, labels, theorem statements, proof bodies, and `package.json`.
+
+Implementation summary:
+- Added a raw `ContField` trace schema with pre-segmented trajectories as explicit input.
+- Made the data-association boundary explicit: Phase 6.3D assumes trajectories are already segmented and does not solve tracking or identity association.
+- Excluded latent truth, true self id, world id, genuine labels, precomputed continuity scores, precomputed margins, and precomputed QICN variables from extractor-visible input.
+- Implemented `extractContField(raw_trace)` as a dependency-free CommonJS extractor that ranks trajectories by raw baseline, sham, and continuity-fracture observations.
+- Defined `QICN_CFS` as a raw continuity-fracture sensitivity score derived from baseline-vs-fracture drop beyond sham drop.
+- Added anti-triviality testing: a dissociation world where `SelfIndex` remains high while continuity fractures; `QICN_CFS` must fall.
+- Added a 6.3D power simulator that uses raw `QICN_SIPM` and raw `QICN_CFS`; `QICN_OFIA`, `QICN_FPPG`, and `QICN_WRI` remain cooked synthetic variables.
+- Added `SelfIndex` recovery-vs-separation/SNR reporting so `accuracy=1.0` cannot be read as a robustness claim outside the high-separation case.
+- Added a stricter false-support summary over `{hot_true, control_leak, borderline_qicn, null_world, insufficient_sample, noise_qicn_0_35, noise_qicn_0_50}`.
+- Added a noncanonical threshold proposal based on the noise result: `QICN_SIPM >= 0.32`, `QICN_CFS >= 0.27`, and `PRIMARY_GAIN >= 0.08`.
+- Preserved the uncomfortable result that `noise_qicn_0_20` loses QICN support under the stricter raw two-variable gate.
+
+Commands executed:
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3d_contfield_extractor.js --self-test`
+  - PASS exit 0.
+  - Status `PASS`.
+  - Boundary: pre-segmented trajectories are assumed; the extractor does not solve data association.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3d_power_sim.js --self-test`
+  - PASS exit 0.
+  - Status `PASS_WITH_REPORTED_LIMITS_AND_DEBT`.
+  - Raw QICN variables: `2/5` (`QICN_SIPM`, `QICN_CFS`).
+  - Cooked QICN variables still present: `3/5` (`QICN_OFIA`, `QICN_FPPG`, `QICN_WRI`).
+  - Condition accuracy `0.9000`.
+  - Honest false QICN support including noise/borderline worlds: `0.0000`.
+  - Legacy narrow false QICN support: `0.0000`.
+  - Correct falsification under `control_leak`: `true`.
+  - Main mismatch: `noise_qicn_0_20` expected QICN support but produced `BOTH_FAIL` because raw `QICN_CFS=0.2185` fell below threshold.
+- From `rigid-identity-framework/`: `Get-Content docs\ai-platform-outputs\reports\QICN_ROADMAP_V3_PHASE6_3D_RAW_CONTFIELD_TRACE_SCHEMA.json -Raw | ConvertFrom-Json | Out-Null`
+  - PASS: raw ContField schema JSON parses.
+- From `rigid-identity-framework/`: `npm run verify`
+  - PASS exit 0; expected scientific blockers preserved: `BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run test:negative-controls`
+  - PASS; 6/6; `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run verify:preregistration-coverage`
+  - PASS; 14/14 predictions have preregistration coverage.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-integrity.cjs`
+  - PASS; no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-claim-registry.cjs`
+  - PASS; 17 entries, 17 unique ids, no failures, no warnings.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-release.cjs`
+  - PASS; no failures, no warnings.
+
+Key measured outputs:
+- `SelfIndex` high-separation recovery remains perfect in the easy synthetic case, but the SNR curve shows collapse at the symmetric point.
+- SelfIndex break point: `snr_break_symmetric`; approximate SNR `0.0000`; accuracy `0.3000`; AUC `0.5010`; mean `QICN_SIPM=0.0093`.
+- Condition matrix:
+  - Expected `QICN_BOUNDED_SUPPORT` -> actual `QICN_BOUNDED_SUPPORT`: `2`.
+  - Expected `QICN_BOUNDED_SUPPORT` -> actual `BOTH_FAIL`: `1`.
+  - Expected `HOT_FAVORED` -> actual `HOT_FAVORED`: `1`.
+  - Expected `QICN_FALSIFIED` -> actual `QICN_FALSIFIED`: `1`.
+  - Expected `INCONCLUSIVE` -> actual `INCONCLUSIVE`: `4`.
+  - Expected `BOTH_FAIL` -> actual `BOTH_FAIL`: `1`.
+- Threshold proposal result:
+  - False support after stricter thresholds: `0.0000`.
+  - Legitimate support retained rate: `0.6667`.
+  - Kept `qicn_true` and `noise_qicn_0_05`.
+  - Lost `noise_qicn_0_20`.
+
+Artifact counts and hashes:
+- `QICN_ROADMAP_V3_PHASE6_3D_RAW_CONTFIELD_TRACE_SCHEMA.json`: 161 lines; SHA256 `2AA2CBE046C0297A2CAA4C38D57D8D26A18A2FEBE37F82777EEC837B0CB4BED8`.
+- `qicn_phase6_3d_contfield_extractor.js`: 287 lines; SHA256 `946D97A4F8D7F4EF1B7543E29FAEB3C2E81E734612C5ED216BFFEDEBC2A2F17F`.
+- `qicn_phase6_3d_power_sim.js`: 380 lines; SHA256 `481F874FE2C5111031965D6D279EB82489AA01098F358E350316663B1352C654`.
+- `QICN_ROADMAP_V3_PHASE6_3D_CONTFIELD_EXTRACTOR.md`: 167 lines; SHA256 `92151E51625545F9BC8D61C9FDE916C7E93EE3B5DE5E3231A47AFD14818C72B8`.
+- `QICN_ROADMAP_V3_PHASE6_3D_SNR_AND_HONEST_ERROR_REPORT.md`: 161 lines; SHA256 `A989F748524485B4A6FE16403D414FEBFB50237ACF454AD29888DD7BB8FDCDD8`.
+- Line counts use `(Get-Content <path>).Count`; ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regressions searched:
+- accidental `.tex`, PDF, release, canonical registry, corpus, artifact, monolith, production script, macro, label, theorem, proof, or `package.json` edits;
+- extractor access to latent truth, true self id, world id, expected ownership, cooked weights, cooked continuity scores, precomputed margins, or precomputed QICN variables;
+- hidden promotion of synthetic support into external validation;
+- hidden consciousness, phenomenality, human-equivalence, agency, or HOT-defeat claims;
+- loss of expected `BLOCKED_*` / `external_support_certified=false` baseline behavior;
+- missing JSON parseability;
+- missing 30-seed condition execution;
+- missing AR(1), block bootstrap, effective-n, Holm, BIC, null, borderline, noise, or insufficient-sample cases;
+- flattering aggregate false-support calculation that excludes noise/borderline worlds.
+
+Regressions found:
+- None in intended file-boundary scope.
+- The harness found a conservative power loss: `noise_qicn_0_20` falls to `BOTH_FAIL` under the raw two-variable gate.
+- Preexisting unrelated untracked files remain outside scope: root `AGENTS.md`, `opencode.jsonc`, `photoshop-mcp/`, `.kiro/`, and AI-output audit/extraction/prompt folders.
+
+Residual risks:
+- 3/5 QICN gate variables remain cooked synthetic variables.
+- `ContField` is raw-extracted only after trajectory segmentation; segmentation itself is not solved.
+- The HOT arm remains a minimal comparator, not a literature-complete HOT model.
+- BIC, power, and threshold behavior are synthetic engineering checks, not external empirical adjudication.
+- The proposed stricter thresholds are candidate protocol parameters only; they are not canonical and should not be promoted without preregistration.
+- Phase 6.3A/6.3B/6.3C/6.3D outputs require external audit before commit/push.
+
+Status: `PHASE6_3D_PASS_WITH_LIMITS_AND_DEBT_READY_FOR_EXTERNAL_AUDIT_NO_PUSH`.
+
+## 2026-06-12 - ROADMAP v3 Phase 6.3E raw OFIA extractor and 3/5 raw gate
+
+User request:
+- Execute the scoped Phase 6.3E prompt.
+- Convert `QICN_OFIA` from cooked synthetic metric into a raw-extracted candidate variable.
+- Use a unified trace architecture with two observable families:
+  - self-locus signals consumed by `extractSelfLocus`;
+  - perturbation response events with observable `perturbation_target_id`.
+- Preserve the critical information boundary:
+  - `perturbation_target_id` is observable by design;
+  - `true_self_locus_id` and `latent_truth` never enter the extractor;
+  - OFIA must classify self-target vs non-self-target using the self-locus inferred by SelfIndex.
+- Measure SelfIndex-to-OFIA error propagation instead of hiding it.
+- Do not calibrate thresholds, do not run weight sensitivity, do not declare synthetic ceiling; defer those to 6.3F.
+- Do not commit or push before external audit.
+
+Operational objective:
+- Add a raw OFIA trace schema, OFIA extractor, and 6.3E power simulator.
+- Raise the gate from `2/5` raw variables to `3/5` raw variables:
+  - raw: `QICN_SIPM`, `QICN_OFIA`, `QICN_CFS`;
+  - cooked: `QICN_FPPG`, `QICN_WRI`.
+- Preserve 6.3A statistics in the power sim: at least 30 seeds, Durbin-Watson, AR(1), block bootstrap, effective sample size, Holm correction, BIC, control leak, null/borderline/noise/insufficient worlds.
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\2a2bb690-edf1-4e95-80ee-03e7ba6adb25\pasted-text.txt`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3c_selflocus_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3d_contfield_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3d_power_sim.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3b_hot_model.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3D_SNR_AND_HONEST_ERROR_REPORT.md`
+- `rigid-identity-framework/paper8_first_person_subjectivity/main.tex`
+- `rigid-identity-framework/.kiro/steering/product.md`
+- `rigid-identity-framework/.kiro/steering/structure.md`
+- `rigid-identity-framework/.kiro/steering/tech.md`
+
+Preflight classification:
+- 6.3C self-locus extractor: `FUNCTIONAL_RAW_EXTRACTOR_FOR_SIPM`.
+- 6.3D ContField extractor: `FUNCTIONAL_RAW_EXTRACTOR_FOR_CFS_WITH_PRESEGMENTATION_BOUNDARY`.
+- 6.3D power sim: `FUNCTIONAL_2_OF_5_RAW_GATE_BASELINE`.
+- 6.3B HOT arm: `FUNCTIONAL_MINIMAL_HOT_ARM`, not a full HOT literature model.
+- Paper 8 source: `FUNCTIONAL_FORMAL_SOURCE_FOR_OWNERSHIP_FIELD_AND_ESTIMATOR_LANGUAGE`.
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3E_RAW_OFIA_TRACE_SCHEMA.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3e_ofia_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3e_power_sim.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3E_OFIA_EXTRACTOR.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `.tex` sources, PDFs, canonical bibliography files, `release/`, canonical `registry/`, `corpus/`, `artifacts/`, `monolithic/`, production `scripts/`, runtime code, macros, labels, theorem statements, proof bodies, `package.json`, and ROADMAP text.
+
+Implementation summary:
+- Added a raw OFIA JSON schema for unified traces containing:
+  - `self_locus_trace`;
+  - `perturbation_events`;
+  - observable `perturbation_target_id`;
+  - downstream pre/post response observations.
+- Added `qicn_phase6_3e_ofia_extractor.js`.
+- `extractOfia(raw_trace)` first runs `extractSelfLocus(raw_trace.self_locus_trace)`.
+- OFIA labels perturbations as inferred-self-target only when `perturbation_target_id == inferred_self_locus_id`.
+- OFIA computes a paired standardized effect between inferred self-target and inferred non-self-target downstream responses.
+- The extractor never receives latent truth or precomputed ownership fields.
+- Added tests for:
+  - recovery;
+  - null controls;
+  - ablation;
+  - anti-triviality dissociation where `SIPM` and `CFS` remain high but OFIA must fall;
+  - SelfIndex-to-OFIA error propagation.
+- Added `qicn_phase6_3e_power_sim.js` as a new 6.3E harness rather than overwriting 6.3D.
+- Preserved the HOT synthetic seed namespace from 6.3D so the 6.3E integration does not accidentally perturb the rival baseline.
+- Did not adjust thresholds or run sensitivity analysis.
+
+Commands executed:
+- From `rigid-identity-framework/`: `Get-Content docs\ai-platform-outputs\reports\QICN_ROADMAP_V3_PHASE6_3E_RAW_OFIA_TRACE_SCHEMA.json -Raw | ConvertFrom-Json | Out-Null`
+  - PASS: raw OFIA schema JSON parses.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3e_ofia_extractor.js --self-test`
+  - PASS exit 0.
+  - Recovery seeds `60`; OFIA pass rate `1.0000`; mean `QICN_OFIA=1.8000`.
+  - Null runs `120`; false OFIA rate `0.0000`; mean null `QICN_OFIA=0.0094`.
+  - Ablation runs `40`; mean drop `1.7999`.
+  - Anti-triviality: `SIPM` high rate `1.0000`; `CFS` high rate `1.0000`; OFIA low rate `1.0000`.
+  - SelfIndex-to-OFIA propagation:
+    - `self_snr_high`: SelfIndex accuracy `1.0000`; OFIA when correct `1.8000`.
+    - `self_snr_mid`: SelfIndex accuracy `1.0000`; OFIA when correct `1.8000`.
+    - `self_snr_near_chance`: SelfIndex accuracy `0.8625`; wrong count `11`; OFIA when wrong `0.0000`.
+    - `self_snr_break_symmetric`: SelfIndex accuracy `0.2625`; wrong count `59`; OFIA when wrong `0.0000`.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3e_power_sim.js --self-test`
+  - PASS exit 0 with status `PASS_WITH_REPORTED_LIMITS_AND_DEBT`.
+  - Runtime reported by script about `10.4` seconds; measured wall time about `11.4` seconds.
+  - Gate raw state `3/5`.
+  - Condition accuracy `0.8000`.
+  - Honest false QICN support including noise/borderline worlds `0.0000`.
+  - Condition matrix:
+    - Expected `QICN_BOUNDED_SUPPORT` -> actual `QICN_BOUNDED_SUPPORT`: `1`.
+    - Expected `QICN_BOUNDED_SUPPORT` -> actual `INCONCLUSIVE`: `1`.
+    - Expected `QICN_BOUNDED_SUPPORT` -> actual `BOTH_FAIL`: `1`.
+    - Expected `HOT_FAVORED` -> actual `HOT_FAVORED`: `1`.
+    - Expected `QICN_FALSIFIED` -> actual `QICN_FALSIFIED`: `1`.
+    - Expected `INCONCLUSIVE` -> actual `INCONCLUSIVE`: `4`.
+    - Expected `BOTH_FAIL` -> actual `BOTH_FAIL`: `1`.
+- From `rigid-identity-framework/`: `npm run verify`
+  - PASS exit 0.
+  - Preserved expected scientific blockers: `BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run test:negative-controls`
+  - PASS exit 0; 6/6; `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run verify:preregistration-coverage`
+  - PASS exit 0; 14/14.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-integrity.cjs`
+  - PASS exit 0; no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-claim-registry.cjs`
+  - PASS exit 0; 17 entries, 17 unique ids, no failures, no warnings.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-release.cjs`
+  - PASS exit 0; no failures, no warnings.
+
+Key measured outputs:
+- Gate raw state improved from `2/5` to `3/5`.
+- `QICN_FPPG` and `QICN_WRI` remain cooked synthetic.
+- OFIA collapses to `0.0000` when SelfIndex is wrong in the error-propagation sweep.
+- The 6.3E power sim becomes stricter:
+  - `noise_qicn_0_05` is now `INCONCLUSIVE`;
+  - `noise_qicn_0_20` is now `BOTH_FAIL`;
+  - these are conservative power losses, not false support.
+- `hot_true` remains `HOT_FAVORED_FOR_TARGET` after preserving the 6.3D HOT RNG namespace.
+
+Artifact counts and hashes:
+- `QICN_ROADMAP_V3_PHASE6_3E_RAW_OFIA_TRACE_SCHEMA.json`: 192 lines; SHA256 `46B70EFC39F4DB7344B7FFDE5DF4FCF8DBACE8C1AE77E122564E3F059AEC7554`.
+- `qicn_phase6_3e_ofia_extractor.js`: 422 lines; SHA256 `F4CAAF9C663A06FF0134E37AEA38062C8E6FED9FEE0DE1C06B18E7253F3D3FE7`.
+- `qicn_phase6_3e_power_sim.js`: 345 lines; SHA256 `BA772A5FC40AF13B454FF445DCD8AA2B59C7F941B418DC14329D01663527DBD9`.
+- `QICN_ROADMAP_V3_PHASE6_3E_OFIA_EXTRACTOR.md`: 252 lines; SHA256 `497EF03940DE8D9C07DAF2DAA6F53B9C119AB602F32E272ED001968CEFC17C8D`.
+- Line counts use `(Get-Content <path>).Count`; ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regressions searched:
+- accidental `.tex`, PDF, release, canonical registry, corpus, artifact, monolith, production script, macro, label, theorem, proof, or `package.json` edits;
+- extractor access to latent truth, true self id, expected ownership, control ownership, cooked ownership scores, or precomputed `QICN_OFIA`;
+- misuse of `perturbation_target_id` as a substitute for inferred self-locus;
+- hidden promotion of synthetic support into external validation;
+- hidden consciousness, phenomenality, human-equivalence, agency, or HOT-defeat claims;
+- accidental threshold calibration or sensitivity analysis that belongs to 6.3F;
+- loss of expected `BLOCKED_*` / `external_support_certified=false` baseline behavior;
+- missing JSON parseability or missing >=30 seed condition execution;
+- missing AR(1), block bootstrap, effective-n, Holm, BIC, null, borderline, noise, control leak, or insufficient-sample cases;
+- flattering aggregate false-support calculation excluding noise/borderline worlds.
+
+Regressions found:
+- None in intended canonical boundary scope.
+- The harness found two conservative power losses:
+  - `noise_qicn_0_05` expected QICN bounded support but obtained `INCONCLUSIVE`;
+  - `noise_qicn_0_20` expected QICN bounded support but obtained `BOTH_FAIL`.
+- OFIA saturates at `1.8000` in high-separation synthetic recovery worlds; this is useful for identifiability but not robust-world evidence.
+- Preexisting unrelated untracked files remain outside scope: root `AGENTS.md`, `opencode.jsonc`, `photoshop-mcp/`, `.kiro/`, and AI-output audit/extraction/prompt folders.
+
+Residual risks:
+- `QICN_FPPG` and `QICN_WRI` remain cooked synthetic variables.
+- OFIA is raw-extracted from synthetic perturbation traces only.
+- OFIA depends on SelfIndex; this reduces effective independence of the gate.
+- ContField still assumes pre-segmented trajectories.
+- The HOT arm remains minimal and not literature-complete.
+- Threshold calibration, weight sensitivity, and synthetic ceiling declaration remain deferred to Phase 6.3F.
+- Phase 6.3A through 6.3E outputs require external audit before commit/push.
+
+Status: `PHASE6_3E_PASS_WITH_LIMITS_AND_DEBT_READY_FOR_EXTERNAL_AUDIT_NO_PUSH`.
+
+---
+
+## 2026-06-12 - Codex - Roadmap v3 Phase 6.3F SNR calibration, weight sensitivity, SelfIndex SPOF, and synthetic ceiling
+
+User request:
+- Analyze prior thread `019e8b0c-953b-7be1-98d4-cf0d2841bc0e` before proceeding.
+- Execute the attached Phase 6.3F prompt:
+  - calibrate thresholds by SNR, including OFIA's own ownership signal;
+  - quantify fragile effective-n behavior;
+  - test weight sensitivity;
+  - quantify SelfIndex as a single point of failure;
+  - declare the synthetic ceiling.
+
+Operational objective:
+- Build non-canonical 6.3F calibration machinery under `docs/ai-platform-outputs/`.
+- Reuse 6.3C/6.3D/6.3E extractors and 6.3E power sim without mutating their defaults.
+- Keep threshold proposals non-canonical and not human-curated.
+- Preserve strict non-claim boundary: no external validation, no consciousness/phenomenality/human-equivalence claims, no HOT adjudication.
+
+Prior-thread context used:
+- Thread `019e8b0c-953b-7be1-98d4-cf0d2841bc0e` closed Phase 6.3E.
+- 6.3E introduced raw OFIA and moved the gate to `3/5` raw:
+  - raw: `QICN_SIPM`, `QICN_OFIA`, `QICN_CFS`;
+  - cooked synthetic: `QICN_FPPG`, `QICN_WRI`.
+- 6.3E deliberately deferred threshold calibration, weight sensitivity, SPOF quantification, and synthetic ceiling declaration to 6.3F.
+- Key debt inherited from 6.3E:
+  - `noise_qicn_0_05` became `INCONCLUSIVE` due to effective-n precedence;
+  - `noise_qicn_0_20` became `BOTH_FAIL`;
+  - OFIA saturated at `1.8`;
+  - OFIA depends on SelfIndex and therefore shares an upstream failure mode.
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\e399f9d4-b73f-4d53-b888-2d689306bdb3\pasted-text.txt`
+- `C:\Users\irisp\.codex\memories\MEMORY.md`
+- `C:\Users\irisp\.codex\memories\rollout_summaries\2026-06-03T01-15-18-HTvU-qicn_phase_6_3e_ofia_raw_extractor_and_3of5_gate.md`
+- Thread summary for `019e8b0c-953b-7be1-98d4-cf0d2841bc0e`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/package.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3b_hot_model.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3c_selflocus_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3d_contfield_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3e_ofia_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3e_power_sim.js`
+
+Preflight classification:
+- `qicn_phase6_3c_selflocus_extractor.js`: `FUNCTIONAL`; `--self-test` present; expected export `extractSelfLocus`.
+- `qicn_phase6_3d_contfield_extractor.js`: `FUNCTIONAL`; `--self-test` present; expected export `extractContField`.
+- `qicn_phase6_3e_ofia_extractor.js`: `FUNCTIONAL`; `--self-test` present; expected export `extractOfia`.
+- `qicn_phase6_3e_power_sim.js`: `FUNCTIONAL`; `--self-test` present; expected export `summarizeCondition`.
+- `qicn_phase6_3b_hot_model.js`: `FUNCTIONAL`; no standalone `--self-test`; treated as smoke dependency through `computeHotHoa`.
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3f_calibration_sensitivity_ceiling.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3F_CALIBRATION_SENSITIVITY_AND_CEILING_REPORT.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `.tex` sources, PDFs, canonical bibliography files, `release/`, canonical `registry/`, `corpus/`, `artifacts/`, `monolithic/`, production `scripts/`, runtime code, macros, labels, theorem statements, proof bodies, `package.json`, and ROADMAP text.
+
+Implementation summary:
+- Added `qicn_phase6_3f_calibration_sensitivity_ceiling.js`.
+- The script:
+  - imports and reuses existing 6.3B/6.3C/6.3D/6.3E modules;
+  - recreates phase-local aggregation/classification so candidate thresholds can be passed without mutating 6.3E defaults;
+  - measures `noise_qicn_0_05` at 30 and 50 seeds under the 6.3A effective-n rule;
+  - derives threshold candidates for `QICN_SIPM`, `QICN_CFS`, and OFIA `standardized_effect`;
+  - keeps OFIA calibration on unclamped `standardized_effect`, not saturated `QICN_OFIA`;
+  - computes OFIA clean/null distributions and evaluates `/1.6` plus clamp `1.8`;
+  - tests +/-0.05 sensitivity for SelfIndex localScore weights, ContField obsScore weights, and OFIA scale;
+  - quantifies SelfIndex SPOF with Pearson correlation matrices, eigenvalue participation ratio, and joint collapse counts;
+  - writes the Markdown report when run with `--write-report`.
+- Added the Phase 6.3F report with effective-n correction, SNR threshold table, OFIA scale/clamp assessment, noise re-evaluation, sensitivity table, SPOF participation ratio, and synthetic ceiling statement.
+
+Key measured outputs:
+- 6.3F script status: `PASS_WITH_REPORTED_LIMITS_AND_DEBT`.
+- Runtime reported by script: about `24.49s` on the final write-report run.
+- `noise_qicn_0_05` at 30 seeds:
+  - obtained `INCONCLUSIVE`;
+  - `effective_n=19.1415`;
+  - `rho=0.2210`;
+  - all five QICN metrics passed.
+- `noise_qicn_0_05` at 50 seeds:
+  - obtained `QICN_BOUNDED_SUPPORT_FOR_TARGET`;
+  - `effective_n=40.6984`;
+  - `rho=0.1026`;
+  - correction status `A_SUFFICIENT_SEEDS_50_EFFECTIVE_N_GE_25`.
+- Candidate thresholds, non-canonical:
+  - `QICN_SIPM >= 0.35`;
+  - `QICN_CFS >= 0.10`;
+  - OFIA `standardized_effect >= 1.40`;
+  - legacy clamped-gate equivalent for OFIA approximately `QICN_OFIA >= 0.875`.
+- Candidate-threshold re-evaluation:
+  - `noise_qicn_0_05` with 50 seeds -> `QICN_BOUNDED_SUPPORT_FOR_TARGET`;
+  - `noise_qicn_0_20` with 50 seeds -> `QICN_BOUNDED_SUPPORT_FOR_TARGET`.
+- OFIA scale/clamp:
+  - clean high-SNR p95 standardized effect `4.9318`;
+  - clean high-SNR p99.5 standardized effect `5.0231`;
+  - assessment: `CURRENT_1_6_UNDERESTIMATES_HIGH_SNR_SIGNAL`;
+  - assessment: `CLAMP_1_8_TRUNCATES_CLEAN_VARIANCE; MOVE_TO_DEFENSIVE_PERCENTILE_OR_REPORT_UNCLAMPED_STANDARDIZED_EFFECT`.
+- Weight sensitivity:
+  - no material sensitivity detected by the synthetic +/-0.05 criterion;
+  - no row escalated to 60 seeds.
+- SelfIndex SPOF:
+  - in `selfindex_snr_broken`, observed SelfIndex accuracy `0.3667`;
+  - `QICN_SIPM` loses discriminative status;
+  - `QICN_OFIA` remains discriminative in mean but shares the SelfIndex failure path;
+  - SIPM+OFIA fail together in 19/30 seeds;
+  - `QICN_CFS` remains the only clearly independent raw signal in the broken SelfIndex regime.
+- Participation ratio:
+  - did not collapse to 1 in this sweep, largely because CFS is synthetic-independent of SelfIndex;
+  - this does not remove the SPOF risk for SIPM+OFIA.
+- Synthetic ceiling:
+  - `EXTERNAL_ADJUDICATION_GAP` remains open;
+  - `QICN_FPPG` and `QICN_WRI` remain cooked synthetic;
+  - ContField still assumes pre-segmented trajectories;
+  - HOT remains an operational-minimal arm, not full HOT adjudication;
+  - synthetic discriminability remains internal support only.
+
+Commands executed:
+- From `QICN-FRAMEWORK/`: memory/thread preflight using `rg`, rollout summary read, and `read_thread`.
+  - Confirmed the cited thread is the 6.3E OFIA raw extractor and 3/5 gate context.
+- From `QICN-FRAMEWORK/`: mandatory source-of-truth reads.
+  - `docs/CANON_SOURCE_OF_TRUTH.md`, `docs/CANON_MANIFEST.md`, `docs/CLAIM_REGISTRY.md`, `docs/LAYER_BOUNDARIES.md`, `docs/THEORY_SYSTEM_INTERFACE.md`.
+- From `rigid-identity-framework/`: mandatory phase reads.
+  - `INSTRUCCIONES.md`, `ROADMAP.md`, `docs/CLAIM_STATUS_POLICY.md`, extractors and simulator.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3f_calibration_sensitivity_ceiling.js --self-test --write-report`
+  - PASS exit 0; status `PASS_WITH_REPORTED_LIMITS_AND_DEBT`; report generated.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3c_selflocus_extractor.js --self-test`
+  - PASS exit 0; recovery accuracy `1`; null false rate `0`.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3d_contfield_extractor.js --self-test`
+  - PASS exit 0; recovery accuracy `1`; null false rate `0`; mean CFS `0.2735`.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3e_ofia_extractor.js --self-test`
+  - PASS exit 0; OFIA pass rate `1`; null false rate `0`; ablation drop `1.7999`.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3e_power_sim.js --self-test`
+  - PASS exit 0; status `PASS_WITH_REPORTED_LIMITS_AND_DEBT`; condition accuracy `0.8`; false support including noise/borderline `0`; raw fraction `3/5`.
+- From `rigid-identity-framework/`: `npm run verify`
+  - PASS exit 0; preserved expected scientific blockers: `BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run test:negative-controls`
+  - PASS exit 0; 6/6; `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run verify:preregistration-coverage`
+  - PASS exit 0; 14/14.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-integrity.cjs`
+  - PASS exit 0; no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-claim-registry.cjs`
+  - PASS exit 0; 17 entries, 17 unique ids, no failures, no warnings.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-release.cjs`
+  - PASS exit 0; no failures, no warnings.
+
+Artifact counts and hashes:
+- `qicn_phase6_3f_calibration_sensitivity_ceiling.js`: 1352 lines; SHA256 `2D41E4260F1D6B04FCA9A9F3928CC7EB3629CA9E6505A9482DAE0A79F17718A8`.
+- `QICN_ROADMAP_V3_PHASE6_3F_CALIBRATION_SENSITIVITY_AND_CEILING_REPORT.md`: 139 lines; SHA256 `C41DFB4F5855835A28AA3B8DAD0A88CA0BAD1D2BB459E97DAF5C3F8A79170E05`.
+- Line counts use `(Get-Content <path>).Count`; ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regressions searched:
+- accidental `.tex`, PDF, release, canonical registry, corpus, artifact, monolith, production script, macro, label, theorem, proof, or `package.json` edits;
+- mutation of 6.3C/6.3D/6.3E extractor defaults;
+- threshold canonization or hidden `human_curated` promotion;
+- use of clamped OFIA as the calibration surface instead of `standardized_effect`;
+- use of `strong_ownership` or nonexistent `perturbationStrength`;
+- hiding `noise_qicn_0_05` effective-n fragility as a bug;
+- calibration designed to make QICN win rather than report trade-offs;
+- hidden promotion of synthetic support into external validation;
+- hidden consciousness, phenomenality, human-equivalence, agency, or HOT-defeat claims;
+- missing synthetic ceiling declaration;
+- loss of expected `BLOCKED_*` / `external_support_certified=false` baseline behavior.
+
+Regressions found:
+- None in intended canonical boundary scope.
+- 6.3F confirms real residual limitations:
+  - OFIA high-SNR signal is truncated by the existing `1.8` clamp;
+  - `/1.6` under-scales the clean high-SNR standardized effect;
+  - SIPM and OFIA share SelfIndex as an upstream failure path;
+  - participation ratio alone can look healthy because CFS remains independent in the synthetic generator; this must not be misread as full gate independence.
+- Preexisting unrelated untracked files remain outside scope: root `AGENTS.md`, `opencode.jsonc`, `photoshop-mcp/`, `.kiro/`, and prior AI-output phase files.
+
+Residual risks:
+- Candidate thresholds are not canonical and not preregistered.
+- Candidate recovery of `noise_qicn_0_05` and `noise_qicn_0_20` is internal synthetic behavior only.
+- `QICN_FPPG` and `QICN_WRI` remain cooked synthetic variables.
+- ContField still assumes pre-segmented trajectories.
+- HOT arm remains operational-minimal, not literature-complete adjudication.
+- OFIA remains dependent on SelfIndex; a future raw variable independent of inferred self is needed to mitigate the SPOF.
+- `EXTERNAL_ADJUDICATION_GAP` remains open.
+- Phase 6.3A through 6.3F outputs require external audit before commit/push.
+
+Status: `PHASE6_3F_PASS_WITH_LIMITS_AND_DEBT_READY_FOR_EXTERNAL_AUDIT_NO_PUSH`.
+
+---
+
+## 2026-06-12 - Codex - Roadmap v3 Phase 6.3-CLOSE Coupled Synthetic Gate Closure
+
+User request:
+- Execute the attached two-pass prompt, but keep passes sequential.
+- Run Pasada A only: close the full synthetic Phase 6.3 block honestly under AI outputs.
+- Do not begin Pasada B / Phase 6.4 until Pasada A is closed and audited.
+- Do not use `git add -A`; do not push without external audit.
+
+Operational objective:
+- Add a coupled synthetic gate check that compares the Phase 6.3F decoupled participation-ratio result with a single shared latent self trace model.
+- Keep all outputs non-canonical under `docs/ai-platform-outputs/`.
+- Preserve the boundary that this is internal synthetic support only: no external validation, no consciousness or phenomenality evidence, no human-equivalence claim, no HOT defeat, and no canonical threshold promotion.
+- Declare the Phase 6.3 synthetic ceiling if the coupled check and existing gates pass with reported limitations.
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\a3e413e4-7117-4205-a723-33c83e144fb1\pasted-text.txt`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3f_calibration_sensitivity_ceiling.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3F_CALIBRATION_SENSITIVITY_AND_CEILING_REPORT.md`
+- Phase 6.3C/6.3D/6.3E extractor modules through the coupled closure script imports.
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3close_coupled_gate.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3_CLOSE_CONSOLIDATION_AND_CEILING.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `.tex` sources, PDFs, canonical bibliography files, `release/`, canonical `registry/`, `corpus/`, `artifacts/`, `monolithic/`, production `scripts/`, runtime code, macros, labels, theorem statements, proof bodies, `package.json`, and ROADMAP text.
+- Phase 6.4 / Pasada B was not started.
+
+Implementation summary:
+- Added `qicn_phase6_3close_coupled_gate.js`.
+- The script:
+  - imports and reuses `extractSelfLocus`, `extractContField`, and `extractOfia`;
+  - imports Phase 6.3F `spofAnalysis(30)` as the decoupled baseline;
+  - generates one shared latent self index and derives three extractor-visible views from it: `selfView`, `continuityView`, and `ownershipView`;
+  - retains latent truth only for evaluation;
+  - computes raw means, discriminative raw variable counts, Pearson correlation matrices, eigenvalues, and participation-ratio `n_eff`;
+  - reports coupled-vs-decoupled side-by-side values without imposing a directional expectation;
+  - writes the Markdown closure report when run with `--write-report`.
+- Added the closure report with coupled trace correction, side-by-side `n_eff` table, consolidated achievements, open debts, non-claims, and a formal synthetic ceiling declaration.
+
+Key measured outputs:
+- 6.3-CLOSE script status: `PASS_WITH_REPORTED_LIMITS_AND_DEBT`.
+- Runtime reported by script on final write-report run: `2157ms`.
+- Observed minimum coupled participation ratio: `2.7120253504554754`.
+- Observed minimum decoupled 6.3F participation ratio: `2.802655915504632`.
+- Direction: `COUPLED_LOWER_THAN_DECOUPLED_MIN`.
+- No directional expectation was imposed.
+- Coupled discriminative raw variables:
+  - `shared_snr_high`: `QICN_SIPM`, `QICN_OFIA`, `QICN_CFS`.
+  - `shared_snr_mid_high`: `QICN_SIPM`, `QICN_OFIA`.
+  - `shared_snr_mid`: `QICN_SIPM`, `QICN_OFIA`.
+  - `shared_snr_low`: `QICN_SIPM`, `QICN_OFIA`.
+  - `shared_snr_fragile`: none.
+  - `shared_snr_broken`: none.
+- In coupled `shared_snr_fragile` and `shared_snr_broken`, all three raw variables fail current thresholds in 30/30 seeds.
+- Important limitation: coupled `shared_snr_broken` has SelfIndex accuracy `1.0`; in this generator, the broken level means gate-signal collapse at current thresholds, not a demonstrated collapse of locus identification.
+- Formal declaration: `SYNTHETIC_BLOCK_6_3_CLOSED_AT_INTERNAL_TESTBED_CEILING`.
+- Explicit instruction: do not open 6.3G; the next useful step requires non-synthetic data or independent adjudication.
+
+Commands executed:
+- From `rigid-identity-framework/`: `node --check docs\ai-platform-outputs\sims\qicn_phase6_3close_coupled_gate.js`
+  - PASS exit 0.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3close_coupled_gate.js --self-test --write-report`
+  - PASS exit 0; status `PASS_WITH_REPORTED_LIMITS_AND_DEBT`; report generated.
+- From `rigid-identity-framework/`: `npm run verify`
+  - PASS exit 0; preserved expected scientific blockers: `BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run test:negative-controls`
+  - PASS exit 0; 6/6; `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run verify:preregistration-coverage`
+  - PASS exit 0; 14/14.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-integrity.cjs`
+  - PASS exit 0; no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-claim-registry.cjs`
+  - PASS exit 0; 17 entries, 17 unique ids, no failures, no warnings.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-release.cjs`
+  - PASS exit 0; no failures, no warnings.
+
+Artifact counts and hashes:
+- `qicn_phase6_3close_coupled_gate.js`: 507 lines; SHA256 `B7960718CD5BA6435235C804219BC8F1C1D5A51A59D64170B22D67BE745D977E`.
+- `QICN_ROADMAP_V3_PHASE6_3_CLOSE_CONSOLIDATION_AND_CEILING.md`: 82 lines; SHA256 `29EFD788FE9A1FFA7FEBAFE2D9AE972A63100629A308CD70AD28701EE449CB2A`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regressions searched:
+- accidental `.tex`, PDF, release, canonical registry, corpus, artifact, monolith, production script, macro, label, theorem, proof, or `package.json` edits;
+- hidden start of Phase 6.4 / Pasada B;
+- mutation of 6.3C/6.3D/6.3E extractor defaults;
+- hidden promotion of threshold candidates to canonical status;
+- hidden external validation claim;
+- hidden consciousness, phenomenality, human-equivalence, agency, metaphysical identity, or HOT-defeat claim;
+- coupled analysis imposing a desired direction rather than reporting the observed direction;
+- loss of expected `BLOCKED_*` / `external_support_certified=false` baseline behavior.
+
+Regressions found:
+- None in intended canonical boundary scope.
+- The coupled check is more honest than the decoupled 6.3F baseline for gate independence because all raw views come from one shared latent synthetic system.
+- The coupled check also exposes a modeling limitation: the generator can collapse gate variables at current thresholds while keeping SelfIndex label recovery perfect, so it should not be read as a full shared-latent failure model.
+- Preexisting unrelated untracked files remain outside scope: root `AGENTS.md`, `ANALISIS_GENERAL_PROYECTO.md`, `opencode.jsonc`, `photoshop-mcp/`, `.kiro/`, AI-output audit/extraction/prompt folders, and prior Phase 6.3A-F AI-output files.
+
+Residual risks:
+- `QICN_FPPG` and `QICN_WRI` remain cooked synthetic variables.
+- Thresholds and weights remain candidate, non-canonical, and not human-curated.
+- ContField still assumes pre-segmented trajectories and does not solve data association.
+- SelfIndex remains an upstream failure mode for SIPM and OFIA, even though the coupled close generator does not force SelfIndex collapse in the broken level.
+- Synthetic calibration and coupled `n_eff` values do not transfer outside this generator.
+- `EXTERNAL_ADJUDICATION_GAP` remains open.
+- Phase 6.3A through 6.3-CLOSE outputs require external audit before push.
+- A fully scoped commit is blocked by the preexisting dirty AI-output ledger and untracked Phase 6.3A-F files unless those prior phase outputs are intentionally included or first cleaned/audited.
+
+Status: `PHASE6_3_CLOSE_PASS_WITH_LIMITS_AND_DEBT_READY_FOR_EXTERNAL_AUDIT_NO_PUSH_B_NOT_STARTED`.

@@ -70,6 +70,25 @@ release/**/logs/
 # Agent tools and temporary artifacts
 .claude/
 .kilocode/
+.kiro/
+.playwright-mcp/
+.pnpm-store/
+**/.kiro/
 artifacts/
 **/artifacts/
 nul
+
+# Local agent/client configuration; not part of the public QICN release.
+opencode.jsonc
+
+# Adjacent local projects and generated dependency trees.
+photoshop-mcp/
+**/node_modules/
+
+# External one-off local analysis snapshots; preserve only curated audits under
+# docs/ai-platform-outputs/ or docs/reports/.
+ANALISIS_GENERAL_PROYECTO.md
+
+# Raw text dumps extracted from PDFs are local evidence unless curated into a
+# smaller report or manifest. They often preserve PDF layout whitespace.
+rigid-identity-framework/docs/ai-platform-outputs/extractions/*.txt

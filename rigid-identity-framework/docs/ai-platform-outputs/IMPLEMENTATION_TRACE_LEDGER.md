@@ -4299,3 +4299,172 @@ Residual risks:
 - A fully scoped commit is blocked by the preexisting dirty AI-output ledger and untracked Phase 6.3A-F files unless those prior phase outputs are intentionally included or first cleaned/audited.
 
 Status: `PHASE6_3_CLOSE_PASS_WITH_LIMITS_AND_DEBT_READY_FOR_EXTERNAL_AUDIT_NO_PUSH_B_NOT_STARTED`.
+
+---
+
+## 2026-06-13 - Codex - Roadmap v3 Phase 6.3-NR internal construct non-redundancy
+
+User request:
+- Execute the attached one-shot prompt for `Phase 6.3-NR (internal construct non-redundancy)`.
+- Do not treat this as Phase 7.
+- Do not compare against rivals.
+- Do not validate anything external.
+- Measure whether the three raw QICN gate variables behave as orthogonal/internal dimensions or redundant constructs on the synthetic coupled testbed.
+
+Operational objective:
+- Build a non-canonical factorial analysis under `docs/ai-platform-outputs/`.
+- Reuse the 6.3C/6.3D/6.3E extractors and 6.3-CLOSE coupled architecture without mutating them.
+- Vary three latent dimensions independently:
+  - self-locus strength for `QICN_SIPM`;
+  - continuity fracture sensitivity for `QICN_CFS`;
+  - ownership asymmetry for `QICN_OFIA`.
+- Estimate specificity, raw-variable correlations with block-bootstrap intervals, and effective dimensionality over the three raw variables only.
+- Report `QICN_FPPG` and `QICN_WRI` separately as cooked synthetic artifacts.
+
+Pre-existing workspace state:
+- The working tree was not clean before this task.
+- Pre-existing modified files not touched by this task:
+  - `rigid-identity-framework/docs/fixtures/TRUSTED_KEYS_REGISTRY_v27.json`
+  - `rigid-identity-framework/docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v27.json`
+  - `rigid-identity-framework/docs/reports/V35_ALL_LEGACY_VERIFICATION.json`
+
+Files read:
+- `C:\Users\irisp\.codex\attachments\8ebe528d-ee2b-4d13-9a27-e592d1ad2182\pasted-text.txt`
+- `AGENTS.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3E_OFIA_EXTRACTOR.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3F_CALIBRATION_SENSITIVITY_AND_CEILING_REPORT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3_CLOSE_CONSOLIDATION_AND_CEILING.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3c_selflocus_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3d_contfield_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3e_ofia_extractor.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3close_coupled_gate.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3f_calibration_sensitivity_ceiling.js`
+
+Preflight classification:
+- `qicn_phase6_3c_selflocus_extractor.js`: `FUNCTIONAL`; exports `extractSelfLocus`.
+- `qicn_phase6_3d_contfield_extractor.js`: `FUNCTIONAL`; exports `extractContField`.
+- `qicn_phase6_3e_ofia_extractor.js`: `FUNCTIONAL`; exports `extractOfia`.
+- `qicn_phase6_3close_coupled_gate.js`: `FUNCTIONAL`; exports coupled report/trace helpers.
+- `qicn_phase6_3f_calibration_sensitivity_ceiling.js`: `FUNCTIONAL`; exports prior 6.3F analysis helpers.
+
+Files created:
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase6_3nr_construct_nonredundancy.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3NR_CONSTRUCT_NONREDUNDANCY.md`
+
+Files modified:
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files intentionally not modified:
+- `.tex` sources, PDFs, canonical bibliography files, `release/`, canonical `registry/`, `corpus/`, `artifacts/`, `monolithic/`, production `scripts/`, runtime code, macros, labels, theorem statements, proof bodies, `package.json`, and ROADMAP text.
+- The three pre-existing dirty tracked files listed above.
+
+Implementation summary:
+- Added `qicn_phase6_3nr_construct_nonredundancy.js`.
+- The script:
+  - runs a 3 x 3 x 3 factorial design;
+  - uses 30 seeds per cell, for 810 total runs;
+  - varies latent labels independently but keeps latent truth evaluation-only;
+  - computes `QICN_SIPM`, `QICN_OFIA`, and `QICN_CFS` with the existing raw extractors;
+  - computes `QICN_FPPG` and `QICN_WRI` as cooked secondary variables with an explicit artifact caveat;
+  - estimates variable-by-dimension specificity using marginal eta-squared;
+  - estimates raw-variable Pearson correlations and 95% confidence intervals by block bootstrap over factorial cells;
+  - computes correlation-matrix eigenvalues, participation-ratio `n_eff`, and PC1 variance fraction;
+  - contrasts the factorial `n_eff` with the 6.3-CLOSE coupled/decoupled values.
+
+Key measured outputs:
+- Script status: `PASS_WITH_REPORTED_LIMITS_AND_DEBT`.
+- Runtime reported by final self-test: about `5.79s`.
+- Factorial design:
+  - cells: `27`;
+  - seeds per cell: `30`;
+  - total runs: `810`.
+- Specificity:
+  - `QICN_SIPM` primary dimension: `self_locus_strength`; eta-squared `0.9913`.
+  - `QICN_OFIA` primary dimension: `ownership_asymmetry`; eta-squared `0.9989`.
+  - `QICN_CFS` primary dimension: `continuity_fracture`; eta-squared `0.9992`.
+- Raw correlations:
+  - `QICN_SIPM` vs `QICN_OFIA`: `r=-0.0016`, 95% block-bootstrap CI `[-0.3611, 0.3883]`.
+  - `QICN_SIPM` vs `QICN_CFS`: `r=0.0005`, 95% block-bootstrap CI `[-0.3685, 0.3771]`.
+  - `QICN_OFIA` vs `QICN_CFS`: `r=-0.0003`, 95% block-bootstrap CI `[-0.3725, 0.4037]`.
+- Effective dimensionality over the three raw variables:
+  - eigenvalues: `1.0018`, `0.9999`, `0.9983`;
+  - `n_eff=2.99999`;
+  - PC1 variance fraction `0.3339`.
+- 6.3-CLOSE contrast:
+  - min coupled `n_eff=2.7120`;
+  - min decoupled `n_eff=2.8027`;
+  - difference explained by design: 6.3-CLOSE swept shared SNR, while 6.3-NR varied latent dimensions independently.
+- Cooked secondary variables:
+  - `QICN_FPPG` / `QICN_WRI` correlation `0.9760`;
+  - explicitly reported as generator artifact, not construct validity.
+- Primary finding:
+  - `NO_STRONG_REDUNDANCY_DETECTED_IN_THIS_SYNTHETIC_FACTORIAL`.
+
+Important residual limits:
+- SelfIndex accuracy remained `1.0` across the factorial cells; this does not resolve the low-SNR SelfIndex SPOF documented earlier.
+- The factorial generator deliberately separates the intended latent dimensions; clean separation here is a property of this generator design, not external construct validity.
+- `QICN_CFS` varies on the intended continuity dimension, but its synthetic means remain below the historical `0.25` support threshold in this run; specificity is not gate pass.
+- OFIA saturates at `1.8` in mid/high ownership-asymmetry cells.
+- `QICN_FPPG` and `QICN_WRI` remain cooked synthetic and are excluded from the primary `n_eff` verdict.
+
+Commands executed:
+- From `rigid-identity-framework/`: `node --check docs\ai-platform-outputs\sims\qicn_phase6_3nr_construct_nonredundancy.js`
+  - PASS exit 0.
+- From `rigid-identity-framework/`: `node docs\ai-platform-outputs\sims\qicn_phase6_3nr_construct_nonredundancy.js --self-test --write-report`
+  - First run failed with a JavaScript template-literal syntax error in Markdown rendering.
+  - Fixed the renderer without changing the analysis design.
+  - Final run PASS exit 0; report generated.
+- From `rigid-identity-framework/`: `npm run verify`
+  - PASS exit 0; preserved expected scientific blockers: `BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`.
+- From `rigid-identity-framework/`: `npm run test:negative-controls`
+  - PASS exit 0; 6/6; `external_support_certified=false`; strict DW blockers preserved.
+- From `rigid-identity-framework/`: `npm run verify:preregistration-coverage`
+  - PASS exit 0; 14/14.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-integrity.cjs`
+  - PASS exit 0; no failures, no warnings; provenance note `working_tree_not_clean_at_hardening_start`.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-claim-registry.cjs`
+  - PASS exit 0; 17 entries, 17 unique ids, no failures, no warnings.
+- From `QICN-FRAMEWORK/`: `node scripts\verify-canonical-release.cjs`
+  - PASS exit 0; no failures, no warnings.
+- From `QICN-FRAMEWORK/`: `git diff --check -- <6.3-NR script> <6.3-NR report>`
+  - PASS; no whitespace errors.
+
+Artifact counts and hashes:
+- `qicn_phase6_3nr_construct_nonredundancy.js`: 775 lines; SHA256 `66788B44FD691760ACC2395C38E84620F4782279E01720875427694AA3F432AC`.
+- `QICN_ROADMAP_V3_PHASE6_3NR_CONSTRUCT_NONREDUNDANCY.md`: 168 lines; SHA256 `BA538798BAF6ED0D65E7A4D653570B52736F18969621019DB72F6BD314AAA25C`.
+- Line counts use `(Get-Content <path>).Count`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regressions searched:
+- accidental `.tex`, PDF, release, canonical registry, corpus, artifact, monolith, production script, macro, label, theorem, proof, or `package.json` edits;
+- hidden start of Phase 7 or rival comparison;
+- hidden external validation claim;
+- hidden consciousness, phenomenality, human-equivalence, agency, metaphysical identity, or HOT-defeat claim;
+- mutation of 6.3C/6.3D/6.3E/6.3F/6.3-CLOSE defaults;
+- inclusion of cooked `FPPG/WRI` in the primary dimensionality verdict;
+- latent truth leakage into extractors;
+- tuning the generator to hide redundancy;
+- missing report of negative findings or residual limits.
+
+Regressions found:
+- None in intended canonical boundary scope.
+- The analysis does not resolve the previously documented SelfIndex failure problem because the factorial cells did not induce SelfIndex collapse.
+- Cooked `FPPG/WRI` are highly correlated by construction and remain uninterpretable as construct-validity evidence.
+
+Residual risks:
+- Results are generator-specific and not transferable.
+- The factorial design tests separability in a constructed synthetic space, not real-world orthogonality.
+- SelfIndex remains an upstream failure mode for SIPM and OFIA under low-SNR conditions not reproduced here.
+- OFIA saturation limits scale interpretation.
+- CFS specificity does not imply gate-threshold pass.
+- External audit is required before push.
+
+Status: `PHASE6_3NR_PASS_WITH_LIMITS_AND_DEBT_READY_FOR_EXTERNAL_AUDIT_NO_PUSH`.

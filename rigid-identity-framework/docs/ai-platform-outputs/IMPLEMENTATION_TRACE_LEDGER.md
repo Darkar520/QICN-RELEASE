@@ -4719,3 +4719,87 @@ Gaps and residual risks:
 - Push still depends on remote accepting `main` without non-fast-forward conflict.
 
 Status: `PASADA_A_FLOATING_FILES_RESOLVED_PUSH_AUDIT_READY`.
+
+## 2026-06-14 - I_int / atomic separator gap model card
+
+Agent/platform: Codex
+User request: Produce a non-canonical model card documenting, not proving, the formal status of the `I_int / atomic separator` gap for human review.
+Operational objective: Extract and structure existing corpus/v17-v20 material, cite real line anchors, keep all changes under `docs/ai-platform-outputs/`, run root/package gates, and commit only the scoped AI-output artifacts. No push.
+
+Files read:
+- `AGENTS.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+- `rigid-identity-framework/basecore/core/sections/01_foundation_from_core.tex`
+- `rigid-identity-framework/basecore/core/sections/03_identity_rigidity_absorbed.tex`
+- `rigid-identity-framework/basecore/core/sections/06_structural_classes_and_dynamics.tex`
+- `rigid-identity-framework/basecore/core/sections/07_operational_criterion_absorbed.tex`
+- `rigid-identity-framework/docs/reports/I_INT_FACTORIZATION_LEMMA_DRAFT.tex`
+- `rigid-identity-framework/docs/ai-platform-outputs/recovery-candidates/backup-noise-2026-06-03/i-int-atomic-separator-closure/I_INT_ATOMIC_SEPARATOR_CLOSURE_v18.tex`
+- `rigid-identity-framework/docs/ai-platform-outputs/recovery-candidates/backup-noise-2026-06-03/i-int-atomic-separator-closure/I_INT_ATOMIC_SEPARATOR_CLOSURE_v19.tex`
+- `rigid-identity-framework/docs/ai-platform-outputs/recovery-candidates/backup-noise-2026-06-03/i-int-atomic-separator-closure/I_INT_ATOMIC_SEPARATOR_CLOSURE_v20.tex`
+- `rigid-identity-framework/registry/theorems.jsonl`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance/verification reminders
+
+Files modified/created:
+- Created `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` / `git status --short` | Establish dirty state and classify edits | Initial clean; after model card only report untracked before ledger update. |
+| `Get-Content` targeted ranges | Extract exact source lines from Paper 5, BaseCore, v18-v20, registry, and policy | PASS; anchors resolved except prompt-named BaseCore file mismatch noted below. |
+| `Select-String` targeted searches | Locate `I_int`, `Qop`, `Partop`, non-simulability, and registry entries | PASS; current BaseCore uses `Partop`/`Critop`, while prompt named `Piop`. |
+| `Get-FileHash -Algorithm SHA256` | Produce source/output hashes | PASS. |
+| `npm run verify` from `rigid-identity-framework/` | Package baseline verification | PASS exit 0; expected scientific blockers preserved (`BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`). |
+| `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/` | Root canonical integrity gate | PASS exit 0; note `working_tree_not_clean_at_hardening_start` because report/ledger edits were pending. |
+| `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/` | Root claim registry gate | PASS exit 0; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/` | Root canonical release gate | PASS exit 0. |
+
+Implementation summary:
+- Documented `gap:basecore:i_int_atomic_separator` as non-canonical, `human_review: REQUIRED`, and `human_curated_status: not_reviewed`.
+- Preserved strict non-proof posture: no theorem source, registry, release, corpus, monolith, paper, or production file was edited.
+- Recorded four conservative layer states:
+  - `I_int | atomic separator` -> `CERRADO_CONDICIONAL`.
+  - `atomicidad | prime intervention-response coupling` -> `CERRADO_CONDICIONAL`.
+  - `atomicidad | separator-complete connected finite incidence` -> `CERRADO_CONDICIONAL`.
+  - `atomicidad | upstream (rigidez+continuidad+fidelidad)` -> `NO_CERRADO_BLOQUEADO_POR_CONTRAEJEMPLO`.
+- Posed the decisive reviewer burden as a question, not a conclusion: whether separator-complete connected incidence can be established without presupposing atomicity.
+- Marked v17-v20 notes as non-canonical scaffolds in `backup-noise` / draft status, not integrated or promoted.
+- Flagged downstream force limits for `prop:integration-transfer`, `Cop/Qop` or BaseCore `Partop` via `I_int`, certification witnesses, and any `I_int`-based strengthening of CCR non-simulability.
+
+Anchor resolution:
+- Prompt requested `basecore/core/sections/01_foundation_from_core.tex` for the "Open-load placement for I_int and atomic separators" remark.
+- Current source resolves that exact remark at `basecore/core/sections/06_structural_classes_and_dynamics.tex:75-77`.
+- The mismatch is explicitly recorded in the model card rather than silently corrected.
+
+Artifact counts and hashes:
+- `QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`: 160 lines; SHA256 `B003F96561DAA68D7B4DD8AAA0FDF32F23538A7B20B037B304A1FC39571EBD60`.
+- Line count uses `(Get-Content <path>).Count`.
+- Source hashes are listed inside the model card.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Verification:
+- `npm run verify` from `rigid-identity-framework/`: PASS.
+- `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/`: PASS.
+- `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/`: PASS.
+- `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/`: PASS.
+
+Regression checks:
+- Confirmed no `.tex`, PDF, registry, release, corpus, monolith, package manifest, production script, or canonical source file was modified.
+- Confirmed no `git add -A` was used before this ledger update.
+- Confirmed no push was attempted.
+
+Residual risks:
+- The model card is an AI-output map, not human mathematical curation.
+- The decisive issue remains unresolved: non-circular construction of separator-complete connected incidence.
+
+Status: `I_INT_ATOMIC_SEPARATOR_MODEL_CARD_READY_FOR_HUMAN_REVIEW_NO_PUSH`.

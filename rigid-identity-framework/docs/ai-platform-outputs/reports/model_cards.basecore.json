@@ -1,0 +1,184 @@
+{
+  "artifact_type": "basecore_model_cards",
+  "schema_status": "candidate_non_canonical",
+  "canonical": false,
+  "date": "2026-06-14",
+  "scope": "BaseCore central results only",
+  "human_review": "REQUIRED",
+  "human_curated_cards": 0,
+  "allowed_epistemic_states": [
+    "PROVED_CONDITIONAL",
+    "DEFINITION_ONLY",
+    "PROTOCOL_ONLY",
+    "INTERNAL_SUPPORT_ONLY",
+    "EXTERNAL_VALIDATION_PENDING",
+    "DOWNSTREAM_FORMAL_DEBT",
+    "CONJECTURAL",
+    "SPECULATIVE_ALIAS"
+  ],
+  "cards": [
+    {
+      "id": "basecore:theorem:thm-fixedpoint",
+      "name": "Unique Fixed Point",
+      "type": "theorem",
+      "source_anchor": {
+        "statement": "basecore/core/sections/01_foundation_from_core.tex:140-149",
+        "proof": "basecore/core/sections/01_foundation_from_core.tex:151-153",
+        "dependencies": [
+          "basecore/core/sections/01_foundation_from_core.tex:35-37",
+          "basecore/core/sections/01_foundation_from_core.tex:39-41",
+          "basecore/core/sections/01_foundation_from_core.tex:43-45",
+          "basecore/core/sections/01_foundation_from_core.tex:75-81",
+          "basecore/core/sections/01_foundation_from_core.tex:119-136"
+        ]
+      },
+      "statement_exact": "Under Hypotheses~\\ref{hyp:H1}--\\ref{hyp:H3}, for each $u\\in\\U$ there exists a unique $f_u^\\ast\\in\\Hilb$ such that $T_u(f_u^\\ast)=f_u^\\ast$. Moreover, for every $\\Psi_0\\in\\Hilb$, $\\lim_{n\\to\\infty}T_u^n(\\Psi_0)=f_u^\\ast$.",
+      "declared_hypotheses": ["H1", "H2", "H3", "fixed u"],
+      "hidden_assumptions": [
+        "Banach fixed-point theorem is invoked externally",
+        "projection proof relies on Hilbert completeness and strict convexity"
+      ],
+      "domain_of_validity": "Hilbert-space transition operator satisfying H1-H3 and strict contraction.",
+      "proof_status": "present",
+      "epistemic_state": "PROVED_CONDITIONAL",
+      "debt_dependencies": [
+        "review whether projection theorem should explicitly declare H3"
+      ],
+      "no_conclusions": [
+        "no consciousness claim",
+        "no phenomenality claim",
+        "no runtime instantiation claim",
+        "no parameterwise non-collapse claim"
+      ],
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "reviewer_questions": [
+        "Should the fixed point be stated as lying in I?",
+        "Is H3 sufficiently explicit in the projection dependency?",
+        "Is invoking Banach fixed point acceptable without local proof?"
+      ]
+    },
+    {
+      "id": "basecore:definition:identity-as-inverse-limit-l19",
+      "name": "Identity as Inverse Limit",
+      "type": "definition",
+      "source_anchor": {
+        "definition": "basecore/core/sections/03_identity_rigidity_absorbed.tex:19-30",
+        "setup": "basecore/core/sections/03_identity_rigidity_absorbed.tex:6-17",
+        "boundary": "basecore/core/sections/03_identity_rigidity_absorbed.tex:32-34"
+      },
+      "statement_exact": "\\Id:=\\varprojlim S_t := \\{(x_t)_{t\\in\\mathbb{N}}\\in \\prod_{t\\in\\mathbb{N}} S_t : \\pi_{t+1\\to t}(x_{t+1})=x_t\\ \\forall t\\}.",
+      "declared_hypotheses": [
+        "non-empty state spaces S_t",
+        "projection maps pi_{t+1 to t}",
+        "compatibility of adjacent projections"
+      ],
+      "hidden_assumptions": [
+        "index category fixed to N",
+        "set-level product exists",
+        "category, morphisms, equivalence notion, and topology are not fully specified here"
+      ],
+      "domain_of_validity": "Declared projective systems only.",
+      "proof_status": "not_applicable",
+      "epistemic_state": "DEFINITION_ONLY",
+      "debt_dependencies": ["MATH-ID category/system discipline"],
+      "no_conclusions": [
+        "no metaphysical identity claim",
+        "no consciousness claim",
+        "no NFD claim without hyp:nfd",
+        "no empirical recoverability claim"
+      ],
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "reviewer_questions": [
+        "Is the category sufficiently fixed?",
+        "Should inverse-limit non-emptiness be assumed or derived?",
+        "Should public text always use inverse-limit identity object?"
+      ]
+    },
+    {
+      "id": "basecore:theorem:thm-rigidity",
+      "name": "Conditional Stability of Inverse-Limit Identity",
+      "type": "theorem",
+      "source_anchor": {
+        "statement": "basecore/core/sections/03_identity_rigidity_absorbed.tex:132-142",
+        "proof": "basecore/core/sections/03_identity_rigidity_absorbed.tex:144-146",
+        "assumptions": "basecore/core/sections/03_identity_rigidity_absorbed.tex:91-116",
+        "metric": "basecore/core/sections/03_identity_rigidity_absorbed.tex:125-130"
+      },
+      "statement_exact": "Assume RIG-1 through RIG-5. Then the perturbed inverse limit exists, and there is a constant C_rig>0 depending only on the projection, lifting, and weight controls such that d_H(Id,tilde{Id}) <= C_rig ||eps_bullet||_w in the weighted product metric.",
+      "declared_hypotheses": ["RIG-1", "RIG-2", "RIG-3", "RIG-4", "RIG-5"],
+      "hidden_assumptions": [
+        "diagonal compactness invoked but compactness is not explicit in RIG-1..RIG-5",
+        "Hausdorff distance is well-defined and finite",
+        "inverse limits are non-empty",
+        "ambient embeddings are coherent",
+        "C_rig existence requires constructive dependency proof"
+      ],
+      "domain_of_validity": "Typed admissible perturbation families satisfying RIG-1..RIG-5 plus compactness/well-definedness burden.",
+      "proof_status": "sketch/heuristic",
+      "epistemic_state": "DOWNSTREAM_FORMAL_DEBT",
+      "debt_dependencies": ["MATH-RIG typed Hausdorff stability formalization"],
+      "no_conclusions": [
+        "no categorical isomorphism claim",
+        "no physical identity preservation claim",
+        "no runtime perturbation validation claim",
+        "no consciousness claim"
+      ],
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "reviewer_questions": [
+        "Does the proof require compactness beyond complete metrics?",
+        "Is d_H well-defined for every admitted system?",
+        "Can C_rig be constructed explicitly?",
+        "Should the theorem be renamed as conditional weighted Hausdorff stability?"
+      ]
+    },
+    {
+      "id": "basecore:theorem:thm-non-simulability",
+      "name": "Conditional Non-Simulability of CCR by Finite Simulators",
+      "type": "theorem",
+      "source_anchor": {
+        "statement": "basecore/core/sections/03_identity_rigidity_absorbed.tex:205-207",
+        "proof": "basecore/core/sections/03_identity_rigidity_absorbed.tex:209-211",
+        "assumptions": "basecore/core/sections/03_identity_rigidity_absorbed.tex:174-202",
+        "mass_definition": "basecore/core/sections/03_identity_rigidity_absorbed.tex:156-166",
+        "boundary": "basecore/core/sections/03_identity_rigidity_absorbed.tex:221-223"
+      },
+      "statement_exact": "Assume NS-1 through NS-3. Then no simulator in \\mathbf{Comp}_{\\mathrm{finite}} faithfully realizes a CCR target.",
+      "declared_hypotheses": ["NS-1", "NS-2", "NS-3"],
+      "hidden_assumptions": [
+        "each finite boundedness feature forces loss of at least one NS-1 component",
+        "faithful realization is restricted to NS-3",
+        "CCR target non-vacuity needs review"
+      ],
+      "domain_of_validity": "CCR targets satisfying NS-1 and finite simulators satisfying NS-2 under faithful simulation criterion NS-3.",
+      "proof_status": "present",
+      "epistemic_state": "DOWNSTREAM_FORMAL_DEBT",
+      "debt_dependencies": [
+        "MATH-SIM simulator taxonomy",
+        "CCR target non-vacuity",
+        "sublemmas for simulator subtypes"
+      ],
+      "no_conclusions": [
+        "no universal simulation impossibility",
+        "no ban on finite-horizon approximation",
+        "no consciousness claim",
+        "no physical instantiation claim"
+      ],
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "reviewer_questions": [
+        "Is the theorem non-trivial given NS-1 exclusion clauses?",
+        "Is Comp_finite too narrow?",
+        "Can compression-loss be decomposed by simulator subtype?",
+        "Is there an explicit non-empty model of NS-1?"
+      ]
+    }
+  ],
+  "gaps": [
+    "EXTERNAL_ADJUDICATION_GAP open",
+    "0 cards human-curated",
+    "registry machine-extracted proved statuses were not upgraded to human-curated proof claims"
+  ]
+}

@@ -4468,3 +4468,88 @@ Residual risks:
 - External audit is required before push.
 
 Status: `PHASE6_3NR_PASS_WITH_LIMITS_AND_DEBT_READY_FOR_EXTERNAL_AUDIT_NO_PUSH`.
+
+## 2026-06-14 - Phase 9 BaseCore model cards
+
+Agent/platform: Codex
+User request: Execute QICN Roadmap v3 Phase 9 as a one-shot extraction of model cards for central BaseCore results.
+Operational objective: Produce non-canonical, AI-extracted model cards for 3-4 central BaseCore results, with exact anchors, hypotheses, proof status, debt, no-conclusions, conservative epistemic state, and review questions.
+
+Files read:
+- `AGENTS.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/basecore/BASECORE.tex`
+- `rigid-identity-framework/basecore/core/sections/01_foundation_from_core.tex`
+- `rigid-identity-framework/basecore/core/sections/03_identity_rigidity_absorbed.tex`
+- `rigid-identity-framework/registry/theorems.jsonl`
+- `rigid-identity-framework/registry/schema.json`
+- `rigid-identity-framework/docs/FALSIFIER_MATRIX.md`
+- `rigid-identity-framework/docs/THEORY_CLAIM_LEDGER.md`
+- Phase 4 hardening report listing under `rigid-identity-framework/docs/ai-platform-outputs/reports/`
+
+Files modified/created/moved/deleted:
+- Created `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE9_BASECORE_MODEL_CARDS.md`
+- Created `rigid-identity-framework/docs/ai-platform-outputs/reports/model_cards.basecore.json`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- No `.tex`, PDF, registry, release, script, corpus, monolith, package manifest, or canonical source file was edited.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Establish dirty baseline | PASS; branch `main...origin/main [ahead 1]`; three pre-existing modified report/fixture files noted and not touched. |
+| `Select-String` / `Get-Content` over BaseCore sources | Extract theorem environments, statements, proofs, assumptions, and exact line anchors | PASS. |
+| `ConvertFrom-Json` over `registry/theorems.jsonl` | Confirm registry ids and statuses for selected cards | PASS. |
+| `Get-Content ... -Raw \| ConvertFrom-Json` | Validate non-canonical JSON artifact | PASS. |
+| `Get-FileHash -Algorithm SHA256` | Hash deliverables | PASS. |
+| `npm run verify` from `rigid-identity-framework/` | Package baseline verification | PASS exit 0; expected blockers preserved (`BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`). |
+| `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/` | Root canonical integrity gate | PASS exit 0; note `working_tree_not_clean_at_hardening_start`. |
+| `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/` | Root claim registry gate | PASS exit 0; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/` | Root canonical release gate | PASS exit 0. |
+
+Implementation summary:
+- Selected four central BaseCore cards:
+  - `basecore:theorem:thm-fixedpoint`;
+  - `basecore:definition:identity-as-inverse-limit-l19`;
+  - `basecore:theorem:thm-rigidity`;
+  - `basecore:theorem:thm-non-simulability`.
+- Treated metric projection as an explicit dependency of the fixed-point card rather than adding a fifth card, to keep the pass inside the requested 3-4 card scope.
+- Downgraded machine-extracted registry language for human-facing status: no card is marked `PROVED` or human-curated.
+- Marked all cards `human_review: REQUIRED` and `human_curated_status: not_reviewed`.
+- Marked inverse-limit identity as `DEFINITION_ONLY`, rigidity as `DOWNSTREAM_FORMAL_DEBT`, non-simulability as `DOWNSTREAM_FORMAL_DEBT`, and fixed point as `PROVED_CONDITIONAL`.
+
+Verification:
+- Source anchors were re-read and confirmed to resolve:
+  - `01_foundation_from_core.tex:75-77`, `79-81`, `140-149`, `151-153`;
+  - `03_identity_rigidity_absorbed.tex:19-30`, `132-142`, `144-146`, `174-207`, `209-211`.
+- JSON artifact parses with `ConvertFrom-Json`.
+- Root gates passed after deliverable creation.
+- Package verify passed with expected scientific blockers preserved.
+
+Artifact counts and hashes:
+- `QICN_ROADMAP_V3_PHASE9_BASECORE_MODEL_CARDS.md`: 338 lines; SHA256 `B17B88A1E52CECC6B1553D1ADAD9FECC98C67896DD55C409DAAEC0892B15A9C1`.
+- `model_cards.basecore.json`: 184 lines; SHA256 `C5DF5F3C1A54C22C11C31205C6A0755C1BEEB4AD411DC36345003D5398EF2582`.
+- Line counts use `(Get-Content <path>).Count`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regression checks:
+- Searched for accidental standalone `PROVED`, human-curated proof language, external-validation language, bridge-support language, and prohibited consciousness/phenomenality claim language in the deliverables.
+- No canonical surfaces were edited.
+- No push was performed.
+- `git add -A` was not used.
+
+Gaps and residual risks:
+- Model cards are ready for human mathematical review, not publication as signed proof status.
+- Human-curated cards remain 0.
+- `EXTERNAL_ADJUDICATION_GAP` remains open.
+- Rigidity still needs hidden compactness/Hausdorff well-definedness review.
+- Non-simulability still needs simulator taxonomy, target non-vacuity review, and sublemmas by finite-simulator subtype.
+- Inverse-limit identity still needs category/morphism/equivalence discipline for public review.
+
+Status: `PHASE9_BASECORE_MODEL_CARDS_READY_FOR_HUMAN_REVIEW_NO_PUSH`.

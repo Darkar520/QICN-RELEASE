@@ -4644,3 +4644,78 @@ Gaps and residual risks:
 - External audit is required before push.
 
 Status: `BASECORE_SHORT_PAPER_SKELETON_READY_FOR_HUMAN_REVIEW_NO_PUSH`.
+
+## 2026-06-14 - Pasada A floating-file cleanup and push audit
+
+Agent/platform: Codex
+User request: Close Pasada A by classifying/resolving the three floating files, then audit accumulated local commits before push.
+Operational objective: Leave the tree clean by resolving tracked verification drift, document the decision, verify gates, and prepare the accumulated commit stack for push.
+
+Files read:
+- `rigid-identity-framework/package.json`
+- `rigid-identity-framework/scripts/verify-human-veto-signature-v27.js`
+- `rigid-identity-framework/scripts/verify-human-veto-signature-v28.js`
+- `rigid-identity-framework/scripts/legacy/run-all-legacy-verifications.js` metadata via tracked report diff
+- `rigid-identity-framework/docs/fixtures/TRUSTED_KEYS_REGISTRY_v27.json`
+- `rigid-identity-framework/docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v27.json`
+- `rigid-identity-framework/docs/reports/V35_ALL_LEGACY_VERIFICATION.json`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance/verification reminders
+
+Files modified/created/moved/deleted:
+- Created `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PASADA_A_FLOATING_FILES_AND_PUSH_AUDIT.md`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- Restored to `HEAD`:
+  - `rigid-identity-framework/docs/fixtures/TRUSTED_KEYS_REGISTRY_v27.json`
+  - `rigid-identity-framework/docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v27.json`
+  - `rigid-identity-framework/docs/reports/V35_ALL_LEGACY_VERIFICATION.json`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Establish and re-check dirty state | Initial `ahead 3` with three tracked dirty files; after restore only Pasada A report remained untracked. |
+| `git log --oneline origin/main..HEAD` | Identify accumulated local commits | PASS; commits `8d93ac6`, `181b8cf`, `cd6f0a7`. |
+| `git diff --stat` / `git diff` on three floating files | Classify uncommitted changes | PASS; identified v27 random key drift and v35 timestamp-only drift. |
+| `Select-String` over scripts/package | Trace source of v27 drift | PASS; v27 self-test generates Ed25519 keys and writes trusted-key registry; v28 self-test uses immutable temp registry pattern. |
+| `git diff --name-status origin/main..HEAD` | Audit ahead commit surface | PASS; only AI-output reports/manuscript/sim plus ledger. |
+| `git diff --check origin/main..HEAD` | Whitespace audit for accumulated commits | PASS. |
+| `git restore -- <three floating files>` | Resolve generated tracked drift | PASS; three floating files restored to `HEAD`. |
+| `npm run verify` from `rigid-identity-framework/` | Package baseline verification | PASS exit 0; expected blockers preserved (`BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`). |
+| `npm run test:negative-controls` from `rigid-identity-framework/` | Negative-control gate | PASS exit 0; 6/6; `external_support_certified=false`. |
+| `npm run verify:preregistration-coverage` from `rigid-identity-framework/` | Preregistration coverage gate | PASS exit 0; 14/14. |
+| `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/` | Root canonical integrity gate | PASS exit 0; note `working_tree_not_clean_at_hardening_start` because Pasada A report was pending. |
+| `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/` | Root claim registry gate | PASS exit 0; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/` | Root canonical release gate | PASS exit 0. |
+
+Implementation summary:
+- Classified `TRUSTED_KEYS_REGISTRY_v27.json` as `GENERATED_NON_DETERMINISTIC_LEGACY_SELF_TEST_DRIFT`.
+- Classified `HUMAN_VETO_SIGNATURE_SELF_TEST_v27.json` as `GENERATED_NON_DETERMINISTIC_LEGACY_SELF_TEST_REPORT_DRIFT`.
+- Classified `V35_ALL_LEGACY_VERIFICATION.json` as `TIMESTAMP_ONLY_LEGACY_RERUN_DRIFT`.
+- Restored all three to `HEAD` rather than committing arbitrary self-test key material or timestamp churn.
+- Audited accumulated ahead commits:
+  - `8d93ac6 Add QICN phase 6.3-NR construct nonredundancy audit`;
+  - `181b8cf Add BaseCore phase 9 model cards`;
+  - `cd6f0a7 Add BaseCore short paper skeleton`.
+
+Verification:
+- Package gates PASS.
+- Root canonical gates PASS.
+- Accumulated commit diff check PASS.
+- Working tree after resolving floating files contained only the new Pasada A report and this ledger update.
+
+Artifact counts and hashes:
+- `QICN_PASADA_A_FLOATING_FILES_AND_PUSH_AUDIT.md`: 163 lines; SHA256 `0996DAEB70C025E11560A049AC73418320D1A6F916040C438E15F41F4208FFE2`.
+- Line count uses `(Get-Content <path>).Count`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regression checks:
+- Confirmed no `.tex`, PDF, registry, release, corpus, monolith, package manifest, production script, or canonical source file was modified.
+- Confirmed no `git add -A` was used.
+- Confirmed no force-push path was used.
+- Confirmed generated drift was not silently committed.
+
+Gaps and residual risks:
+- v27 legacy self-test remains capable of mutating a tracked fixture if executed directly.
+- Long-term fix would migrate or quarantine remaining v27 volatile outputs using the v28 immutable-registry pattern.
+- Push still depends on remote accepting `main` without non-fast-forward conflict.
+
+Status: `PASADA_A_FLOATING_FILES_RESOLVED_PUSH_AUDIT_READY`.

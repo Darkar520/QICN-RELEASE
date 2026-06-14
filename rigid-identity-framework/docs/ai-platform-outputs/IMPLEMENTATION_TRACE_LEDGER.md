@@ -4803,3 +4803,107 @@ Residual risks:
 - The decisive issue remains unresolved: non-circular construction of separator-complete connected incidence.
 
 Status: `I_INT_ATOMIC_SEPARATOR_MODEL_CARD_READY_FOR_HUMAN_REVIEW_NO_PUSH`.
+
+## 2026-06-14 - Phase 7 genuine rival plan and neutral-system infrastructure
+
+Agent/platform: Codex
+User request: Produce a genuine Phase 7 technical plan for computational comparison with real rivals, plus only the rival-independent infrastructure: neutral tiny Boolean-system bank, PyPhi interface/status, and GWT broadcast model. Do not instantiate QICN, do not run QICN-vs-rival comparison, do not touch canon/production, no push.
+Operational objective: Prepare preregistered plan and executable AI-output scaffolds under `docs/ai-platform-outputs/`, preserving the open `I_int / atomic separator` gap as a human-review blocker.
+
+Files read:
+- `AGENTS.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/RIVAL_MODEL_REGISTRY.md`
+- `rigid-identity-framework/docs/protocols/REAL_RIVAL_ENGAGEMENT_PROTOCOL_v24.md`
+- `rigid-identity-framework/docs/protocols/REAL_RIVAL_EXECUTION_REQUIREMENTS_v25.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_ITERATION2_CLAIM_TO_RIVAL_MAPPING.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3A_PREREGISTERED_PROTOCOL.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3A_PREDICTION_REGISTRY_PROPOSAL.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_2B_HOT_BIBLIOGRAPHY_SEED.bib`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/recovery-candidates/backup-noise-2026-06-03/i-int-atomic-separator-closure/I_INT_ATOMIC_SEPARATOR_CLOSURE_v20.tex`
+- `C:\Users\irisp\.codex\attachments\9eab8ebf-c7f4-4deb-aaac-156ed7810257\pasted-text.txt`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance/verification reminders
+
+External source checks:
+- Web search for PyPhi paper/source surface: Mayner et al., "PyPhi: A toolbox for integrated information theory", arXiv/PLOS surface.
+- Web search for GNW model/source surface: Dehaene, Kerszberg, and Changeux 1998; Dehaene and Changeux 2011.
+
+Files modified/created:
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_neutral_systems_bank.js`
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_pyphi_wrapper.py`
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_gwt_broadcast_model.js`
+- Created `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_PHASE7_GENUINE_PLAN.md`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Establish and re-check dirty state | Initial `main...origin/main [ahead 1]`; after implementation only four new AI-output files before ledger update. |
+| `python --version` | Check default Python | PASS; `Python 3.11.9`, Hermes venv. |
+| `python -m pip --version` | Check default pip | FAIL; Hermes venv has no pip. |
+| Bundled Python `--version` and `-m pip --version` | Check Codex bundled Python | PASS; `Python 3.12.13`, `pip 26.0.1`. |
+| Python import check for `pyphi` | Determine PyPhi availability | PASS; `PYPHI_NOT_INSTALLED`. |
+| Bundled Python `pip install --dry-run --disable-pip-version-check pyphi` | Check PyPhi installability without installing | First sandbox run failed on socket permission; escalated dry-run PASS, resolved `pyphi-1.2.0` candidate and dependencies; no install performed. |
+| `node ...qicn_phase7_neutral_systems_bank.js --self-test` | Neutral bank self-test | PASS; 28 systems, deterministic digest `03D9E72888C891E2EFC763C69D48B5D75D038FC0F7F531E6358204452890265B`. |
+| `node ...qicn_phase7_gwt_broadcast_model.js --self-test` | GWT broadcast sanity | Initial FAIL due overly strict averaging; corrected to best-cue ignition plus global availability. Final PASS: product decoupled negative, broadcast star positive. |
+| Bundled Python `...qicn_phase7_pyphi_wrapper.py --self-test` | PyPhi wrapper self-test | PASS with `EXTERNAL_DEPENDENCY_PENDING`; no Phi proxy computed. |
+| `npm run verify` from `rigid-identity-framework/` | Package baseline verification | PASS exit 0; expected blockers preserved (`BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`). |
+| `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/` | Root canonical integrity gate | PASS exit 0; note `working_tree_not_clean_at_hardening_start` because AI-output files were pending. |
+| `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/` | Root claim registry gate | PASS exit 0; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/` | Root canonical release gate | PASS exit 0. |
+| `git diff --check` scoped to new files | Whitespace audit | PASS. |
+
+Implementation summary:
+- Added a deterministic tiny Boolean-system bank with 28 systems over `n=3..6` and seven neutral families: product decoupled, chain, cycle, all-to-all majority, broadcast star, sparse random, and medium-density random.
+- Added a PyPhi wrapper/interface that refuses to compute a homemade Phi proxy. Current runtime status is `EXTERNAL_DEPENDENCY_PENDING` because PyPhi is not installed.
+- Added a minimal GWT/GNW broadcast/ignition detector anchored to Dehaene-Kerszberg-Changeux / Dehaene-Changeux literature. It is explicitly scoped as one tiny Boolean formalization, not complete GWT and not a consciousness detector.
+- Added the preregistered Phase 7 plan report with:
+  - epistemic boundaries;
+  - neutral-bank rationale;
+  - IIT/PyPhi status;
+  - GWT sanity;
+  - HOT as model debt;
+  - QICN instantiation requirements marked `BLOCKED_ON_HUMAN_REVIEW_OF_I_INT_GAP`;
+  - finite connected-incidence linkage to v20 as a candidate only, not certified;
+  - preregistered separating predictions and symmetric result classes;
+  - deferred execution protocol and preconditions.
+
+Artifact counts and hashes:
+- `qicn_phase7_neutral_systems_bank.js`: 277 lines; SHA256 `3EBB2504AC0B74B598F51FCBDDF400B4D6FA00F131193DF29043E3849F37963B`.
+- `qicn_phase7_pyphi_wrapper.py`: 127 lines; SHA256 `239840F9E50168FD5DC92F480E8ADF8FDA0AF994415BF00CB560EF87337785BA`.
+- `qicn_phase7_gwt_broadcast_model.js`: 140 lines; SHA256 `83FFC717C132D428FF8D4BE33C567BDB35F0C161FF3889910FF7B10DA875FF54`.
+- `QICN_ROADMAP_PHASE7_GENUINE_PLAN.md`: 320 lines; SHA256 `347D58DD533F33337309C2143EA5766C4E22EA1FC42C99069D9EE3F52B04F67C`.
+- Line count uses `(Get-Content <path>).Count`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Verification:
+- Neutral-bank self-test PASS.
+- GWT broadcast sanity PASS after one corrective patch.
+- PyPhi wrapper self-test PASS with dependency pending and no proxy computed.
+- `npm run verify` PASS with expected scientific blockers preserved.
+- Root canonical integrity PASS.
+- Root claim registry PASS.
+- Root canonical release PASS.
+
+Regression checks:
+- Confirmed no `.tex`, PDF, registry, release, corpus, monolith, package manifest, production script, canonical source file, or package dependency file was modified.
+- Confirmed no QICN invariant was instantiated.
+- Confirmed no QICN-vs-IIT/GWT/HOT comparison was run.
+- Confirmed no Phi proxy was fabricated.
+- Confirmed no push was attempted.
+
+Residual risks:
+- PyPhi is not installed; exact IIT/Phi execution requires approved dependency installation or external execution environment.
+- GWT detector is a deliberately minimal tiny-system operationalization, not full GNW.
+- HOT remains bibliography/model debt.
+- The QICN branch remains blocked on human review of `I_int / atomic separator`, especially non-circular finite connected incidence.
+
+Status: `PHASE7_GENUINE_PLAN_AND_RIVAL_INFRA_READY_FOR_HUMAN_REVIEW_NO_PUSH`.

@@ -4553,3 +4553,94 @@ Gaps and residual risks:
 - Inverse-limit identity still needs category/morphism/equivalence discipline for public review.
 
 Status: `PHASE9_BASECORE_MODEL_CARDS_READY_FOR_HUMAN_REVIEW_NO_PUSH`.
+
+## 2026-06-14 - BaseCore short paper skeleton
+
+Agent/platform: Codex
+User request: Generate a short BaseCore paper skeleton centered on the strongest defensible conditional core, using extracted corpus content and Phase 9 model cards.
+Operational objective: Produce a non-canonical AI-output manuscript scaffold and decision note under `docs/ai-platform-outputs/manuscript/`, with no canonical corpus edits and no claim inflation.
+
+Files read:
+- `AGENTS.md`
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/FALSIFIER_MATRIX.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE9_BASECORE_MODEL_CARDS.md`
+- `rigid-identity-framework/basecore/BASECORE.tex`
+- `rigid-identity-framework/basecore/core/sections/01_foundation_from_core.tex`
+- `rigid-identity-framework/basecore/core/sections/02_model_and_spectral_extensions.tex`
+- `rigid-identity-framework/basecore/core/sections/03_identity_rigidity_absorbed.tex`
+- `rigid-identity-framework/basecore/core/sections/07_operational_criterion_absorbed.tex`
+- `rigid-identity-framework/basecore/core/sections/08_claim_boundary_and_falsation.tex`
+- `rigid-identity-framework/release/references.bib`
+
+Files modified/created/moved/deleted:
+- Created `rigid-identity-framework/docs/ai-platform-outputs/manuscript/QICN_BASECORE_SHORT_PAPER_SKELETON.md`
+- Created `rigid-identity-framework/docs/ai-platform-outputs/manuscript/MANUSCRIPT_DECISIONS.md`
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- Created directory `rigid-identity-framework/docs/ai-platform-outputs/manuscript/`
+- No `.tex`, PDF, registry, release, script, corpus, monolith, package manifest, or production file was edited.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Establish dirty baseline | PASS; branch `main...origin/main [ahead 2]`; three pre-existing dirty files noted and excluded. |
+| `Get-Content` / `Select-String` | Read required governance, model cards, BaseCore anchors, claim boundaries, and bibliography keys | PASS. |
+| Preflight classification command | Classify required surfaces as FUNCTIONAL/ABSENT | PASS; required prompt surfaces functional. |
+| Anchor range validation command | Confirm cited line ranges exist in source files | PASS; all skeleton anchors resolved. |
+| ASCII/trailing-whitespace checks | Hygiene for generated manuscript files | PASS after cleanup. |
+| Prohibited status/language search | Check no standalone `PROVED` or prohibited validation phrases in manuscript files | PASS. |
+| `npm run verify` from `rigid-identity-framework/` | Package baseline verification | PASS exit 0; expected blockers preserved (`BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`). |
+| `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/` | Root canonical integrity gate | PASS exit 0; note `working_tree_not_clean_at_hardening_start`. |
+| `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/` | Root claim registry gate | PASS exit 0; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/` | Root canonical release gate | PASS exit 0. |
+
+Implementation summary:
+- Selected the central thesis as contractive projection dynamics plus unique fixed point, with inverse-limit identity as structural definition and conditional weighted Hausdorff stability as the main conditional extension.
+- Rejected conditional non-simulability as central thesis while CCR target non-vacuity remains open.
+- Included non-simulability only as a caveated conditional section under NS-1 through NS-3.
+- Marked draft connective prose with `[DRAFT]` and author-needed sections with `[AUTHOR_TODO]`.
+- Preserved model-card states: `PROVED_CONDITIONAL`, `DEFINITION_ONLY`, and `DOWNSTREAM_FORMAL_DEBT`.
+- Included no-conclusion boundaries for phenomenality, consciousness, human equivalence, runtime instantiation, bridge admissibility, external validation, metaphysical identity, categorical isomorphism, and universal simulation impossibility.
+
+Verification:
+- All source anchors in the skeleton resolve to real `.tex` line ranges:
+  - `basecore/BASECORE.tex:117`;
+  - `01_foundation_from_core.tex:35-49`, `68-81`, `112-136`, `140-153`;
+  - `03_identity_rigidity_absorbed.tex:6-38`, `91-116`, `125-146`, `148-153`, `156-166`, `174-211`, `221-223`;
+  - `07_operational_criterion_absorbed.tex:216-218`, `334-335`;
+  - `08_claim_boundary_and_falsation.tex:89-90`.
+- `npm run verify` PASS exit 0 from `rigid-identity-framework/`; expected scientific blockers and `external_support_certified=false` preserved.
+- Root canonical gates PASS exit 0 from `QICN-FRAMEWORK/`:
+  - `node scripts\verify-canonical-integrity.cjs`;
+  - `node scripts\verify-claim-registry.cjs`;
+  - `node scripts\verify-canonical-release.cjs`.
+
+Artifact counts and hashes:
+- `QICN_BASECORE_SHORT_PAPER_SKELETON.md`: 572 lines; SHA256 `E4D2149FCE70628CFC6E1B9000F093804BE63AB312737188C059169BA42137D5`.
+- `MANUSCRIPT_DECISIONS.md`: 93 lines; SHA256 `A3C47F887811B50B2D33A9F45130C846132A2C71549A9DA4AE3F197EC78AB2FF`.
+- Line counts use `(Get-Content <path>).Count`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regression checks:
+- Searched for accidental canonical file edits; none in scope.
+- Searched for standalone `PROVED`, human-curated proof language, external-validation language, bridge-support language, and prohibited consciousness/phenomenality claim language in manuscript outputs.
+- Confirmed no push was performed and `git add -A` was not used.
+
+Gaps and residual risks:
+- Manuscript is a skeleton only; human prose is pending.
+- Expert mathematical review is pending.
+- Human-curated theorem cards remain 0.
+- RIG compactness/Hausdorff well-definedness and `C_{\mathrm{rig}}` construction remain open.
+- CCR target non-vacuity remains open.
+- Simulator taxonomy remains open.
+- `I_int` and atomic separator burdens remain downstream and unresolved.
+- External audit is required before push.
+
+Status: `BASECORE_SHORT_PAPER_SKELETON_READY_FOR_HUMAN_REVIEW_NO_PUSH`.

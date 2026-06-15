@@ -5320,3 +5320,111 @@ Next step:
 - Stage exactly the six bounded source/report/ledger files listed above.
 - Commit locally with message `docs: phase 7 computed-atomicity truth + negative non-circularity result + I_int gap card`.
 - Do not push.
+
+## 2026-06-15 - Evidence surface and open gaps consolidation
+
+Agent/platform: Codex
+User request: Verify audit citations against the real corpus; document the evidence surface, open `I_int`/atomicity and bridge gaps, and the literature confrontation gap; rerun `npm run verify`; update ledger; create a bounded local commit with only the two new reports plus this ledger. No push.
+Operational objective: Consolidate what exists and what remains missing without proving atomicity, instantiating a concrete `S`, closing any gap, or claiming external validation.
+
+Files read:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `INSTRUCCIONES.md`
+- `ROADMAP.md`
+- `docs/CLAIM_STATUS_POLICY.md`
+- `paper5_operational_consciousness/main.tex`
+- `paper9_phenomenal_bridge_organization/main.tex`
+- `release/references.bib`
+- `paper1/main.tex`
+- `paper2/main.tex`
+- `paper3/main.tex`
+- `paper1/references.bib`
+- `paper2/references.bib`
+- `paper3/references.bib`
+- `paper9_phenomenal_bridge_organization/references.bib`
+- `docs/reports/ATOMIC_SEPARATOR_LEMMA_ATTEMPT.md`
+- `docs/reports/I_INT_STATUS_UPDATE.md`
+- `docs/ai-platform-outputs/recovery-candidates/backup-noise-2026-06-03/i-int-atomic-separator-closure/I_INT_ATOMIC_SEPARATOR_CLOSURE_v20.tex`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+- `docs/ai-platform-outputs/reports/QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`
+- `docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3F_CALIBRATION_SENSITIVITY_AND_CEILING_REPORT.md`
+- `docs/ai-platform-outputs/reports/QICN_ROADMAP_V3_PHASE6_3_CLOSE_CONSOLIDATION_AND_CEILING.md`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance/verification reminders
+
+Files created:
+- `docs/ai-platform-outputs/reports/QICN_EVIDENCE_SURFACE_AND_OPEN_GAPS.md`
+- `docs/ai-platform-outputs/reports/QICN_LITERATURE_CONFRONTATION_GAP.md`
+
+Files modified:
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Verified citations and findings:
+- `paper5_operational_consciousness/main.tex:339-344` contains `thm:iint-faithful-factorization-triviality`; the audit's approximate theorem line was accurate.
+- `paper5_operational_consciousness/main.tex:361-366` contains the atomicity-burden remark; it says the theorem is a conditional closure and that proving every upstream-satisfying system has an atomic separator remains the exact remaining mathematical burden.
+- Direct search did not find a canonical product-separator counterexample in `basecore/` or `paper5_operational_consciousness/`.
+- `paper5_operational_consciousness/main.tex:321` warns that a fully connected graph may still fail if dynamics factor into independent blocks.
+- Product-separator material was verified in report/scaffold layers: `docs/reports/ATOMIC_SEPARATOR_LEMMA_ATTEMPT.md:98-126`, `docs/reports/ATOMIC_SEPARATOR_LEMMA_ATTEMPT.md:132-142`, `docs/reports/I_INT_STATUS_UPDATE.md:14-22`, and `I_INT_ATOMIC_SEPARATOR_CLOSURE_v20.tex:112-143`; v20 also states it is intentionally not inserted into Paper 5 and requires human curation before promotion (`I_INT_ATOMIC_SEPARATOR_CLOSURE_v20.tex:288-299`).
+- Paper 5 defines the system tuple `S=(X,\Phi,C,R,\Gamma,U)` at `paper5_operational_consciousness/main.tex:81-85`, defines `S \in \Cop` by the six-invariant conjunction at `paper5_operational_consciousness/main.tex:484-488`, and gives a certification rule at `paper5_operational_consciousness/main.tex:1120-1155`; none of those exhibits a concrete certified member.
+- Paper 9 blocks bridge confirmation from packaging/provisional surfaces at `paper9_phenomenal_bridge_organization/main.tex:124-126`, `paper9_phenomenal_bridge_organization/main.tex:622-628`, `paper9_phenomenal_bridge_organization/main.tex:1007-1014`, and `paper9_phenomenal_bridge_organization/main.tex:1051-1055`.
+- Paper 5 cites Tononi 2004 and Baars/Chalmers at `paper5_operational_consciousness/main.tex:1398`; direct Paper 5 search found no `Koch`, `Dehaene`, `Mashour`, or `Friston`.
+- Cross-paper search found IIT/GWT/HOT mentions in Papers 1-3 and Paper 5, but no verified local-paper confrontation with Friston/FEP, predictive processing, Dennett/Block/Tye, Lewis/Shoemaker, Dehaene/Mashour, or Koch.
+
+Tools and commands:
+
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Select-String` over Paper 5 theorem/remark | Verify audit line claims | Theorem starts line 339; remark starts line 361; audit line estimate accurate. |
+| `Select-String` over BaseCore/Paper 5 product-separator terms | Check canonical counterexample location | No canonical BaseCore/Paper 5 product-separator counterexample found by searched terms. |
+| `Select-String` over reports/scaffolds | Locate product-separator candidate/scaffold | Found report candidate and v20 scaffold; classified as non-canonical/report-layer evidence. |
+| `Select-String` over Paper 5/Paper 9 | Verify `Cop`, certificate, and bridge boundaries | Confirmed class/certificate definitions and explicit no-bridge-confirmation boundaries. |
+| `Select-String` over paper sources and bibliographies | Verify literature confrontation surface | Confirmed limited IIT/GWT/HOT mentions and missing local confrontation for several requested literatures. |
+| `npm run verify` from `rigid-identity-framework/` | Verify package chain and raw scientific verdict | Exit code 0; v30/v31 remain blocked with `external_support_certified=false`. |
+| `git status --porcelain` from `rigid-identity-framework/` | Inventory before bounded staging | Two Phase 7 JSON latest files remain modified and excluded; two new reports plus ledger are the commit scope. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Pre-staging `git status --porcelain`:
+
+```text
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_qicn_candidate_noncircularity.json
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json
+?? rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_EVIDENCE_SURFACE_AND_OPEN_GAPS.md
+?? rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_LITERATURE_CONFRONTATION_GAP.md
+```
+
+Artifact counts and hashes before final bounded staging:
+- `QICN_EVIDENCE_SURFACE_AND_OPEN_GAPS.md`: 123 lines; SHA256 `5EF7A893A485D439F08FA3FF1063157F1143FBDFF4FF3F80B684366F0BA232E8`.
+- `QICN_LITERATURE_CONFRONTATION_GAP.md`: 88 lines; SHA256 `E12226C824939D6AF747CB80218FD4390478EF37F8ED58BC720DAD2E022A1799`.
+- `IMPLEMENTATION_TRACE_LEDGER.md`: ledger hash is intentionally not self-embedded after this entry because writing it here would change the hash.
+- Line count uses `(Get-Content <path>).Count`; hash method uses `Get-FileHash -Algorithm SHA256`.
+
+Explicitly excluded from bounded commit:
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_qicn_candidate_noncircularity.json`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json`
+
+Regression checks:
+- No `.tex`, registry, release, monolith, production code, package manifest, or canonical source was edited.
+- The reports explicitly preserve no-closure/no-validation language.
+- `npm run verify` was reported with raw blocked adjudicator verdicts, not as `PASS` alone.
+- No `git add -A` was used before this ledger update.
+- No push was attempted.
+
+Residual risks:
+- The product-separator counterexample is report/scaffold-layer evidence, not a canonical BaseCore/Paper 5 theorem.
+- The literature confrontation matrix is a gap inventory, not a finished related-work section.
+- Absence searches are bounded to the searched terms and local paper sources; a human literature pass remains required.
+- External validation remains absent.
+
+Next step:
+- Stage only `QICN_EVIDENCE_SURFACE_AND_OPEN_GAPS.md`, `QICN_LITERATURE_CONFRONTATION_GAP.md`, and this ledger.
+- Commit locally with message `docs: consolidate evidence surface, I_int core gap, and literature confrontation gap`.
+- Do not push.

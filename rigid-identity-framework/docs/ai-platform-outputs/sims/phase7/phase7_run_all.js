@@ -34,7 +34,7 @@ function writeJson(filePath, value) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, text, { encoding: "utf8" });
   return {
-    path: normalizePath(path.relative(REPO_ROOT, filePath)),
+    path: path.basename(filePath),
     sha256: sha256Text(text),
     bytes: Buffer.byteLength(text, "utf8"),
   };
@@ -96,7 +96,7 @@ function runAll(outDir = DEFAULT_OUT_DIR) {
     deterministic_run_digest: runDigest,
     cwd: normalizePath(REPO_ROOT),
     python: normalizePath(path.relative(REPO_ROOT, phase7Python())),
-    output_dir: normalizePath(path.relative(REPO_ROOT, resolvedOut)),
+    output_dir_policy: "runtime-selected output directory is intentionally omitted from the manifest for byte-stable snapshots",
     artifacts,
     digest_input: digestInput,
     no_claims: [

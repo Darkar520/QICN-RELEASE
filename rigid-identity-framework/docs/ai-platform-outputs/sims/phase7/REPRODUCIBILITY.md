@@ -90,3 +90,9 @@ node rigid-identity-framework\docs\ai-platform-outputs\sims\phase7\phase7_run_al
 The self-test performs two independent runs under `.venv-phase7/phase7-runner-selftest/`
 and requires equal run digests.
 
+## Versioned latest snapshot
+
+`results/latest` is a versioned deterministic snapshot; regenerating it should
+not change the digest for the same code version. The manifest intentionally
+omits the runtime-selected output directory and records artifact paths by stable
+file name so that two runs to different directories remain byte-identical.

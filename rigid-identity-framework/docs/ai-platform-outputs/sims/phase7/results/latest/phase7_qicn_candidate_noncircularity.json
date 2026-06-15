@@ -1,6 +1,6 @@
 {
   "artifact": "qicn_phase7_qicn_candidate_noncircularity",
-  "status": "NON_CIRCULARITY_EMPIRICALLY_SUPPORTED_PENDING_HUMAN_REVIEW",
+  "status": "CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY",
   "model_id": "phase7-candidate-qicn-connected-incidence-v1",
   "candidate_id": "candidate_qicn_instantiation_non_canonical",
   "human_review": "REQUIRED",
@@ -15,12 +15,13 @@
     "hidden_labels_not_used_by_classifier": [
       "family",
       "edges",
-      "qicn_instantiation_status",
-      "construction_truth_for_evaluation_only"
+      "id",
+      "qicn_instantiation_status"
     ],
+    "atomicity_truth": "Computed by brute-force dynamic factorization from n and transition_table only.",
     "perturbation_response_rule": "For each state and each single-node flip, compare unperturbed and perturbed trajectories for up to n steps and record which response coordinates diverge."
   },
-  "leakage_audit": {
+  "input_contract_audit": {
     "status": "PASS",
     "classifier_input_contract": [
       "n",
@@ -34,17 +35,17 @@
       "groundTruth"
     ],
     "forbidden_hits": [],
-    "note": "Truth labels use family metadata only after observable classification, for evaluation. They are not passed into the classifier."
+    "note": "This audits the observable classifier input contract only. Atomicity ground truth is computed separately from n and transition_table, not from labels."
   },
   "confusion": {
-    "scored_count": 44,
-    "unscored_count": 12,
-    "tp": 36,
+    "scored_count": 56,
+    "unscored_count": 0,
+    "tp": 42,
     "tn": 8,
     "fp": 0,
-    "fn": 0,
-    "accuracy": 1,
-    "sensitivity": 1,
+    "fn": 6,
+    "accuracy": 0.8929,
+    "sensitivity": 0.875,
     "specificity": 1
   },
   "results": [
@@ -78,11 +79,22 @@
         "incidence_density": 0.3333,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": false,
-        "label": "NON_ATOMIC_PRODUCT_CONTROL",
-        "rationale": "Independent product control by construction."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0
+          ],
+          "right": [
+            1,
+            2
+          ]
+        },
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -118,13 +130,16 @@
         "incidence_density": 0.6667,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": false,
-        "label": "NON_ATOMIC_FEEDFORWARD_CONTROL",
-        "rationale": "Feedforward control with terminal separators; not separator-complete connected incidence by construction."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
-      "scored_match": true
+      "scored_match": false
     },
     {
       "system_id": "bnv2_n3_cycle_ring_copy_seed7307",
@@ -162,11 +177,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -206,11 +224,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -250,11 +271,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -294,11 +318,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -338,11 +365,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -382,11 +412,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -426,11 +459,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -470,11 +506,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -514,11 +553,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
       "scored_match": true
     },
@@ -548,13 +590,24 @@
         "incidence_density": 0.1111,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            1
+          ],
+          "right": [
+            2
+          ]
+        },
+        "bipartitions_checked": 3
       },
-      "scored_match": null
+      "scored_match": true
     },
     {
       "system_id": "bnv2_n3_random_density_050_majority_seed7307",
@@ -586,13 +639,24 @@
         "incidence_density": 0.3333,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0
+          ],
+          "right": [
+            1,
+            2
+          ]
+        },
+        "bipartitions_checked": 3
       },
-      "scored_match": null
+      "scored_match": true
     },
     {
       "system_id": "bnv2_n3_random_density_050_mixed_seed7307",
@@ -628,13 +692,16 @@
         "incidence_density": 0.7778,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 3
       },
-      "scored_match": null
+      "scored_match": true
     },
     {
       "system_id": "bnv2_n4_product_decoupled_copy_seed7307",
@@ -669,11 +736,23 @@
         "incidence_density": 0.25,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": false,
-        "label": "NON_ATOMIC_PRODUCT_CONTROL",
-        "rationale": "Independent product control by construction."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0
+          ],
+          "right": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -714,13 +793,16 @@
         "incidence_density": 0.5625,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": false,
-        "label": "NON_ATOMIC_FEEDFORWARD_CONTROL",
-        "rationale": "Feedforward control with terminal separators; not separator-complete connected incidence by construction."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
-      "scored_match": true
+      "scored_match": false
     },
     {
       "system_id": "bnv2_n4_cycle_ring_copy_seed7307",
@@ -767,11 +849,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -820,11 +905,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -873,11 +961,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -926,11 +1017,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -979,11 +1073,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -1032,11 +1129,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -1085,11 +1185,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -1138,11 +1241,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -1191,11 +1297,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
       "scored_match": true
     },
@@ -1239,13 +1348,16 @@
         "incidence_density": 0.75,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
-      "scored_match": null
+      "scored_match": false
     },
     {
       "system_id": "bnv2_n4_random_density_050_majority_seed7307",
@@ -1285,13 +1397,16 @@
         "incidence_density": 0.5625,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
-      "scored_match": null
+      "scored_match": true
     },
     {
       "system_id": "bnv2_n4_random_density_050_mixed_seed7307",
@@ -1336,13 +1451,16 @@
         "incidence_density": 0.875,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 7
       },
-      "scored_match": null
+      "scored_match": true
     },
     {
       "system_id": "bnv2_n5_product_decoupled_copy_seed7307",
@@ -1380,11 +1498,24 @@
         "incidence_density": 0.2,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": false,
-        "label": "NON_ATOMIC_PRODUCT_CONTROL",
-        "rationale": "Independent product control by construction."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0
+          ],
+          "right": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -1431,13 +1562,16 @@
         "incidence_density": 0.52,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": false,
-        "label": "NON_ATOMIC_FEEDFORWARD_CONTROL",
-        "rationale": "Feedforward control with terminal separators; not separator-complete connected incidence by construction."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
-      "scored_match": true
+      "scored_match": false
     },
     {
       "system_id": "bnv2_n5_cycle_ring_copy_seed7307",
@@ -1495,11 +1629,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -1559,11 +1696,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -1623,11 +1763,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -1687,11 +1830,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -1751,11 +1897,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -1815,11 +1964,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -1879,11 +2031,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -1943,11 +2098,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -2007,11 +2165,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
       "scored_match": true
     },
@@ -2050,13 +2211,26 @@
         "incidence_density": 0.24,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            2,
+            4
+          ],
+          "right": [
+            1,
+            3
+          ]
+        },
+        "bipartitions_checked": 15
       },
-      "scored_match": null
+      "scored_match": true
     },
     {
       "system_id": "bnv2_n5_random_density_050_majority_seed7307",
@@ -2108,13 +2282,16 @@
         "incidence_density": 0.76,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 15
       },
-      "scored_match": null
+      "scored_match": true
     },
     {
       "system_id": "bnv2_n5_random_density_050_mixed_seed7307",
@@ -2155,13 +2332,26 @@
         "incidence_density": 0.36,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "right": [
+            4
+          ]
+        },
+        "bipartitions_checked": 15
       },
-      "scored_match": null
+      "scored_match": true
     },
     {
       "system_id": "bnv2_n6_product_decoupled_copy_seed7307",
@@ -2202,11 +2392,25 @@
         "incidence_density": 0.1667,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": false,
-        "label": "NON_ATOMIC_PRODUCT_CONTROL",
-        "rationale": "Independent product control by construction."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0
+          ],
+          "right": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -2260,13 +2464,16 @@
         "incidence_density": 0.5,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": false,
-        "label": "NON_ATOMIC_FEEDFORWARD_CONTROL",
-        "rationale": "Feedforward control with terminal separators; not separator-complete connected incidence by construction."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
-      "scored_match": true
+      "scored_match": false
     },
     {
       "system_id": "bnv2_n6_cycle_ring_copy_seed7307",
@@ -2337,11 +2544,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -2414,11 +2624,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -2491,11 +2704,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -2568,11 +2784,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -2645,11 +2864,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -2722,11 +2944,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -2799,11 +3024,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -2876,11 +3104,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -2953,11 +3184,14 @@
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": true,
-        "expected_connected_incidence": true,
-        "label": "ATOMIC_CONNECTED_CONTROL",
-        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
       "scored_match": true
     },
@@ -3023,13 +3257,16 @@
         "incidence_density": 0.8333,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
-      "scored_match": null
+      "scored_match": false
     },
     {
       "system_id": "bnv2_n6_random_density_050_majority_seed7307",
@@ -3094,13 +3331,16 @@
         "incidence_density": 0.8333,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
-      "scored_match": null
+      "scored_match": true
     },
     {
       "system_id": "bnv2_n6_random_density_050_mixed_seed7307",
@@ -3168,172 +3408,20 @@
         "incidence_density": 0.9167,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
       },
-      "construction_truth_for_evaluation_only": {
-        "scored": false,
-        "expected_connected_incidence": null,
-        "label": "UNSCORED_RANDOM_TOPOLOGY",
-        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      "computed_atomicity_truth_for_evaluation": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "NON_FACTORIZABLE_ATOMIC",
+        "is_atomic": true,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": null,
+        "bipartitions_checked": 31
       },
-      "scored_match": null
+      "scored_match": true
     }
   ],
   "preliminary_comparison": {
-    "artifact": "qicn_phase7_preliminary_qicn_iit_gnw_comparison",
-    "status": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-    "forbidden_claims": [
-      "superiority",
-      "validation",
-      "consciousness",
-      "external adjudication"
-    ],
-    "symmetric_result_classes": [
-      "PRELIM_TOY_FAVORS_QICN_CANDIDATE",
-      "PRELIM_TOY_FAVORS_IIT",
-      "PRELIM_TOY_FAVORS_GNW",
-      "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT",
-      "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
-    ],
-    "rows": [
-      {
-        "system_id": "bnv2_n3_product_decoupled_copy_seed7307",
-        "family": "product_decoupled_copy",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_ABSENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
-      },
-      {
-        "system_id": "bnv2_n3_chain_feedforward_copy_seed7307",
-        "family": "chain_feedforward_copy",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_ABSENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
-      },
-      {
-        "system_id": "bnv2_n3_cycle_ring_copy_seed7307",
-        "family": "cycle_ring_copy",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_HIGH_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
-      },
-      {
-        "system_id": "bnv2_n3_broadcast_star_or_seed7307",
-        "family": "broadcast_star_or",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_AVAILABLE_TOY",
-        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
-      },
-      {
-        "system_id": "bnv2_n3_all_to_all_majority_seed7307",
-        "family": "all_to_all_majority",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_HIGH_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
-      },
-      {
-        "system_id": "bnv2_n3_all_to_all_and_seed7307",
-        "family": "all_to_all_and",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
-      },
-      {
-        "system_id": "bnv2_n3_all_to_all_or_seed7307",
-        "family": "all_to_all_or",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
-      },
-      {
-        "system_id": "bnv2_n3_all_to_all_nand_seed7307",
-        "family": "all_to_all_nand",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
-      },
-      {
-        "system_id": "bnv2_n3_threshold_2_of_n_seed7307",
-        "family": "threshold_2_of_n",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_HIGH_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
-      },
-      {
-        "system_id": "bnv2_n3_threshold_n_minus_1_of_n_seed7307",
-        "family": "threshold_n_minus_1_of_n",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_HIGH_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
-      },
-      {
-        "system_id": "bnv2_n3_mixed_node_rules_seed7307",
-        "family": "mixed_node_rules",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
-      },
-      {
-        "system_id": "bnv2_n3_random_density_030_parity_seed7307",
-        "family": "random_density_030_parity",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_ABSENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
-      },
-      {
-        "system_id": "bnv2_n3_random_density_050_majority_seed7307",
-        "family": "random_density_050_majority",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_ABSENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
-      },
-      {
-        "system_id": "bnv2_n3_random_density_050_mixed_seed7307",
-        "family": "random_density_050_mixed",
-        "n": 3,
-        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
-        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
-        "iit_phi": "IIT_LOW_PHI_TOY",
-        "gnw_principles": "GNW_NOT_DETECTED_TOY",
-        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
-      }
-    ]
+    "status": "NOT_RUN",
+    "reason": "Connected incidence did not recover computed atomicity at the preregistered threshold."
   }
 }

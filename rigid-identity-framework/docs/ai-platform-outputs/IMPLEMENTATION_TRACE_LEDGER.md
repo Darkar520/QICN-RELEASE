@@ -5428,3 +5428,134 @@ Next step:
 - Stage only `QICN_EVIDENCE_SURFACE_AND_OPEN_GAPS.md`, `QICN_LITERATURE_CONFRONTATION_GAP.md`, and this ledger.
 - Commit locally with message `docs: consolidate evidence surface, I_int core gap, and literature confrontation gap`.
 - Do not push.
+
+## 2026-06-15 - Phase 7 results/latest hygiene and human reviewer gap package index
+
+Agent/platform: Codex
+User request: Diagnose the two modified Phase 7 `results/latest` JSON files by running the deterministic runner twice into separate temporary directories, choose exactly one policy for those JSON files, create a master human-reviewer gap package index, rerun verification/self-tests, update ledger, and create a bounded local commit. No push.
+Operational objective: Remove ambiguity around `results/latest` by making the snapshot deterministically versioned, and provide a concise index for human review without closing any scientific gap.
+
+Files read:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `INSTRUCCIONES.md`
+- `ROADMAP.md`
+- `docs/CLAIM_STATUS_POLICY.md`
+- `docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`
+- `docs/ai-platform-outputs/sims/phase7/REPRODUCIBILITY.md`
+- `paper5_operational_consciousness/main.tex`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance/verification reminders
+
+Files modified/created:
+- Modified `docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`.
+- Modified `docs/ai-platform-outputs/sims/phase7/REPRODUCIBILITY.md`.
+- Regenerated `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_qicn_candidate_noncircularity.json`.
+- Regenerated `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json`.
+- Created `docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`.
+- Modified this ledger.
+
+Results/latest diagnosis:
+- Initial double-run command shape:
+  - `node docs/ai-platform-outputs/sims/phase7/phase7_run_all.js --out-dir C:\tmp\qicn_phase7_diag_run1`
+  - `node docs/ai-platform-outputs/sims/phase7/phase7_run_all.js --out-dir C:\tmp\qicn_phase7_diag_run2`
+- The substantive QICN candidate result was byte-identical between both temporary runs and the current `latest` snapshot:
+  - `phase7_qicn_candidate_noncircularity.json` SHA256 `6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E` in run1, run2, and `results/latest`.
+- The manifest was not initially byte-identical:
+  - run1 manifest SHA256 `4241F4086532D1656CEE4C4A9AB9F70B31B1EFC6101CA44BFBD51498C68D158A`;
+  - run2 manifest SHA256 `C95E2D32067DA75C1D129A3805DC346145738B847808BBA9E5CED240BAA9CB8A`;
+  - pre-fix `results/latest` manifest SHA256 `52148B0F062C479D38F742628C00C7E9DA0EC3056E97D787A4DE78C2C096E4FC`.
+- Differing fields were path/noise fields, not scientific result content:
+  - `output_dir`;
+  - `artifacts.bank.path`;
+  - `artifacts.pyphi.path`;
+  - `artifacts.gnw_principles.path`;
+  - `artifacts.qicn_candidate_noncircularity.path`;
+  - the manifest file hash implied by those path differences.
+- Stable substantive fields:
+  - `deterministic_run_digest` stayed `01D8B037D35EF6BEC70C2AD046D4033E7AB229A439193C0BC69F49AC11CDF1E4`;
+  - all result artifact SHA256 values stayed stable.
+
+Policy chosen:
+- Case B, corrected to deterministic snapshot.
+- No `.gitignore` change was made.
+- The runner now records artifact paths by stable file name and replaces variable `output_dir` with `output_dir_policy`.
+- `REPRODUCIBILITY.md` now states: `results/latest` is a versioned deterministic snapshot; regenerating it should not change the digest for the same code version.
+
+Post-fix verification of results/latest policy:
+- After the runner fix, two runs to `C:\tmp\qicn_phase7_diag_run1` and `C:\tmp\qicn_phase7_diag_run2` produced byte-identical target JSON hashes:
+  - `phase7_qicn_candidate_noncircularity.json`: `6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E`;
+  - `phase7_run_manifest.json`: `09CEFB048F2E1137D390833E4868298C2D373D061658CB7F9E07E3793527FA9A`.
+- Regenerated `results/latest` matches the temporary deterministic outputs for both target files:
+  - `results/latest/phase7_qicn_candidate_noncircularity.json`: `6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E`;
+  - `results/latest/phase7_run_manifest.json`: `09CEFB048F2E1137D390833E4868298C2D373D061658CB7F9E07E3793527FA9A`.
+
+Human reviewer index:
+- Created `QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`.
+- The index links only already verified/non-canonical reports:
+  - `QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`;
+  - `QICN_EVIDENCE_SURFACE_AND_OPEN_GAPS.md`;
+  - `QICN_LITERATURE_CONFRONTATION_GAP.md`;
+  - `QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`.
+- The three human burdens are anchored to real lines:
+  - atomicity burden: `paper5_operational_consciousness/main.tex:361-366`;
+  - `Cop` membership rule: `paper5_operational_consciousness/main.tex:484-488`;
+  - candidate certification rule: `paper5_operational_consciousness/main.tex:1120-1155`;
+  - external validation remains blocked by raw v30/v31 adjudicator lines.
+
+Tools and commands:
+
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `node ...phase7_run_all.js --out-dir C:\tmp\qicn_phase7_diag_run1` | First diagnostic run | PASS; digest `01D8B037D35EF6BEC70C2AD046D4033E7AB229A439193C0BC69F49AC11CDF1E4`; pre-fix manifest path noise detected. |
+| `node ...phase7_run_all.js --out-dir C:\tmp\qicn_phase7_diag_run2` | Second diagnostic run | PASS; same digest; pre-fix QICN JSON stable; manifest differed only through output-path fields. |
+| `Get-FileHash` comparisons | Byte-level comparison of target JSON files | Confirmed QICN JSON stable before/after; manifest stable only after runner cleanup. |
+| `node ...phase7_run_all.js --out-dir docs/.../results/latest` | Regenerate versioned latest snapshot | PASS; latest target JSON hashes match post-fix temp outputs. |
+| `node docs/ai-platform-outputs/sims/phase7/qicn_phase7_atomicity_ground_truth.js --self-test` | Required Phase 7 truth self-test | PASS. |
+| `node docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js --self-test` | Required Phase 7 candidate self-test | PASS; verdict remains `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; TP 42, TN 8, FP 0, FN 6, accuracy 0.8929. |
+| `node docs/ai-platform-outputs/sims/phase7/phase7_run_all.js --self-test` | Runner determinism regression | PASS; first and second digest both `01D8B037D35EF6BEC70C2AD046D4033E7AB229A439193C0BC69F49AC11CDF1E4`. |
+| `npm run verify` from `rigid-identity-framework/` | Package verification with raw verdict | Exit code 0; scientific verdicts remain blocked and external support remains false. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Pre-staging `git status --porcelain`:
+
+```text
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/REPRODUCIBILITY.md
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/phase7_run_all.js
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_qicn_candidate_noncircularity.json
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json
+?? rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md
+```
+
+Artifact counts and hashes before final bounded staging:
+- `phase7_run_all.js`: 157 lines; SHA256 `3E31EB32CB996FAC1F25EF7C43E4CAEA88D598DC03921ED4C55E927CB0869C4C`.
+- `REPRODUCIBILITY.md`: 98 lines; SHA256 `CA24A954015205B2D90EB4409AD761239BAE71E68DFB6B0B8E803351DD82BE8D`.
+- `phase7_qicn_candidate_noncircularity.json`: 3427 lines; SHA256 `6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E`.
+- `phase7_run_manifest.json`: 43 lines; SHA256 `09CEFB048F2E1137D390833E4868298C2D373D061658CB7F9E07E3793527FA9A`.
+- `QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`: 52 lines; SHA256 `BD2F31F12BA766D8B1F569A4DF84FCD9B5AEDC875C94FE7FA3B7D9FE42D3DD79`.
+- `IMPLEMENTATION_TRACE_LEDGER.md`: ledger hash is intentionally not self-embedded after this entry because writing it here would change the hash.
+
+Regression checks:
+- No `.tex`, BaseCore, registry, release, monolith, production code, package manifest, or `.gitignore` was modified.
+- The chosen policy leaves `results/latest` versioned and deterministic rather than ignored.
+- The human-reviewer index introduces no new proof, validation, consciousness, identity, subjectivity, superiority, or bridge claim.
+- No `git add -A` was used before this ledger update.
+- No push was attempted.
+
+Residual risks:
+- `cwd` in the manifest remains host-root metadata and is stable for this checkout; if the same snapshot must be byte-identical across machines, a later pass should replace it with a repository-relative constant.
+- Phase 7 remains a non-canonical AI-output empirical probe with a negative result, not evidence of external validation.
+- The human-reviewer package is an index and handoff surface only; human mathematical/literature review is still required.
+
+Next step:
+- Stage explicitly: `QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`, this ledger, `phase7_run_all.js`, `REPRODUCIBILITY.md`, and the two target `results/latest` JSON files.
+- Commit locally with message `docs: phase7 results-latest hygiene + human-reviewer gap package index`.
+- Do not push.

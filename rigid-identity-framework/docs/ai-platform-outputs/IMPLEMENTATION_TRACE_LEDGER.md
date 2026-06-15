@@ -5057,7 +5057,7 @@ Tools and commands:
 | `pip freeze --all` in `.venv-phase7` | Capture exact installed dependency versions | PASS; versions copied into `requirements.txt`. |
 | Web/DOI checks | Anchor GNW literature references | Located DOI surfaces for 1998, 2011, and 2020 GNW references. |
 | `node ...qicn_phase7_gnw_principles_detector.js --self-test` | GNW principles sanity | Initial FAIL because source-wide criterion was too strict for hub broadcast; corrected to sustained wide activation plus selectivity. Final PASS: broadcast star passes, dense AND/OR/NAND and random density controls fail. |
-| `node ...qicn_phase7_qicn_candidate_noncircularity.js --self-test` | Candidate QICN non-circularity/leakage self-test | PASS; verdict `NON_CIRCULARITY_EMPIRICALLY_SUPPORTED_PENDING_HUMAN_REVIEW`; accuracy/sensitivity/specificity 1.0 over 44 scored systems; 12 random systems unscored. |
+| `node ...qicn_phase7_qicn_candidate_noncircularity.js --self-test` | Candidate QICN non-circularity/input-contract self-test | SUPERSEDED by 2026-06-15 atomicity-ground-truth audit: prior truth labels were family-derived; see later ledger entry for corrected computed-truth confusion matrix. |
 | `.venv-phase7\Scripts\python.exe ...qicn_phase7_pyphi_wrapper.py --self-test` | PyPhi wrapper sanity | PASS; product decoupled max Phi `0.0`; official PyPhi example Phi `2.3125`. |
 | `node ...phase7_run_all.js --self-test` | Deterministic reproducibility sanity | PASS; two full runs produced digest `DAD78BABEAD54F2F4FED292B651F40BDCF235E1A1FCDE3797BD8A22CAFEEE3F5`. |
 | `node ...phase7_run_all.js --out-dir ...results\latest` | Generate tracked latest results | PASS; wrote bank, PyPhi, GNW, QICN/non-circularity, and manifest JSON outputs. |
@@ -5133,3 +5133,190 @@ Residual risks:
 - PyPhi exact computation remains tractable here only for `n=3`; `n=4..6` remain `INTRACTABLE`.
 
 Status: `PHASE7_GNW_PRINCIPLES_AND_QICN_CANDIDATE_NONCIRCULARITY_READY_FOR_HUMAN_REVIEW_NO_PUSH`.
+
+## 2026-06-15 - Phase 7 atomicity ground truth correction and raw verify verdict
+
+Agent/platform: Codex
+User request: Correct the circular atomicity truth in the Phase 7 candidate QICN audit by replacing family-label truth with brute-force dynamic factorization from `{n, transition_table}` only; rename leakage audit to input-contract audit; degrade the verdict; rerun deterministic results; transcribe raw `npm run verify` blocked verdict lines; commit scoped; no push.
+Operational objective: Remove the family-derived truth defect and report the raw result even if connected incidence does not recover computed atomicity.
+
+Files read:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance/verification reminders
+
+Files modified/created:
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_atomicity_ground_truth.js`.
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`.
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`.
+- Regenerated `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_qicn_candidate_noncircularity.json`.
+- Regenerated `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json`.
+- Rewrote `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`.
+- Modified this ledger to mark the earlier family-derived truth result as superseded and record the corrected result.
+
+Tools and commands:
+
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Establish dirty state | Initial `main...origin/main [ahead 4]`, clean. |
+| `node ...qicn_phase7_atomicity_ground_truth.js --self-test` | Verify independent brute-force dynamic-factorization truth module | PASS; product decoupled non-atomic, all-to-all majority atomic, cycle ring atomic; source contract audit PASS. |
+| `node ...qicn_phase7_qicn_candidate_noncircularity.js --self-test` | Recompute candidate connected-incidence recovery against computed truth | PASS as operational test with negative scientific result: `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`. |
+| `node ...phase7_run_all.js --self-test` | Deterministic runner sanity after truth correction | PASS; first and second digest both `01D8B037D35EF6BEC70C2AD046D4033E7AB229A439193C0BC69F49AC11CDF1E4`. |
+| `node ...phase7_run_all.js --out-dir ...results\latest` | Regenerate latest tracked results | PASS; QICN candidate result and manifest hashes changed as expected. |
+| `npm run verify` from `rigid-identity-framework/` | Package verification and raw scientific verdict capture | Exit code 0; raw adjudicator verdicts remain blocked, transcribed below. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Required interpretation:
+
+```text
+exit code 0 = los gates corrieron; NO = corpus certificado. external_support_certified=false.
+```
+
+Implementation summary:
+- Added brute-force enumeration of all nontrivial bipartitions for `n <= 6` Boolean systems.
+- Defined computed atomicity as dynamic non-factorization: no bipartition allows both blocks' next states to be determined by their own current states alone.
+- The truth module reads only `n` and `transition_table`; it does not read family, edges, id, or construction labels.
+- Replaced family-derived `constructionTruthLabel(system)` with `computeAtomicityTruth(observed)`.
+- Renamed the classifier audit field to `input_contract_audit`; it checks input contract only and no longer claims to prove non-circularity.
+- Degraded the successful-threshold status to `INPUT_LEAKAGE_RULED_OUT__GROUND_TRUTH_CIRCULARITY_TESTED__PENDING_HUMAN_REVIEW`.
+- Actual corrected result did not meet the threshold, so the status is `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`.
+- The preliminary QICN/IIT/GNW comparison is not run after this failure.
+
+Corrected results:
+- Scored systems: 56.
+- Unscored systems: 0.
+- Computed `NON_FACTORIZABLE_ATOMIC`: 48.
+- Computed `FACTORIZABLE_NON_ATOMIC`: 8.
+- TP 42, TN 8, FP 0, FN 6.
+- Accuracy 0.8929, sensitivity 0.875, specificity 1.0.
+- False negatives: `chain_feedforward_copy` at n=3,4,5,6 and `random_density_030_parity` at n=4,6.
+- Runner digest changed from `DAD78BABEAD54F2F4FED292B651F40BDCF235E1A1FCDE3797BD8A22CAFEEE3F5` to `01D8B037D35EF6BEC70C2AD046D4033E7AB229A439193C0BC69F49AC11CDF1E4`.
+
+Artifact counts and hashes:
+- `qicn_phase7_atomicity_ground_truth.js`: 222 lines; SHA256 `91CCF3DA5BEE049AC25B94B0B1ED4F3B4F46F695917F8F93A7E0B4F88314FB4C`.
+- `qicn_phase7_qicn_candidate_noncircularity.js`: 329 lines; SHA256 `A6F8739B85F7A25DB5FA2F59D7A883EB44C1AE1B3B9B5245E56B338996243110`.
+- `phase7_run_all.js`: 157 lines; SHA256 `88ED94400BABBD6E8BE0F64122A287E495FAF5AB85173DAB196D21A8EF9F0FD4`.
+- `QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`: 226 lines; SHA256 `B4AD1B18593D401A55D428462683AD5084F4582E2A8535C505D375881609BADC`.
+- `phase7_qicn_candidate_noncircularity.json`: 3427 lines; SHA256 `6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E`.
+- `phase7_run_manifest.json`: 43 lines; SHA256 `52148B0F062C479D38F742628C00C7E9DA0EC3056E97D787A4DE78C2C096E4FC`.
+- Line count uses `(Get-Content <path>).Count`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Regression checks:
+- Confirmed no `.tex`, PDF, registry, release, corpus, monolith, production source, package manifest, or package dependency file was modified.
+- Confirmed no `git add -A` was used before this ledger update.
+- Confirmed no push was attempted.
+- Confirmed the new report and current Phase 7 scripts/results contain no old inflated status string or old audit field name.
+
+Residual risks:
+- Connected incidence may remain useful as a sufficient or conservative condition, but it is not a recovery criterion for computed dynamic atomicity on this bank.
+- The brute-force truth definition is exact for these finite Boolean systems only; it is not a proof for arbitrary systems.
+- The scientific verify verdict remains blocked despite exit code 0.
+
+Status: `PHASE7_ATOMICITY_TRUTH_CORRECTED_CONNECTED_INCIDENCE_NEGATIVE_NO_PUSH`.
+
+## 2026-06-15 - Phase 7 scoped commit preparation and I_int gap card empirical-probe addendum
+
+Agent/platform: Codex
+User request: Append the Phase 7 negative empirical probe to the existing non-canonical `I_int / atomic separator` model card, then create a bounded local commit for the pending Phase 7 computed-atomicity work. Do not push. Do not include regenerated `results/latest/*.json` files in the commit.
+Operational objective: Preserve the negative result honestly in the gap model card and commit only scoped AI-output source/report/ledger artifacts.
+
+Files read:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Files modified in this pass:
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Existing Phase 7 files included in the bounded commit set:
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_atomicity_ground_truth.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Explicitly unclassified / excluded from bounded commit:
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_qicn_candidate_noncircularity.json`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json`
+
+Inventory before bounded staging, from cwd `rigid-identity-framework/`:
+
+```text
+ M rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/phase7_run_all.js
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_qicn_candidate_noncircularity.json
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json
+?? rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_atomicity_ground_truth.js
+```
+
+Diff stat after model-card addendum, before bounded staging:
+
+```text
+ .../IMPLEMENTATION_TRACE_LEDGER.md                 |   98 +-
+ .../QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md  |   32 +
+ ...PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md |  315 +++---
+ .../sims/phase7/phase7_run_all.js                  |    3 +-
+ .../qicn_phase7_qicn_candidate_noncircularity.js   |   76 +-
+ .../phase7_qicn_candidate_noncircularity.json      | 1016 +++++++++++---------
+ .../phase7/results/latest/phase7_run_manifest.json |   10 +-
+ 7 files changed, 852 insertions(+), 698 deletions(-)
+```
+
+Tools and commands:
+
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --porcelain` from `rigid-identity-framework/` | Inventory before bounded staging | All pending paths are under `docs/ai-platform-outputs/`; two regenerated JSON latest files are excluded from commit. |
+| `git diff --stat` from `rigid-identity-framework/` | Quantify pending tree before staging | 7 changed tracked files in stat, plus one untracked truth module; JSON result files classified as uncommitted candidates. |
+| `node docs/ai-platform-outputs/sims/phase7/qicn_phase7_atomicity_ground_truth.js --self-test` | Verify brute-force truth module | PASS; truth source contract audit PASS; product decoupled non-atomic, all-to-all majority atomic, cycle ring atomic. |
+| `node docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js --self-test` | Verify corrected candidate recovery result | PASS as operational test; scientific verdict remains `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; TP 42, TN 8, FP 0, FN 6, accuracy 0.8929, sensitivity 0.875, specificity 1.0. |
+| `Select-String` on `QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md` | Confirm model-card closure boundary | Found explicit negative status and mandatory no-closure sentence; no promotion of closure, no certification of non-circularity, no external validation claim. |
+
+Model-card addendum summary:
+- Added final section `Phase 7 empirical probe (negative result, non-canonical)`.
+- Documented that computed atomicity truth is derived only from `n` and `transition_table`, not family labels.
+- Recorded raw confusion matrix: scored 56, TP 42, TN 8, FP 0, FN 6, accuracy 0.8929, sensitivity 0.875, specificity 1.0.
+- Recorded status `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`.
+- Recorded conservative interpretation: FP=0 means the condition did not fire on factorizable systems, but FN=6 means it is not necessary and does not recover full atomicity.
+- Recorded family-label sanity evidence: `random_density_030_parity` is non-atomic at n=3,5 and atomic at n=4,6 under computed truth.
+- Preserved reviewer burden: decide whether static-node dynamic non-factorization is the right notion for BaseCore `I_int / atomic separator`, or whether it misses coordinate-change or unidirectional decompositions.
+- Added mandatory no-conclusion sentence: no gap closure, no no-circularity certification, no external validation, no consciousness/identity/subjectivity/superiority claim.
+
+Artifact counts and hashes before final bounded staging:
+- `qicn_phase7_atomicity_ground_truth.js`: 222 lines; SHA256 `91CCF3DA5BEE049AC25B94B0B1ED4F3B4F46F695917F8F93A7E0B4F88314FB4C`.
+- `qicn_phase7_qicn_candidate_noncircularity.js`: 329 lines; SHA256 `A6F8739B85F7A25DB5FA2F59D7A883EB44C1AE1B3B9B5245E56B338996243110`.
+- `phase7_run_all.js`: 157 lines; SHA256 `88ED94400BABBD6E8BE0F64122A287E495FAF5AB85173DAB196D21A8EF9F0FD4`.
+- `QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`: 226 lines; SHA256 `B4AD1B18593D401A55D428462683AD5084F4582E2A8535C505D375881609BADC`.
+- `QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`: 192 lines; SHA256 `AABC66226DF1370F3A6845260C158EB3AB13B91F48223688D66E4B8EFD90B32C`.
+- `IMPLEMENTATION_TRACE_LEDGER.md`: ledger hash is intentionally not self-embedded after this entry because writing it here would change the hash.
+- Line count uses `(Get-Content <path>).Count`; hash method uses `Get-FileHash -Algorithm SHA256`.
+
+Residual risks:
+- The corrected probe is still an AI-output empirical artifact, not a theorem.
+- Static-node dynamic non-factorization may be too weak or too narrow for the intended BaseCore separator notion.
+- Connected incidence remains conservative in this finite bank but fails as a necessary recovery criterion.
+- The two regenerated JSON latest files remain uncommitted and require later classification: commit as reproducibility artifacts, regenerate in a controlled result commit, or ignore if `latest/` is intended as volatile output.
+
+Next step:
+- Stage exactly the six bounded source/report/ledger files listed above.
+- Commit locally with message `docs: phase 7 computed-atomicity truth + negative non-circularity result + I_int gap card`.
+- Do not push.

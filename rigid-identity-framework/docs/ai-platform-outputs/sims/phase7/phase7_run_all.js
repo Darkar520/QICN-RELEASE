@@ -102,7 +102,7 @@ function runAll(outDir = DEFAULT_OUT_DIR) {
     no_claims: [
       "No QICN gap closure is certified.",
       "No superiority, validation, external adjudication, consciousness, agency, or subjectivity claim is made.",
-      "The preliminary comparison is present only because the non-circularity test returned empirical support pending human review.",
+      "A preliminary comparison is emitted only if connected incidence recovers computed atomicity at the declared threshold.",
     ],
   };
   artifacts.manifest = writeJson(path.join(resolvedOut, "phase7_run_manifest.json"), manifest);
@@ -155,4 +155,3 @@ module.exports = {
   runAll,
   selfTest,
 };
-

@@ -4,6 +4,7 @@
 const fs = require("fs");
 const path = require("path");
 const { buildBank } = require("../qicn_phase7_neutral_systems_bank_v2.js");
+const { computeAtomicityTruth } = require("./qicn_phase7_atomicity_ground_truth.js");
 
 const MODEL_ID = "phase7-candidate-qicn-connected-incidence-v1";
 const HUMAN_REVIEW = "REQUIRED";
@@ -110,43 +111,10 @@ function graphConnected(adjacency, start) {
   return seen.size === adjacency.length;
 }
 
-function constructionTruthLabel(system) {
-  if (system.family === "product_decoupled_copy") {
-    return {
-      scored: true,
-      expected_connected_incidence: false,
-      label: "NON_ATOMIC_PRODUCT_CONTROL",
-      rationale: "Independent product control by construction.",
-    };
-  }
-  if (system.family === "chain_feedforward_copy") {
-    return {
-      scored: true,
-      expected_connected_incidence: false,
-      label: "NON_ATOMIC_FEEDFORWARD_CONTROL",
-      rationale: "Feedforward control with terminal separators; not separator-complete connected incidence by construction.",
-    };
-  }
-  if (system.family.startsWith("random_density_")) {
-    return {
-      scored: false,
-      expected_connected_incidence: null,
-      label: "UNSCORED_RANDOM_TOPOLOGY",
-      rationale: "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone.",
-    };
-  }
-  return {
-    scored: true,
-    expected_connected_incidence: true,
-    label: "ATOMIC_CONNECTED_CONTROL",
-    rationale: "Designed connected-control family for finite connected-incidence recovery.",
-  };
-}
-
 function classifySystem(system) {
   const observed = sanitizeForObservableAlgorithm(system);
   const candidate = evaluateConnectedIncidence(observed);
-  const truth = constructionTruthLabel(system);
+  const truth = computeAtomicityTruth(observed);
   const predicted = candidate.candidate_qicn_classification === "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT";
   return {
     system_id: system.id,
@@ -157,12 +125,12 @@ function classifySystem(system) {
     artifact_status: "candidate_qicn_instantiation_non_canonical",
     algorithm_input_keys: Object.keys(observed).sort(),
     candidate,
-    construction_truth_for_evaluation_only: truth,
-    scored_match: truth.scored ? predicted === truth.expected_connected_incidence : null,
+    computed_atomicity_truth_for_evaluation: truth,
+    scored_match: predicted === truth.is_atomic,
   };
 }
 
-function leakageAudit() {
+function inputContractAudit() {
   const forbiddenTokens = ["family", "edges", "qicn_instantiation_status", "true_atomicity", "groundTruth"];
   const observableSource = [
     sanitizeForObservableAlgorithm.toString(),
@@ -175,15 +143,15 @@ function leakageAudit() {
     classifier_input_contract: ["n", "transition_table"],
     forbidden_tokens_checked_in_observable_algorithm_source: forbiddenTokens,
     forbidden_hits,
-    note: "Truth labels use family metadata only after observable classification, for evaluation. They are not passed into the classifier.",
+    note: "This audits the observable classifier input contract only. Atomicity ground truth is computed separately from n and transition_table, not from labels.",
   };
 }
 
 function confusion(results) {
-  const scored = results.filter((result) => result.construction_truth_for_evaluation_only.scored);
+  const scored = results.filter((result) => result.computed_atomicity_truth_for_evaluation.status !== "TRUTH_ERROR");
   const counts = { tp: 0, tn: 0, fp: 0, fn: 0 };
   for (const result of scored) {
-    const expected = result.construction_truth_for_evaluation_only.expected_connected_incidence;
+    const expected = result.computed_atomicity_truth_for_evaluation.is_atomic;
     const predicted = result.candidate.candidate_qicn_classification === "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT";
     if (expected && predicted) counts.tp += 1;
     if (!expected && !predicted) counts.tn += 1;
@@ -267,12 +235,12 @@ function preliminaryComparison(bank, qicnResults, pyphiRun, gnwRun) {
 
 function run(bank, options = {}) {
   const results = bank.systems.map(classifySystem);
-  const leak = leakageAudit();
+  const contract = inputContractAudit();
   const matrix = confusion(results);
-  const support = leak.status === "PASS" && matrix.accuracy >= 0.95 && matrix.sensitivity >= 0.95 && matrix.specificity >= 0.95;
+  const support = contract.status === "PASS" && matrix.accuracy >= 0.95 && matrix.sensitivity >= 0.95 && matrix.specificity >= 0.95;
   const verdict = support
-    ? "NON_CIRCULARITY_EMPIRICALLY_SUPPORTED_PENDING_HUMAN_REVIEW"
-    : "CIRCULARITY_NOT_RULED_OUT";
+    ? "INPUT_LEAKAGE_RULED_OUT__GROUND_TRUTH_CIRCULARITY_TESTED__PENDING_HUMAN_REVIEW"
+    : "CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY";
   const output = {
     artifact: "qicn_phase7_qicn_candidate_noncircularity",
     status: verdict,
@@ -284,10 +252,11 @@ function run(bank, options = {}) {
     operationalization: {
       source: "v20 connected-incidence scaffold, used here only as a finite non-canonical candidate over Boolean transition tables.",
       observable_algorithm_input: ["n", "transition_table"],
-      hidden_labels_not_used_by_classifier: ["family", "edges", "qicn_instantiation_status", "construction_truth_for_evaluation_only"],
+      hidden_labels_not_used_by_classifier: ["family", "edges", "id", "qicn_instantiation_status"],
+      atomicity_truth: "Computed by brute-force dynamic factorization from n and transition_table only.",
       perturbation_response_rule: "For each state and each single-node flip, compare unperturbed and perturbed trajectories for up to n steps and record which response coordinates diverge.",
     },
-    leakage_audit: leak,
+    input_contract_audit: contract,
     confusion: matrix,
     results,
   };
@@ -296,7 +265,7 @@ function run(bank, options = {}) {
   } else {
     output.preliminary_comparison = {
       status: "NOT_RUN",
-      reason: support ? "PyPhi and GNW result inputs were not supplied." : "CIRCULARITY_NOT_RULED_OUT blocks comparison.",
+      reason: support ? "PyPhi and GNW result inputs were not supplied." : "Connected incidence did not recover computed atomicity at the preregistered threshold.",
     };
   }
   return output;
@@ -305,9 +274,12 @@ function run(bank, options = {}) {
 function selfTest() {
   const result = run(buildBank());
   const failures = [];
-  if (result.leakage_audit.status !== "PASS") failures.push("observable algorithm leak audit failed");
-  if (result.confusion.accuracy < 0.95) failures.push(`accuracy below threshold: ${result.confusion.accuracy}`);
-  if (result.status !== "NON_CIRCULARITY_EMPIRICALLY_SUPPORTED_PENDING_HUMAN_REVIEW") {
+  if (result.input_contract_audit.status !== "PASS") failures.push("observable algorithm input contract audit failed");
+  const allowedVerdicts = [
+    "INPUT_LEAKAGE_RULED_OUT__GROUND_TRUTH_CIRCULARITY_TESTED__PENDING_HUMAN_REVIEW",
+    "CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY",
+  ];
+  if (!allowedVerdicts.includes(result.status)) {
     failures.push(`unexpected verdict: ${result.status}`);
   }
   return {
@@ -315,8 +287,9 @@ function selfTest() {
     status: failures.length ? "FAIL" : "PASS",
     verdict: result.status,
     confusion: result.confusion,
-    leakage_audit: result.leakage_audit,
+    input_contract_audit: result.input_contract_audit,
     reviewer_burden: result.reviewer_burden,
+    negative_result_is_valid: result.status === "CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY",
     failures,
   };
 }
@@ -354,4 +327,3 @@ module.exports = {
   classifySystem,
   preliminaryComparison,
 };
-

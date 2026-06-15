@@ -158,3 +158,35 @@ Method: PowerShell `Get-FileHash -Algorithm SHA256 <file>` and `(Get-Content <fi
 | `rigid-identity-framework/registry/theorems.jsonl` | 699 | `A1DB56DC38F40BF0C23178D8BF0FF4CBE5063C7CC08EBA72E6F2EA32156BB6A0` |
 | `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md` | 80 | `936633B2BCB91459B10BEA50C46AF06D045FB9B5FAF0E15D32EFF4107C870E9A` |
 
+## Phase 7 empirical probe (negative result, non-canonical)
+
+This section records a non-canonical Phase 7 empirical probe of whether the observable candidate condition `connected perturbation-response incidence` recovers brute-force atomicity truth. The truth label used in this probe is computed by dynamic non-factorization from only `n` and `transition_table`, independent of family labels, construction names, graph edges, or ids.
+
+Reference artifacts:
+
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_atomicity_ground_truth.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+
+Raw result:
+
+| Metric | Value |
+|---|---:|
+| scored systems | 56 |
+| true positives | 42 |
+| true negatives | 8 |
+| false positives | 0 |
+| false negatives | 6 |
+| accuracy | 0.8929 |
+| sensitivity | 0.875 |
+| specificity | 1.0 |
+
+Status: `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`.
+
+Honest interpretation: the candidate condition is conservative in this finite probe (`FP=0`, `specificity=1.0`; it never fires on factorizable systems), but it is not necessary (`FN=6`; it misses atomic systems such as `chain_feedforward`). Therefore connected perturbation-response incidence does not recover full computed atomicity under this brute-force truth definition.
+
+Evidence that truth was not assigned by family label: `random_density_030_parity` is computed as non-atomic at `n=3` and `n=5`, but atomic at `n=4` and `n=6`. That split would be impossible if the truth label were inherited from the family name.
+
+Reviewer burden: decide whether dynamic non-factorization by static node bipartition is the right computational notion for the BaseCore `I_int / atomic separator` gap, or whether it only captures total decoupling and misses subtler decompositions such as coordinate changes or unidirectional dependence. This AI artifact does not close that burden.
+
+este probe es un artefacto de IA no-canónico; no cierra el gap I_int, no certifica no-circularidad, no valida QICN externamente, y no implica ningún claim de conciencia, identidad, subjetividad ni superioridad.

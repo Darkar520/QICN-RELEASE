@@ -1,0 +1,3339 @@
+{
+  "artifact": "qicn_phase7_qicn_candidate_noncircularity",
+  "status": "NON_CIRCULARITY_EMPIRICALLY_SUPPORTED_PENDING_HUMAN_REVIEW",
+  "model_id": "phase7-candidate-qicn-connected-incidence-v1",
+  "candidate_id": "candidate_qicn_instantiation_non_canonical",
+  "human_review": "REQUIRED",
+  "human_curated_status": "not_reviewed",
+  "reviewer_burden": "Human reviewer must decide whether finite separator-complete connected incidence is natural and non-circular, or merely a disguised restatement of atomicity.",
+  "operationalization": {
+    "source": "v20 connected-incidence scaffold, used here only as a finite non-canonical candidate over Boolean transition tables.",
+    "observable_algorithm_input": [
+      "n",
+      "transition_table"
+    ],
+    "hidden_labels_not_used_by_classifier": [
+      "family",
+      "edges",
+      "qicn_instantiation_status",
+      "construction_truth_for_evaluation_only"
+    ],
+    "perturbation_response_rule": "For each state and each single-node flip, compare unperturbed and perturbed trajectories for up to n steps and record which response coordinates diverge."
+  },
+  "leakage_audit": {
+    "status": "PASS",
+    "classifier_input_contract": [
+      "n",
+      "transition_table"
+    ],
+    "forbidden_tokens_checked_in_observable_algorithm_source": [
+      "family",
+      "edges",
+      "qicn_instantiation_status",
+      "true_atomicity",
+      "groundTruth"
+    ],
+    "forbidden_hits": [],
+    "note": "Truth labels use family metadata only after observable classification, for evaluation. They are not passed into the classifier."
+  },
+  "confusion": {
+    "scored_count": 44,
+    "unscored_count": 12,
+    "tp": 36,
+    "tn": 8,
+    "fp": 0,
+    "fn": 0,
+    "accuracy": 1,
+    "sensitivity": 1,
+    "specificity": 1
+  },
+  "results": [
+    {
+      "system_id": "bnv2_n3_product_decoupled_copy_seed7307",
+      "family": "product_decoupled_copy",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 3,
+        "incidence_density": 0.3333,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": false,
+        "label": "NON_ATOMIC_PRODUCT_CONTROL",
+        "rationale": "Independent product control by construction."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_chain_feedforward_copy_seed7307",
+      "family": "chain_feedforward_copy",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          []
+        ],
+        "separator_complete": false,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 6,
+        "incidence_density": 0.6667,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": false,
+        "label": "NON_ATOMIC_FEEDFORWARD_CONTROL",
+        "rationale": "Feedforward control with terminal separators; not separator-complete connected incidence by construction."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_cycle_ring_copy_seed7307",
+      "family": "cycle_ring_copy",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_broadcast_star_or_seed7307",
+      "family": "broadcast_star_or",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_all_to_all_majority_seed7307",
+      "family": "all_to_all_majority",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_all_to_all_and_seed7307",
+      "family": "all_to_all_and",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_all_to_all_or_seed7307",
+      "family": "all_to_all_or",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_all_to_all_nand_seed7307",
+      "family": "all_to_all_nand",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_threshold_2_of_n_seed7307",
+      "family": "threshold_2_of_n",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_threshold_n_minus_1_of_n_seed7307",
+      "family": "threshold_n_minus_1_of_n",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_mixed_node_rules_seed7307",
+      "family": "mixed_node_rules",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n3_random_density_030_parity_seed7307",
+      "family": "random_density_030_parity",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [],
+          [
+            0
+          ],
+          []
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 1,
+        "incidence_density": 0.1111,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n3_random_density_050_majority_seed7307",
+      "family": "random_density_050_majority",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 3,
+        "incidence_density": 0.3333,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n3_random_density_050_mixed_seed7307",
+      "family": "random_density_050_mixed",
+      "n": 3,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 7,
+        "incidence_density": 0.7778,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n4_product_decoupled_copy_seed7307",
+      "family": "product_decoupled_copy",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 4,
+        "incidence_density": 0.25,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": false,
+        "label": "NON_ATOMIC_PRODUCT_CONTROL",
+        "rationale": "Independent product control by construction."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_chain_feedforward_copy_seed7307",
+      "family": "chain_feedforward_copy",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            3
+          ],
+          []
+        ],
+        "separator_complete": false,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 9,
+        "incidence_density": 0.5625,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": false,
+        "label": "NON_ATOMIC_FEEDFORWARD_CONTROL",
+        "rationale": "Feedforward control with terminal separators; not separator-complete connected incidence by construction."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_cycle_ring_copy_seed7307",
+      "family": "cycle_ring_copy",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 16,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_broadcast_star_or_seed7307",
+      "family": "broadcast_star_or",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 16,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_all_to_all_majority_seed7307",
+      "family": "all_to_all_majority",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 16,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_all_to_all_and_seed7307",
+      "family": "all_to_all_and",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 16,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_all_to_all_or_seed7307",
+      "family": "all_to_all_or",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 16,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_all_to_all_nand_seed7307",
+      "family": "all_to_all_nand",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 16,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_threshold_2_of_n_seed7307",
+      "family": "threshold_2_of_n",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 16,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_threshold_n_minus_1_of_n_seed7307",
+      "family": "threshold_n_minus_1_of_n",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 16,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_mixed_node_rules_seed7307",
+      "family": "mixed_node_rules",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 16,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n4_random_density_030_parity_seed7307",
+      "family": "random_density_030_parity",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": false,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 12,
+        "incidence_density": 0.75,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n4_random_density_050_majority_seed7307",
+      "family": "random_density_050_majority",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 9,
+        "incidence_density": 0.5625,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n4_random_density_050_mixed_seed7307",
+      "family": "random_density_050_mixed",
+      "n": 4,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 14,
+        "incidence_density": 0.875,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n5_product_decoupled_copy_seed7307",
+      "family": "product_decoupled_copy",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 5,
+        "incidence_density": 0.2,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": false,
+        "label": "NON_ATOMIC_PRODUCT_CONTROL",
+        "rationale": "Independent product control by construction."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_chain_feedforward_copy_seed7307",
+      "family": "chain_feedforward_copy",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4
+          ],
+          []
+        ],
+        "separator_complete": false,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 13,
+        "incidence_density": 0.52,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": false,
+        "label": "NON_ATOMIC_FEEDFORWARD_CONTROL",
+        "rationale": "Feedforward control with terminal separators; not separator-complete connected incidence by construction."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_cycle_ring_copy_seed7307",
+      "family": "cycle_ring_copy",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 25,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_broadcast_star_or_seed7307",
+      "family": "broadcast_star_or",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 25,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_all_to_all_majority_seed7307",
+      "family": "all_to_all_majority",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 25,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_all_to_all_and_seed7307",
+      "family": "all_to_all_and",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 25,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_all_to_all_or_seed7307",
+      "family": "all_to_all_or",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 25,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_all_to_all_nand_seed7307",
+      "family": "all_to_all_nand",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 25,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_threshold_2_of_n_seed7307",
+      "family": "threshold_2_of_n",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 25,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_threshold_n_minus_1_of_n_seed7307",
+      "family": "threshold_n_minus_1_of_n",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 25,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_mixed_node_rules_seed7307",
+      "family": "mixed_node_rules",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 25,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n5_random_density_030_parity_seed7307",
+      "family": "random_density_030_parity",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            4
+          ],
+          [],
+          [
+            0,
+            4
+          ],
+          [],
+          [
+            0,
+            4
+          ]
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 6,
+        "incidence_density": 0.24,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n5_random_density_050_majority_seed7307",
+      "family": "random_density_050_majority",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            4
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 19,
+        "incidence_density": 0.76,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n5_random_density_050_mixed_seed7307",
+      "family": "random_density_050_mixed",
+      "n": 5,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ],
+          []
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 9,
+        "incidence_density": 0.36,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n6_product_decoupled_copy_seed7307",
+      "family": "product_decoupled_copy",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 6,
+        "incidence_density": 0.1667,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": false,
+        "label": "NON_ATOMIC_PRODUCT_CONTROL",
+        "rationale": "Independent product control by construction."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_chain_feedforward_copy_seed7307",
+      "family": "chain_feedforward_copy",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5
+          ],
+          []
+        ],
+        "separator_complete": false,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 18,
+        "incidence_density": 0.5,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": false,
+        "label": "NON_ATOMIC_FEEDFORWARD_CONTROL",
+        "rationale": "Feedforward control with terminal separators; not separator-complete connected incidence by construction."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_cycle_ring_copy_seed7307",
+      "family": "cycle_ring_copy",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 36,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_broadcast_star_or_seed7307",
+      "family": "broadcast_star_or",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 36,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_all_to_all_majority_seed7307",
+      "family": "all_to_all_majority",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 36,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_all_to_all_and_seed7307",
+      "family": "all_to_all_and",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 36,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_all_to_all_or_seed7307",
+      "family": "all_to_all_or",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 36,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_all_to_all_nand_seed7307",
+      "family": "all_to_all_nand",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 36,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_threshold_2_of_n_seed7307",
+      "family": "threshold_2_of_n",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 36,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_threshold_n_minus_1_of_n_seed7307",
+      "family": "threshold_n_minus_1_of_n",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 36,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_mixed_node_rules_seed7307",
+      "family": "mixed_node_rules",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 36,
+        "incidence_density": 1,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": true,
+        "expected_connected_incidence": true,
+        "label": "ATOMIC_CONNECTED_CONTROL",
+        "rationale": "Designed connected-control family for finite connected-incidence recovery."
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "bnv2_n6_random_density_030_parity_seed7307",
+      "family": "random_density_030_parity",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": false,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 30,
+        "incidence_density": 0.8333,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n6_random_density_050_majority_seed7307",
+      "family": "random_density_050_majority",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 30,
+        "incidence_density": 0.8333,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    },
+    {
+      "system_id": "bnv2_n6_random_density_050_mixed_seed7307",
+      "family": "random_density_050_mixed",
+      "n": 6,
+      "human_review": "REQUIRED",
+      "human_curated_status": "not_reviewed",
+      "artifact_status": "candidate_qicn_instantiation_non_canonical",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "candidate": {
+        "incidence": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": true,
+        "incidence_edge_count": 33,
+        "incidence_density": 0.9167,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "construction_truth_for_evaluation_only": {
+        "scored": false,
+        "expected_connected_incidence": null,
+        "label": "UNSCORED_RANDOM_TOPOLOGY",
+        "rationale": "Seeded random graph is useful for stress testing but is not guaranteed non-factorizable by its family label alone."
+      },
+      "scored_match": null
+    }
+  ],
+  "preliminary_comparison": {
+    "artifact": "qicn_phase7_preliminary_qicn_iit_gnw_comparison",
+    "status": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+    "forbidden_claims": [
+      "superiority",
+      "validation",
+      "consciousness",
+      "external adjudication"
+    ],
+    "symmetric_result_classes": [
+      "PRELIM_TOY_FAVORS_QICN_CANDIDATE",
+      "PRELIM_TOY_FAVORS_IIT",
+      "PRELIM_TOY_FAVORS_GNW",
+      "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT",
+      "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
+    ],
+    "rows": [
+      {
+        "system_id": "bnv2_n3_product_decoupled_copy_seed7307",
+        "family": "product_decoupled_copy",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_ABSENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
+      },
+      {
+        "system_id": "bnv2_n3_chain_feedforward_copy_seed7307",
+        "family": "chain_feedforward_copy",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_ABSENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
+      },
+      {
+        "system_id": "bnv2_n3_cycle_ring_copy_seed7307",
+        "family": "cycle_ring_copy",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_HIGH_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
+      },
+      {
+        "system_id": "bnv2_n3_broadcast_star_or_seed7307",
+        "family": "broadcast_star_or",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_AVAILABLE_TOY",
+        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
+      },
+      {
+        "system_id": "bnv2_n3_all_to_all_majority_seed7307",
+        "family": "all_to_all_majority",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_HIGH_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
+      },
+      {
+        "system_id": "bnv2_n3_all_to_all_and_seed7307",
+        "family": "all_to_all_and",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
+      },
+      {
+        "system_id": "bnv2_n3_all_to_all_or_seed7307",
+        "family": "all_to_all_or",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
+      },
+      {
+        "system_id": "bnv2_n3_all_to_all_nand_seed7307",
+        "family": "all_to_all_nand",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
+      },
+      {
+        "system_id": "bnv2_n3_threshold_2_of_n_seed7307",
+        "family": "threshold_2_of_n",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_HIGH_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
+      },
+      {
+        "system_id": "bnv2_n3_threshold_n_minus_1_of_n_seed7307",
+        "family": "threshold_n_minus_1_of_n",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_HIGH_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_CONVERGENCE_OR_SHARED_SUPPORT"
+      },
+      {
+        "system_id": "bnv2_n3_mixed_node_rules_seed7307",
+        "family": "mixed_node_rules",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
+      },
+      {
+        "system_id": "bnv2_n3_random_density_030_parity_seed7307",
+        "family": "random_density_030_parity",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_ABSENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
+      },
+      {
+        "system_id": "bnv2_n3_random_density_050_majority_seed7307",
+        "family": "random_density_050_majority",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_ABSENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_ALL_FAIL_OR_NEGATIVE"
+      },
+      {
+        "system_id": "bnv2_n3_random_density_050_mixed_seed7307",
+        "family": "random_density_050_mixed",
+        "n": 3,
+        "label": "PRELIMINARY_SUBJECT_TO_HUMAN_APPROVAL_OF_QICN_INSTANTIATION",
+        "qicn_candidate": "QICN_CONNECTED_INCIDENCE_PRESENT_TOY",
+        "iit_phi": "IIT_LOW_PHI_TOY",
+        "gnw_principles": "GNW_NOT_DETECTED_TOY",
+        "outcome_class": "PRELIM_TOY_FAVORS_QICN_CANDIDATE"
+      }
+    ]
+  }
+}

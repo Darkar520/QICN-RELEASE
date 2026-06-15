@@ -46,9 +46,20 @@ def expected_interface() -> dict:
 
 
 def load_bank(path: str | None) -> dict:
-    if path:
-        return json.loads(Path(path).read_text(encoding="utf-8"))
-    return json.load(sys.stdin)
+    try:
+        if path:
+            text = Path(path).read_text(encoding="utf-8")
+        else:
+            text = sys.stdin.buffer.read().decode("utf-8")
+        if text.startswith("\ufeff"):
+            raise ValueError("input JSON must be UTF-8 without BOM")
+        return json.loads(text)
+    except UnicodeDecodeError as exc:
+        raise SystemExit(f"UTF-8 decode error while reading input JSON: {exc}") from exc
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"JSON parse error while reading input bank: {exc}") from exc
+    except OSError as exc:
+        raise SystemExit(f"I/O error while reading input bank: {exc}") from exc
 
 
 def transition_probability_matrix(system: dict) -> list:

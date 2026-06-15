@@ -1,0 +1,43 @@
+{
+  "artifact": "phase7_run_all_manifest",
+  "status": "PASS",
+  "runner_id": "phase7-deterministic-run-all-v1",
+  "deterministic_run_digest": "DAD78BABEAD54F2F4FED292B651F40BDCF235E1A1FCDE3797BD8A22CAFEEE3F5",
+  "cwd": "C:/Users/irisp/OneDrive/Escritorio/QICN-FRAMEWORK",
+  "python": ".venv-phase7/Scripts/python.exe",
+  "output_dir": "rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest",
+  "artifacts": {
+    "bank": {
+      "path": "rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_bank_v2.json",
+      "sha256": "9BF1AC8B6DF9FB525179BF72225B97193EFE06B4E99DAB11487046B0494D1D48",
+      "bytes": 199960
+    },
+    "pyphi": {
+      "path": "rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_pyphi_results.json",
+      "sha256": "B5CE43ABA8EB0592895C5DB9F5DD0914AB6114D54D3A9ED947FAC424938368B2",
+      "bytes": 29001
+    },
+    "gnw_principles": {
+      "path": "rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_gnw_principles_results.json",
+      "sha256": "1B4D002B08BF2A51370ABACD01F410AC381E991793A2A2569D0C98D07A786DE3",
+      "bytes": 112849
+    },
+    "qicn_candidate_noncircularity": {
+      "path": "rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_qicn_candidate_noncircularity.json",
+      "sha256": "9273BD6D1D0505929686DBEAE67BA02B49883004452AFA3C3C99793606EC48EC",
+      "bytes": 85074
+    }
+  },
+  "digest_input": {
+    "runner_id": "phase7-deterministic-run-all-v1",
+    "bank_sha256": "9BF1AC8B6DF9FB525179BF72225B97193EFE06B4E99DAB11487046B0494D1D48",
+    "pyphi_sha256": "B5CE43ABA8EB0592895C5DB9F5DD0914AB6114D54D3A9ED947FAC424938368B2",
+    "gnw_principles_sha256": "1B4D002B08BF2A51370ABACD01F410AC381E991793A2A2569D0C98D07A786DE3",
+    "qicn_candidate_noncircularity_sha256": "9273BD6D1D0505929686DBEAE67BA02B49883004452AFA3C3C99793606EC48EC"
+  },
+  "no_claims": [
+    "No QICN gap closure is certified.",
+    "No superiority, validation, external adjudication, consciousness, agency, or subjectivity claim is made.",
+    "The preliminary comparison is present only because the non-circularity test returned empirical support pending human review."
+  ]
+}

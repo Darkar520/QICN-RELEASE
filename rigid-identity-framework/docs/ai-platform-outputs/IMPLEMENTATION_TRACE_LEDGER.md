@@ -5006,3 +5006,130 @@ Residual risks:
 - QICN remains blocked on human review of the `I_int / atomic separator` gap, especially the non-circularity of connected-incidence assumptions.
 
 Status: `PHASE7_REAL_RIVAL_ARM_PROFILED_COMMIT_READY_NO_PUSH`.
+
+## 2026-06-15 - Phase 7 GNW principles and candidate QICN non-circularity test
+
+Agent/platform: Codex
+User request: Execute a one-shot Phase 7 continuation: robust reproducible environment, GNW detector by principles, candidate QICN instantiation over finite connected incidence, empirical non-circularity/leakage test, conditional preliminary comparison only if supported, full traceability, root gates, scoped commit, and no push.
+Operational objective: Build non-canonical AI-output infrastructure and evidence for review without canonizing the candidate instantiation or closing the `I_int / atomic separator` gap.
+
+Files read:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_neutral_systems_bank_v2.js`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_pyphi_wrapper.py`
+- `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_gwt_broadcast_model.js`
+- `C:\Users\irisp\.codex\attachments\1d1bd83e-87fe-4cc0-893a-53824f8003e0\pasted-text.txt`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance/verification reminders
+
+External source checks:
+- Dehaene, Kerszberg, and Changeux 1998 PNAS global workspace model surface: DOI `10.1073/pnas.95.24.14529`.
+- Dehaene and Changeux 2011 Neuron GNW/conscious processing review surface: DOI `10.1016/j.neuron.2011.03.018`.
+- Mashour, Roelfsema, Changeux, and Dehaene 2020 Neuron GNW hypothesis surface: DOI `10.1016/j.neuron.2020.01.026`.
+
+Files modified/created:
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_pyphi_wrapper.py` for explicit UTF-8 JSON input handling and clear I/O/parse errors.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/requirements.txt`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/REPRODUCIBILITY.md`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_gnw_principles_detector.js`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_bank_v2.json`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_pyphi_results.json`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_gnw_principles_results.json`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_qicn_candidate_noncircularity.json`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`.
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`.
+
+Tools and commands:
+
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` / `git status --short` | Establish and re-check dirty state | Initial branch `main...origin/main [ahead 3]`; final dirty state before ledger scoped to PyPhi wrapper and new phase7 AI-output files. |
+| `pip freeze --all` in `.venv-phase7` | Capture exact installed dependency versions | PASS; versions copied into `requirements.txt`. |
+| Web/DOI checks | Anchor GNW literature references | Located DOI surfaces for 1998, 2011, and 2020 GNW references. |
+| `node ...qicn_phase7_gnw_principles_detector.js --self-test` | GNW principles sanity | Initial FAIL because source-wide criterion was too strict for hub broadcast; corrected to sustained wide activation plus selectivity. Final PASS: broadcast star passes, dense AND/OR/NAND and random density controls fail. |
+| `node ...qicn_phase7_qicn_candidate_noncircularity.js --self-test` | Candidate QICN non-circularity/leakage self-test | PASS; verdict `NON_CIRCULARITY_EMPIRICALLY_SUPPORTED_PENDING_HUMAN_REVIEW`; accuracy/sensitivity/specificity 1.0 over 44 scored systems; 12 random systems unscored. |
+| `.venv-phase7\Scripts\python.exe ...qicn_phase7_pyphi_wrapper.py --self-test` | PyPhi wrapper sanity | PASS; product decoupled max Phi `0.0`; official PyPhi example Phi `2.3125`. |
+| `node ...phase7_run_all.js --self-test` | Deterministic reproducibility sanity | PASS; two full runs produced digest `DAD78BABEAD54F2F4FED292B651F40BDCF235E1A1FCDE3797BD8A22CAFEEE3F5`. |
+| `node ...phase7_run_all.js --out-dir ...results\latest` | Generate tracked latest results | PASS; wrote bank, PyPhi, GNW, QICN/non-circularity, and manifest JSON outputs. |
+| `node ...qicn_phase7_neutral_systems_bank_v2.js --self-test` | Bank v2 regression | PASS; 56 systems; digest `C1BDCB64E29B6DC3C7CB9673918DF582E1652CDE1C48FC49DCCA48F839C5A6CF`. |
+| `npm run verify` from `rigid-identity-framework/` | Package baseline verification | PASS; expected blockers preserved (`BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`). |
+| `npm run test:negative-controls` from `rigid-identity-framework/` | Extra negative-control verification | PASS; 6/6 cases, external support remains false. |
+| `npm run verify:preregistration-coverage` from `rigid-identity-framework/` | Extra preregistration coverage verification | PASS; 14/14 predictions covered. |
+| `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/` | Root canonical integrity gate | PASS; note `working_tree_not_clean_at_hardening_start` because scoped AI-output files were pending. |
+| `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/` | Root claim registry gate | PASS; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/` | Root canonical release gate | PASS. |
+
+Implementation summary:
+- Added a pinned Phase 7 reproducibility environment with explicit UTF-8/no-BOM JSON policy.
+- Added deterministic runner that writes reproducible result files and a run manifest with stable digest.
+- Added GNW-by-principles detector that requires non-linear ignition, reverberation, sustained global broadcast, and selectivity against density-only activation.
+- Corrected the prior GNW weakness: dense AND/OR/NAND now fail the sanity test instead of passing because of all-to-all density.
+- Added a candidate QICN finite connected-incidence instantiation with `candidate_qicn_instantiation_non_canonical`, `human_review: REQUIRED`, and `human_curated_status: not_reviewed`.
+- Added an empirical leakage/non-circularity test where the observable classifier receives only `n` and `transition_table`, not `id`, `family`, `edges`, or truth labels.
+- Added conditional preliminary n=3 comparison only because the non-circularity test returned empirical support pending human review.
+
+Observed results:
+- Deterministic run digest: `DAD78BABEAD54F2F4FED292B651F40BDCF235E1A1FCDE3797BD8A22CAFEEE3F5`.
+- GNW principles detector: 4/56 detected, exactly the four `broadcast_star_or` systems; dense AND/OR/NAND and random-density controls rejected.
+- Candidate QICN non-circularity: scored_count 44, unscored_count 12, TP 36, TN 8, FP 0, FN 0, accuracy 1.0, sensitivity 1.0, specificity 1.0.
+- Leakage audit: PASS; observable algorithm source scan found no forbidden tokens and classifier input keys were `n` and `transition_table`.
+- Random-density systems are explicitly unscored for atomicity recovery because their family label does not guarantee non-factorizability.
+- Preliminary n=3 toy comparison: 5 convergence/shared-support rows, 5 QICN-candidate-favoring rows, 4 all-fail/negative rows, 0 IIT-only rows, 0 GNW-only rows.
+
+Artifact counts and hashes:
+- `qicn_phase7_pyphi_wrapper.py`: 293 lines; SHA256 `451E67F5DC8A9BCF5BBFC38ABB17EBCD891076680BFD1664010329425E8F1D72`.
+- `requirements.txt`: 16 lines; SHA256 `43ABFBFF24CAB3860A395FF86E45B37CBDE2B90B0BA56BE0E73BC0EE00BE840D`.
+- `REPRODUCIBILITY.md`: 92 lines; SHA256 `78AE8A641388D93FE11B63FA33891D003CE9F28344B59249F793053B34729CB6`.
+- `phase7_run_all.js`: 158 lines; SHA256 `10D64A096EF7E9A1761DCC32440CC6A02F02EDF154EDC9C1BCC0C7595B92EAA8`.
+- `qicn_phase7_gnw_principles_detector.js`: 268 lines; SHA256 `46248149473EE4D7E55601CA0B4142FB4B1966223E3D7343A73B17F547902F8F`.
+- `qicn_phase7_qicn_candidate_noncircularity.js`: 357 lines; SHA256 `74DD9F35E92200E23A4CB46C475747E29DDCA6A82D506D6A9D9C2CF4A87914D2`.
+- `QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`: 259 lines; SHA256 `004D5D1CDA17823B810CB3DB6E0A078F1A86C5A2C8951C4E496F854F45EC26C5`.
+- `phase7_bank_v2.json`: 11307 lines; SHA256 `9BF1AC8B6DF9FB525179BF72225B97193EFE06B4E99DAB11487046B0494D1D48`.
+- `phase7_pyphi_results.json`: 1116 lines; SHA256 `B5CE43ABA8EB0592895C5DB9F5DD0914AB6114D54D3A9ED947FAC424938368B2`.
+- `phase7_gnw_principles_results.json`: 2545 lines; SHA256 `1B4D002B08BF2A51370ABACD01F410AC381E991793A2A2569D0C98D07A786DE3`.
+- `phase7_qicn_candidate_noncircularity.json`: 3339 lines; SHA256 `9273BD6D1D0505929686DBEAE67BA02B49883004452AFA3C3C99793606EC48EC`.
+- `phase7_run_manifest.json`: 43 lines; SHA256 `23D16DEF510A71828A17E1569F7D1612441AA675A2D06C71DD5564E975CEBA07`.
+- Line count uses `(Get-Content <path>).Count`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Verification:
+- Bank v2 self-test PASS.
+- PyPhi wrapper self-test PASS with real PyPhi 1.2.0.
+- GNW principles self-test PASS.
+- QICN candidate non-circularity self-test PASS.
+- Deterministic runner self-test PASS with equal digests.
+- Latest deterministic run PASS.
+- `npm run verify` PASS with scientific blockers preserved.
+- `npm run test:negative-controls` PASS.
+- `npm run verify:preregistration-coverage` PASS.
+- Root canonical integrity PASS.
+- Root claim registry PASS.
+- Root canonical release PASS.
+
+Regression checks:
+- Confirmed no `.tex`, PDF, registry, release, corpus, monolith, production source, package manifest, or package dependency file was modified.
+- Confirmed `.venv-phase7/` remains ignored and untracked.
+- Confirmed no Phi proxy was fabricated.
+- Confirmed no GNW-complete claim was made.
+- Confirmed no QICN gap closure, superiority, validation, external adjudication, consciousness, agency, subjectivity, or phenomenality claim was made.
+- Confirmed no `git add -A` was used before this ledger update.
+- Confirmed no push was attempted.
+
+Residual risks:
+- The finite connected-incidence condition may still be circular in a deeper formal sense even though this implementation did not leak construction labels.
+- Perfect atomicity recovery applies only to 44 scored designed controls; 12 random-density systems are unscored for atomicity truth.
+- The QICN candidate instantiation is non-canonical and remains subject to human review.
+- The GNW detector is principle-based but remains a toy finite Boolean operationalization, not the full neuronal GNW model.
+- PyPhi exact computation remains tractable here only for `n=3`; `n=4..6` remain `INTRACTABLE`.
+
+Status: `PHASE7_GNW_PRINCIPLES_AND_QICN_CANDIDATE_NONCIRCULARITY_READY_FOR_HUMAN_REVIEW_NO_PUSH`.

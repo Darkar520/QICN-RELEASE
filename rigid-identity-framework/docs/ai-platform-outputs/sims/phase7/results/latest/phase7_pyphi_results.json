@@ -1,0 +1,1116 @@
+{
+  "artifact": "qicn_phase7_pyphi_wrapper",
+  "max_n": 3,
+  "model_id": "phase7-pyphi-real-state-sweep-wrapper-v2",
+  "pyphi_available": true,
+  "pyphi_version": "1.2.0",
+  "results": [
+    {
+      "family": "product_decoupled_copy",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "p25": 0,
+        "p75": 0
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_product_decoupled_copy_seed7307"
+    },
+    {
+      "family": "chain_feedforward_copy",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "p25": 0,
+        "p75": 0
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_chain_feedforward_copy_seed7307"
+    },
+    {
+      "family": "cycle_ring_copy",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 1,
+        "mean": 1,
+        "median": 1,
+        "min": 1,
+        "p25": 1,
+        "p75": 1
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 1,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 1,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 1,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 1,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 1,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 1,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 1,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 1,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_cycle_ring_copy_seed7307"
+    },
+    {
+      "family": "broadcast_star_or",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.125,
+        "mean": 0.05203025,
+        "median": 0.04769,
+        "min": 0.005102,
+        "p25": 0.005102,
+        "p75": 0.090278
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0.125,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.090278,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.090278,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.090278,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.005102,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.005102,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.005102,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.005102,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_broadcast_star_or_seed7307"
+    },
+    {
+      "family": "all_to_all_majority",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.941965,
+        "mean": 0.33347837,
+        "median": 0.314732,
+        "min": 0.125,
+        "p25": 0.125,
+        "p75": 0.3377155
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0.406666,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.314732,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.314732,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.314732,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.941965,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_all_to_all_majority_seed7307"
+    },
+    {
+      "family": "all_to_all_and",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.15625,
+        "mean": 0.05161838,
+        "median": 0.038106,
+        "min": 0.028061,
+        "p25": 0.034758,
+        "p75": 0.041454
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0.028061,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.034758,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.034758,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.034758,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.15625,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_all_to_all_and_seed7307"
+    },
+    {
+      "family": "all_to_all_or",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.15625,
+        "mean": 0.05161838,
+        "median": 0.038106,
+        "min": 0.028061,
+        "p25": 0.034758,
+        "p75": 0.041454
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0.15625,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.034758,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.034758,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.034758,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.028061,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_all_to_all_or_seed7307"
+    },
+    {
+      "family": "all_to_all_nand",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.248354,
+        "mean": 0.086738,
+        "median": 0.051598,
+        "min": 0.041454,
+        "p25": 0.041454,
+        "p75": 0.085369
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0.15625,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.061742,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.061742,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.248354,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_all_to_all_nand_seed7307"
+    },
+    {
+      "family": "threshold_2_of_n",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.941965,
+        "mean": 0.33347837,
+        "median": 0.314732,
+        "min": 0.125,
+        "p25": 0.125,
+        "p75": 0.3377155
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0.406666,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.314732,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.314732,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.314732,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.941965,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_threshold_2_of_n_seed7307"
+    },
+    {
+      "family": "threshold_n_minus_1_of_n",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.941965,
+        "mean": 0.33347837,
+        "median": 0.314732,
+        "min": 0.125,
+        "p25": 0.125,
+        "p75": 0.3377155
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0.406666,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.314732,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.314732,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.314732,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.941965,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_threshold_n_minus_1_of_n_seed7307"
+    },
+    {
+      "family": "mixed_node_rules",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.15625,
+        "mean": 0.06436037,
+        "median": 0.041454,
+        "min": 0.034758,
+        "p25": 0.03978,
+        "p75": 0.07902925
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0.041454,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.034758,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.034758,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.075681,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.15625,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.041454,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.089074,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_mixed_node_rules_seed7307"
+    },
+    {
+      "family": "random_density_030_parity",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "p25": 0,
+        "p75": 0
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_random_density_030_parity_seed7307"
+    },
+    {
+      "family": "random_density_050_majority",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "p25": 0,
+        "p75": 0
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_random_density_050_majority_seed7307"
+    },
+    {
+      "family": "random_density_050_mixed",
+      "n": 3,
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.214286,
+        "mean": 0.10255538,
+        "median": 0.107639,
+        "min": 0.005102,
+        "p25": 0.05335925,
+        "p75": 0.1403075
+      },
+      "state_count": 8,
+      "state_results": [
+        {
+          "phi": 0.090278,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.005102,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.069445,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.005102,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.214286,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.125,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.18623,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "bnv2_n3_random_density_050_mixed_seed7307"
+    },
+    {
+      "family": "product_decoupled_copy",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_product_decoupled_copy_seed7307"
+    },
+    {
+      "family": "chain_feedforward_copy",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_chain_feedforward_copy_seed7307"
+    },
+    {
+      "family": "cycle_ring_copy",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_cycle_ring_copy_seed7307"
+    },
+    {
+      "family": "broadcast_star_or",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_broadcast_star_or_seed7307"
+    },
+    {
+      "family": "all_to_all_majority",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_all_to_all_majority_seed7307"
+    },
+    {
+      "family": "all_to_all_and",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_all_to_all_and_seed7307"
+    },
+    {
+      "family": "all_to_all_or",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_all_to_all_or_seed7307"
+    },
+    {
+      "family": "all_to_all_nand",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_all_to_all_nand_seed7307"
+    },
+    {
+      "family": "threshold_2_of_n",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_threshold_2_of_n_seed7307"
+    },
+    {
+      "family": "threshold_n_minus_1_of_n",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_threshold_n_minus_1_of_n_seed7307"
+    },
+    {
+      "family": "mixed_node_rules",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_mixed_node_rules_seed7307"
+    },
+    {
+      "family": "random_density_030_parity",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_random_density_030_parity_seed7307"
+    },
+    {
+      "family": "random_density_050_majority",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_random_density_050_majority_seed7307"
+    },
+    {
+      "family": "random_density_050_mixed",
+      "n": 4,
+      "reason": "n=4 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n4_random_density_050_mixed_seed7307"
+    },
+    {
+      "family": "product_decoupled_copy",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_product_decoupled_copy_seed7307"
+    },
+    {
+      "family": "chain_feedforward_copy",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_chain_feedforward_copy_seed7307"
+    },
+    {
+      "family": "cycle_ring_copy",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_cycle_ring_copy_seed7307"
+    },
+    {
+      "family": "broadcast_star_or",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_broadcast_star_or_seed7307"
+    },
+    {
+      "family": "all_to_all_majority",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_all_to_all_majority_seed7307"
+    },
+    {
+      "family": "all_to_all_and",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_all_to_all_and_seed7307"
+    },
+    {
+      "family": "all_to_all_or",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_all_to_all_or_seed7307"
+    },
+    {
+      "family": "all_to_all_nand",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_all_to_all_nand_seed7307"
+    },
+    {
+      "family": "threshold_2_of_n",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_threshold_2_of_n_seed7307"
+    },
+    {
+      "family": "threshold_n_minus_1_of_n",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_threshold_n_minus_1_of_n_seed7307"
+    },
+    {
+      "family": "mixed_node_rules",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_mixed_node_rules_seed7307"
+    },
+    {
+      "family": "random_density_030_parity",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_random_density_030_parity_seed7307"
+    },
+    {
+      "family": "random_density_050_majority",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_random_density_050_majority_seed7307"
+    },
+    {
+      "family": "random_density_050_mixed",
+      "n": 5,
+      "reason": "n=5 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n5_random_density_050_mixed_seed7307"
+    },
+    {
+      "family": "product_decoupled_copy",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_product_decoupled_copy_seed7307"
+    },
+    {
+      "family": "chain_feedforward_copy",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_chain_feedforward_copy_seed7307"
+    },
+    {
+      "family": "cycle_ring_copy",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_cycle_ring_copy_seed7307"
+    },
+    {
+      "family": "broadcast_star_or",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_broadcast_star_or_seed7307"
+    },
+    {
+      "family": "all_to_all_majority",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_all_to_all_majority_seed7307"
+    },
+    {
+      "family": "all_to_all_and",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_all_to_all_and_seed7307"
+    },
+    {
+      "family": "all_to_all_or",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_all_to_all_or_seed7307"
+    },
+    {
+      "family": "all_to_all_nand",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_all_to_all_nand_seed7307"
+    },
+    {
+      "family": "threshold_2_of_n",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_threshold_2_of_n_seed7307"
+    },
+    {
+      "family": "threshold_n_minus_1_of_n",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_threshold_n_minus_1_of_n_seed7307"
+    },
+    {
+      "family": "mixed_node_rules",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_mixed_node_rules_seed7307"
+    },
+    {
+      "family": "random_density_030_parity",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_random_density_030_parity_seed7307"
+    },
+    {
+      "family": "random_density_050_majority",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_random_density_050_majority_seed7307"
+    },
+    {
+      "family": "random_density_050_mixed",
+      "n": 6,
+      "reason": "n=6 exceeds observed/declared max_n=3 for exact PyPhi state sweep in this phase.",
+      "status": "INTRACTABLE",
+      "system_id": "bnv2_n6_random_density_050_mixed_seed7307"
+    }
+  ],
+  "status": "PYPHI_AVAILABLE_REAL_STATE_SWEEP_ATTEMPTED"
+}

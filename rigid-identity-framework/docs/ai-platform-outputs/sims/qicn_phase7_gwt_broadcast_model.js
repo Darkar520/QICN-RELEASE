@@ -2,6 +2,7 @@
 "use strict";
 
 const { buildBank } = require("./qicn_phase7_neutral_systems_bank.js");
+const { buildBank: buildBankV2 } = require("./qicn_phase7_neutral_systems_bank_v2.js");
 
 const MODEL_ID = "phase7-gwt-broadcast-ignition-detector-v1";
 
@@ -121,12 +122,13 @@ function main() {
     console.log(JSON.stringify(result, null, 2));
     process.exit(result.status === "PASS" ? 0 : 1);
   }
-  const bank = buildBank();
+  const bank = process.argv.includes("--bank-v2") ? buildBankV2() : buildBank();
   const result = bank.systems.map(evaluateGwt);
   console.log(JSON.stringify({
     artifact: "qicn_phase7_gwt_broadcast_model_results",
     status: "GWT_MODEL_EXECUTED_NO_QICN_COMPARISON",
     model_id: MODEL_ID,
+    bank_version: bank.version,
     results: result,
   }, null, 2));
 }

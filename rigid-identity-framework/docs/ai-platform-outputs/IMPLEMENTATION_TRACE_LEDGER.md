@@ -4907,3 +4907,102 @@ Residual risks:
 - The QICN branch remains blocked on human review of `I_int / atomic separator`, especially non-circular finite connected incidence.
 
 Status: `PHASE7_GENUINE_PLAN_AND_RIVAL_INFRA_READY_FOR_HUMAN_REVIEW_NO_PUSH`.
+
+## 2026-06-15 - Phase 7 real rival profiles over neutral bank v2
+
+Agent/platform: Codex
+User request: Continue Phase 7 by completing only the real-rivals arm. Install pinned PyPhi, extend the neutral bank as v2, compute PyPhi over state distributions rather than a single zero state, run the GWT broadcast arm on bank v2, keep QICN blocked on human review of the `I_int / atomic separator` gap, update traceability, run gates, commit scoped, and do not push.
+Operational objective: Produce rival-side profiles only. No QICN instantiation, no QICN-vs-rival comparison, no canon/registry/release/paper/production edits.
+
+Files read:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_ROADMAP_PHASE7_GENUINE_PLAN.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_GAP_I_INT_ATOMIC_SEPARATOR_MODEL_CARD.md`
+- `C:\Users\irisp\.codex\attachments\090acde3-a6bb-4d14-b998-ae12c56f650b\pasted-text.txt`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance/verification reminders
+
+Files modified/created:
+- Modified `.gitignore` to ignore `.venv-phase7/`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_neutral_systems_bank_v2.js`.
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_pyphi_wrapper.py`.
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_gwt_broadcast_model.js`.
+- Created `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md`.
+- Modified `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`.
+
+Tools and commands:
+
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` / `git status --short` | Establish and re-check dirty state | Initial branch `main...origin/main [ahead 2]`, clean before this continuation. Dirty state after work is scoped to `.gitignore` plus AI-output sims/report/ledger. |
+| Bundled Python `-m venv .venv-phase7` | Create isolated local dependency environment | PASS; `.venv-phase7/` created under repo root and ignored. |
+| `.venv-phase7\Scripts\python.exe -m pip install --disable-pip-version-check pyphi==1.2.0` | Install pinned PyPhi | PASS; installed `pyphi==1.2.0` and dependencies in the ignored venv. |
+| `.venv-phase7\Scripts\python.exe -m pip show pyphi` | Verify package version/surface | PASS; version `1.2.0`, GPL v3 package surface. |
+| PyPhi import probe with compatibility shim | Check runtime import under Python 3.12 | PASS after shim for legacy `collections` ABC aliases. |
+| `node ...qicn_phase7_neutral_systems_bank_v2.js --self-test` | Bank v2 deterministic self-test | PASS; 56 systems; digest `C1BDCB64E29B6DC3C7CB9673918DF582E1652CDE1C48FC49DCCA48F839C5A6CF`. |
+| `.venv-phase7\Scripts\python.exe ...qicn_phase7_pyphi_wrapper.py --self-test` | PyPhi wrapper self-test | PASS; product decoupled max Phi `0.0`, official PyPhi `basic_subsystem` Phi `2.3125`. |
+| `node ...qicn_phase7_gwt_broadcast_model.js --self-test` | GWT broadcast self-test on original bank | PASS; product decoupled negative, broadcast star positive. |
+| `node ...qicn_phase7_gwt_broadcast_model.js --bank-v2` | GWT/GNW minimal detector over bank v2 | PASS; executed 56 systems, no QICN comparison. |
+| `node ...qicn_phase7_neutral_systems_bank_v2.js --emit-json | .venv-phase7\Scripts\python.exe ...qicn_phase7_pyphi_wrapper.py --max-n 3` | Exact PyPhi state sweep over bank v2 | PASS; 14 `n=3` systems / 112 states computed; `n=4..6` marked `INTRACTABLE` by declared policy. |
+| `npm run verify` from `rigid-identity-framework/` | Package baseline verification | PASS; expected blockers preserved (`BLOCKED_MULTIPLE_GATES`, `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`). |
+| `node scripts\verify-canonical-integrity.cjs` from `QICN-FRAMEWORK/` | Root canonical integrity gate | PASS; note `working_tree_not_clean_at_hardening_start` because scoped AI-output files were pending. |
+| `node scripts\verify-claim-registry.cjs` from `QICN-FRAMEWORK/` | Root claim registry gate | PASS; 17 entries, 17 unique ids. |
+| `node scripts\verify-canonical-release.cjs` from `QICN-FRAMEWORK/` | Root canonical release gate | PASS. |
+
+Implementation summary:
+- Added neutral bank v2 with 14 Boolean families over `n=3..6`, deterministic seed `7307`, and explicit QICN blocked status on every system.
+- Corrected the PyPhi wrapper from single zero-state computation to full state-distribution sweeps for tractable systems.
+- Added an explicit connectivity matrix from each bank system's edges so PyPhi does not silently assume complete connectivity when the system is product/feedforward/sparse.
+- Added a narrow Python 3.12 compatibility shim for PyPhi 1.2.0 without modifying the installed package.
+- Extended the GWT broadcast detector with `--bank-v2` while preserving its original self-test behavior.
+- Created a rival-profile report with PyPhi distributions, GWT compact scores, computational ceiling, and strict no-conclusions.
+
+Observed rival results:
+- PyPhi product negative control: `product_decoupled_copy`, `n=3`, all 8 states Phi `0.0`.
+- PyPhi dense candidate: `all_to_all_majority`, `n=3`, max Phi `0.941965`, mean Phi `0.33347837`.
+- PyPhi exact ceiling in this phase: full state sweep at `n=3`; `n=4..6` marked `INTRACTABLE`.
+- GWT product controls: not detected for all `n=3..6`.
+- GWT broadcast-star controls: detected for all `n=3..6`.
+- GWT detector also detects dense OR/NAND and some mixed systems; this is reported as a limitation of the minimal Boolean broadcast detector, not a rival adjudication result.
+
+Artifact counts and hashes:
+- `.gitignore`: 95 lines; SHA256 `ED4AFFBC11959D2410154AEB0BBF5D3A49DFE43A031F451ABF92113D58FAA1D5`.
+- `qicn_phase7_neutral_systems_bank_v2.js`: 319 lines; SHA256 `86D2B48FE1912D8CA9D080CA1DF38AFDFE68EE42D91BAD0DDA302F7789C3122D`.
+- `qicn_phase7_pyphi_wrapper.py`: 282 lines; SHA256 `384A88E2EA790F3D54E1C3B8438F78C92D418AD112B1D6CAE003D95DF057AEAA`.
+- `qicn_phase7_gwt_broadcast_model.js`: 142 lines; SHA256 `D365E4A5482327D3815654387FFB2C98FDA80F2E6A5A06DE5729C5F8604CEE5F`.
+- `QICN_PHASE7_REAL_RIVAL_PROFILES.md`: 202 lines; SHA256 `C26199C2DD9B3D8AFCE2272EAD38E45D63B50E66629946AC5927FF1945052E1B`.
+- Line count uses `(Get-Content <path>).Count`.
+- Ledger final hash is intentionally not self-embedded because writing it here would change the ledger hash.
+
+Verification:
+- Bank v2 self-test PASS.
+- PyPhi wrapper self-test PASS with real PyPhi 1.2.0.
+- GWT broadcast self-test PASS.
+- PyPhi state sweep PASS for `n=3`, `n=4..6` declared `INTRACTABLE`.
+- GWT bank-v2 run PASS.
+- `npm run verify` PASS with scientific blockers preserved.
+- Root canonical integrity PASS.
+- Root claim registry PASS.
+- Root canonical release PASS.
+
+Regression checks:
+- Confirmed no `.tex`, PDF, registry, release, corpus, monolith, production source, package manifest, or package dependency file was modified.
+- Confirmed no QICN invariant was instantiated.
+- Confirmed no QICN-vs-IIT/GWT/HOT comparison was run.
+- Confirmed no Phi proxy was fabricated.
+- Confirmed no `git add -A` was used before this ledger update.
+- Confirmed no push was attempted.
+
+Residual risks:
+- PyPhi exact computation becomes expensive immediately beyond `n=3`; this phase reports `n=4..6` as `INTRACTABLE`.
+- The GWT arm is a minimal broadcast/ignition detector, not a full GNW implementation.
+- HOT remains unimplemented in this continuation.
+- QICN remains blocked on human review of the `I_int / atomic separator` gap, especially the non-circularity of connected-incidence assumptions.
+
+Status: `PHASE7_REAL_RIVAL_ARM_PROFILED_COMMIT_READY_NO_PUSH`.

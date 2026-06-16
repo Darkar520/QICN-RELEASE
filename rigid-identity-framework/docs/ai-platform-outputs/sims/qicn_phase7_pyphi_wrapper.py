@@ -19,8 +19,10 @@ import sys
 from pathlib import Path
 
 
-MODEL_ID = "phase7-pyphi-real-state-sweep-wrapper-v2"
+MODEL_ID = "phase7-pyphi-real-state-sweep-wrapper-v3"
 DEFAULT_MAX_N = 3
+PHI_DEGENERATE = "PHI_DEGENERATE_PERMUTATION_DYNAMICS"
+PHI_NONDEGENERATE = "PHI_NONDEGENERATE_OR_INCONCLUSIVE"
 
 
 def install_py312_compatibility_shim() -> None:
@@ -39,7 +41,17 @@ def expected_interface() -> dict:
         "input": "JSON emitted by qicn_phase7_neutral_systems_bank_v2.js --emit-json",
         "required_system_fields": ["id", "n", "transition_table"],
         "transition_table_row": {"state": "binary string length n", "next": "binary string length n"},
-        "output_fields": ["system_id", "n", "phi_distribution", "state_results", "status"],
+        "output_fields": [
+            "system_id",
+            "n",
+            "phi_distribution",
+            "state_results",
+            "phi_constant",
+            "state_map_is_permutation",
+            "has_self_loops",
+            "phi_degeneracy",
+            "status",
+        ],
         "intractable_policy": f"n > max_n defaults to INTRACTABLE; default max_n={DEFAULT_MAX_N}",
         "no_proxy_policy": "No phi-like substitute is computed when PyPhi is absent.",
     }
@@ -135,6 +147,60 @@ def summarize(values: list[float]) -> dict:
     }
 
 
+def expected_states(n: int) -> list[str]:
+    return [format(index, f"0{n}b") for index in range(2 ** n)]
+
+
+def transition_map(system: dict) -> dict[str, str]:
+    return {str(row["state"]): str(row["next"]) for row in system["transition_table"]}
+
+
+def state_map_is_permutation(system: dict) -> bool:
+    n = int(system["n"])
+    expected = expected_states(n)
+    mapping = transition_map(system)
+    if sorted(mapping.keys()) != expected:
+        return False
+    return sorted(mapping.values()) == expected
+
+
+def node_self_depends(system: dict, node: int) -> bool:
+    n = int(system["n"])
+    mapping = transition_map(system)
+    for state in expected_states(n):
+        flipped = list(state)
+        flipped[node] = "1" if state[node] == "0" else "0"
+        other = "".join(flipped)
+        if other not in mapping or state not in mapping:
+            return False
+        if mapping[state][node] != mapping[other][node]:
+            return True
+    return False
+
+
+def has_self_loops(system: dict) -> bool:
+    return any(node_self_depends(system, node) for node in range(int(system["n"])))
+
+
+def annotate_phi_degeneracy(system: dict, phi_distribution: dict) -> dict:
+    min_phi = phi_distribution.get("min")
+    max_phi = phi_distribution.get("max")
+    phi_constant = (
+        min_phi is not None
+        and max_phi is not None
+        and abs(float(max_phi) - float(min_phi)) <= 1e-12
+    )
+    permutation = state_map_is_permutation(system)
+    self_loops = has_self_loops(system)
+    degeneracy = PHI_DEGENERATE if phi_constant and permutation and not self_loops else PHI_NONDEGENERATE
+    return {
+        "phi_constant": phi_constant,
+        "state_map_is_permutation": permutation,
+        "has_self_loops": self_loops,
+        "phi_degeneracy": degeneracy,
+    }
+
+
 def compute_phi_for_system(system: dict, pyphi, max_n: int) -> dict:
     if system["n"] > max_n:
         return {
@@ -159,13 +225,15 @@ def compute_phi_for_system(system: dict, pyphi, max_n: int) -> dict:
                 "status": "PYPHI_COMPUTED",
             })
         phis = [result["phi"] for result in state_results]
+        phi_distribution = summarize(phis)
         return {
             "system_id": system["id"],
             "family": system.get("family"),
             "n": system["n"],
             "state_count": len(state_results),
-            "phi_distribution": summarize(phis),
+            "phi_distribution": phi_distribution,
             "state_results": state_results,
+            **annotate_phi_degeneracy(system, phi_distribution),
             "status": "PYPHI_STATE_SWEEP_COMPUTED",
         }
     except Exception as exc:  # pragma: no cover - depends on external PyPhi API/runtime.
@@ -215,19 +283,45 @@ def self_test() -> dict:
         }
 
     pyphi = import_configured_pyphi()
+    def transition_table(n: int, next_fn) -> list[dict[str, str]]:
+        rows = []
+        for state in expected_states(n):
+            rows.append({"state": state, "next": next_fn(state)})
+        return rows
+
     product = {
-        "id": "selftest_product_decoupled_n2",
+        "id": "selftest_product_decoupled_n3",
         "family": "product_decoupled_copy",
-        "n": 2,
-        "edges": [[0, 0], [1, 1]],
-        "transition_table": [
-            {"state": "00", "next": "00"},
-            {"state": "01", "next": "01"},
-            {"state": "10", "next": "10"},
-            {"state": "11", "next": "11"},
-        ],
+        "n": 3,
+        "edges": [[0, 0], [1, 1], [2, 2]],
+        "transition_table": transition_table(3, lambda state: state),
     }
-    product_result = compute_phi_for_system(product, pyphi, max_n=2)
+    cycle_ring = {
+        "id": "selftest_cycle_ring_copy_n3",
+        "family": "cycle_ring_copy",
+        "n": 3,
+        "edges": [[0, 1], [1, 2], [2, 0]],
+        "transition_table": transition_table(3, lambda state: "".join(state[(i - 1 + 3) % 3] for i in range(3))),
+    }
+
+    def bank_v2_all_to_all_majority_next(state: str) -> str:
+        bits = [int(bit) for bit in state]
+        next_bits = []
+        for dst in range(3):
+            with_self = bits + [bits[dst]]
+            next_bits.append("1" if sum(with_self) >= ((len(with_self) + 1) // 2) else "0")
+        return "".join(next_bits)
+
+    all_to_all_majority = {
+        "id": "selftest_all_to_all_majority_n3",
+        "family": "all_to_all_majority",
+        "n": 3,
+        "edges": [[src, dst] for src in range(3) for dst in range(3)],
+        "transition_table": transition_table(3, bank_v2_all_to_all_majority_next),
+    }
+    product_result = compute_phi_for_system(product, pyphi, max_n=3)
+    cycle_result = compute_phi_for_system(cycle_ring, pyphi, max_n=3)
+    majority_result = compute_phi_for_system(all_to_all_majority, pyphi, max_n=3)
     official_positive = {
         "status": "NOT_COMPUTED",
         "source": "pyphi.examples.basic_subsystem",
@@ -251,11 +345,24 @@ def self_test() -> dict:
         }
     failures = []
     product_max = (product_result.get("phi_distribution") or {}).get("max")
+    cycle_distribution = cycle_result.get("phi_distribution") or {}
     official_phi = official_positive.get("phi")
     if product_result["status"] != "PYPHI_STATE_SWEEP_COMPUTED":
         failures.append("product self-test did not compute")
+    if cycle_result["status"] != "PYPHI_STATE_SWEEP_COMPUTED":
+        failures.append("cycle-ring self-test did not compute")
+    if majority_result["status"] != "PYPHI_STATE_SWEEP_COMPUTED":
+        failures.append("all-to-all-majority self-test did not compute")
     if product_max is not None and product_max > 1e-6:
         failures.append(f"product self-test max phi expected near zero, got {product_max}")
+    if product_result.get("phi_degeneracy") != PHI_NONDEGENERATE:
+        failures.append(f"product self-test expected {PHI_NONDEGENERATE}, got {product_result.get('phi_degeneracy')}")
+    if cycle_result.get("phi_degeneracy") != PHI_DEGENERATE:
+        failures.append(f"cycle-ring self-test expected {PHI_DEGENERATE}, got {cycle_result.get('phi_degeneracy')}")
+    if cycle_distribution.get("min") != cycle_distribution.get("max"):
+        failures.append(f"cycle-ring self-test expected constant phi, got {cycle_distribution}")
+    if majority_result.get("phi_degeneracy") != PHI_NONDEGENERATE:
+        failures.append(f"all-to-all-majority self-test expected {PHI_NONDEGENERATE}, got {majority_result.get('phi_degeneracy')}")
     if official_phi is None or official_phi <= 0:
         failures.append(f"official PyPhi positive example expected positive phi, got {official_phi}")
     return {
@@ -268,6 +375,8 @@ def self_test() -> dict:
         "no_phi_proxy_computed": True,
         "sanity": {
             "product_decoupled": product_result,
+            "cycle_ring_copy": cycle_result,
+            "all_to_all_majority": majority_result,
             "official_positive_example": official_positive,
         },
         "failures": failures,

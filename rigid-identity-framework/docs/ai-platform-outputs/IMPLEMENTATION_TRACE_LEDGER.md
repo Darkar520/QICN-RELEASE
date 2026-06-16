@@ -5559,3 +5559,141 @@ Next step:
 - Stage explicitly: `QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`, this ledger, `phase7_run_all.js`, `REPRODUCIBILITY.md`, and the two target `results/latest` JSON files.
 - Commit locally with message `docs: phase7 results-latest hygiene + human-reviewer gap package index`.
 - Do not push.
+
+## 2026-06-16 — Phase 7 Phi degeneracy annotation, no clean positive control
+
+Task:
+- Annotate the IIT/PyPhi evidence surface for the `cycle_ring_copy n=3` Phi
+  degeneracy without changing the QICN candidate verdict or activating the
+  preliminary comparison.
+- Scope restricted to AI-output/report artifacts under
+  `docs/ai-platform-outputs/`; no canon, registry, release, `.tex`, monolith,
+  production code, or `package.json` changes.
+- No `git add -A`; no push.
+
+Files read/consulted:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `INSTRUCCIONES.md`
+- `ROADMAP.md`
+- `docs/CLAIM_STATUS_POLICY.md`
+- `docs/ai-platform-outputs/sims/qicn_phase7_pyphi_wrapper.py`
+- `docs/ai-platform-outputs/sims/qicn_phase7_neutral_systems_bank_v2.js`
+- `docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_pyphi_results.json`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json`
+
+Files modified:
+- `docs/ai-platform-outputs/sims/qicn_phase7_pyphi_wrapper.py`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_pyphi_results.json`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json`
+- This ledger.
+
+Detector implemented:
+- Added wrapper output fields for systems with computed Phi:
+  - `phi_constant`;
+  - `state_map_is_permutation`;
+  - `has_self_loops`;
+  - `phi_degeneracy`.
+- The detector is computed from `n` plus raw `transition_table` only.
+- It does not read `family`, `edges`, `id`, or construction labels.
+- `has_self_loops` means node-level self-dependence in the transition table:
+  node `i` has a self-loop iff flipping current bit `i` while holding all
+  other bits fixed can change next bit `i`.
+- `phi_degeneracy` is `PHI_DEGENERATE_PERMUTATION_DYNAMICS` iff
+  `phi_constant && state_map_is_permutation && !has_self_loops`; otherwise it
+  is `PHI_NONDEGENERATE_OR_INCONCLUSIVE`.
+
+Report annotation:
+- `QICN_PHASE7_REAL_RIVAL_PROFILES.md` now adds a `phi_degeneracy` column to
+  the PyPhi `n=3` table.
+- `cycle_ring_copy n=3` is marked
+  `PHI_DEGENERATE_PERMUTATION_DYNAMICS`.
+- The report explicitly states that `cycle_ring_copy n=3` gives Phi `1.0` by
+  degenerate permutation dynamics without self-loops and is not evidence of
+  integration.
+- The report explicitly states the limitation: bank v2 has no clean positive
+  Phi control; the only high nontrivial Phi comes from a degenerate system or
+  from density-designed controls, so Phi around `0.94` is not interpretable as
+  integration without a baseline.
+
+Commands and results:
+
+| Command | Purpose | Result |
+|---|---|---|
+| `..\.venv-phase7\Scripts\python.exe docs\ai-platform-outputs\sims\qicn_phase7_pyphi_wrapper.py --self-test` | PyPhi wrapper self-test with degeneration controls | PASS; product max Phi `0.0` and nondegenerate/inconclusive; `cycle_ring_copy n=3` constant Phi `1.0`, permutation, no self-dependence, `PHI_DEGENERATE_PERMUTATION_DYNAMICS`; all-to-all majority max Phi `0.941965`, `PHI_NONDEGENERATE_OR_INCONCLUSIVE`. |
+| `node docs\ai-platform-outputs\sims\phase7\phase7_run_all.js --out-dir docs\ai-platform-outputs\sims\phase7\results\latest` | Regenerate latest Phase 7 snapshot | PASS; deterministic digest `FA36157AA674E1D2B5DF68CFD048136F8564D99E31EADBEBCDD1959D8961D41A`; PyPhi SHA changed as expected; QICN candidate SHA stayed `6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E`. |
+| `node docs\ai-platform-outputs\sims\phase7\phase7_run_all.js --self-test` | Double-run deterministic regression | PASS; first and second digest both `FA36157AA674E1D2B5DF68CFD048136F8564D99E31EADBEBCDD1959D8961D41A`. |
+| `node docs\ai-platform-outputs\sims\qicn_phase7_neutral_systems_bank_v2.js --self-test` | Bank v2 self-test | PASS; 56 systems; bank digest `C1BDCB64E29B6DC3C7CB9673918DF582E1652CDE1C48FC49DCCA48F839C5A6CF`. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_atomicity_ground_truth.js --self-test` | Atomicity truth self-test | PASS; truth source contract audit PASS. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_qicn_candidate_noncircularity.js --self-test` | QICN candidate self-test | PASS; verdict remains `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; TP 42, TN 8, FP 0, FN 6, accuracy `0.8929`. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_gnw_principles_detector.js --self-test` | GNW principles detector self-test | PASS. |
+| JSON check of `results/latest/phase7_qicn_candidate_noncircularity.json` | Confirm no comparison/verdict drift | `status=CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; `preliminary_comparison.status=NOT_RUN`; accuracy `0.8929`, sensitivity `0.875`, specificity `1`. |
+| `npm run verify` from `rigid-identity-framework/` | Package verification with raw scientific verdict | Exit code 0; gates ran; corpus is not externally certified. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Interpretation note:
+- `exit code 0 = los gates corrieron; NO = corpus certificado. external_support_certified=false.`
+
+Pre-ledger artifact counts and hashes:
+- `qicn_phase7_pyphi_wrapper.py`: 402 lines; SHA256
+  `2563E23E4F111059B1B92A56212A0B99FDFFFDD175A9CAA759F82A5F713F0771`.
+- `QICN_PHASE7_REAL_RIVAL_PROFILES.md`: 223 lines; SHA256
+  `6A0858FFB3AB4286D58A25449F35FDC4F93249E04A406432D4216DE3C4F42D5C`.
+- `phase7_pyphi_results.json`: 1172 lines; SHA256
+  `03417C3BB3F8120DC0517848DAEEF92E383744D3F337B0A134552C890FEAA0A5`.
+- `phase7_run_manifest.json`: 43 lines; SHA256
+  `5672C6D2668359CE9E1D53613028BFDB4E5531C75D2F16F075AF9AB37A1B8D5A`.
+- `IMPLEMENTATION_TRACE_LEDGER.md` before this entry: 5561 lines; SHA256
+  `8EA75F90C2315990B9715DFEA1FAC47B8EF085CE08E018A3EB53E83D004A1D61`.
+
+Pre-ledger `git status --porcelain`:
+
+```text
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_pyphi_results.json
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/qicn_phase7_pyphi_wrapper.py
+```
+
+Regression checks:
+- No QICN verdict was changed.
+- Preliminary comparison remains `NOT_RUN`.
+- No QICN-vs-rival comparison was run.
+- No IIT validation, integration validation, QICN validation, external
+  validation, consciousness, identity, subjectivity, agency, or superiority
+  claim is made.
+- The Phi detector annotates an instrumentation limitation; it does not repair
+  or close any QICN gap.
+- No `.tex`, BaseCore, registry, release, monolith, production package, or
+  `package.json` file was modified.
+- No `git add -A` was used before this ledger update.
+- No push was attempted.
+
+Residual risks:
+- This detector flags one narrow degeneracy class: constant Phi over a
+  bijective transition map with no node self-dependence. Other PyPhi artifacts
+  in tiny Boolean systems may remain unflagged.
+- The `PHI_NONDEGENERATE_OR_INCONCLUSIVE` state is deliberately conservative;
+  it does not assert true integration.
+- Bank v2 still lacks a clean positive Phi control and still needs a baseline
+  design before any interpretive use of high Phi values.
+
+Next step:
+- Stage explicitly only the wrapper, rival profile report, two regenerated
+  `results/latest` JSON files, and this ledger.
+- Commit locally with message
+  `docs: annotate phi degeneracy (no clean positive control) in phase7 IIT profiles`.
+- Do not push.

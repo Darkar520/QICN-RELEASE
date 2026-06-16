@@ -4,6 +4,8 @@ Status: `PHASE7_REAL_RIVAL_ARM_PROFILED_NO_QICN_COMPARISON`
 
 Date: 2026-06-15
 
+Phi degeneracy annotation: 2026-06-16
+
 Human review: `REQUIRED`
 
 Human curated status: `not_reviewed`
@@ -36,6 +38,10 @@ The only completed operation is rival-side profiling:
   before import.
 - Wrapper policy: no homemade Phi proxy. If PyPhi is absent, output is
   `EXTERNAL_DEPENDENCY_PENDING`; if present, exact PyPhi is attempted.
+- Degeneracy annotation policy: for systems with computed Phi, the wrapper
+  derives `phi_constant`, `state_map_is_permutation`, and `has_self_loops` from
+  `n` plus the raw `transition_table`. It does not read `family`, `edges`, or
+  system identifiers for this detector.
 - PyPhi configuration: single-core, progress bars off, filesystem cache under
   `.venv-phase7/pyphi_cache`, subsystem state validation disabled to sweep all
   deterministic Boolean states requested by this phase.
@@ -92,33 +98,49 @@ Self-test sanity:
 
 | case | result |
 |---|---:|
-| product decoupled n=2, all states | max Phi `0.0` |
+| product decoupled n=3, all states | max Phi `0.0`; `PHI_NONDEGENERATE_OR_INCONCLUSIVE` |
+| cycle ring copy n=3, all states | constant Phi `1.0`; `PHI_DEGENERATE_PERMUTATION_DYNAMICS` |
+| all-to-all majority n=3, all states | max Phi `0.941965`; `PHI_NONDEGENERATE_OR_INCONCLUSIVE` |
 | official PyPhi `basic_subsystem`, state `(1,0,0)` | Phi `2.3125` |
 
 PyPhi bank-v2 distributions for `n=3`:
 
-| family | states | min | p25 | median | p75 | max | mean | status |
-|---|---:|---:|---:|---:|---:|---:|---:|---|
-| `product_decoupled_copy` | 8 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `chain_feedforward_copy` | 8 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `cycle_ring_copy` | 8 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `broadcast_star_or` | 8 | 0.005102 | 0.005102 | 0.04769 | 0.090278 | 0.125 | 0.05203025 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `all_to_all_majority` | 8 | 0.125 | 0.125 | 0.314732 | 0.3377155 | 0.941965 | 0.33347837 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `all_to_all_and` | 8 | 0.028061 | 0.034758 | 0.038106 | 0.041454 | 0.15625 | 0.05161838 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `all_to_all_or` | 8 | 0.028061 | 0.034758 | 0.038106 | 0.041454 | 0.15625 | 0.05161838 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `all_to_all_nand` | 8 | 0.041454 | 0.041454 | 0.051598 | 0.085369 | 0.248354 | 0.086738 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `threshold_2_of_n` | 8 | 0.125 | 0.125 | 0.314732 | 0.3377155 | 0.941965 | 0.33347837 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `threshold_n_minus_1_of_n` | 8 | 0.125 | 0.125 | 0.314732 | 0.3377155 | 0.941965 | 0.33347837 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `mixed_node_rules` | 8 | 0.034758 | 0.03978 | 0.041454 | 0.07902925 | 0.15625 | 0.06436037 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `random_density_030_parity` | 8 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `random_density_050_majority` | 8 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | `PYPHI_STATE_SWEEP_COMPUTED` |
-| `random_density_050_mixed` | 8 | 0.005102 | 0.05335925 | 0.107639 | 0.1403075 | 0.214286 | 0.10255538 | `PYPHI_STATE_SWEEP_COMPUTED` |
+| family | states | min | p25 | median | p75 | max | mean | phi_degeneracy | status |
+|---|---:|---:|---:|---:|---:|---:|---:|---|---|
+| `product_decoupled_copy` | 8 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `chain_feedforward_copy` | 8 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `cycle_ring_copy` | 8 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 | `PHI_DEGENERATE_PERMUTATION_DYNAMICS` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `broadcast_star_or` | 8 | 0.005102 | 0.005102 | 0.04769 | 0.090278 | 0.125 | 0.05203025 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `all_to_all_majority` | 8 | 0.125 | 0.125 | 0.314732 | 0.3377155 | 0.941965 | 0.33347837 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `all_to_all_and` | 8 | 0.028061 | 0.034758 | 0.038106 | 0.041454 | 0.15625 | 0.05161838 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `all_to_all_or` | 8 | 0.028061 | 0.034758 | 0.038106 | 0.041454 | 0.15625 | 0.05161838 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `all_to_all_nand` | 8 | 0.041454 | 0.041454 | 0.051598 | 0.085369 | 0.248354 | 0.086738 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `threshold_2_of_n` | 8 | 0.125 | 0.125 | 0.314732 | 0.3377155 | 0.941965 | 0.33347837 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `threshold_n_minus_1_of_n` | 8 | 0.125 | 0.125 | 0.314732 | 0.3377155 | 0.941965 | 0.33347837 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `mixed_node_rules` | 8 | 0.034758 | 0.03978 | 0.041454 | 0.07902925 | 0.15625 | 0.06436037 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `random_density_030_parity` | 8 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `random_density_050_majority` | 8 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+| `random_density_050_mixed` | 8 | 0.005102 | 0.05335925 | 0.107639 | 0.1403075 | 0.214286 | 0.10255538 | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` | `PYPHI_STATE_SWEEP_COMPUTED` |
+
+Degeneracy note: `cycle_ring_copy n=3` da Φ=1.0 por permutación
+degenerada sin auto-loops; es contraejemplo del propio instrumento PyPhi en
+sistemas pequeños, no evidencia de integración. The detector flags it from
+`n` plus `transition_table` only: constant Phi, bijective state map, and no
+node self-dependence in the raw transition dynamics.
+
+Explicit limitation: el banco v2 no tiene control positivo de Φ limpio; el
+único Φ alto no trivial viene de un sistema degenerado o de densidad diseñada,
+así que Φ≈0.94 no es interpretable como integración sin baseline.
 
 PyPhi sanity judgment:
 
 - Product control passes: Phi is zero over every product state.
-- Dense majority candidate discriminates above product at `n=3`, with max
-  Phi `0.941965` and mean Phi `0.33347837`.
+- The apparent high-Phi ring case is degenerate under the transition-table
+  detector above, so it is not a clean positive integration control.
+- Dense majority and threshold systems discriminate above product at `n=3`,
+  with max Phi `0.941965` and mean Phi `0.33347837`, but they are dense
+  designed controls and not interpretable as integration without an explicit
+  baseline.
 - The result is still a tiny-system rival profile. It is not an IIT validation
   experiment and not a QICN comparison.
 
@@ -199,4 +221,3 @@ Before any QICN-vs-rival comparison, the following must be true:
 - HOT remains unimplemented in this continuation.
 - The QICN side remains blocked by human review of the `I_int / atomic
   separator` gap.
-

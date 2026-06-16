@@ -1,17 +1,17 @@
 {
   "artifact": "qicn_phase7_holdout_generalization",
   "status": "OUT_OF_SAMPLE_GENERALIZATION_MEASURED",
-  "model_id": "phase7-holdout-out-of-sample-tpm-bank-v1",
+  "model_id": "phase7-holdout-out-of-sample-tpm-bank-v2",
   "human_review": "REQUIRED",
   "human_curated_status": "not_reviewed",
-  "bank_digest": "FB2468F998A2FA0DE6C09DA566045F7B457E64048B1A28B4F3566D2867DB139D",
+  "bank_digest": "DA6FF03047B77008F5A885D1F7ED47D0AE7355EDFF9661848E9792F42DC02E4D",
   "seed": 917503,
-  "system_count": 32,
+  "system_count": 46,
   "n_range": [
     3,
     4
   ],
-  "generator_policy": "Disjoint from the 14 bank-v2 named families: random deterministic TPMs plus hand-constructed transition rules, all represented only as n + transition_table for truth/classifier evaluation.",
+  "generator_policy": "Disjoint from the 14 bank-v2 named families: random deterministic TPMs, hand-constructed transition rules, and confirmed non-atomic block-product TPMs; all evaluated through n + transition_table for truth/classifier scoring.",
   "evaluation_order": [
     "Build hold-out transition tables deterministically.",
     "Compute atomicity truth first from n + transition_table with qicn_phase7_atomicity_ground_truth.js.",
@@ -25,13 +25,15 @@
     "bank_v2_status": "CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY"
   },
   "confusion": {
-    "scored_count": 32,
+    "scored_count": 46,
     "unscored_count": 0,
+    "positive_count": 31,
+    "negative_count": 15,
     "tp": 30,
-    "tn": 1,
+    "tn": 15,
     "fp": 0,
     "fn": 1,
-    "accuracy": 0.9688,
+    "accuracy": 0.9783,
     "sensitivity": 0.9677,
     "specificity": 1
   },
@@ -1634,6 +1636,748 @@
         "incidence_edge_count": 16,
         "incidence_density": 1,
         "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_PRESENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n3_1p2_not_xor_or_seed987503",
+      "family": "holdout_factorizable_block_product_n3_1p2_not_xor_or",
+      "n": 3,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0
+          ],
+          "right": [
+            1,
+            2
+          ]
+        },
+        "bipartitions_checked": 3
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 5,
+        "incidence_density": 0.5556,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n3_1p2_zero_nand_xor_seed987504",
+      "family": "holdout_factorizable_block_product_n3_1p2_zero_nand_xor",
+      "n": 3,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            2
+          ],
+          "right": [
+            1
+          ]
+        },
+        "bipartitions_checked": 3
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0,
+            2
+          ],
+          [],
+          [
+            0,
+            2
+          ]
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 4,
+        "incidence_density": 0.4444,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n3_2p1_andnot_one_seed987505",
+      "family": "holdout_factorizable_block_product_n3_2p1_andnot_one",
+      "n": 3,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            1
+          ],
+          "right": [
+            2
+          ]
+        },
+        "bipartitions_checked": 3
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          []
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 3,
+        "incidence_density": 0.3333,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n3_2p1_implies_not_seed987506",
+      "family": "holdout_factorizable_block_product_n3_2p1_implies_not",
+      "n": 3,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            2
+          ],
+          "right": [
+            1
+          ]
+        },
+        "bipartitions_checked": 3
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 5,
+        "incidence_density": 0.5556,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_2p2_xoror_andnot_seed987507",
+      "family": "holdout_factorizable_block_product_n4_2p2_xoror_andnot",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            1
+          ],
+          "right": [
+            2,
+            3
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 7,
+        "incidence_density": 0.4375,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_2p2_nand_implies_seed987508",
+      "family": "holdout_factorizable_block_product_n4_2p2_nand_implies",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            2
+          ],
+          "right": [
+            1,
+            3
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 8,
+        "incidence_density": 0.5,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_2p2_orleft_xoror_seed987509",
+      "family": "holdout_factorizable_block_product_n4_2p2_orleft_xoror",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            3
+          ],
+          "right": [
+            1,
+            2
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 8,
+        "incidence_density": 0.5,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_1p3_not_xororand_seed987510",
+      "family": "holdout_factorizable_block_product_n4_1p3_not_xororand",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0
+          ],
+          "right": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 9,
+        "incidence_density": 0.5625,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_1p3_zero_mux_seed987511",
+      "family": "holdout_factorizable_block_product_n4_1p3_zero_mux",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            1,
+            3
+          ],
+          "right": [
+            2
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [],
+          [
+            0,
+            1,
+            3
+          ]
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 9,
+        "incidence_density": 0.5625,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_3p1_nandmix_one_seed987512",
+      "family": "holdout_factorizable_block_product_n4_3p1_nandmix_one",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            2,
+            3
+          ],
+          "right": [
+            1
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0,
+            2,
+            3
+          ],
+          [],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 8,
+        "incidence_density": 0.5,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_3p1_parity_not_seed987513",
+      "family": "holdout_factorizable_block_product_n4_3p1_parity_not",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            1,
+            2
+          ],
+          "right": [
+            3
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "separator_complete": true,
+        "response_complete": true,
+        "connected_incidence": false,
+        "incidence_edge_count": 10,
+        "incidence_density": 0.625,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_1p1p2_not_zero_orleft_seed987514",
+      "family": "holdout_factorizable_block_product_n4_1p1p2_not_zero_orleft",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0
+          ],
+          "right": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0
+          ],
+          [],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 5,
+        "incidence_density": 0.3125,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_1p2p1_one_implies_not_seed987515",
+      "family": "holdout_factorizable_block_product_n4_1p2p1_one_implies_not",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0
+          ],
+          "right": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 5,
+        "incidence_density": 0.3125,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
+      },
+      "scored_match": true
+    },
+    {
+      "system_id": "holdout_factorizable_block_product_n4_2p1p1_nand_zero_one_seed987516",
+      "family": "holdout_factorizable_block_product_n4_2p1p1_nand_zero_one",
+      "n": 4,
+      "holdout_role": "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      "evaluation_order": "truth_computed_before_connected_incidence_classifier",
+      "algorithm_input_keys": [
+        "n",
+        "transition_table"
+      ],
+      "atomicity_truth": {
+        "artifact": "qicn_phase7_atomicity_ground_truth",
+        "model_id": "phase7-bruteforce-dynamic-factorization-truth-v1",
+        "status": "FACTORIZABLE_NON_ATOMIC",
+        "is_atomic": false,
+        "truth_source": "BRUTE_FORCE_DYNAMIC_FACTORIZATION_FROM_N_AND_TRANSITION_TABLE_ONLY",
+        "factorizing_partition": {
+          "left": [
+            0,
+            3
+          ],
+          "right": [
+            1,
+            2
+          ]
+        },
+        "bipartitions_checked": 7
+      },
+      "connected_incidence": {
+        "incidence": [
+          [
+            0,
+            3
+          ],
+          [],
+          [],
+          [
+            0,
+            3
+          ]
+        ],
+        "separator_complete": false,
+        "response_complete": false,
+        "connected_incidence": false,
+        "incidence_edge_count": 4,
+        "incidence_density": 0.25,
+        "candidate_qicn_classification": "QICN_CANDIDATE_CONNECTED_INCIDENCE_ABSENT"
       },
       "scored_match": true
     }

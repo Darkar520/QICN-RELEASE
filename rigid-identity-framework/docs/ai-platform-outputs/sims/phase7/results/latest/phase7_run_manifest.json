@@ -2,7 +2,7 @@
   "artifact": "phase7_run_all_manifest",
   "status": "PASS",
   "runner_id": "phase7-deterministic-run-all-v1",
-  "deterministic_run_digest": "2380DC149E25DBFEFB39F6189D2E686DA55EAF387C93356BD11D4CF853A8B050",
+  "deterministic_run_digest": "15473E145933F0A54E30A0005C44683CFCF0D64EC62B15DD9B31829169DEC6F1",
   "cwd": "C:/Users/irisp/OneDrive/Escritorio/QICN-FRAMEWORK",
   "python": ".venv-phase7/Scripts/python.exe",
   "output_dir_policy": "runtime-selected output directory is intentionally omitted from the manifest for byte-stable snapshots",
@@ -39,8 +39,8 @@
     },
     "holdout_generalization": {
       "path": "phase7_holdout_generalization.json",
-      "sha256": "A47DE9E011CCBEC755A51729F922B101708E925B2F9421C78E642B48825AF89A",
-      "bytes": 46286
+      "sha256": "25A31B6F666B921C888C73A056F67140CCBE7291E4961CB6B1B054895D8F25F3",
+      "bytes": 67292
     }
   },
   "digest_input": {
@@ -51,7 +51,7 @@
     "phi_positive_control_pyphi_sha256": "4728F86DFE61C4095BCF3A99F15069DABAC7E9BC558F9A4C6B247DF278E9B71E",
     "gnw_principles_sha256": "1B4D002B08BF2A51370ABACD01F410AC381E991793A2A2569D0C98D07A786DE3",
     "qicn_candidate_noncircularity_sha256": "6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E",
-    "holdout_generalization_sha256": "A47DE9E011CCBEC755A51729F922B101708E925B2F9421C78E642B48825AF89A"
+    "holdout_generalization_sha256": "25A31B6F666B921C888C73A056F67140CCBE7291E4961CB6B1B054895D8F25F3"
   },
   "no_claims": [
     "No QICN gap closure is certified.",

@@ -9,10 +9,11 @@ const {
   sanitizeForObservableAlgorithm,
 } = require("./qicn_phase7_qicn_candidate_noncircularity.js");
 
-const MODEL_ID = "phase7-holdout-out-of-sample-tpm-bank-v1";
+const MODEL_ID = "phase7-holdout-out-of-sample-tpm-bank-v2";
 const VERSION = "phase7-holdout-bank-v1";
 const DEFAULT_SEED = 917503;
 const RANDOM_CASES_PER_N = 12;
+const MIN_FACTORIZABLE_NEGATIVES = 10;
 
 function mulberry32(seed) {
   let t = seed >>> 0;
@@ -72,6 +73,100 @@ function b(value) {
 
 function parity(values) {
   return values.reduce((acc, value) => acc ^ value, 0);
+}
+
+function blockRule(ruleName, localBits) {
+  const bits = Array.from(localBits, Number);
+  if (bits.length === 1) {
+    const [a] = bits;
+    if (ruleName === "not") return b(1 ^ a);
+    if (ruleName === "force_zero") return "0";
+    if (ruleName === "force_one") return "1";
+  }
+  if (bits.length === 2) {
+    const [a, c] = bits;
+    if (ruleName === "xor_or") return b(a ^ c) + b(a | c);
+    if (ruleName === "and_not_right") return b(a & c) + b(1 ^ c);
+    if (ruleName === "nand_xor") return b(1 ^ (a & c)) + b(a ^ c);
+    if (ruleName === "or_left_and_not") return b(a | c) + b(a & (1 ^ c));
+    if (ruleName === "left_implies_right") return b((1 ^ a) | c) + b(a ^ (1 ^ c));
+  }
+  if (bits.length === 3) {
+    const [a, c, d] = bits;
+    if (ruleName === "xor_or_and") return b(a ^ c) + b(c | d) + b(d & a);
+    if (ruleName === "mux_xor_not") return b(a ? c : d) + b(a ^ d) + b(1 ^ c);
+    if (ruleName === "nand_xor_or") return b(1 ^ (a & c)) + b(c ^ d) + b(a | d);
+    if (ruleName === "parity_gate_mix") return b(parity(bits)) + b(a & (1 ^ d)) + b(c | d);
+  }
+  throw new Error(`unsupported block rule ${ruleName} for block length ${bits.length}`);
+}
+
+function blockProductTransitionTable(n, partition, blockRules) {
+  return transitionTableFromNext(n, (state) => {
+    const next = Array.from({ length: n }, () => "0");
+    partition.forEach((block, blockIndex) => {
+      const localState = block.map((node) => state[node]).join("");
+      const localNext = blockRule(blockRules[blockIndex], localState);
+      if (localNext.length !== block.length) {
+        throw new Error(`block rule ${blockRules[blockIndex]} returned ${localNext.length} bits for block length ${block.length}`);
+      }
+      block.forEach((node, localIndex) => {
+        next[node] = localNext[localIndex];
+      });
+    });
+    return next.join("");
+  });
+}
+
+function confirmedFactorizableBlockProductSystems(seed) {
+  const definitions = [
+    { name: "n3_1p2_not_xor_or", n: 3, partition: [[0], [1, 2]], rules: ["not", "xor_or"] },
+    { name: "n3_1p2_zero_nand_xor", n: 3, partition: [[1], [0, 2]], rules: ["force_zero", "nand_xor"] },
+    { name: "n3_2p1_andnot_one", n: 3, partition: [[0, 1], [2]], rules: ["and_not_right", "force_one"] },
+    { name: "n3_2p1_implies_not", n: 3, partition: [[0, 2], [1]], rules: ["left_implies_right", "not"] },
+    { name: "n4_2p2_xoror_andnot", n: 4, partition: [[0, 1], [2, 3]], rules: ["xor_or", "and_not_right"] },
+    { name: "n4_2p2_nand_implies", n: 4, partition: [[0, 2], [1, 3]], rules: ["nand_xor", "left_implies_right"] },
+    { name: "n4_2p2_orleft_xoror", n: 4, partition: [[0, 3], [1, 2]], rules: ["or_left_and_not", "xor_or"] },
+    { name: "n4_1p3_not_xororand", n: 4, partition: [[0], [1, 2, 3]], rules: ["not", "xor_or_and"] },
+    { name: "n4_1p3_zero_mux", n: 4, partition: [[2], [0, 1, 3]], rules: ["force_zero", "mux_xor_not"] },
+    { name: "n4_3p1_nandmix_one", n: 4, partition: [[0, 2, 3], [1]], rules: ["nand_xor_or", "force_one"] },
+    { name: "n4_3p1_parity_not", n: 4, partition: [[0, 1, 2], [3]], rules: ["parity_gate_mix", "not"] },
+    { name: "n4_1p1p2_not_zero_orleft", n: 4, partition: [[0], [1], [2, 3]], rules: ["not", "force_zero", "or_left_and_not"] },
+    { name: "n4_1p2p1_one_implies_not", n: 4, partition: [[0], [1, 2], [3]], rules: ["force_one", "left_implies_right", "not"] },
+    { name: "n4_2p1p1_nand_zero_one", n: 4, partition: [[0, 3], [1], [2]], rules: ["nand_xor", "force_zero", "force_one"] },
+  ];
+
+  const confirmed = [];
+  for (const [index, definition] of definitions.entries()) {
+    const system = {
+      id: `holdout_factorizable_block_product_${definition.name}_seed${seed + index}`,
+      bank_version: VERSION,
+      seed: seed + index,
+      n: definition.n,
+      family: `holdout_factorizable_block_product_${definition.name}`,
+      holdout_role: "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC",
+      generator_disjoint_from_training_families: true,
+      factorization_generator: {
+        partition: definition.partition,
+        block_rules: definition.rules,
+        construction_note: "Independent block-product dynamics with no cross-block update dependence; retained only after brute-force truth confirms FACTORIZABLE_NON_ATOMIC.",
+      },
+      transition_table: blockProductTransitionTable(definition.n, definition.partition, definition.rules),
+    };
+    const truth = computeAtomicityTruth({
+      n: system.n,
+      transition_table: system.transition_table.map((row) => ({ state: row.state, next: row.next })),
+    });
+    if (truth.status === "FACTORIZABLE_NON_ATOMIC") {
+      system.factorizable_truth_confirmation = {
+        status: truth.status,
+        truth_source: truth.truth_source,
+        factorizing_partition: truth.factorizing_partition,
+      };
+      confirmed.push(system);
+    }
+  }
+  return confirmed;
 }
 
 function manualSystems(seed) {
@@ -141,6 +236,7 @@ function buildHoldoutBank(options = {}) {
     }
   }
   systems.push(...manualSystems(seed + 50000));
+  systems.push(...confirmedFactorizableBlockProductSystems(seed + 70000));
   return {
     artifact: "qicn_phase7_holdout_bank",
     status: "NON_CANONICAL_AI_OUTPUT_OUT_OF_SAMPLE_HOLDOUT_BANK",
@@ -149,7 +245,7 @@ function buildHoldoutBank(options = {}) {
     seed,
     system_count: systems.length,
     n_range: [3, 4],
-    generator_policy: "Disjoint from the 14 bank-v2 named families: random deterministic TPMs plus hand-constructed transition rules, all represented only as n + transition_table for truth/classifier evaluation.",
+    generator_policy: "Disjoint from the 14 bank-v2 named families: random deterministic TPMs, hand-constructed transition rules, and confirmed non-atomic block-product TPMs; all evaluated through n + transition_table for truth/classifier scoring.",
     evaluation_order: [
       "Build hold-out transition tables deterministically.",
       "Compute atomicity truth first from n + transition_table with qicn_phase7_atomicity_ground_truth.js.",
@@ -185,13 +281,17 @@ function confusion(results) {
     if (expected && !predicted) counts.fn += 1;
   }
   const total = counts.tp + counts.tn + counts.fp + counts.fn;
+  const positiveCount = counts.tp + counts.fn;
+  const negativeCount = counts.tn + counts.fp;
   return {
     scored_count: total,
     unscored_count: results.length - scored.length,
+    positive_count: positiveCount,
+    negative_count: negativeCount,
     ...counts,
     accuracy: round(total ? (counts.tp + counts.tn) / total : 0),
-    sensitivity: round((counts.tp + counts.fn) ? counts.tp / (counts.tp + counts.fn) : 0),
-    specificity: round((counts.tn + counts.fp) ? counts.tn / (counts.tn + counts.fp) : 0),
+    sensitivity: round(positiveCount ? counts.tp / positiveCount : 0),
+    specificity: round(negativeCount ? counts.tn / negativeCount : 0),
   };
 }
 
@@ -262,14 +362,29 @@ function selfTest() {
   const bank2 = buildHoldoutBank();
   const output = run();
   const failures = [];
-  if (bank.systems.length !== 32) failures.push(`expected 32 hold-out systems, got ${bank.systems.length}`);
+  const factorizableSystems = bank.systems.filter((system) => system.holdout_role === "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC");
+  const truthNegatives = output.results.filter((result) => result.atomicity_truth.status === "FACTORIZABLE_NON_ATOMIC");
+  if (bank.systems.length !== 46) failures.push(`expected 46 hold-out systems, got ${bank.systems.length}`);
+  if (factorizableSystems.length < MIN_FACTORIZABLE_NEGATIVES) {
+    failures.push(`expected at least ${MIN_FACTORIZABLE_NEGATIVES} confirmed factorizable systems, got ${factorizableSystems.length}`);
+  }
+  if (truthNegatives.length < MIN_FACTORIZABLE_NEGATIVES) {
+    failures.push(`expected at least ${MIN_FACTORIZABLE_NEGATIVES} truth-confirmed negatives, got ${truthNegatives.length}`);
+  }
   if (digest(bank) !== digest(bank2)) failures.push("hold-out bank is not deterministic");
   const training = new Set(TRAINING_FAMILIES);
   for (const system of bank.systems) {
     if (training.has(system.family)) failures.push(`${system.id} reuses training family ${system.family}`);
+    if (system.family === "product_decoupled_copy") failures.push(`${system.id} reuses product_decoupled_copy`);
     if (![3, 4].includes(system.n)) failures.push(`${system.id} n outside hold-out range`);
     if (system.generator_disjoint_from_training_families !== true) failures.push(`${system.id} missing disjoint-generator marker`);
     validateTransitionTable(system, failures);
+    if (system.holdout_role === "OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC") {
+      const truth = computeAtomicityTruth(sanitizeForObservableAlgorithm(system));
+      if (truth.status !== "FACTORIZABLE_NON_ATOMIC") {
+        failures.push(`${system.id} marked factorizable but truth returned ${truth.status}`);
+      }
+    }
   }
   if (output.status !== "OUT_OF_SAMPLE_GENERALIZATION_MEASURED") failures.push(`unexpected run status ${output.status}`);
   if (output.confusion.scored_count !== bank.systems.length) failures.push("hold-out confusion did not score all systems");
@@ -281,6 +396,9 @@ function selfTest() {
     system_count: bank.systems.length,
     random_tpm_systems: RANDOM_CASES_PER_N * 2,
     hand_constructed_systems: manualSystems(DEFAULT_SEED + 50000).length,
+    confirmed_factorizable_systems: factorizableSystems.length,
+    truth_negative_systems: truthNegatives.length,
+    min_truth_negatives_required: MIN_FACTORIZABLE_NEGATIVES,
     run_status: output.status,
     confusion: output.confusion,
     failures,

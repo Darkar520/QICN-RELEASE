@@ -6,6 +6,8 @@ Date: 2026-06-15
 
 Out-of-sample/control addendum: 2026-06-16
 
+Balanced hold-out addendum: 2026-06-16
+
 Human review: `REQUIRED`
 
 Human curated status: `not_reviewed`
@@ -158,11 +160,18 @@ Status:
 
 `OUT_OF_SAMPLE_GENERALIZATION_MEASURED`
 
-The hold-out is separate from the 14 bank-v2 families. It contains 32 systems
-over `n=3..4`: 24 deterministic pseudo-random TPMs from seed `917503`, plus 8
-hand-constructed transition systems that are not instances of the bank-v2
-templates. The generator is deterministic and records bank digest
-`FB2468F998A2FA0DE6C09DA566045F7B457E64048B1A28B4F3566D2867DB139D`.
+The hold-out is separate from the 14 bank-v2 families. It now contains 46
+systems over `n=3..4`: 24 deterministic pseudo-random TPMs from seed `917503`,
+8 hand-constructed transition systems that are not instances of the bank-v2
+templates, and 14 confirmed factorizable block-product systems. The
+factorizable systems are not derived from `product_decoupled_copy`: they use
+independent node blocks with non-identity intra-block rules such as AND, OR,
+XOR, NAND, mux-style and parity-style updates. Each candidate negative is
+retained only if `computeAtomicityTruth` returns
+`FACTORIZABLE_NON_ATOMIC` from `n + transition_table`.
+
+The generator is deterministic and records bank digest
+`DA6FF03047B77008F5A885D1F7ED47D0AE7355EDFF9661848E9792F42DC02E4D`.
 
 Evaluation order is fixed in the artifact:
 
@@ -176,15 +185,23 @@ Hold-out confusion against brute-force dynamic-factorization truth:
 
 | metric | value |
 |---|---:|
-| scored systems | 32 |
+| scored systems | 46 |
 | unscored systems | 0 |
+| computed `NON_FACTORIZABLE_ATOMIC` systems | 31 |
+| computed `FACTORIZABLE_NON_ATOMIC` systems | 15 |
 | TP | 30 |
-| TN | 1 |
+| TN | 15 |
 | FP | 0 |
 | FN | 1 |
-| accuracy | 0.9688 |
+| accuracy | 0.9783 |
 | sensitivity | 0.9677 |
 | specificity | 1.0 |
+
+Specificity is now supported by 15 truth-confirmed negative systems
+(`TN + FP = 15`), including 14 purpose-built factorizable block products plus
+one pre-existing factorizable hold-out system. Connected incidence produced no
+false positives on this balanced negative slice (`FP = 0`). This remains a
+finite local toy hold-out, not external validation.
 
 The single hold-out false negative is:
 
@@ -193,8 +210,9 @@ The single hold-out false negative is:
 | `holdout_manual_conditional_rotate_or_complement_n4_seed967509` | 4 | hand-constructed TPM | `NON_FACTORIZABLE_ATOMIC` | absent |
 
 Comparison to in-sample bank v2: hold-out accuracy and sensitivity are higher
-than the in-sample values (`0.9688` vs `0.8929`; `0.9677` vs `0.875`), while
-specificity remains `1.0`. This is a finite deterministic toy hold-out
+than the in-sample values (`0.9783` vs `0.8929`; `0.9677` vs `0.875`), while
+specificity remains `1.0` on a larger negative base (`15` negatives here vs
+`8` in-sample negatives). This is a finite deterministic toy hold-out
 measurement only. It does not reverse the in-sample verdict, does not prove
 non-circularity, and does not close the `I_int / atomic separator` gap.
 
@@ -214,8 +232,8 @@ candidate result hash did not change.
 
 | run | digest |
 |---|---|
-| first | `2380DC149E25DBFEFB39F6189D2E686DA55EAF387C93356BD11D4CF853A8B050` |
-| second | `2380DC149E25DBFEFB39F6189D2E686DA55EAF387C93356BD11D4CF853A8B050` |
+| first | `15473E145933F0A54E30A0005C44683CFCF0D64EC62B15DD9B31829169DEC6F1` |
+| second | `15473E145933F0A54E30A0005C44683CFCF0D64EC62B15DD9B31829169DEC6F1` |
 
 Latest tracked result hashes:
 
@@ -227,8 +245,8 @@ Latest tracked result hashes:
 | `phase7_phi_positive_control_pyphi_results.json` | `4728F86DFE61C4095BCF3A99F15069DABAC7E9BC558F9A4C6B247DF278E9B71E` |
 | `phase7_gnw_principles_results.json` | `1B4D002B08BF2A51370ABACD01F410AC381E991793A2A2569D0C98D07A786DE3` |
 | `phase7_qicn_candidate_noncircularity.json` | `6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E` |
-| `phase7_holdout_generalization.json` | `A47DE9E011CCBEC755A51729F922B101708E925B2F9421C78E642B48825AF89A` |
-| `phase7_run_manifest.json` | `E97BD25B098E50D11502DF5F646D1B5D61BCAE51C3C652670644EA04E902A205` |
+| `phase7_holdout_generalization.json` | `25A31B6F666B921C888C73A056F67140CCBE7291E4961CB6B1B054895D8F25F3` |
+| `phase7_run_manifest.json` | `ECA1F5D07045869EBADCC4E911046BF58C2761013942AA9A13294985E5CD5880` |
 
 Because the recovery test failed the high-accuracy threshold, the preliminary
 QICN/IIT/GNW comparison is not run:

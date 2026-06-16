@@ -5899,3 +5899,157 @@ Next step:
 - Commit locally with message
   `docs: phase7 out-of-sample holdout + self-loop positive-control candidate`.
 - Do not push.
+
+## 2026-06-16 — Phase 7 balanced hold-out with truth-confirmed factorizable negatives
+
+Task:
+- Repair the out-of-sample hold-out specificity basis by adding a real negative
+  sample: factorizable, non-atomic systems generated outside the 14 bank-v2
+  families and outside `product_decoupled_copy`.
+- Keep in-sample verdict unchanged:
+  `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`.
+- Keep preliminary comparison unchanged: `NOT_RUN`.
+- Do not tune thresholds or promote the hold-out into validation.
+- No canon, registry, release, `.tex`, monolith, production package, or
+  `package.json` changes. No push.
+
+Files read/consulted:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `INSTRUCCIONES.md`
+- `ROADMAP.md`
+- `docs/CLAIM_STATUS_POLICY.md`
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_holdout_bank.js`
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_atomicity_ground_truth.js`
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance and verification reminders
+
+Files modified:
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_holdout_bank.js`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_holdout_generalization.json`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+- This ledger.
+
+Implementation details:
+- Updated hold-out model id to
+  `phase7-holdout-out-of-sample-tpm-bank-v2`.
+- Added 14 block-product systems marked
+  `OUT_OF_SAMPLE_FACTORIZABLE_NON_ATOMIC`.
+- Each block-product system uses disjoint node blocks, varied partitions
+  (`1+2`, `2+1`, `2+2`, `1+3`, `3+1`, `1+1+2`, `1+2+1`,
+  `2+1+1`) and non-identity intra-block rules (`not`, constants, AND, OR,
+  XOR, NAND, implication, mux-style, and parity-style updates).
+- The generator computes `computeAtomicityTruth({n, transition_table})` for
+  each block-product candidate and only retains systems whose truth status is
+  `FACTORIZABLE_NON_ATOMIC`.
+- Added `positive_count` and `negative_count` to hold-out confusion reporting.
+- Strengthened `selfTest()` to require at least
+  `MIN_FACTORIZABLE_NEGATIVES = 10` truth-confirmed negatives. Current result:
+  15 truth-confirmed negatives.
+
+Balanced hold-out result:
+- Status: `OUT_OF_SAMPLE_GENERALIZATION_MEASURED`.
+- Hold-out bank digest:
+  `DA6FF03047B77008F5A885D1F7ED47D0AE7355EDFF9661848E9792F42DC02E4D`.
+- Systems: 46 total.
+  - 24 random deterministic TPMs.
+  - 8 hand-constructed TPMs.
+  - 14 truth-confirmed factorizable block-product negatives.
+- Truth class counts:
+  - `NON_FACTORIZABLE_ATOMIC`: 31.
+  - `FACTORIZABLE_NON_ATOMIC`: 15.
+- Confusion:
+  - scored systems: 46;
+  - positive_count: 31;
+  - negative_count: 15;
+  - TP 30;
+  - TN 15;
+  - FP 0;
+  - FN 1;
+  - accuracy `0.9783`;
+  - sensitivity `0.9677`;
+  - specificity `1`.
+- Specificity is now supported by `TN + FP = 15` truth-confirmed negative
+  systems, not by a single negative system.
+- Connected incidence still produces no false positives on the balanced
+  out-of-sample negative slice (`FP=0`).
+- The single false negative remains
+  `holdout_manual_conditional_rotate_or_complement_n4_seed967509`, computed
+  truth `NON_FACTORIZABLE_ATOMIC`, prediction absent.
+
+Commands and results:
+
+| Command | Purpose | Result |
+|---|---|---|
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_holdout_bank.js --self-test` | Balanced hold-out self-test | PASS; 46 systems; 14 confirmed factorizable systems; 15 truth negatives; TP 30, TN 15, FP 0, FN 1, accuracy `0.9783`, specificity `1`. |
+| `node docs\ai-platform-outputs\sims\phase7\phase7_run_all.js --out-dir docs\ai-platform-outputs\sims\phase7\results\latest` | Regenerate latest results | PASS; deterministic run digest changed to `15473E145933F0A54E30A0005C44683CFCF0D64EC62B15DD9B31829169DEC6F1`. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_atomicity_ground_truth.js --self-test` | Atomicity truth regression | PASS. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_qicn_candidate_noncircularity.js --self-test` | In-sample candidate regression | PASS; verdict remains `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; TP 42, TN 8, FP 0, FN 6, accuracy `0.8929`. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_phi_positive_control_bank.js --self-test` | Positive-control candidate regression | PASS. |
+| `node docs\ai-platform-outputs\sims\phase7\phase7_run_all.js --self-test` | Runner double-run byte stability | PASS; first and second digest both `15473E145933F0A54E30A0005C44683CFCF0D64EC62B15DD9B31829169DEC6F1`. |
+| JSON check of `phase7_qicn_candidate_noncircularity.json` | Confirm no in-sample verdict/comparison drift | `status=CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; `preliminary_comparison.status=NOT_RUN`. |
+| JSON check of `phase7_holdout_generalization.json` | Confirm balanced hold-out metrics | `positive_count=31`; `negative_count=15`; TP 30, TN 15, FP 0, FN 1; accuracy `0.9783`; specificity `1`. |
+| `npm run verify` from `rigid-identity-framework/` | Package verification with raw scientific verdict | Exit code 0; v30/v31 remain blocked with `external_support_certified=false`. |
+| `git diff --check` | Whitespace sanity | No whitespace errors; Windows CRLF warnings only. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Interpretation note:
+- `exit code 0 = los gates corrieron; NO = corpus certificado. external_support_certified=false.`
+
+Pre-ledger artifact counts and hashes:
+- `qicn_phase7_holdout_bank.js`: 429 lines; SHA256
+  `4DFF4AE7141193C7385AFDB021F11904738FC5D5CC8CAA6F27B3AAEEB6C6AD35`.
+- `phase7_holdout_generalization.json`: 2391 lines; SHA256
+  `25A31B6F666B921C888C73A056F67140CCBE7291E4961CB6B1B054895D8F25F3`.
+- `phase7_run_manifest.json`: 61 lines; SHA256
+  `ECA1F5D07045869EBADCC4E911046BF58C2761013942AA9A13294985E5CD5880`.
+- `QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`: 303 lines; SHA256
+  `F986A21E2FAD31BFF3C58CFBCD86EB30B20856350A802619978FFCD9C6649E78`.
+- `IMPLEMENTATION_TRACE_LEDGER.md` before this entry: 5901 lines; SHA256
+  `33CF7194791C056035814056453E65A4446C1A670EEC539F617DB732E4A03537`.
+
+Pre-ledger `git status --porcelain`:
+
+```text
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_holdout_bank.js
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_holdout_generalization.json
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json
+```
+
+Regression checks:
+- No `.tex`, BaseCore, registry, release, monolith, production package, or
+  `package.json` file was modified.
+- No threshold tuning was performed.
+- No `git add -A` was used before this ledger update.
+- No push was attempted.
+- In-sample QICN candidate result hash remains
+  `6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E`.
+- Preliminary comparison remains `NOT_RUN`.
+- No QICN-vs-IIT/GNW/HOT comparison was run.
+- No external validation, consciousness, phenomenality, agency, subjectivity,
+  identity, integration validation, or superiority claim is made.
+
+Residual risks:
+- The balanced hold-out is still generated locally and is not independent
+  empirical validation.
+- The specificity result is now better based for this toy hold-out, but it does
+  not prove non-circularity or close the `I_int / atomic separator` gap.
+- The in-sample result remains negative at the preregistered threshold.
+
+Next step:
+- Stage explicitly only the five files listed in this entry.
+- Commit locally with message
+  `docs: balance phase7 holdout with confirmed factorizable negatives for out-of-sample specificity`.
+- Do not push.

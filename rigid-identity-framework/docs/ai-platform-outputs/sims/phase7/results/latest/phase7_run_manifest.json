@@ -2,7 +2,7 @@
   "artifact": "phase7_run_all_manifest",
   "status": "PASS",
   "runner_id": "phase7-deterministic-run-all-v1",
-  "deterministic_run_digest": "FA36157AA674E1D2B5DF68CFD048136F8564D99E31EADBEBCDD1959D8961D41A",
+  "deterministic_run_digest": "2380DC149E25DBFEFB39F6189D2E686DA55EAF387C93356BD11D4CF853A8B050",
   "cwd": "C:/Users/irisp/OneDrive/Escritorio/QICN-FRAMEWORK",
   "python": ".venv-phase7/Scripts/python.exe",
   "output_dir_policy": "runtime-selected output directory is intentionally omitted from the manifest for byte-stable snapshots",
@@ -17,6 +17,16 @@
       "sha256": "03417C3BB3F8120DC0517848DAEEF92E383744D3F337B0A134552C890FEAA0A5",
       "bytes": 31251
     },
+    "phi_positive_control_bank": {
+      "path": "phase7_phi_positive_control_bank.json",
+      "sha256": "5777FBE03C6B8183DC08CA1839AAD16E8EF7E4A0161A7E4EEE3898023A9CDDAD",
+      "bytes": 2246
+    },
+    "phi_positive_control_pyphi": {
+      "path": "phase7_phi_positive_control_pyphi_results.json",
+      "sha256": "4728F86DFE61C4095BCF3A99F15069DABAC7E9BC558F9A4C6B247DF278E9B71E",
+      "bytes": 1751
+    },
     "gnw_principles": {
       "path": "phase7_gnw_principles_results.json",
       "sha256": "1B4D002B08BF2A51370ABACD01F410AC381E991793A2A2569D0C98D07A786DE3",
@@ -26,14 +36,22 @@
       "path": "phase7_qicn_candidate_noncircularity.json",
       "sha256": "6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E",
       "bytes": 88113
+    },
+    "holdout_generalization": {
+      "path": "phase7_holdout_generalization.json",
+      "sha256": "A47DE9E011CCBEC755A51729F922B101708E925B2F9421C78E642B48825AF89A",
+      "bytes": 46286
     }
   },
   "digest_input": {
     "runner_id": "phase7-deterministic-run-all-v1",
     "bank_sha256": "9BF1AC8B6DF9FB525179BF72225B97193EFE06B4E99DAB11487046B0494D1D48",
     "pyphi_sha256": "03417C3BB3F8120DC0517848DAEEF92E383744D3F337B0A134552C890FEAA0A5",
+    "phi_positive_control_bank_sha256": "5777FBE03C6B8183DC08CA1839AAD16E8EF7E4A0161A7E4EEE3898023A9CDDAD",
+    "phi_positive_control_pyphi_sha256": "4728F86DFE61C4095BCF3A99F15069DABAC7E9BC558F9A4C6B247DF278E9B71E",
     "gnw_principles_sha256": "1B4D002B08BF2A51370ABACD01F410AC381E991793A2A2569D0C98D07A786DE3",
-    "qicn_candidate_noncircularity_sha256": "6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E"
+    "qicn_candidate_noncircularity_sha256": "6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E",
+    "holdout_generalization_sha256": "A47DE9E011CCBEC755A51729F922B101708E925B2F9421C78E642B48825AF89A"
   },
   "no_claims": [
     "No QICN gap closure is certified.",

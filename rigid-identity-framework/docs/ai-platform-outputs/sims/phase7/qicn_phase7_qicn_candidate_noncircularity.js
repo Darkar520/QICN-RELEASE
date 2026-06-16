@@ -325,5 +325,7 @@ module.exports = {
   run,
   selfTest,
   classifySystem,
+  sanitizeForObservableAlgorithm,
+  evaluateConnectedIncidence,
   preliminaryComparison,
 };

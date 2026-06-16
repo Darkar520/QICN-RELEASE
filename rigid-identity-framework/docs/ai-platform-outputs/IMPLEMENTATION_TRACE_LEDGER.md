@@ -5697,3 +5697,205 @@ Next step:
 - Commit locally with message
   `docs: annotate phi degeneracy (no clean positive control) in phase7 IIT profiles`.
 - Do not push.
+
+## 2026-06-16 — Phase 7 out-of-sample hold-out and self-loop Phi control candidate
+
+Task:
+- Add a deterministic out-of-sample hold-out over Boolean transition tables
+  generated outside the 14 bank-v2 families.
+- Add an additive `cycle_ring_with_self_loops` PyPhi positive-control candidate
+  without altering `qicn_phase7_neutral_systems_bank_v2.js`, its families, or
+  the bank-v2 digest.
+- Preserve current in-sample verdict
+  `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`.
+- Preserve preliminary comparison status `NOT_RUN`.
+- No canon, registry, release, `.tex`, monolith, production package, or
+  `package.json` changes. No push.
+
+Files read/consulted:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `INSTRUCCIONES.md`
+- `ROADMAP.md`
+- `docs/CLAIM_STATUS_POLICY.md`
+- `docs/ai-platform-outputs/sims/qicn_phase7_neutral_systems_bank_v2.js`
+- `docs/ai-platform-outputs/sims/qicn_phase7_pyphi_wrapper.py`
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_atomicity_ground_truth.js`
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`
+- `docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md`
+- `C:\Users\irisp\.codex\memories\MEMORY.md` governance and verification reminders
+
+Files created:
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_holdout_bank.js`
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_phi_positive_control_bank.js`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_holdout_generalization.json`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_phi_positive_control_bank.json`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_phi_positive_control_pyphi_results.json`
+
+Files modified:
+- `docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md`
+- This ledger.
+
+Implementation details:
+- `qicn_phase7_qicn_candidate_noncircularity.js` now exports existing pure
+  helper functions `sanitizeForObservableAlgorithm` and
+  `evaluateConnectedIncidence`; no classifier logic, threshold, verdict, or
+  comparison activation rule changed.
+- `qicn_phase7_holdout_bank.js` creates 32 deterministic hold-out systems:
+  24 pseudo-random deterministic TPMs from seed `917503` across `n=3..4`, plus
+  8 hand-constructed TPMs not drawn from the 14 bank-v2 templates.
+- Hold-out evaluation computes `computeAtomicityTruth` first from
+  `n + transition_table`, then evaluates connected incidence from the same
+  input contract. Labels are retained for reporting only.
+- `qicn_phase7_phi_positive_control_bank.js` creates one additive
+  `cycle_ring_with_self_loops` candidate with explicit ring edges plus `[i,i]`
+  self-loops and update rule `self OR predecessor`.
+- `phase7_run_all.js` now emits separate artifacts for hold-out generalization
+  and Phi positive-control-candidate PyPhi results. It does not add the control
+  to bank v2 and does not feed the control into QICN-vs-rival comparison.
+
+Results:
+- Hold-out status: `OUT_OF_SAMPLE_GENERALIZATION_MEASURED`.
+- Hold-out bank digest:
+  `FB2468F998A2FA0DE6C09DA566045F7B457E64048B1A28B4F3566D2867DB139D`.
+- Hold-out confusion:
+  - scored systems: 32;
+  - TP 30;
+  - TN 1;
+  - FP 0;
+  - FN 1;
+  - accuracy `0.9688`;
+  - sensitivity `0.9677`;
+  - specificity `1`.
+- Single hold-out false negative:
+  `holdout_manual_conditional_rotate_or_complement_n4_seed967509`, computed
+  truth `NON_FACTORIZABLE_ATOMIC`, connected-incidence prediction absent.
+- Compared with in-sample bank v2, hold-out accuracy/sensitivity are higher
+  (`0.9688`/`0.9677` vs `0.8929`/`0.875`) and specificity remains `1`.
+  This is reported as a finite toy hold-out measurement only, not as proof of
+  non-circularity or gap closure.
+- In-sample status remains
+  `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`.
+- Preliminary comparison remains `NOT_RUN`.
+- Bank-v2 latest SHA remains unchanged:
+  `9BF1AC8B6DF9FB525179BF72225B97193EFE06B4E99DAB11487046B0494D1D48`.
+
+Phi positive-control-candidate result:
+- Candidate family: `cycle_ring_with_self_loops`.
+- Control marker: `NON_CANONICAL_POSITIVE_CONTROL_CANDIDATE`.
+- PyPhi distribution:
+  - min `0.069445`;
+  - p25 `0.069445`;
+  - median `0.0798615`;
+  - p75 `0.090278`;
+  - max `0.1875`;
+  - mean `0.09201425`.
+- Degeneracy fields:
+  - `phi_constant=false`;
+  - `state_map_is_permutation=false`;
+  - `has_self_loops=true`;
+  - `phi_degeneracy=PHI_NONDEGENERATE_OR_INCONCLUSIVE`.
+- Interpretation recorded in the report: auto-loops eliminate the specific
+  `cycle_ring_copy n=3` permutation degeneracy, but the candidate is weak
+  (`max Phi=0.1875`) and is not a clean high-Phi positive integration control.
+
+Commands and results:
+
+| Command | Purpose | Result |
+|---|---|---|
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_holdout_bank.js --self-test` | Hold-out determinism and out-of-sample confusion self-test | PASS; 32 systems; digest `FB2468F998A2FA0DE6C09DA566045F7B457E64048B1A28B4F3566D2867DB139D`; confusion TP 30, TN 1, FP 0, FN 1, accuracy `0.9688`. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_phi_positive_control_bank.js --self-test` | Positive-control candidate self-test | PASS; one `cycle_ring_with_self_loops` candidate; marker `NON_CANONICAL_POSITIVE_CONTROL_CANDIDATE`. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_atomicity_ground_truth.js --self-test` | Atomicity truth regression | PASS. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_qicn_candidate_noncircularity.js --self-test` | In-sample candidate regression | PASS; verdict remains `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; TP 42, TN 8, FP 0, FN 6, accuracy `0.8929`. |
+| `..\.venv-phase7\Scripts\python.exe docs\ai-platform-outputs\sims\qicn_phase7_pyphi_wrapper.py --self-test` | PyPhi wrapper regression | PASS; cycle ring remains degenerate; all-to-all majority max Phi `0.941965`; product max Phi `0.0`. |
+| `node docs\ai-platform-outputs\sims\qicn_phase7_neutral_systems_bank_v2.js --self-test` | Bank v2 regression | PASS; bank digest `C1BDCB64E29B6DC3C7CB9673918DF582E1652CDE1C48FC49DCCA48F839C5A6CF`. |
+| `node docs\ai-platform-outputs\sims\phase7\phase7_run_all.js --out-dir docs\ai-platform-outputs\sims\phase7\results\latest` | Regenerate latest Phase 7 snapshot | PASS; deterministic run digest `2380DC149E25DBFEFB39F6189D2E686DA55EAF387C93356BD11D4CF853A8B050`. |
+| `node docs\ai-platform-outputs\sims\phase7\phase7_run_all.js --self-test` | Runner double-run byte-stability | PASS; first and second digest both `2380DC149E25DBFEFB39F6189D2E686DA55EAF387C93356BD11D4CF853A8B050`. |
+| JSON check of `results/latest/phase7_qicn_candidate_noncircularity.json` | Confirm no verdict/comparison drift | `status=CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; `preliminary_comparison.status=NOT_RUN`; accuracy `0.8929`. |
+| `npm run verify` from `rigid-identity-framework/` | Package verification with raw scientific verdict | Exit code 0; v30/v31 remain blocked with `external_support_certified=false`. |
+| `git diff --check` | Whitespace sanity | No whitespace errors; Windows CRLF warnings only. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Interpretation note:
+- `exit code 0 = los gates corrieron; NO = corpus certificado. external_support_certified=false.`
+
+Pre-ledger artifact counts and hashes:
+- `qicn_phase7_holdout_bank.js`: 311 lines; SHA256
+  `668FD7B7129B2FE4CF94B0B46312E33A0EBE3A336BCDA8F41B67E4DA301103F2`.
+- `qicn_phase7_phi_positive_control_bank.js`: 137 lines; SHA256
+  `5D58125F6E468C1C83B982B37CAF03D2FF4BCEFBA5EFC8F1596251A6DB5AC27F`.
+- `phase7_run_all.js`: 175 lines; SHA256
+  `9AEF4C17A44D1B36F219AA4F30FCC2C6A6B7F721D71578B3536BEF878FE975DC`.
+- `qicn_phase7_qicn_candidate_noncircularity.js`: 331 lines; SHA256
+  `9CD2E7CD57132614CC690F29BCDBF754026E98B7D89C0CFED6DC0DB808DE7D07`.
+- `phase7_holdout_generalization.json`: 1647 lines; SHA256
+  `A47DE9E011CCBEC755A51729F922B101708E925B2F9421C78E642B48825AF89A`.
+- `phase7_phi_positive_control_bank.json`: 92 lines; SHA256
+  `5777FBE03C6B8183DC08CA1839AAD16E8EF7E4A0161A7E4EEE3898023A9CDDAD`.
+- `phase7_phi_positive_control_pyphi_results.json`: 72 lines; SHA256
+  `4728F86DFE61C4095BCF3A99F15069DABAC7E9BC558F9A4C6B247DF278E9B71E`.
+- `phase7_run_manifest.json`: 61 lines; SHA256
+  `E97BD25B098E50D11502DF5F646D1B5D61BCAE51C3C652670644EA04E902A205`.
+- `QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`: 285 lines; SHA256
+  `B1C0C05B4089D42B31C8F682B17C0A24A3ED36887D442C2FC3B4C308BECCEF15`.
+- `QICN_PHASE7_REAL_RIVAL_PROFILES.md`: 273 lines; SHA256
+  `3C2F7B46D07687968521D2E755FE9EAEEE4BA724C9C90FC854EE4EE5A1384479`.
+- `IMPLEMENTATION_TRACE_LEDGER.md` before this entry: 5699 lines; SHA256
+  `5FE9A7D00546763C2471BFB9216AC5CA567AFE439148831B4FC17B424F607089`.
+
+Pre-ledger `git status --porcelain`:
+
+```text
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/phase7_run_all.js
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js
+ M rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_run_manifest.json
+?? rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_holdout_bank.js
+?? rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_phi_positive_control_bank.js
+?? rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_holdout_generalization.json
+?? rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_phi_positive_control_bank.json
+?? rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/results/latest/phase7_phi_positive_control_pyphi_results.json
+```
+
+Regression checks:
+- No `.tex`, BaseCore, registry, release, monolith, production package, or
+  `package.json` file was modified.
+- No `git add -A` was used before this ledger update.
+- No push was attempted.
+- Existing bank-v2 artifact digest remains unchanged.
+- In-sample QICN candidate result hash remains
+  `6CC5C822D6219C6A51DCE22D88E020D79C5C19AAA52546378513F4A9FDA9B37E`.
+- Preliminary comparison remains `NOT_RUN`.
+- No QICN-vs-IIT/GNW/HOT comparison was run.
+- No external validation, consciousness, phenomenality, agency, subjectivity,
+  identity, integration validation, or superiority claim is made.
+
+Residual risks:
+- The hold-out is out-of-sample relative to the 14 named generators, but it is
+  still a local deterministic toy bank, not independent empirical validation.
+- Higher hold-out accuracy does not negate the in-sample negative result and
+  does not prove non-circularity.
+- `cycle_ring_with_self_loops` removes the specific permutation degeneracy but
+  is not a high-Phi clean positive control; stronger baselines remain needed.
+
+Next step:
+- Stage explicitly only the files listed in this entry.
+- Commit locally with message
+  `docs: phase7 out-of-sample holdout + self-loop positive-control candidate`.
+- Do not push.

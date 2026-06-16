@@ -6,7 +6,9 @@ const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
 const { buildBank } = require("../qicn_phase7_neutral_systems_bank_v2.js");
+const { buildBank: buildPhiPositiveControlBank } = require("./qicn_phase7_phi_positive_control_bank.js");
 const { run: runGnw } = require("./qicn_phase7_gnw_principles_detector.js");
+const { run: runHoldout } = require("./qicn_phase7_holdout_bank.js");
 const { run: runQicnCandidate } = require("./qicn_phase7_qicn_candidate_noncircularity.js");
 
 const RUNNER_ID = "phase7-deterministic-run-all-v1";
@@ -75,18 +77,34 @@ function runAll(outDir = DEFAULT_OUT_DIR) {
   const pyphiRun = runPyPhi(bankPath);
   artifacts.pyphi = writeJson(path.join(resolvedOut, "phase7_pyphi_results.json"), pyphiRun);
 
+  const positiveControlBank = buildPhiPositiveControlBank();
+  const positiveControlBankPath = path.join(resolvedOut, "phase7_phi_positive_control_bank.json");
+  artifacts.phi_positive_control_bank = writeJson(positiveControlBankPath, positiveControlBank);
+
+  const positiveControlPyPhiRun = runPyPhi(positiveControlBankPath);
+  artifacts.phi_positive_control_pyphi = writeJson(
+    path.join(resolvedOut, "phase7_phi_positive_control_pyphi_results.json"),
+    positiveControlPyPhiRun,
+  );
+
   const gnwRun = runGnw(bank);
   artifacts.gnw_principles = writeJson(path.join(resolvedOut, "phase7_gnw_principles_results.json"), gnwRun);
 
   const qicnRun = runQicnCandidate(bank, { pyphiRun, gnwRun });
   artifacts.qicn_candidate_noncircularity = writeJson(path.join(resolvedOut, "phase7_qicn_candidate_noncircularity.json"), qicnRun);
 
+  const holdoutRun = runHoldout();
+  artifacts.holdout_generalization = writeJson(path.join(resolvedOut, "phase7_holdout_generalization.json"), holdoutRun);
+
   const digestInput = {
     runner_id: RUNNER_ID,
     bank_sha256: artifacts.bank.sha256,
     pyphi_sha256: artifacts.pyphi.sha256,
+    phi_positive_control_bank_sha256: artifacts.phi_positive_control_bank.sha256,
+    phi_positive_control_pyphi_sha256: artifacts.phi_positive_control_pyphi.sha256,
     gnw_principles_sha256: artifacts.gnw_principles.sha256,
     qicn_candidate_noncircularity_sha256: artifacts.qicn_candidate_noncircularity.sha256,
+    holdout_generalization_sha256: artifacts.holdout_generalization.sha256,
   };
   const runDigest = sha256Text(stringifyJson(digestInput));
   const manifest = {

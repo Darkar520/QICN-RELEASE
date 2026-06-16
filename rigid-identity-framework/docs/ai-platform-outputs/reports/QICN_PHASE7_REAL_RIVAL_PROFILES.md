@@ -6,6 +6,8 @@ Date: 2026-06-15
 
 Phi degeneracy annotation: 2026-06-16
 
+Self-loop positive-control candidate addendum: 2026-06-16
+
 Human review: `REQUIRED`
 
 Human curated status: `not_reviewed`
@@ -26,6 +28,9 @@ computed here.
 The only completed operation is rival-side profiling:
 
 - IIT/PyPhi: exact PyPhi 1.2.0 state sweep on tractable `n=3` bank-v2 systems.
+- IIT/PyPhi addendum: exact PyPhi 1.2.0 state sweep on one additive
+  `cycle_ring_with_self_loops` candidate, kept outside the 14-family bank-v2
+  digest.
 - GWT/GNW: existing minimal Boolean broadcast/ignition detector extended to bank
   v2.
 
@@ -144,6 +149,48 @@ PyPhi sanity judgment:
 - The result is still a tiny-system rival profile. It is not an IIT validation
   experiment and not a QICN comparison.
 
+## Additive Phi Positive-Control Candidate
+
+New artifact:
+
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_phi_positive_control_bank.js`
+
+Latest tracked result artifacts:
+
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_phi_positive_control_bank.json`
+- `docs/ai-platform-outputs/sims/phase7/results/latest/phase7_phi_positive_control_pyphi_results.json`
+
+The supplement is intentionally outside `qicn_phase7_neutral_systems_bank_v2.js`.
+It does not alter the 14 bank-v2 families or the bank-v2 digest
+`9BF1AC8B6DF9FB525179BF72225B97193EFE06B4E99DAB11487046B0494D1D48`.
+
+Candidate:
+
+| family | n | control_status | update rule |
+|---|---:|---|---|
+| `cycle_ring_with_self_loops` | 3 | `NON_CANONICAL_POSITIVE_CONTROL_CANDIDATE` | each node updates to `self OR predecessor` on a directed ring with explicit `[i,i]` self-loops |
+
+PyPhi result:
+
+| family | states | min | p25 | median | p75 | max | mean | phi_constant | state_map_is_permutation | has_self_loops | phi_degeneracy |
+|---|---:|---:|---:|---:|---:|---:|---:|---|---|---|---|
+| `cycle_ring_with_self_loops` | 8 | 0.069445 | 0.069445 | 0.0798615 | 0.090278 | 0.1875 | 0.09201425 | false | false | true | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` |
+
+Comparison against the degenerate ring:
+
+| system | max Phi | mean Phi | phi_constant | state_map_is_permutation | has_self_loops | phi_degeneracy |
+|---|---:|---:|---|---|---|---|
+| `cycle_ring_copy` | 1.0 | 1.0 | true | true | false | `PHI_DEGENERATE_PERMUTATION_DYNAMICS` |
+| `cycle_ring_with_self_loops` | 0.1875 | 0.09201425 | false | false | true | `PHI_NONDEGENERATE_OR_INCONCLUSIVE` |
+
+Interpretation: adding self-loops eliminates the specific degeneracy observed
+in `cycle_ring_copy n=3` because Phi is no longer constant `1.0`, the state map
+is no longer a permutation, and the transition table has node self-dependence.
+It is therefore a cleaner baseline candidate than the degenerate ring. It is
+not a strong positive integration control: its observed max Phi is only
+`0.1875`, below the dense designed controls, and it remains a tiny-system,
+non-canonical PyPhi probe.
+
 ## GWT/GNW Broadcast Results
 
 Command:
@@ -217,6 +264,9 @@ Before any QICN-vs-rival comparison, the following must be true:
 
 - PyPhi exact state sweeps are only observed here for `n=3`; `n=4..6` remain
   marked `INTRACTABLE`.
+- The self-loop ring eliminates the previous permutation degeneracy, but it is
+  a weak positive-control candidate rather than a clean high-Phi positive
+  control.
 - GWT/GNW remains a minimal broadcast detector, not a full rival model.
 - HOT remains unimplemented in this continuation.
 - The QICN side remains blocked by human review of the `I_int / atomic

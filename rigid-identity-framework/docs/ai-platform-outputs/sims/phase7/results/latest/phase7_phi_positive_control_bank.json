@@ -1,0 +1,92 @@
+{
+  "artifact": "qicn_phase7_phi_positive_control_bank",
+  "status": "NON_CANONICAL_AI_OUTPUT_PHI_POSITIVE_CONTROL_CANDIDATE_BANK",
+  "model_id": "phase7-phi-positive-control-candidate-bank-v1",
+  "version": "phase7-phi-positive-control-candidates-v1",
+  "seed": 7307,
+  "additive_policy": "This supplement does not alter qicn_phase7_neutral_systems_bank_v2.js, its 14 families, or the bank-v2 digest.",
+  "systems": [
+    {
+      "id": "phi_pc_n3_cycle_ring_with_self_loops_seed7307",
+      "bank_version": "phase7-phi-positive-control-candidates-v1",
+      "seed": 7307,
+      "n": 3,
+      "family": "cycle_ring_with_self_loops",
+      "control_status": "NON_CANONICAL_POSITIVE_CONTROL_CANDIDATE",
+      "control_role": "Additive PyPhi positive-control candidate; not part of the 14-family bank v2 digest.",
+      "nodes": [
+        "x0",
+        "x1",
+        "x2"
+      ],
+      "edges": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "update_rule": "Each node updates to self OR predecessor on a directed ring with explicit node self-loops.",
+      "qicn_instantiation_status": "NOT_INSTANTIATED_BLOCKED_ON_HUMAN_REVIEW_OF_I_INT_GAP",
+      "transition_table": [
+        {
+          "state": "000",
+          "next": "000"
+        },
+        {
+          "state": "001",
+          "next": "101"
+        },
+        {
+          "state": "010",
+          "next": "011"
+        },
+        {
+          "state": "011",
+          "next": "111"
+        },
+        {
+          "state": "100",
+          "next": "110"
+        },
+        {
+          "state": "101",
+          "next": "111"
+        },
+        {
+          "state": "110",
+          "next": "111"
+        },
+        {
+          "state": "111",
+          "next": "111"
+        }
+      ]
+    }
+  ],
+  "no_claims": [
+    "This is a positive-control candidate only.",
+    "It is not an IIT validation result.",
+    "It is not a QICN instantiation.",
+    "It creates no consciousness, integration, superiority, or external-validation claim."
+  ]
+}

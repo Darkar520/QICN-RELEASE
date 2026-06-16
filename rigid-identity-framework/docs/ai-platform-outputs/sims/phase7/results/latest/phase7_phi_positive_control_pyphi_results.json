@@ -1,0 +1,72 @@
+{
+  "artifact": "qicn_phase7_pyphi_wrapper",
+  "max_n": 3,
+  "model_id": "phase7-pyphi-real-state-sweep-wrapper-v3",
+  "pyphi_available": true,
+  "pyphi_version": "1.2.0",
+  "results": [
+    {
+      "family": "cycle_ring_with_self_loops",
+      "has_self_loops": true,
+      "n": 3,
+      "phi_constant": false,
+      "phi_degeneracy": "PHI_NONDEGENERATE_OR_INCONCLUSIVE",
+      "phi_distribution": {
+        "count": 8,
+        "max": 0.1875,
+        "mean": 0.09201425,
+        "median": 0.0798615,
+        "min": 0.069445,
+        "p25": 0.069445,
+        "p75": 0.090278
+      },
+      "state_count": 8,
+      "state_map_is_permutation": false,
+      "state_results": [
+        {
+          "phi": 0.1875,
+          "state": "000",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.090278,
+          "state": "001",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.090278,
+          "state": "010",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.069445,
+          "state": "011",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.090278,
+          "state": "100",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.069445,
+          "state": "101",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.069445,
+          "state": "110",
+          "status": "PYPHI_COMPUTED"
+        },
+        {
+          "phi": 0.069445,
+          "state": "111",
+          "status": "PYPHI_COMPUTED"
+        }
+      ],
+      "status": "PYPHI_STATE_SWEEP_COMPUTED",
+      "system_id": "phi_pc_n3_cycle_ring_with_self_loops_seed7307"
+    }
+  ],
+  "status": "PYPHI_AVAILABLE_REAL_STATE_SWEEP_ATTEMPTED"
+}

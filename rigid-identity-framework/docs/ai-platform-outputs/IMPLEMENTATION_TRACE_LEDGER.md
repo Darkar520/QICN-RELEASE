@@ -6053,3 +6053,166 @@ Next step:
 - Commit locally with message
   `docs: balance phase7 holdout with confirmed factorizable negatives for out-of-sample specificity`.
 - Do not push.
+
+---
+
+## 2026-06-16 — Related-work draft, label-permutation invariance, reporting convention, and Paper 5 bridge cross-reference
+
+Agent/platform: Codex
+
+User request: Close exposure and robustness by adding a non-canonical related-work draft, an empirical label-permutation invariance test, a permanent verifier-reporting convention in `AGENTS.md`, and a Paper 5 bridge/approximation cross-reference, without touching canon/registry/release/.tex/monolith/production/package.json, without `git add -A`, and without push.
+
+Operational objective:
+- Improve publication-facing exposure without claiming superiority or closure.
+- Upgrade the input-contract audit from static source scanning to an empirical label-invariance check over bank v2.
+- Prevent future misreporting of verifier exit code 0 as scientific approval.
+- Explicitly mark that Phase 7 PyPhi/GNW calibration is internal evidence and not a Paper 5 approximation/bridge certificate.
+
+Head / workspace context:
+- Starting HEAD for this task: `4b4b4f3` (`docs: balance phase7 holdout with confirmed factorizable negatives for out-of-sample specificity`).
+- Initial `git status --short --branch`: `## main...origin/main [ahead 1]` plus one pre-existing modified file, `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`.
+- That pre-existing index modification was not read as an input to this phase, was not edited, and must not be staged by this phase.
+
+Files read:
+- Root governance: `docs/CANON_SOURCE_OF_TRUTH.md`, `docs/CANON_MANIFEST.md`, `docs/CLAIM_REGISTRY.md`, `docs/LAYER_BOUNDARIES.md`, `docs/THEORY_SYSTEM_INTERFACE.md`.
+- Package governance: `rigid-identity-framework/INSTRUCCIONES.md`, `rigid-identity-framework/ROADMAP.md`, `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`.
+- Prior reports: `docs/ai-platform-outputs/reports/QICN_LITERATURE_CONFRONTATION_GAP.md`, `docs/ai-platform-outputs/reports/QICN_EVIDENCE_SURFACE_AND_OPEN_GAPS.md`, `docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`, `docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md`.
+- Phase 7 code: `docs/ai-platform-outputs/sims/qicn_phase7_neutral_systems_bank_v2.js`, `docs/ai-platform-outputs/sims/phase7/qicn_phase7_qicn_candidate_noncircularity.js`, `docs/ai-platform-outputs/sims/phase7/qicn_phase7_holdout_bank.js`, `docs/ai-platform-outputs/sims/phase7/phase7_run_all.js`.
+- Paper 5 source for line anchors only: `paper5_operational_consciousness/main.tex`.
+- Root `AGENTS.md`.
+
+Files created:
+- `docs/ai-platform-outputs/reports/QICN_RELATED_WORK_DRAFT.md`
+  - Status: `NON_CANONICAL_DRAFT_FOR_HUMAN_REVIEW`.
+  - Purpose: exposure draft only, not inserted into `.tex`.
+  - Covers inverse-limit identity vs Parfit/Lewis/Shoemaker, `I_int` vs IIT/Phi, `C_op`/six-invariant certificate vs GNW/GWT, HOT, FEP/predictive processing, functionalism/operationalism, `M_Omega` vs moduli/rigidity, and inverse limits vs profinite limits.
+  - Each section ends with: `Diferenciación declarada, no probada; pendiente de validación humana.`
+
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_label_permutation_invariance.js`
+  - Status output when passing: `LABEL_INVARIANCE_CONFIRMED`.
+  - Mutates only the `family` field over bank v2; leaves `n` and `transition_table` unchanged.
+  - Includes five known cross-label mutations:
+    `majority<->product`, `cycle<->product`, `broadcast<->product`,
+    `threshold<->product`, and `random-majority<->product`.
+  - Adds systematic full/partial family permutations.
+  - Explicitly records that label invariance is necessary, not sufficient, for non-circularity.
+
+Files modified:
+- `AGENTS.md`
+  - Added one verifier-reporting convention sentence:
+    `verifier exit code 0 ≠ verdict approved. Always report the adjudicator verdict string verbatim (e.g. BLOCKED_FOUNDATION_FIRST_GATES) and external_support_certified together with any 'PASS'.`
+- `docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+  - Added label-permutation invariance section and metrics.
+  - Added explicit Paper 5 approximation/bridge boundary: Phase 7 PyPhi/GNW evidence is internal measurement, not certification of the approximation theorem/bridge.
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+  - This entry.
+
+Verified Paper 5 anchors:
+- `paper5_operational_consciousness/main.tex:711`: `\subsection{Approximate Stability}`.
+- `paper5_operational_consciousness/main.tex:712`: theorem begins, `\begin{theorem}[Approximate stability]\label{thm:stability}`.
+- `paper5_operational_consciousness/main.tex:724`: bounded condition `0 \le \eps < \frac{\delta_\star(S_1)}{2}`.
+- `paper5_operational_consciousness/main.tex:733`: limitation sentence that approximation is bounded by the invariant budget / positive witness margins, not arbitrary continuity.
+
+Label-permutation result:
+
+```text
+status: LABEL_INVARIANCE_CONFIRMED
+permutations_tested: 10
+known_cross_mutations_tested: 5
+system_evaluations: 560
+family_field_mutations: 248
+transition_table_changes: 0
+observable_input_changes: 0
+full_candidate_changes: 0
+classification_changes: 0
+```
+
+In-sample and comparison invariants:
+
+```text
+status: CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY
+preliminary_comparison.status: NOT_RUN
+confusion: TP 42, TN 8, FP 0, FN 6, accuracy 0.8929, sensitivity 0.875, specificity 1
+```
+
+Commands and observed results:
+
+| Command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Preflight repo status | `main...origin/main [ahead 1]`; pre-existing modified `QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_label_permutation_invariance.js --self-test` | New label-permutation empirical test | PASS after correcting self-test count to use `bank.systems.length`; `LABEL_INVARIANCE_CONFIRMED`; 10 permutations; 560 system evaluations; 0 transition-table, observable-input, full-candidate, or classification changes. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_atomicity_ground_truth.js --self-test` | Atomicity truth regression | PASS. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_qicn_candidate_noncircularity.js --self-test` | In-sample candidate regression | PASS; verdict remains `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; TP 42, TN 8, FP 0, FN 6, accuracy `0.8929`. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_holdout_bank.js --self-test` | Balanced hold-out regression | PASS; 46 systems; 15 truth negatives; TP 30, TN 15, FP 0, FN 1, accuracy `0.9783`, specificity `1`. |
+| `node docs\ai-platform-outputs\sims\phase7\qicn_phase7_phi_positive_control_bank.js --self-test` | Phi positive-control candidate regression | PASS. |
+| `node docs\ai-platform-outputs\sims\phase7\phase7_run_all.js --self-test` | Runner double-run byte stability | PASS; first and second digest both `15473E145933F0A54E30A0005C44683CFCF0D64EC62B15DD9B31829169DEC6F1`. |
+| Node one-liner over `run(buildBank())` | Confirm in-sample verdict/comparison | `status=CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`; `preliminary_comparison.status=NOT_RUN`. |
+| `npm run verify` from `rigid-identity-framework/` | Package verification and raw adjudicator status | Exit code 0; v30/v31 remain blocked; `external_support_certified=false`. |
+| `node scripts\verify-canonical-integrity.cjs` from repo root | Root governance gate required by `AGENTS.md` | PASS; note `working_tree_not_clean_at_hardening_start` because this phase had unstaged edits. |
+| `node scripts\verify-claim-registry.cjs` from repo root | Root claim-registry gate | PASS. |
+| `node scripts\verify-canonical-release.cjs` from repo root | Root canonical-release gate | PASS. |
+| `git diff --check` | Whitespace sanity | No whitespace errors; Windows CRLF warnings only. |
+| `Select-String` on Paper 5 and reports | Verify anchor lines and report clauses | Resolved Paper 5 lines 711, 712, 724, 733; report clauses found. |
+| `[System.IO.File]::ReadAllLines(...).Length` + `Get-FileHash -Algorithm SHA256` | Physical line counts and hashes | Completed; method counts physical lines including blanks. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Interpretation note:
+- `exit code 0 = gates executed; not corpus approval. external_support_certified=false.`
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `AGENTS.md` | 50 | `8414C3208536EA3BF8223780F34BC9455ED9BFF5425D3E35878BD4F4DC266A70` |
+| `docs/ai-platform-outputs/reports/QICN_RELATED_WORK_DRAFT.md` | 159 | `B7B0C1F2989A165F6581B534B48767B72AC44606A3B0183D8A75C94DA14CE167` |
+| `docs/ai-platform-outputs/sims/phase7/qicn_phase7_label_permutation_invariance.js` | 286 | `6AFF700C2EA0AA9925FFEFDF76333F45D143357A616232D68FB81124D79E145B` |
+| `docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md` | 347 | `6BF160A2DACADDEBB3F0A2A93EA86F79904C3520A421ADD86F2C6D4B54EA02BE` |
+| `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md` before this entry | 6055 | `59FB7C40110BF6F861B2CAA5C23A96E8220C8E05577612D9ACBC286D5DB539F8` |
+
+Regression checks:
+- No `.tex`, BaseCore, registry, release, monolithic source, production package, or `package.json` file was modified.
+- The related-work draft is non-canonical and remains under `docs/ai-platform-outputs/reports/`.
+- The new permutation test is under `docs/ai-platform-outputs/sims/phase7/`.
+- `AGENTS.md` change is additive only and limited to the explicitly requested reporting convention.
+- The new permutation test leaves raw `transition_table` intact and mutates only `family`.
+- In-sample verdict remains `CONNECTED_INCIDENCE_DOES_NOT_RECOVER_COMPUTED_ATOMICITY`.
+- Preliminary comparison remains `NOT_RUN`.
+- No QICN-vs-rival comparison was run or reactivated.
+- No external validation, consciousness, phenomenality, identity, subjectivity, agency, bridge-certification, or superiority claim is made.
+- No push was attempted.
+
+Residual risks:
+- Label invariance is a necessary leakage check only; it does not prove non-circularity.
+- Related-work positioning is still a human-review draft; it lacks full bibliographic completion for Koch, Dehaene, Mashour, Friston, Rosenthal, Lau, Dennett, Block, Tye, Lewis, and Shoemaker.
+- Paper 5 bridge/approximation anchoring is a documentation boundary, not a proof or certified bridge instance.
+- Root canonical gate output includes `working_tree_not_clean_at_hardening_start`, expected because this phase had unstaged edits when the gate ran.
+
+Git status to classify before staging:
+
+```text
+ M AGENTS.md
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md
+?? rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_RELATED_WORK_DRAFT.md
+?? rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_label_permutation_invariance.js
+```
+
+Staging instruction:
+- Stage explicitly only:
+  - `AGENTS.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_RELATED_WORK_DRAFT.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/sims/phase7/qicn_phase7_label_permutation_invariance.js`
+  - `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- Exclude the pre-existing modified `QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`.
+
+Next step:
+- Commit locally with message:
+  `docs: related-work draft, label-permutation invariance test, reporting convention, paper5 bridge cross-ref`.
+- Do not push.

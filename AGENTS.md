@@ -34,6 +34,8 @@ node scripts/verify-canonical-release.cjs
 
 If any fails, **stop** and report. Do not patch around the failure.
 
+Verifier reporting convention: verifier exit code 0 ≠ verdict approved. Always report the adjudicator verdict string verbatim (e.g. BLOCKED_FOUNDATION_FIRST_GATES) and external_support_certified together with any 'PASS'.
+
 ## Agent behavior
 
 - Default agent: **build**. Use **plan** for non-trivial design decisions.

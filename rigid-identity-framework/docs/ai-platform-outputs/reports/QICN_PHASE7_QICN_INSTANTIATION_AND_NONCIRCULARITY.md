@@ -248,6 +248,43 @@ Latest tracked result hashes:
 | `phase7_holdout_generalization.json` | `25A31B6F666B921C888C73A056F67140CCBE7291E4961CB6B1B054895D8F25F3` |
 | `phase7_run_manifest.json` | `ECA1F5D07045869EBADCC4E911046BF58C2761013942AA9A13294985E5CD5880` |
 
+## Label-Permutation Invariance
+
+New artifact:
+
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_label_permutation_invariance.js`
+
+Command:
+
+```powershell
+node docs\ai-platform-outputs\sims\phase7\qicn_phase7_label_permutation_invariance.js --self-test
+```
+
+Result: `PASS`.
+
+Observed status: `LABEL_INVARIANCE_CONFIRMED`.
+
+The test permutes only the `family` field over bank v2 while leaving `n` and
+`transition_table` unchanged. It includes five known cross-label mutations
+(`majority<->product`, `cycle<->product`, `broadcast<->product`,
+`threshold<->product`, and `random-majority<->product`) plus systematic
+rotations/cycles over the family labels.
+
+| metric | value |
+|---|---:|
+| permutations tested | 10 |
+| known cross-label mutations tested | 5 |
+| system evaluations | 560 |
+| family-field mutations | 248 |
+| transition-table changes | 0 |
+| observable-input changes | 0 |
+| classification changes | 0 |
+
+Invariancia a la etiqueta es necesaria, no suficiente, para no-circularidad;
+la suficiencia la da la verdad computada + hold-out. This result closes only
+the narrow empirical label-leakage check over bank v2; it does not prove that
+connected incidence is a non-circular formal substitute for atomicity.
+
 Because the recovery test failed the high-accuracy threshold, the preliminary
 QICN/IIT/GNW comparison is not run:
 
@@ -288,6 +325,13 @@ status remains blocked.
 - No comparison is run after the computed-truth recovery failure.
 - The hold-out result is not an external validation result and does not
   override the in-sample negative verdict.
+- La evidencia calibratoria de Fase 7 (PyPhi/GNW sobre sistemas Booleanos
+  pequeños) NO constituye el bridge condicional al CCR target de paper5 §11;
+  es medición interna, no certificación del approximation theorem. The relevant
+  Paper 5 anchor is the approximate-stability theorem and its bounded-margin
+  condition (`paper5_operational_consciousness/main.tex:711-733`), especially
+  the warning that approximation is bounded by positive witness margins rather
+  than by arbitrary continuity (`paper5_operational_consciousness/main.tex:733`).
 - No external validation is claimed.
 - No consciousness, phenomenality, agency, subjectivity, or human-equivalence
   claim follows.

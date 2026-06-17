@@ -6216,3 +6216,140 @@ Next step:
 - Commit locally with message:
   `docs: related-work draft, label-permutation invariance test, reporting convention, paper5 bridge cross-ref`.
 - Do not push.
+
+## 2026-06-16 - Speculative retro-induction as optimal control draft
+
+Task:
+- Formalize the historical/prompt-level "retro-induction" idea as a non-canonical, speculative optimal-control/lookahead layer over `C_op`.
+- Preserve BaseCore as forward-only and contractive.
+- Do not touch canon, registry, release, `.tex`, monolithic material, production code, or `package.json`.
+- Keep status `INTERNAL`; AI audit/consensus is error-reduction only, not certification.
+- Commit locally only; no push.
+
+Preflight status:
+- Branch before this task: `main...origin/main [ahead 2]`.
+- Pre-existing uncommitted items excluded from this task:
+  - modified `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`
+  - untracked `rigid-identity-framework/RCIC-ULTIMA VERSION.pdf`
+  - untracked `rigid-identity-framework/RCIC_X.pdf`
+
+Governance and source files read:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `AGENTS.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/basecore/core/sections/01_foundation_from_core.tex`
+- `rigid-identity-framework/paper5_operational_consciousness/main.tex`
+
+Files created:
+- `docs/ai-platform-outputs/reports/QICN_RETROINDUCTION_OPTIMAL_CONTROL_DRAFT.md`
+  - Status: `NON_CANONICAL_SPECULATIVE_DRAFT`
+  - Claim layer: `INTERNAL`
+  - Human review: `REQUIRED`
+  - Human curated status: `not_reviewed`
+  - Verdict: `CONSISTENT_UNDER_RESTRICTED_ADMISSIBLE_CONTROL`
+
+Core result of the draft:
+- The local corpus search did not locate a canonical statement named `Axioma III`, `Axiom III`, `retro-induccion`, or `retro-induction`.
+- Therefore the axiom is treated as prompt-level/historical, not as a BaseCore or paper citation.
+- The physically causal reading is discarded: no future-to-present physical causation is admitted.
+- The conserved kernel is finite-horizon predictive lookahead / optimal control:
+  - states evolve forward under `x_{k+1}=Phi_{u_k}(x_k)` or BaseCore-compatible `T_u`;
+  - Bellman recursion computes values backward only in the planning index;
+  - selected interventions must remain inside the admissible/contraction envelope.
+- No `NEW_CLAIM` is made.
+- `NEW_CLAIM register: none`; the proof-skeleton requirement is therefore not triggered.
+- Proposed metric, prediction, negative control, and toy experiment are marked `CONJECTURE` until implemented.
+
+Verified local anchors used:
+- Paper 5 admissible-system tuple and intervention family:
+  - `paper5_operational_consciousness/main.tex:176-195`
+- Paper 5 admissible support and forward invariance:
+  - `paper5_operational_consciousness/main.tex:197-204`
+- Paper 5 operational-history equation:
+  - `paper5_operational_consciousness/main.tex:216-220`
+- Paper 5 `C_op` membership by six invariants:
+  - `paper5_operational_consciousness/main.tex:484-487`
+- BaseCore contraction operator:
+  - `basecore/core/sections/01_foundation_from_core.tex:39-40`
+- BaseCore transition operator:
+  - `basecore/core/sections/01_foundation_from_core.tex:112-117`
+- BaseCore strict contractivity:
+  - `basecore/core/sections/01_foundation_from_core.tex:119-135`
+- BaseCore Banach fixed-point result:
+  - `basecore/core/sections/01_foundation_from_core.tex:140-152`
+- BaseCore non-runtime/non-phenomenological boundary:
+  - `basecore/core/sections/01_foundation_from_core.tex:216-218`
+
+External literature anchors verified for the draft:
+- Bellman dynamic programming / optimal-control recursion:
+  - Bellman, `Dynamic Programming`, 1957; related primary article anchor: `https://www.pnas.org/doi/10.1073/pnas.38.8.716`
+- Model predictive control:
+  - Rawlings, Mayne, and Diehl, `Model Predictive Control: Theory, Computation, and Design`, 2nd ed.; anchor: `https://sites.engineering.ucsb.edu/~jbraw/mpc/MPC-book-2nd-edition-5th-printing.pdf`
+- Expected free energy / active inference:
+  - Sajid, Da Costa, Parr, and Friston, `Active inference, Bayesian optimal design, and expected utility`, 2021; anchor: `https://arxiv.org/abs/2110.04074`
+- Backward induction / extensive games:
+  - Kuhn, `Extensive Games and the Problem of Information`, 1953; anchor: `https://en.wikipedia.org/wiki/Perfect_recall_%28game_theory%29`
+
+Commands and observed results:
+
+| Command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Preflight status | `main...origin/main [ahead 2]`; pre-existing modified gap-package index and two untracked PDFs. |
+| `Select-String` over draft for `retrocaus`, forbidden vocabulary, risk labels, and `NEW_CLAIM` | Boundary sanity | No `NEW_CLAIM` body beyond explicit `NEW_CLAIM register: none`; no forbidden no-locality/holography/quantization vocabulary. |
+| `npm run verify` from `rigid-identity-framework/` | Package verification and raw adjudicator status | Exit code 0; raw adjudicators remain blocked; `external_support_certified=false`. |
+| `node scripts\verify-canonical-integrity.cjs` from repo root | Root governance gate required by `AGENTS.md` | PASS; note `working_tree_not_clean_at_hardening_start` due pre-existing/user dirty tree. |
+| `node scripts\verify-claim-registry.cjs` from repo root | Root claim-registry gate | PASS. |
+| `node scripts\verify-canonical-release.cjs` from repo root | Root canonical-release gate | PASS. |
+| `[System.IO.File]::ReadAllLines(...).Length` + `Get-FileHash -Algorithm SHA256` | Physical line counts and hashes | Completed; method counts physical lines including blanks. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Interpretation note:
+- `exit code 0 = gates executed; not corpus approval. external_support_certified=false.`
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `docs/ai-platform-outputs/reports/QICN_RETROINDUCTION_OPTIMAL_CONTROL_DRAFT.md` | 191 | `5E77B20ED150D27A1C48FC326F0F7750F2C7F055832888ADECFA476524A4B5E6` |
+| `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md` before this entry | 6218 | `C8D1E19769B3E10791F2EA3E42556BE583BC17F1F0BBB19D7D66103FD62B2195` |
+
+Regression checks:
+- No `.tex`, BaseCore, registry, release, monolithic source, production package, or `package.json` file was modified.
+- The draft remains under `docs/ai-platform-outputs/reports/`.
+- The draft is speculative, non-canonical, and internal.
+- Retro-induction is formalized only as lookahead / finite-horizon optimal control.
+- No physical retrocausality, no external validation, no consciousness/identity/subjectivity/agency/phenomenality claim, no superiority claim, and no bridge certification is made.
+- Consistency with BaseCore is conditional on admissible forward maps remaining inside the contraction envelope; if a future version permits controls outside that envelope, it fails as a QICN layer.
+- No push was attempted.
+
+Residual risks:
+- The named original `Axioma III` was not located in local canonical sources by the searched terms, so the recovered axiom core is reconstructed from the prompt, not cited from the corpus.
+- The proposed metric, prediction, negative control, and reproducible toy experiment are not implemented in this pass.
+- `C_op` membership is not certified for any concrete system.
+- This draft may ultimately collapse to standard MPC/optimal control with only a QICN-specific cost design; the draft says this plainly.
+
+Staging instruction:
+- Stage explicitly only:
+  - `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_RETROINDUCTION_OPTIMAL_CONTROL_DRAFT.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- Exclude:
+  - `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`
+  - `rigid-identity-framework/RCIC-ULTIMA VERSION.pdf`
+  - `rigid-identity-framework/RCIC_X.pdf`
+
+Next step:
+- Commit locally with message:
+  `docs: speculative retro-induction as optimal control draft (non-canonical)`.
+- Do not push.

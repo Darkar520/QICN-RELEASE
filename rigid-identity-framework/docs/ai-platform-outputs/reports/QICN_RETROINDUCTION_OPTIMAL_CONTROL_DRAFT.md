@@ -189,3 +189,51 @@ No superiority claim is made. The sober reading is that the "retro-induction" la
 ## 8. Minimal Next Step
 
 [CONJECTURE] The only useful next step is a tiny deterministic simulation of the delayed-rupture prediction and negative control. If the lookahead policy cannot beat a myopic policy in that toy setting, the retro-induction framing has no operational value beyond relabeling standard control.
+
+## 9. Minimal Toy Experiment
+
+Status: `NON_CANONICAL_SPECULATIVE_INTERNAL_TOY_EXPERIMENT`
+
+Script: `docs/ai-platform-outputs/sims/retroinduction/qicn_retroinduction_toy.js`
+
+Self-test command:
+
+```powershell
+node docs\ai-platform-outputs\sims\retroinduction\qicn_retroinduction_toy.js --self-test
+```
+
+Self-test result: `PASS`
+
+Digest reported by the script: `15053BD5B5A4AEC148D33C639EE381DDC088A5B6CA2324A0F6E788A92A5C956F`
+
+[STANDARD_APPLICATION] The toy implements the finite-horizon Bellman recursion from Section 2.3 over a deterministic affine forward system:
+
+```text
+X = [0,1]^2
+T_u(x) = clip(Kx + b_u)
+K = [[0.75,0],[0,0.5]]
+||K||_2 <= 0.75 < 1
+margin(x) = 1 - x[0]
+threshold = 0.5
+```
+
+This is compatible with the contraction-shaped BaseCore H2 condition only as a toy construction. It is not a `C_op` certificate and it is not evidence for a real system.
+
+[STANDARD_APPLICATION] Result matrix:
+
+| System | Policy | First action | Actions over 3 steps | Margins | Margin-preservation rate | Evaluation total cost | Raw outcome |
+|---|---|---|---|---|---:|---:|---|
+| delayed margin rupture | `H=1` myopic | `rupture_delayed` | `rupture_delayed`, `safe_preserve`, `safe_preserve` | `0.95`, `0.6125`, `0.539375`, `0.484531` | `0` | `10.78875` | delayed margin failure at step 3 |
+| delayed margin rupture | `H=3` lookahead | `safe_preserve` | `safe_preserve`, `safe_preserve`, `safe_preserve` | `0.95`, `0.7925`, `0.674375`, `0.585781` | `1` | `0.24` | margin preserved through step 3 |
+| identical-margin negative control | `H=1` myopic | `control_a` | `control_a`, `control_a`, `control_a` | `0.95`, `0.8025`, `0.691875`, `0.608906` | `1` | `0.12` | no failure |
+| identical-margin negative control | `H=3` lookahead | `control_a` | `control_a`, `control_a`, `control_a` | `0.95`, `0.8025`, `0.691875`, `0.608906` | `1` | `0.12` | no horizon advantage |
+
+Verdict: `LOOKAHEAD_BEATS_MYOPIC_IN_TOY`.
+
+[STANDARD_APPLICATION] What this demonstrates: in this engineered finite-dimensional contractive toy, a horizon-3 Bellman policy avoids a delayed margin loss that a horizon-1 myopic policy does not see at the first decision. The negative control shows that horizon length alone does not create an advantage when admissible actions have identical margin trajectories and identical cost.
+
+[CONJECTURE] What remains open: whether any QICN-relevant cost family over real `C_op` certificate margins is meaningful, non-circular, and externally useful. This toy does not answer that.
+
+NEW_CLAIM register: none.
+
+Non-conclusion: this is not retrocausality, not external validation, not `C_op` membership, not a bridge certificate, not a consciousness/identity/subjectivity/agency/phenomenality claim, and not a superiority claim over other control formalisms.

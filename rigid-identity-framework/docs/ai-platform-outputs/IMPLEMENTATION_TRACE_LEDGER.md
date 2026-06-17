@@ -6353,3 +6353,178 @@ Next step:
 - Commit locally with message:
   `docs: speculative retro-induction as optimal control draft (non-canonical)`.
 - Do not push.
+
+## 2026-06-16 - Retro-induction toy experiment and pending hygiene
+
+Task:
+- Implement the Section 8 minimal toy experiment from `QICN_RETROINDUCTION_OPTIMAL_CONTROL_DRAFT.md`.
+- Keep the layer non-canonical, speculative, and `INTERNAL`.
+- Treat "retro-induction" only as finite-horizon lookahead / optimal control, not physical retrocausality.
+- Report a negative result honestly if the lookahead policy fails.
+- Resolve pending hygiene by including the modified human-reviewer gap-package index and moving root-level founding PDFs into a classified AI-output manuscript folder.
+- Commit locally only; no push.
+
+Preflight status:
+- Branch before this task: `main...origin/main [ahead 3]`.
+- Existing dirty items before implementation:
+  - modified `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`
+  - untracked `rigid-identity-framework/RCIC-ULTIMA VERSION.pdf`
+  - untracked `rigid-identity-framework/RCIC_X.pdf`
+
+Governance and source files read:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `rigid-identity-framework/INSTRUCCIONES.md`
+- `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_RETROINDUCTION_OPTIMAL_CONTROL_DRAFT.md`
+- `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`
+- Phase-output script examples under `rigid-identity-framework/docs/ai-platform-outputs/sims/`
+
+Files created:
+- `docs/ai-platform-outputs/sims/retroinduction/qicn_retroinduction_toy.js`
+  - Deterministic Node.js toy experiment.
+  - Implements `T_u(x)=clip(Kx+b_u)` on `X=[0,1]^2`.
+  - Uses `K=[[0.75,0],[0,0.5]]`, with documented operator-norm bound `||K||_2 <= 0.75 < 1`.
+  - Implements Bellman finite-horizon policy evaluation for `H=1` and `H=3`.
+  - Includes a delayed-margin-rupture prediction system and an identical-margin negative control.
+  - Includes `--self-test`.
+
+Files modified:
+- `docs/ai-platform-outputs/reports/QICN_RETROINDUCTION_OPTIMAL_CONTROL_DRAFT.md`
+  - Added Section 9, `Minimal Toy Experiment`.
+  - Reports result matrix and verdict `LOOKAHEAD_BEATS_MYOPIC_IN_TOY`.
+  - Keeps `NEW_CLAIM register: none`.
+  - States explicitly that the result is a standard toy lookahead result, not a `C_op` certificate, bridge certificate, external validation, or consciousness/identity/subjectivity/agency/phenomenality claim.
+- `docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`
+  - Pre-existing legitimate modification included in this phase as requested.
+  - Adds latest internal empirical evidence summary for Phase 7, including balanced hold-out and Phi-degeneracy limitations.
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+  - This entry.
+
+Files moved:
+- Policy chosen for root-level founding PDFs: preserve content and move into a classified non-canonical AI-output manuscript folder.
+- Destination folder:
+  - `docs/ai-platform-outputs/manuscript/founding-papers/`
+- Moved:
+  - `rigid-identity-framework/RCIC-ULTIMA VERSION.pdf`
+    -> `rigid-identity-framework/docs/ai-platform-outputs/manuscript/founding-papers/RCIC-ULTIMA VERSION.pdf`
+  - `rigid-identity-framework/RCIC_X.pdf`
+    -> `rigid-identity-framework/docs/ai-platform-outputs/manuscript/founding-papers/RCIC_X.pdf`
+- Root-path post-move checks returned `False` for both original paths, confirming the root-level hygiene issue is resolved without deletion.
+
+Toy experiment raw result:
+
+```text
+verdict=LOOKAHEAD_BEATS_MYOPIC_IN_TOY
+digest=15053BD5B5A4AEC148D33C639EE381DDC088A5B6CA2324A0F6E788A92A5C956F
+self_test=PASS
+K_norm_bound=0.75 < 1
+```
+
+Delayed-rupture system:
+
+| Policy | First action | Actions over 3 steps | Margins | Margin-preservation rate | Evaluation total cost |
+|---|---|---|---|---:|---:|
+| `H=1` myopic | `rupture_delayed` | `rupture_delayed`, `safe_preserve`, `safe_preserve` | `0.95`, `0.6125`, `0.539375`, `0.484531` | `0` | `10.78875` |
+| `H=3` lookahead | `safe_preserve` | `safe_preserve`, `safe_preserve`, `safe_preserve` | `0.95`, `0.7925`, `0.674375`, `0.585781` | `1` | `0.24` |
+
+Negative control:
+
+| Policy | First action | Actions over 3 steps | Margins | Margin-preservation rate | Evaluation total cost |
+|---|---|---|---|---:|---:|
+| `H=1` myopic | `control_a` | `control_a`, `control_a`, `control_a` | `0.95`, `0.8025`, `0.691875`, `0.608906` | `1` | `0.12` |
+| `H=3` lookahead | `control_a` | `control_a`, `control_a`, `control_a` | `0.95`, `0.8025`, `0.691875`, `0.608906` | `1` | `0.12` |
+
+Interpretation:
+- The prediction holds inside the engineered toy: `H=3` avoids the delayed rupture that `H=1` does not see at the first decision.
+- The negative control holds: when all admissible actions have identical margin trajectories and costs, horizon length gives no margin or evaluated-cost advantage.
+- This is a standard finite-horizon lookahead result. It does not establish a new theorem, does not certify `C_op`, and does not generalize outside the toy.
+
+Commands and observed results:
+
+| Command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Preflight status | `main...origin/main [ahead 3]`; modified gap-package index; two untracked root PDFs. |
+| `node docs\ai-platform-outputs\sims\retroinduction\qicn_retroinduction_toy.js --self-test` | Toy experiment self-test | PASS; verdict `LOOKAHEAD_BEATS_MYOPIC_IN_TOY`; digest `15053BD5B5A4AEC148D33C639EE381DDC088A5B6CA2324A0F6E788A92A5C956F`. |
+| `git diff --check` | Whitespace sanity | No whitespace errors; Windows CRLF warnings only. |
+| `Select-String` over draft and toy script | Boundary sanity | Found non-canonical/status/verdict/no-claim markers; no `NEW_CLAIM` body beyond explicit empty register; no no-locality/holography/quantization vocabulary. |
+| `Get-FileHash` on root PDFs before moving | PDF preservation precheck | Ran before move; console table truncated hash display, full post-move hashes recorded below. |
+| `Move-Item` for both root PDFs | Hygiene policy | Moved both PDFs into `docs/ai-platform-outputs/manuscript/founding-papers/`; no deletion. |
+| `Test-Path` on original root PDF paths | Confirm root cleanup | Both returned `False`. |
+| `Get-FileHash` on moved PDFs | Content identity/provenance | Full SHA256 hashes recorded below. |
+| `npm run verify` from `rigid-identity-framework/` | Package verification and raw adjudicator status | Exit code 0; v30/v31 remain blocked; `external_support_certified=false`. |
+| `node scripts\verify-canonical-integrity.cjs` from repo root | Root governance gate required by `AGENTS.md` | PASS; note `working_tree_not_clean_at_hardening_start` due this phase's unstaged edits. |
+| `node scripts\verify-claim-registry.cjs` from repo root | Root claim-registry gate | PASS. |
+| `node scripts\verify-canonical-release.cjs` from repo root | Root canonical-release gate | PASS. |
+| `[System.IO.File]::ReadAllLines(...).Length` + `Get-FileHash -Algorithm SHA256` | Physical line counts and hashes | Completed; method counts physical lines including blanks. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Interpretation note:
+- `exit code 0 = gates executed; not corpus approval. external_support_certified=false.`
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `docs/ai-platform-outputs/sims/retroinduction/qicn_retroinduction_toy.js` | 301 | `98EA7A27D20A63F411C0C5C10589149B38A06790F853CB635077CBAAA09517F6` |
+| `docs/ai-platform-outputs/reports/QICN_RETROINDUCTION_OPTIMAL_CONTROL_DRAFT.md` | 239 | `36B70243423D568B22C64094277B58248E6C88D29563F81819D94D51CD4D3C07` |
+| `docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md` | 65 | `8E582A170B98D07F3543A14B6498B69B6AB71450FD16154D5D92B4330029AAA5` |
+| `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md` before this entry | 6355 | `621EB50371018F73A0CB3E0B025D9D1FF13A41D392DE74DB34432D79E499565F` |
+
+Moved PDF hashes:
+
+| File | SHA256 |
+|---|---|
+| `docs/ai-platform-outputs/manuscript/founding-papers/RCIC-ULTIMA VERSION.pdf` | `760FCEB8FE0475A256FE8E46F1DA0C3CCAF51F704A78048BCBAB63F22A45316B` |
+| `docs/ai-platform-outputs/manuscript/founding-papers/RCIC_X.pdf` | `08A0F3794225EC56FB47F9660AA2B1B082D1DDAE951DED4E32148CD67A5C33E7` |
+
+Git status before staging:
+
+```text
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_RETROINDUCTION_OPTIMAL_CONTROL_DRAFT.md
+?? rigid-identity-framework/docs/ai-platform-outputs/manuscript/founding-papers/
+?? rigid-identity-framework/docs/ai-platform-outputs/sims/retroinduction/
+```
+
+Regression checks:
+- No canon/BaseCore source was modified.
+- No registry, release, `.tex`, monolithic material, production code, or `package.json` was modified.
+- The experiment is under `docs/ai-platform-outputs/`.
+- The report remains under `docs/ai-platform-outputs/reports/`.
+- The toy status remains non-canonical, speculative, and internal.
+- The experiment uses forward-only affine maps and Bellman lookahead; it does not implement retrocausality.
+- No `NEW_CLAIM` is made.
+- No external validation, bridge confirmation, consciousness, identity, subjectivity, agency, phenomenality, or superiority claim is made.
+- No push was attempted.
+
+Residual risks:
+- The delayed-rupture result is deliberately engineered and only demonstrates the expected behavior of finite-horizon lookahead on a toy.
+- The cost function is hand-designed and may collapse to standard MPC unless a meaningful, non-circular QICN certificate-margin objective is later defined.
+- The moved PDFs are classified as historical manuscript/founding material, not as canon or active source of truth.
+- Root canonical gate output includes `working_tree_not_clean_at_hardening_start`, expected because this phase had unstaged edits when the gate ran.
+
+Staging instruction:
+- Stage explicitly only:
+  - `rigid-identity-framework/docs/ai-platform-outputs/sims/retroinduction/qicn_retroinduction_toy.js`
+  - `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_RETROINDUCTION_OPTIMAL_CONTROL_DRAFT.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/manuscript/founding-papers/RCIC-ULTIMA VERSION.pdf`
+  - `rigid-identity-framework/docs/ai-platform-outputs/manuscript/founding-papers/RCIC_X.pdf`
+- Do not use `git add -A`.
+
+Next step:
+- Commit locally with message:
+  `docs: retro-induction toy experiment + pending hygiene (index, founding pdfs)`.
+- Do not push.

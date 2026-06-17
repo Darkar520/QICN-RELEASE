@@ -6528,3 +6528,166 @@ Next step:
 - Commit locally with message:
   `docs: retro-induction toy experiment + pending hygiene (index, founding pdfs)`.
 - Do not push.
+
+## 2026-06-17 - Scientific AGENTS rules and Lean toolchain probe deferral
+
+Task:
+- Add compact scientific evidence rules to the real root `AGENTS.md`.
+- Probe/install Lean toolchain with objective success criterion.
+- Create a mathlib project only if a green build is achievable.
+- Formalize BaseCore contraction only after a verified trivial mathlib build.
+- If the Lean/mathlib gate fails, stop before writing any BaseCore `.lean` proof and report deferral.
+- Commit locally only; no push.
+
+Skill used:
+- `agents-md`
+  - Applied only for keeping `AGENTS.md` concise and additive.
+  - The repo-specific scientific governance takes priority over generic minimization advice.
+
+Preflight status:
+- Branch before this task: `main...origin/main [ahead 4]`.
+- Initial working tree: clean.
+- Existing Lean commands before installation:
+  - `elan --version`: command not found.
+  - `lake --version`: command not found.
+  - `lean --version`: command not found.
+
+Governance and source files read:
+- Root `AGENTS.md`.
+- `docs/CANON_SOURCE_OF_TRUTH.md`.
+- `docs/CANON_MANIFEST.md`.
+- `docs/CLAIM_REGISTRY.md`.
+- `docs/LAYER_BOUNDARIES.md`.
+- `docs/THEORY_SYSTEM_INTERFACE.md`.
+- `rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md`.
+- Prompt attachment: `PROMPT - AGENTS.md cientifico + toolchain Lean`.
+
+Files modified:
+- `AGENTS.md`
+  - Added compact section:
+    `## Scientific evidence rules (dominant over implementation rules)`.
+  - Change is additive only.
+  - Added central evidence rule: minimal code is acceptable, minimal evidence is not.
+  - Added metric specification requirements: unit, domain, estimator, uncertainty, decision criterion.
+  - Added layer separation and causal/negative-control/preregistration rules.
+  - Preserved raw-verdict reporting boundary.
+
+Files created:
+- `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+  - Status: `LEAN_TOOLCHAIN_UNAVAILABLE_DEFERRED`.
+  - Report class: `NON_CANONICAL_INTERNAL_FORMALIZATION_REPORT`.
+  - Documents that no `.lean` file is committed and no BaseCore theorem is claimed Lean-verified.
+
+Lean probe details:
+- Downloaded official installer:
+  - `Invoke-WebRequest -Uri https://raw.githubusercontent.com/leanprover/elan/master/elan-init.ps1 -OutFile C:\tmp\elan-init.ps1`
+- First installer invocation failed:
+  - `powershell -ExecutionPolicy Bypass -File C:\tmp\elan-init.ps1 -y`
+  - Error: `unable to read from stdin for confirmation`.
+- Correct non-interactive installer invocation:
+  - `& C:\tmp\elan-init.ps1 -NoPrompt $true -DefaultToolchain stable`
+  - Result: `info: default toolchain set to 'stable'`.
+- Lean required explicit `ELAN_HOME` in this environment:
+  - `$env:ELAN_HOME="$env:USERPROFILE\.elan"`.
+- Lean version after download:
+  - `Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)`.
+- Lake version:
+  - `Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)`.
+
+Mathlib project probe:
+- Temporary project path:
+  - `docs/ai-platform-outputs/formal/lean/`.
+- `lake init QICNLean math` timed out after `244073` ms but left a partial generated project.
+- Generated manifest pinned:
+  - `lean-toolchain`: `leanprover/lean4:v4.31.0`.
+  - `mathlib inputRev`: `v4.31.0`.
+  - `mathlib rev`: `fabf563a7c95a166b8d7b6efca11c8b4dc9d911f`.
+- A smoke theorem source was briefly prepared for the trivial mathlib gate, but no build completed.
+- `lake exe cache get` timed out after `604062` ms.
+- After timeout, the environment reported:
+  - `windows sandbox: helper_log_failed: failed to write setup log line: Espacio en disco insuficiente. (os error 112)`.
+- Cleanup:
+  - Removed generated `.lake/` cache as heavy regenerable artifact.
+  - Removed the temporary Lean project to comply with the rule that no unverified `.lean` file is delivered.
+- Final check:
+  - No files remain under `docs/ai-platform-outputs/formal/`.
+  - No `QICNContraction.lean` was written.
+
+Gate decision:
+- Lean executable: installed.
+- Trivial mathlib `lake build`: not achieved.
+- BaseCore contraction theorem: not attempted.
+- Final Lean status: `LEAN_TOOLCHAIN_UNAVAILABLE_DEFERRED`.
+
+Commands and observed results:
+
+| Command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Preflight status | `main...origin/main [ahead 4]`; clean tree. |
+| `elan --version` / `lake --version` / `lean --version` | Initial Lean probe | All command not found. |
+| `Invoke-WebRequest ... elan-init.ps1` | Download official elan installer | Success. |
+| `powershell -ExecutionPolicy Bypass -File C:\tmp\elan-init.ps1 -y` | First non-interactive install attempt | Failed; installer tried stdin confirmation. |
+| `& C:\tmp\elan-init.ps1 -NoPrompt $true -DefaultToolchain stable` | Correct non-interactive install | Success; default toolchain set to `stable`. |
+| `lean --version` with explicit `ELAN_HOME` | Download/check Lean | Success; Lean `4.31.0`. |
+| `lake --version` with explicit `ELAN_HOME` | Check Lake | Success; Lake `5.0.0-src+68218e8`. |
+| `lake init QICNLean math` | Create mathlib project | Timed out after `244073` ms; partial project created. |
+| `lake exe cache get` | Fetch mathlib oleans | Timed out after `604062` ms; later disk exhaustion observed. |
+| `Remove-Item ... .lake` | Remove heavy generated cache | Success after path verification inside workspace. |
+| `Remove-Item ... formal\lean` | Remove unverified Lean project | Success after path verification inside workspace. |
+| `npm run verify` from `rigid-identity-framework/` | Package verification and raw adjudicator status | Exit code 0; v30/v31 remain blocked; `external_support_certified=false`. |
+| `node scripts\verify-canonical-integrity.cjs` from repo root | Root governance gate required by `AGENTS.md` | PASS; note `working_tree_not_clean_at_hardening_start` due this phase's unstaged edits. |
+| `node scripts\verify-claim-registry.cjs` from repo root | Root claim-registry gate | PASS. |
+| `node scripts\verify-canonical-release.cjs` from repo root | Root canonical-release gate | PASS. |
+| `[System.IO.File]::ReadAllLines(...).Length` + `Get-FileHash -Algorithm SHA256` | Physical line counts and hashes | Completed; method counts physical lines including blanks. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Interpretation note:
+- `exit code 0 = gates executed; not corpus approval. external_support_certified=false.`
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `AGENTS.md` | 67 | `231F0C57451C89E040F0B5E1B5714DC6FC882764F3DADA55B6D8DDD7C9C2C67A` |
+| `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md` | 175 | `226725FD9F705AF53F8EAF939AE0E4C543076BBCFDD1C3B7B60BAA2CCAAEBEAC` |
+| `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md` before this entry | 6530 | `A96802618236633DB214D1A8F9074A0AC109309BBCBCD19C2E10D3004B934D28` |
+
+Git status before staging:
+
+```text
+ M AGENTS.md
+?? rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md
+```
+
+Regression checks:
+- No BaseCore source was modified.
+- No registry, release, `.tex`, monolithic material, production code, or `package.json` was modified.
+- `AGENTS.md` change is additive.
+- No `.lean` file is delivered.
+- No `QICNContraction.lean` is delivered.
+- No `sorry` was introduced.
+- No consciousness, `C_op`, `I_int`, CCR, invariants, identity, subjectivity, agency, phenomenality, or external-validation claim is made.
+- No push was attempted.
+
+Residual risks:
+- The local machine now has elan installed under `C:\Users\irisp\.elan\bin`, and Lean 4.31.0 was downloaded, but the mathlib cache/build gate did not complete.
+- Disk pressure must be resolved before a real mathlib build and BaseCore contraction pilot can proceed.
+- Future formalization should begin with a fresh `lake init QICNLean math`, `lake exe cache get`, and `lake build`; only then write `QICNContraction.lean`.
+
+Staging instruction:
+- Stage explicitly only:
+  - `AGENTS.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- Do not use `git add -A`.
+
+Next step:
+- Commit locally with message:
+  `docs: science rules in AGENTS.md + Lean toolchain probe and BaseCore contraction pilot`.
+- Do not push.

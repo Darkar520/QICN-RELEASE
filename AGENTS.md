@@ -22,6 +22,23 @@ Machine-readable equivalents in `release/`.
 - **No phenomenality / human-equivalence / adjudication claims** from packaging alone.
 - **Modifications to `release/`, `corpus/`, `artifacts/` require explicit user approval** — these are immutable by convention.
 
+## Scientific evidence rules (dominant over implementation rules)
+
+- Minimal code is acceptable; minimal evidence is not.
+- Claims need the minimum sufficient evidence surface: operational definition, metric, prediction, negative control, and reproducible experiment.
+- Metrics must state unit, domain, estimator, uncertainty, and decision criterion.
+- Keep ontology, mathematical model, implementation, language, and interpretation separate.
+- Software verification is not scientific support: exit code 0 does not validate a claim.
+- Always report raw adjudicator verdicts and `external_support_certified`, not just PASS.
+- No causal claim without an explicit causal graph or explicit causal assumptions.
+- No claim survives without a negative control or a documented reason it is impossible.
+- Preregister phase scope, expected outcomes, controls, and stopping rules when evidence is generated.
+- Ledger every phase with files read, files changed, commands, raw outputs, debt, and residual risks.
+- Mark simplifications, proxies, toy margins, and synthetic fixtures as such.
+- Internal evidence remains internal until independent data, method review, and replication exist.
+- AI cross-audit reduces error; it is not certification.
+- Implementation minimalism does not apply to evidence, formalization, hypotheses, or claims.
+
 ## Verification before any "done" claim
 
 Run, in order, and confirm clean output:

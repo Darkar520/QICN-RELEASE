@@ -1,6 +1,6 @@
 # QICN Lean Pilot Report
 
-Status: `LEAN_MATHLIB_BUILD_GREEN__HILBERT_CONVEX_INSTANCE_GREEN__COMPACTNESS_PARTIAL__NONCOLLAPSE_GREEN`
+Status: `LEAN_MATHLIB_BUILD_GREEN__HILBERT_CONVEX_INSTANCE_GREEN__CONCRETE_COMPACTNESS_GREEN__NONCOLLAPSE_GREEN`
 
 Report class: `NON_CANONICAL_INTERNAL_FORMALIZATION_REPORT`
 
@@ -15,8 +15,8 @@ Human curated status: `not_reviewed`
 This report documents a Lean/mathlib toolchain probe, one small abstract
 contraction pilot, a verified Hilbert-space subspace instance, the full
 nonempty complete convex-subset projection instance needed for the H1
-non-expansiveness step, a partial compactness endpoint, and the trivial H5 to
-non-collapse implication.
+non-expansiveness step, the concrete projected-affine compactness theorem from
+H1-H4, and the trivial H5 to non-collapse implication.
 
 It is not a BaseCore edit, not a registry entry, not a release artifact, not an
 external validation, and not a certified `C_op` instance. It does not prove any
@@ -72,6 +72,7 @@ docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorCompact.lean
+docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorConcrete.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNNonCollapse.lean
 docs/ai-platform-outputs/formal/lean/QICNLean.lean
 ```
@@ -115,6 +116,18 @@ hilbert_convex_projected_affine_fixed_point
 ```text
 fixedPoint_perturbation_bound
 attractor_isCompact
+```
+
+`QICNAttractorConcrete.lean` verifies the concrete projected-affine compactness
+closure:
+
+```text
+projectedAffineMap
+projectedAffineMap_contracting
+projectedAffineFixedPoint
+projectedAffineFixedPoint_lipschitz
+projectedAffineFixedPoint_continuous
+projected_affine_attractor_isCompact
 ```
 
 `QICNNonCollapse.lean` verifies the logical H5 implication only:
@@ -173,6 +186,13 @@ EXIT=0
 Build completed successfully (2293 jobs).
 ```
 
+Concrete projected-affine compactness result:
+
+```text
+EXIT=0
+Build completed successfully (2294 jobs).
+```
+
 The build emitted only style warnings about missing mathlib-style copyright
 headers in the non-canonical AI-output files:
 
@@ -182,6 +202,7 @@ warning: QICNLean/QICNContraction.lean:1:1: * '-/': Copyright too short!
 warning: QICNLean/QICNHilbertInstance.lean:1:1: * '-/': Copyright too short!
 warning: QICNLean/QICNConvexProjection.lean:1:1: * '-/': Copyright too short!
 warning: QICNLean/QICNAttractorCompact.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNAttractorConcrete.lean:1:1: * '-/': Copyright too short!
 warning: QICNLean/QICNNonCollapse.lean:1:1: * '-/': Copyright too short!
 ```
 
@@ -233,6 +254,15 @@ attractor_isCompact:
 
 It deliberately does not prove `Continuous Gamma -> Continuous (fun u => f_u*)`
 for the concrete projected affine Hilbert family in this pass.
+
+The concrete attractor file discharges that deferral for the projected-affine
+Hilbert family by proving:
+
+```text
+w |-> fixedPoint (fun x => convexProjection s ... (K x + w)) is Lipschitz
+u |-> fixedPoint (fun x => convexProjection s ... (K x + Gamma u)) is continuous
+Set.range of that selector is compact when U is compact
+```
 
 The non-collapse file proves only:
 
@@ -295,6 +325,9 @@ Compactness/non-collapse:
   perturbation estimate.
 - `isCompact_range` supplies compactness of the range of a continuous selector
   over a compact domain.
+- `Real.coe_toNNReal`, `inv_nonneg`, `div_eq_inv_mul`, and
+  `LipschitzWith.of_dist_le_mul` package the concrete fixed-point selector as a
+  Lipschitz map with constant `(1 - ‖K‖)⁻¹`.
 - `QICNLean.noncollapse_from_H5` uses no analytic lemma; it is a direct
   contradiction from fixed-pointness plus H5.
 
@@ -335,9 +368,9 @@ space or certify a `C_op` instance.
 
 ## Attractor Compactness Status
 
-Status: `PARCIAL_DEFERRAL_CONTINUITY_FROM_GAMMA`
+Status: `COMPACT_CONCRETO_COMPLETO`
 
-The file `QICNAttractorCompact.lean` mechanizes two pieces:
+The file `QICNAttractorCompact.lean` mechanizes two general pieces:
 
 ```text
 fixedPoint_perturbation_bound
@@ -350,14 +383,19 @@ The concrete continuity bridge from H4,
 Continuous Gamma -> Continuous (fun u => f_u*)
 ```
 
-is not discharged in this pass. The theorem `attractor_isCompact` therefore
-takes the continuity of the fixed-point selector as an explicit hypothesis.
-This is a deliberate deferral, not an implicit claim.
+is discharged in `QICNAttractorConcrete.lean` for the projected-affine Hilbert
+family where `f_u*` is represented by `projectedAffineFixedPoint ... (Gamma u)`.
 
 `#print axioms` for the compactness theorem:
 
 ```text
 'QICNLean.attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+`#print axioms` for the concrete compactness theorem:
+
+```text
+'QICNLean.projected_affine_attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
 ```
 
 ## Noncollapse Status
@@ -386,7 +424,6 @@ This does not formalize:
 
 - the QICN state space;
 - the full BaseCore state space;
-- the concrete H4 bridge `Continuous Gamma -> Continuous (fun u => f_u*)`;
 - any non-circular derivation of H5;
 - invariance of any `C_op` certificate;
 - existence of an admissible system `S`;

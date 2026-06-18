@@ -7419,3 +7419,135 @@ Next step:
   fixed-point selector, or accept the compactness theorem as conditional on
   continuity of `F`. For H5, the next real work is a quotient/component
   condition that implies anti-constant fixed-point behavior without restating it.
+
+---
+
+## 2026-06-18 - Codex - Concrete projected-affine attractor compactness from H1-H4
+
+Agent/platform: Codex
+
+User request: Commit the pending B/C Lean/H5 work, then close the compactness
+deferral by proving continuity of the concrete projected-affine fixed-point
+selector from the continuity of `Gamma`, using the existing fixed-point
+perturbation bound.
+
+Phase A result:
+- Commit created locally, no push:
+  `1ea7114 docs: mechanize attractor compactness endpoint + H5 noncollapse implication + H5 critique (Lean, non-canonical)`
+- Verified files in commit:
+  - `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+  - `rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorCompact.lean`
+  - `rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNNonCollapse.lean`
+  - `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+
+Files read:
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorCompact.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+
+Files modified/created:
+- Created `docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorConcrete.lean`
+- Modified `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- Modified `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+- Modified `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Lean theorem names created:
+- `QICNLean.projectedAffineMap`
+- `QICNLean.projectedAffineMap_contracting`
+- `QICNLean.projectedAffineFixedPoint`
+- `QICNLean.projectedAffineFixedPoint_lipschitz`
+- `QICNLean.projectedAffineFixedPoint_continuous`
+- `QICNLean.projected_affine_attractor_isCompact`
+
+Implementation result:
+- Status: `COMPACT_CONCRETO_COMPLETO`
+- The previous deferral `Continuous Gamma -> Continuous (fun u => f_u*)` is
+  discharged for the projected-affine Hilbert family represented by
+  `projectedAffineFixedPoint ... (Gamma u)`.
+- No canon, registry, release, `.tex`, monolithic, production code, or
+  `package.json` was modified.
+
+Mathlib/reused lemmas and APIs:
+- `QICNLean.affine_contracting`
+- `QICNLean.convexProjection_lipschitz`
+- `QICNLean.nonexpansive_after_contracting`
+- `QICNLean.fixedPoint_perturbation_bound`
+- `QICNLean.attractor_isCompact`
+- `LipschitzWith.of_dist_le_mul`
+- `LipschitzWith.continuous`
+- `Continuous.comp`
+- `Real.coe_toNNReal`
+- `inv_nonneg`
+- `div_eq_inv_mul`
+
+Lean build command:
+
+```powershell
+$env:GIT_CONFIG_GLOBAL="$env:TEMP\qicn_lean_gitconfig"
+Get-ChildItem -Path .lake\packages -Directory | ForEach-Object { $p = $_.FullName -replace '\\','/'; git config --global --add safe.directory $p }
+$env:ELAN_HOME="$env:USERPROFILE\.elan"
+& "$env:USERPROFILE\.elan\bin\lake.exe" build *> "$env:TEMP\lean_concrete.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\lean_concrete.txt" -Raw
+```
+
+Raw Lean build result:
+
+```text
+EXIT=0
+Build completed successfully (2294 jobs).
+```
+
+No-sorry/no-axiom grep:
+
+```text
+COUNT=0
+```
+
+`#print axioms` result:
+
+```text
+EXIT=0
+'QICNLean.projected_affine_attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+Package verification:
+
+```text
+npm run verify
+Exit code 0
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Canonical root gates from `C:\Users\irisp\OneDrive\Escritorio\QICN-FRAMEWORK`:
+
+| Command | Result |
+|---|---|
+| `node scripts\verify-canonical-integrity.cjs` | PASS; `failures=[]`; `warnings=[]` |
+| `node scripts\verify-claim-registry.cjs` | PASS; `failures=[]`; `warnings=[]` |
+| `node scripts\verify-canonical-release.cjs` | PASS; `failures=[]`; `warnings=[]` |
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | 7 | `1FE87089CF713DACAE1C45F0D08CED33ED9C3F6B7E5B69829BA498FA548E8458` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorConcrete.lean` | 102 | `2B6E7419AD365E3633A91489C05B912DD7B8D36649D1DB18915C91AC3D44011E` |
+| `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md` | 336 | `0C5ACC4C3D507826A9F37A6755EE5DCE966D00F6B04B34B344F102EA1109754B` |
+| `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md` before this entry | 6251 | `07DCDB3C5A4256AA52EB06B4194D3E54A308362CB8FA7FB65B6C172625640576` |
+
+Residual risk:
+- The compactness theorem is concrete for the projected-affine Hilbert family in
+  the non-canonical Lean pilot. It still does not instantiate a full QICN
+  `C_op` system `S` or any downstream `I_int`/CCR/no-vacuity claim.
+- H5 remains a separate non-circularity problem; this commit does not derive H5.
+- `npm run verify` exit code 0 means gates ran; raw adjudicators remain blocked
+  and `external_support_certified=false`.
+
+Next step:
+- Move to a single Level 2 frontier: either construct a certified instance of
+  `S`, or derive a non-circular replacement for H5 from quotient/component
+  structure. The higher-return frontier remains the certified instance of `S`.

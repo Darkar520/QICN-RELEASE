@@ -3,4 +3,5 @@ import QICNLean.QICNContraction
 import QICNLean.QICNHilbertInstance
 import QICNLean.QICNConvexProjection
 import QICNLean.QICNAttractorCompact
+import QICNLean.QICNAttractorConcrete
 import QICNLean.QICNNonCollapse

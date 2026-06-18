@@ -111,7 +111,8 @@ convexProjection_lipschitz
 hilbert_convex_projected_affine_fixed_point
 ```
 
-`QICNAttractorCompact.lean` verifies a partial compactness endpoint:
+`QICNAttractorCompact.lean` verifies the general compact-image endpoint and the
+fixed-point perturbation estimate:
 
 ```text
 fixedPoint_perturbation_bound
@@ -172,7 +173,7 @@ EXIT=0
 Build completed successfully (2291 jobs).
 ```
 
-Compactness partial result:
+General compactness endpoint result:
 
 ```text
 EXIT=0
@@ -241,7 +242,7 @@ P_s is LipschitzWith 1
 x |-> P_s (K x + c) has a fixed point and convergent iterates when ||K|| < 1
 ```
 
-The compactness partial additionally proves:
+The general compactness endpoint additionally proves:
 
 ```text
 fixedPoint_perturbation_bound:
@@ -252,11 +253,8 @@ attractor_isCompact:
   if F : U -> H is continuous and U is compact, then Set.range F is compact
 ```
 
-It deliberately does not prove `Continuous Gamma -> Continuous (fun u => f_u*)`
-for the concrete projected affine Hilbert family in this pass.
-
-The concrete attractor file discharges that deferral for the projected-affine
-Hilbert family by proving:
+The concrete attractor file gives the verified projected-affine Hilbert-family
+closure by proving:
 
 ```text
 w |-> fixedPoint (fun x => convexProjection s ... (K x + w)) is Lipschitz

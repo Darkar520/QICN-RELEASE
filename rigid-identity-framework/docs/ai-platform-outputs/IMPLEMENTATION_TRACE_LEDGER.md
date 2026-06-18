@@ -7954,3 +7954,91 @@ Residual risk:
   out of `N`.
 - No `C_op`, `I_int`, CCR, no-vacuity, identity, subjectivity, phenomenality, or
   consciousness claim is supported.
+
+## 2026-06-18 - Codex - Rigor bar for genuine non-toy S instances
+
+Status: `ANTI_VACUITY_BAR_DEFINED_ONLY__NO_CERTIFIED_S_INSTANCE`
+
+Scope:
+- Created a non-canonical speculative criteria document fixing the minimum
+  anti-vacuity bar for any future concrete `S=(X,Phi,C,R,Gamma,U)` candidate.
+- Reenunciated the six BaseCore invariants from the canonical operational
+  criterion section with file-line anchors.
+- Defined per-invariant anti-vacuity requirements, global anti-toy guards, a
+  pass/fail checklist, and prohibited toy patterns.
+- Connected `Iint` anti-vacuity to the Phase 7 brute-force atomicity truth
+  source without promoting it to canon.
+- No instance of `S` was constructed or certified.
+- No canon, registry, release, `.tex`, monolithic, `.lean`, or package.json file
+  was edited.
+- No push was performed.
+
+Files changed:
+- `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_GENUINENESS_CRITERIA.md`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Canonical sources read:
+- `docs/CANON_SOURCE_OF_TRUTH.md`
+- `docs/CANON_MANIFEST.md`
+- `docs/CLAIM_REGISTRY.md`
+- `docs/LAYER_BOUNDARIES.md`
+- `docs/THEORY_SYSTEM_INTERFACE.md`
+- `basecore/core/sections/07_operational_criterion_absorbed.tex`
+
+Canonical anchors used:
+- `07_operational_criterion_absorbed.tex:6-21` for `def:system`.
+- `07_operational_criterion_absorbed.tex:27-33` for `def:support`.
+- `07_operational_criterion_absorbed.tex:59-76` for `def:margins`.
+- `07_operational_criterion_absorbed.tex:87-92` for the six invariant contents.
+- `07_operational_criterion_absorbed.tex:101-170` for the six invariant
+  definitions.
+- `07_operational_criterion_absorbed.tex:209-217` for `def:cop` and neutrality
+  of `Crit_op`.
+- `07_operational_criterion_absorbed.tex:299-324` for `def:cert` and the
+  certification rule.
+
+Phase 7 reference used:
+- `docs/ai-platform-outputs/sims/phase7/qicn_phase7_atomicity_ground_truth.js`
+  lines 82-110: `computeAtomicityTruth` returns factorizable/non-factorizable
+  truth from `n` and `transition_table` only.
+- Lines 124-145 audit forbidden construction labels and allow only
+  `["n","transition_table"]` for the truth source.
+
+Root governance gates:
+
+```text
+node scripts\verify-canonical-integrity.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+provenance_notes=["working_tree_not_clean_at_hardening_start"]
+```
+
+```text
+node scripts\verify-claim-registry.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+```text
+node scripts\verify-canonical-release.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+Pre-ledger hash:
+
+| File | SHA256 |
+|---|---|
+| `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_GENUINENESS_CRITERIA.md` | `8D74346AB47CE7614732A2C25930E0FE27312840F924FC8661DECFCAC0F2F674` |
+
+Residual risk:
+- This document defines a rigor bar only. It does not show that any candidate
+  satisfies the bar.
+- Passing the bar in the future would still be internal model conformity, not
+  external validation or a real-world `C_op` claim.

@@ -1,6 +1,6 @@
 # QICN Lean Pilot Report
 
-Status: `LEAN_MATHLIB_BUILD_GREEN__HILBERT_CONVEX_INSTANCE_GREEN__CONCRETE_COMPACTNESS_GREEN__NONCOLLAPSE_GREEN`
+Status: `LEAN_MATHLIB_BUILD_GREEN__HILBERT_CONVEX_INSTANCE_GREEN__CONCRETE_COMPACTNESS_GREEN__NONCOLLAPSE_GREEN__H5_LINEAR_REDUCED__H5_GENERAL_CONVEX_OPEN`
 
 Report class: `NON_CANONICAL_INTERNAL_FORMALIZATION_REPORT`
 
@@ -16,7 +16,8 @@ This report documents a Lean/mathlib toolchain probe, one small abstract
 contraction pilot, a verified Hilbert-space subspace instance, the full
 nonempty complete convex-subset projection instance needed for the H1
 non-expansiveness step, the concrete projected-affine compactness theorem from
-H1-H4, and the trivial H5 to non-collapse implication.
+H1-H4, the trivial H5 to non-collapse implication, and the linear-subspace
+reduction of non-collapse to forcing+invariance data conditions C1/C2.
 
 It is not a BaseCore edit, not a registry entry, not a release artifact, not an
 external validation, and not a certified `C_op` instance. It does not prove any
@@ -74,6 +75,7 @@ docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorCompact.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorConcrete.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNNonCollapse.lean
+docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Derivation.lean
 docs/ai-platform-outputs/formal/lean/QICNLean.lean
 ```
 
@@ -136,6 +138,17 @@ projected_affine_attractor_isCompact
 ```text
 noncollapse_from_H5
 ```
+
+`QICNH5Derivation.lean` verifies the linear-subspace reduction:
+
+```text
+noncollapse_from_forcing
+```
+
+It derives parameterwise non-collapse from data conditions C1/C2: C1 is
+invariance of `N` under `P_I o K`, and C2 is nonzero residual
+`Q (P_I (Gamma u))` for the projected forcing. This is verified only for the
+linear subspace case, where `Submodule.starProjection` is linear.
 
 Informal reading of the verified pilot:
 
@@ -262,13 +275,22 @@ u |-> fixedPoint (fun x => convexProjection s ... (K x + Gamma u)) is continuous
 Set.range of that selector is compact when U is compact
 ```
 
-The non-collapse file proves only:
+The first non-collapse file proves:
 
 ```text
 fixedPoint(u) in N + T_u(fixedPoint(u)) = fixedPoint(u) contradicts H5
 ```
 
-It does not justify H5.
+The H5 derivation file additionally proves the linear-subspace reduction:
+
+```text
+C1 invariance + C2 projected forcing residual != 0
+  => fixedPoint(u) notin N
+```
+
+This is a genuine reduction in the linear subspace case, because C2 is a
+condition on `Gamma`, `P_I`, and the `N`-residual rather than on the fixed
+point. It does not discharge the general closed-convex case.
 
 This is a real formalization result, but still narrow. It is a useful pressure
 test for the BaseCore contraction prose because Lean forces these obligations to
@@ -328,6 +350,11 @@ Compactness/non-collapse:
   Lipschitz map with constant `(1 - ‖K‖)⁻¹`.
 - `QICNLean.noncollapse_from_H5` uses no analytic lemma; it is a direct
   contradiction from fixed-pointness plus H5.
+- `QICNLean.noncollapse_from_forcing` uses `Submodule.starProjection` as a
+  continuous linear map, `map_add`, `Submodule.starProjection_eq_self_iff`,
+  `sub_apply`, `ContinuousLinearMap.id_apply`, and
+  `ContractingWith.fixedPoint_isFixedPt` to reduce linear-subspace
+  non-collapse to C1/C2.
 
 ## Projection Status
 
@@ -398,7 +425,7 @@ family where `f_u*` is represented by `projectedAffineFixedPoint ... (Gamma u)`.
 
 ## Noncollapse Status
 
-Status: `H5_IMPLIES_NONCOLLAPSE_MECHANIZED_TRIVIAL`
+Status: `H5_IMPLIES_NONCOLLAPSE_MECHANIZED_TRIVIAL__H5_LINEAR_REDUCED__H5_GENERAL_CONVEX_OPEN`
 
 The file `QICNNonCollapse.lean` proves:
 
@@ -409,6 +436,30 @@ noncollapse_from_H5
 This is only the logical step from H5 to no-collapse. It does not justify H5 or
 derive H5 from `K`, `Gamma`, projection geometry, quotient dynamics, or any
 nonconstant forcing condition.
+
+The file `QICNH5Derivation.lean` proves:
+
+```text
+noncollapse_from_forcing
+```
+
+This is a linear-subspace reduction of non-collapse to two data conditions:
+
+- C1: invariance of `N` under `P_I o K`;
+- C2: nonzero nonconstant residual of the projected forcing,
+  `Q (P_I (Gamma u)) != 0`.
+
+`#print axioms` for the linear-subspace reduction:
+
+```text
+'QICNLean.noncollapse_from_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+Circularity status: this is a genuine reduction for the linear subspace case,
+not a rephrasing of the fixed-point anti-collapse condition, because C2 is a
+condition on the data and projection geometry rather than on the fixed point.
+The general closed-convex projection case remains open because the proof uses
+linearity of `Submodule.starProjection`.
 
 `#print axioms` for the non-collapse theorem:
 
@@ -422,7 +473,7 @@ This does not formalize:
 
 - the QICN state space;
 - the full BaseCore state space;
-- any non-circular derivation of H5;
+- the general closed-convex derivation of H5;
 - invariance of any `C_op` certificate;
 - existence of an admissible system `S`;
 - `I_int`, CCR, no-vacuity, no-simulability, identity, phenomenality, or

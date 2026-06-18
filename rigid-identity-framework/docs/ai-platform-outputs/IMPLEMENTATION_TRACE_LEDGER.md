@@ -7784,3 +7784,76 @@ Residual risk:
 - No certified `C_op` instance or downstream `I_int`/CCR/no-vacuity claim is
   produced.
 - The theorem is non-canonical and for human review only.
+
+## 2026-06-18 - Codex - Reconcile H5 derivation documentation before push
+
+Status: `H5_LINEAR_REDUCTION_DOCUMENTATION_RECONCILED`
+
+Scope:
+- Updated `QICN_H5_NONCOLLAPSE_CRITIQUE.md` so the final Non-Claims section no
+  longer says the Lean surface proves only the trivial H5 implication.
+- Updated `QICN_LEAN_PILOT_REPORT.md` to list
+  `QICNH5Derivation.lean`, describe theorem `noncollapse_from_forcing`, and
+  mark `H5_LINEAR_REDUCED` while preserving `H5_GENERAL_CONVEX: OPEN`.
+- No Lean recompilation was run.
+- No `.lean` file was edited.
+- No canon, registry, release, monolithic, or package.json file was touched.
+- No `git add -A` was used.
+
+Files changed:
+- `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md`
+- `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Commands and expected results:
+
+```text
+git status --short --branch
+## main...origin/main [ahead 1]
+```
+
+```text
+git rev-parse --show-toplevel
+C:/Users/irisp/OneDrive/Escritorio/QICN-FRAMEWORK
+```
+
+```text
+git log --oneline -3
+e58d34b docs: derive parameterwise non-collapse from forcing+invariance conditions, linear subspace case (Lean, non-canonical)
+6ec672c docs: record hygiene push confirmation in trace ledger
+fc812b3 chore: untrack stale parent-root analysis (keep file+banner on disk, restore gitignore intent)
+```
+
+```text
+git add rigid-identity-framework/docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md
+git add rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md
+git add rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md
+```
+
+Commit message:
+
+```text
+docs: list H5 derivation in pilot report and reconcile non-claims with verified linear reduction
+```
+
+Pre-push expectation:
+
+```text
+git log origin/main..main --oneline
+<Fase B commit> docs: list H5 derivation in pilot report and reconcile non-claims with verified linear reduction
+e58d34b docs: derive parameterwise non-collapse from forcing+invariance conditions, linear subspace case (Lean, non-canonical)
+```
+
+Hash note:
+- The exact Fase B commit hash cannot be embedded inside this same ledger entry
+  without amending/rewriting the commit after creation, which is prohibited by
+  the task. The hash is therefore reported in the final command output and final
+  response, not self-embedded here.
+
+Push confirmation:
+- To be performed after Fase B commit with `git push origin main`.
+- Expected final state: `## main...origin/main`.
+
+Residual risk:
+- Documentation is now consistent with commit `e58d34b`, but this does not add
+  any new formal proof beyond the already verified linear-subspace theorem.

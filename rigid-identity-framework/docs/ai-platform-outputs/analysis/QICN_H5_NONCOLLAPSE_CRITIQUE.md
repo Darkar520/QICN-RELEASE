@@ -152,5 +152,8 @@ FULL_BASECORE_H5_DERIVED_NONCIRCULARLY: NOT_PROVED
 - No new claim is introduced.
 - No `C_op`, `I_int`, CCR, no-vacuity, identity, subjectivity, phenomenality, or
   consciousness claim is supported by this note.
-- The Lean file proves only the one-step implication from assumed H5 to
-  non-collapse.
+- The Lean files prove (a) the trivial implication H5 => non-collapse
+  (`QICNNonCollapse.lean`) and (b) the linear-subspace reduction of
+  non-collapse to the forcing+invariance data conditions C1/C2
+  (`QICNH5Derivation.lean`, theorem `noncollapse_from_forcing`). The general
+  closed-convex case remains OPEN.

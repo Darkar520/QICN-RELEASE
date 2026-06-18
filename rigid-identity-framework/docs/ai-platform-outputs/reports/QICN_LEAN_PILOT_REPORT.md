@@ -1,6 +1,6 @@
 # QICN Lean Pilot Report
 
-Status: `LEAN_TOOLCHAIN_UNAVAILABLE_DEFERRED`
+Status: `LEAN_MATHLIB_BUILD_GREEN__ABSTRACT_CONTRACTION_PILOT_GREEN`
 
 Report class: `NON_CANONICAL_INTERNAL_FORMALIZATION_REPORT`
 
@@ -12,75 +12,30 @@ Human curated status: `not_reviewed`
 
 ## Scope
 
-This report documents a Lean/mathlib toolchain probe for a future BaseCore contraction formalization. It is not a formalization artifact, not a proof, not a BaseCore edit, not a registry entry, and not external validation.
+This report documents a Lean/mathlib toolchain probe and one small, verified,
+non-canonical formalization pilot for the BaseCore contraction pattern.
 
-No `QICNContraction.lean` file is delivered in this pass. No `.lean` file is committed, because the required `lake build` gate did not complete successfully in this environment.
+It is not a BaseCore edit, not a registry entry, not a release artifact, not an
+external validation, and not a certified `C_op` instance. It does not prove any
+claim about consciousness, identity, subjectivity, agency, phenomenality, CCR,
+`I_int`, or no-vacuity of the target class.
 
-## Toolchain Probe
-
-Initial probe:
-
-```text
-elan --version -> command not found
-lake --version -> command not found
-lean --version -> command not found
-```
-
-Installation attempt:
-
-```text
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/leanprover/elan/master/elan-init.ps1 -OutFile C:\tmp\elan-init.ps1
-powershell -ExecutionPolicy Bypass -File C:\tmp\elan-init.ps1 -y
-```
-
-The first installer invocation failed because the PowerShell script did not accept `-y` as its own non-interactive parameter:
-
-```text
-error: unable to read from stdin for confirmation
-```
-
-Correct non-interactive installation command:
-
-```text
-& C:\tmp\elan-init.ps1 -NoPrompt $true -DefaultToolchain stable
-```
-
-Observed result:
-
-```text
-info: default toolchain set to 'stable'
-```
-
-Lean download/version check required explicit `ELAN_HOME`:
-
-```text
-$env:ELAN_HOME="$env:USERPROFILE\.elan"
-lean --version
-```
-
-Observed result:
-
-```text
-Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)
-info: downloading https://releases.lean-lang.org/lean4/v4.31.0/lean-4.31.0-windows.tar.zst
-info: installing C:\Users\irisp\.elan\toolchains\leanprover--lean4---v4.31.0
-```
-
-Lake version after installation:
-
-```text
-Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)
-```
-
-## Mathlib Project Probe
-
-A temporary Lean project was initialized under:
+The verified Lean artifact lives under:
 
 ```text
 docs/ai-platform-outputs/formal/lean/
 ```
 
-The generated manifest pinned:
+## Toolchain
+
+Lean and Lake are installed and usable when `ELAN_HOME` is explicit:
+
+```text
+Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)
+Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)
+```
+
+The Lean project pins:
 
 ```text
 lean-toolchain: leanprover/lean4:v4.31.0
@@ -88,88 +43,137 @@ mathlib inputRev: v4.31.0
 mathlib rev: fabf563a7c95a166b8d7b6efca11c8b4dc9d911f
 ```
 
-The required mathlib cache step did not complete:
+## Cache Step
+
+`lake exe cache get` was retried after disk cleanup. It completed substantial
+download/decompression work but returned exit code 1:
 
 ```text
-lake exe cache get
-command timed out after 604062 milliseconds
+Warning: some files were not found in the cache.
+This usually means that your local checkout of mathlib4 has diverged from upstream.
+Decompression of already-cached files failed (exit code 1)
 ```
 
-After the timeout, the environment reported:
+Interpretation:
+
+- This is not a clean cache pass.
+- It is not treated as certification.
+- It did not block the later trusted gate, because `lake build` compiled the
+  local Lean project successfully from the available mathlib sources/oleans.
+
+## Verified Lean Files
 
 ```text
-windows sandbox: helper_log_failed: failed to write setup log line: Espacio en disco insuficiente. (os error 112)
+docs/ai-platform-outputs/formal/lean/QICNLean/Basic.lean
+docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean
+docs/ai-platform-outputs/formal/lean/QICNLean.lean
 ```
 
-The generated `.lake/` cache was removed as a regenerable artifact. Because the trivial mathlib build gate did not complete, the temporary Lean project was also removed. This enforces the rule that no unverified `.lean` file is delivered or presented as a formalization.
-
-## Gate Decision
-
-Gate result: `DEFERRED`
-
-Reason:
+`Basic.lean` verifies a minimal metric-space smoke theorem:
 
 ```text
-Lean executable installed, but mathlib cache/build did not complete in this environment due timeout and disk exhaustion.
+mathlib_metric_smoke
 ```
 
-Required green gate not achieved:
+`QICNContraction.lean` verifies two abstract metric-space statements:
+
+```text
+nonexpansive_after_contracting
+projected_contraction_exists_fixed_point
+```
+
+Informal reading of the verified pilot:
+
+- If `base : X -> X` is `ContractingWith K base`.
+- If `project : X -> X` is non-expansive, encoded as `LipschitzWith 1 project`.
+- Then the composed update `fun x => project (base x)` is still
+  `ContractingWith K`.
+- In a complete metric space, mathlib's Banach fixed-point API gives a fixed
+  point and convergence of iterates for the composed update.
+
+## Green Build Gate
+
+The trusted Lean gate was:
 
 ```text
 lake build
 ```
 
-was not accepted as green because `lake exe cache get` did not complete and the environment hit disk exhaustion before the build could be trusted.
+Result:
 
-## BaseCore Contraction Formalization
-
-Not attempted in this pass.
-
-No `QICNContraction.lean` is delivered.
-
-No theorem named `contraction` or `fixedpoint` is claimed as Lean-verified.
-
-No `sorry` is introduced.
-
-## Expected Hypotheses for a Future Attempt
-
-The prompt-level target remains:
-
-- Hilbert or complete metric structure for the ambient space.
-- Nonempty closed convex set for the projection target.
-- Non-expansiveness of the metric projection onto that set.
-- Bounded linear operator `K` with strict norm bound `||K|| < 1`.
-- Affine perturbation term `Gamma(u)`.
-- Composition of a non-expansive projection with a strict affine contraction.
-- Banach fixed-point theorem or mathlib `ContractingWith` fixed-point API for uniqueness and convergence.
-
-Comparison with BaseCore H1-H3 should be done only after a verified Lean proof attempt exists. The expected pressure point is that Lean/mathlib may require explicit completeness, nonemptiness, closedness, convexity, and projection non-expansiveness assumptions that prose BaseCore may leave implicit or distribute across hypotheses.
-
-## Reproduction Procedure for Another Machine
-
-Use a machine with enough disk space for mathlib cache artifacts.
-
-```powershell
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/leanprover/elan/master/elan-init.ps1" -OutFile "C:\tmp\elan-init.ps1"
-& "C:\tmp\elan-init.ps1" -NoPrompt $true -DefaultToolchain stable
-$env:ELAN_HOME="$env:USERPROFILE\.elan"
-lean --version
-lake --version
+```text
+Build completed successfully (1652 jobs).
 ```
 
-Then create the project and run:
+The build emitted only style warnings about missing mathlib-style copyright
+headers in the non-canonical AI-output files:
 
-```powershell
-lake init QICNLean math
-lake exe cache get
-lake build
+```text
+warning: QICNLean/Basic.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNContraction.lean:1:1: * '-/': Copyright too short!
 ```
 
-Only after `lake build` is green should a `QICNContraction.lean` file be written and reported.
+No `sorry` was introduced.
+
+## What This Proves
+
+This proves only the abstract mathlib-level skeleton:
+
+```text
+strict contraction + non-expansive post-map => strict contraction
+complete metric space + strict contraction => fixed point and iterate convergence
+```
+
+This is a real formalization result, but narrow. It is a useful pressure test for
+the BaseCore contraction prose because Lean forces these obligations to be
+explicit:
+
+- the ambient space must be a metric/complete metric space;
+- the update must be a strict `ContractingWith K`;
+- the projection-like map must be supplied as non-expansive;
+- convergence is obtained through mathlib's fixed-point API, not by prose.
+
+## What This Does Not Prove
+
+This does not formalize:
+
+- the QICN state space;
+- the BaseCore affine update `Kx + Gamma(u)`;
+- a bounded linear operator norm proof `||K|| < 1`;
+- metric projection onto a nonempty closed convex Hilbert subset;
+- non-expansiveness of the concrete projection used by BaseCore;
+- invariance of any `C_op` certificate;
+- existence of an admissible system `S`;
+- `I_int`, CCR, no-vacuity, no-simulability, identity, phenomenality, or
+  consciousness claims.
+
+The correct next formal step is not to inflate this pilot. The next step is to
+exhibit the actual analytic objects and prove the missing instantiation lemmas:
+
+```text
+BaseCore object definitions
+affine update is ContractingWith K
+projection/correction map is LipschitzWith 1
+target set is nonempty/closed/complete where needed
+```
+
+## Prior Failure Now Resolved
+
+Earlier retries were blocked by disk pressure and by the missing canonical file:
+
+```text
+corpus/pdf_release/pdf_corpus.zip
+```
+
+That file was restored before this successful retry. The prior `DEFERRED`
+decision is superseded by the green `lake build` above, but the prior root-gate
+failure remains historically relevant because it prevented a clean commit before
+the restoration.
 
 ## Non-Claims
 
-- This report does not prove any BaseCore theorem.
-- This report does not formalize consciousness, `C_op`, `I_int`, CCR, invariants, identity, subjectivity, agency, or phenomenality.
-- This report does not claim external validation.
-- This report does not treat an installed executable as a verified formal proof environment for QICN.
+- No external validation is claimed.
+- No BaseCore theorem is claimed fully formalized.
+- No canonical source, registry, release, `.tex`, monolithic paper, production
+  code, or `package.json` was modified.
+- This is an internal, non-canonical Lean pilot for human review.

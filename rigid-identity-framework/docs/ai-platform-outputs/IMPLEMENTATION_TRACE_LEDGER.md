@@ -6691,3 +6691,265 @@ Next step:
 - Commit locally with message:
   `docs: science rules in AGENTS.md + Lean toolchain probe and BaseCore contraction pilot`.
 - Do not push.
+
+## 2026-06-17 - Lean/mathlib retry after disk cleanup
+
+Task:
+- Retry the Lean/mathlib probe after the user reported freeing disk space.
+- Preserve the hard rule: no `.lean` file counts as a formalization unless `lake build` is green.
+- If the trivial mathlib gate fails again, do not write `QICNContraction.lean`.
+
+Preflight status:
+- Branch before retry: `main...origin/main [ahead 5]`.
+- Lean executable state:
+  - `Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)`.
+  - `Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)`.
+- Working tree already contained an external deletion:
+  - `D corpus/pdf_release/pdf_corpus.zip`
+- This deletion was not created by the Lean retry and was not staged or repaired.
+
+Files modified:
+- `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+  - Added `Retry After Local Disk Cleanup`.
+  - Status remains `LEAN_TOOLCHAIN_UNAVAILABLE_DEFERRED`.
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+  - This entry.
+
+Retry commands and observed results:
+
+| Command | Purpose | Result |
+|---|---|---|
+| `git status --short --branch` | Preflight status | `main...origin/main [ahead 5]`; `D corpus/pdf_release/pdf_corpus.zip`. |
+| `lean --version` with explicit `ELAN_HOME` | Confirm Lean executable | Lean `4.31.0`. |
+| `lake --version` with explicit `ELAN_HOME` | Confirm Lake executable | Lake `5.0.0-src+68218e8`. |
+| `New-Item ... docs\ai-platform-outputs\formal\lean` | Recreate temporary project directory | Success. |
+| `lake init QICNLean math` | Recreate mathlib project | Timed out after `904076` ms. |
+| `Get-ChildItem .lake\packages` | Inspect partial dependency state | Partial mathlib dependency tree existed: `mathlib`, `aesop`, `batteries`, `Cli`, `importGraph`, `LeanSearchClient`, `plausible`, `proofwidgets`, `Qq`. |
+| `Get-PSDrive -Name C` during retry | Disk pressure check | Reported `Free = 0` while dependency processes were active. |
+| `Stop-Process` for `git/lake/lean/elan` | Stop dependency processes after timeout | Success; no Lean/Lake/Git processes remained. |
+| `Remove-Item ... formal\lean -Recurse -Force` | Remove unverified Lean project and heavy cache | Success after path verification inside workspace. |
+| `.NET DriveInfo` after cleanup | Confirm usable space after cleanup | `AvailableFreeSpace: 7470563328` bytes initially; later `7471349760` bytes. |
+
+Second retry decision:
+
+```text
+LEAN_TOOLCHAIN_UNAVAILABLE_DEFERRED
+```
+
+Reason:
+
+```text
+Lean and Lake are installed, but `lake init QICNLean math` cannot finish within the available disk/time budget. The dependency fetch fills the available space before any trusted mathlib `lake build` can occur.
+```
+
+Formalization status:
+- No `QICNContraction.lean` was written.
+- No `.lean` file remains under `docs/ai-platform-outputs/formal/`.
+- No `sorry` was introduced.
+- No BaseCore theorem is claimed Lean-verified.
+
+Verification after retry:
+
+| Command | Result |
+|---|---|
+| `npm run verify` from `rigid-identity-framework/` | Exit code 0; raw adjudicators remain blocked with `external_support_certified=false`. |
+| `node scripts\verify-canonical-integrity.cjs` from repo root | FAIL: `missing_required_path:corpus/pdf_release/pdf_corpus.zip`. |
+| `node scripts\verify-claim-registry.cjs` from repo root | PASS. |
+| `node scripts\verify-canonical-release.cjs` from repo root | FAIL: `bundle_build_failed:ENOENT` copying missing `corpus\pdf_release\pdf_corpus.zip`. |
+
+Raw `npm run verify` adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Root gate blocker:
+
+```text
+missing_required_path:corpus/pdf_release/pdf_corpus.zip
+```
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md` | 227 | `3C63AFB16EBE1CEC32985C651EB82375DB0CE8637B7928E98BC0D2495E83C94D` |
+| `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md` before this entry | 6693 | `6AB502FDA2609D737096815A73B5AAD2710480699ECD3AF41923DA84A7259D01` |
+
+Git status after retry and cleanup:
+
+```text
+ D corpus/pdf_release/pdf_corpus.zip
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md
+```
+
+Regression checks:
+- No BaseCore source was modified.
+- No registry, release, `.tex`, monolithic material, production code, or `package.json` was modified.
+- No `.lean` file is delivered.
+- No `QICNContraction.lean` is delivered.
+- No external validation, consciousness, `C_op`, `I_int`, CCR, invariants, identity, subjectivity, agency, or phenomenality claim is made.
+- No commit was created in this retry because root canonical gates fail while `corpus/pdf_release/pdf_corpus.zip` is missing.
+- No push was attempted.
+
+Required next action:
+- Restore or otherwise explicitly resolve `corpus/pdf_release/pdf_corpus.zip` before a clean commit/verification closure can be claimed.
+- After restoring that source-of-truth artifact, rerun the three root gates.
+
+## 2026-06-17 -- Lean toolchain retry after restoring canonical PDF zip
+
+Scope:
+- User requested restoration and retry after freeing additional disk space.
+- Restored the missing canonical corpus file: `corpus/pdf_release/pdf_corpus.zip`.
+- Created a non-canonical Lean/mathlib pilot only under `docs/ai-platform-outputs/formal/lean/`.
+- Updated the Lean pilot report after a real green `lake build`.
+- No BaseCore, registry, release, `.tex`, monolithic paper, production code, or `package.json` file was modified.
+- No push was attempted.
+
+Files created or updated:
+- `docs/ai-platform-outputs/formal/lean/.gitignore`
+- `docs/ai-platform-outputs/formal/lean/lake-manifest.json`
+- `docs/ai-platform-outputs/formal/lean/lakefile.toml`
+- `docs/ai-platform-outputs/formal/lean/lean-toolchain`
+- `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/Basic.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean`
+- `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Restoration:
+
+```text
+git restore -- corpus/pdf_release/pdf_corpus.zip
+```
+
+Result:
+
+```text
+restored; size=8260861 bytes
+```
+
+Lean/Lake toolchain:
+
+```text
+Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)
+Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)
+```
+
+Mathlib manifest:
+
+```text
+lean-toolchain: leanprover/lean4:v4.31.0
+mathlib inputRev: v4.31.0
+mathlib rev: fabf563a7c95a166b8d7b6efca11c8b4dc9d911f
+```
+
+Cache step:
+
+```text
+lake exe cache get
+```
+
+Result:
+
+```text
+exit code 1
+Warning: some files were not found in the cache.
+This usually means that your local checkout of mathlib4 has diverged from upstream.
+Decompression of already-cached files failed (exit code 1)
+```
+
+Interpretation:
+- Cache retrieval was not clean and is not certification.
+- The later trusted Lean gate is `lake build`, which completed successfully.
+
+Lean build:
+
+```text
+lake build
+```
+
+Result:
+
+```text
+Build completed successfully (1652 jobs).
+```
+
+Warnings:
+
+```text
+warning: QICNLean/Basic.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNContraction.lean:1:1: * '-/': Copyright too short!
+```
+
+Lean pilot result:
+- `Basic.lean` verifies a minimal metric-space smoke theorem.
+- `QICNContraction.lean` verifies an abstract metric-space skeleton:
+  strict contraction plus non-expansive post-map remains a strict contraction,
+  and mathlib's Banach fixed-point API gives fixed point plus iterate convergence
+  in a complete metric space.
+- No `sorry` was introduced.
+
+Formalization boundary:
+- This does not formalize the QICN state space.
+- This does not formalize the BaseCore affine update `Kx + Gamma(u)`.
+- This does not prove a bounded-linear-operator norm bound.
+- This does not prove metric projection non-expansiveness for a concrete QICN target set.
+- This does not exhibit an admissible `S` or certify `C_op`.
+- This does not close `I_int`, CCR, no-vacuity, identity, phenomenality, or consciousness claims.
+
+Package verification:
+
+```text
+npm run verify
+```
+
+Result:
+
+```text
+exit code 0
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Note:
+
+```text
+exit code 0 = gates ran; NOT corpus certified. external_support_certified=false.
+```
+
+Root canonical gates after restoring `pdf_corpus.zip`:
+
+| Command | Result |
+|---|---|
+| `node scripts\verify-canonical-integrity.cjs` | PASS; `zip_sha256_match=true`; `canonical_pdf_count=25`; `warnings=[]`; `failures=[]`. |
+| `node scripts\verify-claim-registry.cjs` | PASS; `entries=17`; `unique_ids=17`; `warnings=[]`; `failures=[]`. |
+| `node scripts\verify-canonical-release.cjs` | PASS; `warnings=[]`; `failures=[]`. |
+
+Pre-commit git status:
+
+```text
+## main...origin/main [ahead 5]
+ M rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md
+ M rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md
+?? rigid-identity-framework/docs/ai-platform-outputs/formal/
+```
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md` | 127 | `1668B60A01FF2C1DEF7A0BAA9C888A450A3B6DCE3389D6948387DFBC632E4944` |
+| `docs/ai-platform-outputs/formal/lean/.gitignore` | 2 | `ACE1B7C908FFEA3A289189603A571DFA14CC0626CEE71C4A629757AA1ACEB539` |
+| `docs/ai-platform-outputs/formal/lean/lake-manifest.json` | 96 | `13C4B61A3E06BEAC849C6B2D797EB5F7397FE964EA36E6B687CE60B352A81B51` |
+| `docs/ai-platform-outputs/formal/lean/lakefile.toml` | 15 | `A735D9C6728B295B8EBEFFD6BB8FA32C78F27AA404E548A08F1B76F647A54A8B` |
+| `docs/ai-platform-outputs/formal/lean/lean-toolchain` | 1 | `EFAC0B94923B2D8B6840CD35BE9177AD0FC5AB2332F4F4311C98712CEE92FDEE` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | 2 | `36C7EA0D371C235AC1C62B321B932A4146B54C9A7E78E5781AB2DADC59C8CC9E` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean/Basic.lean` | 11 | `265E4023CEC03DC33BD91C90E5F6072420E4EB0ECAE2DFFA8B66B01489DB8ACB` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean` | 46 | `EC5D490B26402FAA7095EA42EF646700A4F67FC91AF3330E7CB55A0839BECBEC` |
+
+Residual risks:
+- The cache command was not clean even though `lake build` was green.
+- The Lean pilot is abstract and does not instantiate BaseCore analytic objects.
+- The package adjudicator remains scientifically blocked with `external_support_certified=false`.

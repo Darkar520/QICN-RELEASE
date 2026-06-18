@@ -7692,3 +7692,95 @@ Residual risk:
 - The stale root analysis remains present on disk but intentionally ignored.
 - Its banner is preserved locally; because the file is ignored, future clones
   will not receive that historical file unless it is distributed outside Git.
+
+## 2026-06-18 - Codex - H5 linear subspace reduction from forcing and invariance
+
+Status: `H5_LINEAR_SUBSPACE_REDUCED_TO_FORCING_CONDITIONS`
+
+Scope:
+- Added a non-canonical Lean file proving parameterwise non-collapse for the
+  projected-affine linear subspace case from two data conditions:
+  invariance of `N` under `P_I o K`, and nonzero projected forcing residual
+  `Q (P_I (Gamma u))`.
+- Extended the H5 critique with a "Linear quotient derivation (verified)"
+  section and an explicit circularity verdict.
+- Imported the new file from `QICNLean.lean` so `lake build` compiles it.
+- No canon, registry, release, `.tex`, monolithic, package.json, or production
+  file was touched.
+- No push was performed.
+
+Files changed:
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Derivation.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Lean theorem:
+- `QICNLean.noncollapse_from_forcing`
+
+Mathlib / pilot lemmas used:
+- `Submodule.starProjection` as a continuous linear map.
+- `map_add` for linearity of `Submodule.starProjection` and `quotientResidual`.
+- `Submodule.starProjection_eq_self_iff` for `x in N` iff `P_N x = x`.
+- `sub_apply` and `ContinuousLinearMap.id_apply` for `Q := id - P_N`.
+- `ContractingWith.fixedPoint_isFixedPt` for the Banach fixed point equation.
+- Existing pilot lemmas: `affine_contracting`,
+  `subspace_starProjection_nonexpansive`, and `nonexpansive_after_contracting`.
+
+Build command:
+
+```powershell
+$env:GIT_CONFIG_GLOBAL="$env:TEMP\qicn_lean_gitconfig_h5"
+$env:ELAN_HOME="$env:USERPROFILE\.elan"
+& "$env:USERPROFILE\.elan\bin\lake.exe" build *> "$env:TEMP\h5_build_final2.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\h5_build_final2.txt" -Raw
+```
+
+Raw build result:
+
+```text
+EXIT=0
+Build completed successfully (2295 jobs).
+```
+
+No-sorry/no-admit/no-axiom grep:
+
+```text
+COUNT=0
+```
+
+`#print axioms` command:
+
+```powershell
+Set-Content -LiteralPath $env:TEMP\QICNPrintH5Axioms.lean -Value @(
+  'import QICNLean.QICNH5Derivation',
+  '#print axioms QICNLean.noncollapse_from_forcing'
+) -Encoding ASCII
+& "$env:USERPROFILE\.elan\bin\lake.exe" env lean $env:TEMP\QICNPrintH5Axioms.lean *> "$env:TEMP\h5_axioms3.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\h5_axioms3.txt" -Raw
+```
+
+Raw axioms result:
+
+```text
+EXIT=0
+'QICNLean.noncollapse_from_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+Pre-ledger hashes:
+
+| File | SHA256 |
+|---|---|
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Derivation.lean` | `B60D6B6D75D6A0959CD0D2A314B18E75D36071DF6A0400A68806A0046AE6C847` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | `993FCB8AC6A434015186C7BD2C194166E9A7D214562CC106026BA238F54423BF` |
+| `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md` | `D15D2FC7DE2AB35A38088C5CFCC48C27C21383987C536F5879F6F36418830AD1` |
+
+Circularity verdict:
+- This is a genuine reduction in the linear subspace case because C2 is a
+  condition on `Gamma`, `P_I`, and the `N`-residual, not on the fixed point.
+- It is not a general derivation of BaseCore H5. The closed-convex projection
+  case remains open because the proof uses linearity of `Submodule.starProjection`.
+
+Residual risk:
+- `H5_GENERAL_CONVEX: OPEN`.
+- No certified `C_op` instance or downstream `I_int`/CCR/no-vacuity claim is
+  produced.
+- The theorem is non-canonical and for human review only.

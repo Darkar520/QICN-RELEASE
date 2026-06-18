@@ -64,19 +64,87 @@ systems without simply restating non-collapse in anti-fixed-point language?
 | Uniform separation `dist(T_u(c), c) >= epsilon(u) > 0` for constants | Strengthens H5 by giving a quantitative margin. | No | Useful for robustness and numerical testing, but stronger than H5 and not currently supported. Without an exhibited margin it is just a stricter assumption. |
 | Projection-compatible forcing condition | Require `convexProjection(K c + Gamma(u)) != c` for all constants `c`. | Yes by assumption; not explanatory | This is almost H5 specialized to the projected affine form. It is operationally checkable in concrete instances, but it does not reduce circularity unless derived from primitive geometry. |
 
+## Linear Quotient Derivation (Verified)
+
+Lean file:
+
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Derivation.lean`
+
+Status:
+
+```text
+H5_LINEAR_SUBSPACE_REDUCED_TO_FORCING_CONDITIONS
+H5_GENERAL_CONVEX: OPEN
+```
+
+Setup, restricted to the linear subspace case:
+
+- `I` is the projection subspace.
+- `N` is the constant/collapse subspace.
+- `P_I := I.starProjection`.
+- `P_N := N.starProjection`.
+- `Q := id - P_N`, implemented as `quotientResidual N`.
+- `K : H ->L[Real] H` with `||K|| < 1`.
+- `Gamma : U_param -> H`.
+- `f(u)` is the Banach fixed point of `x |-> P_I (K x + Gamma u)`.
+
+Data conditions:
+
+```text
+C1 invariance:
+  forall x in N, P_I (K x) in N
+
+C2 projected forcing:
+  forall u, Q (P_I (Gamma u)) != 0
+```
+
+Verified theorem:
+
+```text
+noncollapse_from_forcing :
+  C1 -> C2 -> forall u, f(u) notin N
+```
+
+Proof idea:
+
+If `f(u) in N`, then `Q f(u) = 0`. Since `f(u)` is a fixed point,
+`f(u) = P_I (K f(u) + Gamma u)`. In the subspace case, `P_I` is linear, so
+
+```text
+Q f(u) = Q (P_I (K f(u))) + Q (P_I (Gamma u)).
+```
+
+By C1, `P_I (K f(u)) in N`, hence its `Q` residual is zero. Therefore
+`Q (P_I (Gamma u)) = 0`, contradicting C2.
+
+Circularity verdict:
+
+This is a genuine reduction in the linear subspace case, not merely a
+re-enunciation of H5. C2 is a condition on the primitive data
+`Gamma`, `P_I`, and the decomposition induced by `N`; it does not quantify over
+or mention the fixed point. C1 is an invariance condition on `P_I o K` over the
+collapse subspace. Together they imply non-collapse without assuming the
+anti-fixed-point form of H5.
+
+The reduction is narrow. It depends on the linearity of `Submodule.starProjection`.
+For the general closed-convex BaseCore projection, `P_I` is non-expansive but not
+linear, so the additive decomposition step is unavailable. The convex case
+remains open and must not be reported as solved.
+
 ## Verdict
 
-No candidate currently discharges H5 from existing BaseCore hypotheses without
-adding a new structural assumption. The best direction is the quotient-space or
-component-decomposition route, because it could replace H5 with a falsifiable
-condition on `K`, `Gamma`, projection, and the constant subspace.
+No candidate currently discharges the full BaseCore H5 for the general convex
+projection case from existing hypotheses alone. The linear subspace route now
+does reduce H5 to primitive forcing and invariance conditions, but those
+conditions are additional structure and the proof depends on linear projection.
 
 Current honest status:
 
 ```text
 H5_IMPLIES_NONCOLLAPSE: MECHANIZED_TRIVIAL
-H5_DERIVED_NONCIRCULARLY: NOT_PROVED
-ALL_REPLACEMENT_CANDIDATES: STILL_ASSUMPTION_OR_REQUIRE_NEW_STRUCTURE
+H5_LINEAR_SUBSPACE_REDUCED_TO_FORCING_CONDITIONS: VERIFIED_IN_LEAN
+H5_GENERAL_CONVEX: OPEN
+FULL_BASECORE_H5_DERIVED_NONCIRCULARLY: NOT_PROVED
 ```
 
 ## Non-Claims

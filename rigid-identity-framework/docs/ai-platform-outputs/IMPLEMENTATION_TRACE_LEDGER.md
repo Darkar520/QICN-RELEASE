@@ -7857,3 +7857,100 @@ Push confirmation:
 Residual risk:
 - Documentation is now consistent with commit `e58d34b`, but this does not add
   any new formal proof beyond the already verified linear-subspace theorem.
+
+## 2026-06-18 - Codex - Convex H5 variational reduction lemma and vacuity obstruction
+
+Status: `CONVEX_VARIATIONAL_REDUCTION_LEMMA_VERIFIED__NAIVE_FORCING_CONDITION_VACUOUS__FULL_CONVEX_NONCOLLAPSE_OPEN`
+
+Scope:
+- Added a non-canonical Lean lemma for the convex projection case:
+  `QICNLean.convex_constant_fixedpoint_reduces`.
+- Imported `QICNH5Convex.lean` from `QICNLean.lean`.
+- Extended `QICN_H5_NONCOLLAPSE_CRITIQUE.md` with the convex variational
+  reduction and the vacuity obstruction for naive projected-forcing exclusion.
+- No canon, registry, release, `.tex`, monolithic, package.json, or production
+  file was touched.
+- No push was performed.
+
+Files changed:
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Convex.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Lean theorem:
+- `QICNLean.convex_constant_fixedpoint_reduces`
+
+Mathlib / pilot lemmas used:
+- `QICNLean.convexProjection_variational` for the Hilbert projection
+  variational inequality.
+- `Submodule.eq_starProjection_of_mem_of_inner_eq_zero` to convert
+  orthogonality to `P_N z = 0`.
+- `Submodule.starProjection_eq_self_iff` for `P_N c = c` when `c in N`.
+- `map_add` for linearity of `Submodule.starProjection`.
+- `inner_neg_right`, `neg_nonpos.mp`, and additive normalization (`abel`) for
+  the bilateral `n` / `-n` variational argument.
+
+Build command:
+
+```powershell
+$env:GIT_CONFIG_GLOBAL="$env:TEMP\qicn_lean_gitconfig_h5convex"
+Get-ChildItem -Path .lake\packages -Directory | ForEach-Object { $p = $_.FullName -replace '\\','/'; git config --global --add safe.directory $p }
+$env:ELAN_HOME="$env:USERPROFILE\.elan"
+& "$env:USERPROFILE\.elan\bin\lake.exe" build *> "$env:TEMP\h5_convex_build_1.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\h5_convex_build_1.txt" -Raw
+```
+
+Raw build result:
+
+```text
+EXIT=0
+Build completed successfully (2296 jobs).
+```
+
+No-sorry/no-admit/no-axiom grep:
+
+```text
+COUNT=0
+```
+
+`#print axioms` command:
+
+```powershell
+Set-Content -LiteralPath $env:TEMP\QICNPrintH5ConvexAxioms.lean -Value @(
+  'import QICNLean.QICNH5Convex',
+  '#print axioms QICNLean.convex_constant_fixedpoint_reduces'
+) -Encoding ASCII
+& "$env:USERPROFILE\.elan\bin\lake.exe" env lean $env:TEMP\QICNPrintH5ConvexAxioms.lean *> "$env:TEMP\h5_convex_axioms.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\h5_convex_axioms.txt" -Raw
+```
+
+Raw axioms result:
+
+```text
+EXIT=0
+'QICNLean.convex_constant_fixedpoint_reduces' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+Pre-ledger hashes:
+
+| File | SHA256 |
+|---|---|
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Convex.lean` | `BD399B7532F22FB5F67E46FF914D54EC9F78F3283744118CD4FCFD30ADFB1E3D` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | `81E1C33AD35582D9A2043521219AACE27A1080A4AD5F2B8E06610C1C929AC4C8` |
+| `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md` | `B0B280706B2ADB3CD1C8CE7DAF39132E7709600C4D1B9BC172CBE49CFFB3C447` |
+
+Vacuity finding:
+- In the convex case, the lemma proves only that a constant fixed point must
+  satisfy `P_N (K c + Gamma u) = c`.
+- The naive condition `forall c in N, P_N (K c + Gamma u) != c` is
+  unsatisfiable as a replacement condition: the induced affine map on `N` is
+  contractive under `||K|| < 1`, so a Banach fixed point exists.
+- Therefore full convex non-collapse requires geometric exclusion by the
+  admissible set `s`, not projected forcing alone.
+
+Residual risk:
+- `FULL_CONVEX_NONCOLLAPSE: OPEN`.
+- The open condition is geometric: exclude the constant candidate from being an
+  admissible convex projected fixed point, or show that `s` pushes the projection
+  out of `N`.
+- No `C_op`, `I_int`, CCR, no-vacuity, identity, subjectivity, phenomenality, or
+  consciousness claim is supported.

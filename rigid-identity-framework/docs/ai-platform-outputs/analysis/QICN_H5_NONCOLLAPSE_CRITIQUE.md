@@ -131,19 +131,107 @@ For the general closed-convex BaseCore projection, `P_I` is non-expansive but no
 linear, so the additive decomposition step is unavailable. The convex case
 remains open and must not be reported as solved.
 
+## Convex Case (Variational Reduction + Vacuity Obstruction)
+
+Lean file:
+
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Convex.lean`
+
+Status:
+
+```text
+CONVEX_VARIATIONAL_REDUCTION_LEMMA: VERIFIED_IN_LEAN
+NAIVE_FORCING_CONDITION_CONVEX: VACUOUS
+FULL_CONVEX_NONCOLLAPSE: OPEN
+```
+
+Setup, restricted to the general convex projection case:
+
+- `s : Set H` is nonempty, complete, and convex.
+- `N : Submodule Real H` is the constant/collapse subspace.
+- `P_N := N.starProjection`.
+- `K : H ->L[Real] H` with `||K|| < 1`.
+- `Gamma : U_param -> H`.
+- `T(u, x) := convexProjection s hne hcl hc (K x + Gamma u)`.
+
+Data/admissibility assumptions used by the verified lemma:
+
+```text
+hNsubI:
+  forall x in N, x in s
+
+hAdm:
+  forall c in N, forall n in N, c + n in s
+```
+
+Verified lemma:
+
+```text
+convex_constant_fixedpoint_reduces :
+  c in N -> T(u, c) = c -> P_N (K c + Gamma u) = c
+```
+
+Reading:
+
+In the convex case, every constant fixed point must satisfy the linear projected
+equation
+
+```text
+P_N (K c + Gamma u) = c.
+```
+
+The proof is variational. If `c` is the convex projection of `K c + Gamma u`,
+then the Hilbert projection variational inequality holds at every admissible
+point. Bilateral admissibility along `N` lets us test both `c + n` and `c - n`,
+forcing `(K c + Gamma u) - c` to be orthogonal to every `n in N`. Orthogonality
+implies `P_N ((K c + Gamma u) - c) = 0`, hence
+`P_N (K c + Gamma u) = c`.
+
+Vacuity obstruction:
+
+The naive condition
+
+```text
+forall c in N, P_N (K c + Gamma u) != c
+```
+
+cannot serve as a non-circular replacement in the convex case. The affine map
+
+```text
+c |-> P_N (K c + Gamma u)
+```
+
+on `N` is contractive whenever `||K|| < 1` and `P_N` is non-expansive. By the
+Banach fixed-point theorem, it has a solution `c*` in `N`. Therefore the naive
+universal exclusion condition is unsatisfiable; a theorem built on it would be
+vacuous rather than informative.
+
+Conclusion:
+
+Convex non-collapse does not follow from projected forcing alone. It requires a
+geometric exclusion condition on the admissible set `s`: for example, the
+candidate constant `c*` solving `P_N (K c* + Gamma u) = c*` must fail to be
+admissible as a convex projection/fixed point, or the geometry of `s` must push
+the projected point out of `N`. Formalizing that exclusion is the open problem.
+
 ## Verdict
 
 No candidate currently discharges the full BaseCore H5 for the general convex
 projection case from existing hypotheses alone. The linear subspace route now
 does reduce H5 to primitive forcing and invariance conditions, but those
 conditions are additional structure and the proof depends on linear projection.
+The convex variational route proves a useful reduction lemma, but also shows
+that the naive projected-forcing exclusion is vacuous; full convex non-collapse
+requires a geometric exclusion condition on `s`.
 
 Current honest status:
 
 ```text
 H5_IMPLIES_NONCOLLAPSE: MECHANIZED_TRIVIAL
 H5_LINEAR_SUBSPACE_REDUCED_TO_FORCING_CONDITIONS: VERIFIED_IN_LEAN
-H5_GENERAL_CONVEX: OPEN
+CONVEX_VARIATIONAL_REDUCTION_LEMMA: VERIFIED_IN_LEAN
+NAIVE_FORCING_CONDITION_CONVEX: VACUOUS
+H5_GENERAL_CONVEX: OPEN_REQUIRES_GEOMETRIC_EXCLUSION
 FULL_BASECORE_H5_DERIVED_NONCIRCULARLY: NOT_PROVED
 ```
 

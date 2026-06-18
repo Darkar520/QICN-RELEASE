@@ -6,3 +6,4 @@ import QICNLean.QICNAttractorCompact
 import QICNLean.QICNAttractorConcrete
 import QICNLean.QICNNonCollapse
 import QICNLean.QICNH5Derivation
+import QICNLean.QICNH5Convex

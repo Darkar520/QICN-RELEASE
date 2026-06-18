@@ -7551,3 +7551,82 @@ Next step:
 - Move to a single Level 2 frontier: either construct a certified instance of
   `S`, or derive a non-circular replacement for H5 from quotient/component
   structure. The higher-return frontier remains the certified instance of `S`.
+
+## 2026-06-18 - Codex - Lean report reconciliation + non-destructive repo hygiene inventory
+
+Status: `DOCUMENTATION_RECONCILED_AND_HYGIENE_INVENTORY_ADDED`
+
+Scope:
+- Fase A reconciled `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+  with verified concrete compactness closure from commit `77941b8`.
+- Fase B marked stale root analysis provenance, clarified ROADMAP SYS-* runtime
+  provenance, and added a non-destructive repo hygiene inventory.
+- No Lean recompilation was run in this pass; no `.lean` file was touched.
+- No file was moved or deleted.
+- No push was performed.
+
+Files changed:
+- `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+- `../ANALISIS_GENERAL_PROYECTO.md`
+- `ROADMAP.md`
+- `docs/ai-platform-outputs/reports/QICN_REPO_HYGIENE_INVENTORY_2026-06-18.md`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Fase A commit:
+- `4aa6b08 docs: reconcile Lean pilot report with verified concrete compactness closure`
+
+Commands and results:
+
+```text
+git status --short --branch
+## main...origin/main
+```
+
+```text
+git log --oneline -3
+77941b8 docs: close projected-affine compactness theorem for Lean pilot
+1ea7114 docs: record Lean convex projection check with honest deferral
+9d24297 formal: complete convex projection instance in Lean pilot
+```
+
+```text
+Select-String QICN_LEAN_PILOT_REPORT.md -Pattern 'deferral|deliberately does not prove|PARCIAL|Continuous Gamma -> Continuous'
+```
+
+Result after Fase A edit:
+- No stale claim remains saying compactness continuity is still deferred or
+  deliberately unproved.
+- The remaining `Continuous Gamma -> Continuous (fun u => f_u*)` occurrence is
+  in the positive status section documenting the verified closure.
+
+```text
+git check-ignore -v -- ANALISIS_GENERAL_PROYECTO.md
+.gitignore:91:ANALISIS_GENERAL_PROYECTO.md ANALISIS_GENERAL_PROYECTO.md
+```
+
+Consequence:
+- `ANALISIS_GENERAL_PROYECTO.md` is ignored by repository policy. Because the
+  prompt explicitly required a banner in this file and a commit, it must be
+  staged with `git add -f -- ANALISIS_GENERAL_PROYECTO.md`.
+
+Top-level folder inventory command:
+- Recursive PowerShell count/size pass over immediate root directories.
+
+Inventory output path:
+- `docs/ai-platform-outputs/reports/QICN_REPO_HYGIENE_INVENTORY_2026-06-18.md`
+
+Pre-ledger final hashes:
+
+| File | SHA256 |
+|---|---|
+| `../ANALISIS_GENERAL_PROYECTO.md` | `D49E9D93AB4A1408AECE84014FB65DCB02651E5E842CC0F110E1000113DEE78A` |
+| `ROADMAP.md` | `22BBF52821FF9BF20E2DD8F392FD1BF953D86818FDCCF99A253BE7B43046EBA6` |
+| `docs/ai-platform-outputs/reports/QICN_REPO_HYGIENE_INVENTORY_2026-06-18.md` | `4723A80A02B5531E94C86B0BE60893E9FCB45602095EFD432C215872D59751AD` |
+| `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md` | `ECA9A68F2221F0D1DD0341227023877FB1911C2B074DFCF0F08528BA7465A37B` |
+
+Residual risk:
+- Hygiene inventory is structural/provenance only; it is not a cleanup action.
+- The root analysis file is intentionally preserved as historical/stale
+  material, not corrected globally.
+- SYS-* ROADMAP rows remain external/historical debt, not active runtime claims
+  about `rigid-identity-framework`.

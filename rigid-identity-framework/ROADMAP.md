@@ -1237,6 +1237,12 @@ Notas de correccion:
 | SYS-META | Metadata legacy `versiones-de-interfaz` | OpenCode/Kiro runtime | `package.json` | ALTA provenance | ABIERTO | Renombrar package/runtime |
 | SYS-PATHS | AGENTS runtime con paths rotos | OpenCode/Kiro runtime | paths a TRADING 3.0 | ALTA provenance | ABIERTO | Reescribir source-of-truth runtime |
 
+Nota de provenance: las filas SYS-* refieren a un runtime EXTERNO/NO-CANONICO
+(paths tipo `TRADING 3.0`, `SimulationEngine.jsx`, `selfpatch-apply.js`,
+`OntologicalSingularityCore.js`) que NO esta presente en el corpus
+`rigid-identity-framework`. Se rastrean como deuda historica/externa, no como
+tooling activo de este repositorio.
+
 ## 3.5 Deuda rastreada no bloqueante
 
 ### 3.5.1 Deuda de layout

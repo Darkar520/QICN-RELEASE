@@ -1,6 +1,6 @@
 # QICN Lean Pilot Report
 
-Status: `LEAN_MATHLIB_BUILD_GREEN__HILBERT_CONVEX_INSTANCE_GREEN`
+Status: `LEAN_MATHLIB_BUILD_GREEN__HILBERT_CONVEX_INSTANCE_GREEN__COMPACTNESS_PARTIAL__NONCOLLAPSE_GREEN`
 
 Report class: `NON_CANONICAL_INTERNAL_FORMALIZATION_REPORT`
 
@@ -13,9 +13,10 @@ Human curated status: `not_reviewed`
 ## Scope
 
 This report documents a Lean/mathlib toolchain probe, one small abstract
-contraction pilot, a verified Hilbert-space subspace instance, and the full
+contraction pilot, a verified Hilbert-space subspace instance, the full
 nonempty complete convex-subset projection instance needed for the H1
-non-expansiveness step.
+non-expansiveness step, a partial compactness endpoint, and the trivial H5 to
+non-collapse implication.
 
 It is not a BaseCore edit, not a registry entry, not a release artifact, not an
 external validation, and not a certified `C_op` instance. It does not prove any
@@ -70,6 +71,8 @@ docs/ai-platform-outputs/formal/lean/QICNLean/Basic.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean
+docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorCompact.lean
+docs/ai-platform-outputs/formal/lean/QICNLean/QICNNonCollapse.lean
 docs/ai-platform-outputs/formal/lean/QICNLean.lean
 ```
 
@@ -105,6 +108,19 @@ convexProjection_variational
 convex_minimizer_unique
 convexProjection_lipschitz
 hilbert_convex_projected_affine_fixed_point
+```
+
+`QICNAttractorCompact.lean` verifies a partial compactness endpoint:
+
+```text
+fixedPoint_perturbation_bound
+attractor_isCompact
+```
+
+`QICNNonCollapse.lean` verifies the logical H5 implication only:
+
+```text
+noncollapse_from_H5
 ```
 
 Informal reading of the verified pilot:
@@ -143,6 +159,20 @@ EXIT=0
 Build completed successfully (2291 jobs).
 ```
 
+Compactness partial result:
+
+```text
+EXIT=0
+Build completed successfully (2292 jobs).
+```
+
+Non-collapse result:
+
+```text
+EXIT=0
+Build completed successfully (2293 jobs).
+```
+
 The build emitted only style warnings about missing mathlib-style copyright
 headers in the non-canonical AI-output files:
 
@@ -151,6 +181,8 @@ warning: QICNLean/Basic.lean:1:1: * '-/': Copyright too short!
 warning: QICNLean/QICNContraction.lean:1:1: * '-/': Copyright too short!
 warning: QICNLean/QICNHilbertInstance.lean:1:1: * '-/': Copyright too short!
 warning: QICNLean/QICNConvexProjection.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNAttractorCompact.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNNonCollapse.lean:1:1: * '-/': Copyright too short!
 ```
 
 No `sorry` was introduced.
@@ -187,6 +219,28 @@ minimizers are unique by the two crossed variational inequalities
 P_s is LipschitzWith 1
 x |-> P_s (K x + c) has a fixed point and convergent iterates when ||K|| < 1
 ```
+
+The compactness partial additionally proves:
+
+```text
+fixedPoint_perturbation_bound:
+  same-K contractions with a uniform pointwise perturbation bound have fixed
+  points within C / (1 - K)
+
+attractor_isCompact:
+  if F : U -> H is continuous and U is compact, then Set.range F is compact
+```
+
+It deliberately does not prove `Continuous Gamma -> Continuous (fun u => f_u*)`
+for the concrete projected affine Hilbert family in this pass.
+
+The non-collapse file proves only:
+
+```text
+fixedPoint(u) in N + T_u(fixedPoint(u)) = fixedPoint(u) contradicts H5
+```
+
+It does not justify H5.
 
 This is a real formalization result, but still narrow. It is a useful pressure
 test for the BaseCore contraction prose because Lean forces these obligations to
@@ -235,6 +289,15 @@ Assembly:
 - `QICNLean.projected_contraction_exists_fixed_point` applies mathlib's Banach
   fixed-point API to obtain fixed point plus convergence of iterates.
 
+Compactness/non-collapse:
+
+- `ContractingWith.fixedPoint_lipschitz_in_map` supplies the fixed-point
+  perturbation estimate.
+- `isCompact_range` supplies compactness of the range of a continuous selector
+  over a compact domain.
+- `QICNLean.noncollapse_from_H5` uses no analytic lemma; it is a direct
+  contradiction from fixed-pointness plus H5.
+
 ## Projection Status
 
 Status: `INSTANCIA_CONVEXA_COMPLETA`
@@ -270,12 +333,61 @@ space or certify a `C_op` instance.
 'QICNLean.hilbert_convex_projected_affine_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]
 ```
 
+## Attractor Compactness Status
+
+Status: `PARCIAL_DEFERRAL_CONTINUITY_FROM_GAMMA`
+
+The file `QICNAttractorCompact.lean` mechanizes two pieces:
+
+```text
+fixedPoint_perturbation_bound
+attractor_isCompact
+```
+
+The concrete continuity bridge from H4,
+
+```text
+Continuous Gamma -> Continuous (fun u => f_u*)
+```
+
+is not discharged in this pass. The theorem `attractor_isCompact` therefore
+takes the continuity of the fixed-point selector as an explicit hypothesis.
+This is a deliberate deferral, not an implicit claim.
+
+`#print axioms` for the compactness theorem:
+
+```text
+'QICNLean.attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+## Noncollapse Status
+
+Status: `H5_IMPLIES_NONCOLLAPSE_MECHANIZED_TRIVIAL`
+
+The file `QICNNonCollapse.lean` proves:
+
+```text
+noncollapse_from_H5
+```
+
+This is only the logical step from H5 to no-collapse. It does not justify H5 or
+derive H5 from `K`, `Gamma`, projection geometry, quotient dynamics, or any
+nonconstant forcing condition.
+
+`#print axioms` for the non-collapse theorem:
+
+```text
+'QICNLean.noncollapse_from_H5' does not depend on any axioms
+```
+
 ## What This Does Not Prove
 
 This does not formalize:
 
 - the QICN state space;
 - the full BaseCore state space;
+- the concrete H4 bridge `Continuous Gamma -> Continuous (fun u => f_u*)`;
+- any non-circular derivation of H5;
 - invariance of any `C_op` certificate;
 - existence of an admissible system `S`;
 - `I_int`, CCR, no-vacuity, no-simulability, identity, phenomenality, or

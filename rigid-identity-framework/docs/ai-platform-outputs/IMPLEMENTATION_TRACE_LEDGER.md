@@ -7273,3 +7273,149 @@ Next step:
 - If desired, connect the verified Hilbert theorem to explicit BaseCore object
   definitions in a separate non-canonical formalization layer, still without
   promoting any `C_op`, `I_int`, CCR, or external-validity claim.
+
+---
+
+## 2026-06-18 - Codex - Lean compactness partial + H5 non-collapse critique
+
+Agent/platform: Codex
+
+User request: Execute three ordered phases: commit the prior convex projection
+turn cleanly, extend the non-canonical Lean pilot toward BaseCore
+`thm:compactness`, and add a Lean/non-Lean H5 non-collapse front without claim
+inflation or canon edits.
+
+Phase A result:
+- Commit created locally, no push:
+  `9d24297 docs: mechanize closed-convex Hilbert projection non-expansiveness + fixed point (Lean, non-canonical)`
+- Verified files in commit:
+  - `rigid-identity-framework/docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+  - `rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+  - `rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean`
+  - `rigid-identity-framework/docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+
+Files read:
+- `basecore/core/sections/01_foundation_from_core.tex`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean`
+- `docs/ai-platform-outputs/formal/lean/.lake/packages/mathlib/Mathlib/Topology/MetricSpace/Contracting.lean`
+- `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+
+Canonical anchors verified:
+- `basecore/core/sections/01_foundation_from_core.tex:167` states the
+  compactness proof idea: fixed points depend continuously on `u` because the
+  contraction constant is uniform and `Gamma` is uniformly continuous on compact
+  `U`; compactness follows as a compact image.
+- `basecore/core/sections/01_foundation_from_core.tex:185-190` states H5:
+  every parameter and constant element satisfies `T_u(c) != c`.
+- `basecore/core/sections/01_foundation_from_core.tex:201-206` proves
+  non-collapse by contradiction from fixed-pointness and H5.
+- `basecore/core/sections/01_foundation_from_core.tex:209-210` remarks that H5
+  is parameterwise and has exactly the quantifier strength needed for
+  `thm:noncollapse`.
+
+Files modified/created after Phase A:
+- Created `docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorCompact.lean`
+- Created `docs/ai-platform-outputs/formal/lean/QICNLean/QICNNonCollapse.lean`
+- Created `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md`
+- Modified `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- Modified `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+- Modified `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Phase B Lean result:
+- Status: `PARCIAL_DEFERRAL_CONTINUITY_FROM_GAMMA`
+- `fixedPoint_perturbation_bound` is discharged from
+  `ContractingWith.fixedPoint_lipschitz_in_map`.
+- `attractor_isCompact` is discharged from `isCompact_range`.
+- Deferral: this pass does not prove
+  `Continuous Gamma -> Continuous (fun u => f_u*)` for the concrete projected
+  affine Hilbert family. The theorem keeps continuity of the selector `F` as an
+  explicit hypothesis.
+
+Phase C result:
+- Lean C1 status: `H5_IMPLIES_NONCOLLAPSE_MECHANIZED_TRIVIAL`
+- Analysis C2 verdict:
+  `H5_DERIVED_NONCIRCULARLY: NOT_PROVED`
+- Replacement candidates reviewed in
+  `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md` all remain
+  assumptions or require new structure. No candidate currently discharges H5
+  without adding a further structural hypothesis.
+
+Lean build commands:
+
+```powershell
+$env:GIT_CONFIG_GLOBAL="$env:TEMP\qicn_lean_gitconfig"
+Get-ChildItem -Path .lake\packages -Directory | ForEach-Object { $p = $_.FullName -replace '\\','/'; git config --global --add safe.directory $p }
+$env:ELAN_HOME="$env:USERPROFILE\.elan"
+& "$env:USERPROFILE\.elan\bin\lake.exe" build *> "$env:TEMP\lean_compact.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\lean_compact.txt" -Raw
+& "$env:USERPROFILE\.elan\bin\lake.exe" build *> "$env:TEMP\lean_noncollapse.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\lean_noncollapse.txt" -Raw
+```
+
+Raw Lean build results:
+
+```text
+Phase B compactness partial:
+EXIT=0
+Build completed successfully (2292 jobs).
+
+Phase C non-collapse:
+EXIT=0
+Build completed successfully (2293 jobs).
+```
+
+No-sorry/no-axiom grep:
+
+```text
+COUNT=0
+```
+
+`#print axioms` results:
+
+```text
+'QICNLean.attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.noncollapse_from_H5' does not depend on any axioms
+```
+
+Package verification:
+
+```text
+npm run verify
+Exit code 0
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Canonical root gates from `C:\Users\irisp\OneDrive\Escritorio\QICN-FRAMEWORK`:
+
+| Command | Result |
+|---|---|
+| `node scripts\verify-canonical-integrity.cjs` | PASS; `failures=[]`; `warnings=[]` |
+| `node scripts\verify-claim-registry.cjs` | PASS; `failures=[]`; `warnings=[]` |
+| `node scripts\verify-canonical-release.cjs` | PASS; `failures=[]`; `warnings=[]` |
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | 6 | `B04475824D4C5099F3F39FAD0B9C84867999524545A2EBAADDA6936116DBC5B7` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorCompact.lean` | 42 | `D97969BAA1736963790E009F6368E4D81F34C3447E5C5D45FF97268E9B1D8347` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNNonCollapse.lean` | 20 | `05DD49375F72FA7C3DF8FC9CE850ED64126C8C0549BD412E3541E40F21CFD781` |
+| `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md` | 307 | `99B08C90C16340F9BF2A14898B26DAC49F24F1FEA0DA5C10D075CF7484452357` |
+| `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md` | 62 | `BD3772163286BAF5D4111181E3B494EFB8D79F8DB3CED631DE817B0A36FA4454` |
+| `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md` before this entry | 6132 | `35BBF8225616D9736EB7EE68515B1E01FA3A65897DAB4AB81050310BD0748FA6` |
+
+Residual risk:
+- Phase B is not `COMPACT_COMPLETO`; the selector-continuity bridge from
+  `Gamma` remains explicit debt.
+- Phase C proves only the trivial implication H5 -> non-collapse. H5 remains an
+  assumption block and is not non-circularly derived.
+- No `C_op`, `I_int`, CCR, no-vacuity, identity, subjectivity, phenomenality,
+  consciousness, or external validation claim is made.
+- `npm run verify` exit code 0 means gates ran; raw adjudicators remain blocked
+  and `external_support_certified=false`.
+
+Next step:
+- Either formalize the missing continuity bridge from `Gamma` to the
+  fixed-point selector, or accept the compactness theorem as conditional on
+  continuity of `F`. For H5, the next real work is a quotient/component
+  condition that implies anti-constant fixed-point behavior without restating it.

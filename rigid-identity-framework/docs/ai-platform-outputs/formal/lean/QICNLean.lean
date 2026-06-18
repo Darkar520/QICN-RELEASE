@@ -2,3 +2,5 @@ import QICNLean.Basic
 import QICNLean.QICNContraction
 import QICNLean.QICNHilbertInstance
 import QICNLean.QICNConvexProjection
+import QICNLean.QICNAttractorCompact
+import QICNLean.QICNNonCollapse

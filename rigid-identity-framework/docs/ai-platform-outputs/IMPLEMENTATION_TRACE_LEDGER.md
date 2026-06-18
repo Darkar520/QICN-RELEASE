@@ -7109,3 +7109,167 @@ Residual risks:
 
 Next step:
 - Optional: instantiate `X := ℋ` (real Hilbert / `InnerProductSpace`), define `project := orthogonalProjection I` and `base := fun x => K x + Γ u`, and discharge the two input hypotheses from mathlib. That upgrade would convert the abstract skeleton into the full mechanized BaseCore fixed-point theorem (thm:projection + lem:nonexp + thm:contraction + thm:fixedpoint).
+
+---
+
+## 2026-06-18 - Codex - Lean convex Hilbert projection instance for H1 non-expansiveness
+
+Agent/platform: Codex
+
+User request: Extend the existing non-canonical Lean pilot from the subspace case
+to the general H1 case: metric projection onto a nonempty complete convex subset
+of a real Hilbert space, prove non-expansiveness, and assemble the projected
+affine fixed-point/convergence theorem. Do not touch canon, registry, release,
+`.tex`, monolithic, production, or `package.json`.
+
+Operational objective: Create
+`docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean`,
+import it from `QICNLean.lean`, update the Lean pilot report and this ledger,
+and keep the result non-canonical/internal with no scientific claim inflation.
+
+Files read:
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- `docs/ai-platform-outputs/formal/lean/.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Projection/Minimal.lean`
+- `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+
+Files modified/created:
+- Created `docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean`
+- Modified `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- Modified `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+- Modified `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Lean theorem names created:
+- `QICNLean.convexProjection`
+- `QICNLean.convexProjection_mem`
+- `QICNLean.convexProjection_minimizes`
+- `QICNLean.convexProjection_variational`
+- `QICNLean.convex_minimizer_unique`
+- `QICNLean.convexProjection_lipschitz`
+- `QICNLean.hilbert_convex_projected_affine_fixed_point`
+
+Mathlib lemmas/API used:
+- Existence: `exists_norm_eq_iInf_of_complete_convex`
+- Variational characterization: `norm_eq_iInf_iff_real_inner_le_zero`
+- Uniqueness/non-expansiveness algebra: `inner_neg_right`, `inner_neg_left`,
+  `inner_sub_left`, `inner_add_left`, `real_inner_self_eq_norm_sq`,
+  `real_inner_le_norm`, `le_of_mul_le_mul_right`
+- Affine contraction and assembly reused:
+  `QICNLean.affine_contracting`,
+  `QICNLean.projected_contraction_exists_fixed_point`
+
+Implementation result:
+- Status: `INSTANCIA_CONVEXA_COMPLETA`
+- Deferrals: none for the H1 convex projection non-expansiveness proof at the
+  Hilbert/mathlib level.
+- The proof defines projection by `Classical.choose` over the existence theorem,
+  extracts membership/minimality, obtains the variational inequality, proves
+  minimizer uniqueness from crossed variational inequalities, proves
+  `LipschitzWith 1`, and composes it with the existing affine contraction and
+  Banach wrapper.
+
+Lean build command:
+
+```powershell
+$env:GIT_CONFIG_GLOBAL="$env:TEMP\qicn_lean_gitconfig"
+Get-ChildItem -Path .lake\packages -Directory | ForEach-Object { $p = $_.FullName -replace '\\','/'; git config --global --add safe.directory $p }
+$env:ELAN_HOME="$env:USERPROFILE\.elan"
+& "$env:USERPROFILE\.elan\bin\lake.exe" build *> "$env:TEMP\lean_cvx.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\lean_cvx.txt" -Raw
+```
+
+Note: the temporary `GIT_CONFIG_GLOBAL` was used only because the Codex sandbox
+user differs from the package owner and Git otherwise blocks `.lake/packages/*`
+with `dubious ownership`. This does not modify the user's real global Git
+configuration or the corpus.
+
+Raw Lean build result:
+
+```text
+EXIT=0
+Build completed successfully (2291 jobs).
+```
+
+Build warnings:
+
+```text
+warning: QICNLean/Basic.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNContraction.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNHilbertInstance.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNConvexProjection.lean:1:1: * '-/': Copyright too short!
+```
+
+No-sorry/no-axiom grep command:
+
+```powershell
+$files = @(); $files += Get-Item -Path QICNLean.lean; $files += Get-ChildItem -Path QICNLean -Recurse -File -Filter *.lean
+$matches = $files | Select-String -Pattern '\b(sorry|admit|axiom)\b' -CaseSensitive:$false
+"COUNT=$(@($matches).Count)"
+```
+
+Raw grep result:
+
+```text
+COUNT=0
+```
+
+`#print axioms` command:
+
+```lean
+import QICNLean
+#print axioms QICNLean.hilbert_convex_projected_affine_fixed_point
+```
+
+Raw `#print axioms` result:
+
+```text
+EXIT=0
+'QICNLean.hilbert_convex_projected_affine_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+Package verification:
+
+```text
+npm run verify
+Exit code 0
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Canonical root gates:
+- Initial attempts from `rigid-identity-framework/` failed with
+  `MODULE_NOT_FOUND` because those three gate scripts live at the
+  `QICN-FRAMEWORK/` root, not in the subpackage.
+- Corrected root runs from `C:\Users\irisp\OneDrive\Escritorio\QICN-FRAMEWORK`:
+
+| Command | Result |
+|---|---|
+| `node scripts\verify-canonical-integrity.cjs` | PASS; `failures=[]`; `warnings=[]` |
+| `node scripts\verify-claim-registry.cjs` | PASS; `failures=[]`; `warnings=[]` |
+| `node scripts\verify-canonical-release.cjs` | PASS; `failures=[]`; `warnings=[]` |
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | 4 | `9AAE27BD11FD077349CD2F2F5B27777951713D51525DA9A82EEA383CED71DFD9` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean` | 149 | `CEF90E049C0FFDD6B2EAACDC8794EB4CE4740B11C489D2AFF909229623DAD052` |
+| `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md` | 228 | `B7240A843EF0EC3C4E66C44BE6BD3516A9AF5E3F38C95ECA7A9CCBCD726A7939` |
+| `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md` before this entry | 6001 | `892397EDE499303B504C39EE97FDBD76C1776BC3C1474ED500466ED7C9945551` |
+
+Residual risk:
+- This is still a non-canonical internal Lean pilot under
+  `docs/ai-platform-outputs/`, not a BaseCore source edit.
+- It formalizes the Hilbert/mathlib projection and fixed-point pattern, but it
+  does not instantiate the full QICN/BaseCore state space or certify a `C_op`
+  system `S`.
+- No `I_int`, CCR, no-vacuity, no-simulability, identity, subjectivity,
+  phenomenality, consciousness, or external validation claim is made.
+- `npm run verify` exit code 0 means gates ran; it does not mean corpus
+  certification. Raw adjudicators remain blocked and
+  `external_support_certified=false`.
+
+Next step:
+- If desired, connect the verified Hilbert theorem to explicit BaseCore object
+  definitions in a separate non-canonical formalization layer, still without
+  promoting any `C_op`, `I_int`, CCR, or external-validity claim.

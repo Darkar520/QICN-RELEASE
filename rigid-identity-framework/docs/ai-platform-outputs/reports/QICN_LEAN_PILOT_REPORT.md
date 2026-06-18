@@ -1,10 +1,10 @@
 # QICN Lean Pilot Report
 
-Status: `LEAN_MATHLIB_BUILD_GREEN__HILBERT_SUBSPACE_INSTANCE_GREEN`
+Status: `LEAN_MATHLIB_BUILD_GREEN__HILBERT_CONVEX_INSTANCE_GREEN`
 
 Report class: `NON_CANONICAL_INTERNAL_FORMALIZATION_REPORT`
 
-Date: 2026-06-17
+Date: 2026-06-18
 
 Human review: `REQUIRED`
 
@@ -13,7 +13,9 @@ Human curated status: `not_reviewed`
 ## Scope
 
 This report documents a Lean/mathlib toolchain probe, one small abstract
-contraction pilot, and a verified Hilbert-space subspace instance of that pilot.
+contraction pilot, a verified Hilbert-space subspace instance, and the full
+nonempty complete convex-subset projection instance needed for the H1
+non-expansiveness step.
 
 It is not a BaseCore edit, not a registry entry, not a release artifact, not an
 external validation, and not a certified `C_op` instance. It does not prove any
@@ -67,6 +69,7 @@ Interpretation:
 docs/ai-platform-outputs/formal/lean/QICNLean/Basic.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean
 docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean
+docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean
 docs/ai-platform-outputs/formal/lean/QICNLean.lean
 ```
 
@@ -89,6 +92,19 @@ projected_contraction_exists_fixed_point
 affine_contracting
 subspace_starProjection_nonexpansive
 hilbert_subspace_projected_affine_fixed_point
+```
+
+`QICNConvexProjection.lean` verifies the general nonempty complete convex-subset
+Hilbert instantiation:
+
+```text
+convexProjection
+convexProjection_mem
+convexProjection_minimizes
+convexProjection_variational
+convex_minimizer_unique
+convexProjection_lipschitz
+hilbert_convex_projected_affine_fixed_point
 ```
 
 Informal reading of the verified pilot:
@@ -120,6 +136,13 @@ Hilbert-subspace instance result:
 Build completed successfully (2290 jobs).
 ```
 
+Hilbert convex-subset instance result:
+
+```text
+EXIT=0
+Build completed successfully (2291 jobs).
+```
+
 The build emitted only style warnings about missing mathlib-style copyright
 headers in the non-canonical AI-output files:
 
@@ -127,6 +150,7 @@ headers in the non-canonical AI-output files:
 warning: QICNLean/Basic.lean:1:1: * '-/': Copyright too short!
 warning: QICNLean/QICNContraction.lean:1:1: * '-/': Copyright too short!
 warning: QICNLean/QICNHilbertInstance.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNConvexProjection.lean:1:1: * '-/': Copyright too short!
 ```
 
 No `sorry` was introduced.
@@ -152,6 +176,16 @@ The Hilbert-subspace instance additionally proves:
 bounded linear K with ||K|| < 1 => x |-> K x + c is ContractingWith ||K||_+
 orthogonal projection onto a complete linear subspace is LipschitzWith 1
 projected affine update has a fixed point and convergent iterates
+```
+
+The Hilbert convex-subset instance additionally proves:
+
+```text
+nonempty complete convex s => metric projection P_s exists by choice
+P_s satisfies the variational inequality from mathlib's minimizer theorem
+minimizers are unique by the two crossed variational inequalities
+P_s is LipschitzWith 1
+x |-> P_s (K x + c) has a fixed point and convergent iterates when ||K|| < 1
 ```
 
 This is a real formalization result, but still narrow. It is a useful pressure
@@ -182,6 +216,18 @@ Projection non-expansiveness, subspace case:
 - `ContinuousLinearMap.lipschitzWith_of_opNorm_le` converts that operator-norm
   bound into `LipschitzWith 1 (fun x => U.starProjection x)`.
 
+Projection existence/non-expansiveness, complete convex case:
+
+- `exists_norm_eq_iInf_of_complete_convex` supplies existence of a minimizer for
+  each `u` over a nonempty complete convex subset.
+- `norm_eq_iInf_iff_real_inner_le_zero` supplies the variational inequality
+  characterization of minimizers.
+- `inner_neg_right`, `inner_neg_left`, `inner_sub_left`, `inner_add_left`,
+  `real_inner_self_eq_norm_sq`, `real_inner_le_norm`, and
+  `le_of_mul_le_mul_right` discharge the standard uniqueness and
+  non-expansiveness proof from the crossed variational inequalities and
+  Cauchy-Schwarz.
+
 Assembly:
 
 - `QICNLean.nonexpansive_after_contracting` composes the affine contraction with
@@ -191,27 +237,38 @@ Assembly:
 
 ## Projection Status
 
-Status: `INSTANCIA_SUBESPACIO`
+Status: `INSTANCIA_CONVEXA_COMPLETA`
 
 Mathlib v4.31.0 has the Hilbert projection theorem for complete convex subsets:
 
 ```text
 exists_norm_eq_iInf_of_complete_convex
+norm_eq_iInf_iff_real_inner_le_zero
 ```
 
-That theorem gives existence of a minimizer for a nonempty complete convex set,
-but this pass did not find and use a ready `metricProjection` object with a
-usable `LipschitzWith 1` theorem for the general closed-convex-set projection.
-Therefore the mechanized instance uses the clean subspace API:
+This pass defines the metric projection by `Classical.choose` over
+`exists_norm_eq_iInf_of_complete_convex`, extracts membership/minimality and the
+variational inequality via `norm_eq_iInf_iff_real_inner_le_zero`, proves
+uniqueness of minimizers from the two crossed variational inequalities, and
+proves `LipschitzWith 1` for the resulting projection map.
 
 ```text
-Submodule.starProjection
-Submodule.starProjection_norm_le
-ContinuousLinearMap.lipschitzWith_of_opNorm_le
+convexProjection_lipschitz :
+  LipschitzWith 1 (fun u => convexProjection s hne hcl hc u)
+
+hilbert_convex_projected_affine_fixed_point :
+  fixed point + iterate convergence for fun x => convexProjection s hne hcl hc (K x + c)
 ```
 
-This discharges `lem:nonexp` only for complete linear subspaces. It does not
-discharge the full convex H1 projection condition.
+This discharges the H1 convex projection non-expansiveness obligation at the
+Hilbert/mathlib level. It still does not define the full QICN/BaseCore state
+space or certify a `C_op` instance.
+
+`#print axioms` for the final convex theorem:
+
+```text
+'QICNLean.hilbert_convex_projected_affine_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
 
 ## What This Does Not Prove
 
@@ -219,21 +276,19 @@ This does not formalize:
 
 - the QICN state space;
 - the full BaseCore state space;
-- metric projection onto a general nonempty closed convex Hilbert subset;
-- non-expansiveness of that general convex projection;
 - invariance of any `C_op` certificate;
 - existence of an admissible system `S`;
 - `I_int`, CCR, no-vacuity, no-simulability, identity, phenomenality, or
   consciousness claims.
 
 The correct next formal step is not to inflate this pilot. The next step is to
-exhibit the actual analytic objects and prove the missing instantiation lemmas:
+exhibit the actual analytic objects and connect this Hilbert/mathlib theorem to
+the intended BaseCore objects:
 
 ```text
 BaseCore object definitions
-general convex projection object
-general convex projection is LipschitzWith 1
 target set is nonempty/closed/complete where needed
+the affine operator and intervention term are the intended BaseCore objects
 ```
 
 ## Prior Failure Now Resolved
@@ -252,7 +307,7 @@ the restoration.
 ## Non-Claims
 
 - No external validation is claimed.
-- No BaseCore theorem is claimed fully formalized.
+- No full BaseCore/QICN system theorem or `C_op` instance is claimed formalized.
 - No canonical source, registry, release, `.tex`, monolithic paper, production
   code, or `package.json` was modified.
 - This is an internal, non-canonical Lean pilot for human review.

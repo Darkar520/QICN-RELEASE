@@ -7630,3 +7630,51 @@ Residual risk:
   material, not corrected globally.
 - SYS-* ROADMAP rows remain external/historical debt, not active runtime claims
   about `rigid-identity-framework`.
+
+## 2026-06-18 - Codex - Restore gitignore intent for stale parent-root analysis and push hygiene commits
+
+Status: `STALE_ROOT_ANALYSIS_UNTRACKED_AND_PUSHED`
+
+Scope:
+- Removed `ANALISIS_GENERAL_PROYECTO.md` from the Git index while keeping the
+  file and its `SUPERSEDED / STALE` banner on disk.
+- Preserved `.gitignore` intent; no `.gitignore` change was needed.
+- No history rewrite was performed.
+- No `git add -A` was used.
+- No canon, registry, release, monolithic, package.json, or `.lean` file was
+  touched.
+
+Commands and results:
+
+```text
+git ls-files ANALISIS_GENERAL_PROYECTO.md
+ANALISIS_GENERAL_PROYECTO.md
+```
+
+```text
+git rm --cached ANALISIS_GENERAL_PROYECTO.md
+rm 'ANALISIS_GENERAL_PROYECTO.md'
+```
+
+```text
+Get-Content ANALISIS_GENERAL_PROYECTO.md -TotalCount 6
+> SUPERSEDED / STALE (2026-06-18). Contiene afirmaciones estructurales no verificables
+> contra el corpus actual ... React/Netlify ...
+> Lean/ProofWidgets en .lake). Conservado como historico. Estado del runtime: ver ROADMAP §3.4.
+
+# ANALISIS GENERAL DEL PROYECTO QICN-FRAMEWORK
+```
+
+```text
+git check-ignore -v ANALISIS_GENERAL_PROYECTO.md
+.gitignore:91:ANALISIS_GENERAL_PROYECTO.md ANALISIS_GENERAL_PROYECTO.md
+```
+
+Pre-push commits expected:
+- `2b7270c docs: hygiene pass — mark stale analysis superseded, clarify external runtime provenance, add repo inventory (non-destructive)`
+- `4aa6b08 docs: reconcile Lean pilot report with verified concrete compactness closure`
+
+Residual risk:
+- The stale root analysis remains present on disk but intentionally ignored.
+- Its banner is preserved locally; because the file is ignored, future clones
+  will not receive that historical file unless it is distributed outside Git.

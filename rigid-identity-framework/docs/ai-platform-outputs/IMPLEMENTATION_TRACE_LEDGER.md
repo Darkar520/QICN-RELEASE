@@ -7671,8 +7671,22 @@ git check-ignore -v ANALISIS_GENERAL_PROYECTO.md
 ```
 
 Pre-push commits expected:
+- `fc812b3 chore: untrack stale parent-root analysis (keep file+banner on disk, restore gitignore intent)`
 - `2b7270c docs: hygiene pass — mark stale analysis superseded, clarify external runtime provenance, add repo inventory (non-destructive)`
 - `4aa6b08 docs: reconcile Lean pilot report with verified concrete compactness closure`
+
+Push confirmation:
+
+```text
+git push origin main
+To https://github.com/Darkar520/QICN-RELEASE.git
+   77941b8..fc812b3  main -> main
+```
+
+```text
+git status -sb
+## main...origin/main
+```
 
 Residual risk:
 - The stale root analysis remains present on disk but intentionally ignored.

@@ -8042,3 +8042,146 @@ Residual risk:
   satisfies the bar.
 - Passing the bar in the future would still be internal model conformity, not
   external validation or a real-world `C_op` claim.
+
+## 2026-06-18 - Codex - Push pending H5/criteria commits, then construct projected-affine internal S candidate
+
+Status: `S_INSTANCE_PARTIAL_INTERNAL_CERTIFICATION__IINT_DEFERRED__FULL_COP_NOT_YET`
+
+Initial push:
+
+```text
+git log origin/main..main --oneline
+6a6ff41 docs: rigor bar for a genuine (non-toy) S instance — anti-vacuity criteria (speculative)
+ac2640c docs: convex H5 variational reduction lemma + vacuity obstruction analysis (Lean, non-canonical)
+```
+
+```text
+git push origin main
+To https://github.com/Darkar520/QICN-RELEASE.git
+   f011ee4..6a6ff41  main -> main
+```
+
+```text
+git status -sb
+## main...origin/main
+```
+
+Construction scope:
+- Added `QICNSInstance.lean` with reusable projected-affine carrier facts:
+  fixed-point existence/uniqueness surface, common-support forward-invariance
+  wrapper, compact attractor-family wrapper, and fixed-point-selector
+  continuity wrapper.
+- Added `QICN_S_INSTANCE_CONSTRUCTION.md`, defining a concrete internal
+  two-intervention `R^2` carrier and scoring it against
+  `QICN_S_INSTANCE_GENUINENESS_CRITERIA.md`.
+- Imported `QICNSInstance.lean` from `QICNLean.lean`.
+- No canon, registry, release, `.tex`, monolithic, or package.json file was
+  touched.
+- No push was performed after this construction commit work.
+
+Files changed:
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNSInstance.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_CONSTRUCTION.md`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Lean build:
+
+```powershell
+$env:GIT_CONFIG_GLOBAL="$env:TEMP\qicn_lean_gitconfig_sinstance"
+Get-ChildItem -Path .lake\packages -Directory | ForEach-Object { $p = $_.FullName -replace '\\','/'; git config --global --add safe.directory $p }
+$env:ELAN_HOME="$env:USERPROFILE\.elan"
+& "$env:USERPROFILE\.elan\bin\lake.exe" build *> "$env:TEMP\sinstance_build_1.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\sinstance_build_1.txt" -Raw
+```
+
+Raw build result:
+
+```text
+EXIT=0
+Build completed successfully (2297 jobs).
+```
+
+No-sorry/no-admit/no-axiom grep:
+
+```text
+COUNT=0
+```
+
+`#print axioms` result:
+
+```text
+EXIT=0
+'QICNLean.sInstance_fixedPoint_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.sInstance_attractor_family_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.sInstance_fixedPoint_selector_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+Root governance gates:
+
+```text
+node scripts\verify-canonical-integrity.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+provenance_notes=["working_tree_not_clean_at_hardening_start"]
+```
+
+```text
+node scripts\verify-claim-registry.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+```text
+node scripts\verify-canonical-release.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+Concrete internal carrier:
+- `X = R^2`, coordinates `(q,z)`.
+- `U={-,+}`, compact non-singleton discrete intervention set.
+- `K(q,z)=(q/4,z/4)`, so `||K||=1/4<1`.
+- `Gamma(+)=(3/4,0)`, `Gamma(-)=(-3/4,0)`.
+- `Phi_u(x)=convexProjection X (Kx+Gamma(u))`, extensionally affine because
+  the convex set is full space.
+- Common support `A=([-1,-1/2]x{0}) union ([1/2,1]x{0})`.
+- Collapse strip `|q|<=1/4`.
+
+Invariant status:
+- `Iper`: `CERTIFIED_INTERNAL`, margin `delta_per=1/4`.
+- `Iri`: `CERTIFIED_INTERNAL_LIMITED_ALTERNATIVES`, margin `delta_ri=2`.
+- `Iint`: `DEFERRED`; continuous admissible factorization class and
+  nonfactorization proof are not established.
+- `Icont`: `CERTIFIED_INTERNAL`, margin `delta_cont=1`.
+- `Idiff`: `CERTIFIED_INTERNAL`, margin `delta_diff=1/2`.
+- `Ileg`: `CERTIFIED_INTERNAL`, margin `delta_leg=1/4`.
+
+Vigilance notes:
+- `Iri` is certified only against a pre-registered limited alternative family
+  (the swapped two-mode assignment), not against all possible identity
+  semantics.
+- `Iint` is intentionally not claimed. The carrier has an obvious coordinate
+  decomposition risk and must not be relabeled as integrated without a real
+  continuous nonfactorization proof.
+- `FULL_COP_MEMBERSHIP: NOT_YET`.
+- This is internal model conformity only, never external validation.
+
+Pre-ledger hashes:
+
+| File | SHA256 |
+|---|---|
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNSInstance.lean` | `9BB45DCFBE4F5A71BB3E8112D5B5AD958951AABD28E3C7BF2F80927C78AE67F0` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | `201A53397CD78F02DE0C12D7B28F5584DC96D1A5C13DD1D9F03A93B831D13E50` |
+| `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_CONSTRUCTION.md` | `FDE1F8E9B6A025E3F53BC120E895560916C6758E1AE2015FC5ECC845E6F38CCF` |
+
+Residual risk:
+- The construction is not a certified `Crit_op` member because `Iint` is
+  deferred.
+- The example is deliberately simple and useful as an anti-vacuity stress test,
+  not as evidence of real-world `C_op`.

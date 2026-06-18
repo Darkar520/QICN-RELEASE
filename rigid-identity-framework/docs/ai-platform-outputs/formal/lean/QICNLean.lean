@@ -1,2 +1,3 @@
 import QICNLean.Basic
 import QICNLean.QICNContraction
+import QICNLean.QICNHilbertInstance

@@ -6953,3 +6953,159 @@ Residual risks:
 - The cache command was not clean even though `lake build` was green.
 - The Lean pilot is abstract and does not instantiate BaseCore analytic objects.
 - The package adjudicator remains scientifically blocked with `external_support_certified=false`.
+
+## 2026-06-17 -- Lean Hilbert subspace instance for BaseCore contraction skeleton
+
+Scope:
+- Added one new non-canonical Lean file for the Hilbert/subspace instantiation:
+  `docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean`.
+- Imported the new module from `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+  so that plain `lake build` actually checks it.
+- Updated `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`.
+- No BaseCore, registry, release, `.tex`, monolithic paper, production code, or
+  `package.json` file was modified.
+- No push was attempted.
+
+Implementation result:
+- Status: `INSTANCIA_SUBESPACIO`.
+- Closed affine contraction for `fun x => K x + c` from a real Hilbert-space
+  continuous linear map `K : H ->L[R] H` and hypothesis `||K|| < 1`.
+- Closed projection non-expansiveness for the orthogonal projection onto a
+  complete linear subspace using `Submodule.starProjection`.
+- Assembled fixed point plus convergence of iterates for
+  `fun x => U.starProjection (K x + c)` by reusing the existing abstract
+  `projected_contraction_exists_fixed_point`.
+
+Exact mathlib/QICN lemmas used:
+- `ContinuousLinearMap.lipschitz`
+- `LipschitzWith.of_dist_le_mul`
+- `Submodule.starProjection`
+- `Submodule.starProjection_norm_le`
+- `ContinuousLinearMap.lipschitzWith_of_opNorm_le`
+- `QICNLean.nonexpansive_after_contracting`
+- `QICNLean.projected_contraction_exists_fixed_point`
+
+Convex projection audit:
+- Located mathlib theorem `exists_norm_eq_iInf_of_complete_convex`.
+- This gives existence of a minimizer for a nonempty complete convex subset.
+- This pass did not find/use a ready general closed-convex-set projection object
+  with a usable `LipschitzWith 1` non-expansiveness theorem.
+- Therefore the convex H1 projection remains a residual formalization gap; this
+  commit proves the complete linear subspace special case only.
+
+Lean build command:
+
+```powershell
+$env:ELAN_HOME="$env:USERPROFILE\.elan"
+& "$env:USERPROFILE\.elan\bin\lake.exe" build *> "$env:TEMP\lean_inst.txt"; "EXIT=$LASTEXITCODE"; Get-Content "$env:TEMP\lean_inst.txt" -Raw
+```
+
+Raw build result:
+
+```text
+EXIT=0
+Build completed successfully (2290 jobs).
+```
+
+Build warnings:
+
+```text
+warning: QICNLean/Basic.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNContraction.lean:1:1: * '-/': Copyright too short!
+warning: QICNLean/QICNHilbertInstance.lean:1:1: * '-/': Copyright too short!
+```
+
+No-sorry grep command:
+
+```powershell
+$files = @(Get-Item "QICNLean.lean") + @(Get-ChildItem -Path "QICNLean" -Recurse -File -Filter "*.lean")
+$matches = $files | Select-String -Pattern "\b(sorry|admit|axiom)\b" -CaseSensitive:$false
+"COUNT=$(@($matches).Count)"
+```
+
+Raw grep result:
+
+```text
+COUNT=0
+```
+
+Pre-ledger physical line counts and SHA256 hashes:
+
+| File | Physical lines | SHA256 |
+|---|---:|---|
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | 3 | `09749C954995AF8B6DE95075CFEDD1ECA2A9AAAA6BE93C10B249C627FC24980C` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean` | 60 | `E3F6D71D9E5B2B3A392A2E3D8D2313854475B69F40733015B48239726A8C6164` |
+| `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md` | 184 | `D5315DB3C009CD790F405049C0AB1A704D58B307D7802CA0A25E78D18D4345FA` |
+| `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md` before this entry | 5911 | `922CAD106BA6E0A0548BA265C5A0AE7A237F167D0724E68D4071FD856D0DBB92` |
+
+Residual risk:
+- `INSTANCIA_SUBESPACIO` is not `INSTANCIA_CONVEXA_COMPLETA`.
+- The full BaseCore H1 projection onto a nonempty closed convex subset still
+  needs either a mathlib-ready metric projection/non-expansiveness API or a
+  separate formal proof.
+- No `C_op` certificate, admissible `S`, `I_int`, CCR, no-vacuity, identity,
+  phenomenality, or consciousness claim is made.
+
+Post-ledger verification:
+
+| Command | Result |
+|---|---|
+| `npm run verify` from `rigid-identity-framework/` | Exit code 0; v30/v31 adjudicators still scientifically blocked. |
+| `node scripts\verify-canonical-integrity.cjs` from repo root | PASS; `failures=[]`; `warnings=[]`. |
+| `node scripts\verify-claim-registry.cjs` from repo root | PASS; `failures=[]`; `warnings=[]`. |
+| `node scripts\verify-canonical-release.cjs` from repo root | PASS; `failures=[]`; `warnings=[]`. |
+
+Raw adjudicator lines:
+
+```text
+External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false
+External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false
+```
+
+Note:
+
+```text
+exit code 0 = gates ran; NOT corpus certified. external_support_certified=false.
+```
+
+---
+
+## 2026-06-17 - Kiro - Independent re-verification and audit of Lean/mathlib contraction pilot
+
+Agent/platform: Kiro (independent skeptical auditor)
+
+User request: Audit the Lean pilot executed by Codex (toolchain probe + abstract BaseCore contraction formalization), verifying against the real repo rather than trusting the Codex summary; close the audit with an honest verdict.
+
+Operational objective: Reproduce the `lake build` gate myself, confirm the absence of logical holes, and compare what Lean actually proved against the canonical BaseCore hypotheses H1-H4 and theorems (projection/contraction/fixed-point) to state precisely what is and is not formalized.
+
+Files read:
+- `docs/ai-platform-outputs/reports/QICN_LEAN_PILOT_REPORT.md`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean`
+- `basecore/core/sections/01_foundation_from_core.tex` (H1-H4, prop:minimal, thm:projection, lem:nonexp, thm:contraction, thm:fixedpoint)
+
+Files modified/created:
+- This ledger entry only. No canon, registry, release, `.tex`, `.lean`, or `package.json` modified.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `lake build` (via `$env:USERPROFILE\.elan\bin\lake.exe`, `ELAN_HOME` explicit) | Reproduce the trusted Lean gate independently | EXIT=0; "Build completed successfully (1652 jobs)"; only copyright-header style warnings |
+| `grep_search \b(sorry|admit|axiom)\b` over `QICNLean/**/*.lean` | Confirm no logical escape hatches | No matches |
+
+Audit findings:
+- Build gate is genuinely green, reproduced by me (not just reported by Codex). Lean 4.31.0 / Lake 5.0.0, mathlib v4.31.0.
+- No `sorry`/`admit`/`axiom`. The two theorems (`nonexpansive_after_contracting`, `projected_contraction_exists_fixed_point`) are fully discharged via mathlib's `ContractingWith`/Banach API.
+- What is mechanically proven: the ABSTRACT logical skeleton only — (contraction) composed with (non-expansive post-map) is a contraction with the same constant, and on a complete metric space this yields a fixed point plus iterate convergence. This is exactly the glue of thm:contraction + thm:fixedpoint.
+- What is NOT formalized (left as Lean hypotheses, not discharged): lem:nonexp (metric projection onto closed convex set is non-expansive) is INPUT as `LipschitzWith 1 project`; the affine update `KΨ+Γ(u)` being a contraction under `‖K‖<1` (thm:contraction's H2 content) is INPUT as `ContractingWith K base`; thm:projection (existence/uniqueness of the metric projection), the Hilbert state space, H4/Γ uniform continuity/U compactness, and attractor compactness (thm:compactness) are entirely out of scope.
+- Honest net result: modest POSITIVE — at the abstract level H1-H3's combination is logically sufficient with no hidden extra hypothesis in the "glue." But the two Hilbert-specific facts where a hidden assumption could plausibly hide were supplied as hypotheses, not derived from mathlib. mathlib does have both (`orthogonalProjection`/`nonexpansive`, bounded-operator Lipschitz), so they are dischargeable; this pilot simply did not discharge them.
+
+Regression checks:
+- No claim inflation: pilot remains NON_CANONICAL_INTERNAL_FORMALIZATION, `external_support_certified` unaffected, no NEW_CLAIM, no consciousness/identity/I_int/CCR claim touched.
+- Layer separation preserved; artifact stays under `docs/ai-platform-outputs/formal/lean/`.
+
+Residual risks:
+- The concrete instantiation (Hilbert objects + discharging lem:nonexp and the `‖K‖<1` affine-contraction step from mathlib) remains unformalized; that is where a hidden analytic assumption, if any, would surface.
+- `lake exe cache get` returned exit 1 (not a clean cache pass); build succeeded from available oleans/sources, so this is non-blocking but not a clean cache certification.
+
+Next step:
+- Optional: instantiate `X := ℋ` (real Hilbert / `InnerProductSpace`), define `project := orthogonalProjection I` and `base := fun x => K x + Γ u`, and discharge the two input hypotheses from mathlib. That upgrade would convert the abstract skeleton into the full mechanized BaseCore fixed-point theorem (thm:projection + lem:nonexp + thm:contraction + thm:fixedpoint).

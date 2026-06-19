@@ -8433,3 +8433,92 @@ Residual risk:
 - A uniform `delta_int>0` over approximate factorizations remains open.
 - This remains internal, non-canonical, and non-external; no new public claim is
   introduced.
+
+## 2026-06-19 — Iint approximate-factorization dichotomy (linear margin vs broad finite-horizon surrogate)
+
+Scope:
+- Non-canonical/speculative/internal analysis only.
+- No canon, registry, release, `.tex`, monolithic, package metadata, or Lean
+  files changed.
+- No push.
+
+File created:
+- `docs/ai-platform-outputs/analysis/QICN_IINT_APPROX_DICHOTOMY.md`
+
+Question addressed:
+- Does the coupled instance have a positive `delta_int` margin?
+- Answer is class-dependent, not unconditional.
+
+Common metric:
+- For horizon `T >= 1` and fixed schedule `u_bullet`,
+  `error(F)=sup_{x in A} max_t ||h_S(x;u_bullet)_t-h_F(x;u_bullet)_t||`.
+- `delta_int(D)=inf_{F in D} error(F)`.
+
+Classes evaluated:
+- `D_lin`: exact real-linear product factorizations by real direct-sum
+  decompositions `R^2=L1 direct_sum L2`, block-diagonal scalar factor
+  dynamics, split readouts, and split causal structure.
+- `D_approx`: broader finite-horizon product-latent surrogates with continuous
+  bounded encoder, independent scalar latent updates, and a time/schedule
+  dependent continuous decoder.
+
+Results:
+- For `K=(1/4)R(pi/3)=aI+bJ`, `a=1/8`, `b=sqrt(3)/8`.
+- Distance from `K` to real-product linear parts in Euclidean operator norm:
+  `sqrt(3)/8`.
+- Since `A` contains radius `2` and the one-step history error sees the linear
+  mismatch, `delta_int^lin = 2*(sqrt(3)/8)=sqrt(3)/4`.
+- Under `D_approx`, the identity product latent dynamics plus a finite-horizon
+  schedule-dependent decoder reproduce the coupled history exactly, so
+  `delta_int^approx=0`.
+
+Verdict:
+- `CLASS_DEPENDENT`.
+- `IINT_MARGIN_UNDER_LIN_ONLY`.
+- `IINT_FAILS_UNDER_APPROX`.
+- `FULL_COP_MEMBERSHIP: NOT_YET`.
+
+No Lean:
+- No new Lean was added in this pass. The result is an analytic/documentary
+  dichotomy. Mechanizing the linear distance formula is possible future work,
+  but the dominant issue is admissible-class selection, not arithmetic.
+
+Root governance gates:
+
+```text
+node scripts\verify-canonical-integrity.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+provenance_notes=["working_tree_not_clean_at_hardening_start"]
+```
+
+```text
+node scripts\verify-claim-registry.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+```text
+node scripts\verify-canonical-release.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+Pre-ledger hash:
+
+| File | SHA256 |
+|---|---|
+| `docs/ai-platform-outputs/analysis/QICN_IINT_APPROX_DICHOTOMY.md` | `54C4D306419B87CE8CB6E3022C4810FA473D97FBEC222F1CDDB42715FE5BAB46` |
+
+Residual risk:
+- `D_lin` may be too narrow to support operational non-simulability.
+- `D_approx` is deliberately broad and likely too permissive as a structural
+  factorization class, because its decoder can reintroduce coupling.
+- Human review must decide which restrictions define the admissible canonical
+  factorization class. Until then, `Iint` is not certified.

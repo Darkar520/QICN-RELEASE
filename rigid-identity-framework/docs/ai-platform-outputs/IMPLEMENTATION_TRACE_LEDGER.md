@@ -8185,3 +8185,109 @@ Residual risk:
   deferred.
 - The example is deliberately simple and useful as an anti-vacuity stress test,
   not as evidence of real-world `C_op`.
+
+## 2026-06-19 — Coupled projected-affine S-instance attempt (non-canonical, internal)
+
+Scope:
+- New attempt only; the previous product/simple instance commit is not modified.
+- Non-canonical/speculative/internal layer under `docs/ai-platform-outputs/`.
+- No canon, registry, release, `.tex`, monolithic, package metadata, or previous
+  product-instance files changed.
+
+Files created/updated:
+- `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNSCoupledInstance.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Scientific boundary:
+- The carrier is coupled: `X=R^2`, `K=rho R(theta)` with `rho=1/4` and
+  `theta=pi/3`; the intended obstruction is that the rotation block has no real
+  one-dimensional invariant eigenspace.
+- `Iint` remains deferred. The exact-factorization obstruction is documented,
+  but a uniform positive `delta_int` over all admissible approximate continuous
+  factorizations is not proved.
+- `FULL_COP_MEMBERSHIP: NOT_YET`.
+- Internal conformity only; no external validation, no `C_op` world claim, no
+  consciousness/identity/subjectivity claim, and no `NEW_CLAIM`.
+
+Invariant status against the anti-vacuity criteria:
+- `Iper`: `CERTIFIED_INTERNAL(delta_per=1/4)`.
+- `Iri`: `CERTIFIED_INTERNAL_LIMITED_ALTERNATIVE_CLASS(delta_ri=1)`.
+- `Iint`: `DEFERRED`; missing uniform approximate-factorization margin and
+  formalized irreducibility proof.
+- `Icont`: `CERTIFIED_INTERNAL(delta_cont=1/4)`.
+- `Idiff`: `CERTIFIED_INTERNAL(delta_diff=1/2)`.
+- `Ileg`: `CERTIFIED_INTERNAL(delta_leg=1/4)`.
+
+Lean build:
+
+```text
+$env:GIT_CONFIG_GLOBAL="$env:TEMP\qicn_lean_gitconfig_scoupled"
+$env:ELAN_HOME="$env:USERPROFILE\.elan"
+& "$env:USERPROFILE\.elan\bin\lake.exe" build
+EXIT=0
+Build completed successfully (2298 jobs).
+```
+
+`sorry/admit/axiom` grep:
+
+```text
+Select-String -Path 'QICNLean\*.lean' -Pattern '\bsorry\b|\badmit\b|\baxiom\b' -CaseSensitive
+COUNT=0
+```
+
+`#print axioms` result:
+
+```text
+EXIT=0
+'QICNLean.coupled_fixedPoint_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.coupled_attractor_family_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.coupled_fixedPoint_selector_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.coupled_blocks_exact_linear_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+Root governance gates:
+
+```text
+node scripts\verify-canonical-integrity.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+provenance_notes=["working_tree_not_clean_at_hardening_start"]
+```
+
+```text
+node scripts\verify-claim-registry.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+```text
+node scripts\verify-canonical-release.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+Pre-ledger hashes:
+
+| File | SHA256 |
+|---|---|
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNSCoupledInstance.lean` | `19CC301D09241987D3BCD08907727F9D8D3FFDFDD3AB7EB799BB385ACC69B9E4` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | `C7073C5E991A59C85DD653D1C238C9D9772A64842B7C28D6FDB50D65E50E775E` |
+| `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md` | `5DE5E89E6B7E62DF2E314EB686A7D8FEC4A0DD10CD2AC348676F6D32525F2441` |
+
+Residual risk:
+- The R2 rotation argument is documented as the right obstruction for exact
+  linear product splitting, but it is not yet mechanized as a concrete spectral
+  theorem for the selected matrix.
+- The approximate-factorization class is explicitly nonempty, but the compactness
+  and normalization needed to extract a positive `delta_int` are still open.
+- `Iri` is intentionally limited to a concrete alternative class and is not a
+  universal identity-semantics theorem.
+- Certified fields are internal model checks only.

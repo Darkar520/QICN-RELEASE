@@ -17,6 +17,7 @@ This is a delivery package for a human reviewer, especially a mathematician and/
 | `QICN_LITERATURE_CONFRONTATION_GAP.md` | `docs/ai-platform-outputs/reports/QICN_LITERATURE_CONFRONTATION_GAP.md` | Literature confrontation gap against IIT, GWT/GNW, HOT, FEP/Friston, predictive processing, operationalist theories, and personal-identity literature. |
 | `QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md` | `docs/ai-platform-outputs/reports/QICN_PHASE7_QICN_INSTANTIATION_AND_NONCIRCULARITY.md` | Phase 7 empirical probe and its negative result: connected incidence does not recover computed atomicity on the finite bank; includes the out-of-sample balanced hold-out. |
 | `QICN_PHASE7_REAL_RIVAL_PROFILES.md` | `docs/ai-platform-outputs/reports/QICN_PHASE7_REAL_RIVAL_PROFILES.md` | PyPhi/GNW rival profiles on the finite bank, plus the programmatic Phi-degeneracy detector and the explicit "no clean positive Phi control" limitation. |
+| `QICN_REVIEWER_PACKAGE_2026-06.md` | `docs/ai-platform-outputs/QICN_REVIEWER_PACKAGE_2026-06.md` | Consolidated human-review package separating Lean-proved statements, document-level analyses, and open burdens after the Lean/H5/S-instance/Iint work. |
 
 ## Latest empirical evidence (non-canonical, internal-only)
 

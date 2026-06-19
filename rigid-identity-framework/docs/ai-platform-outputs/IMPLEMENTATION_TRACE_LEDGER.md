@@ -8522,3 +8522,127 @@ Residual risk:
   factorization class, because its decoder can reintroduce coupling.
 - Human review must decide which restrictions define the admissible canonical
   factorization class. Until then, `Iint` is not certified.
+
+## 2026-06-19 — Consolidated human-reviewer package (Lean-proved vs documented vs open)
+
+Scope:
+- Phase A pushed the pending Iint dichotomy commit `7eaccbb` to `origin/main`.
+- Phase B created a non-canonical reviewer package that separates:
+  1. machine-checked Lean statements,
+  2. document-level analyses,
+  3. open burdens and why they matter.
+- Existing human reviewer gap index was extended with a link to the new package.
+- No canon, registry, release, `.tex`, monolithic, package metadata, or Lean
+  source files changed.
+- No push after Phase B.
+
+Files created/updated:
+- `docs/ai-platform-outputs/QICN_REVIEWER_PACKAGE_2026-06.md`
+- `docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Phase A commands:
+
+```text
+git log origin/main..main --oneline
+7eaccbb docs: Iint approximate-factorization dichotomy (linear margin vs approximate class), honest, non-canonical
+```
+
+```text
+git push origin main
+EXIT=0
+To https://github.com/Darkar520/QICN-RELEASE.git
+   05d6ab6..7eaccbb  main -> main
+```
+
+```text
+git status -sb | Select-Object -First 1
+## main...origin/main
+```
+
+Lean verification:
+
+```text
+lake build
+EXIT=0
+Build completed successfully (2299 jobs).
+```
+
+Build warnings:
+- Existing style-header warnings (`Copyright too short!`) remain present across
+  Lean pilot files. They are not proof failures.
+
+`sorry/admit/axiom` grep:
+
+```text
+Select-String -Path 'QICNLean\*.lean' -Pattern '\bsorry\b|\badmit\b|\baxiom\b' -CaseSensitive
+COUNT=0
+```
+
+Representative `#print axioms`:
+
+```text
+'QICNLean.convexProjection_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.projected_contraction_exists_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.affine_contracting' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.projected_affine_attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.noncollapse_from_H5' does not depend on any axioms
+'QICNLean.noncollapse_from_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.convex_constant_fixedpoint_reduces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.rotation_contraction_no_invariant_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+Root governance gates:
+
+```text
+node scripts\verify-canonical-integrity.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+provenance_notes=["working_tree_not_clean_at_hardening_start"]
+```
+
+```text
+node scripts\verify-claim-registry.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+```text
+node scripts\verify-canonical-release.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+Package content summary:
+- Bucket 1: `PROBADO EN LEAN` populated with exact theorem/file names for
+  convex projection, contraction/fixed point, projected-affine compactness,
+  H5 reductions, and exact rotation spectral obstruction.
+- Bucket 2: `SOLO DOCUMENTADO` populated with anti-toy criteria, product and
+  coupled S-instance analyses, H5 critique, Iint dichotomy, and prior reviewer
+  index.
+- Bucket 3: `ABIERTO Y POR QUE IMPORTA` populated with Iint/canonical
+  factorization class, H5 general convex non-collapse, certified S-instance,
+  CCR no-vacuity, empirical bridge, literature confrontation, and external
+  validation.
+- Negative statuses explicitly included: `external_support_certified=false`,
+  `FULL_COP_MEMBERSHIP: NOT_YET`, product/coupled attempts do not certify
+  `Iint`, and `delta_int^approx=0` under broad decoder-coupled surrogates.
+
+Pre-ledger hashes:
+
+| File | SHA256 |
+|---|---|
+| `docs/ai-platform-outputs/QICN_REVIEWER_PACKAGE_2026-06.md` | `E77EFF314CE1E27363D3F1D568E0825CD74E2142F3DEDE949CCF91AE736E30D6` |
+| `docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md` | `9D38BD496959B5D3131B07ED4DD6B68F5293D597CC547EB982999A2550A55A83` |
+
+Residual risk:
+- This package is an index/consolidation, not new mathematics.
+- Human review must still adjudicate the admissible factorization class for
+  `Iint` and the broader H5/CCR/bridge burdens.
+- No external support is certified.

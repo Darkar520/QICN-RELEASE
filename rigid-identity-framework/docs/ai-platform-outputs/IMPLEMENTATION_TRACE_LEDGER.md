@@ -8291,3 +8291,145 @@ Residual risk:
 - `Iri` is intentionally limited to a concrete alternative class and is not a
   universal identity-semantics theorem.
 - Certified fields are internal model checks only.
+
+## 2026-06-19 — Rotation-contraction spectral obstruction mechanized (exact split only)
+
+Scope:
+- Phase A pushed the two pending local commits to `origin/main`:
+  `fd4905d` and `e919039`.
+- Phase B added a non-canonical Lean proof of the exact no-real-invariant-line
+  obstruction for the coupled rotation-contraction block.
+- No canon, registry, release, `.tex`, monolithic, package metadata, or previous
+  product-instance files changed.
+- No push after Phase B.
+
+Files created/updated:
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNRotationSpectral.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md`
+- `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+
+Phase A commands:
+
+```text
+git log origin/main..main --oneline
+fd4905d docs: coupled projected-affine S instance attempt with explicit Iint deferral
+e919039 docs: projected-affine internal S instance attempt with anti-toy scoring (Iint deferred)
+```
+
+```text
+git push origin main
+EXIT=0
+To https://github.com/Darkar520/QICN-RELEASE.git
+   6a6ff41..fd4905d  main -> main
+```
+
+```text
+git status -sb | Select-Object -First 1
+## main...origin/main
+```
+
+Mechanized Lean surface:
+- `complexMulCLM`: multiplication by a complex scalar as a real continuous
+  linear map via `LinearMap.mulLeft` and `.toContinuousLinearMap`.
+- `rotationContractionScalar`: explicit scalar `1/8 + (sqrt 3)/8 i`, the
+  coordinate form of the `rho=1/4`, `theta=pi/3` block.
+- `rotationContractionScalar_im_ne_zero`: non-realness of the scalar.
+- `complex_mul_no_nontrivial_invariant_real_subspace`: multiplication by any
+  non-real complex scalar has no nontrivial invariant real subspace in `C`.
+- `rotation_contraction_no_invariant_line`: the concrete exact obstruction used
+  by the coupled S-instance report.
+
+Mathlib/QICN lemmas and primitives used:
+- QICN predicate: `NoNontrivialInvariantRealSubspace`.
+- Linear map construction: `LinearMap.mulLeft`, `LinearMap.toContinuousLinearMap`.
+- Complex coordinate lemmas: `Complex.ext`, `Complex.add_re`,
+  `Complex.add_im`, `Complex.smul_re`, `Complex.smul_im`,
+  `Complex.I_mul_re`, `Complex.I_mul_im`, `Complex.one_re`,
+  `Complex.one_im`, `Complex.I_re`, `Complex.I_im`,
+  `Complex.normSq_eq_zero`, `Complex.normSq_apply`.
+- Submodule/order primitives: `Submodule.smul_mem`, `Submodule.add_mem`,
+  `Submodule.sub_mem`, `Submodule.mem_bot`, `eq_top_iff`.
+- Field/algebra primitives: `inv_mul_cancel₀`; arithmetic discharged by
+  `field_simp` and `ring_nf`.
+
+Lean verification:
+
+```text
+lake env lean QICNLean\QICNRotationSpectral.lean
+EXIT=0
+```
+
+```text
+lake build
+EXIT=0
+Build completed successfully (2299 jobs).
+```
+
+Build warnings:
+- Existing style-header warnings (`Copyright too short!`) remain present across
+  the Lean pilot files, including the new file. They are not proof failures.
+
+`sorry/admit/axiom` grep:
+
+```text
+Select-String -Path 'QICNLean\*.lean' -Pattern '\bsorry\b|\badmit\b|\baxiom\b' -CaseSensitive
+COUNT=0
+```
+
+`#print axioms` result:
+
+```text
+EXIT=0
+'QICNLean.rotation_contraction_no_invariant_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+Root governance gates:
+
+```text
+node scripts\verify-canonical-integrity.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+provenance_notes=["working_tree_not_clean_at_hardening_start"]
+```
+
+```text
+node scripts\verify-claim-registry.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+```text
+node scripts\verify-canonical-release.cjs
+EXIT=0
+status=PASS
+failures=[]
+warnings=[]
+```
+
+Pre-ledger hashes:
+
+| File | SHA256 |
+|---|---|
+| `docs/ai-platform-outputs/formal/lean/QICNLean/QICNRotationSpectral.lean` | `5300EFA09F00952EA33106108A4C3D01FE7F3AC1362AD6AB35A9D2466189EAEC` |
+| `docs/ai-platform-outputs/formal/lean/QICNLean.lean` | `1ABAB52AE8F75E784B99AB50C201DB26CA5D3F96D4C030E0D5B7EB0EC09B63EA` |
+| `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md` | `8904A3E7962C011D64584915949A88F72707583AF74D1DCB30E40694080E1B5B` |
+
+Scientific status:
+- `SPECTRAL_MECHANIZED`: exact real-linear product splitting is blocked by the
+  mechanized no-real-invariant-line theorem.
+- `IINT_STATUS`: still `DEFERRED`; exact splitting is weaker than a certified
+  positive lower bound against all admissible approximate continuous
+  factorizations.
+- `FULL_COP_MEMBERSHIP`: still `NOT_YET`.
+
+Residual risk:
+- The theorem closes only the exact invariant-line obstruction for the chosen
+  rotation-contraction block.
+- A uniform `delta_int>0` over approximate factorizations remains open.
+- This remains internal, non-canonical, and non-external; no new public claim is
+  introduced.

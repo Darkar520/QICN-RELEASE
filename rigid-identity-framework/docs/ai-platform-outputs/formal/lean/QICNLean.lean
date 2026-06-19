@@ -9,3 +9,4 @@ import QICNLean.QICNH5Derivation
 import QICNLean.QICNH5Convex
 import QICNLean.QICNSInstance
 import QICNLean.QICNSCoupledInstance
+import QICNLean.QICNRotationSpectral

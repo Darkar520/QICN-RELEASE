@@ -2,7 +2,7 @@
 
 Status: `NON_CANONICAL_SPECULATIVE_INTERNAL_COUPLED_ATTEMPT`
 
-Date: 2026-06-18
+Date: 2026-06-19
 
 Human review: `REQUIRED`
 
@@ -51,8 +51,9 @@ spec_C(K) = { rho * exp(i theta), rho * exp(-i theta) }
 
 Because `theta` is not a multiple of `pi`, the real linear map has no real
 one-dimensional invariant eigenspace. This is the intended exact
-linear-factorization obstruction. The Lean file records the abstract predicate
-for this obstruction, but does not mechanize the concrete matrix spectral proof.
+linear-factorization obstruction. The Lean file
+`QICNRotationSpectral.lean` now mechanizes this exact obstruction for the
+complex-plane model of the rotation-contraction block.
 
 Interventions:
 
@@ -138,6 +139,7 @@ both coordinates at the previous step.
 Lean file:
 
 - `docs/ai-platform-outputs/formal/lean/QICNLean/QICNSCoupledInstance.lean`
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNRotationSpectral.lean`
 
 Mechanized reusable facts:
 
@@ -148,6 +150,8 @@ coupled_fixedPoint_unique
 coupled_attractor_family_isCompact
 coupled_fixedPoint_selector_continuous
 coupled_blocks_exact_linear_factorization
+complex_mul_no_nontrivial_invariant_real_subspace
+rotation_contraction_no_invariant_line
 ```
 
 Lean status:
@@ -155,14 +159,16 @@ Lean status:
 - The projected-affine fixed-point/compactness/continuity carrier is verified.
 - The exact-factorization obstruction is represented abstractly as
   `NoNontrivialInvariantRealSubspace K`.
-- The concrete spectral fact for `K = rho * R(pi/3)` is not mechanized.
+- The exact no-real-invariant-line spectral fact is mechanized as
+  `rotation_contraction_no_invariant_line` for the complex-plane
+  rotation-contraction scalar `1/8 + (sqrt 3)/8 i`.
 - The approximate nonfactorization margin `delta_int>0` is not mechanized.
 
 Build result:
 
 ```text
 lake build: EXIT=0
-Build completed successfully (2298 jobs).
+Build completed successfully (2299 jobs).
 sorry/admit/axiom grep: COUNT=0
 ```
 
@@ -173,6 +179,7 @@ sorry/admit/axiom grep: COUNT=0
 'QICNLean.coupled_attractor_family_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
 'QICNLean.coupled_fixedPoint_selector_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
 'QICNLean.coupled_blocks_exact_linear_factorization' does not depend on any axioms
+'QICNLean.rotation_contraction_no_invariant_line' depends on axioms: [propext, Classical.choice, Quot.sound]
 ```
 
 ## Admissible Factorization Class for Iint
@@ -197,7 +204,6 @@ Therefore exact linear product factorization is structurally blocked.
 What is not closed:
 
 - A uniform lower bound `delta_int>0` against all approximate factorizations.
-- A mechanized proof of the concrete spectral fact.
 - A compactness/normalization argument over the factorization search space.
 
 Thus `Iint` receives a real opportunity here, but is not certified.
@@ -291,8 +297,8 @@ Missing burden:
 
 - No certified `delta_int>0` lower bound against all approximate admissible
   factorizations.
-- No Lean proof that the concrete rotation-contraction matrix has no real
-  invariant line.
+- No proof that the exact no-invariant-line obstruction yields a uniform
+  positive error against all admissible approximate continuous factorizations.
 - No proof that every admissible approximate split fails to reproduce histories
   below a positive margin.
 
@@ -436,8 +442,9 @@ S_COUPLED_DEFERRED:
   approximate-factorization margin delta_int is certified.
 
 IINT_STATUS:
-  DEFERRED(missing concrete spectral proof in Lean + uniform delta_int over all
-  admissible approximate continuous factorizations)
+  DEFERRED(exact no-real-invariant-line obstruction is mechanized; uniform
+  delta_int over all admissible approximate continuous factorizations is still
+  missing)
 
 FULL_COP_MEMBERSHIP:
   NOT_YET
@@ -451,4 +458,3 @@ connected. It still does not certify full `Crit_op` membership because `Iint`
 is open. It is internal, non-canonical, speculative, and never external
 validation. It is not a real-world `C_op` instance and introduces no new public
 claim.
-

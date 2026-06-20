@@ -9016,3 +9016,69 @@ Residual risk:
   subjecthood closure, phenomenality, or claim strengthening.
 - Successor mapping against Paper 7/Paper 8/monolithic subjecthood bridge
   remains a human-review task, not decided here.
+
+## 2026-06-20 - Restore bridge references.bib and resolve undefined citations
+
+Agent/platform: Codex
+
+User request: Resolve undefined `paper1`--`paper5` citations in the recovered
+operational-subjecthood bridge without editing the byte-exact restored
+`main.tex`, without fabricating bibliography entries, and push only if the
+undefined-citation count reaches zero.
+
+Files modified/created:
+- CREATED `paper_bridge_operational_subjecthood/references.bib`
+- REGENERATED `paper_bridge_operational_subjecthood/main.pdf`
+- APPENDED this ledger entry
+
+Bibliography recovery:
+- `main.tex` directive: `\addbibresource{references.bib}`.
+- No bridge-local `.bib` existed in `7c3ae1c^`.
+- Recovered a same-snapshot shared `references.bib` from
+  `7c3ae1c^:rigid-identity-framework/paper9_phenomenal_bridge_organization/references.bib`
+  into the bridge directory because it contains the required `paper1`--`paper5`
+  keys and uses the exact expected filename.
+- Byte-exact check:
+  - source blob: `360ccbca2a70af07d6c120f93299addf086a2d50`
+  - restored `git hash-object`: `360ccbca2a70af07d6c120f93299addf086a2d50`
+
+Citation resolution:
+- Before: `5` undefined citation keys observed in the prior bridge compile:
+  `paper1`, `paper2`, `paper3`, `paper4`, `paper5`.
+- After full `pdflatex/biber/pdflatex/pdflatex`: `0` undefined citation warnings
+  in `main.log`.
+- `biber main`: found local data source `references.bib`; no missing database
+  entry warnings.
+
+Verification:
+| Command | Result |
+|---|---|
+| `pdflatex -interaction=nonstopmode main.tex` | `EXIT=0`; initial pass before biber |
+| `biber main` | `EXIT=0`; local `references.bib` found |
+| `pdflatex -interaction=nonstopmode main.tex` | `EXIT=0`; `main.pdf` 25 pages |
+| `pdflatex -interaction=nonstopmode main.tex` | `EXIT=0`; `main.pdf` 25 pages, 426143 bytes |
+| citation warning grep in `main.log` | `0` |
+| `npm run verify:corpus-registry` | `EXIT=0`; blockers none; warnings none |
+| `npm run verify:macro-registry` | `EXIT=0`; blockers none; warnings none |
+| `node scripts\verify-canonical-integrity.cjs` | `PASS` |
+| `node scripts\verify-claim-registry.cjs` | `PASS` |
+| `node scripts\verify-canonical-release.cjs` | `PASS` |
+
+Claim invariant:
+- Common IDs vs `76edce0`: `469`.
+- Bridge entries: `80`.
+- `epistemic_status_changes=0`.
+- `proof_status_changes=0`.
+
+Hashes:
+| File | SHA256 |
+|---|---|
+| `paper_bridge_operational_subjecthood/references.bib` | `B9246090527C6386C99DC7431649CB506F0482452C8D2B6FC266963AB9654914` |
+| `paper_bridge_operational_subjecthood/main.pdf` | `CD323D70E9471C3485D0A52245B5E9F7853903CD3F82C195A3DE26B37EC78DA9` |
+
+Residual risk:
+- The restored bibliography resolves citations for this bridge paper but does
+  not validate bridge claims, close subjecthood burdens, or change registry
+  epistemic/proof strength.
+- MiKTeX still emits the environment warning that it is running on an
+  unsupported Windows version; this did not affect exit status in this run.

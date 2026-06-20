@@ -11,3 +11,4 @@ import QICNLean.QICNSInstance
 import QICNLean.QICNSCoupledInstance
 import QICNLean.QICNRotationSpectral
 import QICNLean.QICNCoupledSplitMargin
+import QICNLean.QICNCoupledSplitMarginUniversal

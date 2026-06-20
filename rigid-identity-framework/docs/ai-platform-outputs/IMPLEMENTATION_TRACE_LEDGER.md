@@ -9082,3 +9082,108 @@ Residual risk:
   epistemic/proof strength.
 - MiKTeX still emits the environment warning that it is running on an
   unsupported Windows version; this did not affect exit status in this run.
+
+## 2026-06-20 - Kiro (internal red-team) - Iint global-quantifier attack under D* (Lean universal layer)
+
+Status: `STILL_OPEN_AT_CANONICAL_LEVEL / CLOSED_INTERNAL_UNDER_ADOPTED_D*`
+
+Seal: `INTERNAL_ADVERSARIAL / NOT_EXTERNAL_VALIDATION`; `external_support_certified=false`;
+layer `SPECULATIVE / NON_CANONICAL`; `NEW_CLAIM=none`; `FULL_COP_MEMBERSHIP: NOT_YET`.
+
+Request (summarized):
+- Adversarial internal referee. Attack the GLOBAL QUANTIFIER of `Iint` under the
+  adopted structural class `D*` for the coupled carrier: can "for EVERY admissible
+  `D*` factorization → reproduction margin ≥ δ_int > 0" be formalized/proved
+  without smuggling the result into the definition (no gerrymandering)? Only the
+  hypothesis-conditioned kernel was previously mechanized, not the universal.
+
+Operational objective:
+- Either (a) formalize the `D*` admissibility layer in Lean and prove the
+  universal `∀ D*, error ≥ √7/14`; or (b) refute by exhibiting an admissible
+  `D*` factorization beating `√7/14`; or (c) `STILL_OPEN`/`EXTERNAL_REQUIRED`
+  with the exact missing lemma. Anti-gerrymandering guard active.
+
+Files read:
+- `INSTRUCCIONES.md`, `docs/CLAIM_STATUS_POLICY.md`, `.kiro/steering/*.md`.
+- `basecore/core/sections/07_operational_criterion_absorbed.tex` (def:iint, class-paramétrica).
+- `docs/ai-platform-outputs/analysis/QICN_IINT_APPROX_DICHOTOMY.md`.
+- `docs/ai-platform-outputs/analysis/QICN_IINT_CANONICAL_CLASS_SPLIT_READOUT.md`.
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNCoupledSplitMargin.lean`,
+  `QICNRotationSpectral.lean`, `QICNLean.lean`, `lakefile.toml`, `lean-toolchain`.
+
+Files created:
+- `docs/ai-platform-outputs/formal/lean/QICNLean/QICNCoupledSplitMarginUniversal.lean`
+  (new; 207 lines; SHA256 `DC19E27F6EA203CF4B5B293DC3B6927F4E451976516EC7F8A213D56AAEC6A3D9`).
+- `docs/ai-platform-outputs/analysis/QICN_IINT_GLOBAL_QUANTIFIER_REDTEAM.md`
+  (new; 217 lines; SHA256 `9F14272FF6DC55ED6958482B1CEBDF7046D4CF4F87F657A60EFFCD2F0443663D`).
+
+Files modified:
+- `docs/ai-platform-outputs/formal/lean/QICNLean.lean` (added import of the new
+  module; 14 lines; SHA256 `8382B491008ACE3E2F155B6DB35ECC227182DE124CB212851BB913C8158399EF`).
+
+No canonical `.tex`, registry, release, monolithic, package.json, or existing
+`.lean` file was modified. No file moved or deleted (scratch axioms file was
+created and removed during verification only).
+
+Tools used: read_files, grep_search, list_directory, fs_write, str_replace,
+fs_append, execute_pwsh (lake build / lake env lean), Get-FileHash.
+
+Commands executed and observed result:
+- `lake build` (baseline, before changes): `Build completed successfully (2302 jobs)`, EXIT 0.
+- `lake build QICNLean.QICNCoupledSplitMarginUniversal` (first attempt): EXIT 1,
+  unknown constant `Complex.norm_ofReal`. Fixed to `Complex.norm_real` +
+  `Real.norm_eq_abs` via a local `norm_ofReal_eq` helper.
+- `lake build QICNLean.QICNCoupledSplitMarginUniversal` (after fix):
+  `Build completed successfully (2296 jobs)`, EXIT 0.
+- `lake env lean scratch_axioms.lean` (temp): all four theorems depend on axioms
+  `[propext, Classical.choice, Quot.sound]`, EXIT 0; scratch then deleted.
+- `lake build` (full project, after scratch removal):
+  `Build completed successfully (2303 jobs)`, EXIT 0.
+
+Verification / evidence:
+- Mechanized `theorem dstar_universal_margin (F : DStarFactorization) :
+  Real.sqrt 7 / 14 ≤ F.ε` — a genuine `∀` over the adopted-`D*` structure with
+  NO per-factorization fiber hypotheses; fiber/corner bounds derived inside the
+  proof from `reproduces` + `corner` + true coupled dynamics; reuses
+  `coupled_psi1_fiber_thin`, `coupled_psi2_fiber_thin`,
+  `coupled_split_readout_positive_margin`.
+- `#print axioms` = `[propext, Classical.choice, Quot.sound]` for all four
+  theorems; no `sorry`, no extra axioms.
+
+Regressions sought:
+- Any sorry/extra axiom in the new universal theorem or its dependencies.
+- Any break to the existing kernel / full-project Lean build.
+- Any inflation of `Iint`/`Crit_op` status or accidental canonical edit.
+
+Regressions found:
+- None. Full project build green; existing files untouched; axioms standard.
+
+Verdict (honest, not forced):
+- `STILL_OPEN` at the canonical level. The universal IS mechanized and
+  non-vacuous over the explicitly specified `DStarFactorization` structure
+  (challenges 1 "vacuity" and 2 "nonlinear/clever gerrymander" defeated within
+  the class; challenge 3 "search-space" sidestepped by uniform bound ⇒ infimum
+  ≥ √7/14 > 0). NOT REFUTED: no factorization beating √7/14 exists in the
+  structure. NOT `EXTERNAL_REQUIRED`. But canonical closure is gated on a
+  source-level disambiguation of `def:iint` (coordinate-aligned, decoder-free
+  split reproduction of the 2-D full-state readout), which is pre-existing
+  precision debt (canonical-class doc §4.2/§6); adopting it unilaterally to
+  force CLOSED would be gerrymandering. Hence canonical verdict remains open and
+  `FULL_COP_MEMBERSHIP: NOT_YET` is unchanged.
+
+Residual risks:
+- The `reproduces` field encodes the load-bearing coordinate-aligned split
+  disambiguation. It is faithful to the adopted (human-recorded 2026-06-19) `D*`
+  reading and WLOG among orthonormal frames, but is NOT uniquely forced by the
+  current under-specified canonical text. The mechanized universal is therefore
+  class-relative, not a canonical `Iint` certification.
+- Package-level gates (`npm run verify`) were NOT run in this pass (no `.tex`,
+  registry, script, or claim-language change; scope is non-canonical Lean +
+  analysis doc only). Tracked debt, non-blocking for this scope.
+
+Next step recommended:
+- Human decision on whether to open a scoped Phase-2/Phase-4 ticket to add the
+  §6 clarifications (esp. item 2: coordinatewise decoder-free split reproduction)
+  to `def:iint` under audit-before-push + human approval. Only that source edit
+  can upgrade `CLOSED_INTERNAL_UNDER_ADOPTED_D*` to a non-gerrymandered canonical
+  closure. Do NOT present the current Lean universal as a canonical `Iint` closure.

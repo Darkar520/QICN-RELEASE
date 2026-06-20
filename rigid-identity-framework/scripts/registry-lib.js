@@ -196,7 +196,7 @@ const AUDIT_OVERRIDES = [
     tags: ["audit-v5", "null-regime", "pointwise-c3"],
   },
   {
-    match: { paper: "paper3", title: "Profinite Coupling Bound" },
+    match: { paper: "paper3", title: "Conditional Profinite Bound" },
     proof_status: "not_expected",
     epistemic_status: "conjectural",
     audit_status: "demoted_to_conjecture",
@@ -375,7 +375,7 @@ const REQUIRED_AUDIT_COVERAGE = [
   { description: "Paper 2 Phi-Regularity hypothesis", match: { paper: "paper2", label: "hyp:phi-paper2" } },
   { description: "BaseCore Phi-Regularity hypothesis", match: { paper: "basecore", label: "hyp:phi-regularity" } },
   { description: "Paper 3 instability", match: { paper: "paper3", label: "thm:instability" } },
-  { description: "Paper 3 profinite coupling", match: { paper: "paper3", title: "Profinite Coupling Bound" } },
+  { description: "Paper 3 profinite coupling", match: { paper: "paper3", title: "Conditional Profinite Bound" } },
   { description: "Paper 3 simulation lower bound conditional", match: { paper: "paper3", label: "thm:sim-cond" } },
   { description: "Paper 10 null error lower bound forced-choice correction", match: { paper: "paper10", label: "thm:null-forced" } },
   { description: "Paper 8 self-index emergence", match: { paper: "paper8", label: "thm:selfindex-emergence" } },
@@ -418,13 +418,23 @@ function walkFiles(dirPath, predicate, options = {}) {
   return results;
 }
 
+function isExcludedRegistrySnapshot(filePath, frameworkRoot) {
+  const relative = normalizePath(filePath, frameworkRoot);
+  const basename = path.basename(relative);
+  if (relative.startsWith("docs/ai-platform-outputs/recovery-candidates/")) return true;
+  if (/_v\d+\.tex$/i.test(basename)) return true;
+  return /^docs\/theory\/PROJECTION_INVARIANT_BRIDGE_.*_v[^/]*\.tex$/i.test(relative);
+}
+
 function activeTexFiles(frameworkRoot, options = {}) {
   const skipDirs = options.includeLegacy
     ? ["node_modules"]
     : ["node_modules", "canonical_core_legacy", "archive", "assets", "submission", "monolithic", "reports"];
   return walkFiles(
     frameworkRoot,
-    (filePath) => filePath.toLowerCase().endsWith(".tex"),
+    (filePath) =>
+      filePath.toLowerCase().endsWith(".tex") &&
+      !isExcludedRegistrySnapshot(filePath, frameworkRoot),
     { skipDirs }
   );
 }

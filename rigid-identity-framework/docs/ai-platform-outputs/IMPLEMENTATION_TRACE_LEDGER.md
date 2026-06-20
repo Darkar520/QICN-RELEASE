@@ -8877,3 +8877,76 @@ Residual risk:
   `D_approx` or broader behavioral simulators.
 - No external validation, no `Crit_op` proof, and no unconditional `Iint`
   closure follows.
+
+## 2026-06-20 - Clean registry re-extraction scope and bridge source-recovery decision
+
+Agent/platform: Codex
+
+User request: Replace unpushed commit `c9d47f0` with one clean commit that
+preserves the legitimate Paper 3 overlay-title fix, repairs the extractor scope
+so snapshots/backups are not scanned, records the 80 dropped `bridge:*` entries
+as `SOURCE_RECOVERY_REQUIRED`, and leaves Paper 9 subsumption as pending human
+verification.
+
+Phase 0:
+- `git rev-parse c9d47f0`: `c9d47f0d0acfe71ff7110c0ef2c3224cb3110838`.
+- `git reset --soft 76edce0`: `HEAD` returned to `76edce0`; changes were preserved for recomposition.
+
+Files modified:
+- MODIFIED `scripts/registry-lib.js`
+- REGENERATED `registry/theorems.jsonl`
+- REGENERATED `registry/macros.jsonl`
+- CREATED `docs/ai-platform-outputs/reports/QICN_BRIDGE_SOURCE_RECOVERY.md`
+- APPENDED this ledger entry
+
+Implementation summary:
+- Preserved the legitimate Paper 3 overlay fix:
+  - `AUDIT_OVERRIDES`: Paper 3 profinite match title from `Profinite Coupling Bound` to `Conditional Profinite Bound`.
+  - `REQUIRED_AUDIT_COVERAGE`: same title update for the required coverage check.
+- Added extractor exclusions in `activeTexFiles` via `isExcludedRegistrySnapshot`:
+  - `docs/ai-platform-outputs/recovery-candidates/**`
+  - any basename matching `/_v\d+\.tex$/i`
+  - `docs/theory/PROJECTION_INVARIANT_BRIDGE_*_v*.tex`
+- Re-ran `npm run extract:registry` after the scope fix.
+- Confirmed the generated Paper 3 entry remains:
+  `paper3:proposition:conditional-profinite-bound-l448 | Conditional Profinite Bound | conjectural | not_expected | demoted_to_conjecture`.
+- Created `QICN_BRIDGE_SOURCE_RECOVERY.md` with the 80 dropped `bridge:*`
+  IDs/titles from `76edce0`, status `SOURCE_RECOVERY_REQUIRED`, and
+  `PENDING_HUMAN_VERIFICATION` for Paper 9/monolithic bridge subsumption.
+- No Paper 3 `.tex`, canon `.tex`, release file, label, or claim-status policy
+  was edited.
+
+Claim invariant check:
+- Baseline: `76edce0:registry/theorems.jsonl`, `baseline_total=699`.
+- Current clean registry: `current_total=675`.
+- Common IDs: `389`.
+- Added IDs: `286`.
+- Removed IDs: `310`.
+- Dropped `bridge:*` entries: `80`.
+- `epistemic_status_changes=0`.
+- `proof_status_changes=0`.
+
+Verification:
+| Command | Result |
+|---|---|
+| `npm run extract:registry` | `EXIT=0`; `formal_entries=675`; `macro_entries=340`; `snapshot_or_backup_entries=0` |
+| `npm run verify:corpus-registry` | `EXIT=0`; blockers none; warnings none |
+| `npm run verify:macro-registry` | `EXIT=0`; blockers none; warnings none |
+
+Hashes:
+| File | SHA256 |
+|---|---|
+| `scripts/registry-lib.js` | `E793AD384F293D67461194552967FB73CCC32F4FA03191DE437BEDBD6B035878` |
+| `registry/theorems.jsonl` | `76685F2E44C406B46043AA640CD223C586A1DA72385AD2EFC376C269606E03D3` |
+| `registry/macros.jsonl` | `DE808DC62A4BA6CDC6CA2C0DC8EF4D5FAE67302B9701B3A18CF548CA19141CF3` |
+| `docs/ai-platform-outputs/reports/QICN_BRIDGE_SOURCE_RECOVERY.md` | `FB674D144D327692F78B599148BD99FC7CAEBC323C338AF80A253FBF11519534` |
+
+Residual risk:
+- The Paper 3 overlay remains title-based because the proposition has no stable
+  label; adding one would touch Paper 3 `.tex` and was out of scope.
+- The 80 `bridge:*` entries are absent from the clean registry but not declared
+  obsolete; they require source recovery, formal retirement, or confirmed
+  successor mapping.
+- Paper 9/monolithic bridge subsumption is deliberately not decided here.
+- This is extractor scope hygiene and provenance accounting, not claim closure
+  or external validation.

@@ -8801,3 +8801,79 @@ Residual risk:
 - `def:iint` tightening is drafted, not applied; no `.tex` was touched.
 - No item moved from document-level/open burden to full theorem closure. The newly listed Lean result is only the quantitative margin kernel, not canonical `Iint` closure.
 - No external validation or `Crit_op` proof follows.
+
+## 2026-06-20 - BaseCore def:iint class-parametric precision (Phase-2/4 canon edit)
+
+Agent/platform: Codex
+
+User request: Push the prior verified package commit, then apply a scoped BaseCore
+canon edit making `def:iint` explicitly relative to an admissible
+factorization class, with strict anti-inflation language and no downstream
+claim strengthening.
+
+Phase A push:
+- `git log origin/main..main --oneline`: `b8a313a docs: adopt D* structural Iint reading + def:iint tightening proposal (drafted) + human-reviewer package (non-canonical)`.
+- `git push origin main`: pushed `d36ea51..b8a313a`.
+- Post-push status: `## main...origin/main`.
+
+Files modified/created:
+- MODIFIED `basecore/core/sections/07_operational_criterion_absorbed.tex`
+- MODIFIED `basecore/BASECORE.pdf`
+- MODIFIED `registry/theorems.jsonl`
+- MODIFIED `docs/reports/MONOLITHIC_BUILD_REPORT.md`
+- MODIFIED `monolithic/QICN_MONOLITHIC.pdf`
+- CREATED `docs/ai-platform-outputs/reports/QICN_DEFIINT_PHASE24_REPORT.md`
+- APPENDED this ledger entry
+
+Implementation summary:
+- Preserved the original `def:iint` label and original non-trivial
+  factorization wording.
+- Added class-parametric notation `Iint(S;D)=1`.
+- Set unqualified `Iint(S)=1` to default structural class `D_star`.
+- Defined `D_star` as fixed, time-homogeneous, schedule-independent,
+  non-trivial, split-readout, decomposed dynamics/causal-structure
+  factorizations with normalized search and no reconstruction decoder.
+- Added an anti-inflation remark that broader decoder-coupled or
+  schedule-dependent behavioral classes such as `D_approx` may have
+  `delta_int=0`.
+- Updated only the `basecore:definition:def-iint` JSONL entry in
+  `registry/theorems.jsonl`; the full extractor output was not versioned
+  because it introduced an unrelated FCR blocker.
+
+Verification:
+| Command | Result |
+|---|---|
+| `pdflatex -interaction=nonstopmode BASECORE.tex` | `EXIT=0` |
+| `biber BASECORE` | `EXIT=0` |
+| `pdflatex -interaction=nonstopmode BASECORE.tex` | `EXIT=0` |
+| `pdflatex -interaction=nonstopmode BASECORE.tex` | `EXIT=0`; `BASECORE.pdf` 41 pages, 674674 bytes |
+| `BASECORE.aux` label check | `def:iint` intact as `25.3` on page `32` |
+| `npm run build:monolithic` | `EXIT=0` |
+| `npm run compile:monolithic` | `EXIT=0`; `QICN_MONOLITHIC.pdf` 335 pages, 2840468 bytes |
+| `npm run verify` | `EXIT=0`; v30 `verdict=BLOCKED_MULTIPLE_GATES; blockers=4; external_support_certified=false`; v31 `verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false` |
+| `npm run extract:registry` | `EXIT=0`; generated expanded FCR was not versioned |
+| generated `npm run verify:corpus-registry` | `EXIT=1`; blocker `Required AUDIT_MASTER_v5 coverage missing from FCR: Paper 3 profinite coupling` |
+| final `npm run verify:corpus-registry` | `EXIT=0`; blockers none |
+| final `npm run verify:macro-registry` | `EXIT=0`; blockers none |
+| `node scripts\verify-canonical-integrity.cjs` | `PASS` |
+| `node scripts\verify-claim-registry.cjs` | `PASS` |
+| `node scripts\verify-canonical-release.cjs` | `PASS` |
+
+Hashes:
+| File | Before | After |
+|---|---|---|
+| `basecore/core/sections/07_operational_criterion_absorbed.tex` | `89831B7D8CDC47594E6DD69AE7F6A1469F6EC842F5AFCEFECF8B41DA2AA31FC1` | `7999FF6DA9474B98F860F2162BFAED9FF18EBE9779687585E47910CD571D668A` |
+| `basecore/BASECORE.tex` | `4A8F92DC4E47272E3C3A8D502D9748FA1FA4FD50789B931B9D297C0DD417FF0D` | `4A8F92DC4E47272E3C3A8D502D9748FA1FA4FD50789B931B9D297C0DD417FF0D` |
+| `basecore/BASECORE.pdf` | `4E3AE62300371F63A3D1C292CBC247946F6F68528A55224A92764DCEA91700A2` | `82349C7D68D53BF653D7AB58171099380576D61FE4970B4192DC080BAE54BB70` |
+| `registry/theorems.jsonl` | `A1DB56DC38F40BF0C23178D8BF0FF4CBE5063C7CC08EBA72E6F2EA32156BB6A0` | `759A88658D7A7CBAE94AAD2C5886E12C8DB8F3E8399B31A74B96E28AD9570B35` |
+
+Residual risk:
+- Paper 5 retains a local `def:iint` wording and should be reconciled in a
+  downstream pass if the project wants all paper-local copies to mirror BaseCore.
+- Full `extract:registry` currently exposes an unrelated FCR coverage blocker
+  for Paper 3 profinite coupling; only the targeted `def:iint` registry entry
+  was versioned.
+- The edit is class-parametric; `D_star` adoption does not prove resistance to
+  `D_approx` or broader behavioral simulators.
+- No external validation, no `Crit_op` proof, and no unconditional `Iint`
+  closure follows.

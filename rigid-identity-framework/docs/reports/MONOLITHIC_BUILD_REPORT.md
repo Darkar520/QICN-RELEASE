@@ -1,7 +1,7 @@
 # Monolithic Build Report v2
 
 Status: MONOLITHIC_COMPILED
-Date: 2026-06-07
+Date: 2026-06-20
 
 ## Boundary
 
@@ -60,7 +60,7 @@ mtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/iri
 sp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/ty
 pe1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (335 pages, 2838030 bytes).
+Output written on QICN_MONOLITHIC.pdf (335 pages, 2840468 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 [pdflatex pass 3]
@@ -76,7 +76,7 @@ mtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/iri
 sp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/ty
 pe1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (335 pages, 2838030 bytes).
+Output written on QICN_MONOLITHIC.pdf (335 pages, 2840468 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 ```
@@ -85,11 +85,15 @@ Transcript written on QICN_MONOLITHIC.log.
 
 ```text
 [pdflatex pass 1]
+pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [biber]
+biber: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [pdflatex pass 2]
+pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [pdflatex pass 3]
+pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 ```

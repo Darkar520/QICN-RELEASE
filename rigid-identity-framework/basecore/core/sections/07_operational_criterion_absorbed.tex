@@ -121,7 +121,35 @@ An admissible system satisfies causal integration, written $\Iint(S)=1$, if ther
 \Aset=A_1\times A_2,\qquad R=R_1\sqcup R_2,
 \]
 together with decomposed dynamics and causal structure reproducing admissible histories within error smaller than a positive margin $\delta_{\mathrm{int}}(S)$ while preserving $\Id_S$.
+More explicitly, this shorthand is relative to a declared admissible
+factorization class.  For such a class $\mathfrak{D}$, write
+$\Iint(S;\mathfrak{D})=1$ when no factorization in $\mathfrak{D}$
+reproduces the admissible histories below a positive margin
+$\delta_{\mathrm{int}}(S;\mathfrak{D})$ while preserving $\Id_S$.
+The unqualified notation $\Iint(S)=1$ refers to the default structural class
+$\mathfrak{D}_{\ast}$: fixed, time-homogeneous, schedule-independent,
+non-trivial product factorizations with both factors non-singleton, with
+split readouts $R=R_1\sqcup R_2$, decomposed dynamics and causal structure, a
+search space normalized independently of the target error, and no
+reconstruction decoder or time-dependent post-processing map that re-couples
+the factors at output time.  This default structural reading is the adopted
+class recorded in
+\texttt{docs/ai-platform-outputs/analysis/QICN\_IINT\_CANONICAL\_CLASS\_SPLIT\_READOUT.md}.
 \end{definition}
+
+\begin{remark}[Class-relative integration margin]
+The integration criterion is class-relative.  Adopting
+$\mathfrak{D}_{\ast}$ does not assert that $S$ resists every broader
+behavioral simulator.  In particular, under decoder-coupled or
+schedule-dependent behavioral classes such as
+$\mathfrak{D}_{\mathrm{approx}}$, the corresponding margin
+$\delta_{\mathrm{int}}(S;\mathfrak{D}_{\mathrm{approx}})$ may vanish, i.e. may
+be equal to $0$; the
+current coupled-carrier analysis records precisely this failure mode.  Thus
+the default structural reading preserves a falsation surface and must not be
+read as an unconditional closure of integration, nor as a strengthening of any
+downstream theorem that assumes $\Iint(S)=1$.
+\end{remark}
 
 \subsection{Regime Continuity}
 

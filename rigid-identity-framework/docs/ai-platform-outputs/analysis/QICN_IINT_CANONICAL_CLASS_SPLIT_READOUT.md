@@ -6,7 +6,18 @@ Date: 2026-06-19
 
 Human review: `REQUIRED`
 
-Human curated status: `not_reviewed`
+Human curated status: `DSTAR_STRUCTURAL_READING_ADOPTED_FOR_CANONICAL_INTERPRETATION`
+
+Human decision recorded: `DSTAR_STRUCTURAL_READING_ADOPTED`
+
+Decision date: 2026-06-19
+
+Decision boundary: the adopted reading is the structural, split-readout,
+decoder-free, time-homogeneous class `D*`. This records a human modeling
+decision for the non-canonical analysis layer only. It does **not** edit
+`basecore/core/sections/07_operational_criterion_absorbed.tex`, does **not**
+promote a release claim, and does **not** change `FULL_COP_MEMBERSHIP:
+NOT_YET`.
 
 Boundary: this document does **not** close `Iint`, does **not** certify
 `Crit_op`, does **not** change `FULL_COP_MEMBERSHIP: NOT_YET`, and makes **no**
@@ -363,11 +374,12 @@ make **in the source**, not a fact this analysis can settle unilaterally.
 ## 5. Verdict
 
 ```text
-IINT_CANONICAL_CLASS_CANDIDATE:
+IINT_CANONICAL_CLASS_ADOPTED_READING:
   D* = non-trivial product structure psi:A->A_1xA_2 (poss. nonlinear),
        autonomous decomposed factor dynamics,
        split readouts R = R_1 \sqcup R_2 (NO reconstruction decoder),
        time-homogeneous and schedule-independent.
+  Human decision recorded 2026-06-19: ADOPTED as the structural reading.
 
 DELTA_INT_VERDICT:
   CLOSED_INTERNAL_UNDER_D*
@@ -376,13 +388,21 @@ DELTA_INT_VERDICT:
   exact reproduction by a non-trivial D* factorization is impossible.
 
 CONDITIONALITY:
-  Positive only under the faithful split-readout, decoder-free, time-homogeneous
-  reading. Under D_approx (decoder-coupled) the same carrier gives delta_int = 0.
-  The verdict is therefore CLASS-DETERMINED, not absolute.
+  Positive only under the adopted faithful split-readout, decoder-free,
+  time-homogeneous structural reading. Under D_approx (decoder-coupled) the
+  same carrier gives delta_int = 0. The verdict remains CLASS-DETERMINED
+  relative to the adopted class until def:iint is tightened in the canonical
+  source.
 
 REFEREE DEFENSIBILITY:
   DEFENSIBLE (faithful reading of def:iint, not ad-hoc),
   CONDITIONAL on tightening def:iint to fix points (i)-(v) of section 4.2.
+
+LEAN BACKING:
+  QICNCoupledSplitMargin.lean mechanizes the quantitative kernel:
+  coupled_psi1_fiber_thin, coupled_psi2_fiber_thin, and
+  coupled_split_readout_positive_margin. The global quantifier over every
+  admissible D* factorization remains a documented hypothesis-to-kernel step.
 
 FULL_COP_MEMBERSHIP: NOT_YET   (unchanged)
 ```

@@ -8736,6 +8736,9 @@ Commands and results:
 | `#print axioms QICNLean.coupled_psi1_fiber_thin` | `[propext, Classical.choice, Quot.sound]` |
 | `#print axioms QICNLean.coupled_psi2_fiber_thin` | `[propext, Classical.choice, Quot.sound]` |
 | `#print axioms QICNLean.coupled_split_readout_positive_margin` | `[propext, Classical.choice, Quot.sound]` |
+| `node scripts\verify-canonical-integrity.cjs` | `status=PASS`; failures `[]`; warnings `[]` |
+| `node scripts\verify-claim-registry.cjs` | `status=PASS`; failures `[]`; warnings `[]` |
+| `node scripts\verify-canonical-release.cjs` | `status=PASS`; failures `[]`; warnings `[]` |
 | `node scripts\verify-canonical-integrity.cjs` | `status=PASS`; warnings `[]`; failures `[]` |
 | `node scripts\verify-claim-registry.cjs` | `status=PASS`; warnings `[]`; failures `[]` |
 | `node scripts\verify-canonical-release.cjs` | `status=PASS`; warnings `[]`; failures `[]` |
@@ -8750,3 +8753,51 @@ Residual risk:
 - This is a mechanized algebraic kernel, not a full formalization of the canonical admissible-factorization search space.
 - The human/canonical decision between `D*`, `D_approx`, and behavioral simulability remains open.
 - No external validation, no `Crit_op` certification, and no public claim closure follows from this file.
+
+## 2026-06-19 - Adopt D* structural Iint reading and refresh reviewer package
+
+Agent/platform: Codex
+
+User request: Push pending commits, record the human decision adopting the structural split-readout D* reading for `Iint`, draft but do not apply `def:iint` tightening text, refresh the human-reviewer package, and preserve strict non-claim boundaries.
+
+Phase A push:
+- Actual `git log origin/main..main --oneline` before push listed `d36ea51`, `32e0d00`, and `f3385b6`. The prompt expected `7eaccbb` as the third commit, but `7eaccbb` was already on origin; the real third pending commit was `f3385b6`.
+- `git push origin main`: pushed `7eaccbb..d36ea51`.
+- Post-push `git status -sb`: `## main...origin/main`.
+
+Files modified/created:
+- MODIFIED `docs/ai-platform-outputs/analysis/QICN_IINT_CANONICAL_CLASS_SPLIT_READOUT.md`
+- CREATED `docs/ai-platform-outputs/analysis/QICN_DEFIINT_TIGHTENING_PROPOSAL.md`
+- MODIFIED `docs/ai-platform-outputs/QICN_REVIEWER_PACKAGE_2026-06.md`
+- APPENDED this ledger entry
+
+Implementation summary:
+- Recorded the human decision `DSTAR_STRUCTURAL_READING_ADOPTED` dated `2026-06-19`.
+- Marked the adopted reading as structural `D*`: split readouts, no reconstruction decoder, time-homogeneous and schedule-independent.
+- Preserved the boundary that this is a non-canonical analysis-layer decision and does not edit BaseCore `.tex`.
+- Drafted `QICN_DEFIINT_TIGHTENING_PROPOSAL.md` with exact proposed text for the five required clarifications: time-homogeneity/schedule-independence, split readouts without decoder, non-triviality, normalized search space, and structural-not-behavioral interpretation.
+- Refreshed `QICN_REVIEWER_PACKAGE_2026-06.md` into three buckets: machine-checked Lean, document-level analyses, and open burdens.
+- Added the anti-inflation `C_op` status block: `CONFORMIDAD INTERNA CONDICIONAL`, `FULL_COP_MEMBERSHIP: NOT_YET`.
+
+Verification:
+| Command | Result |
+|---|---|
+| `lake build` from `docs/ai-platform-outputs/formal/lean/` | `EXIT=0`; `Build completed successfully (2302 jobs).` |
+| `Select-String ... QICNLean/*.lean -Pattern '\b(sorry|admit|axiom)\b'` | `COUNT=0` |
+| `#print axioms QICNLean.convexProjection_lipschitz` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.projected_contraction_exists_fixed_point` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.affine_contracting` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.projected_affine_attractor_isCompact` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.noncollapse_from_H5` | no axioms |
+| `#print axioms QICNLean.noncollapse_from_forcing` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.convex_constant_fixedpoint_reduces` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.rotation_contraction_no_invariant_line` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.coupled_psi1_fiber_thin` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.coupled_psi2_fiber_thin` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.coupled_split_readout_positive_margin` | `[propext, Classical.choice, Quot.sound]` |
+
+Residual risk:
+- The global quantifier from arbitrary admissible D* factorization to the explicit fiber/corner hypotheses consumed by the Lean kernel remains documented, not fully mechanized.
+- `def:iint` tightening is drafted, not applied; no `.tex` was touched.
+- No item moved from document-level/open burden to full theorem closure. The newly listed Lean result is only the quantitative margin kernel, not canonical `Iint` closure.
+- No external validation or `Crit_op` proof follows.

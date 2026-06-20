@@ -27,9 +27,8 @@ FULL_COP_MEMBERSHIP: NOT_YET
 
 The mechanized mathematics here is standard: Banach fixed-point structure,
 Hilbert projection geometry, convex projection non-expansiveness, and finite
-linear algebra. The value of this package is not originality of those
-mathematical ingredients. The value is discipline: anti-self-deception,
-traceability, and explicit separation between what is proved, what is merely
+linear/metric algebra. The value is discipline: anti-self-deception,
+traceability, and explicit separation between what is machine-checked, what is
 documented, and what remains open.
 
 Verification snapshot:
@@ -37,7 +36,7 @@ Verification snapshot:
 ```text
 lake build
 EXIT=0
-Build completed successfully (2299 jobs).
+Build completed successfully (2302 jobs).
 
 grep sorry/admit/axiom in QICNLean/*.lean
 COUNT=0
@@ -45,8 +44,8 @@ COUNT=0
 
 ## 2. PROBADO EN LEAN
 
-Machine-checked statements are listed by exact Lean file and theorem name.
-All paths are under:
+Machine-checked statements are listed by exact Lean file and theorem name. All
+paths are under:
 
 ```text
 docs/ai-platform-outputs/formal/lean/QICNLean/
@@ -61,7 +60,8 @@ docs/ai-platform-outputs/formal/lean/QICNLean/
 | `noncollapse_from_H5` | `QICNNonCollapse.lean` | Pure implication from assumed H5 anti-constant fixed-point condition to non-collapse. | BaseCore H5 implication only; does not justify H5. | no axioms |
 | `noncollapse_from_forcing` | `QICNH5Derivation.lean` | Linear-subspace reduction of non-collapse to forcing plus invariance data conditions C1/C2. | H5 reduction in the linear/subspace case, not the general convex case. | `[propext, Classical.choice, Quot.sound]` |
 | `convex_constant_fixedpoint_reduces` | `QICNH5Convex.lean` | Convex variational reduction showing fixed-point/collapse tension under constant fixed-point hypothesis. | Convex H5 reduction fragment; not full H5 general closure. | `[propext, Classical.choice, Quot.sound]` |
-| `rotation_contraction_no_invariant_line` | `QICNRotationSpectral.lean` | Multiplication by the concrete non-real rotation-contraction scalar has no nontrivial invariant real subspace. | Exact linear-factorization block for the coupled S-instance; not approximate `Iint`. | `[propext, Classical.choice, Quot.sound]` |
+| `rotation_contraction_no_invariant_line` | `QICNRotationSpectral.lean` | Multiplication by the concrete non-real rotation-contraction scalar has no nontrivial invariant real subspace. | Exact linear-factorization block for the coupled S-instance; not approximate/global `Iint`. | `[propext, Classical.choice, Quot.sound]` |
+| `coupled_psi1_fiber_thin`, `coupled_psi2_fiber_thin`, `coupled_split_readout_positive_margin` | `QICNCoupledSplitMargin.lean` | Quantitative split-readout margin kernel: fiber-thinness plus corner-chain arithmetic gives `sqrt(7)/14` from explicit fiber hypotheses. | Supports the adopted structural D* reading of `Iint`; does not mechanize the global quantifier over all admissible D* factorizations. | each: `[propext, Classical.choice, Quot.sound]` |
 
 ### Reproduction Recipe
 
@@ -77,13 +77,13 @@ Expected current result:
 
 ```text
 EXIT=0
-Build completed successfully (2299 jobs).
+Build completed successfully (2302 jobs).
 ```
 
 Grep:
 
 ```powershell
-Select-String -Path 'QICNLean\*.lean' -Pattern '\bsorry\b|\badmit\b|\baxiom\b' -CaseSensitive
+Select-String -Path 'QICNLean\*.lean' -Pattern '\b(sorry|admit|axiom)\b'
 ```
 
 Expected current result:
@@ -95,14 +95,7 @@ COUNT=0
 Representative `#print axioms` script:
 
 ```lean
-import QICNLean.QICNConvexProjection
-import QICNLean.QICNContraction
-import QICNLean.QICNHilbertInstance
-import QICNLean.QICNAttractorConcrete
-import QICNLean.QICNNonCollapse
-import QICNLean.QICNH5Derivation
-import QICNLean.QICNH5Convex
-import QICNLean.QICNRotationSpectral
+import QICNLean
 
 #print axioms QICNLean.convexProjection_lipschitz
 #print axioms QICNLean.projected_contraction_exists_fixed_point
@@ -112,6 +105,9 @@ import QICNLean.QICNRotationSpectral
 #print axioms QICNLean.noncollapse_from_forcing
 #print axioms QICNLean.convex_constant_fixedpoint_reduces
 #print axioms QICNLean.rotation_contraction_no_invariant_line
+#print axioms QICNLean.coupled_psi1_fiber_thin
+#print axioms QICNLean.coupled_psi2_fiber_thin
+#print axioms QICNLean.coupled_split_readout_positive_margin
 ```
 
 Observed current outputs:
@@ -125,6 +121,9 @@ Observed current outputs:
 'QICNLean.noncollapse_from_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]
 'QICNLean.convex_constant_fixedpoint_reduces' depends on axioms: [propext, Classical.choice, Quot.sound]
 'QICNLean.rotation_contraction_no_invariant_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.coupled_psi1_fiber_thin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.coupled_psi2_fiber_thin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QICNLean.coupled_split_readout_positive_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
 ```
 
 ## 3. SOLO DOCUMENTADO
@@ -136,32 +135,62 @@ proved unless explicitly mapped to a Lean theorem above.
 |---|---|---|
 | `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_GENUINENESS_CRITERIA.md` | Defines the anti-toy bar for a genuine S-instance: anti-vacuity per invariant plus global disqualification patterns. | Documented criterion. Not a proof that any instance passes. |
 | `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_CONSTRUCTION.md` | Product/simple projected-affine instance attempt scored as `5/6` on documented criteria. | Product structure remains; `Iint` absent/deferred. No integration certified. |
-| `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md` | Coupled rotation-contraction instance attempt scored as `5/6`, with exact linear split obstruction supported by Lean. | `Iint` still deferred; exact split block is weaker than approximate integration. |
+| `docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md` | Coupled rotation-contraction instance attempt scored at document level, with exact linear split obstruction supported by Lean. | Five invariants are document-level/internal. `Iint` requires the D* reading and the global factorization step; no full `C_op` proof. |
+| `docs/ai-platform-outputs/analysis/QICN_IINT_CANONICAL_CLASS_SPLIT_READOUT.md` | Records the human decision adopting the structural D* reading and the conditional `sqrt(7)/14` margin argument. | D* decision recorded; quantitative kernel machine-checked; global D* quantifier documented, not fully mechanized. |
+| `docs/ai-platform-outputs/analysis/QICN_DEFIINT_TIGHTENING_PROPOSAL.md` | Draft text to tighten `def:iint` around the D* structural reading. | `DRAFTED_NOT_APPLIED`; no `.tex` touched. Requires Phase-2/4 protocol and external audit before canon edit. |
 | `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md` | Critiques H5 circularity and separates the trivial H5 implication from later linear/convex reductions. | H5 general convex case remains open. |
-| `docs/ai-platform-outputs/analysis/QICN_IINT_APPROX_DICHOTOMY.md` | Shows `delta_int^lin=sqrt(3)/4>0` under exact linear product class, but `delta_int^approx=0` under broad finite-horizon decoder-coupled surrogates. | Class-dependent result; `Iint` not certified. |
-| `docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md` | Earlier package index for human review, with `I_int / atomic separator`, evidence surface, literature confrontation, and Phase 7 empirical probes. | Still valid as prior index; this package extends it with Lean/reduction consolidation. |
+| `docs/ai-platform-outputs/analysis/QICN_IINT_APPROX_DICHOTOMY.md` | Shows `delta_int^lin=sqrt(3)/4>0` under exact linear product class, but `delta_int^approx=0` under broad finite-horizon decoder-coupled surrogates. | Class-dependent result; explains why the adopted D* class is structural rather than behavioral. |
+| `docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md` | Earlier package index for human review, with `I_int / atomic separator`, evidence surface, literature confrontation, and Phase 7 empirical probes. | Still valid as prior index; this package links to it rather than duplicating it. |
 
 Important negative included deliberately:
 
 ```text
-The "5/6 certified" language in the S-instance documents is document-level
-internal scoring only. The product and coupled attempts do not certify Iint.
-Therefore neither is a full Crit_op member.
+The "5/6 certified" language in S-instance documents is document-level
+internal scoring only. Under the adopted D* reading the coupled instance has a
+machine-checked margin kernel, but the global D* quantifier and canonical
+def:iint tightening are not machine-closed here. Therefore no full Crit_op
+membership is proved.
 ```
 
 ## 4. ABIERTO Y POR QUE IMPORTA
 
 | Open item | Why it matters | What would close it |
 |---|---|---|
-| `Iint` / canonical factorization class | This is the only current route that could move `FULL_COP_MEMBERSHIP` away from `NOT_YET`. The dichotomy brackets two extremes: `D_lin` gives a positive margin but is narrow; `D_approx` gives zero margin but is too permissive and decoder-degenerate. | Human modeling decision defining an admissible intermediate class: split decoder/readouts, no schedule-specific decoder, time-homogeneous factor dynamics, capacity bounds independent of epsilon, and a proof of positive margin or explicit failure. |
+| Global `Iint` quantifier over all D* factorizations | The Lean kernel proves fiber-thinness and the corner-chain margin once explicit fiber/corner hypotheses are given. It does not formalize the passage from every admissible D* product factorization to those hypotheses. | Mechanize the global D* admissibility layer or provide a reviewed hand proof accepted as sufficient for the document-level claim. |
+| Canonical `def:iint` precision | The D* reading is adopted in this non-canonical layer, but BaseCore `.tex` has not been tightened. | Apply `QICN_DEFIINT_TIGHTENING_PROPOSAL.md` only after Phase-2/4 governance, external audit, and human approval. |
+| Certified complete S-instance | Existing attempts score several invariants internally. The coupled instance is strongest under D*, but full proof is still not complete. | One concrete `S=(X,Phi,C,R,Gamma,U)` passing all six anti-vacuity criteria with explicit margins and a closed global `Iint` argument. |
+| CCR no-vacuity | Downstream CCR/no-simulability claims cannot outrun the missing full `C_op`/integration/no-vacuity burden. | A non-vacuous certified instance plus proof that the relevant CCR conditions are satisfied without circular assumptions. |
 | H5 general convex non-collapse | Linear/subspace and convex fragments are mechanized, but full geometric exclusion for the general convex carrier is not closed. | A general theorem or counterexample for H5 over closed convex supports and projected affine dynamics. |
-| Certified complete S-instance | Existing attempts score several invariants internally, but `Iint` remains absent/deferred. | One concrete `S=(X,Phi,C,R,Gamma,U)` passing all six anti-vacuity criteria with explicit margins, including `Iint`. |
-| CCR no-vacuity | Downstream CCR/no-simulability claims cannot outrun the missing integration/no-vacuity burden. | A non-vacuous certified instance plus proof that the relevant CCR conditions are satisfied without circular assumptions. |
 | Empirical bridge | Internal Boolean probes and Lean formalization do not establish external bridge support. | Independent empirical protocol, preregistered comparators, external replication, and bridge-specific acceptance criteria. |
-| Literature confrontation | Related-work positioning remains incomplete relative to IIT, GWT/GNW, HOT, FEP, predictive processing, operationalism, and personal identity. | Human-written related-work section that states overlaps, conflicts, and differentiators without superiority claims. |
+| Rival/literature confrontation | Related-work positioning remains incomplete relative to IIT, GWT/GNW, HOT, FEP, predictive processing, operationalism, and personal identity. | Human-written related-work section that states overlaps, conflicts, and differentiators without superiority claims. |
 | External validation | Current package has no external certification. | Independent expert review/replication. Current state remains `external_support_certified=false`. |
 
-## 5. COMO LEER ESTE PAQUETE
+## 5. ESTATUS C_op - BLINDAJE ANTI-INFLACION
+
+```text
+Bajo la lectura adoptada D*, la instancia acoplada satisface los 6 invariantes
+a nivel INTERNO/documentado (5 documentados + Iint con margen-kernel
+mecanizado y cuantificador global asumido). Esto es CONFORMIDAD INTERNA
+CONDICIONAL, NO prueba de C_op, NO validacion externa.
+
+FULL_COP_MEMBERSHIP: NOT_YET
+
+Motivos estrictos:
+- falta mecanizacion del cuantificador global sobre toda factorizacion D*;
+- falta precision canonica aplicada de def:iint;
+- falta validacion externa.
+```
+
+Forbidden reading:
+
+```text
+Do not read this as "C_op proved", "Crit_op certified", "CCR closed", or
+external validation. No item in this package licenses consciousness, identity,
+subjectivity, phenomenality, superiority, human equivalence, or bridge
+confirmation.
+```
+
+## 6. COMO LEER ESTE PAQUETE
 
 Suggested route for a referee:
 
@@ -170,33 +199,23 @@ Suggested route for a referee:
    operational criterion.
 2. Read the Lean files in this order:
    `QICNConvexProjection.lean`, `QICNContraction.lean`,
-   `QICNHilbertInstance.lean`, `QICNAttractorConcrete.lean`.
-   This gives the standard Hilbert/Banach machinery.
+   `QICNHilbertInstance.lean`, `QICNAttractorConcrete.lean`,
+   `QICNRotationSpectral.lean`, `QICNCoupledSplitMargin.lean`.
 3. Read H5 materials:
    `QICNNonCollapse.lean`, `QICNH5Derivation.lean`,
    `QICNH5Convex.lean`, then
    `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md`.
-   Separate the trivial H5 implication from the stronger data-condition
-   reductions.
-4. Read the S-instance documents:
+4. Read the coupled S-instance and Iint materials:
    `QICN_S_INSTANCE_GENUINENESS_CRITERIA.md`,
-   `QICN_S_INSTANCE_CONSTRUCTION.md`,
-   `QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md`.
-   Keep `5/6` in its bucket: document-level internal scoring, not `Crit_op`.
-5. Read `QICN_IINT_APPROX_DICHOTOMY.md` last. This is the current live
-   mathematical decision point: what factorization class is admissible for
-   `Iint`?
-6. Use the earlier package index
-   `docs/ai-platform-outputs/reports/QICN_HUMAN_REVIEWER_GAP_PACKAGE_INDEX.md`
-   for the broader gap/evidence/literature context.
+   `QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md`,
+   `QICN_IINT_APPROX_DICHOTOMY.md`,
+   `QICN_IINT_CANONICAL_CLASS_SPLIT_READOUT.md`, and
+   `QICN_DEFIINT_TIGHTENING_PROPOSAL.md`.
 
-## Final Boundary
+The central reviewer question is now sharper, not solved away:
 
-This package is useful because it says where the floor is solid and where it is
-not. The Lean-proved layer is real but standard. The S-instance layer is
-partially scored but not integrated. The `Iint` layer is class-dependent. The
-external-support layer is absent.
-
-No item in this package upgrades QICN to external validation, real-world
-`C_op`, bridge confirmation, consciousness, identity, subjectivity, or
-phenomenality.
+```text
+Is the adopted D* structural reading the correct canonical reading of def:iint,
+and can the global D* quantifier be formalized without smuggling the desired
+integration result into the definition?
+```

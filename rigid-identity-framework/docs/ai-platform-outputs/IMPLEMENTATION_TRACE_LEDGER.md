@@ -8646,3 +8646,66 @@ Residual risk:
 - Human review must still adjudicate the admissible factorization class for
   `Iint` and the broader H5/CCR/bridge burdens.
 - No external support is certified.
+
+## 2026-06-19 - Iint canonical factorization class (split-readout intermediate class D*)
+
+Agent/platform: Kiro (deep-research subagent)
+
+User request: Attack the canonical factorization class for the integration invariant Iint of the coupled rho*R(pi/3) carrier; define the non-degenerate intermediate class, determine whether delta_int>0 is provable/refutable under the most defensible class, give the bound or refutation, and judge referee-defensibility. Negative result admissible. No claim inflation, internal != external, do not touch canon/registry/release/monolithic/.lean, output under analysis/, no push.
+
+Operational objective: Resolve the open intermediate-class question left by QICN_IINT_APPROX_DICHOTOMY.md (D_lin gives sqrt3/4>0, D_approx gives 0 and is degenerate) by defining the faithful canonical class D* and determining delta_int(D*).
+
+Files read:
+- INSTRUCCIONES.md
+- docs/CLAIM_STATUS_POLICY.md
+- docs/ai-platform-outputs/analysis/QICN_IINT_APPROX_DICHOTOMY.md
+- docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_CONSTRUCTION.md
+- docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_GENUINENESS_CRITERIA.md
+- docs/ai-platform-outputs/analysis/QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md
+- basecore/core/sections/07_operational_criterion_absorbed.tex (def:iint and surrounding grammar)
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNRotationSpectral.lean
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNSCoupledInstance.lean
+
+Files modified/created/moved/deleted:
+- CREATED docs/ai-platform-outputs/analysis/QICN_IINT_CANONICAL_CLASS_SPLIT_READOUT.md
+- APPENDED this ledger entry
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| read_files | Read governance, def:iint, dichotomy, construction docs, Lean | OK |
+| node -e (arithmetic) | Verify C=4sqrt7, bound=sqrt7/14~=0.18898, D_lin=sqrt3/4 | All confirmed exactly |
+| npm run lint:nonclaims | Check new doc against prohibited claim language | 2 violations, both pre-existing in OTHER files (Phase6 rival-mapping report, v36 prompt); new doc clean |
+
+Implementation summary:
+- Defined D* = the faithful literal reading of def:iint: non-trivial product structure psi:A->A_1xA_2 (possibly nonlinear homeomorphism), autonomous decomposed factor dynamics, split readouts R=R_1 \sqcup R_2 with NO reconstruction decoder, time-homogeneous and schedule-independent. D_lin (subset) D* (subset) D_approx.
+- Proved (hand proof, internal): for any non-trivial F in D* with error epsilon, psi_i-fibers are thin (||x-x'||<=C*epsilon, C=4sqrt7) via t=0,1 readout reproduction and the coupling term b=sqrt3/8; chaining through a corner point gives diam(A)<=2C*epsilon, hence delta_int(D*) >= diam(A)/(2C) = sqrt7/14 ~= 0.189. Enclosing interval sqrt7/14 <= delta_int(D*) <= sqrt3/4.
+- Exact-reproduction corollary: no non-trivial D* factorization reproduces the coupled history exactly (quantitative upgrade of Lean rotation_contraction_no_invariant_line, which only blocks exact real-line-invariant linear splits).
+- Verdict: CLOSED_INTERNAL_UNDER_D* with explicit bound; class-determined (D_approx still gives 0). Defensibility: DEFENSIBLE as faithful reading (not ad-hoc), CONDITIONAL on tightening def:iint (5 listed clarifications: fixed/time-homogeneous factorization, split readouts without decoder, nontriviality convention, normalized search space, structural-vs-behavioral statement).
+- Flagged that the r_id full-state readout enables a NON-defensible vacuous pass under a literal-partition reading; the defensible basis is the reproduction reading, independent of r_id unsplittability.
+
+Verification:
+- Arithmetic verified numerically (node): a=1/8, b=sqrt3/8, (1+a)/b=3sqrt3, C=4sqrt7, bound=sqrt7/14, D_lin=sqrt3/4. All exact.
+- lint:nonclaims: new doc introduces zero violations (2 reported violations pre-exist in unrelated files).
+- No canon/.lean/registry/scripts modified; Lean build unchanged (not rebuilt; no Lean edited). Existing coupled-instance Lean #print axioms unchanged: [propext, Classical.choice, Quot.sound] (coupled_blocks_exact_linear_factorization: no axioms) per QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md.
+
+Regression checks:
+- Sought: claim inflation, internal-as-external leakage, accidental edit of canon/registry/Lean, prohibited-language gate breakage. None found.
+- The analysis does not change FULL_COP_MEMBERSHIP (NOT_YET) and does not certify Iint/Crit_op.
+
+Residual risks:
+- The positive bound is conditional on the D* reading; def:iint is currently under-specified (decoder admissibility, time-homogeneity, nontriviality, search-space normalization). A referee favoring behavioral simulability could still favor D_approx.
+- Lower bound sqrt7/14 is conservative, not tight.
+- Approximate D* margin is not yet mechanized in Lean.
+- The r_id-based vacuous pass must not be used as the certification basis (documented).
+
+Next step:
+- Human decision on the canonical reading (D* vs D_approx vs behavioral simulability) — the real open modeling decision, not delegable to tooling.
+- If D* adopted: scoped Phase-2/4 ticket to add the 5 clarifications to def:iint under audit-before-push protocol (out of scope here).
+- Optional: mechanize section-2 argument in Lean as coupled_split_readout_positive_margin reusing QICNSCoupledInstance.lean.
+
+Codex cleanup before commit:
+- Removed untracked scratch files from `docs/ai-platform-outputs/formal/lean/`: `AxiomCheck.lean`, `build_exit.txt`, `build_log.txt`.
+- Confirmed `AxiomCheck.lean` contained only temporary `#print axioms` commands and the `.txt` files were build dumps.
+- Re-ran Lean build from `docs/ai-platform-outputs/formal/lean/` using the real Windows user after sandbox ownership blocked `.lake/packages/mathlib`; `lake build` result: `EXIT=0`.
+- Corrected the report and ledger date from `2026-06-20` to the current environment date `2026-06-19`.

@@ -8950,3 +8950,69 @@ Residual risk:
 - Paper 9/monolithic bridge subsumption is deliberately not decided here.
 - This is extractor scope hygiene and provenance accounting, not claim closure
   or external validation.
+
+## 2026-06-20 - Recover operational-subjecthood bridge source from Git history
+
+Agent/platform: Codex
+
+User request: Recover the deleted
+`paper_bridge_operational_subjecthood/main.tex` from Git history, classify
+whether the deletion was accidental or intentional/absorbed, restore only if
+the evidence supports source recovery, re-extract registry entries without
+claim-strength inflation, and commit locally without push.
+
+Files modified/created:
+- CREATED `paper_bridge_operational_subjecthood/main.tex`
+- CREATED `paper_bridge_operational_subjecthood/main.pdf`
+- REGENERATED `registry/theorems.jsonl`
+- REGENERATED `registry/macros.jsonl`
+- MODIFIED `docs/ai-platform-outputs/reports/QICN_BRIDGE_SOURCE_RECOVERY.md`
+- APPENDED this ledger entry
+
+Recovery and classification:
+- `git cat-file -e 7c3ae1c^:rigid-identity-framework/paper_bridge_operational_subjecthood/main.tex`: `EXIT=0`.
+- `git cat-file -e 7c3ae1c^:rigid-identity-framework/paper_bridge_operational_subjecthood/main.pdf`: `EXIT=128`; no historical PDF existed at that path.
+- Restored `main.tex` from `7c3ae1c^` using the root `.git` checkout.
+- Physical line count: `1432`; non-empty line count: `1204`.
+- Classification: `PERDIDA_ACCIDENTAL`.
+- Evidence: `7c3ae1c` was a broad consolidation / LaTeX cleanup touching `136`
+  files; deprecation ledgers did not mark the bridge paper as deprecated;
+  `build-monolithic-volume.js` still declared the path as a recovery source;
+  Paper 7 and Paper 8 did not contain the bridge labels, while the monolithic
+  section was generated fallback content rather than a clean source replacement.
+
+Verification:
+| Command | Result |
+|---|---|
+| `pdflatex -interaction=nonstopmode main.tex` | `EXIT=0`; generated `main.pdf` |
+| `biber main` | `EXIT=0`; warnings: missing `paper1`--`paper5` entries because no local `references.bib` was recovered |
+| `pdflatex -interaction=nonstopmode main.tex` | `EXIT=0`; `main.pdf` 24 pages |
+| `pdflatex -interaction=nonstopmode main.tex` | `EXIT=0`; `main.pdf` 24 pages, 422004 bytes |
+| `npm run extract:registry` | `EXIT=0`; `formal_entries=755`; `macro_entries=383` |
+| `npm run verify:corpus-registry` | `EXIT=0`; blockers none; warnings none |
+| `npm run verify:macro-registry` | `EXIT=0`; blockers none; warnings none |
+
+Bridge claim-strength invariant:
+- Bridge entries after re-extraction: `80`.
+- Missing bridge entries against `76edce0`: `0`.
+- `epistemic_status_changes=0`.
+- `proof_status_changes=0`.
+- Status distribution: `19` heuristic/not_applicable/draft_extracted;
+  `27` conditional/not_applicable/draft_extracted; `34` proved/present/draft_extracted.
+
+Hashes:
+| File | SHA256 |
+|---|---|
+| `paper_bridge_operational_subjecthood/main.tex` | `77BA213D15F64A291F1C636180AD81CFA9920306A41C4A6805B6413EE66FF1C8` |
+| `paper_bridge_operational_subjecthood/main.pdf` | `C13ADAE8DFEB293FA6B878694D421B350F0693963EAC0159CA91E74DA366BF2D` |
+| `registry/theorems.jsonl` | `A799BFA157ED2E0D56BB122494A6115C1CD72961B5359AB168F796AE6E57210B` |
+| `registry/macros.jsonl` | `CD677620E3C0FE57CE398DB12DC9FCE934A37DB4094D452916039F21BE7BC81F` |
+
+Residual risk:
+- The exact restored `main.tex` compiles but leaves citations `paper1`--`paper5`
+  unresolved because the historical tree did not include a local
+  `references.bib`; this was not patched to preserve exact source recovery.
+- Restoring the source and registry entries does not imply external validation,
+  subjecthood closure, phenomenality, or claim strengthening.
+- Successor mapping against Paper 7/Paper 8/monolithic subjecthood bridge
+  remains a human-review task, not decided here.

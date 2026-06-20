@@ -2,12 +2,35 @@
 
 Date: 2026-06-20
 
-STATUS: SOURCE_RECOVERY_REQUIRED
+STATUS: RECOVERED
 
-Decision status: human-review checkpoint. This report does not delete,
-supersede, or validate the dropped bridge entries. It records that the current
-clean registry re-extraction no longer finds a canonical source file for the
-former `bridge:*` entries.
+Decision status: source recovered. This report does not validate or strengthen
+the recovered bridge entries. It records that the original bridge source file
+has been restored from Git history and that the registry entries have been
+re-extracted without changing their prior epistemic or proof status.
+
+Recovery source:
+
+- Git source: `7c3ae1c^:rigid-identity-framework/paper_bridge_operational_subjecthood/main.tex`
+- Restored path: `rigid-identity-framework/paper_bridge_operational_subjecthood/main.tex`
+- Restored `main.tex` SHA256: `77BA213D15F64A291F1C636180AD81CFA9920306A41C4A6805B6413EE66FF1C8`
+- Physical line count: `1432`; non-empty line count: `1204`
+- Classification: `PERDIDA_ACCIDENTAL`
+
+Classification evidence:
+
+- Commit `7c3ae1c` was a broad consolidation / LaTeX clean-up commit touching
+  `136` files, with the bridge source removed as one item in a mass cleanup.
+- `basecore/core_meta/deprecated_archived_file_ledger.md` and
+  `basecore/core_meta/deprecation_archive_plan.md` do not record this bridge
+  paper as intentionally deprecated or superseded.
+- `scripts/build-monolithic-volume.js` still declares
+  `paper_bridge_operational_subjecthood/main.tex` as the expected source path
+  and treats the monolithic section as recovered/fallback content when the
+  source path is absent.
+- The bridge labels are not present in `paper7_operational_life_subjecthood`
+  or `paper8_first_person_subjectivity`; they were present only in the
+  generated monolithic section, which is not a clean source replacement.
 
 ## Scope
 
@@ -17,10 +40,10 @@ The clean registry extractor now excludes:
 - versioned snapshot files matching `*_vNN.tex`
 - `docs/theory/PROJECTION_INVARIANT_BRIDGE_*_v*.tex`
 
-After this scope correction, the registry no longer contains the historical
-`bridge:*` entries listed below. The reason is source provenance, not a
-mathematical decision that the entries are false, superseded, or conceptually
-retired.
+After restoring the original source path and re-running registry extraction,
+the registry again contains the historical `bridge:*` entries listed below.
+The reason is source recovery, not a mathematical decision that the entries
+are externally validated, stronger, or public-claim-closing.
 
 ## Dropped Bridge Entries
 
@@ -113,27 +136,41 @@ Count: 80
 
 ## Decision
 
-These 80 entries are not present in the current clean registry. They are not
-declared obsolete, false, superseded, or retired by this report. They are in
-state:
+These 80 entries are present again in the current clean registry. They are not
+declared externally validated, strengthened, or claim-closing by this report.
+They are in state:
 
-`SOURCE_RECOVERY_REQUIRED`
+`RECOVERED`
 
-Acceptable next actions are:
+Registry recovery invariant:
 
-- recover and document a canonical source path for the bridge text,
-- map the entries to a confirmed successor source, or
-- formally retire the entries through a human-reviewed registry decision.
+- bridge entry count after re-extraction: `80`
+- bridge entries missing against baseline `76edce0`: `0`
+- `epistemic_status` changes against baseline `76edce0`: `0`
+- `proof_status` changes against baseline `76edce0`: `0`
+- recovered status distribution:
+  - `heuristic | not_applicable | draft_extracted`: `19`
+  - `conditional | not_applicable | draft_extracted`: `27`
+  - `proved | present | draft_extracted`: `34`
 
-Until one of those actions is taken, they should not be silently reintroduced
-into `registry/theorems.jsonl`.
+Residual next actions are:
+
+- resolve the restored paper's bibliography provenance: the exact historical
+  `main.tex` compiles, but its local `references.bib` source was not present in
+  `7c3ae1c^`, so biber falls back to an unrelated MiKTeX bibliography and
+  leaves citations `paper1`--`paper5` unresolved;
+- decide whether the recovered bridge source should be added to future release
+  manifests or remain a registry-facing recovered source;
+- optionally perform a successor crosswalk against Paper 7, Paper 8, and the
+  generated monolithic subjecthood-bridge section.
 
 ## PENDING_HUMAN_VERIFICATION
 
-Task: verify in depth, not by superficial grep, whether
-`paper9_phenomenal_bridge_organization`, the monolithic section
-`10-phenomenal-bridge-organization`, and/or the monolithic subjecthood bridge
-section genuinely subsume the 80 dropped `bridge:*` entries.
+Task: verify in depth, not by superficial grep, whether Paper 7, Paper 8, and
+the generated monolithic subjecthood-bridge section substantively duplicate or
+supersede any of the recovered `bridge:*` entries. Paper 9 is a phenomenal
+bridge organization paper and should not be treated as the default successor
+for this operational-subjecthood bridge.
 
 Items to check include at least:
 
@@ -147,9 +184,9 @@ Items to check include at least:
 
 Decision rule:
 
-- If substantive subsumption is confirmed, update status to `paper9 successor`.
-- If substantive subsumption is not confirmed, keep status
-  `SOURCE_RECOVERY_REQUIRED`.
+- If substantive subsumption is confirmed, record a successor mapping.
+- If substantive subsumption is not confirmed, keep the recovered bridge paper
+  as the source-owning path for these entries.
 
 This report does not decide that question.
 

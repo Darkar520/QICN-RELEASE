@@ -10,3 +10,4 @@ import QICNLean.QICNH5Convex
 import QICNLean.QICNSInstance
 import QICNLean.QICNSCoupledInstance
 import QICNLean.QICNRotationSpectral
+import QICNLean.QICNCoupledSplitMargin

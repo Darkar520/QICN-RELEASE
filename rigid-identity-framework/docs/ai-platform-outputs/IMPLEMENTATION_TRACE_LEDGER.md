@@ -8709,3 +8709,44 @@ Codex cleanup before commit:
 - Confirmed `AxiomCheck.lean` contained only temporary `#print axioms` commands and the `.txt` files were build dumps.
 - Re-ran Lean build from `docs/ai-platform-outputs/formal/lean/` using the real Windows user after sandbox ownership blocked `.lake/packages/mathlib`; `lake build` result: `EXIT=0`.
 - Corrected the report and ledger date from `2026-06-20` to the current environment date `2026-06-19`.
+
+## 2026-06-19 - Lean kernel for split-readout positive margin under D*
+
+Agent/platform: Codex
+
+User request: Mechanize the quantitative core of the split-readout positive-margin argument for the coupled carrier after committing the Kiro analysis, without inflating `Iint` or `FULL_COP_MEMBERSHIP`.
+
+Files modified/created:
+- CREATED `docs/ai-platform-outputs/formal/lean/QICNLean/QICNCoupledSplitMargin.lean`
+- MODIFIED `docs/ai-platform-outputs/formal/lean/QICNLean.lean`
+- MODIFIED `docs/ai-platform-outputs/analysis/QICN_IINT_CANONICAL_CLASS_SPLIT_READOUT.md`
+- APPENDED this ledger entry
+
+Implementation summary:
+- Added `coupled_psi1_fiber_thin`: from `|z.re| <= 2ε` and `|(c*z).re| <= 2ε`, with `c=rotationContractionScalar`, proves `||z|| <= 4 sqrt(7) ε`.
+- Added `coupled_psi2_fiber_thin`: the symmetric imaginary-coordinate fiber bound.
+- Added `coupled_split_readout_positive_margin`: from explicit fiber/corner-chain hypotheses and `diam=4`, proves `sqrt(7)/14 <= ε`.
+- The global quantifier over arbitrary admissible `D*` factorizations is not mechanized; its fiber/corner consequences remain explicit hypotheses. `Iint` stays class-conditional and `FULL_COP_MEMBERSHIP: NOT_YET`.
+
+Commands and results:
+| Command | Result |
+|---|---|
+| `lake build` from `docs/ai-platform-outputs/formal/lean/` | `EXIT=0`; build completed successfully |
+| `Select-String ... QICNLean/*.lean -Pattern '\b(sorry|admit|axiom)\b'` | `COUNT=0` |
+| `#print axioms QICNLean.coupled_psi1_fiber_thin` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.coupled_psi2_fiber_thin` | `[propext, Classical.choice, Quot.sound]` |
+| `#print axioms QICNLean.coupled_split_readout_positive_margin` | `[propext, Classical.choice, Quot.sound]` |
+| `node scripts\verify-canonical-integrity.cjs` | `status=PASS`; warnings `[]`; failures `[]` |
+| `node scripts\verify-claim-registry.cjs` | `status=PASS`; warnings `[]`; failures `[]` |
+| `node scripts\verify-canonical-release.cjs` | `status=PASS`; warnings `[]`; failures `[]` |
+
+Mathlib/Lean facts used:
+- `Complex.normSq_eq_norm_sq`, `Complex.normSq_apply`
+- `sq_le_sq₀`, `abs_sub_le`, `abs_mul`, `abs_of_pos`, `abs_of_nonneg`
+- `Real.sq_sqrt`, `Real.sqrt_pos_of_pos`
+- tactics/imports: `FieldSimp`, `Linarith`/`nlinarith`, `NormNum`, `Positivity`, `Ring`
+
+Residual risk:
+- This is a mechanized algebraic kernel, not a full formalization of the canonical admissible-factorization search space.
+- The human/canonical decision between `D*`, `D_approx`, and behavioral simulability remains open.
+- No external validation, no `Crit_op` certification, and no public claim closure follows from this file.

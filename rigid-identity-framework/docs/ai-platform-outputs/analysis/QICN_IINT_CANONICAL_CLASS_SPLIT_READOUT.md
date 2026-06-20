@@ -423,8 +423,12 @@ the recommendation.
 - This implies nothing about consciousness, identity, subjectivity,
   phenomenality, CCR, `I_int`, or no-vacuity.
 - The lower bound `sqrt(7)/14` is conservative and not claimed tight.
-- The Lean exact obstruction is unchanged; the approximate `D*` margin is
-  **not** yet mechanized (recommended next formal step).
+- The Lean status is now split:
+  `QICNRotationSpectral.lean` mechanizes the exact real-line-invariant split
+  obstruction, and `QICNCoupledSplitMargin.lean` mechanizes the quantitative
+  fiber-thinness plus corner-chain kernel yielding `sqrt(7)/14` from explicit
+  fiber hypotheses. The global quantifier over all admissible `D*`
+  factorizations remains documented, not mechanized.
 
 ## 8. Recommended next steps
 
@@ -433,8 +437,8 @@ the recommendation.
    to tooling.
 2. If `D*` is adopted: open a scoped Phase-2/4 ticket to add clarifications
    (section 6) to `def:iint` under the audit-before-push protocol.
-3. Optional formalization: mechanize section 2 in Lean (fiber-thinness +
-   chaining => positive margin) as `coupled_split_readout_positive_margin`,
-   reusing `QICNSCoupledInstance.lean`. The argument is elementary (two time
-   steps, triangle inequalities) and should be tractable; current exact-only
-   Lean status would then be upgraded to an approximate margin under `D*`.
+3. Optional formalization: mechanize the remaining global step from an
+   arbitrary admissible `D*` factorization to the explicit fiber/corner
+   hypotheses consumed by `coupled_split_readout_positive_margin`. This is the
+   remaining formal gap; do not present the current Lean kernel as a full
+   canonical `Iint` closure.

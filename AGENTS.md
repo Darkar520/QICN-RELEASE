@@ -39,9 +39,16 @@ Machine-readable equivalents in `release/`.
 - AI cross-audit reduces error; it is not certification.
 - Implementation minimalism does not apply to evidence, formalization, hypotheses, or claims.
 
+## Layout (don't guess)
+
+The repo has two cooperating tiers. Confusing them is the #1 source of wasted cycles (see VERSION 3 / `TOOL-CWD` in `rigid-identity-framework/ROADMAP.md`):
+
+- **Root** (`QICN-FRAMEWORK/`): release governance, doc canon, machine-readable manifests under `release/`, PDF corpus under `corpus/`, root verifiers under `scripts/`. Active math source and papers live one level down, **not here**.
+- **Inner** (`rigid-identity-framework/`): `basecore/` is the active base layer; `paper1..paper10*/` are downstream packages; `monolithic/` is the assembled volume; `registry/` is the machine-readable theorem/macro corpus; `scripts/` is the audit/adjudication tooling with its own `package.json`. Legacy `canonical_core_legacy/` is preserved, not modified.
+
 ## Verification before any "done" claim
 
-Run, in order, and confirm clean output:
+Run from the **repo root**:
 
 ```bash
 node scripts/verify-canonical-integrity.cjs
@@ -49,9 +56,33 @@ node scripts/verify-claim-registry.cjs
 node scripts/verify-canonical-release.cjs
 ```
 
+Then run the inner framework gate from `rigid-identity-framework/`:
+
+```bash
+cd rigid-identity-framework && npm run verify:release
+```
+
 If any fails, **stop** and report. Do not patch around the failure.
 
-Verifier reporting convention: verifier exit code 0 ≠ verdict approved. Always report the adjudicator verdict string verbatim (e.g. BLOCKED_FOUNDATION_FIRST_GATES) and external_support_certified together with any 'PASS'.
+Verifier reporting convention: exit code 0 ≠ verdict approved. Always report the adjudicator verdict string verbatim (e.g. `BLOCKED_FOUNDATION_FIRST_GATES`) and `external_support_certified` together with any 'PASS'. `external_support_certified=false` is a deliberate scientific boundary, not a repo failure.
+
+## Compile a paper
+
+Each paper has its own folder under `rigid-identity-framework/`; compile from inside that folder. For BaseCore use `basecore/BASECORE.tex`:
+
+```bash
+cd rigid-identity-framework/basecore
+pdflatex -interaction=nonstopmode BASECORE.tex
+biber BASECORE
+pdflatex -interaction=nonstopmode BASECORE.tex
+pdflatex -interaction=nonstopmode BASECORE.tex
+```
+
+Build the full assembled volume with `npm run compile:monolithic` (from `rigid-identity-framework/`). `*.aux/.log/.out/.toc/.bbl/.blg/.bcf/.run.xml` are build artifacts — keep them out of commits when feasible.
+
+## Container reproducibility
+
+The `Dockerfile` at the root runs the full gate chain (root verifiers + `npm run verify:release`) with `QICN_GOVERNANCE_BLINDED=true`. Use it when reproducing CI locally. CI itself is `.gitlab-ci.yml` (stages: verify, audit).
 
 ## Agent behavior
 
@@ -59,6 +90,8 @@ Verifier reporting convention: verifier exit code 0 ≠ verdict approved. Always
 - Subagents (`explore`, etc.) inherit provider timeouts (10 min hard). If a subagent runs >10 min, it is hung — report and abort.
 - Prefer `read` / `glob` / `grep` over `bash` for file discovery. Bash is for execution only.
 - When in doubt about a claim, cross-check with `release/claim_registry.v1.json` before stating it.
+- AI platform outputs (reports, audits, prompts, repair plans) go under `rigid-identity-framework/docs/ai-platform-outputs/`. Every phase that touches the framework also writes a row to `IMPLEMENTATION_TRACE_LEDGER.md` there. See `rigid-identity-framework/INSTRUCCIONES.md` for the full phase protocol and audit-before-push rules.
+- Active roadmap is `rigid-identity-framework/ROADMAP.md` (preserves VERSION 1, 2, 3 as literal user text). Read it together with `INSTRUCCIONES.md` before any non-trivial change.
 
 ## Forbidden operations
 

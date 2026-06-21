@@ -2,7 +2,8 @@
 
 Status: `NON_CANONICAL_HUMAN_REVIEW_PACKAGE`
 
-Date: 2026-06-19
+Date: 2026-06-19 (refreshed 2026-06-20: added `dstar_universal_margin` and the
+H5 convex-exclusion candidate analysis; build job count updated to 2304)
 
 Human review: `REQUIRED`
 
@@ -36,7 +37,7 @@ Verification snapshot:
 ```text
 lake build
 EXIT=0
-Build completed successfully (2302 jobs).
+Build completed successfully (2304 jobs).
 
 grep sorry/admit/axiom in QICNLean/*.lean
 COUNT=0
@@ -62,6 +63,8 @@ docs/ai-platform-outputs/formal/lean/QICNLean/
 | `convex_constant_fixedpoint_reduces` | `QICNH5Convex.lean` | Convex variational reduction showing fixed-point/collapse tension under constant fixed-point hypothesis. | Convex H5 reduction fragment; not full H5 general closure. | `[propext, Classical.choice, Quot.sound]` |
 | `rotation_contraction_no_invariant_line` | `QICNRotationSpectral.lean` | Multiplication by the concrete non-real rotation-contraction scalar has no nontrivial invariant real subspace. | Exact linear-factorization block for the coupled S-instance; not approximate/global `Iint`. | `[propext, Classical.choice, Quot.sound]` |
 | `coupled_psi1_fiber_thin`, `coupled_psi2_fiber_thin`, `coupled_split_readout_positive_margin` | `QICNCoupledSplitMargin.lean` | Quantitative split-readout margin kernel: fiber-thinness plus corner-chain arithmetic gives `sqrt(7)/14` from explicit fiber hypotheses. | Supports the adopted structural D* reading of `Iint`; does not mechanize the global quantifier over all admissible D* factorizations. | each: `[propext, Classical.choice, Quot.sound]` |
+| `dstar_universal_margin` | `QICNCoupledSplitMarginUniversal.lean` | **Universal** `∀`-quantifier over the explicitly specified `D*` factorization structure: every `DStarFactorization` has margin `≥ sqrt(7)/14`. | `Iint` global **class-relative**: genuine universal over the adopted `D*` class, but the coordinate-aligned/decoder-free modeling commitment is a disambiguation of the canonical text, not forced by it. `CLOSED_INTERNAL_UNDER_ADOPTED_D*`, `STILL_OPEN` canonically. | `[propext, Classical.choice, Quot.sound]` |
+| `constants_inadmissible_of_inter_empty`, `convexProjection_not_mem_of_inadmissible`, `convex_noncollapse_from_constants_inadmissible`, `cStarConstant` (def), `cStarConstant_fixed`, `cStarConstant_mem`, `bilateral_admissibility_forces_N_subset`, `cStar_admissible_under_reduction_hypotheses`, `candidate_b_self_defeating` | `QICNH5ConvexExclusion.lean` | H5 convex-case candidate analysis. **(a)** `s ∩ N = ∅ ⇒ convex non-collapse`: non-circular but **strong** (excludes all admissible constants) — `CLOSED_INTERNAL`. **(b)** exclude only the dynamically-selected `c*(u)`: `REFUTED_INTERNAL` — the reduction's admissibility hypothesis forces `N ⊆ s`, hence `c*(u) ∈ s`, making the exclusion vacuous (self-defeating). Minimal non-circular exclusion: `STILL_OPEN`. | H5 (convex carrier) candidate boundary; full general H5 `NOT_PROVED`. | each: `[propext, Classical.choice, Quot.sound]` |
 
 ### Reproduction Recipe
 
@@ -77,7 +80,7 @@ Expected current result:
 
 ```text
 EXIT=0
-Build completed successfully (2302 jobs).
+Build completed successfully (2304 jobs).
 ```
 
 Grep:
@@ -156,7 +159,7 @@ membership is proved.
 
 | Open item | Why it matters | What would close it |
 |---|---|---|
-| Global `Iint` quantifier over all D* factorizations | The Lean kernel proves fiber-thinness and the corner-chain margin once explicit fiber/corner hypotheses are given. It does not formalize the passage from every admissible D* product factorization to those hypotheses. | Mechanize the global D* admissibility layer or provide a reviewed hand proof accepted as sufficient for the document-level claim. |
+| Global `Iint` quantifier over all D* factorizations | `dstar_universal_margin` now mechanizes a genuine `∀` over the explicitly specified `DStarFactorization` structure (margin `≥ sqrt(7)/14`). The residual gap is **not** the quantifier itself but the **class-relativity**: the `D*` structure encodes the coordinate-aligned / decoder-free disambiguation, which is a modeling commitment not forced by the canonical text. | Referee adjudication that the adopted `D*` class is the correct canonical reading (question 1), or a canonical `def:iint` tightening under governance — not more Lean. |
 | Canonical `def:iint` precision | The D* reading is adopted in this non-canonical layer, but BaseCore `.tex` has not been tightened. | Apply `QICN_DEFIINT_TIGHTENING_PROPOSAL.md` only after Phase-2/4 governance, external audit, and human approval. |
 | Certified complete S-instance | Existing attempts score several invariants internally. The coupled instance is strongest under D*, but full proof is still not complete. | One concrete `S=(X,Phi,C,R,Gamma,U)` passing all six anti-vacuity criteria with explicit margins and a closed global `Iint` argument. |
 | CCR no-vacuity | Downstream CCR/no-simulability claims cannot outrun the missing full `C_op`/integration/no-vacuity burden. | A non-vacuous certified instance plus proof that the relevant CCR conditions are satisfied without circular assumptions. |
@@ -200,11 +203,15 @@ Suggested route for a referee:
 2. Read the Lean files in this order:
    `QICNConvexProjection.lean`, `QICNContraction.lean`,
    `QICNHilbertInstance.lean`, `QICNAttractorConcrete.lean`,
-   `QICNRotationSpectral.lean`, `QICNCoupledSplitMargin.lean`.
+   `QICNRotationSpectral.lean`, `QICNCoupledSplitMargin.lean`,
+   `QICNCoupledSplitMarginUniversal.lean` (the universal `D*` margin, read with
+   its class-relative qualifier).
 3. Read H5 materials:
    `QICNNonCollapse.lean`, `QICNH5Derivation.lean`,
-   `QICNH5Convex.lean`, then
-   `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md`.
+   `QICNH5Convex.lean`, `QICNH5ConvexExclusion.lean` (convex candidate
+   analysis: (a) strong / closed, (b) refuted), then
+   `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md` and
+   `docs/ai-platform-outputs/analysis/QICN_H5_CONVEX_EXCLUSION_REDTEAM.md`.
 4. Read the coupled S-instance and Iint materials:
    `QICN_S_INSTANCE_GENUINENESS_CRITERIA.md`,
    `QICN_S_INSTANCE_COUPLED_CONSTRUCTION.md`,

@@ -9289,3 +9289,418 @@ Siguiente paso recomendado:
   aprobada de esta fase teorica.
 
 Git: NO commit / NO push (segun instruccion del usuario y disciplina de fase).
+
+---
+
+## 2026-06-20 — Material para referee externo: cover + refresco del package index
+
+Agente: Kiro (auditor interno).
+Resumen de la solicitud: "(b) preparar lo necesario para el referee externo".
+Cerrar la tarea de entrada para revisor humano externo, alineando el package
+index con el corpus Lean actual.
+
+Archivos leidos:
+- docs/ai-platform-outputs/QICN_REFEREE_SUBMISSION_COVER.md (creado en sesion
+  previa, verificado completo).
+- docs/ai-platform-outputs/QICN_REVIEWER_PACKAGE_2026-06.md (estaba stale).
+- QICNLean/QICNCoupledSplitMarginUniversal.lean, QICNLean/QICNH5ConvexExclusion.lean
+  (nombres exactos de teoremas).
+
+Archivos cambiados:
+- docs/ai-platform-outputs/QICN_REVIEWER_PACKAGE_2026-06.md
+  * Nota de refresco con fecha 2026-06-20.
+  * Job count actualizado 2302 -> 2304 (snapshot y receta de reproduccion).
+  * Tabla seccion 2: +2 filas — `dstar_universal_margin`
+    (QICNCoupledSplitMarginUniversal.lean, universal sobre clase D*,
+    CLOSED_INTERNAL_UNDER_ADOPTED_D* / STILL_OPEN canonicamente, class-relative)
+    y los 9 simbolos de QICNH5ConvexExclusion.lean (candidata (a) CLOSED_INTERNAL
+    fuerte; candidata (b) REFUTED_INTERNAL self-defeating; minima STILL_OPEN;
+    H5 general NOT_PROVED).
+  * Orden de lectura (seccion 6): +2 archivos Lean y +redteam doc.
+  * Item abierto del cuantificador global Iint reformulado: el `∀` ya esta
+    mecanizado; el gap residual es la class-relativity (decision de referee),
+    no mas Lean.
+
+Comandos + resultados:
+```text
+git -C QICN-FRAMEWORK status -sb
+## main...origin/main        # sincronizado, sin ahead
+?? rigid-identity-framework/.git.orphan-jobhunter-remote.bak/   # neutralizado, NO commitear
+?? rigid-identity-framework/docs/ai-platform-outputs/QICN_REFEREE_SUBMISSION_COVER.md
+
+lake build  *> qicn_build.txt
+EXIT=0 ; Build completed successfully (2304 jobs).
+grep sorry|admit|axiom en QICNLean/*.lean  -> COUNT=0
+```
+
+Regresiones buscadas:
+- Que el build siguiera verde (2304 jobs) y grep=0 antes de afirmar numeros en
+  el index.
+- Que el refresco del index NO elevara estatus de ningun claim
+  (external_support_certified=false, FULL_COP_MEMBERSHIP: NOT_YET intactos).
+Regresiones encontradas:
+- Ninguna. Solo documentacion de docs/ai-platform-outputs; no se toco
+  canon/registry/release/monolithic/.lean/package.json.
+
+Riesgos residuales:
+- `dstar_universal_margin` es universal genuino pero class-relative; el index lo
+  marca explicitamente como tal para no leerse como prueba de Iint canonico.
+
+Siguiente paso recomendado:
+- Decision del usuario sobre commit (solo cover + index, NO el .bak, NO git add -A).
+  NO push hasta que el usuario lo autorice. La frontera de fondo (D* canonico,
+  H5 minimo, instancia C_op, CCR, bridge, rivales, validacion externa) es de
+  referee humano, no cerrable por IA.
+
+Git: NO commit / NO push (pendiente decision del usuario).
+
+---
+
+## 2026-06-21 — Tooling de inventario + trazabilidad de archivos (read-only)
+
+Agente: Kiro (auditor interno).
+Resumen de la solicitud: buscar en GitHub enfoques de trazabilidad/limpieza y
+construir un script read-only que inventarie el repo y proponga buckets de
+decision (KEEP/REVIEW/AI_OUTPUT/BUILD_ARTIFACT/ORPHAN_CANDIDATE) carpeta por
+carpeta, sin borrar nada.
+
+Busqueda web (referencia, no usada como dependencia): knip, unimported (archivado),
+deadfile, jameshfisher/git-orphaned-files, xodn348/cleanup ("never auto-deletes"),
+siegerts/github-repository-audit. Conclusion: ninguna entiende a la vez
+LaTeX+Lean+Node+JSONL+steering; se construyo herramienta a medida dependency-free.
+
+Archivos creados:
+- scripts/inventory-traceability.js (CommonJS, stdlib-only, con --self-test/--dry/--root).
+  Construye grafo de referencias: \input/\include/\addbibresource (LaTeX),
+  import (Lean via QICNLean.*), require() (Node) + targets de package.json,
+  #[[file:...]] (steering). Reachability BFS desde roots. Clasifica + detecta
+  duplicados por sha256.
+- docs/ai-platform-outputs/reports/INVENTORY_TRACEABILITY_2026-06-21.md
+- docs/ai-platform-outputs/reports/INVENTORY_TRACEABILITY_2026-06-21.json
+
+Comandos + resultados:
+```text
+node scripts/inventory-traceability.js --self-test   -> SELF-TEST OK
+node scripts/inventory-traceability.js
+  661 archivos. Buckets: KEEP 172, REVIEW 252, BUILD_ARTIFACT 121,
+  AI_OUTPUT 100, ORPHAN_CANDIDATE 16. Duplicados (hash): 5 grupos.
+```
+
+Hallazgos verificados:
+- Bug corregido en resolver Node (no probaba .js sin extension) -> falsos
+  huerfanos de scripts/lib bajaron de 12 a 2 reales.
+- paper1/main.tex usa \addbibresource{../../release/references.bib} (apunta al
+  release del repo PADRE), por lo que paper1/references.bib local esta sin usar
+  (huerfano real, no falso positivo).
+- basecore/core/sections/11_discrete_bridge.tex NO esta incluido por BASECORE.tex
+  (aparece como root LaTeX) — seccion existente no cableada al volumen base.
+- Duplicado exacto: SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v31.md ==
+  _v34.md (mismo hash, distinto label de version) — ruido/confusion real.
+- Concentracion de ruido candidato: docs/ai-platform-outputs/ (100 AI_OUTPUT,
+  59 en reports/) + docs (232 REVIEW). recovery-candidates/backup-noise-2026-06-03
+  contiene 5 .tex v18-v22.
+
+Regresiones buscadas/encontradas:
+- Script read-only: no se borro/movio/modifico ninguna fuente; solo se
+  escribieron 2 reportes bajo docs/ai-platform-outputs/reports/. Ninguna regresion.
+
+Riesgos residuales:
+- ORPHAN_CANDIDATE para .js/.bib puede tener falsos positivos por require()
+  dinamico o bib referenciado cross-root; verificar antes de cualquier accion.
+- Los scripts versionados (v22..v35) y registry NO son ruido (gobernanza); el
+  bucket nunca los marca como removibles.
+
+Siguiente paso recomendado:
+- Decision humana carpeta-por-carpeta sobre AI_OUTPUT/REVIEW. Opcional: wire del
+  alias npm (audit:inventory) y/o segunda pasada sobre el repo PADRE completo.
+  Nada se borra sin inventario+hashes+aprobacion explicita; sin git add -A.
+
+Git: NO commit / NO push (pendiente decision del usuario).
+
+---
+
+## 2026-06-21 — Trazabilidad profunda del repo PADRE completo + plan de triaje
+
+Agente: Kiro (auditor interno).
+Solicitud: trazabilidad maxima carpeta-por-carpeta del repo completo, conociendo
+el contenido de cada archivo, para separar ruido de util sin remover lo
+necesario y actualizar lo desactualizado.
+
+Mejoras al tooling (read-only):
+- scripts/inventory-traceability.js: +synopsis() (titulo/encabezado/docstring por
+  archivo), +--outRoot (reporte a zona gobernada), +seccion detallada por carpeta
+  con sinopsis y bucket. self-test OK.
+
+Reportes generados (en rigid-identity-framework/docs/ai-platform-outputs/reports/):
+- INVENTORY_TRACEABILITY_QICN-FRAMEWORK_2026-06-21.{md,json} (2348 archivos).
+
+Plan creado:
+- docs/ai-platform-outputs/repair-plans/QICN_REPO_TRIAGE_2026-06-21.md
+
+Hechos verificados ejecutando (git ls-files / inventario SHA256 / lectura):
+- photoshop-mcp/ (162) tracked=0 → ruido ajeno (MCP de Photoshop), no es QICN.
+- artifacts/ (1379) tracked=0 → artefactos generados/.pyc/tmp, reproducibles.
+- rigid-identity-paper, phenomenological-regimes-paper,
+  phenomenological-instability-paper: tracked=0, solo restos de build (sin .tex/.pdf).
+- nul (raiz): no trackeado, archivo espurio Windows.
+- corpus/ (29) tracked=1 → release real (pdf_corpus.zip + manifests). KEEP.
+- release/ (47) y docs/ (18) del PADRE: trackeados; mezcla canon + outputs IA.
+- Duplicado exacto: SESSION_ZERO_..._v31.md == _v34.md (mismo hash).
+- Estructura raiz: doble nivel docs/release/scripts (padre vs
+  rigid-identity-framework) = causa raiz de la confusion de versiones.
+
+Recomendacion (no ejecutada): Fase A remover ruido no-trackeado (riesgo minimo),
+Fase B gitignore cachés, Fase C consolidar outputs IA trackeados (sin git add -A),
+Fase D update de desactualizados. NO tocar basecore/registry/papers/gates v22-v35.
+
+Regresiones: ninguna (read-only; solo se escribieron reportes+plan bajo
+docs/ai-platform-outputs/). 
+
+Git: NO commit / NO push. Pendiente decision del usuario sobre fases.
+
+---
+
+## 2026-06-21 — Ejecucion triaje Fases A/B/C/D
+
+Agente: Kiro (auditor interno). Solicitud: "procede con fase A, luego B, C y D".
+
+LINEA BASE (antes y despues, verificada):
+- node scripts/verify-canonical-integrity.cjs EXIT=0
+- node scripts/verify-claim-registry.cjs EXIT=0
+- node scripts/verify-canonical-release.cjs EXIT=0
+
+FASE A — HECHA (ruido no-trackeado a cuarentena reversible):
+- Re-verificado git ls-files = 0 para: photoshop-mcp, artifacts, rigid-identity-paper,
+  phenomenological-regimes-paper, phenomenological-instability-paper.
+- Move-Item de las 5 carpetas a _TRIAGE_QUARANTINE_2026-06-21/.
+- nul (entrada real de fs, nombre reservado Windows) eliminado via fs.unlinkSync('\\?\...').
+- git status: 0 archivos trackeados borrados (deleted-tracked count = 0). Gates EXIT=0.
+
+FASE B — HECHA (gitignore):
+- .gitignore (padre) += __pyphi_cache__/, **/__pyphi_cache__/, _TRIAGE_QUARANTINE_2026-06-21/.
+- git check-ignore confirma ambos. Commit 58dada5 (1 file, +5).
+
+FASE C — SUBCONJUNTO SEGURO HECHO + RESTO DEFERIDO:
+- Verificacion de referencias ANTES de mover. Hallazgo correctivo: muchos
+  "ruidos" candidatos estan referenciados por RUTA en roadmaps/ledger/prompts
+  (PDF_RELEASE_REPRODUCIBILITY_REPAIR_PLAN.md citado por QICN_GLOBAL_ROADMAP_v40,
+  QICN_V40_PHASE5A, ledger; CODEX_PROMPT_FCR_v10 por QICN_THEORY_FALSIFIABILITY_ROADMAP)
+  => KEEP, NO mover (romperia referencias/historia).
+- Tambien correctivo: RELEASE_NOTES.md (raiz) y docs/CANON_*, docs/LAYER_BOUNDARIES,
+  docs/THEORY_SYSTEM_INTERFACE, docs/CANONICAL_RELEASE_NOTES, release/*.v1.json,
+  release/_non_canonical/README.md son CANONICOS (gate verify-canonical-integrity
+  valida su existencia). NO mover.
+- Movidos solo 5 con CERO referencias externas (git mv -> ai-platform-outputs/audits/):
+  AUDIT_HANDOFF_FCR_v9.md, AUDIT_FCR_v10_IMPLEMENTATION.md, GITLAB_DUO_AUDIT_TRIAGE_v1.md,
+  GITLAB_DUO_AUDIT_IMPLEMENTATION_v1.md, AUDIT_FORMAL_VERIFICATION_QICN_v1.md.
+- Gates EXIT=0 tras los moves. Commit del rename (5x R100) previo a 58dada5.
+
+FASE D — DEFERIDA (sin accion auto-ejecutable segura):
+- Cablear 11_discrete_bridge.tex en BASECORE.tex = decision de contenido/claim
+  (riesgo inflacion) => NO automatizar.
+- SESSION_ZERO_..._v34.{md,json}: aunque byte-identico a v31, ESTA referenciado
+  (OPERATIONAL_TERM_PROMOTION_AUDIT_v26.json, QICN_V34_L4_..._REPORT.md) => NO deduplicar.
+- paper2/paper3/main.tex usan ../../release/references.bib (confirmado); sus
+  references.bib locales estan sin uso, pero borrar trackeado de bajo valor =
+  destructivo => flag, no ejecutar.
+
+OTROS: AGENTS.md aparece modificado en el working tree SIN intervencion mia
+(cambio preexistente). NO tocado.
+
+Git: 2 commits locales (Fase C renames + Fase B gitignore). main...origin/main
+[ahead 2]. NO push (pendiente aprobacion). Cuarentena reversible en disco.
+Documentos AI-output de la sesion (script, reportes, cover, triaje) sin commit,
+para revision del usuario.
+
+---
+
+## 2026-06-21 — Fase 1: Cableado de la Sección 11 (Discrete-to-Continuous Bridge) en BASECORE
+
+Agente: colaborador de investigación QICN (ejecutor, Kiro). Solicitud del usuario:
+ejecutar Fase 1 (cablear `11_discrete_bridge.tex` en `BASECORE.tex`), Fase 2
+(remover .bib locales muertos de paper2/paper3) y Fase 3 (commit acotado de docs
+AI-output). Rol: auditor escéptico, no-destructivo, anti-inflación.
+
+Objetivo operacional: incluir el puente discreto→continuo como contenido canónico
+del volumen BASECORE. Operación ESTRUCTURAL, NO fortalecimiento de claim.
+
+### NOTA DE DISCREPANCIA EN LÍNEA BASE (importante)
+Los tres scripts nombrados como LÍNEA BASE por el usuario
+(`scripts/verify-canonical-integrity.cjs`, `verify-claim-registry.cjs`,
+`verify-canonical-release.cjs`) **NO existen** en el repo actual: búsqueda
+recursiva de `*.cjs` = 0 resultados; `package.json` no los referencia. (Entradas
+previas del ledger los citan como EXIT=0, pero hoy no están presentes.)
+Decisión: usar la cadena de verificación canónica REAL que sí existe y es la
+declarada en steering/tech.md como baseline v31:
+- `npm run verify` (= verify:v31, sobre v30) EXIT=0
+- `npm run verify:corpus-registry` EXIT=0
+- `npm run verify:macro-registry` EXIT=0
+Se reporta el conflicto; no se forzó ni se fabricó la ejecución de scripts
+inexistentes.
+
+Archivos leídos: INSTRUCCIONES.md, docs/CLAIM_STATUS_POLICY.md, package.json,
+basecore/BASECORE.tex, basecore/core/sections/11_discrete_bridge.tex,
+basecore/core/sections/01_foundation_from_core.tex (refs), ledger (tail).
+
+Archivos creados:
+- docs/ai-platform-outputs/analysis/QICN_SECTION11_INCLUSION_READOUT.md (readout
+  de pérdida/ganancia + sello anti-inflación).
+
+Archivos modificados:
+- basecore/BASECORE.tex: insertada UNA línea
+  `\input{core/sections/11_discrete_bridge}` tras la línea 09 y antes de
+  `\appendix` (contenido principal, no apéndice). Sin otros cambios.
+- basecore/BASECORE.pdf: recompilado in situ (no regenerado).
+- (artefactos .aux/.bbl/.toc/.log: gitignored, no aparecen en git status).
+
+Herramientas/comandos:
+- Auditoría de refs externas (grep): def:transition, hyp:H1–H4, thm:contraction,
+  thm:fixedpoint — todas presentes en 01_foundation_from_core.tex. Resuelven.
+- Verificación de que el párrafo "Boundary of this bridge" (condicional/no-externo)
+  está al inicio de la sección: PRESENTE. Procede.
+- Recompilación: pdflatex (PASS1=0) + biber (BIBER=0) + pdflatex (PASS2=0) +
+  pdflatex (PASS3=0).
+- Chequeo de .log: UNDEFINED_COUNT=0, MULTIPLY_COUNT=0.
+- Gates: npm run verify EXIT=0; verify:corpus-registry EXIT=0;
+  verify:macro-registry EXIT=0. 0 blockers en corpus/macro registry.
+
+Hashes/páginas del PDF:
+- BEFORE: SHA256=82349C7D68D53BF653D7AB58171099380576D61FE4970B4192DC080BAE54BB70;
+  size=674674; pages=41.
+- AFTER:  SHA256=E258365BCBAD8F00A27AB7CCE7AF47820C6DF9D701F61EB665A855A6ABB08CE7;
+  size=699919; pages=44 (+3 por el nuevo \part y su contenido formal).
+
+Marcadores científicos (sin cambios, intactos):
+- external_support_certified=false (v30 y v31).
+- verdict=BLOCKED_FOUNDATION_FIRST_GATES (v31, blockers=9).
+- No se tocó registry/, ni estados epistemic_status/proof_status, ni
+  FULL_COP_MEMBERSHIP. No se elevó ningún claim a NEW_CLAIM ni a C_op.
+
+Razón del cambio: el material formal (condicional, interno) del puente ya existía
+en el árbol fuente pero no estaba cableado en el volumen compilado; la inclusión
+lo integra como contenido canónico sin alterar su fuerza ni su frontera.
+
+Regresiones buscadas: referencias indefinidas, labels múltiplemente definidos,
+rotura de gates/registry, elevación inadvertida de claims/certificación externa.
+Regresiones encontradas: ninguna.
+
+Riesgos residuales: la introducción de un único `\part` en un documento `article`
+crea un encabezado "Part" aislado (cosmético, no de claim); aceptado por el alcance
+de la fase según instrucción del usuario.
+
+Siguiente paso: commit acotado de Fase 1 (BASECORE.tex + PDF + readout), luego
+Fase 2 (pre-check .bib de paper2/paper3).
+
+---
+
+## 2026-06-21 — Fase 2: Remover references.bib locales sin uso de paper2/paper3
+
+Agente: colaborador de investigación QICN (ejecutor, Kiro).
+
+Objetivo operacional: eliminar los `references.bib` locales de paper2 y paper3,
+que no son consumidos por la compilación por-paper (ambos main.tex usan el bib
+compartido `../../release/references.bib`).
+
+Pre-check (obligatorio) — RESULTADO: PASA.
+- paper2/main.tex: única `\addbibresource` = `../../release/references.bib`.
+- paper3/main.tex: única `\addbibresource` = `../../release/references.bib`.
+- Ninguno referencia su `references.bib` local por nombre.
+- Ambos locales existen y estaban trackeados.
+
+Hashes pre-borrado (trazabilidad):
+- paper2/references.bib: SHA256=F162B37B0B3D587B30CB76081524AF1BEC1A429045EE4AB7BDDF4C93A6A8CB31; 201 líneas.
+- paper3/references.bib: SHA256=414E956DEF68265F9927CBE8C0B09CAE51A1D81FC2540E3BB06FBF35E70035D7; 89 líneas.
+
+Auditoría de consumidores (escéptica) ANTES de borrar:
+- `scripts/build-monolithic-volume.js` NO lee ningún `.bib` (grep: 0 matches).
+- `monolithic/build/monolithic_references.bib` es un artefacto de build UNTRACKED
+  con comentarios de procedencia `% source: paperN/references.bib`, pero NINGÚN
+  script lo regenera (grep "monolithic_references" no halló escritor). El
+  inventario lo clasifica como ORPHAN_CANDIDATE/UNTRACKED.
+- Conclusión: la única dependencia residual es la procedencia histórica (stale)
+  dentro de ese artefacto untracked; no afecta compilación por-paper ni gates.
+
+Verificación de compilación:
+- BASELINE (con bib local presente): paper2 0 citas indefinidas; paper3 0 citas
+  indefinidas.
+- TRAS `git rm`: paper2 recompilado (pdflatex+biber+pdflatex x2) -> 0 citas
+  indefinidas, 0 errores LaTeX; paper3 recompilado -> 0 citas indefinidas, 0
+  errores LaTeX (17 págs). Confirma que los bibs locales eran redundantes.
+
+Archivos eliminados (git rm, staged D):
+- paper2/references.bib
+- paper3/references.bib
+
+Nota de alcance: la recompilación de verificación regeneró paper2/main.pdf y
+paper3/main.pdf (solo metadata de build; el .tex no cambió en esta fase). Para
+mantener el commit acotado al objetivo, se restauraron ambos PDF a HEAD
+(`git checkout -- paper2/main.pdf paper3/main.pdf`). El commit de Fase 2 contiene
+EXCLUSIVAMENTE las dos eliminaciones.
+
+Herramientas/comandos: grep (consumidores), Get-FileHash (hashes), pdflatex+biber
+(compilación), git rm, git checkout, git status.
+
+Regresiones buscadas: citas indefinidas tras borrado; rotura de build monolítico;
+consumidores no detectados.
+Regresiones encontradas: ninguna en compilación por-paper.
+
+Riesgos residuales: los comentarios de procedencia en el artefacto untracked
+`monolithic/build/monolithic_references.bib` quedan colgados (stale). Si en el
+futuro se reintroduce un proceso que regenere esa bib desde los `.bib` por-paper,
+deberá apuntar a `release/references.bib`. Riesgo bajo: artefacto no canónico, no
+trackeado, sin regenerador activo.
+
+Siguiente paso: commit acotado de Fase 2; luego Fase 3 (commit de docs AI-output).
+
+---
+
+## 2026-06-21 — Fase 3: Commit acotado de documentos AI-output de la sesión
+
+Agente: colaborador de investigación QICN (ejecutor, Kiro).
+
+Objetivo operacional: trackear los documentos AI-output de la sesión (inventario,
+trazabilidad, triaje, cover y reviewer package del referee, ledger) mediante un
+commit acotado por rutas explícitas, sin `git add -A`.
+
+Archivos staged (allowlist explícita del usuario):
+- scripts/inventory-traceability.js
+- docs/ai-platform-outputs/reports/INVENTORY_TRACEABILITY_2026-06-21.md
+- docs/ai-platform-outputs/reports/INVENTORY_TRACEABILITY_2026-06-21.json
+- docs/ai-platform-outputs/reports/INVENTORY_TRACEABILITY_QICN-FRAMEWORK_2026-06-21.md
+- docs/ai-platform-outputs/reports/INVENTORY_TRACEABILITY_QICN-FRAMEWORK_2026-06-21.json
+- docs/ai-platform-outputs/repair-plans/QICN_REPO_TRIAGE_2026-06-21.md
+- docs/ai-platform-outputs/QICN_REFEREE_SUBMISSION_COVER.md
+- docs/ai-platform-outputs/QICN_REVIEWER_PACKAGE_2026-06.md
+- docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md
+
+Adición señalada (fuera de la allowlist, justificada):
+- docs/ai-platform-outputs/analysis/QICN_SECTION11_INCLUSION_READOUT.md — es el
+  entregable obligatorio de la Fase 1 (readout de inclusión + sello anti-inflación)
+  creado en esta sesión. Se incluye para que el artefacto requerido quede
+  trackeado junto al ledger; ubicación correcta (analysis/). DESVIACIÓN explícita
+  de la allowlist, registrada aquí para revisión del usuario.
+
+Excluidos deliberadamente (confirmado por `git diff --cached --name-only`):
+- AGENTS.md (modificación preexistente ajena a esta sesión).
+- .git.orphan-jobhunter-remote.bak/ (backup; prohibido).
+- _TRIAGE_QUARANTINE_* (cuarentena; prohibido).
+
+Herramientas/comandos: git add (rutas explícitas), git diff --cached
+--name-only, git status, git commit.
+
+Regresiones buscadas: inclusión accidental de AGENTS.md/.bak/quarantine; uso de
+`git add -A`.
+Regresiones encontradas: ninguna; staging acotado verificado.
+
+Riesgos residuales: warnings LF→CRLF de git (benignos, normalización de finales de
+línea en Windows). AGENTS.md permanece modificado en el árbol sin commit (decisión
+del usuario, fuera de alcance).
+
+Commits locales de la sesión:
+- Fase 1: e280ba1 (basecore: incluir sec.11).
+- Fase 2: 4633b13 (remover references.bib locales paper2/paper3).
+- Fase 3: (hash se registra tras este commit).
+
+NO push: el push lo decide el usuario por separado. Cierre de iteración requiere
+auditoría externa antes de cualquier push a origin/main (regla 1.3 de
+INSTRUCCIONES.md).

@@ -9704,3 +9704,64 @@ Commits locales de la sesión:
 NO push: el push lo decide el usuario por separado. Cierre de iteración requiere
 auditoría externa antes de cualquier push a origin/main (regla 1.3 de
 INSTRUCCIONES.md).
+
+---
+
+## 2026-06-21 — Remoción de ruido narrativo de IA (5 buckets)
+
+Agente: Kiro. Solicitud del usuario: remover meta-reports/roadmaps/summaries/
+gradings de IA que bajan credibilidad. Reconciliación con regla de trazabilidad:
+git history conserva todo lo removido, así que la trazabilidad queda intacta;
+solo el árbol de trabajo deja de exhibir el ruido.
+
+Método: clasificador read-only scripts/classify-removable-noise.js (reference-aware,
+excluye catálogos auto-referenciales). Manifiesto: 261 candidatos narrativos →
+164 REMOVE_CANDIDATE, 69 KEEP_MACHINE (referenciados por scripts/gates), 14
+KEEP_REFERENCED, 10 gobernanza, 4 referee. Se identificó que la lista REMOVE era
+sobre-inclusiva (incluía análisis matemático sustantivo + specs), así que se
+restringió a 5 buckets de ruido claro aprobados por el usuario.
+
+Removido (82 listados; 80 trackeados via git rm, 2 untracked/inexistentes):
+- ROADMAP/PHASE (51): roadmaps v40, QICN_V40_PHASE*, baselines.
+- AUDIT-DE-REPO (20): GITLAB_DUO_AUDIT_*, AUDIT_FCR_*, hygiene audits, patch audit.
+- PROMPTS (5), RECOVERY/EXTRACTION (4), SUMMARY/PATCH (2).
+CONSERVADO explícitamente: analysis/ matemático (Iint/H5/S-instance/section11),
+specs (FCR_SPEC, MEASUREMENT_DICTIONARY, measurement_specs/*), manuscript/,
+reviewer package + cover + ledger. REPORTS-VARIOS (32) diferido a revisión ítem-a-ítem.
+
+Verificación (antes y después): verify-canonical-integrity/claim-registry/
+canonical-release EXIT 0; npm run verify (v31) EXIT 0; verify:corpus-registry
+EXIT 0; verify:macro-registry EXIT 0. Ningún gate roto.
+
+Commit: 80 deleciones staged, scoped (solo deleciones), sin git add -A.
+main...origin/main [ahead 1]. NO push (pendiente decisión del usuario).
+Sin commitear: scripts/classify-removable-noise.js + NOISE_REMOVAL_MANIFEST
+(untracked), AGENTS.md (preexistente).
+
+---
+
+## 2026-06-21 — Segundo corte curado (REPORTS-VARIOS) + push
+
+Agente: Kiro. Tras desglose ítem-a-ítem de los 32 de REPORTS-VARIOS, el usuario
+aprobó remover los 15 meta-reports de implementación/fase/versión.
+
+Removidos (15, git rm, historia conserva): QICN_BIFURCATION_CLOSURE_REPORT_v1,
+QICN_BRIDGE_SOURCE_RECOVERY, QICN_MONOLITHIC_REBUILD_AFTER_PAPER3_4_6_REPORT_v1,
+QICN_PAPER3_EXTENSION_AND_SOURCE_STATUS_v1, QICN_PAPER4_PAPER6_EXTENSION_REPORT_v1,
+CODEX_V37_IMPLEMENTATION_REPORT, CODEX_V39_QUARANTINE_IMPORT_REPORT,
+CODEX_V39_SEPARATION_PREFLIGHT_REPORT, FULL_MODIFIED_TEXT_FILE_CONTENTS_v26,
+MONOLITHIC_PDF_POLISH_REPORT, QICN_V32_IMPLEMENTATION_REPORT,
+QICN_V33_IMPLEMENTATION_REPORT, QICN_V34_L4_ESTIMATOR_GAP_CLOSURE_REPORT,
+QICN_V35_VERSION_CENTRALIZATION_PREFLIGHT, QICN_V35_VERSION_CENTRALIZATION_REPORT.
+
+Conservados (sustancia): evidence surface, I_int model card, reviewer gap index,
+Lean pilot report, literature confrontation, related work, retroinduction draft,
+external predictions, formal methods protocol, I_int factorization spec, registry
+curation protocol. Borderline (6) diferidos a decisión del usuario. SESSION_ZERO
+v34.md NO tocado (referenciado por OPERATIONAL_TERM_PROMOTION_AUDIT_v26.json).
+
+Verificación: 3 gates .cjs EXIT 0; npm run verify (v31) EXIT 0. Sin gate roto.
+Commit acotado (15 deleciones). Push: 6c2083c..ca58703 main -> main. Sincronizado.
+
+Commits previos de la jornada también pusheados: remoción de 80 (ruido 5 buckets)
+y AGENTS.md (layout de dos niveles, de opencode).

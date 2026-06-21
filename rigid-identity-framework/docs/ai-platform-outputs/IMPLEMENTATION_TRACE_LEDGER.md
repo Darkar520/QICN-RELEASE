@@ -9765,3 +9765,25 @@ Commit acotado (15 deleciones). Push: 6c2083c..ca58703 main -> main. Sincronizad
 
 Commits previos de la jornada también pusheados: remoción de 80 (ruido 5 buckets)
 y AGENTS.md (layout de dos niveles, de opencode).
+
+---
+
+## 2026-06-21 — Consolidación de ruido on-disk + git huérfano + README índice
+
+Agente: Kiro. Pulido estructural final.
+
+- Borrado definitivo del git huérfano `.git.orphan-jobhunter-remote.bak/`
+  (neutralizado hacía sesiones; sin valor; irreversible, aprobado por usuario).
+- Renombrada la cuarentena `_TRIAGE_QUARANTINE_2026-06-21/` ->
+  `_LOCAL_NOISE_ARCHIVE/` (gitignored, local, no versionado), con README-manifiesto
+  interno que documenta contenido y provenance. Es contenedor local de
+  conveniencia; la trazabilidad canónica es git history.
+- `recovery-candidates/` (14 archivos tracked) copiados al archivo local y
+  removidos del repo vía git rm (history conserva).
+- .gitignore: `_TRIAGE_QUARANTINE_2026-06-21/` -> `_LOCAL_NOISE_ARCHIVE/`.
+- README raíz: añadida sección "Layout (two tiers)" espejando AGENTS.md.
+- Editorial: trío de audits anti-inflación verde (lint:nonclaims,
+  audit:semantic-inflation, audit:terms EXIT 0). Reports refrescados.
+
+Verificación: 3 gates .cjs EXIT 0 en cada etapa. Working tree: 0 untracked,
+limpio. Commits pusheados: 75fedb2..5e4fdf2 (y previos de la jornada).

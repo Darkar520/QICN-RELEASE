@@ -1,9 +1,16 @@
-# QICN-FRAMEWORK
+﻿# QICN-FRAMEWORK
 
 Audit-first mathematical framework for the QICN / Rigid Identity paper family.
 The active base layer is **BaseCore**; downstream papers derive from it and do
 not automatically promote runtime, synthetic, or interpretive claims into public
 theory closure.
+
+## Layout (two tiers)
+
+The repo has two cooperating tiers; confusing them is the #1 source of wasted cycles:
+
+- **Root `QICN-FRAMEWORK/`** - release governance, canonical doc set (`docs/`), machine-readable manifests (`release/`), frozen PDF corpus (`corpus/`), and root verifiers (`scripts/*.cjs`). No active math source lives here.
+- **Inner `rigid-identity-framework/`** - the active framework: `basecore/` (source of truth), `paper1..paper10/`, `monolithic/`, `registry/`, audit tooling (`scripts/`) with its own `package.json`, and `docs/`.
 
 ## Quick Verification
 

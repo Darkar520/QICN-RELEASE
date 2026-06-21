@@ -7,6 +7,7 @@ import QICNLean.QICNAttractorConcrete
 import QICNLean.QICNNonCollapse
 import QICNLean.QICNH5Derivation
 import QICNLean.QICNH5Convex
+import QICNLean.QICNH5ConvexExclusion
 import QICNLean.QICNSInstance
 import QICNLean.QICNSCoupledInstance
 import QICNLean.QICNRotationSpectral

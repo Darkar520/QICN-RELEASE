@@ -9187,3 +9187,105 @@ Next step recommended:
   to `def:iint` under audit-before-push + human approval. Only that source edit
   can upgrade `CLOSED_INTERNAL_UNDER_ADOPTED_D*` to a non-gerrymandered canonical
   closure. Do NOT present the current Lean universal as a canonical `Iint` closure.
+
+
+## 2026-06-18 - Claude (Kiro subagent, INTERNAL_ADVERSARIAL) - H5 convex geometric-exclusion red-team
+
+Status: `INTERNAL_ADVERSARIAL / NOT_EXTERNAL_VALIDATION` ; `external_support_certified=false` ; `FULL_COP_MEMBERSHIP: NOT_YET` ; `No NEW_CLAIM`.
+
+Solicitud resumida:
+- Atacar H5 en el caso CONVEXO GENERAL como referee hostil interno. Buscar una
+  condicion de exclusion geometrica que (i) implique no-colapso convexo y (ii)
+  sea NO CIRCULAR (sobre la geometria estatica de I/s, N, K, Gamma, no sobre el
+  punto fijo), o declarar STILL_OPEN sin forzar.
+
+Objetivo operacional:
+- Mecanizar y evaluar dos candidatas: (a) exclusion estatica fuerte `s ∩ N = ∅`;
+  (b) exclusion debil de un solo punto `c*(u) ∉ s`. Aplicar test de
+  circularidad y de fuerza a cada una. Sello adversarial en todo artefacto.
+
+Archivos leidos:
+- INSTRUCCIONES.md
+- docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md
+- docs/ai-platform-outputs/formal/lean/QICNLean.lean
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Convex.lean
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Derivation.lean
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNNonCollapse.lean
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNCoupledSplitMarginUniversal.lean (cabecera/sello)
+- mathlib .lake/.../InnerProductSpace/Projection/Basic.lean (nombre exacto `starProjection_apply_mem`)
+
+Archivos creados:
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5ConvexExclusion.lean (8 teoremas + 1 def)
+- docs/ai-platform-outputs/analysis/QICN_H5_CONVEX_EXCLUSION_REDTEAM.md
+
+Archivos modificados:
+- docs/ai-platform-outputs/formal/lean/QICNLean.lean (solo agregado `import QICNLean.QICNH5ConvexExclusion`)
+
+Archivos eliminados:
+- docs/ai-platform-outputs/formal/lean/scratch_axioms.lean (temporal de #print axioms; borrado tras verificar)
+
+Sin tocar: canon (.tex), registry, release, monolithic, package.json, ni los
+`.lean` preexistentes (salvo el import del archivo nuevo).
+
+Herramientas usadas: read_files, grep_search, file_search, execute_pwsh (lake),
+fs_write, str_replace, delete_file.
+
+Comandos ejecutados y resultado:
+
+```text
+lake.exe build            # baseline previo a cambios
+Build completed successfully (2303 jobs).  EXIT 0
+```
+
+```text
+lake.exe build QICNLean.QICNH5ConvexExclusion
+Build completed successfully (2291 jobs).  EXIT 0
+# solo warnings de cabecera (linter.style.header), identicos al sello de
+# QICNCoupledSplitMarginUniversal.lean; sin errores.
+```
+
+```text
+lake.exe env lean scratch_axioms.lean
+# Los 8 teoremas dependen solo de: [propext, Classical.choice, Quot.sound]
+# Sin sorry, sin axiomas extra.  EXIT 0
+```
+
+Resultados / veredicto interno:
+- Candidata (a) `s ∩ N = ∅`: CLOSED_INTERNAL. NO circular (estatica; solo s, N),
+  implica no-colapso (de hecho el output de proyeccion nunca es constante para
+  ningun input), pero FUERTE/no minima; incompatible con `hAdm` del lema de
+  reduccion (hAdm ⇒ N ⊆ s ⇒ choca con s∩N=∅ via 0∈N).
+- Candidata (b) `c*(u) ∉ s`: REFUTED_INTERNAL. NO circular (c* desde datos
+  primitivos N,K,Gamma via el wrapper lineal), pero AUTODERROTANTE: el lema de
+  reduccion variacional requiere `hAdm`, y `hAdm ⇒ N ⊆ s ⇒ c*(u) ∈ s`, asi que
+  la hipotesis de (b) es inconsistente con la maquinaria que le daria fuerza
+  (`candidate_b_self_defeating : hAdm ∧ c*∉s ⇒ False`). Sin hAdm, no hay
+  reduccion y excluir solo c* es insuficiente.
+- Exclusion geometrica MINIMA no circular: STILL_OPEN (no se hallo ninguna mas
+  debil que (a)). Recomendado: condicion sobre deriva en el cociente H/N.
+- FULL_BASECORE_H5_DERIVED_NONCIRCULARLY (convexo): NOT_PROVED.
+
+Regresiones buscadas:
+- Que el build Lean siguiera verde tras agregar el archivo y el import.
+- Que ningun teorema introdujera `sorry` ni axiomas no estandar.
+- Que no se tocara canon/registry/release/monolithic/package.json ni .lean previos.
+
+Regresiones encontradas:
+- Ninguna. Build verde; axiomas estandar; alcance respetado.
+
+Riesgos residuales:
+- (a) es fuerte y no explica el modo de colapso; (b) refutada como ruta usable.
+  El caso convexo general de H5 sigue sin reduccion no circular minima.
+- Warnings de cabecera del linter de estilo (preexistentes en el sello), no
+  bloqueantes.
+
+Siguiente paso recomendado:
+- Formalizar la dinamica de cociente en H/N (mapa inducido sin punto fijo cero)
+  como candidata estructural mas profunda que ataque el modo de colapso, en vez
+  de removerlo. Mantener sello adversarial. NO push hasta auditoria externa
+  aprobada de esta fase teorica.
+
+Git: NO commit / NO push (segun instruccion del usuario y disciplina de fase).

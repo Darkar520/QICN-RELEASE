@@ -9787,3 +9787,69 @@ Agente: Kiro. Pulido estructural final.
 
 Verificación: 3 gates .cjs EXIT 0 en cada etapa. Working tree: 0 untracked,
 limpio. Commits pusheados: 75fedb2..5e4fdf2 (y previos de la jornada).
+
+## 2026-06-21 - Reproducibilidad mecánica del corpus: recompilación in situ + manifiesto único
+
+Agent/platform: Kiro (ejecutor de reproducibilidad QICN, no-destructivo, anti-inflación)
+
+User request: Confirmar que cada paper + BASECORE + el monolítico compilan limpio
+y registrar un manifiesto único de páginas + SHA256 por PDF, compilando in situ
+(pdflatex->biber->pdflatex x2), sin editar fuentes, sin elevar claims.
+
+Operational objective: Verificar reproducibilidad mecánica de las 13 unidades del
+corpus y producir manifiesto JSON+MD, manteniendo intactos los bloqueos
+científicos contra validación externa.
+
+Files read:
+- package.json, INSTRUCCIONES.md, steering (product/tech/structure)
+- monolithic/QICN_MONOLITHIC.tex, monolithic/compile.ps1
+- paper10_external_adjudication/main.tex (inspección de bibliografía)
+- logs de build (.log/.blg) de cada unidad
+
+Files modified/created/moved/deleted:
+- CREADO: docs/ai-platform-outputs/reports/QICN_REPRODUCIBILITY_MANIFEST_2026-06-21.json
+- CREADO: docs/ai-platform-outputs/reports/QICN_REPRODUCIBILITY_MANIFEST_2026-06-21.md
+- RECOMPILADOS (PDF trackeados, solo bytes de build): basecore/BASECORE.pdf,
+  paper1..paper4/main.pdf, paper5..paper10/main.pdf, paper_bridge/main.pdf,
+  monolithic/QICN_MONOLITHIC.pdf (13 PDF)
+- NO se editó ningún .tex ni .bib.
+- Temporales creados y eliminados al cierre: _qicn_compile_tmp.ps1,
+  _paper_results.txt, basecore/_inspect.txt, monolithic/_mono.txt.
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| pdflatex --version / biber --version | toolchain | MiKTeX-pdfTeX 4.18 (MiKTeX 24.1), biber 2.21 |
+| npm run verify | baseline v31 | EXIT 0; external_support_certified=false |
+| npm run verify:corpus-registry | baseline | EXIT 0 |
+| npm run verify:macro-registry | baseline | EXIT 0 |
+| pdflatex+biber+pdflatex x2 (in situ por unidad) | recompilación | 13/13 compilan; ver manifiesto |
+| npm run audit:monolithic-build-quality | gate v20 | EXIT 1 (FAIL por warnings tipográficos; 0 undefined refs) |
+| git status --short | clasificación de árbol | solo 13 PDF + JSON gate modificados; artefactos build gitignored |
+
+Implementation summary:
+- 13 unidades compiladas in situ. 13/13 CLEAN según criterio (0 refs/citas
+  indefinidas, 0 labels duplicados). Total 676 páginas.
+- paper10: biber EXIT 2 (documento sin biblatex; artefacto de invocación, no
+  defecto). monolithic: gate v20 FAIL solo por 26 warnings tipográficos.
+- Discrepancia documentada: los scripts .cjs de baseline solicitados NO EXISTEN;
+  se usó la cadena canónica real de package.json.
+
+Verification:
+- Baseline (antes): npm run verify / verify:corpus-registry / verify:macro-registry = EXIT 0.
+- SHA256 y conteo de páginas registrados por PDF en el manifiesto.
+
+Regression checks:
+- Buscadas: refs/citas indefinidas, labels duplicados, fallos de compilación,
+  elevación accidental de claims.
+- Encontradas: ninguna regresión de claim. paper10 biber EXIT 2 (no defecto);
+  monolithic gate v20 FAIL (deuda tipográfica cosmética preexistente, no tocada).
+
+Residual risks:
+- Deuda tipográfica del monolítico (overfull hbox, hyperref pdfstring) sin
+  resolver por diseño (no se edita fuente en esta tarea).
+- paper10 sin bibliografía formal: decisión pendiente del usuario.
+
+Next step:
+- Usuario decide push tras revisar el manifiesto. Commit local acotado a:
+  los 2 manifiestos + los 13 PDF recompilados (rutas explícitas, sin git add -A).

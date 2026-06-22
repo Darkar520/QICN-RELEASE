@@ -1,0 +1,52 @@
+{
+  "manifest": "QICN_REPRODUCIBILITY_MANIFEST",
+  "date": "2026-06-21",
+  "agent": "Kiro deep-research collaborator (QICN reproducibility executor)",
+  "scope": "Mechanical in-situ recompilation of every corpus unit (BASECORE + paper1..paper10 + paper_bridge + monolithic) with single page-count + SHA256 manifest.",
+  "anti_inflation_note": "Successful compilation is mechanical reproducibility ONLY. It is NOT scientific validation, NOT external validation, NOT peer review, NOT human-curated proof. No claim was elevated. external_support_certified=false and FULL_COP_MEMBERSHIP: NOT_YET remain intact. No .tex/.bib source was edited.",
+  "toolchain": {
+    "pdflatex": "MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)",
+    "biber": "2.21",
+    "os_note": "MiKTeX emits a non-fatal 'unsupported version of Windows' critical-issue banner; compilation proceeds with EXIT 0.",
+    "compile_sequence": "pdflatex (nonstopmode) -> biber -> pdflatex -> pdflatex, executed in situ per unit; sources never regenerated."
+  },
+  "baseline_verifications": {
+    "note": "The three .cjs baseline scripts requested (verify-canonical-integrity.cjs, verify-claim-registry.cjs, verify-canonical-release.cjs) and audit-public-release-reproducibility.cjs DO NOT EXIST in the repo (0 .cjs files; package.json does not reference them). Real canonical chain from package.json used instead.",
+    "npm run verify (v31)": "EXIT 0 (PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false)",
+    "npm run verify:corpus-registry": "EXIT 0",
+    "npm run verify:macro-registry": "EXIT 0"
+  },
+  "status_criteria": {
+    "CLEAN": "compiles + 0 undefined references + 0 undefined citations + 0 multiply-defined labels",
+    "WARN": "compiles but with pending undefined references/citations/labels",
+    "FAIL": "does not compile"
+  },
+  "units": [
+    { "unit": "basecore", "pdf": "basecore/BASECORE.pdf", "tex": "basecore/BASECORE.tex", "pages": 44, "sha256": "E13F48BBD3D5FA15EA8380A93CEFB50BD866A737CF2B06CE88F3DFCF9C6E58AC", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper1", "pdf": "paper1/main.pdf", "tex": "paper1/main.tex", "pages": 26, "sha256": "BA8D8A9DE2C5F3B85D151B8312DF02BF43F55726F9DA6BFF35B9E47776C012B0", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper2", "pdf": "paper2/main.pdf", "tex": "paper2/main.tex", "pages": 17, "sha256": "2267116FFDA42BBEED6AF16646F2843C05B245A2927F8F2ED5B7DA801E5AB27A", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper3", "pdf": "paper3/main.pdf", "tex": "paper3/main.tex", "pages": 17, "sha256": "9FBA3C6EF7FA6240901978EE10274B11FC2928DE6BC490CC3744DCD3575DE08F", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper4", "pdf": "paper4/main.pdf", "tex": "paper4/main.tex", "pages": 16, "sha256": "98C47D4E70658149A582CE1790FCF0E359548CBFD1EF125964D92EC0ECA72E52", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper5_operational_consciousness", "pdf": "paper5_operational_consciousness/main.pdf", "tex": "paper5_operational_consciousness/main.tex", "pages": 28, "sha256": "4B470DBF8C0942EBA539B6F5D92E704C615C700AAD8F35FDF0E1B40799D7E791", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper6_predictions_falsation", "pdf": "paper6_predictions_falsation/main.pdf", "tex": "paper6_predictions_falsation/main.tex", "pages": 22, "sha256": "418C576599681231FD2F71C113E2D02D6E8A96354EEEC36649BA90563A6B12B7", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper7_operational_life_subjecthood", "pdf": "paper7_operational_life_subjecthood/main.pdf", "tex": "paper7_operational_life_subjecthood/main.tex", "pages": 28, "sha256": "4C5A76CDBEDFBBAB89FB9FFD429319FAFCF460EAB0E16872CE351C09DE6FA1E7", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper8_first_person_subjectivity", "pdf": "paper8_first_person_subjectivity/main.pdf", "tex": "paper8_first_person_subjectivity/main.tex", "pages": 43, "sha256": "472CAC3791CCAF4CBA9C568AEF9EAFF77E55351503DFC404CD6F73A5E6615E47", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper9_phenomenal_bridge_organization", "pdf": "paper9_phenomenal_bridge_organization/main.pdf", "tex": "paper9_phenomenal_bridge_organization/main.tex", "pages": 42, "sha256": "A24F6101F2CB610E049A08C68C0DC94A0C2AC766E4E2DC0B0C5EB814869AA5D2", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "paper10_external_adjudication", "pdf": "paper10_external_adjudication/main.pdf", "tex": "paper10_external_adjudication/main.tex", "pages": 33, "sha256": "C033BAA9E172D769FBA2EF2265AC86F53C939AB6F96E9FB65E4EBD3EF945EB7D", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,2,0,0", "status": "CLEAN", "note": "biber step returned EXIT 2 ('Cannot find main.bcf'): this document uses NO biblatex (no addbibresource, no thebibliography, main.bbl is 0 bytes). The biber failure is an invocation artifact on a non-bibliographic document, NOT a PDF defect. pdflatex steps all EXIT 0; 0 undefined refs/citations/labels." },
+    { "unit": "paper_bridge_operational_subjecthood", "pdf": "paper_bridge_operational_subjecthood/main.pdf", "tex": "paper_bridge_operational_subjecthood/main.tex", "pages": 25, "sha256": "BBB65B9BE2DFEBCF7914B198FE4A814511C26334FDE6411EFF420062F39CD1B2", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "" },
+    { "unit": "monolithic", "pdf": "monolithic/QICN_MONOLITHIC.pdf", "tex": "monolithic/QICN_MONOLITHIC.tex", "pages": 335, "sha256": "967CC9152674D8C3E3AA603FFBFD5153CE702CAB94A65C81754E99DD520A3967", "refs_indef": 0, "citas_indef": 0, "labels_dup": 0, "exit_steps": "0,0,0,0", "status": "CLEAN", "note": "Compiled in situ from existing wrapper (NOT reassembled from papers). CLEAN per this manifest's criteria (0 undefined refs/citations/labels). NOTE: the project's own stricter gate `npm run audit:monolithic-build-quality` (v20) returns FAIL (EXIT 1) due to 26 typographic LaTeX warnings (7 overfull hbox, 7 hyperref pdfstring warnings); undefined_references=0. These are cosmetic, not reference/citation/label defects, and were NOT fixed (no source edits)." }
+  ],
+  "totals": {
+    "units": 13,
+    "clean": 13,
+    "warn": 0,
+    "fail": 0,
+    "total_pages": 676
+  },
+  "discrepancies": [
+    "Requested baseline scripts verify-canonical-integrity.cjs, verify-claim-registry.cjs, verify-canonical-release.cjs DO NOT EXIST (0 .cjs files in repo). Real canonical chain used as baseline.",
+    "Requested audit-public-release-reproducibility.cjs DOES NOT EXIST. Used the real npm run audit:monolithic-build-quality instead.",
+    "paper10_external_adjudication: biber EXIT 2 (document has no biblatex; harmless invocation artifact).",
+    "monolithic: project gate audit:monolithic-build-quality v20 = FAIL on typographic warnings only (0 undefined references)."
+  ]
+}

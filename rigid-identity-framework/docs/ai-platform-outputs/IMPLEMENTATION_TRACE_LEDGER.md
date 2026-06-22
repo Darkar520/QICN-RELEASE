@@ -9853,3 +9853,101 @@ Residual risks:
 Next step:
 - Usuario decide push tras revisar el manifiesto. Commit local acotado a:
   los 2 manifiestos + los 13 PDF recompilados (rutas explícitas, sin git add -A).
+
+---
+
+## 2026-06-22 - Kiro - Monolithic Build-Quality Gate v20 Typography Pass
+
+Agent/platform: Kiro (ejecutor tipografico, sub-agente)
+
+User request: Resolver o deferir con causa raiz los warnings tipograficos que
+hacen FALLAR `npm run audit:monolithic-build-quality` (gate v20). Solo cosmetico;
+prohibido alterar texto matematico, claims, enunciados, definiciones, numeracion
+o semantica. Respetar separacion de capas (wrapper vs por-paper). No tocar
+registry/, gates v22..v35, package.json. Commit acotado por rutas, sin push.
+
+Operational objective: Reducir el failCount del gate v20 resolviendo los warnings
+seguros en su capa canonica correcta y deferir con causa raiz lo no resoluble sin
+riesgo semantico.
+
+Files read:
+- `package.json`, `INSTRUCCIONES.md`, steering (`tech.md`, `structure.md`, `product.md`)
+- `scripts/audit-monolithic-build-quality.js`
+- `scripts/build-monolithic-volume.js`
+- `monolithic/QICN_MONOLITHIC.log`, `monolithic/QICN_MONOLITHIC.toc`
+- `monolithic/preamble/packages.tex`, `monolithic/preamble/setup.tex`
+- `monolithic/build/sections/05-*.tex`, `06-*.tex`, `08-*.tex`, `12-*.tex`
+- per-paper headings via grep (paper1, paper2, paper5, paper9, paper8, paper10, bridge)
+
+Files modified/created:
+- Modified `monolithic/preamble/packages.tex` (WRAPPER: cmap antes de fontenc; +bookmark)
+- Modified `paper1/main.tex` (2 titulos `\texorpdfstring`)
+- Modified `paper2/main.tex` (1 titulo `\texorpdfstring`)
+- Modified `paper_bridge_operational_subjecthood/main.tex` (1 titulo `\texorpdfstring` + 12 floats `[h]`->`[ht]`)
+- Modified `paper10_external_adjudication/main.tex` (5 floats `[h]`->`[ht]`)
+- Recompiled tracked PDFs: `paper1/main.pdf`, `paper2/main.pdf`, `paper10_external_adjudication/main.pdf`, `paper_bridge_operational_subjecthood/main.pdf`, `monolithic/QICN_MONOLITHIC.pdf`
+- Created `docs/ai-platform-outputs/analysis/QICN_MONOLITHIC_TYPOGRAPHY_FIXPLAN_2026-06-22.md`
+- Modified `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`
+- Regenerated (build artifacts, NO commit): `monolithic/QICN_MONOLITHIC.tex`, `monolithic/build/sections/*.tex`, `*.aux/.bbl/.bcf/.blg/.log/.out/.run.xml/.toc`, `docs/reports/MONOLITHIC_BUILD_QUALITY_GATE_v20.json`, `docs/reports/MONOLITHIC_BUILD_REPORT.md`
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `npm run audit:monolithic-build-quality` (PRE) | Inventario | FAIL; latex_warnings=26, overfull_hbox=7, pdfstring=7, 335 pp |
+| `Get-FileHash ... QICN_MONOLITHIC.pdf` (PRE) | Hash baseline | `967CC9152674D8C3E3AA603FFBFD5153CE702CAB94A65C81754E99DD520A3967` |
+| `npm run verify` / `verify:corpus-registry` / `verify:macro-registry` (PRE) | Baseline gates | EXIT 0 / 0 / 0 |
+| str_replace x4 + PowerShell `-replace` (floats) | Aplicar fixes | cmap+bookmark; 4 titulos texorpdfstring; 17 floats `[h]`->`[ht]` |
+| `npm run compile:monolithic` | Regenerar sections + compilar | EXIT 0; compiled |
+| `npm run audit:monolithic-build-quality` (POST) | Medir | FAIL; latex_warnings=0, overfull_hbox=7, pdfstring=0, 339 pp |
+| recompile paper1/2/10/bridge (pdflatex+biber+pdflatex+pdflatex) | Confirmar render-neutral | EXIT 0; misma paginacion; 0 undefined |
+| `Get-FileHash ... QICN_MONOLITHIC.pdf` (POST) | Hash final | `49E978A4680283844718EE20A0987BC0113A52FAB07BA71EFA0089F2E2CE7A0F` |
+| `npm run verify` / `verify:corpus-registry` / `verify:macro-registry` (POST) | Sin regresion | EXIT 0 / 0 / 0 |
+
+Implementation summary:
+- 26 de 33 items del failCount resueltos: cmap (1, WRAPPER), bookmark-level (13,
+  WRAPPER via `\usepackage{bookmark}`), pdfstring (7, titulos por-paper con
+  `\texorpdfstring`), float specifier (5, `[h]`->`[ht]` por-paper).
+- 7 overfull hbox deferidos con causa raiz (3 math display irreducibles por regla;
+  4 layout de tabla del ensamblado monolitico, fuera de edit tipografico minimo).
+- Detalle completo y tabla de deferrals en el fixplan 2026-06-22.
+
+Verification:
+- gate v20: latex_warnings 26->0, pdfstring 7->0, overfull_hbox 7 (sin cambio),
+  failCount 33->7; EXIT sigue 1 (FAIL) porque los 3 math display son irreducibles
+  sin reescribir ecuaciones (prohibido). Maximo alcanzable bajo el alcance.
+- Papers editados recompilados: paper1 26pp, paper2 17pp, paper10 33pp, bridge
+  25pp; misma paginacion PRE/POST, 0 referencias indefinidas. Solo paper1 cambio
+  +47 bytes (cadena plana de bookmark del texorpdfstring) => metadato PDF, no
+  contenido visible.
+- Monolitico POST: 339 pp (PRE 335; +4 reflow cosmetico por reordenamiento de
+  preambulo y paquete bookmark), SHA256 `49E978A4...2CE7A0F`.
+- `npm run verify`=EXIT 0 (verify:v31, `external_support_certified=false`,
+  `BLOCKED_FOUNDATION_FIRST_GATES` preservados); corpus-registry y macro-registry
+  EXIT 0.
+
+Regressions searched:
+- Cambio de contenido/claims/numeracion: NO (texorpdfstring render-neutral;
+  `[h]`->`[ht]` no-op cuando `h` aplica; misma paginacion por-paper).
+- Referencias indefinidas tras editar fuentes: 0 en los 4 papers.
+- Regresion de gates canonicos: ninguna (verify/corpus/macro EXIT 0).
+- Enmascaramiento de badness: NO usado (gate badness_masking_hits=0).
+- Promocion a NEW_CLAIM / C_op: NO. `external_support_certified=false` y
+  `FULL_COP_MEMBERSHIP: NOT_YET` intactos (no se toco registry/ ni Lean artifact).
+
+Regressions found and handled:
+- Ninguna regresion. El unico delta no trivial es +4 paginas en el monolitico por
+  reflow cosmetico (paquete bookmark + reorden de preambulo), dentro de lo
+  permitido ("mismo nro de paginas salvo reflow cosmetico").
+
+Residual risks:
+- Gate v20 sigue FAIL por 7 overfull hbox (deuda de layout ya documentada en
+  entradas previas del ledger como "layout debt 7 overfull"). 3 son math display
+  (irreducibles por regla); 4 son layout de tabla del ensamblado monolitico.
+- Resolver O1/O2/O6/O7 (tablas) requeriria una fase dedicada tocando
+  `build-monolithic-volume.js` (\resizebox/anchos por tabla) con auditoria
+  externa, fuera de este alcance tipografico.
+
+Next step:
+- Commit acotado por rutas explicitas (solo .tex editados, PDFs recompilados
+  tracked, fixplan, ledger; sin build artifacts, sin push). Fase futura opcional:
+  deuda de layout de tablas del monolitico, con auditoria externa antes de push.

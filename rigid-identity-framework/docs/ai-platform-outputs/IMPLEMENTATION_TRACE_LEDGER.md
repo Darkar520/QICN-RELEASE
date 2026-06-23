@@ -10471,3 +10471,30 @@ Next step:
   external tangency/regularity input on ∂s along N is required first.
 - Left staged/uncommitted for human audit; NO push (regla 1.3, auditoría externa
   pendiente).
+
+---
+
+## 2026-06-22 — Cierre de la línea H5 convexo + decisión de modelado registrada
+
+Agente: Kiro (auditor). Tras auditar (ejecutando: build EXIT 0, #print axioms
+estándar, lectura de pruebas) las tres fases adversariales H5
+(quotient-dynamics ae8b5dd, quotient-displacement edd7308, unilateral-bridge
+b848b81, todas pusheadas), se CIERRA la línea de H5 convexo interno.
+
+Resultado neto: no-colapso convexo mecanizado como teorema CONDICIONAL bajo
+SubspaceDichotomy (D) — unifica regímenes (a) estático + bilateral, no circular,
+compatible con (a) (N≠⊥). H5 BaseCore general (s convexo arbitrario) NOT_PROVED.
+
+Decisión de modelado registrada en QICN_REVIEWER_PACKAGE_2026-06.md §7 como
+pregunta para referee: ¿el s de BaseCore puede cortar parcialmente N?
+- NO → (D) canónica, H5 convexo cerrado en su dominio.
+- SÍ → régimen parcial EXTERNAL_REQUIRED (tangencia/regularidad de ∂s).
+Postura anti-inflación: NO se declara "no puede pasar"; H5 convexo = condicional
+bajo (D); aplicabilidad de (D) al BaseCore real diferida a revisión humana.
+
+Recomendación adoptada: PARAR la línea H5 (contenido interno tractable agotado;
+lo que queda es decisión humana/externa, no más Lean). external_support_certified
+=false, FULL_COP_MEMBERSHIP: NOT_YET intactos.
+
+Siguiente: Fase A (gate v20 monolítico + refresco de paquete referee).
+Git: pendiente commit de este registro (reviewer package §7 + ledger).

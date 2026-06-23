@@ -226,3 +226,39 @@ Is the adopted D* structural reading the correct canonical reading of def:iint,
 and can the global D* quantifier be formalized without smuggling the desired
 integration result into the definition?
 ```
+
+
+## 7. H5 CONVEXO — CIERRE DE LA LÍNEA (2026-06-22)
+
+`external_support_certified=false` · `FULL_COP_MEMBERSHIP: NOT_YET` · machine-checked, NON_CANONICAL
+
+Tres fases Lean adversariales (todas EXIT 0, axiomas `[propext, Classical.choice, Quot.sound]`, sin sorry):
+
+| Archivo Lean | Resultado | Estatus |
+|---|---|---|
+| `QICNH5QuotientDynamics.lean` | Marco de cociente H/N; `collapse_iff_cStar_fixed` (↔ bajo `hAdm`): el colapso sobre todo `N` se reduce a un chequeo de un punto `c*(u)`. | CLOSED_INTERNAL (reducción no circular) |
+| `QICNH5QuotientDisplacement.lean` | `(Q)=‖q(T_u(c*))‖` cantidad unificadora: `(a)⇒(Q)`, `(Q)⟺(c)` bajo `hAdm`; `regimes_incompatible` (obstrucción regime-free); contraejemplo ℝ² de no-equivarianza; cota de margen. | CLOSED_INTERNAL + OBSTRUCTED_INTERNAL |
+| `QICNH5UnilateralBridge.lean` | `SubspaceDichotomy (D)`: `(∃y∈N∩s)→N⊆s`. No circular, estrictamente más débil que `hAdm`, compatible con régimen (a) (`dichotomy_regimeA_satisfiable`, `N≠⊥`). `(D)+(Q)⇒no-colapso`. | CLOSED_INTERNAL (condicional bajo `(D)`) |
+
+### Resultado neto (honesto)
+**El no-colapso convexo (H5) está mecanizado como teorema CONDICIONAL bajo la
+hipótesis `(D)` (dicotomía de subespacio).** `(D)` unifica los dos regímenes
+conocidos (estático `s∩N=∅` y bilateral `N⊆s`) bajo una sola hipótesis no
+circular. **H5 BaseCore general (s convexo arbitrario) sigue `NOT_PROVED`.**
+
+### Decisión de modelado pendiente (pregunta para referee)
+`(D)` excluye por decreto el **régimen parcial** (donde `s` corta parcialmente el
+subespacio de constantes `N`: algunas constantes admisibles, otras no), mecanizado
+en `partial_regime_violates_dichotomy`. La pregunta abierta, que es de **modelado /
+matemático externo**, no de tooling:
+
+> **¿El conjunto admisible `s` de BaseCore puede cortar parcialmente el subespacio
+> de constantes `N`?**
+> - **Si NO** → `(D)` es la hipótesis canónica y H5 convexo queda cerrado en su
+>   dominio (condicional bajo `(D)`, con `(D)` siempre válida en BaseCore).
+> - **Si SÍ** → el régimen parcial es `EXTERNAL_REQUIRED`: necesita input
+>   matemático externo (regularidad/tangencia de `∂s` a lo largo de `N`).
+
+Postura adoptada (anti-inflación): **NO se declara "no puede pasar"** (sería definir
+el resultado a conveniencia). H5 convexo se presenta como **condicional bajo `(D)`**;
+la aplicabilidad de `(D)` al `s` real de BaseCore se difiere a revisión humana.

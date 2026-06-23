@@ -1,0 +1,106 @@
+{
+  "_artifact_class": "DERIVED_SCAFFOLD_NOT_THE_CANONICAL_TEMPLATE",
+  "_derived_from": "docs/templates/EXTERNAL_SESSION_ZERO_MANIFEST.template.json",
+  "_seal": {
+    "status_class": "NON_CANONICAL",
+    "epistemic_class": "SPECULATIVE_SCAFFOLD",
+    "evidence_class": "NOT_EXTERNAL_VALIDATION",
+    "external_support_certified": false,
+    "FULL_COP_MEMBERSHIP": "NOT_YET",
+    "claim_promotion": "NONE",
+    "note": "This file is structure only. It contains no data, no predictions, and no results. It must never be passed to an adjudicator as if it were a dataset. measurement_points is intentionally empty."
+  },
+  "schema_version": "1.0.0",
+  "manifest_id": "SESSION-ZERO-EXTERNAL-SCAFFOLD-G1.1",
+  "status": "external_dataset_required",
+  "governance_boundary": "This scaffold is not a dataset and does not certify external support, consciousness, phenomenality, identity transfer, agency, moral status, or bridge-burden closure. It is a placeholder structure for a future human-collected, preregistered, independently adjudicated external experiment.",
+  "preregistration_hash": "TO_BE_FILLED_BEFORE_DATA_COLLECTION",
+  "dataset_sha256": "TO_BE_FILLED_AFTER_FREEZE",
+  "dataset_origin": "non_synthetic_required",
+  "adjudicator": "independent_adjudicator_required",
+
+  "_measurement_point_field_specification": {
+    "_doc": "Annotation block (valid-JSON, not consumed by the adjudicator). Describes what each future measurement_points[i] field must contain. See EXTERNAL_EMPIRICAL_PROTOCOL_SCAFFOLD_G1.1.md section 1 for units and instruments.",
+    "id": "string, unique immutable point id (mNNN); frozen numbering scheme; TO_BE_PREREGISTERED",
+    "timestamp": "integer/epoch; temporal order used for Durbin-Watson; TO_BE_MEASURED at capture, not reorderable",
+    "observed_delta": "real observable under test (e.g. total-variation distribution shift, dimensionless 0..1); TO_BE_MEASURED",
+    "qicn_prediction": "a-priori QICN value for observed_delta, frozen before capture, hashed; TO_BE_PREREGISTERED + TO_BE_FROZEN_BEFORE_DATA_COLLECTION",
+    "rival_prediction": "a-priori non-straw-man rival value (trace-memory Markov suite), frozen same act; TO_BE_PREREGISTERED + TO_BE_FROZEN_BEFORE_DATA_COLLECTION",
+    "measurement_sigma": "declared instrument measurement-noise std; estimated from instrument physics / technical replicates, NOT fitted to QICN; TO_BE_MEASURED",
+    "noise_floor": "baseline activity floor of the observable under control/sham; TO_BE_MEASURED",
+    "separator_id": "preregistered identity-separator targeted at this point; TO_BE_PREREGISTERED",
+    "response_coordinate": "preregistered response coordinate measured; TO_BE_PREREGISTERED",
+    "_bridge_estimator_columns": "if a bridge_certificate is declared, each invariant needs its *_estimate column per point; TO_BE_MEASURED"
+  },
+
+  "decision_thresholds": {
+    "_doc": "Start from the canonical template values, but they must be re-frozen and EXTERNALLY calibrated (null/rival ensemble not tuned to QICN) before any support inference. See protocol scaffold section 3 and 4.",
+    "support_gain_aic": 5.0,
+    "weakening_gain_aic": 0.0,
+    "minimum_ci_lower": 0.0,
+    "minimum_admissible_n": 8,
+    "threshold_calibration_status": "synthetic_engineering_gate",
+    "_threshold_calibration_status_target": "externally_calibrated_holdout (requires the lineage block below to be all-true and adjudicator-signed)",
+    "threshold_calibration_lineage": {
+      "_doc": "v31 calibration_lineage gate. All three must be true, set by an INDEPENDENT adjudicator, to escape BLOCKED_CIRCULAR_CALIBRATION.",
+      "fixture_blind": "TO_BE_FILLED_BY_INDEPENDENT_ADJUDICATOR",
+      "generated_before_fixture_scoring": "TO_BE_FILLED_BY_INDEPENDENT_ADJUDICATOR",
+      "external_holdout_used": "TO_BE_FILLED_BY_INDEPENDENT_ADJUDICATOR"
+    }
+  },
+
+  "temporal_dependence_policy": {
+    "_doc": "Section 5. Prefer independent points so residuals approximate iid. If continuous series, model AR(1)/GLS with preregistered params. Range is a DIAGNOSTIC, not a support pass.",
+    "method": "durbin_watson_residual_diagnostic",
+    "acceptable_range": "TO_BE_PREREGISTERED",
+    "decorrelation_interval": "TO_BE_MEASURED",
+    "action_on_violation": "block_external_support_until_dependence_modeled"
+  },
+
+  "exclusion_rules": {
+    "max_noise_floor": 0.2,
+    "allowed_reason_codes": [
+      "sensor_dropout_gt_5s",
+      "timestamp_corruption",
+      "predeclared_hardware_failure"
+    ],
+    "max_exclusion_fraction": 0.2
+  },
+
+  "perturbation_type_registry": {
+    "_doc": "v31 typed_perturbation_separation gate (BLOCKED_TYPE_CONFUSION). Internal perturbations and external extension witnesses must be declared separately and non-empty. Perturbation source must be INDEPENDENT of the model.",
+    "internal_perturbations": "TO_BE_PREREGISTERED",
+    "external_witnesses": "TO_BE_PREREGISTERED",
+    "perturbation_source": "independent_required"
+  },
+
+  "model_parameters": {
+    "_doc": "Parameter counts feed the AICc complexity penalty. Keep QICN free-parameter count honest; do not under-count to win AIC.",
+    "qicn_parameter_count": 6,
+    "rival_parameter_count": 1,
+    "complexity_penalty_factor": 1.0,
+    "measurement_sigma_estimation_method": "TO_BE_PREREGISTERED_INDEPENDENT_OF_QICN"
+  },
+
+  "bridge_certificate": {
+    "_doc": "Optional. If included, each latent invariant needs an estimator column per measurement point with a preregistered tolerance vector. Operational coverage only; never a proof of latent preservation, phenomenality, or identity transfer.",
+    "certificate_id": "TO_BE_PREREGISTERED",
+    "latent_invariants": "TO_BE_PREREGISTERED",
+    "estimators": "TO_BE_PREREGISTERED",
+    "tolerance_vector": "TO_BE_PREREGISTERED"
+  },
+
+  "measurement_points": [],
+  "exclusion_log": [],
+
+  "claims_under_test": [
+    {
+      "claim_id": "PRED-EXT-01",
+      "_recommended_first_landing": "PRED-EXT-01 is the recommended first prediction to land empirically (see protocol scaffold section 2). This does NOT promote it to a result.",
+      "prediction_id": "PRED-EXT-01",
+      "downgrade_action_if_fail": "downgrade_to_open_burden_or_failed_prediction"
+    }
+  ],
+
+  "_admissibility_checklist_pointer": "See EXTERNAL_EMPIRICAL_PROTOCOL_SCAFFOLD_G1.1.md section 6. While any field remains a TO_BE_* placeholder, this manifest is NOT evaluable and yields no external support."
+}

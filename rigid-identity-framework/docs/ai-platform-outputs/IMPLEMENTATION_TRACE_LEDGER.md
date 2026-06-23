@@ -10162,3 +10162,38 @@ Residual risks:
 
 Next step:
 - Commit acotado por rutas explicitas: scripts/negative-control-suite.js + los 2 reports regenerados. NO push (lo decide el usuario; regla 1.3 exige auditoria externa antes de push).
+
+---
+
+## 2026-06-23 — Andamiaje de preregistro/protocolo empírico EXTERNO (gap G1.1)
+
+- **Fecha:** 2026-06-23
+- **Agente:** Kiro (subagente colaborador de investigación QICN), backend LLM como canal observable.
+- **Solicitud resumida:** Construir SOLO el andamiaje (estructura + placeholders) del preregistro/protocolo empírico externo para el gap G1.1, sin inventar datos, sin rellenar `measurement_points`, sin ejecutar ni simular predicciones.
+- **Objetivo operacional:** Especificar qué debe medir un experimentador humano independiente y qué congelar antes de recolectar datos, mapeando cada campo del schema `measurement_points` a una cantidad física/operacional real, con sellos NON_CANONICAL / SPECULATIVE_SCAFFOLD / NOT_EXTERNAL_VALIDATION.
+- **Archivos leídos:**
+  - `INSTRUCCIONES.md`
+  - `docs/templates/EXTERNAL_SESSION_ZERO_MANIFEST.template.json` (no editado)
+  - `docs/templates/EXTERNAL_DATASET_MANIFEST.template.json` (no editado)
+  - `registry/prediction-canon-map.json` (no editado)
+  - `docs/protocols/THRESHOLD_CALIBRATION_AND_DEATH_RULES_v25.md`
+  - `scripts/external-session-zero-adjudicator-v30.js`, `scripts/external-session-zero-adjudicator-v31.js`
+  - `docs/preregistrations/PRED-EXT-01_prereg_v3.md`, `docs/preregistrations/PRED-EXT-01_freeze_v3.json`
+  - `docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v27.json`
+- **Archivos creados (solo bajo `docs/ai-platform-outputs/preregistrations/`):**
+  - `docs/ai-platform-outputs/preregistrations/EXTERNAL_EMPIRICAL_PROTOCOL_SCAFFOLD_G1.1.md`
+  - `docs/ai-platform-outputs/preregistrations/EXTERNAL_SESSION_ZERO_MANIFEST_SCAFFOLD_G1.1.json` (`measurement_points: []`, placeholders anotados)
+- **Archivos modificados/movidos/eliminados:** ninguno (template canónico, adjudicadores, gates y registry intactos).
+- **Herramientas usadas:** read_files, grep_search, list_directory, fs_write, fs_append, get_diagnostics, execute_pwsh.
+- **Comandos ejecutados + resultado:**
+  - `node -e JSON.parse(...)` sobre el scaffold JSON → `JSON OK` (EXIT 0).
+  - `npm run verify` → EXIT 0; verdicts esperados BLOCKED (v30 `BLOCKED_MULTIPLE_GATES`, v31 `BLOCKED_FOUNDATION_FIRST_GATES`); `external_support_certified=false` preservado.
+  - `node scripts/verify-canonical-integrity.cjs` → status PASS, EXIT 0.
+  - `node scripts/verify-canonical-release.cjs` → status PASS, EXIT 0.
+  - `node scripts/verify-claim-registry.cjs` → status PASS, EXIT 0.
+- **Hashes/páginas:** no aplican (no se congeló dataset ni preregistro; todos los hashes quedan como placeholder `TO_BE_FILLED_*`).
+- **Razón de cada cambio:** cerrar el andamiaje del gap G1.1 sin tocar el canon; los dos artefactos nuevos son outputs de IA y por regla viven bajo `docs/ai-platform-outputs/`.
+- **Regresiones buscadas:** cambio de estado de gates, certificación externa accidental, edición del template/adjudicadores/registry, JSON inválido.
+- **Regresiones encontradas:** ninguna. `external_support_certified` sigue `false`; calibración sigue `synthetic_engineering_gate`; ningún gate cambió de estado.
+- **Riesgos residuales:** que el andamiaje se lea como evidencia (no lo es); los gates `.cjs` del repo padre generan artefactos en `_build/` (build noise, no canon, no commitear).
+- **Siguiente paso recomendado:** recolección de datos reales por un tercero, preregistro y congelamiento de predicciones/umbrales, calibración externa de umbrales (null/rival no ajustado a QICN) y ejecución por un adjudicador independiente distinto del runner. Sin push (fase de andamiaje).

@@ -10197,3 +10197,79 @@ Next step:
 - **Regresiones encontradas:** ninguna. `external_support_certified` sigue `false`; calibración sigue `synthetic_engineering_gate`; ningún gate cambió de estado.
 - **Riesgos residuales:** que el andamiaje se lea como evidencia (no lo es); los gates `.cjs` del repo padre generan artefactos en `_build/` (build noise, no canon, no commitear).
 - **Siguiente paso recomendado:** recolección de datos reales por un tercero, preregistro y congelamiento de predicciones/umbrales, calibración externa de umbrales (null/rival no ajustado a QICN) y ejecución por un adjudicador independiente distinto del runner. Sin push (fase de andamiaje).
+
+## 2026-06-18 - H5 Convex Non-Collapse: Quotient-Dynamics Red-Team (Lean)
+
+Agent/platform: Kiro (deep-research collaborator subagent)
+
+User request: Formalizar la dinámica de cociente en H/N para el problema de
+no-colapso convexo H5; determinar si una condición NO CIRCULAR estrictamente más
+débil que (a) `s ∩ N = ∅` fuerza el no-colapso, atacando el modo de colapso
+directamente (el colapso = punto fijo que proyecta a 0 en H/N). Sellos
+INTERNAL_ADVERSARIAL / NOT_EXTERNAL / NON_CANONICAL; sin sorry; #print axioms
+estándar; archivo Lean nuevo + import; reportar veredicto honesto.
+
+Operational objective: Construir el marco de cociente q = N.mkQ, documentar la
+obstrucción de descenso del mapa convexo a H/N, y mecanizar la reducción del modo
+de colapso a un chequeo de punto único c*(u). Veredicto por candidata. No tocar
+registry/canon/papers/gates/package.json. No push.
+
+Files read:
+- rigid-identity-framework/INSTRUCCIONES.md
+- rigid-identity-framework/docs/CLAIM_STATUS_POLICY.md
+- .kiro/steering/{product,tech,structure}.md
+- formal/lean/QICNLean.lean (aggregator)
+- formal/lean/QICNLean/{QICNH5Convex, QICNH5ConvexExclusion, QICNH5Derivation,
+  QICNNonCollapse, QICNConvexProjection, QICNHilbertInstance, QICNContraction}.lean
+- formal/lean/{lakefile.toml, lean-toolchain}
+- docs/ai-platform-outputs/analysis/QICN_H5_CONVEX_EXCLUSION_REDTEAM.md
+
+Files modified/created/moved/deleted:
+- CREATED formal/lean/QICNLean/QICNH5QuotientDynamics.lean (7 theorems, sealed)
+- MODIFIED formal/lean/QICNLean.lean (added one import line)
+- CREATED docs/ai-platform-outputs/analysis/QICN_H5_QUOTIENT_DYNAMICS_REDTEAM.md
+- TEMP created+deleted formal/lean/ScratchAxioms.lean (axiom audit only)
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| lake build (baseline) | pre-change build | EXIT 0, 2304 jobs, style warnings only |
+| lake build (post) | verify new file | EXIT 0, 2305 jobs (+1), style warnings only |
+| lake env lean ScratchAxioms.lean | #print axioms audit | all 7 thms: [propext, Classical.choice, Quot.sound] |
+| git status --short | tree hygiene | only the import edit + new .lean tracked; .olean gitignored |
+
+Implementation summary:
+- Quotient framing CLOSED_INTERNAL (trivial): mem_iff_mkQ_eq_zero,
+  convex_fixedpoint_mkQ_ne_zero — collapse = null class of H/N.
+- Induced convex quotient map OBSTRUCTED_INTERNAL: convex projection is not
+  N-equivariant ⇒ no canonical T̄_u on H/N (documented, not yet a Lean
+  counterexample).
+- Single-point reduction (c) `T_u(c*(u)) ≠ c*(u)` CLOSED_INTERNAL:
+  collapse_iff_cStar_fixed proves under hAdm that (∃ c∈N, T_u c = c) ↔
+  T_u(c*(u)) = c*(u). Non-circular (c* from primitives N,K,Γ), non-vacuous
+  (unlike candidate (b)), uses Banach uniqueness (cStarConstant_unique).
+
+Verification:
+- lake build EXIT 0 (2305 jobs); no errors, only header-style linter warnings
+  matching the existing sealed files.
+- #print axioms = [propext, Classical.choice, Quot.sound] for all 7 theorems; no
+  sorry/admit/extra axioms.
+
+Regression checks:
+- Sought: breakage of pre-existing oleans / changed job topology / new axioms.
+- Found: none. Job count +1 (the new module only); existing files untouched
+  except the additive import.
+
+Residual risks:
+- (c) is EQUIVALENT to non-collapse under hAdm (not merely sufficient) and lives
+  in the regime N ⊆ s, which is INCOMPATIBLE with (a) s∩N=∅. So (c) is NOT the
+  "strictly weaker than (a)" minimal exclusion — that target remains STILL_OPEN.
+- Descent obstruction is argued, not mechanized as a counterexample.
+- Internal conformance only; not external validation. No C_op / H5-general proof.
+
+Next step:
+- Seek a single quotient-displacement condition dominating BOTH regimes
+  (a: s∩N=∅, hAdm: N⊆s); mechanize the descent obstruction as an explicit ℝ²
+  counterexample; consider a quantitative margin form ‖T_u(c*)−c*‖ ≥ δ.
+- No push performed; tree left staged/uncommitted for human decision and external
+  audit per INSTRUCCIONES 1.3.

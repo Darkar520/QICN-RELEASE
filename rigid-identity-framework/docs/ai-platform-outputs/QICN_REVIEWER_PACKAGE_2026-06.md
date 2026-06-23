@@ -256,19 +256,24 @@ hipótesis `(D)` (dicotomía de subespacio).** `(D)` unifica los dos regímenes
 conocidos (estático `s∩N=∅` y bilateral `N⊆s`) bajo una sola hipótesis no
 circular. **H5 BaseCore general (s convexo arbitrario) sigue `NOT_PROVED`.**
 
-### Decisión de modelado pendiente (pregunta para referee)
-`(D)` excluye por decreto el **régimen parcial** (donde `s` corta parcialmente el
-subespacio de constantes `N`: algunas constantes admisibles, otras no), mecanizado
-en `partial_regime_violates_dichotomy`. La pregunta abierta, que es de **modelado /
-matemático externo**, no de tooling:
+### Decisión de modelado tomada por el autor (2026-06-23)
+Análisis: `docs/ai-platform-outputs/analysis/QICN_H5_PARTIAL_REGIME_MODELING_DECISION.md`.
 
-> **¿El conjunto admisible `s` de BaseCore puede cortar parcialmente el subespacio
-> de constantes `N`?**
-> - **Si NO** → `(D)` es la hipótesis canónica y H5 convexo queda cerrado en su
->   dominio (condicional bajo `(D)`, con `(D)` siempre válida en BaseCore).
-> - **Si SÍ** → el régimen parcial es `EXTERNAL_REQUIRED`: necesita input
->   matemático externo (regularidad/tangencia de `∂s` a lo largo de `N`).
+La pregunta abierta ("¿`s` puede cortar parcialmente `N`?") se resolvió **no** vía
+`(D)` (que no es genérica: para `s` acotado degenera en (a)), sino adoptando el
+**régimen (a) `s∩N=∅` como condición de admisibilidad canónica** — *ningún estado
+admisible es una constante pura*. Bajo (a), el no-colapso convexo es un teorema
+**cerrado incondicionalmente** (`convex_noncollapse_from_constants_inadmissible`,
+machine-checked, sin `(D)`/`hAdm`/`(Q)`).
 
-Postura adoptada (anti-inflación): **NO se declara "no puede pasar"** (sería definir
-el resultado a conveniencia). H5 convexo se presenta como **condicional bajo `(D)`**;
-la aplicabilidad de `(D)` al `s` real de BaseCore se difiere a revisión humana.
+Estatus: `DECISION_ADOPTED_NON_CANONICAL`. Es **decisión de modelado del autor**,
+no validación externa; la aplicación al `.tex` canónico queda pendiente de
+gobernanza + revisor. **H5 convexo *general*** (soporte que contiene constantes:
+régimen parcial/bilateral) queda **fuera del alcance canónico por decisión
+declarada** — `EXTERNAL_REQUIRED`, no resuelto ni escondido.
+
+> **Pregunta residual para referee** (de aceptabilidad, no de tooling): ¿es
+> `s∩N=∅` la restricción de admisibilidad correcta para el dominio pretendido, o
+> el campo exige cubrir soportes que contienen constantes? La corrección de la
+> matemática y la aceptabilidad de la decisión siguen requiriendo revisor externo
+> (G1.3). `external_support_certified=false`.

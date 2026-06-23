@@ -10634,3 +10634,52 @@ Residual risks / next step:
   certificada, Iint canónico, bridge empírico (G1.1), validación externa.
 - Sin tocar canon; `external_support_certified=false`, `FULL_COP_MEMBERSHIP:
   NOT_YET`. Commit acotado a los 3 archivos (2 docs referee + ledger).
+
+---
+
+## 2026-06-23 — Decisión de modelado del autor: régimen parcial H5 convexo (`s∩N`)
+
+Agente: Kiro (andamiaje + análisis). Decisión: autor del corpus. Idioma: español.
+Solicitud: tras aclarar qué decisiones humanas puede tomar el autor (modelado) vs.
+cuáles requieren tercero (validación), preparar el andamiaje para que el autor
+tome formalmente la decisión de modelado sobre si `s` puede cortar parcialmente
+`N`, cerrando H5 convexo de forma trazable y no inflada.
+
+Archivos leídos: `QICNH5UnilateralBridge.lean`, `QICNH5ConvexExclusion.lean`
+(firma `convex_noncollapse_from_constants_inadmissible`),
+`basecore/core/sections/01_foundation_from_core.tex` (def Constant Subspace,
+hyp:H5, thm:noncollapse).
+
+Archivos cambiados (solo docs AI-output, NON_CANONICAL; ningún `.tex` canónico):
+- NUEVO `docs/ai-platform-outputs/analysis/QICN_H5_PARTIAL_REGIME_MODELING_DECISION.md`.
+- `docs/ai-platform-outputs/QICN_REVIEWER_PACKAGE_2026-06.md` §7: pregunta abierta
+  → decisión de autor adoptada (régimen (a)), con pregunta de aceptabilidad
+  residual para referee.
+
+Hallazgo del análisis (clave anti-inflación): `(D)` NO es genérica — para `s`
+convexo acotado con `s∩N≠∅` el corte parcial es forzoso (un acotado no contiene
+toda la recta de una constante), así que `(D)` degenera en (a). Postular `(D)`
+canónica sería gerrymandering. Decisión superior y defendible: adoptar
+**`s∩N=∅`** (régimen (a)) como admisibilidad canónica, que cierra el no-colapso
+convexo INCONDICIONALMENTE vía `convex_noncollapse_from_constants_inadmissible`
+(ya machine-checked, axiomas `[propext, Classical.choice, Quot.sound]`, sin `(D)`).
+
+Verification:
+- Teorema de cierre confirmado en `QICNH5ConvexExclusion.lean` (firma leída).
+- Gates canónicos POST: `npm run verify`=EXIT 0; 3 .cjs (tier raíz)=EXIT 0.
+
+Regression checks:
+- Buscadas: inflación de claims, promoción a NEW_CLAIM/C_op, edición de canon/
+  registry/gates, declaración de `(D)` como hecho del marco (gerrymandering).
+- Encontradas: ninguna. Estatus `DECISION_ADOPTED_NON_CANONICAL`: decisión tomada
+  y registrada, NO aplicada al `.tex` (aplicación canónica pendiente de gobernanza
+  + revisor externo, igual patrón que DEFIINT_TIGHTENING DRAFTED_NOT_APPLIED).
+  H5 convexo general queda fuera del alcance canónico por decisión declarada
+  (EXTERNAL_REQUIRED), no escondido. `external_support_certified=false`,
+  `FULL_COP_MEMBERSHIP: NOT_YET`.
+
+Residual risks / next step:
+- La aceptabilidad de la restricción `s∩N=∅` para el dominio pretendido es
+  pregunta para referee (G1.3), no cerrable por tooling.
+- Aplicación canónica (editar 01_foundation con la cláusula de admisibilidad)
+  requiere fase de gobernanza dedicada + auditoría externa + aprobación humana.

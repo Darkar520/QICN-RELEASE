@@ -10111,3 +10111,54 @@ Residual risks:
 
 Next step:
 - Commit acotado: solo docs/ai-platform-outputs/reports/QICN_COMPILATION_CONVENTIONS.md. Cierre: reportar git status y commits locales; sin push.
+
+## 2026-06-23 - Kiro - Negative-control suite PASS label clarity (presentation-only, no gate logic change)
+
+Agent/platform: Kiro (Claude)
+User request: Clarificar que el "PASS" de la suite de controles negativos no puede malinterpretarse como validez estadistica ni soporte externo. Cambio de CLARIDAD de etiqueta, NO de logica de gate. No tocar casos, blockers, umbrales, adjudicadores v30/v31 ni gates v22..v35.
+Operational objective: Hacer el claim MAS DEBIL/explicito anadiendo lenguaje de frontera/negacion al report, sin alterar el booleano PASS/FAIL, exit code, casos ni blockers.
+
+Files read:
+- scripts/negative-control-suite.js
+- docs/reports/NEGATIVE_CONTROL_SUITE_v30.json (pre-edit baseline)
+- INSTRUCCIONES, steering, AUDIT_EXTERNAL_2026-06-10 (contexto del gap A-4)
+
+Files modified:
+- scripts/negative-control-suite.js (anadido const RESULT_MEANING; report.result_meaning; seccion "Interpretacion" en el .md)
+- docs/reports/NEGATIVE_CONTROL_SUITE_v30.json (regenerado; +1 campo result_meaning)
+- docs/reports/NEGATIVE_CONTROL_SUITE_v30.md (regenerado; +seccion Interpretacion + nota de blocker esperado)
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| npm run test:negative-controls (PRE) | Baseline | PASS; cases=6/6; external_support_certified=false; EXIT 0 |
+| ..\scripts\verify-canonical-integrity/claim-registry/canonical-release.cjs (PRE) | Baseline gates | PASS / PASS / PASS; EXIT 0 |
+| npm run test:negative-controls (POST) | Regenerar + verificar | PASS; cases=6/6; external_support_certified=false; EXIT 0 |
+| git diff docs/reports/NEGATIVE_CONTROL_SUITE_v30.json | Confirmar delta semantico | UNICO cambio = +"result_meaning"; casos/blockers/verdicts/result/external_support_certified intactos |
+| get_diagnostics scripts/negative-control-suite.js | Sanidad del .js | No diagnostics |
+| ..\scripts\verify-*.cjs (POST) + npm run verify (POST) | Re-baseline | EXIT 0 todos; v30 BLOCKED_MULTIPLE_GATES blockers=4; v31 BLOCKED_FOUNDATION_FIRST_GATES blockers=9; external_support_certified=false |
+
+Implementation summary:
+- Anadido `RESULT_MEANING` (lenguaje de frontera/negacion): "PASS = los gates internos rechazaron correctamente los fixtures adversariales conocidos. NO es validez estadistica, NO es soporte externo, NO es prueba de QICN, conciencia, identidad, ni cierre de bridge. Los datos sinteticos con autocorrelacion severa son BLOQUEADOS por BLOCKED_TEMPORAL_DEPENDENCE_STRICT; ese bloqueo es la condicion del PASS, no su ausencia."
+- `report.result` conservado tal cual (compatibilidad). Anadido `report.result_meaning`.
+- `.md`: anadida seccion "## Interpretacion" con el mismo texto + linea explicita de que BLOCKED_TEMPORAL_DEPENDENCE_STRICT es blocker ESPERADO del caso baseline (condicion del PASS, no fallo).
+- Los `actual_blockers` por caso ya estaban expuestos en el report; no se alteraron.
+
+Verification:
+- Diff semantico del JSON: SOLO el campo nuevo `result_meaning`. result="PASS", external_support_certified=false, 6 casos, verdicts y actual_blockers IDENTICOS antes/despues.
+- Suite POST: cases=6/6 PASS, EXIT 0. Gates raiz POST: EXIT 0. npm run verify POST: EXIT 0 con bloqueos cientificos preservados.
+
+Regression checks:
+- Logica de gate / PASS-FAIL / exit code: NO cambiada (booleano `cases.every(...)` intacto).
+- Casos, blockers, verdicts, umbrales: NO renombrados/eliminados/alterados.
+- Adjudicadores v30/v31, gates v22..v35: NO tocados.
+- Lenguaje afirmativo prohibido (validated/certified/confirmed/external en sentido afirmativo): NO introducido; solo negacion/frontera.
+- NEW_CLAIM / external_support_certified: sin elevar (false intacto).
+
+Regressions found: ninguna.
+
+Residual risks:
+- generated_at del report sigue "2026-05-29" (la herramienta lo fija; no se cambio para no introducir ruido). El cambio es puramente de claridad de presentacion.
+
+Next step:
+- Commit acotado por rutas explicitas: scripts/negative-control-suite.js + los 2 reports regenerados. NO push (lo decide el usuario; regla 1.3 exige auditoria externa antes de push).

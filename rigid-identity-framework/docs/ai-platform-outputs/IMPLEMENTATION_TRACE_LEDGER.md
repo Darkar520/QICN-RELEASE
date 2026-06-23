@@ -10576,3 +10576,61 @@ Residual risks / next step:
   math display; o se acepta como deuda permanente o se rediseña el gate para
   distinguir overfull de tabla vs display.
 - Pendiente: auditoria externa antes de cualquier push (no se hace push aqui).
+
+---
+
+## 2026-06-23 — Fase A2: refresco del paquete referee (job count 2361 + tabla H5 quotient/bridge)
+
+Agente: Kiro (auditor independiente). Idioma: español. Solicitud: refrescar el
+material para referee externo (`QICN_REVIEWER_PACKAGE_2026-06.md` y
+`QICN_REFEREE_SUBMISSION_COVER.md`) para reflejar el estado vigente del Lean tras
+las tres fases H5 (quotient-dynamics, quotient-displacement, unilateral-bridge),
+que estaban descritas en prosa (§7) pero ausentes de la tabla canónica de
+teoremas machine-checked, y con un job count desfasado (2304).
+
+Archivos leídos: `QICN_REVIEWER_PACKAGE_2026-06.md`,
+`QICN_REFEREE_SUBMISSION_COVER.md`,
+`QICN_MONOLITHIC_TYPOGRAPHY_FIXPLAN_2026-06-22.md`, los 3 `.lean` H5 nuevos.
+
+Archivos cambiados (solo docs AI-output, NON_CANONICAL):
+- `docs/ai-platform-outputs/QICN_REVIEWER_PACKAGE_2026-06.md`: header (changelog
+  2026-06-23, job count 2304→2361), §1 snapshot (2361), §2 tabla (+3 filas:
+  QICNH5QuotientDynamics / QICNH5QuotientDisplacement / QICNH5UnilateralBridge,
+  con teoremas exactos, mapping y axiomas), reproduction recipe (2361), §6 orden
+  de lectura H5 (+3 archivos).
+- `docs/ai-platform-outputs/QICN_REFEREE_SUBMISSION_COVER.md`: fecha 2026-06-23,
+  §3 build line (2361) + 1 fila tabla (H5 condicional bajo (D); general
+  NOT_PROVED).
+
+Tools and commands (auditados ejecutando, NO confiando en resumen):
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `Get-ChildItem QICNH5*.lean` + grep sorry/admit | inventario H5 | 6 archivos; sorry/admit=0 |
+| `lake build` (volcado a archivo) | job count real | EXIT 0; **2361 jobs** (no 2304) |
+| `lake env lean` #print axioms (6 teoremas H5) | axiomas | `[propext, Classical.choice, Quot.sound]` en los 6; EXIT 0 |
+| `npm run verify` + 3 .cjs (POST edición) | sin regresión | EXIT 0 los 4; external_support_certified=false |
+
+Verification:
+- Build Lean: 2361 jobs, EXIT 0, sorry/admit=0.
+- Axiomas estándar en collapse_iff_cStar_fixed, regimes_incompatible,
+  noncollapse_of_positive_margin, noncollapse_of_subspace_dichotomy,
+  dichotomy_regimeA_satisfiable, partial_regime_violates_dichotomy.
+- Gates canónicos POST: `npm run verify`=EXIT 0; verify-canonical-integrity /
+  claim-registry / canonical-release .cjs = EXIT 0.
+- Scratch + logs de auditoría (AuditA2Scratch.lean, axioms_a2.log,
+  build_audit_a2.log) borrados tras medir.
+
+Regression checks:
+- Buscadas: inflación de claims, promoción a NEW_CLAIM/C_op, cambio de estatus
+  (external_support_certified / FULL_COP_MEMBERSHIP), edición de Lean/registry/
+  papers/gates/package.json.
+- Encontradas: ninguna. Solo se documentó (en tablas referee) lo ya
+  machine-checked; ningún resultado se elevó. H5 sigue presentado como
+  condicional bajo (D); general NOT_PROVED. Job count 2304 histórico preservado
+  en el changelog del header.
+
+Residual risks / next step:
+- Frontera no cerrable por tooling intacta: H5 general convexo, instancia C_op
+  certificada, Iint canónico, bridge empírico (G1.1), validación externa.
+- Sin tocar canon; `external_support_certified=false`, `FULL_COP_MEMBERSHIP:
+  NOT_YET`. Commit acotado a los 3 archivos (2 docs referee + ledger).

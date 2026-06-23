@@ -1,7 +1,7 @@
 # QICN — Referee Submission Cover
 
 Status: `NON_CANONICAL_REFEREE_ENTRY_POINT`
-Date: 2026-06-20
+Date: 2026-06-23
 Human review: `REQUIRED`  ·  Human curated status: `not_reviewed`
 `external_support_certified = false`  ·  `FULL_COP_MEMBERSHIP: NOT_YET`
 
@@ -67,7 +67,7 @@ mathlib v4.31.0.
 ```powershell
 cd .../rigid-identity-framework/docs/ai-platform-outputs/formal/lean
 $env:ELAN_HOME="$env:USERPROFILE\.elan"
-& "$env:USERPROFILE\.elan\bin\lake.exe" build      # expect EXIT 0, "Build completed successfully (2304 jobs)"
+& "$env:USERPROFILE\.elan\bin\lake.exe" build      # expect EXIT 0, "Build completed successfully (2361 jobs)"
 ```
 Then `#print axioms <thm>` for any theorem below should show only
 `[propext, Classical.choice, Quot.sound]` (and `noncollapse_from_H5`: no axioms).
@@ -81,6 +81,7 @@ A grep for `sorry|admit|axiom` over `QICNLean/*.lean` returns `0`.
 | H5 reduced to data conditions C1/C2 (**linear case**) | `QICNH5Derivation.lean · noncollapse_from_forcing` | H5 reduction (linear) |
 | Convex constant-fixed-point variational reduction | `QICNH5Convex.lean · convex_constant_fixedpoint_reduces` | H5 (convex fragment) |
 | H5 convex geometric exclusion: (a) `s∩N=∅ ⇒ non-collapse`; (b) weaker exclusion refuted | `QICNH5ConvexExclusion.lean` | H5 (convex, candidate analysis) |
+| H5 convex non-collapse **conditional** under subspace dichotomy `(D)` (unifies static `s∩N=∅` and bilateral `N⊆s`); partial regime `EXTERNAL_REQUIRED` | `QICNH5QuotientDynamics.lean`, `QICNH5QuotientDisplacement.lean`, `QICNH5UnilateralBridge.lean` | H5 (convex, conditional); general H5 `NOT_PROVED` |
 | Rotation-contraction has no real invariant line (exact factorization block) | `QICNRotationSpectral.lean · rotation_contraction_no_invariant_line` | `Iint` exact obstruction |
 | Integration margin kernel `√7/14` (fiber-thinness + corner chain) | `QICNCoupledSplitMargin.lean` | `Iint` quantitative |
 | **Universal** integration margin over the adopted `D*` class | `QICNCoupledSplitMarginUniversal.lean · dstar_universal_margin` | `Iint` global, class-relative |

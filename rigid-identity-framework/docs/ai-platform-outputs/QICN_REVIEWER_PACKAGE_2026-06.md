@@ -3,7 +3,9 @@
 Status: `NON_CANONICAL_HUMAN_REVIEW_PACKAGE`
 
 Date: 2026-06-19 (refreshed 2026-06-20: added `dstar_universal_margin` and the
-H5 convex-exclusion candidate analysis; build job count updated to 2304)
+H5 convex-exclusion candidate analysis; build job count updated to 2304.
+Refreshed 2026-06-23: added the three H5 quotient/displacement/unilateral-bridge
+files to the machine-checked table; build job count updated to 2361)
 
 Human review: `REQUIRED`
 
@@ -37,7 +39,7 @@ Verification snapshot:
 ```text
 lake build
 EXIT=0
-Build completed successfully (2304 jobs).
+Build completed successfully (2361 jobs).
 
 grep sorry/admit/axiom in QICNLean/*.lean
 COUNT=0
@@ -65,6 +67,9 @@ docs/ai-platform-outputs/formal/lean/QICNLean/
 | `coupled_psi1_fiber_thin`, `coupled_psi2_fiber_thin`, `coupled_split_readout_positive_margin` | `QICNCoupledSplitMargin.lean` | Quantitative split-readout margin kernel: fiber-thinness plus corner-chain arithmetic gives `sqrt(7)/14` from explicit fiber hypotheses. | Supports the adopted structural D* reading of `Iint`; does not mechanize the global quantifier over all admissible D* factorizations. | each: `[propext, Classical.choice, Quot.sound]` |
 | `dstar_universal_margin` | `QICNCoupledSplitMarginUniversal.lean` | **Universal** `∀`-quantifier over the explicitly specified `D*` factorization structure: every `DStarFactorization` has margin `≥ sqrt(7)/14`. | `Iint` global **class-relative**: genuine universal over the adopted `D*` class, but the coordinate-aligned/decoder-free modeling commitment is a disambiguation of the canonical text, not forced by it. `CLOSED_INTERNAL_UNDER_ADOPTED_D*`, `STILL_OPEN` canonically. | `[propext, Classical.choice, Quot.sound]` |
 | `constants_inadmissible_of_inter_empty`, `convexProjection_not_mem_of_inadmissible`, `convex_noncollapse_from_constants_inadmissible`, `cStarConstant` (def), `cStarConstant_fixed`, `cStarConstant_mem`, `bilateral_admissibility_forces_N_subset`, `cStar_admissible_under_reduction_hypotheses`, `candidate_b_self_defeating` | `QICNH5ConvexExclusion.lean` | H5 convex-case candidate analysis. **(a)** `s ∩ N = ∅ ⇒ convex non-collapse`: non-circular but **strong** (excludes all admissible constants) — `CLOSED_INTERNAL`. **(b)** exclude only the dynamically-selected `c*(u)`: `REFUTED_INTERNAL` — the reduction's admissibility hypothesis forces `N ⊆ s`, hence `c*(u) ∈ s`, making the exclusion vacuous (self-defeating). Minimal non-circular exclusion: `STILL_OPEN`. | H5 (convex carrier) candidate boundary; full general H5 `NOT_PROVED`. | each: `[propext, Classical.choice, Quot.sound]` |
+| `collapse_iff_cStar_fixed`, `convex_collapsed_fixedpoint_eq_cStar`, `cStarConstant_unique`, `convex_noncollapse_of_cStar_not_fixed`, `convex_fixedpoint_not_mem_of_cStar_not_fixed` | `QICNH5QuotientDynamics.lean` | Quotient `H/N` framework: under admissibility `hAdm`, collapse over the whole constant subspace `N` reduces to a single-point check on `c*(u)` (`collapse_iff_cStar_fixed`). | H5 convex reduction (single-point), not general closure. `CLOSED_INTERNAL`. | each: `[propext, Classical.choice, Quot.sound]` |
+| `quotientDriftAtCStar` (def), `regime_a_implies_quotient_displacement`, `regimes_incompatible`, `noncollapse_of_quotient_displacement`, `noncollapse_of_positive_margin`, `convex_projection_not_N_equivariant` | `QICNH5QuotientDisplacement.lean` | `(Q)=‖q(T_u(c*))‖` as unifying quantity: `(a)⇒(Q)`, `(Q)⟺(c)` under `hAdm`; `regimes_incompatible` (regime-free obstruction); explicit ℝ² non-equivariance counterexample; margin bound. | H5 convex regime-free domination `STILL_OPEN`; obstruction `OBSTRUCTED_INTERNAL`. | each: `[propext, Classical.choice, Quot.sound]` |
+| `SubspaceDichotomy` (def), `regime_a_implies_dichotomy`, `bilateral_implies_dichotomy`, `noncollapse_of_subspace_dichotomy`, `dichotomy_regimeA_satisfiable`, `partial_regime_violates_dichotomy` | `QICNH5UnilateralBridge.lean` | `SubspaceDichotomy (D)`: `(∃y∈N∩s)→N⊆s`. Non-circular, strictly weaker than `hAdm`, compatible with regime (a) (`dichotomy_regimeA_satisfiable`, `N≠⊥`). `(D)+(Q)⇒non-collapse`. Partial regime excluded by decree (`partial_regime_violates_dichotomy`). | H5 convex **conditional** under `(D)`; general H5 `NOT_PROVED`. `CLOSED_INTERNAL` (conditional). | each: `[propext, Classical.choice, Quot.sound]` |
 
 ### Reproduction Recipe
 
@@ -80,7 +85,7 @@ Expected current result:
 
 ```text
 EXIT=0
-Build completed successfully (2304 jobs).
+Build completed successfully (2361 jobs).
 ```
 
 Grep:
@@ -209,7 +214,12 @@ Suggested route for a referee:
 3. Read H5 materials:
    `QICNNonCollapse.lean`, `QICNH5Derivation.lean`,
    `QICNH5Convex.lean`, `QICNH5ConvexExclusion.lean` (convex candidate
-   analysis: (a) strong / closed, (b) refuted), then
+   analysis: (a) strong / closed, (b) refuted), then the quotient-reduction
+   trilogy `QICNH5QuotientDynamics.lean` (single-point reduction
+   `collapse_iff_cStar_fixed`), `QICNH5QuotientDisplacement.lean`
+   (`(Q)` unifying quantity, `regimes_incompatible`),
+   `QICNH5UnilateralBridge.lean` (`SubspaceDichotomy (D)` ⇒ conditional
+   non-collapse), then
    `docs/ai-platform-outputs/analysis/QICN_H5_NONCOLLAPSE_CRITIQUE.md` and
    `docs/ai-platform-outputs/analysis/QICN_H5_CONVEX_EXCLUSION_REDTEAM.md`.
 4. Read the coupled S-instance and Iint materials:

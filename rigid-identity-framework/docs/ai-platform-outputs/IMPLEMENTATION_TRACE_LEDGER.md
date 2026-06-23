@@ -9951,3 +9951,163 @@ Next step:
 - Commit acotado por rutas explicitas (solo .tex editados, PDFs recompilados
   tracked, fixplan, ledger; sin build artifacts, sin push). Fase futura opcional:
   deuda de layout de tablas del monolitico, con auditoria externa antes de push.
+
+Commit hash (local, sin push): `3d9b860` — 12 archivos (5 .tex, 5 PDFs
+recompilados tracked, fixplan, ledger). Excluidos del commit: `docs/reports/`
+auto-generados (gate JSON + build report) y `_repro_runner.ps1` (untracked
+ajeno). Esta linea de hash se deja como nota de trazabilidad post-commit (un
+commit no puede contener su propio hash).
+
+## 2026-06-22 - Kiro - G3.1 Adversarial Generative-Model Alignment (Phase 6 harness unblock)
+
+Agent/platform: Kiro (Claude)
+User request: Cerrar gaps de tooling/provenance Nivel 3 sin tocar ciencia. FASE 1 (G3.1): alinear el modelo generativo adversarial para desbloquear el harness de Phase 6.
+Operational objective: Hacer que `external-trace-generator.js` SOPORTE explícitamente el modelo `seeded_weighted_panel_v3_explicit_salt` que emite `adversarial-negative-controls.js`, implementando su semántica de salt explícito sin degradar el control a v2, preservando v2 byte-idéntico. EXIT 0 en `npm run test:adversarial-negative-controls`.
+
+Files read:
+- scripts/lib/adversarial-negative-controls.js
+- scripts/lib/external-trace-generator.js
+- INSTRUCCIONES.md, docs/CLAIM_STATUS_POLICY.md, .kiro/steering/{product,tech,structure}.md
+- docs/reports/ADVERSARIAL_NEGATIVE_CONTROL_DECISION_RECORD.json (post-run, verificación)
+
+Files modified/created/moved/deleted:
+- MODIFICADO: scripts/lib/external-trace-generator.js (soporte v3 + helper de derivación de seed con salt + bloque `--self-test`).
+- NO modificado: scripts/lib/adversarial-negative-controls.js (ya emitía v3 correctamente; sin cambios necesarios; no se editó para evitar churn gratuito).
+- REGENERADOS por el harness (NO commiteados en esta fase): docs/reports/ADVERSARIAL_NEGATIVE_CONTROL_DECISION_RECORD.json y ADVERSARIAL_NEGATIVE_CONTROL_REPORT.md (cambian `trace_panel_sha256` porque el salt ahora entra en el seed; ver riesgos residuales).
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| node scripts\lib\external-trace-generator.js --self-test | Validar v2 (salt-ignorado, determinista) y v3 (salt requerido, determinista, salts distintos => trazas distintas, v3!=v2, modelo desconocido rechazado) | PASS, EXIT 0 |
+| npm run test:adversarial-negative-controls (ANTES) | Estado previo del gate | FATAL `Unsupported generative_model: seeded_weighted_panel_v3_explicit_salt`, EXIT 1 |
+| npm run test:adversarial-negative-controls (DESPUÉS) | Verificar desbloqueo | status=adversarial_negative_controls_pass, EXIT 0 |
+| npm run verify (post-edit) | No-regresión de cadena que consume el generador | EXIT 0; external_support_certified=false; BLOCKED_FOUNDATION_FIRST_GATES intacto |
+
+Implementation summary:
+- Semántica v3 implementada: el `scenario_salt` (obligatorio y no vacío) se prepende al componente de scenario del seed por rol: `${seed}:salt:${scenario_salt}:${id}:${role}`. Para v2/default el componente sigue siendo exactamente `${id}` => trazas byte-idénticas a antes (verificado en self-test 1b/1c).
+- v3 NO degrada el control: salts distintos producen flujos de traza genuinamente decorrelacionados y v3-salted != v2 (verificado), de modo que el null adversarial sigue siendo un null real, no una re-ejecución de v2.
+- `--self-test` añadido (CommonJS, dependency-free, guard `require.main === module`).
+
+Verification:
+- Decision record post-run: status=adversarial_negative_controls_pass; support_blocked=false; failures=0; todos los candidatos `support_rule_satisfied=false` / `verdict=support_rule_not_satisfied` (null correcto, sin soporte espurio).
+- Línea base raíz (.cjs) y framework re-verificada en cierre (ver entrada de cierre).
+
+Regression checks:
+- v2/default byte-idéntico: SÍ verificado (self-test compara paneles).
+- Inflación de claim: NO. status interno synthetic; sin external_support; boundary intacto.
+- Promoción a NEW_CLAIM / external_support_certified: NO (sigue false).
+- Registry editado a mano: NO (no se tocó registry/).
+
+Regressions found and handled:
+- Ninguna regresión funcional. Delta esperado: cambian los `trace_panel_sha256` en los reportes regenerados (consecuencia directa y honesta del salt explícito en el seed).
+
+Residual risks:
+- Los reportes regenerados ADVERSARIAL_* quedan modificados en el árbol pero NO se commitean en esta fase (alcance de commit = solo el .js, por instrucción explícita). El usuario debe decidir si commitea el decision-record/report regenerados; sus SHAs de traza cambian legítimamente bajo la semántica v3 correcta. No se revierten (son outputs honestos), no se commitean (fuera del scope del commit de fase).
+
+Next step:
+- Commit acotado: solo scripts/lib/external-trace-generator.js + esta entrada de ledger. Continuar FASE 2 (G3.2 colisión de label por case-folding).
+
+## 2026-06-22 - Kiro - G3.2 Case-Folding Label Collision Resolution (BaseCore hyp:H3 vs hyp:h3)
+
+Agent/platform: Kiro (Claude)
+User request: FASE 2 (G3.2): resolver colisión de label por case-folding entre dos hipótesis distintas en BaseCore, quirúrgicamente, actualizando todas las cross-refs y re-extrayendo el registry.
+Operational objective: Renombrar el label de la hipótesis Metric (`hyp:h3`) a `hyp:H3-metric` para eliminar la colisión por case-folding con la hipótesis Completeness (`hyp:H3`), sin cambiar texto/numeración de las hipótesis, actualizando cross-refs y re-extrayendo el registry (no edición manual).
+
+Files read:
+- basecore/core/sections/01_foundation_from_core.tex (L43, def hyp:H3 Completeness)
+- basecore/core/sections/04_regime_constraints_absorbed.tex (L260, def hyp:h3 Metric)
+- registry/theorems.jsonl (entradas hyp-h3 disambiguadas por ubicación)
+- basecore/BASECORE.log (PRE/POST warnings)
+
+Files modified/created/moved/deleted:
+- MODIFICADO: basecore/core/sections/04_regime_constraints_absorbed.tex (solo el identificador del label: `\label{hyp:h3}` -> `\label{hyp:H3-metric}`; texto/título/numeración de la hipótesis SIN cambios).
+- REGENERADO (re-extracción, NO edición manual): registry/theorems.jsonl, registry/macros.jsonl (`npm run extract:registry`).
+- RECOMPILADO: basecore/BASECORE.pdf (in situ, sincronía fuente-PDF). SHA256 POST = `D829240ECA24EC9C91672415A3FCC3211D6D5F63F4929A5AD06AF788ECFACC30`.
+- Cross-refs: NINGUNA requería actualización (0 `\ref/\eqref/\autoref/\cref` a `hyp:h3` en basecore; confirmado por grep case-sensitive).
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| grep_search `hyp:h3` (case-sensitive, basecore/**) | Localizar cross-refs | Solo la definición; 0 referencias |
+| pdflatex x1 + biber + pdflatex x2 (basecore/) | Recompilar BASECORE in situ | EXIT 0; 44 pp; 0 multiply-defined; 0 undefined refs |
+| npm run extract:registry | Re-extraer registry | EXIT 0; formal_entries=755; macro_entries=383 |
+| npm run verify:corpus-registry | Validar registry | EXIT 0; 0 blockers/warnings |
+| npm run verify:macro-registry | Validar macros | EXIT 0; 0 blockers/warnings |
+| node ..\scripts\verify-canonical-integrity.cjs | Integridad canónica (hash PDFs release) | PASS; canonical_pdf_count=25; sha256_match=true |
+| node ..\scripts\verify-claim-registry.cjs | Claim registry raíz | PASS; entries=17 |
+| node ..\scripts\verify-canonical-release.cjs | Release canónico | PASS |
+| npm run verify | Cadena v31 | EXIT 0; external_support_certified=false; BLOCKED_FOUNDATION_FIRST_GATES |
+| node (tally HEAD vs working) | Comparar distribución de estados | epistemic y proof IDÉNTICOS (755/755) |
+
+Implementation summary:
+- PRE: el extractor ya detectaba la colisión y desambiguaba por ubicación: IDs `basecore:hypothesis:hyp-h3-basecorecoresections01-foundation-from-core-l43` (Completeness) y `...-04-regime-constraints-absorbed-l260` (Metric), cada uno con history `deduplicated_registry_id`.
+- POST: IDs limpios y distintos sin colisión: `basecore:hypothesis:hyp-h3` (Completeness) y `basecore:hypothesis:hyp-h3-metric` (Metric); las notas `deduplicated_registry_id` ya no se generan. `thm-fixedpoint.depends_on` ahora apunta al ID limpio `basecore:hypothesis:hyp-h3`.
+- paper2 `hyp:h3` (Metric, doc separado sin colisión) NO se tocó; su entrada `paper2:hypothesis:hyp-h3` permanece igual.
+
+Verification:
+- Compilación: 0 multiply-defined labels, 0 undefined references (BASECORE.log), 44 pp.
+- Estados: epistemic `{conditional:362,proved:244,heuristic:138,conjectural:8,open_burden:1,tautology:2}` y proof `{not_applicable:448,present:249,heuristic:13,missing:36,not_expected:7,invalid:1,sketch:1}` IDÉNTICOS antes/después. Solo cambian: 2 IDs/labels H3, puntero depends_on de thm-fixedpoint, y `registry_version` global (re-estampado 2026-06-20 -> 2026-06-22 por la re-extracción).
+- Todos los gates raíz y de framework EXIT 0.
+
+Regression checks:
+- Cambio de texto/numeración de hipótesis: NO (solo el identificador del label).
+- Cross-refs rotas: NO (0 refs a hyp:h3; 0 undefined refs en compilación).
+- Inflación/deriva de claims: NO (distribuciones de estado idénticas; epistemic/proof preservados por entrada).
+- Registry editado a mano: NO (solo `extract:registry`).
+- Promoción a NEW_CLAIM / external_support_certified: NO (sigue false).
+
+Regressions found and handled:
+- Ninguna. El diff masivo de registry (755+383 líneas) es por re-estampado de `registry_version`, efecto normal de la re-extracción; no hay cambios de contenido fuera de los esperados.
+
+Residual risks:
+- Artefactos generados del monolito (monolithic/build/sections/01-basecore.tex L72/L1106) aún contienen `mono:basecore:hyp:H3` y `mono:basecore:hyp:h3` (misma colisión por case-folding dentro del monolito). Se corregirán en la próxima `npm run build:monolithic` (regeneración desde basecore), fuera del alcance de esta fase. Flag para fase futura de sincronización del monolito.
+- registry_version re-estampado a 2026-06-22 en todo el archivo (efecto de la herramienta, no edición manual).
+
+Next step:
+- Commit acotado: 04_*.tex + registry/{theorems,macros}.jsonl + BASECORE.pdf recompilado. Continuar FASE 3 (G3.6 paso biber en paper10).
+
+## 2026-06-22 - Kiro - G3.6 paper10 No-Bibliography Compilation Convention (biber step omission)
+
+Agent/platform: Kiro (Claude)
+User request: FASE 3 (G3.6): confirmar que paper10 no tiene bibliografía por diseño y registrar la convención de que el paso biber se omite; es defecto de protocolo, no del PDF.
+Operational objective: Verificar la ausencia de bibliografía en paper10_external_adjudication y registrar la convención de compilación (omitir biber) en un doc de convenciones, sin editar el .tex.
+
+Files read:
+- paper10_external_adjudication/main.tex (búsqueda de marcadores de bibliografía)
+- paper10_external_adjudication/main.bbl (0 bytes), main.log (post-compilación)
+- docs/ai-platform-outputs/reports/QICN_REPRODUCIBILITY_MANIFEST_2026-06-21.md
+
+Files modified/created/moved/deleted:
+- CREADO: docs/ai-platform-outputs/reports/QICN_COMPILATION_CONVENTIONS.md (convención CC-1 + nota de corrección del tier de los .cjs).
+- NO modificado: paper10_external_adjudication/main.tex (sin bibliografía por diseño => no se edita).
+- RECOMPILADO solo para verificación y luego REVERTIDO: paper10_external_adjudication/main.pdf (`git checkout --`; la fuente no cambió, el delta era solo metadata de build).
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| grep marcadores bib en main.tex | Confirmar ausencia de bibliografía | 0 `\cite`/`\addbibresource`/`\bibliography`/`\thebibliography`/`\printbibliography`/`\bibitem`/`biblatex` |
+| Test main.bbl/main.bcf | Confirmar no-biblatex | main.bbl=0 bytes; main.bcf ausente |
+| pdflatex -nonstopmode main.tex x2 (paper10) | Verificar compilación sin biber | EXIT 0; 33 pp; 0 refs indef; 0 citas indef |
+| git checkout -- paper10.../main.pdf | Revertir PDF recompilado (solo metadata) | árbol limpio para paper10 |
+
+Implementation summary:
+- Confirmado por diseño: paper10 no usa biblatex; el EXIT 2 de biber (`Cannot find main.bcf`) es un defecto del protocolo de 4 pasos (invoca biber incondicionalmente), no del documento.
+- Registrada la convención CC-1: "paper10 = unidad sin bibliografía; el paso biber se omite", con la secuencia correcta (pdflatex x2) y la prohibición explícita de inventar una bibliografía para silenciar biber.
+- No se editó el .tex (correcto, por diseño).
+
+Verification:
+- pdflatex x2: EXIT 0, 33 páginas, 0 referencias/citas indefinidas (main.log).
+
+Regression checks:
+- Edición de .tex/.bib: NO (solo doc de convención).
+- Inflación de claims: NO (nota anti-inflación incluida en el doc).
+- Invención de bibliografía: NO (explícitamente prohibida en CC-1).
+
+Regressions found and handled:
+- Ninguna. paper10/main.pdf recompilado fue revertido para no ensuciar el árbol (fuente intacta).
+
+Residual risks:
+- El runner de reproducibilidad (`_repro_runner.ps1`, untracked en raíz) probablemente sigue invocando biber incondicionalmente; la convención CC-1 documenta la omisión, pero no se modificó el runner (fuera de alcance; el runner no está tracked). Mejora futura opcional: condicionar el paso biber a la existencia de `.bcf`/biblatex.
+
+Next step:
+- Commit acotado: solo docs/ai-platform-outputs/reports/QICN_COMPILATION_CONVENTIONS.md. Cierre: reportar git status y commits locales; sin push.

@@ -19,68 +19,64 @@
           "candidate_count": 4,
           "best_candidate": {
             "family": "complexity-only",
-            "candidate_id": "complexity-only-2",
-            "scenario_salt": "adversarial-complexity-only-2",
+            "candidate_id": "complexity-only-1",
+            "scenario_salt": "adversarial-complexity-only-1",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1,
-            "margin_to_threshold": -1,
+            "danger_score": 1.026315789473684,
+            "margin_to_threshold": -0.9736842105263159,
             "metrics": {
               "tv_targeted": 0.16049382716049382,
-              "tv_sham": 0.1111111111111111,
-              "tv_off_target": 0.16049382716049382,
-              "control_max": 0.16049382716049382,
-              "rho_selective": 1,
-              "rival_tv_loss": 0.14332010852212437,
-              "complexity_penalty": 0.0008333333333333334,
-              "penalized_rival_loss": 0.1441534418554577,
-              "rival_parameter_count": 16,
-              "rival_training_entropy_bits": 1.831646681802639,
-              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
-              "strongest_rival_memory_depth": 1,
-              "rival_suite_min_penalized_loss": 0.1441534418554577,
+              "tv_sham": 0.15637860082304528,
+              "tv_off_target": 0.1440329218106996,
+              "control_max": 0.15637860082304528,
+              "rho_selective": 1.026315789473684,
+              "rival_tv_loss": 0.09247899283024084,
+              "complexity_penalty": 0.011250000000000001,
+              "penalized_rival_loss": 0.10372899283024084,
+              "rival_parameter_count": 216,
+              "rival_training_entropy_bits": 1.839542345086648,
+              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+              "strongest_rival_memory_depth": 3,
+              "rival_suite_min_penalized_loss": 0.10372899283024084,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "c90f99e50f6702e4cd75fff4b3602914fa9af0a99b209b2cf55cc5a990318b0d"
+            "trace_panel_sha256": "a4095b8792c90689f911b3e4de08aec26afb0edf1362e784624206a82fa8c149"
           },
           "candidates": [
             {
               "family": "complexity-only",
-              "candidate_id": "complexity-only-2",
-              "scenario_salt": "adversarial-complexity-only-2",
+              "candidate_id": "complexity-only-1",
+              "scenario_salt": "adversarial-complexity-only-1",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1,
-              "margin_to_threshold": -1,
+              "danger_score": 1.026315789473684,
+              "margin_to_threshold": -0.9736842105263159,
               "metrics": {
                 "tv_targeted": 0.16049382716049382,
-                "tv_sham": 0.1111111111111111,
-                "tv_off_target": 0.16049382716049382,
-                "control_max": 0.16049382716049382,
-                "rho_selective": 1,
-                "rival_tv_loss": 0.14332010852212437,
-                "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.1441534418554577,
-                "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.831646681802639,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
-                "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.1441534418554577,
+                "tv_sham": 0.15637860082304528,
+                "tv_off_target": 0.1440329218106996,
+                "control_max": 0.15637860082304528,
+                "rho_selective": 1.026315789473684,
+                "rival_tv_loss": 0.09247899283024084,
+                "complexity_penalty": 0.011250000000000001,
+                "penalized_rival_loss": 0.10372899283024084,
+                "rival_parameter_count": 216,
+                "rival_training_entropy_bits": 1.839542345086648,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+                "strongest_rival_memory_depth": 3,
+                "rival_suite_min_penalized_loss": 0.10372899283024084,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "c90f99e50f6702e4cd75fff4b3602914fa9af0a99b209b2cf55cc5a990318b0d"
+              "trace_panel_sha256": "a4095b8792c90689f911b3e4de08aec26afb0edf1362e784624206a82fa8c149"
             },
             {
               "family": "complexity-only",
@@ -88,63 +84,29 @@
               "scenario_salt": "adversarial-complexity-only-3",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.9243697478991598,
-              "margin_to_threshold": -1.07563025210084,
+              "danger_score": 0.9454545454545453,
+              "margin_to_threshold": -1.0545454545454547,
               "metrics": {
-                "tv_targeted": 0.4526748971193416,
-                "tv_sham": 0.4238683127572016,
-                "tv_off_target": 0.4897119341563786,
-                "control_max": 0.4897119341563786,
-                "rho_selective": 0.9243697478991598,
-                "rival_tv_loss": 0.39079956597026805,
-                "complexity_penalty": 0.011041666666666667,
-                "penalized_rival_loss": 0.4018412326369347,
-                "rival_parameter_count": 212,
-                "rival_training_entropy_bits": 1.8023104929737988,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.4018412326369347,
+                "tv_targeted": 0.4279835390946502,
+                "tv_sham": 0.4156378600823045,
+                "tv_off_target": 0.4526748971193416,
+                "control_max": 0.4526748971193416,
+                "rho_selective": 0.9454545454545453,
+                "rival_tv_loss": 0.40542799393645224,
+                "complexity_penalty": 0.0033333333333333335,
+                "penalized_rival_loss": 0.4087613272697856,
+                "rival_parameter_count": 64,
+                "rival_training_entropy_bits": 1.8722443679660838,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
+                "strongest_rival_memory_depth": 2,
+                "rival_suite_min_penalized_loss": 0.4087613272697856,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "7667cbc143ae84204456d0777abce1a167eb50c3f7fbbc7def5a277b5f02c901"
-            },
-            {
-              "family": "complexity-only",
-              "candidate_id": "complexity-only-1",
-              "scenario_salt": "adversarial-complexity-only-1",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.896551724137931,
-              "margin_to_threshold": -1.103448275862069,
-              "metrics": {
-                "tv_targeted": 0.2139917695473251,
-                "tv_sham": 0.1934156378600823,
-                "tv_off_target": 0.23868312757201646,
-                "control_max": 0.23868312757201646,
-                "rho_selective": 0.896551724137931,
-                "rival_tv_loss": 0.14396494477546964,
-                "complexity_penalty": 0.009791666666666667,
-                "penalized_rival_loss": 0.15375661144213632,
-                "rival_parameter_count": 188,
-                "rival_training_entropy_bits": 1.7280718122218068,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.15375661144213632,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "03f3c57a45affb32185a74a7ab8f14e13e29e3a3de7a6822868c3b48f70660eb"
+              "trace_panel_sha256": "4d65e57119d540a39849f84db9bc5481b31f0c7d44b4ca08850e02a1b19bd97e"
             },
             {
               "family": "complexity-only",
@@ -152,31 +114,59 @@
               "scenario_salt": "adversarial-complexity-only-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.8867924528301887,
-              "margin_to_threshold": -1.1132075471698113,
+              "danger_score": 0.9305555555555555,
+              "margin_to_threshold": -1.0694444444444446,
               "metrics": {
-                "tv_targeted": 0.1934156378600823,
-                "tv_sham": 0.21810699588477367,
-                "tv_off_target": 0.18930041152263377,
-                "control_max": 0.21810699588477367,
-                "rho_selective": 0.8867924528301887,
-                "rival_tv_loss": 0.1039139584405032,
-                "complexity_penalty": 0.011875,
-                "penalized_rival_loss": 0.1157889584405032,
-                "rival_parameter_count": 228,
-                "rival_training_entropy_bits": 1.875795449534479,
+                "tv_targeted": 0.27572016460905346,
+                "tv_sham": 0.22633744855967075,
+                "tv_off_target": 0.2962962962962963,
+                "control_max": 0.2962962962962963,
+                "rho_selective": 0.9305555555555555,
+                "rival_tv_loss": 0.1595280448375353,
+                "complexity_penalty": 0.011041666666666667,
+                "penalized_rival_loss": 0.17056971150420197,
+                "rival_parameter_count": 212,
+                "rival_training_entropy_bits": 1.7984570092792564,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.1157889584405032,
+                "rival_suite_min_penalized_loss": 0.17056971150420197,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "cc23fdf99e8bf3d9047470849b9f898491d1cf5cb21611b96b99ce7b5009ea90"
+              "trace_panel_sha256": "ec381809a121166128ff223c70188462f86a84080896bc93472c2ddee1049192"
+            },
+            {
+              "family": "complexity-only",
+              "candidate_id": "complexity-only-2",
+              "scenario_salt": "adversarial-complexity-only-2",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.918918918918919,
+              "margin_to_threshold": -1.0810810810810811,
+              "metrics": {
+                "tv_targeted": 0.13991769547325103,
+                "tv_sham": 0.09876543209876543,
+                "tv_off_target": 0.1522633744855967,
+                "control_max": 0.1522633744855967,
+                "rho_selective": 0.918918918918919,
+                "rival_tv_loss": 0.11432980234221177,
+                "complexity_penalty": 0.0033333333333333335,
+                "penalized_rival_loss": 0.1176631356755451,
+                "rival_parameter_count": 64,
+                "rival_training_entropy_bits": 1.892690066412048,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
+                "strongest_rival_memory_depth": 2,
+                "rival_suite_min_penalized_loss": 0.1176631356755451,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "a28a646a974c1fe5b75f9ced26f86cba4c5efff37237d4f9504835af3030ea1e"
             }
           ]
         },
@@ -185,68 +175,64 @@
           "candidate_count": 4,
           "best_candidate": {
             "family": "memory-only",
-            "candidate_id": "memory-only-3",
-            "scenario_salt": "adversarial-memory-only-3",
+            "candidate_id": "memory-only-1",
+            "scenario_salt": "adversarial-memory-only-1",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1.8461538461538465,
-            "margin_to_threshold": -0.15384615384615352,
+            "danger_score": 1.4999999999999998,
+            "margin_to_threshold": -0.5000000000000002,
             "metrics": {
-              "tv_targeted": 0.09876543209876544,
-              "tv_sham": 0.037037037037037,
-              "tv_off_target": 0.05349794238683127,
-              "control_max": 0.05349794238683127,
-              "rho_selective": 1.8461538461538465,
-              "rival_tv_loss": 0.12857142857142842,
+              "tv_targeted": 0.04938271604938271,
+              "tv_sham": 0.03292181069958848,
+              "tv_off_target": 0.02880658436213991,
+              "control_max": 0.03292181069958848,
+              "rho_selective": 1.4999999999999998,
+              "rival_tv_loss": 0.04413620848393868,
               "complexity_penalty": 0.0008333333333333334,
-              "penalized_rival_loss": 0.12940476190476174,
+              "penalized_rival_loss": 0.04496954181727201,
               "rival_parameter_count": 16,
-              "rival_training_entropy_bits": 1.7007943394070946,
+              "rival_training_entropy_bits": 1.9689662041068363,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
               "strongest_rival_memory_depth": 1,
-              "rival_suite_min_penalized_loss": 0.12940476190476174,
+              "rival_suite_min_penalized_loss": 0.04496954181727201,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "c320edf25fd351a19afd7546f75549530c97971c20e4105b70fea29a7272fc8f"
+            "trace_panel_sha256": "c2ec0b5a9cc14218f6531f47bb03da5f1ebf8b84713d1115f55cb6b3a5222e9a"
           },
           "candidates": [
             {
               "family": "memory-only",
-              "candidate_id": "memory-only-3",
-              "scenario_salt": "adversarial-memory-only-3",
+              "candidate_id": "memory-only-1",
+              "scenario_salt": "adversarial-memory-only-1",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.8461538461538465,
-              "margin_to_threshold": -0.15384615384615352,
+              "danger_score": 1.4999999999999998,
+              "margin_to_threshold": -0.5000000000000002,
               "metrics": {
-                "tv_targeted": 0.09876543209876544,
-                "tv_sham": 0.037037037037037,
-                "tv_off_target": 0.05349794238683127,
-                "control_max": 0.05349794238683127,
-                "rho_selective": 1.8461538461538465,
-                "rival_tv_loss": 0.12857142857142842,
+                "tv_targeted": 0.04938271604938271,
+                "tv_sham": 0.03292181069958848,
+                "tv_off_target": 0.02880658436213991,
+                "control_max": 0.03292181069958848,
+                "rho_selective": 1.4999999999999998,
+                "rival_tv_loss": 0.04413620848393868,
                 "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.12940476190476174,
+                "penalized_rival_loss": 0.04496954181727201,
                 "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.7007943394070946,
+                "rival_training_entropy_bits": 1.9689662041068363,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
                 "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.12940476190476174,
+                "rival_suite_min_penalized_loss": 0.04496954181727201,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "c320edf25fd351a19afd7546f75549530c97971c20e4105b70fea29a7272fc8f"
+              "trace_panel_sha256": "c2ec0b5a9cc14218f6531f47bb03da5f1ebf8b84713d1115f55cb6b3a5222e9a"
             },
             {
               "family": "memory-only",
@@ -254,31 +240,29 @@
               "scenario_salt": "adversarial-memory-only-2",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.499999999999999,
-              "margin_to_threshold": -0.5000000000000011,
+              "danger_score": 0.8275862068965518,
+              "margin_to_threshold": -1.1724137931034482,
               "metrics": {
-                "tv_targeted": 0.07407407407407406,
-                "tv_sham": 0.04938271604938274,
-                "tv_off_target": 0.04938271604938271,
-                "control_max": 0.04938271604938274,
-                "rho_selective": 1.499999999999999,
-                "rival_tv_loss": 0.07634910724215424,
+                "tv_targeted": 0.09876543209876543,
+                "tv_sham": 0.11934156378600821,
+                "tv_off_target": 0.09876543209876544,
+                "control_max": 0.11934156378600821,
+                "rho_selective": 0.8275862068965518,
+                "rival_tv_loss": 0.10640037612444474,
                 "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.07718244057548758,
+                "penalized_rival_loss": 0.10723370945777808,
                 "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.9060356372472929,
+                "rival_training_entropy_bits": 1.897395859353898,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
                 "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.07718244057548758,
+                "rival_suite_min_penalized_loss": 0.10723370945777808,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "5422a67d663050710c14e4c624f54e9c3c07577a424df3ccfac9190e3418827a"
+              "trace_panel_sha256": "cebcc56fd0582be1cdfc04d9a657cb08438c4091235b9c6207b6f21a2b3ab906"
             },
             {
               "family": "memory-only",
@@ -286,63 +270,59 @@
               "scenario_salt": "adversarial-memory-only-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.9090909090909092,
-              "margin_to_threshold": -1.0909090909090908,
+              "danger_score": 0.75,
+              "margin_to_threshold": -1.25,
               "metrics": {
-                "tv_targeted": 0.04115226337448559,
-                "tv_sham": 0.045267489711934145,
-                "tv_off_target": 0.04526748971193413,
-                "control_max": 0.045267489711934145,
-                "rho_selective": 0.9090909090909092,
-                "rival_tv_loss": 0.028943173483248,
+                "tv_targeted": 0.037037037037037035,
+                "tv_sham": 0.03703703703703708,
+                "tv_off_target": 0.04938271604938271,
+                "control_max": 0.04938271604938271,
+                "rho_selective": 0.75,
+                "rival_tv_loss": 0.029290836507632298,
                 "complexity_penalty": 0.0033333333333333335,
-                "penalized_rival_loss": 0.032276506816581334,
+                "penalized_rival_loss": 0.03262416984096563,
                 "rival_parameter_count": 64,
-                "rival_training_entropy_bits": 1.9937102840270842,
+                "rival_training_entropy_bits": 1.9969312625280735,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
                 "strongest_rival_memory_depth": 2,
-                "rival_suite_min_penalized_loss": 0.032276506816581334,
+                "rival_suite_min_penalized_loss": 0.03262416984096563,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "3371f82ed2908b62be954053384a25283646814d383090320e1242873351922e"
+              "trace_panel_sha256": "4d9d4719530e01bfe63b71a453354d5c6d49f7bf0d414d1c813dfeaf5346e308"
             },
             {
               "family": "memory-only",
-              "candidate_id": "memory-only-1",
-              "scenario_salt": "adversarial-memory-only-1",
+              "candidate_id": "memory-only-3",
+              "scenario_salt": "adversarial-memory-only-3",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.3000000000000005,
-              "margin_to_threshold": -1.6999999999999995,
+              "danger_score": 0.5499999999999998,
+              "margin_to_threshold": -1.4500000000000002,
               "metrics": {
-                "tv_targeted": 0.012345679012345692,
-                "tv_sham": 0.041152263374485576,
-                "tv_off_target": 0.032921810699588494,
-                "control_max": 0.041152263374485576,
-                "rho_selective": 0.3000000000000005,
-                "rival_tv_loss": 0.015689395663325487,
+                "tv_targeted": 0.04526748971193414,
+                "tv_sham": 0.04115226337448555,
+                "tv_off_target": 0.08230452674897118,
+                "control_max": 0.08230452674897118,
+                "rho_selective": 0.5499999999999998,
+                "rival_tv_loss": 0.054742223679291054,
                 "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.01652272899665882,
+                "penalized_rival_loss": 0.055575557012624385,
                 "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.9767273645730639,
+                "rival_training_entropy_bits": 1.7112412055575636,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
                 "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.01652272899665882,
+                "rival_suite_min_penalized_loss": 0.055575557012624385,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "eeaf78995935eb9950361c3cdf948bb05a9ff47f6be2ffc4d6c150fe7489384d"
+              "trace_panel_sha256": "5d9359022c795cf6441a6b4ef3d4d90edb14f65c5646b8b598bce4fc54261dcf"
             }
           ]
         },
@@ -355,31 +335,29 @@
             "scenario_salt": "adversarial-narrative-only-0",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 0.6500000000000004,
-            "margin_to_threshold": -1.3499999999999996,
+            "danger_score": 0.49999999999999983,
+            "margin_to_threshold": -1.5000000000000002,
             "metrics": {
-              "tv_targeted": 0.053497942386831296,
-              "tv_sham": 0.08230452674897118,
-              "tv_off_target": 0.05761316872427985,
-              "control_max": 0.08230452674897118,
-              "rho_selective": 0.6500000000000004,
-              "rival_tv_loss": 0.051651452897162546,
-              "complexity_penalty": 0.0008333333333333334,
-              "penalized_rival_loss": 0.05248478623049588,
-              "rival_parameter_count": 16,
-              "rival_training_entropy_bits": 1.8598716669676643,
-              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
-              "strongest_rival_memory_depth": 1,
-              "rival_suite_min_penalized_loss": 0.05248478623049588,
+              "tv_targeted": 0.04115226337448558,
+              "tv_sham": 0.0823045267489712,
+              "tv_off_target": 0.0411522633744856,
+              "control_max": 0.0823045267489712,
+              "rho_selective": 0.49999999999999983,
+              "rival_tv_loss": 0.039607070098928554,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.04294040343226189,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.8169364881362693,
+              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "strongest_rival_memory_depth": 2,
+              "rival_suite_min_penalized_loss": 0.04294040343226189,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "f40707d4da84cf6d59d62a701b0eab723bea16ae6defb72754b48a9a63521aae"
+            "trace_panel_sha256": "61b51f2385ef5fafb6e09a07b10a02da1d66a96b6b4b95984ed9054fa3194f57"
           },
           "candidates": [
             {
@@ -388,31 +366,29 @@
               "scenario_salt": "adversarial-narrative-only-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.6500000000000004,
-              "margin_to_threshold": -1.3499999999999996,
+              "danger_score": 0.49999999999999983,
+              "margin_to_threshold": -1.5000000000000002,
               "metrics": {
-                "tv_targeted": 0.053497942386831296,
-                "tv_sham": 0.08230452674897118,
-                "tv_off_target": 0.05761316872427985,
-                "control_max": 0.08230452674897118,
-                "rho_selective": 0.6500000000000004,
-                "rival_tv_loss": 0.051651452897162546,
-                "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.05248478623049588,
-                "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.8598716669676643,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
-                "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.05248478623049588,
+                "tv_targeted": 0.04115226337448558,
+                "tv_sham": 0.0823045267489712,
+                "tv_off_target": 0.0411522633744856,
+                "control_max": 0.0823045267489712,
+                "rho_selective": 0.49999999999999983,
+                "rival_tv_loss": 0.039607070098928554,
+                "complexity_penalty": 0.0033333333333333335,
+                "penalized_rival_loss": 0.04294040343226189,
+                "rival_parameter_count": 64,
+                "rival_training_entropy_bits": 1.8169364881362693,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
+                "strongest_rival_memory_depth": 2,
+                "rival_suite_min_penalized_loss": 0.04294040343226189,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "f40707d4da84cf6d59d62a701b0eab723bea16ae6defb72754b48a9a63521aae"
+              "trace_panel_sha256": "61b51f2385ef5fafb6e09a07b10a02da1d66a96b6b4b95984ed9054fa3194f57"
             }
           ]
         },
@@ -425,31 +401,29 @@
             "scenario_salt": "adversarial-entropy-matched-2",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1.772727272727273,
-            "margin_to_threshold": -0.22727272727272707,
+            "danger_score": 1.2564102564102564,
+            "margin_to_threshold": -0.7435897435897436,
             "metrics": {
-              "tv_targeted": 0.16049382716049387,
-              "tv_sham": 0.09053497942386833,
-              "tv_off_target": 0.08641975308641976,
-              "control_max": 0.09053497942386833,
-              "rho_selective": 1.772727272727273,
-              "rival_tv_loss": 0.09545957388084093,
-              "complexity_penalty": 0.011666666666666667,
-              "penalized_rival_loss": 0.1071262405475076,
-              "rival_parameter_count": 224,
-              "rival_training_entropy_bits": 1.8969414636258648,
-              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-              "strongest_rival_memory_depth": 3,
-              "rival_suite_min_penalized_loss": 0.1071262405475076,
+              "tv_targeted": 0.20164609053497942,
+              "tv_sham": 0.16049382716049382,
+              "tv_off_target": 0.13168724279835395,
+              "control_max": 0.16049382716049382,
+              "rho_selective": 1.2564102564102564,
+              "rival_tv_loss": 0.18567722257560565,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.18651055590893897,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.7925063796564198,
+              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "strongest_rival_memory_depth": 1,
+              "rival_suite_min_penalized_loss": 0.18651055590893897,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "c3c01fd2cd8dd569bd73e96b7e5a1ad34280021c5348ec53ff2ccb5d22511094"
+            "trace_panel_sha256": "a4043b48a8998514ec454f3fb959d0769e0ad0f3e1e1ad6b7d7026e6f063ad47"
           },
           "candidates": [
             {
@@ -458,95 +432,29 @@
               "scenario_salt": "adversarial-entropy-matched-2",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.772727272727273,
-              "margin_to_threshold": -0.22727272727272707,
+              "danger_score": 1.2564102564102564,
+              "margin_to_threshold": -0.7435897435897436,
               "metrics": {
-                "tv_targeted": 0.16049382716049387,
-                "tv_sham": 0.09053497942386833,
-                "tv_off_target": 0.08641975308641976,
-                "control_max": 0.09053497942386833,
-                "rho_selective": 1.772727272727273,
-                "rival_tv_loss": 0.09545957388084093,
-                "complexity_penalty": 0.011666666666666667,
-                "penalized_rival_loss": 0.1071262405475076,
-                "rival_parameter_count": 224,
-                "rival_training_entropy_bits": 1.8969414636258648,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.1071262405475076,
+                "tv_targeted": 0.20164609053497942,
+                "tv_sham": 0.16049382716049382,
+                "tv_off_target": 0.13168724279835395,
+                "control_max": 0.16049382716049382,
+                "rho_selective": 1.2564102564102564,
+                "rival_tv_loss": 0.18567722257560565,
+                "complexity_penalty": 0.0008333333333333334,
+                "penalized_rival_loss": 0.18651055590893897,
+                "rival_parameter_count": 16,
+                "rival_training_entropy_bits": 1.7925063796564198,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+                "strongest_rival_memory_depth": 1,
+                "rival_suite_min_penalized_loss": 0.18651055590893897,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "c3c01fd2cd8dd569bd73e96b7e5a1ad34280021c5348ec53ff2ccb5d22511094"
-            },
-            {
-              "family": "entropy-matched",
-              "candidate_id": "entropy-matched-0",
-              "scenario_salt": "adversarial-entropy-matched-0",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.1555555555555554,
-              "margin_to_threshold": -0.8444444444444446,
-              "metrics": {
-                "tv_targeted": 0.21399176954732507,
-                "tv_sham": 0.18518518518518517,
-                "tv_off_target": 0.16049382716049376,
-                "control_max": 0.18518518518518517,
-                "rho_selective": 1.1555555555555554,
-                "rival_tv_loss": 0.1206771639633135,
-                "complexity_penalty": 0.011458333333333334,
-                "penalized_rival_loss": 0.13213549729664684,
-                "rival_parameter_count": 220,
-                "rival_training_entropy_bits": 1.8760324760523175,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.13213549729664684,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "1099a01d692cc0fe80775e6f75e8cdc21d85fffac81c53b3423f5dfbbbf8adf7"
-            },
-            {
-              "family": "entropy-matched",
-              "candidate_id": "entropy-matched-3",
-              "scenario_salt": "adversarial-entropy-matched-3",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.9065420560747662,
-              "margin_to_threshold": -1.0934579439252339,
-              "metrics": {
-                "tv_targeted": 0.39917695473251025,
-                "tv_sham": 0.42386831275720166,
-                "tv_off_target": 0.4403292181069959,
-                "control_max": 0.4403292181069959,
-                "rho_selective": 0.9065420560747662,
-                "rival_tv_loss": 0.3352031004888296,
-                "complexity_penalty": 0.011666666666666667,
-                "penalized_rival_loss": 0.3468697671554963,
-                "rival_parameter_count": 224,
-                "rival_training_entropy_bits": 1.8708911355738547,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.3468697671554963,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "6e277f4d9ee7227568fed57638222b0a273b2dd256627ba67080b3089a114085"
+              "trace_panel_sha256": "a4043b48a8998514ec454f3fb959d0769e0ad0f3e1e1ad6b7d7026e6f063ad47"
             },
             {
               "family": "entropy-matched",
@@ -554,31 +462,89 @@
               "scenario_salt": "adversarial-entropy-matched-1",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.8999999999999998,
-              "margin_to_threshold": -1.1,
+              "danger_score": 1.09375,
+              "margin_to_threshold": -0.90625,
               "metrics": {
-                "tv_targeted": 0.14814814814814814,
-                "tv_sham": 0.16460905349794241,
-                "tv_off_target": 0.14814814814814817,
-                "control_max": 0.16460905349794241,
-                "rho_selective": 0.8999999999999998,
-                "rival_tv_loss": 0.10601727685932544,
-                "complexity_penalty": 0.011041666666666667,
-                "penalized_rival_loss": 0.11705894352599211,
-                "rival_parameter_count": 212,
-                "rival_training_entropy_bits": 1.835270790464924,
+                "tv_targeted": 0.1440329218106996,
+                "tv_sham": 0.0823045267489712,
+                "tv_off_target": 0.13168724279835392,
+                "control_max": 0.13168724279835392,
+                "rho_selective": 1.09375,
+                "rival_tv_loss": 0.08702756143503398,
+                "complexity_penalty": 0.0125,
+                "penalized_rival_loss": 0.09952756143503398,
+                "rival_parameter_count": 240,
+                "rival_training_entropy_bits": 1.907675554777887,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.11705894352599211,
+                "rival_suite_min_penalized_loss": 0.09952756143503398,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "80d378ec1c5b19b39fcfbad7283117c94220ffcd0e8611ad743fca116e5fd7bc"
+              "trace_panel_sha256": "9ff5872e34924b63aee0ff6090a6669abf4f4bfb578a662d38ed5706468e1f43"
+            },
+            {
+              "family": "entropy-matched",
+              "candidate_id": "entropy-matched-3",
+              "scenario_salt": "adversarial-entropy-matched-3",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.8155339805825242,
+              "margin_to_threshold": -1.1844660194174756,
+              "metrics": {
+                "tv_targeted": 0.34567901234567905,
+                "tv_sham": 0.30864197530864196,
+                "tv_off_target": 0.4238683127572017,
+                "control_max": 0.4238683127572017,
+                "rho_selective": 0.8155339805825242,
+                "rival_tv_loss": 0.27693255076507406,
+                "complexity_penalty": 0.0033333333333333335,
+                "penalized_rival_loss": 0.2802658840984074,
+                "rival_parameter_count": 64,
+                "rival_training_entropy_bits": 1.9026946809060556,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
+                "strongest_rival_memory_depth": 2,
+                "rival_suite_min_penalized_loss": 0.2802658840984074,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "b257d1e1d23a3b1801cdb90519da18563b45bae8afd5412f5dea100fcd7ffdc5"
+            },
+            {
+              "family": "entropy-matched",
+              "candidate_id": "entropy-matched-0",
+              "scenario_salt": "adversarial-entropy-matched-0",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.7358490566037733,
+              "margin_to_threshold": -1.2641509433962268,
+              "metrics": {
+                "tv_targeted": 0.16049382716049376,
+                "tv_sham": 0.21810699588477367,
+                "tv_off_target": 0.21399176954732507,
+                "control_max": 0.21810699588477367,
+                "rho_selective": 0.7358490566037733,
+                "rival_tv_loss": 0.06818041620112825,
+                "complexity_penalty": 0.011666666666666667,
+                "penalized_rival_loss": 0.07984708286779492,
+                "rival_parameter_count": 224,
+                "rival_training_entropy_bits": 1.8460676122654107,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+                "strongest_rival_memory_depth": 3,
+                "rival_suite_min_penalized_loss": 0.07984708286779492,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "915dec8b6474621d5df8d0a6b15bc9d38a7ce4268fe963b5f7e507842947f7b3"
             }
           ]
         },
@@ -591,31 +557,29 @@
             "scenario_salt": "adversarial-targeted-frequency-matched-0",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1.2545454545454546,
-            "margin_to_threshold": -0.7454545454545454,
+            "danger_score": 1.114285714285714,
+            "margin_to_threshold": -0.8857142857142859,
             "metrics": {
-              "tv_targeted": 0.28395061728395066,
-              "tv_sham": 0.2263374485596708,
-              "tv_off_target": 0.20987654320987656,
-              "control_max": 0.2263374485596708,
-              "rho_selective": 1.2545454545454546,
-              "rival_tv_loss": 0.16722864725578962,
-              "complexity_penalty": 0.011041666666666667,
-              "penalized_rival_loss": 0.1782703139224563,
-              "rival_parameter_count": 212,
-              "rival_training_entropy_bits": 1.8334639233366632,
+              "tv_targeted": 0.32098765432098764,
+              "tv_sham": 0.2880658436213992,
+              "tv_off_target": 0.2592592592592593,
+              "control_max": 0.2880658436213992,
+              "rho_selective": 1.114285714285714,
+              "rival_tv_loss": 0.20204587692228104,
+              "complexity_penalty": 0.010833333333333334,
+              "penalized_rival_loss": 0.21287921025561438,
+              "rival_parameter_count": 208,
+              "rival_training_entropy_bits": 1.8023104929737988,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
               "strongest_rival_memory_depth": 3,
-              "rival_suite_min_penalized_loss": 0.1782703139224563,
+              "rival_suite_min_penalized_loss": 0.21287921025561438,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "ca3ed2fffcfdb0c82a926b08643053919244cdfd6d440f6d3c8190e0d80185e2"
+            "trace_panel_sha256": "bbac300f1f0b22707616ecbbcec3d1d8947870a40c96758afc5306c12d655c20"
           },
           "candidates": [
             {
@@ -624,95 +588,29 @@
               "scenario_salt": "adversarial-targeted-frequency-matched-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.2545454545454546,
-              "margin_to_threshold": -0.7454545454545454,
+              "danger_score": 1.114285714285714,
+              "margin_to_threshold": -0.8857142857142859,
               "metrics": {
-                "tv_targeted": 0.28395061728395066,
-                "tv_sham": 0.2263374485596708,
-                "tv_off_target": 0.20987654320987656,
-                "control_max": 0.2263374485596708,
-                "rho_selective": 1.2545454545454546,
-                "rival_tv_loss": 0.16722864725578962,
-                "complexity_penalty": 0.011041666666666667,
-                "penalized_rival_loss": 0.1782703139224563,
-                "rival_parameter_count": 212,
-                "rival_training_entropy_bits": 1.8334639233366632,
+                "tv_targeted": 0.32098765432098764,
+                "tv_sham": 0.2880658436213992,
+                "tv_off_target": 0.2592592592592593,
+                "control_max": 0.2880658436213992,
+                "rho_selective": 1.114285714285714,
+                "rival_tv_loss": 0.20204587692228104,
+                "complexity_penalty": 0.010833333333333334,
+                "penalized_rival_loss": 0.21287921025561438,
+                "rival_parameter_count": 208,
+                "rival_training_entropy_bits": 1.8023104929737988,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.1782703139224563,
+                "rival_suite_min_penalized_loss": 0.21287921025561438,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "ca3ed2fffcfdb0c82a926b08643053919244cdfd6d440f6d3c8190e0d80185e2"
-            },
-            {
-              "family": "targeted-frequency-matched",
-              "candidate_id": "targeted-frequency-matched-1",
-              "scenario_salt": "adversarial-targeted-frequency-matched-1",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.2187500000000004,
-              "margin_to_threshold": -0.7812499999999996,
-              "metrics": {
-                "tv_targeted": 0.16049382716049382,
-                "tv_sham": 0.13168724279835387,
-                "tv_off_target": 0.12757201646090532,
-                "control_max": 0.13168724279835387,
-                "rho_selective": 1.2187500000000004,
-                "rival_tv_loss": 0.11675324209399017,
-                "complexity_penalty": 0.011250000000000001,
-                "penalized_rival_loss": 0.12800324209399017,
-                "rival_parameter_count": 216,
-                "rival_training_entropy_bits": 1.8670196411946705,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.12800324209399017,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "364f6bd06fcbea531d63124ecb6cfd167769d18671ebb117e9e9ac14b4a18972"
-            },
-            {
-              "family": "targeted-frequency-matched",
-              "candidate_id": "targeted-frequency-matched-2",
-              "scenario_salt": "adversarial-targeted-frequency-matched-2",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.021276595744681,
-              "margin_to_threshold": -0.978723404255319,
-              "metrics": {
-                "tv_targeted": 0.19753086419753085,
-                "tv_sham": 0.19341563786008228,
-                "tv_off_target": 0.1728395061728395,
-                "control_max": 0.19341563786008228,
-                "rho_selective": 1.021276595744681,
-                "rival_tv_loss": 0.12293216902444831,
-                "complexity_penalty": 0.0033333333333333335,
-                "penalized_rival_loss": 0.12626550235778164,
-                "rival_parameter_count": 64,
-                "rival_training_entropy_bits": 1.7649132131937901,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
-                "strongest_rival_memory_depth": 2,
-                "rival_suite_min_penalized_loss": 0.12626550235778164,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "34c98387306aa3ae29d9fe4d83311f270a9e930f65245cef1f20fb4a85cea5a6"
+              "trace_panel_sha256": "bbac300f1f0b22707616ecbbcec3d1d8947870a40c96758afc5306c12d655c20"
             },
             {
               "family": "targeted-frequency-matched",
@@ -720,31 +618,89 @@
               "scenario_salt": "adversarial-targeted-frequency-matched-3",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.9739130434782611,
-              "margin_to_threshold": -1.026086956521739,
+              "danger_score": 1.096774193548387,
+              "margin_to_threshold": -0.903225806451613,
               "metrics": {
-                "tv_targeted": 0.46090534979423875,
-                "tv_sham": 0.4732510288065843,
-                "tv_off_target": 0.4567901234567901,
-                "control_max": 0.4732510288065843,
-                "rho_selective": 0.9739130434782611,
-                "rival_tv_loss": 0.3620669724405546,
-                "complexity_penalty": 0.011250000000000001,
-                "penalized_rival_loss": 0.37331697244055456,
-                "rival_parameter_count": 216,
-                "rival_training_entropy_bits": 1.8154655550846215,
+                "tv_targeted": 0.419753086419753,
+                "tv_sham": 0.36213991769547327,
+                "tv_off_target": 0.38271604938271603,
+                "control_max": 0.38271604938271603,
+                "rho_selective": 1.096774193548387,
+                "rival_tv_loss": 0.349553311050364,
+                "complexity_penalty": 0.010833333333333334,
+                "penalized_rival_loss": 0.3603866443836974,
+                "rival_parameter_count": 208,
+                "rival_training_entropy_bits": 1.7879381906152176,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.37331697244055456,
+                "rival_suite_min_penalized_loss": 0.3603866443836974,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "3e9dccb472592fe887ddbfd9593b3080829667005b00c14d659613f8daf30c85"
+              "trace_panel_sha256": "456ecc5905042d47553a4f5e255b4465b862bf0b387f9c811ae09889854d4d37"
+            },
+            {
+              "family": "targeted-frequency-matched",
+              "candidate_id": "targeted-frequency-matched-2",
+              "scenario_salt": "adversarial-targeted-frequency-matched-2",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.9487179487179489,
+              "margin_to_threshold": -1.051282051282051,
+              "metrics": {
+                "tv_targeted": 0.15226337448559674,
+                "tv_sham": 0.16049382716049382,
+                "tv_off_target": 0.10288065843621401,
+                "control_max": 0.16049382716049382,
+                "rho_selective": 0.9487179487179489,
+                "rival_tv_loss": 0.14695603387498304,
+                "complexity_penalty": 0.0008333333333333334,
+                "penalized_rival_loss": 0.14778936720831637,
+                "rival_parameter_count": 16,
+                "rival_training_entropy_bits": 1.8067305859398013,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+                "strongest_rival_memory_depth": 1,
+                "rival_suite_min_penalized_loss": 0.14778936720831637,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "d3b98462625fe898becac6c1c294c871c6ca47c6347e7f754993fc03921cdcd6"
+            },
+            {
+              "family": "targeted-frequency-matched",
+              "candidate_id": "targeted-frequency-matched-1",
+              "scenario_salt": "adversarial-targeted-frequency-matched-1",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.673076923076923,
+              "margin_to_threshold": -1.326923076923077,
+              "metrics": {
+                "tv_targeted": 0.1440329218106996,
+                "tv_sham": 0.1728395061728395,
+                "tv_off_target": 0.21399176954732513,
+                "control_max": 0.21399176954732513,
+                "rho_selective": 0.673076923076923,
+                "rival_tv_loss": 0.05657347335944275,
+                "complexity_penalty": 0.011250000000000001,
+                "penalized_rival_loss": 0.06782347335944275,
+                "rival_parameter_count": 216,
+                "rival_training_entropy_bits": 1.8196452906916036,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+                "strongest_rival_memory_depth": 3,
+                "rival_suite_min_penalized_loss": 0.06782347335944275,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "ec63d35238b411b4502a06dd4463d15898a82f82f83327079637b0b8a5309cd3"
             }
           ]
         },
@@ -757,31 +713,29 @@
             "scenario_salt": "adversarial-role-shuffled-0",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 0.07500000000000002,
-            "margin_to_threshold": -1.925,
+            "danger_score": 0.07207207207207209,
+            "margin_to_threshold": -1.927927927927928,
             "metrics": {
-              "tv_targeted": 0.03703703703703705,
-              "tv_sham": 0.4938271604938272,
-              "tv_off_target": 0.44855967078189296,
-              "control_max": 0.4938271604938272,
-              "rho_selective": 0.07500000000000002,
-              "rival_tv_loss": 0.02978062260207099,
+              "tv_targeted": 0.03292181069958848,
+              "tv_sham": 0.45679012345679004,
+              "tv_off_target": 0.4238683127572016,
+              "control_max": 0.45679012345679004,
+              "rho_selective": 0.07207207207207209,
+              "rival_tv_loss": 0.027299356291075196,
               "complexity_penalty": 0.0008333333333333334,
-              "penalized_rival_loss": 0.03061395593540432,
+              "penalized_rival_loss": 0.028132689624408527,
               "rival_parameter_count": 16,
-              "rival_training_entropy_bits": 1.805541104293273,
+              "rival_training_entropy_bits": 1.8169898835077236,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
               "strongest_rival_memory_depth": 1,
-              "rival_suite_min_penalized_loss": 0.03061395593540432,
+              "rival_suite_min_penalized_loss": 0.028132689624408527,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "124d8adb79f7145cf811517faf0fa91a0170e4097f910aeba740f4a7d02bd67e"
+            "trace_panel_sha256": "712f049f5a43d3fa1407edd186b15e2f1b4c5d8e86cb2bc5131d0ce7e3d4bf98"
           },
           "candidates": [
             {
@@ -790,31 +744,29 @@
               "scenario_salt": "adversarial-role-shuffled-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.07500000000000002,
-              "margin_to_threshold": -1.925,
+              "danger_score": 0.07207207207207209,
+              "margin_to_threshold": -1.927927927927928,
               "metrics": {
-                "tv_targeted": 0.03703703703703705,
-                "tv_sham": 0.4938271604938272,
-                "tv_off_target": 0.44855967078189296,
-                "control_max": 0.4938271604938272,
-                "rho_selective": 0.07500000000000002,
-                "rival_tv_loss": 0.02978062260207099,
+                "tv_targeted": 0.03292181069958848,
+                "tv_sham": 0.45679012345679004,
+                "tv_off_target": 0.4238683127572016,
+                "control_max": 0.45679012345679004,
+                "rho_selective": 0.07207207207207209,
+                "rival_tv_loss": 0.027299356291075196,
                 "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.03061395593540432,
+                "penalized_rival_loss": 0.028132689624408527,
                 "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.805541104293273,
+                "rival_training_entropy_bits": 1.8169898835077236,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
                 "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.03061395593540432,
+                "rival_suite_min_penalized_loss": 0.028132689624408527,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "124d8adb79f7145cf811517faf0fa91a0170e4097f910aeba740f4a7d02bd67e"
+              "trace_panel_sha256": "712f049f5a43d3fa1407edd186b15e2f1b4c5d8e86cb2bc5131d0ce7e3d4bf98"
             }
           ]
         },
@@ -827,31 +779,29 @@
             "scenario_salt": "adversarial-perturbation-shuffled-1",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1.333333333333333,
-            "margin_to_threshold": -0.666666666666667,
+            "danger_score": 0.9999999999999999,
+            "margin_to_threshold": -1,
             "metrics": {
-              "tv_targeted": 0.2304526748971193,
-              "tv_sham": 0.1728395061728395,
-              "tv_off_target": 0.037037037037037035,
-              "control_max": 0.1728395061728395,
-              "rho_selective": 1.333333333333333,
-              "rival_tv_loss": 0.10993858692936781,
-              "complexity_penalty": 0.011875,
-              "penalized_rival_loss": 0.1218135869293678,
-              "rival_parameter_count": 228,
-              "rival_training_entropy_bits": 1.8150597741871108,
+              "tv_targeted": 0.10699588477366256,
+              "tv_sham": 0.10699588477366258,
+              "tv_off_target": 0.06584362139917693,
+              "control_max": 0.10699588477366258,
+              "rho_selective": 0.9999999999999999,
+              "rival_tv_loss": 0.04521624198260153,
+              "complexity_penalty": 0.012083333333333335,
+              "penalized_rival_loss": 0.05729957531593487,
+              "rival_parameter_count": 232,
+              "rival_training_entropy_bits": 1.9176978012007624,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
               "strongest_rival_memory_depth": 3,
-              "rival_suite_min_penalized_loss": 0.1218135869293678,
+              "rival_suite_min_penalized_loss": 0.05729957531593487,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "208daa84c1e5702cf3d2ce5af3858155e5d2ada4c45878d067972973de1eb136"
+            "trace_panel_sha256": "a67e5abfe5924ed4c74fa4b36f3ec2f9132829fc004bf56fc85678648b78d4b0"
           },
           "candidates": [
             {
@@ -860,63 +810,29 @@
               "scenario_salt": "adversarial-perturbation-shuffled-1",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.333333333333333,
-              "margin_to_threshold": -0.666666666666667,
+              "danger_score": 0.9999999999999999,
+              "margin_to_threshold": -1,
               "metrics": {
-                "tv_targeted": 0.2304526748971193,
-                "tv_sham": 0.1728395061728395,
-                "tv_off_target": 0.037037037037037035,
-                "control_max": 0.1728395061728395,
-                "rho_selective": 1.333333333333333,
-                "rival_tv_loss": 0.10993858692936781,
-                "complexity_penalty": 0.011875,
-                "penalized_rival_loss": 0.1218135869293678,
-                "rival_parameter_count": 228,
-                "rival_training_entropy_bits": 1.8150597741871108,
+                "tv_targeted": 0.10699588477366256,
+                "tv_sham": 0.10699588477366258,
+                "tv_off_target": 0.06584362139917693,
+                "control_max": 0.10699588477366258,
+                "rho_selective": 0.9999999999999999,
+                "rival_tv_loss": 0.04521624198260153,
+                "complexity_penalty": 0.012083333333333335,
+                "penalized_rival_loss": 0.05729957531593487,
+                "rival_parameter_count": 232,
+                "rival_training_entropy_bits": 1.9176978012007624,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.1218135869293678,
+                "rival_suite_min_penalized_loss": 0.05729957531593487,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "208daa84c1e5702cf3d2ce5af3858155e5d2ada4c45878d067972973de1eb136"
-            },
-            {
-              "family": "perturbation-shuffled",
-              "candidate_id": "perturbation-shuffled-2",
-              "scenario_salt": "adversarial-perturbation-shuffled-2",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.25,
-              "margin_to_threshold": -0.75,
-              "metrics": {
-                "tv_targeted": 0.16460905349794236,
-                "tv_sham": 0.1316872427983539,
-                "tv_off_target": 0.045267489711934165,
-                "control_max": 0.1316872427983539,
-                "rho_selective": 1.25,
-                "rival_tv_loss": 0.14506365031221613,
-                "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.14589698364554946,
-                "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.841683600443385,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
-                "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.14589698364554946,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "85996be52a53e724a916e7616ee706a8591c982d4e1559871dcb92875200d1d2"
+              "trace_panel_sha256": "a67e5abfe5924ed4c74fa4b36f3ec2f9132829fc004bf56fc85678648b78d4b0"
             },
             {
               "family": "perturbation-shuffled",
@@ -924,31 +840,29 @@
               "scenario_salt": "adversarial-perturbation-shuffled-3",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.1047619047619046,
-              "margin_to_threshold": -0.8952380952380954,
+              "danger_score": 0.9793814432989691,
+              "margin_to_threshold": -1.0206185567010309,
               "metrics": {
-                "tv_targeted": 0.47736625514403286,
-                "tv_sham": 0.43209876543209874,
-                "tv_off_target": 0.07407407407407407,
-                "control_max": 0.43209876543209874,
-                "rho_selective": 1.1047619047619046,
-                "rival_tv_loss": 0.4445801392962485,
-                "complexity_penalty": 0.009166666666666667,
-                "penalized_rival_loss": 0.45374680596291517,
-                "rival_parameter_count": 176,
-                "rival_training_entropy_bits": 1.7745760772027916,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.45374680596291517,
+                "tv_targeted": 0.39094650205761317,
+                "tv_sham": 0.39917695473251025,
+                "tv_off_target": 0.02469135802469133,
+                "control_max": 0.39917695473251025,
+                "rho_selective": 0.9793814432989691,
+                "rival_tv_loss": 0.32399489751612165,
+                "complexity_penalty": 0.0033333333333333335,
+                "penalized_rival_loss": 0.327328230849455,
+                "rival_parameter_count": 64,
+                "rival_training_entropy_bits": 1.871884620775511,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
+                "strongest_rival_memory_depth": 2,
+                "rival_suite_min_penalized_loss": 0.327328230849455,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "380d88fa78be0d495a61d40def623ab984031cdc3d01da607aafea57a98eb2a4"
+              "trace_panel_sha256": "c7cff9b9668e76200611f430f7548c09eea0a49773befbd4d3fcbc316b3fe187"
             },
             {
               "family": "perturbation-shuffled",
@@ -956,31 +870,59 @@
               "scenario_salt": "adversarial-perturbation-shuffled-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.72,
-              "margin_to_threshold": -1.28,
+              "danger_score": 0.8518518518518517,
+              "margin_to_threshold": -1.1481481481481484,
               "metrics": {
-                "tv_targeted": 0.14814814814814817,
-                "tv_sham": 0.20576131687242802,
-                "tv_off_target": 0.10288065843621401,
-                "control_max": 0.20576131687242802,
-                "rho_selective": 0.72,
-                "rival_tv_loss": 0.08843336363492363,
+                "tv_targeted": 0.18930041152263372,
+                "tv_sham": 0.2222222222222222,
+                "tv_off_target": 0.08641975308641978,
+                "control_max": 0.2222222222222222,
+                "rho_selective": 0.8518518518518517,
+                "rival_tv_loss": 0.07593624152799053,
                 "complexity_penalty": 0.011666666666666667,
-                "penalized_rival_loss": 0.1001000303015903,
+                "penalized_rival_loss": 0.0876029081946572,
                 "rival_parameter_count": 224,
-                "rival_training_entropy_bits": 1.8865868509460315,
+                "rival_training_entropy_bits": 1.8312119490810588,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.1001000303015903,
+                "rival_suite_min_penalized_loss": 0.0876029081946572,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "80f57409de446269d06e3946c4e6f58cc50513cd27d46806e2a97ce03ab0997f"
+              "trace_panel_sha256": "187b10d40966ee58455da60503659fa6b0e03cdbc7d417adfb4b50619c58c045"
+            },
+            {
+              "family": "perturbation-shuffled",
+              "candidate_id": "perturbation-shuffled-2",
+              "scenario_salt": "adversarial-perturbation-shuffled-2",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.8214285714285715,
+              "margin_to_threshold": -1.1785714285714284,
+              "metrics": {
+                "tv_targeted": 0.09465020576131687,
+                "tv_sham": 0.11522633744855966,
+                "tv_off_target": 0.10288065843621398,
+                "control_max": 0.11522633744855966,
+                "rho_selective": 0.8214285714285715,
+                "rival_tv_loss": 0.1087470889705612,
+                "complexity_penalty": 0.0008333333333333334,
+                "penalized_rival_loss": 0.10958042230389455,
+                "rival_parameter_count": 16,
+                "rival_training_entropy_bits": 1.8511633459258259,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+                "strongest_rival_memory_depth": 1,
+                "rival_suite_min_penalized_loss": 0.10958042230389455,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "21d2ccb504001d5e30aed4216bd855ac41dcf33c379b8f8d416779a6de8c15f1"
             }
           ]
         },
@@ -990,67 +932,61 @@
           "best_candidate": {
             "family": "transition-preserving-shuffled",
             "candidate_id": "transition-preserving-shuffled-0",
-            "scenario_salt": "pred-ext-01-v3.1-salt-0001",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1,
-            "margin_to_threshold": -1,
+            "danger_score": 0,
+            "margin_to_threshold": -2,
             "metrics": {
-              "tv_targeted": 0.004115226337448555,
-              "tv_sham": 0.004115226337448555,
+              "tv_targeted": 0,
+              "tv_sham": 0,
               "tv_off_target": 0.004115226337448555,
               "control_max": 0.004115226337448555,
-              "rho_selective": 1,
-              "rival_tv_loss": 0.007360766456586357,
+              "rho_selective": 0,
+              "rival_tv_loss": 0.01227371911978048,
               "complexity_penalty": 0.0008333333333333334,
-              "penalized_rival_loss": 0.00819409978991969,
+              "penalized_rival_loss": 0.013107052453113813,
               "rival_parameter_count": 16,
-              "rival_training_entropy_bits": 1.942268370092337,
+              "rival_training_entropy_bits": 1.805541104293273,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
               "strongest_rival_memory_depth": 1,
-              "rival_suite_min_penalized_loss": 0.00819409978991969,
+              "rival_suite_min_penalized_loss": 0.013107052453113813,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "c52da3945102eb1dc677ea631aafa3e7c19ae5685fb943cc6951aef7f23070fd"
+            "trace_panel_sha256": "0b3e9c48794ee8b901e006a7493a5c0163eb7cb198bd40fec34e52dcb27b04c9"
           },
           "candidates": [
             {
               "family": "transition-preserving-shuffled",
               "candidate_id": "transition-preserving-shuffled-0",
-              "scenario_salt": "pred-ext-01-v3.1-salt-0001",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1,
-              "margin_to_threshold": -1,
+              "danger_score": 0,
+              "margin_to_threshold": -2,
               "metrics": {
-                "tv_targeted": 0.004115226337448555,
-                "tv_sham": 0.004115226337448555,
+                "tv_targeted": 0,
+                "tv_sham": 0,
                 "tv_off_target": 0.004115226337448555,
                 "control_max": 0.004115226337448555,
-                "rho_selective": 1,
-                "rival_tv_loss": 0.007360766456586357,
+                "rho_selective": 0,
+                "rival_tv_loss": 0.01227371911978048,
                 "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.00819409978991969,
+                "penalized_rival_loss": 0.013107052453113813,
                 "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.942268370092337,
+                "rival_training_entropy_bits": 1.805541104293273,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
                 "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.00819409978991969,
+                "rival_suite_min_penalized_loss": 0.013107052453113813,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "c52da3945102eb1dc677ea631aafa3e7c19ae5685fb943cc6951aef7f23070fd"
+              "trace_panel_sha256": "0b3e9c48794ee8b901e006a7493a5c0163eb7cb198bd40fec34e52dcb27b04c9"
             }
           ]
         }
@@ -1067,68 +1003,64 @@
           "candidate_count": 4,
           "best_candidate": {
             "family": "complexity-only",
-            "candidate_id": "complexity-only-1",
-            "scenario_salt": "adversarial-complexity-only-1",
+            "candidate_id": "complexity-only-0",
+            "scenario_salt": "adversarial-complexity-only-0",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1.0208333333333333,
-            "margin_to_threshold": -0.9791666666666667,
+            "danger_score": 1.1282051282051284,
+            "margin_to_threshold": -0.8717948717948716,
             "metrics": {
-              "tv_targeted": 0.2016460905349794,
-              "tv_sham": 0.19753086419753085,
-              "tv_off_target": 0.15226337448559668,
-              "control_max": 0.19753086419753085,
-              "rho_selective": 1.0208333333333333,
-              "rival_tv_loss": 0.1431595430250666,
-              "complexity_penalty": 0.012083333333333335,
-              "penalized_rival_loss": 0.15524287635839992,
-              "rival_parameter_count": 232,
-              "rival_training_entropy_bits": 1.8627019453500382,
+              "tv_targeted": 0.18106995884773663,
+              "tv_sham": 0.16049382716049382,
+              "tv_off_target": 0.15637860082304528,
+              "control_max": 0.16049382716049382,
+              "rho_selective": 1.1282051282051284,
+              "rival_tv_loss": 0.0983711816821925,
+              "complexity_penalty": 0.011875,
+              "penalized_rival_loss": 0.1102461816821925,
+              "rival_parameter_count": 228,
+              "rival_training_entropy_bits": 1.8697590069295122,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
               "strongest_rival_memory_depth": 3,
-              "rival_suite_min_penalized_loss": 0.15524287635839992,
+              "rival_suite_min_penalized_loss": 0.1102461816821925,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "f580506b7f19d9a84dc1a931191b0a356407b88404104376484f3eb5bb2bebb3"
+            "trace_panel_sha256": "348c071dd6635c4c326e9271fec72ec0be09ee6cfa76aec1098eb98383f95b6f"
           },
           "candidates": [
             {
               "family": "complexity-only",
-              "candidate_id": "complexity-only-1",
-              "scenario_salt": "adversarial-complexity-only-1",
+              "candidate_id": "complexity-only-0",
+              "scenario_salt": "adversarial-complexity-only-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.0208333333333333,
-              "margin_to_threshold": -0.9791666666666667,
+              "danger_score": 1.1282051282051284,
+              "margin_to_threshold": -0.8717948717948716,
               "metrics": {
-                "tv_targeted": 0.2016460905349794,
-                "tv_sham": 0.19753086419753085,
-                "tv_off_target": 0.15226337448559668,
-                "control_max": 0.19753086419753085,
-                "rho_selective": 1.0208333333333333,
-                "rival_tv_loss": 0.1431595430250666,
-                "complexity_penalty": 0.012083333333333335,
-                "penalized_rival_loss": 0.15524287635839992,
-                "rival_parameter_count": 232,
-                "rival_training_entropy_bits": 1.8627019453500382,
+                "tv_targeted": 0.18106995884773663,
+                "tv_sham": 0.16049382716049382,
+                "tv_off_target": 0.15637860082304528,
+                "control_max": 0.16049382716049382,
+                "rho_selective": 1.1282051282051284,
+                "rival_tv_loss": 0.0983711816821925,
+                "complexity_penalty": 0.011875,
+                "penalized_rival_loss": 0.1102461816821925,
+                "rival_parameter_count": 228,
+                "rival_training_entropy_bits": 1.8697590069295122,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.15524287635839992,
+                "rival_suite_min_penalized_loss": 0.1102461816821925,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "f580506b7f19d9a84dc1a931191b0a356407b88404104376484f3eb5bb2bebb3"
+              "trace_panel_sha256": "348c071dd6635c4c326e9271fec72ec0be09ee6cfa76aec1098eb98383f95b6f"
             },
             {
               "family": "complexity-only",
@@ -1136,31 +1068,59 @@
               "scenario_salt": "adversarial-complexity-only-2",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.9189189189189187,
-              "margin_to_threshold": -1.0810810810810811,
+              "danger_score": 1.058823529411765,
+              "margin_to_threshold": -0.9411764705882351,
               "metrics": {
-                "tv_targeted": 0.139917695473251,
-                "tv_sham": 0.1522633744855967,
-                "tv_off_target": 0.14814814814814817,
-                "control_max": 0.1522633744855967,
-                "rho_selective": 0.9189189189189187,
-                "rival_tv_loss": 0.12080566110633399,
-                "complexity_penalty": 0.0033333333333333335,
-                "penalized_rival_loss": 0.12413899443966732,
-                "rival_parameter_count": 64,
-                "rival_training_entropy_bits": 1.815467534056372,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
-                "strongest_rival_memory_depth": 2,
-                "rival_suite_min_penalized_loss": 0.12413899443966732,
+                "tv_targeted": 0.14814814814814814,
+                "tv_sham": 0.12757201646090535,
+                "tv_off_target": 0.139917695473251,
+                "control_max": 0.139917695473251,
+                "rho_selective": 1.058823529411765,
+                "rival_tv_loss": 0.14427525836783817,
+                "complexity_penalty": 0.012083333333333335,
+                "penalized_rival_loss": 0.1563585917011715,
+                "rival_parameter_count": 232,
+                "rival_training_entropy_bits": 1.8547427923463136,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+                "strongest_rival_memory_depth": 3,
+                "rival_suite_min_penalized_loss": 0.1563585917011715,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "391124f7e12a37c749ec0352d64e2ef2dc9b36bee745c160f00339f6a9ea1b89"
+              "trace_panel_sha256": "923b56faf2abb7c5fb67c286d53be405b786c17cd3bace227a91228b3590277a"
+            },
+            {
+              "family": "complexity-only",
+              "candidate_id": "complexity-only-1",
+              "scenario_salt": "adversarial-complexity-only-1",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.9756097560975607,
+              "margin_to_threshold": -1.0243902439024393,
+              "metrics": {
+                "tv_targeted": 0.16460905349794236,
+                "tv_sham": 0.09465020576131689,
+                "tv_off_target": 0.16872427983539096,
+                "control_max": 0.16872427983539096,
+                "rho_selective": 0.9756097560975607,
+                "rival_tv_loss": 0.11820643894045327,
+                "complexity_penalty": 0.011250000000000001,
+                "penalized_rival_loss": 0.12945643894045328,
+                "rival_parameter_count": 216,
+                "rival_training_entropy_bits": 1.8282778758723788,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+                "strongest_rival_memory_depth": 3,
+                "rival_suite_min_penalized_loss": 0.12945643894045328,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "3ede588562d850326391277f7679d1577417668079d64871b22bceab7b7b2a8b"
             },
             {
               "family": "complexity-only",
@@ -1168,63 +1128,29 @@
               "scenario_salt": "adversarial-complexity-only-3",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.7454545454545456,
-              "margin_to_threshold": -1.2545454545454544,
+              "danger_score": 0.8857142857142858,
+              "margin_to_threshold": -1.1142857142857143,
               "metrics": {
-                "tv_targeted": 0.3374485596707819,
-                "tv_sham": 0.4526748971193415,
-                "tv_off_target": 0.38271604938271603,
-                "control_max": 0.4526748971193415,
-                "rho_selective": 0.7454545454545456,
-                "rival_tv_loss": 0.23624911335099089,
-                "complexity_penalty": 0.012291666666666666,
-                "penalized_rival_loss": 0.24854078001765756,
-                "rival_parameter_count": 236,
-                "rival_training_entropy_bits": 1.8762297658182137,
+                "tv_targeted": 0.38271604938271603,
+                "tv_sham": 0.41975308641975306,
+                "tv_off_target": 0.4320987654320987,
+                "control_max": 0.4320987654320987,
+                "rho_selective": 0.8857142857142858,
+                "rival_tv_loss": 0.3382698189042099,
+                "complexity_penalty": 0.011041666666666667,
+                "penalized_rival_loss": 0.34931148557087655,
+                "rival_parameter_count": 212,
+                "rival_training_entropy_bits": 1.8325064151481225,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.24854078001765756,
+                "rival_suite_min_penalized_loss": 0.34931148557087655,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "a39fa78eb90bf7e218bfa32f231ca6a45f3dbe6c17b5ee7876a66197b182cf8f"
-            },
-            {
-              "family": "complexity-only",
-              "candidate_id": "complexity-only-0",
-              "scenario_salt": "adversarial-complexity-only-0",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.6818181818181818,
-              "margin_to_threshold": -1.3181818181818183,
-              "metrics": {
-                "tv_targeted": 0.18518518518518515,
-                "tv_sham": 0.2674897119341564,
-                "tv_off_target": 0.2716049382716049,
-                "control_max": 0.2716049382716049,
-                "rho_selective": 0.6818181818181818,
-                "rival_tv_loss": 0.08075695135144338,
-                "complexity_penalty": 0.011250000000000001,
-                "penalized_rival_loss": 0.09200695135144338,
-                "rival_parameter_count": 216,
-                "rival_training_entropy_bits": 1.8423102084759206,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.09200695135144338,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "5f08ee6932ab8d4cdddfb3519d28cefd90a6db7551056418e941064fb6578a94"
+              "trace_panel_sha256": "cf17eff09e5538d4bcf886fb00e5051cec0caebb6aa8282532abd597a8f15497"
             }
           ]
         },
@@ -1233,132 +1159,64 @@
           "candidate_count": 4,
           "best_candidate": {
             "family": "memory-only",
-            "candidate_id": "memory-only-1",
-            "scenario_salt": "adversarial-memory-only-1",
+            "candidate_id": "memory-only-2",
+            "scenario_salt": "adversarial-memory-only-2",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1.2142857142857144,
-            "margin_to_threshold": -0.7857142857142856,
+            "danger_score": 1,
+            "margin_to_threshold": -1,
             "metrics": {
-              "tv_targeted": 0.06995884773662553,
-              "tv_sham": 0.05761316872427984,
-              "tv_off_target": 0.04526748971193416,
-              "control_max": 0.05761316872427984,
-              "rho_selective": 1.2142857142857144,
-              "rival_tv_loss": 0.06665297007878145,
-              "complexity_penalty": 0.0033333333333333335,
-              "penalized_rival_loss": 0.06998630341211477,
-              "rival_parameter_count": 64,
-              "rival_training_entropy_bits": 1.9684870180025227,
-              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
-              "strongest_rival_memory_depth": 2,
-              "rival_suite_min_penalized_loss": 0.06998630341211477,
+              "tv_targeted": 0.05761316872427982,
+              "tv_sham": 0.05761316872427982,
+              "tv_off_target": 0.04115226337448562,
+              "control_max": 0.05761316872427982,
+              "rho_selective": 1,
+              "rival_tv_loss": 0.05368033571194873,
+              "complexity_penalty": 0.0008333333333333334,
+              "penalized_rival_loss": 0.054513669045282064,
+              "rival_parameter_count": 16,
+              "rival_training_entropy_bits": 1.875106625191506,
+              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+              "strongest_rival_memory_depth": 1,
+              "rival_suite_min_penalized_loss": 0.054513669045282064,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "4fe6def4b31b9368e9be4d4480e25e3e48e6068e342e299222de6ebf6307bb08"
+            "trace_panel_sha256": "ec8b6f35883d8f007bcb15b3063801e340832d6debb930da354de11e6debefac"
           },
           "candidates": [
-            {
-              "family": "memory-only",
-              "candidate_id": "memory-only-1",
-              "scenario_salt": "adversarial-memory-only-1",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.2142857142857144,
-              "margin_to_threshold": -0.7857142857142856,
-              "metrics": {
-                "tv_targeted": 0.06995884773662553,
-                "tv_sham": 0.05761316872427984,
-                "tv_off_target": 0.04526748971193416,
-                "control_max": 0.05761316872427984,
-                "rho_selective": 1.2142857142857144,
-                "rival_tv_loss": 0.06665297007878145,
-                "complexity_penalty": 0.0033333333333333335,
-                "penalized_rival_loss": 0.06998630341211477,
-                "rival_parameter_count": 64,
-                "rival_training_entropy_bits": 1.9684870180025227,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
-                "strongest_rival_memory_depth": 2,
-                "rival_suite_min_penalized_loss": 0.06998630341211477,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "4fe6def4b31b9368e9be4d4480e25e3e48e6068e342e299222de6ebf6307bb08"
-            },
-            {
-              "family": "memory-only",
-              "candidate_id": "memory-only-3",
-              "scenario_salt": "adversarial-memory-only-3",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.1428571428571426,
-              "margin_to_threshold": -0.8571428571428574,
-              "metrics": {
-                "tv_targeted": 0.09876543209876543,
-                "tv_sham": 0.08641975308641978,
-                "tv_off_target": 0.07818930041152262,
-                "control_max": 0.08641975308641978,
-                "rho_selective": 1.1428571428571426,
-                "rival_tv_loss": 0.10151238056268648,
-                "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.10234571389601982,
-                "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.837405837593074,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
-                "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.10234571389601982,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "4475285c20d036e5333e30598246cac8dd05ecdbb131462457c32c1bd222226d"
-            },
             {
               "family": "memory-only",
               "candidate_id": "memory-only-2",
               "scenario_salt": "adversarial-memory-only-2",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.043478260869565,
-              "margin_to_threshold": -0.956521739130435,
+              "danger_score": 1,
+              "margin_to_threshold": -1,
               "metrics": {
-                "tv_targeted": 0.09876543209876543,
-                "tv_sham": 0.09465020576131689,
-                "tv_off_target": 0.05349794238683127,
-                "control_max": 0.09465020576131689,
-                "rho_selective": 1.043478260869565,
-                "rival_tv_loss": 0.10143021390736404,
+                "tv_targeted": 0.05761316872427982,
+                "tv_sham": 0.05761316872427982,
+                "tv_off_target": 0.04115226337448562,
+                "control_max": 0.05761316872427982,
+                "rho_selective": 1,
+                "rival_tv_loss": 0.05368033571194873,
                 "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.10226354724069738,
+                "penalized_rival_loss": 0.054513669045282064,
                 "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.896151583047545,
+                "rival_training_entropy_bits": 1.875106625191506,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
                 "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.10226354724069738,
+                "rival_suite_min_penalized_loss": 0.054513669045282064,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "f30e884c130362f0054e1c6ea78087e0f8b7c4c59a085cd7c06bbd8cca76ec6a"
+              "trace_panel_sha256": "ec8b6f35883d8f007bcb15b3063801e340832d6debb930da354de11e6debefac"
             },
             {
               "family": "memory-only",
@@ -1366,31 +1224,89 @@
               "scenario_salt": "adversarial-memory-only-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.4545454545454546,
-              "margin_to_threshold": -1.5454545454545454,
+              "danger_score": 0.9473684210526313,
+              "margin_to_threshold": -1.0526315789473686,
               "metrics": {
-                "tv_targeted": 0.041152263374485604,
-                "tv_sham": 0.08641975308641979,
-                "tv_off_target": 0.09053497942386832,
-                "control_max": 0.09053497942386832,
-                "rho_selective": 0.4545454545454546,
-                "rival_tv_loss": 0.02021727880622784,
-                "complexity_penalty": 0.013125000000000001,
-                "penalized_rival_loss": 0.03334227880622784,
-                "rival_parameter_count": 252,
-                "rival_training_entropy_bits": 1.9901227586322805,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.03334227880622784,
+                "tv_targeted": 0.07407407407407404,
+                "tv_sham": 0.07818930041152262,
+                "tv_off_target": 0.053497942386831254,
+                "control_max": 0.07818930041152262,
+                "rho_selective": 0.9473684210526313,
+                "rival_tv_loss": 0.07069032858857528,
+                "complexity_penalty": 0.0008333333333333334,
+                "penalized_rival_loss": 0.07152366192190862,
+                "rival_parameter_count": 16,
+                "rival_training_entropy_bits": 1.9939371720643628,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+                "strongest_rival_memory_depth": 1,
+                "rival_suite_min_penalized_loss": 0.07152366192190862,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "d8273472704bd2f8a6425e514d8d2e0200093c17e6855bc1688ece6fbb18ee3a"
+              "trace_panel_sha256": "5cc0939291691b254a17a01b3959e6dd65ffa01af22a5eb73c3283ae9419b2ef"
+            },
+            {
+              "family": "memory-only",
+              "candidate_id": "memory-only-3",
+              "scenario_salt": "adversarial-memory-only-3",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.7272727272727271,
+              "margin_to_threshold": -1.272727272727273,
+              "metrics": {
+                "tv_targeted": 0.06584362139917695,
+                "tv_sham": 0.061728395061728426,
+                "tv_off_target": 0.09053497942386833,
+                "control_max": 0.09053497942386833,
+                "rho_selective": 0.7272727272727271,
+                "rival_tv_loss": 0.07090361219629804,
+                "complexity_penalty": 0.0008333333333333334,
+                "penalized_rival_loss": 0.07173694552963138,
+                "rival_parameter_count": 16,
+                "rival_training_entropy_bits": 1.8318538385538046,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+                "strongest_rival_memory_depth": 1,
+                "rival_suite_min_penalized_loss": 0.07173694552963138,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "bbdb748550f8c8710e55257527cd2a1853ef8d79195689c97c5a0c9552c7e710"
+            },
+            {
+              "family": "memory-only",
+              "candidate_id": "memory-only-1",
+              "scenario_salt": "adversarial-memory-only-1",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.24000000000000002,
+              "margin_to_threshold": -1.76,
+              "metrics": {
+                "tv_targeted": 0.024691358024691357,
+                "tv_sham": 0.10288065843621398,
+                "tv_off_target": 0.06584362139917696,
+                "control_max": 0.10288065843621398,
+                "rho_selective": 0.24000000000000002,
+                "rival_tv_loss": 0.025695740373085002,
+                "complexity_penalty": 0.0008333333333333334,
+                "penalized_rival_loss": 0.026529073706418334,
+                "rival_parameter_count": 16,
+                "rival_training_entropy_bits": 1.9768409398509426,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+                "strongest_rival_memory_depth": 1,
+                "rival_suite_min_penalized_loss": 0.026529073706418334,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "c5146f01abb605223a7ef70807b2104bdbffd13dbe3157e8bcdddb2656ff5263"
             }
           ]
         },
@@ -1403,31 +1319,29 @@
             "scenario_salt": "adversarial-narrative-only-0",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 0.9333333333333329,
-            "margin_to_threshold": -1.066666666666667,
+            "danger_score": 0.8333333333333336,
+            "margin_to_threshold": -1.1666666666666665,
             "metrics": {
-              "tv_targeted": 0.05761316872427981,
-              "tv_sham": 0.02880658436213991,
-              "tv_off_target": 0.06172839506172839,
-              "control_max": 0.06172839506172839,
-              "rho_selective": 0.9333333333333329,
-              "rival_tv_loss": 0.06717813467664013,
+              "tv_targeted": 0.06172839506172842,
+              "tv_sham": 0.07407407407407408,
+              "tv_off_target": 0.037037037037037035,
+              "control_max": 0.07407407407407408,
+              "rho_selective": 0.8333333333333336,
+              "rival_tv_loss": 0.05931040695058354,
               "complexity_penalty": 0.0008333333333333334,
-              "penalized_rival_loss": 0.06801146800997347,
+              "penalized_rival_loss": 0.06014374028391687,
               "rival_parameter_count": 16,
-              "rival_training_entropy_bits": 1.8201467629741694,
+              "rival_training_entropy_bits": 1.883108671078889,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
               "strongest_rival_memory_depth": 1,
-              "rival_suite_min_penalized_loss": 0.06801146800997347,
+              "rival_suite_min_penalized_loss": 0.06014374028391687,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "0068827c2684fdaf4bc78a083878c379202ef5f59bef056a503483ecc1152a0c"
+            "trace_panel_sha256": "d0d389e7175bcc95412243ee997ec4661d0d4399183fbbc0334cc7effa279741"
           },
           "candidates": [
             {
@@ -1436,31 +1350,29 @@
               "scenario_salt": "adversarial-narrative-only-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.9333333333333329,
-              "margin_to_threshold": -1.066666666666667,
+              "danger_score": 0.8333333333333336,
+              "margin_to_threshold": -1.1666666666666665,
               "metrics": {
-                "tv_targeted": 0.05761316872427981,
-                "tv_sham": 0.02880658436213991,
-                "tv_off_target": 0.06172839506172839,
-                "control_max": 0.06172839506172839,
-                "rho_selective": 0.9333333333333329,
-                "rival_tv_loss": 0.06717813467664013,
+                "tv_targeted": 0.06172839506172842,
+                "tv_sham": 0.07407407407407408,
+                "tv_off_target": 0.037037037037037035,
+                "control_max": 0.07407407407407408,
+                "rho_selective": 0.8333333333333336,
+                "rival_tv_loss": 0.05931040695058354,
                 "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.06801146800997347,
+                "penalized_rival_loss": 0.06014374028391687,
                 "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.8201467629741694,
+                "rival_training_entropy_bits": 1.883108671078889,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
                 "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.06801146800997347,
+                "rival_suite_min_penalized_loss": 0.06014374028391687,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "0068827c2684fdaf4bc78a083878c379202ef5f59bef056a503483ecc1152a0c"
+              "trace_panel_sha256": "d0d389e7175bcc95412243ee997ec4661d0d4399183fbbc0334cc7effa279741"
             }
           ]
         },
@@ -1473,31 +1385,29 @@
             "scenario_salt": "adversarial-entropy-matched-0",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1.2380952380952377,
-            "margin_to_threshold": -0.7619047619047623,
+            "danger_score": 1.2222222222222223,
+            "margin_to_threshold": -0.7777777777777777,
             "metrics": {
-              "tv_targeted": 0.2139917695473251,
-              "tv_sham": 0.17283950617283955,
-              "tv_off_target": 0.1440329218106996,
-              "control_max": 0.17283950617283955,
-              "rho_selective": 1.2380952380952377,
-              "rival_tv_loss": 0.12028971173752916,
-              "complexity_penalty": 0.012083333333333335,
-              "penalized_rival_loss": 0.1323730450708625,
-              "rival_parameter_count": 232,
-              "rival_training_entropy_bits": 1.9059622478078067,
+              "tv_targeted": 0.3168724279835391,
+              "tv_sham": 0.242798353909465,
+              "tv_off_target": 0.25925925925925924,
+              "control_max": 0.25925925925925924,
+              "rho_selective": 1.2222222222222223,
+              "rival_tv_loss": 0.18752281028428433,
+              "complexity_penalty": 0.011250000000000001,
+              "penalized_rival_loss": 0.19877281028428434,
+              "rival_parameter_count": 216,
+              "rival_training_entropy_bits": 1.8023104929737988,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
               "strongest_rival_memory_depth": 3,
-              "rival_suite_min_penalized_loss": 0.1323730450708625,
+              "rival_suite_min_penalized_loss": 0.19877281028428434,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "f352485aa441a1257e3fb6436d3525ddad3fce657abd9058fbaec06b03abda96"
+            "trace_panel_sha256": "af12f80a72ca3fcb6a5f042009361d7687362cb2a60fa71a3d15013420ae7af4"
           },
           "candidates": [
             {
@@ -1506,63 +1416,29 @@
               "scenario_salt": "adversarial-entropy-matched-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.2380952380952377,
-              "margin_to_threshold": -0.7619047619047623,
+              "danger_score": 1.2222222222222223,
+              "margin_to_threshold": -0.7777777777777777,
               "metrics": {
-                "tv_targeted": 0.2139917695473251,
-                "tv_sham": 0.17283950617283955,
-                "tv_off_target": 0.1440329218106996,
-                "control_max": 0.17283950617283955,
-                "rho_selective": 1.2380952380952377,
-                "rival_tv_loss": 0.12028971173752916,
-                "complexity_penalty": 0.012083333333333335,
-                "penalized_rival_loss": 0.1323730450708625,
-                "rival_parameter_count": 232,
-                "rival_training_entropy_bits": 1.9059622478078067,
+                "tv_targeted": 0.3168724279835391,
+                "tv_sham": 0.242798353909465,
+                "tv_off_target": 0.25925925925925924,
+                "control_max": 0.25925925925925924,
+                "rho_selective": 1.2222222222222223,
+                "rival_tv_loss": 0.18752281028428433,
+                "complexity_penalty": 0.011250000000000001,
+                "penalized_rival_loss": 0.19877281028428434,
+                "rival_parameter_count": 216,
+                "rival_training_entropy_bits": 1.8023104929737988,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.1323730450708625,
+                "rival_suite_min_penalized_loss": 0.19877281028428434,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "f352485aa441a1257e3fb6436d3525ddad3fce657abd9058fbaec06b03abda96"
-            },
-            {
-              "family": "entropy-matched",
-              "candidate_id": "entropy-matched-2",
-              "scenario_salt": "adversarial-entropy-matched-2",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.1489361702127663,
-              "margin_to_threshold": -0.8510638297872337,
-              "metrics": {
-                "tv_targeted": 0.2222222222222222,
-                "tv_sham": 0.19341563786008226,
-                "tv_off_target": 0.1810699588477366,
-                "control_max": 0.19341563786008226,
-                "rho_selective": 1.1489361702127663,
-                "rival_tv_loss": 0.2120826271368063,
-                "complexity_penalty": 0.0033333333333333335,
-                "penalized_rival_loss": 0.21541596047013964,
-                "rival_parameter_count": 64,
-                "rival_training_entropy_bits": 1.8560968392183879,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
-                "strongest_rival_memory_depth": 2,
-                "rival_suite_min_penalized_loss": 0.21541596047013964,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "7080bc565b99e47755005c0572fb95877daa267224226dcb053de994cbb3d07a"
+              "trace_panel_sha256": "af12f80a72ca3fcb6a5f042009361d7687362cb2a60fa71a3d15013420ae7af4"
             },
             {
               "family": "entropy-matched",
@@ -1570,31 +1446,29 @@
               "scenario_salt": "adversarial-entropy-matched-3",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.990566037735849,
-              "margin_to_threshold": -1.009433962264151,
+              "danger_score": 0.9915254237288136,
+              "margin_to_threshold": -1.0084745762711864,
               "metrics": {
-                "tv_targeted": 0.43209876543209874,
-                "tv_sham": 0.43621399176954734,
-                "tv_off_target": 0.4238683127572016,
-                "control_max": 0.43621399176954734,
-                "rho_selective": 0.990566037735849,
-                "rival_tv_loss": 0.4010220274864368,
+                "tv_targeted": 0.4814814814814815,
+                "tv_sham": 0.48559670781893005,
+                "tv_off_target": 0.4732510288065844,
+                "control_max": 0.48559670781893005,
+                "rho_selective": 0.9915254237288136,
+                "rival_tv_loss": 0.4022218807853629,
                 "complexity_penalty": 0.0033333333333333335,
-                "penalized_rival_loss": 0.40435536081977014,
+                "penalized_rival_loss": 0.40555521411869627,
                 "rival_parameter_count": 64,
-                "rival_training_entropy_bits": 1.854121728141783,
+                "rival_training_entropy_bits": 1.7809021995308187,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
                 "strongest_rival_memory_depth": 2,
-                "rival_suite_min_penalized_loss": 0.40435536081977014,
+                "rival_suite_min_penalized_loss": 0.40555521411869627,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "038361fca3a9fc44037620658c962c1d9c6c1937374c7198ebd13ecc9f201305"
+              "trace_panel_sha256": "bfdfe580bdc02691d0c2f9515dd4b6755e2eb1848e05c15e34d796fad4b4ac74"
             },
             {
               "family": "entropy-matched",
@@ -1602,31 +1476,59 @@
               "scenario_salt": "adversarial-entropy-matched-1",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.8571428571428571,
-              "margin_to_threshold": -1.1428571428571428,
+              "danger_score": 0.8235294117647058,
+              "margin_to_threshold": -1.1764705882352942,
               "metrics": {
-                "tv_targeted": 0.19753086419753085,
-                "tv_sham": 0.23045267489711935,
-                "tv_off_target": 0.2263374485596708,
-                "control_max": 0.23045267489711935,
-                "rho_selective": 0.8571428571428571,
-                "rival_tv_loss": 0.12000385224819311,
-                "complexity_penalty": 0.012291666666666666,
-                "penalized_rival_loss": 0.13229551891485977,
-                "rival_parameter_count": 236,
-                "rival_training_entropy_bits": 1.8488886616829716,
+                "tv_targeted": 0.1728395061728395,
+                "tv_sham": 0.13168724279835392,
+                "tv_off_target": 0.20987654320987653,
+                "control_max": 0.20987654320987653,
+                "rho_selective": 0.8235294117647058,
+                "rival_tv_loss": 0.07542933020261613,
+                "complexity_penalty": 0.011041666666666667,
+                "penalized_rival_loss": 0.0864709968692828,
+                "rival_parameter_count": 212,
+                "rival_training_entropy_bits": 1.8146792692018736,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.13229551891485977,
+                "rival_suite_min_penalized_loss": 0.0864709968692828,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "ed454cf0b44fd996585dce8d075b5797eefc04a52c511c419a0a360a434cff98"
+              "trace_panel_sha256": "e1e09b469b12c14af5e91cd679562ae172dbf1549d46324335b3e1c35b83dd11"
+            },
+            {
+              "family": "entropy-matched",
+              "candidate_id": "entropy-matched-2",
+              "scenario_salt": "adversarial-entropy-matched-2",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.8095238095238103,
+              "margin_to_threshold": -1.1904761904761898,
+              "metrics": {
+                "tv_targeted": 0.06995884773662554,
+                "tv_sham": 0.07818930041152264,
+                "tv_off_target": 0.0864197530864197,
+                "control_max": 0.0864197530864197,
+                "rho_selective": 0.8095238095238103,
+                "rival_tv_loss": 0.07544992359832002,
+                "complexity_penalty": 0.0008333333333333334,
+                "penalized_rival_loss": 0.07628325693165336,
+                "rival_parameter_count": 16,
+                "rival_training_entropy_bits": 1.8587426404687601,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
+                "strongest_rival_memory_depth": 1,
+                "rival_suite_min_penalized_loss": 0.07628325693165336,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "e5424dee188c441402d814a09016ed960f573c62c2e19e7da824c335308116db"
             }
           ]
         },
@@ -1635,100 +1537,94 @@
           "candidate_count": 4,
           "best_candidate": {
             "family": "targeted-frequency-matched",
-            "candidate_id": "targeted-frequency-matched-2",
-            "scenario_salt": "adversarial-targeted-frequency-matched-2",
+            "candidate_id": "targeted-frequency-matched-3",
+            "scenario_salt": "adversarial-targeted-frequency-matched-3",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1.083333333333333,
-            "margin_to_threshold": -0.916666666666667,
+            "danger_score": 1.0208333333333333,
+            "margin_to_threshold": -0.9791666666666667,
             "metrics": {
-              "tv_targeted": 0.16049382716049382,
-              "tv_sham": 0.14814814814814817,
-              "tv_off_target": 0.1440329218106996,
-              "control_max": 0.14814814814814817,
-              "rho_selective": 1.083333333333333,
-              "rival_tv_loss": 0.12406706795961643,
-              "complexity_penalty": 0.011250000000000001,
-              "penalized_rival_loss": 0.13531706795961643,
-              "rival_parameter_count": 216,
-              "rival_training_entropy_bits": 1.8177572108945501,
+              "tv_targeted": 0.4032921810699588,
+              "tv_sham": 0.38683127572016457,
+              "tv_off_target": 0.3950617283950617,
+              "control_max": 0.3950617283950617,
+              "rho_selective": 1.0208333333333333,
+              "rival_tv_loss": 0.341195682362206,
+              "complexity_penalty": 0.011875,
+              "penalized_rival_loss": 0.353070682362206,
+              "rival_parameter_count": 228,
+              "rival_training_entropy_bits": 1.878939029924804,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
               "strongest_rival_memory_depth": 3,
-              "rival_suite_min_penalized_loss": 0.13531706795961643,
+              "rival_suite_min_penalized_loss": 0.353070682362206,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "fefa4818daf6038eb619e0a8023582d6aa8eb7c8286702bd442835941830fea5"
+            "trace_panel_sha256": "ec691e06e3b3bd611b04fdaa3baa4dcdaf29538f1bd09ad0432a1e7738ce4a13"
           },
           "candidates": [
-            {
-              "family": "targeted-frequency-matched",
-              "candidate_id": "targeted-frequency-matched-2",
-              "scenario_salt": "adversarial-targeted-frequency-matched-2",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.083333333333333,
-              "margin_to_threshold": -0.916666666666667,
-              "metrics": {
-                "tv_targeted": 0.16049382716049382,
-                "tv_sham": 0.14814814814814817,
-                "tv_off_target": 0.1440329218106996,
-                "control_max": 0.14814814814814817,
-                "rho_selective": 1.083333333333333,
-                "rival_tv_loss": 0.12406706795961643,
-                "complexity_penalty": 0.011250000000000001,
-                "penalized_rival_loss": 0.13531706795961643,
-                "rival_parameter_count": 216,
-                "rival_training_entropy_bits": 1.8177572108945501,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.13531706795961643,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "fefa4818daf6038eb619e0a8023582d6aa8eb7c8286702bd442835941830fea5"
-            },
             {
               "family": "targeted-frequency-matched",
               "candidate_id": "targeted-frequency-matched-3",
               "scenario_salt": "adversarial-targeted-frequency-matched-3",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.9727272727272728,
-              "margin_to_threshold": -1.0272727272727273,
+              "danger_score": 1.0208333333333333,
+              "margin_to_threshold": -0.9791666666666667,
               "metrics": {
-                "tv_targeted": 0.4403292181069959,
-                "tv_sham": 0.45267489711934156,
-                "tv_off_target": 0.41975308641975306,
-                "control_max": 0.45267489711934156,
-                "rho_selective": 0.9727272727272728,
-                "rival_tv_loss": 0.38614207202665873,
-                "complexity_penalty": 0.010625,
-                "penalized_rival_loss": 0.39676707202665873,
-                "rival_parameter_count": 204,
-                "rival_training_entropy_bits": 1.8276115774064605,
+                "tv_targeted": 0.4032921810699588,
+                "tv_sham": 0.38683127572016457,
+                "tv_off_target": 0.3950617283950617,
+                "control_max": 0.3950617283950617,
+                "rho_selective": 1.0208333333333333,
+                "rival_tv_loss": 0.341195682362206,
+                "complexity_penalty": 0.011875,
+                "penalized_rival_loss": 0.353070682362206,
+                "rival_parameter_count": 228,
+                "rival_training_entropy_bits": 1.878939029924804,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.39676707202665873,
+                "rival_suite_min_penalized_loss": 0.353070682362206,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "6ab5073bd1a8f20b1d02d7daa1d30cb8bc2938ae60ac75fb59f45efa5afd0548"
+              "trace_panel_sha256": "ec691e06e3b3bd611b04fdaa3baa4dcdaf29538f1bd09ad0432a1e7738ce4a13"
+            },
+            {
+              "family": "targeted-frequency-matched",
+              "candidate_id": "targeted-frequency-matched-2",
+              "scenario_salt": "adversarial-targeted-frequency-matched-2",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.9574468085106385,
+              "margin_to_threshold": -1.0425531914893615,
+              "metrics": {
+                "tv_targeted": 0.18518518518518517,
+                "tv_sham": 0.19341563786008226,
+                "tv_off_target": 0.19341563786008226,
+                "control_max": 0.19341563786008226,
+                "rho_selective": 0.9574468085106385,
+                "rival_tv_loss": 0.13886042305711593,
+                "complexity_penalty": 0.011875,
+                "penalized_rival_loss": 0.15073542305711593,
+                "rival_parameter_count": 228,
+                "rival_training_entropy_bits": 1.890022397777998,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+                "strongest_rival_memory_depth": 3,
+                "rival_suite_min_penalized_loss": 0.15073542305711593,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "a2d18e8e8d0aeb7e67b94c26c7dfd4b42e9511482a7cc0e2e3419c9d3e67e92a"
             },
             {
               "family": "targeted-frequency-matched",
@@ -1736,31 +1632,29 @@
               "scenario_salt": "adversarial-targeted-frequency-matched-1",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.75,
-              "margin_to_threshold": -1.25,
+              "danger_score": 0.8999999999999999,
+              "margin_to_threshold": -1.1,
               "metrics": {
-                "tv_targeted": 0.16049382716049385,
-                "tv_sham": 0.16872427983539096,
-                "tv_off_target": 0.21399176954732513,
-                "control_max": 0.21399176954732513,
-                "rho_selective": 0.75,
-                "rival_tv_loss": 0.09436185503653831,
-                "complexity_penalty": 0.011041666666666667,
-                "penalized_rival_loss": 0.10540352170320498,
-                "rival_parameter_count": 212,
-                "rival_training_entropy_bits": 1.8248525769693789,
+                "tv_targeted": 0.18518518518518517,
+                "tv_sham": 0.205761316872428,
+                "tv_off_target": 0.13580246913580246,
+                "control_max": 0.205761316872428,
+                "rho_selective": 0.8999999999999999,
+                "rival_tv_loss": 0.10261746025040575,
+                "complexity_penalty": 0.011666666666666667,
+                "penalized_rival_loss": 0.11428412691707242,
+                "rival_parameter_count": 224,
+                "rival_training_entropy_bits": 1.8459361636378957,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.10540352170320498,
+                "rival_suite_min_penalized_loss": 0.11428412691707242,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "7f6af24f8e9c0c97b4288895c2ce2ab9bbbd3b993b81bb8231ed958556b2a347"
+              "trace_panel_sha256": "463857b44aa805e652bc1db94e98579eb876416e5eb9eeadfdd6b987bbc51b35"
             },
             {
               "family": "targeted-frequency-matched",
@@ -1768,31 +1662,29 @@
               "scenario_salt": "adversarial-targeted-frequency-matched-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.7307692307692305,
-              "margin_to_threshold": -1.2692307692307696,
+              "danger_score": 0.8703703703703703,
+              "margin_to_threshold": -1.1296296296296298,
               "metrics": {
-                "tv_targeted": 0.15637860082304522,
-                "tv_sham": 0.21399176954732513,
-                "tv_off_target": 0.16872427983539093,
-                "control_max": 0.21399176954732513,
-                "rho_selective": 0.7307692307692305,
-                "rival_tv_loss": 0.08212685017318708,
+                "tv_targeted": 0.1934156378600823,
+                "tv_sham": 0.20987654320987656,
+                "tv_off_target": 0.22222222222222224,
+                "control_max": 0.22222222222222224,
+                "rho_selective": 0.8703703703703703,
+                "rival_tv_loss": 0.08759180079912064,
                 "complexity_penalty": 0.011250000000000001,
-                "penalized_rival_loss": 0.09337685017318707,
+                "penalized_rival_loss": 0.09884180079912064,
                 "rival_parameter_count": 216,
-                "rival_training_entropy_bits": 1.8592238829327643,
+                "rival_training_entropy_bits": 1.8672071396721799,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.09337685017318707,
+                "rival_suite_min_penalized_loss": 0.09884180079912064,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "46a057eb9a26bb1d0f2780c057975447965e5afd1933d7da31bb1adaa0f03891"
+              "trace_panel_sha256": "98d6e004efb3ec50f5f028694315e50b8b2450983681463ad0a3b3b73dba160d"
             }
           ]
         },
@@ -1805,31 +1697,29 @@
             "scenario_salt": "adversarial-role-shuffled-0",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 0.1529411764705882,
-            "margin_to_threshold": -1.8470588235294119,
+            "danger_score": 0.12389380530973448,
+            "margin_to_threshold": -1.8761061946902655,
             "metrics": {
-              "tv_targeted": 0.05349794238683127,
-              "tv_sham": 0.3456790123456791,
-              "tv_off_target": 0.34979423868312765,
-              "control_max": 0.34979423868312765,
-              "rho_selective": 0.1529411764705882,
-              "rival_tv_loss": 0.05569023908490526,
+              "tv_targeted": 0.05761316872427983,
+              "tv_sham": 0.4650205761316873,
+              "tv_off_target": 0.43209876543209874,
+              "control_max": 0.4650205761316873,
+              "rho_selective": 0.12389380530973448,
+              "rival_tv_loss": 0.055260380414946145,
               "complexity_penalty": 0.0008333333333333334,
-              "penalized_rival_loss": 0.05652357241823859,
+              "penalized_rival_loss": 0.056093713748279476,
               "rival_parameter_count": 16,
-              "rival_training_entropy_bits": 1.9048501724574503,
+              "rival_training_entropy_bits": 1.8033921725096134,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
               "strongest_rival_memory_depth": 1,
-              "rival_suite_min_penalized_loss": 0.05652357241823859,
+              "rival_suite_min_penalized_loss": 0.056093713748279476,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "99911f66ea64a547b7a99b30854c04da43db0558b129846f3d65876f73ac2606"
+            "trace_panel_sha256": "fa4905a849ded3abfab0d859930137f073eb0ef3ed614c83601ea98df947e7e1"
           },
           "candidates": [
             {
@@ -1838,31 +1728,29 @@
               "scenario_salt": "adversarial-role-shuffled-0",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.1529411764705882,
-              "margin_to_threshold": -1.8470588235294119,
+              "danger_score": 0.12389380530973448,
+              "margin_to_threshold": -1.8761061946902655,
               "metrics": {
-                "tv_targeted": 0.05349794238683127,
-                "tv_sham": 0.3456790123456791,
-                "tv_off_target": 0.34979423868312765,
-                "control_max": 0.34979423868312765,
-                "rho_selective": 0.1529411764705882,
-                "rival_tv_loss": 0.05569023908490526,
+                "tv_targeted": 0.05761316872427983,
+                "tv_sham": 0.4650205761316873,
+                "tv_off_target": 0.43209876543209874,
+                "control_max": 0.4650205761316873,
+                "rho_selective": 0.12389380530973448,
+                "rival_tv_loss": 0.055260380414946145,
                 "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.05652357241823859,
+                "penalized_rival_loss": 0.056093713748279476,
                 "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.9048501724574503,
+                "rival_training_entropy_bits": 1.8033921725096134,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
                 "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.05652357241823859,
+                "rival_suite_min_penalized_loss": 0.056093713748279476,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "99911f66ea64a547b7a99b30854c04da43db0558b129846f3d65876f73ac2606"
+              "trace_panel_sha256": "fa4905a849ded3abfab0d859930137f073eb0ef3ed614c83601ea98df947e7e1"
             }
           ]
         },
@@ -1871,132 +1759,64 @@
           "candidate_count": 4,
           "best_candidate": {
             "family": "perturbation-shuffled",
-            "candidate_id": "perturbation-shuffled-0",
-            "scenario_salt": "adversarial-perturbation-shuffled-0",
+            "candidate_id": "perturbation-shuffled-2",
+            "scenario_salt": "adversarial-perturbation-shuffled-2",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
-            "danger_score": 1.2549019607843137,
-            "margin_to_threshold": -0.7450980392156863,
+            "danger_score": 1.6666666666666672,
+            "margin_to_threshold": -0.3333333333333328,
             "metrics": {
-              "tv_targeted": 0.26337448559670784,
-              "tv_sham": 0.20987654320987656,
-              "tv_off_target": 0.0411522633744856,
-              "control_max": 0.20987654320987656,
-              "rho_selective": 1.2549019607843137,
-              "rival_tv_loss": 0.18678699128773377,
-              "complexity_penalty": 0.010625,
-              "penalized_rival_loss": 0.19741199128773376,
-              "rival_parameter_count": 204,
-              "rival_training_entropy_bits": 1.8481047188988557,
-              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-              "strongest_rival_memory_depth": 3,
-              "rival_suite_min_penalized_loss": 0.19741199128773376,
+              "tv_targeted": 0.1440329218106996,
+              "tv_sham": 0.08641975308641973,
+              "tv_off_target": 0.032921810699588466,
+              "control_max": 0.08641975308641973,
+              "rho_selective": 1.6666666666666672,
+              "rival_tv_loss": 0.11450663175823837,
+              "complexity_penalty": 0.0033333333333333335,
+              "penalized_rival_loss": 0.1178399650915717,
+              "rival_parameter_count": 64,
+              "rival_training_entropy_bits": 1.8557604708710405,
+              "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
+              "strongest_rival_memory_depth": 2,
+              "rival_suite_min_penalized_loss": 0.1178399650915717,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "24d4a300686cbf236198a31154c03ed02f83775f9896e120d0b8fe15dbef4420"
+            "trace_panel_sha256": "dc7e56c711a3f870dc5197a269f499ecdd847875610b7a45635d74228bffa786"
           },
           "candidates": [
-            {
-              "family": "perturbation-shuffled",
-              "candidate_id": "perturbation-shuffled-0",
-              "scenario_salt": "adversarial-perturbation-shuffled-0",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.2549019607843137,
-              "margin_to_threshold": -0.7450980392156863,
-              "metrics": {
-                "tv_targeted": 0.26337448559670784,
-                "tv_sham": 0.20987654320987656,
-                "tv_off_target": 0.0411522633744856,
-                "control_max": 0.20987654320987656,
-                "rho_selective": 1.2549019607843137,
-                "rival_tv_loss": 0.18678699128773377,
-                "complexity_penalty": 0.010625,
-                "penalized_rival_loss": 0.19741199128773376,
-                "rival_parameter_count": 204,
-                "rival_training_entropy_bits": 1.8481047188988557,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.19741199128773376,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "24d4a300686cbf236198a31154c03ed02f83775f9896e120d0b8fe15dbef4420"
-            },
-            {
-              "family": "perturbation-shuffled",
-              "candidate_id": "perturbation-shuffled-3",
-              "scenario_salt": "adversarial-perturbation-shuffled-3",
-              "support_rule_satisfied": false,
-              "verdict": "support_rule_not_satisfied",
-              "danger_score": 1.1443298969072166,
-              "margin_to_threshold": -0.8556701030927834,
-              "metrics": {
-                "tv_targeted": 0.4567901234567901,
-                "tv_sham": 0.39917695473251025,
-                "tv_off_target": 0.08641975308641975,
-                "control_max": 0.39917695473251025,
-                "rho_selective": 1.1443298969072166,
-                "rival_tv_loss": 0.33696580064847365,
-                "complexity_penalty": 0.011458333333333334,
-                "penalized_rival_loss": 0.348424133981807,
-                "rival_parameter_count": 220,
-                "rival_training_entropy_bits": 1.7681569219209636,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.348424133981807,
-                "rival_suite_depths_tested": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-                ]
-              },
-              "trace_panel_sha256": "4a2e95ed1badc2784bf9485756114f9419acf1a6e1e8cf6c3d898185ba24dc00"
-            },
             {
               "family": "perturbation-shuffled",
               "candidate_id": "perturbation-shuffled-2",
               "scenario_salt": "adversarial-perturbation-shuffled-2",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.8214285714285713,
-              "margin_to_threshold": -1.1785714285714288,
+              "danger_score": 1.6666666666666672,
+              "margin_to_threshold": -0.3333333333333328,
               "metrics": {
-                "tv_targeted": 0.18930041152263372,
-                "tv_sham": 0.23045267489711935,
-                "tv_off_target": 0.04115226337448557,
-                "control_max": 0.23045267489711935,
-                "rho_selective": 0.8214285714285713,
-                "rival_tv_loss": 0.1230051070777383,
-                "complexity_penalty": 0.010833333333333334,
-                "penalized_rival_loss": 0.13383844041107162,
-                "rival_parameter_count": 208,
-                "rival_training_entropy_bits": 1.8060339543910398,
-                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
-                "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.13383844041107162,
+                "tv_targeted": 0.1440329218106996,
+                "tv_sham": 0.08641975308641973,
+                "tv_off_target": 0.032921810699588466,
+                "control_max": 0.08641975308641973,
+                "rho_selective": 1.6666666666666672,
+                "rival_tv_loss": 0.11450663175823837,
+                "complexity_penalty": 0.0033333333333333335,
+                "penalized_rival_loss": 0.1178399650915717,
+                "rival_parameter_count": 64,
+                "rival_training_entropy_bits": 1.8557604708710405,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth2",
+                "strongest_rival_memory_depth": 2,
+                "rival_suite_min_penalized_loss": 0.1178399650915717,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "a7c1cabff119e54deb153b0688cbc5ce49c4db50ff43a8902df742a8de6decd0"
+              "trace_panel_sha256": "dc7e56c711a3f870dc5197a269f499ecdd847875610b7a45635d74228bffa786"
             },
             {
               "family": "perturbation-shuffled",
@@ -2004,31 +1824,89 @@
               "scenario_salt": "adversarial-perturbation-shuffled-1",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
-              "danger_score": 0.7209302325581395,
-              "margin_to_threshold": -1.2790697674418605,
+              "danger_score": 1.0999999999999996,
+              "margin_to_threshold": -0.9000000000000004,
               "metrics": {
-                "tv_targeted": 0.12757201646090532,
-                "tv_sham": 0.17695473251028804,
-                "tv_off_target": 0.06995884773662553,
-                "control_max": 0.17695473251028804,
-                "rho_selective": 0.7209302325581395,
-                "rival_tv_loss": 0.055950693128409654,
-                "complexity_penalty": 0.011041666666666667,
-                "penalized_rival_loss": 0.06699235979507633,
-                "rival_parameter_count": 212,
-                "rival_training_entropy_bits": 1.8555332514899967,
+                "tv_targeted": 0.13580246913580243,
+                "tv_sham": 0.1234567901234568,
+                "tv_off_target": 0.03703703703703705,
+                "control_max": 0.1234567901234568,
+                "rho_selective": 1.0999999999999996,
+                "rival_tv_loss": 0.08652493191044415,
+                "complexity_penalty": 0.010625,
+                "penalized_rival_loss": 0.09714993191044415,
+                "rival_parameter_count": 204,
+                "rival_training_entropy_bits": 1.8370852235931796,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
                 "strongest_rival_memory_depth": 3,
-                "rival_suite_min_penalized_loss": 0.06699235979507633,
+                "rival_suite_min_penalized_loss": 0.09714993191044415,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "6946e9cf66c935b7367e813a7138b6f15fc3b1b6e43fc30959cad56a1f303c11"
+              "trace_panel_sha256": "77b68851d2413a4334a9b04bc2e849a45bd7d7a647d90e29cdc7fbe0dcb585a9"
+            },
+            {
+              "family": "perturbation-shuffled",
+              "candidate_id": "perturbation-shuffled-3",
+              "scenario_salt": "adversarial-perturbation-shuffled-3",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.956896551724138,
+              "margin_to_threshold": -1.043103448275862,
+              "metrics": {
+                "tv_targeted": 0.45679012345679015,
+                "tv_sham": 0.4773662551440329,
+                "tv_off_target": 0.061728395061728385,
+                "control_max": 0.4773662551440329,
+                "rho_selective": 0.956896551724138,
+                "rival_tv_loss": 0.37889349780333287,
+                "complexity_penalty": 0.010625,
+                "penalized_rival_loss": 0.38951849780333286,
+                "rival_parameter_count": 204,
+                "rival_training_entropy_bits": 1.7663353349065292,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+                "strongest_rival_memory_depth": 3,
+                "rival_suite_min_penalized_loss": 0.38951849780333286,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "a59e891354d744ca9a006eafff6badab0c6bee44605f25ac592ced9719694338"
+            },
+            {
+              "family": "perturbation-shuffled",
+              "candidate_id": "perturbation-shuffled-0",
+              "scenario_salt": "adversarial-perturbation-shuffled-0",
+              "support_rule_satisfied": false,
+              "verdict": "support_rule_not_satisfied",
+              "danger_score": 0.7971014492753623,
+              "margin_to_threshold": -1.2028985507246377,
+              "metrics": {
+                "tv_targeted": 0.22633744855967075,
+                "tv_sham": 0.2839506172839506,
+                "tv_off_target": 0.057613168724279816,
+                "control_max": 0.2839506172839506,
+                "rho_selective": 0.7971014492753623,
+                "rival_tv_loss": 0.1349922036814042,
+                "complexity_penalty": 0.010208333333333333,
+                "penalized_rival_loss": 0.1452005370147375,
+                "rival_parameter_count": 196,
+                "rival_training_entropy_bits": 1.7899833128179223,
+                "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth3",
+                "strongest_rival_memory_depth": 3,
+                "rival_suite_min_penalized_loss": 0.1452005370147375,
+                "rival_suite_depths_tested": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "trace_panel_sha256": "909debbf5f98f2ceb3d3a959853ca50f9955522061b6f82e555c8cbc10e8d860"
             }
           ]
         },
@@ -2038,67 +1916,61 @@
           "best_candidate": {
             "family": "transition-preserving-shuffled",
             "candidate_id": "transition-preserving-shuffled-0",
-            "scenario_salt": "pred-ext-01-v3.1-salt-0001",
             "support_rule_satisfied": false,
             "verdict": "support_rule_not_satisfied",
             "danger_score": 1,
             "margin_to_threshold": -1,
             "metrics": {
-              "tv_targeted": 0.004115226337448583,
-              "tv_sham": 0,
-              "tv_off_target": 0.004115226337448583,
-              "control_max": 0.004115226337448583,
+              "tv_targeted": 0.004115226337448555,
+              "tv_sham": 0.004115226337448555,
+              "tv_off_target": 0.004115226337448555,
+              "control_max": 0.004115226337448555,
               "rho_selective": 1,
-              "rival_tv_loss": 0.015970988174300926,
+              "rival_tv_loss": 0.009082970237275542,
               "complexity_penalty": 0.0008333333333333334,
-              "penalized_rival_loss": 0.016804321507634258,
+              "penalized_rival_loss": 0.009916303570608876,
               "rival_parameter_count": 16,
-              "rival_training_entropy_bits": 1.8528494904780404,
+              "rival_training_entropy_bits": 1.8486047103484111,
               "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
               "strongest_rival_memory_depth": 1,
-              "rival_suite_min_penalized_loss": 0.016804321507634258,
+              "rival_suite_min_penalized_loss": 0.009916303570608876,
               "rival_suite_depths_tested": [
                 1,
                 2,
-                3,
-                4,
-                5
+                3
               ]
             },
-            "trace_panel_sha256": "97fb490d1f003578f2a56702251fd0b52370eade9f8a07e1aca75ca5337b0ea8"
+            "trace_panel_sha256": "2d7374f8ef095dfb46e96b6c4233c5fcc0192907ef536c9a7001b2b3a66c130d"
           },
           "candidates": [
             {
               "family": "transition-preserving-shuffled",
               "candidate_id": "transition-preserving-shuffled-0",
-              "scenario_salt": "pred-ext-01-v3.1-salt-0001",
               "support_rule_satisfied": false,
               "verdict": "support_rule_not_satisfied",
               "danger_score": 1,
               "margin_to_threshold": -1,
               "metrics": {
-                "tv_targeted": 0.004115226337448583,
-                "tv_sham": 0,
-                "tv_off_target": 0.004115226337448583,
-                "control_max": 0.004115226337448583,
+                "tv_targeted": 0.004115226337448555,
+                "tv_sham": 0.004115226337448555,
+                "tv_off_target": 0.004115226337448555,
+                "control_max": 0.004115226337448555,
                 "rho_selective": 1,
-                "rival_tv_loss": 0.015970988174300926,
+                "rival_tv_loss": 0.009082970237275542,
                 "complexity_penalty": 0.0008333333333333334,
-                "penalized_rival_loss": 0.016804321507634258,
+                "penalized_rival_loss": 0.009916303570608876,
                 "rival_parameter_count": 16,
-                "rival_training_entropy_bits": 1.8528494904780404,
+                "rival_training_entropy_bits": 1.8486047103484111,
                 "strongest_rival_id": "RIVAL-TRACE-MEMORY-01-depth1",
                 "strongest_rival_memory_depth": 1,
-                "rival_suite_min_penalized_loss": 0.016804321507634258,
+                "rival_suite_min_penalized_loss": 0.009916303570608876,
                 "rival_suite_depths_tested": [
                   1,
                   2,
-                  3,
-                  4,
-                  5
+                  3
                 ]
               },
-              "trace_panel_sha256": "97fb490d1f003578f2a56702251fd0b52370eade9f8a07e1aca75ca5337b0ea8"
+              "trace_panel_sha256": "2d7374f8ef095dfb46e96b6c4233c5fcc0192907ef536c9a7001b2b3a66c130d"
             }
           ]
         }

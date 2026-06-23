@@ -1,3 +1,13 @@
+> **SUPERSEDED (2026-06-23).** Este análisis fue producido durante la
+> exploración de H5 convexo y la lectura D*/Iint. Las decisiones definitivas se
+> adoptaron en:
+> - QICN_H5_PARTIAL_REGIME_MODELING_DECISION.md (H5: régimen (a) snN=Ø)
+> - QICN_IINT_CANONICAL_CLASS_SPLIT_READOUT.md (Iint: D* adoptado)
+>
+> Este archivo se conserva como registro histórico del red-team adversarial.
+> No es el estado actual del framework.
+
+---
 # QICN H5 â€” Convex Geometric-Exclusion Red-Team
 
 ```

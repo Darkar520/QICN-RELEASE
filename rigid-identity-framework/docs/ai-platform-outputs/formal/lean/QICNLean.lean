@@ -9,6 +9,7 @@ import QICNLean.QICNH5Derivation
 import QICNLean.QICNH5Convex
 import QICNLean.QICNH5ConvexExclusion
 import QICNLean.QICNH5QuotientDynamics
+import QICNLean.QICNH5QuotientDisplacement
 import QICNLean.QICNSInstance
 import QICNLean.QICNSCoupledInstance
 import QICNLean.QICNRotationSpectral

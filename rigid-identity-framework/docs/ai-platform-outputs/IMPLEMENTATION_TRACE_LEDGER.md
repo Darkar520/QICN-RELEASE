@@ -10273,3 +10273,105 @@ Next step:
   counterexample; consider a quantitative margin form ‖T_u(c*)−c*‖ ≥ δ.
 - No push performed; tree left staged/uncommitted for human decision and external
   audit per INSTRUCCIONES 1.3.
+
+
+---
+
+## 2026-06-22 - H5 Convex Non-Collapse: Quotient-DISPLACEMENT Red-Team (Lean)
+
+Agent/platform: Kiro (deep-research collaborator subagent)
+
+User request: Ejecutar los tres tracks abiertos por el quotient-dynamics red-team.
+Track 1 (headline): investigar una condicion de DESPLAZAMIENTO DE COCIENTE sobre
+`‖q(T_u x) − q(x)‖_{H/N}` no circular que se especialice a (a) `s∩N=∅` y a (c)
+`N⊆s` y por tanto domine ambos; si no unifica, demostrar POR QUE (obstruccion) y
+marcar STILL_OPEN. Track 2: mecanizar la obstruccion del mapa cociente inducido
+como CONTRAEJEMPLO EXPLICITO en R^2. Track 3: version cuantitativa
+`‖T_u(c*) − c*‖ ≥ δ` con δ que salga de los primitivos (no asumida). Sellos
+INTERNAL_ADVERSARIAL / NOT_EXTERNAL / NON_CANONICAL; sin sorry; #print axioms
+estandar; archivo Lean nuevo + import aditivo; STILL_OPEN/OBSTRUCTED son validos;
+no forzar cierre ni inventar unificador fuerte. No tocar registry/canon/papers/
+gates/package.json. No push.
+
+Operational objective: Identificar la condicion de desplazamiento de cociente (Q)
+`q(T_u(c*(u))) ≠ 0`, probar sus especializaciones a (a) y (c) y su obstruccion a
+una hipotesis libre de regimen; mecanizar el contraejemplo de no-equivariancia de
+la proyeccion convexa en R^2; y acotar honestamente el margen H por el drift de
+cociente sin fabricar una constante universal.
+
+Files read:
+- rigid-identity-framework/.kiro/steering/{product,tech,structure}.md
+- formal/lean/QICNLean.lean (aggregator)
+- formal/lean/QICNLean/{QICNH5QuotientDynamics, QICNH5Convex, QICNH5ConvexExclusion,
+  QICNH5Derivation, QICNNonCollapse, QICNConvexProjection, QICNHilbertInstance,
+  QICNCoupledSplitMargin}.lean
+- formal/lean/{lakefile.toml, lean-toolchain}
+- docs/ai-platform-outputs/analysis/QICN_H5_QUOTIENT_DYNAMICS_REDTEAM.md
+- .lake/packages/mathlib/Mathlib/Analysis/Normed/Group/Quotient.lean,
+  Analysis/InnerProductSpace/PiL2.lean, Analysis/Convex/Basic.lean (lemma-name audit)
+
+Files modified/created/moved/deleted:
+- CREATED formal/lean/QICNLean/QICNH5QuotientDisplacement.lean (13 declarations, sealed)
+- MODIFIED formal/lean/QICNLean.lean (added one import line; additive)
+- CREATED docs/ai-platform-outputs/analysis/QICN_H5_QUOTIENT_DISPLACEMENT_REDTEAM.md
+- TEMP created+deleted formal/lean/{scratch_h5q2, scratch_h5q2b, scratch_h5q2c,
+  scratch_norm, scratch_axioms}.lean (prototyping + axiom audit only)
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| lake build (baseline) | pre-change build | EXIT 0, 2305 jobs, style warnings only |
+| lake env lean scratch_*.lean | prototype risky lemmas (EuclideanSpace, quotient seminorm, halfspace projection, R^2 counterexample) | EXIT 0 after iteration |
+| lake build (post) | verify new file | EXIT 0, 2360 jobs (+55), header-seal warnings only |
+| lake env lean scratch_axioms.lean | #print axioms audit | all 13 decls: [propext, Classical.choice, Quot.sound] |
+| git status --short | tree hygiene | only the import edit + 2 new files tracked; .olean gitignored; scratches deleted |
+
+Implementation summary:
+- Track 1 (headline): condition (Q) `q(T_u(c*(u))) ≠ 0` = drift>0. Mechanized
+  `regime_a_implies_quotient_displacement` ((a)⇒(Q), no hAdm) and
+  `quotient_displacement_iff_cStar_moved` ((Q)⟺(c) under hAdm) via the NEW reduction
+  `convexProjection_mem_N_implies_starProjection_eq` (convex image in N ⇒ equals
+  P_N). `noncollapse_of_quotient_displacement` ((Q)+hAdm ⇒ noncollapse).
+  DOMINATION by a single regime-free hypothesis: STILL_OPEN, obstruction MECHANIZED
+  via `regimes_incompatible` (hAdm ∧ s∩N=∅ ⇒ False, since 0∈N). No domination
+  theorem claimed.
+- Track 2: `convex_projection_not_N_equivariant` — explicit R^2 counterexample
+  (N = first axis, s = closed half-space {0 ≤ ⟨(1,1),·⟩}, x=(0,-2), x'=(3,-2)):
+  same N-coset but projections (1,-1) vs (3,-2) in different cosets ⇒ no canonical
+  induced T̄_u. Upgrades the prior documented obstruction to OBSTRUCTED_INTERNAL.
+  Supported by `halfspace_projection` (closed-form) and `convexProjection_of_mem`.
+- Track 3: `quotient_le_collapse_displacement` proves ‖q(T_u(c*))‖ ≤ ‖T_u(c*)−c*‖;
+  `noncollapse_of_positive_margin` turns 0<δ into noncollapse. δ := ‖q(T_u(c*))‖ is
+  primitive-derived; δ>0 ⟺ exclusion (Q). NO universal positive constant claimed
+  (declined as not honestly derivable abstractly).
+
+Verification:
+- lake build EXIT 0 (2360 jobs); no errors, only header-style seal-linter warnings
+  matching the existing sealed files.
+- #print axioms = [propext, Classical.choice, Quot.sound] for all 13 declarations;
+  no sorry/admit/extra axioms. Scratch files deleted after the audit.
+
+Regression checks:
+- Sought: breakage of pre-existing oleans / changed job topology / new axioms /
+  accidental claim inflation / gerrymandered counterexample.
+- Found: none. Job count +55 (new module + its mathlib deps: PiL2, Convex.Basic,
+  Normed.Group.Quotient); existing files untouched except the additive import. The
+  Track-2 counterexample reuses no Track-1 K/Γ/c* machinery (anti-gerrymandering).
+
+Residual risks:
+- Track 1 is a PARTIAL ADVANCE: (Q) unifies as a QUANTITY (implied by (a),
+  equivalent to (c) under hAdm) but a single regime-free DOMINATING condition is
+  STILL_OPEN; the obstruction (regime disjointness + hAdm-dependence of the
+  reduction) is mechanized, not merely asserted.
+- Track 3 δ has no universal positive lower bound abstractly: δ>0 is equivalent to
+  the open exclusion (Q). The √7/14-style margins elsewhere are instance-specific
+  (coupled carrier), not from this convex skeleton.
+- Internal conformance only; NOT external validation, NOT peer review,
+  external_support_certified=false. No C_op / Iint / general-s H5 proof. No NEW_CLAIM.
+  FULL_COP_MEMBERSHIP: NOT_YET.
+
+Next step:
+- Seek a non-circular condition implying non-collapse WITHOUT full bilateral hAdm
+  (one-sided admissibility / cone condition) to straddle the regime gap exposed by
+  `regimes_incompatible`. Optionally add `IsClosed N` to sharpen Track 3 to δ>0⟺(Q).
+  Left staged/uncommitted for human audit; no push.

@@ -10375,3 +10375,99 @@ Next step:
   (one-sided admissibility / cone condition) to straddle the regime gap exposed by
   `regimes_incompatible`. Optionally add `IsClosed N` to sharpen Track 3 to δ>0⟺(Q).
   Left staged/uncommitted for human audit; no push.
+
+---
+
+## 2026-06-23 — H5 convex non-collapse: unilateral/dichotomy bridge red-team (Track 1)
+
+Agent: Kiro (subagent, QICN formal red-team role).
+Layer: NON_CANONICAL. INTERNAL_ADVERSARIAL / NOT_EXTERNAL_VALIDATION.
+external_support_certified = false. FULL_COP_MEMBERSHIP: NOT_YET. No NEW_CLAIM,
+no C_op.
+
+Request (summary): find a non-circular hypothesis strictly weaker than bilateral
+admissibility `hAdm` under which "(Q) => non-collapse" holds WITHOUT requiring
+`N subset s`, i.e. compatible with regime (a) `s∩N=∅`. If any candidate recollapses
+the regimes or needs circularity, mechanize the obstruction and emit
+EXTERNAL_REQUIRED.
+
+Operational objective: weaken the BRIDGE (not the regime). Mechanize a unifying,
+non-circular, geometrically interpretable hypothesis compatible with both
+regimes, plus a regime-compatibility certificate (opposite of
+`regimes_incompatible`).
+
+Files read:
+- INSTRUCCIONES.md; .kiro/steering/{product,tech,structure}.md.
+- formal/lean/QICNLean.lean, lean-toolchain, lakefile.toml.
+- QICNLean/QICNH5QuotientDynamics.lean, QICNH5QuotientDisplacement.lean,
+  QICNH5Convex.lean, QICNH5ConvexExclusion.lean (signatures of reused lemmas).
+
+Files created:
+- docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5UnilateralBridge.lean.
+- docs/ai-platform-outputs/analysis/QICN_H5_UNILATERAL_BRIDGE_REDTEAM.md.
+Files modified:
+- docs/ai-platform-outputs/formal/lean/QICNLean.lean (additive import only).
+- docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md (this entry).
+Files moved/deleted: none (temp ASCII axiom scratch h5q3_axscratch.lean created
+and deleted per protocol).
+
+Tools: read_files, fs_write, str_replace, execute_pwsh (lake build / lake env
+lean), delete_file.
+
+Commands + observed result:
+- ELAN_HOME set; `lake.exe build *> %TEMP%\h5q3_build.txt` => EXIT=0, 2361 jobs,
+  `Built QICNLean.QICNH5UnilateralBridge`. Only mathlib header-style linter
+  warnings (cosmetic, identical to existing sealed red-team files). No errors,
+  no sorry/admit.
+- `lake env lean h5q3_axscratch.lean` => EXIT=0; #print axioms for all 5
+  theorems = [propext, Classical.choice, Quot.sound]. Scratch deleted.
+
+Implementation summary:
+- Headline `noncollapse_of_subspace_dichotomy`: under the SUBSPACE DICHOTOMY
+  (D) `(∃ y ∈ N∩s) → N⊆s` and (Q), every convex fixed point has `q x* ≠ 0`. A
+  collapse witness `x*∈N` is automatically in `s` (projection output), so (D)
+  upgrades to `N⊆s`, recovers `hAdm`, and fires the prior
+  `noncollapse_of_quotient_displacement`. `N⊆s` is NOT assumed a priori.
+- (D) is non-circular (`def SubspaceDichotomy` uses only `s, N`), strictly weaker
+  than `hAdm` (`bilateral_implies_dichotomy`), and compatible with regime (a)
+  (`regime_a_implies_dichotomy`, vacuous premise).
+- Compatibility certificate `dichotomy_regimeA_satisfiable`: explicit ℝ² model
+  with a GENUINE nonzero `N = ker⟨e₂,·⟩ ≠ ⊥` (e₁∈N) and `s={w|⟨e₂,w⟩=1}` where
+  (D) AND regime (a) hold simultaneously. Opposite of `regimes_incompatible`;
+  `N≠⊥` rules out trivial-isolation objection.
+- Honest limitation `partial_regime_violates_dichotomy`: (D) FAILS in the partial
+  regime (N∩s proper nonempty), i.e. (D) excludes it by fiat rather than solving.
+
+Verdict:
+- Track 1 (headline): CLOSED_INTERNAL for the stated objective (all honest
+  success criteria mechanized: compatible with both regimes, non-circular,
+  implication to non-collapse).
+- Residual partial-regime gap: EXTERNAL_REQUIRED (modelling decision on whether
+  `s` may partially cut `N`, or external math input on ∂s tangency along N).
+  Internal brute force exhausted.
+- Secondary Track-3 sharpening (IsClosed N): NOT pursued (low-value polish; omitted
+  to minimize build failure surface).
+
+Regression checks:
+- Sought: broken oleans / changed job topology beyond the new module / new axioms
+  / claim inflation / gerrymandered hypothesis (smuggling the conclusion).
+- Found: none. Job count 2360 -> 2361 (single new module; deps already present
+  via QICNH5QuotientDisplacement). Existing files untouched except the additive
+  import. (D) mentions only `s, N` (no fixed point / c* / dynamics / Q): passes
+  anti-gerrymandering. No registry/canon/papers/gates/package.json touched.
+
+Residual risks:
+- (D) is a UNIFICATION of the two known regimes, NOT a new mechanism for the
+  partial regime; presenting it as a full closure of the H5 convex regime gap
+  would be inflation. The report states this explicitly.
+- Internal conformance only; NOT external validation, NOT peer review;
+  external_support_certified=false; no C_op/Iint/general H5; no NEW_CLAIM;
+  FULL_COP_MEMBERSHIP: NOT_YET.
+
+Next step:
+- STOP internal brute force on the partial regime. Route to external/human
+  modelling decision: does BaseCore allow `s` to partially truncate the constant
+  subspace `N`? If "no", (D) is the canonical bridge hypothesis; if "yes", an
+  external tangency/regularity input on ∂s along N is required first.
+- Left staged/uncommitted for human audit; NO push (regla 1.3, auditoría externa
+  pendiente).

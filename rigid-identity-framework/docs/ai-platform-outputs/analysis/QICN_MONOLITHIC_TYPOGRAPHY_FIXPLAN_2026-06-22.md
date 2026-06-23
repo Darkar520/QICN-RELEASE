@@ -201,3 +201,88 @@ SHA256 `49E978A4680283844718EE20A0987BC0113A52FAB07BA71EFA0089F2E2CE7A0F`,
 Sin tocar `registry/`, ni gates v22..v35, ni `package.json`. Nada promovido a
 NEW_CLAIM ni a C_op. `external_support_certified=false` y
 `FULL_COP_MEMBERSHIP: NOT_YET` intactos.
+
+## 6. Cierre de deuda de TABLAS (2026-06-23)
+
+Agente: Kiro (ingeniero LaTeX/build, sub-agente). Idioma: espanol.
+Alcance UNICO de esta fase: resolver los 4 overfull hbox de TABLAS del ensamblado
+monolitico (O1/O2/O6/O7) editando SOLO el ensamblador
+`scripts/build-monolithic-volume.js`, de forma render-neutral en contenido
+(ningun dato/numero/fila/simbolo cambia). Los 3 overfull de ECUACION display
+(O3/O4/O5) se DEFIEREN como deuda matematica documentada (prohibido reescribir
+math display).
+
+### Causa raiz medida (desde `QICN_MONOLITHIC.log`)
+- O1 (sec05/Paper4, 14.69pt): `\begin{tabular}{lcccc}` "Cross-run variability by
+  system"; ancho natural de la tabla > `\textwidth` por etiquetas de fila largas.
+- O2 (sec06/Paper5, 21.26pt): palabra "Phenomenological" desbordando la primera
+  columna `p{1.55cm}` del "Corpus Dependency Ledger".
+- O6 (sec12/Bridge, 2.03pt): cabecera `Implied by $\Cop$?` (donde `\Cop` expande
+  a `\mathrm{Consciousness}_{\mathrm{op}}`) desbordando la columna media `p{2.8cm}`
+  de la tabla "Properties not implied by membership in $\Cop$".
+- O7 (sec12/Bridge, 3.23pt): token `OntologicalSingularityCore.` (lmtt) ~3pt
+  demasiado ancho para la 2a columna `p{5.2cm}` de "Computational Verification
+  Status" (rompe en el `.` via `\nolinkurl`, pero el fragmento residual queda
+  3.23pt largo).
+
+### Fix aplicado (capa: ensamblador, funcion `fitWideTablesForMonolithic`)
+Render-neutral en contenido; solo ajuste de ancho. Aplicado SOLO al generar las
+secciones monoliticas; las fuentes canonicas por-paper y sus PDFs standalone no
+se tocan. Sin `\tiny`, sin ocultar contenido, sin enmascarar badness.
+- O1: envolver el `tabular{lcccc}` en `\resizebox{\textwidth}{!}{...}` (escala
+  uniforme; preserva todos los valores).
+- O2: columna `p{1.55cm}` -> `p{2.4cm}`; la columna X (Y) absorbe la diferencia,
+  manteniendo el ancho total en `\textwidth`.
+- O6: columna media `p{2.8cm}` -> `p{3.2cm}`; X (Y) absorbe.
+- O7: 2a columna `p{5.2cm}` -> `p{5.5cm}`; X (Y) absorbe.
+
+### Conteos gate v20: antes -> despues (esta fase)
+| Metrica | PRE (warnings ya resueltos) | POST |
+|---|---|---|
+| result | FAIL | FAIL |
+| latex_warnings | 0 | 0 |
+| overfull_hbox | 7 | 3 |
+| overfull_vbox / underfull_vbox | 0 | 0 |
+| undefined_references | 0 | 0 |
+| hyperref_pdfstring_warnings | 0 | 0 |
+| question_mark / badness_masking | 0 | 0 |
+| pages_detected | 339 | 339 |
+
+Overfull por id: O1 14.69pt -> RESUELTO; O2 21.26pt -> RESUELTO; O6 2.03pt ->
+RESUELTO; O7 3.23pt -> RESUELTO. Residuales (deuda matematica, sin cambios):
+O3 17.07pt (display, Paper7), O4 22.27pt (math `$[][]$`, Paper7), O5 0.59pt
+(math 8pt, Paper8/9).
+
+### Estado HONESTO del gate v20
+`audit:monolithic-build-quality` = FAIL (EXIT 1), porque cuenta los 3 overfull de
+ecuacion display como fallos. **Las 4 tablas estan resueltas (overfull de tabla =
+0).** El gate NO PUEDE llegar a PASS sin reescribir matematica display (O3/O4/O5),
+lo cual viola la regla anti-semantica. Estado reportado: "tablas-resueltas /
+3-display = deuda matematica documentada". No se fuerza el PASS, no se enmascara
+badness.
+
+### Verificacion render-neutral (SHA256, EXIT 0)
+- Monolitico PRE: `49E978A4680283844718EE20A0987BC0113A52FAB07BA71EFA0089F2E2CE7A0F`,
+  339 pag, 2860801 bytes.
+- Monolitico POST: `4B02CEC3593709DF79DFD0062601ADB9232CD4F1C33D580A9A2E2DE1E3A8C736`,
+  339 pag, 2860538 bytes. 0 undefined references, 0 multiply-defined labels.
+- PDFs standalone SIN cambios (mismo SHA256 PRE=POST):
+  - paper4/main.pdf: `98C47D4E70658149A582CE1790FCF0E359548CBFD1EF125964D92EC0ECA72E52`
+  - paper5_operational_consciousness/main.pdf: `4B470DBF8C0942EBA539B6F5D92E704C615C700AAD8F35FDF0E1B40799D7E791`
+  - paper_bridge_operational_subjecthood/main.pdf: `D3041BBDA87AD862110C489C2E4326DA013671C6446ECF45AFDE665272718FA1`
+- Gates canonicos POST: `npm run verify` = EXIT 0
+  (`external_support_certified=false`, `BLOCKED_FOUNDATION_FIRST_GATES` intactos);
+  `verify-canonical-integrity.cjs` = EXIT 0; `verify-claim-registry.cjs` = EXIT 0;
+  `verify-canonical-release.cjs` = EXIT 0.
+
+### Bloqueos cientificos
+Sin tocar `registry/`, `package.json`, gates, claims ni fuentes por-paper. Nada
+promovido a NEW_CLAIM ni a `\Cop`. `external_support_certified=false` y
+`FULL_COP_MEMBERSHIP: NOT_YET` intactos.
+
+### Deuda residual (fase futura, fuera de alcance)
+O3/O4/O5: overfull de math display, no resolubles sin reescribir ecuaciones.
+Permanecen como deuda de layout matematico documentada. El gate v20 seguira en
+FAIL mientras se cuente cada overfull de display como fallo; alternativa futura
+(no ejecutada aqui): que el gate distinga overfull de tabla vs display, decision
+de diseño del gate que requiere aprobacion y queda fuera de esta fase.

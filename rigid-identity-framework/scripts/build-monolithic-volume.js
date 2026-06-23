@@ -243,13 +243,69 @@ function tightenDenseTablesForMonolithic(content) {
     .replace(/\\begin\{tabular\}\{lcccccc\}/g, "\\begin{tabular}{@{}lcccccc@{}}");
 }
 
+// Monolithic-only table-width fixes (v20 build-quality gate: O1/O2/O6/O7).
+//
+// These overfull \hbox cases are layout debt of the ASSEMBLED a4/1in geometry,
+// not of the per-paper standalone PDFs. The transforms are strictly
+// content-neutral: no datum, number, row, or symbol is changed. They only
+// adjust table width (uniform \resizebox scale, or fixed column widths absorbed
+// by the trailing X/Y column so the table stays at \textwidth). They are applied
+// only while generating the monolithic sections, so the canonical per-paper
+// sources and their standalone PDFs are untouched.
+//
+// The three remaining display-math overfulls (O3/O4/O5) are deliberately NOT
+// touched here: reshaping display equations would alter mathematical content,
+// which the governance rules forbid. They remain documented mathematical layout
+// debt.
+function fitWideTablesForMonolithic(content) {
+  let out = content;
+
+  // O1 -- Paper 4 "Cross-run variability by system" (\begin{tabular}{lcccc}).
+  // The tabular's natural width exceeds \textwidth (long row labels such as
+  // "DYNAMIC CONTROL NO SELF MODEL"). Scale the whole tabular uniformly to
+  // \textwidth; every cell value is preserved, only the rendered size shrinks.
+  out = out.replace(
+    /\\begin\{tabular\}\{lcccc\}([\s\S]*?)\\end\{tabular\}/g,
+    (match, body) => `\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}{lcccc}${body}\\end{tabular}}`
+  );
+
+  // O2 -- Paper 5 "Corpus Dependency Ledger" tabularx. The single long token
+  // "Phenomenological" overflows the narrow first column; widen it from 1.55cm
+  // to 2.4cm. The trailing X (Y) column absorbs the difference, so the table
+  // width stays \textwidth.
+  out = out.replace(
+    /\\begin\{tabularx\}\{\\textwidth\}\{>\{\\raggedright\\arraybackslash\}p\{1\.55cm\} >\{\\raggedright\\arraybackslash\}p\{4\.5cm\} Y\}/g,
+    "\\begin{tabularx}{\\textwidth}{>{\\raggedright\\arraybackslash}p{2.4cm} >{\\raggedright\\arraybackslash}p{4.5cm} Y}"
+  );
+
+  // O6 -- Bridge "Properties not implied by membership in $\Cop$" tabularx. The
+  // header cell "Implied by $\Cop$?" (where \Cop expands to a wide token)
+  // overflows the middle column; widen it from 2.8cm to 3.2cm. X (Y) absorbs it.
+  out = out.replace(
+    /\\begin\{tabularx\}\{\\textwidth\}\{>\{\\raggedright\\arraybackslash\}p\{4\.1cm\} >\{\\raggedright\\arraybackslash\}p\{2\.8cm\} Y\}/g,
+    "\\begin{tabularx}{\\textwidth}{>{\\raggedright\\arraybackslash}p{4.1cm} >{\\raggedright\\arraybackslash}p{3.2cm} Y}"
+  );
+
+  // O7 -- Bridge "Computational Verification Status" tabularx. The code token
+  // "OntologicalSingularityCore." overflows the second column by ~3pt; widen it
+  // from 5.2cm to 5.5cm. X (Y) absorbs it.
+  out = out.replace(
+    /\\begin\{tabularx\}\{\\textwidth\}\{>\{\\raggedright\\arraybackslash\}p\{2\.2cm\} >\{\\raggedright\\arraybackslash\}p\{5\.2cm\} Y\}/g,
+    "\\begin{tabularx}{\\textwidth}{>{\\raggedright\\arraybackslash}p{2.2cm} >{\\raggedright\\arraybackslash}p{5.5cm} Y}"
+  );
+
+  return out;
+}
+
 function applyMonolithicLayoutTransforms(content, relPath) {
-  return fitLongDisplayMathForMonolithic(
-    splitKnownAlignedChainsForMonolithic(
-      insertTextBreakHintsForMonolithic(
-        tightenDenseTablesForMonolithic(
-          rewriteCodeTokensForMonolithic(
-            rewriteBacktickCodeForMonolithic(rewriteRelativeAssetPaths(content, relPath))
+  return fitWideTablesForMonolithic(
+    fitLongDisplayMathForMonolithic(
+      splitKnownAlignedChainsForMonolithic(
+        insertTextBreakHintsForMonolithic(
+          tightenDenseTablesForMonolithic(
+            rewriteCodeTokensForMonolithic(
+              rewriteBacktickCodeForMonolithic(rewriteRelativeAssetPaths(content, relPath))
+            )
           )
         )
       )

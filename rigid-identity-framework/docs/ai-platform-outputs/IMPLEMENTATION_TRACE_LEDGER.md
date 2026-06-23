@@ -10498,3 +10498,81 @@ lo que queda es decisión humana/externa, no más Lean). external_support_certif
 
 Siguiente: Fase A (gate v20 monolítico + refresco de paquete referee).
 Git: pendiente commit de este registro (reviewer package §7 + ledger).
+
+## 2026-06-23 - Cierre de deuda de TABLAS del monolitico (gate v20: O1/O2/O6/O7)
+
+Agent/platform: Kiro (ingeniero LaTeX/build, sub-agente)
+User request: Cerrar el gate v20 resolviendo los 4 overfull hbox de TABLAS del
+ensamblado monolitico (O1/O2/O6/O7) editando solo el ensamblador/preambulo, de
+forma render-neutral; dejar los 3 overfull de ECUACION display (O3/O4/O5) como
+deuda matematica documentada (sin tocar math).
+Operational objective: overfull_hbox de tabla = 0 en `QICN_MONOLITHIC.log`,
+manteniendo bloqueos cientificos, sin cambiar fuentes por-paper ni sus PDFs
+standalone, sin forzar PASS ni enmascarar badness.
+
+Files read:
+- INSTRUCCIONES.md; .kiro/steering/{tech,structure,product}.md
+- docs/ai-platform-outputs/analysis/QICN_MONOLITHIC_TYPOGRAPHY_FIXPLAN_2026-06-22.md
+- scripts/build-monolithic-volume.js; scripts/audit-monolithic-build-quality.js
+- monolithic/QICN_MONOLITHIC.log; docs/reports/MONOLITHIC_BUILD_QUALITY_GATE_v20.json
+- monolithic/preamble/{packages,setup}.tex
+- monolithic/build/sections/{05,06,12}-*.tex (generados)
+- paper4/main.tex; paper5_operational_consciousness/main.tex;
+  paper_bridge_operational_subjecthood/main.tex (solo lectura, para anclas unicas)
+
+Files modified/created/moved/deleted:
+- MODIFICADO: scripts/build-monolithic-volume.js (nueva funcion
+  `fitWideTablesForMonolithic`, cableada en `applyMonolithicLayoutTransforms`).
+- REGENERADO por el build: monolithic/QICN_MONOLITHIC.tex,
+  monolithic/build/sections/*.tex, monolithic/QICN_MONOLITHIC.pdf (+ artefactos
+  .aux/.bbl/.bcf/.blg/.log/.out/.run.xml/.toc), docs/reports/MONOLITHIC_BUILD_REPORT.md,
+  docs/reports/MONOLITHIC_BUILD_QUALITY_GATE_v20.json.
+- ACTUALIZADO: docs/ai-platform-outputs/analysis/QICN_MONOLITHIC_TYPOGRAPHY_FIXPLAN_2026-06-22.md (seccion 6, cierre de tablas).
+- ACTUALIZADO: este ledger.
+- NO tocados: registry/, package.json, gates, claims, fuentes .tex por-paper,
+  preambulo monolitico (packages.tex/setup.tex sin cambios).
+
+Tools and commands:
+| Tool/command | Purpose | Result |
+|---|---|---|
+| `npm run audit:monolithic-build-quality` (PRE) | baseline | FAIL; overfull_hbox=7, latex_warnings=0, 339 pag |
+| `Get-FileHash` (PRE) | hashes PRE | mono 49E978...; paper4 98C47D...; paper5 4B470D...; bridge D3041B... |
+| `npm run verify` + 3 .cjs (PRE) | baseline gates | EXIT 0 los 4; external_support_certified=false |
+| `npm run compile:monolithic` | reensamblar + compilar | 1er intento FAIL por bloqueo de escritura del PDF (visor/sync); reintento EXIT 0 |
+| `npm run audit:monolithic-build-quality` (POST) | medir gate | FAIL; overfull_hbox=3 (solo O3/O4/O5 display) |
+| inspeccion de overfull_hbox del JSON | confirmar residuales | 17.07pt@363, 22.27pt@915, 0.59pt@1048 = O3/O4/O5 |
+| `Select-String` log undefined/multiply-defined | integridad refs | 0 lineas |
+| `Get-FileHash` (POST) | hashes POST | mono 4B02CE...; standalone IDENTICOS a PRE |
+| `npm run verify` + 3 .cjs (POST) | sin regresion | EXIT 0 los 4 |
+
+Implementation summary:
+- O1: `\resizebox{\textwidth}{!}{...}` sobre `tabular{lcccc}` de Paper4.
+- O2: `p{1.55cm}`->`p{2.4cm}` (ledger Paper5); X absorbe.
+- O6: `p{2.8cm}`->`p{3.2cm}` (tabla not-implied Bridge); X absorbe.
+- O7: `p{5.2cm}`->`p{5.5cm}` (tabla computational-status Bridge); X absorbe.
+- Render-neutral: ningun dato/numero/fila/simbolo cambia; solo ancho/escala.
+
+Verification:
+- Gate v20: overfull_hbox 7 -> 3 (4 tablas resueltas; 3 residuales = math display
+  O3/O4/O5, deferidos por regla). latex_warnings=0, vbox=0, refs=0, 339 pag.
+- Monolitico POST SHA256 4B02CEC3593709DF79DFD0062601ADB9232CD4F1C33D580A9A2E2DE1E3A8C736, 339 pag, 2860538 bytes; 0 undefined/multiply-defined.
+- Standalone sin cambios (SHA256 PRE=POST): paper4 98C47D4E...; paper5 4B470DBF...;
+  bridge D3041BBD....
+- `npm run verify`=EXIT 0 (external_support_certified=false,
+  BLOCKED_FOUNDATION_FIRST_GATES intactos); verify-canonical-integrity/claim/release .cjs = EXIT 0.
+
+Regression checks:
+- Buscadas: nuevos overfull/underfull, undefined refs, multiply-defined labels,
+  cambio de paginas, regresion en gates canonicos, alteracion de PDFs standalone,
+  enmascaramiento de badness, inflacion de claims.
+- Encontradas: ninguna. (1er compile fallo por bloqueo de escritura del PDF, no
+  por contenido; resuelto al reintentar.)
+
+Residual risks / next step:
+- El gate v20 sigue en FAIL (EXIT 1) porque cuenta los 3 overfull de math display
+  como fallos. NO se puede llegar a PASS sin reescribir ecuaciones (prohibido).
+  Estado: "tablas-resueltas / 3-display = deuda matematica documentada".
+- Deuda futura (fuera de alcance, requiere aprobacion): O3/O4/O5 son layout de
+  math display; o se acepta como deuda permanente o se rediseña el gate para
+  distinguir overfull de tabla vs display.
+- Pendiente: auditoria externa antes de cualquier push (no se hace push aqui).

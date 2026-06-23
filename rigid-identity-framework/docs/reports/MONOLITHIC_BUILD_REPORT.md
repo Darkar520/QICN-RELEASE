@@ -1,7 +1,7 @@
 # Monolithic Build Report v2
 
 Status: MONOLITHIC_COMPILED
-Date: 2026-06-20
+Date: 2026-06-22
 
 ## Boundary
 
@@ -24,7 +24,7 @@ Editorial policy: BaseCore is treated as the foundational layer rather than Pape
 | paper8_first_person_subjectivity/main.tex | extracted |
 | paper9_phenomenal_bridge_organization/main.tex | extracted |
 | paper10_external_adjudication/main.tex | extracted |
-| paper_bridge_operational_subjecthood/main.tex | reused_existing_section |
+| paper_bridge_operational_subjecthood/main.tex | extracted |
 
 ## Compile Result
 
@@ -60,7 +60,7 @@ mtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/iri
 sp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/ty
 pe1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (335 pages, 2840468 bytes).
+Output written on QICN_MONOLITHIC.pdf (339 pages, 2860801 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 [pdflatex pass 3]
@@ -76,7 +76,7 @@ mtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/iri
 sp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/ty
 pe1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (335 pages, 2840468 bytes).
+Output written on QICN_MONOLITHIC.pdf (339 pages, 2860801 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 ```

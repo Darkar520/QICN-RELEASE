@@ -253,6 +253,63 @@ f_u^\ast(s)=\frac{s}{4}+\frac1{24}+\frac{4u}{3},\qquad
 For $N\geq2$ the finite equilibrium coordinates are also nonconstant. This is a mathematical realization of the projection dynamics, dissipative finite transition, consistency and non-collapse obligations together. It does not establish the inverse-limit non-finite-determination condition, the six operational invariants or a phenomenal bridge.
 \end{example}
 
+\section{Projective Dissipation on the Circle-Prefix Towers}
+
+Fix the two towers of Theorem~\ref{thm:joint-transport-readout}, with $w_t=3^{-t}$, jump $a$ at stage $k$, and branch $s\in\{0,1\}$. Write $\beta_k=3^{-(k+1)}$. A history is specified by an initial angle $\theta$ and an infinite bit sequence $b$, with stage-$t$ angle $\theta+sa\mathbf{1}_{t>k}$. The depth $t$ is distinct from the iteration index $n$. For a fixed parameter $u\in\mathbb T=\mathbb R/\mathbb Z$, put
+\[
+ R(b)_1=0,\qquad R(b)_{j+1}=1-b_j,\qquad
+ D_{s,u,t}(\theta_t,b_1,\ldots,b_t)
+ =\bigl(u+sa\mathbf{1}_{t>k},\,R(b)|_t\bigr).
+\]
+Here $R(b)|_0$ is empty, and the right side at depth $t$ depends only on the given prefix. Write $D_{s,u}$ for the corresponding evolution of complete histories.
+
+\begin{theorem}[Contractive Projective Evolution and Equilibrium Transport]\label{thm:projective-dissipation}
+The stage maps commute with their bonding maps and with the existing transport $h_t$ between towers. At fixed $u$, the map $D_{s,u}$ has sharp Lipschitz constant $1/3$ on $I_s$ in $d_w$. Its unique fixed history $x^\ast_{s,u}$ has initial angle $u$ and binary sequence $0101\ldots$. For $n\geq 0$ its orbit satisfies
+\[
+ d_w(D_{s,u}^{\,n}x,x^\ast_{s,u})\leq 3^{-n}d_w(x,x^\ast_{s,u}).
+\]
+The existing transport $H$ conjugates the two evolutions and sends $x^\ast_{0,u}$ to $x^\ast_{1,u}$. Their $d_w$ and common readout distances are both $\beta_k a$. The finite readouts retain E0--E2 on each history domain, with the original uniform tail $3^{-t}$.
+\end{theorem}
+
+\begin{proof}
+Deleting the last bit commutes with taking the stated initial segment of $R(b)$. At stage $k$, subtracting $sa$ from the updated phase $u+sa$ gives $u$ as required. At every other stage the updated phase is the same on both sides of the bonding map. Transport adds $a$ precisely at $t>k$ and leaves the bits fixed, giving the transport square. The induced history equations follow coordinatewise.
+
+For points in one tower the phase difference vanishes after one iteration. If the input bits first differ at $m$, the output bits first differ at $m+1$. The binary distance therefore changes from $3^{-m}$ to $3^{-(m+1)}$. Equality in the contraction bound is attained with equal input phases and distinct bits. The fixed bit sequence is forced by $b_1=0$ and $b_{j+1}=1-b_j$, and the fixed angle by the phase update. Iteration gives the claimed geometric estimate. The phase difference under $H$ is $a$ at levels $t>k$, and Theorem~\ref{thm:joint-transport-readout} gives the readout distance. The underlying domains and readout are the same as in that theorem. A later bit may still be flipped within each finite cylinder, which proves E2 on the history domain.
+\end{proof}
+
+\begin{theorem}[Hilbert Realization of the Projective Dissipation]\label{thm:hilbert-projective-dissipation}
+The circle-prefix evolutions above embed into the BaseCore projected dynamics on $L^2([0,1])$ with $C=\{0\leq f\leq1\text{ a.e.}\}$, $\|K\|=1/3$, and compact parameter space $\{0,1\}\times\mathbb T$. The embedding is bi-Lipschitz on $I_0\cup I_1$ for fixed $k$. The equilibrium profiles $f^\ast_{s,u}$ satisfy
+\[
+ \inf_{s,u}\operatorname{dist}(f^\ast_{s,u},\mathcal N)\geq\sqrt{2/45},
+\]
+where $\mathcal N$ is the subspace of constant $L^2$ functions. Thus H5 follows for this family.
+
+At depth $t$ let $Q_t$ be the orthogonal projection onto the retained profile cells, with zero tail. The realized finite map has $N_t=8\cdot 9^t$ equal-mesh nodes and its embedded update is $Q_tT_{s,u}$. It commutes with restriction in the sense $Q_tT_{s,u}=Q_tT_{s,u}Q_t$ on $C$. Its uniform one-step discrepancy on $C$ is at most $3^{-t}/\sqrt{2}$, with equality for $t\geq1$. Its fixed point is $Q_tf^\ast_{s,u}$, with error at most the same bound. Starting the finite evolution at $Q_tf_0$ gives this bound at every iteration $n\geq1$ relative to the orbit from $f_0$.
+\end{theorem}
+
+\begin{proof}
+Partition $[0,1]$ up to null sets into four consecutive phase cells of length $1/8$ and consecutive binary cells $B_j$ of lengths $\ell_j=4\cdot 9^{-j}$ for $j\geq1$. These lengths sum to one. Encode each of $\theta_0,\theta_{k+1}$ by its pair
+\[
+ e(\theta)=\bigl((1+\cos(2\pi\theta))/2,\,(1+\sin(2\pi\theta))/2\bigr)
+\]
+on its two phase cells. Assign $b_j$ on $B_j$. The chord distance of the encoded angle pair is $\sin(\pi\rho)$ for circle distance $\rho\leq1/2$, hence lies between $2\rho$ and $\pi\rho$. At first differing bit $m$, the norm of the binary part lies between $2\cdot3^{-m}$ and $(3/\sqrt{2})3^{-m}$. Since $d_w$ on the union is the maximum of the initial angle distance, $\beta_k$ times the later angle distance, and the binary distance, these bounds give the claimed bi-Lipschitz property.
+
+For $f\in L^2$, let $Kf$ be zero on the phase cells and $B_1$, and equal to the negative mean of $f$ on $B_j$ throughout $B_{j+1}$. Cauchy--Schwarz on each cell and $\ell_{j+1}/\ell_j=1/9$ give
+\[
+ \|Kf\|^2\leq\tfrac19\sum_{j\geq1}\int_{B_j}|f|^2\leq\tfrac19\|f\|^2.
+\]
+A nonzero function supported on and constant on $B_1$ attains equality. The forcing $\Gamma(s,u)$ assigns the phase values $e(u),e(u+sa)$, zero on $B_1$, and one on each later $B_j$. This is continuous on the compact parameter space. On $C$, the affine output lies in $C$, so projection onto $C$ leaves it unchanged. On the embedded histories, it produces exactly the two phase resets and the bit update, preserving each embedded tower for its branch parameter. H1--H4 hold. The unique fixed profile has value zero on $B_1$ and one on $B_2$. For any constant $c$, its squared distance to that constant is at least $\ell_1c^2+\ell_2(1-c)^2\geq\ell_1\ell_2/(\ell_1+\ell_2)=2/45$. This proves the bound and H5. The same two retained cells certify the lower bound in the finite embedding for $t\geq2$.
+
+The retained cells have endpoints on the equal mesh of size $1/N_t$. The equal-mesh averaging of $f$ therefore preserves each retained cell mean. To implement the update on mesh nodes, take the resonance term zero and use the feedback $B(\mathbf x)=-\mathbf x+L_t\mathbf x$, with $\alpha=1$, where $L_t$ is the equal-mesh restriction of $Q_tK$ to piecewise constant inputs. The input is the mesh vector for $Q_t\Gamma(s,u)$. The increment $\mathbf x+B(\mathbf x)$ is $L_t\mathbf x$, whose normalized Euclidean operator norm is at most $1/3$ by the mesh isometry. The clamp is inactive on $C$ and the embedded update is $Q_tT_{s,u}$. Every retained output depends only on retained means or the parameter. Hence $Q_tT_{s,u}=Q_tT_{s,u}Q_t$ on $C$.
+
+The difference $T_{s,u}f-Q_tT_{s,u}f$ is a tail supported on cells of total measure $\tfrac12\,9^{-t}$, with values in $[0,1]$. All tail values equal one for $f=0$ if $t\geq1$. For $t=0$, $B_1$ is forced to zero and the sharp discrepancy is $1/(3\sqrt{2})$, still within the stated upper bound $1/\sqrt{2}$. The projected fixed point solves the finite equation by commutation, and contraction ensures uniqueness. By induction the finite trajectory from $Q_tf_0$ equals $Q_tT_{s,u}^{\,n}f_0$. The same tail bound applies to $T_{s,u}^{\,n}f_0$ for every $n\geq1$.
+\end{proof}
+
+\begin{remark}[Controls for Projective Dissipation]\label{rem:projective-dissipation-controls}
+Holding bits fixed preserves positive distances on equal-phase fibers, ruling out strict contraction in $d_w$. Replacing the complement by a plain right shift with leading zero keeps the contraction but changes the fixed sequence to $0000\ldots$. At $u=0$ on $I_0$ this recovers the original null readout $(0,0,0)$. With the complement, the fixed ternary readout is $\sum_{r\geq1}2\cdot3^{-2r}=1/4$, so each fixed readout is at least $1/4$ away from that null element. These are separate from H5, whose distance is measured in $L^2$. For $a>0$ the branch-preserving map on the union has two distinct fixed points and therefore cannot be a strict contraction there. Although E2 holds on the history domain, the restriction to a singleton equilibrium at a fixed parameter factors through every stage. The model dissipates dependence on the initial history, and its phase component resets in one step.
+\end{remark}
+
+
 \begin{example}[Contractivity Alone Does Not Give Uniform Discretization]\label{ex:no-uniform-discretization}
 Let $T(f)=\kappa f$ on $C$, with $0<\kappa<1$, and $F_N(f)=\kappa P_Nf$. In each cell choose $f_N$ equal to $0$ on the first half and $1$ on the second. Then $P_Nf_N=1/2$ and
 \[

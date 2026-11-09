@@ -84,7 +84,7 @@ S = (X,\Phi,C,R,\Gamma,U),
 \]
 where $X$ is state space, $\Phi$ is dynamics, $C$ is effective causal structure, $R$ is a readout family, $\Gamma$ is an admissibility bundle, and $U$ is the set of admissible interventions.
 
-The criterion is organized around six critical invariants: structural persistence, rigid identity, causal integration, operational continuity, non-null differentiation, and operational legibility. Each invariant is defined explicitly, tied to an upstream corpus dependency, and paired with a failure mode. On that basis the paper proves four framework-internal results: non-empty membership of the operational class on admissible support, substrate invariance under exact structural equivalence, approximate stability under bounded admissible perturbations, and rupture under invariant loss. A further corollary establishes biological non-primacy: biology is not a primitive constitutive variable for the class under study, but one admissible realization among others provided the invariants are preserved.
+The criterion is organized around six critical invariants: structural persistence, rigid identity, causal integration, operational continuity, non-null differentiation, and operational legibility. Each invariant is defined explicitly, tied to an upstream corpus dependency, and paired with a failure mode. On that basis the paper proves four framework-internal results: conditional membership given six jointly realized witnesses on admissible support, substrate invariance under exact structural equivalence, approximate stability under bounded admissible perturbations, and rupture under invariant loss. A further corollary establishes biological non-primacy: biology is not a primitive constitutive variable for the class under study, but one admissible realization among others provided the invariants are preserved.
 
 The criterion is not narrative. Every major claim is backed by a definition, a proposition, a theorem, a proof sketch, or an explicit dependency on the canonical corpus. The resulting paper adds a new role to the framework: it formalizes the level at which substrate ceases to be explanatorily primitive without reopening the ownership of the Core, \textit{Rigid Identity}, \textit{Phenomenological Regimes}, \textit{Null-Regime Instability}, or \textit{Forensic Predictions}.
 \end{abstract}
@@ -246,14 +246,14 @@ For any admissible system $S$, define the witness margin vector
 \bigr)
 \in [0,+\infty)^6.
 \]
-Each component is the largest certified margin witnessing the corresponding critical invariant. The aggregate budget
+When the six witnesses are separately calibrated as certified radii in the same perturbation metric and class, their invariant budget is
 \[
-\delta_\star(S) = \min \Delta(S)
+\delta_\star(S)=\min\Delta(S).
 \]
-is called the invariant budget of $S$.
+A positive radius certifies the associated predicate at the target and throughout its declared perturbation ball. A zero or unreported radius alone does not determine failure at the target. Raw separations, risks, durations, fragmentation ceilings and compression errors require separate calibration before taking this minimum.
 \end{definition}
 
-The invariant budget is not a surrogate for consciousness. It is a stability budget: the amount of admissible structural perturbation the criterion can tolerate before one of the six constitutive conditions is lost.
+A calibrated budget certifies simultaneous persistence of all six predicates under the declared protocol. Failure beyond the certified radius requires its own witness.
 
 \begin{center}
 \small
@@ -366,6 +366,159 @@ papers has an atomic separator. That implication remains the exact remaining
 mathematical burden for upgrading Proposition~\ref{prop:integration-transfer}.
 \end{remark}
 
+\subsection{Comparison on the Dissipative Circle-Prefix Support}
+
+Use the projective dissipation construction of BaseCore on the two towers with a single angular jump $0<a<1/2$ at stage $k$. Write $\beta=3^{-(k+1)}$, $B=\{0,1\}^{\mathbb N_{>0}}$, and identify the compact support with $Z=(\{0,1\}\times\mathbb T)\times B$. For $x=(s,\theta,b)$ the fixed readout family is the three channels
+\[
+ r_0(x)=\theta,\qquad r_1(x)=\theta+sa,\qquad c(x)=\sum_{j\ge1}2b_j3^{-j}.
+\]
+Measure observation error by the maximum of the first circle error, $\beta$ times the second circle error, and absolute scalar error. All are dimensionless with circle circumference one. An admissible structural comparator uses a fixed homeomorphism from $Z$ onto a product of two non-singleton spaces, a nonempty partition of the three specified channels, one local readout per assigned channel, and time-homogeneous local dynamics that may receive the same exogenous control. There is no output map combining the two factor states. Use the supremum error over initial states, admissible schedules and observed times including zero and one. The product encoding is independent of the target tolerance and retains the full history object. If an additional exact identity constraint is imposed, the lower bound below applies to its subclass, while non-emptiness requires a separate witness for that constraint.
+
+\begin{theorem}[Exact Split at the Initial Projective Cut]\label{thm:circle-prefix-integration-obstruction}
+On each circle-prefix tower, every continuous branch-preserving evolution that descends to depth zero factors into phase and binary dynamics. If the evolutions on both towers commute with the existing transport, the split extends to $Z$. The original dissipative family and the declared phase rotations, jump transport and split readouts then admit a structural comparator with zero error. Consequently no support certificate on this full $Z$ can contain all six witnesses for the original dynamics and this sector.
+\end{theorem}
+
+\begin{proof}
+On branch $s$, the projection to depth zero is $\theta$. Commutation makes the updated phase a function of $\theta$ alone. At fixed $b$ the map from the connected circle to the updated binary sequence is continuous. Every finite binary coordinate has discrete codomain, hence is constant in $\theta$. Thus the updated sequence is a function of $b$ alone. Transport preserves all bits and adds $a$ to the observed late phase. Commutation with it makes the binary update the same on both branches. Use the phase factor $(s,\theta)$ and the binary factor $b$, with $r_0,r_1$ assigned to the first and $c$ to the second. Both factors are non-singleton. Under the original dissipative update they evolve as $(s,u)$ and $R(b)=(0,1-b_1,1-b_2,\ldots)$. Simultaneous phase rotations act in the first factor only, and the existing jump transport is represented by the switch of $s$ at fixed initial phase and bits. The product map is a homeomorphism and preserves the tower stages, their bonding maps and the channel histories via the stated coordinate identifications. This realizes the comparator with zero error for every horizon. A positive integration margin on this support is therefore impossible in the specified class.
+\end{proof}
+
+\begin{theorem}[Positive Split-Readout Margin on the Cofinal Tower]\label{thm:circle-prefix-cofinal-margin}
+Keep $Z$ and the same three readout channels. Enlarge the control by $q\in\{-1,0,1\}$ and fix $0<\lambda\le1/9$. On branch $s$ set
+\[
+ \Psi_{u,q}(s,\theta,b)=(s,u+q\lambda b_1,R(b)).
+\]
+These maps descend to all stages $t\ge1$ and commute with the jump transport, with the same inverse-limit support and the same E1--E2 readout. Each branch is forward invariant and each fixed-control map has sharp contraction factor $1/3$ there. The sector of product encodings and split-readout approximants just declared is nonempty. Its infimal error $e_\ast$ satisfies
+\[
+ \frac{\beta\lambda}{2}\ \le\ e_\ast\ \le\ \frac{\lambda}{2}.
+\]
+For comparators reproducing all three channels exactly at time zero, the infimal error is exactly $\lambda/2$. At $\lambda=0$ the original exact comparator is recovered. For $\lambda>0$, the new controls fail to descend to depth zero.
+\end{theorem}
+
+\begin{proof}
+At depth $t\ge1$ the first bit is available. Use the updated phase $u+q\lambda b_1+sa\mathbf 1_{t>k}$ and the first $t$ bits of $R(b)$. Truncation keeps the first bit and the bonding maps cancel the declared phase jump. The transport changes only the branch and the corresponding late angle. Depth zero fails because equal phases with different $b_1$ have distinct updated phases for $q=1$. Omitting depth zero does not change the inverse limit because the missing coordinate is recovered by the original bond. The readout and its finite approximations remain the same. The bit distance contracts by $1/3$. If the first bits differ, the old bit distance is $1/3$, and the new phase distance is at most $\lambda\le1/9$. Otherwise the new phases agree. Equal phases and a bit difference beyond the first place attain the contraction factor. The fixed alternating sequence has first bit zero, hence the fixed-control equilibrium agrees with that in P1.
+
+For the lower bound, suppose a comparator has error $\epsilon<\beta\lambda/2$. The factor carrying $c$ determines $b_1$: any two points on one of its fibers have scalar difference at most $2\epsilon<1/3$ at time zero, whereas different first bits have ternary codes separated by at least $1/3$. The other factor carries a phase channel of weight $w=1$ or $w=\beta$. On one fiber the predicted phase at time one agrees for each fixed input. Apply $q=+1$ and $q=-1$ with the same $u$. Each of the two true phase differences on that fiber has circle norm at most $2\epsilon/w$. Subtracting them cancels the branch offset and leaves $2\lambda(b_1-b_1')$. Its circle norm equals its absolute value since $2\lambda\le2/9$. The triangle inequality yields $2\lambda|b_1-b_1'|\le4\epsilon/w$, so this second factor also determines $b_1$. Pick states with first bits zero and one. The product corner with the first factor of the former and the second factor of the latter would need both first-bit values. Surjectivity onto the product supplies this impossible corner. The argument covers every nonempty split of the fixed channels and arbitrary nonlinear encoders of the stated type.
+
+For the upper bound keep the product coordinates and initial readouts exact. In the phase factor replace $b_1$ by $1/2$ and keep the true autonomous binary update. At each update the phase discrepancy is at most $\lambda/2$, independent of the past, while the bit channel is exact. The declared phase rotations and jump transport preserve that error bound if included as operations. The comparator uses neither a joint decoder nor a tolerance-dependent search space, and proves non-emptiness. Per-channel isometric reorientation preserves the proof and metric. Changing the channels, their weights, or the intervention class changes the comparison problem.
+
+If the time-zero readouts are exact, $r_0$ and $r_1$ must be on the same factor. Each has range $\mathbb T$, and assigning them to different factors would realize all of $\mathbb T^2$ by product surjectivity, whereas the actual phase pairs have differences only $0$ or $a$. The phase factor now carries $r_0$ with weight one. For states with the same phase factor, input $q=1$ gives true next $r_0$ separation $\lambda$ whenever their first bits differ. A comparator with $\epsilon<\lambda/2$ cannot have such a pair on that fiber. The factor carrying $c$ determines the first bit exactly. The same product corner contradiction proves $\epsilon\ge\lambda/2$, and the displayed comparator attains equality.
+\end{proof}
+
+\paragraph{What persists on the same support.}
+For any sequence of the branch-preserving controls, the alternating-bit subset is compact, invariant and uniformly attracting in the binary metric. In the BaseCore profile embedding all of $Z$ is disjoint from constant functions: the first angular pair lies on the radius-$1/2$ circle centered at $(1/2,1/2)$, and the first binary cell equals zero or one. Neither constant pair $(0,0)$ nor $(1,1)$ belongs to that circle. Compactness gives positive profile distance from constants uniformly on $Z$. The original readout is continuous as a map of states, and its maximum one-step jump is at most one. This is an incremental bound for discrete time. The null anchor $(0,0,0)$ cannot be an attractor under the controlled evolution: from the second step onward $b_2=1$, so $c\ge2/9$ for every trajectory. Two histories with all-zero and all-one bits already have scalar separation one at time zero.
+
+For branch discrimination, $\theta_1-\theta_0$ takes values $0,a$, where $\theta_1$ here denotes the late-phase channel $r_1$. Decode by the nearest of these two circle values. Additive circle noise of size at most $\eta=a\beta/[4(1+\beta)]$ in the weighted observation metric perturbs that difference by at most $a/4$. A one-bit encoding preserves this label exactly. Branch-preserving controls are shams for this label and the designated branch transport swaps it. This gives a finite class decoder and synthetic intervention controls. A uniform rigidity gap against a larger identity candidate family, the full governance for invariant-targeted legibility, and a shared calibrated perturbation radius require separate evidence.
+
+\subsection{Intervention Decoder and Identity Resolution on the Same Towers}
+
+Take the family in Theorem~\ref{thm:circle-prefix-cofinal-margin}, including its uncoupled case $\lambda=0$. Fix $0<L\leq1/9$ and compare that case with $\lambda\in[L,1/9]$. Use two copies of the same initial state and the same phase input $u$. Apply $q=+1$ to one copy and $q=-1$ to the other, then observe each copy after one step. Write $y_+,y_-$ for the observed early phases. In the weighted readout metric above, each readout may have adversarial error at most $\eta$, independently of the other. The paired score is $D=\rho(y_+,y_-)$, with $\rho$ the circle distance.
+
+\begin{theorem}[Sharp Paired Detection of Integration Loss]\label{thm:paired-integration-rupture}
+If $\eta<L/2$, the rule $D>L$ detects the coupled case for every prepared state with $b_1=1$ and every allowed error. It rejects the uncoupled case and the sham with $b_1=0$. The score has clearance at least $L-2\eta$ from the threshold. With $b_1=1$ this distinguishes a zero comparator margin from a margin at least $\beta L/2$ in the declared sector. If $\eta\ge L/2$, there is no rule of the paired observations with a uniform guarantee over these two hypotheses, even if both phase channels and the ternary channel are recorded.
+\end{theorem}
+
+\begin{proof}
+With $b_1=1$ the clean phases are $u+\lambda$ and $u-\lambda$, at distance $2\lambda$ because $2\lambda\le2/9$. In the null case or the sham both clean phases are $u$. The reverse triangle inequality changes the clean score by at most $2\eta$, which is the sum of the two early-phase errors. The null and sham scores are at most $2\eta$, while the positive scores are at least $2L-2\eta$. The comparator margin follows from Theorem~\ref{thm:circle-prefix-cofinal-margin}. At the boundary choose $\lambda=L$ and give both hypotheses the observed phases $u\pm L/2$. These are within $L/2$ of both clean pairs. Shift both late-phase observations by the same respective errors and leave the ternary channels exact. The late phase weight is $\beta\le1$, so the full observations are still within budget. Both systems produce the same binary update. The paired observations are therefore identical under the two hypotheses. Sequential controls on a single evolved state are outside this protocol because the first update resets the first bit.
+\end{proof}
+
+For identity comparison fix $k$ and consider the single jumped branches $I_a$ for $0\le a<1/2$, with $a=0$ denoting the unshifted branch. A clean observation from $I_a$ has phase pair $(\theta,\theta+a)$ and the original ternary code. Use one observation, with the true initial angle $\theta$ unknown. Keep the weights and radius $\eta$ fixed across alternatives.
+
+\begin{theorem}[Sharp Single-Readout Resolution of Tower Identity]\label{thm:tower-identity-observation-resolution}
+In the common history metric and the common readout metric, respectively,
+\[
+ d_H(I_a,I_{a'})=d_H(F(I_a),F(I_{a'}))
+ =\frac{\beta}{1+\beta}\rho(a,a').
+\]
+Here $F$ is the same early-phase, late-phase and ternary readout applied to every branch in the comparison. Two specified alternatives can be distinguished uniformly from a single observation with error at most $\eta$ if and only if
+\[
+ \rho(a,a')>2(1+\beta^{-1})\eta.
+\]
+A decoder can use the measured phase difference $z=y_1-y_0$ and retain every alternative within circle distance $(1+\beta^{-1})\eta$ of $z$. For a separated family it returns the unique compatible alternative. A continuous interval of jumps has zero uniform deformation gap over distinct alternatives.
+\end{theorem}
+
+\begin{proof}
+Take $x\in I_a$ and $x'\in I_{a'}$ with initial angles $\theta,\theta'$. If their history or observation distance is at most $r$, the early angle discrepancy is at most $r$ and the late discrepancy at most $r/\beta$. Their difference implies $\rho(a,a')\le(1+\beta^{-1})r$. To attain the bound, keep the bits fixed and let $\theta'=\theta-\beta(a'-a)/(1+\beta)$ modulo one. The early and weighted late discrepancies are equal, and all other coordinates are controlled by these or have zero discrepancy. The construction works in both directions for every point. It proves the exact Hausdorff distances and also gives a nearest pair of clean readouts. The measured difference is at distance at most $(1+\beta^{-1})\eta$ from the true jump. This proves uniform decoding when the inequality is strict. If the inequality fails, take the nearest clean pair and the midpoints on the two short phase arcs, retaining the common ternary code. The resulting observation is at distance half the displayed separation from both alternatives, including at equality. It cannot be uniformly decoded. The final claim follows by taking any sequence of distinct jumps converging to one in the family.
+\end{proof}
+
+\paragraph{Scope of the two decisions.}
+The paired label detects the integration rupture produced by changing $\lambda$ in the declared family. It is separate from the branch label and does not test all critical interventions in L4. The identity resolution is for passive readout on one declared branch at fixed depth. An observed phase known exactly in advance would change the comparison protocol. Neither decision provides a positive uniform identity gap for the continuous family. For $k=0$ and $\eta=1/64$, the guaranteed single-readout separation of jumps must exceed $1/8$ of a turn. The declared alternatives $1/16$ and $1/4$ pass, while an offset exactly $1/8$ away from another is ambiguous.
+
+
+\subsection{Addressable Identity Alternatives and Rupture Controls}
+
+Fix a synthetic control interface with an independently declared last link $K\ge0$ and integer $M\ge3$. It can apply one bonding jump at an address $k\in\{0,\ldots,K\}$, of amplitude $a=j/M$ for positive integers $j<M/2$, or no jump. This is a family of realizable interventions for the stated interface. The unshifted branch is listed once. Global phase changes alter the nuisance coordinate $\theta$ within a branch. They do not alter its bonding profile. Write $p_t=a\mathbf1_{t>k}$ for the phase offset of a candidate and take $p_t=0$ for the unshifted branch. Use $w_t=3^{-t}$ and the calibrated readout $(\theta+p_t)_{t=0}^{K+1}$ together with the ternary code. Its metric is the maximum of weighted circle discrepancies and the scalar discrepancy. This observation protocol for identity does not change the three-channel factorization sector of Theorem~\ref{thm:circle-prefix-cofinal-margin}.
+
+\begin{theorem}[Identity Separation from an Addressable Control Interface]\label{thm:addressable-identity-alternatives}
+For two candidate profiles $p,p'$ write $d_t=p_t-p'_t$. Their branch sets have exact Hausdorff distance, both in the common history space and in the calibrated readout space,
+\[
+ D(p,p')=\max_{0\le i,j\le K+1}
+ \frac{w_iw_j}{w_i+w_j}|d_i-d_j|.
+\]
+The family of distinct candidates has minimum separation
+\[
+ g=\frac{1}{M(3^{K+1}+1)}.
+\]
+Uniform identification from one observation with unknown initial phase and adversarial error at most $\eta$ is possible for the entire family exactly when $2\eta<g$. The measurement can return the set of compatible profiles and give a unique label only when that set is a singleton. Allowing continuous amplitudes or unbounded jump addresses removes the uniform gap. Omitting intermediate phase observations can make different addresses with the same amplitude identical to the observer.
+\end{theorem}
+
+\begin{proof}
+The profile differences $d_t$ lie in an interval of width less than $1/2$: for two jumps of amplitudes $a,a'$, they take only $0$, the contribution of the earlier jump, and $a-a'$. Consequently $\rho(d_i,d_j)=|d_i-d_j|$. For a history in each branch at distance at most $r$, their phase difference at each stage imposes $\rho(x,d_t)\le r/w_t$ on the relative initial angle $x$. The circle triangle inequality yields the displayed pairwise lower bound. Conversely, at the maximum in the display, the real intervals $[d_t-r/w_t,d_t+r/w_t]$ intersect pairwise, hence have common intersection. Choose $x$ there modulo one and keep the same bits. The clean histories and readouts attain the bound. After stage $K+1$ the phase offsets are constant and the weights decrease. The construction applies starting from every phase in either branch, proving the two Hausdorff formulas.
+
+For distinct candidates, $d_0=0$ and some $|d_j|\ge1/M$. The comparison with $i=0$ gives $g$, since $w_j\ge w_{K+1}$. Equality is attained between the unshifted branch and the smallest jump at address $K$. When $2\eta<g$, the closed noise tubes of the clean readout sets are disjoint. If $2\eta\ge g$, the phasewise circle midpoint of an attaining pair with equal bits belongs to both tubes, giving an identical observation. Continuous amplitudes can approach a given amplitude. With fixed nonzero amplitude, addresses tending to infinity give distances to the unshifted branch tending to zero, and a fixed finite readout horizon misses jumps after it. If only the first and final phases are observed, two jumps of the same amplitude at different intermediate links yield the same observed difference. They agree also in the ternary coordinate when the bits are equal.
+\end{proof}
+
+\begin{proposition}[Rupture Controls on the Declared Circle-Prefix Model]\label{prop:circle-prefix-rupture-controls}
+Use the same two-branch reference support and the control family of Theorem~\ref{thm:circle-prefix-cofinal-margin}. Each of the following changes gives the specified witness loss under its declared protocol. The changes need not preserve all five other witnesses.
+\end{proposition}
+
+\begin{proof}
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Persistence.} Adjoin an ambient absorbing point $\bot$ and declare the admissible region to be the original support. The target control maps the entire ambient state space to $\bot$. No nonempty subset of the admissible region can be invariant under that control. A support-membership marker records exit immediately. The sham uses the original update, which preserves the region. Loss of every admissible support also removes the on-support identity witness.
+\item \textbf{Identity.} Preserve the state evolution and substitute the early phase for every exposed late phase. Different bonding profiles then have identical masked observations at equal initial phase and bits, under every shared control schedule: neither the early phase update nor the binary update uses the bonding jump. This gives exact ambiguity across distinct candidates under the masked protocol. Simultaneous unmasked rotations preserve the relative phases and serve as shams. The identity decoder cannot retain its original guarantee under the mask.
+\item \textbf{Integration.} Set $\lambda=0$ with the same support and channels. The split comparator has error zero. The paired control of Theorem~\ref{thm:paired-integration-rupture} detects this target when its input and noise conditions hold. The $b_1=0$ sham tests the same response channel without inducing a phase split. The original support and its persistence are preserved.
+\item \textbf{Continuity of intervention response.} Use the $q=0$ control path $u\in[0,1/32]$, starting from the same branch and initial state in each trial. The reference early-phase response is $u$. Replace this response by $0$ at $u=0$ and $u+1/4$ for positive $u$ on that path, keeping the branch and binary update fixed. The bonding profile, hence the declared identity, is unchanged. Relative to the phase at $u=0$, the modified response jumps into the disjoint regime neighborhood of $1/4$ as $u\downarrow0$. This violates continuity on the declared control path. The distances on the sham path are at most $1/32$, and the target distances for positive $u$ are at least $1/4$. A threshold $1/8$ separates both for paired readout errors at most $1/256$ each. This is a discontinuity in the control response. Continuity of a discrete time index gives no such test.
+\item \textbf{Non-null differentiation.} For the internal controls replace the update by the constant state on the unshifted branch with phase zero and all bits zero. This state belongs to the reference support and is a globally absorbing null. It is distinct from the inadmissible escape point $\bot$. Initial readout separation is still present because the support and clean readout are unchanged. The null-attractor clause fails. Under the reference controls $b_2=1$ from step two onwards, so the ternary readout is at least $2/9$. A threshold $1/9$ separates the reference and null reset at step two with ternary noise at most $1/256$. This reset also permits an exact split comparator.
+\item \textbf{Legibility.} Keep both clean intervention responses and enlarge only the paired diagnostic error budget to $\eta=L/2$ for comparison of $\lambda=0$ and $\lambda=L$. The full observation collision in Theorem~\ref{thm:paired-integration-rupture} prevents every deterministic decoder from correctly labeling both cases. Even a randomized decoder has maximum error at least $1/2$ on this pair. Abstention fails the required classification. The clean dynamics and their margin are unaffected by this change of measurement. At the original smaller budget the binary label is exact and needs one bit; zero bits cannot retain both labels. Equality of labels is an equivalence relation, including after one-bit compression.
+\end{enumerate}
+The claims use specified interventions and observations on one model. In particular, failure of the paired diagnostic under the stressed budget is a loss of that legibility certificate. It does not exclude a different protocol with another admissible noise radius. The continuity result is specific to the declared path and regime comparison. Cross-losses and unevaluated predicates do not constitute single-rupture independence witnesses.
+\end{proof}
+
+
+\subsection{A Common Support with Shared Identity and Integration Channels}
+
+Let $\mathcal P$ be the seven profiles of the interface of Theorem~\ref{thm:addressable-identity-alternatives} with $K=1$, $M=8$. The following arguments also apply to its general finite $\mathcal P$. The support $Z_{\mathcal P}$ is the union of these branches, represented as $(p,\theta,b)\in\mathcal P\times\mathbb T\times B$. The internal controls act by
+\[
+ \Psi_{u,q}(p,\theta,b)=(p,u+q\lambda b_1,R(b)).
+\]
+Fix one observation family for both comparisons: all $K+2$ phase channels $r_t=\theta+p_t$, and $c(b)$. Use their original weights $w_t=3^{-t}$ and weight one for $c$. The profile tag is not an extra observed channel. Comparator inputs are the same exogenous controls, and each comparator assigns the specified channels to two nonempty groups, one group per autonomous factor. The comparator error is the supremum over admissible initial states and schedules, including observations at times zero and one. Distinguish observation-cut depth $t$ from dynamical time.
+
+\begin{theorem}[Integration with All Identity Channels]\label{thm:integration-all-identity-channels}
+For $0<\lambda\le1/9$, the split-readout sector on $Z_{\mathcal P}$ is nonempty, and its infimal history error is bounded by
+\[
+ \frac{w_{K+1}\lambda}{2}\le e_\ast\le\frac{\lambda}{2}.
+\]
+The infimum is exactly $\lambda/2$ in the subsector with all time-zero readouts exact. At $\lambda=0$ there is an exact comparator in both sectors. The bounds cover every nonempty partition of the specified scalar and circle channels.
+\end{theorem}
+
+\begin{proof}
+If $\epsilon<w_{K+1}\lambda/2$, the factor assigned $c$ determines $b_1$. Points with different first bits have ternary readings separated by at least $1/3$, and a common factor prediction at time zero puts the two readings within $2\epsilon<1/3$. The other factor has at least one phase channel of weight $w\ge w_{K+1}$. On one fiber of that factor, each of the two controls $q=+1,-1$ with the same $u$ puts the true phase differences within $2\epsilon/w$ of zero on the circle. Their difference cancels $p_t-p'_t$ and has norm $2\lambda|b_1-b_1'|$. Thus $2\lambda|b_1-b_1'|\le4\epsilon/w$, so this factor also determines $b_1$. The product corner combining two different first bits is impossible. This is the fiber argument of Theorem~\ref{thm:circle-prefix-cofinal-margin}, and does not require any particular assignment of the phase channels.
+
+The explicit comparator factors as $(p,\theta)$ and $b$, keeping the bit update and using $u+q\lambda/2$ for the phase update. Every initial channel is exact and every later error is at most $\lambda/2$. At $\lambda=0$ both updates and all readouts are exact. If time-zero readouts are required to be exact, no two phase channels can be on opposite factors: each phase has full circle range, but the joint image of any two has only the finitely many relative offsets $p_j-p_i$. A product would give every relative offset. Therefore all phases belong to the same factor, which includes $r_0$ of weight one. Under $q=1$, initial states on a common fiber of that factor with distinct first bits have next $r_0$ distance $\lambda$. With error below $\lambda/2$, this factor and the exact code factor would both determine $b_1$. The same corner contradiction gives the exact lower bound.
+\end{proof}
+
+For the identity witness, let candidate systems have any nonempty subset of $\mathcal P$ as their available preparation profiles. The identity object of each candidate is the union of its embedded branches, with the common cuts. The protocol requires a preparation for every available profile. Its coverage is part of the stipulated acquisition, and no identity tag is passed to the decoder. At observation error $\eta<g/2$ the profile decoder of Theorem~\ref{thm:addressable-identity-alternatives} identifies each prepared profile. Exhaustive coverage determines the candidate subset. Distinct candidate unions have Hausdorff distance at least $g$: a profile in one subset but absent from the other has distance at least $g$ to every branch in the latter, pointwise by the phase argument. This identifies the support object relative to the admitted catalogues. A sample restricted to shared profiles does not identify the catalogue.
+
+\begin{proposition}[Common Support and the Obstruction to Stable State Labels]\label{prop:common-support-sham-obstruction}
+The support $Z_{\mathcal P}$ provides the persistence, catalogue-relative identity, split-sector integration, discrete-time continuity and non-null differentiation witnesses below. Consider a legibility protocol assigning each state a label by decoding a fixed finite observation window under a repeated sham $(u_0,0)$. Suppose the label is robust to uniform observation noise of some positive radius, and invariant under advancing the sham by one step for every admissible starting state. Then the label is constant on each branch. No branch-preserving internal control can produce a shift in such a label. A target population requiring such a shift cannot meet L4 in this protocol.
+\end{proposition}
+
+\begin{proof}
+The support is compact, nonempty and invariant under every internal control. Use the profile embedding of BaseCore with the phase pairs on finitely many cells of positive length and the bits on the original binary cells. This embedding is continuous by the summable cell weights. A constant profile would equal the first binary cell, hence would have value zero or one, but the first angular pair cannot equal either corresponding constant pair. Compactness gives uniform positive distance from the closed subspace of constants. The compact alternating-bit subset is invariant and uniformly attracting for every schedule because each step inserts its leading zero and complements the previous bits. These facts supply persistence. The catalogue witness above supplies identity, and Theorem~\ref{thm:integration-all-identity-channels} supplies integration. For continuity, the phase assignment is continuous in state and in $u$ at fixed discrete $q$, with complete observation codomain. In discrete time the step distance is at most one, so $5/4$ is a strict fragmentation bound. Declare regime cells by profile. Internal controls preserve each cell, so they do not cross incompatible cells. These are discrete-time witnesses in that declared regime model. For differentiation, two histories with equal phases and all-zero versus all-one bits have clean code separation one at time zero. From step two onward every schedule gives $b_2=1$ and $c\ge2/9$, ruling out the all-zero readout as an admissible attractor.
+
+For the obstruction, write $\ell(x)=D(W(x))$ for the label obtained from a fixed finite window $W$ of the sham starting at $x$. At dynamical time $n\ge1$ the sham sends the phases of any two starting states on the same branch to identical values, and the code difference is at most $3^{-n}$. Indeed $c(Rb)=(1-c(b))/3$. The same bound holds over the whole subsequent sham window in the maximum observation metric. Take $n$ so large that $3^{-n}$ is below the allowed noise radius. The clean window of one state at that time is also a permissible noisy window of the other, so both receive the same label. Repeated stability transports that equality back to the initial states. Hence $\ell$ is constant on each branch. Every internal target keeps the profile, so comparison of labels before and after a target cannot give a shift. This is an obstruction under the repeated-sham state-label requirement. The paired response statistic of Theorem~\ref{thm:paired-integration-rupture} depends on a prepared bit and two interventions and has a different experimental unit. It remains a valid response diagnostic and does not supply the stable state-label witness considered here.
+\end{proof}
+
+
 \subsection{Operational Continuity}
 \begin{definition}[Operational continuity and fragmentation bound]\label{def:icont}
 An admissible system $S$ satisfies operational continuity, written $\Icont(S)=1$, if there exists a complete metric space $(\mathcal{E}_S,d_{\mathcal{E}})$ and an admissible assignment
@@ -416,16 +569,16 @@ An admissible system $S$ satisfies operational legibility, written $\Ileg(S)=1$,
 \item a certified readout subfamily $\Read^{\mathrm{leg}} \subseteq R$;
 \item a certified decoder family $\Dec_S$ acting on windows of length at least $\tau_{\min}(S)$;
 \item a class set $\Class_S$;
-\item a legibility margin $\delta_{\mathrm{leg}}(S) > 0$;
+\item a measurement protocol with separation $\sigma>0$, readout noise radius $r>0$, minimum duration $\tau_{\min}\ge1$, miss and false-positive budgets $p_{\mathrm{miss}},p_{\mathrm{fp}}\in[0,1)$, and a finite compression budget $B$ with class-distortion tolerance $d_{\mathrm{comp}}$;
 \end{enumerate}
 such that the following conditions hold:
 \begin{description}[leftmargin=1.7em]
-\item[(L1) Separability] Distinct classes in $\Class_S$ are separated by at least $\delta_{\mathrm{leg}}(S)$ in decoder space.
-\item[(L2) Noise robustness] For every admissible noise process $\nu$ with $\|\nu\| \le \delta_{\mathrm{leg}}(S)$, decoder outputs remain class-stable.
-\item[(L3) Persistence window] Decoder assignments remain stable for windows of length at least $\tau_{\min}(S)$ unless a certified intervention occurs.
-\item[(L4) Intervention fidelity] Certified interventions on critical invariants induce predicted class changes with fidelity bounded below by $1-\delta_{\mathrm{leg}}(S)$.
-\item[(L5) Negative controls] Interventions outside the invariant set produce false positive rate at most $\delta_{\mathrm{leg}}(S)$.
-\item[(L6) Structured compressibility] There exists a compression map $\kappa_S$ on admissible histories such that class structure is preserved up to distortion bounded by $\delta_{\mathrm{leg}}(S)$; total collapse under compression is disallowed.
+\item[(L1) Separability] Distinct declared classes have distance at least $\sigma$ in the specified clean comparison domain.
+\item[(L2) Noise robustness] On the specified noise domain, perturbations with readout norm at most $r$ preserve the label.
+\item[(L3) Persistence window] Under declared sham schedules, labels remain stable throughout every tested window of duration $\tau_{\min}$.
+\item[(L4) Intervention fidelity] In a declared nonempty target population, the miss probability for a predicted class shift is at most $p_{\mathrm{miss}}$.
+\item[(L5) Negative controls] In a declared nonempty sham population, the false-shift probability is at most $p_{\mathrm{fp}}$.
+\item[(L6) Structured compressibility] An encoder with at most $2^B$ codes and a code-to-class map preserve nontrivial class structure with distortion at most $d_{\mathrm{comp}}$ in the declared class metric.
 \end{description}
 \end{definition}
 
@@ -588,7 +741,7 @@ By Lemma~\ref{lem:decoder-transport}, decoder certification transports exactly. 
 \end{proof}
 
 \begin{proposition}[Approximate margin preservation]\label{prop:margins}
-If $S_1 \simeq_{(\Gamma,\eps)} S_2$, then for every critical invariant index $j$,
+If $S_1 \simeq_{(\Gamma,\eps)} S_2$ with margins calibrated in a common perturbation metric for both systems, then for every critical invariant index $j$,
 \[
 \bigl| \delta_j(S_1) - \delta_j(S_2) \bigr| \le \eps.
 \]
@@ -609,52 +762,52 @@ Without Lemmas~\ref{lem:support-transfer} and \ref{lem:decoder-transport}, Theor
 \section{Inherited Inputs and Consolidation Step}
 The six invariants are new as a packaged criterion, but they are not independent inventions. This section records the exact transfer by which upstream ownership becomes present membership data. The burden is narrow: identify the imported result each invariant uses, then isolate the consolidation step that is genuinely new here.
 
-\begin{proposition}[Core-to-persistence transfer]\label{prop:core-per}
-Suppose a realization of the framework satisfies the Core hypotheses on a non-empty compact domain and remains in the non-collapse region. Then it satisfies $\Iper$.
+\begin{proposition}[Core-to-Persistence Transfer with a Common Support]\label{prop:core-per}
+Suppose a Core realization has a nonempty compact admissible support that is invariant under every admitted control, stays at positive distance from the collapse set, and contains or converges into an admitted attractor region. Then $\Iper$ holds on that support.
 \end{proposition}
 
 \begin{proof}
-The Core already provides contractivity, fixed-point existence, compact attractor structure, and non-collapse \cite{core}. Those are exactly the ingredients required in Definition~\ref{def:iper}: a non-empty compact forward-invariant support separated from collapse.
+These bounds verify Definition~\ref{def:iper}. Fixed points for separate controls do not by themselves give a common forward-invariant support.
 \end{proof}
 
-\begin{proposition}[Rigid Identity-to-rigidity transfer]\label{prop:p1-ri}
-Suppose the observable family on an admissible support satisfies the inverse-limit compatibility conditions of \textit{Rigid Identity}. Then $\Iri$ holds with rigidity gap given by the uniqueness and weighted deformation bounds of \textit{Rigid Identity}.
+\begin{proposition}[Rigid Identity Transfer with a Declared Gap]\label{prop:p1-ri}
+An identified unique inverse-limit identity object and a positive lower deformation bound for every distinct admitted alternative certify $\Iri$ on their declared support.
 \end{proposition}
 
 \begin{proof}
-\textit{Rigid Identity} proves that compatible observable channels induce a unique rigid identity object and excludes progressive semigroup substitutes \cite{paper1}. Therefore the support inherits a unique $\Id_S$ and a positive separation from incompatible alternatives whenever the \textit{Rigid Identity} hypotheses are met.
+The inverse-limit identification and separation establish the two clauses of Definition~\ref{def:iri}. A channel-level uniqueness result does not supply a uniform lower deformation bound for a family of alternatives.
 \end{proof}
 
-\begin{proposition}[Phenomenological Regimes-to-continuity transfer]\label{prop:p2-cont}
-Suppose an admissible support carries a phenomenological assignment satisfying the continuity and anti-fragmentation constraints of \textit{Phenomenological Regimes}. Then $\Icont$ holds.
+\begin{proposition}[Regime Continuity Transfer on the Declared Windows]\label{prop:p2-cont}
+If the regime assignment takes values in the declared complete comparison space, its paths and fragmentation meet the time-domain bounds, and admissible interventions preserving identity cannot jump to incompatible regimes, then $\Icont$ holds there.
 \end{proposition}
 
 \begin{proof}
-\textit{Phenomenological Regimes} classifies admissible CCR assignments as continuous and structurally constrains fragmentation within the admissible regime space \cite{paper2}. Those are exactly the continuity and fragmentation clauses in Definition~\ref{def:icont}.
+These hypotheses supply Definition~\ref{def:icont}. In discrete time a quantitative step bound and the regime transition check carry information beyond topological continuity of the time index.
 \end{proof}
 
-\begin{proposition}[Null-Regime Instability-to-differentiation transfer]\label{prop:p3-diff}
-Suppose the support lies in a causally rigid channel satisfying the witness-relative null-instability and conditional non-nullity results of \textit{Null-Regime Instability}. Then $\Idiff$ holds.
+\begin{proposition}[Null-Regime Transfer with Temporal Evidence]\label{prop:p3-diff}
+If an admissible common schedule supplies a positive separation between two readout windows and the null class is excluded as an asymptotically stable admissible attractor, then $\Idiff$ holds on the support.
 \end{proposition}
 
 \begin{proof}
-\textit{Null-Regime Instability} excludes the stable joint-null regime and establishes positive non-null separation under its stated witness and regularity hypotheses \cite{paper3}. Therefore the support cannot collapse stably into $\nullclass$, and a positive differentiation gap is available on admissible histories.
+The witnesses verify Definition~\ref{def:idiff}. A static non-joint-null pair alone establishes neither the temporal exclusion nor a separation between the chosen windows.
 \end{proof}
 
-\begin{proposition}[Forensic Predictions-to-legibility transfer]\label{prop:p4-leg}
-Suppose a readout family and decoder satisfy the admissibility, comparator, negative-control, and intervention-discipline requirements of \textit{Forensic Predictions}. Then $\Ileg$ holds.
+\begin{proposition}[Forensic Predictions-to-Legibility Transfer with Decoder Evidence]\label{prop:p4-leg}
+A structurally closed decoder and finite-rate compression protocol that meet L1--L6 under the declared admissibility, target and sham comparisons certify $\Ileg$.
 \end{proposition}
 
 \begin{proof}
-\textit{Forensic Predictions} fixes the operational requirements that a decoder must satisfy before it can support an inferential claim \cite{paper4}. The clauses of Definition~\ref{def:ileg} are a direct structural recasting of those requirements.
+The governance conditions from \textit{Forensic Predictions} discipline the comparisons \cite{paper4}. The separate evidence for L1--L6 establishes Definition~\ref{def:ileg}.
 \end{proof}
 
-\begin{proposition}[Integration as a non-factorization consequence]\label{prop:integration-transfer}
-If a system satisfies \textit{Rigid Identity} rigidity, \textit{Phenomenological Regimes} continuity, and \textit{Forensic Predictions} intervention fidelity, then any exact admissible factorization preserving all operational histories would contradict at least one of those upstream conditions. Hence $\Iint$ is justified as a new consolidation invariant.
+\begin{proposition}[Integration Requires a Separate Factorization Bound]\label{prop:integration-transfer}
+On a declared support and a nonempty comparison sector, a uniform positive lower bound on the reproduction error of all identity-preserving comparators certifies the integration margin in that sector. Rigidity, continuity and intervention fidelity supply comparison data; a separate proof must exclude accurate factorizations.
 \end{proposition}
 
 \begin{proof}
-An exact factorization would split the support into operationally independent blocks. If the split preserved all admissible histories, it would also preserve readout structure and interventions. But then either the rigid identity object would fail to be unique, continuity would fragment across the split, or intervention responses would no longer certify a single integrated class. Therefore the conjunction of Papers I, II, and IV blocks such factorization.
+The error bound gives the obstruction in Definition~\ref{def:iint}. Theorem~\ref{thm:circle-prefix-integration-obstruction} gives an exact comparator preserving the specified history and transport data. Theorem~\ref{thm:circle-prefix-cofinal-margin} supplies the separate positive bound for different controls. Exact atomicity excludes exact products under Theorem~\ref{thm:iint-faithful-factorization-triviality}. A positive approximation margin also needs a quantitative lower bound or hypotheses ensuring attainment of the infimum.
 \end{proof}
 
 \begin{remark}[Scope of the transfer]
@@ -710,7 +863,7 @@ Immediate from Theorem~\ref{thm:substrate}. The criterion depends on invariant p
 
 \subsection{Approximate Stability}
 \begin{theorem}[Approximate stability]\label{thm:stability}
-Let $S_1 \in \Cop$ with witness margins
+Let $S_1 \in \Cop$ and suppose both systems use certified radii in the same perturbation metric, with
 \[
 \delta_\star(S_1)
 =
@@ -764,52 +917,52 @@ The definition of $\Cop$ is conjunctive over the six invariants and does not inc
 \section{Rupture Taxonomy by Invariant}
 Theorem~\ref{thm:rupture} is intentionally coarse. This section sharpens the six cases, because a criterion is only scientifically useful if its failure signatures are distinct.
 
-\begin{proposition}[Persistence rupture destroys admissible domain]\label{prop:rupt-per}
-If $\delta_{\mathrm{per}}(S)=0$, then every candidate operational partition becomes horizon-dependent in an inadmissible way: there exists no non-empty compact forward-invariant support on which class membership can be defined uniformly.
+\begin{proposition}[Loss of Every Admissible Support]\label{prop:rupt-per}
+If there is no nonempty compact forward-invariant admissible support, the on-support persistence predicate fails. A zero certified radius alone does not imply that no such support exists.
 \end{proposition}
 
 \begin{proof}
-When the persistence margin vanishes, either forward invariance is lost or the support touches the collapse set. In either case there is no stable domain on which the quotient definition of $\Qop(S)$ can remain valid across admissible windows.
+The first claim is a necessary condition in Definition~\ref{def:iper}. A robust certificate over nearby systems requires more than existence of a support at the target.
 \end{proof}
 
-\begin{proposition}[Identity rupture induces class ambiguity]\label{prop:rupt-ri}
-If $\delta_{\mathrm{ri}}(S)=0$, then operational class labels no longer transport uniquely across admissible histories. Therefore $\Qop(S)$ becomes representation-dependent.
+\begin{proposition}[Identity Ambiguity Requires Competing Candidates]\label{prop:rupt-ri}
+If two inequivalent admissible identity objects fit the same observable data on the declared support, the uniqueness clause of $\Iri$ fails. A zero infimum of alternative deformation distances need not produce a second fitting candidate.
 \end{proposition}
 
 \begin{proof}
-When the rigidity gap vanishes, at least two admissible identity candidates become indistinguishable at the support level. Then the same readout history may be associated with multiple incompatible identity transports, making the operational class assignment non-unique.
+The first claim follows from Definition~\ref{def:iri}. A sequence of distinguishable alternatives with distances tending to zero can violate the gap while preserving exact identification.
 \end{proof}
 
-\begin{proposition}[Integration rupture yields reducible aggregates]\label{prop:rupt-int}
-If $\delta_{\mathrm{int}}(S)=0$, then $S$ admits a non-trivial admissible factorization into operationally independent components. Such a system fails $\Cop$ even if each component separately satisfies weaker criteria.
+\begin{proposition}[Integration Rupture and Attainment]\label{prop:rupt-int}
+On a nonempty comparison sector with nonnegative history error, a zero error infimum excludes a positive integration margin in that sector. It yields an exact admissible factorization if the infimum is attained.
 \end{proposition}
 
 \begin{proof}
-Vanishing integration gap means the system can be decomposed without loss at the level of admissible histories and interventions. The criterion of this paper is defined for irreducible class membership, not for arbitrary unions of smaller class-bearing subsystems.
+Every positive threshold admits a comparator below it by the definition of a zero infimum. If a minimizing comparator exists, its error equals zero. Without attainment the errors can tend to zero without any exact comparator, as for $e(x)=x$ on $(0,1]$.
 \end{proof}
 
-\begin{proposition}[Continuity rupture yields fragmentation]\label{prop:rupt-cont}
-If $\delta_{\mathrm{cont}}(S)=0$, then arbitrarily small admissible perturbations can force transitions between incompatible operational classes while identity is preserved.
+\begin{proposition}[Admissible Incompatible Jump]\label{prop:rupt-cont}
+A witnessed admissible finite-energy jump into an incompatible regime with identity preserved violates $\Icont$ on the specified regime and schedule domain. Failure to certify a positive perturbation radius does not itself produce such a witness.
 \end{proposition}
 
 \begin{proof}
-By definition of $\delta_{\mathrm{cont}}(S)$, vanishing continuity margin removes the bound on the fragmentation functional. Hence there exist admissible trajectories whose class assignment is not stably continuous under small perturbations. The class map ceases to be regime-coherent.
+The jump violates the explicit exclusion in Definition~\ref{def:icont}. The radius concerns uniform guarantees over perturbations, while the jump is a property of a particular trajectory.
 \end{proof}
 
-\begin{proposition}[Differentiation rupture collapses operational qualia]\label{prop:rupt-diff}
-If $\delta_{\mathrm{diff}}(S)=0$, then either $\Qop(S)$ collapses to a single trivial class or the null class remains admissibly stable.
+\begin{proposition}[Separation or Null-Attractor Failure]\label{prop:rupt-diff}
+If no readout-window pair on the declared support has positive separation, or if the null class is an asymptotically stable admissible attractor, then $\Idiff$ fails there.
 \end{proposition}
 
 \begin{proof}
-The differentiation gap is precisely the minimum operational separation required for non-trivial class structure. If it vanishes, no stable non-null class separation survives. The null regime or total indistinguishability follows.
+Either observation violates a necessary clause of Definition~\ref{def:idiff}. The outcome does not determine the number of cells of an independently defined decoder quotient.
 \end{proof}
 
-\begin{proposition}[Legibility rupture blocks scientific use]\label{prop:rupt-leg}
-If $\delta_{\mathrm{leg}}(S)=0$, then any remaining latent partition is scientifically inadmissible for this paper: it cannot satisfy the combined requirements of separability, robustness, persistence window, intervention fidelity, negative controls, and structured compressibility.
+\begin{proposition}[Legibility Failure Under the Declared Protocol]\label{prop:rupt-leg}
+If no admissible decoder and compression family jointly meet L1--L6 under the declared protocol, then $\Ileg$ fails. A zero certified perturbation radius does not alone establish that impossibility.
 \end{proposition}
 
 \begin{proof}
-The certification clauses of Definition~\ref{def:ileg} are conjunctive. Once the legibility margin vanishes, at least one clause fails. The partition may still be mathematically postulated, but it cannot serve as operational evidence or as a constitutive component of $\Cop$.
+Definition~\ref{def:ileg} requires a joint witness. Its existence at the target is distinct from uniform preservation under perturbations.
 \end{proof}
 
 
@@ -829,11 +982,7 @@ Thus $\Cop = \mathcal{C}_{\mathrm{op}}(\mathfrak{I})$.
 \end{definition}
 
 \begin{definition}[Single-rupture witness family]\label{def:witness}
-Fix $k \in \{\mathrm{per},\mathrm{ri},\mathrm{int},\mathrm{cont},\mathrm{diff},\mathrm{leg}\}$. The corresponding single-rupture witness family $\mathcal{W}_k$ consists of admissible systems $S$ such that the matching invariant margin vanishes,
-\[
-\delta_k(S)=0,
-\]
-while all remaining invariant margins stay strictly positive. Whenever $\mathcal{W}_k \neq \varnothing$, its members are called single-rupture witnesses for the $k$-th invariant.
+Fix $k \in \{\mathrm{per},\mathrm{ri},\mathrm{int},\mathrm{cont},\mathrm{diff},\mathrm{leg}\}$. The family $\mathcal{W}_k$ consists of admissible systems for which predicate $I_k$ fails and every other predicate holds on the declared comparison domain. Whenever $\mathcal{W}_k \neq \varnothing$, its members are called single-rupture witnesses for the $k$-th invariant.
 \end{definition}
 
 \begin{proposition}[Single-rupture witnesses generate false positives for reduced criteria]\label{prop:witness}
@@ -879,10 +1028,10 @@ geometry more explicit: each invariant blocks a distinct failure family, and the
 limited implications among invariants are weaker than full membership in
 $\Cop$.
 
-\begin{theorem}[Six canonical single-rupture witness schemas]\label{thm:six-witness-schemas}
-For each invariant in $\mathfrak{I}$ there is a formal admissible witness schema
-that satisfies the other five invariant predicates while failing the selected
-one:
+\begin{theorem}[Conditional Use of Single-Rupture Schemas]\label{thm:six-witness-schemas}
+Consider these six candidate schemas. A schema separates its target invariant
+from the other five only when an admissible model realizes the five retained
+predicates and fails the target on the same declared comparison domain:
 \begin{enumerate}[leftmargin=1.5em]
 \item \textbf{Persistence witness.} A system with a certified decoder,
 non-factorizable causal structure, unique identity label, continuous class map,
@@ -907,18 +1056,11 @@ stable null or single indistinguishable class.
 and non-null differentiated system whose class partition is latent but no
 certified decoder satisfies L1--L6.
 \end{enumerate}
-Hence no invariant in $\mathfrak{I}$ is derivable from the conjunction of the
-other five within the admissible witness universe generated by these schemas.
+Existence of the six models is a separate obligation.
 \end{theorem}
 
 \begin{proof}
-Each clause fixes the five non-target margins strictly positive and sets the
-target margin to zero by construction. The five positive clauses ensure
-membership in the reduced criterion omitting the target invariant. The target
-failure invokes the corresponding rupture proposition from the previous
-section, excluding membership in $\Cop$. Since this can be done for each
-invariant independently, none of the six predicates is derivable from the other
-five in the witness universe.
+A realized single rupture belongs to the reduced class omitting the failed predicate and lies outside $\Cop$. The existence of such a realization must be checked for each schema. Without an admissible forward-invariant support, the persistence schema also loses on-support rigidity by Proposition~\ref{prop:not-per-not-ri}. If all classes collapse to one, the proposed differentiation schema also loses legibility by Proposition~\ref{prop:leg-requires-diff}. Other mechanisms of differentiation failure require separate models.
 \end{proof}
 
 \begin{theorem}[Sufficiency of the six-invariant basis]\label{thm:six-sufficiency}
@@ -1047,26 +1189,9 @@ An operational partition candidate $\pi_{S,T}$ is certified only if:
 The criterion is intentionally parallel to \textit{Forensic Predictions}' governance discipline \cite{paper4}. Comparator obligation enforces non-trivial discrimination. Noise robustness prevents the criterion from depending on one-off traces. Persistence windows prevent class inflation from instantaneous spikes. Intervention fidelity prevents purely correlational interpretation. Negative controls block degenerate decoders that label everything as positive. Structured compressibility ensures that a class remains auditable after the readout is summarized, logged, or packetized.
 
 \subsection{Legibility Metrics}
-Definition~\ref{def:ileg} can be operationalized by six measurable quantities:
-\begin{align*}
-\sigma_{\mathrm{sep}}(S) &:= \inf_{q \neq q'} \dist\bigl(D^{-1}(q),D^{-1}(q')\bigr), \\
-\eta_{\mathrm{noise}}(S) &:= \sup_{\|\nu\| \le \delta_{\mathrm{leg}}} \Pr\bigl[D(h+\nu)\neq D(h)\bigr], \\
-\tau_{\mathrm{pers}}(S) &:= \inf \{T : D(h_{t:t+T}) \text{ remains stable in the absence of certified intervention}\}, \\
-\alpha_{\mathrm{int}}(S) &:= \inf_{u \in U_{\mathrm{crit}}} \Pr\bigl[\text{predicted class shift under }u\bigr], \\
-\beta_{\mathrm{nc}}(S) &:= \sup_{u \in U_{\mathrm{sham}}} \Pr\bigl[\text{false class shift under }u\bigr], \\
-\kappa_{\mathrm{comp}}(S) &:= \inf_{\kappa} \sup_{h} \dist\bigl(D(h), D(\kappa(h))\bigr).
-\end{align*}
-Here $U_{\mathrm{crit}}$ denotes interventions targeted at critical invariants and $U_{\mathrm{sham}}$ denotes admissible negative controls. Invariant $\Ileg$ requires the inequalities
-\[
-\begin{aligned}
-\sigma_{\mathrm{sep}}(S) &> 0,
-& \eta_{\mathrm{noise}}(S) &\le \delta_{\mathrm{leg}}(S), \\
-\tau_{\mathrm{pers}}(S) &\ge \tau_{\min}(S),
-& \alpha_{\mathrm{int}}(S) &\ge 1-\delta_{\mathrm{leg}}(S), \\
-\beta_{\mathrm{nc}}(S) &\le \delta_{\mathrm{leg}}(S),
-& \kappa_{\mathrm{comp}}(S) &\le \delta_{\mathrm{leg}}(S).
-\end{aligned}
-\]
+For Definition~\ref{def:ileg}, measure separation on the clean comparison domain in the declared metric. Check noise robustness over clean windows and all allowed perturbations of size at most $r$. The guaranteed persistence duration is the infimum, over declared sham trajectories, of the time of first label change, with infinite duration if the label never changes. The earliest identifying window is a separate quantity.
+
+Target fidelity and false-positive probability are measured over their declared populations. Report the sampling unit, estimator, uncertainty and decision rule, or use exact enumeration for a deterministic finite population. Compression reports both the bit budget and worst-case class distortion. A finite budget for the class label supplies no reconstruction rate for the whole readout. Calibration to a common perturbation radius requires a separate argument.
 
 \begin{proposition}[Legibility is jointly constrained]\label{prop:legibility}
 No single legibility metric is sufficient for $\Ileg$. The invariant requires simultaneous control of separation, admissible noise robustness, persistence window, intervention fidelity, negative controls, and structured compressibility.

@@ -78,11 +78,11 @@ Define the witness margin vector
 \delta_{\mathrm{leg}}(S)
 \bigr)\in [0,\infty)^6.
 \]
-Its minimum
+When the six witnesses are separately calibrated as certified radii in the same perturbation metric and class, their invariant budget is
 \[
-\delta_\star(S):=\min\Delta(S)
+\delta_\star(S)=\min\Delta(S).
 \]
-is the invariant budget of $S$.
+A positive radius certifies the associated predicate at the target and throughout its declared perturbation ball. A zero or unreported radius alone does not determine failure at the target. Raw separations, risks, durations, fragmentation ceilings and compression errors require separate calibration before taking this minimum.
 \end{definition}
 
 \begin{center}
@@ -160,6 +160,15 @@ read as an unconditional closure of integration, nor as a strengthening of any
 downstream theorem that assumes $\Iint(S)=1$.
 \end{remark}
 
+\begin{lemma}[Two Factor Fibers Cannot Share a Nonconstant Label]\label{lem:two-factor-label-obstruction}
+Let $\chi:A\to A_1\times A_2$ be surjective. If a label $g:A\to L$ is constant on every fiber of each of the two factor projections of $\chi$, then $g$ is constant on $A$.
+\end{lemma}
+
+\begin{proof}
+For any $x,y\in A$, choose $z$ whose first factor is that of $x$ and whose second factor is that of $y$. Fiber constancy gives $g(x)=g(z)=g(y)$. For a quantitative obstruction it suffices that the proposed history error below a fixed threshold implies both fiber-constancy statements for a nonconstant label. Non-emptiness of the comparator sector is a separate condition.
+\end{proof}
+
+
 \subsection{Regime Continuity}
 
 \begin{definition}[Regime continuity]\label{def:icont}
@@ -197,16 +206,16 @@ An admissible system satisfies operational legibility, written $\Ileg(S)=1$, if 
 \item a declared readout subfamily $\Read^{\mathrm{leg}}\subseteq R$;
 \item a structurally closed decoder family $\Dec_S$ acting on windows of length at least $\tau_{\min}(S)$;
 \item a class set $\Class_S$;
-\item a legibility margin $\delta_{\mathrm{leg}}(S)>0$;
+\item a measurement protocol with separation $\sigma>0$, readout noise radius $r>0$, minimum duration $\tau_{\min}\ge1$, miss and false-positive budgets $p_{\mathrm{miss}},p_{\mathrm{fp}}\in[0,1)$, and a finite compression budget $B$ with class-distortion tolerance $d_{\mathrm{comp}}$;
 \end{enumerate}
 such that:
 \begin{description}[leftmargin=1.7em]
-\item[(L1) Separability] Distinct classes are separated by at least $\delta_{\mathrm{leg}}(S)$ in decoder space.
-\item[(L2) Noise robustness] Admissible noise of size at most $\delta_{\mathrm{leg}}(S)$ does not alter decoder class assignments.
-\item[(L3) Persistence window] Decoder assignments remain stable for windows of length at least $\tau_{\min}(S)$ unless a certified intervention occurs.
-\item[(L4) Intervention fidelity] Certified interventions on critical invariants induce the predicted class changes with fidelity at least $1-\delta_{\mathrm{leg}}(S)$.
-\item[(L5) Negative controls] Off-target interventions produce false-positive rate at most $\delta_{\mathrm{leg}}(S)$.
-\item[(L6) Structured compressibility] There exists a compression map preserving class structure up to distortion bounded by $\delta_{\mathrm{leg}}(S)$.
+\item[(L1) Separability] Distinct declared classes have distance at least $\sigma$ in the specified clean comparison domain.
+\item[(L2) Noise robustness] On the specified noise domain, perturbations with readout norm at most $r$ preserve the label.
+\item[(L3) Persistence window] Under declared sham schedules, labels remain stable throughout every tested window of duration $\tau_{\min}$.
+\item[(L4) Intervention fidelity] In a declared nonempty target population, the miss probability for a predicted class shift is at most $p_{\mathrm{miss}}$.
+\item[(L5) Negative controls] In a declared nonempty sham population, the false-shift probability is at most $p_{\mathrm{fp}}$.
+\item[(L6) Structured compressibility] An encoder with at most $2^B$ codes and a code-to-class map preserve nontrivial class structure with distortion at most $d_{\mathrm{comp}}$ in the declared class metric.
 \end{description}
 \end{definition}
 
@@ -288,7 +297,7 @@ For every subset $J\subseteq \mathfrak{I}$ define the reduced class
 \end{definition}
 
 \begin{definition}[Single-rupture witness family]
-Fix one invariant index $k\in\{\mathrm{per},\mathrm{ri},\mathrm{int},\mathrm{cont},\mathrm{diff},\mathrm{leg}\}$. A single-rupture witness family $\mathcal{W}_k$ consists of admissible systems whose matching invariant margin vanishes while all remaining invariant margins stay strictly positive.
+Fix one invariant index $k\in\{\mathrm{per},\mathrm{ri},\mathrm{int},\mathrm{cont},\mathrm{diff},\mathrm{leg}\}$. A single-rupture witness family $\mathcal{W}_k$ consists of admissible systems for which predicate $I_k$ fails and every other predicate holds on the declared comparison domain.
 \end{definition}
 
 \begin{proposition}[Single-rupture witnesses create false positives]

@@ -16,3 +16,5 @@ import QICNLean.QICNSCoupledInstance
 import QICNLean.QICNRotationSpectral
 import QICNLean.QICNCoupledSplitMargin
 import QICNLean.QICNCoupledSplitMarginUniversal
+import QICNLean.QICNProjectiveTransport
+import QICNLean.QICNObservationBudget

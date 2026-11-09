@@ -344,6 +344,20 @@ Theorem~\ref{thm:instability} assumes $\Phi(z_0),\Phi(z_1)\in\E$, not $\bot$. If
 The theorem above does \emph{not} infer a finite-energy non-zero deformation from $\MO=+\infty$. Under the infimum convention for ontological mass, $\MO=+\infty$ means precisely that no finite-energy admissible perturbation produces non-zero deformation. The older Step 2 proof direction is therefore withdrawn. The surviving result is conditional on an independently specified extension witness.
 \end{caveat}
 
+\begin{example}[External Null Witness in a Common Readout Domain]\label{ex:joint-external-null-witness}
+Fix $k\geq0$ and $0<a<1/2$. Use the weighted circle-prefix history metric with weights $3^{-t}$, the undeformed tower $I_0$, the single-jump tower $I_1$ (bonding shift $-a$ at level $k$), and $Z=I_0\cup I_1$. Set $\beta=3^{-(k+1)}$. The common readout $F$ takes the initial angle, the angle at $k+1$, and the ternary code of the bits, with codomain metric $\max(\rho_0,\beta\rho_1,|\Delta\text{code}|)$. The two angular blocks give the first two terms of $d_w$, while the ternary leading term minus its tail bounds the binary part from below. Thus $C=1$ holds on the entire compact union. Order the codomain by equality together with $e_0=(0,0,0)$ below every element.
+
+Declare internal interventions to be simultaneous rotations of all stages of $I_0$, with cost the absolute shortest angular shift. Every such map has its inverse and sends $I_0$ onto itself. This gives infinite resistance in this sector by the Hausdorff convention, despite finite-cost nonidentity transports. The pointwise readout changes under a nonzero rotation. A sector admitting the single-jump deformation instead has a finite resistance witness with projection-defect cost $3^{-k}a$. The two sectors specify different admissible operations.
+
+Declare as a separate extension the addition of the single-jump branch to $I_0$. It is the union of two compact projective limits; it is also realized by the disjoint union of the two stage towers with branch-preserving projections. Embed its histories in $Z$ by forgetting the tag, which is injective at the limit since the phases across $k$ distinguish the two branches. The inclusion $j:I_0\hookrightarrow Z$ preserves the restricted readout exactly. Take $z_0=j(x)$ with zero phase and all-zero bits and $z_1$ on the added branch with the same initial phase and bits. Then
+\[
+ d_Z(z_0,z_1)=\beta a,\qquad F(z_0)=e_0,\qquad
+ d_{\mathcal E}(F(z_1),e_0)=\beta a.
+\]
+The extension is positive in Hausdorff distance, $\beta a/(1+\beta)$, using the two angular blocks. The transported point and the added endpoint are distinct. The scalar ternary readout alone, which discards both angles, assigns them the same value and fails the positive lower bound on this pair. The example realizes a typed extension witness and distinguishes setwise resistance from readout invariance.
+\end{example}
+
+
 \subsection{Conditional Consequences}
 
 \begin{corollary}[Conditional Forced Non-Nullity]\label{cor:forced}
@@ -978,7 +992,7 @@ Apply the witness theorem, the anchored bound, and the corrected results of Appe
 \end{proof}
 
 \begin{remark}[Structural Import]
-The open program is to construct a single admitted system satisfying the required geometry, intervention costs, transport and readout properties together. The pair-separation theorem does not itself establish that joint realization, nor a dynamical prohibition of an individual null state.
+The internal sector of the example meets the mass-only CCR definition of this paper. The open program is to realize the stronger preservation conditions, witness geometry, costs, transport and readout for the intended target class. Example~\ref{ex:joint-external-null-witness} realizes the typed witness and the required comparison geometry for a specified sector. Temporal instability of an individual null state requires a separate dynamical result.
 \end{remark}
 
 % =============================================================================

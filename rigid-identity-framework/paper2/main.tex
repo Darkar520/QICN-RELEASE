@@ -408,6 +408,35 @@ It is attained by $g_\ast(s)=\phi_t(s)+1/(2\,3^{t+1})$.
 For a fixed prefix $s$, the all-zero and all-one suffixes give endpoints $\phi_t(s)$ and $\phi_t(s)+A_t$. For any number $g(s)$, the triangle inequality forces at least one endpoint error to be at least $A_t/2$. Conversely all readout values in that fiber lie between those endpoints, so their midpoint has error at most $A_t/2$. Both endpoints belong to the domain, establishing the exact optimum and attainment. The bound is positive for each fixed finite budget and tends to zero as $t$ increases; it gives no positive uniform error floor across increasing resolutions.
 \end{proof}
 
+\begin{proposition}[Sharp Error for Arbitrary Binary Codes]\label{prop:ternary-arbitrary-code}
+For the ternary assignment above, let an encoder choose at most $2^B$ states as an arbitrary function of the whole history, and let each state decode to any real number. The minimum worst-case absolute error is $1/(2\cdot3^B)$ for every integer $B\geq0$.
+\end{proposition}
+\begin{proof}
+The cylinders of depth $B$ have intervals of length $3^{-B}$ between their two attainable endpoints. Different intervals have gaps at least $3^{-B}$: after the first differing bit $j\leq B$, the maximum opposing tail is $3^{-j}$. Thus all $2^{B+1}$ endpoints, including the depth-zero endpoints $0$ and $1$, are pairwise separated by at least $3^{-B}$. Two share a code and the triangle inequality forces error at least $3^{-B}/2$. Encoding the $B$-bit prefix and decoding to its interval midpoint attains the bound.
+\end{proof}
+
+\subsection{Common Readout on Two Coherently Transported Towers}
+
+\begin{theorem}[Joint Realization of Transport and Controlled Readouts]\label{thm:joint-transport-readout}
+Use circle-prefix stages $S_t=\mathbb T\times\{0,1\}^t$, stage metric $\max(\rho,\mathbf{1}_{\text{different prefix}})$, and weights $w_t=3^{-t}$, where $\rho$ is circle distance with circumference one. Take the usual truncation tower $I_0$ and its variant $I_1$ with angle shift $-a$ at the single bonding level $k$, for $0<a<1/2$. Write $\beta=3^{-(k+1)}$. In the common weighted history space put $Z=I_0\cup I_1$. Let the complete codomain be $\mathcal E=\mathbb T^2\times[0,1]$ with the maximum of the first circle distance, $\beta$ times the second circle distance, and the absolute scalar difference. Define
+\[
+ F(x)=\left(\theta_0(x),\theta_{k+1}(x),\sum_{j\geq1}2b_j(x)3^{-j}\right).
+\]
+Then $d_w(x,y)\leq d_{\mathcal E}(F(x),F(y))\leq3d_w(x,y)$ on all of $Z$. On each tower the restriction satisfies E0--E2 with $a_t=2\cdot3^{-(t+1)}$ and uniform tail $A_t=3^{-t}$. The coordinate homeomorphism $H:I_0\to I_1$ shifts angles at stages $t>k$ by $a$. With projection-defect cost $E_w=3^{-k}a$, one has
+\[
+ d_w(x,Hx)=d_{\mathcal E}(F(x),F(Hx))=\beta a,\qquad
+ d_H(I_0,I_1)=\frac{\beta a}{1+\beta}.
+\]
+\end{theorem}
+\begin{proof}
+In each tower the angle is constant on the two blocks $t\le k$ and $t>k$. Thus the angular part of the history distance is exactly the maximum of the two weighted angular distances in the codomain. The binary part is $3^{-j}$ at first differing bit $j$. The leading ternary term and its tail give lower and upper constants $1$ and $3$ for that part. Each tower is closed in the compact metric product, so their union is complete.
+
+For a declared tower $s\in\{0,1\}$ the finite observation $(\theta_t,b_1,\ldots,b_t)$ gives the initial angle $\theta=\theta_t-sa\mathbf 1_{t>k}$. The stage readout is $(\theta,\theta+sa,\sum_{j=1}^t2b_j3^{-j})$. The phase rule uses the declared bonding family, and on both towers the successive readout increment is bounded by $a_t$, with exactly the stated uniform tail. A later-bit flip proves E2, since both phase coordinates stay fixed while the scalar changes. The codomain is nontrivial, proving E0. Within either fixed-angle fiber the sharp binary-code result applies to the scalar readout.
+
+The coordinate squares commute because the sole change of phase at stage $k+1$ cancels the shift $-a$ in its bonding map. The coordinatewise inverse shifts by $-a$ on the later block. For fixed bits, $F$ measures the shift $\beta a$ exactly. In the comparison of sets, a pair at distance $r$ has $a\leq r+r/\beta$ by the triangle inequality at stages $0$ and $k+1$. Equal bit sequences and an initial phase offset $-\beta a/(1+\beta)$ for the second history attain this bound in both directions.
+\end{proof}
+
+
 \subsection{Controls Separating Convergence, Continuity, and Invariance}
 
 \begin{proposition}[Setwise Invariance Does Not Supply Continuity]\label{prop:readout-continuity-control}

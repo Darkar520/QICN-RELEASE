@@ -88,70 +88,97 @@ If some finite canonical prefix determined identity, then in particular one of t
 
 \subsection{Metric Projective Assumptions}
 
-\begin{assumption}[RIG-1: Metric Projective System]\label{ass:rig1}
-Each $S_t$ is equipped with a complete metric $d_t$.
+\begin{assumption}[RIG-1: Common Metric Stages]\label{ass:rig1}
+Both towers use the same nonempty complete metric stages $(S_t,d_t)$ and continuous bonding maps. Use the weighted history metric below with $w_t\operatorname{diam}(S_t)\to0$. This fixes the ambient space used for both Hausdorff directions.
 \end{assumption}
 
-\begin{assumption}[RIG-2: Uniform Lipschitz Projections]\label{ass:rig2}
-Each projection $\pi_{t+1\to t}:S_{t+1}\to S_t$ is Lipschitz with constant $L_t$, and the weighted control sequence used below is finite.
+\begin{assumption}[RIG-2: Controlled Propagation]\label{ass:rig2}
+For the fiber lifting constants $K_t>0$ of RIG-3 define $q_t=w_{t+1}K_t/w_t$. Require $C=\sup_{0\leq k\leq t<\infty}\prod_{j=k}^t q_j<\infty$. In particular $q_t\leq1$ at each stage suffices.
 \end{assumption}
 
-\begin{assumption}[RIG-3: Stable Lifting]\label{ass:rig3}
-For each admissible perturbed projection family there exist compatible approximate lifting maps with constants bounded uniformly by a finite lifting constant $L_{\mathrm{lift}}$.
+\begin{assumption}[RIG-3: Exact Fiber Lifts in Both Towers]\label{ass:rig3}
+For each $f\in\{\pi_t,\widetilde\pi_t\}$, $u\in S_{t+1}$ and $v\in S_t$, there exists $u'\in S_{t+1}$ with $f(u')=v$ and $d_{t+1}(u,u')\leq K_t d_t(f(u),v)$. The same $K_t$ bounds both lifts. No continuous selection is required.
 \end{assumption}
 
-\begin{assumption}[RIG-4: Typed Perturbation Model]\label{ass:rig4}
-Perturbations are represented either by maps between common ambient Banach embeddings or by map-space distances
-\[
-d_{\mathrm{map}}^{(t)}(\pi_{t+1\to t},\widetilde\pi_{t+1\to t})\le \eps_t.
-\]
-Literal expressions of the form $\widetilde\pi=\pi+\eps$ are used only when a common ambient linear model has been specified.
+\begin{assumption}[RIG-4: Typed Projection Defects]\label{ass:rig4}
+Write $\pi_t=\pi_{t+1\to t}$ and $\widetilde\pi_t=\widetilde\pi_{t+1\to t}$. Require $\sup_{u\in S_{t+1}} d_t(\pi_t(u),\widetilde\pi_t(u))\leq\epsilon_t<\infty$.
 \end{assumption}
 
 \begin{assumption}[RIG-5: Summable Deformation]\label{ass:rig5}
-There exists a positive weight sequence $\{w_t\}_{t\ge 0}$ such that
-\[
-\sum_{t=0}^\infty w_t\eps_t<\infty.
-\]
+Require $E_w=\sum_{t\geq0}w_t\epsilon_t<\infty$.
 \end{assumption}
 
 \begin{definition}[Weighted Deformation Size]
-The weighted deformation size of a perturbed projective family is
-\[
-\|\eps_\bullet\|_w:=\sum_{t=0}^{\infty} w_t\eps_t.
-\]
+The weighted deformation size is $\|\epsilon_\bullet\|_w=E_w$. When $\epsilon_t$ is the exact supremum projection defect this specifies a cost on the common-stage perturbations. An independently defined intervention cost needs its own quantitative relation to this sum.
 \end{definition}
 
-\begin{definition}[Weighted Product Metric]
-For compatible sequences $x=(x_t)$ and $y=(y_t)$ define
+\begin{definition}[Weighted Product Metric]\label{def:weighted-metric}
+For nonempty metric spaces $(S_t,d_t)$ and weights $0<w_t<\infty$, write
 \[
-\dw(x,y):=\sup_{t\ge 0} w_t\, d_t(x_t,y_t).
+ d_w(x,y)=\sup_{t\geq0} w_t d_t(x_t,y_t),\qquad
+ P_b=\{x\in\textstyle\prod_t S_t:d_w(x,b)<\infty\}.
 \]
+The formula defines an extended metric on the product and an ordinary metric on each finite-distance component $P_b$.
 \end{definition}
+
+\begin{proposition}[Finiteness, Completeness and Compactness of Weighted Histories]\label{prop:weighted-history}
+The formula is finite on every pair in the full product exactly when the weighted diameters are bounded outside a finite set of stages. For finite-diameter stages this is equivalent to $B=\sup_t w_t\operatorname{diam}(S_t)<\infty$. For any nonempty inverse limit $I$ and $b\in I$, it is finite on all of $I$ exactly when $I\subseteq P_b$. If the coordinate spaces are complete and the bonding maps continuous, $P_b$ and $I\cap P_b$ are complete. If $w_t\operatorname{diam}(S_t)\to0$, the weighted metric induces the product topology and
+\[
+ 0\leq d_w(x,y)-\max_{0\leq t\leq N} w_t d_t(x_t,y_t)
+ \leq \sup_{t>N} w_t\operatorname{diam}(S_t).
+\]
+In this case compact coordinate spaces give a compact inverse limit. Surjective bonding maps give a compatible history through each stage point.
+\end{proposition}
+
+\begin{proof}
+The extended triangle inequality follows by taking suprema. A uniform bound outside finitely many stages suffices since each of the exceptional distances is individually finite. If no such bound exists, choose distinct stages $t_j$ and pairs with weighted distances greater than $j$. Combining these pairs in two product points gives an infinite distance. The bound $B<\infty$ characterizes \emph{boundedness} of the full-product metric. The inverse-limit condition follows from the triangle inequality through $b$.
+
+A $d_w$-Cauchy sequence converges in each coordinate. Passing to each coordinate limit in the same uniform Cauchy bound proves convergence in $d_w$. The limit remains in $P_b$ by the triangle inequality and in $I$ by continuity of the bonding maps. With vanishing weighted diameter tails, a finite prefix controls the metric up to the displayed remainder, while each coordinate projection is $1/w_t$-Lipschitz. This proves the topology assertion. Conversely, on the full product with a finite metric, if the weighted diameters fail to vanish there are infinitely many coordinates with weighted diameter at least some $\eta>0$. At any fixed product point, for each such coordinate one can change that coordinate by weighted distance greater than $\eta/3$, by the triangle inequality. The resulting sequence converges in the product topology but fails to converge in $d_w$. The converse may fail on a restricted set of compatible histories. The inverse limit is closed in the compact product because it is the intersection of the closed compatibility equations. Surjectivity gives successive lifts and the earlier coordinates are determined by projection.
+\end{proof}
+
+\begin{example}[Two Distinct Tail Failures]\label{ex:weighted-tail-failures}
+On $S_t=[0,1]$ with identity bonding maps and $w_t=2^{-t}$, choose $d_t(s,u)=4^t|s-u|$. The two constant histories $0$ and $1$ have distance $+\infty$. For a different failure, take $S_t=\{0,1\}^t$ with prefix deletion and $d_t=2^t$ times the discrete metric. With the same weights every distinct pair of histories has distance $1$. The inverse limit has a compact product topology and a noncompact discrete metric topology. Flipping a bit at successively later levels gives product convergence to the unflipped history while all the weighted distances remain $1$.
+\end{example}
 
 \begin{theorem}[Conditional Stability of Inverse-Limit Identity]\label{thm:rigidity}
-Assume RIG-1 through RIG-5. Then the perturbed inverse limit
-\[
-\widetilde{\Id}:=\varprojlim \widetilde S_t
-\]
-exists, and there is a constant $C_{\mathrm{rig}}>0$ depending only on the projection, lifting, and weight controls such that
-\[
-d_H(\Id,\widetilde{\Id})\le C_{\mathrm{rig}}\|\eps_\bullet\|_w
-\]
-in the weighted product metric.
+Under RIG-1 through RIG-5 the two limits $I=\Id$ and $\widetilde I=\widetilde{\Id}$ are nonempty. Every history in either limit has a compatible history in the other within distance $C E_w$. Thus $d_H(I,\widetilde I)\leq C E_w$.
 \end{theorem}
-
-\begin{proof}[Proof sketch]
-The lifting assumption gives compatible approximate lifts at each level. Weighted Lipschitz control propagates local deformation bounds through the projective tower. Summability ensures that the cumulative compatibility defect remains finite, so diagonal compactness arguments produce a perturbed inverse-limit object. The same bounds control the Hausdorff distance between the original and perturbed compatible-sequence sets.
+\begin{proof}
+Given a history $x$ of $\pi$, set $y_0=x_0$. Having chosen $y_t$, lift it under $\widetilde\pi_t$ at $x_{t+1}$. The exact lift $y_{t+1}$ obeys
+\[
+ d_{t+1}(y_{t+1},x_{t+1})\le K_t(d_t(y_t,x_t)+\epsilon_t)
+\]
+by the fiber estimate and $\pi_t(x_{t+1})=x_t$. For $a_t=w_t d_t(y_t,x_t)$ this gives $a_{t+1}\le q_t a_t+q_t w_t\epsilon_t$, with $a_0=0$. Iteration bounds $a_{t+1}$ by $\sum_{k=0}^t (\prod_{j=k}^t q_j)w_k\epsilon_k$, at most $C E_w$. The reverse construction uses the fiber estimate for $\pi_t$ and gives the other directed Hausdorff bound. Each limit is nonempty by successive lifts from any $S_0$ point. Taking suprema proves the estimate in the common history metric.
 \end{proof}
 
 \begin{corollary}[Conditional Isomorphism Requires Extra Structure]
-The metric estimate of Theorem~\ref{thm:rigidity} does not by itself imply that $\Id$ and $\widetilde{\Id}$ are isomorphic. Isomorphism or shape-equivalence requires additional bi-lifting, coherence, or ambient-embedding assumptions.
+The Hausdorff bound alone is a statement about the distance between sets. A homeomorphism follows under the commuting-bijection hypotheses below.
 \end{corollary}
-
 \begin{proof}
-Metric closeness and categorical isomorphism are different conclusions. A small Hausdorff deformation need not preserve global inverse-limit type without extra hypotheses guaranteeing two-sided coherent transport.
+The following transport proposition gives the sufficient condition. Example~\ref{ex:hausdorff-not-isomorphism} exhibits the failure of the unconditional implication.
 \end{proof}
+
+\begin{proposition}[Transport by Commuting Coordinate Bijections]\label{prop:coherent-history-transport}
+Suppose the weighted metric induces the product topology and homeomorphisms $h_t:S_t\to S_t$ satisfy $\widetilde\pi_t h_{t+1}=h_t\pi_t$. Then $H(x)_t=h_t(x_t)$ maps the limits homeomorphically, with inverse $H^{-1}(y)_t=h_t^{-1}(y_t)$. Its displacement in the common history space is at most $\sup_t w_t\sup_{z\in S_t}d_t(z,h_t(z))$.
+\end{proposition}
+\begin{proof}
+The displayed square and its inverse give exact compatibility of both images. Coordinate continuity in the product gives continuity of both induced maps. The displacement estimate follows coordinate by coordinate.
+\end{proof}
+
+\begin{example}[A Ramified Tower with Positive Deformation and Coherent Transport]\label{ex:coherent-rotation-tower}
+Take $S_t=(\mathbb R/\mathbb Z)\times\{0,1\}^{t}$ with the maximum of the circle distance (circumference one) and the discrete prefix distance. Let $\pi_t$ keep the angle and delete the last bit, and take $w_t=2^{-t}$. For an intervention at stage $k$ with amplitude $0<a<1/2$, replace $\pi_k$ by prefix deletion and angle shift $-a$. Set $h_t$ to the identity for $t\leq k$ and to angle shift $a$ for $t>k$. The inverses shift by $-a$ on those same levels. The squares commute at $k$ by cancellation and at every other level by commutation with prefix deletion. Each limit has at least two histories over every finite cut, since a later bit may be flipped.
+
+All bonding maps are $1$-Lipschitz and satisfy the fiber estimate with $K_t=1$: set the required angle and prefix, retaining the last bit. Thus $q_t=1/2$. The chosen dimensionless intervention cost is $E_w=w_k a$, and $\sup_x d_w(x,Hx)=w_{k+1}a=E_w/2$. More precisely, for $b=w_{k+1}$,
+\[
+ d_H(I,\widetilde I)=\frac{ba}{1+b}>0.
+\]
+Indeed an original history has constant angle $\theta$ and a perturbed one has angle $\varphi$ up to $k$ and $\varphi+a$ thereafter. If the two histories are at distance $r$, the circle triangle inequality gives $a\leq r+r/b$ from stages $0$ and $k+1$. Choosing identical bits and $\varphi=\theta-ba/(1+b)$ attains equality. That choice is reversible for every perturbed history and gives both directed distances. For the sector of these single jumps the infimum of the cost-to-deformation ratio is $2$, since the ratio is $2(1+b)$ at stage $k$. This uses the declared projection-defect cost. An entropy-based cost requires a separate comparison.
+\end{example}
+
+\begin{example}[Hausdorff Stability Without a Homeomorphism]\label{ex:hausdorff-not-isomorphism}
+Take $S_t=\{0,\ldots,2^t-1\}$ with discrete distance scaled by $r>0$, $w_t=2^{-t}$, and $\pi_t(j)=\lfloor j/2\rfloor$. For $t\geq1$, change only the image of $j=1$ to $1$, keeping $\widetilde\pi_0=\pi_0$. Both maps remain surjective and satisfy the fiber estimate with $K_t=1$. The weighted intervention cost is $r\sum_{t\geq1}2^{-t}=r$. The all-zero history of the perturbed tower is isolated by the cylinder $y_1=0$ because each subsequent zero has exactly one lift. The original tower is the binary-prefix space and has no isolated histories. Thus the limits are not homeomorphic, even though the Hausdorff bound tends to zero with $r$. The perturbation hypotheses for the Hausdorff estimate all hold.
+\end{example}
+
 
 \begin{definition}[Ontological Mass]\label{def:ontmass}
 Let $E_w(\delta)$ denote the weighted energy of an admissible perturbation family $\delta$. Define
@@ -171,55 +198,38 @@ $\MO$ is a deformation-resistance scalar, not a metaphysical substance. BaseCore
 
 \section{Conditional Non-Simulability}
 
-\begin{assumption}[NS-1: CCR Target]\label{ass:ns1}
-A CCR target is an inverse-limit identity object satisfying:
-\begin{enumerate}[leftmargin=*]
-\item non-finite determination (Hypothesis~\ref{hyp:nfd});
-\item infinite deformation resistance $\MO=+\infty$;
-\item absence of a finite sufficient statistic for faithful identity recovery;
-\item absence of a finite-dimensional faithful embedding preserving projective compatibility.
-\end{enumerate}
+\begin{assumption}[NS-1: Target and Observable Family]\label{ass:ns1}
+Fix a nonempty set of compatible histories $X\subseteq\Id$, a family of queries $J$, and responses $F_j:X\to (Y_j,\rho_j)$. The query can specify an observable, a time horizon, or a declared intervention. All queries refer to the same encoded history. The intervention protocol and parameters are known to both parties and fixed independently of the history, except for information explicitly included in the encoded state. Non-finite determination and deformation resistance are separate properties of a target, measured using their own definitions.
 \end{assumption}
 
-\begin{assumption}[NS-2: Finite Simulator Class]\label{ass:ns2}
-A simulator $C$ belongs to $\mathbf{Comp}_{\mathrm{finite}}$ if it has at least one of the following boundedness features:
-\begin{enumerate}[leftmargin=*]
-\item finite-dimensional latent state or finite context;
-\item bounded memory horizon or finite sufficient statistic;
-\item finite perturbation-energy budget;
-\item finite-rank projective representation.
-\end{enumerate}
+\begin{assumption}[NS-2: Binary Representation Budget]\label{ass:ns2}
+A deterministic encoder $c:X\to\{0,1\}^B$ has at most $2^B$ possible representations. The budget includes all history-dependent information accessible to the decoder. An adaptive binary transcript of depth at most $B$ satisfies the same bound when its query tree is fixed in advance and the choices and termination are determined by its previous bits. An exact real parameter is outside this finite-alphabet class.
 \end{assumption}
 
-\begin{assumption}[NS-3: Faithful Simulation Requirement]\label{ass:ns3}
-A simulation is faithful only if it preserves, at the stated tolerance level, all of:
-\begin{enumerate}[leftmargin=*]
-\item projective compatibility;
-\item non-finite determination;
-\item deformation-resistance class;
-\item relevant observables in the weighted metric;
-\item admissible intervention responses.
-\end{enumerate}
+\begin{assumption}[NS-3: Uniform Response Fidelity]\label{ass:ns3}
+The decoders $g_j:\{0,1\}^B\to Y_j$ must satisfy $\rho_j(g_j(c(x)),F_j(x))\leq\eta$ for every $x\in X$ and $j\in J$. The tolerance is in the declared response units, after normalizing them if necessary. Faithfulness of additional structures, such as the bonding maps or the intervention cost sector, imposes separate constraints.
 \end{assumption}
 
-\begin{theorem}[Conditional Non-Simulability of CCR by Finite Simulators]\label{thm:non-simulability}
-Assume NS-1 through NS-3. Then no simulator in $\mathbf{Comp}_{\mathrm{finite}}$ faithfully realizes a CCR target.
+\begin{theorem}[Finite-Budget Obstruction by Response Separation]\label{thm:non-simulability}
+Under NS-1--NS-3, let $A\subseteq X$ be a finite set such that for each distinct $x,y\in A$ there is $j$ with $\rho_j(F_j(x),F_j(y))>2\eta$. Then $|A|\leq 2^B$. For exact fidelity, a code exists exactly when the number of equivalence classes of $x\sim y$ defined by $F_j(x)=F_j(y)$ for all $j$ is at most $2^B$.
 \end{theorem}
-
 \begin{proof}
-A finite simulator in the sense of NS-2 necessarily compresses the target into finite latent structure, finite memory horizon, finite-rank projective representation, or a finite sufficient statistic. Any such compression destroys at least one component of NS-1: either NFD collapses, the faithful projective structure is lost, or the deformation-resistance class is reduced from $\MO=+\infty$ to a finite value. Therefore faithful realization, as defined by NS-3, fails.
+If $c(x)=c(y)$, the decoded value for every given query is the same, so the triangle inequality gives $\rho_j(F_j(x),F_j(y))\leq 2\eta$. Thus $c$ is injective on $A$. At zero error, different response classes must use different representations. Conversely, assign a distinct representation to each class and decode its common response for each query.
 \end{proof}
 
-\begin{theorem}[Approximation Barrier]
-Assume NS-1 through NS-3. Finite simulators may approximate bounded finite projections of a CCR target over finite horizons, but they cannot preserve the full inverse-limit object faithfully as the horizon grows without bound unless resources also grow without bound.
+\begin{theorem}[Approximation Barrier]\label{thm:finite-budget-approximation}
+On the binary prefix tower $S_t=\{0,1\}^{t}$ with weights $w_t=2^{-t}$ and discrete stage metrics, use $Y=X=\{0,1\}^{\mathbb N}$ as the decoded history space, with $d_w(x,y)=2^{-m}$ at the first differing bit $m\geq1$. Among all encoders with at most $2^B$ states and decoders into $X$, the minimum worst-case $d_w$ error is $2^{-(B+1)}$. Exact recovery of all finite prefix responses requires unbounded $B$ as the query horizon increases.
 \end{theorem}
-
 \begin{proof}
-Finite-horizon projections are finite objects and may be approximated by finite representations. But a faithful approximation of the full inverse-limit target must preserve NFD and the infinite deformation-resistance class. That cannot be achieved with bounded representational resources by Theorem~\ref{thm:non-simulability}.
+Keep the first $B$ bits and pad the rest with zeros. The first possible mismatch is at $B+1$. For the lower bound, take all $2^{B+1}$ histories with arbitrary first $B+1$ bits and zero tail. Two share a code. An error strictly less than $2^{-(B+1)}$ would require the common decoded history to share the first $B+1$ bits with both, which is impossible. At horizon $t$ all $2^t$ prefixes occur, so exact recovery of that response needs $B\geq t$, attained by storing those bits.
 \end{proof}
+
+\begin{example}[One Exact Real Encodes Every Binary History]\label{ex:unbounded-precision-control}
+The map $b\mapsto\sum_{j\geq1}2b_j3^{-j}$ is injective: at the first unequal bit $j$ the leading difference is $2\cdot3^{-j}$ and the remaining tail is bounded by $3^{-j}$. On the image, inverse decoding followed by each prefix projection recovers all the canonical observations from one exact real. As a separate intervention control, any declared family that leaves the target limit set fixed has $\MO=+\infty$ by the defining convention, even if the allowed interventions have finite cost. Neither fact supplies a finite binary budget.
+\end{example}
 
 \begin{remark}[What has been removed]
-BaseCore no longer claims that finite simulators ``cannot approximate at all.'' The correct statement is conditional and finer-grained: finite-horizon approximation may exist, but faithful full inverse-limit realization of CCR targets is blocked under NS-1 through NS-3.
+The resource obstruction concerns the declared responses, metric tolerance and binary budget. Infinite-precision scalar encodings and finite-cost interventions require independent hypotheses before a binary-budget theorem can be applied to them. In the CCR program, non-finite determination and infinite resistance are separately specified; any stronger obstruction to faithful embeddings must state its category and preserved observations. Exact response classes determine whether a finite sufficient statistic exists for the declared queries.
 \end{remark}
 
 \section{Section Summary}
@@ -228,6 +238,6 @@ BaseCore no longer claims that finite simulators ``cannot approximate at all.'' 
 \item Identity is an inverse-limit object, not a canonical finite slice.
 \item Non-locality now depends explicitly on the NFD assumption.
 \item Rigidity is stated as metric stability under explicit perturbation-model assumptions, not as automatic isomorphism.
-\item Non-simulability is conditional on a defined CCR target, a defined finite simulator class, and a defined notion of faithful simulation.
+\item Uniform observational fidelity obeys a binary-budget separation bound. The intervention-resistance class is determined separately.
 \item BaseCore therefore preserves theorem strength where assumptions support it and weakens only those statements that were previously over-absolute.
 \end{enumerate}

@@ -1777,3 +1777,89 @@ No autoriza commit ni push.
 No autoriza Phase 6.2 hasta que el usuario o auditor externo apruebe esta integracion.
 
 6:04 p.m.
+
+## 2026-11-08 — Reorganización conservadora y continuación matemática
+
+La instrucción actual del usuario prioriza una copia de trabajo ordenada con
+historial conservado antes de continuar el fortalecimiento matemático. Las
+versiones históricas del roadmap permanecen intactas.
+
+1. Preservar fuentes, cambios pendientes, antecedentes y Git; clasificar cada
+   archivo en un único inventario de migración.
+2. Verificar la copia vinculada `codex/qicn-framework-ordenado` sin alterar
+   fuentes matemáticas ni publicaciones congeladas durante el traslado.
+3. Sólo tras aceptar la reorganización, resolver E1/E2 con una realización no
+   vacía y comprobar sus consecuencias; después conciliar régimen nulo,
+   cocientes y las demás obligaciones por orden de dependencia.
+
+La primera corrección local de BaseCore se conserva pendiente de revisión
+matemática externa. Ninguna propuesta abierta se retira por estar sin prueba.
+El inventario y la aceptación de esta fase se registran en
+`docs/ai-platform-outputs/reports/REORGANIZACION_QICN_2026-11-08.md`.
+
+Estado de reorganización: ACEPTADA, con alcance y evidencia en el informe citado. La copia vinculada es activa; la siguiente fase matemática no está cerrada por esta aceptación.
+
+R2: E2 conservada y E1 reformulada con convergencia controlada por decisión explícita del usuario. Adopción local verificada en BaseCore/Paper II/monolito/registro; enlaces generales masa-transporte, régimen nulo y demás obligaciones permanecen abiertos. Véase el addendum R2 del documento de continuidad.
+
+R3: cociente, ruptura y tipos de certificado corregidos localmente y verificados; normalización de márgenes y realizaciones conjuntas pendientes. R4 continúa con régimen nulo según prerregistro del ledger; sin cierre global.
+
+R4: régimen nulo conciliado localmente entre BaseCore y Paper III, con tipos, mínimos finitos, intensidad, ruido y anexos corregidos bajo condiciones explícitas. Fuente/registro/monolito/PDF verificados. Permanecen realización CCR, estabilidad temporal, rigidez general, integración, métricas y adjudicación del programa completo; véase continuidad R4.
+
+
+## Plan de fortalecimiento completo 2026-11-08
+
+Objetivo: conservar todas las líneas del marco y convertir cada afirmación importante en un resultado con hipótesis visibles, un contraejemplo que delimite su alcance o una obligación abierta con una vía concreta de resolución. Las versiones anteriores de este roadmap permanecen como historial; este orden rige la continuación actual.
+
+La primera prioridad es la **realizabilidad de los fundamentos**. Cerrar indicadores, narrativas o adjudicación sobre una clase cuya existencia y cuyos transportes siguen abiertos acumula trabajo sobre premisas sin demostrar. La meta es obtener conclusiones más amplias cuando la prueba lo permita y explicitar el límite exacto cuando un contraejemplo impida la generalización.
+
+### P0 — Base reproducible y alcance de la evidencia
+
+- Estado comprobado: copia autónoma en el Escritorio; gates raíz y release 6/6; R1–R4 repetibles; registro/monolito alineados; Lean 4.31.0 en WSL (19 archivos, 78 teoremas públicos auditados).
+- Usar el inventario de continuidad y los informes de auditoría existentes para asociar cada afirmación con su fuente, hipótesis, prueba, control, formalización y obligaciones. No crear un segundo canon.
+- Salida: cada resultado intervenido queda localizado por identificador y fuente exacta. Un archivo que compila no acredita una interpretación ni verifica un enunciado que no está formalizado.
+
+### P1 — Dinámica, métrica, límites inversos y rigidez (BaseCore / Papers I–III)
+
+- Cerrar BC-MET: declarar diámetros y pesos que hagan finita la métrica ponderada y controlar colas; probar compatibilidad del límite, completitud y condiciones de compacidad. Reproducir el contraejemplo con coordenadas no acotadas.
+- Cerrar BC-RIG: construir transportes coherentes en ambos sentidos, precisar el coste de intervención y demostrar la cota de deformación en un modelo no vacío. La cercanía de Hausdorff no basta para obtener un isomorfismo.
+- Completar BC-NS mediante una clase de observación y presupuesto declarados. Probar obstrucciones para esos presupuestos, con controles de codificación real de precisión no acotada. Verificar la realización E1/E2 completa, no sólo su no factorización, y conciliar el enlace masa/transporte y el sector de testigos de nulo.
+- Probar los resultados dinámicos con hipótesis mínimas justificadas: contracción, puente, no colapso y realización. Mantener explícitos los casos en que estabilidad estructural, estabilidad temporal y separación métrica no coinciden.
+- Salida: modelo constructivo no trivial, supuestos mínimos auditados, cotas y controles de frontera, y cobertura Lean de los pasos que sostienen los resultados. Si una hipótesis no tiene realización conocida, queda marcada como tal.
+
+### P2 — Integración, soporte común y criterio operacional (BaseCore / Paper V)
+
+- Definir el sector de factorizaciones, incluidos codificadores, decodificadores, observables, transportes y operaciones permitidas. Para D*, comprobar existencia de comparadores admisibles y dependencia de coordenadas/orientación; no extrapolar una cota del modelo alineado a toda factorización.
+- Separar márgenes de legibilidad por dominio y unidad: distancia, ruido, error probabilístico, fidelidad y distorsión. Cuando se normalicen, fijar la escala antes de evaluar y justificar rangos y umbrales.
+- Construir un soporte común con los seis testigos, o demostrar una incompatibilidad bajo hipótesis precisas. Para afirmar independencia, construir realizaciones para cada ruptura; los vectores booleanos sólo prueban la lógica de cuantificadores.
+- Salida: soporte, mapas, dinámica y certificados explícitos; controles de cociente, no trivialidad, ablación, ruido y pérdida de testigos. No declarar pertenencia a Cop cuando sólo existe un separador condicionado.
+
+### P3 — Predicciones, métricas, viabilidad y observadores (Papers IV, VI, VII y VIII)
+
+- Para cada índice, fijar unidad, dominio, estimador, incertidumbre, criterio de decisión y condiciones de identificabilidad. Corregir rangos, signos y normalizaciones antes de usar productos o exponentes; el caso de propiedad/ownership se contrasta con su interpretación y control.
+- Distinguir inviabilidad, frontera de un soporte invariante, estado no observado y fallo de medición. Definir la clase de observadores y las intervenciones con grafo causal o supuestos causales escritos.
+- Diseñar controles de ruido, ablación, intervenciones simuladas y negativas; fijar comparadores con presupuesto comparable. Recuperar o documentar la procedencia de fuentes que sólo tengan un PDF de release correspondiente.
+- Salida: predicciones que separen modelos y puedan fallar, con unidades de muestreo, semillas/replicación y criterios preregistrados. La actividad interna del runtime no cuenta como evidencia externa.
+
+### P4 — Puente, adjudicación y anexos (Papers IX–X / v26–v31)
+
+- Escribir las hipótesis de enlace del puente y exhibir realizaciones conjuntas o contraejemplos. Marcar las lecturas ontológicas, filosóficas o fenomenales como interpretaciones o propuestas mientras no haya una definición operacional y una prueba específica.
+- Corregir la adjudicación que permite empate sin pérdida: fijar elección forzada o pérdida y cobertura de abstención antes de medir. Probar su comportamiento frente a la regla de siempre empatar y a competidores equivalentes.
+- Cerrar el caso de centro/diámetro mediante geometría suficiente o resultado escalar exacto; no invertir una cota Lipschitz superior para recuperar información latente sin coercividad. Resolver el codominio, cuantificadores y constantes de los anexos en su fuente correspondiente.
+- En estadística, fijar estimando, unidad independiente, dependencia temporal, multiplicidad y potencia. Los ticks de dos semillas no son réplicas independientes. Registrar predicciones negativas y criterios de descarte antes de correr una campaña.
+- Salida: decisión no trivial, resultados geométricos correctamente tipados y protocolo ejecutable con controles que detecten fuga, confusión y falsas confirmaciones.
+
+### P5 — Revisión, sincronización documental y contrastación externa
+
+- En cada fase, sincronizar fuente vigente, registro, monolito y PDF después de corregir. Auditar conservación de contenido y propagación completa; resolver avisos de maquetación antes de la edición de publicación.
+- Usar la bibliografía primaria para separar resultados clásicos, adaptaciones y posibles aportes nuevos. Las afirmaciones de novedad y superioridad requieren comparación explícita; si no hay evidencia suficiente, registrar `NOT_YET_ADJUDICATED`.
+- Exigir revisión matemática independiente de los cambios, réplica de las pruebas, y datos/método independientes para cualquier afirmación empírica. Publicaciones congeladas sólo se cambian mediante una fase autorizada y auditada. La sincronización de la rama de trabajo no actualiza el canon de `main`.
+- Salida: revisión externa aprobada para integración; resultados empíricos con controles y replicación cuando correspondan. Mantener el veredicto crudo real hasta que cambie la evidencia.
+
+### Regla de cierre de cada fase
+
+1. Identificar el enunciado, su dominio, hipótesis y conclusión. Si el anterior falla, conservar el contraejemplo y la propuesta original como historial; describir explícitamente qué cambia.
+2. Entregar prueba o construcción, y controles que distingan su hipótesis real de una tautología. Para una proposición empírica, preregistrar la predicción, comparadores, ruido, intervención y criterio de fallo.
+3. Verificar Lean en las proposiciones formalizadas, suites de regresión, fuentes y compilación. Reportar lo que sigue sin mecanizar o no puede decidirse con los datos disponibles.
+4. Registrar el cambio en el ledger y someterlo a revisión independiente antes de promoverlo a canon. No mezclar fases ni usar el runtime para acreditar una prueba matemática.
+
+Siguiente intervención: **P1 / BC-MET y BC-RIG**, comenzando por la métrica finita y el transporte entre torres. El resto del programa se conserva; el orden evita construir resultados posteriores sobre definiciones de dominio aún ambiguas.

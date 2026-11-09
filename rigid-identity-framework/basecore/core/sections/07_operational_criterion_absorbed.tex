@@ -22,6 +22,15 @@ X_\Gamma=\{x\in X:\gamma_j(x)\le 0\ \forall j\};
 \end{enumerate}
 \end{definition}
 
+\begin{definition}[Declared State Attractor]\label{def:state-attractor}
+Fix a non-empty compact set $\operatorname{Attr}_X(S)\subseteq X_\Gamma$ invariant under every admitted transition and a non-empty class of admitted schedules at every horizon. It is a controlled attracting region on a declared non-empty basin $B_X$ if, for every $x_0\in B_X$,
+\[
+\sup_{u_\bullet}\operatorname{dist}_{d_X}\bigl(x_n,\operatorname{Attr}_X(S)\bigr)\longrightarrow0,
+\qquad x_{k+1}=\Phi_{u_k}(x_k).
+\]
+The supremum is over admitted schedules. This is a state-space certificate to supply, not an existence theorem. Its codomain is $X$; the structurally stable readout set $\Attr(S)$ in the null-regime section instead lies in $\E$. No intersection of those different types is taken.
+\end{definition}
+
 \subsection{Admissible Support}
 
 \begin{definition}[Admissible support]\label{def:support}
@@ -29,7 +38,7 @@ A subset $\Aset\subseteq X_\Gamma$ is an admissible support if:
 \begin{enumerate}[leftmargin=1.5em]
 \item $\Aset$ is non-empty and compact;
 \item $\Phi_u(\Aset)\subseteq \Aset$ for every $u\in U$;
-\item $\Aset\cap \Attr(S)\neq\varnothing$;
+\item $\Aset\cap \operatorname{Attr}_X(S)\neq\varnothing$;
 \item $\Aset$ stays disjoint from the collapse set excluded by the base non-collapse burden.
 \end{enumerate}
 \end{definition}
@@ -178,11 +187,15 @@ for some admissible schedule $u_\bullet$, and if the null class $\nullclass$ is 
 
 \subsection{Operational Legibility}\label{sec:legibility}
 
+\begin{definition}[Decoder Family and Structural Closure]\label{def:decoder}
+A decoder family uses one declared class set and acts on the specified history windows. For each intervention-response comparison, declare its response cells and a matching relation on those cells. The family is structurally closed when decoder class equality composes exactly and the response-cell matching relations are reflexive, symmetric and transitive. These are conditions on the chosen comparison data; they are not inferred from a numerical tolerance alone. The legibility clauses below supply the additional operational requirements.
+\end{definition}
+
 \begin{definition}[Operational legibility]\label{def:ileg}
 An admissible system satisfies operational legibility, written $\Ileg(S)=1$, if there exist:
 \begin{enumerate}[leftmargin=1.5em]
-\item a certified readout subfamily $\Read^{\mathrm{leg}}\subseteq R$;
-\item a certified decoder family $\Dec_S$ acting on windows of length at least $\tau_{\min}(S)$;
+\item a declared readout subfamily $\Read^{\mathrm{leg}}\subseteq R$;
+\item a structurally closed decoder family $\Dec_S$ acting on windows of length at least $\tau_{\min}(S)$;
 \item a class set $\Class_S$;
 \item a legibility margin $\delta_{\mathrm{leg}}(S)>0$;
 \end{enumerate}
@@ -208,7 +221,7 @@ Without $\Iper$ there is no stable admissible domain. Without $\Iri$ there is no
 \section{Criterion Class, Certified Partition, and Rupture}
 
 \begin{definition}[Certified decoder]
-A decoder $D\in \Dec_S$ is certified if it satisfies the six legibility clauses of Definition~\ref{def:ileg} on the chosen admissible support.
+A decoder $D\in\Dec_S$ is certified as part of a structurally closed family when the six clauses of Definition~\ref{def:ileg} hold on the chosen admissible support. Structural closure and operational certification are separate requirements.
 \end{definition}
 
 \begin{definition}[Criterion indistinguishability]
@@ -220,12 +233,16 @@ and the intervention responses remain matched within the legibility margin.
 \end{definition}
 
 \begin{proposition}[Well-definedness of the certified partition]\label{prop:qop-welldefined}
-If $\Iper(S)=\Iri(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1$, then $\sim_{\Partop,S}$ is an equivalence relation on $\Aset$.
+On any declared support $\Aset$ with a structurally closed decoder family, the relation $\sim_{\Partop,S}$ is an equivalence relation. This conclusion does not require the other critical invariants; certification of criterion membership still does.
 \end{proposition}
 
 \begin{proof}
-Reflexivity and symmetry are immediate. Transitivity follows because certified decoder equality composes and the tolerance bound remains within the permitted legibility margin on admissible support.
+For every fixed decoder, horizon and intervention schedule, equality of decoder labels is reflexive, symmetric and transitive. The response-cell matching relation has those properties by Definition~\ref{def:decoder}. Their intersection, over all declared comparisons, has the same properties: if $x$ matches $y$ and $y$ matches $z$, each decoder equality and each response-cell match composes, so $x$ matches $z$. This proves the assertion without adding two tolerance errors and silently treating the sum as the original tolerance.
 \end{proof}
+
+\begin{remark}[Tolerance Alone Is Not Transitive]\label{rem:tolerance-control}
+With constant decoder labels, let response matching mean distance at most $1$ on $\{0,3/4,3/2\}$. Adjacent points match, but the endpoints do not. Thus decoder equality plus raw tolerance is not enough. By contrast, equality under a declared response-cell map is an equivalence relation and supplies a concrete structurally closed matching rule. This example concerns closure only, not satisfaction of all six legibility clauses.
+\end{remark}
 
 \begin{definition}[Certified operational partition]\label{def:qop}
 Assume Proposition~\ref{prop:qop-welldefined}. The certified operational partition of $S$ is
@@ -249,17 +266,12 @@ The symbol $\Critop$ is a shorthand for a conjunctive operational criterion. It 
 A rupture is any loss of admissibility or loss of at least one critical invariant margin beyond its admissible threshold.
 \end{definition}
 
-\begin{theorem}[Rupture by invariant loss]\label{thm:rupture}
-Let $S$ be admissible. If one or more critical invariants fail beyond admissible threshold, then exactly one of the following occurs:
-\begin{enumerate}[leftmargin=1.5em]
-\item $S\notin\Critop$;
-\item $\Partop(S)$ becomes undefined;
-\item $\Partop(S)$ becomes trivial or non-legible in the BaseCore sense.
-\end{enumerate}
+\begin{theorem}[Rupture by Invariant Loss]\label{thm:rupture}
+If a critical invariant has no admissible witness on any support, then $S\notin\Critop$. Loss of a witness on one chosen support invalidates that support's certificate, but does not exclude a certificate on another support without further analysis. Quotient undefinedness, triviality and loss of legibility are not mutually exclusive labels and need not accompany every loss of criterion membership.
 \end{theorem}
 
 \begin{proof}
-Failure of $\Iper$ destroys the admissible domain. Failure of $\Iri$ destroys unique identity transport. Failure of $\Iint$ produces reducibility. Failure of $\Icont$ destroys regime coherence. Failure of $\Idiff$ collapses the partition into nullity or triviality. Failure of $\Ileg$ leaves any remaining partition uncertifiable. These cases exhaust the six invariants.
+A criterion witness requires all six invariants on one admissible support. Global failure of one invariant rules out such a support. A certificate on a fixed support must satisfy every clause there, so a local witness loss invalidates that certificate. A structurally closed decoder relation may still define a quotient when another invariant, such as integration, fails; the quotient theorem does not assume that invariant. Hence an exclusive three-way classification cannot be inferred.
 \end{proof}
 
 \section{Minimality of the Invariant Basis}

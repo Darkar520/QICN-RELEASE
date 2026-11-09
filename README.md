@@ -7,6 +7,15 @@ theory closure.
 
 ## Layout (two tiers)
 
+La copia activa `qicn-framework-ordenado` está en la raíz del Escritorio,
+con almacén Git propio, el mismo historial y los remotos `origin` y `gitlab`.
+La rama de trabajo es `codex/qicn-framework-ordenado`. Las carpetas anteriores
+se conservan como respaldo.
+
+El [plan completo de fortalecimiento](rigid-identity-framework/ROADMAP.md#plan-de-fortalecimiento-completo-2026-11-08)
+vive en el roadmap existente. La [verificación Lean](rigid-identity-framework/docs/ai-platform-outputs/reports/REORGANIZACION_QICN_2026-11-08.md#repetir-lean)
+documenta la cobertura mecanizada y cómo repetir la comprobación.
+
 The repo has two cooperating tiers; confusing them is the #1 source of wasted cycles:
 
 - **Root `QICN-FRAMEWORK/`** - release governance, canonical doc set (`docs/`), machine-readable manifests (`release/`), frozen PDF corpus (`corpus/`), and root verifiers (`scripts/*.cjs`). No active math source lives here.
@@ -54,6 +63,7 @@ pdflatex -interaction=nonstopmode BASECORE.tex
 - `rigid-identity-framework/registry/` - machine-readable theorem and macro corpus.
 - `rigid-identity-framework/scripts/` - verification and audit tooling.
 - `rigid-identity-framework/docs/` - policies, ledgers, reports, and process logs.
+- `rigid-identity-framework/docs/ai-platform-outputs/recovery-candidates/` - preserved historical variants and recovery inputs; excluded from active theorem extraction.
 - `rigid-identity-framework/canonical_core_legacy/` - preserved historical package, not disorder.
 - `release/` - root-level canonical release metadata and boundary manifests.
 - `corpus/` - frozen PDF corpus material.

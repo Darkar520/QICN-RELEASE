@@ -44,6 +44,10 @@ Let $K:\Hilb\to\Hilb$ be a bounded linear operator with operator norm $\norm{K}<
 The ambient space $\Hilb$ is complete.
 \end{hypothesis}
 
+\begin{remark}[Logical Status of Completeness]
+Completeness is already part of the Hilbert-space assumption in H1. H3 records this requirement explicitly for later generalizations; it is not independent of H1 as written. A counterexample in an incomplete inner-product space tests such a generalization, not independence of H3 from H1.
+\end{remark}
+
 \begin{hypothesis}[H4: Parameter Compactness]\label{hyp:H4}
 Let $\U$ be a compact metric space and let $\Gamma:\U\to\Hilb$ be uniformly continuous.
 \end{hypothesis}
@@ -164,7 +168,17 @@ Under Hypotheses~\ref{hyp:H1}--\ref{hyp:H4}, the set $\A^\ast$ is compact in $\H
 \end{theorem}
 
 \begin{proof}
-Let $F:\U\to\Hilb$ be given by $F(u)=f_u^\ast$. The fixed points depend continuously on $u$ because the contraction constant is uniform and $\Gamma$ is uniformly continuous on the compact parameter space. Since $\U$ is compact and $\A^\ast=F(\U)$, the image is compact.
+Let $F:\U\to\Hilb$ be given by $F(u)=f_u^\ast$. Insert the two fixed-point equations and use non-expansiveness of projection to obtain
+\[
+\norm{f_u^\ast-f_v^\ast}
+\leq\norm{K}\norm{f_u^\ast-f_v^\ast}+\norm{\Gamma(u)-\Gamma(v)}.
+\]
+Consequently
+\[
+\norm{f_u^\ast-f_v^\ast}
+\leq\frac{\norm{\Gamma(u)-\Gamma(v)}}{1-\norm{K}}.
+\]
+Thus $F$ is continuous. Since $\U$ is compact and $\A^\ast=F(\U)$, the image is compact.
 \end{proof}
 
 \section{Parameterwise Non-Collapsibility}\label{sec:parameterwise-noncollapse}
@@ -209,6 +223,16 @@ contradicting Hypothesis~\ref{hyp:H5}. Therefore $f_u^\ast\notin\mathcal{N}$.
 \begin{remark}[What H5 does not say]
 Hypothesis~\ref{hyp:H5} is parameterwise. It does not merely say that \emph{some} parameter breaks constant collapse. It excludes constant fixed points for \emph{every} parameter. This is exactly the quantifier strength needed for Theorem~\ref{thm:noncollapse}.
 \end{remark}
+
+\begin{proposition}[H5 Is Not Implied by H1--H4]\label{prop:h5-not-derived}
+There exists a family satisfying H1--H4 for which H5 fails and its unique equilibrium is constant. There also exists a family satisfying H1--H4 for which H5 holds with a positive uniform distance of the equilibria from the constant subspace.
+\end{proposition}
+
+\begin{proof}
+For the first assertion, take $\Hilb=L^2([0,1])$, $\I=\Hilb$, $K=q\operatorname{Id}$ with $0\leq q<1$, $\U=\{0\}$ and $\Gamma(0)=0$. Projection is the identity, $T_0f=qf$, and the unique fixed point is the constant zero function. H1--H4 hold, but H5 fails at $c=0$.
+
+For the second assertion, Theorem~\ref{thm:realized-nonconstant-bridge} and Example~\ref{ex:common-bridge-witness} construct a family with $\I=\{0\leq f\leq1\}$, $Kf=\tfrac14\int f$ and $\Gamma(u)(s)=s/4+u$, $u\in[0,1/4]$. Its explicitly computed unique fixed points have distance $1/(4\sqrt{12})$ from the constants for every parameter. The proof uses the displayed dynamics and does not assume H5 to derive that distance. Thus H1--H4 permit both regimes; a structural condition beyond them is needed to select non-collapse.
+\end{proof}
 
 \section{Summary of Base Results}
 

@@ -1,0 +1,59 @@
+# Papers VII–IX: auditoría matemática y experimental
+
+Lectura de las fuentes completas, incluidos apéndices. Informe interno; los estados de implementación que anuncian los manuscritos no se convierten aquí en hechos comprobados del runtime. Las referencias son líneas de `main.tex` de cada carpeta en el inventario inicial.
+
+## Paper VII — vida y sujeto operacionales
+
+**Avance real.** Se separan organización abierta, conciencia operacional y organización de sujeto; se requieren mantenimiento, historia, controles e intervenciones, y se declara que las clases no certifican vida biológica ni experiencia. La conjunción mediante mínimo es matemáticamente legítima cuando las coordenadas están bien definidas y calibradas.
+
+**VII-01, alto, margen de viabilidad degenerado.** En 237–246, el ínfimo sobre todos los estados iniciales de A y sobre tiempos que incluyen cero de la distancia al complemento de A vale cero para un soporte propio cerrado con frontera accesible. Ejemplo: X=R, A=[0,1], dinámica identidad. A es perfectamente invariante, pero dist(0,R\\A)=0, luego rho=0. No confundir invariancia con separación uniforme respecto de la propia frontera. Reparación: fijar conjunto inseguro distinto, núcleo inicial B contenido en el interior de A y horizonte, y demostrar una barrera positiva. Si A=X, la distancia al vacío debe tratarse explícitamente, pues no es automáticamente una puntuación finita.
+
+**VII-02, medio/alto, recuperación no tipada.** En 255–267 `x_t^-` se describe como valor de viabilidad y luego aparece como argumento de V, que espera un estado. Faltan el instante de aplicación, la familia de choques, el máximo recuperable y los casos sin daño o ya óptimos. Exigir incremento estrictamente positivo uniforme puede excluir sistemas sanos que ya están en el máximo. Usar estado inmediatamente posterior al choque, recuperación relativa al daño y exclusión declarada del denominador cero.
+
+**VII-03, alto, vecindad no equivale a clase.** La bola de tolerancia en el vector de descriptores (331–345) no da por sí misma una relación de equivalencia. Con puntos 0, 0.75ε, 1.5ε se cumple proximidad consecutiva, no entre extremos. Llamarla vecindad, o construir cociente mediante igualdad de firma estructural y probar transitividad.
+
+**VII-04, alto, norma ponderada y umbrales.** Una distancia euclídea ponderada pequeña no controla cada coordenada cruda por esa misma distancia si algún peso es menor que uno. Para d_w(x,y)=||W(x−y)||, el control correcto es |x_j−y_j|≤d_w/w_j. Toda afirmación de preservación de umbrales necesita estos factores o cotas Lipschitz y márgenes explícitos. No basta comparar una distancia agregada con el mínimo de umbrales heterogéneos.
+
+**VII-05, experimental.** Las etiquetas dentro/fuera no identifican una frontera causal si cortar enlaces externos causa una intensidad de lesión distinta. La ganancia de predicción histórica depende de clases de modelos, capacidad, distribución y evaluación fuera de muestra. Se requieren modelos anidados con presupuesto equivalente, barajado temporal, controles de daño y semillas independientes. Descriptores de propiedad, privilegio y cierre de automodelo siguen sin estimadores plenamente especificados en este manuscrito.
+
+**VII-06, lógico.** Que una definición añada palabras o condiciones no prueba independencia ni inclusión estricta. Construir sistemas que satisfagan todos los requisitos de una clase y fallen exactamente el requisito adicional. La clasificación es una propuesta formal; no hay aquí una campaña empírica nueva que establezca propiedades mentales.
+
+## Paper VIII — clase estructural indexada
+
+**Avances reales.** Siete coordenadas, separación entre mínimo y media geométrica, rivales híbridos, penalización de complejidad, controles y estados pass/fail/invalid/unsupported. La prueba de robustez local (472–519) es correcta si todas las coordenadas son positivas, el error es menor que el mínimo y los exponentes positivos suman uno. La ganancia multiplicativa se deriva correctamente. El transporte bajo preservación exacta es un resultado condicional de preservación de predicados, no un mecanismo para realizar físicamente ese transporte.
+
+**VIII-01, alto, estimadores fuera del dominio.** Se declaran coordenadas en [0,1], pero perspectiva, valoración, continuidad e irreducibilidad pueden ser negativas en las fórmulas de 525–535 y 1301–1329; algunas requieren además pérdidas o respuestas no negativas y denominadores no nulos. La media con exponentes reales deja de estar definida en R si recibe una coordenada negativa. Definir por separado estimación firmada, estado de insuficiencia y puntuación normalizada; no ocultar derrota de un rival mediante recorte silencioso.
+
+**VIII-02, alto, signo del control de ownership.** En 1285–1299 se resta λ por la distancia al control. Esto penaliza precisamente distinguirse del control, mientras el texto dice que pretende evitar coincidencia trivial. Si o=o*=1 y control=0, el ajuste resta λ; si el control también vale 1, no penaliza. La puntuación puede ser negativa. Reparación: definir un contraste de error frente a control o ganancia predictiva con signo coherente y rango demostrado. Es necesario especificar de dónde procede o*, para evitar que la etiqueta que se quiere validar sea la verdad de referencia autogenerada.
+
+**VIII-03, alto, estabilidad bajo permutación y singularidad.** El estimador de 1274–1283 multiplica el margen del candidato dominante por invariancia de q frente a permutaciones. Si las permutaciones admisibles intercambian al candidato dominante con los demás y la comparación mantiene las etiquetas originales, ambas exigencias compiten: q=(1,0), intercambio, distancia de variación total 1, puntuación 0. Distinguir equivariancia al cambio de nombres de estabilidad frente a una intervención que intercambia funciones causales. Comparar q transformado con la referencia también transformada para un mero renombrado.
+
+**VIII-04, alto, circularidad del perfil de intervención.** D_u^j incluye j=Δ y el propio Δ se calcula como fracción de intervenciones selectivas sobre las coordenadas, entre ellas Δ (777–788, 1332–1345). Falta orden de evaluación o problema de punto fijo con existencia/unicidad. Calcular selectividad sobre coordenadas primitivas y evaluar Δ en un conjunto separado; reservar irreducibilidad para evaluación fuera de muestra.
+
+**VIII-05, medio, ínfimo no alcanzado.** Margen cero significa igualdad de ínfimos, no existencia de un rival que alcanza el ajuste (696, 717–718). Una familia de pérdidas 1+1/n frente a pérdida 1 tiene ínfimo igual sin ningún empate efectivo. El teorema con margen estrictamente positivo sí es válido. Reparar la lectura de cero mediante aproximación arbitraria o demostrar compacidad y semicontinuidad que aseguren mínimo.
+
+**VIII-06, alto, independencia aún no probada.** La prueba de que Sub_1p es estrictamente más fuerte establece inclusión, no exhibe testigo de diferencia. Los criterios de emergencia/propiedad/factorización explícitamente abiertos no son teoremas probados aunque sus etiquetas empiecen por `thm:`. La tabla de 1493–1497 sobrestima el cierre si se lee como independencia matemática ya demostrada.
+
+**VIII-07, comparadores.** Los rivales son esquemas, no familias de algoritmos completamente fijadas. Una política, monitor o registro con suficiente capacidad puede realizar las mismas funciones de ownership y continuidad. Excluirlos porque adquieren un nombre del modelo fuerte sería circular. Congelar gramática de programas, información disponible, presupuesto, ajuste, pérdida, complejidad y evaluación ciega. Derrotar esos algoritmos concretos no derrota todas las teorías de workspace, memoria o agencia.
+
+**VIII-08, transporte aproximado.** La cota de 1141–1159 preserva las cláusulas numéricas bajo sus hipótesis; la estabilidad de la admisibilidad de intervenciones no se deduce de una tolerancia genérica sin margen frente a su umbral. Declarar ese margen o asumir explícitamente preservación de la cláusula booleana. El umbral λΦ≥λG^7 (si se usa como vinculación) es una cota débil: con pesos que suman uno, todas las coordenadas ≥g implican directamente media geométrica ≥g.
+
+## Paper IX — organización de puente
+
+**Avance real.** Distingue formalización, implementación y admisibilidad, y prohíbe inferir fenomenalidad desde artefactos. Se degradaron correctamente cargas de independencia a conjeturas y no vacuidad a criterio (1271–1297). Esa cautela debe conservarse.
+
+**IX-01, alto, especificación semántica incompleta.** Las definiciones 224–245 dicen qué deberían superar los predicados, sin dar aún mapas observables, espacios, estimadores identificables ni desigualdades que decidan esos términos. `Temporal lived structure`, `interiority`, `valence topology` y `constitutively` siguen siendo etiquetas de programa o interpretaciones, no variables físicas demostradas. Convertir cada una en familia de observaciones, intervención, modelo rival ejecutable y predicción diferencial con error. Declarar el resto como no formalizado. El propio paper lo reconoce parcialmente al dejar BPF-2–6 abiertos; llamar a ello cierre formal completo es excesivo.
+
+**IX-02, alto, prueba por intención.** En 382–388 se afirma irreducibilidad al Paper VIII porque se han pedido nuevas obligaciones. Que se soliciten nuevas intervenciones/artefactos no prueba que ninguna coordenada sea reparametrización de las previas. Se necesita contraejemplo de estados con iguales coordenadas upstream y distinto resultado bridge, o teorema de no factorización. La prueba actual es un requisito de diseño.
+
+**IX-03, alto, dominio del funcional.** R_b=min L_weak−L_bridge (557–566) es real firmado y no necesariamente acotado. En 767–830 se eleva a exponentes sin restringir dominio ni normalizar y se mezcla con seis valores [0,1] y un perfil Δ cuya scalarización debe definirse. Una derrota del modelo fuerte produce valores negativos y potencias fraccionarias no reales. Usar margen firmado separado, transformada monótona calibrada y dominio válido sólo donde corresponda. Fijar pesos y probar rango, monotonía y tratamiento de datos faltantes.
+
+**IX-04, medio/alto, mínimos, umbrales y cierre.** El mínimo de pérdidas requiere existencia; una familia continua no lo garantiza. El gate usa un umbral común, mientras registra umbrales individuales: establecer la relación o usar min_k(score_k/threshold_k). Los híbridos de dos y tres rivales no forman una clausura bajo composición arbitraria salvo definición restringida explícita. No vender ese concurso como derrota de todos los híbridos.
+
+**IX-05, experimental.** B3–B8 se clasifican como hipótesis falsables, pero varias son definiciones de lo que contará como bridge, sin distribución ni predicción diferencial ejecutable. La propuesta de controles es buena y aún no constituye resultados. Un score que baja al destruir lo que su fórmula mide comprueba sensibilidad instrumental; hace falta además un efecto independiente para distinguir relevancia explicativa.
+
+**IX-06, sincronización de estado.** Paper IX describe BPF-2–6 abiertos y sólo superficies; Paper X presupone BPF-M3 y otras clausuras internas posteriores. Puede ser evolución cronológica, no contradicción matemática, pero debe fijarse versión/hash de cada estado. Las frases de implementación del manuscrito requieren verificación del repositorio correspondiente y no se certifican en esta auditoría de teoría.
+
+## Lectura responsable de los tres papers
+
+Las clases son especificaciones internas y candidatos de investigación. No hay demostración de conciencia, vivencia ni equivalencia humana. Tampoco hay razón para desechar todo: robustez de agregadores, taxonomía de fallos, intervenciones con controles y disciplina de evidencia son piezas aprovechables. La prioridad es resolver dominios y testigos, después calibrar una predicción diferencial estrecha, antes de añadir nuevas capas terminológicas.

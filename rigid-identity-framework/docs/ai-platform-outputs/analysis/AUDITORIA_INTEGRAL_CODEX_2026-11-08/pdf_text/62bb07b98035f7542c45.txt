@@ -1,0 +1,170 @@
+QICN ROEO Export
+Batch roeo_batch_nal_paper_v1
+Operational Equivalence
+
+Pair
+CondA
+S0_vs_S1_r0 S0
+S0_vs_S2_r0 S0
+S1_vs_S3_r0 S1
+S0_vs_S1_r1 S0
+S0_vs_S2_r1 S0
+S1_vs_S3_r1 S1
+S0_vs_S1_r2 S0
+S0_vs_S2_r2 S0
+S1_vs_S3_r2 S1
+S0_vs_S1_r3 S0
+S0_vs_S2_r3 S0
+S1_vs_S3_r3 S1
+S0_vs_S1_r4 S0
+S0_vs_S2_r4 S0
+S1_vs_S3_r4 S1
+epsilon=0.080000
+
+CondB
+S1
+S2
+S3
+S1
+S2
+S3
+S1
+S2
+S3
+S1
+S2
+S3
+S1
+S2
+S3
+
+Status
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+EQUIVALENT
+
+Substrate Non-Observability
+
+Metric
+Value Threshold Pass
+acc_clean_strict 0.300000 0.350000 true
+acc_leak_strict 1.000000 1.000000 true
+chance
+0.250000 0.350000 true
+Negative Controls
+
+Control
+NC1
+NC2
+NC3
+NC4
+
+Expected
+eect_min_or_ro_fail
+eect_min
+abs_eect_le_tau
+acc_ge_threshold
+
+Observed
+1.000000
+0.264337
+0.000000
+1.000000
+
+Pass
+true
+true
+true
+true
+
+1
+
+d
+0.000000
+0.000000
+0.000290
+0.000000
+0.000000
+0.000217
+0.000000
+0.000000
+0.000181
+0.000000
+0.000000
+0.000263
+0.000000
+0.000000
+0.000217
+
+Provenance Hashes
+
+Artifact
+sha256
+preregister
+cfa00749d53121921b431f85a93f826d207579d29ef97e358c4ae00178b8dd28
+report:operational fb2eeb764d3bec51a31e90db8b4e74e22394b72f8c8e3e116a04092c480e42
+report:sno
+c7702796757cf18040b318012aed572ee763b1b38d50cc4b600f670d1d22fc
+report:nc
+995dbc061b77f62be318088d4697fd2553dfe2ae13715a1916f871b4f5939395
+report:enforcement 270293c0c8d6ab5ee14039fb880c89536f293af2c7a9393cc5aa3879d0d5a45e
+ticks:S0_r0
+045f273252ec444fcb651f1d6549b19423954c4590a39876361bc539b0e23d7e
+ticks:S1_r0
+5c38bb60d11b1da36f41a27d7a19d90d5f08338b36851de18b01e05f8bb055
+ticks:S2_r0
+256f78ec49756ca7f158a5c3006d0ad3e214a483d3b2fd97bd4030e6a3c58b84
+ticks:S3_r0
+6f4a11b090ccdc2c13c49b367cf8a635a027ae81461881e7cbf28002ea5d626b
+ticks:S0_r1
+52eed0a5875a89afe19bc49d8484e2b738392efa734a8b8b4e5697a2790306f7
+ticks:S1_r1
+15ad946c3eb87f2cbf72a0481a720a388e55b62c9464b915cefa6210db61777c
+ticks:S2_r1
+1526c27eb42ec6dc293f2b4f5bfe64c6b3b2353fc248126d45992ce2edd617
+ticks:S3_r1
+65c99bfb966fd4b9bc352c1dd3ad93083a0b979cf9600ecda68cd48c1942ea2f
+ticks:S0_r2
+dc7c9df09aaed0a827e908f8dfc3dea16f0449a5b2de5f0c2c6c07b4be8c
+ticks:S1_r2
+fb0f223f1f4d4cbb517e897d2381687bba3e951d84517037ac0ab1093dfa1679
+ticks:S2_r2
+aa2497f8363e184f24f44e635e3379160d2b659e064221da5aaddf2032a7d8a8
+ticks:S3_r2
+1d22380ae15c5e6a6be75eabc00f048ab54ccc5748cc9d474d6d15c3b3b58fb7
+ticks:S0_r3
+0cdabbf6b899e3fd27024f31325059dd8aa2188e9e59a6fbbe1bb7328cc03327
+ticks:S1_r3
+6ef01f8af5f21769efcd97f89eaabb9525e20689200ed6ba05cdb534f3c989
+ticks:S2_r3
+13ccaa7dab9bad12f345da043e2189aab9dd30be4aed085ed1ec2b00b01526
+ticks:S3_r3
+fe641a6f823160b0e3a3fcef69fb9690ccbca8c5a37e2197f38af7cf683a3f2b
+ticks:S0_r4
+b8f2b47d9253fca2f0b98cd6f67c85887f3d3e3116e8e846ef5f4283401c1495
+ticks:S1_r4
+f3621194ce68ecb21e9fd092e2c5f452e764ba01da2e374739b2b73cf64e4068
+ticks:S2_r4
+0839f473c2bbe205e7a1061fe67e3b24b0b7067c74c11bc9b42b077be4539f03
+ticks:S3_r4
+85c44a8a548a6afd3420f12efb283d919dfac03a10af8262919fc0e069daed5c
+prereg_hash=15c59914b39234f3e4c6318653d1b8ebf1d728f96d9936239d769a50d91817b6
+Figure Data References
+
+ figures_data_ROEO.json
+
+2
+
+

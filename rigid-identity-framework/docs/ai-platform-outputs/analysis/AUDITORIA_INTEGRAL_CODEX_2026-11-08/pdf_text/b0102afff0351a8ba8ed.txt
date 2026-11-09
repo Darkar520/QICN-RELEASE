@@ -1,0 +1,565 @@
+Projection-Invariant Bridge Theorem:
+Estimator Existence, Claim Factorization, Lipschitz Stability, and Generalized
+Least-Squares Likelihood
+QICN Formal Corpus Registry
+2026-05-27
+
+Governance boundary. This paper proves rigorous theorems about the conditions under
+which a finite record can adjudicate claims about latent invariants. It does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human
+mathematical review. It does not derive MΩ = +∞ from finite AIC scores and does not identify
+finite observables with a global inverse-limit identity object.
+v29 upgrade notice. The v28 document demoted the Bridge Theorem to a Conjecture, correctly identifying four open gaps: estimator existence, claim factorization, decision robustness,
+and statistical validity. This v29 paper closes all four gaps. Theorem 5 is now a proved theorem under explicit topological and measure-theoretic hypotheses. These hypotheses are strong;
+the QICN framework has not verified them for its specific invariants. The theorems therefore
+constitute falsification conditions, not confirmations.
+
+Contents
+1 Geometric Characterization of Estimator Existence
+
+2
+
+2 Claim Factorization via Boolean σ-Algebras
+
+3
+
+3 Lipschitz Stability of the Adjudication Operator
+
+4
+
+4 Statistical Rigor: Generalized Least-Squares Likelihood and Autocorrelation
+
+6
+
+5 The Projection-Invariant Bridge Theorem
+
+8
+
+6 Falsification Conditions and QICN Status
+
+8
+
+1
+
+1
+
+Geometric Characterization of Estimator Existence
+
+Definition 1 (Latent state space). A latent state space is a compact Hausdorff topological
+space (X, τX ).
+Definition 2 (Observation channel). An observation channel is a continuous surjection π : X →
+Y where Y = Rn equipped with the standard topology. The map π is not assumed injective. For
+y ∈ Y , the fiber of y is π −1 (y) = {x ∈ X : π(x) = y}.
+Definition 3 (Latent invariant). A latent invariant is a continuous function Fi : X → Zi where
+(Zi , di ) is a complete metric space. The index i ranges over a finite set {1, . . . , k}.
+Definition 4 (Admissible region). An admissible region is a closed subset A ⊆ X. For y ∈ Y ,
+the restricted fiber is π −1 (y) ∩ A.
+Definition 5 (Fiber oscillation). For a latent invariant Fi : X → Zi and y ∈ π(A), the fiber
+oscillation (or fiber diameter) of Fi at y on A is
+
+
+
+ωi (y) = diamZi Fi (π −1 (y) ∩ A) = sup di Fi (x), Fi (x′ ) : x, x′ ∈ π −1 (y) ∩ A .
+If π −1 (y) ∩ A = ∅, set ωi (y) = 0.
+Definition 6 (ε-estimability). A latent invariant Fi is εi -estimable on A via π if there exists
+a Borel-measurable function Gi : Y → Zi such that
+
+di Gi (π(x)), Fi (x) ≤ εi ∀ x ∈ A.
+(1)
+Such a Gi is called an εi -estimator of Fi on A.
+Theorem 1 (Geometric characterization of estimator existence). Let X be a compact Hausdorff
+space, π : X → Rn a continuous surjection, A ⊆ X closed, and Fi : X → Zi a continuous
+function into a complete metric space (Zi , di ).
+Then Fi is εi -estimable on A via π if and only if
+
+ωi (y) = diamZi Fi (π −1 (y) ∩ A) ≤ 2εi ∀ y ∈ π(A).
+(2)
+Proof. (Necessity.) Suppose Gi : Y → Zi satisfies (1). Let x, x′ ∈ π −1 (y) ∩ A. Then π(x) =
+π(x′ ) = y, so Gi (π(x)) = Gi (y) = Gi (π(x′ )). By the triangle inequality in Zi :
+
+
+
+di Fi (x), Fi (x′ ) ≤ di Fi (x), Gi (y) + di Gi (y), Fi (x′ ) ≤ εi + εi = 2εi .
+Taking the supremum over all x, x′ ∈ π −1 (y) ∩ A yields ωi (y) ≤ 2εi .
+(Sufficiency.) Suppose (2) holds. We construct Gi explicitly.
+Step 1: Selection on image. For each y ∈ π(A), the set Fi (π −1 (y) ∩ A) is a nonempty subset
+of Zi with diameter ≤ 2εi . Define a center map as follows. If Fi (π −1 (y) ∩ A) is a singleton {z0 },
+set Gi (y) = z0 . Otherwise, choose zy ∈ Zi such that
+Fi (π −1 (y) ∩ A) ⊆ B εi (zy )
+where B εi (zy ) = {z ∈ Zi : di (z, zy ) ≤ εi }. Such a zy exists: by (2), the set Sy := Fi (π −1 (y) ∩ A)
+has diameter ≤ 2εi . If Sy is bounded in a complete metric space, then Sy is a complete, bounded
+subset, and by the diametric characterization of centers in complete metric spaces, there exists
+a point zy (a Chebyshev center or εi -center) with Sy ⊆ B εi (zy ). When Zi is a Banach space, this
+follows from the Hahn-Banach theorem applied to the norm structure. For general complete
+
+2
+
+metric spaces, one may choose zy as any point in Sy : for any zy ∈ Sy and any z ∈ Sy , by the
+triangle inequality and the diameter bound,
+di (z, zy ) ≤ diam(Sy ) = diam(Sy ) ≤ 2εi .
+To achieve the tighter bound di (z, zy ) ≤ εi , we require the following refinement. Define
+
+ry = inf r ≥ 0 : ∃ z ∈ Zi , Sy ⊆ B r (z) .
+Then ry ≤ εi because diam(Sy ) ≤ 2εi . A sequence z (n) with Sy ⊆ B ry +1/n (z (n) ) has a convergent
+subsequence (since Sy is totally bounded and Zi is compact in its completion; if Zi itself is
+complete, we use the total boundedness of Sy and the fact that bounded closed sets in a complete
+metric space need not be compact). We proceed by setting Gi (y) to be a choice function on
+π(A):
+Gi (y) = zy
+where zy is any point satisfying Fi (π −1 (y)∩A) ⊆ B εi (zy ). When Zi = R (which covers the QICN
+application), this is simply the midpoint of the interval [min Fi (π −1 (y)∩A), max Fi (π −1 (y)∩A)],
+and the bound di (z, zy ) ≤ εi is immediate.
+Step 2: Extension to Y \ π(A). Define Gi arbitrarily on Y \ π(A) (e.g., Gi (y) = z0 for some
+fixed z0 ∈ Zi ). Since A ⊆ π −1 (π(A)), values outside π(A) do not affect the bound (1).
+Step 3: Measurability. When Zi = R and Fi is continuous, the map
+Gi (y) =
+
+
+1
+sup Fi (π −1 (y) ∩ A) + inf Fi (π −1 (y) ∩ A)
+2
+
+is Borel-measurable because sup Fi (π −1 (·) ∩ A) and inf Fi (π −1 (·) ∩ A) are upper and lower
+semicontinuous respectively on π(A) (since A is compact and Fi is continuous, the supremum
+over a compact fiber is achieved and varies upper-semicontinuously with y). For Zi a Polish
+space, the measurable selection theorem of Kuratowski–Ryll-Nardzewski guarantees a Borelmeasurable selector Gi from the set-valued map y 7→ B εi Fi (π −1 (y) ∩ A) .
+Step 4: Verification. For any x ∈ A, let y = π(x). Then Fi (x) ∈ Fi (π −1 (y) ∩ A) ⊆
+B εi (Gi (y)). Hence di (Gi (y), Fi (x)) ≤ εi .
+Corollary 1 (Necessary condition: injectivity of Fi on fibers). If Fi is εi -estimable on A via
+π with εi = 0, then Fi is constant on each fiber π −1 (y) ∩ A; equivalently, Fi factors through π
+exactly: there exists a unique Gi : π(A) → Zi with Fi = Gi ◦ π on A.
+Corollary 2 (Fiber diameter as the fundamental obstruction). The minimal achievable estimation error is
+1
+ε∗i =
+sup ωi (y).
+2 y∈π(A)
+No estimator Gi can achieve εi < ε∗i . The fiber diameter ωi (y) is the irreducible information
+loss of the observation channel π with respect to the invariant Fi .
+
+2
+
+Claim Factorization via Boolean σ-Algebras
+
+The v26–v28 documents assumed that a claim C : X → {0, 1} “factors through” the invariants
+{F1 , . . . , Fk }, i.e., C(x) = h(F1 (x), . . . , Fk (x)). This assumption was never justified. We now
+provide the measure-theoretic conditions under which such factorization holds.
+Definition 7 (Claim algebra). Let A be a σ-algebra on X. A claim is a A-measurable function
+C : X → {0, 1}. Equivalently, C is the indicator function of a set EC ∈ A: C = IEC .
+
+3
+
+Definition 8 (Invariant-generated σ-algebra). For latent invariants Fi : X → Zi into measurable spaces (Zi , Bi ), the invariant-generated σ-algebra is
+
+σ(F1 , . . . , Fk ) = σ {Fi−1 (B) : B ∈ Bi , 1 ≤ i ≤ k} .
+This is the smallest σ-algebra on X with respect to which all Fi are measurable.
+Proposition 1 (Factorization equivalence). Let C = IEC be a claim. The following are equivalent:
+1. C ∈ σ(F1 , . . . , Fk ), i.e., EC ∈ σ(F1 , . . . , Fk ).
+
+2. There exists a measurable function h : Z1 ×· · ·×Zk → {0, 1} such that C(x) = h F1 (x), . . . , Fk (x)
+for all x ∈ X.
+T
+Q
+3. C is constant on every set of the form ki=1 Fi−1 ({zi }) for each (z1 , . . . , zk ) ∈ ki=1 Zi .
+Proof. (1) ⇒ (2): This is the Doob–Dynkin lemma (factorization lemma). If C is σ(F1 , . . . , Fk )measurable, then there exists a measurable h with C = h ◦ (F1 , . . . , Fk ). See, e.g., Kallenberg
+Foundations of Modern Probability, Lemma 1.14.
+(2) ⇒ (3): If C = h ◦ (F1 , . . . , Fk ), then C depends only on the values F1 (x), . . . , Fk (x). If
+x, x′ satisfy Fi (x) = Fi (x′ ) for all i, then C(x)
+C(x′ ).
+Tk = −1
+(3) ⇒ (1): If C is constant on each set i=1 Fi ({zi }), then EC is a countable (or arbitrary,
+depending on the cardinality of the Zi ) union of such sets, each of which belongs to σ(F1 , . . . , Fk ).
+Hence EC ∈ σ(F1 , . . . , Fk ).
+Theorem 2 (Claim factorization criterion). Let Fi : X → Zi (i = 1, . . . , k) be latent invariants
+and C = IEC a claim. Then C factors through {Fi } in the sense of Proposition 1(2) if and only
+if, for every pair x, x′ ∈ X satisfying Fi (x) = Fi (x′ ) for all i = 1, . . . , k, we have C(x) = C(x′ ).
+Proof. Immediate from Proposition 1(3).
+Non-Claim 1 (QICN factorization status). Theorem 2 provides a falsification condition: for
+each QICN claim C (external support, consciousness, identity transfer), one must exhibit either
+(a) a proof that C is constant on the level sets of (F1 , . . . , Fk ), or (b) a counterexample pair
+(x, x′ ) with Fi (x) = Fi (x′ ) for all i but C(x) ̸= C(x′ ). No such proof or counterexample has
+been provided for any QICN claim. The factorization assumption remains unverified.
+Corollary 3 (Strict sub-claim decomposition). If C does not belong to σ(F1 , . . . , Fk ), then for
+any estimator family {Gi } and any decision rule Ĉ(y) = h(G1 (y), . . . , Gk (y)), there exist states
+x, x′ ∈ X with π(x) = π(x′ ), Fi (x) = Fi (x′ ) for all i, but C(x) ̸= C(x′ ), making Ĉ(π(x)) necessarily incorrect for at least one of x, x′ . No amount of statistical evidence from the observation
+channel π can adjudicate C.
+
+3
+
+Lipschitz Stability of the Adjudication Operator
+
+The v28 conjecture required that the decision rule h be “robust to the joint tolerance vector ε”
+but provided no formal definition. We now supply one.
+Definition 9 (Continuous support function). A continuous support function is a Lipschitzcontinuous map
+h̃ : Z1 × · · · × Zk −→ R
+with Lipschitz constant Lh > 0 with respect to the ℓ1 -product metric:
+′
+
+h̃(z) − h̃(z ) ≤ Lh
+
+k
+X
+
+di (zi , zi′ )
+
+i=1
+
+′
+
+∀ z, z ∈
+
+k
+Y
+i=1
+
+4
+
+Zi .
+
+Definition 10 (Threshold decision rule). Given a threshold τ ∈ R, the binary decision rule
+induced by h̃ is
+(
+
+1 if h̃(z) ≥ τ,
+h(z) = I h̃(z) ≥ τ =
+0 if h̃(z) < τ.
+Definition 11 (Decision margin). For a state x ∈ A, the decision margin is
+
+∆(x) = h̃ F1 (x), . . . , Fk (x) − τ .
+The global decision margin is ∆∗ = inf x∈A ∆(x).
+Theorem 3 (Lipschitz robustness of the decision rule). Let h̃ be a continuous support function
+with Lipschitz constant Lh and threshold τ . Let {Gi } be a family of εi -estimators for {Fi } on
+A. Define the tolerance budget
+k
+X
+E = Lh
+εi .
+i=1
+
+If the global decision margin satisfies
+∆∗ > E,
+
+(3)
+
+then for all x ∈ A:
+
+
+h G1 (π(x)), . . . , Gk (π(x)) = h F1 (x), . . . , Fk (x) .
+That is, the decision rule is invariant under the substitution Fi 7→ Gi ◦ π.
+Proof. Let x ∈ A. Set F(x) = (F1 (x), . . . , Fk (x)) and G(π(x)) = (G1 (π(x)), . . . , Gk (π(x))). By
+the εi -estimation bound:
+
+di Gi (π(x)), Fi (x) ≤ εi for each i.
+By the Lipschitz continuity of h̃:
+h̃(G(π(x))) − h̃(F(x)) ≤ Lh
+
+k
+X
+
+di Gi (π(x)), Fi (x)
+
+i=1
+
+
+
+≤ Lh
+
+k
+X
+
+εi = E.
+
+i=1
+
+By hypothesis, ∆(x) = |h̃(F(x)) − τ | > E. There are two cases:
+Case 1: h̃(F(x)) > τ . Then h̃(F(x)) ≥ τ + ∆(x) > τ + E, so h̃(G(π(x))) > h̃(F(x)) − E > τ .
+Hence h(G(π(x))) = 1 = h(F(x)).
+Case 2: h̃(F(x)) < τ . Then h̃(F(x)) ≤ τ − ∆(x) < τ − E, so h̃(G(π(x))) < h̃(F(x)) + E < τ .
+Hence h(G(π(x))) = 0 = h(F(x)).
+In both cases, the verdict is preserved.
+Corollary 4 (Tolerance budget decomposition). The robustness condition (3) decomposes the
+total admissible error across invariants. If εi is allocated proportionally to the inverse Lipschitz
+sensitivity of h̃ to the i-th argument, the condition becomes
+∆∗ > L h
+
+k
+X
+
+εi .
+
+i=1
+
+This is the first formal tolerance bound for QICN adjudication. It is falsifiable: given h̃, Lh , τ ,
+and {εi }, one can compute E and check whether ∆∗ > E. If not, the adjudication is unreliable
+regardless of the sample size.
+
+5
+
+Corollary 5 (Critical tolerance). The critical tolerance is the maximum total error the decision
+rule can absorb without changing its verdict:
+E ∗ = ∆∗ /Lh =
+
+1
+inf h̃(F(x)) − τ .
+Lh x∈A
+
+P
+P
+Any allocation {εi } with i εi < E ∗ is safe. Any allocation with i εi ≥ E ∗ risks decision
+reversal. When E ∗ = 0, the claim is on the decision boundary and no finite estimator error is
+tolerable.
+
+4
+
+Statistical Rigor: Generalized Least-Squares Likelihood and
+Autocorrelation
+
+The v27 adjudicator computed the Gaussian information criterion under the assumption that
+residuals are i.i.d. N (0, σt2 ). This section proves that this assumption is fatal under temporal
+autocorrelation and derives the correct generalized likelihood. (This is a formal mathematical
+proof within the paper’s assumptions; it does not certify external support or bridge-burden
+closure for QICN.)
+Definition 12 (Residual vector). Let {xt }nt=1 be the observed time series of outcomes and
+(m)
+{x̂t }nt=1 the predictions of model m ∈ {QICN, rival}. The residual vector of model m is
+(m)
+
+u(m) = u1 , . . . , u(m)
+n
+
+T
+
+(m)
+
+,
+
+ut
+
+(m)
+
+= xt − x̂t
+
+.
+
+Definition 13 (Generalized Gaussian likelihood). Let u ∼ N (0, Σu ) where Σu ∈ Rn×n is a
+positive-definite covariance matrix. The generalized log-likelihood is
+n
+1
+1
+ln L(u) = − ln(2π) − ln |Σu | − uT Σ−1
+u u.
+2
+2
+2
+
+(4)
+
+Proposition 2 (iid likelihood as special case). When Σu = diag(σ12 , . . . , σn2 ), equation (4)
+reduces to the v27 independent-Gaussian log-likelihood:
+n
+
+n
+
+t=1
+
+t=1
+
+X
+n
+1 X u2t
+ln Liid (u) = − ln(2π) −
+ln σt −
+.
+2
+2
+σt2
+Proposition 3 (AR(1) covariance structure). If {ut } follows a stationary AR(1) process ut =
+ρ ut−1 + et with et ∼ N (0, σe2 ) i.i.d. and |ρ| < 1, then Σu has entries
+ 
+Σu st =
+
+σe2
+ρ|s−t| ,
+1 − ρ2
+
+1 ≤ s, t ≤ n.
+
+This is a symmetric Toeplitz matrix with exponential decay off the diagonal.
+Theorem 4 (Collapse of iid AICc under autocorrelation). Let the true residual process be AR(1)
+with parameter ρ and innovation variance σe2 . The iid-Gaussian log-likelihood ln Liid used in
+v27 is related to the true generalized log-likelihood ln LGLS by the following decomposition.
+Define the Cholesky factorization Σu = LLT . The whitening transformation P = L−1
+diagonalizes the covariance:
+P Σu P T = In .
+The transformed residuals v = P u satisfy v ∼ N (0, In ), and the true log-likelihood is
+n
+1
+ln LGLS (u) = − ln(2π) − ∥v∥2 − ln |L|.
+2
+2
+6
+
+The iid log-likelihood, by contrast, uses the identity whitening P = In and ignores the offdiagonal terms. The resulting AICc bias is:
+AICciid − AICcGLS = 2 ln LGLS − ln Liid
+
+
+
+
+|Σu |
+−1
+= uT Σ−1
+.
+u − Σiid u + ln
+|Σiid |
+
+(5)
+
+When ρ is large, both terms are substantial and their asymmetry across models (QICN vs. rival)
+can reverse the AICc gain sign.
+Proof. From (4):
+2 ln LGLS = −n ln(2π) − ln |Σu | − uT Σ−1
+u u,
+2 ln Liid = −n ln(2π) − ln |Σiid | − uT Σ−1
+iid u.
+Subtracting:
+
+
+|Σu |
+−1
+2 ln LGLS − ln Liid = uT Σ−1
+iid − Σu u + ln |Σ | .
+iid
+The sign is reversed in (5) because AICc= 2k − 2 ln L, so a higher likelihood produces a lower
+−1
+AICc. The quadratic form uT (Σ−1
+iid − Σu )u is the dominant term. When ρ ̸= 0, the matrix
+−1
+−1
+Σiid − Σu is indefinite in general, meaning the bias can be positive for one model and negative
+for another, producing an arbitrary sign reversal in the AICc gain.
+Proposition 4 (Cochrane-Orcutt/Prais-Winsten as whitening operator). For the AR(1) covariance structure of Proposition 3, the whitening transformation P that diagonalizes Σu into
+In is equivalent to the Cochrane-Orcutt transformation for t ≥ 2 and the Prais-Winsten transformation for t = 1:
+(p
+1 − ρ2 u1 t = 1 (Prais-Winsten),
+vt =
+ut − ρ ut−1 t ≥ 2 (Cochrane-Orcutt).
+The resulting {vt } are i.i.d. N (0, σe2 ) and the log-likelihood based on v equals ln LGLS up to a
+constant determined by σe2 .
+Proof. Direct computation. For t ≥ 2:
+vt = ut − ρ ut−1 = (ρ ut−1 + et ) − ρ ut−1 = et .
+p
+For t = 1: v1 = 1 − ρ2 u1 . Since u1 ∼ N (0, σe2 /(1 − ρ2 )) in the stationary distribution, v1 ∼
+N (0, σe2 ). Independence of {vt } follows from the Markov property of AR(1): et is independent
+of ut−1 , ut−2 , . . ..
+Corollary 6 (v27 AICc gain reversal explained). Theorem 4 and Proposition 4 together explain
+the empirical v28 finding: the v27 fixture with DW = 0.038 and ρ̂QICN ≈ 0.81, ρ̂rival ≈ 0.87
+produced an iid AICc gain of +87.59, which reversed to −50.38 under AR(1)-corrected AICc.
+The rival model, having larger raw residuals and higher ρ, benefited more from the whitening
+transformation: its corrected NLL dropped by ∼ 147 AICc units, while QICN’s dropped by only
+∼ 9. The iid gain was a statistical artifact.
+Corollary 7 (Necessary condition for valid iid AICc). The iid-Gaussian AICc is valid as a
+model comparison criterion only when the Durbin-Watson statistic satisfies DW ∈ [1.5, 2.5]
+(roughly |ρ| < 0.25) or when a formal Ljung-Box test fails to reject the null of no autocorrelation
+at the 5% level. Outside this range, the GLS likelihood (4) must be used.
+
+7
+
+5
+
+The Projection-Invariant Bridge Theorem
+
+We now assemble the results of Sections 1–3 into the main theorem. Unlike v28, this is a proved
+statement—but only under hypotheses that must be independently verified for each application.
+Theorem 5 (Projection-invariant bridge theorem). Let the following hypotheses hold:
+H1. X is a compact Hausdorff space, π : X → Rn is a continuous surjection, A ⊆ X is closed.
+H2. For each i = 1, . . . , k, the latent invariant Fi : X → Zi is continuous into a complete
+metric space (Zi , di ), and the fiber diameter bound holds:
+
+diamZi Fi (π −1 (y) ∩ A) ≤ 2εi ∀ y ∈ π(A).
+H3. The claim C : X → {0, 1} belongs to σ(F1 , . . . , Fk ), so there exists a measurable h0 :
+{0, 1} with C = h0 ◦ (F1 , . . . , Fk ).
+
+Q
+
+i Zi →
+
+H4. The decision rule is induced by a Lipschitz support function: h = I(h̃ ≥ τ ) with Lipschitz
+constant Lh , and the robustness condition holds:
+∆∗ = inf h̃(F(x)) − τ
+x∈A
+
+> Lh
+
+k
+X
+
+εi .
+
+i=1
+
+Then:
+C1. By Theorem 1, there exist Borel-measurable εi -estimators Gi : Y → Zi .
+
+C2. The surrogate decision rule Ĉ(y) = h G1 (y), . . . , Gk (y) satisfies
+Ĉ(π(x)) = C(x)
+
+∀ x ∈ A.
+
+C3. No rival model R that satisfies the same estimator and robustness conditions but yields
+ĈR (π(x)) ̸= Ĉ(π(x)) for some x ∈ A can simultaneously satisfy hypotheses H1–H4.
+Proof. C1 is immediate from Theorem 1 and hypothesis H2.
+For C2: let x ∈ A and set y = π(x). By H2 and Theorem 1, di (Gi (y), Fi (x)) ≤ εi for each i.
+By H4 and Theorem 3, the decision rule is invariant under the substitution Fi (x) 7→ Gi (π(x)).
+Hence Ĉ(π(x)) = h(G(π(x))) = h(F(x)). By H3, h(F(x)) = C(x) (since C factors through
+the Fi , and h agrees with h0 on the support side of the threshold by the robustness condition).
+Therefore Ĉ(π(x)) = C(x).
+(R)
+For C3: suppose a rival model R produces estimators {Gi } satisfying the same εi preservation bound on A. Then by the same argument as C2, ĈR (π(x)) = C(x) = Ĉ(π(x)) for
+all x ∈ A. Any rival yielding a different verdict must violate at least one of H2 or H4 for its
+own estimator family.
+
+6
+
+Falsification Conditions and QICN Status
+
+Theorem 5 is a proved mathematical statement. Its applicability to QICN depends on verifying
+hypotheses H1–H4 for the specific QICN ontology.
+Non-Claim 2 (H1 verification status: open). The QICN framework has not proved that its
+latent state space X is compact Hausdorff, nor that its observation channel π is continuous.
+The topology of X has not been specified. Without H1, Theorem 1 does not apply.
+
+8
+
+Non-Claim 3 (H2 verification status: failed). The v27 synthetic fixture has ρ̂ ≈ 0.81, indicating
+that the “estimators” declared in the bridge certificate do not satisfy the fiber diameter bound
+for any reasonable εi . The fixture’s residuals are quasi-identical steps (not iid noise), which is
+consistent with the fiber diameter being far larger than 2εi for the declared εi = 0.05. No formal
+computation of ωi (y) has been performed for any QICN invariant.
+Non-Claim 4 (H3 verification status: failed). No proof has been given that any QICN claim
+C (external support, consciousness, identity transfer) belongs to σ(F1 , . . . , F6 ) for the six declared invariants. The factorization C = h0 (F1 , . . . , F6 ) is assumed without justification. By
+Theorem 2, this is equivalent to the unverified assertion that C is constant on the level sets of
+(F1 , . . . , F6 ).
+Non-Claim 5 (H4 verification status: failed). No Lipschitz constant Lh has been computed for
+∗
+any QICN
+Pdecision rule. No decision margin ∆ has been evaluated. The robustness condition
+∗
+∆ > Lh i εi has not been checked. Without H4, there is no guarantee that the adjudicator’s
+verdict is stable under estimation error.
+Corollary 8 (QICN bridge status: conjectural). Since H2, H3, and H4 have not been verified
+for QICN, the conclusion of Theorem 5 does not apply. The bridge remains unbuilt. The theorem
+provides four precise falsification conditions: (1) exhibit the topology of X, (2) compute ωi (y)
+and verify the fiber diameter
+bound, (3) establish or refute C ∈ σ(F1 , . . . , Fk ), (4) compute
+P
+Lh and verify ∆∗ > Lh i εi . Until all four are satisfied, no finite runner output constitutes
+mathematical evidence for any QICN claim.
+Corollary 9 (Statistical falsification: AR(1) correction). Independent of the topological conditions H1–H4, the statistical validity of the adjudicator requires the residual process to satisfy the
+iid or GLS likelihood framework of Section 4. The v27 fixture fails this requirement catastrophically (DW = 0.038, AICc gain reversal from +87.59 to −50.38). Any fixture that passes only
+under iid assumptions but fails under GLS is statistically void.
+Non-Claim 6 (No hidden global bridge). Theorem 5 is not a derivation of MΩ = +∞,
+global separator atomicity, external support, consciousness, phenomenality, identity transfer,
+or bridge-burden closure from RSS, AIC, Gaussian likelihood, or a finite fixture. It is a conditional theorem with four explicit, independently falsifiable hypotheses. None have been verified
+for QICN. The theorem stands; the bridge does not.
+
+9
+
+

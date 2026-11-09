@@ -1,0 +1,209 @@
+{
+  "scope": "Synthetic mathematical counterexamples only; not empirical QICN measurements",
+  "checks": 18,
+  "passed": 18,
+  "external_support_certified": false,
+  "results": [
+    {
+      "id": "X-01-always-tie",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "risk": 0.0,
+        "claimed_lower_bound_no_leak": 0.5
+      }
+    },
+    {
+      "id": "A-02-discrete-center",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "epsilon": 1,
+        "diameter": 2,
+        "best_radius_in_codomain": 2
+      }
+    },
+    {
+      "id": "A-02-Banach-triangle",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "equilateral_side": 2,
+        "circumradius": 1.1547005383792517,
+        "epsilon": 1
+      }
+    },
+    {
+      "id": "A-03-upper-Lipschitz-not-coercivity",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "K": 1,
+        "epsilon": 0,
+        "fiber_diameter": 1.0
+      }
+    },
+    {
+      "id": "A-06-target-rule-link",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "C": 1,
+        "h0": 1,
+        "h_support": -1,
+        "threshold": 0,
+        "margin": 1,
+        "estimator_error": 0,
+        "h_decision": 0
+      }
+    },
+    {
+      "id": "A-05-not-iff",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "true_support": 1,
+        "exact_estimated_support": 1,
+        "threshold": 0,
+        "declared_error_budget": 2,
+        "decision_preserved": true
+      }
+    },
+    {
+      "id": "A-08-AR1-inverse-eigenvalues",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "actual_eigenvalues": [
+          0.5,
+          1.5
+        ],
+        "published_formula": [
+          1.0000000000000002,
+          0.4285714285714286
+        ]
+      }
+    },
+    {
+      "id": "A-10-PW-GLS-identity",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "PW_NLL": 7.0370872296968265,
+        "GLS_NLL": 7.037087229696826,
+        "difference": 8.881784197001252e-16
+      }
+    },
+    {
+      "id": "A-07-AIC-logdet-sign",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "direct_2logL_difference": 0.28768207245178085,
+        "printed_logdet_ratio": -0.28768207245178085
+      }
+    },
+    {
+      "id": "VII-03-proximity-not-equivalence",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "states": [
+          0,
+          0.75,
+          1.5
+        ],
+        "tolerance": 1
+      }
+    },
+    {
+      "id": "VII-04-weighted-margin",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "coordinate_change": 1,
+        "weight": 0.001,
+        "weighted_distance": 0.001,
+        "margin": 0.1
+      }
+    },
+    {
+      "id": "VIII-02-control-sign",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "correct_distinct_from_control_score": 0.5,
+        "identical_control_score": 1.0
+      }
+    },
+    {
+      "id": "III-two-eta-not-null-exclusion",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "true_separation": 2.8284271247461903,
+        "eta": 1,
+        "estimate1": [
+          1,
+          0
+        ],
+        "estimate2": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "base-rotation-origin",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "rotation_90_of_origin": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "I-square-not-lower-Lipschitz",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "difference_quotients_towards_zero": [
+          0.10000000000000002,
+          0.01,
+          0.001,
+          9.999999999999999e-05
+        ]
+      }
+    },
+    {
+      "id": "legacy-H5-quantifiers",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "T0": "constant 0",
+        "T1": "constant 1",
+        "all_fixed_points_constant": true
+      }
+    },
+    {
+      "id": "I-weighted-history-distance-diverges",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "summable_weights": "2^-t",
+        "coordinate_distance": "4^t",
+        "weighted_terms": [
+          2.0,
+          4.0,
+          8.0,
+          16.0,
+          32.0,
+          64.0,
+          128.0,
+          256.0,
+          512.0
+        ]
+      }
+    },
+    {
+      "id": "I-nonconvex-projection",
+      "counterexample_confirmed": true,
+      "evidence": {
+        "support": [
+          0,
+          1
+        ],
+        "point": 0.5,
+        "minimizers": [
+          0,
+          1
+        ]
+      }
+    }
+  ]
+}

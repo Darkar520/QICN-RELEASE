@@ -1,0 +1,75 @@
+{
+  "schema_version": "3.0.0",
+  "generated_at": "2026-05-27",
+  "runner": "scripts/external-session-zero-adjudicator.js",
+  "runner_version": "v25",
+  "manifest_id": "SESSION-ZERO-SYNTHETIC-FIXTURE-v25",
+  "manifest_status": "synthetic_fixture",
+  "governance_boundary": "This adjudication report does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.",
+  "external_support_certified": false,
+  "synthetic_fixture": true,
+  "preregistration_hash": "fixture_prereg_hash_not_external_v25",
+  "dataset_sha256": "fixture_dataset_hash_not_external_v25",
+  "prediction_bundle": {
+    "bundle_id": "fixture_qicn_predictions_v25",
+    "prediction_sha256": "fixture_prediction_bundle_hash_not_external_v25",
+    "generation_protocol": "fixture_apriori_closed_form_values_declared_before_scoring",
+    "frozen_before_outcome_analysis": true
+  },
+  "provenance": {
+    "manifest_sha256": "64db74b879cdd77aa342af6deffede962ea5d1601f5731c701c97e649d755e8b",
+    "manifest_path": "docs/fixtures/EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v25.json",
+    "runner_path": "scripts/external-session-zero-adjudicator.js",
+    "runner_sha256": "7caefa5654718319a6592ae18d5a24b8f1bb3d3e3e77614823734599a7e8386f",
+    "dataset_sha256": "fixture_dataset_hash_not_external_v25",
+    "prediction_bundle_sha256": "fixture_prediction_bundle_hash_not_external_v25"
+  },
+  "validation_failures": [],
+  "validation_warnings": [],
+  "counts": {
+    "raw_points": 9,
+    "excluded_points": 1,
+    "admissible_points": 8
+  },
+  "noise_model": {
+    "weighted_mean_delta_minus_noise": 0.23750000000000004,
+    "standard_error": 0.02331844763272204,
+    "standard_error_method": "weighted_mean_declared_sigma_plus_hc1_residual_sandwich_diagnostic_not_blue_claim",
+    "t_critical_975": 2.365,
+    "degrees_of_freedom": 7,
+    "ci95": {
+      "lower": 0.18235187134861242,
+      "upper": 0.2926481286513877
+    },
+    "unweighted_sample_variance": 0.0018500000000000005,
+    "n": 8,
+    "assumption_caveat": "Assumes independent scalar measurement errors for this diagnostic. Correlated, multiplicative, or biased noise must be modelled in an external campaign manifest before support promotion."
+  },
+  "model_comparison": {
+    "comparison_method": "independent_gaussian_aic_using_declared_measurement_sigma_no_rss_floor",
+    "qicn_rss": 0.005199999999999998,
+    "rival_rss": 0.4575,
+    "qicn_negative_log_likelihood": -15.574349922794546,
+    "rival_negative_log_likelihood": 74.88565007720544,
+    "qicn_aic": -19.148699845589093,
+    "rival_aic": 151.77130015441088,
+    "complexity_adjusted_gain": 170.91999999999996,
+    "qicn_parameter_count": 6,
+    "rival_parameter_count": 1,
+    "qicn_parameter_count_source": "model_parameters.qicn_free_parameters.length",
+    "rival_parameter_count_source": "model_parameters.rival_free_parameters.length",
+    "qicn_prediction_policy": "a_priori_manifest_field_qicn_prediction_bound_to_prediction_bundle_no_observed_delta_access",
+    "no_rss_floor": true
+  },
+  "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+  "downgrade_required": false,
+  "claims_under_test": [
+    {
+      "claim_id": "PRED-EXT-01",
+      "prediction_id": "PRED-EXT-01",
+      "downgrade_action_if_fail": "downgrade_internal_synthetic_support_to_open_burden_for_external_support"
+    }
+  ],
+  "interpretation": "Synthetic diagnostic only: proves runner plumbing and anti-tautology gates, not empirical support.",
+  "report_sha256": "c12d422fd45ac6339f7371cf4788e93a5a9de0bd5a04cef67739b753914bd223"
+}

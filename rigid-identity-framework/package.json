@@ -82,6 +82,8 @@
     "validate:promotion-rules": "node scripts/validate-promotion-rules.js",
     "verify:v30": "npm run adjudicate:external-session-zero-v30 && npm run summary:ar1-correction:v28 && npm run test:negative-control-suite && npm run validate:promotion-rules",
     "adjudicate:external-session-zero-v31": "node scripts/external-session-zero-adjudicator-v31.js",
-    "verify:v31": "npm run verify:v30 && npm run adjudicate:external-session-zero-v31"
+    "verify:v31": "npm run verify:v30 && npm run adjudicate:external-session-zero-v31",
+    "verify:math": "python scripts/verify-math-regressions.py",
+    "verify:lean": "python scripts/verify-lean.py"
   }
 }

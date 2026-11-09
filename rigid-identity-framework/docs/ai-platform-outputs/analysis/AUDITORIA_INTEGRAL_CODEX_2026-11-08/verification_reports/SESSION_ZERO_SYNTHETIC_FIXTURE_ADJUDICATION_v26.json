@@ -1,0 +1,126 @@
+{
+  "schema_version": "4.0.0",
+  "generated_at": "2026-05-27",
+  "governance_boundary": "This adjudication report does not certify external support, consciousness, phenomenality, identity transfer, bridge-burden closure, or human mathematical review.",
+  "input_manifest": "docs\\fixtures\\EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v26.json",
+  "validation_summary": {
+    "ok": true,
+    "is_synthetic_fixture": true,
+    "failures": [],
+    "warnings": [],
+    "dataset_hash_verified": true,
+    "prediction_bundle_hash_verified": true,
+    "threshold_calibration_hash_verified": true,
+    "parameter_identifiability": {
+      "checked": 7,
+      "nonzero": 7,
+      "min_l2_effect": 0.001
+    }
+  },
+  "provenance": {
+    "runner_path": "scripts\\external-session-zero-adjudicator.js",
+    "runner_sha256": "b46ee78ae581439f3b46c751b7f14cde2177f2bbaa51a12e2c04042ccf88bfe9",
+    "manifest_path": "docs\\fixtures\\EXTERNAL_SESSION_ZERO_SYNTHETIC_FIXTURE_v26.json",
+    "manifest_sha256": "4645cf2c8ab976cef98ebe93b2ba0f84594d93c5cf31c88a58faf6d011714708",
+    "dataset_path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_DATASET_v26.json",
+    "dataset_sha256": "7b961316adedcb7bf5efdce59f03d15c0e3bc04f6d2055e5b694f4a0416fbc82",
+    "prediction_bundle_path": "docs/fixtures/SESSION_ZERO_SYNTHETIC_PREDICTION_BUNDLE_v26.json",
+    "prediction_bundle_sha256": "fa1af52c0e5c24cbe0d7d13bc2c66934384e973b34a6da856c7e3480ab142de4",
+    "threshold_calibration_report_path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v26.json",
+    "threshold_calibration_report_sha256": "d0e6eca33718012c78623c9e69593f6b1dfd795663ccf96dca36afe2e97d1a5a"
+  },
+  "counts": {
+    "total_points": 9,
+    "excluded_points": 1,
+    "admissible_points": 8,
+    "qicn_free_parameter_count": 6,
+    "rival_free_parameter_count": 1
+  },
+  "effect_estimate": {
+    "weighted_mean_delta_minus_noise": 0.23750000000000004,
+    "standard_error": 0.02331844763272204,
+    "degrees_of_freedom": 7,
+    "t_critical_975": 2.365,
+    "ci95": [
+      0.18235187134861242,
+      0.2926481286513877
+    ],
+    "method": "weighted_mean_declared_sigma_plus_hc1_residual_sandwich_diagnostic_not_blue_claim"
+  },
+  "model_comparison": {
+    "method": "independent_gaussian_aic_using_declared_measurement_sigma_no_rss_floor_v26",
+    "assumption_caveat": "The AIC comparison is a finite operational scoring rule under declared scalar measurement noise; it is not a theorem deriving M_Omega, global atomicity, consciousness, or bridge-burden closure.",
+    "qicn": {
+      "aic": -19.148699845589093,
+      "nll": -15.574349922794546,
+      "sse": 0.005199999999999998,
+      "residuals": [
+        0.030000000000000027,
+        0.030000000000000027,
+        0.01999999999999999,
+        0.019999999999999962,
+        0.020000000000000018,
+        0.019999999999999962,
+        0.02999999999999997,
+        0.03
+      ]
+    },
+    "rival": {
+      "aic": 151.77130015441088,
+      "nll": 74.88565007720544,
+      "sse": 0.4575,
+      "residuals": [
+        0.25,
+        0.22000000000000003,
+        0.19,
+        0.24,
+        0.27,
+        0.24,
+        0.3,
+        0.18
+      ]
+    },
+    "complexity_adjusted_gain": 170.91999999999996,
+    "outcome_prediction_leakage_diagnostics": {
+      "pearson_observed_vs_qicn_prediction": 0.9930555555555556,
+      "affine_fit_qicn_prediction_from_observed_delta": {
+        "slope": 0.9930555555555556,
+        "intercept": -0.022951388888888924,
+        "maxAbsResidual": 0.005451388888888853
+      }
+    },
+    "temporal_dependence_diagnostic": {
+      "method": "durbin_watson_on_qicn_residuals",
+      "durbin_watson": 0.03846153846153865,
+      "policy": {
+        "method": "durbin_watson_residual_diagnostic",
+        "action_on_violation": "diagnostic_only_for_synthetic_fixture_block_external_until_dependence_model",
+        "acceptable_range": [
+          0.5,
+          3.5
+        ]
+      }
+    }
+  },
+  "decision_thresholds": {
+    "support_gain_aic": 5,
+    "weakening_gain_aic": 0,
+    "minimum_ci_lower": 0,
+    "minimum_admissible_n": 8,
+    "threshold_calibration_status": "internal_null_calibrated_synthetic_engineering_gate",
+    "threshold_calibration_report_path": "docs/reports/THRESHOLD_NULL_CALIBRATION_v26.json",
+    "threshold_calibration_report_sha256": "d0e6eca33718012c78623c9e69593f6b1dfd795663ccf96dca36afe2e97d1a5a",
+    "external_support_allowed": false
+  },
+  "claims_under_test": [
+    {
+      "claim_id": "PRED-EXT-01",
+      "prediction_id": "PRED-EXT-01",
+      "downgrade_action_if_fail": "downgrade_internal_synthetic_support_to_open_burden_for_external_support"
+    }
+  ],
+  "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+  "external_support_certified": false,
+  "result": "PASS",
+  "report_sha256": "3b2c9d2d20713358ea9dce387363bdcef2547f68d6c54de32dfe45688a1f1a63"
+}

@@ -1,0 +1,3036 @@
+BaseCore of the Rigid Identity Framework
+Autonomous Mathematical Source Text for Foundational Dynamics, Identity Rigidity,
+Regime Constraints, and Operational-Criterion Grammar
+Johnny Andrey Pérez Ramírez
+
+Abstract
+This document is the BaseCore of the Rigid Identity Framework: the autonomous mathematical base layer of the source tree. It selectively normalizes formal material from Papers
+1--6 only where theorem ownership belongs in the base layer. Papers 7--9 remain downstream
+and are not required for the validity of any theorem stated here. BaseCore proves contractive
+projection dynamics, typed computable witnesses, parameterwise non-collapse under explicit
+anti-constant assumptions, inverse-limit identity under non-finite-determination assumptions,
+conditional rigidity under admissible perturbation models, conditional non-simulability of
+CCR targets by finite simulator classes, operational-criterion grammar, and falsation /
+claim-boundary ledgers. It does not prove phenomenality, metaphysical subjectivity, human
+equivalence, runtime instantiation, bridge admissibility, or external adjudication. The LaTeX
+tree is the source of truth; the PDF is a compiled artifact only.
+
+Contents
+I
+
+Foundational Dynamics
+
+5
+
+1 Scope, System Boundary, and Non-Inference Note
+
+5
+
+2 Introduction
+2.1 Purpose . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.3 Scope discipline . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+5
+5
+5
+
+3 Minimal Base Hypotheses
+
+5
+
+4 The Projection Operator
+
+6
+
+5 The Transition Operator
+
+7
+
+6 Existence and Compactness of Attractors
+
+7
+
+7 Parameterwise Non-Collapsibility
+
+7
+
+8 Summary of Base Results
+
+8
+
+II
+
+8
+
+Typed Computable Model and State Spectral Gap
+
+1
+
+9 Typed Computable Model: Embedded Constant-Disk Witness
+8
+9.1 Golden Mean Parameter Space . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+9.2 Typed Banach Witness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+9.3 Basic Operator Properties . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+9.4 Separate Anti-Collapse Witness . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+10 State Spectral Gap and Parameter-Family Persistence
+
+12
+
+III
+
+13
+
+Identity, Rigidity, and Conditional Non-Simulability
+
+11 Projective Systems and Inverse-Limit Identity
+13
+11.1 Projective Setup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+11.2 Non-Locality of Identity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+12 Rigidity under Admissible Perturbations
+14
+12.1 Metric Projective Assumptions . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+13 Conditional Non-Simulability
+
+15
+
+14 Section Summary
+
+16
+
+IV
+
+16
+
+Regime Structure and Continuity Constraints
+
+15 Formal Setup
+15.1 Review of Identity Framework . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.2 Abstract Phenomenological Space . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.2.1 Why a Separate Space? . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.3 Phenomenological Assignment . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.3.1 Uniqueness of the Limit Assignment . . . . . . . . . . . . . . . . . . . . .
+15.4 Axioms for Phenomenological Coherence . . . . . . . . . . . . . . . . . . . . . . .
+15.5 Inevitability of the Axioms . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.5.1 Inevitability of E0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.5.2 Inevitability of E1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.5.3 Inevitability of E2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.6 Minimality Theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.7 Rejected Alternatives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.7.1 Rejected: Continuity Axiom . . . . . . . . . . . . . . . . . . . . . . . . .
+15.7.2 Rejected: Surjectivity Axiom . . . . . . . . . . . . . . . . . . . . . . . . .
+15.7.3 Rejected: Injectivity Axiom . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.8 Structural Interpretation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.9 Closure of Section 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.10Phenomenological Neutrality Clause . . . . . . . . . . . . . . . . . . . . . . . . .
+
+17
+17
+17
+17
+17
+18
+18
+18
+18
+19
+19
+19
+19
+20
+20
+20
+20
+20
+21
+
+16 Compatibility with Identity Regimes
+16.1 Induced Constraints from Identity Rigidity . . . . . . . . . . . . . . . . . . . . .
+16.2 Necessity of Metric Structure on Phenomenological Space . . . . . . . . . . . . .
+16.2.1 Why H3 is Necessary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16.2.2 Why Completeness is Necessary . . . . . . . . . . . . . . . . . . . . . . . .
+16.2.3 Alternatives Considered and Rejected . . . . . . . . . . . . . . . . . . . .
+16.3 Phenomenological Continuity . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16.4 Phenomenological Fragmentation . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+21
+21
+21
+21
+22
+22
+22
+22
+
+2
+
+16.5 Relationship Between Metrics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+16.6 Closure of Section 3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+17 Impossibility Theorems
+17.1 Φ-Regularity Hypothesis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17.2 Fragmentation Theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17.3 Forced Continuity Theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17.4 Dichotomy Theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+23
+23
+24
+24
+25
+
+18 Classification of Phenomenological Regimes
+25
+18.1 Complete Classification . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+18.2 Structural Implications . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+19 Extended Proofs
+19.1 Proof of Fragmentation Theorem (Extended) . . . . . . . . . . . . . . . . . . . .
+19.2 Proof of Forced Continuity Theorem (Extended) . . . . . . . . . . . . . . . . . .
+19.3 Structural Necessity Lemma . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+25
+25
+26
+26
+
+V
+
+26
+
+Null-Regime Structural Exclusion
+
+20 Compatibility, Instability, and Forced Non-Nullity
+20.1 Compatibility Operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+20.2 Phenomenological Instability and Forced Non-Nullity . . . . . . . . . . . . . . .
+20.3 Positive Regime Structure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+26
+26
+27
+27
+
+21 Canonical Families and Structural Closure Consequences
+
+28
+
+VI
+
+BaseCore Boundary and Expansion Interface
+
+28
+
+22 BaseCore Ownership and Downstream Boundary
+
+28
+
+23 Admissible Structural Extensions
+
+29
+
+VII
+
+30
+
+Operational-Criterion Grammar and Certification
+
+24 Admissible Systems, Supports, and Histories
+24.1 System Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+24.2 Admissible Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+24.3 Operational Histories . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+24.4 Witness Margin Vector . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+30
+30
+30
+31
+31
+
+25 Six Critical Invariants
+25.1 Structural Persistence . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25.2 Rigid Identity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25.3 Causal Integration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25.4 Regime Continuity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25.5 Non-Null Differentiation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25.6 Operational Legibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+31
+31
+32
+32
+32
+32
+33
+
+26 Criterion Class, Certified Partition, and Rupture
+
+33
+
+3
+
+27 Minimality of the Invariant Basis
+
+34
+
+28 Operational Legibility as a Certified Object
+
+35
+
+29 Certified Candidate Audit Schema
+
+35
+
+VIII
+
+Claim Boundary and Falsation Grammar
+
+36
+
+30 Forensic Admissibility and Integrity Grammar
+
+36
+
+31 Certification, Comparison, and Rupture
+
+36
+
+32 Prediction and Falsation Grammar
+
+37
+
+33 Claim Boundary Ledger
+37
+33.1 Allowed BaseCore Claims . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+33.2 Forbidden BaseCore Claims . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+34 Dependency Ledger
+
+38
+
+35 Assumption-to-Theorem-to-Non-Claim Mapping
+
+38
+
+36 Theorem Hygiene Ledger
+
+39
+
+37 Redundancy Ledger
+
+39
+
+38 Open Assumptions Inventory
+
+40
+
+39 Downstream Boundary Note
+
+40
+
+IX
+
+40
+
+Discrete-to-Continuous Bridge
+
+40 From Node Networks to Hilbert Space Dynamics
+
+40
+
+A Counterexamples for Necessity
+A.1 Without H1 (Convexity) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+A.2 Without H2 (‖𝐾‖ < 1) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+A.3 Without H3 (Completeness) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+A.4 Without H4 (Compactness) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+A.5 Why Φ-Regularity Is a Hypothesis . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+43
+43
+43
+43
+43
+43
+
+4
+
+Part I
+
+Foundational Dynamics
+1
+
+Scope, System Boundary, and Non-Inference Note
+
+What BaseCore does. This document proves the mathematical base results that later layers
+may use: projection existence and uniqueness, strict contraction, unique fixed points, compact
+attractor families, parameterwise non-collapse under explicit anti-constant assumptions, inverselimit identity under non-finite-determination assumptions, conditional rigidity, conditional
+non-simulability, and operational-criterion grammar.
+What BaseCore is not. BaseCore is not the whole QICN corpus. It is not a bridge program,
+not runtime validation, not a phenomenality theory, not a human-equivalence claim, and not an
+external-adjudication layer.
+What should not be inferred. Nothing in BaseCore alone licenses claims about consciousness,
+subjectivity, phenomenality, moral status, human-machine equivalence, bridge admissibility, or
+deployment readiness. Those are downstream burdens, not consequences of the theorems below.
+Source-of-truth rule. The LaTeX tree is the source of truth. Compiled PDFs, release bundles,
+and runtime artifacts are derived surfaces only.
+
+2
+
+Introduction
+
+2.1
+
+Purpose
+
+BaseCore is the canonical base layer of the Rigid Identity Framework. Its role is narrower and
+stronger than a broad architectural survey: it owns only the theorem-level mathematics that
+downstream papers may depend on without making BaseCore depend on them.
+
+2.2
+
+Methodology
+
+We use standard tools from:
+• Hilbert-space geometry and metric projections;
+• contraction mappings and fixed-point theory;
+• compactness and continuity arguments;
+• projective systems and inverse limits;
+• assumption-led claim-boundary discipline.
+
+2.3
+
+Scope discipline
+
+This section is pure mathematics. The symbols ‘‘identity,’’ ‘‘regime,’’ and ‘‘criterion’’ are
+structural labels only. Their ordinary-language interpretations are not part of any proof unless
+explicitly formalized as assumptions.
+
+3
+
+Minimal Base Hypotheses
+
+Hypothesis 3.1 (H1: Projection Structure). Let ℋ be a real Hilbert space with inner product
+⟨·, ·⟩ and norm ‖·‖. Let ℐ ⊂ ℋ be non-empty, closed, and convex.
+
+5
+
+Hypothesis 3.2 (H2: Contraction Operator). Let 𝐾 : ℋ → ℋ be a bounded linear operator
+with operator norm ‖𝐾‖ < 1.
+Hypothesis 3.3 (H3: Completeness). The ambient space ℋ is complete.
+Hypothesis 3.4 (H4: Parameter Compactness). Let 𝒰 be a compact metric space and let
+Γ : 𝒰 → ℋ be uniformly continuous.
+Proposition 3.5 (Base sufficiency of H1--H4). Hypotheses H1--H4 are sufficient for:
+1. existence and uniqueness of the metric projection onto ℐ;
+2. strict contraction of the transition operators 𝑇𝑢 ;
+3. existence and uniqueness of the fixed point 𝑓𝑢* for each 𝑢 ∈ 𝒰;
+4. compactness of the attractor family 𝒜* = {𝑓𝑢* : 𝑢 ∈ 𝒰}.
+They do not, by themselves, imply parameterwise non-collapse.
+Proof. The four items are exactly the content of Theorems 4.2, 5.2, 6.1, and 6.3. Parameterwise
+non-collapse requires an additional anti-constant hypothesis introduced in Section 7.
+
+4
+
+The Projection Operator
+
+Definition 4.1 (Metric Projection). For Ψ ∈ ℋ, define the metric projection onto ℐ by
+ℵ(Ψ) := arg min ‖Ψ − Φ‖ .
+Φ∈ℐ
+
+Theorem 4.2 (Existence and Uniqueness of Projection). Under Hypothesis 3.1, the projection
+ℵ(Ψ) exists and is unique for every Ψ ∈ ℋ.
+Proof. Existence follows because a minimizing sequence in the closed convex set ℐ is Cauchy by
+the parallelogram law, hence converges in the complete space ℋ to a point of ℐ that attains the
+infimum. Uniqueness follows from strict convexity of the norm induced by the Hilbert inner
+product: if two minimizers existed, their midpoint would produce the same minimum and the
+parallelogram identity would force the two minimizers to coincide.
+Lemma 4.3 (Non-Expansiveness of the Projection). The map ℵ : ℋ → ℐ is non-expansive:
+‖ℵ(Ψ1 ) − ℵ(Ψ2 )‖ ≤ ‖Ψ1 − Ψ2 ‖
+
+∀Ψ1 , Ψ2 ∈ ℋ.
+
+Proof. This is the standard Hilbert-space projection inequality. Let Φ𝑖 = ℵ(Ψ𝑖 ). The projection
+characterization
+⟨Ψ𝑖 − Φ𝑖 , Φ − Φ𝑖 ⟩ ≤ 0
+∀Φ ∈ ℐ
+applied with Φ = Φ2 and Φ = Φ1 yields
+‖Φ1 − Φ2 ‖2 ≤ ⟨Ψ1 − Ψ2 , Φ1 − Φ2 ⟩ ≤ ‖Ψ1 − Ψ2 ‖ ‖Φ1 − Φ2 ‖ .
+If Φ1 ̸= Φ2 , divide by ‖Φ1 − Φ2 ‖.
+
+6
+
+5
+
+The Transition Operator
+
+Definition 5.1 (Transition Operator). For each 𝑢 ∈ 𝒰, define
+𝑇𝑢 (Ψ) := ℵ(𝐾Ψ + Γ(𝑢)).
+Theorem 5.2 (Contractivity). Under Hypotheses 3.1 and 3.2, each 𝑇𝑢 is a strict contraction
+with Lipschitz constant at most ‖𝐾‖:
+‖𝑇𝑢 (Ψ1 ) − 𝑇𝑢 (Ψ2 )‖ ≤ ‖𝐾‖ ‖Ψ1 − Ψ2 ‖ .
+Proof. By Lemma 4.3,
+‖𝑇𝑢 (Ψ1 ) − 𝑇𝑢 (Ψ2 )‖ = ‖ℵ(𝐾Ψ1 + Γ(𝑢)) − ℵ(𝐾Ψ2 + Γ(𝑢))‖
+≤ ‖𝐾(Ψ1 − Ψ2 )‖ ≤ ‖𝐾‖ ‖Ψ1 − Ψ2 ‖ .
+Since ‖𝐾‖ < 1, strict contraction follows.
+
+6
+
+Existence and Compactness of Attractors
+
+Theorem 6.1 (Unique Fixed Point). Under Hypotheses 3.1--3.3, for each 𝑢 ∈ 𝒰 there exists a
+unique 𝑓𝑢* ∈ ℋ such that
+𝑇𝑢 (𝑓𝑢* ) = 𝑓𝑢* .
+Moreover, for every Ψ0 ∈ ℋ,
+
+lim 𝑇𝑢𝑛 (Ψ0 ) = 𝑓𝑢* .
+
+𝑛→∞
+
+Proof. By Theorem 5.2, each 𝑇𝑢 is a strict contraction on the complete metric space (ℋ, ‖·‖).
+The Banach fixed-point theorem yields existence, uniqueness, and convergence of iterates.
+Definition 6.2 (Attractor Family). Define the attractor family
+𝒜* := {𝑓𝑢* : 𝑢 ∈ 𝒰}.
+Theorem 6.3 (Compactness of the Attractor Family). Under Hypotheses 3.1--3.4, the set 𝒜*
+is compact in ℋ.
+Proof. Let 𝐹 : 𝒰 → ℋ be given by 𝐹 (𝑢) = 𝑓𝑢* . The fixed points depend continuously on 𝑢
+because the contraction constant is uniform and Γ is uniformly continuous on the compact
+parameter space. Since 𝒰 is compact and 𝒜* = 𝐹 (𝒰), the image is compact.
+
+7
+
+Parameterwise Non-Collapsibility
+
+Definition 7.1 (Constant Subspace). Whenever the ambient realization distinguishes constant
+elements, let 𝒩 ⊂ ℋ denote the closed subspace of constants.
+Definition 7.2 (Parameterwise Non-Collapsible Family). A family {𝑇𝑢 }𝑢∈𝒰 is parameterwise
+non-collapsible if
+𝑓𝑢* ∈
+/𝒩
+∀𝑢 ∈ 𝒰.
+Hypothesis 7.3 (H5: No Constant Fixed Points). For every parameter 𝑢 ∈ 𝒰 and every
+constant element 𝑐 ∈ 𝒩 ,
+𝑇𝑢 (𝑐) ̸= 𝑐.
+
+7
+
+Theorem 7.4 (Structural Non-Collapsibility). Under Hypotheses 3.1--7.3, the family is parameterwise non-collapsible:
+𝑓𝑢* ∈
+/𝒩
+∀𝑢 ∈ 𝒰.
+Proof. Fix 𝑢 ∈ 𝒰. Suppose by contradiction that 𝑓𝑢* ∈ 𝒩 . Write 𝑓𝑢* = 𝑐 with 𝑐 ∈ 𝒩 . Since 𝑓𝑢*
+is a fixed point,
+𝑇𝑢 (𝑐) = 𝑇𝑢 (𝑓𝑢* ) = 𝑓𝑢* = 𝑐,
+contradicting Hypothesis 7.3. Therefore 𝑓𝑢* ∈
+/ 𝒩.
+Remark 7.5 (What H5 does not say). Hypothesis 7.3 is parameterwise. It does not merely
+say that some parameter breaks constant collapse. It excludes constant fixed points for every
+parameter. This is exactly the quantifier strength needed for Theorem 7.4.
+
+8
+
+Summary of Base Results
+
+1. H1--H4 give a complete theorem-tight base for projection existence, strict contraction, unique
+fixed points, and compact attractor families.
+2. H5 is a separate anti-constant assumption block used only for parameterwise non-collapse.
+3. No empirical, phenomenological, biological, or runtime claim is inferred at this level.
+4. Later sections may add conditional identity, rigidity, and criterion theorems, but only by
+introducing their own explicit assumption blocks.
+
+Part II
+
+Typed Computable Model and State
+Spectral Gap
+9
+
+Typed Computable Model: Embedded Constant-Disk Witness
+
+This section repairs the type leaks of the previous computable model. The purpose is narrow:
+provide a fully typed witness for the transition grammar and the state spectral gap. It does not
+by itself certify parameterwise non-collapse; that burden is handled separately below.
+
+9.1
+
+Golden Mean Parameter Space
+
+Definition 9.1 (Golden Mean Shift Parameter Space). Let Σ = {0, 1} and
+(︃
+
+𝐴=
+
+)︃
+
+1 1
+.
+1 0
+
+The Golden Mean Shift 𝑆𝐴 ⊂ ΣN is the subshift of finite type consisting of all binary sequences
+that avoid the block 11.
+Definition 9.2 (Parameter Encoding). Define
+𝑢(𝑥) =
+
+∞
+∑︁
+
+−𝑖
+
+𝑥𝑖 𝜑 ,
+
+𝑖=1
+
+The image 𝒰 := 𝑢(𝑆𝐴 ) ⊂ [0, 1] is compact.
+8
+
+√
+1+ 5
+𝜑=
+.
+2
+
+9.2
+
+Typed Banach Witness
+
+Definition 9.3 (Ambient Space and Constant Embedding). Let
+𝑋 = [0, 1],
+with norm
+
+𝐸 = R2 ,
+
+ℬ = 𝐶(𝑋, 𝐸)
+
+‖𝑓 ‖∞ := sup ‖𝑓 (𝑠)‖2 .
+𝑠∈𝑋
+
+Define the constant embedding
+𝑗 : 𝐸 → ℬ,
+
+𝑗(𝑣)(𝑠) = 𝑣.
+
+Definition 9.4 (Invariant Constant Disk). Let
+𝐷 := {𝑣 ∈ 𝐸 : ‖𝑣‖2 ≤ 1},
+
+ℐc := 𝑗(𝐷) ⊂ ℬ.
+
+Definition 9.5 (Averaging Operator). Define
+𝐴 : ℬ → 𝐸,
+
+𝐴(𝑓 ) :=
+
+∫︁ 1
+0
+
+𝑓 (𝜏 ) 𝑑𝜏.
+
+Definition 9.6 (Disk Projection). Define the Euclidean projection
+𝑃𝐸 : 𝐸 → 𝐷,
+
+𝑃𝐸 (𝑣) =
+
+⎧
+⎪
+⎨𝑣,
+
+‖𝑣‖2 ≤ 1,
+
+⎪
+⎩
+
+‖𝑣‖2 > 1.
+
+𝑣
+,
+‖𝑣‖2
+
+Definition 9.7 (Typed Projection onto the Constant Disk). Define
+ℵ ℬ : ℬ → ℐc ,
+
+ℵℬ (𝑓 ) := 𝑗(𝑃𝐸 (𝐴(𝑓 ))).
+
+Definition 9.8 (Constant-Valued Contraction Operator). Define
+̃︁ : ℬ → ℬ,
+𝐾
+
+̃︁ )(𝑠) :=
+(𝐾𝑓
+
+1
+2
+
+∫︁ 1
+0
+
+𝑓 (𝜏 ) 𝑑𝜏.
+
+Definition 9.9 (Lifted Input Coupling). Let Γ : 𝒰 → 𝐸 be
+Γ(𝑢) = (𝑢, 0).
+Define its constant lift
+
+Γℬ : 𝒰 → ℬ,
+
+Γℬ (𝑢) := 𝑗(Γ(𝑢)).
+
+Definition 9.10 (Typed Transition Operator). For each 𝑢 ∈ 𝒰, define
+𝑇𝑢 : ℬ → ℐc ,
+
+̃︁ + Γℬ (𝑢) .
+𝑇𝑢 (𝑓 ) := ℵℬ 𝐾𝑓
+(︀
+
+)︀
+
+Remark 9.11 (Typing discipline). No unembedded element of 𝐸 is treated as an element of ℬ.
+The embedding 𝑗 is always written explicitly. This removes the earlier type leak in which a disk
+in 𝐸 was silently treated as a subset of a function space.
+
+9
+
+9.3
+
+Basic Operator Properties
+
+Lemma 9.12 (The Embedding is Isometric). For every 𝑣 ∈ 𝐸,
+‖𝑗(𝑣)‖∞ = ‖𝑣‖2 .
+Proof. By definition,
+‖𝑗(𝑣)‖∞ = sup ‖𝑗(𝑣)(𝑠)‖2 = sup ‖𝑣‖2 = ‖𝑣‖2 .
+𝑠∈𝑋
+
+𝑠∈𝑋
+
+Lemma 9.13 (The Disk Projection is Non-Expansive). For all 𝑣, 𝑤 ∈ 𝐸,
+‖𝑃𝐸 (𝑣) − 𝑃𝐸 (𝑤)‖2 ≤ ‖𝑣 − 𝑤‖2 .
+Proof. 𝑃𝐸 is the metric projection onto the closed convex set 𝐷 ⊂ R2 , so the standard Hilbertspace non-expansiveness property applies.
+Lemma 9.14 (The Typed Projection is Non-Expansive). For all 𝑓, 𝑔 ∈ ℬ,
+‖ℵℬ (𝑓 ) − ℵℬ (𝑔)‖∞ ≤ ‖𝑓 − 𝑔‖∞ .
+Proof. Using the isometry of 𝑗, the non-expansiveness of 𝑃𝐸 , and Jensen’s inequality for the
+averaging operator,
+‖ℵℬ (𝑓 ) − ℵℬ (𝑔)‖∞ = ‖𝑃𝐸 (𝐴(𝑓 )) − 𝑃𝐸 (𝐴(𝑔))‖2
+≤ ‖𝐴(𝑓 ) − 𝐴(𝑔)‖2
+⃦∫︁ 1
+⃦
+⃦
+⃦
+⃦
+= ⃦ (𝑓 (𝜏 ) − 𝑔(𝜏 )) 𝑑𝜏 ⃦
+⃦
+0
+2
+∫︁ 1
+
+≤
+
+0
+
+‖𝑓 (𝜏 ) − 𝑔(𝜏 )‖2 𝑑𝜏 ≤ ‖𝑓 − 𝑔‖∞ .
+
+Lemma 9.15 (Norm of the Lifted Contraction).
+⃦ ⃦
+1
+⃦ ̃︁⃦
+⃦𝐾 ⃦ ≤ .
+
+2
+
+Proof. For any 𝑓 ∈ ℬ,
+⃦ ∫︁ 1
+⃦
+∫︁
+⃦1
+⃦
+1 1
+1
+⃦
+⃦
+=⃦
+𝑓 (𝜏 ) 𝑑𝜏 ⃦ ≤
+‖𝑓 (𝜏 )‖2 𝑑𝜏 ≤ ‖𝑓 ‖∞ .
+∞
+2 0
+2
+2
+0
+2
+
+⃦
+⃦
+⃦ ̃︁ ⃦
+⃦𝐾𝑓 ⃦
+
+Theorem 9.16 (Typed Contraction on the Computable Witness). For each 𝑢 ∈ 𝒰, the map
+𝑇𝑢 : ℬ → ℐc is a strict contraction:
+‖𝑇𝑢 (𝑓 ) − 𝑇𝑢 (𝑔)‖∞ ≤
+
+1
+‖𝑓 − 𝑔‖∞ .
+2
+
+̃︁
+Proof. Combine non-expansiveness of ℵℬ with the bound on 𝐾:
+⃦
+⃦
+
+⃦
+⃦
+
+̃︁ − 𝐾𝑔
+̃︁ ⃦
+‖𝑇𝑢 (𝑓 ) − 𝑇𝑢 (𝑔)‖∞ ≤ ⃦𝐾𝑓
+
+∞
+
+10
+
+≤
+
+1
+‖𝑓 − 𝑔‖∞ .
+2
+
+Corollary 9.17 (Unique Fixed Point in the Typed Witness). For each 𝑢 ∈ 𝒰, there exists a
+unique 𝑓𝑢* ∈ ℐc such that
+𝑇𝑢 (𝑓𝑢* ) = 𝑓𝑢* .
+Proof. The Banach fixed-point theorem applies on the complete metric space (ℬ, ‖·‖∞ ).
+Proposition 9.18 (Typed Non-Vacuity of the Computable Model). The embedded constant-disk
+Golden Mean model is a fully typed, non-vacuous witness of the transition grammar:
+1. every operator has explicit domain and codomain;
+2. the transition map 𝑇𝑢 is well-defined on ℬ;
+3. the family admits unique fixed points and a compact parameter image;
+4. the state contraction bound is explicit and computable.
+Proof. Items (1)--(3) follow from the definitions above and the contraction theorem. Compactness
+of the parameter image follows because 𝒰 is compact and 𝑢 ↦→ 𝑓𝑢* is continuous under a uniform
+contraction constant.
+Remark 9.19 (Why this witness does not certify H5). The image of 𝑇𝑢 lies in the constant
+subspace ℐc . Therefore its fixed point is constant by construction. This witness is correct and
+useful for typing and state spectral analysis, but it cannot certify the parameterwise anti-constant
+hypothesis H5 from Section 7.
+
+9.4
+
+Separate Anti-Collapse Witness
+
+Definition 9.20 (Affine Non-Constant Witness Space). Let
+ℋac := 𝐿2 ([0, 1]),
+
+𝒩 := {𝑐1 : 𝑐 ∈ R},
+
+ℎ(𝑠) := sin(2𝜋𝑠).
+
+Choose 𝑟 with 0 < 𝑟 < ‖ℎ‖𝐿2 and define the closed convex affine set
+ℐac := ℎ + {𝑔 ∈ ℋac : ‖𝑔‖𝐿2 ≤ 𝑟}.
+Lemma 9.21 (The Anti-Collapse Witness Set Avoids Constants).
+ℐac ∩ 𝒩 = ∅.
+Proof. The distance from ℎ to the constant subspace 𝒩 equals ‖ℎ‖𝐿2 because ℎ has mean zero
+and is orthogonal to constants. Since 𝑟 < ‖ℎ‖𝐿2 , the radius-𝑟 ball around ℎ does not intersect
+𝒩.
+Definition 9.22 (Anti-Collapse Witness Dynamics). Let 𝒰 = [0, 1], choose 𝛽 ∈ (0, 1/2), and
+define
+𝑢
+𝐾ac 𝑓 := 𝛽𝑓,
+Γac (𝑢) := ℎ.
+4
+Let 𝑃ac denote the metric projection onto ℐac , and define
+𝑇𝑢ac (𝑓 ) := 𝑃ac (𝐾ac 𝑓 + Γac (𝑢)).
+Proposition 9.23 (Separate Witness for H5). The family {𝑇𝑢ac }𝑢∈𝒰 satisfies Hypotheses 3.1--7.3
+of Section 1.
+Proof. 1. ℋac is a Hilbert space and ℐac is non-empty, closed, and convex.
+2. ‖𝐾ac ‖ = 𝛽 < 1.
+11
+
+3. Completeness is inherited from 𝐿2 ([0, 1]).
+4. 𝒰 = [0, 1] is compact and Γac is continuous.
+5. For every constant 𝑐 ∈ 𝒩 and every 𝑢 ∈ 𝒰, the value 𝑇𝑢ac (𝑐) belongs to ℐac , while ℐac ∩ 𝒩 = ∅.
+Hence 𝑇𝑢ac (𝑐) ̸= 𝑐.
+Remark 9.24. BaseCore therefore distinguishes two roles cleanly: the Golden Mean witness
+certifies typed operator correctness and state contraction; the affine anti-collapse witness certifies
+the stronger H5 burden needed for parameterwise non-collapse.
+
+10
+
+State Spectral Gap and Parameter-Family Persistence
+
+Theorem 10.1 (State Spectral Gap). Fix 𝑢 ∈ 𝒰 in the typed computable model. Assume 𝑇𝑢 is
+Fréchet differentiable at its fixed point 𝑓𝑢* . Then
+⃦ ⃦
+1
+⃦ ̃︁⃦
+𝜌(𝐷𝑇𝑢 (𝑓𝑢* )) ≤ ‖𝐷𝑇𝑢 (𝑓𝑢* )‖ ≤ ⃦𝐾
+⃦≤ .
+2
+
+Consequently the state spectral gap satisfies
+⃦ ⃦
+1
+⃦ ̃︁⃦
+Δstate ≥ 1 − ⃦𝐾
+⃦≥ .
+2
+
+Proof. At every point where the projection 𝑃𝐸 is Fréchet differentiable, its derivative has
+operator norm at most 1 because 𝑃𝐸 is non-expansive. Since ℵℬ = 𝑗 ∘ 𝑃𝐸 ∘ 𝐴,
+(︁
+
+)︁
+
+̃︁ * + Γℬ (𝑢) ∘ 𝐾,
+̃︁
+𝐷𝑇𝑢 (𝑓𝑢* ) = 𝐷ℵℬ 𝐾𝑓
+𝑢
+
+and therefore
+
+⃦ ⃦
+1
+⃦ ̃︁⃦
+‖𝐷𝑇𝑢 (𝑓𝑢* )‖ ≤ ‖𝐷ℵℬ ‖ ⃦𝐾
+⃦≤ .
+2
+The spectral-radius bound follows from 𝜌(𝐿) ≤ ‖𝐿‖ for bounded linear operators.
+
+Theorem 10.2 (Relaxation-Time Bound). Under the hypotheses of Theorem 10.1, any discreteto-continuous relaxation convention of the form
+𝜏state = −
+with 𝜌 = 𝜌(𝐷𝑇𝑢 (𝑓𝑢* )) gives
+𝜏state ≤
+
+1
+ln 𝜌
+
+1
+.
+ln 2
+
+Proof. Theorem 10.1 gives 𝜌 ≤ 1/2. Since − ln(𝜌) ≥ ln 2, the bound follows.
+Proposition 10.3 (Parameter-Family Persistence is not State Spectrum). Let 𝐹 : 𝒰 → ℬ be
+the fixed-point family 𝐹 (𝑢) = 𝑓𝑢* . Any persistence of parameter labels or family coordinates
+belongs to the variation of 𝐹 over 𝒰, not to the state-transition spectrum of 𝐷𝑇𝑢 (𝑓𝑢* ) for fixed 𝑢.
+Proof. The state-transition spectrum is defined for the linearization of 𝑇𝑢 at fixed parameter 𝑢.
+Family-level transport instead concerns the map 𝐹 between parameter space and fixed-point set.
+These are different operators on different domains. Therefore a family-persistence mode cannot
+be used to introduce a unit eigenvalue into the contraction spectrum of 𝐷𝑇𝑢 (𝑓𝑢* ).
+
+12
+
+Remark 10.4 (What has been removed). The previous text incorrectly mixed strict contraction
+with a state-spectrum eigenvalue 𝜆 = 1. BaseCore no longer does that. Any neutral or persistent
+mode must now be interpreted as a parameter-family bookkeeping mode, not as an eigenmode
+of the contractive state Jacobian.
+
+Part III
+
+Identity, Rigidity, and Conditional
+Non-Simulability
+11
+
+Projective Systems and Inverse-Limit Identity
+
+11.1
+
+Projective Setup
+
+Definition 11.1 (Projective System of State Spaces). Let {𝑆𝑡 }𝑡∈N be a family of non-empty
+state spaces together with projection maps
+𝜋𝑡+1→𝑡 : 𝑆𝑡+1 → 𝑆𝑡
+satisfying the compatibility rule
+𝜋𝑡+1→𝑡 ∘ 𝜋𝑡+2→𝑡+1 = 𝜋𝑡+2→𝑡
+
+∀𝑡 ∈ N.
+
+Definition 11.2 (Identity as Inverse Limit). The identity object associated with the projective
+system is
+⎧
+⃒
+⎫
+⎨
+
+ℐ := lim 𝑆𝑡 = (𝑥𝑡 )𝑡∈N ∈
+←−
+⎩
+
+∏︁
+𝑡∈N
+
+⃒
+⃒
+
+⎬
+
+⃒
+
+⎭
+
+𝑆𝑡 ⃒⃒ 𝜋𝑡+1→𝑡 (𝑥𝑡+1 ) = 𝑥𝑡 ∀𝑡 .
+
+Remark 11.3 (Identity neutrality). In BaseCore, ℐ is a structural inverse-limit object only. It
+carries no automatic phenomenological, biological, or metaphysical interpretation.
+Hypothesis 11.4 (Topological Regularity). Each 𝑆𝑡 is compact Hausdorff and each 𝜋𝑡+1→𝑡 is
+continuous and surjective.
+Hypothesis 11.5 (NFD: Non-Finite Determination). For every 𝑡 ∈ N, the canonical projection
+𝑝𝑡 : ℐ → 𝑆𝑡 ,
+
+𝑝𝑡 ((𝑥𝑘 )𝑘 ) = 𝑥𝑡
+
+is not injective. Equivalently,
+∀𝑡 ∃𝑥, 𝑦 ∈ ℐ
+
+𝑥 ̸= 𝑦
+
+and 𝑝𝑡 (𝑥) = 𝑝𝑡 (𝑦).
+
+Remark 11.6 (Persistent future branching as an operational form of NFD). A sufficient operational strengthening of Hypothesis 11.5 is: for every 𝑡 there exists 𝑘 > 𝑡 and 𝑥𝑡 ∈ 𝑆𝑡 such
+that the fiber of 𝜋𝑘→𝑡 over 𝑥𝑡 contains at least two globally extendable compatible histories.
+BaseCore keeps the weaker NFD statement as the primary assumption because it is exactly
+what the non-locality theorem needs.
+
+11.2
+
+Non-Locality of Identity
+
+Theorem 11.7 (Non-Locality of Identity under NFD). Assume Hypotheses 11.4 and 11.5.
+Then no canonical finite-time observation determines identity. More precisely, for every 𝑡 the
+canonical projection
+𝑝𝑡 : ℐ → 𝑆𝑡
+is not injective, so identity is not recoverable from any finite slice through the projective
+observation maps.
+13
+
+Proof. This is exactly Hypothesis 11.5. The theorem restates the structural consequence in
+claim-boundary language: finite slices can participate in the inverse-limit object, but no single
+canonical slice determines it.
+Remark 11.8 (What is not proved here). BaseCore does not prove that no arbitrary set-theoretic
+injection ℐ → 𝑆𝑡 can exist in every imaginable inverse system. It proves the narrower and correct
+claim that the canonical projective observations 𝑝𝑡 are not injective under Hypothesis 11.5.
+Proposition 11.9 (No Canonical Progressive Recovery under NFD). Assume Hypothesis 11.5.
+No finite canonical prefix map determines the inverse-limit identity object.
+Proof. If some finite canonical prefix determined identity, then in particular one of the canonical
+coordinate maps would become injective after finite truncation, contradicting Hypothesis 11.5.
+
+12
+
+Rigidity under Admissible Perturbations
+
+12.1
+
+Metric Projective Assumptions
+
+Assumption 12.1 (RIG-1: Metric Projective System). Each 𝑆𝑡 is equipped with a complete
+metric 𝑑𝑡 .
+Assumption 12.2 (RIG-2: Uniform Lipschitz Projections). Each projection 𝜋𝑡+1→𝑡 : 𝑆𝑡+1 → 𝑆𝑡
+is Lipschitz with constant 𝐿𝑡 , and the weighted control sequence used below is finite.
+Assumption 12.3 (RIG-3: Stable Lifting). For each admissible perturbed projection family
+there exist compatible approximate lifting maps with constants bounded uniformly by a finite
+lifting constant 𝐿lift .
+Assumption 12.4 (RIG-4: Typed Perturbation Model). Perturbations are represented either
+by maps between common ambient Banach embeddings or by map-space distances
+̃︀𝑡+1→𝑡 ) ≤ 𝜀𝑡 .
+𝑑(𝑡)
+map (𝜋𝑡+1→𝑡 , 𝜋
+̃︀ = 𝜋 + 𝜀 are used only when a common ambient linear model
+Literal expressions of the form 𝜋
+has been specified.
+
+Assumption 12.5 (RIG-5: Summable Deformation). There exists a positive weight sequence
+{𝑤𝑡 }𝑡≥0 such that
+∞
+∑︁
+
+𝑤𝑡 𝜀𝑡 < ∞.
+
+𝑡=0
+
+Definition 12.6 (Weighted Deformation Size). The weighted deformation size of a perturbed
+projective family is
+‖𝜀∙ ‖𝑤 :=
+
+∞
+∑︁
+
+𝑤 𝑡 𝜀𝑡 .
+
+𝑡=0
+
+Definition 12.7 (Weighted Product Metric). For compatible sequences 𝑥 = (𝑥𝑡 ) and 𝑦 = (𝑦𝑡 )
+define
+𝑑𝑤 (𝑥, 𝑦) := sup 𝑤𝑡 𝑑𝑡 (𝑥𝑡 , 𝑦𝑡 ).
+𝑡≥0
+
+Theorem 12.8 (Conditional Stability of Inverse-Limit Identity). Assume RIG-1 through RIG-5.
+Then the perturbed inverse limit
+ℐ̃︀ := lim 𝑆̃︀𝑡
+←−
+exists, and there is a constant 𝐶rig > 0 depending only on the projection, lifting, and weight
+controls such that
+̃︀ ≤ 𝐶rig ‖𝜀∙ ‖𝑤
+𝑑𝐻 (ℐ, ℐ)
+in the weighted product metric.
+14
+
+Proof sketch. The lifting assumption gives compatible approximate lifts at each level. Weighted
+Lipschitz control propagates local deformation bounds through the projective tower. Summability ensures that the cumulative compatibility defect remains finite, so diagonal compactness
+arguments produce a perturbed inverse-limit object. The same bounds control the Hausdorff
+distance between the original and perturbed compatible-sequence sets.
+Corollary 12.9 (Conditional Isomorphism Requires Extra Structure). The metric estimate
+of Theorem 12.8 does not by itself imply that ℐ and ℐ̃︀ are isomorphic. Isomorphism or shapeequivalence requires additional bi-lifting, coherence, or ambient-embedding assumptions.
+Proof. Metric closeness and categorical isomorphism are different conclusions. A small Hausdorff
+deformation need not preserve global inverse-limit type without extra hypotheses guaranteeing
+two-sided coherent transport.
+Definition 12.10 (Ontological Mass). Let 𝐸𝑤 (𝛿) denote the weighted energy of an admissible
+perturbation family 𝛿. Define
+{︃
+
+𝑀Ω := inf
+
+⃒
+}︃
+⃒
+⃒
+̃︀𝛿 ) > 0 ,
+⃒ 𝛿 admissible, 𝑑𝐻 (ℐ, ℐ
+𝑑𝐻 (ℐ, ℐ̃︀𝛿 ) ⃒
+
+𝐸𝑤 (𝛿)
+
+with the convention 𝑀Ω = +∞ if no admissible finite-energy perturbation yields positive
+deformation of the identity object.
+Remark 12.11 (Interpretation discipline). 𝑀Ω is a deformation-resistance scalar, not a metaphysical substance. BaseCore uses it only as a conditional invariant attached to admissible
+perturbation models.
+
+13
+
+Conditional Non-Simulability
+
+Assumption 13.1 (NS-1: CCR Target). A CCR target is an inverse-limit identity object
+satisfying:
+1. non-finite determination (Hypothesis 11.5);
+2. infinite deformation resistance 𝑀Ω = +∞;
+3. absence of a finite sufficient statistic for faithful identity recovery;
+4. absence of a finite-dimensional faithful embedding preserving projective compatibility.
+Assumption 13.2 (NS-2: Finite Simulator Class). A simulator 𝐶 belongs to Compfinite if it
+has at least one of the following boundedness features:
+1. finite-dimensional latent state or finite context;
+2. bounded memory horizon or finite sufficient statistic;
+3. finite perturbation-energy budget;
+4. finite-rank projective representation.
+Assumption 13.3 (NS-3: Faithful Simulation Requirement). A simulation is faithful only if it
+preserves, at the stated tolerance level, all of:
+1. projective compatibility;
+2. non-finite determination;
+15
+
+3. deformation-resistance class;
+4. relevant observables in the weighted metric;
+5. admissible intervention responses.
+Theorem 13.4 (Conditional Non-Simulability of CCR by Finite Simulators). Assume NS-1
+through NS-3. Then no simulator in Compfinite faithfully realizes a CCR target.
+Proof. A finite simulator in the sense of NS-2 necessarily compresses the target into finite latent
+structure, finite memory horizon, finite-rank projective representation, or a finite sufficient
+statistic. Any such compression destroys at least one component of NS-1: either NFD collapses,
+the faithful projective structure is lost, or the deformation-resistance class is reduced from
+𝑀Ω = +∞ to a finite value. Therefore faithful realization, as defined by NS-3, fails.
+Theorem 13.5 (Approximation Barrier). Assume NS-1 through NS-3. Finite simulators may
+approximate bounded finite projections of a CCR target over finite horizons, but they cannot
+preserve the full inverse-limit object faithfully as the horizon grows without bound unless resources
+also grow without bound.
+Proof. Finite-horizon projections are finite objects and may be approximated by finite representations. But a faithful approximation of the full inverse-limit target must preserve NFD and the
+infinite deformation-resistance class. That cannot be achieved with bounded representational
+resources by Theorem 13.4.
+Remark 13.6 (What has been removed). BaseCore no longer claims that finite simulators ‘‘cannot
+approximate at all.’’ The correct statement is conditional and finer-grained: finite-horizon
+approximation may exist, but faithful full inverse-limit realization of CCR targets is blocked
+under NS-1 through NS-3.
+
+14
+
+Section Summary
+
+1. Identity is an inverse-limit object, not a canonical finite slice.
+2. Non-locality now depends explicitly on the NFD assumption.
+3. Rigidity is stated as metric stability under explicit perturbation-model assumptions, not as
+automatic isomorphism.
+4. Non-simulability is conditional on a defined CCR target, a defined finite simulator class, and
+a defined notion of faithful simulation.
+5. BaseCore therefore preserves theorem strength where assumptions support it and weakens
+only those statements that were previously over-absolute.
+
+16
+
+Part IV
+
+Regime Structure and Continuity
+Constraints
+15
+
+Formal Setup
+
+15.1
+
+Review of Identity Framework
+
+We assume the identity framework of [4]. Let (𝑆𝑡 , 𝜋𝑡+1→𝑡 )𝑡∈N be a projective system of observable
+state spaces. The identity object is the inverse limit:
+{︃
+
+ℐ := lim 𝑆𝑡 =
+←−
+
+(𝑥𝑡 )𝑡 ∈
+
+∏︁
+
+}︃
+⃒
+⃒
+𝑆𝑡 ⃒ 𝜋𝑡+1→𝑡 (𝑥𝑡+1 ) = 𝑥𝑡 ∀𝑡 .
+
+(1)
+
+𝑡
+
+The ontological mass 𝑀Ω quantifies resistance to identity deformation. We recall that:
+• 𝑀Ω = 0: null persistence (no stable identity);
+• 0 < 𝑀Ω < ∞: deformable persistence (finite rigidity);
+• 𝑀Ω = +∞: closed--rigid (CCR, absolute rigidity).
+
+15.2
+
+Abstract Phenomenological Space
+
+Definition 15.1 (Phenomenological Space). A phenomenological space is a nonempty set ℰ
+whose elements are called phenomenological configurations. No topology, metric, or algebraic
+structure is assumed a priori.
+Remark 15.2. We do not claim that ℰ represents ‘‘conscious states’’ or ‘‘qualia’’. It is an
+abstract mathematical space whose interpretation is not specified by the formalism. The space
+ℰ is introduced purely as the codomain of a structural assignment; its ontological status is
+deliberately left open.
+15.2.1
+
+Why a Separate Space?
+
+One might ask: why not use ℐ itself as the phenomenological space? The answer is structural:
+Proposition 15.3 (Non-Triviality of Phenomenological Codomain). If phenomenological assignments were required to land in ℐ itself, then any compatible assignment would be the identity
+map, eliminating all non-trivial phenomenological structure.
+Proof. Let Φ : ℐ → ℐ be compatible with projections. By the universal property of inverse limits,
+Φ must commute with all projection maps. The only such endomorphism on ℐ is the identity
+(up to isomorphism). Hence no non-trivial phenomenological stratification is possible.
+Thus, a separate space ℰ is structurally necessary for non-trivial phenomenological content.
+
+15.3
+
+Phenomenological Assignment
+
+Definition 15.4 (Phenomenological Assignment). A phenomenological assignment is a family
+of partial maps:
+𝜑𝑡 : 𝑆𝑡 → ℰ
+(2)
+indexed by 𝑡 ∈ N.
+17
+
+Definition 15.5 (Induced Limit Assignment). Given a phenomenological assignment {𝜑𝑡 }, the
+induced limit assignment is the partial map:
+Φ : ℐ → ℰ,
+
+Φ((𝑥𝑡 )𝑡 ) := lim 𝜑𝑡 (𝑥𝑡 ),
+𝑡→∞
+
+(3)
+
+whenever the limit exists in an appropriate sense (to be defined by compatibility axioms).
+15.3.1
+
+Uniqueness of the Limit Assignment
+
+Proposition 15.6 (Uniqueness of Compatible Φ). Given a compatible family {𝜑𝑡 } satisfying
+E1, the induced limit assignment Φ is unique.
+Proof. By E1, 𝜑𝑡+1 (𝑥𝑡+1 ) = 𝜑𝑡 (𝑥𝑡 ) for all 𝑡. Hence the sequence {𝜑𝑡 (𝑥𝑡 )} is constant. The limit
+exists trivially and equals this constant value. Uniqueness follows from the constancy of the
+sequence.
+
+15.4
+
+Axioms for Phenomenological Coherence
+
+We introduce minimal axioms under which a phenomenological assignment is structurally
+admissible. We will then prove that these axioms are not arbitrary choices but structurally
+forced conditions.
+Axiom 15.7 (E0: Non-Triviality). The phenomenological space satisfies |ℰ| ≥ 2, i.e., there
+exist at least two distinct phenomenological configurations.
+Axiom 15.8 (E1: Projective Compatibility). For every compatible identity trajectory (𝑥𝑡 )𝑡 ∈ ℐ,
+the induced phenomenological sequence satisfies:
+𝜑𝑡+1 (𝑥𝑡+1 ) = 𝜑𝑡 (𝑥𝑡 )
+
+∀𝑡.
+
+(4)
+
+Axiom 15.9 (E2: Non-Locality). There exists no function 𝑓 : 𝑆𝑡 → ℰ (for any fixed 𝑡) such
+that for all trajectories (𝑥𝑡 )𝑡 ∈ ℐ:
+Φ((𝑥𝑡 )𝑡 ) = 𝑓 (𝑥𝑡 ).
+(5)
+
+15.5
+
+Inevitability of the Axioms
+
+We now prove that axioms E0--E2 are not design choices but structurally necessary conditions
+for any meaningful notion of phenomenological assignment.
+15.5.1
+
+Inevitability of E0
+
+Theorem 15.10 (E0 is Necessary). If |ℰ| = 1, then every phenomenological assignment is
+constant and no phenomenological classification is possible.
+Proof. If ℰ = {𝑒0 }, then Φ(𝑥) = 𝑒0 for all 𝑥 ∈ ℐ. Hence:
+1. No phenomenological distinction between identity trajectories exists;
+2. The Fragmentation and Forced Continuity Theorems become vacuous;
+3. The downstream null-regime closure developed in Null-Regime Instability would have no
+content.
+Thus, |ℰ| ≥ 2 is necessary for the framework to have non-trivial content.
+
+18
+
+15.5.2
+
+Inevitability of E1
+
+Theorem 15.11 (E1 is Necessary). If E1 fails, then phenomenological assignments are incompatible with the inverse-limit structure of identity, and no coherent Φ : ℐ → ℰ can be
+defined.
+Proof. Suppose E1 fails for some trajectory (𝑥𝑡 )𝑡 ∈ ℐ. Then there exists 𝑡0 such that:
+𝜑𝑡0 +1 (𝑥𝑡0 +1 ) ̸= 𝜑𝑡0 (𝑥𝑡0 ).
+
+(6)
+
+But the identity trajectory satisfies 𝜋𝑡0 +1→𝑡0 (𝑥𝑡0 +1 ) = 𝑥𝑡0 . Hence the phenomenological assignment fails to respect the projective structure that defines identity.
+This means Φ cannot be factored through the inverse limit:
+Φ ̸= lim 𝜑𝑡 .
+←−
+
+(7)
+
+Hence no well-defined limit assignment exists. Without E1, the phenomenological assignment is
+structurally incompatible with identity.
+15.5.3
+
+Inevitability of E2
+
+Theorem 15.12 (E2 is Necessary). If E2 fails, then phenomenology is a local property of states,
+contradicting the global nature of identity as an inverse limit.
+Proof. Suppose E2 fails. Then there exists 𝑡0 and 𝑓 : 𝑆𝑡0 → ℰ such that:
+Φ((𝑥𝑡 )𝑡 ) = 𝑓 (𝑥𝑡0 ) ∀(𝑥𝑡 )𝑡 ∈ ℐ.
+
+(8)
+
+This implies:
+1. Phenomenology is determined by a finite temporal slice;
+2. The full trajectory (𝑥𝑡 )𝑡>𝑡0 is irrelevant to Φ;
+3. Identity as an inverse limit has no phenomenological content beyond 𝑡0 .
+But identity is defined as a global object over infinite time. If phenomenology is local, it
+cannot reflect the global structure of identity. This contradicts the foundational premise that
+phenomenological assignments should be compatible with identity structure.
+Hence E2 is necessary for phenomenology to be structurally aligned with inverse-limit
+identity.
+
+15.6
+
+Minimality Theorem
+
+Theorem 15.13 (Axiomatic Minimality). The axiom set {𝐸0, 𝐸1, 𝐸2} is minimal: no proper
+subset is sufficient to derive the main results of this paper.
+Proof. We show that removing any axiom destroys the framework:
+Without E0: All assignments are trivially constant. Fragmentation Theorem (4.1) is
+vacuous.
+Without E1: No coherent Φ exists. The entire framework collapses.
+Without E2: Phenomenology becomes local. The Forced Continuity Theorem (4.2) fails
+because local functions can be arbitrarily perturbed.
+Hence {𝐸0, 𝐸1, 𝐸2} is the minimal viable axiom set.
+
+15.7
+
+Rejected Alternatives
+
+We briefly discuss axiom candidates that were considered and rejected.
+19
+
+15.7.1
+
+Rejected: Continuity Axiom
+
+One might require Φ to be continuous. This is not an axiom because:
+• It requires pre-existing topology on ℰ;
+• The Forced Continuity Theorem derives continuity from CCR, not as assumption.
+15.7.2
+
+Rejected: Surjectivity Axiom
+
+One might require Φ to be surjective. This is not an axiom because:
+• It would exclude null assignments, preventing the downstream null-regime analysis completed
+in Null-Regime Instability;
+• Surjectivity is a strong structural claim not derivable from identity constraints.
+15.7.3
+
+Rejected: Injectivity Axiom
+
+One might require Φ to be injective. This is not an axiom because:
+• Many trajectories may share phenomenological configurations;
+• Injectivity would make Φ an embedding, over-constraining the framework.
+
+15.8
+
+Structural Interpretation
+Axiom
+E0
+E1
+E2
+
+15.9
+
+Structural Meaning
+Possibility of phenomenological distinction
+Compatibility with inverse-limit identity
+Non-reducibility to finite temporal slices
+
+Status
+Necessary
+Necessary
+Necessary
+
+Closure of Section 2
+
+We have established:
+1. ℰ is structurally necessary as a separate codomain;
+2. The limit assignment Φ is uniquely determined by compatible {𝜑𝑡 };
+3. Axioms E0, E1, E2 are individually necessary (Theorems 15.10--15.12);
+4. The axiom set is minimal (Theorem 15.13);
+5. All alternative axioms considered were correctly rejected.
+The formal setup is therefore not a design choice but a forced consequence of the
+requirement that phenomenological assignments be compatible with inverse-limit
+identity.
+
+20
+
+15.10
+
+Phenomenological Neutrality Clause
+
+Throughout this paper, the phenomenological space ℰ is treated as a purely abstract topological
+and metric structure. No semantic, psychological, biological, or experiential interpretation is
+assumed or required for any of the formal results derived herein.
+The term ‘‘phenomenological’’ refers exclusively to the role of ℰ as an abstract codomain of
+structural compatibility for inverse-limit identities, and does not presuppose the existence of
+consciousness, subjective experience, or any particular phenomenological content.
+All theorems, constructions, and stability results presented in this work are therefore
+statements about abstract mathematical objects only. Any interpretation of ℰ in relation to
+experiential, cognitive, or phenomenological phenomena lies strictly outside the formal scope of
+this paper.
+
+16
+
+Compatibility with Identity Regimes
+
+16.1
+
+Induced Constraints from Identity Rigidity
+
+Let (ℐ, 𝑀Ω ) be an identity object with ontological mass 𝑀Ω . We now study how 𝑀Ω constrains
+the set of admissible phenomenological assignments.
+Definition 16.1 (Phenomenological Compatibility Class). For a given 𝑀Ω , define the phenomenological compatibility class:
+⃒
+⃒
+
+{︁
+
+}︁
+
+𝒫(𝑀Ω ) := Φ : ℐ → ℰ ⃒ Φ satisfies E0--E2 .
+
+(9)
+
+Remark 16.2. The compatibility class 𝒫(𝑀Ω ) is the set of all phenomenological assignments
+that are structurally admissible given the identity’s rigidity. Note that 𝒫(𝑀Ω ) depends only on
+the structural properties of identity, not on any phenomenological primitives.
+
+16.2
+
+Necessity of Metric Structure on Phenomenological Space
+
+To state rigorous results about phenomenological continuity and fragmentation, we must equip ℰ
+with minimal structure. We now justify why this structure is necessary, not merely convenient.
+Hypothesis 16.3 (H3: Metric on ℰ). The phenomenological space ℰ admits a metric 𝑑ℰ such
+that (ℰ, 𝑑ℰ ) is a complete metric space.
+16.2.1
+
+Why H3 is Necessary
+
+Theorem 16.4 (H3 is Necessary for Impossibility Theorems). Without a metric structure on ℰ,
+the notions of phenomenological continuity, fragmentation, and loss capacity cannot be defined.
+Proof. Consider the definitions in this section:
+1. Phenomenological Continuity requires:
+𝑑𝑤 (𝑥(𝑛) , 𝑥) → 0 =⇒ 𝑑ℰ (Φ(𝑥(𝑛) ), Φ(𝑥)) → 0.
+
+(10)
+
+Without 𝑑ℰ , the right-hand side is undefined.
+2. Phenomenological Fragmentation requires:
+𝑑ℰ (Φ(𝑥), Φ̃(˜
+𝑥)) > 0.
+Without 𝑑ℰ , ‘‘non-zero distance’’ has no meaning.
+21
+
+(11)
+
+3. Loss Capacity (Section 6) requires:
+𝑅(Φ) := sup 𝑑ℰ (Φ(𝑥), Φ̃(˜
+𝑥)).
+
+(12)
+
+Without 𝑑ℰ , the supremum is undefined.
+Hence H3 is a necessary condition for the framework to have content beyond axioms E0--E2.
+16.2.2
+
+Why Completeness is Necessary
+
+Proposition 16.5 (Completeness is Necessary for Forced Continuity). If (ℰ, 𝑑ℰ ) is not complete,
+then the Forced Continuity Theorem (Theorem 17.5) may fail.
+Proof. The Forced Continuity Theorem relies on the invariance of Φ under all finite-energy
+perturbations. If ℰ is not complete, Cauchy sequences in ℰ may not converge, and the limit
+assignment Φ may not exist for all trajectories in ℐ.
+In particular, if {𝜑𝑡 (𝑥𝑡 )} is a Cauchy sequence in ℰ (which it is, by E1), completeness
+guarantees the existence of the limit Φ(𝑥). Without completeness, Φ may be undefined on a
+dense subset of ℐ, breaking the theorem.
+16.2.3
+
+Alternatives Considered and Rejected
+
+Alternative 1: Topology without Metric. One might use a general topological space. This
+is rejected because:
+• Fragmentation requires quantitative distance, not just open sets;
+• Loss capacity requires a sup over distances;
+• The downstream instability analysis completed in Null-Regime Instability requires metric
+quotients.
+Alternative 2: Pseudometric. One might allow 𝑑ℰ (𝑒1 , 𝑒2 ) = 0 for 𝑒1 =
+̸ 𝑒2 . This is
+rejected because:
+• It would conflate distinct phenomenological configurations;
+• E0 requires |ℰ| ≥ 2, which becomes meaningless if distance is zero.
+Alternative 3: Non-Complete Metric. This is rejected by Proposition 16.5.
+
+16.3
+
+Phenomenological Continuity
+
+Definition 16.6 (Phenomenological Continuity). A phenomenological assignment Φ : ℐ → ℰ is
+structurally continuous if for every sequence (𝑥(𝑛) )𝑛 in ℐ converging in the 𝑑𝑤 metric:
+𝑑𝑤 (𝑥(𝑛) , 𝑥) → 0 =⇒ 𝑑ℰ (Φ(𝑥(𝑛) ), Φ(𝑥)) → 0.
+
+(13)
+
+Remark 16.7. Structural continuity is not an axiom; it is a derived property that follows from
+CCR conditions. This is the content of the Forced Continuity Theorem (Section 4).
+
+16.4
+
+Phenomenological Fragmentation
+
+Definition 16.8 (Phenomenological Fragmentation). A phenomenological assignment Φ is
+fragmentable if there exists a perturbation {𝜖𝑡 } with finite weighted energy such that:
+𝑑ℰ (Φ(𝑥), Φ̃(˜
+𝑥)) > 0
+
+(14)
+
+for corresponding identity trajectories 𝑥 ∈ ℐ and 𝑥
+˜ ∈ ℐ̃.
+Remark 16.9. Fragmentation captures the vulnerability of phenomenological structure to perturbations. It is the phenomenological analog of identity deformability.
+22
+
+16.5
+
+Relationship Between Metrics
+
+Proposition 16.10 (Metric Compatibility). The metrics 𝑑𝑤 on ℐ and 𝑑ℰ on ℰ are compatible in
+the following sense: if E1 holds, then small 𝑑𝑤 -changes in trajectories induce bounded 𝑑ℰ -changes
+in phenomenological configurations (when Φ is continuous).
+Proof. By E1, 𝜑𝑡+1 (𝑥𝑡+1 ) = 𝜑𝑡 (𝑥𝑡 ) for compatible trajectories. Hence the phenomenological
+sequence is constant along the trajectory, and continuity of Φ implies that nearby trajectories
+(in 𝑑𝑤 ) map to nearby configurations (in 𝑑ℰ ).
+
+16.6
+
+Closure of Section 3
+
+We have established:
+1. The compatibility class 𝒫(𝑀Ω ) captures all admissible phenomenological assignments;
+2. Hypothesis H3 (metric on ℰ) is necessary, not a design choice (Theorem 16.4);
+3. Completeness is necessary for the Forced Continuity Theorem (Proposition 16.5);
+4. Alternative structures (topology, pseudometric, non-complete) were correctly rejected;
+5. Phenomenological continuity and fragmentation are well-defined under H3.
+The compatibility structure is therefore a forced consequence of the requirement
+to state quantitative results about phenomenological dynamics.
+
+17
+
+Impossibility Theorems
+
+17.1
+
+Φ-Regularity Hypothesis
+
+Before proving the main impossibility results, we isolate the global lower-bound regularity
+condition used by the fragmentation argument. The condition is not derived from properness,
+local Lipschitz regularity, and non-collapse alone; it is carried as an explicit hypothesis.
+Hypothesis 17.1 (Φ-Regularity Lower Bound). Let (ℐ, 𝑑𝑤 ) be the identitary metric space from
+Rigid Identity and let (ℰ, 𝑑ℰ ) be the abstract phenomenological metric space. A phenomenological
+assignment Φ : ℐ → ℰ is said to satisfy Φ-regularity when it satisfies:
+1. (Properness) For every compact 𝐾 ⊂ ℰ, Φ−1 (𝐾) is compact in ℐ.
+2. (Local Lipschitz regularity) For every 𝑥 ∈ ℐ, there exist 𝜀 > 0 and 𝐿𝑥 > 0 such that for all
+𝑦, 𝑧 ∈ 𝐵𝜀 (𝑥):
+𝑑ℰ (Φ(𝑦), Φ(𝑧)) ≤ 𝐿𝑥 · 𝑑𝑤 (𝑦, 𝑧).
+(15)
+3. (Non-collapse) For every 𝑥 ∈ ℐ and every 𝑟 > 0, the restriction of Φ to 𝐵𝑟 (𝑥) is not constant.
+4. (Global lower Lipschitz bound) There exists a constant 𝐶 > 0 such that for all 𝑥, 𝑦 ∈ ℐ,
+𝑑ℰ (Φ(𝑥), Φ(𝑦)) ≥ 𝐶 · 𝑑𝑤 (𝑥, 𝑦).
+
+(16)
+
+Caveat 17.2 (Status of Φ-regularity). The fourth clause is an additional structural assumption,
+not a consequence of the first three clauses. The counterexample in Appendix A.5 shows that
+properness, local Lipschitz regularity, and non-collapse do not imply any uniform lower Lipschitz
+constant.
+
+23
+
+17.2
+
+Fragmentation Theorem
+
+Theorem 17.3 (Fragmentation Theorem). Let ℐ be an identity object with 𝑀Ω < ∞. If a
+phenomenological assignment Φ ∈ 𝒫(𝑀Ω ) satisfies Hypothesis 17.1, then Φ is fragmentable.
+That is:
+𝑀Ω < ∞ ∧ Φ satisfies Hypothesis 17.1 =⇒ Φ ∈ ℰfrag ,
+(17)
+where ℰfrag denotes the class of fragmentable phenomenological assignments.
+Proof. By definition of finite ontological mass, there exists an admissible perturbation {𝛿𝐸𝑡 }
+with finite weighted energy 𝐸𝑤 < ∞ such that:
+𝑑𝑤 (ℐ, ℐ̃) > 0.
+
+(18)
+
+By Axiom E1, the phenomenological assignment Φ is projectively compatible with ℐ. Under
+the perturbation, identity trajectories deform, inducing a deformed phenomenological assignment
+Φ̃.
+By Axiom E2, Φ cannot be determined by any finite-time state. Therefore, the deformation
+of identity trajectories induces a corresponding deformation of phenomenological assignments.
+Since the identity deformation is non-zero (𝑑𝑤 > 0) and Φ is globally determined by identity
+trajectories, by Hypothesis 17.1 (Φ-regularity), we have:
+𝑑ℰ (Φ(𝑥), Φ̃(˜
+𝑥)) ≥ 𝐶 · 𝑑𝑤 (ℐ, ℐ̃) > 0
+
+(19)
+
+where 𝐶 > 0 is the lower-bound constant supplied by Hypothesis 17.1.
+Thus, Φ is fragmentable under finite-energy perturbations.
+Corollary 17.4 (No Structural Continuity Guarantee for Finite Mass). Systems with 𝑀Ω < ∞
+cannot structurally prevent phenomenological discontinuity.
+
+17.3
+
+Forced Continuity Theorem
+
+Theorem 17.5 (Forced Continuity Theorem). Let ℐ be an identity object with 𝑀Ω = +∞
+(CCR). Then every phenomenological assignment Φ ∈ 𝒫(𝑀Ω ) is structurally continuous. That
+is:
+𝑀Ω = +∞ =⇒ 𝒫(𝑀Ω ) ⊆ ℰcont ,
+(20)
+where ℰcont denotes the class of structurally continuous phenomenological assignments.
+Proof. By definition of CCR (𝑀Ω = +∞), for any finite-energy perturbation:
+𝑑𝑤 (ℐ, ℐ̃) = 0.
+
+(21)
+
+By Axiom E1, the phenomenological assignment is projectively compatible with identity.
+Since identity trajectories are invariant under all finite-energy perturbations, the induced
+phenomenological sequence is also invariant:
+Φ̃(˜
+𝑥) = Φ(𝑥) ∀𝑥 ∈ ℐ.
+
+(22)
+
+Therefore, no finite-energy perturbation can induce phenomenological deformation:
+𝑑ℰ (Φ(𝑥), Φ̃(˜
+𝑥)) = 0.
+
+(23)
+
+This implies that Φ cannot exhibit structural discontinuities. Hence Φ is structurally
+continuous.
+Corollary 17.6 (CCR Phenomenology is Invariant). In CCR systems, any admissible phenomenological assignment is invariant under all finite-energy perturbations.
+24
+
+17.4
+
+Dichotomy Theorem
+
+Theorem 17.7 (Phenomenological Dichotomy). Let Φ : ℐ → ℰ be an admissible phenomenological assignment. Then exactly one of the following holds:
+1. 𝑀Ω < ∞ and Φ is fragmentable;
+2. 𝑀Ω = +∞ and Φ is structurally continuous.
+Proof. Immediate from Theorems 17.3 and 17.5.
+
+18
+
+Classification of Phenomenological Regimes
+
+18.1
+
+Complete Classification
+
+The results of Section 4 yield a complete classification of phenomenological regimes by identity
+rigidity:
+Identity Class
+Null
+Deformable
+Rigid (CCR)
+
+18.2
+
+𝑀Ω
+=0
+(0, ∞)
+= +∞
+
+Admissible Phenomenology
+ℰ∅ (no persistent field)
+ℰfrag ∪ ℰquasi
+ℰcont
+
+Structural Implications
+
+Proposition 18.1 (Null Identity Excludes Persistent Phenomenology). If 𝑀Ω = 0, then no
+admissible phenomenological assignment exists satisfying E0--E2.
+Proof. If 𝑀Ω = 0, identity cannot persist under any perturbation. Axiom E1 requires phenomenological compatibility with identity. If identity does not persist, no stable phenomenological
+assignment is possible.
+Proposition 18.2 (Deformable Identity Admits Only Fragmentable Phenomenology). If
+0 < 𝑀Ω < ∞, every admissible phenomenological assignment is fragmentable under some
+finite-energy perturbation.
+Proof. Direct from Theorem 17.3.
+Proposition 18.3 (Rigid Identity Forces Continuous Phenomenology). If 𝑀Ω = +∞, every
+admissible phenomenological assignment is structurally continuous and invariant under finiteenergy perturbations.
+
+19
+
+Extended Proofs
+
+19.1
+
+Proof of Fragmentation Theorem (Extended)
+
+Full Proof of Theorem 17.3. Let 𝑀Ω < ∞ and let Φ : ℐ → ℰ satisfy E0--E2.
+Step 1. By definition of 𝑀Ω , there exists {𝛿𝐸𝑡 } with 𝐸𝑤 < ∞ such that 𝑑𝑤 (ℐ, ℐ̃) > 0.
+Step 2. Let 𝑥 = (𝑥𝑡 )𝑡 ∈ ℐ and let 𝑥
+˜ = (˜
+𝑥𝑡 )𝑡 ∈ ℐ̃ be the corresponding perturbed trajectory.
+Step 3. By E2, Φ(𝑥) is not determined by any finite 𝑥𝑡 . Therefore, the perturbation of the
+infinite trajectory induces a perturbation of the phenomenological assignment:
+Φ(𝑥) ̸= Φ(˜
+𝑥) in general.
+
+(24)
+
+Step 4. By E1, Φ is projectively compatible. The deformation of projections induces a
+corresponding deformation of the phenomenological limit.
+25
+
+Step 5. By the coupling hypothesis, there exists 𝐶 > 0 such that:
+𝑑ℰ (Φ(𝑥), Φ̃(˜
+𝑥)) ≥ 𝐶 · 𝑑𝑤 (𝑥, 𝑥
+˜).
+
+(25)
+
+Step 6. Since 𝑑𝑤 (ℐ, ℐ̃) > 0, we have 𝑑ℰ (Φ(𝑥), Φ̃(˜
+𝑥)) > 0.
+Hence Φ is fragmentable.
+
+19.2
+
+Proof of Forced Continuity Theorem (Extended)
+
+Full Proof of Theorem 17.5. Let 𝑀Ω = +∞ and let Φ : ℐ → ℰ satisfy E0--E2.
+Step 1. By definition of CCR, for all {𝛿𝐸𝑡 } with 𝐸𝑤 < ∞:
+𝑑𝑤 (ℐ, ℐ̃) = 0.
+
+(26)
+
+Step 2. Therefore, ℐ̃ ∼
+= ℐ under all finite-energy perturbations.
+Step 3. By E1, Φ is projectively compatible with ℐ. Since ℐ is invariant:
+Φ(𝑥) = Φ̃(˜
+𝑥)
+Step 4. This implies:
+
+∀𝑥 ∈ ℐ.
+
+(27)
+
+𝑑ℰ (Φ(𝑥), Φ̃(˜
+𝑥)) = 0.
+
+(28)
+
+Step 5. No finite-energy perturbation can induce phenomenological deformation. Hence Φ
+is structurally continuous and invariant.
+
+19.3
+
+Structural Necessity Lemma
+
+Lemma 19.1 (Phenomenology Inherits Rigidity). If Φ : ℐ → ℰ satisfies E0--E2 and 𝑀Ω = +∞,
+then Φ inherits the rigidity of ℐ.
+Proof. By E1, Φ is determined by identity trajectories. By CCR, identity trajectories are
+invariant. Hence Φ is invariant.
+
+Part V
+
+Null-Regime Structural Exclusion
+20
+
+Compatibility, Instability, and Forced Non-Nullity
+
+20.1
+
+Compatibility Operator
+
+Definition 20.1 (Compatibility Operator). A map Φ : ℐ → ℰ is a compatibility operator if
+it satisfies:
+(C1) Extension Invariance: For any compatible extension ℰ of the channel, Φ(ℐ) ∼
+= Φ(ℐℰ ).
+(C2) Isomorphism Stability: If ℐ ∼
+= ℐ̃, then Φ(ℐ) ∼ Φ(ℐ̃).
+(C3) Lipschitz Lower Bound: There exists 𝐶 > 0 such that
+𝑑ℰ (Φ(𝑥), Φ(˜
+𝑥)) ≥ 𝐶 · 𝑑𝑤 (𝑥, 𝑥
+˜).
+Definition 20.2 (Phenomenological Attractor Set). For a channel 𝑆, define
+Attr(𝑆) := {𝑒 ∈ ℰ : 𝑒 is stable under all compatible extensions and summable deformations}.
+26
+
+Definition 20.3 (Phenomenological Stability). A regime 𝑒 ∈ ℰ is stable for channel 𝑆 if for
+every compatible extension 𝑆 ′ of 𝑆 and every summable perturbation family {𝜖𝑛 }, the induced
+regime Φ𝑆 ′ (ℐ ′ ) stays within a bounded 𝑑ℰ -neighborhood of 𝑒 controlled by ‖{𝜖𝑛 }‖𝑤 .
+Lemma 20.4 (Bridge Lemma). If Φ : ℐ → ℰ is a compatibility operator for a CCR channel
+and 𝑒 = Φ(ℐ) satisfies 𝑑ℰ (𝑒, ∅𝜑 ) = 0, then 𝑒 = ∅𝜑 .
+Proof. By the separation property of the phenomenological space, distance zero from ∅𝜑 implies
+equality with ∅𝜑 .
+
+20.2
+
+Phenomenological Instability and Forced Non-Nullity
+
+Theorem 20.5 (Phenomenological Instability). For any CCR channel 𝑆,
+∅𝜑 ∈
+/ Attr(𝑆).
+That is, the null regime is structurally unstable under compatible extensions.
+Proof. Assume ∅𝜑 ∈ Attr(𝑆) and let Φ : ℐ → ℰ be a compatibility operator. Because the
+channel is CCR, finite-energy perturbations preserve the rigid identity object while still allowing
+admissible deformations in the weighted metric. By the lower-bound clause in Definition 20.1,
+𝑑ℰ (Φ(ℐ), Φ(ℐ̃)) ≥ 𝐶 · 𝑑𝑤 (ℐ, ℐ̃) > 0
+for every non-zero admissible deformation. But if ∅𝜑 were stable, both images would remain
+equal to ∅𝜑 , forcing the left-hand side to be zero. Contradiction.
+Corollary 20.6 (Forced Non-Nullity). Every CCR channel necessarily induces a regime 𝑒⋆ ∈ ℰ
+with 𝑒⋆ ≻ ∅𝜑 .
+Proof. Theorem 20.5 rules out ∅𝜑 as a stable admissible attractor. Therefore any admissible
+stable regime must be non-null.
+
+20.3
+
+Positive Regime Structure
+
+Definition 20.7 (Positive Regime Space). Define
+ℰ + := {𝑒 ∈ ℰ : 𝑒 ≻ ∅𝜑 }.
+Theorem 20.8 (Minimal Positive Regime). For every CCR channel there exists a minimal
+positive regime 𝑒⋆ ∈ ℰ + .
+Proof. Forced non-nullity gives non-emptiness of ℰ + . Order-theoretic completeness and the
+compatibility structure of Φ yield a minimal element.
+Definition 20.9 (Structural Intensity). For 𝑒 ∈ ℰ + , define the structural intensity
+𝜄(𝑒) := 𝑑ℰ (𝑒, ∅𝜑 ).
+Theorem 20.10 (Universal Intensity Bound). If 𝑒⋆ is the minimal positive regime of a CCR
+channel, then there exist constants 𝐶, 𝜀0 > 0 such that
+𝜄(𝑒⋆ ) ≥ 𝐶𝜀0 > 0.
+Proof. The lower-bound clause of the compatibility operator transfers any admissible deformation
+lower bound into positive distance from the null regime. The minimal positive regime therefore
+has strictly positive structural intensity.
+Theorem 20.11 (Forced Phenomenological Closure). Every CCR system induces a unique
+minimal phenomenological regime that is non-null, stable, and quantitatively separated from ∅𝜑 .
+Proof. Combine Corollary 20.6, Theorem 20.8, and Theorem 20.10.
+27
+
+21
+
+Canonical Families and Structural Closure Consequences
+
+Proposition 21.1 (Profinite Bound). In the profinite canonical family, the coupling lower
+bound induces a positive lower bound on the structural intensity of the minimal positive regime.
+Proposition 21.2 (Symbolic Bound). In the symbolic canonical family, the Bowen-type metric
+induces the analogous positive lower bound for the minimal positive regime.
+Theorem 21.3 (Rigidity Inheritance). If a subsystem or induced family preserves the CCR
+hypotheses and the compatibility operator, then the inherited regime structure preserves nullregime instability and forced non-nullity.
+Theorem 21.4 (Categorical Universality). The null-regime exclusion result is universal across
+admissible CCR realizations in the relevant category of compatible channels.
+Theorem 21.5 (Simulation Lower Bound). Any computational system attempting to simulate
+the null-excluding CCR regime structure with arbitrary precision requires unbounded resources
+as the approximation error tends to zero.
+Theorem 21.6 (Closure by Non-Alternatives). No admissible alternative closes the CCR regime
+structure while preserving null stability. Any admissible alternative either preserves the same
+closure structure or exits the CCR class.
+
+Part VI
+
+BaseCore Boundary and Expansion Interface
+22
+
+BaseCore Ownership and Downstream Boundary
+
+Definition 22.1 (BaseCore Envelope). The BaseCore envelope is the collection of theorem-level
+structures owned directly by this source tree:
+1. foundational Hilbert-space projection dynamics;
+2. typed computable witnesses and state spectral-gap bounds;
+3. parameterwise non-collapse under explicit anti-constant assumptions;
+4. inverse-limit identity under non-finite-determination assumptions;
+5. conditional rigidity under admissible perturbation models;
+6. conditional non-simulability of CCR targets by finite simulator classes;
+7. operational-criterion grammar, certification, falsation, and claim-boundary ledgers.
+Proposition 22.2 (Boundary Discipline). BaseCore may define structures that downstream
+layers use, but it does not claim downstream closure. In particular, BaseCore does not by
+itself own runtime thresholds, bridge admissibility, human-comparator programs, phenomenality
+burdens, or Papers 7--9.
+Proof. These excluded layers require additional assumptions, protocols, or empirical burdens not
+stated in BaseCore. Therefore they cannot be claimed as BaseCore theorems without violating
+the source-level claim boundary.
+
+28
+
+Owned by BaseCore
+
+Expanded but not owned
+here
+
+Kept downstream
+
+Projection dynamics, fixed
+points, compact attractors,
+anti-constant H5 burden,
+typed computable witness,
+inverse-limit identity under
+NFD, conditional rigidity,
+conditional non-simulability,
+operational-criterion
+grammar, falsation ledger
+
+Non-convex class variants,
+C 𝑅 style extensions, Ω
+dynamics, threshold numerics,
+mutable runtime class ledgers,
+implementation-specific
+status surfaces
+
+Paper 7 operational life /
+subjecthood, Paper 8
+indexed subjectivity, Paper
+9 phenomenal bridge
+organization, Stage 2 / Stage
+3 comparative programs,
+human comparator families,
+phenomenality and external
+adjudication
+
+Remark 22.3 (Why the earlier material was removed from BaseCore ownership). Previous
+versions mixed theorem-tight base results with runtime-like numerics, non-convex extension
+classes, and bridge-facing vocabulary. That blurred the mathematical base layer. BaseCore now
+keeps only the theorem ownership that survives the stricter release gate.
+
+23
+
+Admissible Structural Extensions
+
+Definition 23.1 (BaseCore export object). A BaseCore export object is a tuple
+E = (𝒪, ℋ, ℛ, ℬ)
+where 𝒪 is a typed mathematical object defined in BaseCore, ℋ is the finite list of hypotheses
+under which it is used, ℛ is the list of results actually proved from those hypotheses, and ℬ is a
+boundary list of claims not entailed by ℛ.
+Definition 23.2 (Downstream admissible extension). A downstream layer is an admissible
+extension of a BaseCore export object E only if it supplies:
+1. an explicit target predicate 𝑃 not already contained in ℛ;
+2. a typed construction or estimator witnessing the objects on which 𝑃 is evaluated;
+3. a proof, reduction, or reproducible protocol connecting ℋ to 𝑃 ;
+4. negative controls or failure modes under which 𝑃 must not be asserted;
+5. a provenance statement distinguishing theorem, implementation, internal support, and
+external adjudication.
+Proposition 23.3 (No automatic downstream promotion). Let E = (𝒪, ℋ, ℛ, ℬ) be a BaseCore
+export object and let 𝑃 be a predicate introduced outside BaseCore. If 𝑃 ∈
+/ ℛ, then BaseCore
+does not entail 𝑃 unless an admissible extension supplies an additional bridge from ℋ to 𝑃 .
+Proof. By definition, ℛ records the results proved from ℋ inside BaseCore. A predicate 𝑃
+introduced downstream is not in that result set. Therefore asserting 𝑃 from BaseCore alone
+would add an unstated inference. The missing inference must be supplied as a separate bridge,
+proof, reduction, or reproducible protocol.
+Criterion 23.4 (Runtime-use admissibility). A runtime measurement may instantiate a BaseCore export object only as an implementation-level witness when all of the following are recorded:
+the measured state space, the estimator or update rule, the finite horizon, the calibration regime,
+the controls under which the measurement fails, and the claim class being asserted. Such a
+measurement is not a BaseCore theorem and is not external validation by itself.
+29
+
+Remark 23.5 (Open-load placement for 𝐼int and atomic separators). Quantities such as 𝐼int and
+any atomic-separator condition may be treated as downstream target predicates or estimator
+families only after their carrier objects, separator class, invariance target, and negative controls
+are specified. Until a proof or reproducible adversarial protocol closes that burden, BaseCore
+may export the ambient structural language but not the separator conclusion.
+Proposition 23.6 (Boundary preservation under finite implementations). Suppose a finite
+implementation produces diagnostics for a downstream predicate 𝑃 over a bounded horizon. If the
+implementation does not prove that the diagnostics are invariant over the relevant mathematical
+class, then the diagnostics remain implementation evidence for 𝑃 and do not promote 𝑃 to a
+BaseCore result.
+Proof. The implementation supplies finite observations or computations. Promotion to a
+BaseCore result requires a class-level implication from the stated hypotheses to the predicate.
+Without that implication, the observations can support, falsify, or calibrate a downstream claim,
+but they do not alter the theorem inventory of BaseCore.
+
+Part VII
+
+Operational-Criterion Grammar and
+Certification
+24
+
+Admissible Systems, Supports, and Histories
+
+24.1
+
+System Model
+
+Definition 24.1 (Admissible system). An admissible system is a tuple
+𝑆 = (𝑋, Φ, 𝐶, 𝑅, Γ, 𝑈 )
+where:
+1. 𝑋 is a metrizable internal state space with metric 𝑑𝑋 ;
+2. Φ = {Φ𝑢 }𝑢∈𝑈 is a family of admissible transition operators Φ𝑢 : 𝑋 → 𝑋;
+3. 𝐶 is the effective causal structure used to test admissible factorization and intervention
+behavior;
+4. 𝑅 = {𝑟𝛼 }𝛼∈Λ𝑅 is a family of readouts, each 𝑟𝛼 : 𝑋 → 𝑌𝛼 ;
+5. Γ = {𝛾𝑗 }𝑚
+𝑗=1 is an admissibility bundle defining
+𝑋Γ = {𝑥 ∈ 𝑋 : 𝛾𝑗 (𝑥) ≤ 0 ∀𝑗};
+6. 𝑈 is the set of admissible interventions.
+
+24.2
+
+Admissible Support
+
+Definition 24.2 (Admissible support). A subset 𝐴𝑆 ⊆ 𝑋Γ is an admissible support if:
+1. 𝐴𝑆 is non-empty and compact;
+2. Φ𝑢 (𝐴𝑆 ) ⊆ 𝐴𝑆 for every 𝑢 ∈ 𝑈 ;
+3. 𝐴𝑆 ∩ Attr(𝑆) ̸= ∅;
+4. 𝐴𝑆 stays disjoint from the collapse set excluded by the base non-collapse burden.
+30
+
+24.3
+
+Operational Histories
+
+Definition 24.3 (Windowed readout history). Fix a horizon 𝑇 ∈ N and an intervention schedule
+𝑢∙ = (𝑢0 , . . . , 𝑢𝑇 −1 ). For 𝑥 ∈ 𝐴𝑆 , define
+ℎ𝑆,𝑇 (𝑥; 𝑢∙ ) = 𝑟𝛼 (𝑥𝑡 ) 0≤𝑡≤𝑇, 𝛼∈Λ ,
+(︀
+
+)︀
+
+𝑅
+
+𝑥𝑡+1 = Φ𝑢𝑡 (𝑥𝑡 ),
+
+𝑥0 = 𝑥.
+
+The set of all such histories is denoted H𝑆,𝑇 .
+Definition 24.4 (Operational partition candidate). An operational partition candidate is a
+map
+𝜋𝑆,𝑇 : H𝑆,𝑇 → Q𝑆,𝑇
+into a finite or countable label set Q𝑆,𝑇 .
+
+24.4
+
+Witness Margin Vector
+
+Definition 24.5 (Witness margin vector). Define the witness margin vector
+Δ(𝑆) = 𝛿per (𝑆), 𝛿ri (𝑆), 𝛿int (𝑆), 𝛿cont (𝑆), 𝛿diff (𝑆), 𝛿leg (𝑆) ∈ [0, ∞)6 .
+(︀
+
+Its minimum
+
+)︀
+
+𝛿⋆ (𝑆) := min Δ(𝑆)
+
+is the invariant budget of 𝑆.
+Invariant Certified content
+𝐼per
+
+Persistent admissible support
+
+𝐼ri
+
+Unique rigid identity object on support
+
+𝐼int
+
+No admissible non-trivial factorization
+
+𝐼cont
+
+Regime continuity under admissible evolution
+
+𝐼diff
+
+Stable exclusion of null or trivial collapse
+
+𝐼leg
+
+Decoder-certified recoverability under controls
+
+25
+
+Six Critical Invariants
+
+25.1
+
+Structural Persistence
+
+Upstream anchor
+
+Rupture signature
+
+BaseCore
+dynamics
+Identity / rigidity
+block
+Criterion
+grammar
+Regime
+constraints
+Null-regime
+exclusion
+Falsation
+grammar
+
+Support loss or
+collapse exposure
+Identity ambiguity
+Reducible aggregate
+Fragmentation into
+incompatible classes
+Null or trivialized
+class structure
+Opaque or
+non-auditable
+partition
+
+Definition 25.1 (Structural persistence). An admissible system satisfies structural persistence,
+written 𝐼per (𝑆) = 1, if there exists an admissible support 𝐴𝑆 and a constant 𝛿per (𝑆) > 0 such
+that:
+1. 𝐴𝑆 is forward invariant under all 𝑢 ∈ 𝑈 ;
+2. every admissible trajectory starting in 𝐴𝑆 remains at least 𝛿per (𝑆) away from the collapse
+set;
+3. 𝐴𝑆 contains or converges into a non-empty admissible attractor region.
+
+31
+
+25.2
+
+Rigid Identity
+
+Definition 25.2 (Rigid identity). An admissible system satisfies rigid identity, written 𝐼ri (𝑆) = 1,
+if the observable family induced by 𝑅 on 𝐴𝑆 determines a unique identity object ℐ𝑆 and there
+exists a gap 𝛿ri (𝑆) > 0 such that every admissible alternative identity candidate remains at
+weighted deformation distance at least 𝛿ri (𝑆) from ℐ𝑆 .
+
+25.3
+
+Causal Integration
+
+Definition 25.3 (Causal integration). An admissible system satisfies causal integration, written
+𝐼int (𝑆) = 1, if there is no non-trivial factorization
+𝐴𝑆 = 𝐴1 × 𝐴2 ,
+
+𝑅 = 𝑅1 ⊔ 𝑅2 ,
+
+together with decomposed dynamics and causal structure reproducing admissible histories
+within error smaller than a positive margin 𝛿int (𝑆) while preserving ℐ𝑆 . More explicitly,
+this shorthand is relative to a declared admissible factorization class. For such a class D,
+write 𝐼int (𝑆; D) = 1 when no factorization in D reproduces the admissible histories below a
+positive margin 𝛿int (𝑆; D) while preserving ℐ𝑆 . The unqualified notation 𝐼int (𝑆) = 1 refers to
+the default structural class D* : fixed, time-homogeneous, schedule-independent, non-trivial
+product factorizations with both factors non-singleton, with split readouts 𝑅 = 𝑅1 ⊔ 𝑅2 ,
+decomposed dynamics and causal structure, a search space normalized independently of the
+target error, and no reconstruction decoder or time-dependent post-processing map that recouples the factors at output time. This default structural reading is the adopted class recorded
+in docs/ai-platform-outputs/analysis/QICN_IINT_CANONICAL_CLASS_SPLIT_READOUT.md.
+Remark 25.4 (Class-relative integration margin). The integration criterion is class-relative.
+Adopting D* does not assert that 𝑆 resists every broader behavioral simulator. In particular, under decoder-coupled or schedule-dependent behavioral classes such as Dapprox , the corresponding
+margin 𝛿int (𝑆; Dapprox ) may vanish, i.e. may be equal to 0; the current coupled-carrier analysis
+records precisely this failure mode. Thus the default structural reading preserves a falsation
+surface and must not be read as an unconditional closure of integration, nor as a strengthening
+of any downstream theorem that assumes 𝐼int (𝑆) = 1.
+
+25.4
+
+Regime Continuity
+
+Definition 25.5 (Regime continuity). An admissible system satisfies regime continuity, written
+𝐼cont (𝑆) = 1, if there exists a complete metric space (ℰ, 𝑑ℰ ) and an admissible assignment
+Π𝑆 : 𝐴𝑆 → ℰ
+such that:
+1. every admissible trajectory induces a continuous path in ℰ on admissible windows;
+2. there exists 𝛿cont (𝑆) > 0 bounding the fragmentation functional on all admissible histories;
+3. no admissible finite-energy perturbation produces a discontinuous jump into an incompatible
+regime class while ℐ𝑆 is preserved.
+
+25.5
+
+Non-Null Differentiation
+
+Definition 25.6 (Non-null differentiation). An admissible system satisfies non-null differentiation, written 𝐼diff (𝑆) = 1, if there exist 𝑥, 𝑦 ∈ 𝐴𝑆 , a horizon 𝑇 , and a readout subfamily R ⋆ ⊆ 𝑅
+such that
+(︀
+)︀
+dist ℎ𝑆,𝑇 (𝑥; 𝑢∙ ), ℎ𝑆,𝑇 (𝑦; 𝑢∙ ) ≥ 𝛿diff (𝑆) > 0
+for some admissible schedule 𝑢∙ , and if the null class 0 is not an asymptotically stable admissible
+attractor.
+32
+
+25.6
+
+Operational Legibility
+
+Definition 25.7 (Operational legibility). An admissible system satisfies operational legibility,
+written 𝐼leg (𝑆) = 1, if there exist:
+1. a certified readout subfamily R leg ⊆ 𝑅;
+2. a certified decoder family D𝑆 acting on windows of length at least 𝜏min (𝑆);
+3. a class set Q𝑆 ;
+4. a legibility margin 𝛿leg (𝑆) > 0;
+such that:
+(L1) Separability Distinct classes are separated by at least 𝛿leg (𝑆) in decoder space.
+(L2) Noise robustness Admissible noise of size at most 𝛿leg (𝑆) does not alter decoder class
+assignments.
+(L3) Persistence window Decoder assignments remain stable for windows of length at least
+𝜏min (𝑆) unless a certified intervention occurs.
+(L4) Intervention fidelity Certified interventions on critical invariants induce the predicted
+class changes with fidelity at least 1 − 𝛿leg (𝑆).
+(L5) Negative controls Off-target interventions produce false-positive rate at most 𝛿leg (𝑆).
+(L6) Structured compressibility There exists a compression map preserving class structure
+up to distortion bounded by 𝛿leg (𝑆).
+Proposition 25.8 (Each invariant is individually necessary). If any one of 𝐼per , 𝐼ri , 𝐼int , 𝐼cont , 𝐼diff , 𝐼leg
+fails, then 𝑆 ∈
+/ Critop .
+Proof. Without 𝐼per there is no stable admissible domain. Without 𝐼ri there is no unique identity
+carrier. Without 𝐼int the system is reducible. Without 𝐼cont the criterion fragments under
+admissible evolution. Without 𝐼diff the admissible partition collapses into nullity or triviality.
+Without 𝐼leg the partition is not recoverable under admissible readout and intervention discipline.
+Since Definition 26.5 below requires all six, failure of any one excludes membership.
+
+26
+
+Criterion Class, Certified Partition, and Rupture
+
+Definition 26.1 (Certified decoder). A decoder 𝐷 ∈ D𝑆 is certified if it satisfies the six legibility
+clauses of Definition 25.7 on the chosen admissible support.
+Definition 26.2 (Criterion indistinguishability). For 𝑥, 𝑦 ∈ 𝐴𝑆 , write 𝑥 ∼Partop ,𝑆 𝑦 if, for
+every certified decoder 𝐷 ∈ D𝑆 , every admissible horizon 𝑇 ≥ 𝜏min (𝑆), and every admissible
+intervention schedule 𝑢∙ ,
+𝐷(ℎ𝑆,𝑇 (𝑥; 𝑢∙ )) = 𝐷(ℎ𝑆,𝑇 (𝑦; 𝑢∙ )),
+and the intervention responses remain matched within the legibility margin.
+Proposition 26.3 (Well-definedness of the certified partition). If 𝐼per (𝑆) = 𝐼ri (𝑆) = 𝐼cont (𝑆) =
+𝐼diff (𝑆) = 𝐼leg (𝑆) = 1, then ∼Partop ,𝑆 is an equivalence relation on 𝐴𝑆 .
+Proof. Reflexivity and symmetry are immediate. Transitivity follows because certified decoder
+equality composes and the tolerance bound remains within the permitted legibility margin on
+admissible support.
+33
+
+Definition 26.4 (Certified operational partition). Assume Proposition 26.3. The certified
+operational partition of 𝑆 is
+Partop (𝑆) := 𝐴𝑆 /∼Partop ,𝑆 .
+Definition 26.5 (Operational-criterion class membership). An admissible system belongs to the
+BaseCore operational-criterion class, written 𝑆 ∈ Critop , if there exists a non-empty admissible
+support 𝐴𝑆 such that
+𝐼per (𝑆) = 𝐼ri (𝑆) = 𝐼int (𝑆) = 𝐼cont (𝑆) = 𝐼diff (𝑆) = 𝐼leg (𝑆) = 1.
+Remark 26.6 (Neutrality of the class symbol). The symbol Critop is a shorthand for a conjunctive
+operational criterion. It is not a theorem of phenomenality, metaphysical subjectivity, or human
+equivalence.
+Definition 26.7 (Rupture). A rupture is any loss of admissibility or loss of at least one critical
+invariant margin beyond its admissible threshold.
+Theorem 26.8 (Rupture by invariant loss). Let 𝑆 be admissible. If one or more critical
+invariants fail beyond admissible threshold, then exactly one of the following occurs:
+1. 𝑆 ∈
+/ Critop ;
+2. Partop (𝑆) becomes undefined;
+3. Partop (𝑆) becomes trivial or non-legible in the BaseCore sense.
+Proof. Failure of 𝐼per destroys the admissible domain. Failure of 𝐼ri destroys unique identity
+transport. Failure of 𝐼int produces reducibility. Failure of 𝐼cont destroys regime coherence. Failure
+of 𝐼diff collapses the partition into nullity or triviality. Failure of 𝐼leg leaves any remaining
+partition uncertifiable. These cases exhaust the six invariants.
+
+27
+
+Minimality of the Invariant Basis
+
+Definition 27.1 (Reduced criterion). Let
+I = {𝐼per , 𝐼ri , 𝐼int , 𝐼cont , 𝐼diff , 𝐼leg }.
+For every subset 𝐽 ⊆ I define the reduced class
+𝒞op (𝐽) := {𝑆 : 𝐼(𝑆) = 1 for every 𝐼 ∈ 𝐽}.
+Definition 27.2 (Single-rupture witness family). Fix one invariant index 𝑘 ∈ {per, ri, int, cont, diff, leg}.
+A single-rupture witness family 𝒲𝑘 consists of admissible systems whose matching invariant
+margin vanishes while all remaining invariant margins stay strictly positive.
+Proposition 27.3 (Single-rupture witnesses create false positives). Let 𝐽𝑘 = I ∖ {𝐼𝑘 } and
+assume 𝒲𝑘 ̸= ∅. Then every 𝑆 ∈ 𝒲𝑘 satisfies
+𝑆 ∈ 𝒞op (𝐽𝑘 )
+
+but
+
+𝑆∈
+/ Critop .
+
+Proof. All retained invariants remain positive by construction, but the omitted invariant fails
+exactly. Proposition 25.8 then excludes 𝑆 from Critop .
+Theorem 27.4 (Minimality of the six-invariant basis). Let U be any admissible universe
+containing at least one single-rupture witness for each invariant. Then no strict subset of I is
+extensionally equivalent to Critop on U.
+Proof. Take any strict subset 𝐽 ⊊ I. Some invariant 𝐼𝑘 is omitted. By assumption, U contains
+a witness 𝑆𝑘 ∈ 𝒲𝑘 , which satisfies the reduced criterion but not Critop . Hence the two classes
+differ on U.
+34
+
+28
+
+Operational Legibility as a Certified Object
+
+Criterion 28.1 (Legibility certificate). An operational partition candidate is certified only if:
+1. comparator separability holds against pre-registered baselines;
+2. admissible noise does not dissolve the class map below the legibility margin;
+3. the same class assignment survives on windows of length at least 𝜏min (𝑆);
+4. targeted interventions on an invariant induce the predicted directional class change;
+5. sham or off-target interventions do not generate the same class signature;
+6. audit-friendly compression preserves class structure without total collapse.
+Proposition 28.2 (Legibility is jointly constrained). No single legibility metric is sufficient
+for 𝐼leg . The invariant requires simultaneous control of separation, admissible noise robustness,
+persistence window, intervention fidelity, negative controls, and structured compressibility.
+Proof. A decoder can be separable yet fragile to admissible noise, stable over windows yet
+intervention-insensitive, or robust under noise yet collapse under compression. Because Definition 25.7 is conjunctive, all six clauses are required together.
+
+29
+
+Certified Candidate Audit Schema
+
+Definition 29.1 (Base criterion certificate). A BaseCore criterion certificate for an admissible
+system 𝑆 is a tuple
+(︀
+)︀
+Cert(𝑆) = 𝐴𝑆 , D𝑆 , 𝜋𝑆 , Δ(𝑆), 𝐸𝑆 ,
+where:
+1. 𝐴𝑆 is a certified admissible support;
+2. D𝑆 is a certified decoder family;
+3. 𝜋𝑆 is the decoder-induced partition on admissible histories;
+4. Δ(𝑆) is the witness margin vector;
+5. 𝐸𝑆 is the evidence bundle localizing the witness for each invariant.
+Criterion 29.2 (Candidate certification rule). A candidate system may be certified as a member
+of Critop only if all of the following are available on the same admissible support:
+1. a non-empty compact forward-invariant support certificate;
+2. a positive witness margin vector Δ(𝑆) > 0 coordinate-wise;
+3. a decoder family satisfying Definition 25.7;
+4. a targeted intervention panel together with negative controls;
+5. an auditable compression map preserving class structure;
+6. a traceable dependency ledger showing which upstream result supports each invariant witness.
+Theorem 29.3 (Certified criterion membership). If Cert(𝑆) exists and satisfies Criterion 29.2,
+then 𝑆 ∈ Critop and Partop (𝑆) is well-defined.
+35
+
+Proof. Criterion 29.2 explicitly requires positive witnesses for all six invariants on a common
+admissible support. Definition 26.5 then gives 𝑆 ∈ Critop , and Proposition 26.3 gives a welldefined partition quotient.
+Remark 29.4 (Boundary discipline). The section above defines a theorem-tight grammar for
+certification, rupture, and falsation. It does not prove phenomenality, subjectivity, biological
+primacy, or cross-substrate identity transport.
+
+Part VIII
+
+Claim Boundary and Falsation Grammar
+30
+
+Forensic Admissibility and Integrity Grammar
+
+Definition 30.1 (Forensic packet). Each operational run emits a packet
+𝐾 = (tick, seed, versionHash, 𝐻𝑣 , metrics, sensorSummary, checksum).
+Assumption 30.2 (Packet admissibility). A run is admissible only if checksum, schema, seed
+consistency, version hash, and 𝐻𝑣 consistency all pass.
+Definition 30.3 (Severe violation). A run has a severe violation if any of the following holds:
+checksum mismatch, schema failure, seed/version inconsistency, or critical-state replay mismatch.
+Criterion 30.4 (Integrity gate). Severely violated runs are excluded from support counting
+and marked as hard failures.
+Proposition 30.5 (Integrity-first inference). If admissibility fails, inferential significance is
+non-actionable.
+
+31
+
+Certification, Comparison, and Rupture
+
+Definition 31.1 (Operational certification). For an admissible system 𝑆, define
+Cert(𝑆) = 1
+
+⇐⇒
+
+𝐼per (𝑆), 𝐼ri (𝑆), 𝐼int (𝑆), 𝐼cont (𝑆), 𝐼diff (𝑆), 𝐼leg (𝑆) > 0
+
+on a non-empty admissible support under the integrity grammar above.
+Definition 31.2 (Equivalence discriminator). For two admissible systems 𝑆1 , 𝑆2 , define
+EqΓ,𝜀 (𝑆1 , 𝑆2 ) = 1
+when the relevant signatures, admissibility bundle, decoder behavior, and invariant deltas match
+within the allowed comparison regime.
+Definition 31.3 (Rupture event). For a targeted invariant family 𝐽, define
+Rupt𝐽 (𝑆) = 1
+when an admissible intervention or perturbation drives at least one invariant in 𝐽 below its
+certification margin so that class membership becomes invalidated, destroyed, or undefined.
+
+36
+
+32
+
+Prediction and Falsation Grammar
+
+Proposition 32.1 (Complexity-only negative control prediction). If a candidate system exhibits
+high connectivity, high entropy, or rich activity while failing one or more critical invariants,
+then
+Cert(𝑆) = 0,
+𝑆∈
+/ Critop in certified form,
+Partop (𝑆) is not certified.
+Proposition 32.2 (Ablation prediction). If a system is initially certified and a targeted
+admissible intervention destroys one or more invariants, then the framework predicts loss of
+certification or transition to an ambiguity-boundary regime.
+Proposition 32.3 (Exact grammar-transport prediction). If two realizations preserve the
+relevant signatures, admissibility conditions, decoder behavior, and six critical invariants up
+to the allowed comparison regime, then the framework predicts preserved BaseCore criterion
+membership.
+Proposition 32.4 (Threshold-sensitive boundary behavior). The framework predicts stable
+pass/fail regions together with narrow transition bands near critical margins. It predicts neither
+global threshold collapse nor perfect flat insensitivity.
+Proposition 32.5 (Legibility dependence prediction). Criterion membership becomes inadmissible if readouts cease to be separable, noise-robust, intervention-sensitive, or compressible
+without total collapse.
+Proposition 32.6 (Continuity and non-null relevance). Regime continuity and non-null differentiation are constitutive. Systems that preserve rich activity while losing continuity or
+collapsing toward effective null structure fail the operational criterion or leave it undefined.
+Remark 32.7 (What stays outside BaseCore). Runtime status classes, Stage 2 / Stage 3 comparative programs, human comparator campaigns, Papers 7--9, and bridge-facing burden architectures
+remain downstream artifacts. BaseCore absorbs only the falsation grammar and claim-boundary
+semantics needed to keep theorem ownership honest.
+
+33
+
+Claim Boundary Ledger
+
+33.1
+
+Allowed BaseCore Claims
+
+1. Under H1--H4, projection dynamics admit unique fixed points and compact attractor families.
+2. Under H5, attractors are parameterwise non-constant.
+3. Under NFD, inverse-limit identity is not determined by any finite canonical projection.
+4. Under RIG-1 through RIG-5, inverse-limit structures are stable under summable admissible
+perturbations in the weighted metric.
+5. Under NS-1 through NS-3, finite simulator classes cannot faithfully realize full CCR targets.
+6. Under the six-invariant operational burden, certified criterion structures can be defined,
+audited, and falsified.
+
+37
+
+33.2
+
+Forbidden BaseCore Claims
+
+1. Human phenomenal consciousness.
+2. Metaphysical subjectivity.
+3. Human-machine equivalence.
+4. External validation.
+5. Runtime instantiation by the current system.
+6. Paper 9 bridge admissibility.
+7. Strong phenomenality.
+8. Moral status.
+9. Cross-substrate identity preservation.
+10. Public claim closure.
+
+34
+
+Dependency Ledger
+
+1. The foundational Hilbert-space dynamics remain the base layer.
+2. Papers 1--6 contribute formal material selectively normalized into BaseCore only where
+theorem ownership belongs in the base.
+3. Papers 7--9 remain downstream and are not dependencies of any BaseCore theorem.
+4. Stage 2 / Stage 3 comparative programs remain downstream runtime and governance layers.
+5. The PDF remains a derived artifact of the LaTeX tree.
+
+35
+
+Assumption-to-Theorem-to-Non-Claim Mapping
+
+Assumption block
+
+Theorem family
+
+Non-claim boundary
+
+H1--H4
+
+Projection existence,
+contraction, unique fixed
+points, compact attractor
+family
+Structural non-collapsibility
+
+No parameterwise non-collapse and no identity /
+rigidity / simulator claim
+
+H5
+NFD
+
+RIG-1 through RIG-5
+
+NS-1 through NS-3
+Six invariant burden
+plus legibility clauses
+
+Non-locality of identity
+under canonical finite
+projections
+Conditional stability of
+inverse-limit identity and
+weighted Hausdorff control
+Conditional non-simulability
+and approximation barrier
+Criterion class membership,
+certified partition, rupture
+logic
+
+38
+
+No claim about phenomenality, subjectivity, or
+runtime class membership
+No theorem that arbitrary set-theoretic injections
+into finite slices are impossible
+No automatic isomorphism, shape equivalence, or
+transfer theorem without extra assumptions
+No theorem that finite systems cannot approximate
+finite horizons at all
+No theorem of phenomenality, human equivalence,
+biology as primitive, or bridge admissibility
+
+36
+
+Theorem Hygiene Ledger
+
+Theorem
+
+Assumptions
+
+Conclusion type
+
+Non-conclusion
+
+Downstream
+use
+
+Existence and
+uniqueness of
+projection
+Contractivity
+
+H1
+
+No empirical or runtime
+content
+
+H1--H2
+
+Hilbert-space
+geometric existence
+/ uniqueness
+Strict contraction
+bound
+
+Unique fixed point
+
+H1--H3
+
+Compactness of
+attractor family
+
+H1--H4
+
+Structural
+non-collapsibility
+
+H1--H5
+
+Base
+transition
+grammar
+Fixed-point
+and
+spectralgap results
+Attractor
+family
+Parameterfamily base
+layer
+Anticollapse
+gate
+
+State spectral gap
+
+Typed
+differentiability at
+fixed point
+Topological
+regularity plus
+NFD
+RIG-1 through
+RIG-5
+
+Non-locality under
+NFD
+Conditional stability
+of inverse-limit
+identity
+Conditional
+non-simulability
+
+NS-1 through
+NS-3
+
+Certified criterion
+membership
+
+Six invariants
+plus certificate
+rule
+
+37
+
+No spectrum with unit state
+eigenvalue
+
+Existence and
+convergence
+Compactness /
+continuity
+
+No non-collapse by itself
+
+Parameterwise
+exclusion of
+constant fixed
+points
+Spectral-radius
+upper bound < 1
+
+No stronger semantic
+interpretation
+
+No persistence mode 𝜆 = 1
+in state spectrum
+
+Stability
+accounting
+
+Canonical finite
+slices do not
+determine identity
+Weighted
+Hausdorff stability
+under admissible
+perturbations
+Faithful realization
+blocked for finite
+simulators
+Base criterion class
+and certified
+partition
+
+No universal ban on
+arbitrary injections
+
+Identity
+block
+
+No automatic isomorphism
+
+Rigidity
+accounting
+
+No claim against bounded
+finite-horizon approximation
+
+Simulator
+boundary
+
+No phenomenality or
+human-equivalence theorem
+
+Downstream
+classification gates
+
+No regime or identity
+burden by itself
+
+Redundancy Ledger
+
+1. The previous state-spectrum claim 𝜆1 = 1 under strict contraction has been removed.
+2. The previous untyped Golden Mean witness has been replaced by a typed model with explicit
+embedding.
+3. The earlier non-collapse quantifier mismatch has been removed by replacing the old H5 with
+a parameterwise anti-constant hypothesis.
+4. The earlier absolute inverse-limit nonlocality claim has been replaced by an NFD-conditional
+theorem.
+5. The earlier unconditional rigidity / non-simulability language has been replaced by explicit
+assumption blocks.
+6. Substrate invariance, biological non-primacy, bridge-facing closure, and other downstream
+claims have been removed from BaseCore ownership.
+
+39
+
+38
+
+Open Assumptions Inventory
+
+1. The anti-collapse witness is abstract and theorem-valid, but not the same object as the
+Golden Mean typed witness.
+2. Physical realization of CCR-like targets remains open.
+3. Empirical instantiation of the BaseCore operational criterion remains open.
+4. External validation remains open.
+5. Papers 7--9 may build on BaseCore, but their additional burdens remain open at the BaseCore
+level.
+
+39
+
+Downstream Boundary Note
+
+Papers 7, 8, and 9 remain downstream of this source tree. Their classificatory, indexedsubjectivity, and bridge-burden layers may cite BaseCore, but they are not part of the autonomous
+mathematical base rebuilt here.
+
+Part IX
+
+Discrete-to-Continuous Bridge
+40
+
+From Node Networks to Hilbert Space Dynamics
+
+Boundary of this bridge. This part states a conditional approximation theorem between a
+finite node-network transition and the abstract BaseCore transition operator from Definition 5.1.
+It does not prove that any particular runtime execution belongs to an operational-consciousness
+class, and it does not convert finite tests into external validation.
+Definition 40.1 (Discrete State Space). Let 𝑁 ∈ N and let a node network be indexed by
+𝑖 ∈ {1, . . . , 𝑁 }. Each node carries:
+• a local coherence state 𝑥𝑖 (𝑡) ∈ [0, 1];
+• an energy coordinate 𝑒𝑖 (𝑡) ∈ [0, 1];
+• a phase coordinate 𝜑𝑖 (𝑡) ∈ [0, 2𝜋).
+The discrete state space is
+
+𝒮𝑁 = [0, 1]𝑁 × [0, 1]𝑁 × [0, 2𝜋)𝑁 .
+
+Definition 40.2 (Mean Coherence Observable). For a discrete state 𝑠(𝑡) = ((𝑥𝑖 (𝑡))𝑖 , (𝑒𝑖 (𝑡))𝑖 , (𝜑𝑖 (𝑡))𝑖 ) ∈
+𝒮𝑁 , define
+𝑁
+1 ∑︁
+𝑋𝑁 (𝑡) :=
+𝑥𝑖 (𝑡) ∈ [0, 1].
+𝑁 𝑖=1
+This is an observable of the coherence coordinate only; it is not a complete state descriptor.
+Definition 40.3 (Finite Hilbert Embedding). Let
+ℋ𝑁 := R𝑁 ,
+
+⟨a, b⟩𝑁 :=
+
+40
+
+𝑁
+1 ∑︁
+𝑎𝑖 𝑏𝑖 .
+𝑁 𝑖=1
+
+The coherence embedding
+is
+
+𝜄𝑁 : 𝒮𝑁 → ℋ𝑁
+𝜄𝑁 ((𝑥𝑖 )𝑖 , (𝑒𝑖 )𝑖 , (𝜑𝑖 )𝑖 ) = (𝑥1 , . . . , 𝑥𝑁 ).
+
+Thus 𝜄𝑁 forgets energy and phase except where they enter the transition rule below.
+Definition 40.4 (Piecewise-Constant Isometry). Let ℋ = 𝐿2 ([0, 1]) and partition [0, 1] into
+intervals
+[︂
+)︂
+𝑖−1 𝑖
+𝐼𝑁,𝑖 =
+,
+𝑖 = 1, . . . , 𝑁.
+,
+𝑁 𝑁
+Define 𝐽𝑁 : ℋ𝑁 ˓→ ℋ by
+
+(𝐽𝑁 x)(𝑠) = 𝑥𝑖
+
+for 𝑠 ∈ 𝐼𝑁,𝑖 .
+
+†
+Then 𝐽𝑁 is an isometry from (ℋ𝑁 , ‖·‖𝑁 ) into 𝐿2 ([0, 1]). Its adjoint 𝐽𝑁
+: ℋ → ℋ𝑁 is the
+cell-averaging map
+∫︁
+†
+(𝐽𝑁
+𝑓 )𝑖 = 𝑁
+
+𝐼𝑁,𝑖
+
+𝑓 (𝑠) 𝑑𝑠.
+
+Definition 40.5 (Discrete Transition Operator). Fix auxiliary energy and phase coordinates
+(𝑒𝑖 )𝑖 and (𝜑𝑖 )𝑖 , a graph with incoming neighborhoods conn(𝑖), and a control 𝑢 ∈ 𝒰. Let
+𝑑𝑁 := max𝑖 | conn(𝑖)|. The coherence-coordinate transition
+𝑒,𝜑
+𝑇̂︀𝑁,𝑢
+: ℋ𝑁 → ℋ𝑁
+
+is defined componentwise by
+(︀ 𝑒,𝜑 )︀
+𝑇̂︀ x = clamp
+𝑁,𝑢
+
+[0,1] (𝑥𝑖 + 𝜂𝑅𝑖 (x; 𝑒, 𝜑) + 𝛼 𝐵𝑖 (x) + Γ𝑁,𝑖 (𝑢)) ,
+
+𝑖
+
+where
+𝑅𝑖 (x; 𝑒, 𝜑) =
+
+∑︁
+
+𝐼𝑗 (𝑥𝑗 )
+
+𝑗∈conn(𝑖)
+
+exp(−|𝑒𝑖 − 𝑒𝑗 |/(𝑘𝑇 ))
+.
+𝜃 cos(𝜑𝑖 − 𝜑𝑗 )
+
+Here 𝐼𝑗 : [0, 1] → [0, 1] is the intensity readout, 𝐵𝑖 is the finite retro-inductive feedback term,
+Γ𝑁 (𝑢) is the finite input coupling, and 𝑘, 𝑇, 𝜃, 𝜂, 𝛼 are runtime parameters.
+Assumption 40.6 (Discrete Regularity Conditions). For a fixed parameter region, assume:
+1. 𝐼𝑗 is 𝐿𝐼 -Lipschitz for every node 𝑗.
+2. The phase denominator is uniformly separated from zero: there exists 𝑐𝜑 > 0 such that
+| cos(𝜑𝑖 − 𝜑𝑗 )| ≥ 𝑐𝜑 on every active edge.
+3. 𝐵 : ℋ𝑁 → ℋ𝑁 is 𝐿𝐵 -Lipschitz.
+4. Γ𝑁 (𝑢) is independent of x for fixed 𝑢.
+5. The parameters satisfy
+𝜌𝑁 := 𝜂 𝑑𝑁 𝐿𝐼
+
+exp(1/(𝑘𝑇 ))
++ 𝛼𝐿𝐵 < 1.
+𝜃𝑐𝜑
+
+Remark 40.7 (Relation to the runtime guard). The runtime resonance function sets the contribution to zero when the denominator is numerically singular or when the Boltzmann exponent
+is beyond the accepted range. Assumption 40.6 is the mathematical version of that guard:
+without a lower bound on | cos(𝜑𝑖 − 𝜑𝑗 )|, the resonance quotient is not uniformly Lipschitz and
+no contraction theorem follows from 𝜃 > 1/2 alone.
+41
+
+Theorem 40.8 (Discrete Operator Contractivity). Under Assumption 40.6, for fixed 𝑢, 𝑒, 𝜑 the
+𝑒,𝜑
+operator 𝑇̂︀𝑁,𝑢
+is a strict contraction on ℋ𝑁 :
+⃦
+⃦
+⃦ ̂︀𝑒,𝜑
+⃦
+𝑒,𝜑
+⃦𝑇𝑁,𝑢 (x) − 𝑇̂︀𝑁,𝑢 (y)⃦
+
+𝑁
+
+≤ 𝜌𝑁 ‖x − y‖𝑁
+
+∀x, y ∈ ℋ𝑁 .
+
+Proof. The clamp map on [0, 1]𝑁 is non-expansive componentwise. For each active edge, the
+energy-phase coefficient is bounded in absolute value by
+exp(1/(𝑘𝑇 ))
+.
+𝜃𝑐𝜑
+Since each 𝐼𝑗 is 𝐿𝐼 -Lipschitz and each row has at most 𝑑𝑁 incoming edges, the resonance part
+has Lipschitz constant at most
+exp(1/(𝑘𝑇 ))
+𝑑𝑁 𝐿𝐼
+𝜃𝑐𝜑
+in the normalized finite Hilbert norm. The feedback part contributes at most 𝛼𝐿𝐵 , and the input
+coupling contributes no state-dependent term. Multiplying by 𝜂 and using non-expansiveness of
+the clamp gives the displayed bound. The assumed inequality 𝜌𝑁 < 1 makes the contraction
+strict.
+Assumption 40.9 (Bridge Consistency). Let 𝑇𝑢 = ℵ(𝐾 · +Γ(𝑢)) be the BaseCore transition
+operator from Definition 5.1 on ℋ = 𝐿2 ([0, 1]). Assume there are constants 𝐶1 , 𝐶2 > 0 and a
+parameter approximation regime such that
+⃦
+⃦
+⃦
+⃦
+𝑒,𝜑 †
+⃦𝐽𝑁 𝑇̂︀𝑁,𝑢 𝐽𝑁 − 𝑇𝑢 ⃦
+
+≤ 𝜀𝑁 ,
+
+op
+
+with
+
+𝐶1
+𝜀𝑁 = √ + 𝐶2 max{0, 𝜌𝑁 − ‖𝐾‖}.
+𝑁
+This is a finite-rank consistency assumption, not a consequence of H1--H5 alone.
+Theorem 40.10 (Hilbert--Discrete Bridge). Assume Hypotheses 3.1--3.4, Assumptions 40.6
+and 40.9, and 𝜌𝑁 < 1. Then the embedded finite transition approximates the abstract BaseCore
+transition by
+⃦
+⃦
+𝐶1
+⃦
+⃦
+𝑒,𝜑 †
+⃦𝐽𝑁 𝑇̂︀𝑁,𝑢 𝐽𝑁 − 𝑇𝑢 ⃦ ≤ √ + 𝐶2 max{0, 𝜌𝑁 − ‖𝐾‖}.
+op
+𝑁
+In particular, if 𝑁 → ∞, the Galerkin/quadrature term tends to zero, and the discrete parameter
+regime is chosen so that lim sup𝑁 𝜌𝑁 ≤ ‖𝐾‖, then the finite transition converges to 𝑇𝑢 in operator
+norm.
+Proof. The displayed
+estimate is exactly Assumption 40.9. The convergence statement follows
+√
+because 𝐶1 / 𝑁 → 0 and the second term vanishes under lim sup𝑁 𝜌𝑁 ≤ ‖𝐾‖. The theorem
+is therefore a bridge theorem under explicit discretization consistency, not an unconditional
+runtime-instantiation result.
+Corollary 40.11 (Convergence of Fixed Points). Let 𝑓𝑢* be the unique fixed point of 𝑇𝑢 from
+𝑒,𝜑
+*
+Theorem 6.1. Let 𝑓̂︀𝑁,𝑢
+be the unique fixed point of 𝑇̂︀𝑁,𝑢
+from Theorem 40.8. If the assumptions
+of Theorem 40.10 hold and
+𝑞𝑁 := max{‖𝐾‖ , 𝜌𝑁 } < 1,
+then
+
+⃦
+⃦
+⃦
+⃦
+*
+− 𝑓𝑢* ⃦
+⃦𝐽𝑁 𝑓̂︀𝑁,𝑢
+
+ℋ
+
+≤
+
+𝜀𝑁
+.
+1 − 𝑞𝑁
+
+Consequently, if 𝜀𝑁 → 0 and sup𝑁 𝑞𝑁 < 1, then
+⃦
+⃦
+
+⃦
+⃦
+
+*
+lim ⃦𝐽𝑁 𝑓̂︀𝑁,𝑢
+− 𝑓𝑢* ⃦ = 0.
+ℋ
+
+𝑁 →∞
+
+42
+
+Proof. This is the standard perturbation bound for fixed points of strict contractions. Insert
+* ), use the operator discrepancy bound from Theorem 40.10, and then
+and subtract 𝑇𝑢 (𝐽𝑁 𝑓̂︀𝑁,𝑢
+use the contraction constant of 𝑇𝑢 from Theorem 5.2. Moving the contraction term to the left
+gives the stated estimate.
+Remark 40.12 (Applicability to the Current QICN Runtime). The theorem is asymptotic and
+conditional. The current runtime configuration has 𝑁sample = 1500 for heavy processing and
+connection count between 3 and 8, so a typical mean degree is about 5.5. The full configured
+potential network size is 10,000,000, but the certified finite computation uses the processing
+sample. Therefore the error bound is not negligible by declaration. It is a hypothesis-driven
+approximation bridge from finite node dynamics toward the BaseCore operator, not automatic
+validation of a finite execution and not evidence of phenomenality, subjecthood, or external
+adjudication.
+
+A
+
+Counterexamples for Necessity
+
+A.1
+
+Without H1 (Convexity)
+
+Let ℐ = {𝑥 ∈ R2 : ‖𝑥‖ = 1} (unit circle, not convex).
+For Ψ = (0, 0), every point on ℐ is equidistant. Projection is not unique.
+
+A.2
+
+Without H2 (‖𝐾‖ < 1)
+
+Let 𝐾 be a rotation by angle 𝜃 ̸= 0 with ‖𝐾‖ = 1.
+Orbits cycle indefinitely; no fixed point exists.
+
+A.3
+
+Without H3 (Completeness)
+
+Let ℋ = 𝐶([0, 1], Q) (rational-valued continuous functions).
+Cauchy sequences may converge to irrational functions outside the space.
+
+A.4
+
+Without H4 (Compactness)
+
+Let 𝒰 = (0, 1) (open interval) and Γ(𝑢) = 1/𝑢.
+As 𝑢 → 0, attractors escape to infinity; 𝒜* is not compact.
+
+A.5
+
+Why Φ-Regularity Is a Hypothesis
+
+Let ℐ = R with the Euclidean metric, let ℰ = (−𝜋/2, 𝜋/2) with the Euclidean metric, and define
+Φ(𝑥) = arctan(𝑥).
+The map Φ is proper as a map into the open interval ℰ, locally Lipschitz, and non-constant on
+every nonempty ball. However, no constant 𝐶 > 0 can satisfy
+| arctan(𝑥) − arctan(𝑦)| ≥ 𝐶|𝑥 − 𝑦|
+
+∀𝑥, 𝑦 ∈ R.
+
+Indeed, with 𝑦 = 𝑥 + 1,
+| arctan(𝑥 + 1) − arctan(𝑥)| → 0
+
+as 𝑥 → ∞,
+
+while |𝑥 − 𝑦| = 1. Thus properness, local Lipschitz regularity, and non-collapse do not imply
+a global lower Lipschitz bound. Any theorem using such a bound must carry it as an explicit
+hypothesis or prove stronger coercive hypotheses.
+43
+
+References
+[1] Stefan Banach. Sur les operations dans les ensembles abstraits et leur application aux
+equations integrales. Vol. 3. Fundamenta Mathematicae, 1922, pp. 133–181.
+[2] Haim Brezis. Functional Analysis, Sobolev Spaces and Partial Differential Equations.
+Springer, 2011.
+[3]
+
+Erwin Kreyszig. Introductory Functional Analysis with Applications. Wiley, 1978.
+
+[4] Johnny Andrey Pérez Ramírez. ‘‘Rigid Identity as an Inverse Limit in Observable Channels’’.
+In: arXiv preprint (2026).
+[5]
+
+Walter Rudin. Functional Analysis. McGraw-Hill, 1991.
+
+44
+
+

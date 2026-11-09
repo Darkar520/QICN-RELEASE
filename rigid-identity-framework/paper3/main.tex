@@ -85,14 +85,14 @@
 % ABSTRACT
 % =============================================================================
 \begin{abstract}
-We introduce an abstract phenomenological space $\E$ and a compatibility operator $\Phi: \I \to \E$ mapping rigid identity objects to phenomenological regimes. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: in any closed causally rigid (CCR) channel---characterized by inverse-limit identity, causal isolation, and MIR geometry---joint null collapse is dynamically unstable under a separately typed compatible extension witness. Consequently, a CCR realization with such a witness induces a witness-relative non-null separation. The result is \emph{negative-structural}: it does not posit experience; it forbids one typed joint-null configuration under stated hypotheses. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove universal factorization and non-simulability results. All constructions are purely topological and categorical, without metaphysical axioms.
+We introduce an abstract phenomenological space $\E$ and a compatibility operator $\Phi: Z \to \E$ on a declared metric comparison domain. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: under a certified positive lower readout bound, two defined, separated witness values cannot both equal the null element. CCR is a possible application class and is not needed for this metric implication. Consequently, a CCR realization with such a witness induces a witness-relative non-null separation. The result is \emph{negative-structural}: it does not posit experience; it forbids one typed joint-null configuration under stated hypotheses. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove factorization on a faithful image and a finite-prefix approximation bound. The results are metric, order-theoretic and representation-relative; physical interpretation requires additional evidence.
 \end{abstract}
 
 \section{Scope, System Boundary, and Non-Inference Note}
 
-\noindent\textbf{Scope and admissible reading.}\enspace This paper proves a witness-relative negative-structural result: under CCR constraints plus a separately typed extension witness, a lower Lipschitz constant, and an admissible compatibility operator, joint collapse to the null regime is unstable. It develops explicit bounds, factorization structure, and canonical-family consequences for that conditional result. It does not define or detect consciousness, identify $\E$ with subjective experience, assert that CCR systems exist in nature, or derive ethical or metaphysical closure from the theorem. Related systems may implement admissibility-governed diagnostics, boundary-sensitive stress tests, and runtime comparisons motivated by this paper, but those outputs do not implement the abstract phenomenological space $\E$ and do not convert current runtime behavior into proof that any concrete system instantiates experience.
+\noindent\textbf{Scope and admissible reading.}\enspace This paper proves a witness-relative negative-structural result: under CCR constraints plus a separately typed extension witness, a lower Lipschitz constant, and an admissible compatibility operator, joint exact collapse to the null regime is excluded. It develops explicit bounds, factorization structure, and canonical-family consequences for that conditional result. It does not define or detect consciousness, identify $\E$ with subjective experience, assert that CCR systems exist in nature, or derive ethical or metaphysical closure from the theorem. Related systems may implement admissibility-governed diagnostics, boundary-sensitive stress tests, and runtime comparisons motivated by this paper, but those outputs do not implement the abstract phenomenological space $\E$ and do not convert current runtime behavior into proof that any concrete system instantiates experience.
 
-\noindent\textbf{Witness-relative clarification.}\enspace CCR by itself does not provide the extension witness, the lower Lipschitz constant, or the admissible compatibility operator. Any phrase such as ``forced non-nullity'' or ``null instability'' in this manuscript is to be read under the explicit hypotheses of Theorem~\ref{thm:instability}, especially Definition~\ref{def:extension-witness}. The null-instability theorem must not be read as a consciousness detector, an AI-subjectivity claim, a moral-status claim, an empirical certificate, or validation of the corpus by the runtime.
+\noindent\textbf{Witness-relative clarification.}\enspace CCR by itself does not provide the extension witness, the lower Lipschitz constant, or the admissible compatibility operator. The historical phrase ``null instability'' denotes joint exact null exclusion here, not temporal instability. Statements of non-nullity use the explicit hypotheses of Theorem~\ref{thm:instability}, including the declared witness domain of Definition~\ref{def:extension-witness}. The null-instability theorem must not be read as a consciousness detector, an AI-subjectivity claim, a moral-status claim, an empirical certificate, or validation of the corpus by the runtime.
 
 
 
@@ -109,19 +109,27 @@ Papers I and II established a mathematical framework for structural identity as 
 \emph{Can a CCR system remain in a structurally null phenomenological state?}
 \end{quote}
 
-We prove the answer is \textbf{no under a separated extension witness}---not as a metaphysical claim, but as a structural theorem with typed hypotheses.
+We exclude joint null assignment on a separated, detected witness pair. This does not exclude a null value at one endpoint or a dynamically stable null state.
 
 \subsection{Main Result (Informal)}
 
-\textbf{No-Null Regime Theorem:} For a CCR channel equipped with the separated extension witness and regularity hypotheses stated in Theorem~\ref{thm:instability}, joint assignment to the phenomenological null regime $\nullphi$ is structurally unstable. The theorem yields a witness-relative non-null separation $e_\star \succ \nullphi$ with positive structural intensity under those hypotheses.
+\textbf{No-Null Regime Theorem:} For a CCR channel equipped with the separated extension witness and regularity hypotheses stated in Theorem~\ref{thm:instability}, joint exact assignment to the null element $\nullphi$ is excluded. At least one endpoint is non-null; positive distance from null and a gap to every lower regime are distinct conclusions.
+
+\begin{example}[Nonempty Assignment and Null-Anchored Witness]\label{ex:null-realization}
+Let $Z=\{0,1\}^{\mathbb N}$, let $d_Z(x,y)=3^{-(m+1)}$ at their first differing bit $m$, and let $\E=[0,1]$ with its usual order, metric and null $0$. Set $d_Z(x,x)=0$. The ternary readout $F(b)=\sum_{j\geq0}2b_j/3^{j+1}$ satisfies
+\[
+d_Z(x,y)\leq |F(x)-F(y)|\leq3d_Z(x,y).
+\]
+The first differing term has magnitude $2/3^{m+1}$ and the remaining tail is at most $1/3^{m+1}$, proving both bounds. The all-zero and all-one sequences give images $0$ and $1$, a null-anchored pair. Every finite prefix has different readout completions, while uniform tail error is $3^{-(N+1)}$; thus the revised E1 and E2 are realized together. The finite positive witness image $\{1\}$ has relative gap one, but the ambient global lower gap at $1$ is zero. This model supplies readout geometry, not an infinite-mass cost certificate or phenomenal evidence.
+\end{example}
 
 \subsection{Paper Organization}
 
-Section 2 reviews prerequisites from Papers I--II. Section 3 defines the phenomenological space with full axiomatic clarity. Section 4 proves the main instability theorem. Section 5 stratifies positive regimes. Section 6 provides quantitative bounds. Section 7 establishes ontological closure. Section 8 explicitly delimits scope. Section 9 compares with existing frameworks. Section 10 discusses limitations. Section 11 concludes. Appendices provide canonical examples with explicit computations.
+Section 2 reviews prerequisites from Papers I--II. Section 3 defines the phenomenological space with full axiomatic clarity. Section 4 proves the main instability theorem. Section 5 stratifies positive regimes. Section 6 provides quantitative bounds. Section 7 combines the conditional witness conclusions. Section 8 explicitly delimits scope. Section 9 compares with existing frameworks. Section 10 discusses limitations. Section 11 concludes. Appendices provide canonical examples with explicit computations.
 
 \subsection{What This Paper Adds Beyond Phenomenological Regimes}
 
-\textit{Phenomenological Regimes} classifies the admissible regime space and derives the continuity and non-constancy constraints that any compatible assignment must satisfy. This paper takes the remaining case---the null regime itself---and proves that it cannot remain structurally stable under CCR.
+\textit{Phenomenological Regimes} classifies the admissible regime space and derives the continuity and non-constancy constraints that any compatible assignment must satisfy. This paper takes the remaining case---the null regime itself---and proves joint null exclusion under independently supplied witness hypotheses.
 
 % =============================================================================
 % SECTION 2: PRELIMINARIES
@@ -140,29 +148,29 @@ Let $(S_t, \pi_{t+1 \to t})_{t \in T}$ be a projective system of state spaces wi
 \end{definition}
 
 \begin{definition}[Weighted Deformation Metric]
-For $x, \tilde{x} \in \I$, define:
-\[
-\dw(x, \tilde{x}) := \sup_t w_t \cdot d_t(x_t, \tilde{x}_t)
-\]
-where $\{w_t\}$ are summable weights and $d_t$ is the normalized metric on $S_t$.
+For $x,y\in\I$, use $\dw(x,y)=\sup_t w_t d_t(x_t,y_t)$ with $w_t>0$, $\sum_t w_t<\infty$, and normalized complete coordinate metrics $0\leq d_t\leq1$. The normalization guarantees a finite metric and uniformly vanishing tails. This metric is on histories, not on the set of identity objects of different systems.
 \end{definition}
 
 \begin{proposition}[Metric Completeness, Rigid Identity]
-If each $(S_t, d_t)$ is complete and the projections are uniformly continuous, then $(\I, \dw)$ is a complete metric space.
+With the normalized complete coordinate metrics above and continuous projective maps, $(\I,\dw)$ is complete, when non-empty.
 \end{proposition}
+
+\begin{proof}
+A $\dw$-Cauchy sequence is Cauchy in each coordinate, since $w_t>0$. Coordinate completeness supplies limits; continuity of each projection preserves compatibility. For convergence in $\dw$, first choose a finite prefix with $\sup_{t>N}w_t$ small, then control the finitely many remaining coordinates. The normalized tail is uniformly small.
+\end{proof}
 
 \subsection{Ontological Mass and CCR Classification}
 
 \begin{definition}[Ontological Mass, infimum convention]\label{def:paper3-ontmass}
-Following \textit{Rigid Identity}, the ontological mass of an identity object is the lower resistance to non-zero admissible deformation:
+Specify a metric comparison space $(Z,d_Z)$ containing a chosen point $z_S$ for each object under comparison and a declared intervention sector with cost $E_w(\delta)\in[0,\infty]$. Define
 \[
-\MO := \inf \left\{ \frac{E_w(\delta)}{\dw(\I, \tilde{\I})} \;\middle|\; \delta \text{ admissible},\; \dw(\I,\tilde{\I})>0 \right\}.
+\MO(S)=\inf\left\{\frac{E_w(\delta)}{d_Z(z_S,z_{S,\delta})}:\delta\text{ admitted},\ 0<d_Z(z_S,z_{S,\delta})<\infty\right\},
 \]
-If no finite-energy admissible perturbation induces non-zero deformation, the set is empty in the operational deformation sector and we set $\MO=+\infty$.
+with $\inf\varnothing=+\infty$. A common metric/embedding and cost model must be supplied; $\I$ itself is a set, not an input to a map whose domain is that set.
 \end{definition}
 
 \begin{remark}[v24 consistency patch]
-Earlier drafts used a supremum notation for $\MO$ in this paper. That notation is superseded here. The infimum convention is the canonical one used in \textit{Rigid Identity}: it measures a lower resistance to deformation, not a largest observed cost. All claims below are read under this convention.
+Earlier drafts used a supremum notation for $\MO$ in this paper. That notation is superseded here. The infimum convention measures a lower resistance to deformation in a specified sector, not a largest observed cost. All claims below are read under this convention.
 \end{remark}
 
 \begin{definition}[CCR Channel]
@@ -170,36 +178,40 @@ A channel is \textbf{Closed Causally Rigid (CCR)} if $\MO = +\infty$.
 \end{definition}
 
 \begin{remark}[Physical Interpretation]
-$\MO = +\infty$ means that arbitrarily small deformations require unbounded energy. This is not a metaphor---it is a precise metric condition on the projective system.
+$\MO=+\infty$ refers to the declared intervention/cost model: there is no finite-cost nonzero deformation in that sector. Geometry alone supplies neither an energy unit nor a physical realization.
 \end{remark}
 
 \subsection{Key Theorems from Papers I--II}
 
-\begin{theorem}[Non-Simulability, Rigid Identity]\label{thm:nonsim}
-For any finite-dimensional computational architecture $\mathcal{A}_{\text{fin}}$:
-\[
-\MO(\mathcal{A}_{\text{fin}}) < \infty
-\]
-Therefore, CCR identity cannot be simulated by finite systems.
+\begin{theorem}[Finite Representation Budget]\label{thm:nonsim}
+Fix a finite test set $A\subseteq Z$ with $\dE(\Phi(x),\Phi(y))\geq\delta>0$ for every distinct $x,y\in A$. An encoder $q:A\to Q$ with $|Q|<|A|$ and any decoder $g:Q\to\E$ incur worst-case error at least $\delta/2$. Finite real dimension alone is not this cardinal budget.
 \end{theorem}
 
-\begin{theorem}[Spectral Coupling, Rigid Identity]\label{thm:spectral}
-There exists a spectral coupling constant $\sigma_{\min} > 0$ such that for the phenomenological compatibility operator $T_\Phi$:
-\[
-C = \sigma_{\min}(T_\Phi)
-\]
-is derived from the spectral gap of $T_\Phi$, not assumed.
+\begin{proof}
+Two distinct points share an encoder value by the pigeonhole principle. If both reconstruction errors were smaller than $\delta/2$, the triangle inequality would make their true readout distance smaller than $\delta$.
+\end{proof}
+
+\begin{theorem}[Audited Linear Coupling]\label{thm:spectral}
+If an audited linear readout $T$ from a nonzero finite-dimensional Euclidean space to another Euclidean space is injective, then its least singular value is positive and $\|T(x-y)\|\geq\sigma_{\min}(T)\|x-y\|$. A nonlinear readout requires a separate lower-bound proof; a named spectral gap does not supply one.
 \end{theorem}
 
-\begin{theorem}[Forced Continuity, Phenomenological Regimes]\label{thm:cont}
-If $\MO = +\infty$, then any compatible phenomenological assignment $\Phi: \I \to \E$ is continuous.
+\begin{proof}
+On the compact unit sphere, the continuous function $v\mapsto\|Tv\|$ attains a strictly positive minimum when $T$ is injective. Scaling gives the bound. This is a readout singular-value statement, not an inference from the dynamics spectrum.
+\end{proof}
+
+\begin{theorem}[Continuity under Controlled Approximation]\label{thm:cont}
+In a complete metric codomain, suppose finite continuous readouts $f_n$ satisfy $d(f_{n+1}(z),f_n(z))\leq a_n$ uniformly, with $\sum_n a_n<\infty$. Their limit $\Phi$ is continuous. The mass label is not sufficient by itself.
 \end{theorem}
+
+\begin{proof}
+The tail bound $d(\Phi(z),f_N(z))\leq\sum_{n\geq N}a_n$ is uniform. Given an error, choose this tail small, use continuity of $f_N$, and apply the triangle inequality at the two endpoints.
+\end{proof}
 
 \begin{remark}[Remaining null-regime gap]\label{rem:null-prelim}
-\textit{Phenomenological Regimes} classifies admissible phenomenological regimes and derives the continuity constraints that govern them, but it does not complete the prohibition theorem for the null regime itself. That closure is the specific task of this paper.
+\textit{Phenomenological Regimes} classifies admissible phenomenological regimes and derives the continuity constraints that govern them, but a null label alone does not supply an instability result. The task here is to derive the precise witness-relative conclusion and its limits.
 \end{remark}
 
-This paper converts Remark \ref{rem:null-prelim} into a full null-instability theorem.
+The results below address joint null exclusion; temporal attraction and existence of physical CCR systems remain separate obligations.
 
 % =============================================================================
 % SECTION 3: PHENOMENOLOGICAL SPACE
@@ -227,9 +239,9 @@ $\E$ is an abstract regime space. No phenomenological content is assumed. The nu
 The symbol $\nullphi$ serves two distinct roles in the broader framework, and conflating them creates a category error:
 \begin{enumerate}
 \item \textbf{Null regime ($\nullphi\in\E$):} In Definition~\ref{def:phenom}, $\nullphi$ is the bottom element of the phenomenological poset $(\E,\preceq)$. It is a legitimate element of $\E$, comparable to all other regimes via $\preceq$ and separated from them by $\dE$.
-\item \textbf{Undefined assignment ($\bot\notin\E$):} When a compatibility operator $\Phi$ is not defined on some input $x\in\I$, we write $\Phi(x)=\bot$. The symbol $\bot$ is disjoint from $\E$; it lives in the typed codomain $\E_\bot:=\E\sqcup\{\bot\}$.
+\item \textbf{Undefined assignment ($\bot\notin\E$):} When a compatibility operator $\Phi$ is not defined on some input $x\in Z$, we write $\Phi(x)=\bot$. The symbol $\bot$ is disjoint from $\E$; it lives in the typed codomain $\E_\bot:=\E\sqcup\{\bot\}$.
 \end{enumerate}
-The instability theorem (Theorem~\ref{thm:instability}) concerns admissible values in $\E$ and rules out two separated witness endpoints both taking the value $\nullphi$. The v31 conditional closure theorem concerns a different case: $\Phi$ undefined on both witness endpoints, written $\Phi(\I)=\bot$ and $\Phi(\tilde{\I})=\bot$. That case is excluded by the witness hypothesis, which requires $\Phi$ to be defined on both endpoints.
+The instability theorem (Theorem~\ref{thm:instability}) concerns admissible values in $\E$ and rules out two separated witness endpoints both taking the value $\nullphi$. The v31 conditional closure theorem concerns a different case: $\Phi$ undefined on both witness endpoints, written $\Phi(z_0)=\bot$ and $\Phi(z_1)=\bot$. That case is excluded by the witness hypothesis, which requires $\Phi$ to be defined on both endpoints.
 \end{remark}
 
 \begin{nontheorem}[What $\E$ Is Not]
@@ -246,15 +258,13 @@ $\E$ is a mathematical object satisfying Definition \ref{def:phenom}. All interp
 \subsection{Compatibility Operator}
 
 \begin{definition}[Compatibility Operator]\label{def:compat}
-A map $\Phi: \I \to \E$ is a \textbf{compatibility operator} if it satisfies:
+For each system declare a metric domain $D_S$ and a map $\Phi_S:D_S\to\E$. Audited comparisons use a single complete metric domain $(Z,d_Z)$ and its specified readout $\Phi:Z\to\E$. One may take $Z=\I$ for histories; comparison of whole identity objects instead requires an explicit metric representation of those objects.
 \begin{enumerate}
-\item[(C1)] \textbf{Extension Invariance:} For any compatible extension $\mathcal{E}$ of the channel, $\Phi(\I) \cong \Phi(\I_\mathcal{E})$.
-\item[(C2)] \textbf{Isomorphism Stability:} If $\I \cong \tilde{\I}$, then $\Phi(\I) \sim \Phi(\tilde{\I})$.
-\item[(C3)] \textbf{Lipschitz Lower Bound:} There exists $C > 0$ such that:
-\[
-\dE(\Phi(x), \Phi(\tilde{x})) \geq C \cdot \dw(x, \tilde{x})
-\]
+\item[(C1)] For a declared extension transport $j:D_S\to D_{S'}$, extension invariance means $\Phi_{S'}\circ j=\Phi_S$, in the common codomain.
+\item[(C2)] For a declared isomorphism transport $u:D_S\to D_{S'}$, isomorphism stability means $\Phi_{S'}\circ u=\Phi_S$.
+\item[(C3)] On the declared audited pair class $W\subseteq Z\times Z$, a certified $C>0$ satisfies $\dE(\Phi(x),\Phi(y))\geq C d_Z(x,y)$.
 \end{enumerate}
+Exact transport of a point under C1/C2 is not a new separated witness. In an extension domain a second, distinct point must be supplied. The pair theorem uses C3 only; it does not derive the maps or the witness from CCR.
 \end{definition}
 
 \begin{remark}[Partial definedness and the $\bot$ marker]\label{rem:partial-phi}
@@ -262,11 +272,11 @@ In contexts where $\Phi$ is only partially defined, $\Phi(x)=\bot$ means that no
 \end{remark}
 
 \begin{lemma}[Well-Posedness of (C3)]
-Axiom (C3) is consistent with continuity of $\Phi$ (Theorem \ref{thm:cont}) when $\MO = +\infty$.
+Continuity and a positive lower bound are jointly realizable; for example $Z=\E=[0,1]$ with the ordinary metric and $\Phi(x)=x$ satisfies both with $C=1$.
 \end{lemma}
 
 \begin{proof}
-Continuity requires: for all $\epsilon > 0$, there exists $\delta > 0$ such that $\dw(x, \tilde{x}) < \delta$ implies $\dE(\Phi(x), \Phi(\tilde{x})) < \epsilon$. This is compatible with (C3) because (C3) provides a lower bound, not an upper bound. The function $\Phi$ can be both continuous (upper control) and satisfy (C3) (lower control).
+The identity map preserves distances exactly. Neither condition is deduced from CCR.
 \end{proof}
 
 \begin{remark}
@@ -276,14 +286,11 @@ Axioms (C1)--(C3) are structural. No phenomenological content is introduced.
 \subsection{Attractor Set}
 
 \begin{definition}[Attractor Set]
-For a channel $S$, the \textbf{attractor set} is:
-\[
-\Attr(S) := \{ e \in \E : e \text{ is stable under all compatible extensions and summable deformations} \}
-\]
+Let the allowed readout perturbations and extension transports be specified as below. Define $\Attr(S)$ as their structurally stable readout values. This notation does not assert temporal attraction; a flow and a basin would be additional data.
 \end{definition}
 
 \begin{definition}[Stability]
-A regime $e \in \E$ is \textbf{stable} for channel $S$ if for every compatible extension $S'$ of $S$ and every summable perturbation $\{\epsilon_n\}$, the induced regime $\Phi_{S'}(\I')$ satisfies $\dE(\Phi_{S'}(\I'), e) < \delta$ for some $\delta > 0$ depending only on $\|\{\epsilon_n\}\|_w$.
+A value $e=\Phi_S(z)$ is structurally stable if some finite modulus $\omega(\rho)\to0$ as $\rho\downarrow0$ satisfies $\dE(\Phi_{S'}(Pz),e)\leq\omega(\rho)$ for every declared perturbation transport $P:D_S\to D_{S'}$ of cost at most $\rho$. Exact persistence would instead require equality. For $\Phi(x)=x$ on $[0,1]$ with clipped additive perturbations, the null value $0$ is stable with $\omega(\rho)=\rho$, although a separated point has a non-null image.
 \end{definition}
 
 \subsection{The Bridge Lemma Revisited}
@@ -291,11 +298,11 @@ A regime $e \in \E$ is \textbf{stable} for channel $S$ if for every compatible e
 From \textit{Phenomenological Regimes}, we have:
 
 \begin{lemma}[Bridge Lemma]\label{lem:bridge}
-If $\Phi: \I \to \E$ is a compatibility operator for a CCR channel, and if the regime $e = \Phi(\I)$ satisfies $\dE(e, \nullphi) = 0$, then $e = \nullphi$.
+For any defined $e=\Phi(z)\in\E$, $\dE(e,\nullphi)=0$ implies $e=\nullphi$. No CCR assumption is required.
 \end{lemma}
 
 \begin{proof}
-By the separation axiom in Definition \ref{def:phenom}, $\dE(e, \nullphi) = 0$ implies $e = \nullphi$.
+This is the separation axiom of a metric.
 \end{proof}
 
 \begin{caveat}[Semantic Shield for Bridge Lemma]
@@ -311,38 +318,27 @@ The Bridge Lemma is a \textbf{metric statement}, not an ontological one. It does
 \subsection{The Conditional Null-Separation Theorem}
 
 \begin{definition}[Admissible extension witness]\label{def:extension-witness}
-Let $S$ be a channel with identity object $\I$. An \textbf{admissible extension witness} for a compatibility operator $\Phi$ is a tuple $(S',\tilde{\I},\epsilon)$ such that:
-\begin{enumerate}
-\item $S'$ is a compatible extension of $S$ in the declared projective category;
-\item $\tilde{\I}$ is the identity object induced by $S'$ and lies in the domain on which $\Phi$ is evaluated;
-\item $0<\dw(\I,\tilde{\I})=\epsilon<\infty$;
-\item the witness is not introduced as a finite-energy deformation of a CCR identity object. It is an extension-side comparison datum, not a contradiction of $\MO=+\infty$.
-\end{enumerate}
+For the declared comparison readout $\Phi:Z\to\E$, an extension witness is $(S',z_0,z_1,\epsilon)$ with both endpoints in $Z$, both readout values defined, and $0<d_Z(z_0,z_1)=\epsilon<\infty$. Its provenance must identify the admitted extension and the embedding/transport that places the endpoints in $Z$. When $Z=D_{S'}$, $z_0$ may be a transported point of $S$, whereas $z_1$ is a distinct point. Admissibility of this construction and the lower bound on this pair are separate obligations. No finite-cost internal nonzero deformation is inferred from $\MO=+\infty$.
 \end{definition}
 
 \begin{theorem}[Conditional Null-Separation Under an Admissible Extension Witness]\label{thm:instability}
-Let $S$ be a CCR channel, let $\Phi:\I\to\E$ be a compatibility operator satisfying the Lipschitz lower bound (C3), and suppose an admissible extension witness $(S',\tilde{\I},\epsilon)$ exists for $\Phi$. Then $\Phi$ cannot collapse both separated identity objects to the null regime:
+Let $\Phi:Z\to\E$ be defined on a declared separated witness pair $(z_0,z_1)$ with $d_Z(z_0,z_1)=\epsilon>0$ and $\dE(\Phi(z_0),\Phi(z_1))\geq C\epsilon$, $C>0$. Then
 \[
-\neg\bigl(\Phi(\I)=\nullphi \;\wedge\; \Phi(\tilde{\I})=\nullphi\bigr).
+\neg(\Phi(z_0)=\nullphi\ \wedge\ \Phi(z_1)=\nullphi),\qquad
+\max_{i=0,1}\dE(\Phi(z_i),\nullphi)\geq C\epsilon/2.
 \]
-Equivalently, null stability across such a separated extension witness is impossible.
+This applies to a CCR channel if it supplies these data; CCR is unnecessary for the metric conclusion. It excludes joint exact null assignment, not a single stable null endpoint.
 \end{theorem}
 
+\begin{proof}
+If both images were null their mutual distance would be zero, contradicting the positive lower bound. The triangle inequality bounds their mutual distance by the sum of their distances to null, at most twice their maximum. Rearranging gives the quantitative assertion. The factor $1/2$ is sharp in general: in the coordinatewise ordered positive quadrant with the $\ell^1$ metric, values $(a,0)$ and $(0,a)$ have separation $2a$ and both have null distance $a$.
+\end{proof}
+
 \begin{remark}[Applicability scope]\label{rem:instability-scope}
-Theorem~\ref{thm:instability} assumes $\Phi(\I),\Phi(\tilde{\I})\in\E$, not $\bot$. If $\Phi$ is undefined on either endpoint, the separated-witness hypothesis of Definition~\ref{def:extension-witness} is not satisfied and the theorem does not apply.
+Theorem~\ref{thm:instability} assumes $\Phi(z_0),\Phi(z_1)\in\E$, not $\bot$. If $\Phi$ is undefined on either endpoint, the separated-witness hypothesis of Definition~\ref{def:extension-witness} is not satisfied and the theorem does not apply.
 \end{remark}
 
-\begin{proof}
-Assume for contradiction that $\Phi(\I)=\nullphi$ and $\Phi(\tilde{\I})=\nullphi$. By Definition~\ref{def:extension-witness}, $\dw(\I,\tilde{\I})=\epsilon>0$. Applying (C3) gives
-\[
-\dE(\Phi(\I),\Phi(\tilde{\I})) \geq C\,\dw(\I,\tilde{\I}) = C\epsilon>0.
-\]
-But the null-collapse assumption gives
-\[
-\dE(\Phi(\I),\Phi(\tilde{\I}))=\dE(\nullphi,\nullphi)=0,
-\]
-a contradiction. Hence the two separated identities cannot both be mapped to the null regime.
-\end{proof}
+
 
 \begin{caveat}[v24 correction of the former Step 2]
 The theorem above does \emph{not} infer a finite-energy non-zero deformation from $\MO=+\infty$. Under the infimum convention for ontological mass, $\MO=+\infty$ means precisely that no finite-energy admissible perturbation produces non-zero deformation. The older Step 2 proof direction is therefore withdrawn. The surviving result is conditional on an independently specified extension witness.
@@ -351,7 +347,7 @@ The theorem above does \emph{not} infer a finite-energy non-zero deformation fro
 \subsection{Conditional Consequences}
 
 \begin{corollary}[Conditional Forced Non-Nullity]\label{cor:forced}
-If a CCR channel admits an admissible extension witness for $\Phi$ and if $\Phi(\tilde{\I})=\nullphi$ for the witness object, then $\Phi(\I)\neq\nullphi$. Symmetrically, if $\Phi(\I)=\nullphi$, then $\Phi(\tilde{\I})\neq\nullphi$.
+If a CCR channel admits an admissible extension witness for $\Phi$ and if $\Phi(z_1)=\nullphi$ for the witness object, then $\Phi(z_0)\neq\nullphi$. Symmetrically, if $\Phi(z_0)=\nullphi$, then $\Phi(z_1)\neq\nullphi$.
 \end{corollary}
 
 \begin{proof}
@@ -377,49 +373,39 @@ with the inherited partial order $\preceq$.
 \end{definition}
 
 \begin{lemma}[Witness-Relative No-Minimum Collapse]\label{lem:no-collapse}
-Under the hypotheses of Theorem~\ref{thm:instability}, the two-point witness image cannot have infimum equal to a joint null collapse.
+The finite positive witness image $A=\{\Phi(z_0),\Phi(z_1)\}\setminus\{\nullphi\}$ is non-empty. Its infimum, if one exists in the ambient poset, need not be positive or belong to $A$.
 \end{lemma}
 
 \begin{proof}
-The witness image contains $\Phi(\I)$ and $\Phi(\tilde{\I})$. If both collapsed to $\nullphi$, Theorem~\ref{thm:instability} would be contradicted. Therefore the witness-relative image is not a joint null collapse.
+Non-emptiness follows from Theorem~\ref{thm:instability}. In the complete finite lattice $\{0,a,b,1\}$ with incomparable $a,b$ and discrete metric, the injective image $\{a,b\}$ is separated, but its infimum is $0$. Thus a positive infimum cannot be inferred.
 \end{proof}
 
 \subsection{Minimal Positive Regime}
 
 \begin{theorem}[Witness-Relative Minimal Positive Regime]\label{thm:minimal}
-Assume the hypotheses of Theorem~\ref{thm:instability}. If the witness-relative positive image
-\[
-\E^{+,\mathrm{wit}}:=\{\Phi(\I),\Phi(\tilde{\I})\}\setminus\{\nullphi\}
-\]
-is non-empty and has an infimum in $(\E,\preceq)$, then there exists a minimal positive witness-relative regime
-\[
-e_\star^{\mathrm{wit}}:=\inf \E^{+,\mathrm{wit}}\in\Eplus.
-\]
+The finite non-empty positive witness image $A$ has at least one minimal element in its inherited partial order. If its two possible elements are comparable, it has a unique least element. These statements require no ambient infimum or order completeness; they concern $A$, not all of $\Eplus$.
 \end{theorem}
 
 \begin{proof}
-Non-emptiness follows from Theorem~\ref{thm:instability}: not both witness images are null. Existence of the infimum is an explicit hypothesis. Since the image is not a joint null collapse and the separation axiom excludes positive classes at zero distance from $\nullphi$, the resulting infimum is positive when it lies in the witness image or in the declared positive closure of that image.
+Starting from any member of a finite non-empty poset, a strictly descending chain must terminate at a minimal member. For a set of at most two comparable members the smaller one is least and unique. The diamond example above has two incomparable minimal members, so uniqueness cannot be inferred without an added condition.
 \end{proof}
 
 \subsection{Structural Intensity}
 
 \begin{definition}[Structural Intensity]
-For $e \in \Eplus$, define the \textbf{structural intensity} as:
+For positive $e$, distinguish the null distance $r(e)=\dE(e,\nullphi)$ from the global lower gap
 \[
-\iota(e) := \inf\{ \dE(e, \tilde{e}) : \tilde{e} \prec e \}.
+\iota(e)=\inf_{f\in\E,\ f\prec e}\dE(e,f).
 \]
-This measures the minimal distance to any strictly smaller regime.
+For an explicitly audited set $A_0$ containing $e$ and $\nullphi$, define the relative gap $\iota_{A_0}(e)$ by the same infimum restricted to $f\in A_0$. All gaps have the units of $\dE$; no conversion to experience or energy is implied.
 \end{definition}
 
 \begin{corollary}[Witness-Relative Positive Intensity]\label{cor:intensity}
-If $e_\star^{\mathrm{wit}}$ exists as in Theorem~\ref{thm:minimal} and the only witness-relative element below it is $\nullphi$, then
-\[
-\iota(e_\star^{\mathrm{wit}})>0.
-\]
+For a minimal positive member $e$ of the finite witness image $A$ and $A_0=A\cup\{\nullphi\}$, $\iota_{A_0}(e)=r(e)>0$. The global $\iota(e)$ need not be positive.
 \end{corollary}
 
 \begin{proof}
-By the separation axiom, $\dE(e_\star^{\mathrm{wit}},\nullphi)>0$. If $\nullphi$ is the only witness-relative element below $e_\star^{\mathrm{wit}}$, the infimum defining intensity is bounded below by that positive separation.
+The only strictly smaller member of $A_0$ is null, giving the equality. For $\E=[0,1]$ with its usual order and metric, $e=1$ has global gap zero, although the audited set $A_0=\{0,1\}$ has relative gap one.
 \end{proof}
 
 % =============================================================================
@@ -430,23 +416,23 @@ By the separation axiom, $\dE(e_\star^{\mathrm{wit}},\nullphi)>0$. If $\nullphi$
 \subsection{Witness Lower Bound}
 
 \begin{theorem}[Witness Intensity Bound]\label{thm:bound}
-Under the hypotheses of Theorem~\ref{thm:instability}, if exactly one of $\Phi(\I)$ and $\Phi(\tilde{\I})$ is null, then the non-null witness image $e$ satisfies
+Under the hypotheses of Theorem~\ref{thm:instability}, if exactly one of $\Phi(z_0)$ and $\Phi(z_1)$ is null, then the non-null witness image $e$ satisfies
 \[
 \dE(e,\nullphi)\geq C\epsilon>0.
 \]
 \end{theorem}
 
 \begin{proof}
-Apply (C3) to the pair $(\I,\tilde{\I})$. If one side maps to $\nullphi$ and the other side maps to $e$, then
+Apply (C3) to the pair $(z_0,z_1)$. If one side maps to $\nullphi$ and the other side maps to $e$, then
 \[
-\dE(e,\nullphi)=\dE(\Phi(\I),\Phi(\tilde{\I}))\geq C\dw(\I,\tilde{\I})=C\epsilon.
+\dE(e,\nullphi)=\dE(\Phi(z_0),\Phi(z_1))\geq C\,d_Z(z_0,z_1)=C\epsilon.
 \]
 \end{proof}
 
 \subsection{Explicit Constants for Canonical Families}
 
 \begin{proposition}[Conditional Profinite Bound]
-For a profinite family with a verified extension witness of separation $\epsilon$ and an independently certified witness-level lower constant $C_{\mathrm{prof}}>0$, the witness image separation satisfies
+For a profinite family with a verified extension witness of separation $\epsilon$, one endpoint fixed at $\nullphi$, and an independently certified witness-level lower constant $C_{\mathrm{prof}}>0$, the witness image separation satisfies
 \[
 \dE(e,\nullphi)\geq C_{\mathrm{prof}}\epsilon.
 \]
@@ -457,7 +443,7 @@ This is Theorem~\ref{thm:bound} applied with the certified constant $C_{\mathrm{
 \end{proof}
 
 \begin{proposition}[Conditional Symbolic Bound]
-For a symbolic family with a verified extension witness of separation $\epsilon$ and an independently certified witness-level lower constant $C_{\mathrm{sym}}>0$, the witness image separation satisfies
+For a symbolic family with a verified extension witness of separation $\epsilon$, one endpoint fixed at $\nullphi$, and an independently certified witness-level lower constant $C_{\mathrm{sym}}>0$, the witness image separation satisfies
 \[
 \dE(e,\nullphi)\geq C_{\mathrm{sym}}\epsilon.
 \]
@@ -468,7 +454,7 @@ This is Theorem~\ref{thm:bound} applied with the certified constant $C_{\mathrm{
 \end{proof}
 
 \begin{example}[p-Adic witness calculation]
-If a 2-adic model supplies an independently verified witness with $\epsilon=2^{-1}$ and $C=1$, then the conditional bound gives $\dE(e,\nullphi)\geq 1/2$. This is a witness calculation, not a universal theorem that every CCR channel is non-null.
+If a 2-adic model supplies an independently verified witness with $\epsilon=2^{-1}$ and $C=1$, with one endpoint mapped to null, then the conditional bound gives $\dE(e,\nullphi)\geq 1/2$. This is a witness calculation, not a universal theorem that every CCR channel is non-null.
 \end{example}
 
 \begin{caveat}[No lower bound from summability alone]
@@ -483,25 +469,25 @@ The existence of summable coordinate weights, continuity of a readout, or compac
 The instability theorem is useful only if its hypotheses can be audited without smuggling the desired conclusion into the witness. This section records the minimal audit layer required before the theorem may be used in a concrete argument.
 
 \begin{definition}[Witness certificate]\label{def:witness-certificate}
-A witness certificate for a pair $(\I,\tilde{\I})$ consists of the tuple
+A witness certificate for a pair $(z_0,z_1)$ consists of the tuple
 \[
-\mathfrak{W}:=(\tilde{\I},\epsilon,C,\Phi,\E,\nullphi,\mathcal{J}),
+\mathfrak{W}:=(z_0,z_1,\epsilon,C,\Phi,\E,\nullphi,\mathcal{J}),
 \]
-where $\epsilon=\dw(\I,\tilde{\I})>0$, $C>0$ is the certified lower constant for $\Phi$ on the audited pair or audited witness class, $\mathcal{J}$ is the provenance record establishing that $\tilde{\I}$ is an admissible typed extension rather than an internal relabeling of $\I$, and all objects are fixed before the null/non-null status is adjudicated.
+where $\epsilon=d_Z(z_0,z_1)>0$, $C>0$ is the certified lower constant for $\Phi$ on the audited pair or audited witness class, $\mathcal{J}$ is the provenance record establishing that the endpoint pair comes from a declared typed comparison, rather than an internal relabeling, and all objects are fixed before the null/non-null status is adjudicated.
 \end{definition}
 
 \begin{definition}[Witness independence]
-A witness certificate is conclusion-independent when the construction of $\tilde{\I}$, the choice of $\Phi$, the metric $\dE$, the null element $\nullphi$, and the lower constant $C$ are fixed before the endpoint status is adjudicated. Dependence on the upstream CCR structure is allowed; dependence on a preselected endpoint verdict is not.
+A witness certificate is conclusion-independent when the construction of the endpoint $z_1$, the choice of $\Phi$, the metric $\dE$, the null element $\nullphi$, and the lower constant $C$ are fixed before the endpoint status is adjudicated. Dependence on the upstream CCR structure is allowed; dependence on a preselected endpoint verdict is not.
 \end{definition}
 
 \begin{proposition}[Certificate sufficiency]
-If a conclusion-independent witness certificate exists for $(\I,\tilde{\I})$, and both endpoints are assigned to $\nullphi$, then the certificate is inconsistent.
+If a conclusion-independent witness certificate exists for $(z_0,z_1)$, and both endpoints are assigned to $\nullphi$, then the certificate is inconsistent.
 \end{proposition}
 
 \begin{proof}
-The certificate includes the separation condition $\dw(\I,\tilde{\I})=\epsilon>0$ and the lower bound
+The certificate includes the separation condition $d_Z(z_0,z_1)=\epsilon>0$ and the lower bound
 \[
-\dE(\Phi(\I),\Phi(\tilde{\I}))\geq C\epsilon>0.
+\dE(\Phi(z_0),\Phi(z_1))\geq C\epsilon>0.
 \]
 If both endpoints are assigned to $\nullphi$, then the left-hand side is $\dE(\nullphi,\nullphi)=0$, contradicting $C\epsilon>0$.
 \end{proof}
@@ -517,13 +503,13 @@ A witness certificate does not prove that $\I$ is conscious, living, subjective,
 \hline
 \textbf{Failure mode} & \textbf{Formal symptom} & \textbf{Consequence} \\
 \hline
-Absent witness & No typed $\tilde{\I}$ with $\dw(\I,\tilde{\I})>0$ & Theorem~\ref{thm:instability} cannot be invoked \\
+Absent witness & No typed endpoint $z_1$ with $d_Z(z_0,z_1)>0$ & Theorem~\ref{thm:instability} cannot be invoked \\
 \hline
 Zero lower constant & $C=0$ or no certified positive lower bound & The null assignment is not contradicted by the metric data \\
 \hline
-Conclusion-dependent witness & $\tilde{\I}$ or $\Phi$ is chosen after fixing the endpoint verdict & The certificate no longer supplies an independent exclusion of joint nullity \\
+Conclusion-dependent witness & $z_1$ or $\Phi$ is chosen after fixing the endpoint verdict & The certificate no longer supplies an independent exclusion of joint nullity \\
 \hline
-Quotient collapse & $\Phi(\I)=\Phi(\tilde{\I})$ despite $\dw(\I,\tilde{\I})>0$ & The map may be continuous, but it is not separating on the audited pair \\
+Quotient collapse & $\Phi(z_0)=\Phi(z_1)$ despite $d_Z(z_0,z_1)>0$ & The map may be continuous, but it is not separating on the audited pair \\
 \hline
 Null redefinition & $\nullphi$ changes between construction and adjudication & The theorem has no stable target \\
 \hline
@@ -535,15 +521,19 @@ Estimator-only promotion & Runtime estimates are substituted for $\Phi$ without 
 \subsection{Robust Decision Margin}
 
 \begin{proposition}[Noise-robust null exclusion]\label{prop:noise-margin}
-Let $\widehat{e}_1,\widehat{e}_2\in\E$ be estimated images of $\Phi(\I)$ and $\Phi(\tilde{\I})$ with certified error at most $\eta$ in $\dE$. If a witness certificate gives $C\epsilon>2\eta$, then the two estimated images cannot both be certified as the same null element within error $\eta$.
+Let $e_i=\Phi(z_i)$ and estimates $\widehat e_i$ satisfy $\dE(e_i,\widehat e_i)\leq\eta_i$, $i=0,1$. Let $m=C\epsilon$ be a certified true separation. Then
+\[
+\dE(\widehat e_0,\widehat e_1)\geq m-\eta_0-\eta_1.
+\]
+Positive estimated separation follows from $m>\eta_0+\eta_1$. If null acceptance instead means $\dE(\widehat e_i,\nullphi)\leq r_i$, both estimates cannot be accepted as null when
+\[
+m>\eta_0+\eta_1+r_0+r_1.
+\]
+For equal estimation and acceptance radii $\eta$, this sufficient condition is $m>4\eta$, not merely $m>2\eta$.
 \end{proposition}
 
 \begin{proof}
-The true images satisfy $\dE(\Phi(\I),\Phi(\tilde{\I}))\geq C\epsilon$. By the triangle inequality,
-\[
-\dE(\widehat{e}_1,\widehat{e}_2)\geq C\epsilon-2\eta.
-\]
-If $C\epsilon>2\eta$, the estimated images remain separated. A joint certification that both are the same null element within the same error budget would require the certified separation to vanish inside the error ball, contradicting the strict margin.
+Apply the triangle inequality through the two estimates. If both estimates lie in their null balls, their mutual distance is at most $r_0+r_1$, and the true separation is at most $\eta_0+\eta_1+r_0+r_1$. This contradicts the strict condition. As a negative control, true values $(2,0),(0,2)$ in $\mathbb R_+^2$ and estimates $(1,0),(0,1)$ have errors one and true separation $2\sqrt2>2$, yet both estimates lie in the unit null ball. Estimated separation is not the same decision as null-ball exclusion.
 \end{proof}
 
 \begin{caveat}[Implementation boundary]
@@ -554,10 +544,10 @@ Proposition~\ref{prop:noise-margin} is an error-budget rule for an already speci
 
 \begin{enumerate}
 \item \textbf{Constant-null control.} Set $\Phi(x)=\nullphi$ for all $x$. This must fail the lower-bound condition whenever $\epsilon>0$.
-\item \textbf{Coordinate-blind control.} Choose a readout that ignores every coordinate on which $\I$ and $\tilde{\I}$ differ. This tests whether separation is actually carried by the map.
-\item \textbf{Witness-shuffle control.} Hold $\Phi$ fixed and replace $\tilde{\I}$ by a typed object not separated from $\I$. The theorem must become inapplicable.
+\item \textbf{Coordinate-blind control.} Choose a readout that ignores every coordinate on which $z_0$ and $z_1$ differ. This tests whether separation is actually carried by the map.
+\item \textbf{Witness-shuffle control.} Hold $\Phi$ fixed and replace $z_1$ by a typed point not separated from $z_0$. The theorem must become inapplicable.
 \item \textbf{Null-relabel control.} Change the declared null element after observing the images. This must be rejected as target drift.
-\item \textbf{Estimator-margin control.} Increase $\eta$ until $C\epsilon\leq 2\eta$. The robust decision margin must fail rather than silently promoting a non-null conclusion.
+\item \textbf{Estimator-margin control.} Vary estimation radii and null-acceptance radii separately. At $m\leq\eta_0+\eta_1$ positive estimated separation is no longer guaranteed; at $m\leq\eta_0+\eta_1+r_0+r_1$ joint null-ball exclusion is no longer guaranteed. The corresponding sufficient margin must fail rather than silently promoting a non-null conclusion.
 \end{enumerate}
 
 % =============================================================================
@@ -566,11 +556,11 @@ Proposition~\ref{prop:noise-margin} is an error-budget rule for an already speci
 \section{Witness-Relative Closure Theorem}
 
 \begin{theorem}[Conditional Phenomenological Closure]\label{thm:closure}
-A CCR system equipped with an admissible extension witness and a compatibility operator satisfying (C3) admits witness-relative non-null separation. If, in addition, the witness-relative positive image has a minimal positive element, that element is quantitatively separated from $\nullphi$ by the bound in Theorem~\ref{thm:bound}.
+A declared separated, detected pair has a non-empty positive image and the unanchored lower bound $\max_i r(\Phi(z_i))\geq C\epsilon/2$. Its finite positive image has a minimal member; uniqueness requires comparability. If one endpoint is null, the other is the unique positive witness image, with relative gap and null distance at least $C\epsilon$. Temporal stability, global minimal positivity, and physical CCR realizability are not consequences.
 \end{theorem}
 
 \begin{proof}
-Non-null separation follows from Theorem~\ref{thm:instability}. Witness-relative minimality follows from Theorem~\ref{thm:minimal} under its stated infimum hypothesis. The quantitative bound follows from Theorem~\ref{thm:bound}.
+Combine Theorem~\ref{thm:instability}, Theorem~\ref{thm:minimal}, Corollary~\ref{cor:intensity} and the anchored bound of Theorem~\ref{thm:bound}. Each conclusion retains its stated hypotheses.
 \end{proof}
 
 \subsection{Classification Table}
@@ -581,8 +571,8 @@ Non-null separation follows from Theorem~\ref{thm:instability}. Witness-relative
 \hline
 \textbf{System Type} & \textbf{Ontological Mass} & \textbf{Null Regime Permitted?} \\
 \hline
-Degenerate & $\MO = 0$ & Yes \\
-Finite-mass & $0 < \MO < \infty$ & Model-dependent \\
+Degenerate & $\MO = 0$ & Not decided by mass alone \\
+Finite-mass & $0 < \MO < \infty$ & Not decided by mass alone \\
 CCR without extension witness & $\MO = +\infty$ & Not decided here \\
 CCR with separated extension witness & $\MO = +\infty$ & Joint null collapse forbidden by Theorem~\ref{thm:instability} \\
 \hline
@@ -596,32 +586,32 @@ CCR with separated extension witness & $\MO = +\infty$ & Joint null collapse for
 
 The null element $\nullphi$ determines a fiber
 \[
-\mathcal{N}_\Phi:=\Phi^{-1}(\{\nullphi\})\subseteq\I.
+\mathcal{N}_\Phi:=\Phi^{-1}(\{\nullphi\})\subseteq Z.
 \]
 The instability theorem can be read as a geometric obstruction on this fiber: a certified witness pair cannot be contained entirely inside $\mathcal{N}_\Phi$.
 
 \begin{definition}[Null fiber]
-For a compatibility operator $\Phi:\I\to\E$, the null fiber is the preimage $\mathcal{N}_\Phi=\{x\in\I:\Phi(x)=\nullphi\}$.
+For a compatibility operator $\Phi:Z\to\E$, the null fiber is the preimage $\mathcal{N}_\Phi=\{x\in Z:\Phi(x)=\nullphi\}$.
 \end{definition}
 
 \begin{definition}[Witness-detecting map]
-A compatibility operator $\Phi$ is witness-detecting on a set $W\subseteq \I\times\I$ when there exists $C_W>0$ such that
+A compatibility operator $\Phi$ is witness-detecting on a set $W\subseteq Z\times Z$ when there exists $C_W>0$ such that
 \[
-\dE(\Phi(x),\Phi(y))\geq C_W\dw(x,y)
+\dE(\Phi(x),\Phi(y))\geq C_W\,d_Z(x,y)
 \]
 for every $(x,y)\in W$.
 \end{definition}
 
 \begin{proposition}[Null-fiber exclusion on detected pairs]
-Let $W$ be a witness class on which $\Phi$ is witness-detecting with constant $C_W>0$. If $(x,y)\in W$ and $\dw(x,y)>0$, then $(x,y)$ cannot both lie in $\mathcal{N}_\Phi$.
+Let $W$ be a witness class on which $\Phi$ is witness-detecting with constant $C_W>0$. If $(x,y)\in W$ and $d_Z(x,y)>0$, then $(x,y)$ cannot both lie in $\mathcal{N}_\Phi$.
 \end{proposition}
 
 \begin{proof}
-If $x,y\in\mathcal{N}_\Phi$, then $\Phi(x)=\Phi(y)=\nullphi$, so $\dE(\Phi(x),\Phi(y))=0$. Witness detection gives $\dE(\Phi(x),\Phi(y))\geq C_W\dw(x,y)>0$, a contradiction.
+If $x,y\in\mathcal{N}_\Phi$, then $\Phi(x)=\Phi(y)=\nullphi$, so $\dE(\Phi(x),\Phi(y))=0$. Witness detection gives $\dE(\Phi(x),\Phi(y))\geq C_W\,d_Z(x,y)>0$, a contradiction.
 \end{proof}
 
 \begin{corollary}[Diameter obstruction]
-If a subset $A\subseteq\I$ contains a detected witness pair $(x,y)$ with $\dw(x,y)>0$, then $A$ cannot be contained in $\mathcal{N}_\Phi$.
+If a subset $A\subseteq Z$ contains a detected witness pair $(x,y)$ with $d_Z(x,y)>0$, then $A$ cannot be contained in $\mathcal{N}_\Phi$.
 \end{corollary}
 
 \begin{proof}
@@ -630,25 +620,25 @@ Containment $A\subseteq\mathcal{N}_\Phi$ would place both endpoints of the detec
 
 \subsection{Quotient-Collapse Diagnostic}
 
-Let $q:\I\to Q$ be a quotient map and let $\Phi=h\circ q$ for some $h:Q\to\E$. If $q(x)=q(y)$ for a separated pair, then $\Phi(x)=\Phi(y)$ for every such $h$. Therefore no lower-bound certificate can hold on that pair.
+Let $q:Z\to Q$ be a quotient map and let $\Phi=h\circ q$ for some $h:Q\to\E$. If $q(x)=q(y)$ for a separated pair, then $\Phi(x)=\Phi(y)$ for every such $h$. Therefore no lower-bound certificate can hold on that pair.
 
 \begin{proposition}[Quotient obstruction]
-Suppose $\Phi=h\circ q$ and $q(x)=q(y)$ while $\dw(x,y)>0$. Then no constant $C>0$ can satisfy
+Suppose $\Phi=h\circ q$ and $q(x)=q(y)$ while $d_Z(x,y)>0$. Then no constant $C>0$ can satisfy
 \[
-\dE(\Phi(x),\Phi(y))\geq C\dw(x,y).
+\dE(\Phi(x),\Phi(y))\geq C\,d_Z(x,y).
 \]
 \end{proposition}
 
 \begin{proof}
-Since $q(x)=q(y)$, $\Phi(x)=h(q(x))=h(q(y))=\Phi(y)$. Hence the left-hand side is zero, while $C\dw(x,y)>0$ for any $C>0$.
+Since $q(x)=q(y)$, $\Phi(x)=h(q(x))=h(q(y))=\Phi(y)$. Hence the left-hand side is zero, while $C\,d_Z(x,y)>0$ for any $C>0$.
 \end{proof}
 
 \subsection{Certificate Stability}
 
 \begin{proposition}[Minimum over a finite witness ledger]
-Let $W_0=\{(x_i,y_i)\}_{i=1}^m$ be a finite ledger of separated witness pairs. Suppose each pair has a certified lower constant $C_i>0$:
+Let $m\geq1$ and let $W_0=\{(x_i,y_i)\}_{i=1}^m$ be a finite ledger of separated witness pairs. Suppose each pair has a certified lower constant $C_i>0$:
 \[
-\dE(\Phi(x_i),\Phi(y_i))\geq C_i\dw(x_i,y_i).
+\dE(\Phi(x_i),\Phi(y_i))\geq C_i\,d_Z(x_i,y_i).
 \]
 Then $C_*=\min_i C_i>0$ is a valid lower constant for the finite ledger.
 \end{proposition}
@@ -656,17 +646,17 @@ Then $C_*=\min_i C_i>0$ is a valid lower constant for the finite ledger.
 \begin{proof}
 For each $i$, $C_i\geq C_*$. Hence
 \[
-\dE(\Phi(x_i),\Phi(y_i))\geq C_i\dw(x_i,y_i)\geq C_*\dw(x_i,y_i).
+\dE(\Phi(x_i),\Phi(y_i))\geq C_i\,d_Z(x_i,y_i)\geq C_*\,d_Z(x_i,y_i).
 \]
 Since the ledger is finite and each $C_i$ is positive, $C_*>0$.
 \end{proof}
 
 \begin{proposition}[Strict margin persistence]
-Let $m=C\epsilon$ be the certified separation margin for a witness pair. If a perturbation of the estimated images changes their distance by at most $\rho<m$, then the pair remains separated after perturbation.
+Let $\widehat m>0$ be a certified lower bound on the current estimated pair distance. If a further perturbation changes that distance by at most $\rho<\widehat m$, the estimates remain separated. From true margin $m=C\epsilon$ and estimator radii, one may use $\widehat m=m-\eta_0-\eta_1$ only when it is positive.
 \end{proposition}
 
 \begin{proof}
-The perturbed distance is bounded below by $m-\rho>0$. Therefore the two perturbed images cannot coincide.
+The new estimated distance is at least $\widehat m-\rho>0$. An unadjusted true margin cannot be substituted for the current estimated one.
 \end{proof}
 
 \subsection{Operational Checklist}
@@ -674,7 +664,7 @@ The perturbed distance is bounded below by $m-\rho>0$. Therefore the two perturb
 For a claimed null-fiber exclusion, the certificate record must identify:
 \begin{enumerate}
 \item the null element $\nullphi$;
-\item the endpoints $(\I,\tilde{\I})$ or the audited witness class $W$;
+\item the endpoints $(z_0,z_1)$ or the audited witness class $W$;
 \item the separation value $\epsilon$ or the family of separations;
 \item the map $\Phi$ and the metric $\dE$;
 \item the lower constant $C$ or the finite-ledger constant $C_*$;
@@ -713,7 +703,7 @@ We do not model representations, meta-cognition, or self-awareness. The space $\
 
 \subsection{Mathematical Foundations (Chalmers, Nagel)}
 
-Our framework provides formal tools that \emph{could} be used in philosophical analysis, but we do not claim to resolve the ``hard problem.'' The prohibition of $\nullphi$ is a structural fact, not an explanation of subjective experience.
+Our framework provides formal tools that \emph{could} be used in philosophical analysis, but we do not claim to resolve the ``hard problem.'' The conditional exclusion of joint exact nullity is a metric fact, not an explanation of subjective experience.
 
 % =============================================================================
 % SECTION 10: LIMITATIONS
@@ -742,7 +732,7 @@ Our framework provides formal tools that \emph{could} be used in philosophical a
 
 \subsection{Foundation-Level Gaps and Non-Claims}\label{sec:gap-nonclaims}
 
-The following gaps remain open in the current corpus and are documented here to prevent over-reading of the instability theorem.
+The following gaps remain open in the current corpus and are documented here to prevent over-reading of the separation theorem.
 
 \begin{nontheorem}[Topology consistency gap]\label{nonthm:topology}
 Papers I--II assume both compact Hausdorff and Polish structures on state spaces, but do not prove their consistency for every QICN instantiation. The inverse limit $\mathcal{I}$ uses compactness and closed-subspace arguments, while the metric $d_w$ uses a metric regularity structure. Every compact metric space is Polish, so the composition is consistent when each $S_t$ is compact metric. Non-compact Polish spaces such as $\mathbb{R}^n$ require additional hypotheses and are not automatically covered.
@@ -753,7 +743,7 @@ The observable channel $\mathcal{C}$ and the projective projections $\pi_{t+1\to
 \end{nontheorem}
 
 \begin{nontheorem}[Null-regime exclusion requires external witness]\label{nonthm:null-external}
-The instability theorem (Theorem~\ref{thm:instability}) requires a separated external witness $(\tilde{\mathcal{I}},\epsilon,C)$. CCR alone does not produce such a witness. The theorem is witness-relative: if a CCR system has a typed external witness with lower Lipschitz constant $C>0$, then both endpoints cannot simultaneously be null. It does not state that CCR by itself implies non-nullity.
+The instability theorem (Theorem~\ref{thm:instability}) requires a separated external witness $(z_0,z_1,\epsilon,C)$. CCR alone does not produce such a witness. The theorem is witness-relative: if a CCR system has a typed external witness with lower Lipschitz constant $C>0$, then both endpoints cannot simultaneously be null. It does not state that CCR by itself implies non-nullity.
 \end{nontheorem}
 
 \begin{nontheorem}[Estimator verification gap]\label{nonthm:estimator-gap}
@@ -773,10 +763,10 @@ This is a structural exclusion result. It does not define phenomenology or turn 
 
 \begin{enumerate}
 \item \textbf{Phenomenological Instability Theorem:} joint null collapse is excluded under the typed witness hypotheses.
-\item \textbf{Minimal Positive Regime:} witness-relative positive regimes can be characterized when the stated infimum hypotheses hold.
-\item \textbf{Quantitative Bounds:} $\iota(e_\star) \geq C\varepsilon_0 > 0$ is explicit when the witness and lower Lipschitz constant are independently verified.
-\item \textbf{Canonical Examples:} Profinite and symbolic families computed.
-\item \textbf{Semantic Immunization:} Clear scope delimitation throughout.
+\item \textbf{Minimal Positive Regime:} witness-relative positive regimes can be characterized on the finite audited image; uniqueness requires comparability.
+\item \textbf{Quantitative Bounds:} Null distance is at least $C\epsilon$ for a null-anchored witness, and relative gap agrees with that distance at a minimal finite witness image.
+\item \textbf{Canonical Examples:} Profinite and symbolic witness bounds are conditional; summability does not certify infinite mass.
+\item \textbf{Scope Conditions:} Clear scope delimitation throughout.
 \end{enumerate}
 
 % =============================================================================
@@ -804,16 +794,19 @@ d_G(x, y) := \sum_{n \geq 0} \alpha_n \mathbf{1}_{x_n \neq y_n}
 \]
 where $\alpha_n = 2^{-(n+1)}$ (standard choice).
 
-This is an ultrametric; $(G, d_G)$ is compact, complete, and totally disconnected.
+For a projective group tower, coordinate disagreement persists at all higher levels, so this weighted-tail distance is an ultrametric. Its tails vanish uniformly; $(G,d_G)$ is compact, complete, and totally disconnected.
 
 \subsection{CCR Verification}
 
+The following cost control uses state comparisons in the declared canonical domain. It does not infer a whole-object deformation metric or a physical energy law.
+
+
 \begin{proposition}
-The profinite system is CCR: $\MO = +\infty$.
+Summable coordinate-change costs do not certify CCR. If an admitted transformation changes infinitely many coordinates and costs $\sum_{n\in J}w_n$ with $\sum_n w_n<\infty$, its cost is finite.
 \end{proposition}
 
 \begin{proof}
-Any finite-energy deformation can only modify finitely many coordinates $x_n$. To modify infinitely many coordinates requires $E_w = \sum_{n \in S} w_n = \infty$ for any infinite $S \subseteq \mathbb{N}$ with $\sum_{n \in S} w_n = \infty$. Hence any nonzero deformation $\dw > 0$ requires infinite energy as $\epsilon \to 0$, giving $\MO = +\infty$.
+The cost of any subset is bounded by the total convergent sum. For example, addition of one sends the zero element of $\mathbb Z_2$ to a distinct compatible element and changes every residue coordinate at positive levels; this has finite coordinate-change cost under the declared summable rule. If this intervention is admitted with positive deformation, the infimum mass is finite. Infinite mass needs a different justified intervention/cost restriction, not just profinite topology.
 \end{proof}
 
 \subsection{Phenomenological Operator}
@@ -847,9 +840,9 @@ The assumptions that the coordinate functions are Lipschitz and that the coeffic
 
 \subsection{Intensity Bound}
 
-With $\varepsilon_0 = 2^{-1}$ for a certified minimal witness separation:
+For a certified witness separation $\epsilon>0$ and one null endpoint, the other image satisfies
 \[
-\iota(e_\star) \geq C_{\mathrm{prof}} \cdot \varepsilon_0.
+r(e) \geq C_{\mathrm{prof}}\epsilon.
 \]
 
 % =============================================================================
@@ -879,12 +872,15 @@ The space $(\Sigma_A, d_B)$ is compact and complete.
 
 \subsection{CCR Verification}
 
+The following cost control uses state comparisons in the declared canonical domain. It does not infer a whole-object deformation metric or a physical energy law.
+
+
 \begin{proposition}
-The symbolic system is CCR: $\MO = +\infty$.
+Symbolic compactness and summable coordinate weights do not certify CCR under coordinate-change cost.
 \end{proposition}
 
 \begin{proof}
-Any finite-energy modification can only change finitely many symbols. The argument is identical to the profinite case.
+In the binary full shift the coordinatewise complement is admitted if the intervention class includes it. It changes infinitely many symbols, at total cost at most $\sum_{j\in\mathbb Z}w_j<\infty$, and maps one compatible sequence to another distinct one. This is a finite-cost positive deformation, so the infinite-mass conclusion fails for that intervention model. A restricted SFT requires its own admitted transformation; no universal CCR certificate follows.
 \end{proof}
 
 \subsection{Phenomenological Operator}
@@ -918,19 +914,11 @@ This is the certified lower-bound hypothesis applied to the witness pair.
 \section{Hereditary Rigidity}
 
 \begin{theorem}[Rigidity Inheritance]
-Let $(S_n, \pi_{n+1 \to n})$ be a CCR tower and $\{\epsilon_n\}$ a family of local deformations with:
-\[
-\| \{\epsilon_n\} \|_w := \sum_{n \geq 0} w_n \|\epsilon_n\|_{\text{op}} < \infty
-\]
-Then the deformed identity $\tilde{\I}$ is isomorphic to $\I$ and:
-\[
-d_{\I}(\phi(x), x) \leq K \cdot \|\{\epsilon_n\}\|_w
-\]
-for some $K > 0$ depending only on the projective structure. In particular, $\MO = +\infty$ is inherited.
+Suppose a readout $\Phi:Z\to\E$ has lower constant $C$ on a declared pair class. Let $a:Z'\to Z$ and $b:\E\to\E'$ satisfy lower bounds with constants $c_a,c_b>0$, and set $\Phi'=b\circ\Phi\circ a$. Then $\Phi'$ has lower constant $c_ac_bC$ on the pulled-back class. To inherit CCR additionally require that every finite-cost positive deformation in the new sector pulls back to a finite-cost positive deformation in the original sector. Summability alone supplies neither assumption.
 \end{theorem}
 
 \begin{proof}
-The key is that summable deformations induce a summable perturbation of the inverse limit, which by completeness converges to an isomorphic copy. The CCR condition is preserved because the energy-deformation ratio remains unbounded.
+Successive application of the three lower bounds gives $d_{\E'}(\Phi'(x),\Phi'(y))\geq c_bc_aC d_{Z'}(x,y)$. If the original sector admits no finite-cost positive deformation, the specified pullback property rules out one in the new sector by contradiction. Stability moduli and null anchors, if required, must also be transported explicitly.
 \end{proof}
 
 % =============================================================================
@@ -939,14 +927,14 @@ The key is that summable deformations induce a summable perturbation of the inve
 \section{Universal Factorization}
 
 \begin{theorem}[Categorical Universality]
-The identity $\I$ of any CCR channel is an initial object in the category of compatible representations $(\I \xrightarrow{\Phi} \E)$ with $\E$ complete metric and $\Phi$ satisfying (C1)--(C3).
+If $\Phi:Z\to\E$ has a positive global lower bound, it is injective. For any $\Psi:Z\to F$ there is a unique factor map $u:\Phi(Z)\to F$ with $u\circ\Phi=\Psi$. If $\Psi$ is $L$-Lipschitz, $u$ is $L/C$-Lipschitz. No unique extension to all of $\E$ follows.
 \end{theorem}
 
 \begin{proof}
-For any compatible representation $(\I \xrightarrow{\Psi} F)$, define $u: \E \to F$ by $u(e) := \Psi(\Phi^{-1}(e))$. Well-definedness follows from (C2); uniqueness from (C1).
+Define $u(\Phi(z))=\Psi(z)$. Injectivity gives well-definedness and uniqueness on the image. The inverse of $\Phi$ on its image is $1/C$-Lipschitz, which gives the stated bound. At a point of $\E\setminus\Phi(Z)$ the commuting identity specifies no value, and a continuous extension may require additional conditions.
 \end{proof}
 
-\textbf{Consequence:} All compatible representations factor through a canonical one; the class of induced regimes is completely classified by $\I$.
+\textbf{Consequence:} All representations of the same declared domain factor setwise through a faithful image. A categorical claim additionally fixes objects and morphisms: with continuous maps and continuous faithful $\Phi$ having continuous inverse on its image, that image representation is initial. This does not classify arbitrary ambient codomains or physical systems.
 
 % =============================================================================
 % APPENDIX E: NON-SIMULABILITY BOUNDS
@@ -954,31 +942,26 @@ For any compatible representation $(\I \xrightarrow{\Psi} F)$, define $u: \E \to
 \section{Non-Simulability Bounds}
 
 \subsection{Simulation Error}
-
-For a CCR family $\{I_N\}$ truncated at level $N$ and a finite-dimensional simulator $\mathcal{A}$ with $\dim(\mathcal{A}) < \infty$:
+Fix the target readout and the information available to the decoder. On the binary prefix tower, let $p_N$ reveal bits $0,\ldots,N$ and let $F(b)=\sum_{j\geq0}2b_j/3^{j+1}$. Define
 \[
-\text{err}_N(\mathcal{A}) := \inf_{\Phi, \hat{\Phi}} \sup_{x \in I_N} \dE(\Phi(x), \hat{\Phi}(x))
+\operatorname{err}_N=\inf_{g:\{0,1\}^{N+1}\to\mathbb R}\sup_b|F(b)-g(p_Nb)|.
 \]
-where $\hat{\Phi}$ is any map computable by $\mathcal{A}$.
+The target is not optimized away, and the resource restriction is a canonical prefix, not finite real dimension.
 
 \begin{theorem}[Simulation Lower Bound]\label{thm:sim-cond}
-For profinite and SFT families:
+For the fixed target and prefix class above,
 \[
-\text{err}_N(\mathcal{A}) \geq C \cdot 2^{-(N+1)}
+\operatorname{err}_N=\frac{1}{2\,3^{N+1}}>0,\qquad \lim_{N\to\infty}\operatorname{err}_N=0.
 \]
-for any $\dim(\mathcal{A}) < \infty$. In particular:
-\[
-\liminf_{N \to \infty} \text{err}_N(\mathcal{A}) > 0
-\]
-No finite architecture achieves perfect simulation.
+Thus exact reconstruction fails at every fixed prefix budget, while arbitrarily accurate approximation is possible as the budget grows.
 \end{theorem}
 
 \begin{proof}
-The ultrametric structure forces minimal separation $2^{-(N+1)}$ at level $N$. Any finite-dimensional approximation must collapse some distinctions, incurring error at least $C \cdot 2^{-(N+1)}$ by (C3).
+Every prefix fiber has two completions with tails all zero or all one, whose images differ by $3^{-(N+1)}$. A single decoder value incurs error at least half that distance on one extreme. The midpoint of the two extremes attains this bound for the entire fiber. This proves equality. The bound tends to zero; it cannot yield a positive limiting error or a prohibition on finite-dimensional real encodings.
 \end{proof}
 
 \begin{corollary}
-No finite-dimensional semigroup can support an exact representation of CCR identity with $\MO = +\infty$.
+In this prefix model, worst-case error at most $\varepsilon$ requires $1/(2\,3^{N+1})\leq\varepsilon$. Hence $N$ must diverge as $\varepsilon\downarrow0$. This does not forbid a real-valued encoding with unbounded precision.
 \end{corollary}
 
 % =============================================================================
@@ -987,17 +970,15 @@ No finite-dimensional semigroup can support an exact representation of CCR ident
 \section{Final Structural Closure}
 
 \begin{theorem}[Closure by Non-Alternatives]
-In the canonical families (profinite and SFT), and by inheritance (Appendix C), every compatible representation satisfies:
-\begin{enumerate}
-\item Hereditary rigidity: $\MO = +\infty$
-\item Universal factorization (Appendix D)
-\item Quantified null prohibition: $\iota(e_\star) \geq C\varepsilon_0 > 0$
-\item Non-simulability with explicit error bounds (Appendix E)
-\end{enumerate}
+The following obligations are jointly sufficient for the corresponding structural conclusions: an admitted separated pair with a certified lower constant gives joint null exclusion; a null anchor gives the stronger anchored bound; faithful global readout gives image factorization; declared prefix access gives the approximation bound above; and the explicit pullback conditions of Appendix C give inheritance. A competing model satisfying those same obligations obeys those same conclusions. Neither CCR realizability nor satisfaction of all obligations is inferred from canonical topology alone.
 \end{theorem}
 
+\begin{proof}
+Apply the witness theorem, the anchored bound, and the corrected results of Appendices C--E with their hypotheses. They are independent implications; no circular existence assertion is used to supply their premises.
+\end{proof}
+
 \begin{remark}[Structural Import]
-This theorem establishes that the class of CCR channels is \textbf{closed} under the stated structural criteria: no extension, simulation, or compatible representation considered here escapes the structural constraints. The null regime is prohibited by mathematical necessity under those criteria, not by stipulation.
+The open program is to construct a single admitted system satisfying the required geometry, intervention costs, transport and readout properties together. The pair-separation theorem does not itself establish that joint realization, nor a dynamical prohibition of an individual null state.
 \end{remark}
 
 % =============================================================================

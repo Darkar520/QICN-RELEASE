@@ -1,129 +1,119 @@
-﻿% Derived from paper3/main.tex
+% Derived from paper3/main.tex; typed witness-relative revision.
 \part{Null-Regime Structural Exclusion}
-
-\section{Compatibility, Instability, and Forced Non-Nullity}
+\section{Compatibility, Witnesses, and Non-Nullity}
 
 \subsection{Compatibility Operator}
 \begin{definition}[Compatibility Operator]\label{def:compatibility-operator}
-A map $\Phi: \I \to \E$ is a \textbf{compatibility operator} if it satisfies:
-\begin{enumerate}[leftmargin=*]
-\item[(C1)] \textbf{Extension Invariance:} For any compatible extension $\mathcal{E}$ of the channel, $\Phi(\I) \cong \Phi(\I_\mathcal{E})$.
-\item[(C2)] \textbf{Isomorphism Stability:} If $\I \cong \tilde{\I}$, then $\Phi(\I) \sim \Phi(\tilde{\I})$.
-\item[(C3)] \textbf{Lipschitz Lower Bound:} There exists $C > 0$ such that
+Declare a complete metric comparison domain $(Z,d_Z)$, a complete metric poset $(\E,\preceq,\dE)$ with bottom $\nullphi$, and maps $\Phi_S:D_S\to\E$. The audited readout $\Phi:Z\to\E$ is defined on its declared pair class $W\subseteq Z\times Z$. Extension and isomorphism transports $j:D_S\to D_{S'}$ satisfy $\Phi_{S'}\circ j=\Phi_S$ when claimed. On $W$, a certified $C>0$ satisfies
 \[
-\dE(\Phi(x), \Phi(\tilde{x})) \geq C \cdot \dw(x,\tilde{x}).
+\dE(\Phi(x),\Phi(y))\geq C d_Z(x,y).
 \]
-\end{enumerate}
+One may choose $Z=\I$ for history comparisons. Comparing whole identity objects requires a separate declared embedding/metric; $\Phi(\I)$ is not a point value when the domain is the set $\I$. A separated extension witness supplies two distinct defined points in a common comparison domain, not merely a relabeled copy under exact transport. CCR does not supply such a pair or lower constant.
 \end{definition}
 
 \begin{definition}[Phenomenological Attractor Set]\label{def:phenomenological-attractor}
-For a channel $S$, define
-\[
-\Attr(S) := \{ e \in \E : e \text{ is stable under all compatible extensions and summable deformations} \}.
-\]
+Use $\Attr(S)$ for structurally stable readout values under a declared perturbation/extension family, as defined below. Temporal attraction would additionally require a dynamics and a basin; neither is implied by this notation.
 \end{definition}
 
 \begin{definition}[Phenomenological Stability]\label{def:phenomenological-stability}
-A regime $e \in \E$ is \textbf{stable} for channel $S$ if for every compatible extension $S'$ of $S$ and every summable perturbation family $\{\epsilon_n\}$, the induced regime $\Phi_{S'}(\I')$ stays within a bounded $\dE$-neighborhood of $e$ controlled by $\|\{\epsilon_n\}\|_w$.
+A value $e=\Phi_S(z)$ is structurally stable if a finite modulus $\omega(\rho)\to0$ as $\rho\downarrow0$ controls $\dE(\Phi_{S'}(Pz),e)\leq\omega(\rho)$ for all declared perturbation transports $P$ of cost at most $\rho$. Exact persistence instead requires equality. Stability does not force equality at a nonzero perturbation budget.
 \end{definition}
 
 \begin{lemma}[Bridge Lemma]\label{lem:null-bridge}
-If $\Phi:\I\to\E$ is a compatibility operator for a CCR channel and $e=\Phi(\I)$ satisfies $\dE(e,\nullphi)=0$, then $e=\nullphi$.
+For any defined $e\in\E$, distance $\dE(e,\nullphi)=0$ implies $e=\nullphi$. No CCR assumption is needed.
 \end{lemma}
-
 \begin{proof}
-By the separation property of the phenomenological space, distance zero from $\nullphi$ implies equality with $\nullphi$.
+This is metric separation.
 \end{proof}
 
-\subsection{Phenomenological Instability and Forced Non-Nullity}
-\begin{theorem}[Phenomenological Instability]\label{thm:phenomenological-instability}
-For any CCR channel $S$,
+\subsection{Witness-Relative Null Separation}
+\begin{theorem}[Conditional Null Separation]\label{thm:phenomenological-instability}
+Suppose $(z_0,z_1)\in W$, $d_Z(z_0,z_1)=\epsilon>0$, and the lower constant in Definition~\ref{def:compatibility-operator} is $C>0$. Their images cannot both equal null, and
 \[
-\nullphi \notin \Attr(S).
+\max_{i=0,1}\dE(\Phi(z_i),\nullphi)\geq C\epsilon/2.
 \]
-That is, the null regime is structurally unstable under compatible extensions.
+The historical instability label denotes joint exact null exclusion here, not dynamical instability of an individual null endpoint.
 \end{theorem}
-
 \begin{proof}
-Assume $\nullphi \in \Attr(S)$ and let $\Phi:\I\to\E$ be a compatibility operator. Because the channel is CCR, finite-energy perturbations preserve the rigid identity object while still allowing admissible deformations in the weighted metric. By the lower-bound clause in Definition~\ref{def:compatibility-operator},
-\[
-\dE(\Phi(\I),\Phi(\tilde{\I})) \ge C \cdot \dw(\I,\tilde{\I}) > 0
-\]
-for every non-zero admissible deformation. But if $\nullphi$ were stable, both images would remain equal to $\nullphi$, forcing the left-hand side to be zero. Contradiction.
+Joint nullity would give mutual image distance zero, contradicting $C\epsilon>0$. The triangle inequality bounds that mutual distance by the sum of their distances to null, at most twice their maximum.
 \end{proof}
 
-\begin{corollary}[Forced Non-Nullity]\label{cor:forced-non-nullity}
-Every CCR channel necessarily induces a regime $e_\star \in \E$ with $e_\star \succ \nullphi$.
+\begin{corollary}[Conditional Forced Non-Nullity]\label{cor:forced-non-nullity}
+Under the separated-pair hypotheses, at least one witness image is non-null. If one endpoint is fixed at null, the other has null distance at least $C\epsilon$. CCR alone does not select a non-null endpoint or guarantee a stable regime.
 \end{corollary}
-
 \begin{proof}
-Theorem~\ref{thm:phenomenological-instability} rules out $\nullphi$ as a stable admissible attractor. Therefore any admissible stable regime must be non-null.
+The first assertion follows from joint null exclusion. In the anchored case, mutual image distance is the other endpoint's distance to null, so the lower bound applies directly.
 \end{proof}
 
 \subsection{Positive Regime Structure}
 \begin{definition}[Positive Regime Space]\label{def:positive-regime-space}
-Define
-\[
-\Eplus := \{ e \in \E : e \succ \nullphi \}.
-\]
+Let $\Eplus=\E\setminus\{\nullphi\}$ with inherited order. For a witness pair, let $A=\{\Phi(z_0),\Phi(z_1)\}\setminus\{\nullphi\}$ and $A_0=A\cup\{\nullphi\}$.
 \end{definition}
 
-\begin{theorem}[Minimal Positive Regime]\label{thm:minimal-positive-regime}
-For every CCR channel there exists a minimal positive regime $e_\star \in \Eplus$.
+\begin{theorem}[Minimal Positive Witness Regime]\label{thm:minimal-positive-regime}
+The finite positive witness image $A$ is non-empty and has a minimal element. If its two possible values are comparable, it has a unique least element. No ambient order completeness is needed. This does not prove a least member of all of $\Eplus$.
 \end{theorem}
-
 \begin{proof}
-Forced non-nullity gives non-emptiness of $\Eplus$. Order-theoretic completeness and the compatibility structure of $\Phi$ yield a minimal element.
+Non-emptiness follows from joint null exclusion. A strictly descending chain in a finite non-empty poset terminates at a minimal element. If at most two members are comparable, the smaller is the unique least member. In the complete lattice $\{0,a,b,1\}$, incomparable positive $a,b$ are both minimal in their two-point image and have infimum zero. Thus an ambient infimum alone gives neither a positive infimum nor uniqueness.
 \end{proof}
 
 \begin{definition}[Structural Intensity]\label{def:structural-intensity}
-For $e \in \Eplus$, define the structural intensity
-\[
-\iota(e) := \dE(e,\nullphi).
-\]
+Distinguish null distance $r(e)=\dE(e,\nullphi)$, global lower gap $\iota(e)=\inf_{f\in\E,\ f\prec e}\dE(e,f)$, and the audited relative gap $\iota_{A_0}(e)$ obtained by restricting this infimum to $f\in A_0$. All are measured in units of $\dE$. A positive null distance does not imply a positive global gap.
 \end{definition}
 
-\begin{theorem}[Universal Intensity Bound]\label{thm:universal-intensity-bound}
-If $e_\star$ is the minimal positive regime of a CCR channel, then there exist constants $C,\varepsilon_0>0$ such that
-\[
-\iota(e_\star) \ge C\varepsilon_0 > 0.
-\]
+\begin{theorem}[Anchored Witness Intensity Bound]\label{thm:universal-intensity-bound}
+If one endpoint is null, the other image $e$ is the unique positive member of $A$ and satisfies $\iota_{A_0}(e)=r(e)\geq C\epsilon>0$. Without that anchor, only $\max_i r(\Phi(z_i))\geq C\epsilon/2$ follows. No universal global intensity bound is claimed.
 \end{theorem}
-
 \begin{proof}
-The lower-bound clause of the compatibility operator transfers any admissible deformation lower bound into positive distance from the null regime. The minimal positive regime therefore has strictly positive structural intensity.
+Apply the anchored corollary. The only smaller member of $A_0$ is null, so the relative infimum equals null distance. On the usual interval $[0,1]$, the global gap at $1$ is zero despite relative gap one in $\{0,1\}$, showing why the restriction matters.
 \end{proof}
 
-\begin{theorem}[Forced Phenomenological Closure]\label{thm:forced-phenomenological-closure}
-Every CCR system induces a unique minimal phenomenological regime that is non-null, stable, and quantitatively separated from $\nullphi$.
+\begin{theorem}[Conditional Phenomenological Closure]\label{thm:forced-phenomenological-closure}
+A declared detected pair gives joint null exclusion and a minimal positive member of its finite image. A null anchor gives a unique positive witness value and the anchored quantitative bound. Uniqueness in the ambient regime space, temporal stability and CCR realizability require further hypotheses and constructions.
 \end{theorem}
-
 \begin{proof}
-Combine Corollary~\ref{cor:forced-non-nullity}, Theorem~\ref{thm:minimal-positive-regime}, and Theorem~\ref{thm:universal-intensity-bound}.
+Combine the preceding witness, order and relative-gap results with their stated hypotheses. None of these implications supplies the premises of another by assuming the desired conclusion.
 \end{proof}
 
 \section{Canonical Families and Structural Closure Consequences}
-
 \begin{proposition}[Profinite Bound]\label{prop:profinite-bound}
-In the profinite canonical family, the coupling lower bound induces a positive lower bound on the structural intensity of the minimal positive regime.
+A profinite witness pair with declared positive separation $\epsilon$, certified lower constant $C_{\mathrm{prof}}>0$ and one null endpoint gives $r(e)\geq C_{\mathrm{prof}}\epsilon$. Summable coordinate costs do not by themselves certify CCR.
 \end{proposition}
+\begin{proof}
+Apply the anchored bound. A transformation changing infinitely many coordinates can still cost at most the finite sum of the coordinate weights, so the old finite-support argument cannot establish infinite mass.
+\end{proof}
 
 \begin{proposition}[Symbolic Bound]\label{prop:symbolic-bound}
-In the symbolic canonical family, the Bowen-type metric induces the analogous positive lower bound for the minimal positive regime.
+The same anchored conclusion holds for a symbolic witness with its audited metric and lower constant. The full binary shift with complement intervention and summable coordinate-change costs is a control against automatic infinite mass.
 \end{proposition}
+\begin{proof}
+Apply the anchored bound. Complement changes every symbol at finite total summable cost; when admitted it yields positive deformation and finite infimum mass.
+\end{proof}
 
 \begin{theorem}[Rigidity Inheritance]\label{thm:rigidity-inheritance}
-If a subsystem or induced family preserves the CCR hypotheses and the compatibility operator, then the inherited regime structure preserves null-regime instability and forced non-nullity.
+For $\Phi'=b\circ\Phi\circ a$, lower constants $c_a$ for $a$, $C$ for $\Phi$ on the mapped pairs and $c_b$ for $b$ give lower constant $c_ac_bC$. CCR inheritance separately requires every new finite-cost positive deformation to pull back to one in the old sector. Summability alone proves neither statement.
 \end{theorem}
+\begin{proof}
+Compose the three inequalities. A new finite-cost positive deformation would contradict original CCR under the stipulated pullback property. Null anchors and stability moduli need their own transport conditions.
+\end{proof}
 
-\begin{theorem}[Categorical Universality]\label{thm:null-categorical-universality}
-The null-regime exclusion result is universal across admissible CCR realizations in the relevant category of compatible channels.
+\begin{theorem}[Factorization on a Faithful Image]\label{thm:null-categorical-universality}
+If $\Phi:Z\to\E$ has a positive global lower bound, then every map $\Psi:Z\to F$ factors uniquely through $\Phi(Z)$. If $\Psi$ is $L$-Lipschitz, the factor is $L/C$-Lipschitz. No unique extension to the whole ambient $\E$ is implied.
 \end{theorem}
+\begin{proof}
+The lower bound makes $\Phi$ injective with inverse Lipschitz constant $1/C$ on its image. Set $u(\Phi(z))=\Psi(z)$; this is well-defined, unique there, and has the stated bound. Outside the image no value is prescribed.
+\end{proof}
 
-\begin{theorem}[Simulation Lower Bound]\label{thm:null-simulation-lower-bound}
-Any computational system attempting to simulate the null-excluding CCR regime structure with arbitrary precision requires unbounded resources as the approximation error tends to zero.
+\begin{theorem}[Finite-Prefix Simulation Bound]\label{thm:null-simulation-lower-bound}
+For $F(b)=\sum_{j\geq0}2b_j/3^{j+1}$ and a decoder observing only bits $0,\ldots,N$, the optimal worst-case scalar error is $1/(2\,3^{N+1})$. It is positive for every fixed prefix and tends to zero with growing budget. The conclusion concerns prefix information, not finite real dimension.
 \end{theorem}
+\begin{proof}
+Two extreme continuations of the same prefix have images separated by $3^{-(N+1)}$, forcing half that error for any single decoder value. The midpoint attains the bound on every fiber. This also supplies a non-empty approximation model consistent with revised E1/E2.
+\end{proof}
 
-\begin{theorem}[Closure by Non-Alternatives]\label{thm:null-closure-by-non-alternatives}
-No admissible alternative closes the CCR regime structure while preserving null stability. Any admissible alternative either preserves the same closure structure or exits the CCR class.
+\begin{theorem}[Conditional Closure by Non-Alternatives]\label{thm:null-closure-by-non-alternatives}
+Any alternative model satisfying the same declared pair, lower-bound, anchor and transport hypotheses obeys the corresponding preceding conclusions. The program of realizing these properties jointly with an infinite-mass intervention model remains open; pair separation is not a proof of an individual null state's dynamical instability.
 \end{theorem}
+\begin{proof}
+The conclusions depend on the enumerated mathematical hypotheses and apply to every model satisfying them. Existence and physical interpretation are additional questions.
+\end{proof}

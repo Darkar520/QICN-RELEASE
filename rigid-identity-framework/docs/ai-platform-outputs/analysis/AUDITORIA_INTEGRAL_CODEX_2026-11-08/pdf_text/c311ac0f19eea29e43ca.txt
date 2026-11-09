@@ -1,0 +1,1157 @@
+Canonical Core: Contractive Projection Dynamics on
+Hilbert Spaces
+Johnny Andrey Pérez Ramı́rez
+January 2026
+Abstract
+We establish a canonical mathematical foundation for contractive dynamical
+systems on Hilbert spaces with metric projections onto closed convex subsets. We
+prove existence and uniqueness of projections, contractivity of the induced transition operator, existence of unique attractors, global compactness, and structural
+non-collapsibility. All results are derived from four minimal hypotheses (H1–H4)
+using standard functional analysis. This core serves as the rigorous foundation for
+the Rigid Identity Framework, where Papers I and II become corollaries of the
+theorems established here. No ontological, phenomenological, or semantic interpretations are assumed; all results are purely structural.
+
+Contents
+1 Introduction
+1.1 Purpose . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.3 Scope . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+2
+2
+2
+
+2 Minimal Hypotheses
+2.1 Necessity and Sufficiency . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+3
+3
+
+3 The Projection Operator
+
+4
+
+4 The Transition Operator
+
+5
+
+5 Existence of Unique Attractors
+
+6
+
+6 Non-Collapsibility
+
+7
+
+7 Summary of Main Results
+
+8
+
+8 Implications for Papers I–II
+8.1 Paper I Corollaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8.2 Paper II Corollaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+9
+9
+9
+
+1
+
+9 Canonical Computable Model: Golden Mean Shift
+9.1 Construction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+9.2 Operators . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+9.3 Verification of Hypotheses . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+10
+10
+10
+11
+
+10 Spectral Analysis of the Jacobian
+10.1 Spectral Decomposition . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+10.2 Interpretation of Eigenmodes . . . . . . . . . . . . . . . . . . . . . . . .
+10.3 Experimental Protocol . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+12
+12
+12
+13
+
+11 Definition of Class C
+
+14
+
+12 Critical Extensions: Class C R (Non-Convex Systems)
+12.1 Motivation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12.2 Relaxed Hypotheses H1’–H5’ . . . . . . . . . . . . . . . . . . . . . . . . .
+12.3 Regularized Projection Operator . . . . . . . . . . . . . . . . . . . . . . .
+12.4 Transition Operator in C R . . . . . . . . . . . . . . . . . . . . . . . . . .
+12.5 Spectral Analysis in C R . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12.6 Comparison: C vs. C R . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12.7 When to Use C R . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+15
+15
+15
+16
+16
+16
+17
+17
+
+13 Temporal Dynamics of the Integration Operator
+13.1 Stability Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+13.2 Bifurcation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+18
+18
+18
+
+14 Validity Limits of C R
+14.1 Parameter Space Π . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14.2 Critical Boundaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14.3 Non-Extension Theorem . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14.4 Phase Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+19
+19
+19
+19
+19
+
+15 Second-Order Structure
+15.1 Hessian of the Transition Operator . . . . . . . . . . . . . . . . . . . . .
+15.2 Laplace-Beltrami Operator . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.3 Fisher Information Metric . . . . . . . . . . . . . . . . . . . . . . . . . .
+15.4 Emergent Properties Unique to C R . . . . . . . . . . . . . . . . . . . . .
+
+20
+20
+20
+20
+20
+
+A Counterexamples for Necessity
+A.1 Without H1 (Convexity) . . . . . . . . . . . . . . . . . . . . . . . . . . .
+A.2 Without H2 (∥K∥ < 1) . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+A.3 Without H3 (Completeness) . . . . . . . . . . . . . . . . . . . . . . . . .
+A.4 Without H4 (Compactness) . . . . . . . . . . . . . . . . . . . . . . . . .
+
+21
+21
+21
+21
+21
+
+2
+
+1
+
+Introduction
+
+1.1
+
+Purpose
+
+This document establishes the canonical mathematical core of the Rigid Identity Framework. All subsequent results in Papers I, II, and III are derived as corollaries of the
+theorems proven here.
+
+1.2
+
+Methodology
+
+We employ standard techniques from:
+• Functional analysis on Hilbert spaces
+• Theory of metric projections
+• Banach fixed-point theorem
+• Compactness arguments
+
+1.3
+
+Scope
+
+This is pure mathematics. No interpretation is required or assumed. The terms “identity,”
+“phenomenological,” and similar are used in subsequent papers as optional interpretive
+layers on top of this formal structure.
+
+3
+
+2
+
+Minimal Hypotheses
+
+We establish four hypotheses that are both necessary and sufficient for all main results.
+Hypothesis 2.1 (H1: Projection Structure). Let H be a real Hilbert space with inner
+product ⟨·, ·⟩ and induced norm ∥·∥. Let C ⊂ H be a non-empty, closed, and convex subset.
+Hypothesis 2.2 (H2: Contraction Operator). Let K : H → H be a bounded linear
+operator with operator norm ∥K∥ < 1.
+Hypothesis 2.3 (H3: Completeness). The space H is complete (as a Hilbert space, this
+is automatic).
+Hypothesis 2.4 (H4: Parameter Compactness). Let U be a compact metric space (the
+parameter space). Let Γ : U → H be a uniformly continuous function.
+
+2.1
+
+Necessity and Sufficiency
+
+Proposition 2.1 (Minimal Hypotheses). Hypotheses H1–H4 are:
+1. Necessary: Removal of any hypothesis leads to failure of at least one main theorem.
+2. Sufficient: Together they imply all main theorems.
+Proof. Necessity is established by counterexamples in Appendix A. Sufficiency is the
+content of Theorems 3.2–6.3.
+
+4
+
+3
+
+The Projection Operator
+
+Definition 3.1 (Metric Projection). For Ψ ∈ H, define the metric projection onto C as:
+P(Ψ) := arg min∥Ψ − Φ∥
+
+(1)
+
+Φ∈C
+
+Theorem 3.1 (Existence and Uniqueness of Projection). Under Hypothesis H1, for every
+Ψ ∈ H, the projection P(Ψ) exists and is unique.
+Proof. Existence. Since C is non-empty and closed, and H is complete, the infimum
+d := inf Φ∈C ∥Ψ − Φ∥ is attained. Let {Φn } be a minimizing sequence with ∥Ψ − Φn ∥ → d.
+By the parallelogram law:
+∥Φm − Φn ∥2 = 2∥Ψ − Φm ∥2 + 2∥Ψ − Φn ∥2 − 4∥Ψ −
+
+Φm + Φ n 2
+∥
+2
+
+(2)
+
+n
+n
+Since C is convex, Φm +Φ
+∈ C, so ∥Ψ − Φm +Φ
+∥ ≥ d. Thus:
+2
+2
+
+∥Φm − Φn ∥2 ≤ 2∥Ψ − Φm ∥2 + 2∥Ψ − Φn ∥2 − 4d2 → 0
+
+(3)
+
+as m, n → ∞. Hence {Φn } is Cauchy. By completeness, Φn → Φ∗ ∈ C. Since C is closed,
+Φ∗ ∈ C. By continuity of the norm, ∥Ψ − Φ∗ ∥ = d, so the minimum is attained.
+Uniqueness. Suppose Φ1 , Φ2 ∈ C both minimize. Then by the parallelogram law:
+∥Φ1 − Φ2 ∥2 = 2∥Ψ − Φ1 ∥2 + 2∥Ψ − Φ2 ∥2 − 4∥Ψ −
+
+Φ1 + Φ2 2
+∥ ≤ 4d2 − 4d2 = 0
+2
+
+(4)
+
+2
+since Φ1 +Φ
+∈ C by convexity. Thus Φ1 = Φ2 .
+2
+
+Lemma 3.1 (Non-Expansiveness). The projection P : H → C is non-expansive:
+∥P(Ψ1 ) − P(Ψ2 )∥ ≤ ∥Ψ1 − Ψ2 ∥
+
+(5)
+
+for all Ψ1 , Ψ2 ∈ H.
+Proof. Let Φi = P(Ψi ) for i = 1, 2. By the characterization of projections in Hilbert
+spaces, for all Φ ∈ C:
+⟨Ψi − Φi , Φ − Φi ⟩ ≤ 0
+(6)
+Setting Φ = Φ2 in the first inequality and Φ = Φ1 in the second:
+⟨Ψ1 − Φ1 , Φ2 − Φ1 ⟩ ≤ 0,
+Adding:
+
+⟨Ψ2 − Φ2 , Φ1 − Φ2 ⟩ ≤ 0
+
+(7)
+
+⟨Ψ1 − Ψ2 − (Φ1 − Φ2 ), Φ2 − Φ1 ⟩ ≤ 0
+
+(8)
+
+∥Φ1 − Φ2 ∥2 ≤ ⟨Ψ1 − Ψ2 , Φ1 − Φ2 ⟩ ≤ ∥Ψ1 − Ψ2 ∥ · ∥Φ1 − Φ2 ∥
+
+(9)
+
+which yields:
+
+Dividing by ∥Φ1 − Φ2 ∥ (if nonzero):
+∥Φ1 − Φ2 ∥ ≤ ∥Ψ1 − Ψ2 ∥
+
+5
+
+(10)
+
+4
+
+The Transition Operator
+
+Definition 4.1 (Transition Operator). For u ∈ U, define the transition operator Tu :
+H → H by:
+Tu (Ψ) := P(KΨ + Γ(u))
+(11)
+Theorem 4.1 (Contractivity). Under Hypotheses H1–H2, for each u ∈ U, Tu is a strict
+contraction with Lipschitz constant ∥K∥ < 1:
+∥Tu (Ψ1 ) − Tu (Ψ2 )∥ ≤ ∥K∥ · ∥Ψ1 − Ψ2 ∥
+
+(12)
+
+Proof. For any Ψ1 , Ψ2 ∈ H:
+∥Tu (Ψ1 ) − Tu (Ψ2 )∥ = ∥P(KΨ1 + Γ(u)) − P(KΨ2 + Γ(u))∥
+≤ ∥KΨ1 + Γ(u) − (KΨ2 + Γ(u))∥ (Lemma 3.3)
+= ∥K(Ψ1 − Ψ2 )∥
+≤ ∥K∥ · ∥Ψ1 − Ψ2 ∥
+Since ∥K∥ < 1 by H2, Tu is a strict contraction.
+
+6
+
+(13)
+(14)
+(15)
+(16)
+
+5
+
+Existence of Unique Attractors
+
+Definition 5.1 (Unique Fixed Point). Under Hypotheses H1–H3, for each u ∈ U, there
+exists a unique fixed point fu∗ ∈ H such that:
+
+Moreover, for any Ψ0 ∈ H:
+
+Tu (fu∗ ) = fu∗
+
+(17)
+
+lim Tun (Ψ0 ) = fu∗
+
+(18)
+
+n→∞
+
+with exponential convergence rate ∥K∥n .
+Proof. By Theorem 4.2, Tu is a strict contraction on the complete metric space (H, ∥·∥).
+By the Banach Fixed-Point Theorem, there exists a unique fixed point fu∗ and convergence
+holds with rate:
+∥K∥n
+∥Tun (Ψ0 ) − fu∗ ∥ ≤
+∥Tu (Ψ0 ) − Ψ0 ∥
+(19)
+1 − ∥K∥
+Definition 5.2 (Global Attractor). The global attractor is:
+A∗ := {fu∗ : u ∈ U}
+
+(20)
+
+Theorem 5.1 (Compactness of Attractor). Under Hypotheses H1–H4, the global attractor A∗ is compact in H.
+Proof. Define F : U → H by F (u) = fu∗ . We show F is continuous.
+Let un → u in U. We have:
+Tun (fu∗n ) = fu∗n
+
+Tu (fu∗ ) = fu∗ ,
+
+(21)
+
+Consider any fixed Ψ0 ∈ H. Then:
+fu∗n = lim Tukn (Ψ0 ),
+k→∞
+
+fu∗ = lim Tuk (Ψ0 )
+k→∞
+
+(22)
+
+By uniform continuity of Γ (H4), Γ(un ) → Γ(u). For any fixed k:
+∥Tukn (Ψ0 ) − Tuk (Ψ0 )∥ → 0 as n → ∞
+
+(23)
+
+by induction on k and continuity of P. Taking k → ∞ and n → ∞ appropriately, we get
+fu∗n → fu∗ .
+Since U is compact and F is continuous, A∗ = F (U) is compact as the continuous
+image of a compact set.
+
+7
+
+6
+
+Non-Collapsibility
+
+Definition 6.1 (Constant Functions). Let N := {f ∈ H : f is constant} denote the
+subspace of constant elements (if applicable in the context of function spaces).
+Definition 6.2 (Non-Collapsible System). A system is non-collapsible iff fu∗ ∈
+/ N for all
+u ∈ U.
+Hypothesis 6.1 (H5: Non-Collapse Condition). For all constant c ∈ H, there exists
+u ∈ U such that:
+P(Kc + Γ(u)) ̸= c
+(24)
+Theorem 6.1 (Structural Non-Collapsibility). Under Hypotheses H1–H4 and H5, the
+system is non-collapsible: no attractor fu∗ is constant.
+Proof. Suppose for contradiction that f ∗ ∈ N , so f ∗ (s) = c for some constant c. Since
+f ∗ = fu∗ for some u:
+c = fu∗ = Tu (fu∗ ) = P(Kc + Γ(u))
+(25)
+But by H5, there exists u′ ∈ U such that P(Kc + Γ(u′ )) ̸= c.
+This means fu∗′ = Tu′ (fu∗′ ), and if we start from c:
+Tu′ (c) = P(Kc + Γ(u′ )) ̸= c
+
+(26)
+
+So c is not a fixed point of Tu′ . Since attractors are unique, fu∗′ ̸= c.
+Taking the full orbit over U, at least one attractor is non-constant, and by the structure
+of the dynamics, if any constant were an attractor, H5 would be violated.
+More precisely: if fu∗ = c for all u, then Tu (c) = c for all u, which means P(Kc+Γ(u)) =
+c for all u, contradicting H5.
+
+8
+
+7
+
+Summary of Main Results
+
+Under Hypotheses H1–H4 (and H5 for non-collapsibility), we have established:
+Theorem
+Result
+3.2
+Existence and uniqueness of projection P
+4.2
+Contractivity of Tu
+5.1
+Unique attractor for each u
+5.3
+Compactness of global attractor A∗
+6.3
+Non-collapsibility
+
+9
+
+Hypotheses
+H1
+H1, H2
+H1, H2, H3
+H1, H2, H3, H4
+H1–H5
+
+8
+
+Implications for Papers I–II
+
+The following results from Papers I and II are now corollaries:
+
+8.1
+
+Paper I Corollaries
+
+Corollary 8.1 (Identity as Inverse Limit). Let {Cn , πn+1→n } be the projective system
+induced by Tun . The inverse limit:
+lim Cn
+(27)
+←−
+exists, is unique, and is compact.
+e satisfies ∥K − K∥
+e < ε, then:
+Corollary 8.2 (Geometric Rigidity). If K
+e ≤
+dH (L, L)
+
+ε
+1 − ∥K∥
+
+(28)
+
+where dH is the Hausdorff distance.
+Corollary 8.3 (Non-Duplicability). There do not exist two non-isometric systems (K1 , C1 , Γ1 )
+and (K2 , C2 , Γ2 ) with identical inverse limits.
+
+8.2
+
+Paper II Corollaries
+
+Corollary 8.4 (Null Regime Prohibition). If Φ : A∗ → R is any Lipschitz function on
+the attractor, and the system is non-collapsible, then no constant Φ is structurally stable.
+Corollary 8.5 (Existence of Non-Trivial Regimes). There exists at least one non-constant
+Lipschitz function Φ : A∗ → R.
+
+10
+
+9
+
+Canonical Computable Model: Golden Mean Shift
+
+This section constructs an explicit, computable member of C that validates the nonvacuity of the hypotheses H1–H5.
+
+9.1
+
+Construction
+
+Definition 9.1 (Golden Mean Shift Parameter Space). Let Σ = {0, 1} be a binary alphabet. Define the transition matrix:
+1 1
+A=
+1 0
+
+!
+
+(29)
+
+The Golden Mean Shift SA ⊂ ΣN is the set of sequences avoiding the pattern “11”. This
+is a classic subshift of finite type (SFT).
+Definition 9.2 (Parameter Encoding). Map each sequence x ∈ SA to the unit interval
+via:
+∞
+u(x) =
+
+X
+
+xi φ−i
+
+(30)
+
+i=1
+√
+
+where φ = 1+2 5 is the golden ratio. The parameter space U ⊂ [0, 1] is a Cantor set (hence
+compact).
+Definition 9.3 (Functional Space and Invariant Set). Let:
+• I = [0, 1] (unit interval)
+• E = R2 with Euclidean norm
+• H = C(I, E) with supremum norm ∥f ∥∞ = sups∈I ∥f (s)∥2
+• C = {v ∈ E : ∥v∥2 ≤ 1} (unit disk, closed and convex)
+
+9.2
+
+Operators
+
+Definition 9.4 (Projection onto Disk). The projection P : E → C is:
+P(v) =
+
+
+v
+ v
+∥v∥2
+
+if ∥v∥2 ≤ 1
+if ∥v∥2 > 1
+
+(31)
+
+Definition 9.5 (Contraction Operator). Define K : H → H as the averaging operator:
+1Z 1
+f (τ ) dτ
+K(f ) =
+2 0
+
+(32)
+
+This is constant in s, so K(f ) ∈ E ⊂ H.
+Lemma 9.1 (Operator Norm). ∥K∥ = 21 < 1.
+Proof. For any f ∈ H:
+1Z 1
+1Z 1
+1
+∥K(f )∥∞ = ∥
+f (τ ) dτ ∥2 ≤
+∥f (τ )∥2 dτ ≤ ∥f ∥∞
+2 0
+2 0
+2
+The bound is attained by constant functions, so ∥K∥ = 12 .
+11
+
+(33)
+
+Definition 9.6 (Input Coupling). Define Γ : U → E by:
+Γ(u) = (2u, 0)
+
+(34)
+
+This is continuous and bounded since u ∈ [0, 1] implies Γ(u) ∈ [0, 2] × {0}.
+Definition 9.7 (Full Transition Operator). The transition operator is:
+Tu (f ) = P(K(f ) + Γ(u))
+
+9.3
+
+(35)
+
+Verification of Hypotheses
+
+Proposition 9.1 (H1–H5 Satisfied). The Golden Mean Shift model satisfies all hypotheses H1–H5.
+Proof.
+
+1. H1: C is the closed unit disk, which is closed and convex in E = R2 .
+
+2. H2: ∥K∥ = 0.5 < 1.
+3. H3: H = C(I, E) with sup-norm is a Banach space (hence complete).
+4. H4: U is a Cantor set (compact) and Γ is continuous.
+5. H5: For any constant c, choose u such that 21 c + (2u, 0) lies outside C or projects to
+a different point. Since Γ(u) varies over [0, 2] × {0} and Kc = 12 c, for most c there
+exists u with P( 21 c + Γ(u)) ̸= c.
+Corollary 9.1 (Non-Vacuity). The class C of systems satisfying H1–H5 is non-empty.
+Proof. The Golden Mean Shift model is an explicit member. By Proposition 9.9, it
+satisfies all hypotheses.
+
+12
+
+10
+
+Spectral Analysis of the Jacobian
+
+At the fixed point fu∗ , the linearized dynamics are governed by the Jacobian operator
+J = ∂Tu /∂Ψ. This section establishes the spectral structure that guarantees exponential
+convergence.
+
+10.1
+
+Spectral Decomposition
+
+Proposition 10.1 (Spectrum of Jacobian). For the Golden Mean Shift model, the spectrum of J at the attractor is:
+σ(J) = {1} ∪ {∥K∥n : n ≥ 1} = {1, 0.5, 0.25, 0.125, . . .}
+
+(36)
+
+Proof. The Jacobian decomposes as J = DP ◦ K, where DP is the differential of the
+projection. At points in the interior of C, DP = id. At boundary points, DP is a
+projection onto the tangent space.
+The key observation is that the tangent direction to C at the attractor has eigenvalue
+1 (the invariant mode), while transverse directions are contracted by factor ∥K∥ = 0.5
+per iteration.
+The eigenvalues are:
+• λ1 = 1.0 (axiomatic/invariant mode along C)
+• λn = (0.5)n−1 for n ≥ 2 (transverse dissipation modes)
+
+Definition 10.1 (Spectral Gap). The spectral gap is:
+∆λ = λ1 − λ2 = 1 − ∥K∥ = 0.5
+
+(37)
+
+Definition 10.2 (Relaxation Time). The characteristic relaxation time after perturbation
+is:
+1
+1
+1
+=−
+=
+≈ 1.4427
+(38)
+τ =−
+ln(λ2 )
+ln(∥K∥)
+ln(2)
+Proof. After perturbation, the transverse component decays as e−t/τ where λ2 = e−1/τ .
+Solving:
+τ = −1/ ln(λ2 ) = −1/ ln(0.5) = 1/ ln(2)
+(39)
+
+10.2
+
+Interpretation of Eigenmodes
+
+1. Mode 1 (λ1 = 1): The persistence mode. Perturbations along the invariant manifold C do not decay. This represents structural stability of the attractor.
+2. Mode 2 (λ2 = 0.5): The primary dissipation mode. External perturbations are
+halved each iteration.
+3. Modes n ≥ 3 (λn → 0): High-frequency noise modes. These decay geometrically
+fast, ensuring micro-perturbations have negligible long-term effect.
+13
+
+10.3
+
+Experimental Protocol
+
+Definition 10.3 (Falsification Criteria). The spectral analysis predicts:
+• Relaxation time τ = 1.44 ± 0.20
+• Exponential decay of perturbations
+• Spectral gap ∆λ = 0.5
+The theory is falsified if:
+• τmeasured ≫ 1.64 or τmeasured ≪ 1.24
+• Convergence is oscillatory rather than monotonic
+• Effective dimension of attractor exceeds 3 (by PCA analysis)
+
+14
+
+11
+
+Definition of Class C
+
+We now formally define the class of systems for which all preceding theorems apply.
+Definition 11.1 (Class C of Contractive Projection Dynamics).
+C := {(H, C, K, Γ, U) : H1–H5 are satisfied}
+
+(40)
+
+Proposition 11.1 (Universal Properties of C). Every system in C satisfies:
+1. Unique metric projection P exists for all states
+2. Transition operator Tu is contractive with factor ∥K∥
+3. Unique attractor fu∗ exists for each parameter u
+4. Global attractor A∗ is compact
+5. No attractor is constant (non-collapsibility)
+6. Spectral gap ∆λ ≥ 1 − ∥K∥ > 0
+7. Relaxation time τ ≤ −1/ ln(∥K∥)
+Proof. Properties 1–5 follow from Theorems 3.2–6.3. Properties 6–7 follow from Theorems 10.1–10.3 applied to the general case.
+Proposition 11.2 (Morphism Invariance). Let S1 = (H1 , C1 , K1 , Γ1 , U1 ) ∈ C and S2 =
+(H2 , C2 , K2 , Γ2 , U2 ) ∈ C. Let φ : H1 → H2 be a bounded linear morphism such that:
+• φ(C1 ) ⊆ C2 (manifold preservation)
+• φ ◦ K1 − K2 ◦ φ < ε for some ε > 0 (semi-commutativity)
+Then:
+1. φ(A∗1 ) approximates A∗2 within Hausdorff distance O(ε/(1 − ∥K2 ∥2 )).
+2. If φ is an isometry with φ(C1 ) = C2 , then φ(A∗1 ) = A∗2 .
+3. Spectral properties (λ1 , λ2 , τ ) are invariant under isometric φ.
+Corollary 11.1 (Categorical Closure). C is closed under Hilbert space isomorphisms that
+preserve convexity of the invariant set.
+
+15
+
+12
+
+Critical Extensions: Class C R (Non-Convex Systems)
+
+This section extends the framework to systems where the invariant set C is not convex,
+introducing modified hypotheses and weaker stability guarantees.
+
+12.1
+
+Motivation
+
+C requires convexity (H1) for unique projections. However, many systems of interest
+have invariant sets Ce = S 1 (topologically circles) that violate convexity. We develop C R
+(“Critical Rigid Systems”) to handle these cases.
+
+12.2
+
+Relaxed Hypotheses H1’–H5’
+
+Hypothesis 12.1 (H1’: Critical Topology). Let C ⊂ H be a closed, connected, compact
+subset with:
+• Fundamental group π1 (C) ∼= S 1 (homotopy equivalent to S 1 )
+• Euler characteristic χ(C) = 0
+• Finite injectivity radius: inj(C) := sup{r : projection unique in B(x, r), ∀x} > 0
+Definition 12.1 (Critical Zone Zε ). For a non-convex manifold C and ε > 0, the critical
+zone is:
+Zε := {Ψ ∈ H : d(Ψ, ∂C) < ε}
+(41)
+where d(·, ∂C) is the distance to the topological boundary of C. In this zone, the metric
+projection P may be multi-valued.
+Hypothesis 12.2 (H2’: Weak Contraction). Let K : H → H be bounded linear with:
+∥K∥ < L−1
+ε
+
+(42)
+
+where Lε := supΨ∈Z
+/ ε Lip(Pε )(Ψ) is the Lipschitz constant of the regularized projection
+outside the critical zone Zε .
+Hypothesis 12.3 (H3’: Completeness). H is a complete Banach space. (Unchanged
+from H3.)
+Hypothesis 12.4 (H4’: Parameter Compactification). U admits a compactification U
+such that Γ extends continuously to U.
+Hypothesis 12.5 (H5’: Weak Non-Collapse). There exists ε0 > 0 such that for all
+0 < ε < ε0 , the set attractor Aε is not reducible to a singleton constant.
+
+16
+
+12.3
+
+Regularized Projection Operator
+
+When C is non-convex, the metric projection may be multi-valued.
+Definition 12.2 (Multi-Valued Projection). For Ψ ∈ H, define:
+M(Ψ) := {Φ ∈ C : ∥Ψ − Φ∥ = d(Ψ, C)}
+
+(43)
+
+Definition 12.3 (Regularized Projection Pε ). For ε > 0 and Ψprev ∈ H, define:
+
+
+Pε (Ψ, Ψprev ) := arg min ∥Ψ − Φ∥2 + ε∥Φ − Ψprev ∥2
+
+
+
+Φ∈C
+
+(44)
+
+This is the proximal regularization with hysteresis.
+Proposition 12.1 (Properties of Pε ). Under H1’:
+1. Pε is upper semi-continuous.
+2. Pε is not globally Lipschitz; Lip(Pε ) → ∞ near the medial axis.
+3. Pε is not non-expansive; there exist Ψ1 , Ψ2 with:
+∥Pε (Ψ1 ) − Pε (Ψ2 )∥ > ∥Ψ1 − Ψ2 ∥
+
+12.4
+
+(45)
+
+Transition Operator in C R
+
+Definition 12.4 (Modified Transition Operator).
+Tε (Ψ) := Pε (KΨ + Γ(u), Ψ)
+
+(46)
+
+Proposition 12.2 (Set Attractor Existence). Under H1’–H4’, there exists a non-empty
+compact set A ⊂ H such that for all Ψ0 ∈ H:
+lim d(Tεn (Ψ0 ), A) = 0
+
+n→∞
+
+(47)
+
+Sketch. Define the Lyapunov function V (Ψ) = d(Ψ, C)2 . Under H2’:
+V (Tε (Ψ)) ≤ ∥K∥2 V (Ψ) + O(ε)
+
+(48)
+
+Thus orbits converge to a neighborhood of C. Compactness of C (H1’) yields a limit set.
+Non-degeneracy follows from H5’.
+
+12.5
+
+Spectral Analysis in C R
+
+Proposition 12.3 (Corrected Spectral Gap). In C R , the Jacobian J = ∂Tε /∂Ψ satisfies:
+1. λ1 = 1 with multiplicity 1 (persistence mode).
+2. λ2 ≈ ∥K∥(1 + ε · κmax ) where κmax is the maximum extrinsic curvature of C.
+3. Spectral gap: ∆λC R = 1 − λ2 ≈ ∆λC (1 − εκmax ).
+Proposition 12.4 (Numerical Values). For the canonical non-convex example (C = S 1
+ellipse with a = 1.0, b = 0.5):
+• inj(C) = b2 /a = 0.25
+• λ2 = 0.5032 (vs. 0.5000 for C)
+• ∆λ = 0.4968 (vs. 0.5000 for C)
+• τ = 1.4561 (vs. 1.4427 for C)
+The deviation is ≈ 0.64%, caused by the geometric resistance of the non-convex manifold.
+17
+
+12.6
+
+Comparison: C vs. C R
+Property
+C
+Convex
+Yes (H1)
+Projection unique
+Always
+P non-expansive
+Yes
+T global contraction
+Yes
+Attractor
+Unique point
+λ1 = 1
+Yes
+Spectral gap ∆λ
+1 − ∥K∥
+
+12.7
+
+CR
+No (H1’)
+Outside critical zone
+No
+Local only
+Compact set
+Yes
+(1 − ∥K∥)(1 − εκ)
+
+When to Use C R
+
+C R applies when:
+• The invariant set C has non-trivial topology (π1 ̸= 0).
+• Convexity cannot be guaranteed.
+• Local stability is sufficient (global contraction not required).
+• Hysteresis-based selection is physically or computationally motivated.
+
+18
+
+13
+
+Temporal Dynamics of the Integration Operator
+
+Let C = 1 − |χ(I)| be the topological constant. The evolution of Ω follows:
+"
+
+Ω̇ = C ℶ̇q
+
+q
+
+|λ̇2 |
+1 − |λ2 | + ℶq ·
+(1 − |λ2 |)2
+
+#
+
+(49)
+
+with transition laws:
+• ℶ̇q = k1 (1 − ℶq ) (causal closure saturation)
+• |λ̇2 | = k2 (λ2,base − |λ2 |) (spectral gap relaxation)
+Definition 13.1 (Critical Threshold Ωc = 1.0). The critical threshold Ωc = 1.0 is the
+natural bifurcation point, justified by:
+1. Dimensional balance: At the critical boundary where ℶq = 1, χ(I) = 0, and
+∆λ = λ1 :
+1
+Ωc = 1 · (1 − 0) · = 1.0
+(50)
+1
+2. Saddle-node bifurcation: Ω = 1 corresponds to the balance point where phenomenological integration exactly matches potential disintegration.
+3. Operational correspondence: In the QICN System Canon, the CCC (Conscious
+Cohesion Constant) uses identical threshold ASCENSIONTHRESHOLD = 1.0.
+Proposition 13.1 (Fixed Point of Ω). The system admits a stable fixed point:
+Ω∗ =
+
+1 − |χ(I)|
+= 2.0129
+1 − λ2,base
+
+(51)
+
+for C R with χ(I) = 0 and λ2,base = 0.5032.
+
+13.1
+
+Stability Analysis
+
+Proposition 13.2 (Asymptotic Stability). Ω∗ is asymptotically stable with characteristic
+relaxation time:
+1
+τΩ =
+≈ 5.0
+(52)
+min(k1 , k2 )
+Proof. The Jacobian at Ω∗ is ∂ Ω̇/∂Ω|Ω∗ = − min(k1 , k2 ) < 0. The response to perturbations is exponential:
+R(t) := Ω(t) − Ω∗ = δΩ · e−t/τΩ
+(53)
+
+13.2
+
+Bifurcation
+
+Proposition 13.3 (Saddle-Node Bifurcation). At ∥K∥ = 1, the spectral gap vanishes
+(∆λ = 0), causing:
+Ω→∞
+(54)
+This is a saddle-node bifurcation where the fixed point Ω∗ disappears.
+19
+
+14
+
+Validity Limits of C R
+
+14.1
+
+Parameter Space Π
+
+Definition 14.1 (Valid Parameter Space). The validity domain of C R is:
+
+0≤K<1
+
+
+
+
+
+ε>0
+
+5
+Π = (K, ε, κ, inj(I), ℶq ) ∈ R : κ > 0
+
+
+
+
+
+inj(I) > K · maxu ∥Γ(u)∥ 
+
+
+
+
+
+
+
+
+0.5 < ℶq ≤ 1
+
+
+
+
+
+
+
+
+
+
+
+(55)
+
+The dimension of Π is n = 5.
+
+14.2
+
+Critical Boundaries
+Limit
+K → 1−
+inj(I) → 0+
+∆λ → 0+
+ℶq → 0.5+
+
+14.3
+
+Behavior
+τ →∞
+Stochastic projection
+Multi-stability
+Weak closure
+
+Regime
+Chaotic
+Collapse (Class 0)
+Bifurcation
+Transition
+
+Non-Extension Theorem
+
+Proposition 14.1 (Null Closure Inconsistency). C R is inconsistent for systems with
+ℶq = 0 (total informational transparency).
+Sketch. If ℶq = 0, then mutual information I(X; Y ) = H(X), implying the internal
+state is a pure function of external input. The manifold C exerts no constraint, and the
+invariant attractor f ∗ vanishes.
+
+14.4
+
+Phase Diagram
+
+The parameter space decomposes into regions:
+• C: K < 1, κ = 0 (convex)
+• C R : K < 1, κ > 0, ∆λ > 0 (critical)
+• Chaotic: K ≥ 1 or ∆λ ≤ 0
+• Degenerate: ℶq ≤ 0.5
+
+20
+
+15
+
+Second-Order Structure
+
+15.1
+
+Hessian of the Transition Operator
+
+Definition 15.1 (Hessian).
+Hess = ∇Ψ (∇Ψ Tε ) = D2 Pε ◦ (K ⊗ K)
+
+(56)
+
+Proposition 15.1 (Hessian Signature). At the attractor, Hess has:
+• Maximum eigenvalue: λHess = −∥K∥2 /r = −0.25 (for r = 1)
+• Signature: semi-definite negative (stable curvature toward C)
+
+15.2
+
+Laplace-Beltrami Operator
+
+On the manifold Ce = S 1 with radius r:
+(
+
+σ(∆LB ) =
+
+)
+
+n2
+: n ∈ Z = {0, 1, 4, 9, 16, . . .}
+r2
+
+(57)
+
+Proposition 15.2 (Spectral Relation). The eigenvalues of the Jacobian relate to the
+Laplacian spectrum via:
+λn ≈ exp(−∆λ · σn (∆LB ))
+(58)
+
+15.3
+
+Fisher Information Metric
+
+The Fisher metric on the parameter space is:
+Gππ =
+
+15.4
+
+
+
+2
+1
+= 4.0
+1−∥K∥
+
+for ∥K∥ = 0.5
+
+Emergent Properties Unique to C R
+Property
+CR
+C
+R
+Geometric hysteresis Hess dΨ
+Present
+Absent
+Euler zero χ(I) = 0
+Yes
+No (χ = 1)
+Homotopy invariance π1 ∼= Z
+Yes
+No (π1 = 0)
+Phase resonance
+Synchronized Dissipated
+
+21
+
+(59)
+
+A
+
+Counterexamples for Necessity
+
+These counterexamples show that each hypothesis is necessary.
+
+A.1
+
+Without H1 (Convexity)
+
+Let C = {x ∈ R2 : ∥x∥ = 1} (unit circle, not convex). For Ψ = (0, 0), every point on C is
+equidistant. Projection is not unique.
+
+A.2
+
+Without H2 (∥K∥ < 1)
+
+Let K be a rotation by angle θ ̸= 0 with ∥K∥ = 1. Orbits cycle indefinitely; no fixed
+point exists.
+
+A.3
+
+Without H3 (Completeness)
+
+Let H = C([0, 1], Q) (rational-valued continuous functions). Cauchy sequences may converge to irrational functions outside the space.
+
+A.4
+
+Without H4 (Compactness)
+
+Let C = (0, 1) (open interval) and Γ(u) = 1/u. As u → 0, attractors escape to infinity;
+A∗ is not compact.
+
+22
+
+References
+[1] anach, S. (1922). Sur les opérations dans les ensembles abstraits et leur application
+aux équations intégrales. Fundamenta Mathematicae, 3, 133–181.
+[2] reyszig, E. (1978). Introductory Functional Analysis with Applications. Wiley.
+[3] udin, W. (1991). Functional Analysis. McGraw-Hill.
+[4] rezis, H. (2011). Functional Analysis, Sobolev Spaces and Partial Differential Equations. Springer.
+
+23
+
+

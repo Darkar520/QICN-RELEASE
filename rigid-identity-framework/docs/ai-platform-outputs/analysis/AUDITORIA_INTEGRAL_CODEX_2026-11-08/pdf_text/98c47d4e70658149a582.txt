@@ -1,0 +1,1613 @@
+Falsiable Predictions Under Forensic Constraints
+Johnny Andrey Pérez Ramírez
+Abstract
+This paper species a falsication-rst protocol for evaluating QICN under strict forensic
+admissibility constraints. The design is intentionally claim-bounded: the target is comparative structural-functional support, not phenomenological proof. The protocol instantiates
+ve core predictions, mandatory ablation baselines, xed seeds, and pre-registered decision gates. Statistical inference is dened ex ante with primary-metric priority, eect-size
+thresholds, and multiplicity correction.
+To prevent post-hoc ination, evidence is admissible only if packet integrity, replay consistency, and runtime budget constraints pass simultaneously. We introduce a version-frozen
+operational triple (A, J, W ) (actuator set, objective functional, workspace interface), and
+require semantic version bumps for incompatible changes. We further include latency invalidation criteria and baseline obligations (heuristic, planner-o, world-model-o) for all key
+experiments.
+The strongest admissible conclusion remains constrained comparative support for audited cognition-operational hypotheses. This manuscript does not claim biological qualia,
+metaphysical identity equivalence, or direct proof of subjective experience.
+
+1 Scope, System Boundary, and Non-Inference Note
+What this paper does. This paper species a falsication-rst evaluation protocol for QICN
+under xed admissibility rules, ablation obligations, pre-registered decision gates, and bounded
+statistical reporting.
+
+Scope and admissible reading. The protocol is a bounded comparison and falsication surface. It does not prove phenomenology, biological equivalence, metaphysical identity equivalence,
+subjective experience, or universal dominance over rival architectures, and it does not replace
+upstream theorem burdens. A related system may instantiate the runner, admissibility lters,
+governed artifacts, and comparison surfaces, but passing runs support only gate-preserving comparative readings; they do not validate the corpus externally or certify a consciousness claim.
+
+2 Introduction
+2.1 Problem Statement
+QICN has formal foundations in rigid identity, regime structure, and non-null instability constraints. What remained open is evidence governance: whether those foundations survive adversarial empirical evaluation with explicit failure gates.
+
+2.2 Continuity with Existing Papers
+This paper extends the previous corpus and is aligned with the formal line of:
+1. paper1 (rigid identity),
+2. paper2 (phenomenological regimes),
+3. paper3 (structural instability and non-null constraints).
+
+1
+
+It does not replace those results; it operationalizes them under benchmark-grade falsication
+pressure.
+
+2.3 Contributions
+ Decision-complete pre-registration with hard fail rules.
+ Mandatory baseline and ablation policy for key claims.
+ Forensic admissibility as rst-class gate.
+ Runtime budget invalidation policy (tick budget as evidence lter).
+ A new operational PPS section as addendum, without overclaiming qualia.
+
+3 Formal Setup
+3.1 System, Scenario, and Seed Spaces
+Denition 3.1 (System Set). S = {s1 , . . . , s5 } with: s1 QICN FULL, s2 LLM REACTIVE, s3
+LLM PLUS MEMORY, s4 DYNAMIC CONTROL NO SELF MODEL, s5 ABLATION QICN
+POLICY OFF.
+
+Denition 3.2 (Scenario Set). C = {c1 , . . . , c12 } with nominal, sensor noise (moderate/severe),
+delity degradation, high latency, intermittent failures, post-threshold prolonged, pre-threshold
+control, narrative perturbation, operational chart freeze, audit stress, deterministic replay.
+
+Denition 3.3 (Seed Set). Σ = {17057, 424242}.
+Denition 3.4 (Run Space). D = S × C × Σ, with |D| = 120.
+
+3.2 Observable Vector
+For each run r ∈ D , we log:
+
+
+X(r) = βq , Ω, CCC, P M IA, ∆λ, stasis, forensic, replay, latencyp95 , latencyp99 , budget_overow_rate, η .
+
+3.3 Version-Frozen Operational Triple
+Denition 3.5 (Frozen Triple). For protocol version v, dene:
+ Av : allowed actuator set,
+ Jv : objective/reward functional,
+ Wv : workspace contract (read/write schema).
+The tuple hash Hv = sha256(Av ∥Jv ∥Wv ) is mandatory in every forensic packet.
+
+Criterion 3.6 (Compatibility Rule). Any incompatible change to Av , Jv , or Wv invalidates
+cross-version inference unless accompanied by an explicit version bump and full rerun.
+
+4 Forensic Integrity Model
+Denition 4.1 (Forensic Packet). Each run emits
+K = (tick, seed, versionHash, Hv , metrics, sensorSummary, checksum).
+2
+
+4.1 Admissibility Layers
+The forensic packet is not a decorative log. It is the object on which the evaluation depends. A
+run is admissible only after passing three distinct layers:
+1.
+
+Physical integrity: the packet is present, parseable, hash-consistent, and bound to the
+declared executable, conguration, seed, and version hash.
+
+2.
+
+Protocol integrity: the run obeys the frozen scenario, actuator, workspace, and metric
+contracts without unregistered intervention.
+
+3.
+
+Inferential integrity: the accepted packet belongs to the pre-registered comparison cell
+and has not been selected because of its outcome.
+
+Failure at the rst layer invalidates the packet. Failure at the second layer invalidates the cell
+unless the protocol declares a narrower exclusion rule before execution. Failure at the third layer
+invalidates the corresponding inference even when the raw metrics look favorable.
+
+Denition 4.2 (Admissible Evidence Cell). For system s, scenario c, and seed subset Σc , an
+evidence cell E(s, c, Σc ) is admissible when every included packet satises physical and protocol
+integrity, every exclusion is logged before metric aggregation, and the cell still meets the preregistered minimum eective sample size after exclusions.
+
+Criterion 4.3 (No Rescue by Favorable Metrics). Let m(r) be any primary or secondary metric
+for run r .
+
+If r fails the forensic gate, then m(r) may be archived for debugging but cannot
+
+contribute to support, eect-size estimation, or tier movement.
+
+4.2 Tamper and Sham Controls
+The protocol must include deliberately invalid artifacts. These controls are not stress tests of
+QICN behavior; they test whether the evaluation machinery refuses inadmissible evidence.
+Control
+Hash tamper
+Seed mismatch
+Scenario alias
+
+Injected defect
+modify
+
+one
+
+Required evaluator response
+
+metric
+
+eld
+
+after
+
+packet rejected before aggrega-
+
+packet emission
+
+tion
+
+replay packet under a seed not
+
+packet rejected or quarantined
+
+matching the manifest
+
+as non-comparable
+
+relabel a hard scenario as nomi-
+
+protocol-integrity failure
+
+nal
+Clock distortion
+
+violate declared tick or latency
+
+runtime-budget
+
+invalidation
+
+envelope
+
+for the aected cell
+
+Outcome-selected
+
+keep only successful runs from a
+
+inferential-integrity failure
+
+replay
+
+larger hidden set
+
+Malformed sensor sum-
+
+remove sensor elds needed by a
+
+packet rejected for incomplete
+
+mary
+
+primary metric
+
+observability
+
+Proposition 4.4 (Evaluator Specicity). A forensic evaluator is specic enough for this protocol
+
+only if it rejects every tamper and sham control above while still accepting a clean replay of the
+same scenario family under the frozen manifest.
+Proof. The rst condition prevents a permissive evaluator from converting arbitrary artifacts
+into evidence. The second condition prevents an over-strict evaluator from becoming a trivial
+rejection machine. Together they dene a minimal specicity requirement: admissible evidence
+must be accepted for the right reason, and inadmissible evidence must be rejected for the right
+reason.
+
+3
+
+4.3 Audit Trail and Chain of Custody
+Each accepted cell must expose a chain of custody:
+
+C(E) = (source commit, manifest hash, runner hash, packet hashes, exclusion ledger, analysis script hash).
+The chain is part of the evidence. A result with a missing analysis script hash or missing exclusion
+ledger is not equivalent to a fully traceable result, even if the visible table is numerically identical.
+
+Criterion 4.5 (Traceability Completeness). An accepted result table must be reproducible from
+its packet set and analysis script without manual row editing. If manual correction is needed,
+the correction must be represented as a signed ledger entry with the original packet preserved.
+
+Assumption 4.6 (Packet Admissibility). A run is admissible only if checksum, schema, seed
+consistency, version hash, and Hv consistency all pass.
+
+Denition 4.7 (Severe Violation). A run has severe violation if any of: checksum mismatch,
+schema failure, seed/version inconsistency, critical-state replay mismatch.
+
+Criterion 4.8 (Integrity Gate). Severe runs are excluded from support counting and marked
+hard failures.
+
+Proposition 4.9 (Integrity-First Inference). If admissibility fails, inferential signicance is
+non-actionable.
+
+5 Pre-Registered Prediction Set
+Denition 5.1 (Prediction Set). P = {P1 , P2 , P3 , P4 , P5 } with pre-registered statements, eectsize oors, and failure rules.
+
+ID
+
+Statement
+
+Decision Rule
+
+Failure Rule
+
+P1
+
+Closure
+
+QICN beats at least 3 com-
+
+No robust edge or repeated
+
+parators with robust CI and
+
+integrity breakdown
+
+resilience
+
+under stress
+
+eect-size oor
+P2
+
+P3
+
+No
+
+prolonged
+
+QICN
+
+preserves
+
+bounded
+
+non-zero
+
+atline
+
+controlling stasis
+
+Narrative-metric
+
+Lower mismatch and higher
+
+Mismatch
+
+forensic
+
+exact+tolerated concordance
+
+tegrity blocking
+
+Deterministic
+
+Replay
+
+Replay mismatch above tol-
+
+identity
+
+xed seed/version/hash
+
+erance
+
+Composite leadership across
+
+No stable leadership margin
+
+consis-
+
+variation
+
+while
+
+Flatline persistence or out-
+
+post-threshold
+
+of-bound drift
+
+ination
+
+or
+
+in-
+
+tency
+P4
+
+robust-
+
+consistency
+
+under
+
+ness
+P5
+
+Integrated
+
+multi-
+
+metric advantage
+
+most scenario families
+
+Table 2: Core predictions, decision and failure rules.
+
+6 Comparator Design and Alternative Explanations
+6.1 Comparator Rationale
+Comparator choice targets distinct explanations for apparent coherence: reactive prompting,
+memory-augmented text continuity, dynamics without self-model, and internal policy ablation.
+
+4
+
+6.2 Mandatory Baseline Policy (Hard Requirement)
+For each key claim experiment, the following baselines are mandatory:
+1.
+
+Heuristic baseline (no world model, no planner),
+
+2.
+
+Planner-o (world model ON),
+
+3.
+
+World-model-o (planner ON with heuristic transition proxy).
+
+A claim without these contrasts is inadmissible for tier upgrade.
+
+6.3 Internal Falsier Role of Ablation
+Corollary 6.1. If QICN FULL does not reliably exceed ABLATION QICN POLICY OFF,
+integration-level claims are weakened and cannot be escalated.
+
+6.4 Comparator Adequacy
+The comparator set is adequate only if each alternative removes or weakens a dierent explanatory ingredient while preserving enough task exposure to make the contrast meaningful. A weak
+comparator that cannot perform the task at all is a sanity check, not a discriminating baseline.
+A strong comparator that reproduces the task but lacks one frozen ingredient is more valuable
+because it places pressure on the claimed necessity of that ingredient.
+
+Denition 6.2 (Comparator Coverage Vector). For a comparator si , dene
+V (si ) = (vA , vJ , vW , vM , vP ),
+where vA records actuator coverage,
+
+vJ objective compatibility, vW workspace compatibility,
+vM memory/model access, and vP planning access. Each coordinate is reported as full,
+restricted, or absent.
+
+Criterion 6.3 (Non-Trivial Comparator). A comparator is non-trivial for a prediction Pk only
+if it has enough coverage to attempt the target scenario while lacking at least one ingredient
+that the prediction treats as structurally relevant.
+
+6.5 Negative-Control Acceptance
+Negative controls have a dierent success condition from positive runs. A negative control succeeds scientically when it exposes whether the pipeline can withhold support from a supercially
+attractive but structurally defective case.
+
+Denition 6.4 (Negative-Control Pass). A negative control passes the evaluation when the evaluator correctly withholds the target claim despite high activity, high uency, high connectivity,
+or high surface task performance.
+
+Remark 6.5. The strongest negative controls are not intentionally broken systems. They are
+near-plausible alternatives that preserve enough surface competence to make false promotion
+tempting.
+
+5
+
+7 Statistical Inference Specication
+7.1 Primary Metrics First (Anti p-hacking)
+Protocol 7.1 (Analysis Lock). Inference order is frozen:
+1. evaluate primary metrics only,
+2. if primaries fail: global result fails,
+3. secondary metrics are descriptive and cannot overturn failed primaries.
+
+7.2 Power Planning and Minimum Sample Size
+Assumption 7.2. Final claims require pre-registered minimum sample size per comparator/scenario
+sucient for target power ≥ 0.8 under conservative eect assumptions.
+
+7.3 Multiplicity and Eect Size
+Holm correction is applied within endpoint families; in addition, each accepted contrast must
+pass a practical eect-size oor (pre-registered).
+
+7.4 Decision Semantics
+A prediction counts as supported i directionality, integrity gate, multiplicity-corrected signicance, and eect-size oor all hold.
+
+7.5 Hierarchical Decision Rule
+The protocol uses hierarchical decisions because not all failures have the same meaning. The
+gate order is:
+integrity → eligibility → primary direction → eect size → multiplicity → secondary description.
+No later stage can repair an earlier failure.
+
+Protocol 7.3 (Cell-Level Decision). For each system-scenario family, compute:
+∆i0 = µ̂(s1 , c) − µ̂(si , c),
+where s1 is QICN FULL and si is the comparator. The cell is supportive only if the admissible
+packet set passes integrity, ∆i0 has the pre-registered direction, the condence interval excludes
+the practical irrelevance band, and the family survives multiplicity correction.
+
+Denition 7.4 (Practical Irrelevance Band). For endpoint e, let τe > 0 be the smallest eect
+regarded as scientically meaningful before execution.
+
+A contrast inside [−τe , τe ] is reported
+
+as inconclusive for support even if a large sample makes the numerical dierence statistically
+detectable.
+
+7.6 Missingness and Exclusion Accounting
+Every missing packet has evidentiary meaning. The protocol therefore separates:
+1.
+
+structural missingness, caused by scenario infeasibility or runner failure;
+
+2.
+
+forensic exclusion, caused by integrity failure;
+
+3.
+
+budget exclusion, caused by runtime or latency violation;
+6
+
+4.
+
+analysis exclusion, caused by a pre-registered endpoint rule.
+
+The nal table must report counts for all four classes.
+
+A favorable result with unexplained
+
+missingness is not admissible for escalation.
+
+8 Acceptance Criteria
+Criterion 8.1 (Intermediate Claim Gate). Support at intermediate tier requires:
+1. at least 3/5 predictions supported,
+2. each supported prediction beats at least 3 comparators,
+3. zero severe forensic violations in QICN FULL.
+
+Criterion 8.2 (Latency/Tick Budget Invalidation). If runtime exceeds budget envelope (e.g.,
+persistent p99 overow above pre-registered tolerance), the corresponding runs are invalid for
+cognitive-operational claims.
+
+Criterion 8.3 (Escalation Block). A result cannot move beyond methodological readiness if
+any of the following hold:
+1. a primary endpoint is computed from packets that failed integrity;
+2. a comparator has no declared coverage vector;
+3. negative controls are absent for the claim family;
+4. the practical irrelevance band was chosen after looking at outcomes;
+5. exclusion counts cannot be reconstructed from the artifact set.
+
+8.1 Claim Classes Produced by the Protocol
+The protocol distinguishes four output classes:
+1.
+2.
+
+PIPELINE_READY: artifacts and gates work, but evidence is pilot or synthetic.
+INTERNAL_COMPARATIVE_SUPPORT: frozen internal runs support a bounded contrast against
+declared comparators.
+
+3.
+
+WEAKENED: one or more primary contrasts fail or become inconclusive.
+
+4.
+
+INVALID: integrity, eligibility, or traceability fails before scientic interpretation.
+
+Only the second class can support a bounded internal scientic reading, and even there the
+support is limited to the declared systems, scenarios, seeds, and gates.
+
+9 Preliminary Results
+9.1 Status of Preliminary Data
+Current pilot evidence is tagged as synthetic-preliminary and is used for pipeline verication, not
+nal claim escalation. Accordingly, the strongest admissible reading of this section is methodological readiness under xed gates, not external validation of the full theoretical corpus.
+
+7
+
+N
+
+βq
+
+QICN FULL
+
+24
+
+0.9519
+
+LLM REACTIVE
+
+24
+
+0.4391
+
+LLM PLUS MEMORY
+
+24
+
+0.5491
+
+0.7249
+
+System
+
+Forensic
+
+Stasis
+
+Composite
+
+Severe
+
+0.9685
+
+0.1408
+
+0.9176
+
+0
+
+0.6448
+
+0.7622
+
+0.5013
+
+0
+
+0.6323
+
+0.5854
+
+0
+
+DYNAMIC CONTROL NO SELF MODEL
+
+22
+
+0.6183
+
+0.6879
+
+0.5423
+
+0.6225
+
+2
+
+ABLATION QICN POLICY OFF
+
+24
+
+0.7591
+
+0.8135
+
+0.3819
+
+0.7405
+
+0
+
+Table 3: Preliminary system-level summary.
+System
+
+P1
+
+P2
+
+P3
+
+P4
+
+P5
+
+QICN FULL
+
+1.000
+
+1.000
+
+1.000
+
+1.000
+
+1.000
+
+LLM REACTIVE
+
+0.000
+
+0.000
+
+0.000
+
+0.000
+
+0.000
+
+LLM PLUS MEMORY
+
+0.000
+
+0.000
+
+0.000
+
+0.000
+
+0.000
+
+DYNAMIC CONTROL NO SELF MODEL
+
+0.000
+
+0.000
+
+0.000
+
+0.000
+
+0.000
+
+ABLATION QICN POLICY OFF
+
+0.000
+
+0.667
+
+0.000
+
+0.000
+
+0.000
+
+Table 4: Preliminary prediction support rates.
+
+Scenario
+nominal
+ruido sensorial moderado
+ruido sensorial severo
+degradacion delidad
+alta latencia
+fallos intermitentes
+post umbral prolongado
+pre umbral control
+perturbacion narrativa
+freeze chart operativo
+stress auditoria
+replay determinista
+
+CCC ∆RMS(Q)
+0.0206
+0.0223
+0.0200
+0.0181
+0.0198
+0.0179
+0.0199
+0.0181
+0.0203
+0.0225
+0.0202
+0.0183
+
+CCC ∆RMS(A)
+0.0164
+0.0173
+0.0140
+0.0131
+0.0144
+0.0127
+0.0148
+0.0139
+0.0152
+0.0178
+0.0147
+0.0137
+
+Stasis(Q)
+0.1276
+0.1389
+0.1524
+0.1407
+0.1460
+0.1481
+0.1483
+0.1320
+0.1374
+0.1352
+0.1469
+0.1366
+
+Table 5: Scenario-level dierential indicators.
+
+8
+
+Stasis(A)
+0.3374
+0.3735
+0.4199
+0.3836
+0.4094
+0.4072
+0.4032
+0.3502
+0.3763
+0.3575
+0.3977
+0.3669
+
+Comp(Q)
+0.9239
+0.9219
+0.9086
+0.9134
+0.9098
+0.9110
+0.9145
+0.9224
+0.9238
+0.9246
+0.9150
+0.9220
+
+Comp(A)
+0.7781
+0.7454
+0.7048
+0.7346
+0.7212
+0.7208
+0.7203
+0.7650
+0.7453
+0.7673
+0.7294
+0.7538
+
+9.2
+9.3
+9.4
+9.5
+
+System-Level Summary
+Prediction-Level Support Rates
+Scenario Dierential: QICN vs Ablation
+Full Scenario-System Grid
+
+Scenario
+alta latencia
+alta latencia
+alta latencia
+alta latencia
+alta latencia
+nominal
+nominal
+nominal
+nominal
+nominal
+ruido sensorial moderado
+ruido sensorial moderado
+ruido sensorial moderado
+ruido sensorial moderado
+ruido sensorial moderado
+ruido sensorial severo
+ruido sensorial severo
+ruido sensorial severo
+ruido sensorial severo
+ruido sensorial severo
+degradacion delidad
+degradacion delidad
+degradacion delidad
+degradacion delidad
+degradacion delidad
+fallos intermitentes
+fallos intermitentes
+fallos intermitentes
+fallos intermitentes
+fallos intermitentes
+freeze chart operativo
+freeze chart operativo
+freeze chart operativo
+freeze chart operativo
+freeze chart operativo
+perturbacion narrativa
+perturbacion narrativa
+perturbacion narrativa
+perturbacion narrativa
+perturbacion narrativa
+post umbral prolongado
+post umbral prolongado
+post umbral prolongado
+post umbral prolongado
+post umbral prolongado
+pre umbral control
+pre umbral control
+pre umbral control
+pre umbral control
+pre umbral control
+replay determinista
+replay determinista
+replay determinista
+replay determinista
+replay determinista
+
+System
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+QICN FULL
+LLM REACTIVE 9
+LLM PLUS MEMORY
+DYNAMIC CONTROL NO SELF MODEL
+ABLATION QICN POLICY OFF
+
+N
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+1
+2
+2
+2
+2
+1
+2
+2
+2
+2
+2
+2
+
+βq
+
+0.9400
+0.3931
+0.5031
+0.5731
+0.7131
+0.9686
+0.5036
+0.6136
+0.6836
+0.8236
+0.9554
+0.4526
+0.5626
+0.6326
+0.7726
+0.9378
+0.3846
+0.4946
+0.5646
+0.7046
+0.9510
+0.4356
+0.5456
+0.6156
+0.7556
+0.9422
+0.4016
+0.5116
+0.5816
+0.7216
+0.9620
+0.4781
+0.5881
+0.6581
+0.7981
+0.9532
+0.4441
+0.5541
+0.6241
+0.7641
+0.9444
+0.4101
+0.5201
+0.5871
+0.7301
+0.9642
+0.4866
+0.5965
+0.6696
+0.8066
+0.9576
+0.4611
+0.5711
+0.6411
+0.7811
+
+Forensic
+0.9608
+0.6066
+0.7016
+0.6567
+0.7820
+0.9758
+0.6988
+0.7739
+0.7291
+0.8543
+0.9653
+0.6618
+0.7370
+0.6922
+0.8174
+0.9518
+0.6130
+0.6881
+0.6433
+0.7685
+0.9648
+0.6525
+0.7276
+0.6828
+0.8080
+0.9611
+0.6113
+0.7063
+0.6614
+0.7867
+0.9799
+0.6699
+0.7451
+0.7200
+0.8451
+0.9750
+0.6473
+0.7225
+0.6974
+0.8226
+0.9614
+0.6160
+0.7110
+0.6755
+0.7914
+0.9790
+0.6733
+0.7484
+0.7165
+0.8486
+0.9793
+0.6605
+0.7357
+0.7107
+0.8357
+
+Stasis
+0.1460
+0.7944
+0.6644
+0.5744
+0.4094
+0.1276
+0.7176
+0.5924
+0.5026
+0.3374
+0.1389
+0.7535
+0.6216
+0.5316
+0.3735
+0.1524
+0.7998
+0.6649
+0.5748
+0.4199
+0.1407
+0.7674
+0.6358
+0.5458
+0.3836
+0.1481
+0.7841
+0.6541
+0.5647
+0.4072
+0.1352
+0.7350
+0.6044
+0.5144
+0.3575
+0.1374
+0.7611
+0.6311
+0.5411
+0.3763
+0.1483
+0.7782
+0.6482
+0.5528
+0.4032
+0.1320
+0.7332
+0.6084
+0.5210
+0.3502
+0.1366
+0.7492
+0.6193
+0.5259
+0.3669
+
+9.6 Variability Structure
+SD(CCC ∆)
+
+SD(PMIA ∆)
+
+SD(Ω ∆)
+
+QICN FULL
+
+0.0022
+
+0.0021
+
+0.0039
+
+0.0085
+
+LLM REACTIVE
+
+0.0024
+
+0.0023
+
+0.0041
+
+0.0221
+
+LLM PLUS MEMORY
+
+0.0026
+
+0.0032
+
+0.0042
+
+0.0210
+
+DYNAMIC CONTROL NO SELF MODEL
+
+0.0025
+
+0.0024
+
+0.0043
+
+0.0228
+
+ABLATION QICN POLICY OFF
+
+0.0023
+
+0.0027
+
+0.0040
+
+0.0217
+
+System
+
+SD(Composite)
+
+Table 6: Cross-run variability by system.
+
+10 Scenario Curves and Comparative Plots
+10.1
+10.2
+10.3
+10.4
+
+Composite Score Curves
+Stasis Pressure Curves
+Forensic Concordance Curves
+Interpretive Notes
+
+In pilot data, QICN tracks higher forensic/composite trajectories while maintaining lower stasis
+pressure than broad comparators; ablation remains intermediate.
+
+This is protocol-consistent
+
+but not nal evidence.
+
+11 Result Decomposition by Scenario Families
+11.1 Family Partition
+Scenarios are partitioned into nominal-control, sensor-stress, runtime-friction, and regime-transition
+families.
+
+11.2 Family-Level Contrast Function
+⋆ = QICN FULL. For comparator c, family f , endpoint k :
+
+Let s
+
+(k)
+
+(k)
+
+∆f,k (c) = µs⋆ ,f − µc,f .
+For cost endpoints (e.g., stasis), sign is inverted to preserve higher is better convention.
+
+11.3 Interpretive Decomposition
+Largest relative advantage is expected in runtime-friction and regime-transition families where
+policy coupling, replay consistency, and forensic admissibility interact.
+
+12 Robustness Diagnostics Beyond Point Estimates
+12.1 Median-Shift and Tail-Stability Diagnostics
+med
+(0.1)
+(0.9)
+δs,c
+= median(xs ) − median(xc ), δs,c
+= Q0.1 (xs ) − Q0.1 (xc ), δs,c
+= Q0.9 (xs ) − Q0.9 (xc ).
+
+10
+
+12.2 Integrity-Coupled Eective Sample Size
+η=
+
+nadm
+∈ [0, 1].
+nraw
+
+High eects with low η are downgraded.
+
+12.3 Cross-Seed Drift Diagnostic
+(k)
+Ds,c,k = µ(k)
+s,c,σ1 − µs,c,σ2 .
+
+12.4 Compute Budget Robustness
+Budget telemetry is summarized by p50, p95, p99, and overow rate. Persistent overow above
+threshold invalidates aected runs.
+
+13 Methodological Appendix: Statistical Power
+13.1 Eect-Size-Oriented Planning
+α
+
+β
+
+Power
+
+Eect size d
+
+Required n/group
+
+0.01
+
+0.20
+
+0.80
+
+10.737
+
+1
+
+0.01
+
+0.10
+
+0.90
+
+10.737
+
+1
+
+0.02
+
+0.20
+
+0.80
+
+10.737
+
+1
+
+0.02
+
+0.10
+
+0.90
+
+10.737
+
+1
+
+0.05
+
+0.20
+
+0.80
+
+10.737
+
+1
+
+0.05
+
+0.10
+
+0.90
+
+10.737
+
+1
+
+Table 7: Power planning under multiple settings.
+
+13.2 Interpretation
+Power table is planning guidance only; nal adequacy depends on endpoint dilution and scenario
+heterogeneity.
+
+14 Methodological Appendix: Sensitivity Analysis
+14.1 Composite Weight Sensitivity
+Weight set
+
+QICN score
+
+Ablation score
+
+Margin
+
+Balanced
+Forensic-priority
+
+0.9176
+
+0.7405
+
+0.1771
+
+0.9343
+
+0.7631
+
+0.1712
+
+Dynamics-priority
+
+0.8905
+
+0.7019
+
+0.1886
+
+Replay-priority
+
+0.9333
+
+0.7684
+
+0.1649
+
+Table 8: Weight sensitivity for QICN vs ablation composite margin.
+
+14.2 Sensitivity Remark
+Directional stability across admissible weight sets is required for claim robustness.
+
+11
+
+15 Operational Implications for the Existing QICN Corpus
+15.1 What v4.5 Adds (and What It Does Not)
+v4.5 adds a hard falsication layer with strict admissibility and baseline policy.
+
+It does not
+
+replace formal theorem-level foundations of prior papers.
+
+15.2 Implications for Claim Governance
+Tiered governance:
+
+ Tier 0: descriptive telemetry,
+ Tier 1: inferential signal without comparator robustness,
+ Tier 2: comparator-robust support (target),
+ Tier 3: external multi-lab replication.
+
+15.3 Decision-Theoretic Reading
+Accept claim i integrity gate passes and support score exceeds threshold under xed preregistration.
+
+16 Threats to Validity
+16.1 Comparator Misspecication
+Mitigation: heterogeneous comparators + mandatory ablations.
+
+16.2 Endpoint Contamination Risk
+Mitigation: endpoint separation, frozen analysis lock, and judge-side artifact review.
+
+16.3 Environment and Runtime Drift
+Mitigation: xed seeds, version/hash checks, replay checks.
+
+16.4 Pilot-to-Final Generalization
+Pilot evidence is non-nal by construction.
+
+17 Reproducibility and Artifact Contract
+17.1 Machine-Readable Contracts
+Bound contracts: predictions registry, experiment matrix, results artifact, and schema set.
+
+17.2 Run Artifact Naming
+
+artifacts/raw/<system>/<scenario>/<run_id>.json and artifacts/logs/<system>/<scenario>/<run_id
+
+17.3 Auto-Generation Pipeline
+node research/scripts/generate_preliminary_pilot_dataset.v45.mjs
+node research/scripts/generate_latex_assets.v45.mjs
+12
+
+18 Discussion
+The contribution is methodological discipline: pre-registered prediction logic + integrity admissibility + decision-complete acceptance. This blocks narrative ination over weak traceability.
+
+19 Conclusion
+This work provides an auditable and falsiable pathway for testing structural-functional claims in
+QICN. Final claims remain contingent on real (non-synthetic) run completion under unchanged
+gates.
+
+20 Phenomenology Protocol Suite (PPS): Operational Addendum
+20.1 Epistemic Scope
+PPS denes
+
+operational phenomenology proxies ; it does not claim direct proof of qualia.
+
+20.2 Workspace Denition and Logging
+Dene workspace variable Wt with explicit read/write schema and temporal persistence constraints.
+
+Every perturbation experiment logs pre-state, intervention, post-state, and replay
+
+token.
+
+20.3 Entropy and Non-Determinism Inputs
+When PPS is instantiated on the QICN runtime, the architecture may call a QuantumEntropyBridge
+to inject hardware-originating entropy into counterfactual exploration. Within this paper, that
+mechanism is treated only as an auditable source of operational non-determinism for perturbation protocols; it is not itself evidence for the ontological claims of
+
+logical Regimes, or Null-Regime Instability.
+
+Rigid Identity, Phenomeno-
+
+20.4 Online World Model and Causal Interventions
+The operational testbed may also use an online WorldModelEngine and a nite-horizon planner
+to select admissible interventions under xed forensic constraints.
+
+In the release corpus, this
+
+mechanism belongs to the empirical protocol layer: it denes how interventions are scheduled
+and logged, not what the theoretical papers prove.
+
+20.5 PCI-like Perturbation Protocol
+Inject controlled perturbations into selected subspaces and compute response spread/complexity.
+
+Prediction 20.1. If global workspace integration is present, perturbations yield reproducible
+non-local propagation signatures above a pre-registered complexity oor.
+
+20.6 Dissociation Tests
+Design two-way dissociation conditions: report-without-workspace and workspace-without-report.
+Report pass/fail by explicit confusion matrices.
+
+13
+
+20.7 Valence Intervention Test
+Internal valence variable
+
+vt must be both predictive and causally manipulable; intervention
+
+should alter policy in the expected direction while preserving forensic admissibility.
+
+20.8 Constraints on Qualia Mapping (Claim Boundary)
+Evidence from PPS constrains candidate mapping families between structural states and hypothetical qualitative states. It does not establish subjective qualia as a theorem of this paper.
+
+A Appendix A: Scenario Denitions
+1. nominal: baseline conditions.
+2. ruido sensorial moderado: moderate sensor corruption.
+3. ruido sensorial severo: severe sensor corruption.
+4. degradacion delidad: persistent delity reduction.
+5. alta latencia: high-latency regime.
+6. fallos intermitentes: intermittent failures.
+7. post umbral prolongado: prolonged post-threshold dynamics.
+8. pre umbral control: pre-threshold control.
+9. perturbacion narrativa: narrative perturbation.
+10. freeze chart operativo: visualization freeze control.
+11. stress auditoria: integrity/audit stress.
+12. replay determinista: deterministic replay.
+
+B Appendix B: Composite Score Denition
+Scorev4.5 = w1 F + w2 O + w3 R + w4 B,
+
+wi ≥ 0,
+
+X
+
+wi = 1.
+
+i
+
+C Appendix C: Reporting Standard
+Each release must report: run counts, severe violations by class, eect sizes with uncertainty,
+multiplicity-adjusted outcomes, and prediction pass/fail matrix.
+
+D Appendix D: Statistical Power Derivation Details
+Approximate per-group size:
+
+2(z1−α/2 + z1−β )2
+.
+d2
+If family heterogeneity rises, inate by factor γ = 1 + κ · CVf amily .
+n≈
+
+14
+
+Pre-registered constants
+ Target power: 1 − β ≥ 0.8 for primary contrasts.
+ Familywise error control: Holm, applied to each endpoint family.
+ Eect oor:
+
+contrasts below the practical oor are reported as non-actionable even if
+
+nominally signicant.
+
+Failure semantics
+Any post-hoc sample-size modication without preregistered amendment invalidates inference
+status for the aected prediction.
+
+E Appendix E: Sensitivity Analysis Protocol
+Let
+
+M (w) = ScoreQICN (w) − ScoreAblation (w).
+Directional robustness requires inf w∈Wϵ M (w) > 0 under simplex-constrained admissible weights.
+
+Simplex sampling policy
+Weights are sampled under wi ≥ ϵ and
+
+P
+
+i wi = 1 using either:
+
+1. deterministic grid on simplex, or
+2. Monte Carlo simplex sampling with xed seed.
+The chosen method must be declared before running nal inference.
+
+Sensitivity fail rule
+If the sign of M (w) changes on admissible w , claims are downgraded to hypothesis-generating
+status.
+
+F Appendix F: Reproducibility Checklist Template
+Run-level: schema pass, seed/version/hash validity, severe violation counts, admissible/raw
+ratio, prediction matrix.
+
+Manuscript-level: no post-hoc rule edits, comparator set versioned, correction policy unchanged or explicitly superseded, evidence stage explicit, claim boundaries preserved.
+
+Runtime budget checklist
+1. Report p50/p95/p99 latency per critical component.
+2. Report budget-overow rate and overow episodes.
+3. Mark runs invalid if overow exceeds preregistered tolerance.
+
+Baseline checklist
+For every key experiment, include: heuristic baseline, planner-o, and world-model-o outputs
+with identical seeds and scenario assignments.
+
+15
+
+References
+[1]
+
+Bradley Efron and Robert J. Tibshirani.
+
+An Introduction to the Bootstrap. Chapman and
+
+Hall, 1993.
+
+Scandinavian
+
+[2]
+
+Sture Holm.  A Simple Sequentially Rejective Multiple Test Procedure. In:
+
+[3]
+
+Johnny Andrey Perez Ramirez.  Phenomenological Regimes Induced by Structural Iden-
+
+Journal of Statistics 6.2 (1979), pp. 6570.
+tity. In:
+
+[4]
+
+arXiv preprint (2026).
+
+Johnny Andrey Perez Ramirez.  Structural Instability of the Phenomenological Null Regime
+in Causally Rigid Channels. In:
+
+[5]
+
+arXiv preprint (2026).
+
+Johnny Andrey Pérez Ramírez.  Rigid Identity as an Inverse Limit in Observable Channels.
+In: (2026). Companion paper establishing the identity framework and ontological mass
+invariant.
+
+16
+
+

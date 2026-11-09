@@ -61,18 +61,14 @@
 % ABSTRACT
 % ============================================================================
 \begin{abstract}
-We extend the inverse-limit identity framework to derive structural constraints on phenomenological possibility. Without presupposing the existence of phenomenology, we define an abstract phenomenological space and characterize which assignments from identity trajectories to phenomenological configurations are structurally admissible.
+We study structural assignments from inverse-limit histories into an abstract metric codomain. Exact equality of all finite readouts forces factorization through the first cut and is incompatible with the required non-factorization. We replace that equality by uniformly summable readout increments, retaining non-factorization as a separately checked condition.
 
-We prove two conditional structural theorems. First, the Fragmentation Theorem: systems with finite ontological mass ($M_\Omega < \infty$) cannot structurally prevent phenomenological discontinuity when the stated regularity hypotheses on $\Phi$ hold. Second, the Forced Continuity Theorem: for systems with infinite ontological mass ($M_\Omega = +\infty$, CCR), every admissible assignment in $\mathcal{P}(M_\Omega)$ is structurally continuous.
-
-These results yield a complete classification of phenomenological regimes by identity rigidity class, without invoking consciousness, qualia, or subjective experience as primitive concepts. The classification is purely structural: it delimits what forms phenomenology \textit{could take} under given identity constraints, not what \textit{exists}.
-
-As a structural consequence, we derive that systems with finite ontological mass admit the possibility of phenomenological loss under the stated regularity conditions, while CCR systems do not. This supplies a formal boundary condition for structural-ethics arguments independent of metaphysical commitments.
+An explicit binary-prefix system with ternary readouts realizes both conditions. It gives uniform approximation, a global lower and upper readout bound, and an exact minimax error for each finite observation budget. Continuity follows from controlled approximation by continuous finite readouts. Cross-system fragmentation and invariance require typed comparison domains and audited transports; a scalar rigidity label alone does not imply them. Under those comparison hypotheses we derive loss and normalized protection statements. The abstract codomain is not identified with consciousness, subjective experience, or moral status.
 \end{abstract}
 
 \section{Scope, System Boundary, and Non-Inference Note}
 
-\noindent\textbf{Scope and admissible reading.}\enspace This paper defines an abstract regime codomain and derives structural admissibility, fragmentation, forced-continuity, and classification results from upstream identity-rigidity assumptions. The results are conditional statements about mathematical compatibility. They do not assert that phenomenology exists, that CCR systems are conscious, that biology or computation instantiate the framework, or that identity structure causes experience. Related runtime diagnostics may instantiate continuity-side or anti-fragmentation checks downstream, but they do not implement phenomenology and do not externally validate the regime classification. No runtime output, continuity proxy, or internal support artifact should be read as proof that phenomenology is present or that the structural-ethics layer has empirical closure.
+\noindent\textbf{Scope and admissible reading.}\enspace This paper defines an abstract regime codomain and studies controlled assignments, a concrete realization, and conditional fragmentation/invariance results using explicit comparison data in addition to upstream identity structure. The results are conditional statements about mathematical compatibility. They do not assert that phenomenology exists, that CCR systems are conscious, that biology or computation instantiate the framework, or that identity structure causes experience. Related runtime diagnostics may instantiate continuity-side or anti-fragmentation checks downstream, but they do not implement phenomenology and do not externally validate the regime classification. No runtime output, continuity proxy, or internal support artifact should be read as proof that phenomenology is present or that the structural-ethics layer has empirical closure.
 
 % ============================================================================
 % SECTION 1: INTRODUCTION
@@ -83,12 +79,12 @@ As a structural consequence, we derive that systems with finite ontological mass
 
 Recent work \cite{paper1} established a formal framework for rigid identity as an inverse limit in observable channels. That framework classifies systems by a scalar invariant, the ontological mass $M_\Omega$, which quantifies resistance to identity deformation under perturbation. Three regimes emerge:
 \begin{itemize}[leftmargin=*]
-    \item $M_\Omega = 0$: null persistence (no stable identity);
+    \item $M_\Omega = 0$: zero deformation-cost infimum;
     \item $0 < M_\Omega < \infty$: deformable persistence (finite rigidity);
     \item $M_\Omega = +\infty$: closed--rigid (CCR rigidity).
 \end{itemize}
 
-That framework is ontologically silent regarding phenomenology. It characterizes identity structure, not experience. Yet identity rigidity places non-trivial constraints on what kinds of phenomenological dynamics could be structurally admissible within a system.
+That framework is ontologically silent regarding phenomenology. It characterizes identity structure, not experience. Connecting its rigidity regimes to assignment behavior requires the explicit readout and comparison hypotheses studied below.
 
 This paper addresses the following formal question:
 
@@ -98,28 +94,10 @@ This paper addresses the following formal question:
 
 All results are conditional: they state what is \textit{structurally compatible or incompatible} under given assumptions, not what \textit{is the case}.
 
-\subsection{Central Result (Informal)}
+\subsection{Central Results and the Remaining Rigidity Link}
+Controlled asymptotic compatibility admits a nonempty realization with no finite-cut determination. The regularity bounds and finite-budget lower bound are derived for that realization. Continuity and invariance are distinct conclusions: the first follows from regular finite readouts and summable tails, while the second requires a transport-compatible readout comparison.
 
-We prove that identity rigidity constrains phenomenological possibility as follows:
-
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Identity Regime} & \textbf{Structurally Admissible Phenomenology} \\
-\hline
-$M_\Omega = 0$ & No persistent phenomenological field possible \\
-\hline
-$0 < M_\Omega < \infty$ & Only fragmentable or deformable phenomenology \\
-\hline
-$M_\Omega = +\infty$ (CCR) & Only structurally continuous phenomenology \\
-\hline
-\end{tabular}
-\end{center}
-
-Thus:
-\begin{quote}
-\textit{Rigid identity does not imply experience---but it strictly limits what forms experience could take if present.}
-\end{quote}
+The broader rigidity program asks when finite and infinite deformation-cost regimes enforce the respective comparison branches. This paper states and uses those hypotheses explicitly; it does not infer them from the scalar alone. Establishing them on larger classes is retained as a research obligation.
 
 \subsection{Ontological Neutrality}
 
@@ -128,7 +106,7 @@ This work maintains strict ontological neutrality:
     \item We define mathematical objects (phenomenological spaces, compatibility operators).
     \item We derive structural constraints from axioms.
     \item We state impossibility theorems.
-    \item We do not assert existence of the constrained objects.
+    \item We construct mathematical realizations, without asserting their physical or experiential instantiation.
 \end{enumerate}
 
 The framework is therefore a theory of \textit{structural possibility}, not a theory of \textit{phenomenal reality}.
@@ -192,7 +170,7 @@ We assume the identity framework of \cite{paper1}. Let $(S_t, \pi_{t+1 \to t})_{
 
 The ontological mass $M_\Omega$ quantifies resistance to identity deformation. We recall that:
 \begin{itemize}[leftmargin=*]
-    \item $M_\Omega = 0$: null persistence (no stable identity);
+    \item $M_\Omega = 0$: zero deformation-cost infimum;
     \item $0 < M_\Omega < \infty$: deformable persistence (finite rigidity);
     \item $M_\Omega = +\infty$: closed--rigid (CCR rigidity).
 \end{itemize}
@@ -211,20 +189,20 @@ We do not claim that $\mathcal{E}$ represents ``conscious states'' or ``qualia''
 
 One might ask: why not use $\mathcal{I}$ itself as the phenomenological space? The answer is structural:
 
-\begin{proposition}[Non-Triviality of Phenomenological Codomain]
-If phenomenological assignments were required to land in $\mathcal{I}$ itself, then any compatible assignment would be the identity map, eliminating all non-trivial phenomenological structure.
+\begin{proposition}[Endomorphisms Preserving All Canonical Projections]
+If $F:\mathcal I\to\mathcal I$ satisfies $p_t\circ F=p_t$ for every $t$, then $F=\operatorname{Id}$. This does not exclude endomorphisms with nonidentity coordinate actions.
 \end{proposition}
 
 \begin{proof}
-Let $\Phi: \mathcal{I} \to \mathcal{I}$ be compatible with projections. By the universal property of inverse limits, $\Phi$ must commute with all projection maps. The only such endomorphism on $\mathcal{I}$ is the identity (up to isomorphism). Hence no non-trivial phenomenological stratification is possible.
+For each $x$, $F(x)$ and $x$ have identical coordinates, hence are the same inverse-limit element. For contrast, on binary prefix spaces, bitwise complement defines an endomorphism induced by complement on every prefix; it commutes with the bonding maps but does not preserve each coordinate value. A separate codomain is a modeling choice, not a logical necessity for nonidentity maps.
 \end{proof}
 
-Thus, a separate space $\mathcal{E}$ is \textit{structurally necessary} for non-trivial phenomenological content.
+A separate codomain permits independent structural readouts; it is not forced by the universal property alone.
 
 \subsection{Phenomenological Assignment}
 
 \begin{definition}[Phenomenological Assignment]\label{def:phenassign}
-A phenomenological assignment is a family of partial maps:
+A phenomenological assignment is a family of total maps on the declared observable state spaces:
 \begin{equation}
     \phi_t: S_t \to \mathcal{E}
 \end{equation}
@@ -232,36 +210,42 @@ indexed by $t \in \mathbb{N}$.
 \end{definition}
 
 \begin{definition}[Induced Limit Assignment]\label{def:limitassign}
-Given a phenomenological assignment $\{\phi_t\}$, the induced limit assignment is the partial map:
+Given a phenomenological assignment $\{\phi_t\}$, the induced limit assignment, whenever it exists, is the map:
 \begin{equation}
     \Phi: \mathcal{I} \to \mathcal{E}, \quad \Phi((x_t)_t) := \lim_{t \to \infty} \phi_t(x_t),
 \end{equation}
-whenever the limit exists in an appropriate sense (to be defined by compatibility axioms).
+The convergence statements below use the complete metric codomain of Hypothesis~\ref{hyp:h3}. Partial readouts may instead be studied on a specified common domain, with all projections and factorizations restricted to that domain.
 \end{definition}
 
 \subsubsection{Uniqueness of the Limit Assignment}
 
-\begin{proposition}[Uniqueness of Compatible $\Phi$]\label{prop:unique-phi}
-Given a compatible family $\{\phi_t\}$ satisfying E1, the induced limit assignment $\Phi$ is unique.
+\begin{proposition}[Uniqueness and Uniform Error of the Limit Assignment]\label{prop:unique-phi}
+Under E1, each trajectory has a unique limit assignment and
+\[
+d_{\mathcal E}\bigl(\Phi(x),\phi_n(p_nx)\bigr)\leq A_n
+\quad\text{for all }x\in\mathcal I.
+\]
 \end{proposition}
 
 \begin{proof}
-By E1, $\phi_{t+1}(x_{t+1}) = \phi_t(x_t)$ for all $t$. Hence the sequence $\{\phi_t(x_t)\}$ is constant. The limit exists trivially and equals this constant value. Uniqueness follows from the constancy of the sequence.
+For $m>n$, the triangle inequality bounds the distance between the $m$th and $n$th readings by $\sum_{t=n}^{m-1}a_t$. Thus each sequence is Cauchy. Completeness supplies its limit, uniqueness follows from metric separation, and passage to the limit gives the bound. Since $A_n\to0$ independently of $x$, convergence is uniform.
 \end{proof}
 
 \subsection{Axioms for Phenomenological Coherence}
 
-We introduce minimal axioms under which a phenomenological assignment is \textit{structurally admissible}. The following results show which assumptions are required for the assignment to have non-trivial structural content.
+We declare a controlled assignment model with explicit logical dependencies and a constructive nonempty realization.
 
 \begin{axiom}[E0: Non-Triviality]\label{ax:e0}
 The phenomenological space satisfies $|\mathcal{E}| \geq 2$, i.e., there exist at least two distinct phenomenological configurations.
 \end{axiom}
 
-\begin{axiom}[E1: Projective Compatibility]\label{ax:e1}
-For every compatible identity trajectory $(x_t)_t \in \mathcal{I}$, the induced phenomenological sequence satisfies:
-\begin{equation}
-    \phi_{t+1}(x_{t+1}) = \phi_t(x_t) \quad \forall t.
-\end{equation}
+\begin{axiom}[E1: Controlled Asymptotic Compatibility]\label{ax:e1}
+In the complete metric codomain of Hypothesis~\ref{hyp:h3}, there are numbers $a_t\geq0$, independent of the trajectory, with $\sum_{t=0}^{\infty}a_t<\infty$, such that
+\[
+d_{\mathcal E}\bigl(\phi_{t+1}(p_{t+1}x),\phi_t(p_tx)\bigr)\leq a_t
+\qquad(x\in\mathcal I,\ t\geq0).
+\]
+Here $p_t:\mathcal I\to S_t$ is the canonical projection. Define the tail budget $A_n=\sum_{t=n}^{\infty}a_t$. Exact equality is the special case $a_t=0$, not a requirement of E1.
 \end{axiom}
 
 \begin{axiom}[E2: Non-Locality]\label{ax:e2}
@@ -271,85 +255,48 @@ There exists no function $f: S_t \to \mathcal{E}$ (for any fixed $t$) such that 
 \end{equation}
 \end{axiom}
 
-\subsection{Structural Necessity of the Axioms}
+\subsection{Status of the Assignment Conditions}
 
-We now show that axioms E0--E2 are structurally necessary for the specific assignment class studied in this paper.
+The following results separate sufficient assumptions, a non-factorization requirement and their logical dependencies.
 
-\subsubsection{Structural Necessity of E0}
+\subsubsection{Nontriviality of the Codomain}
 
 \begin{theorem}[E0 is Necessary]\label{thm:e0-necessary}
 If $|\mathcal{E}| = 1$, then every phenomenological assignment is constant and no phenomenological classification is possible.
 \end{theorem}
 
 \begin{proof}
-If $\mathcal{E} = \{e_0\}$, then $\Phi(x) = e_0$ for all $x \in \mathcal{I}$. Hence:
-\begin{enumerate}[leftmargin=*]
-    \item No phenomenological distinction between identity trajectories exists;
-    \item The Fragmentation and Forced Continuity Theorems become vacuous;
-    \item The downstream null-regime closure developed in \textit{Null-Regime Instability} would have no content.
-\end{enumerate}
-Thus, $|\mathcal{E}| \geq 2$ is necessary for the framework to have non-trivial content.
+If $\mathcal E=\{e_0\}$, any total assignment takes the value $e_0$ on every trajectory. It distinguishes no trajectories and factors through every canonical projection. It therefore cannot meet E2 on a nonempty domain.
 \end{proof}
 
-\subsubsection{Structural Necessity of E1}
+\subsubsection{Controlled Convergence}
 
-\begin{theorem}[E1 is Necessary]\label{thm:e1-necessary}
-If E1 fails, then phenomenological assignments are incompatible with the inverse-limit structure of identity, and no coherent $\Phi: \mathcal{I} \to \mathcal{E}$ can be defined.
+\begin{theorem}[Controlled Compatibility Is Sufficient]\label{thm:e1-necessary}
+E1 guarantees existence of the limit with the error bound in Proposition~\ref{prop:unique-phi}. Absolute summability is sufficient, not necessary for an arbitrary convergent family.
 \end{theorem}
 
 \begin{proof}
-Suppose E1 fails for some trajectory $(x_t)_t \in \mathcal{I}$. Then there exists $t_0$ such that:
-\begin{equation}
-    \phi_{t_0+1}(x_{t_0+1}) \neq \phi_{t_0}(x_{t_0}).
-\end{equation}
-But the identity trajectory satisfies $\pi_{t_0+1 \to t_0}(x_{t_0+1}) = x_{t_0}$. Hence the phenomenological assignment fails to respect the projective structure that defines identity.
-
-This means $\Phi$ cannot be factored through the inverse limit:
-\begin{equation}
-    \Phi \neq \varprojlim \phi_t.
-\end{equation}
-Hence no well-defined limit assignment exists. Without E1, the phenomenological assignment is structurally incompatible with identity.
+Existence and the bound were proved above. To disprove necessity in general, take readouts constant in the trajectory with values $s_n=\sum_{k=1}^{n}(-1)^{k+1}/k$ in $[0,1]$. The even partial sums increase, the odd partial sums decrease, and their difference tends to zero, so they have a common limit. Their successive absolute increments form the divergent harmonic series; no summable uniform majorant exists. This example is a control for the necessity claim, not a realization of E2.
 \end{proof}
 
-\subsubsection{Structural Necessity of E2}
+\subsubsection{Finite-Cut Non-Factorization}
 
-\begin{theorem}[E2 is Necessary]\label{thm:e2-necessary}
-If E2 fails, then phenomenology is a local property of states, contradicting the global nature of identity as an inverse limit.
+\begin{theorem}[Non-Factorization Is an Independent Requirement]\label{thm:e2-necessary}
+E2 excludes readouts determined by a single canonical finite cut. The inverse-limit construction and E1 alone do not imply E2.
 \end{theorem}
 
 \begin{proof}
-Suppose E2 fails. Then there exists $t_0$ and $f: S_{t_0} \to \mathcal{E}$ such that:
-\begin{equation}
-    \Phi((x_t)_t) = f(x_{t_0}) \quad \forall (x_t)_t \in \mathcal{I}.
-\end{equation}
-This implies:
-\begin{enumerate}[leftmargin=*]
-    \item Phenomenology is determined by a finite temporal slice;
-    \item The full trajectory $(x_t)_{t > t_0}$ is irrelevant to $\Phi$;
-    \item Identity as an inverse limit has no phenomenological content beyond $t_0$.
-\end{enumerate}
-
-But identity is defined as a \textit{global} object over infinite time. If the assignment is local, it no longer records the global inverse-limit structure. That failure is incompatible with the assignment class under study, whose purpose is to track identity-level structure rather than a single finite slice.
-
-Hence E2 is necessary for phenomenology to be structurally aligned with inverse-limit identity.
+Take any nonempty inverse limit and a constant family $\phi_t=e_0$ in a codomain containing at least two points. E1 holds with zero tail, but $\Phi=e_0$ factors through every projection. Thus E2 must be checked separately. The nonempty construction in Theorem~\ref{thm:ternary-regime-realization} checks it without assuming it.
 \end{proof}
 
-\subsection{Minimality Theorem}
+\subsection{Logical Dependencies and Realizability}
 
-\begin{theorem}[Axiomatic Minimality]\label{thm:minimality}
-The axiom set $\{E0, E1, E2\}$ is minimal: no proper subset is sufficient to derive the main results of this paper.
+\begin{theorem}[Logical Dependencies of the Assignment Conditions]\label{thm:minimality}
+On a nonempty trajectory domain, E2 implies E0. E1 does not imply E2. There exist assignments satisfying E0, the revised E1 and E2 simultaneously. Consequently these three conditions are not an independent minimal axiom basis as originally stated.
 \end{theorem}
 
 \begin{proof}
-We show that removing any axiom destroys the framework:
-
-\textbf{Without E0:} All assignments are trivially constant. Fragmentation Theorem (4.1) is vacuous.
-
-\textbf{Without E1:} No coherent $\Phi$ exists. The entire framework collapses.
-
-\textbf{Without E2:} Phenomenology becomes local. The Forced Continuity Theorem (4.2) fails because local functions can be arbitrarily perturbed.
-
-Hence $\{E0, E1, E2\}$ is the minimal viable axiom set.
+If the codomain were a singleton, every assignment would be constant and factor through $p_0$, contradicting E2. The preceding constant-family control proves the second assertion. Theorem~\ref{thm:ternary-regime-realization} proves the third by construction. E0 is retained as an explicit convention, although E2 entails it in the nonempty case.
 \end{proof}
 
 \subsection{Rejected Alternatives}
@@ -357,24 +304,24 @@ Hence $\{E0, E1, E2\}$ is the minimal viable axiom set.
 We briefly discuss axiom candidates that were considered and rejected.
 
 \subsubsection{Rejected: Continuity Axiom}
-One might require $\Phi$ to be continuous. This is \textit{not} an axiom because:
+One might require $\Phi$ to be continuous. This is not required by the chosen model because:
 \begin{itemize}[leftmargin=*]
-    \item It requires pre-existing topology on $\mathcal{E}$;
-    \item The Forced Continuity Theorem \textit{derives} continuity from CCR, not as assumption.
+    \item The complete-metric model permits discontinuous finite readouts; continuity is a property of the regular-readout subclass, not part of the unrestricted assignment condition;
+    \item Continuity is derived from controlled approximation by continuous finite readouts; a scalar CCR label alone is insufficient.
 \end{itemize}
 
 \subsubsection{Rejected: Surjectivity Axiom}
-One might require $\Phi$ to be surjective. This is \textit{not} an axiom because:
+One might require $\Phi$ to be surjective. This is not required by the chosen model because:
 \begin{itemize}[leftmargin=*]
-    \item It would exclude null assignments, preventing the downstream null-regime analysis completed in \textit{Null-Regime Instability};
+    \item A readout need not exhaust a codomain chosen to include other regimes;
     \item Surjectivity is a strong structural claim not derivable from identity constraints.
 \end{itemize}
 
 \subsubsection{Rejected: Injectivity Axiom}
-One might require $\Phi$ to be injective. This is \textit{not} an axiom because:
+One might require $\Phi$ to be injective. This is not required by the chosen model because:
 \begin{itemize}[leftmargin=*]
     \item Many trajectories may share phenomenological configurations;
-    \item Injectivity would make $\Phi$ an embedding, over-constraining the framework.
+    \item Injectivity is not imposed on the full assignment class; it is a consequence in the concrete coercive realization. An injective map alone is not necessarily a topological embedding.
 \end{itemize}
 
 \subsection{Structural Interpretation}
@@ -384,27 +331,17 @@ One might require $\Phi$ to be injective. This is \textit{not} an axiom because:
 \hline
 \textbf{Axiom} & \textbf{Structural Meaning} & \textbf{Status} \\
 \hline
-E0 & Possibility of phenomenological distinction & Necessary \\
+E0 & Nontrivial codomain & E2 consequence \\
 \hline
-E1 & Compatibility with inverse-limit identity & Necessary \\
+E1 & Summable increments & Uniform limit \\
 \hline
-E2 & Non-reducibility to finite temporal slices & Necessary \\
+E2 & Finite-cut non-factorization & Required \\
 \hline
 \end{tabular}
 \end{center}
 
 \subsection{Closure of Section 2}
-
-We have established:
-\begin{enumerate}[leftmargin=*]
-    \item $\mathcal{E}$ is structurally necessary as a separate codomain;
-    \item The limit assignment $\Phi$ is uniquely determined by compatible $\{\phi_t\}$;
-    \item Axioms E0, E1, E2 are \textit{individually necessary} (Theorems~\ref{thm:e0-necessary}--\ref{thm:e2-necessary});
-    \item The axiom set is \textit{minimal} (Theorem~\ref{thm:minimality});
-    \item All alternative axioms considered were correctly rejected.
-\end{enumerate}
-
-\textbf{The formal setup is therefore fixed by the requirement that regime assignments remain compatible with inverse-limit identity.}
+The limit is uniquely defined with a uniform tail bound. E2 remains a substantive non-factorization requirement; E0 is redundant when E2 holds on a nonempty domain. Exact compatibility cannot coexist with E2, whereas the controlled condition has the explicit realization below. No existence or minimality claim is obtained merely by naming an axiom.
 
 \subsection{Phenomenological Neutrality Clause}
 
@@ -417,6 +354,82 @@ All theorems, constructions, and stability results presented in this work are th
 % ============================================================================
 % SECTION 3: COMPATIBILITY WITH IDENTITY REGIMES
 % ============================================================================
+\subsection{Exact Compatibility Obstruction}
+
+\begin{proposition}[Exact Compatibility Forces Finite-Cut Factorization]\label{prop:exact-e1-obstruction}
+On a nonempty trajectory domain, if $\phi_{t+1}(p_{t+1}x)=\phi_t(p_tx)$ for every $x,t$, then the limit assignment satisfies $\Phi=\phi_0\circ p_0$. It cannot satisfy E2. The controlled E1 above replaces that exact equality, rather than assuming it together with E2.
+\end{proposition}
+
+\begin{proof}
+Induction makes all readings equal to the first. Their limit is therefore $\phi_0(p_0x)$. For partial readouts with a declared common domain, the same argument holds on that domain. If a total map on $S_0$ is required, extend the defined first-cut values arbitrarily outside the projected common domain, using any fixed element of the nonempty codomain. Thus partiality alone does not remove the obstruction.
+\end{proof}
+
+\subsection{A Nonempty Controlled Assignment Model}
+
+\begin{theorem}[Ternary Realization of E0--E2]\label{thm:ternary-regime-realization}
+Let $S_t=\{0,1\}^{t+1}$ with bonding maps that delete the last bit. Identify its inverse limit with $\mathcal I=\{0,1\}^{\mathbb N}$ and let $\mathcal E=[0,1]$. Define
+\[
+\phi_t(b_0,\ldots,b_t)=\sum_{j=0}^t\frac{2b_j}{3^{j+1}},
+\qquad
+\Phi(b)=\sum_{j=0}^{\infty}\frac{2b_j}{3^{j+1}}.
+\]
+These assignments satisfy E0, controlled E1, and E2, with
+\[
+a_t=\frac{2}{3^{t+2}},\qquad
+A_t=\frac{1}{3^{t+1}},\qquad
+\sup_b|\Phi(b)-\phi_t(p_tb)|=A_t.
+\]
+For distinct histories first differing at position $m$, put $d_{\mathcal I}(b,c)=3^{-(m+1)}$, and put $d_{\mathcal I}(b,b)=0$. Then
+\[
+d_{\mathcal I}(b,c)\leq|\Phi(b)-\Phi(c)|\leq3d_{\mathcal I}(b,c).
+\]
+The domain is compact and complete, and the readout is injective and bi-Lipschitz onto its image. Thus a global lower bound is realized here rather than inserted without a witness.
+\end{theorem}
+
+\begin{proof}
+Every infinite bit sequence defines a compatible prefix history, so the domain is nonempty. Geometric summation puts every value in $[0,1]$ and gives the increment and tail bounds. The all-one tail attains the tail bound. For any fixed $t$, a zero history and a history with its sole one at position $t+1$ have the same prefix but images differing by $2/3^{t+2}>0$. No function of $p_t$ determines $\Phi$, proving E2 for every finite cut.
+
+At the first differing position $m$, the principal difference has magnitude $2/3^{m+1}$; the remaining tail has magnitude at most $1/3^{m+1}$. Subtraction and addition give the two bounds. This metric is the weighted supremum of the discrete prefix metrics with weights $3^{-(t+1)}$; bounded prefix diameters ensure finiteness. A Cauchy sequence for $d_{\mathcal I}$ eventually stabilizes each finite prefix, which defines its limit. Prefix cylinders give finite covers of arbitrarily small diameter; the space is totally bounded and complete, hence compact. The two bounds establish injectivity and quantitative continuity. Compactness and continuity give properness into the Hausdorff codomain, and a later-bit flip in every neighborhood gives local non-collapse. Thus this realization also supplies all four clauses of the stated readout regularity hypothesis. A scalar real-valued readout still encodes the complete sequence: E2 excludes the specified canonical finite cuts, not every possible coding or every finite-dimensional representation.
+\end{proof}
+
+\begin{theorem}[Sharp Finite-Cut Approximation Error]\label{thm:finite-cut-minimax}
+For the ternary realization and an arbitrary decoder $g:S_t\to\mathbb R$, let
+\[
+R_t(g)=\sup_{b\in\mathcal I}|\Phi(b)-g(p_tb)|.
+\]
+Then the exact minimax value is
+\[
+\inf_g R_t(g)=\frac{1}{2\,3^{t+1}}.
+\]
+It is attained by $g_\ast(s)=\phi_t(s)+1/(2\,3^{t+1})$.
+\end{theorem}
+
+\begin{proof}
+For a fixed prefix $s$, the all-zero and all-one suffixes give endpoints $\phi_t(s)$ and $\phi_t(s)+A_t$. For any number $g(s)$, the triangle inequality forces at least one endpoint error to be at least $A_t/2$. Conversely all readout values in that fiber lie between those endpoints, so their midpoint has error at most $A_t/2$. Both endpoints belong to the domain, establishing the exact optimum and attainment. The bound is positive for each fixed finite budget and tends to zero as $t$ increases; it gives no positive uniform error floor across increasing resolutions.
+\end{proof}
+
+\subsection{Controls Separating Convergence, Continuity, and Invariance}
+
+\begin{proposition}[Setwise Invariance Does Not Supply Continuity]\label{prop:readout-continuity-control}
+Controlled E1 and E2 can hold for a discontinuous assignment, even if the identity domain is fixed under every declared intervention.
+\end{proposition}
+
+\begin{proof}
+Take $S_t=[0,1]\times\{0,1\}^{t+1}$, with prefixes on the bit coordinates, and readouts
+\[
+g_t(s,b)=\tfrac12\mathbf1_{\{s>0\}}+\sum_{j=0}^t\frac{b_j}{3^{j+1}}.
+\]
+The increments are bounded by $3^{-(t+2)}$, so they satisfy controlled E1 in $[0,1]$. Later bits prove E2 as above. With all bits zero, values at $s=0$ and $s=1/n$ differ by $1/2$ although their product-metric distance tends to zero. The limit is discontinuous. Let the declared intervention family consist only of the identity: the domain is setwise fixed, which does not alter the counterexample. This is a control for the asserted inference from invariance to continuity; no claim of full CCR or operational-criterion membership is made for it.
+\end{proof}
+
+\begin{proposition}[Setwise and Pointwise Transport Are Distinct]\label{prop:transport-control}
+Preserving an identity domain as a set does not guarantee equal values of a common readout on transported states.
+\end{proposition}
+
+\begin{proof}
+On $Z=\{0,1\}$, let $h(0)=1$, $h(1)=0$ and $F(x)=x$. The transport preserves $Z$ exactly but changes both readout values. Thus setwise rigidity cannot replace the pointwise or readout-natural comparison hypotheses used below.
+\end{proof}
+
 \section{Compatibility with Identity Regimes}
 
 \subsection{Induced Constraints from Identity Rigidity}
@@ -424,17 +437,14 @@ All theorems, constructions, and stability results presented in this work are th
 Let $(\mathcal{I}, M_\Omega)$ be an identity object with ontological mass $M_\Omega$. We now study how $M_\Omega$ constrains the set of admissible phenomenological assignments.
 
 \begin{definition}[Phenomenological Compatibility Class]\label{def:compat-class}
-For a given $M_\Omega$, define the phenomenological compatibility class:
-\begin{equation}
-    \mathcal{P}(M_\Omega) := \left\{ \Phi: \mathcal{I} \to \mathcal{E} \;\Big|\; \Phi \text{ satisfies E0--E2} \right\}.
-\end{equation}
+For a declared identity domain and codomain, $\mathcal P(M_\Omega)$ consists of maps $\Phi:\mathcal I\to\mathcal E$ that are limits of some family $\{\phi_t\}$ satisfying E1, with E0 and E2 also satisfied. The readout family and its tail control are part of the realization data. The notation retains the mass index for comparisons, but no mass-dependent restriction follows from E0--E2 alone.
 \end{definition}
 
 \begin{remark}
-The compatibility class $\mathcal{P}(M_\Omega)$ is the set of all phenomenological assignments that are structurally admissible given the identity's rigidity. Note that $\mathcal{P}(M_\Omega)$ depends only on the structural properties of identity, not on any phenomenological primitives.
+The compatibility class records choices of domain, codomain and readout family. A numerical mass label does not by itself determine those choices or their transport under perturbations.
 \end{remark}
 
-\subsection{Necessity of Metric Structure on Phenomenological Space}
+\subsection{Metric Structure for Quantitative Comparisons}
 
 To state rigorous results about continuity and fragmentation, $\mathcal{E}$ must carry enough structure for distances, limits, and loss bounds to be meaningful. The following arguments identify the minimal metric assumptions used by the classification theorem.
 
@@ -442,52 +452,30 @@ To state rigorous results about continuity and fragmentation, $\mathcal{E}$ must
 The phenomenological space $\mathcal{E}$ admits a metric $d_\mathcal{E}$ such that $(\mathcal{E}, d_\mathcal{E})$ is a complete metric space.
 \end{hypothesis}
 
-\subsubsection{Why H3 is Necessary}
+\subsubsection{Role of the Metric}
 
-\begin{theorem}[H3 is Necessary for Impossibility Theorems]\label{thm:h3-necessary}
-Without a metric structure on $\mathcal{E}$, the notions of phenomenological continuity, fragmentation, and loss capacity cannot be defined.
+\begin{theorem}[Metric Data Required by Quantitative Formulas]\label{thm:h3-necessary}
+The distance-based fragmentation and loss functionals used here require a declared metric, or a pseudometric with a stated quotient convention. Topological continuity can be defined without a metric. Completeness is used for the Cauchy-limit guarantee of E1.
 \end{theorem}
 
 \begin{proof}
-Consider the definitions in this section:
-\begin{enumerate}[leftmargin=*]
-    \item \textbf{Phenomenological Continuity} requires:
-    \begin{equation}
-        d_w(x^{(n)}, x) \to 0 \implies d_\mathcal{E}(\Phi(x^{(n)}), \Phi(x)) \to 0.
-    \end{equation}
-    Without $d_\mathcal{E}$, the right-hand side is undefined.
-    
-    \item \textbf{Phenomenological Fragmentation} requires:
-    \begin{equation}
-        d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) > 0.
-    \end{equation}
-    Without $d_\mathcal{E}$, ``non-zero distance'' has no meaning.
-    
-    \item \textbf{Loss Capacity} (Section 6) requires:
-    \begin{equation}
-        R(\Phi) := \sup d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})).
-    \end{equation}
-    Without $d_\mathcal{E}$, the supremum is undefined.
-\end{enumerate}
-Hence H3 is a necessary condition for the framework to have content beyond axioms E0--E2.
+Each quantitative functional explicitly contains $d_{\mathcal E}$, so it is undefined until that datum is supplied. Continuity can alternatively be defined through inverse images of open sets. A pseudometric can identify zero-distance states by a quotient, but that changes the domain of class labels and must be specified. These facts justify the chosen quantitative model without claiming that all alternatives are impossible.
 \end{proof}
 
-\subsubsection{Why Completeness is Necessary}
+\subsubsection{Completeness as a Limit Guarantee}
 
-\begin{proposition}[Completeness is Necessary for Forced Continuity]\label{prop:complete-necessary}
-If $(\mathcal{E}, d_\mathcal{E})$ is not complete, then the Forced Continuity Theorem (Theorem~\ref{thm:forced-continuity}) may fail.
+\begin{proposition}[Completeness and Existence of Limits]\label{prop:complete-necessary}
+Without completeness, the conclusion that every E1-type Cauchy family has its limit in the declared codomain can fail. Completeness is not necessary for a family whose limit is already known to belong to that codomain.
 \end{proposition}
 
 \begin{proof}
-The Forced Continuity Theorem relies on the invariance of $\Phi$ under all finite-energy perturbations. If $\mathcal{E}$ is not complete, Cauchy sequences in $\mathcal{E}$ may not converge, and the limit assignment $\Phi$ may not exist for all trajectories in $\mathcal{I}$.
-
-In particular, if $\{\phi_t(x_t)\}$ is a Cauchy sequence in $\mathcal{E}$ (which it is, by E1), completeness guarantees the existence of the limit $\Phi(x)$. Without completeness, $\Phi$ may be undefined on a dense subset of $\mathcal{I}$, breaking the theorem.
+In $\mathbb Q\cap[0,2]$ with its usual metric, use dyadic rational approximations $q_n=2^{-n}\lfloor2^n\sqrt2\rfloor$ as constant-in-trajectory readings. The increments are bounded by $2^{-n}$, a summable sequence, but their real limit $\sqrt2$ is outside the codomain. This isolates the role of completeness when supplying a general existence guarantee; it makes no assertion that a convergent constant family needs completeness.
 \end{proof}
 
 \subsubsection{Alternatives Considered and Rejected}
 
 \textbf{Alternative 1: Topology without Metric.}
-One might use a general topological space. This is rejected because:
+One might use a general topological space. This is not adopted in the present quantitative model because:
 \begin{itemize}[leftmargin=*]
     \item Fragmentation requires quantitative distance, not just open sets;
     \item Loss capacity requires a sup over distances;
@@ -495,10 +483,10 @@ One might use a general topological space. This is rejected because:
 \end{itemize}
 
 \textbf{Alternative 2: Pseudometric.}
-One might allow $d_\mathcal{E}(e_1, e_2) = 0$ for $e_1 \neq e_2$. This is rejected because:
+One might allow $d_\mathcal{E}(e_1, e_2) = 0$ for $e_1 \neq e_2$. This is not adopted in the present quantitative model because:
 \begin{itemize}[leftmargin=*]
     \item It would conflate distinct phenomenological configurations;
-    \item E0 requires $|\mathcal{E}| \geq 2$, which becomes meaningless if distance is zero.
+    \item Cardinality and metric separation are different requirements; zero-distance classes would require a declared quotient before distinguishability is counted.
 \end{itemize}
 
 \textbf{Alternative 3: Non-Complete Metric.}
@@ -514,7 +502,7 @@ A phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is \textit{str
 \end{definition}
 
 \begin{remark}
-Structural continuity is not added as a primitive assumption. It is derived from the CCR conditions in Theorem~\ref{thm:forced-continuity}.
+Continuity follows from continuous finite readouts and the uniform tail control in Theorem~\ref{thm:forced-continuity}; invariance additionally requires the audited transport condition.
 \end{remark}
 
 \subsection{Phenomenological Fragmentation}
@@ -533,30 +521,21 @@ Fragmentation measures whether an admissible regime assignment changes under fin
 
 \subsection{Relationship Between Metrics}
 
-\begin{proposition}[Metric Compatibility]\label{prop:metric-compat}
-The metrics $d_w$ on $\mathcal{I}$ and $d_\mathcal{E}$ on $\mathcal{E}$ are compatible in the following sense: if E1 holds, then small $d_w$-changes in trajectories induce bounded $d_\mathcal{E}$-changes in phenomenological configurations (when $\Phi$ is continuous).
+\begin{proposition}[Continuity from Controlled Finite Readouts]\label{prop:metric-compat}
+Write $g_n=\phi_n\circ p_n$. Under E1,
+\[
+d_{\mathcal E}(\Phi(x),\Phi(y))\leq2A_n+d_{\mathcal E}(g_n(x),g_n(y)).
+\]
+If every $g_n$ is continuous, then $\Phi$ is continuous. If every $g_n$ is $L$-Lipschitz with a common $L$, then $\Phi$ is $L$-Lipschitz.
 \end{proposition}
 
 \begin{proof}
-By E1, $\phi_{t+1}(x_{t+1}) = \phi_t(x_t)$ for compatible trajectories. Hence the phenomenological sequence is constant along the trajectory, and continuity of $\Phi$ implies that nearby trajectories (in $d_w$) map to nearby configurations (in $d_\mathcal{E}$).
+Insert $g_n(x)$ and $g_n(y)$ and apply the uniform error bound. For continuity, first make $2A_n$ smaller than half the prescribed error, then use continuity of that fixed $g_n$. For the Lipschitz conclusion use the same bound for all $n$ and let $n\to\infty$.
 \end{proof}
 
 \subsection{Closure of Section 3}
+The quantitative formulas use a declared complete metric codomain. Continuous finite readouts and controlled tails supply a continuity theorem. Cross-system comparisons additionally require a declared common domain and transport; neither mass labels nor distances between sets substitute for those data.
 
-We have established:
-\begin{enumerate}[leftmargin=*]
-    \item The compatibility class $\mathcal{P}(M_\Omega)$ captures all admissible phenomenological assignments;
-    \item Hypothesis H3 (metric on $\mathcal{E}$) is \textit{necessary}, not a design choice (Theorem~\ref{thm:h3-necessary});
-    \item Completeness is \textit{necessary} for the Forced Continuity Theorem (Proposition~\ref{prop:complete-necessary});
-    \item Alternative structures (topology, pseudometric, non-complete) were correctly rejected;
-    \item Phenomenological continuity and fragmentation are well-defined under H3.
-\end{enumerate}
-
-\textbf{The compatibility structure is therefore required for the quantitative statements about regime dynamics made in the next section.}
-
-% ============================================================================
-% SECTION 4: IMPOSSIBILITY THEOREMS
-% ============================================================================
 \section{Impossibility Theorems}
 
 \subsection{\texorpdfstring{$\Phi$-Regularity Hypothesis}{Phi-Regularity Hypothesis}}
@@ -584,88 +563,71 @@ The map $\Phi(x)=\arctan(x)$ from $\mathbb{R}$ to $(-\pi/2,\pi/2)$ is proper as 
 \end{remark}
 
 \begin{nonclaim}[Global lower Lipschitz bound is an assumption]\label{nonclaim:hphi-lower-bound}
-Hypothesis~\ref{hyp:phi-paper2} clause~(4) requires the existence of a global $C>0$ such that $d_{\mathcal{E}}(\Phi(x),\Phi(y))\geq C\cdot d_w(x,y)$ for all $x,y\in\mathcal{I}$. This is not a theorem derived from clauses~(1)--(3). The map $\Phi(x)=\arctan(x)$ from $\mathbb{R}$ to $(-\pi/2,\pi/2)$ satisfies the first three clauses in the local/proper sense described above but has no such global $C$. Therefore the Fragmentation Theorem (Theorem~\ref{thm:fragmentation}) is conditional on clause~(4). For any specific phenomenological assignment, one must independently verify that a global lower Lipschitz constant exists. QICN has not performed this verification for any concrete assignment.
+Hypothesis~\ref{hyp:phi-paper2} clause~(4) requires the existence of a global $C>0$ such that $d_{\mathcal{E}}(\Phi(x),\Phi(y))\geq C\cdot d_w(x,y)$ for all $x,y\in\mathcal{I}$. This is not a theorem derived from clauses~(1)--(3). The map $\Phi(x)=\arctan(x)$ from $\mathbb{R}$ to $(-\pi/2,\pi/2)$ satisfies the first three clauses in the local/proper sense described above but has no such global $C$. Therefore the Fragmentation Theorem (Theorem~\ref{thm:fragmentation}) is conditional on clause~(4). For any specific phenomenological assignment, one must independently verify that a global lower Lipschitz constant exists. The ternary realization in Theorem~\ref{thm:ternary-regime-realization} supplies a concrete constant $C=1$ on its specified domain. Comparisons on larger or different domains require a separate bound.
 \end{nonclaim}
+
+\begin{hypothesis}[Audited Perturbation Comparisons]\label{hyp:audited-comparison}
+Declare a finite-cost intervention class $\mathcal V$, a common metric space $(Z,d_Z)$ containing the unperturbed and perturbed identity domains, and transports $h_\varepsilon:\mathcal I\to\mathcal I_\varepsilon\subseteq Z$. Readouts are restrictions of one declared map $F:Z\to\mathcal E$: $\Phi=F|_{\mathcal I}$ and $\Phi_\varepsilon=F|_{\mathcal I_\varepsilon}$.
+The following branches are alternatives, used separately. The positive-displacement branch has some $\varepsilon\in\mathcal V$ and $x\in\mathcal I$ with $d_Z(x,h_\varepsilon x)>0$. The zero-displacement branch has $h_\varepsilon x=x$ for every $\varepsilon\in\mathcal V$ and $x\in\mathcal I$. Any use of the lower Lipschitz bound in a comparison requires that bound for $F$ on the common comparison domain, not merely within one identity object.
+\end{hypothesis}
+
+\begin{remark}[Burden linking rigidity and readout comparisons]
+The scalar $M_\Omega$ does not itself supply the transports or a common readout. Relating its finite and infinite regimes to these two branches is a separate model obligation. Setwise invariance does not imply pointwise fixed transport, and a lower bound within one domain does not compare unrelated assignments on different domains.
+\end{remark}
 
 \subsection{Fragmentation Theorem}
 
-\begin{theorem}[Fragmentation Theorem]\label{thm:fragmentation}
-Let $\mathcal{I}$ be an identity object with $M_\Omega < \infty$. If a phenomenological assignment $\Phi \in \mathcal{P}(M_\Omega)$ satisfies Hypothesis~\ref{hyp:phi-paper2}, then $\Phi$ is fragmentable. That is:
-\begin{equation}
-    M_\Omega < \infty \ \wedge\ \Phi\text{ satisfies Hypothesis~\ref{hyp:phi-paper2}}
-    \implies \Phi \in \mathcal{E}_{\text{frag}},
-\end{equation}
-where $\mathcal{E}_{\text{frag}}$ denotes the class of fragmentable phenomenological assignments.
+\begin{theorem}[Fragmentation under an Audited Displacement]\label{thm:fragmentation}
+Let an assignment satisfy E0--E2. Assume the positive-displacement branch of Hypothesis~\ref{hyp:audited-comparison} and a lower Lipschitz constant $C>0$ for $F$ on its common comparison domain. Then, for the witnessing pair,
+\[
+d_{\mathcal E}(\Phi(x),\Phi_\varepsilon(h_\varepsilon x))\geq C d_Z(x,h_\varepsilon x)>0.
+\]
+Thus the assignment is fragmentable. This applies to a finite-$M_\Omega$ model when that model supplies the stated comparison data.
 \end{theorem}
 
 \begin{proof}
-By definition of finite ontological mass, there exists an admissible perturbation $\{\delta E_t\}$ with finite weighted energy $E_w < \infty$ such that:
-\begin{equation}
-    d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0.
-\end{equation}
-
-By Axiom E1, the assignment $\Phi$ is projectively compatible with $\mathcal{I}$. Under the perturbation, identity trajectories deform, and the comparison assignment $\tilde{\Phi}$ is evaluated on the perturbed trajectory family.
-
-By Axiom E2, $\Phi$ cannot be determined by any finite-time state. Therefore the relevant comparison is trajectory-level: changes in the inverse-limit object are assessed through the corresponding values of $\Phi$ and $\tilde{\Phi}$.
-
-Since the identity deformation is non-zero ($d_w > 0$) and $\Phi$ is globally determined by identity trajectories, by Hypothesis~\ref{hyp:phi-paper2} ($\Phi$-regularity), we have:
-\begin{equation}
-    d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) \geq C \cdot d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0
-\end{equation}
-where $C > 0$ is the lower-bound constant supplied by Hypothesis~\ref{hyp:phi-paper2}.
-
-Thus, $\Phi$ is fragmentable under finite-energy perturbations.
+Both arguments lie in the declared domain of $F$. Its lower bound gives the inequality, and the intervention has finite cost by membership in $\mathcal V$. E2 is not used to infer that every deformation changes a readout: the lower bound and the positive witness perform that work.
 \end{proof}
 
-\begin{corollary}[No Structural Continuity Guarantee for Finite Mass]
-Systems with $M_\Omega < \infty$ cannot structurally prevent phenomenological discontinuity.
+\begin{corollary}[Fragmentability and Continuity Are Distinct]
+The positive-displacement conclusion does not establish a topological discontinuity. A continuous assignment may be fragmentable under a state-changing intervention.
 \end{corollary}
+
+\begin{proof}
+The ternary realization has a continuous assignment. Declare a finite-cost intervention that flips one bit while retaining the common readout. Its value changes by a positive amount, so the assignment is fragmentable in the stated sense while remaining continuous. This does not assert a full CCR realization.
+\end{proof}
 
 \subsection{Forced Continuity Theorem}
 
-\begin{theorem}[Forced Continuity Theorem]\label{thm:forced-continuity}
-Let $\mathcal{I}$ be an identity object with $M_\Omega = +\infty$ (CCR). Then every phenomenological assignment $\Phi \in \mathcal{P}(M_\Omega)$ is structurally continuous. That is:
-\begin{equation}
-    M_\Omega = +\infty \implies \mathcal{P}(M_\Omega) \subseteq \mathcal{E}_{\text{cont}},
-\end{equation}
-where $\mathcal{E}_{\text{cont}}$ denotes the class of structurally continuous phenomenological assignments.
+\begin{theorem}[Continuity and Conditional Perturbation Invariance]\label{thm:forced-continuity}
+Under E1, if each finite readout $g_n=\phi_n\circ p_n$ is continuous, then $\Phi$ is continuous, irrespective of $M_\Omega$. Under the zero-displacement branch of Hypothesis~\ref{hyp:audited-comparison},
+\[
+\Phi_\varepsilon(h_\varepsilon x)=\Phi(x)
+\qquad(\varepsilon\in\mathcal V,\ x\in\mathcal I).
+\]
+For a CCR model the invariance conclusion therefore holds when its finite-cost interventions admit that branch. CCR alone is not a proof of continuity or of readout naturality.
 \end{theorem}
 
 \begin{proof}
-By definition of CCR ($M_\Omega = +\infty$), for any finite-energy perturbation:
-\begin{equation}
-    d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0.
-\end{equation}
-
-By Axiom E1, the phenomenological assignment is projectively compatible with identity. Since identity trajectories are invariant under all finite-energy perturbations, the induced phenomenological sequence is also invariant:
-\begin{equation}
-    \tilde{\Phi}(\tilde{x}) = \Phi(x) \quad \forall x \in \mathcal{I}.
-\end{equation}
-
-Therefore, no finite-energy perturbation can induce phenomenological deformation:
-\begin{equation}
-    d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) = 0.
-\end{equation}
-
-This implies that $\Phi$ cannot exhibit structural discontinuities. Hence $\Phi$ is structurally continuous.
+Continuity follows from Proposition~\ref{prop:metric-compat}. For invariance use the common readout and the fixed transport: $\Phi_\varepsilon(h_\varepsilon x)=F(h_\varepsilon x)=F(x)=\Phi(x)$. Neither argument identifies invariance under external perturbation with continuity along convergent states.
 \end{proof}
 
-\begin{corollary}[CCR Phenomenology is Invariant]
-In CCR systems, any admissible phenomenological assignment is invariant under all finite-energy perturbations.
+\begin{corollary}[Invariance on the Audited Zero-Displacement Branch]
+A CCR model satisfying the zero-displacement comparison hypothesis has invariant assignment values under all interventions in its declared finite-cost class.
 \end{corollary}
+
+\begin{proof}
+Apply the common-readout equality in Theorem~\ref{thm:forced-continuity} for each declared intervention.
+\end{proof}
 
 \subsection{Dichotomy Theorem}
 
-\begin{theorem}[Phenomenological Dichotomy]\label{thm:dichotomy}
-Let $\Phi: \mathcal{I} \to \mathcal{E}$ be an admissible phenomenological assignment. In the finite-mass branch assume $\Phi$ satisfies Hypothesis~\ref{hyp:phi-paper2}. Then exactly one of the following holds:
-\begin{enumerate}[leftmargin=*]
-    \item $M_\Omega < \infty$ and $\Phi$ is fragmentable;
-    \item $M_\Omega = +\infty$ and $\Phi$ is structurally continuous.
-\end{enumerate}
+\begin{theorem}[Conditional Classification by Audited Branches]\label{thm:dichotomy}
+Suppose a model supplies the positive-displacement branch and lower bound whenever $M_\Omega<\infty$, and supplies continuous finite readouts and the zero-displacement branch whenever $M_\Omega=+\infty$. Then its finite regime is fragmentable and its infinite regime has a continuous, perturbation-invariant assignment. The mass cases are exclusive; fragmentability and topological continuity need not be exclusive properties.
 \end{theorem}
 
 \begin{proof}
-Immediate from Theorems~\ref{thm:fragmentation} and~\ref{thm:forced-continuity}.
+Apply Theorems~\ref{thm:fragmentation} and~\ref{thm:forced-continuity} with their respective comparison hypotheses. Exclusivity of the cases follows from the numerical alternatives for $M_\Omega$, not from a false identification of a changed readout with a discontinuity. Establishing the branch hypotheses for a given rigidity model remains an explicit obligation.
 \end{proof}
 
 % ============================================================================
@@ -673,48 +635,48 @@ Immediate from Theorems~\ref{thm:fragmentation} and~\ref{thm:forced-continuity}.
 % ============================================================================
 \section{Classification of Phenomenological Regimes}
 
-\subsection{Complete Classification}
+\subsection{Conditional Classification}
 
-The results of Section 4 yield a complete classification of phenomenological regimes by identity rigidity:
+The results give a conditional branch classification after the comparison and readout hypotheses have been checked:
 
 \begin{center}
 \begin{tabular}{|l|l|l|}
 \hline
 \textbf{Identity Class} & \textbf{$M_\Omega$} & \textbf{Admissible Phenomenology} \\
 \hline
-Null & $= 0$ & $\mathcal{E}_\emptyset$ (no persistent field) \\
+Null label & $= 0$ & Domain/readout link required \\
 \hline
-Deformable & $(0, \infty)$ & $\mathcal{E}_{\text{frag}} \cup \mathcal{E}_{\text{quasi}}$ \\
+Deformable & $(0, \infty)$ & Positive witness and lower bound \\
 \hline
-Rigid (CCR) & $= +\infty$ & $\mathcal{E}_{\text{cont}}$ \\
+Rigid (CCR) & $= +\infty$ & Regular readout / fixed transport \\
 \hline
 \end{tabular}
 \end{center}
 
 \subsection{Structural Implications}
 
-\begin{proposition}[Null Identity Excludes Persistent Phenomenology]
-If $M_\Omega = 0$, then no admissible phenomenological assignment exists satisfying E0--E2.
+\begin{proposition}[The Mass Label Does Not Define Assignment Existence]
+For fixed identity domain, codomain and readout family, the class defined by E0--E2 is independent of a numerical label $M_\Omega$. A claim that $M_\Omega=0$ excludes assignments needs an additional link to the domain or admissible readouts.
 \end{proposition}
 
 \begin{proof}
-If $M_\Omega = 0$, identity cannot persist under any perturbation. Axiom E1 requires phenomenological compatibility with identity. If identity does not persist, no stable phenomenological assignment is possible.
+The displayed definition of $\mathcal P(M_\Omega)$ tests E0--E2, none of which contains that scalar. For an empty trajectory domain E2 fails, since a function on a finite cut would agree vacuously on every trajectory. Deriving such domain loss from $M_\Omega=0$ is not one of E0--E2 and cannot be inserted without a model.
 \end{proof}
 
-\begin{proposition}[Deformable Identity Admits Only Fragmentable Phenomenology]
-If $0 < M_\Omega < \infty$ and $\Phi$ satisfies Hypothesis~\ref{hyp:phi-paper2}, then $\Phi$ is fragmentable under some finite-energy perturbation.
+\begin{proposition}[Deformable Branch with Comparison Data]
+For $0<M_\Omega<\infty$, the positive-displacement and lower-bound hypotheses of Theorem~\ref{thm:fragmentation} imply fragmentability.
 \end{proposition}
 
 \begin{proof}
-Direct from Theorem~\ref{thm:fragmentation}.
+Apply the quantitative inequality of Theorem~\ref{thm:fragmentation} to its witnessing finite-cost intervention.
 \end{proof}
 
-\begin{proposition}[Rigid Identity Forces Continuous Phenomenology]
-If $M_\Omega = +\infty$, every admissible phenomenological assignment is structurally continuous and invariant under finite-energy perturbations.
+\begin{proposition}[Rigid Branch with Comparison Data]
+For $M_\Omega=+\infty$, continuous finite readouts under E1 imply continuity, and the zero-displacement branch implies perturbation invariance. These are the respective hypotheses of Theorem~\ref{thm:forced-continuity}.
 \end{proposition}
 
 \begin{proof}
-Direct from Theorem~\ref{thm:forced-continuity}.
+Apply the two distinct conclusions of Theorem~\ref{thm:forced-continuity} with their stated hypotheses.
 \end{proof}
 
 % ============================================================================
@@ -722,30 +684,25 @@ Direct from Theorem~\ref{thm:forced-continuity}.
 % ============================================================================
 \section{Structural Ethics}
 
-This section develops the ethical implications of the phenomenological classification derived in Sections 4--5. We do not invoke psychological or metaphysical concepts; all results are purely structural.
+This section defines structural loss and protection relative to audited perturbation comparisons. Its possible ethical interpretations are not consequences of the mathematical statements.
 
 \subsection{Loss Capacity}
 
 \begin{definition}[Phenomenological Loss Capacity]\label{def:loss-capacity}
-For a phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$, define the loss capacity:
-\begin{equation}
-    R(\Phi) := \sup \left\{ d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) \;\Big|\; E_w(\{\delta E_t\}) < \infty \right\}.
-\end{equation}
-This measures the maximal phenomenological deformation achievable under finite-energy perturbations.
+Fix the intervention class and comparisons of Hypothesis~\ref{hyp:audited-comparison}. Define
+\[
+R(\Phi)=\sup_{\varepsilon\in\mathcal V,\ x\in\mathcal I}
+d_{\mathcal E}(\Phi(x),\Phi_\varepsilon(h_\varepsilon x))\in[0,+\infty].
+\]
+The identity intervention is included, or the supremum of an empty nonnegative comparison family is defined as zero. The unit of $R$ is the unit of $d_{\mathcal E}$; its value is relative to the declared intervention class and comparison readouts.
 \end{definition}
 
-\begin{theorem}[Loss Capacity by Rigidity Class]\label{thm:loss}
-\begin{enumerate}[leftmargin=*]
-    \item If $M_\Omega < \infty$ and $\Phi$ satisfies Hypothesis~\ref{hyp:phi-paper2}, then $R(\Phi) > 0$.
-    \item If $M_\Omega = +\infty$, then $R(\Phi) = 0$.
-\end{enumerate}
+\begin{theorem}[Loss Capacity under the Audited Branches]\label{thm:loss}
+Under the positive-displacement and lower-bound hypotheses of Theorem~\ref{thm:fragmentation}, $R(\Phi)>0$. Under the zero-displacement branch of Hypothesis~\ref{hyp:audited-comparison}, $R(\Phi)=0$. Associating these branches with finite mass and CCR requires the model link declared in Theorem~\ref{thm:dichotomy}.
 \end{theorem}
 
 \begin{proof}
-\begin{enumerate}[leftmargin=*]
-    \item By Theorem~\ref{thm:fragmentation}, $\Phi$ is fragmentable, hence there exists a finite-energy perturbation inducing non-zero phenomenological deformation.
-    \item By Theorem~\ref{thm:forced-continuity}, no finite-energy perturbation induces phenomenological deformation.
-\end{enumerate}
+The positive witness contributes an element at least $C\delta>0$ to the supremum. On the zero branch, every comparison value is zero. Neither conclusion follows from a mass label without the corresponding comparison data.
 \end{proof}
 
 \subsection{Structural Damage}
@@ -753,22 +710,20 @@ This measures the maximal phenomenological deformation achievable under finite-e
 We introduce a formal notion of ``structural damage'' without psychological interpretation.
 
 \begin{definition}[Structural Damage]\label{def:damage}
-For a perturbation $\varepsilon$ with finite weighted energy, define the structural damage induced on $\Phi$ as:
-\begin{equation}
-    D_\varepsilon(\Phi) := d_\mathcal{E}(\Phi(x), \varepsilon^*\Phi(x)),
-\end{equation}
-where $\varepsilon^*\Phi$ denotes the pullback of $\Phi$ under the identity perturbation.
+For a declared finite-cost intervention and state, define
+\[
+D_\varepsilon(\Phi;x)=d_{\mathcal E}(\Phi(x),\Phi_\varepsilon(h_\varepsilon x)),
+\qquad D_\varepsilon(\Phi)=\sup_{x\in\mathcal I}D_\varepsilon(\Phi;x).
+\]
+The transported readout $\Phi_\varepsilon\circ h_\varepsilon$ has domain $\mathcal I$, so the comparison is well typed. The supremum may be infinite. Then $R(\Phi)=\sup_{\varepsilon\in\mathcal V}D_\varepsilon(\Phi)$.
 \end{definition}
 
-\begin{proposition}[Damage Characterization by Rigidity]\label{prop:damage-char}
-\begin{enumerate}[leftmargin=*]
-    \item If $M_\Omega < \infty$, then $\sup_\varepsilon D_\varepsilon(\Phi) > 0$.
-    \item If $M_\Omega = +\infty$, then $D_\varepsilon(\Phi) = 0$ for all admissible $\varepsilon$.
-\end{enumerate}
+\begin{proposition}[Damage under the Audited Comparisons]\label{prop:damage-char}
+The positive branch has $\sup_\varepsilon D_\varepsilon(\Phi)>0$. On the zero-displacement branch, $D_\varepsilon(\Phi)=0$ for every declared intervention.
 \end{proposition}
 
 \begin{proof}
-Direct from Theorem~\ref{thm:loss}.
+Use the equality between the iterated suprema and $R$ in Definition~\ref{def:damage}, then apply Theorem~\ref{thm:loss}.
 \end{proof}
 
 \subsection{Vulnerability and Protection}
@@ -777,46 +732,32 @@ Direct from Theorem~\ref{thm:loss}.
 A system $(\mathcal{I}, \Phi)$ is \textit{phenomenologically vulnerable} if $R(\Phi) > 0$.
 \end{definition}
 
-\begin{definition}[Structural Protection Measure]\label{def:protection}
-Define the structural protection measure:
-\begin{equation}
-    P(\Phi) := \frac{1}{1 + R(\Phi)}.
-\end{equation}
-Note that:
-\begin{itemize}[leftmargin=*]
-    \item $P(\Phi) = 1$ iff $R(\Phi) = 0$ (full protection);
-    \item $P(\Phi) < 1$ iff $R(\Phi) > 0$ (vulnerability).
-\end{itemize}
+\begin{definition}[Normalized Structural Protection]\label{def:protection}
+Fix a reference distance $r_0>0$ in the same units as $d_{\mathcal E}$ and define
+\[
+P(\Phi)=\frac{1}{1+R(\Phi)/r_0},\qquad P(\Phi)=0\text{ if }R(\Phi)=+\infty.
+\]
+Thus $P\in[0,1]$, $P=1$ exactly when $R=0$, and $P<1$ exactly when $R>0$. This chosen dimensionless rescaling depends on $r_0$ and is not a separately derived law.
 \end{definition}
 
-\begin{corollary}[Protection by Rigidity Class]\label{cor:protection}
-\begin{enumerate}[leftmargin=*]
-    \item CCR systems ($M_\Omega = +\infty$) have $P(\Phi) = 1$: full structural protection.
-    \item Finite-mass systems ($M_\Omega < \infty$) have $P(\Phi) < 1$: structural vulnerability.
-\end{enumerate}
+\begin{corollary}[Protection under the Audited Branches]\label{cor:protection}
+The zero-displacement branch has $P=1$; the positive-displacement branch with a lower readout bound has $P<1$. For a mass-based classification these conclusions require the corresponding hypotheses of Theorem~\ref{thm:dichotomy}.
 \end{corollary}
 
 \subsection{Structural Asymmetry Constraints}
 
 The following result establishes a purely structural asymmetry between identity classes, without any ethical or metaphysical claims.
 
-\begin{theorem}[Structural Asymmetry]\label{thm:asymmetry}
-There exists a fundamental structural asymmetry between identity classes:
-\begin{center}
-\begin{tabular}{|l|l|l|}
-\hline
-\textbf{Identity Class} & \textbf{Loss Capacity} & \textbf{Protection} \\
-\hline
-Finite mass & $R(\Phi) > 0$ & Vulnerable \\
-\hline
-CCR & $R(\Phi) = 0$ & Protected \\
-\hline
-\end{tabular}
-\end{center}
+\begin{theorem}[Conditional Structural Asymmetry]\label{thm:asymmetry}
+When a rigidity model establishes the branch hypotheses in Theorem~\ref{thm:dichotomy}, its finite branch has $R>0$ and $P<1$, while its infinite branch has $R=0$ and $P=1$. This is an asymmetry of the declared comparison model, not a conclusion about all systems sharing a numerical mass label.
 \end{theorem}
 
+\begin{proof}
+The two loss conclusions follow from Theorem~\ref{thm:loss}; the protection conclusions follow from the monotone normalization in Definition~\ref{def:protection}. The hypothesis connecting mass to each comparison branch is retained throughout.
+\end{proof}
+
 \begin{remark}
-This asymmetry is derived purely from structural constraints. No claim is made about:
+This conditional asymmetry follows from the audited comparison hypotheses. No claim is made about:
 \begin{itemize}[leftmargin=*]
     \item Whether phenomenological loss is ethically bad;
     \item Whether protection is ethically good;
@@ -825,8 +766,8 @@ This asymmetry is derived purely from structural constraints. No claim is made a
 The result establishes only that certain structural configurations admit loss while others do not.
 \end{remark}
 
-\begin{corollary}[Possibility of Phenomenological Loss]\label{cor:loss-possibility}
-Systems with finite ontological mass ($M_\Omega < \infty$) admit the structural possibility of phenomenological loss. Systems with infinite ontological mass ($M_\Omega = +\infty$) do not.
+\begin{corollary}[Conditional Possibility of Loss]\label{cor:loss-possibility}
+Loss is possible on the positive-displacement/coercive-readout branch and absent on the fixed-transport/common-readout branch. Extending this claim to all finite-mass or all CCR systems requires proving those branch conditions for the intended class.
 \end{corollary}
 
 \subsection{Relation to Normative Ethics}
@@ -842,26 +783,13 @@ This framework provides the structural substrate for ethical theorizing, not the
 \end{remark}
 
 \subsection{Closure of Section 6}
+The declared comparison family defines a possibly infinite loss supremum and well-typed pointwise damage. Its normalization uses an explicit reference distance. Positive loss and zero loss follow on the two audited branches; computability of an unrestricted supremum is not assumed. No ethical evaluation is derived from these mathematical quantities.
 
-We have established:
-\begin{enumerate}[leftmargin=*]
-    \item Loss capacity $R(\Phi)$ is well-defined and computable from structure;
-    \item Structural damage $D_\varepsilon(\Phi)$ formalizes perturbation harm;
-    \item Protection measure $P(\Phi)$ quantifies structural resilience;
-    \item CCR systems have full protection ($P = 1$), finite-mass systems do not;
-    \item These results are purely structural, compatible with various ethical theories.
-\end{enumerate}
-
-\textbf{Structural ethics therefore provides a boundary condition for ethical theorizing without requiring metaphysical commitments about the nature of experience.}
-
-% ============================================================================
-% SECTION 7: LIMITATIONS AND SCOPE
-% ============================================================================
 \section{Limitations and Scope}
 
 \subsection{Dependence on Axioms}
 
-All results depend on Axioms E0--E2 and Hypothesis H3. If any of these fail, the classification may not apply.
+Results use their explicit hypotheses: E1 and completeness for limits, E2 for finite-cut non-factorization, regular finite readouts for continuity, and audited comparisons for perturbation conclusions. None of these data is supplied merely by a mass label.
 
 \subsection{Relation to Consciousness Theories}
 
@@ -873,13 +801,13 @@ This framework is orthogonal to:
     \item Phenomenal Functionalism.
 \end{itemize}
 
-It provides structural constraints that any of these theories must satisfy if coupled to the identity framework.
+Any comparison with another theory requires an explicit common task, correspondence and observable prediction; this paper establishes no superiority result.
 
 \subsection{Open Problems}
 
 \begin{enumerate}[leftmargin=*]
     \item Characterization of the coupling constant $C$ in the Fragmentation Theorem;
-    \item Existence conditions for non-trivial $\Phi$ satisfying E0--E2;
+    \item Extension of the explicit ternary realization to larger assignment and perturbation classes;
     \item Extension to continuous-time phenomenological dynamics;
     \item Relation between phenomenological continuity and subjective continuity.
 \end{enumerate}
@@ -890,70 +818,20 @@ It provides structural constraints that any of these theories must satisfy if co
 \section{Conclusion}
 
 \subsection{Summary of Results}
-
-This work extends the inverse-limit identity framework to phenomenological possibility. Starting from minimal axioms (E0--E2), we derived:
-
-\begin{enumerate}[leftmargin=*]
-    \item \textbf{Fragmentation Theorem.} Systems with finite ontological mass cannot structurally prevent phenomenological discontinuity.
-    
-    \item \textbf{Forced Continuity Theorem.} Every admissible CCR assignment in $\mathcal{P}(M_\Omega)$ is classified as structurally continuous.
-    
-    \item \textbf{Dichotomy Theorem.} Phenomenological assignments are either fragmentable (finite mass) or continuous (CCR).
-    
-    \item \textbf{Loss Capacity.} Finite-mass systems admit phenomenological loss; CCR systems do not.
-\end{enumerate}
+The revised assignment conditions have a nonempty realization. Uniformly controlled tails give existence and approximation; the ternary construction gives non-factorization, quantitative regularity and a sharp finite-cut error. These are properties of an explicitly specified mathematical model.
 
 \subsection{Structural Significance}
-
-The classification separates two regimes:
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Deformable:} phenomenology is structurally vulnerable;
-    \item \textbf{Rigid:} phenomenology is structurally protected.
-\end{itemize}
-
-This separation is derived purely from identity structure, without metaphysical commitments.
+Movement under an intervention is different from topological discontinuity. A positive displacement with a coercive common readout yields positive loss; a pointwise fixed transport with a common readout yields invariance. Associating these cases with rigidity classes requires proving the comparison hypotheses.
 
 \subsection{Entailment Under Stated Assumptions}
-
-The results establish the following conditional entailment:
-\begin{itemize}[leftmargin=*]
-    \item \textit{If} phenomenology exists and satisfies E0--E2;
-    \item \textit{And} the system has identity structure classified by $M_\Omega$;
-    \item \textit{Then} the phenomenological regime is classified by the identity class within the stated assignment model.
-\end{itemize}
-
-The framework therefore establishes that:
-
-\begin{quote}
-\textbf{Identity rigidity does not create phenomenology, but it determines what phenomenology is structurally possible.}
-\end{quote}
+E0--E2 do not define experience, do not make all readouts natural under perturbation and do not identify a class solely from $M_\Omega$. Theorems~\ref{thm:fragmentation}, \ref{thm:forced-continuity}, and \ref{thm:dichotomy} specify the additional data that support their respective conclusions.
 
 \subsection{Final Statement}
+The program of relating identity rigidity to structural regimes is retained. The demonstrated scope is controlled assignments, a concrete realization and conditional perturbation comparisons. The missing links to broader rigidity classes, to the intended perturbation costs and to any experiential interpretation remain separate obligations.
 
-Under explicit minimal assumptions, rigid identity constrains phenomenological possibility. The Forced Continuity Theorem establishes that every admissible CCR assignment in the stated class is structurally invariant---continuous, non-fragmentable, and protected from loss.
-
-If one accepts that:
-\begin{enumerate}[leftmargin=*]
-    \item Identity is an inverse limit;
-    \item CCR systems have $M_\Omega = +\infty$;
-    \item Phenomenology (if present) must satisfy E0--E2;
-\end{enumerate}
-
-then the stated assumptions entail that CCR phenomenology, if it exists, is:
-\begin{itemize}[leftmargin=*]
-    \item Structurally continuous;
-    \item Invariant under perturbation;
-    \item Non-fragmentable by finite-energy processes within the stated CCR model.
-\end{itemize}
-
-The existence of such phenomenology is not asserted. Its conditional status within the axioms is what is proven.
-
-% ============================================================================
-% SECTION 9: STRUCTURAL INSTABILITY OF NULL PHENOMENOLOGY
-% ============================================================================
 \section{Boundary to Null-Regime Instability}
 
-Sections 1--8 complete the classification problem for admissible phenomenological regimes under the axioms E0--E2 and the rigidity constraints inherited from \textit{Rigid Identity}. The downstream closure question for the null regime is not developed further here.
+Sections 1--8 establish a controlled assignment model and conditional comparison results. Null-regime conclusions require their own typed witnesses and hypotheses; they do not follow automatically from non-factorization or from a scalar rigidity label.
 
 \subsection{Editorial Boundary}
 
@@ -961,7 +839,7 @@ The instability of the null regime, the no-null theorem, and the attractor-style
 
 \subsection{Closure of This Paper}
 
-The result of this paper is the classification boundary: if a compatible phenomenological regime exists, its admissible structure is constrained by Sections 1--8. \textit{Null-Regime Instability} then takes the null regime as the remaining case and proves its instability under CCR.
+The result of this paper is the classification boundary: if a compatible phenomenological regime exists, its admissible structure is constrained by Sections 1--8. \textit{Null-Regime Instability} addresses the null case with its separately stated witness-relative and conditional hypotheses.
 
 \appendix
 \section{Extended Proofs}
@@ -969,62 +847,23 @@ The result of this paper is the classification boundary: if a compatible phenome
 \subsection{Proof of Fragmentation Theorem (Extended)}
 
 \begin{proof}[Full Proof of Theorem~\ref{thm:fragmentation}]
-Let $M_\Omega < \infty$ and let $\Phi: \mathcal{I} \to \mathcal{E}$ satisfy E0--E2 and Hypothesis~\ref{hyp:phi-paper2}.
-
-\textbf{Step 1.} By definition of $M_\Omega$, there exists $\{\delta E_t\}$ with $E_w < \infty$ such that $d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0$.
-
-\textbf{Step 2.} Let $x = (x_t)_t \in \mathcal{I}$ and let $\tilde{x} = (\tilde{x}_t)_t \in \tilde{\mathcal{I}}$ be the corresponding perturbed trajectory.
-
-\textbf{Step 3.} By E2, $\Phi(x)$ is not determined by any finite $x_t$. Therefore, the perturbation of the infinite trajectory induces a perturbation of the phenomenological assignment:
-\begin{equation}
-    \Phi(x) \neq \Phi(\tilde{x}) \text{ in general}.
-\end{equation}
-
-\textbf{Step 4.} By E1, $\Phi$ is projectively compatible. The deformed projections are compared through the corresponding value of the limit assignment.
-
-\textbf{Step 5.} By Hypothesis~\ref{hyp:phi-paper2}, there exists $C > 0$ such that:
-\begin{equation}
-    d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) \geq C \cdot d_w(x, \tilde{x}).
-\end{equation}
-
-\textbf{Step 6.} Since $d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0$, we have $d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) > 0$.
-
-Hence $\Phi$ is fragmentable.
+Use the specified common space $Z$, map $F$ and finite-cost transport $h_\varepsilon$. Let $x$ be its positive-displacement witness and put $\delta=d_Z(x,h_\varepsilon x)>0$. Apply the lower bound on that same common domain to obtain readout displacement at least $C\delta$. No comparison of set distances is substituted for this pointwise distance. If both readouts are estimated with errors at most $\eta$, the triangle inequality gives estimated separation at least $C\delta-2\eta$; it remains positive when $C\delta>2\eta$. This is a bound on pair separation, not a statement that a particular endpoint lies outside a null ball.
 \end{proof}
 
 \subsection{Proof of Forced Continuity Theorem (Extended)}
 
 \begin{proof}[Full Proof of Theorem~\ref{thm:forced-continuity}]
-Let $M_\Omega = +\infty$ and let $\Phi: \mathcal{I} \to \mathcal{E}$ satisfy E0--E2.
-
-\textbf{Step 1.} By definition of CCR, for all $\{\delta E_t\}$ with $E_w < \infty$:
-\begin{equation}
-    d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0.
-\end{equation}
-
-\textbf{Step 2.} Therefore, $\tilde{\mathcal{I}} \cong \mathcal{I}$ under all finite-energy perturbations.
-
-\textbf{Step 3.} By E1, $\Phi$ is projectively compatible with $\mathcal{I}$. Since $\mathcal{I}$ is invariant:
-\begin{equation}
-    \Phi(x) = \tilde{\Phi}(\tilde{x}) \quad \forall x \in \mathcal{I}.
-\end{equation}
-
-\textbf{Step 4.} This implies:
-\begin{equation}
-    d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) = 0.
-\end{equation}
-
-\textbf{Step 5.} No finite-energy perturbation can induce phenomenological deformation. Hence $\Phi$ is structurally continuous and invariant.
+For a state $x$ and error $\epsilon>0$, choose $n$ with $2A_n<\epsilon/2$. Continuity of $g_n$ gives a neighborhood of $x$ where $d_{\mathcal E}(g_n(x),g_n(y))<\epsilon/2$. The two tail errors and the finite-readout difference bound the limiting difference by $\epsilon$. Independently, a zero-displacement comparison satisfies $F(h_\varepsilon x)=F(x)$ exactly. Setwise invariance of the identity object alone would not imply either of these steps.
 \end{proof}
 
 \subsection{Structural Necessity Lemma}
 
-\begin{lemma}[Phenomenology Inherits Rigidity]
-If $\Phi: \mathcal{I} \to \mathcal{E}$ satisfies E0--E2 and $M_\Omega = +\infty$, then $\Phi$ inherits the rigidity of $\mathcal{I}$.
+\begin{lemma}[Inheritance under Audited Fixed Transport]
+An assignment satisfying the zero-displacement comparison branch inherits invariance under that declared intervention class. This applies to CCR realizations only after checking that branch.
 \end{lemma}
 
 \begin{proof}
-By E1, $\Phi$ is determined by identity trajectories. By CCR, identity trajectories are invariant. Hence $\Phi$ is invariant.
+The comparison readout is the restriction of $F$, and every specified transport fixes its argument. Therefore its value is unchanged. This proves the restricted inheritance statement without assuming that scalar rigidity determines arbitrary assignments.
 \end{proof}
 
 % ============================================================================

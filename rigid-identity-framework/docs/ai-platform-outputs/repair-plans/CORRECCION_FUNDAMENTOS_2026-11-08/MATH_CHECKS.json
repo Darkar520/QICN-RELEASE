@@ -1,0 +1,332 @@
+{
+  "scope": "Synthetic mathematical regression controls, not universal proofs or external validation",
+  "checks": 64,
+  "passed": 64,
+  "results": [
+    {
+      "name": "zero increments preserve identity",
+      "passed": true,
+      "detail": "The old zero-factor bound fails on two distinct interior states."
+    },
+    {
+      "name": "positive increments may expand",
+      "passed": true,
+      "detail": "Positive resonance with no dissipative feedback is not automatically contractive."
+    },
+    {
+      "name": "directed star norm N=3",
+      "passed": true,
+      "detail": "Incoming degree alone underestimates the Euclidean norm; the row/column bound is sharp here."
+    },
+    {
+      "name": "directed star norm N=7",
+      "passed": true,
+      "detail": "Incoming degree alone underestimates the Euclidean norm; the row/column bound is sharp here."
+    },
+    {
+      "name": "directed star norm N=16",
+      "passed": true,
+      "detail": "Incoming degree alone underestimates the Euclidean norm; the row/column bound is sharp here."
+    },
+    {
+      "name": "exact cell variance N=1",
+      "passed": true,
+      "detail": "1/192"
+    },
+    {
+      "name": "exact fixed point N=1 u=0",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "iteration reaches oracle N=1 u=0",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=1 u=1/8",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "iteration reaches oracle N=1 u=1/8",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=1 u=1/4",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "iteration reaches oracle N=1 u=1/4",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact cell variance N=2",
+      "passed": true,
+      "detail": "1/768"
+    },
+    {
+      "name": "exact fixed point N=2 u=0",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=2 u=0",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=2 u=0",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=2 u=1/8",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=2 u=1/8",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=2 u=1/8",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=2 u=1/4",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=2 u=1/4",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=2 u=1/4",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact cell variance N=3",
+      "passed": true,
+      "detail": "1/1728"
+    },
+    {
+      "name": "exact fixed point N=3 u=0",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=3 u=0",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=3 u=0",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=3 u=1/8",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=3 u=1/8",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=3 u=1/8",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=3 u=1/4",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=3 u=1/4",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=3 u=1/4",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact cell variance N=7",
+      "passed": true,
+      "detail": "1/9408"
+    },
+    {
+      "name": "exact fixed point N=7 u=0",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=7 u=0",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=7 u=0",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=7 u=1/8",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=7 u=1/8",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=7 u=1/8",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=7 u=1/4",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=7 u=1/4",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=7 u=1/4",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact cell variance N=16",
+      "passed": true,
+      "detail": "1/49152"
+    },
+    {
+      "name": "exact fixed point N=16 u=0",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=16 u=0",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=16 u=0",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=16 u=1/8",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=16 u=1/8",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=16 u=1/8",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "exact fixed point N=16 u=1/4",
+      "passed": true,
+      "detail": "Rational substitution in the finite transition, including the range condition."
+    },
+    {
+      "name": "finite noncollapse N=16 u=1/4",
+      "passed": true,
+      "detail": "Distinct cell averages produce distinct equilibrium coordinates."
+    },
+    {
+      "name": "iteration reaches oracle N=16 u=1/4",
+      "passed": true,
+      "detail": "Finite regression from an alternating initial state; oracle is the exact fixed-point formula."
+    },
+    {
+      "name": "uniform noncollapse distance",
+      "passed": true,
+      "detail": "Exact squared L2 distance of s/4 plus any constant from the constant subspace."
+    },
+    {
+      "name": "parameter sensitivity attains bound",
+      "passed": true,
+      "detail": "Equilibrium shift equals input shift divided by 1-kappa."
+    },
+    {
+      "name": "directed dissipative bound finite regression",
+      "passed": true,
+      "detail": {
+        "seed": 20261108,
+        "pairs": 300,
+        "bound": 0.2565685424949238,
+        "maximum_observed_ratio": 0.20185100898176486
+      }
+    },
+    {
+      "name": "fixed-point perturbation denominator",
+      "passed": true,
+      "detail": "For identical kappa and a constant forcing perturbation, the exact equilibrium difference is delta/(1-kappa)."
+    },
+    {
+      "name": "trajectory perturbation geometric bound",
+      "passed": true,
+      "detail": "Exact eight-step recursion, including the zero initial discrepancy case."
+    },
+    {
+      "name": "zero kappa convention",
+      "passed": true,
+      "detail": "At kappa=0 the error is bounded by one-step discrepancy after the first step."
+    },
+    {
+      "name": "uniform consistency negative control N=1",
+      "passed": true,
+      "detail": "Even T=kappa*Id admits no vanishing uniform cell-average error on the entire cube of L2 functions."
+    },
+    {
+      "name": "uniform consistency negative control N=3",
+      "passed": true,
+      "detail": "Even T=kappa*Id admits no vanishing uniform cell-average error on the entire cube of L2 functions."
+    },
+    {
+      "name": "uniform consistency negative control N=16",
+      "passed": true,
+      "detail": "Even T=kappa*Id admits no vanishing uniform cell-average error on the entire cube of L2 functions."
+    },
+    {
+      "name": "H1-H4 collapse witness",
+      "passed": true,
+      "detail": "The unique fixed point of f -> f/2 is the constant zero function; see source for the universal proof."
+    },
+    {
+      "name": "complete-codomain lower-Lipschitz counterexample",
+      "passed": true,
+      "detail": "x^3 at x=0.01,y=0 violates proposed lower constant C=0.01; the source proves failure for every C>0."
+    },
+    {
+      "name": "compactness control preserves uniform continuity",
+      "passed": true,
+      "detail": "Gamma(u)=u is 1-Lipschitz on noncompact R; its equilibrium image remains noncompact."
+    }
+  ]
+}

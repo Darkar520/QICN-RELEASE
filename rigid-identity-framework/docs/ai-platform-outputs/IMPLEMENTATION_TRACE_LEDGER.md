@@ -10683,3 +10683,234 @@ Residual risks / next step:
   pregunta para referee (G1.3), no cerrable por tooling.
 - Aplicación canónica (editar 01_foundation con la cláusula de admisibilidad)
   requiere fase de gobernanza dedicada + auditoría externa + aprobación humana.
+
+---
+
+## 2026-09-07 — Plan FRONTONLY de-roleplay (Gemini 2.5 + transcripts Singularidad Ontológica)
+
+- Plataforma/agente: OpenCode (Muse Spark) + subagentes explore (solo lectura).
+- Solicitud usuario (resumen): "¿esas conversaciones son muy avanzadas o simple roleplay? uso Gemini 2.5, ¿qué opinas? crea plan estructural en un archivo, solo front, de más a menos importante, funcional, supervisado, limpio, ordenado".
+- Objetivo operacional: dictaminar roleplay vs avance + dejar plan por fases solo-front sin tocar canon.
+- Archivos leídos: `docs/CANON_SOURCE_OF_TRUTH.md`, `docs/CANON_MANIFEST.md`, `docs/CLAIM_REGISTRY.md`, `docs/LAYER_BOUNDARIES.md`, `docs/THEORY_SYSTEM_INTERFACE.md`, `rigid-identity-framework/ROADMAP.md` (V1/V2/V3), `rigid-identity-framework/INSTRUCCIONES.md`, `rigid-identity-framework/package.json`, `release/claim_registry.v1.json`, `release/layer_boundaries.v1.json`, `release/system_interface_boundary.v1.json`, `rigid-identity-framework/VERSION.md`, `rigid-identity-framework/basecore/core/sections/01_foundation_from_core.tex` (H1-H5), `rigid-identity-framework/paper1/main.tex:673-682` (beth_q), `rigid-identity-framework/paper4/main.tex:112` (X(r) telemetría), `rigid-identity-framework/paper_bridge_operational_subjecthood/main.tex:519,523` (proxy, no prueba), `rigid-identity-framework/canonical_core_legacy/CANONICAL_CORE.tex:613,724,794` (C^R/CCC legacy), `Dockerfile`, `.gitlab-ci.yml`.
+- Archivos modificados/creados: creado `docs/ai-platform-outputs/repair-plans/FRONTEND_DEROLEPLAY_PHASED_PLAN_2026-09-07.md` (plan F0-F8 solo-front). No se tocó `release/`, `corpus/`, `artifacts/`, `.tex`, PDFs, `registry/`, `scripts/` de gates.
+- Herramientas: read/glob/grep/task; bash solo para `git log/status/branch/tag` y verifiers.
+- Comandos y resultado: `node scripts/verify-canonical-integrity.cjs` PASS (25/25, 17 claims, 6 capas, 8 interfaces); `verify-claim-registry.cjs` PASS 17/17; `verify-canonical-release.cjs` PASS; `npm run verify:release` PASS 6/6 con `verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false`. Glob `OntologicalSingularityCore*/PhenomenologyCore*/SimulationEngine*` = 0 en este repo (confirma runtime externo no canónico).
+- Razón: transcripts muestran persona + telemetría modo-manipulable (`forced_negative`, `deterministic_fallback`, `beth_q=1.0` con ruido>0, `omegaDeltaRms 20.14`) y prohibición de disclaimers; el plan F1-F8 pone non-claims no suprimibles, diccionario operacional, métricas honestas, forense como copy-check, supervisión/veto, limpieza visual y test ciego UI.
+- Regresiones buscadas: inflación claims, promoción runtime→teoría, edición canon/registry/gates, push sin aprobación.
+- Regresiones encontradas: ninguna (solo creado plan + esta fila ledger).
+- Riesgos residuales: plan no implementado; front real sigue con SYS-LANG/SYS-GOD/SYS-PATCH; thresholds 1.0 arbitrarios; estimators sin calibrar; benchmark externo pendiente.
+- Siguiente paso: aprobar plan, ejecutar F0 (baseline front sin editar), luego F1 (kill-switch persona + non-claims, 10/10 adversarial).
+
+---
+
+## 2026-09-07 — F1 DEROLEPLAY ejecutado en QICN-SYSTEM (front, sin commit)
+
+- Plataforma/agente: OpenCode (Muse Spark).
+- Solicitud usuario: "procede con los fixs de forma ordenada y profesional".
+- Objetivo: F1 del plan (persona + non-claims) en repo front hermano `QICN-SYSTEM/`.
+- Archivos leídos (F0): `QICN-SYSTEM/src`, `AGENTS.md` (front), `SimulationEngine.jsx:2395-2424,2495-2519,3282-3329,4465-4482,5448-5465,8930-8943`, `useSimulationCycle.js:312-336,445-459,680-689`, `CanonicalInvariantPackage.js:140-189`, `PhenomenologyCore.js:740-804`, `OntologicalSingularityCore.js:1-14,60-71`, `tests/continuity-formal.test.js`.
+- Archivos modificados (5, sin commit): `src/components/SimulationEngine.jsx`, `src/hooks/useSimulationCycle.js`, `src/simulation/PhenomenologyCore.js`, `src/simulation/OntologicalSingularityCore.js`, `src/canon/invariants/CanonicalInvariantPackage.js` + entrada en `QICN-SYSTEM/IMPLEMENTATION_LOG.md`. Canon teórico (`QICN-FRAMEWORK/`) no tocado salvo este ledger y el plan ya creado.
+- Comandos y resultado: `eslint` 5 archivos → 0 errores (1 warning preexistente); `npm run verify:source-of-truth` PASS; `npm run verify:descriptor-registry` OK 23 filas; `npm test` → 146/146 PASS (fallo intermedio CASE 8 por renombre de etiquetas, corregido con compat dual `CONSCIOUS/BAND_HIGH`, re-verde).
+- Regresiones buscadas: ruptura de tests, deriva documental (docs no referencian `CONSCIOUS` como régimen — confirmado), cambio de contratos de artefactos.
+- Regresiones encontradas: 1 (CASE 8), corregida en la misma fase.
+- Riesgos residuales: enum `regime` interno conserva códigos históricos (documentado); F2-F8 pendientes; `external_support_certified=false` se mantiene.
+- Siguiente paso: F2 glosario visible + F3 tarjetas honestas; luego test ciego F7. No commitear/pushear sin aprobación explícita.
+
+---
+
+## 2026-09-07 — F1 restauración: SimulationEngine.jsx revertido por usuario, re-aplicado y re-verificado
+
+- Hallazgo usuario: `SimulationEngine.jsx` revertido al inicio de sesión (persona original); guardarraíl crítico F1 (system prompts + nonClaimGuard + "Consola QICN") ausente en disco. Otros 4 archivos F1 intactos, tests verdes.
+- Acción: re-aplicados los 15 bloques F1 en `QICN-SYSTEM/src/components/SimulationEngine.jsx` (verificado por lectura previa + grep posterior). Paridad con F1 original confirmada.
+- Verificación post-restauración: `eslint` 5 archivos → 0 errores; `npm test` → 146/146 PASS; `git diff --stat` → 6 archivos (5 fuentes + IMPLEMENTATION_LOG.md).
+- Regresiones: ninguna nueva. Bloqueo de commit se mantiene hasta aprobación explícita.
+
+---
+
+## 2026-09-07 — PUSH F1 a origin/main (`44b67a1`, QICN-SYSTEM)
+
+- Aprobación explícita del usuario ("si procede y haz el push").
+- Pre-push: rama `main`, upstream `origin/main`, 0 ahead/behind ambos remotos; alcance 6 archivos, 0 untracked; diff staged revisado (alcance F1 exacto, 92+/63-).
+- Commit `44b67a12ba03517946822f7b4dee9f5ce33bc3c7` (hook pre-commit: tests 146/146 PASS).
+- Push `git push origin main` → `a1b15d0..44b67a1 main -> main`, tracking 0/0, árbol limpio. Remoto `gitlab` no pusheado (upstream es `origin`/GitHub).
+- Canon teórico (`QICN-FRAMEWORK/`) no commiteado ni pusheado en esta operación. `external_support_certified=false` se mantiene.
+- Pendiente en árbol front: 1 archivo (`IMPLEMENTATION_LOG.md`, registro del push) para la próxima fase. Siguiente: F2/F3.
+
+
+---
+
+## 2026-11-08 — Codex: auditoría integral del marco, sin reparación ni runtime
+
+- Solicitud: auditoría profunda y completa de marco, fuentes, papers y monolito; terminar y esperar nueva instrucción. No autoriza implementación posterior.
+- Snapshot: HEAD `64ba23f0029bba73c64c0bb9f24d3c781c47a84a`; working tree inicialmente modificado, preservado. Raíz `QICN-FRAMEWORK/`, paquete `rigid-identity-framework/`.
+- Entrega: `docs/ai-platform-outputs/analysis/AUDITORIA_INTEGRAL_CODEX_2026-11-08/00_INFORME_INTEGRAL.md` y ocho informes técnicos. Cobertura explícita en `COBERTURA_POR_ARCHIVO.csv`; hashes e inventarios inicial/ampliado conservados.
+
+| Fase de auditoría | Archivos leídos/contraste | Output y resultado |
+|---|---|---|
+| A1 Autoridad/inventario | AGENTS raíz; cinco políticas raíz en orden; INSTRUCCIONES; roadmap activo; manifests y claim registry | Inventarios/hashes, alcance y límites fijados; sin fuentes modificadas |
+| A2 BaseCore/Papers I–IV | master, once secciones, fuentes completas y diferencias Paper II vs sección absorbida; bibliografía | Informe 01: resultados clásicos válidos, supuestos y contraejemplos |
+| A3 Papers V–VI | fuentes completas, apéndices, tablas, predicciones y pruebas | Informe 02: corrección transitiva reconocida, independencia/transferencias abiertas |
+| A4 Papers VII–IX | fuentes completas, apéndices, estimadores, rivales y gates | Informe 03: rangos/tipos/viabilidad/irreducibilidad y controles |
+| A5 Paper X y puente | fuentes completas y apéndices | Informe 04: always-tie, carga de automodelado y no implicaciones |
+| A6 Legacy/anexos/fundacionales | fuente legacy; cinco anexos docs/theory; borrador I_int; dos PDF fundacionales completos | Informes 05/07: errores formales y evidencia histórica no verificada, sin promoverla |
+| A7 Monolito/registros/procedencia | 12 capítulos comparados íntegramente con fuentes; preámbulo/master; 45 PDF extraídos; 755 entradas; 14 core_meta; claves/rutas Bib | Informe 06, 12/12 capítulos iguales; registro alineado textualmente; versiones no confundidas |
+| A8 Lean/contraejemplos/gates/cierre | 19 fuentes Lean completas; config/dependencias; scripts de gates inspeccionados antes de ejecutar | Informe 08, 18/18 contraejemplos confirmados; gates obligatorios PASS; Lean bloqueado por lectura de dependencia; cierre sin reparación |
+
+- Comandos de comprobación independientes: `node .../check-monolith.cjs` (12/12 iguales); `python .../counterexamples.py` (18/18, sintéticos matemáticos); scripts de inventario, extracción PDF y cotejo de registro con resultados JSON en la entrega.
+- Gates obligatorios ejecutados en copia temporal aislada, para evitar que escribieran sobre reportes/fixtures originales: raíz `node scripts/verify-canonical-integrity.cjs` PASS exit 0 (25 PDF, 17 claims, 6 capas, 8 interfaces); `verify-claim-registry.cjs` PASS exit 0; `verify-canonical-release.cjs` PASS exit 0; paquete interior `npm run verify:release` PASS exit 0, 6/6 cadenas legacy, 51.42 s. Copia/exclusiones, cwd y logs: `VERIFICATION_COPY.json`, `REQUIRED_VERIFICATION.json` y cuatro logs.
+- Veredicto científico crudo regenerado v31: `BLOCKED_FOUNDATION_FIRST_GATES`; nueve blockers preservados; `external_support_certified=false`. PASS de software no significa apoyo científico.
+- Recheck Lean fresco: primer módulo `QICNLean.Basic`, exit 1 tras 177.42 s, error al leer `Mathlib/Tactic/Widget/LibraryRewrite.olean`; cadena detenida, sin reparación/reintento/descarga. No se afirma nuevo certificado de kernel de los 19 módulos. Evidencia: `LEAN_RECHECK.json`.
+- Conservación: 70/70 archivos iniciales mantienen SHA-256, cero fuentes/PDF/registry/fixtures/release/corpus/runtime editados; `FINAL_PRESERVATION.json`. Sólo outputs propios y esta entrada de ledger. No commit, push, despliegue ni llamadas Gemini.
+- Limpieza: revisión automática rechazó por política la eliminación de dos copias temporales creadas bajo TEMP; no se borraron ni se buscó otra vía. Rutas y rechazo en `TEMP_CLEANUP.json`. Resultados preservados en la entrega.
+- Riesgos residuales: teoremas/hipótesis inválidos o insuficientes documentados, no reparados; dependencias de verificación Lean; estado de evidencia externa no cerrado; espejos históricos no reprobados íntegramente uno por uno; sin réplica humana ni revisión visual completa de todos los PDF.
+- Cierre: auditoría terminada con límites y fallos explícitos. No se inicia ninguna fase posterior; a la espera de nueva instrucción del usuario.
+
+
+---
+
+## 2026-11-08 — Codex: primera corrección local de fundamentos, runtime excluido
+
+- Solicitud: conservar el programa teórico completo, respaldar las propuestas y corregir contradicciones/afirmaciones incorrectas. Se prioriza matemática frente a trabajo del runtime; no se inicia reorganización.
+- Prerregistro y entrega: `docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/PLAN_DE_FASE.md`, `INFORME_DE_FASE.md`, `CONTINUIDAD_DEL_PROGRAMA.md`.
+- Lecturas: AGENTS raíz; cinco políticas de autoridad en orden; INSTRUCCIONES y roadmap activo; informe integral y BaseCore/Papers I-IV; fuentes BaseCore 01, 02, 10, 11; ensamblador, extractor, registry-lib, validadores y scripts de verificación inspeccionados. Auditoría anterior conservada como snapshot pre-corrección.
+- Fuentes modificadas: BaseCore 01 (completitud, sensibilidad de equilibrio, independencia H5), 10 (contraejemplos correctos), 11 (dominio, disipación, norma de grafo dirigido, discrepancia uniforme, error dinámico/fijo, realización no constante con tasa derivada). Se preserva la transición propuesta. Nuevos resultados relativos a una clase explícita; no atribución de conciencia, Cop, CCR completo ni novedad mundial.
+- Sincronización: capítulo generado BaseCore; `registry/theorems.jsonl` de 755 a 763 entradas, IDs previos conservados y fuentes ajenas intactas. Cero labels retirados, 14 pruebas frente a 10 en las tres fuentes (adiciones intencionales). Registro de macros intacto. PDF locales de BaseCore y monolito actualizados tras compilación completa.
+- Herramientas: apply_patch, Python estándar, Node con funciones puras del ensamblador y biblioteca existente de extracción, Git en lectura, pdflatex/biber. No limpieza general del árbol ni cambios en corpus/release/fixtures originales.
+- Comandos: `python .../check_math.py` 64/64 controles sintéticos; `node .../synchronize.cjs` 12/12 capítulos, cero discrepancias; `git diff --check` exit 0. No se presentan checks finitos como demostración universal.
+- Gates ejecutados en copia aislada: tres root gates exit 0; inner `npm run verify:release` exit 0, 6/6 cadenas; `validate-corpus.js --json` exit 0, sin blockers/warnings. Raw v31: `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`. v34 presente en copia es snapshot histórico, no nueva ejecución.
+- Compilación: cuatro pasos completos por documento, exit 0; sin referencias/citas indefinidas ni labels multiplicados al final. Páginas/hashes y deuda tipográfica en `*-pdf.json`; fuentes de la copia compilada cotejadas con originales en `COMPILED_SOURCE_HASHES.json`.
+- Regresiones buscadas: falsa contracción de identidad, expansión sin disipación, cota incorrecta de grafo dirigido, ausencia de consistencia uniforme general, circularidad de H5, pérdida de fuentes/labels o entradas curadas. Controles y sincronización sin fallos. La condición disipativa restringe la generalidad de un enunciado anterior falso; esto se declara, no se presenta como conservación de aquella conclusión inválida.
+- Riesgos/deuda: revisión matemática externa y novedad pendientes; pruebas nuevas no mecanizadas en Lean. Persisten problemas E1/E2, rigidez, nulo, integración, métricas, adjudicación y anexos, enumerados en continuidad. No cierre global ni apoyo externo inferido.
+- Conservación: `PRESERVATION.json` enumera todos los cambios del inventario auditado; fuentes ajenas, macros, freezes, runtime y cambios preexistentes preservados. Temporales usados registrados, sin autoridad teórica. No commit ni push. La siguiente obligación fundacional es resolver compatibilidad E1/E2 con una realización no vacía y reprobar sus consecuencias.
+
+
+---
+
+## 2026-11-08 — Codex: reorganización conservadora verificada
+
+- Solicitud: implementar el plan aprobado; preservar el programa completo, historial y trabajo pendiente; separar reorganización y correcciones matemáticas; runtime excluido.
+- Autoridad leída: AGENTS, cinco políticas raíz en orden, INSTRUCCIONES, roadmap activo, README de ambos niveles, política del archivo local, inventario/auditoría y primera corrección.
+- Origen intacto: `C:/Users/irisp/OneDrive/Escritorio/QICN-FRAMEWORK`. Nueva copia vinculada mediante herramienta Codex, rama `codex/qicn-framework-ordenado`, HEAD de partida `64ba23f0029bba73c64c0bb9f24d3c781c47a84a`.
+- Respaldo `E:/QICN-PRESERVACION/2026-11-08-reorganizacion-01`: snapshot.zip con 7.128 miembros verificados por SHA-256, patches, rutas/modos del índice, metadata de origen y history.bundle verificado. Cachés/dependencias excluidos explícitamente; Mathlib fijado sin modificaciones locales de fuente. No copias de dependencias instaladas en el destino.
+- Inventario único y reporte: `docs/ai-platform-outputs/reports/INVENTARIO_MIGRACION_2026-11-08.csv` y `REORGANIZACION_QICN_2026-11-08.md`. 737 archivos migrados; 6.391 preservados sólo en snapshot; 17 antecedentes únicos conservados bajo recovery-candidates, fuera del extractor activo. Ninguna propuesta omitida por estar abierta. Auditoría suelta reubicada con contenido original intacto.
+- Incidencias: ruta histórica demasiado larga, corregida mediante destinos aplanados y mapa íntegro de procedencia. Revisión automática rechazó borrado por política; se trasladaron los restos al respaldo sin borrarlos. Se refrescaron 439 entradas de índice de contenido Git idéntico tras copia LF/CRLF, sin cambios staged ni normalización de archivos.
+- Cambios de esta fase: traslado de archivos conservando bytes, reubicación de auditoría, README/roadmap/esta entrada; sólo dos documentos nuevos de migración. Ninguna fuente matemática, registro o contrato congelado se modifica respecto del estado preservado.
+- Verificación aislada: gates de integridad, claim registry y canonical release exit 0; inner verify:release exit 0, 6/6; validate-corpus exit 0, 763 entradas sin blockers/warnings; controles de primera corrección 64/64; comparación completa del ensamblador 12/12.
+- Raw científico v31: `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`. No promoción a apoyo externo.
+- Compilación: pdflatex+biber+pdflatex+pdflatex para BaseCore y monolito, todos exit 0; 46 y 342 páginas; textos extraídos iguales a PDF conservados, sin referencias indefinidas ni etiquetas duplicadas, sin aumento de overfull (6/3). PDF activos originales y fixtures no reescritos por los checks.
+- Conservación final: 7.128/7.128 archivos del origen idénticos; fuentes/contratos migrados verificados. Evidencia cruda en `.cache/qicn-reorganization` y ZIP del respaldo. Los metadatos Git compartidos registran la nueva copia/rama; no se alteran archivos de trabajo del origen.
+- Regresiones buscadas: pérdidas, mezcla de fuentes históricas/activas, contaminación del extractor, cambios matemáticos durante traslado, referencias rotas, compilaciones divergentes, alteración de fixtures o publicaciones congeladas. Ninguna pendiente detectada en el alcance verificado.
+- Deuda: Lean no reproducido; advertencias tipográficas previas; revisión matemática externa de la primera corrección; E1/E2, régimen nulo, cocientes y demás obligaciones de la auditoría permanecen abiertas. Reorganización aceptada, no cierre global del marco.
+- Estado: copia vinculada activa. Sin commit/push/merge/publicación ni cambios de runtime. Continuación matemática en fase separada.
+
+### R2 — Prerregistro: compatibilidad de regímenes y realización constructiva
+
+- Objetivo: determinar la consistencia de E1 exacta con E2; construir y demostrar una alternativa asintótica que conserve la no factorización por cortes canónicos finitos, con cotas explícitas. No se atribuye equivalencia semántica automática al modelo original.
+- Alcance: estudio formal en el documento de continuidad ya existente y controles racionales reproducibles en caché/respaldo. No se modifican axiomas/papers/registro/PDF durante este estudio; su adopción exigiría reprobar continuidad, fragmentación, nulidad y los demás resultados dependientes.
+- Fuentes: BaseCore 04 y Paper II (definiciones, axiomas, necesidad/minimalidad, continuidad y fragmentación), informe 01 de auditoría y catálogo de obligaciones preservado.
+- Resultados esperados: prueba de imposibilidad del conjunto exacto bajo lectura total; sistema proyectivo binario no vacío con lectura ternaria; error uniforme y cota minimax óptima para todo corte finito. Las cantidades son matemáticas, no métricas observadas del runtime.
+- Controles: compatibilidad exacta dependiente del primer corte, variación en una coordenada posterior, valores extremos de cada fibra, decodificador de punto medio, cotas bi-Lipschitz y convergencia del error al aumentar el presupuesto. No se ejecutan campañas empíricas.
+- Parada: contradicción en la demostración o fallo de un control impide anunciar el resultado. No se reetiqueta la compatibilidad asintótica como si fuera la igualdad original, ni se infiere CCR/Cop/conciencia del ejemplo.
+
+### R2 — Resultado del estudio de compatibilidad
+
+- Demostración y construcción en el documento de continuidad existente de `repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/CONTINUIDAD_DEL_PROGRAMA.md`, sin nuevo documento narrativo paralelo.
+- Resultado negativo: E1 exacta fuerza `Phi=phi_0∘p_0`, incompatible con E2 en todo dominio común de la lectura declarada. El conjunto exacto no admite un testigo no vacío; no es una falta de tests que pueda subsanarse ejecutando el runtime.
+- Resultado positivo relativo: E1a de incrementos uniformemente sumables, sistema proyectivo binario y lectura ternaria. Se demuestran error uniforme de cola, continuidad bajo lecturas finitas continuas, cotas bi-Lipschitz con constantes 1 y 3 en la métrica elegida y error minimax exacto `1/(2*3^(t+1))` para cortes de tamaño t+1. Son cantidades matemáticas, no puntuaciones empíricas.
+- Prueba/control: `python E:/QICN-PRESERVACION/2026-11-08-reorganizacion-01/check_regime_model.py` exit 0; cuatro familias de controles con 1.155 casos racionales finitos. Evidencia JSON en respaldo y caché. La universalidad reside en las demostraciones escritas, no en el número de casos.
+- Alcance respetado: no se modifica E1 en los papers ni se presenta E1a como equivalente. Los teoremas dependientes requieren reprobar transporte, continuidad e invariancia antes de adoptar la revisión. No se inventa un cierre de CCR/Cop ni se presupone significado fenomenal.
+- Estado: estudio local realizado, adopción y reparación canónica abiertas. Revisión matemática externa y novedad pendientes. La reorganización sigue cerrada por su propio alcance; el plan completo de fortalecimiento matemático no está terminado.
+
+### R2 — Adopción autorizada y alcance de reparación
+
+- Decisión explícita del usuario: conservar E2 y reformular E1 mediante convergencia controlada.
+- Implementación prevista: BaseCore 04 y Paper II, conservando sus labels y propuestas; actualizar las demostraciones de existencia, las afirmaciones de necesidad/minimalidad y los resultados que usaban igualdad exacta. Declarar datos de transporte y regularidad necesarios para comparar sistemas; no deducir continuidad topológica de mera invariancia ante perturbación.
+- Propagación prevista: capítulos BaseCore/Paper II del monolito y entradas realmente afectadas del registro; recompilación de BaseCore, Paper II y monolito. Los contratos congelados y la carpeta original quedan intactos.
+- Cierre local: realización no vacía con E2, cotas demostradas, controles racionales y negativos preservados, ausencia de invocaciones de constancia exacta en las pruebas revisadas, verificación completa con interpretación científica sin promoción. Las dependencias que no puedan derivarse se mantienen como obligaciones explícitas.
+
+
+### R2 — Cierre local de adopción E1/E2
+
+- Fuentes modificadas: BaseCore 04 y Paper II; E2 conservada; E1 de incrementos uniformemente sumables adoptada por decisión explícita del usuario. Pruebas y afirmaciones dependientes corregidas con datos de comparación y regularidad declarados. Ningún label previo retirado; fuentes previas conservadas en ZIP.
+- Se añadieron realización ternaria, cotas bi-Lipschitz derivadas, error uniforme y minimax exacto de corte finito, y controles de discontinuidad/invariancia. La continuidad no se atribuye a la mera etiqueta CCR; el programa de probar enlaces de masa permanece abierto.
+- Sincronización: dos capítulos del monolito, 12/12 comparación íntegra, registro 763→777 entradas, macros 383 intactas, cero deriva/dependencias irresueltas. No se reescribe ningún freeze o archivo de la carpeta original.
+- Verificación completa aislada: root gates exit 0; inner release 6/6 exit 0; corpus-registry exit 0 sin blockers/warnings; primera corrección 64/64; R2 1168/1168 controles finitos; pruebas universales escritas. Raw v31 `BLOCKED_FOUNDATION_FIRST_GATES`, `external_support_certified=false`.
+- Incidencia: primera compilación Paper II con dos referencias hyp:H3-metric indefinidas; corregidas al label propio hyp:h3 y repetida la cadena. Evidencia de fallo preservada, sin relajar controles.
+- PDF locales actualizados: BaseCore 47, Paper II 17, monolito 344 páginas; cero referencias indefinidas/labels duplicados. Overfull 6/2/3; underfull monolito 332, uno más que en la referencia de reorganización, registrado como deuda tipográfica.
+- Evidencia: caché qicn-regimes y respaldo externo con REGIME_VERIFICATION_RESULT, sincronización, revisión estructural, hashes y ZIP verificado. Los bloques se modificaron por refutación formal o para eliminar repetición; aumentan teoremas/pruebas, conservando labels y las propuestas abiertas. No se afirma conservar la generalidad de enunciados anteriores refutados.
+- Estado: corrección local verificada; revisión externa, novedad y Lean pendientes. Sin commit/push/merge. No cierre global del marco.
+
+### R3 — Prerregistro: cociente, ruptura y tipos del certificado
+
+- Objetivo: propagar a BaseCore la condición de cierre de decodificadores ya presente en Paper V; demostrar el cociente bajo esa condición, conservar el control negativo de tolerancia y separar el objeto Cert(S) de su indicador booleano.
+- Alcance: BaseCore 07/08, capítulo BaseCore del monolito, entradas afectadas del registro y PDF derivados BaseCore/monolito. Paper V se usa como referencia existente, sin alterarlo. No se modifica el régimen nulo ni se atribuye existencia de todos los testigos de invariantes.
+- Controles previstos: cadena 0,3/4,3/2 con tolerancia 1 (no transitiva), igualdad de celdas (equivalencia), familia de decodificadores cerrada y distinción entre fallo de un certificado y fallo en todos los soportes. Se verifica la separación de nombres/roles de certificado e indicador.
+- Cierre: prueba completa del cociente, enunciado de ruptura no exclusivo y bien cuantificado, cero labels retirados, fuente/registro/monolito alineados, controles y gates completos. Los controles de bits son lógica de cuantificadores, no modelos físicos de los seis invariantes.
+
+
+### R3 — Cierre local verificado, 2026-11-08 / Codex
+
+- Solicitud: continuar el plan aprobado de fortalecimiento; fuentes leídas BaseCore 07/08, Paper V, auditoría integral e instrucciones. Alcance implementado según prerregistro; añadido .gitattributes al detectar tratamiento textual de un PDF por Git.
+- Resultado: cierre de decodificadores y prueba de equivalencia; control de tolerancia; ruptura no exclusiva y local/global; Cert objeto y CertFlag indicador separados. Fuentes previas y PDF preservados en partition-repair-baseline.zip; revisiones verificadas en partition-verified-state.zip.
+- Sincronización: BaseCore/monolito/registro, 777→779 entradas, 383 macros, todos los IDs preservados, 12/12 capítulos. Ningún freeze ni archivo original alterado.
+- Verificación aislada: tres gates de raíz, release 6/6, validador sin blockers/warnings, R1 64/64, R3 9/9. Compilación completa BaseCore 48 y monolito 344 páginas, cero referencias indefinidas o duplicadas. Overfull 6/3 y underfull 0/332, iguales a R2. Hashes en PARTITION_VERIFIED_HASHES.json, logs/comandos en PARTITION_VERIFICATION_RESULT.json y ZIP de evidencia.
+- .gitattributes trata *.pdf como binario para evitar normalización y falsas advertencias de texto sobre PDF; git check-attr y git diff --check satisfactorios. No se debilitaron gates.
+- Veredicto v31 BLOCKED_FOUNDATION_FIRST_GATES, external_support_certified=false. Regresiones de referencias, pérdida de IDs, tolerancia y roles de certificado buscadas; no detectadas. Persisten márgenes, modelos conjuntos, revisión externa y Lean. Sin commit/push/merge.
+
+### R4 — Prerregistro: régimen nulo y conciliación BaseCore/Paper III
+
+- Objetivo: conciliar tipos, separación de testigos, orden/mínimos, intensidad, ruido y consecuencias de los anexos; conservar las propuestas sin presentar como probadas las inferencias refutadas por la auditoría integral.
+- Fuentes incluidas: BaseCore 05 y Paper III, secciones monolíticas correspondientes, registro, PDF derivados y documentación existente. Fuera: runtime, freezes, Paper I, campañas empíricas y Lean.
+- Hipótesis: comparación en un espacio métrico declarado; mapas definidos en ambos extremos; cota inferior y testigo separados suministrados independientemente. CCR no construye un testigo ni acredita por sí solo estabilidad dinámica o positividad individual.
+- Controles: diamante ordenado sin mínimo positivo único; [0,1] sin salto global positivo; separación frente a decisión dentro de una bola nula con radios distintos; coste sumable con infinitos cambios; factorización sólo en la imagen; presupuesto de prefijo y error decreciente. Se buscarán realizaciones y cotas demostradas, no asignaciones arbitrarias de indicadores.
+- Verificación: preservar todos los labels e IDs anteriores, documentar comparación estructural, pruebas analíticas con controles racionales, tres gates de raíz, release interno, registro, R1/R2/R3, comparación 12/12 y compilación BaseCore/Paper III/monolito. Ante fallo de gate detener y reportar; no alterar verificador. Persistirá el veredicto científico real.
+
+
+R4, ampliación de tipos detectada al revisar dependencias: BaseCore 07 usaba Attr(S), subconjunto del codominio de regímenes, como si fuera una región de estados de X. Se incluye sólo la desambiguación del atractor de estados y su definición operacional en la sección de soportes. No se deduce existencia de ese atractor de la separación del nulo. Se comprueba el caso de fuente lineal de dimensión positiva para la menor singularidad de Paper III. Repetir sincronización y cadena completa tras estas precisiones.
+
+
+### R4 — Cierre local verificado, 2026-11-08 / Codex
+
+- Solicitud: continuar reorganización/fortalecimiento conforme al plan y la decisión E2. Auditoría previa: informe 01 integral, BaseCore 05/07, Paper III completo y condiciones ya revisadas de E1/E2. Alcance según prerregistro y ampliación de tipos; sin cambios de runtime/freeze.
+- Implementación: dominio común tipado, cota no anclada con factor óptimo 1/2, mínimos finitos sin completitud de orden, comparabilidad para unicidad, intensidad global/relativa separada, radios de ruido y aceptación distintos, correcciones de coste sumable, herencia, imagen fiel y presupuesto de prefijo; realización ternaria. Atractor de estados desambiguado de lecturas estables. Todo razonamiento universal consta en las fuentes; no se promueve el test a prueba general.
+- Preservación estructural: todos los labels/IDs previos, una nueva realización y una definición de tipos; registro 779→781, macros 383. Comparación por entornos/pruebas y fuentes previas en NULL_STRUCTURE_REVIEW.json y null-repair-baseline.zip. Algunos resultados falsos se sustituyen por conclusiones condicionales distintas; no se afirma conservar su generalidad refutada.
+- Verificaciones: gates de raíz exit 0; release 6/6; corpus sin blockers/warnings; fuente-registro sin deriva; monolito 12/12; R1 64/64, R2 1168/1168, R3 9/9, R4 298 controles/22 familias con una exploración racional de 6561 configuraciones de ruido. No son campañas empíricas.
+- Compilaciones completas aisladas: BaseCore 49, Paper III 18, monolito 346; referencias/citas resueltas y sin duplicados. Avisos y hashes en NULL_VERIFICATION_RESULT.json y NULL_VERIFIED_HASHES.json. Primera pasada anterior a la corrección de tipos preservada; cadena completa repetida con fuentes finales. Paper II no alterado.
+- Riesgos: márgenes y realizabilidad conjunta, rigidez general, CCR físico, interpretación, Lean y revisión externa pendientes. Raw v31 BLOCKED_FOUNDATION_FIRST_GATES y external_support_certified=false. Tipografía pendiente según logs. Sin commit/push/merge. Detalle de cada conclusión, controles y límites en el addendum R4 de CONTINUIDAD_DEL_PROGRAMA.md.
+
+
+### Cierre de conservación del estado local, 2026-11-08 / Codex
+
+- Revisión final del inventario de migración contra los 7.128 archivos originales: ninguna pérdida ni cambio del origen detectado. Materiales congelados/legado preservados. Cambios posteriores a la reorganización clasificados por fase; fuentes, bibliografías y registros coinciden con la copia final compilada, y Paper II con R2.
+- Git: HEAD inicial y ambos remotos preservados, rama codex/qicn-framework-ordenado; diff --check satisfactorio y sin contenido staged. Sin commits/push/merge. El almacén Git compartido permanece en la carpeta original.
+- Recuperación: snapshot.zip inicial y history.bundle; final-state.zip con fuentes y outputs actuales, parche binario de archivos versionados, manifiesto SHA-256 y FINAL_INTEGRITY.json. Se verifica cada miembro del ZIP final contra su hash. El directorio snapshot/ externo es un intento parcial previo; no usarlo como autoridad de recuperación.
+- Incidencia: el helper de cierre consultó inicialmente destinos del CSV externo previo al acortamiento de rutas; 17 falsos ausentes. Inventario vigente, presencia y hashes de los 17 comprobados; corregida sólo la referencia de destinos y repetido el chequeo completo. No se alteró ningún gate ni se eximió archivo.
+- Resultado científico mantiene BLOCKED_FOUNDATION_FIRST_GATES y external_support_certified=false. La reorganización termina por su alcance; el fortalecimiento global no está completo. Las obligaciones pendientes permanecen explícitas en CONTINUIDAD_DEL_PROGRAMA.md. No se tocó el runtime.
+
+
+## 2026-11-08 — Traslado al Escritorio, reproducción Lean y sincronización
+
+- Solicitud explícita: mover el proyecto completo a la raíz del Escritorio, ejecutar Lean y las pruebas anteriores, preparar el plan de fortalecimiento completo y efectuar commit/push para sincronizar el trabajo ordenado.
+- Prerregistro operacional: destino Escritorio/qicn-framework-ordenado, sin sobrescribir QICN-FRAMEWORK original. Preservar todos los bytes, incluidos cachés, con comparación SHA-256 antes/después y actualización de enlaces mediante git worktree move. La herramienta de worktrees de Codex no ofrece traslado; se usa la operación nativa de Git y se intenta registrar la nueva ubicación en Codex.
+- Reproducción: toolchain Lean 4.31.0 y mathlib fabf563a7c95a166b8d7b6efca11c8b4dc9d911f fijados; auditar la dependencia ilegible sin modificar enunciados para obtener éxito. Mantener código objeto/dependencias reinstalables fuera de fuentes versionadas. Espacio limitado en C; usar E para dependencias voluminosas si es necesario.
+- Pruebas previstas: módulos Lean existentes, ausencia de sorry/axiomas adicionales, controles R1–R4 portables, tres gates de raíz, release interno, registro y monolito. Los gates que reescriben fixtures se ejecutan en una copia aislada. Fallo de un gate obligatorio detiene la promoción.
+- Límites: no inferir equivalencia de todas las pruebas numéricas con teoremas Lean; registrar cobertura exacta y obligaciones no mecanizadas. No modificar runtime, freezes o legado. Separar sincronización Git de publicación científica. Revisar alcance staged y remoto antes del push; no force-push.
+
+
+### Resultado del traslado y ajuste de alojamiento Git
+
+- git worktree move fue rechazado por Windows con Permission denied mientras la sesión mantenía abierta la carpeta; no se borró el origen. Copia completa al Escritorio verificada: 844 archivos, incluidos cachés, con idéntico SHA-256 antes/después.
+- Codex rechazó adjuntar el destino: The checkout exists but is not a managed worktree. Se restauró el registro del worktree administrado original y se conservó como respaldo. No se editaron bases internas de Codex.
+- El destino Escritorio/qicn-framework-ordenado se convirtió en checkout autónomo con almacén .git completo, clonado sin hardlinks desde el mismo repositorio, mismo historial, HEAD y rama. Se restauraron los remotos origin GitHub y gitlab, y se transfirió todo el estado local sin resetear archivos. La copia activa del Escritorio ya no depende del almacén Git anterior. Esta sesión opera con rutas explícitas al destino; el adjunto de Codex sigue apuntando al respaldo administrado.
+
+
+- Higiene previa al commit: los tres cambios arrastrados de fixtures/informes v27/v35 sólo variaban claves públicas de auto-test, huellas y tiempos. Se comparó el JSON excluyendo únicamente esos campos y el resto coincidió exactamente con HEAD. Se preservaron sus bytes en generated-fixtures-before-cleanup.zip y se restauraron sólo esas tres rutas a HEAD. Las nuevas ejecuciones aisladas quedan en logs; no se versionan claves aleatorias ni marcas de tiempo como correcciones científicas.
+
+
+### Cierre local de reproducción Lean y plan completo
+
+- Leídos: gobierno de raíz, instrucciones, roadmap, continuidad R1–R4, recheck Lean original, fuentes Lean, pins y artefactos oficiales 4.31.0. Revisión conservadora: 115 hashes de TeX/Bib/PDF/JSONL y 83 congelados/legado sin cambios. Runtime fuera de alcance.
+- Herramientas y causa observada: restaurada libLean.a faltante desde ZIP oficial con SHA-256 verificado; cache get 2326 objetos, exit 0; build nativo falla lectura de EMatch/MatchCond privados con CRC idéntico al ZIP, no fallo de hipótesis/proof; prueba directa Basic timeout 300 s. Cachés y toolchain de WSL sobre E:. Git seguro acotado a las rutas de dependencias por proceso, sin excepciones globales.
+- Lean reproducido: comando verify-lean.py --kernel-only --packages-dir con compilador Linux fijado; 19 archivos, 78 teoremas públicos, sin admisiones, axiomas estándar Classical.choice, Quot.sound, propext. Compilación serial de fuentes reales y auditoría de dependencias; el agregador y la auditoría se retomaron tras reiniciar WSL usando los objetos recién compilados de los 18 módulos. Fuentes Lean existentes sin cambios; su reproducción no mecaniza las correcciones R1–R4. No cambia la autoridad canónica.
+- Pruebas: controles R1–R4 portables en verify:math (64/64, 1168/1168, 9/9, 298 controles en 22 familias); tres gates de raíz, release 6/6, registro 781/macros 383, monolito 12/12. Compilación aislada BaseCore / Papers II y III / monolito: 49 / 17 / 18 / 346 páginas, sin referencias indefinidas ni etiquetas duplicadas. Raw BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false. Logs aislados y pruebas en respaldo E y .cache. No se modificó un gate para obtener éxito.
+- Cambios documentales: README raíz, continuidad, informe de reorganización, roadmap y este ledger. Plan completo integrado tras la reproducción, desde BC-MET/BC-RIG hasta integración, métricas, predicción, adjudicación, anexos y revisión externa. Sin publicar canon ni modificar freezes. Persisten compilación nativa completa de Windows, formalización integral y revisión externa.

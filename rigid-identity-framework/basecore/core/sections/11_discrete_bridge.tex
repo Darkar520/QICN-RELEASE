@@ -4,7 +4,7 @@
 \noindent\textbf{Boundary of this bridge.}\enspace This part states a conditional approximation theorem between a finite node-network transition and the abstract BaseCore transition operator from Definition~\ref{def:transition}. It does not prove that any particular runtime execution belongs to an operational-consciousness class, and it does not convert finite tests into external validation.
 
 \begin{definition}[Discrete State Space]
-Let $N\in\mathbb{N}$ and let a node network be indexed by $i\in\{1,\dots,N\}$. Each node carries:
+Let $N\geq1$ and let a node network be indexed by $i\in\{1,\dots,N\}$. Each node carries:
 \begin{itemize}[leftmargin=*]
 \item a local coherence state $x_i(t)\in[0,1]$;
 \item an energy coordinate $e_i(t)\in[0,1]$;
@@ -57,9 +57,15 @@ Then $J_N$ is an isometry from $(\Hilb_N,\norm{\cdot}_N)$ into $L^2([0,1])$. Its
 \end{definition}
 
 \begin{definition}[Discrete Transition Operator]
-Fix auxiliary energy and phase coordinates $(e_i)_i$ and $(\phi_i)_i$, a graph with incoming neighborhoods $\operatorname{conn}(i)$, and a control $u\in\U$. Let $d_N:=\max_i|\operatorname{conn}(i)|$. The coherence-coordinate transition
+Fix auxiliary energy and phase coordinates $(e_i)_i$ and $(\phi_i)_i$, a graph with incoming neighborhoods $\operatorname{conn}(i)$, and a control $u\in\U$. Write
 \[
-\widehat T_{N,u}^{e,\phi}:\Hilb_N\to\Hilb_N
+C_N=[0,1]^N,\qquad
+d_N^{\rm in}=\max_i|\operatorname{conn}(i)|,\qquad
+d_N^{\rm out}=\max_j|\{i:j\in\operatorname{conn}(i)\}|.
+\]
+The coherence-coordinate transition
+\[
+\widehat T_{N,u}^{e,\phi}:C_N\to C_N
 \]
 is defined componentwise by
 \[
@@ -78,7 +84,7 @@ I_j(x_j)
 \frac{\exp(-|e_i-e_j|/(kT))}
 {\theta\cos(\phi_i-\phi_j)}.
 \]
-Here $I_j:[0,1]\to[0,1]$ is the intensity readout, $B_i$ is the finite retro-inductive feedback term, $\Gamma_N(u)$ is the finite input coupling, and $k,T,\theta,\eta,\alpha$ are runtime parameters.
+Here $I_j:[0,1]\to[0,1]$ is the intensity readout, $B_i$ is a feedback term, $\Gamma_N(u)$ is the finite input coupling, and $k,T,\theta>0$, $\eta,\alpha\geq0$ are parameters. Energy and phase are frozen in this operator; contractivity of this coordinate map does not establish contractivity of a coupled energy--phase evolution.
 \end{definition}
 
 \begin{assumption}[Discrete Regularity Conditions]\label{ass:discrete-regularity}
@@ -86,94 +92,175 @@ For a fixed parameter region, assume:
 \begin{enumerate}[leftmargin=*]
 \item $I_j$ is $L_I$-Lipschitz for every node $j$.
 \item The phase denominator is uniformly separated from zero: there exists $c_\phi>0$ such that $|\cos(\phi_i-\phi_j)|\ge c_\phi$ on every active edge.
-\item $B:\Hilb_N\to\Hilb_N$ is $L_B$-Lipschitz.
+\item There exist $\beta>0$ and an $L_D$-Lipschitz map $D:C_N\to\Hilb_N$ such that $B(\mathbf{x})=-\beta\mathbf{x}+D(\mathbf{x})$.
 \item $\Gamma_N(u)$ is independent of $\mathbf{x}$ for fixed $u$.
 \item The parameters satisfy
 \[
-\rho_N:=\eta\,d_N\,L_I\,\frac{\exp(1/(kT))}{\theta c_\phi}+\alpha L_B<1.
+L_R:=\frac{L_I\sqrt{d_N^{\rm in}d_N^{\rm out}}}{\theta c_\phi},
+\qquad
+\rho_N:=|1-\alpha\beta|+\eta L_R+\alpha L_D<1.
 \]
 \end{enumerate}
 \end{assumption}
 
 \begin{remark}[Relation to the runtime guard]
-The runtime resonance function sets the contribution to zero when the denominator is numerically singular or when the Boltzmann exponent is beyond the accepted range. Assumption~\ref{ass:discrete-regularity} is the mathematical version of that guard: without a lower bound on $|\cos(\phi_i-\phi_j)|$, the resonance quotient is not uniformly Lipschitz and no contraction theorem follows from $\theta>1/2$ alone.
+A denominator guard can ensure that the quotient is defined on a parameter region. It does not establish the dissipative feedback condition or contractivity. On the stated energy domain and for $kT>0$, the exponential coefficient is at most $1$. The conditions above are sufficient, not necessary; a specified feedback must be checked against them.
 \end{remark}
 
+\begin{lemma}[Directed Resonance Bound]\label{lem:directed-resonance-bound}
+Under the first two regularity conditions, $R$ is $L_R$-Lipschitz in the normalized Hilbert norm.
+\end{lemma}
+
+\begin{proof}
+Let $a_{ij}$ be the energy--phase coefficient on an active edge and zero otherwise, and put $W=(|a_{ij}|)$. Componentwise,
+\[
+|R_i(\mathbf{x})-R_i(\mathbf{y})|
+\leq L_I\sum_j W_{ij}|x_j-y_j|.
+\]
+The row and column sums of $W$ are bounded by $d_N^{\rm in}/(\theta c_\phi)$ and $d_N^{\rm out}/(\theta c_\phi)$. The matrix inequality $\norm{W}_2\leq\sqrt{\norm{W}_1\norm{W}_\infty}$ therefore gives the result. Multiplying both vector norms by $N^{-1/2}$ leaves the matrix bound unchanged. A bound on incoming degree alone does not control this norm for directed graphs.
+\end{proof}
+
 \begin{theorem}[Discrete Operator Contractivity]\label{thm:discrete-contraction}
-Under Assumption~\ref{ass:discrete-regularity}, for fixed $u,e,\phi$ the operator $\widehat T_{N,u}^{e,\phi}$ is a strict contraction on $\Hilb_N$:
+Under Assumption~\ref{ass:discrete-regularity}, for fixed $u,e,\phi$ the operator $\widehat T_{N,u}^{e,\phi}$ is a strict contraction on the complete set $C_N$:
 \[
 \norm{\widehat T_{N,u}^{e,\phi}(\mathbf{x})-\widehat T_{N,u}^{e,\phi}(\mathbf{y})}_N
 \le
 \rho_N\norm{\mathbf{x}-\mathbf{y}}_N
 \qquad
-\forall \mathbf{x},\mathbf{y}\in\Hilb_N.
+\forall \mathbf{x},\mathbf{y}\in C_N.
 \]
+It has a unique fixed point in $C_N$, and every iterate starting there converges to it.
 \end{theorem}
 
 \begin{proof}
-The clamp map on $[0,1]^N$ is non-expansive componentwise. For each active edge, the energy-phase coefficient is bounded in absolute value by
+The expression before clamping is
 \[
-\frac{\exp(1/(kT))}{\theta c_\phi}.
+(1-\alpha\beta)\mathbf{x}+\eta R(\mathbf{x})+\alpha D(\mathbf{x})+\Gamma_N(u).
 \]
-Since each $I_j$ is $L_I$-Lipschitz and each row has at most $d_N$ incoming edges, the resonance part has Lipschitz constant at most
-\[
-d_N L_I\frac{\exp(1/(kT))}{\theta c_\phi}
-\]
-in the normalized finite Hilbert norm. The feedback part contributes at most $\alpha L_B$, and the input coupling contributes no state-dependent term. Multiplying by $\eta$ and using non-expansiveness of the clamp gives the displayed bound. The assumed inequality $\rho_N<1$ makes the contraction strict.
+Subtract its values at two states, use Lemma~\ref{lem:directed-resonance-bound} and the Lipschitz bound for $D$, and apply non-expansiveness of the coordinate clamp. This gives the stated factor $|1-\alpha\beta|+\eta L_R+\alpha L_D$. The input cancels because $u$ is fixed. The cube is nonempty, closed and complete, and the clamp maps into it, so Banach's theorem applies.
 \end{proof}
 
+\begin{example}[Zero-Increment Negative Control]\label{ex:discrete-identity-control}
+If $R=B=\Gamma_N=0$, the written transition is the identity on $C_N$ and has Lipschitz constant $1$ for $N\geq1$. It is not a strict contraction. In a decomposition $B=-\beta\operatorname{Id}+D$, one has $D=\beta\operatorname{Id}$, so $|1-\alpha\beta|+\alpha\beta\geq1$ and the sufficient conditions correctly reject it. Lipschitz regularity of increments alone cannot remove the identity term.
+\end{example}
+
 \begin{assumption}[Bridge Consistency]\label{ass:bridge-consistency}
-Let $T_u=\aleph(K\cdot+\Gamma(u))$ be the BaseCore transition operator from Definition~\ref{def:transition} on $\Hilb=L^2([0,1])$. Assume there are constants $C_1,C_2>0$ and a parameter approximation regime such that
+Let $T_u=\aleph(K\cdot+\Gamma(u))$ be the BaseCore transition on $\Hilb=L^2([0,1])$, with $\kappa:=\norm{K}<1$. Define the closed invariant-domain candidate
 \[
-\norm{J_N\widehat T_{N,u}^{e,\phi}J_N^\dagger-T_u}_{\operatorname{op}}
-\le
-\eps_N,
+C=\{f\in L^2([0,1]):0\leq f\leq1\text{ almost everywhere}\}.
 \]
-with
+Assume $T_u(C)\subseteq C$ and let $F_{N,u}=J_N\widehat T_{N,u}^{e,\phi}J_N^\dagger:C\to C$. There is a stated nonnegative bound $\eps_N$ such that
 \[
-\eps_N=
-\frac{C_1}{\sqrt{N}}+
-C_2\max\{0,\rho_N-\norm{K}\}.
+\sup_{f\in C}\norm{F_{N,u}(f)-T_u(f)}_{\Hilb}\leq\eps_N.
 \]
-This is a finite-rank consistency assumption, not a consequence of H1--H5 alone.
+This is a discrepancy between nonlinear maps on a specified domain, not a linear operator norm. Its validity and any claimed rate must be proved for the discretization under consideration; H1--H5 alone do not provide a quadrature rate.
 \end{assumption}
 
 \begin{theorem}[Hilbert--Discrete Bridge]\label{thm:bridge}
-Assume Hypotheses~\ref{hyp:H1}--\ref{hyp:H4}, Assumptions~\ref{ass:discrete-regularity} and~\ref{ass:bridge-consistency}, and $\rho_N<1$. Then the embedded finite transition approximates the abstract BaseCore transition by
+Assume Hypotheses~\ref{hyp:H1}--\ref{hyp:H4} and Assumptions~\ref{ass:discrete-regularity} and~\ref{ass:bridge-consistency}. For $f_0\in C$ and $\mathbf{x}_0\in C_N$, set $f_{n+1}=T_u(f_n)$ and $\mathbf{x}_{n+1}=\widehat T_{N,u}^{e,\phi}(\mathbf{x}_n)$ with fixed $u,e,\phi$. Then, for every $n\geq0$,
 \[
-\norm{J_N\widehat T_{N,u}^{e,\phi}J_N^\dagger-T_u}_{\operatorname{op}}
-\le
-\frac{C_1}{\sqrt{N}}+
-C_2\max\{0,\rho_N-\norm{K}\}.
+\norm{J_N\mathbf{x}_n-f_n}_{\Hilb}
+\leq\kappa^n\norm{J_N\mathbf{x}_0-f_0}_{\Hilb}
++\eps_N\frac{1-\kappa^n}{1-\kappa}.
 \]
-In particular, if $N\to\infty$, the Galerkin/quadrature term tends to zero, and the discrete parameter regime is chosen so that $\limsup_N\rho_N\le\norm{K}$, then the finite transition converges to $T_u$ in operator norm.
+The convention $\kappa^0=1$ applies also at $\kappa=0$. If $\eps_N\to0$, the transition maps converge uniformly on $C$.
 \end{theorem}
 
 \begin{proof}
-The displayed estimate is exactly Assumption~\ref{ass:bridge-consistency}. The convergence statement follows because $C_1/\sqrt{N}\to0$ and the second term vanishes under $\limsup_N\rho_N\le\norm{K}$. The theorem is therefore a bridge theorem under explicit discretization consistency, not an unconditional runtime-instantiation result.
+Since $J_N^\dagger J_N=\operatorname{Id}$, $J_N\mathbf{x}_{n+1}=F_{N,u}(J_N\mathbf{x}_n)$. Insert $T_u(J_N\mathbf{x}_n)$, apply the uniform discrepancy and contractivity of $T_u$, and obtain $d_{n+1}\leq\eps_N+\kappa d_n$. Induction gives the geometric-sum bound. Uniform convergence is the definition of the discrepancy bound with $\eps_N\to0$.
 \end{proof}
 
 \begin{corollary}[Convergence of Fixed Points]\label{cor:bridge-fixed-points}
-Let $f_u^\ast$ be the unique fixed point of $T_u$ from Theorem~\ref{thm:fixedpoint}. Let $\widehat f_{N,u}^\ast$ be the unique fixed point of $\widehat T_{N,u}^{e,\phi}$ from Theorem~\ref{thm:discrete-contraction}. If the assumptions of Theorem~\ref{thm:bridge} hold and
-\[
-q_N:=\max\{\norm{K},\rho_N\}<1,
-\]
-then
+Let $f_u^\ast$ and $\widehat f_{N,u}^\ast$ be the unique fixed points of $T_u$ and $\widehat T_{N,u}^{e,\phi}$. Under the assumptions of Theorem~\ref{thm:bridge},
 \[
 \norm{J_N\widehat f_{N,u}^\ast-f_u^\ast}_{\Hilb}
 \le
-\frac{\eps_N}{1-q_N}.
+\frac{\eps_N}{1-\kappa}.
 \]
-Consequently, if $\eps_N\to0$ and $\sup_N q_N<1$, then
+Consequently, for a fixed $\kappa<1$, if $\eps_N\to0$, then
 \[
 \lim_{N\to\infty}\norm{J_N\widehat f_{N,u}^\ast-f_u^\ast}_{\Hilb}=0.
 \]
 \end{corollary}
 
 \begin{proof}
-This is the standard perturbation bound for fixed points of strict contractions. Insert and subtract $T_u(J_N\widehat f_{N,u}^\ast)$, use the operator discrepancy bound from Theorem~\ref{thm:bridge}, and then use the contraction constant of $T_u$ from Theorem~\ref{thm:contraction}. Moving the contraction term to the left gives the stated estimate.
+Invariance of $C$ and completeness give $f_u^\ast\in C$. Write $g_N=J_N\widehat f_{N,u}^\ast\in C$. Then $F_{N,u}(g_N)=g_N$ and
+\[
+\norm{g_N-f_u^\ast}\leq\eps_N+\kappa\norm{g_N-f_u^\ast}.
+\]
+Rearrange. No uniform gap for the discrete contraction constants $\rho_N$ is needed for this estimate; each finite fixed point must exist, and the continuum factor $\kappa$ supplies the denominator.
 \end{proof}
 
+\begin{lemma}[Cell-Average Error for a Lipschitz Profile]\label{lem:cell-average-error}
+Let $a:[0,1]\to\mathbb{R}$ be $L_a$-Lipschitz and put $P_N=J_NJ_N^\dagger$. Then
+\[
+\norm{P_Na-a}_{L^2}\leq\frac{L_a}{\sqrt{12}\,N}.
+\]
+\end{lemma}
+
+\begin{proof}
+For a cell $I$ of length $h=1/N$ and its mean $\bar a_I$, the variance identity gives
+\[
+\int_I|a-\bar a_I|^2
+=\frac{1}{2h}\int_I\int_I|a(s)-a(t)|^2\,ds\,dt
+\leq\frac{L_a^2h^3}{12}.
+\]
+Sum over $N$ cells and take square roots. For an affine profile the bound is attained with $L_a$ equal to its absolute slope.
+\end{proof}
+
+\begin{theorem}[Realized Contractive Bridge with Nonconstant Equilibria]\label{thm:realized-nonconstant-bridge}
+Let $0<\kappa<1$, let $\U$ be a nonempty compact interval, and let a nonconstant Lipschitz profile $a:[0,1]\to\mathbb{R}$ satisfy
+\[
+0\leq a(s)+u\leq1-\kappa\qquad(s\in[0,1],\ u\in\U).
+\]
+Take $\I=C$, $Kf=\kappa\int_0^1f$, and $\Gamma(u)(s)=a(s)+u$. Let $a_{N,i}=N\int_{I_{N,i}}a$ and
+\[
+\widehat T_{N,u}(\mathbf{x})_i
+=\operatorname{clamp}_{[0,1]}\left(\kappa\frac1N\sum_jx_j+a_{N,i}+u\right).
+\]
+This finite transition has the original increment form: choose all $N$ nodes as incoming neighbors (including self-edges), $I_j(x_j)=x_j$, $e_i=\phi_i=0$, $k=T=1$, $\theta=N/\kappa$, $\eta=\alpha=\beta=1$, $D=0$, $B(\mathbf{x})=-\mathbf{x}$ and $\Gamma_{N,i}=a_{N,i}+u$. The assumptions of the discrete contraction and bridge theorems hold with $\rho_N=\kappa$ and
+\[
+\eps_N=\norm{P_Na-a}\leq\frac{L_a}{\sqrt{12}\,N}.
+\]
+Writing $\bar a=\int_0^1a$, the equilibria are
+\[
+f_u^\ast(s)=a(s)+u+\kappa\frac{\bar a+u}{1-\kappa},\qquad
+\widehat f_{N,u,i}^\ast=a_{N,i}+u+\kappa\frac{\bar a+u}{1-\kappa}.
+\]
+In particular, H1--H5 hold and
+\[
+\norm{J_N\widehat f_{N,u}^\ast-f_u^\ast}
+=\norm{P_Na-a}\leq\frac{L_a}{\sqrt{12}\,N},\qquad
+\dist(f_u^\ast,\mathcal N)=\norm{a-\bar a}>0.
+\]
+These conclusions hold simultaneously for every $u\in\U$.
+\end{theorem}
+
+\begin{proof}
+$C$ is nonempty, closed and convex in $L^2$, $\norm{K}=\kappa$, and $u\mapsto\Gamma(u)$ is Lipschitz on compact $\U$. The range condition makes the clamp inactive on $C$ and on $C_N$. The chosen graph has energy--phase coefficient $1/\theta=\kappa/N$ on each edge, so the increment $\mathbf{x}+R(\mathbf{x})+B(\mathbf{x})$ equals the constant vector $\kappa N^{-1}\sum_jx_j$. The contraction factor is therefore $\kappa$ in both spaces.
+
+Cell averaging preserves the mean. Consequently $F_{N,u}(f)-T_u(f)=P_Na-a$ for every $f\in C$, proving the uniform discrepancy and its rate by Lemma~\ref{lem:cell-average-error}. Averaging either fixed-point equation gives $m=\kappa m+\bar a+u$, hence $m=(\bar a+u)/(1-\kappa)$ and the displayed formulas. Their difference is exactly $P_Na-a$. The orthogonal projection of $f_u^\ast$ onto the constant subspace is its mean, leaving $a-\bar a$ as residual. A nonconstant continuous profile has positive residual norm. Thus no equilibrium is constant, and uniqueness excludes a constant fixed point: H5 follows for this class rather than being an additional assumption about it.
+\end{proof}
+
+\begin{example}[Explicit Common Witness]\label{ex:common-bridge-witness}
+Choose $\kappa=1/4$, $a(s)=s/4$ and $\U=[0,1/4]$. All preceding conditions hold. Directly,
+\[
+f_u^\ast(s)=\frac{s}{4}+\frac1{24}+\frac{4u}{3},\qquad
+\norm{J_N\widehat f_{N,u}^\ast-f_u^\ast}
+=\frac{1}{4\sqrt{12}\,N},\qquad
+\dist(f_u^\ast,\mathcal N)=\frac1{4\sqrt{12}}.
+\]
+For $N\geq2$ the finite equilibrium coordinates are also nonconstant. This is a mathematical realization of the projection dynamics, dissipative finite transition, consistency and non-collapse obligations together. It does not establish the inverse-limit non-finite-determination condition, the six operational invariants or a phenomenal bridge.
+\end{example}
+
+\begin{example}[Contractivity Alone Does Not Give Uniform Discretization]\label{ex:no-uniform-discretization}
+Let $T(f)=\kappa f$ on $C$, with $0<\kappa<1$, and $F_N(f)=\kappa P_Nf$. In each cell choose $f_N$ equal to $0$ on the first half and $1$ on the second. Then $P_Nf_N=1/2$ and
+\[
+\norm{F_N(f_N)-T(f_N)}=\kappa/2
+\]
+for every $N$. Thus even strict contractions need additional structure for a uniform approximation rate over all of $C$. The profile-based realization above supplies that structure explicitly.
+\end{example}
+
 \begin{remark}[Applicability to the Current QICN Runtime]\label{rem:bridge-applicability}
-The theorem is asymptotic and conditional. The current runtime configuration has $N_{\mathrm{sample}}=1500$ for heavy processing and connection count between $3$ and $8$, so a typical mean degree is about $5.5$. The full configured potential network size is $10{,}000{,}000$, but the certified finite computation uses the processing sample. Therefore the error bound is not negligible by declaration. It is a hypothesis-driven approximation bridge from finite node dynamics toward the BaseCore operator, not automatic validation of a finite execution and not evidence of phenomenality, subjecthood, or external adjudication.
+Application to any implementation requires identifying its actual state domain, coefficients, feedback, frozen or evolving auxiliary coordinates, and approximation error. Network size or mean degree alone cannot discharge these conditions. The realized family above is an explicit mathematical example; no assertion is made here that a current runtime implements it or satisfies its hypotheses.
 \end{remark}

@@ -9,21 +9,17 @@ For $\Psi = (0, 0)$, every point on $\I$ is equidistant. Projection is not uniqu
 
 \subsection{\texorpdfstring{Without H2 ($\norm{K} < 1$)}{Without H2 (norm K < 1)}}
 
-Let $K$ be a rotation by angle $\theta \neq 0$ with $\norm{K} = 1$.
+Take $\Hilb=\I=\mathbb R^2$, $\U=\{0\}$, $\Gamma(0)=0$ and let $K$ be rotation by $\pi/2$. The point $0$ is fixed, but every nonzero orbit cycles with period four and fails to converge. Thus removing strict contraction can destroy convergence even when a unique fixed point remains.
 
-Orbits cycle indefinitely; no fixed point exists.
+To obtain failure of existence as well, take $K=\operatorname{Id}$ and $\Gamma(0)=v\neq0$ on the same space. The equation $x=x+v$ has no solution. Both examples preserve H1, H3 and H4.
 
 \subsection{Without H3 (Completeness)}
 
-Let $\Hilb = C([0,1], \mathbb{Q})$ (rational-valued continuous functions).
-
-Cauchy sequences may converge to irrational functions outside the space.
+H1 already specifies a Hilbert space, so H3 cannot be removed independently while keeping H1 unchanged. To test the extension to a real inner-product space without completeness, take $c_{00}$, the real finite-support sequences with the $\ell^2$ norm, and $\I=c_{00}$. Let $S(x_1,x_2,\ldots)=(0,x_1,x_2,\ldots)$, $K=S/2$, $\U=\{0\}$ and $\Gamma(0)=e_1$. Projection onto $\I$ is the identity and $T(x)=Sx/2+e_1$ is a strict contraction. Its only possible fixed-point coordinates are $(1,1/2,1/4,\ldots)$, which do not belong to $c_{00}$. The iteration from zero is Cauchy but has no limit in the stated space. This isolates the completeness requirement for the generalized contraction argument.
 
 \subsection{Without H4 (Compactness)}
 
-Let $\U = (0, 1)$ (open interval) and $\Gamma(u) = 1/u$.
-
-As $u \to 0$, attractors escape to infinity; $\A^*$ is not compact.
+Take $\Hilb=\I=\mathbb R$, $K=0$, $\U=\mathbb R$ and $\Gamma(u)=u$. The input map is uniformly continuous, but the parameter space is not compact. Each transition has the unique fixed point $f_u^\ast=u$, and $\A^\ast=\mathbb R$ is not compact. Thus compactness of the parameter space cannot simply be dropped while retaining the stated compact-image conclusion. It is sufficient, not necessary, since some maps on noncompact parameter spaces have compact image.
 
 \subsection{\texorpdfstring{Why $\Phi$-Regularity Is a Hypothesis}{Why Phi-Regularity Is a Hypothesis}}\label{app:phi-regularity-counterexample}
 
@@ -42,6 +38,8 @@ Indeed, with $y=x+1$,
 \quad\text{as }x\to\infty,
 \]
 while $|x-y|=1$. Thus properness, local Lipschitz regularity, and non-collapse do not imply a global lower Lipschitz bound. Any theorem using such a bound must carry it as an explicit hypothesis or prove stronger coercive hypotheses.
+
+The same obstruction persists with a complete codomain: let $\mathcal I=\mathcal E=\mathbb R$ and $\Phi(x)=x^3$. This is a proper, locally Lipschitz, injective map between complete spaces and is nonconstant on every nonempty ball. If $|x^3-y^3|\geq C|x-y|$ held globally for $C>0$, choosing $y=0$ and $x=h\neq0$ would imply $h^2\geq C$ for all $h$, a contradiction as $h\to0$. Completeness of the codomain does not supply a positive lower Lipschitz constant.
 
 % =============================================================================
 % REFERENCES

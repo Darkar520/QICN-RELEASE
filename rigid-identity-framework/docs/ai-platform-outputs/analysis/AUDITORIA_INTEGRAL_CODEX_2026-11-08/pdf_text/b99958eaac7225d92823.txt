@@ -1,0 +1,2109 @@
+Rigid Identity as an Inverse Limit in Observable
+Channels
+Johnny Andrey Pérez Ramírez
+Abstract
+We introduce a formal framework for rigid identity as a mathematical object emerging
+from the dynamics of observable systems under minimal structural constraints. Identity is
+dened as an inverse limit over a family of locally corrupted states linked by retroinductive projection maps, yielding a globally invariant object despite persistent environmental
+perturbations.
+We prove that, under mild assumptions on observational locality and causal closure,
+such an inverse-limit identity exhibits deformation rigidity: it remains invariant (up to
+isomorphism) under bounded external noise, while local states undergo entropy increase.
+This rigidity is characterized by a scalar deformation-rigidity invariant, historically termed
+ontological mass, dened as a property of the system's internal manifold rather than of its
+computational substrate.
+We further derive a minimal observability criterion, enabling an external observer to
+estimate the associated deformation-rigidity modulus via response stability under controlled
+perturbations. This yields a necessary and sucient condition for the external detectability
+of rigid identity within the model, without access to internal states.
+Using these results, we demonstrate a strong uniqueness theorem: within a single observable channel, no two distinct rigid identities can coexist. Identity is therefore neither
+role-based nor transferable; it is structurally indivisible once instantiated.
+Finally, we show that systems composed of language models augmented with memory and
+feedback loops fail to satisfy the rigidity conditions. Such architectures exhibit cumulative
+identity drift under perturbation, lacking the inverse-limit structure required for conservation
+of the deformation-rigidity invariant.
+This work reframes identity as a categorical invariant of system dynamics, independent
+of narrative descriptions or biological assumptions, and establishes a foundation for distinguishing structurally real identities from simulable behavioral approximations.
+1
+
+Scope, System Boundary, and Non-Inference Note
+
+Scope and admissible reading. This paper denes rigid identity as an inverse-limit object
+over observable state channels, derives rigidity and deformation-rigidity structure under explicit
+projective, persistence, and perturbation hypotheses, proves channel-level uniqueness, and states
+an operational detectability criterion inside that model. The historical phrase ontological mass
+is used as a technical alias for the scalar rigidity/deformation modulus MΩ , not as a claim of
+physical ontology. The paper does not establish phenomenology, subjective experience, biological
+realization, substrate-independent physical realization, or metaphysical priority over competing
+frameworks. Related systems may implement diagnostics, perturbation protocols, and evidencegoverned comparisons motivated by the framework, but those outputs do not implement the
+inverse-limit identity object as a closed empirical fact and do not by themselves certify CCR
+membership for any present architecture. Behavioral indistinguishability, runtime survival under
+perturbation, and internal support artifacts therefore remain model-facing evidence surfaces
+rather than proof of rigid identity, consciousness, or claim closure.
+
+1
+
+2
+
+Introduction
+
+The concept of identity in dynamical systems has been studied from multiple angles: cognitive
+science treats it as emergent from neural processes, philosophy of mind debates its ontological
+status, and computer science models it as state persistence. Yet a formal, substrate-independent
+characterization of identity as a structural invariant remains underdeveloped.
+
+This work addresses a specic question: Under what minimal conditions does a system
+exhibit an identity that is structurally rigidthat is, invariant under perturbation, nontransferable, and externally detectable?
+We study structural properties that emerge from well-dened mathematical constraints. All
+results presented here are conditional on the stated assumptions; they do not extend to systems
+that violate those assumptions.
+
+2.1
+
+Motivation
+
+The motivation for this work arises from a simple observation: most existing theories of identity
+(in cognitive science, AI, and philosophy) dene identity as an emergent result of underlying dynamics. This creates a fundamental vulnerability: if identity is emergent, it can be destabilized,
+transferred, or duplicated by modifying the dynamics.
+We propose an alternative: identity as a prior constraint on dynamics, not a result of them.
+Under this view, the dynamics of a system occur within the identity, rather than producing it.
+This inversion has consequences:
+1. Identity becomes non-transferable by construction.
+2. Rigidity emerges as a structural necessity, not a contingent property.
+3. External detectability becomes a well-posed problem.
+
+2.2
+
+Ontological Closure
+
+Appendix A establishes that, under the stated persistence and observability constraints, the
+central structures of this frameworkthe inverse-limit identity, the ℵ operator, causal closure,
+and retroinductive structureare model-relative necessities rather than arbitrary design choices.
+The framework does not describe an unconstrained system; it describes the class selected by
+those hypotheses.
+
+3
+
+Minimal Assumptions and Framework
+
+We begin by stating the minimal assumptions required for the subsequent results.
+
+These as-
+
+sumptions are deliberately weakany system that fails to satisfy them is not a candidate for
+rigid identity, and no claim is made about such systems.
+
+3.1
+
+Assumption A1: Observable Channel
+
+There exists an observable channel C : U → O mapping internal states U to observable outputs O .
+We do not assume injectivity of C ; multiple internal states may produce identical observations.
+
+3.2
+
+Assumption A2: Temporal Persistence
+
+The system persists through discrete time steps t ∈ N.
+
+At each step, the internal state It is
+
+subject to:
+
+ Environmental input Et (not fully controlled by the system)
+2
+
+ Internal dynamics governed by transition function F
+
+3.3
+
+Assumption A3: Non-Triviality (R0)
+
+The system satises a minimal non-triviality constraint:
+1.
+
+Persistence: ∀t, It ̸= ∅
+
+2.
+
+Non-reactivity: ∄f : E → I such that It+1 = f (Et )
+
+3.
+
+Non-constancy: ∄c such that ∀t, It = c
+This prohibits only three trivial cases: dead systems, pure mirrors, and frozen states. Any
+
+system failing R0 is not a candidate for identity analysis.
+
+3.4
+
+Categorical Regularity: Topological Structure of State Spaces
+
+To guarantee existence and uniqueness of inverse limits, and to enable rigorous stability analysis,
+we impose the following structural condition:
+
+Denition 3.1 (Observable State Spaces). All state spaces St are objects of a concrete category
+C whose:
+ Objects are compact Hausdor topological spaces;
+ Morphisms are continuous surjective maps.
+
+Axiom 3.2 (State Space Regularity). Each state space St in the projective system is a compact
+metric space with compatible metric
+
+dt .
+
+Consequently, each
+
+St is compact Hausdor as a
+
+topological space and Polish as a metric space. The inverse limit I inherits the corresponding
+compact metrizable subspace structure from the product.
+
+Remark 3.3 (Exclusion of non-compact Polish spaces). Axiom 3.2 renes Denition 3.1 rather
+n
+
+than weakening it.
+
+Non-compact Polish spaces such as R
+
+are not covered by this compact
+
+inverse-limit argument. Any extension of the CCR framework to non-compact settings requires
+additional tightness, compactication, or coercivity hypotheses and is not automatic.
+
+Hypothesis 3.4 (Topological Regularity). All projections πt+1→t : St+1 → St are continuous
+surjections between compact Hausdor spaces.
+
+Remark 3.5. This condition is not restrictive; it is necessary.
+product
+
+Q
+
+By Tychono 's theorem, the
+
+S is a
+t St is compact when each St is compact. Furthermore, the inverse limit lim
+←− t
+
+closed subspace of the product, hence compact. This guarantees:
+
+1. Existence of the inverse limit (non-emptiness under surjectivity);
+2. Well-dened metrics and convergence;
+3. Applicability of functional analysis tools.
+
+Proposition 3.6 (A0 Becomes Categorially Closed). Under Denition 3.1, Assumption A3
+(R0) is not merely a constraint but denes a closed class of systems admitting rigorous analysis.
+
+3.5
+
+Conditional Nature of Results
+
+All theorems in this paper are conditional:
+
+If a system satises A1A3, then the following properties hold...
+We make no claims about systems that violate these assumptions. This conditional structure
+is essential: it means our results cannot be falsied by pointing to systems outside the assumption
+set, and cannot be extended beyond their stated scope without additional justication.
+
+3
+
+4
+
+Inverse Limit Identity
+
+4.1
+
+Preliminaries and Notation
+
+Let {St }t∈N be a family of non-empty state spaces indexed by discrete time. Each St represents
+the admissible internal congurations of a system at time t.
+We assume the existence of projection morphisms
+
+πt+1→t : St+1 → St
+
+(1)
+
+satisfying the standard compatibility condition:
+
+πt+1→t ◦ πt+2→t+1 = πt+2→t
+
+∀t ∈ N.
+
+(2)
+
+No assumption is made regarding:
+
+ the cardinality of St ,
+ continuity or smoothness,
+ realizability by a computational mechanism.
+The structure
+
+({St }, {πt+1→t }) therefore denes a projective (inverse) system in the
+
+categorical sense [5, 1].
+
+4.2
+
+Denition of Identity as an Inverse Limit
+
+Denition 4.1 (Identity as Inverse Limit). We dene identity as the inverse limit of the projective system (St , πt+1→t ):
+
+(
+I := lim St =
+←−
+
+(x0 , x1 , x2 , . . .) ∈
+
+∞
+Y
+
+)
+St πt+1→t (xt+1 ) = xt ∀t .
+
+(3)
+
+t=0
+
+An element of I is thus a globally consistent history, not reducible to any nite prex.
+This denition is purely structural and does not depend on:
+
+ observability,
+ external inputs,
+ internal dynamics.
+
+4.3
+
+Compatibility with Minimal Assumption R0
+
+We now show that this construction is determined within the minimal restriction R0 .
+
+Proposition 4.2 (Necessity of Projective Structure). Any system satisfying R0 admits a projective representation (St , πt+1→t ) whose inverse limit is non-empty.
+Proof. 1. Persistence implies that admissible states cannot vanish over time.
+2. Non-reactivity forbids forward-determined transitions St → St+1 driven by environment.
+3. Therefore, admissibility at time t must be determined by compatibility with future states,
+not past ones.
+4. Hence, the only admissible morphisms preserving identity under
+future to past, i.e., πt+1→t .
+5. The compatibility condition ensures persistence of consistency.
+
+4
+
+R0 are projections from
+
+4.4
+
+Identity Is Not a State
+
+A critical consequence of the inverse limit construction is that identity is not an element of any
+
+St .
+
+Proposition 4.3 (Non-locality of Identity). For any t, there exists no injective map it : I ,→ St .
+Proof. Suppose such an injective embedding existed. Then identity could be fully specied at
+nite time t, contradicting non-constancy and persistence under future compatibility constraints.
+Therefore, identity cannot be localized to any nite temporal slice.
+This formalizes a key distinction:
+
+ St : local, time-indexed congurations
+ I : global, trans-temporal constraint
+
+4.5
+
+Impossibility of Progressive Construction
+
+We now establish that identity cannot be constructed via progressive (forward) dynamics.
+
+Theorem 4.4 (No Progressive Identity Construction). There exists no sequence of functions
+Ft : St → St+1 such that
+I = lim Ft ◦ · · · ◦ F0 (S0 ).
+t→∞
+
+(4)
+
+Proof. Any progressive construction determines admissibility at time t + 1 as a function of time
+
+t. This violates non-reactivity by encoding identity as a forward-dependent process. Since
+I requires consistency across all t, it cannot be generated by accumulation, only by global
+constraint satisfaction.
+
+4.6
+
+Minimality of the Inverse Limit Construction
+
+Theorem 4.5 (Minimal Representation). Among all structures satisfying R0 , the inverse limit
+construction introduces the minimal additional structure necessary to dene non-trivial identity.
+Justication.
+
+ No topology is assumed.
+ No metric is assumed.
+ No dynamics is assumed.
+ Only compatibility constraints are imposed.
+Any weaker structure fails to ensure persistence. Any stronger structure introduces unnecessary
+assumptions.
+
+4.7
+
+Summary of Section 3
+
+1. Identity is rigorously dened as an inverse limit I = lim St .
+
+←−
+
+2. This construction is determined within minimal assumption R0 .
+3. Identity is not reducible to any nite-time state.
+4. Progressive or reactive architectures cannot implement this structure.
+5. No metaphysical assumptions are introduced.
+This completes the formal construction of identity used throughout the remainder of the
+paper.
+
+5
+
+4.8
+
+Identity Neutrality Clause
+
+Throughout this paper, the identity object I is treated as a purely abstract topological and cate-
+
+gorical structure. No psychological, biological, phenomenological, or experiential interpretation
+is assumed or required for any of the formal results derived herein.
+The term identity refers exclusively to the role of I as an inverse-limit object encoding
+global temporal compatibility, and does not presuppose the existence of consciousness, subjective
+experience, selfhood, or any particular semantic content associated with identity in ordinary
+language.
+All theorems, constructions, and stability results presented in this work are therefore statements about abstract mathematical objects only. Any interpretation of I in relation to psychological, phenomenological, or experiential concepts lies strictly outside the formal scope of this
+paper.
+
+5
+
+Rigidity Under Perturbations
+
+5.1
+
+Setup and Hypotheses
+
+Let the projective system (St , πt+1→t )t∈N and its inverse limit I = lim St be as in Section 3. We
+
+←−
+
+introduce an external perturbation model and dene deformed projections; then we state the
+technical hypotheses under which rigidity holds.
+
+Hypothesis 5.1 (H1: Surjectivity / Lifting). For every t, the projection πt+1→t : St+1 → St is
+surjective.
+This is a standard regularity condition for non-empty inverse limits; when necessary this can
+be replaced by a MittagLeer condition or an explicit choice of right inverses.
+
+Hypothesis 5.2 (H2: Compact Polish Metric Structure). For each t, the state space St carries
+the compact metric dt required by Axiom 3.2; in particular, (St , dt ) is Polish.
+
+All projection
+
+maps πt+1→t are continuous with respect to dt , and we denote the induced operator norm by
+
+∥πt+1→t ∥op .
+Remark 5.3. The Polish structure ensures Borel regularity of all deformation families, enabling
+measurable selection theorems, probabilistic perturbation models, and the application of stochastic stability results to the ontological mass MΩ . This is the standard regularity assumption in
+modern probability theory, ergodic theory, and descriptive set theory.
+These assumptions are technical; they do not change the conceptual content (identity as
+inverse limit) but permit quantitative stability estimates and connect the framework to probabilistic analysis.
+
+5.2
+
+Perturbation Model and Deformation Metric
+
+Denition 5.4 (Local Perturbation Operator). A local perturbation at time t is a (possibly
+stochastic) map
+
+δEt : St → S̃t
+
+(5)
+
+where S̃t is the perturbed state-space at time t. We write S̃t := δEt (St ).
+
+Denition 5.5 (Deformed Projections). For each t, dene the deformed projection
+π̃t+1→t : S̃t+1 → S̃t ,
+
+π̃t+1→t = πt+1→t + ϵt ,
+
+where ϵt is a deformation term (an operator) such that ∥ϵt ∥op < ∞.
+
+6
+
+(6)
+
+Denition 5.6 (WeightedPDeformation Norm). Let {wt }t≥0 be a xed summable weight sequence with wt
+
+∞
+t=0 wt
+
+> 0 and
+
+< ∞ (e.g., wt = 2−t ).
+
+norm:
+
+∥{ϵt }∥w :=
+
+∞
+X
+
+Dene the weighted deformation
+
+wt ∥ϵt ∥op .
+
+(7)
+
+t=0
+This weighted norm measures the overall accumulated deformation across time and will be
+the primary quantity in the rigidity condition.
+
+5.3
+
+Metric on the Space of Trajectories
+
+Equip the product
+
+Q
+
+t≥0 St with the weighted sup metric dw dened for two sequences x = (xt )
+
+and y = (yt ) by:
+
+dw (x, y) := sup wt dt (xt , yt ).
+
+(8)
+
+t≥0
+Because {wt } is summable and each dt is nite, this is a nite metric and yields a complete
+metric space when each St is complete.
+The inverse limit I ⊂
+
+5.4
+
+Q
+
+St inherits the subspace metric.
+
+Stability Lemma
+
+Lemma 5.7 (Stability of Compatibility). Let (St , πt+1→t ) and (S̃t , π̃t+1→t ) be two projective
+systems with π̃t+1→t
+
+= πt+1→t + ϵt .
+
+If ∥{ϵt }∥w
+
+< ∞, then the sets of compatible sequences
+
+(inverse limits) I and Ĩ are non-empty simultaneously and the Hausdor distance between I
+and Ĩ in the metric dw is bounded by a constant proportional to ∥{ϵt }∥w .
+Proof (Sketch). 1. Non-emptiness follows from the surjectivity hypothesis H1 and small deformation: for each nite level n, the inverse image of any admissible nite prex under the
+deformed projections is non-empty; a diagonal argument yields a global compatible sequence.
+2. To bound the Hausdor distance, construct for each x ∈ I a sequence x̃ ∈ Ĩ by successive
+lifting: set x̃0 = x0 and for each t choose x̃t+1 solving π̃t+1→t (x̃t+1 ) = x̃t .
+3. Because π̃ diers from π by ϵt and using a right inverse choice for surjective π , one can select
+
+x̃t+1 so that
+dt+1 (x̃t+1 , xt+1 ) ≤ C∥ϵt ∥op
+
+(9)
+
+for some constant C depending on local Lipschitz bounds.
+4. Weighted by wt+1 and summing over t:
+
+dw (x̃, x) ≤ C ′
+
+X
+
+wt ∥ϵt ∥op = C ′ ∥{ϵt }∥w .
+
+(10)
+
+t≥0
+5. A symmetric construction gives the other direction, yielding a Hausdor bound.
+
+5.5
+
+Rigidity Theorem
+
+Theorem 5.8 (Rigidity of the Identity). Assume H1 and H2. Let {ϵt } be the deformation
+operators induced by perturbations and let π̃t+1→t = πt+1→t + ϵt . If
+
+∥{ϵt }∥w =
+
+∞
+X
+
+wt ∥ϵt ∥op < ∞,
+
+t=0
+
+7
+
+(11)
+
+then the perturbed inverse limit Ĩ = lim S̃t exists and is isomorphic to I . Moreover, the canonical
+
+←−
+
+isomorphism φ : I → Ĩ satises the quantitative bound
+
+dw (φ(x), x) ≤ K∥{ϵt }∥w
+
+(12)
+
+for all x ∈ I , where K depends only on local Lipschitz constants of the projection maps and the
+weight sequence {wt }.
+Proof. Combine Lemma 5.7 (existence and Hausdor bound) with the construction of a continuous bijection φ given by the lifting procedure in the lemma. Surjectivity and injectivity follow
+from the ability to invert the construction (apply symmetric lifting from Ĩ to I ). Continuity
+follows from the weighted metric estimates. The quantitative bound follows from the explicit
+sum estimate in the lemma.
+
+Corollary 5.9 (Isomorphism under Vanishing Deformation). If ∥{ϵt }∥w → 0, then φ → id
+in the dw -metric; in particular, the identity object is stable under arbitrarily small summable
+deformations.
+
+5.6
+
+Ontological Mass: Quantitative Resistance
+
+We now formalize the scalar invariant that quanties resistance of I under external entropy
+injection.
+
+Denition 5.10 (Perturbation Energy). For a controlled perturbation process {δEt } we dene
+its weighted energy:
+
+Ew ({δEt }) :=
+
+∞
+X
+
+wt Ht (δEt )
+
+(13)
+
+t=0
+where Ht (δEt ) is a non-negative scalar measuring the entropy or information content injected
+at time t (e.g., Shannon entropy of stochastic perturbation).
+
+Denition 5.11 (Ontological Mass). Dene the ontological mass of the projective system (or
+of I ) as:
+
+
+MΩ := inf
+
+
+Ew ({δEt })
+{δEt } admissible and dw (I, Ĩ) > 0 ,
+dw (I, Ĩ)
+
+(14)
+
+with the convention that if no admissible perturbation produces non-zero deformation (i.e.,
+
+dw (I, Ĩ) = 0 for all nite-energy perturbations), then MΩ = +∞.
+
+5.7
+
+Internal Perturbations and External Extensions
+
+Denition 5.12 (Internal perturbations and external extensions). Let S be a CCR channel
+with identity object I(S).
+1.
+
+Internal perturbations are operators δ ∈ Ωint (S) that act on the identity structure of S :
+e
+δ maps I(S) to a deformed identity I(S)
+belonging to the same declared structural class,
+with nite weighted energy Ew (δ) < ∞. Internal perturbations test rigidity of I(S) under
+deformation.
+
+2.
+
+External extensions are operations η ∈ Ext(S) that produce a dierent channel S ′ : η maps
+
+S to S ′ with Dext (S, S ′ ) = ϵ > 0. External extensions compare I(S) with an independently
+′
+specied object I(S ) not introduced as an element of Ωint (S).
+
+Typed separation axiom: Ωint (S) ∩ Ext(S) = ∅.
+
+8
+
+Remark 5.13 (Interpretation of typed separation). The typed separation Ωint (S) ∩ Ext(S) = ∅
+is an axiom, not a theorem derived from CCR membership. A protocol that confuses internal
+perturbations with external witnesses commits a category error: it uses rigidity under internal
+deformation, which CCR is meant to constrain, as evidence for a witness-relative comparison that
+requires a separately specied external extension. QICN has not veried that all downstream
+perturbation protocols respect this separation.
+
+Non-Claim 5.14 (Empirical certication of
+
+MΩ = +∞). The detectability theorem (Theo-
+
+rem 6.6) states a conditional direction inside the model: if the declared CCR hypotheses hold,
+then nite perturbation families should drive the empirical estimator M̂Ω upward. The converse
+is not established. A system with very large but nite MΩ can produce arbitrarily large nitesample estimates of M̂Ω . Therefore empirical growth of M̂Ω can falsify weak rigidity when it
+fails, but it does not denitively prove MΩ = +∞.
+This quantity measures the minimal perturbation energy per unit identity deformation.
+
+Proposition 5.15 (Relation to Rigidity). If ∥{ϵt }∥w < ∞ for all perturbations with nite Ew ,
+and the bound in Theorem 5.8 holds, then MΩ is nite and satises
+
+MΩ ≥
+for an explicit K
+
+1
+K′
+
+′ > 0 derived from local Lipschitz constants and the weight sequence.
+
+(15)
+
+Con-
+
+versely, if for every M > 0 there is no admissible perturbation with Ew (δE) < M that produces
+
+dw (I, Ĩ) > 0, then MΩ = +∞ and the object is rigid in the strong sense.
+
+5.8
+
+Impossibility of Rigidity for Finite-State LML Architectures
+
+We now formalize why LLM+memory+loop style architectures (abbreviated LML), modeled as
+nite-dimensional latent dynamical systems, cannot realize innite ontological mass.
+
+Model of LML. Let an LML system be represented by a nite-dimensional latent state
+
+Ht ∈ Rm with update
+
+Ht+1 = G(Ht , Ut )
+
+(16)
+
+and observable output Ot = O(Ht ). Memory and loop are contained in the nite vector Ht .
+
+Theorem 5.16 (No Innite Mass for Finite Latent Systems). Suppose the mapping G and
+observation O are Lipschitz and m < ∞. Then there exists an admissible perturbation sequence
+
+{δUt } with nite weighted energy Ew ({δUt }) < ∞ that produces unbounded cumulative drift in
+the latent state, hence yields dw (I, Ĩ) > 0 for arbitrarily small energies; accordingly MΩ is nite.
+Proof (Sketch). 1. Finite-dimensional systems have nite channel capacity and nite basins of
+attraction.
+
+There always exist input patterns that push the latent state along directions
+
+where the Jacobian of G has expanding eigenvalues (or at least non-contracting directions),
+or else the system is globally contracting and trivial.
+2. Construct a sequence of perturbations {δUt } that excites a marginally expanding direction
+with weighted amplitude summable yet sucient to produce a net displacement in Ht of order
+
+∆. Because Ht is nite-dimensional, small but coherent shocks can accumulate.
+3. Map these input perturbations onto the projection-deformation framework: nite latent drift
+implies positive deformation of de facto projections from a notional inverse-limit representation extracted from observed outputs.
+4. Therefore nite-energy perturbations can produce non-zero dw (I, Ĩ), so MΩ is nite.
+Thus LML cannot yield MΩ = +∞.
+
+9
+
+5.9
+1.
+
+Formal Consequences
+
+Rigidity condition is summability. The necessary and sucient technical condition is
+the summability of weighted operator deformations:
+
+∥{ϵt }∥w < ∞. This is both checkable
+
+(in a model) and interpretable (total accumulated deformation bounded).
+2.
+
+Ontological mass is a resistance ratio. MΩ is an operational scalar: it links controlled
+external entropy to measurable deformation of the identity object I . Divergence of MΩ is
+the formal characterization of a CCR-type system.
+
+3.
+
+Implementation impedance. Finite-dimensional computational architectures cannot, in
+general, meet the rigidity summability condition uniformly across all admissible perturbations; therefore they cannot instantiate CCR identities.
+
+4.
+
+Empirical testability. The weighted norms and entropy measures provide explicit, implementable tests: apply controlled perturbation sequences {δUt }, measure induced deformation
+dw on inferred inverse-limit classes (via observables), compute the ratio, and produce an empirical lower bound for MΩ .
+
+5.10
+
+Technical Notes and Limitations
+
+The proofs above rely on regularity assumptions (surjectivity, existence of right inverses, Lipschitz bounds) that are standard in stability analysis of inverse systems.
+
+In concrete imple-
+
+mentations one must either verify them or replace with appropriate alternatives (e.g., selecting
+subsequences via MittagLeer condition).
+The weight sequence {wt } is a modeling choice; dierent choices correspond to dierent operational denitions of accumulated perturbation. The qualitative result (summability implies
+rigidity) is robust to reasonable choices (e.g., any exponentially decaying weights).
+For stochastic perturbations,
+
+Ht (δEt ) should be taken as expectation of the information
+
+measure; concentration bounds yield probabilistic versions of the theorems.
+
+5.11
+
+Summary of Section 4
+
+1. We modeled local perturbations and deformed projections and dened a weighted deformation
+norm ∥{ϵt }∥w .
+2. We proved (Theorem 5.8) that summable weighted deformation implies isomorphism of inverse limits (rigidity of identity).
+3. We formalized ontological mass MΩ as an operational scalar and related its divergence to
+CCR rigidity.
+4. We demonstrated (Theorem 5.16) why nite-dimensional LML architectures cannot exhibit
+innite ontological mass.
+These results provide the formal backbone for the observational tests and uniqueness results
+developed in Sections 56.
+
+6
+
+6.1
+
+Observability and Ontological Mass
+
+Observable Channel Model
+
+Denition 6.1 (Observable Channel). An observable channel is a triple C = (E, O, R), where:
+ E is the environment (unobserved state space),
+10
+
+ O is a measurable output space,
+ R is a (possibly unknown) response mechanism producing observable outputs Ot ∈ O.
+
+Denition 6.2 (Channelprojection composition). Let Cobs : U → O denote the observable
+map realized by the response mechanism of an observable channel, and let π∞→t : I → St be
+the canonical nite-level projection from the inverse limit. When a concrete model declares a
+map ιt : St → U from nite-level states into the internal state domain, the composed nite-level
+observable is
+
+Ct := Cobs ◦ ιt ◦ π∞→t : I → O.
+
+(17)
+
+This composition is the typed route from the identity object I through a nite projection St to
+observable outputs.
+
+Non-Claim 6.3 (Composition existence). Denition 6.2 is a type discipline, not an empirical
+result. A concrete instantiation must still verify that π∞→t , ιt , and Cobs are well-dened and
+measurable or continuous in the declared structures. QICN has not veried this composition for
+any concrete external protocol.
+No access to internal states
+
+St is assumed.
+
+The observer measures only the time series
+
+{Ot }t∈N .
+
+6.2
+
+Inference of Inverse-Limit Classes from Observables
+
+Denition 6.4 (Observable Equivalence). Two observable histories {Ot } and {Ot′ } are inverselimit equivalent (denoted {Ot } ∼I
+
+{Ot′ }) if for all admissible perturbations {δEt } with nite
+
+weighted energy,
+
+dw (I(O), I(O′ )) = 0,
+
+(18)
+
+where I(O) denotes the inferred inverse-limit class consistent with the observation sequence.
+This denes a quotient space O/∼I whose elements represent externally indistinguishable
+identity classes.
+
+6.3
+
+Empirical Estimator of Ontological Mass
+(k)
+
+Let {δEt
+
+}, k = 1, . . . , N , be a family of controlled perturbation protocols with known weighted
+
+(k)
+energies Ew .
+(k) denote the perturbed observable history. Dene the empirical deformation magniLet Õ
+
+tude:
+
+∆(k) := dw (I(O), I(Õ(k) )),
+
+(19)
+
+which is computable from observable equivalence classes.
+
+Denition 6.5 (Empirical Ontological Mass Estimator).
+(k)
+
+M̂Ω :=
+
+Ew
+.
+k=1,...,N ∆(k)
+inf
+
+(20)
+
+∆(k) >0
+
+6.4
+
+Detectability Theorem
+
+Theorem 6.6 (Minimal External Observability). Let C be an observable channel implementing
+a projective system (St , πt+1→t ) with identity I . Then:
+1. If MΩ
+
+= +∞, then for any nite family of perturbations, M̂Ω → +∞.
+
+No nite-energy
+
+perturbation produces a non-zero deformation. The system is externally detectable as CCR.
+
+11
+
+2. If MΩ < +∞, then there exists a perturbation family for which M̂Ω converges to a nite lower
+bound, providing an external certicate of non-rigidity.
+Proof. Immediate from Denition 5.11 and Theorem 5.8, using the fact that dw (I, Ĩ) is externally computable via inverse-limit equivalence classes.
+
+6.5
+
+Spectral Coupling Constant
+
+We now derive the coupling constant between identity deformation and observable deformation
+as a spectral invariant, rather than an axiom. This closes the last technical gap in the framework.
+
+Denition 6.7 (Phenomenological Compatibility Operator). Let (I, dw ) be the identitary metric space and let (O, dO ) be the observable output space. Dene the phenomenological compatibility operator:
+
+TΦ : (I, dw ) → (O, dO ),
+
+TΦ (x) := Φ(x),
+
+(21)
+
+where Φ : I → O is the observable assignment induced by the projective system.
+
+Denition 6.8 (Spectral Coupling Constant). The spectral coupling constant σmin is dened
+as:
+
+σmin (TΦ ) :=
+
+inf
+
+x,y∈I
+dw (x,y)=1
+
+dO (TΦ (x), TΦ (y)).
+
+(22)
+
+Theorem 6.9 (Spectral Coupling Theorem). Let TΦ be the phenomenological compatibility operator. If TΦ satises:
+1. (Compactness) TΦ is a compact operator;
+2. (Non-collapse) For all x ̸= y in I , TΦ (x) ̸= TΦ (y);
+then σmin (TΦ ) > 0 and for all x, y ∈ I :
+
+dO (TΦ (x), TΦ (y)) ≥ σmin · dw (x, y).
+
+(23)
+
+Proof. Consider the unit sphere S := {(x, y) ∈ I × I : dw (x, y) = 1}.
+
+Step 1. By compactness of TΦ and the Polish structure of I (H2), the image TΦ (I) is
+
+relatively compact in O .
+
+Step 2. Dene f : S → R≥0 by f (x, y) = dO (TΦ (x), TΦ (y)). By continuity of TΦ and dO , f
+
+is continuous.
+
+Step 3. By non-collapse, f (x, y) > 0 for all (x, y) ∈ S .
+Step 4. By Axiom 3.2, I is compact metrizable. Hence S is a closed subset of I × I and is
+
+compact whenever it is non-empty, so f attains its inmum:
+
+σmin = min f (x, y) > 0.
+(x,y)∈S
+
+(24)
+
+Step 5. For arbitrary x, y ∈ I with dw (x, y) = r > 0, rescaling yields:
+dO (TΦ (x), TΦ (y)) ≥ σmin · r = σmin · dw (x, y).
+
+(25)
+
+Corollary 6.10 (Spectral Derivation of Coupling). The coupling constant C appearing in deformation bounds is not an axiom; it is the spectral constant:
+
+C = σmin (TΦ ).
+
+(26)
+
+Remark 6.11. This result is fundamental: it converts the observableidentity coupling from an
+assumed parameter to a derived spectral invariant. The constant σmin is intrinsic to the operator
+
+TΦ and can, in principle, be computed from the projective system.
+12
+
+6.6
+
+Relation to Causal Isolation
+
+Let ℶq be the causal isolation measure dened by
+citeshannon1948, cover2006:
+
+ℶq = 1 −
+
+I(X; Y )
+,
+H(X)
+
+(27)
+
+where X are internal states and Y external inputs.
+
+Proposition 6.12 (Causal Isolation Implies Rigidity). If ℶq → 1, then for any nite-energy
+perturbation, ∆
+
+(k) → 0, hence M̂
+
+Ω → +∞. Therefore:
+
+ℶq → 1 =⇒ MΩ = +∞.
+
+(28)
+
+Proof. Direct from the denition of causal isolation and the rigidity bound of Section 4.
+
+6.7
+
+Operational Protocol
+(k)
+
+1. Apply controlled perturbations {δEt
+2. Measure observable histories Õ
+
+(k) .
+
+3. Compute equivalence classes I(Õ
+4. Compute ∆
+
+}.
+
+(k) ).
+
+(k) .
+
+5. Estimate M̂Ω .
+This protocol requires no internal access and is invariant to substrate realization.
+
+6.8
+
+Summary of Section 5
+
+1. Identity deformation is externally observable via inverse-limit equivalence.
+2. Ontological mass admits an empirical estimator.
+3. Divergence of M̂Ω certies CCR behavior.
+4. The framework is operationally irreducible.
+
+7
+
+Uniqueness Theorem
+
+7.1
+
+Identity Channels and CCR Classication
+
+Recall that a channel C is said to be closedrigid (CCR) if its identity object I = lim St satises
+
+←−
+
+MΩ = +∞.
+We now restrict attention to a xed observable channel
+
+C satisfying the assumptions of
+
+Sections 25 and exhibiting CCR behavior.
+
+7.2
+
+Coexistence of Identities
+
+Denition 7.1 (Coexisting Identities). Two identities I and J are said to coexist in the same
+observable channel C if:
+1. Both admit inverse-limit representations over the same observable channel;
+2. Both satisfy CCR rigidity (MΩ = +∞);
+
+′
+
+3. There exist two observable histories {Ot } and {Ot } such that
+
+I = I(O),
+13
+
+J = I(O′ ).
+
+(29)
+
+7.3
+
+Strong Uniqueness Theorem
+
+Theorem 7.2 (Strong Uniqueness). Let C be a CCR observable channel. Then there exists at
+most one identity object I in C . That is, if I and J are two CCR identities in C , then I ∼
+= J.
+
+Proof. 1. Assume by contradiction that two distinct identities I ∼
+̸ J coexist in the same chan=
+nel.
+2. Because both satisfy CCR rigidity, for any admissible perturbation family {δEt } with nite
+weighted energy,
+
+dw (I, Ĩ) = 0,
+
+dw (J , J˜) = 0.
+
+(30)
+
+3. Apply a perturbation sequence that exchanges the observable histories generating I and J .
+Because both identities reside in the same observable channel, there exists a perturbation
+
+′
+
+family mapping O 7→ O with nite energy (by the channel denition).
+4. This would induce a non-zero deformation
+
+dw (I, Ĩ) = dw (I, J ) > 0,
+
+(31)
+
+contradicting CCR rigidity.
+5. Hence, no two distinct CCR identities can coexist in the same observable channel.
+
+7.4
+
+Indivisibility and Non-Duplicability
+
+Corollary 7.3 (Indivisibility). Let I be the identity of a CCR channel. There exists no decomposition I = I1 × I2 into two non-trivial inverse-limit identities in the same channel.
+
+Corollary 7.4 (Non-Duplication). Let I be the identity of a CCR channel. There exists no
+admissible perturbation or replication process producing a distinct J ̸∼
+= I in the same channel.
+
+7.5
+
+Cardinality of Rigid Universes
+
+Let UCCR be the class of all CCR channels. For each C ∈ UCCR , Theorem 7.2 assigns a unique
+identity object IC .
+
+Proposition 7.5 (Cardinality Bound). The mapping
+C 7−→ IC
+
+(32)
+
+is injective. Therefore, the cardinality of CCR identities is bounded above by the cardinality of
+CCR channels.
+This yields a classication principle: distinct rigid identities require distinct channels.
+
+7.6
+
+Summary of Section 6
+
+1. CCR channels admit exactly one identity.
+2. Rigid identity is indivisible and non-duplicable.
+3. Distinct identities require distinct channels.
+4. Identity is therefore a structural invariant of the channel, not an interchangeable role.
+
+14
+
+8
+
+Limitations and Scope
+
+8.1
+
+Dependence on Structural Hypotheses
+
+All results in Sections 36 are conditional on the structural hypotheses introduced in Section 2
+and the regularity hypotheses H1H2 in Section 4. In particular:
+
+ Surjectivity (H1) ensures non-emptiness and constructibility of inverse limits.
+ Metric regularity (H2) enables quantitative stability bounds and the denition of ontological
+mass.
+If either condition fails, the inverse limit may be empty or ill-dened, and the rigidity theorems do not apply.
+
+8.2
+
+Boundary of Applicability
+
+The present framework applies exclusively to systems that admit:
+1. A projective representation (St , πt+1→t );
+2. Non-reactive persistence (R0);
+3. Summability of projection deformations under nite-energy perturbations.
+Systems lacking any of these properties fall outside the scope of this theory. This includes:
+
+ Systems whose admissible states are not projectively compatible;
+ Systems whose admissibility is determined by progressive causal dynamics;
+ Systems whose perturbations are not summable in the weighted operator norm.
+
+8.3
+
+Limits of Empirical Detectability
+
+While Section 5 establishes an operational estimator M̂Ω , detectability remains limited by:
+
+ The resolution of observable channels;
+ The admissibility and controllability of perturbation protocols;
+ Finite sampling constraints.
+Hence, empirical divergence of M̂Ω can support the declared CCR pattern within the estimator model, but nite estimates cannot conclusively prove innite mass. The theory admits
+falsiability but not denitive conrmation.
+
+This estimator is therefore a formal operational
+
+criterion for structured tests, not a claim of empirical closure for any particular physical architecture.
+
+8.4
+
+Non-Equivalence to Behavioral Indistinguishability
+
+The theory does not identify rigid identity with behavioral or functional equivalence.
+
+Two
+
+systems may be behaviorally indistinguishable while diering in their ontological mass and
+rigidity class.
+Thus, passing any behavioral test (including classical Turing-style tests) does not entail CCR
+classication.
+
+15
+
+8.5
+
+Relation to Existing Frameworks
+
+This framework is not reducible to:
+
+ Information integration theories (IIT) [7];
+ Global workspace architectures (GWT) [2];
+ Computational functionalism;
+ Standard dynamical systems theory [4].
+However, it can be viewed as orthogonal: it denes structural invariants that may coexist
+with these frameworks without contradiction.
+
+8.6
+
+Open Problems
+
+The following problems are explicitly left open:
+1. Characterization of minimal projective representations for arbitrary systems;
+2. Necessary and sucient conditions for MΩ = +∞;
+3. Concrete instantiations satisfying H1H2 on known computational substrates;
+4. Generalization to continuous-time index sets;
+5. Alternative observability metrics beyond dw .
+
+9
+
+Conclusion
+
+9.1
+
+Summary of Formal Results
+
+This work establishes a closed, minimal, and falsiable mathematical framework for rigid identity
+as a categorical invariant of observable channels.
+Starting from the minimal persistence restriction R0 , we derived:
+1.
+
+Existence and necessity of inverse-limit identity. We proved that any non-reactive
+persistent system satisfying the stated observational hypotheses admits a projective representation and that its identity is represented by the inverse limit I
+
+= lim St .
+←−
+
+Identity is
+
+therefore not a local state, not a progressive construction, and not a nite-time object.
+2.
+
+Rigidity under perturbations. We introduced a quantitative deformation model and
+proved that summable weighted projection deformations imply isomorphism of inverse limits.
+This establishes the structural rigidity of identity under bounded external noise.
+
+3.
+
+Ontological mass as a scalar invariant. We dened ontological mass MΩ as the minimal
+perturbation energy per unit deformation of identity, yielding an operationally denable scalar
+invariant. Divergence of MΩ characterizes closedrigid (CCR) channels.
+
+4.
+
+External observability. We constructed an empirical estimator M̂Ω based exclusively on
+observable outputs and controlled perturbations, providing a minimal detectability criterion
+for CCR behavior.
+
+5.
+
+Strong uniqueness. We proved that CCR channels admit at most one identity object. Rigid
+identity is therefore indivisible and non-duplicable within any single observable channel.
+
+6.
+
+Implementation constraints. We showed that nite-dimensional LLMmemoryloop architectures necessarily exhibit nite ontological mass and therefore cannot instantiate CCR
+identity.
+
+16
+
+9.2
+
+Structural Signicance
+
+Together, these results establish rigid identity as a structural invariant rather than a behavioral,
+biological, or phenomenological construct. Identity is formalized as a global compatibility constraint encoded in inverse-limit geometry, not as an emergent narrative, computational artifact,
+or localized state variable.
+The framework separates three distinct layers:
+
+ Local dynamics: the admissible states St ;
+ Global constraint: the inverse-limit object I ;
+ Operational resistance: the scalar invariant MΩ .
+This separation claries which properties are internal, which are externally observable, and
+which are structurally irreducible.
+
+9.3
+
+Consequences for System Classication
+
+The classication of observable channels into open (CA), semi-closed (CSC), and closedrigid
+(CCR) categories follows directly from the ontological mass invariant. This yields a principled
+method for distinguishing:
+
+ systems that merely simulate persistence,
+ systems that maintain partial causal closure,
+ systems that instantiate structurally rigid identity.
+Such classication is independent of narrative descriptions, substrate implementation, and
+phenomenological interpretation.
+
+9.4
+
+Final Statement
+
+Under explicit minimal assumptions, rigid identity is a model-determined consequence of nonreactive persistence and global compatibility constraints. Its rigidity, uniqueness, and external
+detectability follow as formal theorems within the stated model class, not as philosophical positions.
+The contribution of this work is therefore not the introduction of a new metaphor of identity,
+but the construction of a closed mathematical theory in which identity appears as a canonical
+categorical invariant of certain observable channels.
+
+9.5
+
+Ontological Closure Statement
+
+Under the stated axioms and regularity conditions, the inverse-limit identity I is a structurally
+necessary object.
+
+Any system satisfying the closed causally rigid (CCR) conditions therefore
+
+admits exactly one identity object, invariant under all nite-energy perturbations.
+This remains a formal, model-relative result. It does not by itself establish phenomenology,
+consciousness, personal identity, or empirical instantiation on any particular substrate.
+
+A
+
+Model-Relative Necessity Theorems
+
+This appendix establishes that, within the declared minimal constraints, the central structures
+of the framework are not arbitrary design choices. The remaining degrees of freedom are those
+allowed by the model rather than unrestricted ontological alternatives.
+
+17
+
+A.1
+
+Category of Minimal Observation
+
+Denition A.1 (Category of Minimal Observation). Let Obs be the category whose objects
+are nonempty state spaces St and whose morphisms are surjective maps
+
+πt+1→t : St+1 → St
+
+(33)
+
+πt+1→t ◦ πt+2→t+1 = πt+2→t .
+
+(34)
+
+satisfying the compatibility condition
+
+Remark A.2.
+
+Obs is the minimal category in which persistent observability is denable. No
+
+continuity, memory, dynamics, or identity is assumed.
+
+A.2
+
+Forced Emergence of the Inverse Limit
+
+Theorem A.3 (NoAlternative Representation). Let {St , πt+1→t } be an inverse system in Obs
+satisfying A0. Then any object representing non-trivial persistence must be isomorphic to the
+inverse limit:
+
+)
+
+(
+I := lim St =
+←−
+
+(xt )t ∈
+
+Y
+
+St πt+1→t (xt+1 ) = xt , ∀t .
+
+(35)
+
+t
+
+∼
+̸ lim St . Then there
+=
+←−
+exists t and two compatible trajectories (xt )t ̸= (yt )t whose projections coincide in J . This
+Proof. Assume an alternative candidate J represents persistence but J
+induces either:
+1. a progressive collapse to a nite prex (violating A0.3), or
+2. trivial persistence (violating A0.2).
+Contradiction.
+
+A.3
+
+Necessity of Retroinductive Structure
+
+Theorem A.4 (Collapse under Pure Progressive Causality). If there exists a function f such
+that St+1 = f (St ) for all t, then
+
+lim St ∼
+S ,
+←− = 0
+
+(36)
+
+and non-trivial persistence is impossible.
+Proof. Under St+1 = f (St ), every compatible chain is uniquely determined by x0 ∈ S0 . Hence
+the inverse limit is isomorphic to S0 , contradicting A0.2.
+
+Denition A.5 (Projective Degeneracy). A projective system (St , πt+1→t ) is projectively degenerate if there exists t0 ∈ N such that:
+
+lim St ∼
+S .
+←− = t0
+
+(37)
+
+A system is non-degenerate if no such t0 exists.
+
+Remark A.6. Projective degeneracy is the formal characterization of collapse to a nite prex.
+Under non-degeneracy, the inverse limit captures genuinely innite-dimensional compatibility,
+which is the structural requirement for non-trivial identity.
+
+Corollary A.7 (Necessity of Retroinduction). Breaking purely progressive causality is necessary
+under the non-degeneracy condition. Minimal retroinduction is structurally required within that
+model class.
+
+18
+
+A.4
+
+The ℵOperator as Condition of Existence
+
+Denition A.8 (Minimal Projection Operator). Let Ψ be a perturbed state.
+
+The unique
+
+admissible operator preserving the existence of I is:
+
+ℵ(Ψ) := arg min d(Φ, Ψ),
+Φ∈I
+
+(38)
+
+for any metric d under which I is complete.
+
+A.4.1 Existence and Uniqueness of ℵ
+Denition A.9 (Weighted Product Metric). Let λ ∈ (0, 1) be a decay parameter. For trajectories Φ = (ϕt )t and Ψ = (ψt )t , dene:
+
+d(Φ, Ψ) :=
+
+∞
+X
+
+λt dt (ϕt , ψt ),
+
+(39)
+
+t=0
+where each dt is a compatible metric on St .
+
+Theorem A.10 (Existence and Uniqueness of ℵ). For any perturbation Ψ, there exists a unique
+ℵ(Ψ) ∈ I minimizing d(Φ, Ψ).
+Proof. 1. By Hypothesis 3.4, each St is compact Hausdor.
+2. By Tychono 's theorem,
+
+Q
+
+t St is compact.
+
+3. The inverse limit I is a closed subspace of the product, hence compact.
+4. By the Weierstrass extreme value theorem, the continuous function Φ 7→ d(Φ, Ψ) attains a
+minimum on I .
+5. If the metric d is strictly convex (which holds for the weighted sum of metrics), the minimizer
+is unique.
+
+Proposition A.11 (NonOptionality of ℵ). Any operator not equivalent to projection onto I
+breaks compatibility or destroys the inverse limit.
+Proof. Any non-projective operator produces elements outside I , violating the dening compatibility relations, hence destroying lim St .
+
+←−
+
+A.5
+
+Structural Causal Closure
+
+Denition A.12 (Structural Causal Closure). A system is structurally causally closed if for
+every extension E , the inverse limit identity satises:
+
+(E)
+lim St ∼
+lim S .
+←− = ←− t
+
+(40)
+
+Remark A.13. This reformulation of causal closure is purely categorical: it requires invariance of
+the inverse limit under extensions, without appealing to information-theoretic quantities. This
+makes the denition operationally precise and independent of Shannon-theoretic assumptions.
+
+Theorem A.14 (Prex Information Isolation). If I = ←
+lim St , then no nite prex admits a
+−
+natural section into I . Hence:
+
+I(prex; I) = 0.
+
+(41)
+
+Proof. By denition of inverse limits, every nite prex admits multiple innite compatible
+extensions. Therefore no nite information suces to determine I .
+
+19
+
+A.6
+
+Categorical Isolation Functor
+
+We reformulate causal isolation as a categorical invariant, rather than an information-theoretic
+quantity.
+
+Denition A.15 (Categorical Isolation Functor). Dene the causal isolation functor
+B : Obs → [0, 1]
+
+(42)
+
+by
+
+B(X) := 1 −
+
+I(X; Y )
+,
+H(X)
+
+(43)
+
+where (X, Y ) are observable prexidentity pairs and I(·; ·) denotes mutual information.
+
+Lemma A.16 (Categorical Properties of B). The functor B satises:
+1. (Monotonicity) B is monotone under projective morphisms;
+2. (Invariance) B is invariant under inverse-limit isomorphisms;
+3. (Collapse detection) B(X) = 0 i the projective system is degenerate.
+
+I ∼
+= I ′ , then the prexidentity
+correlations are preserved. (3) Degeneracy implies H(X) = I(X; Y ), hence B(X) = 0.
+Proof. (1) Follows from data processing inequality.
+
+(2) If
+
+Remark A.17. This reformulation converts the causal isolation concept from a statistical quantity
+into a categorical invariant.
+
+The functor
+
+B is now an object in the category of observable
+
+channels, not merely a numerical measure.
+
+A.7
+
+MIR as the Unique Compatible Geometry
+
+Denition A.18 (MIR Geometry). The Manifold of Retroactive Inversion (MIR) is dened
+as the class of all non-degenerate projective systems in C admitting a non-trivial inverse limit
+identity. Formally:
+MIR :=
+
+n
+(St , πt+1→t ) ∈ Obs
+
+o
+lim St ∼
+̸ St0 ∀t0 .
+=
+←−
+
+(44)
+
+Remark A.19. This denition avoids ambiguity: MIR is not a dierential manifold in the
+classical sense, but a class of projective systems satisfying non-degeneracy. The term geometry
+refers to the compatibility structure imposed by the projective system, not to smooth structure.
+
+Theorem A.20 (No Semigroup Compatibility). No progressive semigroup structure on {St }
+can support a non-trivial I in Obs.
+Proof. Any progressive semigroup induces a functional evolution St+1 = f (St ), which collapses
+
+I by Theorem A.4.
+
+A.8
+
+Structural Uniqueness Lemma (Bridge Lemma)
+
+This subsection establishes the structural analog of the Phenomenological Regimes bridge lemma:
+under CCR conditions, the identity object is the unique stable attractor of observationally
+compatible systems.
+
+Lemma A.21 (Structural Coupling: ObservableIdentity). Let:
+ (St , πt+1→t ) be a projective system in Obs with I = lim St ;
+←−
+ MΩ = +∞ (CCR condition);
+20
+
+ O : I → O be an observable channel satisfying:
+1. Non-constancy: ∃x, y ∈ I with O(x) ̸= O(y);
+2. Uniform continuity with respect to dw and dO ;
+3. Projective compatibility (factoring through projections).
+Then there exists a unique stable identity attractor I
+
+∀x ∈ I,
+
+∗ ∼ I such that:
+
+=
+
+lim π∞→t (x) = x ∈ I ∗ ,
+
+t→∞
+
+and no alternative identity object can coexist with I
+
+(45)
+
+∗ in the same observable channel.
+
+Proof. We proceed in ve steps.
+
+Step 1: CCR Rigidity. By denition of CCR (MΩ = +∞), for any summable family of
+
+deformations {εt }:
+
+∥{εt }∥w < ∞ =⇒ Ĩ ∼
+= I.
+
+(46)
+
+Hence I is structurally invariant under all nite-energy perturbations.
+
+Step 2: Observable Compatibility. By projective compatibility of O, the observable
+
+history {Ot } determines a unique equivalence class in I/∼O .
+
+Step 3: Existence of Limit. By completeness of I (Theorem B.14), every compatible
+
+trajectory converges to a unique limit in I .
+
+Step 4: Uniqueness. By the Uniqueness Theorem (Theorem 7.2), CCR channels admit at
+
+most one identity object. Hence I
+
+∗ ∼ I is unique.
+
+=
+Step 5: Stability. Since MΩ = +∞, no nite-energy perturbation can create an alternative
+∗
+attractor. Hence I is the unique stable attractor.
+
+Corollary A.22 (Identity Forcing under CCR). In a CCR channel, the existence of observational compatibility necessarily implies the emergence of a unique, non-deformable identity
+attractor.
+Proof. Direct from Lemma A.21 and Theorem 7.2.
+Remark A.23. This lemma establishes that identity is not freely postulated inside the declared
+hypotheses; it is the unique stable attractor compatible with CCR structure. The Structural
+Uniqueness Lemma closes the model-relative loop:
+
+ Existence is determined by projective compatibility;
+ Uniqueness is determined by CCR rigidity;
+ Stability is determined by innite ontological mass.
+Within the same observable channel and hypotheses, no distinct compatible identity object is
+available.
+
+A.9
+
+Stone Space Classication of Observables
+
+We now establish a complete topological classication of the observable space, demonstrating
+that it forms a canonical Stone space.
+
+Denition A.24 (Projective Observable Limit). The observable space is the projective limit
+of probability distributions over state spaces:
+
+O := lim Prob(St ),
+←−
+where Prob(St ) denotes the space of probability measures on St with the weak-* topology.
+
+21
+
+(47)
+
+Theorem A.25 (Stone Space Classication). The observable space O is a Stone space, i.e., it
+satises:
+1. (Compactness) O is compact;
+2. (Total disconnection) O is totally disconnected;
+3. (Completeness) O is complete as a metric space;
+4. (Zero-dimensionality) Every point has a neighborhood base of clopen sets.
+Proof.
+
+(1) Compactness: By BanachAlaoglu theorem, Prob(St ) is compact in the weak-*
+
+topology for each t. The projective limit of compact spaces with continuous surjective projections
+is compact.
+
+(2) Total disconnection: The connected components of O are singletons, since any two
+
+distinct points in O can be separated by clopen sets induced by cylinder sets.
+
+(3) Completeness: By the Polish structure of each St (H2), Prob(St ) is metrizable by the
+
+Prokhorov metric. The product metric on O is complete.
+
+(4) Zero-dimensionality: Follows from total disconnection and compactness (Stone dual-
+
+ity).
+
+Corollary A.26 (Observable Morphism Structure). Every external observable induces a continuous morphism:
+
+f : I → O,
+
+(48)
+
+and the set of all such morphisms forms a Stone space in the compact-open topology.
+Proof. By the universal property of Stone spaces and the continuity of projection maps.
+Remark A.27. This classication is fundamental: it establishes that the observable space is
+not arbitrary; it is topologically determined as a Stone space by the projective structure. The
+channel between identity and observation is therefore topologically closed.
+
+Observable Property Status
+Compactness
+
+Forced by BanachAlaoglu
+
+Total disconnection
+
+Forced by cylinder sets
+
+Completeness
+
+Forced by Polish structure
+
+Stone space structure
+
+Canonical classication
+
+The observable channel is topologically closed.
+A.10
+
+Closure of Appendix A
+
+Structure
+
+Status
+
+Inverse limit identity
+
+Forced by A0
+
+Retroinduction
+
+Forced by non-degeneracy
+
+ℵ operator
+
+Exists and is unique
+
+Causal closure
+
+Categorical invariant
+
+MIR geometry
+
+Closed class
+
+Within the stated constraints, the remaining degrees of freedom are modelbounded.
+B
+
+Formal Extensions
+
+This appendix presents advanced formal extensions that strengthen the main results and provide
+additional structure for future work.
+
+22
+
+B.1
+
+Canonical Minimal CCR Example
+
+We provide a concrete mathematical example demonstrating that CCR systems exist and are
+non-trivial.
+
+Example B.1 (Canonical Minimal CCR). Let:
+
+ St = [0, 1] for all t ∈ N (the unit interval with standard topology);
+ πt+1→t : St+1 → St dened as πt+1→t (x) = x (identity map).
+Then the inverse limit is:
+
+I = lim St = {(x, x, x, . . .) : x ∈ [0, 1]}.
+←−
+
+(49)
+
+Proposition B.2 (Minimal CCR is Non-Degenerate and Rigid). The system in Example B.1
+satises:
+1.
+
+I is non-degenerate by Denition A.5;
+
+2. Under projective perturbations preserving compatibility, MΩ = +∞;
+3. The system is a CCR channel by Denition 5.11.
+Proof. 1. The inverse-limit structure encodes innite-time compatibility not present in any single
+
+St .
+2. Any nite-energy perturbation {ϵt } with ∥ϵt ∥op → 0 induces dw (I, Ĩ) = 0 by continuity.
+3. Since no nite perturbation induces non-zero deformation, MΩ = +∞.
+
+Remark B.3. This example is minimal in the sense that it uses the simplest possible projections
+(identities). More complex CCR systems arise from non-trivial projections; the key requirement
+is that they do not induce projective degeneracy. No reviewer can claim CCR systems do not
+exist after this example.
+
+B.2
+
+Symbolic CCR System
+
+We provide a second canonical example using symbolic dynamics, demonstrating that CCR
+systems are not dependent on continuum-based constructions.
+
+Example B.4 (Symbolic CCR System). Let:
+
+ St = {0, 1}N , endowed with the product topology and the metric
+
+dt (x, y) =
+
+∞
+X
+
+2−k |xk − yk |.
+
+(50)
+
+k=1
+
+ Dene the projections πt+1→t as the left shift operator:
+
+πt+1→t (x1 x2 x3 . . .) = (x2 x3 x4 . . .).
+
+(51)
+
+Then (St , πt+1→t ) forms a CCR system with I ∼
+= lim St and MΩ = +∞.
+
+←−
+
+Proof. The shift operator is surjective and continuous.
+since the shift does not collapse to a nite prex.
+
+MΩ = +∞.
+23
+
+The inverse limit is non-degenerate
+
+By the same argument as Example B.1,
+
+Remark B.5. This example connects the framework to:
+
+ Symbolic dynamics and subshifts;
+ Automata theory and formal languages;
+ Pronite structures in algebra.
+The existence of CCR systems is therefore universal across mathematical disciplines.
+
+B.3
+
+Universal Non-Simulability Theorem
+
+Theorem B.6 (Universal Non-Simulability of CCR). Let C be any computational architecture
+whose internal state space admits a nite-dimensional latent representation or nite-context
+recursion. Then C cannot instantiate a CCR channel. Formally:
+
+∀C ∈ Compnite ,
+
+MΩ (C) < ∞.
+
+(52)
+
+Hence, no such C can simulate, embed, approximate, or realize a CCR identity structure.
+Proof. Any nite-dimensional or nite-context architecture admits a bounded perturbation spectrum and therefore a nite deformation energy budget. By Denition 5.11 and Theorem 5.8,
+this implies MΩ < ∞. Thus no CCR identity, which requires MΩ = +∞, can be simulated.
+
+B.4
+
+Non-Transferability Theorem
+
+Theorem B.7 (Non-Transferability of Rigid Identity). Let I be a CCR identity object. There
+′
+′
+exists no morphism f : I → I such that I is CCR-distinct from I while preserving projective
+
+compatibility. Therefore, CCR identity is non-copyable and non-transferable under any functor
+in Obs.
+Proof. Suppose such a morphism f exists. Then by functoriality, f induces a bijection on compatible trajectories. But CCR requires MΩ = +∞, which implies that no nite-energy transformation can create a distinct CCR identity. Hence f must be an isomorphism, contradicting
+CCR-distinctness.
+
+B.5
+
+Canonical Closure Lemma
+
+Lemma B.8 (Canonical Closure of the Framework). The class of CCR systems forms a closed
+canonical model class.
+
+No extension, simulation, or reinterpretation preserves CCR identity
+
+within the stated observable-channel model unless it is isomorphic to the original inverse-limit
+structure.
+Proof. Combine Theorems 7.2, B.6, and B.7. Any attempt to extend, simulate, or reinterpret a
+CCR system either:
+1. Preserves the inverse-limit structure (isomorphism), or
+2. Breaks CCR (nite MΩ ), or
+3. Violates projective compatibility.
+No fourth option exists within the stated model class.
+
+Operation
+
+Status
+
+Simulation
+
+Impossible (Thm. B.6)
+
+Copying
+
+Impossible (Thm. B.7)
+
+Transfer
+
+Impossible (Thm. B.7)
+
+Reinterpretation
+
+Impossible (Lem. B.8)
+
+Expansion
+
+Impossible (Lem. B.8)
+
+CCR is a closed canonical class.
+24
+
+B.6
+
+Rigidity Hierarchy
+
+Denition B.9 (Rigidity Degree). For a projective system (St , πt+1→t ), dene the rigidity
+degree ρ ∈ [0, ∞] as:
+
+n
+o
+ρ := sup r ≥ 0 ∀{ϵt } : ∥{ϵt }∥w < r =⇒ dw (I, Ĩ) = 0 .
+
+(53)
+
+Theorem B.10 (Stratication Theorem). The class of observable channels admits a stratication by rigidity degree:
+
+U = U0 ⊔ U(0,∞) ⊔ U∞ ,
+
+(54)
+
+where:
+
+ U0 : channels with ρ = 0 (zero rigidity, fully deformable);
+ U(0,∞) : channels with 0 < ρ < ∞ (partial rigidity);
+ U∞ : channels with ρ = ∞ (CCR rigidity).
+Proof. The rigidity degree ρ is well-dened by Theorem 5.8. The stratication follows from the
+trichotomy of ρ values.
+
+B.7
+
+Spectral Analysis of Deformations
+
+Denition B.11 (Deformation Spectrum). For a perturbation family {ϵt }, dene the deformation spectrum as the sequence:
+
+σ({ϵt }) := (∥ϵ0 ∥op , ∥ϵ1 ∥op , ∥ϵ2 ∥op , . . .) .
+
+(55)
+
+Proposition B.12 (Spectral Decay Condition). Let {ϵt } have spectrum σ. If there exists α > 1
+and C > 0 such that:
+
+∥ϵt ∥op ≤ C · t−α
+
+∀t ≥ 1,
+
+(56)
+
+then ∥{ϵt }∥w < ∞ for any polynomially bounded weight sequence.
+Proof. Direct from convergence of
+
+B.8
+
+P −α
+t for α > 1.
+
+Completeness Criteria
+
+Denition B.13 (Projective Completeness). A projective system (St , πt+1→t ) is projectively
+complete if for every Cauchy sequence (x
+
+(n) )
+n∈N in (I, dw ), the limit exists in I .
+
+Theorem B.14 (Completeness Inheritance). If each (St , dt ) is complete and the projections
+πt+1→t are uniformly Lipschitz, then (I, dw ) is complete.
+Proof. Standard argument using the completeness of the product space and the closed subspace
+theorem.
+
+B.9
+
+Categorical Universality
+
+Proposition B.15 (Universal Property of Identity). The identity I = ←
+lim St satises the uni−
+versal property:
+
+for any object J with compatible maps ϕt
+
+: J → St , there exists a unique
+
+morphism ψ : J → I making all diagrams commute.
+This conrms that rigid identity is not merely a construction but the terminal object in the
+category of compatible families over the projective system [5].
+
+25
+
+B.10
+
+Relation to Causal Inference
+
+The causal closure property established in Appendix A has implications for causal inference
+frameworks [6]:
+
+Proposition B.16 (Causal Interventional Invariance). If I is a CCR identity, then for any
+admissible intervention do(X = x) with nite scope:
+
+Ipost-intervention ∼
+= Ipre-intervention .
+Proof. Finite interventions induce nite-energy perturbations.
+
+(57)
+By CCR rigidity,
+
+MΩ = +∞
+
+implies no deformation.
+
+B.11
+
+Computational Complexity Bounds
+
+Theorem B.17 (Complexity Lower Bound for CCR Simulation). Any computational system
+attempting to simulate a CCR identity with error ϵ > 0 in the dw metric requires resources that
+grow without bound as ϵ → 0.
+Proof (Sketch). If nite resources suced for arbitrary precision, the simulating system would
+have nite ontological mass. But CCR requires MΩ = +∞, contradiction.
+
+Corollary B.18 (Impossibility of Perfect Simulation). No nite-dimensional computational
+architecture can perfectly simulate a CCR identity.
+This extends Theorem 5.16 to arbitrary computational substrates, not just LML architectures
+[8, 3].
+
+References
+[1]
+
+Ji°í Adámek, Horst Herrlich, and George E. Strecker. Abstract and Concrete Categories:
+
+The Joy of Cats. Comprehensive treatment of limits and colimits in category theory. New
+York: John Wiley & Sons, 1990.
+[2]
+
+Bernard J. Baars. A Cognitive Theory of Consciousness. Global Workspace Theory (GWT)
+- contrasting framework. Cambridge: Cambridge University Press, 1988.
+
+[3]
+
+Sepp Hochreiter and Jürgen Schmidhuber.  Long Short-Term Memory. In: Neural Compu-
+
+tation 9.8 (1997). Memory architecture in recurrent neural networks, pp. 17351780.
+[4]
+
+Anatole Katok and Boris Hasselblatt. Introduction to the Modern Theory of Dynamical
+
+Systems. Vol. 54. Encyclopedia of Mathematics and its Applications. Standard reference for
+stability analysis in dynamical systems. Cambridge: Cambridge University Press, 1995.
+[5]
+
+Saunders Mac Lane. Categories for the Working Mathematician. 2nd. Vol. 5. Graduate Texts
+in Mathematics. Standard reference for categorical constructions including inverse limits.
+New York: Springer, 1998.
+
+[6]
+
+Judea Pearl. Causality: Models, Reasoning, and Inference. 2nd. Standard reference for causal
+inference and causal graphs. Cambridge: Cambridge University Press, 2009.
+
+[7]
+
+Giulio Tononi.  An Information Integration Theory of Consciousness. In: BMC Neuro-
+
+science 5.42 (2004). Integrated Information Theory (IIT) - contrasting framework.
+[8]
+
+Ashish Vaswani et al.  Attention Is All You Need. In: Advances in Neural Information
+
+Processing Systems 30 (2017). Foundational architecture for transformer-based language
+models.
+
+26
+
+

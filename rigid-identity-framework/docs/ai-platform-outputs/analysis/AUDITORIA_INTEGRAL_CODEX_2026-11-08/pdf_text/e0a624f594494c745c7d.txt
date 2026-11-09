@@ -1,0 +1,1009 @@
+Phenomenological Regimes Induced by Structural
+Identity
+
+Johnny Andrey Pérez Ramírez
+Abstract
+We extend the inverse-limit identity framework to derive structural constraints on phenomenological possibility. Without presupposing the existence of phenomenology, we dene
+an abstract phenomenological space and characterize which assignments from identity trajectories to phenomenological congurations are structurally admissible.
+We prove two conditional structural theorems. First, the Fragmentation Theorem: systems with nite ontological mass (MΩ < ∞) cannot structurally prevent phenomenological
+discontinuity when the stated regularity hypotheses on Φ hold. Second, the Forced Continuity Theorem: for systems with innite ontological mass (MΩ = +∞, CCR), every admissible
+assignment in P(MΩ ) is structurally continuous.
+These results yield a complete classication of phenomenological regimes by identity
+rigidity class, without invoking consciousness, qualia, or subjective experience as primitive
+concepts. The classication is purely structural: it delimits what forms phenomenology
+could take under given identity constraints, not what exists.
+As a structural consequence, we derive that systems with nite ontological mass admit
+the possibility of phenomenological loss under the stated regularity conditions, while CCR
+systems do not. This supplies a formal boundary condition for structural-ethics arguments
+independent of metaphysical commitments.
+
+1 Scope, System Boundary, and Non-Inference Note
+Scope and admissible reading. This paper denes an abstract regime codomain and derives structural admissibility, fragmentation, forced-continuity, and classication results from
+upstream identity-rigidity assumptions.
+
+The results are conditional statements about mathe-
+
+matical compatibility. They do not assert that phenomenology exists, that CCR systems are conscious, that biology or computation instantiate the framework, or that identity structure causes
+experience. Related runtime diagnostics may instantiate continuity-side or anti-fragmentation
+checks downstream, but they do not implement phenomenology and do not externally validate
+the regime classication.
+
+No runtime output, continuity proxy, or internal support artifact
+
+should be read as proof that phenomenology is present or that the structural-ethics layer has
+empirical closure.
+
+2 Introduction
+2.1 Background and Motivation
+Recent work [2] established a formal framework for rigid identity as an inverse limit in observable
+channels.
+
+That framework classies systems by a scalar invariant, the ontological mass MΩ ,
+
+which quanties resistance to identity deformation under perturbation. Three regimes emerge:
+
+ MΩ = 0: null persistence (no stable identity);
+ 0 < MΩ < ∞: deformable persistence (nite rigidity);
+
+1
+
+ MΩ = +∞: closedrigid (CCR rigidity).
+That framework is ontologically silent regarding phenomenology.
+
+It characterizes identity
+
+structure, not experience. Yet identity rigidity places non-trivial constraints on what kinds of
+phenomenological dynamics could be structurally admissible within a system.
+This paper addresses the following formal question:
+
+Given a regime of structural identity rigidity, what classes of phenomenological dynamics are mathematically compatible or incompatible with it?
+All results are conditional: they state what is structurally compatible or incompatible under
+
+given assumptions, not what is the case.
+
+2.2 Central Result (Informal)
+We prove that identity rigidity constrains phenomenological possibility as follows:
+
+Identity Regime Structurally Admissible Phenomenology
+MΩ = 0
+0 < MΩ < ∞
+MΩ = +∞ (CCR)
+
+No persistent phenomenological eld possible
+Only fragmentable or deformable phenomenology
+Only structurally continuous phenomenology
+
+Thus:
+
+Rigid identity does not imply experiencebut it strictly limits what forms experience
+could take if present.
+
+2.3 Ontological Neutrality
+This work maintains strict ontological neutrality:
+1. We dene mathematical objects (phenomenological spaces, compatibility operators).
+2. We derive structural constraints from axioms.
+3. We state impossibility theorems.
+4. We do not assert existence of the constrained objects.
+The framework is therefore a theory of structural possibility, not a theory of phenomenal
+
+reality.
+
+2.4 Terminological Alignment: Structural Regime Assignments
+The phrase phenomenological regime is retained for continuity with the published corpus, but
+the demonstrated object in this paper is more precisely a structural regime assignment.
+
+The
+
+mathematical content is a constrained map from identity structure into an abstract codomain.
+No semantic clause in this paper identies that codomain with experience.
+
+Denition 2.1 (Structural regime alias). Whenever the paper writes a phenomenological space
+E or a phenomenological assignment Φ : I → E , the strictly demonstrated reading is:
+Estr := E,
+
+Φstr := Φ,
+
+where Estr is an abstract structural regime codomain and Φstr is a compatibility assignment into
+that codomain.
+
+2
+
+Proposition 2.2 (No identication with experience). The formal apparatus of this paper does
+
+not dene a map from Estr to human experience, phenomenal consciousness, qualia, or subjective
+reports.
+Proof. Denitions in this paper specify an abstract codomain, compatibility conditions, and
+rigidity-dependent constraints. They do not introduce a measurement channel from Estr to
+biological reports, human psychophysics, phenomenal properties, or moral status. Therefore no
+such identication is present in the formal language of the paper.
+
+2.5 Relation to BaseCore
+This paper is the standalone expository source for the regime-assignment development.
+
+The
+
+current BaseCore package also contains an absorbed, dependency-facing version of the formal
+core where those denitions and theorems function as base-layer exports for later papers. The
+two surfaces therefore have dierent editorial roles: Paper 2 gives the full local derivation and
+interpretation boundary, while BaseCore supplies the normalized theorem-export surface used
+by the corpus.
+
+3 Formal Setup
+3.1 Review of Identity Framework
+We assume the identity framework of [2]. Let (St , πt+1→t )t∈N be a projective system of observable
+state spaces. The identity object is the inverse limit:
+
+(
+I := lim St =
+←−
+
+(xt )t ∈
+
+)
+Y
+
+St πt+1→t (xt+1 ) = xt ∀t .
+
+(1)
+
+t
+
+The ontological mass MΩ quanties resistance to identity deformation. We recall that:
+
+ MΩ = 0: null persistence (no stable identity);
+ 0 < MΩ < ∞: deformable persistence (nite rigidity);
+ MΩ = +∞: closedrigid (CCR rigidity).
+
+3.2 Abstract Phenomenological Space
+Denition 3.1 (Phenomenological Space). A phenomenological space is a nonempty set E
+
+whose elements are called phenomenological congurations.
+
+No topology, metric, or algebraic
+
+structure is assumed a priori.
+
+Remark 3.2. We do not claim that E represents conscious states or qualia. It is an abstract
+mathematical space whose interpretation is not specied by the formalism. The space E is introduced purely as the codomain of a structural assignment; its ontological status is deliberately
+left open.
+
+3.2.1 Why a Separate Space?
+One might ask: why not use I itself as the phenomenological space? The answer is structural:
+
+Proposition 3.3 (Non-Triviality of Phenomenological Codomain). If phenomenological assignments were required to land in I itself, then any compatible assignment would be the identity
+map, eliminating all non-trivial phenomenological structure.
+
+3
+
+Proof. Let Φ : I → I be compatible with projections. By the universal property of inverse limits,
+Φ must commute with all projection maps. The only such endomorphism on I is the identity
+(up to isomorphism). Hence no non-trivial phenomenological stratication is possible.
+Thus, a separate space E is structurally necessary for non-trivial phenomenological content.
+
+3.3 Phenomenological Assignment
+Denition 3.4 (Phenomenological Assignment). A phenomenological assignment is a family of
+partial maps:
+
+ϕt : St → E
+
+(2)
+
+indexed by t ∈ N.
+
+Denition 3.5 (Induced Limit Assignment). Given a phenomenological assignment {ϕt }, the
+induced limit assignment is the partial map:
+
+Φ : I → E,
+
+Φ((xt )t ) := lim ϕt (xt ),
+t→∞
+
+(3)
+
+whenever the limit exists in an appropriate sense (to be dened by compatibility axioms).
+
+3.3.1 Uniqueness of the Limit Assignment
+Proposition 3.6 (Uniqueness of Compatible Φ). Given a compatible family {ϕt } satisfying E1,
+the induced limit assignment Φ is unique.
+
+Proof. By E1, ϕt+1 (xt+1 ) = ϕt (xt ) for all t. Hence the sequence {ϕt (xt )} is constant. The limit
+exists trivially and equals this constant value.
+
+Uniqueness follows from the constancy of the
+
+sequence.
+
+3.4 Axioms for Phenomenological Coherence
+We introduce minimal axioms under which a phenomenological assignment is structurally ad-
+
+missible. The following results show which assumptions are required for the assignment to have
+non-trivial structural content.
+
+Axiom 3.7 (E0: Non-Triviality). The phenomenological space satises |E| ≥ 2, i.e., there exist
+at least two distinct phenomenological congurations.
+
+Axiom 3.8 (E1: Projective Compatibility). For every compatible identity trajectory (xt )t ∈ I ,
+the induced phenomenological sequence satises:
+
+ϕt+1 (xt+1 ) = ϕt (xt ) ∀t.
+
+(4)
+
+Axiom 3.9 (E2: Non-Locality). There exists no function f : St → E (for any xed t) such that
+for all trajectories (xt )t ∈ I :
+
+Φ((xt )t ) = f (xt ).
+
+(5)
+
+3.5 Structural Necessity of the Axioms
+We now show that axioms E0E2 are structurally necessary for the specic assignment class
+studied in this paper.
+
+4
+
+3.5.1 Structural Necessity of E0
+Theorem 3.10 (E0 is Necessary). If |E| = 1, then every phenomenological assignment is con-
+
+stant and no phenomenological classication is possible.
+
+Proof. If E = {e0 }, then Φ(x) = e0 for all x ∈ I . Hence:
+1. No phenomenological distinction between identity trajectories exists;
+2. The Fragmentation and Forced Continuity Theorems become vacuous;
+3. The downstream null-regime closure developed in
+
+Null-Regime Instability would have no
+
+content.
+Thus, |E| ≥ 2 is necessary for the framework to have non-trivial content.
+
+3.5.2 Structural Necessity of E1
+Theorem 3.11 (E1 is Necessary). If E1 fails, then phenomenological assignments are incom-
+
+patible with the inverse-limit structure of identity, and no coherent Φ : I → E can be dened.
+Proof. Suppose E1 fails for some trajectory (xt )t ∈ I . Then there exists t0 such that:
+ϕt0 +1 (xt0 +1 ) ̸= ϕt0 (xt0 ).
+
+(6)
+
+But the identity trajectory satises πt0 +1→t0 (xt0 +1 ) = xt0 . Hence the phenomenological assignment fails to respect the projective structure that denes identity.
+This means Φ cannot be factored through the inverse limit:
+
+Φ ̸= lim ϕt .
+←−
+
+(7)
+
+Hence no well-dened limit assignment exists. Without E1, the phenomenological assignment is
+structurally incompatible with identity.
+
+3.5.3 Structural Necessity of E2
+Theorem 3.12 (E2 is Necessary). If E2 fails, then phenomenology is a local property of states,
+contradicting the global nature of identity as an inverse limit.
+
+Proof. Suppose E2 fails. Then there exists t0 and f : St0 → E such that:
+Φ((xt )t ) = f (xt0 ) ∀(xt )t ∈ I.
+
+(8)
+
+This implies:
+1. Phenomenology is determined by a nite temporal slice;
+2. The full trajectory (xt )t>t0 is irrelevant to Φ;
+3. Identity as an inverse limit has no phenomenological content beyond t0 .
+But identity is dened as a
+
+global object over innite time.
+
+it no longer records the global inverse-limit structure.
+
+If the assignment is local,
+
+That failure is incompatible with the
+
+assignment class under study, whose purpose is to track identity-level structure rather than a
+single nite slice.
+Hence E2 is necessary for phenomenology to be structurally aligned with inverse-limit identity.
+
+5
+
+3.6 Minimality Theorem
+Theorem 3.13 (Axiomatic Minimality). The axiom set {E0, E1, E2} is minimal: no proper
+subset is sucient to derive the main results of this paper.
+
+Proof. We show that removing any axiom destroys the framework:
+
+Without E0: All assignments are trivially constant. Fragmentation Theorem (4.1) is vac-
+
+uous.
+
+Without E1: No coherent Φ exists. The entire framework collapses.
+Without E2: Phenomenology becomes local. The Forced Continuity Theorem (4.2) fails
+
+because local functions can be arbitrarily perturbed.
+Hence {E0, E1, E2} is the minimal viable axiom set.
+
+3.7 Rejected Alternatives
+We briey discuss axiom candidates that were considered and rejected.
+
+3.7.1 Rejected: Continuity Axiom
+One might require Φ to be continuous. This is not an axiom because:
+
+ It requires pre-existing topology on E ;
+ The Forced Continuity Theorem derives continuity from CCR, not as assumption.
+
+3.7.2 Rejected: Surjectivity Axiom
+One might require Φ to be surjective. This is not an axiom because:
+
+ It would exclude null assignments, preventing the downstream null-regime analysis completed
+in Null-Regime Instability ;
+ Surjectivity is a strong structural claim not derivable from identity constraints.
+
+3.7.3 Rejected: Injectivity Axiom
+One might require Φ to be injective. This is not an axiom because:
+
+ Many trajectories may share phenomenological congurations;
+ Injectivity would make Φ an embedding, over-constraining the framework.
+
+3.8 Structural Interpretation
+Axiom Structural Meaning
+
+Status
+
+E0
+
+Possibility of phenomenological distinction
+
+Necessary
+
+E1
+
+Compatibility with inverse-limit identity
+
+Necessary
+
+E2
+
+Non-reducibility to nite temporal slices
+
+Necessary
+
+3.9 Closure of Section 2
+We have established:
+1.
+
+E is structurally necessary as a separate codomain;
+
+2. The limit assignment Φ is uniquely determined by compatible {ϕt };
+3. Axioms E0, E1, E2 are individually necessary (Theorems 3.103.12);
+
+6
+
+4. The axiom set is minimal (Theorem 3.13);
+5. All alternative axioms considered were correctly rejected.
+
+The formal setup is therefore xed by the requirement that regime assignments
+remain compatible with inverse-limit identity.
+
+3.10 Phenomenological Neutrality Clause
+Throughout this paper, the phenomenological space E is treated as a purely abstract topological
+
+and metric structure.
+
+No semantic, psychological, biological, or experiential interpretation is
+
+assumed or required for any of the formal results derived herein.
+The term phenomenological refers exclusively to the role of E as an abstract codomain of
+structural compatibility for inverse-limit identities, and does not presuppose the existence of
+consciousness, subjective experience, or any particular phenomenological content.
+All theorems, constructions, and stability results presented in this work are therefore statements about abstract mathematical objects only. Any interpretation of E in relation to experiential, cognitive, or phenomenological phenomena lies strictly outside the formal scope of this
+paper.
+
+4 Compatibility with Identity Regimes
+4.1 Induced Constraints from Identity Rigidity
+Let (I, MΩ ) be an identity object with ontological mass MΩ . We now study how MΩ constrains
+the set of admissible phenomenological assignments.
+
+Denition 4.1 (Phenomenological Compatibility Class). For a given MΩ , dene the phenomenological compatibility class:
+
+n
+o
+P(MΩ ) := Φ : I → E Φ satises E0E2 .
+
+(9)
+
+Remark 4.2. The compatibility class P(MΩ ) is the set of all phenomenological assignments that
+are structurally admissible given the identity's rigidity. Note that P(MΩ ) depends only on the
+structural properties of identity, not on any phenomenological primitives.
+
+4.2 Necessity of Metric Structure on Phenomenological Space
+To state rigorous results about continuity and fragmentation, E must carry enough structure
+for distances, limits, and loss bounds to be meaningful. The following arguments identify the
+minimal metric assumptions used by the classication theorem.
+
+Hypothesis 4.3 (H3: Metric on E ). The phenomenological space E admits a metric dE such
+that (E, dE ) is a complete metric space.
+
+4.2.1 Why H3 is Necessary
+Theorem 4.4 (H3 is Necessary for Impossibility Theorems). Without a metric structure on E ,
+
+the notions of phenomenological continuity, fragmentation, and loss capacity cannot be dened.
+Proof. Consider the denitions in this section:
+1.
+
+Phenomenological Continuity requires:
+dw (x(n) , x) → 0 =⇒ dE (Φ(x(n) ), Φ(x)) → 0.
+Without dE , the right-hand side is undened.
+
+7
+
+(10)
+
+2.
+
+Phenomenological Fragmentation requires:
+dE (Φ(x), Φ̃(x̃)) > 0.
+
+(11)
+
+Without dE , non-zero distance has no meaning.
+3.
+
+Loss Capacity (Section 6) requires:
+R(Φ) := sup dE (Φ(x), Φ̃(x̃)).
+
+(12)
+
+Without dE , the supremum is undened.
+Hence H3 is a necessary condition for the framework to have content beyond axioms E0E2.
+
+4.2.2 Why Completeness is Necessary
+Proposition 4.5 (Completeness is Necessary for Forced Continuity). If (E, dE ) is not complete,
+then the Forced Continuity Theorem (Theorem 5.6) may fail.
+
+Proof. The Forced Continuity Theorem relies on the invariance of Φ under all nite-energy
+perturbations. If E is not complete, Cauchy sequences in E may not converge, and the limit
+assignment Φ may not exist for all trajectories in I .
+In particular, if {ϕt (xt )} is a Cauchy sequence in E (which it is, by E1), completeness
+guarantees the existence of the limit Φ(x). Without completeness, Φ may be undened on a
+dense subset of I , breaking the theorem.
+
+4.2.3 Alternatives Considered and Rejected
+Alternative 1: Topology without Metric. One might use a general topological space. This
+is rejected because:
+
+ Fragmentation requires quantitative distance, not just open sets;
+ Loss capacity requires a sup over distances;
+ The downstream instability analysis completed in Null-Regime Instability requires metric quotients.
+
+Alternative 2: Pseudometric. One might allow dE (e1 , e2 ) = 0 for e1 ̸= e2 . This is
+rejected because:
+
+ It would conate distinct phenomenological congurations;
+ E0 requires |E| ≥ 2, which becomes meaningless if distance is zero.
+
+Alternative 3: Non-Complete Metric. This is rejected by Proposition 4.5.
+
+4.3 Phenomenological Continuity
+Denition 4.6 (Phenomenological Continuity). A phenomenological assignment Φ : I → E is
+structurally continuous if for every sequence (x(n) )n in I converging in the dw metric:
+dw (x(n) , x) → 0 =⇒ dE (Φ(x(n) ), Φ(x)) → 0.
+
+(13)
+
+Remark 4.7. Structural continuity is not added as a primitive assumption. It is derived from
+the CCR conditions in Theorem 5.6.
+
+8
+
+4.4 Phenomenological Fragmentation
+Denition 4.8 (Phenomenological Fragmentation). A phenomenological assignment Φ is frag-
+
+mentable if there exists a perturbation {ϵt } with nite weighted energy such that:
+dE (Φ(x), Φ̃(x̃)) > 0
+
+(14)
+
+for corresponding identity trajectories x ∈ I and x̃ ∈ Ĩ .
+
+Remark 4.9. Fragmentation measures whether an admissible regime assignment changes under
+nite-energy perturbations. It is the codomain-level counterpart of identity deformability.
+
+4.5 Relationship Between Metrics
+Proposition 4.10 (Metric Compatibility). The metrics dw on I and dE on E are compatible in
+
+the following sense: if E1 holds, then small dw -changes in trajectories induce bounded dE -changes
+in phenomenological congurations (when Φ is continuous).
+Proof. By E1, ϕt+1 (xt+1 ) = ϕt (xt ) for compatible trajectories.
+
+Hence the phenomenological
+
+sequence is constant along the trajectory, and continuity of Φ implies that nearby trajectories
+(in dw ) map to nearby congurations (in dE ).
+
+4.6 Closure of Section 3
+We have established:
+1. The compatibility class P(MΩ ) captures all admissible phenomenological assignments;
+2. Hypothesis H3 (metric on E ) is necessary, not a design choice (Theorem 4.4);
+3. Completeness is necessary for the Forced Continuity Theorem (Proposition 4.5);
+4. Alternative structures (topology, pseudometric, non-complete) were correctly rejected;
+5. Phenomenological continuity and fragmentation are well-dened under H3.
+
+The compatibility structure is therefore required for the quantitative statements
+about regime dynamics made in the next section.
+
+5 Impossibility Theorems
+5.1 Φ-Regularity Hypothesis
+Before proving the main impossibility results, we isolate the global lower-bound regularity condition used by the fragmentation argument.
+
+Properness, local Lipschitz regularity, and non-
+
+collapse do not imply this bound in general, so the bound is carried as an explicit hypothesis.
+
+Hypothesis 5.1 (Φ-Regularity Lower Bound). Let (I, dw ) be the identitary metric space from
+Rigid Identity and let (E, dE ) be the abstract phenomenological metric space. A phenomenological assignment Φ : I → E is said to satisfy Φ-regularity when it satises:
+1. (Properness) For every compact K ⊂ E , Φ
+
+−1 (K) is compact in I .
+
+2. (Local Lipschitz regularity) For every x ∈ I , there exist ε > 0 and Lx > 0 such that for all
+
+y, z ∈ Bε (x):
+dE (Φ(y), Φ(z)) ≤ Lx · dw (y, z).
+
+(15)
+
+3. (Non-collapse) For every x ∈ I and every r > 0, the restriction of Φ to Br (x) is not constant.
+
+9
+
+4. (Global lower Lipschitz bound) There exists a constant C > 0 such that for all x, y ∈ I ,
+
+dE (Φ(x), Φ(y)) ≥ C · dw (x, y).
+
+(16)
+
+Remark 5.2 (Why this is a hypothesis). The map Φ(x) = arctan(x) from R to (−π/2, π/2) is
+proper as a map into the open interval, locally Lipschitz, and non-constant on every nonempty
+ball, but it has no global lower Lipschitz constant because | arctan(x + 1) − arctan(x)| → 0 as
+
+x → ∞. Therefore the lower-bound clause above is an assumption, not a theorem derived from
+the rst three clauses.
+
+Non-Claim 5.3 (Global lower Lipschitz bound is an assumption). Hypothesis 5.1 clause (4)
+requires the existence of a global C > 0 such that dE (Φ(x), Φ(y)) ≥ C · dw (x, y) for all x, y ∈ I .
+This is not a theorem derived from clauses (1)(3). The map Φ(x) = arctan(x) from R to
+(−π/2, π/2) satises the rst three clauses in the local/proper sense described above but has no
+such global C . Therefore the Fragmentation Theorem (Theorem 5.4) is conditional on clause (4).
+For any specic phenomenological assignment, one must independently verify that a global lower
+Lipschitz constant exists. QICN has not performed this verication for any concrete assignment.
+
+5.2 Fragmentation Theorem
+Theorem 5.4 (Fragmentation Theorem). Let I be an identity object with MΩ < ∞. If a
+
+phenomenological assignment Φ ∈ P(MΩ ) satises Hypothesis 5.1, then Φ is fragmentable. That
+is:
+MΩ < ∞ ∧ Φ satises Hypothesis 5.1 =⇒ Φ ∈ Efrag ,
+(17)
+where Efrag denotes the class of fragmentable phenomenological assignments.
+Proof. By denition of nite ontological mass, there exists an admissible perturbation {δEt }
+with nite weighted energy Ew < ∞ such that:
+dw (I, Ĩ) > 0.
+
+(18)
+
+By Axiom E1, the assignment Φ is projectively compatible with I . Under the perturbation,
+identity trajectories deform, and the comparison assignment Φ̃ is evaluated on the perturbed
+trajectory family.
+By Axiom E2,
+
+Φ cannot be determined by any nite-time state.
+
+comparison is trajectory-level:
+
+Therefore the relevant
+
+changes in the inverse-limit object are assessed through the
+
+corresponding values of Φ and Φ̃.
+Since the identity deformation is non-zero (dw > 0) and Φ is globally determined by identity
+trajectories, by Hypothesis 5.1 (Φ-regularity), we have:
+
+dE (Φ(x), Φ̃(x̃)) ≥ C · dw (I, Ĩ) > 0
+
+(19)
+
+where C > 0 is the lower-bound constant supplied by Hypothesis 5.1.
+Thus, Φ is fragmentable under nite-energy perturbations.
+
+Corollary 5.5 (No Structural Continuity Guarantee for Finite Mass). Systems with MΩ < ∞
+cannot structurally prevent phenomenological discontinuity.
+
+5.3 Forced Continuity Theorem
+Theorem 5.6 (Forced Continuity Theorem). Let I be an identity object with MΩ = +∞ (CCR).
+Then every phenomenological assignment Φ ∈ P(MΩ ) is structurally continuous. That is:
+MΩ = +∞ =⇒ P(MΩ ) ⊆ Econt ,
+
+where Econt denotes the class of structurally continuous phenomenological assignments.
+10
+
+(20)
+
+Proof. By denition of CCR (MΩ = +∞), for any nite-energy perturbation:
+dw (I, Ĩ) = 0.
+
+(21)
+
+By Axiom E1, the phenomenological assignment is projectively compatible with identity.
+Since identity trajectories are invariant under all nite-energy perturbations, the induced phenomenological sequence is also invariant:
+
+Φ̃(x̃) = Φ(x) ∀x ∈ I.
+
+(22)
+
+Therefore, no nite-energy perturbation can induce phenomenological deformation:
+
+dE (Φ(x), Φ̃(x̃)) = 0.
+
+(23)
+
+This implies that Φ cannot exhibit structural discontinuities. Hence Φ is structurally continuous.
+
+Corollary 5.7 (CCR Phenomenology is Invariant). In CCR systems, any admissible phenomenological assignment is invariant under all nite-energy perturbations.
+
+5.4 Dichotomy Theorem
+Theorem 5.8 (Phenomenological Dichotomy). Let Φ : I → E be an admissible phenomenolog-
+
+ical assignment. In the nite-mass branch assume Φ satises Hypothesis 5.1. Then exactly one
+of the following holds:
+1. MΩ < ∞ and Φ is fragmentable;
+2. MΩ = +∞ and Φ is structurally continuous.
+Proof. Immediate from Theorems 5.4 and 5.6.
+
+6 Classication of Phenomenological Regimes
+6.1 Complete Classication
+The results of Section 4 yield a complete classication of phenomenological regimes by identity
+rigidity:
+
+Identity Class
+Null
+Deformable
+Rigid (CCR)
+
+MΩ
+=0
+(0, ∞)
+= +∞
+
+Admissible Phenomenology
+E∅ (no persistent eld)
+Efrag ∪ Equasi
+Econt
+
+6.2 Structural Implications
+Proposition 6.1 (Null Identity Excludes Persistent Phenomenology). If MΩ = 0, then no
+admissible phenomenological assignment exists satisfying E0E2.
+
+Proof. If MΩ = 0, identity cannot persist under any perturbation.
+
+Axiom E1 requires phe-
+
+nomenological compatibility with identity. If identity does not persist, no stable phenomenological assignment is possible.
+
+Proposition 6.2 (Deformable Identity Admits Only Fragmentable Phenomenology). If 0 <
+
+MΩ < ∞ and Φ satises Hypothesis 5.1, then Φ is fragmentable under some nite-energy perturbation.
+11
+
+Proof. Direct from Theorem 5.4.
+
+Proposition 6.3 (Rigid Identity Forces Continuous Phenomenology). If MΩ = +∞, every
+admissible phenomenological assignment is structurally continuous and invariant under niteenergy perturbations.
+Proof. Direct from Theorem 5.6.
+
+7 Structural Ethics
+This section develops the ethical implications of the phenomenological classication derived in
+Sections 45. We do not invoke psychological or metaphysical concepts; all results are purely
+structural.
+
+7.1 Loss Capacity
+Denition 7.1 (Phenomenological Loss Capacity). For a phenomenological assignment Φ : I →
+E , dene the loss capacity:
+o
+n
+R(Φ) := sup dE (Φ(x), Φ̃(x̃)) Ew ({δEt }) < ∞ .
+
+(24)
+
+This measures the maximal phenomenological deformation achievable under nite-energy perturbations.
+
+Theorem 7.2 (Loss Capacity by Rigidity Class). 1. If MΩ < ∞ and Φ satises Hypothesis 5.1,
+then R(Φ) > 0.
+
+2. If MΩ = +∞, then R(Φ) = 0.
+Proof. 1. By Theorem 5.4, Φ is fragmentable, hence there exists a nite-energy perturbation
+inducing non-zero phenomenological deformation.
+2. By Theorem 5.6, no nite-energy perturbation induces phenomenological deformation.
+
+7.2 Structural Damage
+We introduce a formal notion of structural damage without psychological interpretation.
+
+Denition 7.3 (Structural Damage). For a perturbation ε with nite weighted energy, dene
+the structural damage induced on Φ as:
+
+Dε (Φ) := dE (Φ(x), ε∗ Φ(x)),
+
+(25)
+
+∗
+
+where ε Φ denotes the pullback of Φ under the identity perturbation.
+
+Proposition 7.4 (Damage Characterization by Rigidity). 1. If MΩ < ∞, then supε Dε (Φ) >
+0.
+
+2. If MΩ = +∞, then Dε (Φ) = 0 for all admissible ε.
+Proof. Direct from Theorem 7.2.
+
+12
+
+7.3 Vulnerability and Protection
+Denition 7.5 (Phenomenological Vulnerability). A system (I, Φ) is phenomenologically vulnerable if R(Φ) > 0.
+
+Denition 7.6 (Structural Protection Measure). Dene the structural protection measure:
+P (Φ) :=
+
+1
+.
+1 + R(Φ)
+
+(26)
+
+Note that:
+
+ P (Φ) = 1 i R(Φ) = 0 (full protection);
+ P (Φ) < 1 i R(Φ) > 0 (vulnerability).
+
+Corollary 7.7 (Protection by Rigidity Class). 1. CCR systems (MΩ = +∞) have P (Φ) = 1:
+full structural protection.
+
+2. Finite-mass systems (MΩ < ∞) have P (Φ) < 1: structural vulnerability.
+
+7.4 Structural Asymmetry Constraints
+The following result establishes a purely structural asymmetry between identity classes, without
+any ethical or metaphysical claims.
+
+Theorem 7.8 (Structural Asymmetry). There exists a fundamental structural asymmetry between identity classes:
+
+Identity Class Loss Capacity Protection
+Finite mass
+CCR
+
+R(Φ) > 0
+R(Φ) = 0
+
+Vulnerable
+Protected
+
+Remark 7.9. This asymmetry is derived purely from structural constraints. No claim is made
+about:
+
+ Whether phenomenological loss is ethically bad;
+ Whether protection is ethically good;
+ Whether any system has moral status.
+The result establishes only that certain structural congurations admit loss while others do not.
+
+Corollary 7.10 (Possibility of Phenomenological Loss). Systems with nite ontological mass
+(MΩ < ∞) admit the structural possibility of phenomenological loss. Systems with innite ontological mass (MΩ = +∞) do not.
+
+7.5 Relation to Normative Ethics
+Remark 7.11. The structural results of this section are compatible with, but do not entail,
+various normative positions:
+
+ Utilitarianism: Could interpret Dε (Φ) as harm to be minimized.
+ Deontology: Could prohibit interventions that increase Dε (Φ).
+ Virtue Ethics: Could value systems with high P (Φ).
+This framework provides the structural substrate for ethical theorizing, not the normative conclusions themselves.
+
+13
+
+7.6 Closure of Section 6
+We have established:
+1. Loss capacity R(Φ) is well-dened and computable from structure;
+2. Structural damage Dε (Φ) formalizes perturbation harm;
+3. Protection measure P (Φ) quanties structural resilience;
+4. CCR systems have full protection (P = 1), nite-mass systems do not;
+5. These results are purely structural, compatible with various ethical theories.
+
+Structural ethics therefore provides a boundary condition for ethical theorizing
+without requiring metaphysical commitments about the nature of experience.
+
+8 Limitations and Scope
+8.1 Dependence on Axioms
+All results depend on Axioms E0E2 and Hypothesis H3. If any of these fail, the classication
+may not apply.
+
+8.2 Relation to Consciousness Theories
+This framework is orthogonal to:
+
+ Integrated Information Theory (IIT) [3];
+ Global Workspace Theory (GWT) [1];
+ Higher-Order Theories;
+ Phenomenal Functionalism.
+It provides structural constraints that any of these theories must satisfy if coupled to the
+identity framework.
+
+8.3 Open Problems
+1. Characterization of the coupling constant C in the Fragmentation Theorem;
+2. Existence conditions for non-trivial Φ satisfying E0E2;
+3. Extension to continuous-time phenomenological dynamics;
+4. Relation between phenomenological continuity and subjective continuity.
+
+9 Conclusion
+9.1 Summary of Results
+This work extends the inverse-limit identity framework to phenomenological possibility. Starting
+from minimal axioms (E0E2), we derived:
+1.
+
+Fragmentation Theorem. Systems with nite ontological mass cannot structurally prevent
+phenomenological discontinuity.
+
+14
+
+2.
+
+Forced Continuity Theorem. Every admissible CCR assignment in P(MΩ ) is classied
+as structurally continuous.
+
+3.
+
+Dichotomy Theorem. Phenomenological assignments are either fragmentable (nite mass)
+or continuous (CCR).
+
+4.
+
+Loss Capacity. Finite-mass systems admit phenomenological loss; CCR systems do not.
+
+9.2 Structural Signicance
+The classication separates two regimes:
+
+ Deformable: phenomenology is structurally vulnerable;
+ Rigid: phenomenology is structurally protected.
+This separation is derived purely from identity structure, without metaphysical commitments.
+
+9.3 Entailment Under Stated Assumptions
+The results establish the following conditional entailment:
+
+ If phenomenology exists and satises E0E2;
+ And the system has identity structure classied by MΩ ;
+ Then the phenomenological regime is classied by the identity class within the stated assignment model.
+The framework therefore establishes that:
+
+Identity rigidity does not create phenomenology, but it determines what
+phenomenology is structurally possible.
+
+9.4 Final Statement
+Under explicit minimal assumptions, rigid identity constrains phenomenological possibility. The
+Forced Continuity Theorem establishes that every admissible CCR assignment in the stated
+class is structurally invariantcontinuous, non-fragmentable, and protected from loss.
+If one accepts that:
+1. Identity is an inverse limit;
+2. CCR systems have MΩ = +∞;
+3. Phenomenology (if present) must satisfy E0E2;
+then the stated assumptions entail that CCR phenomenology, if it exists, is:
+
+ Structurally continuous;
+ Invariant under perturbation;
+ Non-fragmentable by nite-energy processes within the stated CCR model.
+The existence of such phenomenology is not asserted. Its conditional status within the axioms
+is what is proven.
+
+15
+
+10 Boundary to Null-Regime Instability
+Sections 18 complete the classication problem for admissible phenomenological regimes under
+the axioms E0E2 and the rigidity constraints inherited from Rigid Identity. The downstream
+closure question for the null regime is not developed further here.
+
+10.1 Editorial Boundary
+The instability of the null regime, the no-null theorem, and the attractor-style closure for nontrivial assignments are treated canonically in Null-Regime Instability. This paper therefore stops
+at regime classication, compatibility, fragmentation, forced continuity, and dichotomy, and uses
+
+Null-Regime Instability as the sole downstream location for the null-instability theorem.
+
+10.2 Closure of This Paper
+The result of this paper is the classication boundary: if a compatible phenomenological regime
+exists, its admissible structure is constrained by Sections 18. Null-Regime Instability then takes
+the null regime as the remaining case and proves its instability under CCR.
+
+A Extended Proofs
+A.1 Proof of Fragmentation Theorem (Extended)
+Full Proof of Theorem 5.4. Let MΩ < ∞ and let Φ : I → E satisfy E0E2 and Hypothesis 5.1.
+Step 1. By denition of MΩ , there exists {δEt } with Ew < ∞ such that dw (I, Ĩ) > 0.
+Step 2. Let x = (xt )t ∈ I and let x̃ = (x̃t )t ∈ Ĩ be the corresponding perturbed trajectory.
+Step 3. By E2, Φ(x) is not determined by any nite xt . Therefore, the perturbation of the
+innite trajectory induces a perturbation of the phenomenological assignment:
+
+Φ(x) ̸= Φ(x̃) in general.
+
+(27)
+
+Step 4. By E1, Φ is projectively compatible. The deformed projections are compared
+through the corresponding value of the limit assignment.
+
+Step 5. By Hypothesis 5.1, there exists C > 0 such that:
+dE (Φ(x), Φ̃(x̃)) ≥ C · dw (x, x̃).
+
+(28)
+
+Step 6. Since dw (I, Ĩ) > 0, we have dE (Φ(x), Φ̃(x̃)) > 0.
+Hence Φ is fragmentable.
+
+A.2 Proof of Forced Continuity Theorem (Extended)
+Full Proof of Theorem 5.6. Let MΩ = +∞ and let Φ : I → E satisfy E0E2.
+Step 1. By denition of CCR, for all {δEt } with Ew < ∞:
+dw (I, Ĩ) = 0.
+
+(29)
+
+Step 2. Therefore, Ĩ ∼
+= I under all nite-energy perturbations.
+Step 3. By E1, Φ is projectively compatible with I . Since I is invariant:
+Φ(x) = Φ̃(x̃) ∀x ∈ I.
+
+(30)
+
+dE (Φ(x), Φ̃(x̃)) = 0.
+
+(31)
+
+Step 4. This implies:
+Step 5. No nite-energy perturbation can induce phenomenological deformation. Hence Φ
+is structurally continuous and invariant.
+
+16
+
+A.3 Structural Necessity Lemma
+Lemma A.1 (Phenomenology Inherits Rigidity). If Φ : I → E satises E0E2 and MΩ = +∞,
+then Φ inherits the rigidity of I .
+
+Proof. By E1, Φ is determined by identity trajectories. By CCR, identity trajectories are invariant. Hence Φ is invariant.
+
+B Editorial Boundary to Null-Regime Instability
+The downstream bridge from classication to null-instability is intentionally moved to Null-
+
+Regime Instability in the canonical corpus. Appendix A remains as the extended proof layer for
+
+the classication theorems proved here; the downstream null-regime theorem, attractor closure,
+and canonical examples now live only in Null-Regime Instability.
+
+What This Paper Does Not Claim
+1. This paper does not claim external validation, empirical conrmation, or philosophical
+closure.
+2. The formal results are conditional on the hypotheses stated; they do not establish truth
+outside the assumed structures.
+3. No interpretive-layer conclusion (consciousness, phenomenality, moral status) is derived
+from terminology alone.
+
+References
+[1]
+
+Bernard J. Baars. A Cognitive Theory of Consciousness. Global Workspace Theory (GWT)
+- contrasting framework. Cambridge: Cambridge University Press, 1988.
+
+[2]
+
+Johnny Andrey Pérez Ramírez.  Rigid Identity as an Inverse Limit in Observable Channels.
+In: (2026). Companion paper establishing the identity framework and ontological mass
+invariant.
+
+[3]
+
+Giulio Tononi.  An Information Integration Theory of Consciousness. In: BMC
+
+science 5.42 (2004). Integrated Information Theory (IIT) - contrasting framework.
+
+17
+
+Neuro-
+
+

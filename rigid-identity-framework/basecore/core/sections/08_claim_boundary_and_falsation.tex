@@ -27,14 +27,8 @@ If admissibility fails, inferential significance is non-actionable.
 
 \section{Certification, Comparison, and Rupture}
 
-\begin{definition}[Operational certification]\label{def:operational-certification}
-For an admissible system $S$, define
-\[
-\Cert(S)=1
-\quad\Longleftrightarrow\quad
-\Iper(S),\Iri(S),\Iint(S),\Icont(S),\Idiff(S),\Ileg(S)>0
-\]
-on a non-empty admissible support under the integrity grammar above.
+\begin{definition}[Operational Certification Indicator]\label{def:operational-certification}
+Keep $\Cert(S)$ for the certificate object of Definition~\ref{def:cert}. Define a distinct mathematical indicator $\operatorname{CertFlag}(S)$ to be $1$ exactly when such a certificate satisfies Criterion~\ref{crit:cert} on one common admissible support and meets the integrity grammar above; otherwise its value is $0$. This does not identify a tuple with a Boolean value. An empirical audit may have an unknown verdict: missing evidence is not a proof that this mathematical indicator is zero.
 \end{definition}
 
 \begin{definition}[Equivalence discriminator]\label{def:equivalence-discriminator}
@@ -56,9 +50,9 @@ when an admissible intervention or perturbation drives at least one invariant in
 \section{Prediction and Falsation Grammar}
 
 \begin{proposition}[Complexity-only negative control prediction]\label{prop:complexity-only-negative-control}
-If a candidate system exhibits high connectivity, high entropy, or rich activity while failing one or more critical invariants, then
+If a candidate exhibits high connectivity, high entropy, or rich activity but no admissible support realizes all required critical witnesses together, then
 \[
-\Cert(S)=0,
+\operatorname{CertFlag}(S)=0,
 \qquad
 S\notin\Critop\text{ in certified form},
 \qquad
@@ -67,7 +61,7 @@ S\notin\Critop\text{ in certified form},
 \end{proposition}
 
 \begin{proposition}[Ablation prediction]\label{prop:ablation-prediction}
-If a system is initially certified and a targeted admissible intervention destroys one or more invariants, then the framework predicts loss of certification or transition to an ambiguity-boundary regime.
+If an intervention destroys a required witness on the certified support, that certificate loses validity. Excluding a replacement certificate on a different support requires checking that support as well.
 \end{proposition}
 
 \begin{proposition}[Exact grammar-transport prediction]\label{prop:grammar-transport-prediction}

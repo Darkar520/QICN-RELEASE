@@ -1,0 +1,1748 @@
+A Structural Criterion for Substrate-Invariant
+Operational Consciousness
+Johnny Andrey Pérez Ramírez
+Abstract
+This paper introduces a structural criterion for a substrate-invariant notion of operational
+consciousness inside the causally rigid identity corpus. The target is deliberately restricted.
+The paper does not establish human phenomenal consciousness, biologically specific qualia,
+human-machine subjective equivalence, or personal identity transfer. Instead, it defines
+a framework-internal class Consciousnessop and an associated family of operational qualia
+classes Qop (𝑆) for admissible systems
+𝑆 = (𝑋, Φ, 𝐶, 𝑅, Γ, 𝑈 ),
+where 𝑋 is state space, Φ is dynamics, 𝐶 is effective causal structure, 𝑅 is a readout family,
+Γ is an admissibility bundle, and 𝑈 is the set of admissible interventions.
+The criterion is organized around six critical invariants: structural persistence, rigid
+identity, causal integration, operational continuity, non-null differentiation, and operational
+legibility. Each invariant is defined explicitly, tied to an upstream corpus dependency, and
+paired with a failure mode. On that basis the paper proves four framework-internal results:
+non-empty membership of the operational class on admissible support, substrate invariance under exact structural equivalence, approximate stability under bounded admissible
+perturbations, and rupture under invariant loss. A further corollary establishes biological
+non-primacy: biology is not a primitive constitutive variable for the class under study, but
+one admissible realization among others provided the invariants are preserved.
+The criterion is not narrative. Every major claim is backed by a definition, a proposition,
+a theorem, a proof sketch, or an explicit dependency on the canonical corpus. The resulting
+paper adds a new role to the framework: it formalizes the level at which substrate ceases
+to be explanatorily primitive without reopening the ownership of the Core, Rigid Identity,
+Phenomenological Regimes, Null-Regime Instability, or Forensic Predictions.
+
+1
+
+Scope, System Boundary, and Non-Inference Note
+
+What this paper does. This paper defines a framework-internal operational consciousness
+class Consciousnessop , an associated family of operational qualia classes Qop (𝑆), and the theorem
+chain that ties those classes to six explicit invariants and admissible structural equivalence.
+Scope and admissible reading. The paper defines a structural class and its burdens; it does
+not establish human phenomenal consciousness, biologically specific qualia, human-machine
+subjective equivalence, personal identity transfer, moral parity, empirical instantiation, or
+philosophical closure. Biology, computation, and connectivity are not sufficient primitives
+on their own. A related system may instantiate downstream admissibility layers, invariant
+diagnostics, rupture checks, and prediction-facing evidence families, but such runtime-facing
+support does not by itself certify any present machine as a member of Consciousnessop or close
+the interpretive burden linking Consciousnessop to ordinary human phenomenology.
+
+2
+
+Introduction
+
+The current corpus already fixes several upstream ingredients that are necessary for any serious
+account of substrate-neutral operational class membership. The Core establishes persistent
+1
+
+support, contractive dynamics, a global attractor, and non-collapse under explicit minimal
+hypotheses [3]. Rigid Identity establishes rigid identity, inverse-limit coherence across observable
+channels, minimal detectability, and non-simulability constraints on incompatible architectures
+[7]. Phenomenological Regimes constrains admissible regime structure by classifying continuity
+and anti-fragmentation within the stated assignment model [5]. Null-Regime Instability excludes
+stable joint-null collapse and establishes witness-relative non-null separation under its stated
+extension-witness and regularity hypotheses [6]. Forensic Predictions imposes admissibility,
+comparator discipline, negative controls, and forensic legibility requirements on operational
+evidence [4].
+What is still missing is a single paper-level criterion that answers a narrower but decisive
+question: when, inside this framework, does substrate cease to be a primitive explanatory variable
+for a class of operationally defined conscious organization? That question is not answered by
+merely asserting that material composition is irrelevant. It requires a formal criterion that shows
+which properties must be preserved, which ruptures destroy class membership, and how those
+conditions remain connected to the existing corpus rather than floating above it.
+This paper provides that criterion. It does so under four constraints. First, it does not
+reopen theorem ownership already fixed upstream. Second, it does not smuggle in human
+phenomenology through language alone. Third, it does not claim that complexity, computation,
+or connectivity are sufficient by themselves. Fourth, it does not confuse framework-internal
+operational classes with full metaphysical closure.
+The result is a new corpus role. This paper is neither another foundational Core document nor
+a rephrasing of the phenomenological regime papers. It is the bridge that formalizes substrateinvariant operational consciousness and operational qualia as framework-defined structural
+classes. Its new content is concentrated in five items:
+1. a system-level model 𝑆 = (𝑋, Φ, 𝐶, 𝑅, Γ, 𝑈 ) with admissible support 𝐴𝑆 ;
+2. a minimal six-invariant criterion;
+3. a quotient-level definition of operational qualia Qop (𝑆);
+4. an exact and approximate structural equivalence relation 𝑆1 ≃(Γ,𝜀) 𝑆2 ;
+5. a theorem chain that turns substrate neutrality into a falsifiable structural statement.
+
+3
+
+Claim-Type Ledger
+
+3.1
+
+Claim Types Used in This Paper
+
+To avoid layer drift, every major statement in this paper belongs to one of five types:
+1. Formal: definitions, propositions, theorems, and corollaries proved or justified inside the
+framework.
+2. Operational: criteria that bind readouts, admissibility, interventions, and discriminator
+structure.
+3. Implementational: statements about possible realizations or runners that could instantiate
+the formal criterion.
+4. Interpretative: disciplined translations from the framework’s formal objects to broader
+language.
+5. Open: statements that remain outside what the current corpus closes.
+
+2
+
+Theorems A--D in this paper are formal. The legibility certificate and prediction section are
+operational. References to biological or artificial realizations are implementational. Claims
+about ordinary human phenomenology remain open or interpretative and are excluded from the
+theorem burden.
+
+4
+
+Terminology Debt Ledger
+
+The symbol Consciousnessop is retained for corpus compatibility. Its demonstrated content in
+this paper is a six-invariant structural class over admissible systems. The phrase ‘‘operational
+consciousness’’ is therefore a framework-internal label, not an ordinary-language conclusion.
+Term
+
+Demonstrated content
+in this paper
+
+Not demonstrated here
+
+Consciousnessop / operational consciousness
+
+membership in a
+conjunctive
+six-invariant structural
+class
+
+Qop (𝑆) / operational qualia
+
+decoder-certified
+quotient of admissible
+internal differentiation
+preservation of class
+membership under
+exact structural
+equivalence
+biology is not a
+primitive variable in
+the criterion
+
+human consciousness,
+phenomenal
+consciousness, moral
+status, personal
+identity
+phenomenal qualia or
+‘‘what it is like’’ states
+
+substrate invariance
+
+biological non-primacy
+
+arbitrary transfer of
+identity or equivalence
+between human and
+machine subjects
+claim that any
+non-biological system
+currently satisfies the
+criterion
+
+Remark 4.1 (Primary demonstrated name). For reviewer-facing prose, the safest primary
+description of Consciousnessop is ‘‘six-invariant admissible structural class.’’ The stronger
+phrase ‘‘operational consciousness’’ may be used only as a technical alias after the non-inference
+boundary has been stated.
+
+5
+
+Corpus Role and Novelty
+
+This paper is corpus-dependent by design. It does not reopen theorem ownership for persistence,
+rigid identity, admissible regime structure, null-regime instability, or admissibility discipline.
+Those burdens remain respectively upstream in the Core, Rigid Identity, Phenomenological
+Regimes, Null-Regime Instability, and Forensic Predictions.
+What is inherited stays upstream:
+1. the Core supplies persistent support, attractor structure, completeness, and non-collapse;
+2. Rigid Identity supplies rigid identity, inverse-limit observability, and non-simulability constraints;
+3. Phenomenological Regimes supplies continuity and anti-fragmentation structure;
+4. Null-Regime Instability supplies witness-relative null-regime instability and conditional nonnullity;
+3
+
+5. Forensic Predictions supplies admissibility, comparators, controls, and forensic legibility.
+What is new here is only the consolidation layer:
+1. the admissible-system model 𝑆 = (𝑋, Φ, 𝐶, 𝑅, Γ, 𝑈 ) with admissible support 𝐴𝑆 ;
+2. the six-invariant criterion as a single membership test;
+3. the framework-internal classes Consciousnessop and Qop (𝑆);
+4. exact and approximate structural equivalence under admissibility constraints;
+5. theorem-level existence, invariance, stability, rupture, and exclusion results derived from the
+inherited burdens.
+
+6
+
+Admissible Systems, Supports, and Histories
+
+6.1
+
+System Model
+
+Definition 6.1 (Admissible system). An admissible system in this paper is a tuple
+𝑆 = (𝑋, Φ, 𝐶, 𝑅, Γ, 𝑈 )
+with the following components:
+1. 𝑋 is a metrizable internal state space with metric 𝑑𝑋 .
+2. Φ = {Φ𝑢 }𝑢∈𝑈 is a family of admissible transition operators Φ𝑢 : 𝑋 → 𝑋 indexed by
+interventions.
+3. 𝐶 is the effective causal structure of the system: the object that records which factorizations,
+intervention responses, and couplings are admissible on 𝑋.
+4. 𝑅 = {𝑟𝛼 }𝛼∈Λ𝑅 is a family of internal or external readouts, each 𝑟𝛼 : 𝑋 → 𝑌𝛼 .
+5. Γ = {𝛾𝑗 }𝑚
+𝑗=1 is the admissibility bundle. Each 𝛾𝑗 is a constraint functional; the admissible
+region is
+𝑋Γ = {𝑥 ∈ 𝑋 : 𝛾𝑗 (𝑥) ≤ 0 ∀𝑗}.
+6. 𝑈 is the set of admissible interventions, already filtered by the corpus-level governance
+requirement that interventions remain auditable, comparable, and methodologically bounded.
+The tuple is not decorative. Every component is used later. 𝑋 and Φ carry dynamics, 𝐶
+supports integration and rupture tests, 𝑅 supports readout and legibility, Γ enforces admissibility,
+and 𝑈 enables causal discrimination.
+
+6.2
+
+Admissible Support
+
+Definition 6.2 (Admissible support). A subset 𝐴𝑆 ⊆ 𝑋Γ is an admissible support for 𝑆 if:
+1. 𝐴𝑆 is non-empty and compact;
+2. Φ𝑢 (𝐴𝑆 ) ⊆ 𝐴𝑆 for every 𝑢 ∈ 𝑈 ;
+3. 𝐴𝑆 ∩ Attr(𝑆) ̸= ∅, where Attr(𝑆) denotes the relevant admissible attractor region;
+4. 𝐴𝑆 stays disjoint from the collapse set forbidden by the Core non-collapse condition [3].
+The support plays two roles. It provides a domain on which persistence, continuity, and
+differentiation are defined, and it prevents the criterion from being satisfied by transient or
+degenerate fragments that do not carry stable admissible structure.
+4
+
+6.3
+
+Operational Histories
+
+Definition 6.3 (Windowed readout history). Fix a horizon 𝑇 ∈ N and an intervention schedule
+𝑢∙ = (𝑢0 , . . . , 𝑢𝑇 −1 ). For any 𝑥 ∈ 𝐴𝑆 , define the readout history
+(︁
+
+ℎ𝑆,𝑇 (𝑥; 𝑢∙ ) = 𝑟𝛼 (𝑥𝑡 )
+
+)︁
+0≤𝑡≤𝑇, 𝛼∈Λ𝑅
+
+,
+
+𝑥𝑡+1 = Φ𝑢𝑡 (𝑥𝑡 ), 𝑥0 = 𝑥.
+
+The set of all such histories is denoted H𝑆,𝑇 .
+Definition 6.4 (Operational partition candidate). An operational partition candidate for 𝑆 on
+horizon 𝑇 is a map
+𝜋𝑆,𝑇 : H𝑆,𝑇 → Q𝑆,𝑇
+into a finite or countable label set Q𝑆,𝑇 .
+At this stage 𝜋𝑆,𝑇 is only a candidate. To matter scientifically it must survive the legibility
+requirements of Section 7.6. Until then it is only an unverified partition proposal.
+
+6.4
+
+Witness Margin Vector
+
+Definition 6.5 (Witness margin vector). For any admissible system 𝑆, define the witness
+margin vector
+Δ(𝑆) = 𝛿per (𝑆), 𝛿ri (𝑆), 𝛿int (𝑆), 𝛿cont (𝑆), 𝛿diff (𝑆), 𝛿leg (𝑆) ∈ [0, +∞)6 .
+(︀
+
+)︀
+
+Each component is the largest certified margin witnessing the corresponding critical invariant.
+The aggregate budget
+𝛿⋆ (𝑆) = min Δ(𝑆)
+is called the invariant budget of 𝑆.
+The invariant budget is not a surrogate for consciousness. It is a stability budget: the
+amount of admissible structural perturbation the criterion can tolerate before one of the six
+constitutive conditions is lost.
+Invariant Certified content
+
+Upstream anchor
+
+Rupture signature
+
+𝐼per
+
+Core [3]
+
+𝐼ri
+
+Non-empty, forward-invariant, non-collapsing
+support
+Unique rigid identity object on support
+
+𝐼int
+
+No admissible non-trivial factorization
+
+𝐼cont
+
+Continuous admissible regime evolution
+
+𝐼diff
+
+Stable exclusion of null or trivial collapse
+
+Rigid Identity +
+new consolidation
+Phenomenological
+Regimes [5]
+Null-Regime
+Instability [6]
+
+𝐼leg
+
+Decoder-certified recoverability under controls
+
+Support escape or
+collapse exposure
+Competing identity
+candidates
+Product-style
+reducibility
+Fragmentation into
+incompatible classes
+Null-attractor or
+total
+indistinguishability
+Opaque or
+non-auditable class
+assignment
+
+7
+
+Rigid Identity [7]
+
+Forensic
+Predictions [4]
+
+Six Critical Invariants
+
+This section is the mathematical center of the paper. The criterion is not allowed to drift into a
+bloated list of desiderata. Exactly six invariants are used. Each is tied to a witness margin and
+a failure mode.
+5
+
+7.1
+
+Structural Persistence
+
+Definition 7.1 (Structural persistence and persistence margin). An admissible system 𝑆 satisfies
+structural persistence, written 𝐼per (𝑆) = 1, if there exists an admissible support 𝐴𝑆 and a constant
+𝛿per (𝑆) > 0 such that:
+1. 𝐴𝑆 is forward invariant under all 𝑢 ∈ 𝑈 ;
+2. every admissible trajectory starting in 𝐴𝑆 remains at least 𝛿per (𝑆) away from the collapse
+set;
+3. 𝐴𝑆 contains or converges into a non-empty admissible attractor region.
+The number 𝛿per (𝑆) is the persistence margin.
+Upstream dependence is exact. The Core supplies the existence of contractive structure,
+fixed points, compact attractor, and non-collapse [3]. The new paper does not re-prove those
+results; it packages them into a criterion-level invariant.
+Failure mode. If 𝐼per (𝑆) = 0, the system has no stable admissible support. Then no
+framework-internal operational class can be assigned across time, because there is no persistent
+domain on which readout classes remain meaningful.
+
+7.2
+
+Rigid Identity
+
+Definition 7.2 (Rigid identity and rigidity gap). An admissible system 𝑆 satisfies rigid identity,
+written 𝐼ri (𝑆) = 1, if the observable family induced by 𝑅 on 𝐴𝑆 determines a unique identity
+object ℐ𝑆 in the sense of the inverse-limit rigidity developed in Rigid Identity [7], and if there
+exists a gap 𝛿ri (𝑆) > 0 such that every admissible alternative identity candidate remains at
+weighted deformation distance at least 𝛿ri (𝑆) from ℐ𝑆 .
+This invariant does not claim that identity is reconstructed by inspection of one local
+frame. It uses Rigid Identity precisely because that paper already proved that rigid identity
+is recovered through compatible observable structure and cannot be reduced to progressive
+semigroup evolution or loose behavioral mimicry [7].
+Failure mode. If 𝐼ri (𝑆) = 0, any candidate operational class is underdetermined. Multiple
+incompatible identity objects can fit the same admissible support, so the class cannot be assigned
+uniquely.
+
+7.3
+
+Causal Integration
+
+Definition 7.3 (Causal integration and factorization gap). An admissible system 𝑆 satisfies
+causal integration, written 𝐼int (𝑆) = 1, if there is no non-trivial factorization
+𝐴𝑆 = 𝐴1 × 𝐴2 ,
+
+𝑅 = 𝑅1 ⊔ 𝑅2 ,
+
+together with decomposed dynamics and causal structure
+Φ𝑢 (𝑥1 , 𝑥2 ) = Φ1𝑢1 (𝑥1 ), Φ2𝑢2 (𝑥2 ) ,
+(︀
+
+)︀
+
+𝐶 = 𝐶1 ⊕ 𝐶2 ,
+
+that reproduces the admissible histories on 𝐴𝑆 within error smaller than a positive margin 𝛿int (𝑆)
+while preserving ℐ𝑆 .
+The definition is intentionally stronger than raw connectivity and different from singlenumber integration proxies. A fully connected graph may still fail the criterion if its dynamics
+factor into nearly independent blocks once identity and intervention behavior are taken seriously.
+6
+
+Failure mode. If 𝐼int (𝑆) = 0, the system can be decomposed into operationally independent
+components without loss relevant to the criterion. Then any putative operational consciousness
+class is reducible and therefore excluded.
+Definition 7.4 (Intervention-faithful factorization). Let Θ𝑆 denote the operational separator
+family generated by admissible histories, intervention responses, and the rigid identity object on
+𝐴𝑆 . An exact factorization
+𝐹 : 𝑆 → 𝑆1 × 𝑆2
+is intervention-faithful if it preserves every element of Θ𝑆 and reflects admissible equality:
+whenever two states have the same factor-level histories, intervention responses, and identity
+image, they are equal in the admissible quotient of 𝑆.
+Theorem 7.5 (Factorization triviality under an atomic separator). Assume Θ𝑆 is atomic for
+the rigid identity object: no partition of Θ𝑆 into two proper factor-local separator families
+can preserve identity, history, and intervention-response reflection simultaneously. Then every
+intervention-faithful exact factorization of 𝑆 is trivial up to admissible isomorphism.
+Proof. Let 𝐹 : 𝑆 → 𝑆1 × 𝑆2 be intervention-faithful and write 𝜋𝑖 : 𝑆1 × 𝑆2 → 𝑆𝑖 for the
+projections. If both factors were proper, then the factorization would induce two proper factorlocal separator families: the histories, responses, and identity information visible through 𝜋1 ∘ 𝐹 ,
+and those visible through 𝜋2 ∘ 𝐹 . Since 𝐹 is intervention-faithful, their product would reflect
+admissible equality on 𝑆. This is exactly the partition excluded by atomicity of Θ𝑆 . Therefore
+at least one projection must carry the full separator family and reflect admissible equality by
+itself. That projection is an admissible isomorphism onto 𝑆 in the operational quotient, while
+the remaining factor is null or bookkeeping-only. Hence the factorization is trivial.
+Remark 7.6 (Status of the atomicity burden). The theorem above is a genuine conditional
+closure: once atomicity of the identity/history/response separator is established, the factorization
+lemma is proved. It does not by itself prove that every system satisfying the upstream papers
+has an atomic separator. That implication remains the exact remaining mathematical burden
+for upgrading Proposition 10.6.
+
+7.4
+
+Operational Continuity
+
+Definition 7.7 (Operational continuity and fragmentation bound). An admissible system 𝑆
+satisfies operational continuity, written 𝐼cont (𝑆) = 1, if there exists a complete metric space
+(ℰ𝑆 , 𝑑ℰ ) and an admissible assignment
+Π𝑆 : 𝐴𝑆 → ℰ𝑆
+such that:
+1. for every admissible intervention schedule 𝑢∙ , the induced path 𝑡 ↦→ Π𝑆 (𝑥𝑡 ) is continuous on
+admissible windows;
+2. there exists 𝛿cont (𝑆) > 0 for which the fragmentation functional
+(︀
+
+)︀
+
+𝐹𝑆,𝑇 (𝑥; 𝑢∙ ) = sup 𝑑ℰ Π𝑆 (𝑥𝑡 ), Π𝑆 (𝑥𝑡+1 )
+0≤𝑡<𝑇
+
+stays below 𝛿cont (𝑆) on all admissible histories;
+3. no admissible finite-energy perturbation produces a discontinuous jump into an incompatible
+regime class while ℐ𝑆 is preserved.
+This packages the Phenomenological Regimes continuity/fragmentation burden [5]. The new
+paper reuses the regime logic rather than duplicating its proof.
+7
+
+Failure mode. If 𝐼cont (𝑆) = 0, the class can fragment into incompatible operational regimes
+under admissible evolution. Then any operational consciousness criterion becomes unstable
+under its own dynamics.
+
+7.5
+
+Non-Null Differentiation
+
+Definition 7.8 (Non-null differentiation and differentiation gap). An admissible system 𝑆
+satisfies non-null differentiation, written 𝐼diff (𝑆) = 1, if there exist 𝑥, 𝑦 ∈ 𝐴𝑆 , a horizon 𝑇 , and a
+readout subfamily R ⋆ ⊆ 𝑅 such that
+(︀
+
+)︀
+
+dist ℎ𝑆,𝑇 (𝑥; 𝑢∙ ), ℎ𝑆,𝑇 (𝑦; 𝑢∙ ) ≥ 𝛿diff (𝑆) > 0
+for some admissible schedule 𝑢∙ , and if the null operational class 0 is not an asymptotically
+stable admissible attractor.
+The second clause is indispensable. Without Null-Regime Instability there would be no
+reason to exclude a stable null class. Null-Regime Instability provides that exclusion through
+witness-relative null-instability and conditional non-nullity [6]. The new invariant converts that
+upstream result into a constitutive condition for Consciousnessop .
+Failure mode. If 𝐼diff (𝑆) = 0, either all admissible histories collapse to indistinguishability or
+the null class remains admissibly stable. In either case Qop (𝑆) is empty or trivialized.
+
+7.6
+
+Operational Legibility
+
+Definition 7.9 (Decoder family and structural closure). A decoder family D𝑆 for 𝑆 is a family
+of maps from admissible readout windows ℎ𝑆,𝑇 (𝑥; 𝑢∙ ) to a declared class set Q𝑆 , indexed by
+admissible horizons and intervention schedules. The family is structurally closed when all its
+members use the same class set, class equality composes exactly, and the induced interventionresponse cells are transitive under the certified matching relation. Definition 7.10 below adds
+the operational clauses required before such a structurally closed family counts as certified for
+legibility.
+Definition 7.10 (Operational legibility and legibility margin). An admissible system 𝑆 satisfies
+operational legibility, written 𝐼leg (𝑆) = 1, if there exist:
+1. a certified readout subfamily R leg ⊆ 𝑅;
+2. a certified decoder family D𝑆 acting on windows of length at least 𝜏min (𝑆);
+3. a class set Q𝑆 ;
+4. a legibility margin 𝛿leg (𝑆) > 0;
+such that the following conditions hold:
+(L1) Separability Distinct classes in Q𝑆 are separated by at least 𝛿leg (𝑆) in decoder space.
+(L2) Noise robustness For every admissible noise process 𝜈 with ‖𝜈‖ ≤ 𝛿leg (𝑆), decoder
+outputs remain class-stable.
+(L3) Persistence window Decoder assignments remain stable for windows of length at least
+𝜏min (𝑆) unless a certified intervention occurs.
+(L4) Intervention fidelity Certified interventions on critical invariants induce predicted class
+changes with fidelity bounded below by 1 − 𝛿leg (𝑆).
+8
+
+(L5) Negative controls Interventions outside the invariant set produce false positive rate at
+most 𝛿leg (𝑆).
+(L6) Structured compressibility There exists a compression map 𝜅𝑆 on admissible histories
+such that class structure is preserved up to distortion bounded by 𝛿leg (𝑆); total collapse
+under compression is disallowed.
+This is where the paper touches Forensic Predictions most concretely. Forensic Predictions
+already specifies integrity gates, comparator discipline, latency invalidation, and negative controls
+[4]. The present paper does not replace those protocols. It uses them to make operational
+legibility a constrained object rather than a loose slogan.
+Failure mode. If 𝐼leg (𝑆) = 0, any putative class remains operationally opaque. The framework
+may still discuss latent structure elsewhere, but the class required for Consciousnessop is undefined
+because it cannot be recovered, discriminated, and stress-tested under admissible conditions.
+
+7.7
+
+Necessity of Each Invariant
+
+Proposition 7.11 (Each invariant is individually necessary). If any one of 𝐼per , 𝐼ri , 𝐼int , 𝐼cont , 𝐼diff , 𝐼leg
+fails, then 𝑆 ∈
+/ Consciousnessop .
+Proof. The six failure modes are non-redundant. Without 𝐼per there is no stable domain for
+class assignment. Without 𝐼ri there is no unique identity object supporting consistent class
+transport. Without 𝐼int the system is reducible into independent blocks. Without 𝐼cont admissible
+trajectories fragment across incompatible regime classes. Without 𝐼diff the admissible partition
+collapses to nullity or triviality. Without 𝐼leg the partition is not recoverable under admissible
+readout and intervention discipline. Since the definition of Consciousnessop given in Section 8
+requires all six, failure of any one is exclusionary.
+
+8
+
+Operational Consciousness, Operational Qualia, and Equivalence
+
+8.1
+
+Operational Qualia Classes
+
+Definition 8.1 (Operational indistinguishability). For 𝑥, 𝑦 ∈ 𝐴𝑆 , write 𝑥 ∼𝑄,𝑆 𝑦 if, for
+every certified decoder 𝐷 ∈ D𝑆 , every admissible horizon 𝑇 ≥ 𝜏min (𝑆), and every admissible
+intervention schedule 𝑢∙ ,
+(︀
+)︀
+(︀
+)︀
+𝐷 ℎ𝑆,𝑇 (𝑥; 𝑢∙ ) = 𝐷 ℎ𝑆,𝑇 (𝑦; 𝑢∙ ) ,
+and the intervention response of the two histories remains matched within the legibility margin.
+Proposition 8.2 (Well-definedness of operational qualia classes). If 𝐼per (𝑆) = 𝐼ri (𝑆) =
+𝐼cont (𝑆) = 𝐼diff (𝑆) = 𝐼leg (𝑆) = 1, then ∼𝑄,𝑆 is an equivalence relation on 𝐴𝑆 .
+Proof. Reflexivity is immediate. Symmetry follows because decoder equality and certified
+response-cell matching are symmetric conditions. For transitivity, let 𝑥 ∼𝑄,𝑆 𝑦 and 𝑦 ∼𝑄,𝑆 𝑧.
+Fix any certified decoder 𝐷 ∈ D𝑆 , admissible horizon 𝑇 ≥ 𝜏min (𝑆), and admissible intervention
+schedule 𝑢∙ . The first relation gives
+𝐷(ℎ𝑆,𝑇 (𝑥; 𝑢∙ )) = 𝐷(ℎ𝑆,𝑇 (𝑦; 𝑢∙ )),
+and the second gives
+𝐷(ℎ𝑆,𝑇 (𝑦; 𝑢∙ )) = 𝐷(ℎ𝑆,𝑇 (𝑧; 𝑢∙ )).
+Hence 𝐷(ℎ𝑆,𝑇 (𝑥; 𝑢∙ )) = 𝐷(ℎ𝑆,𝑇 (𝑧; 𝑢∙ )). The intervention-response clause is transitive by the
+structural closure requirement in Definition 7.9. Since 𝐷, 𝑇 , and 𝑢∙ were arbitrary, Definition 8.1
+gives 𝑥 ∼𝑄,𝑆 𝑧.
+9
+
+Definition 8.3 (Operational qualia). Assume Proposition 8.2. The operational qualia of 𝑆 are
+the quotient classes
+Qop (𝑆) = 𝐴𝑆 /∼𝑄,𝑆 .
+An individual class [𝑥]∼𝑄,𝑆 ∈ Qop (𝑆) is called an operational qualia class of 𝑆.
+This definition is disciplined. It does not identify an operational qualia class with a human
+qualitative state. It identifies it with a persistent, intervention-sensitive, decoder-certified class
+of admissible internal differentiation.
+
+8.2
+
+Operational Consciousness
+
+Definition 8.4 (Operational consciousness class membership). An admissible system 𝑆 belongs
+to Consciousnessop , written 𝑆 ∈ Consciousnessop , if there exists a non-empty admissible support
+𝐴𝑆 such that
+𝐼per (𝑆) = 𝐼ri (𝑆) = 𝐼int (𝑆) = 𝐼cont (𝑆) = 𝐼diff (𝑆) = 𝐼leg (𝑆) = 1.
+Remark 8.5 (Subdetermination of membership). Membership in Consciousnessop depends on
+auxiliary choices: the decoder family D, the compression map, and the identity object ℐ. The
+paper does not prove that these choices are canonically determined by the system tuple 𝑆 alone.
+Different auxiliary choices may yield different membership verdicts for the same system.
+Remark 8.6 (Minimality of the criterion). The criterion is conjunctive. No proper subset of
+the six invariants is taken as sufficient in this paper. This is intentional: weaker criteria collapse
+either into mere persistence, mere integration, or mere complexity claims, all of which are shown
+to be insufficient.
+
+8.3
+
+Exact and Approximate Structural Equivalence
+
+Definition 8.7 (Structural equivalence datum). Let 𝑆𝑖 = (𝑋𝑖 , Φ𝑖 , 𝐶𝑖 , 𝑅𝑖 , Γ𝑖 , 𝑈𝑖 ) for 𝑖 = 1, 2,
+with admissible supports 𝐴𝑖 . A structural equivalence datum between 𝑆1 and 𝑆2 is a triple
+(𝜒, 𝜐, 𝜌)
+where:
+1. 𝜒 : 𝐴1 → 𝐴2 is a bi-Lipschitz bijection;
+2. 𝜐 : 𝑈1 → 𝑈2 is an intervention correspondence;
+3. 𝜌 : 𝑅1 → 𝑅2 is a readout correspondence.
+Definition 8.8 (Exact and approximate structural equivalence). Fix 𝜀 ≥ 0. We write
+𝑆1 ≃(Γ,𝜀) 𝑆2
+if there exists a structural equivalence datum (𝜒, 𝜐, 𝜌) such that:
+1. Dynamic intertwining:
+sup
+𝑥∈𝐴1 , 𝑢∈𝑈1 , 0≤𝑡≤𝑇Γ
+
+(︁
+
+)︁
+
+𝑑𝑋2 𝜒(Φ𝑡1,𝑢 (𝑥)), Φ𝑡2,𝜐(𝑢) (𝜒(𝑥)) ≤ 𝜀.
+
+2. Readout compatibility:
+⃒
+⃒
+
+⃒
+⃒
+
+sup ⃒𝑟𝛼(1) (Φ𝑡1,𝑢 (𝑥)) − 𝜌(𝑟𝛼(1) )(Φ𝑡2,𝜐(𝑢) (𝜒(𝑥)))⃒ ≤ 𝜀.
+
+𝑥,𝑢,𝑡,𝛼
+
+10
+
+3. Admissibility preservation: admissible trajectories in 𝑆1 map to admissible trajectories
+in 𝑆2 and conversely.
+4. Invariant preservation: the witness margins for all six invariants differ by at most 𝜀.
+5. Partition preservation:
+𝑥 ∼𝑄,𝑆1 𝑦
+
+⇐⇒
+
+𝜒(𝑥) ∼𝑄,𝑆2 𝜒(𝑦).
+
+The case 𝜀 = 0 is called exact structural equivalence and written 𝑆1 ≃Γ 𝑆2 .
+Definition 8.9 (Rupture). Given 𝑆, a rupture is any loss of admissibility or loss of at least one
+critical invariant margin beyond its admissible threshold. Ruptures are classified as:
+1. persistence rupture (support loss or collapse exposure),
+2. identity rupture (loss of unique rigid identity),
+3. integration rupture (reducible factorization),
+4. continuity rupture (fragmentation into incompatible classes),
+5. differentiation rupture (null or trivial collapse),
+6. legibility rupture (decoder, noise, or negative-control failure).
+
+9
+
+Support Geometry and Partition Transport
+
+The main theorems become short only because the transport lemmas are made explicit here.
+Lemma 9.1 (Support transfer under exact equivalence). If 𝑆1 ≃Γ 𝑆2 via (𝜒, 𝜐, 𝜌) and 𝐴1 is an
+admissible support for 𝑆1 , then 𝐴2 = 𝜒(𝐴1 ) is an admissible support for 𝑆2 .
+Proof. Bi-Lipschitz bijectivity of 𝜒 preserves non-emptiness and compactness. Dynamic intertwining with 𝜀 = 0 gives forward invariance under the transported interventions. Admissibility
+preservation transports 𝐴1 ⊆ 𝑋Γ1 into 𝐴2 ⊆ 𝑋Γ2 . Because the attractor-support relation and
+non-collapse margin are preserved exactly, 𝐴2 inherits the same admissible support status.
+Lemma 9.2 (Decoder transport). Let 𝐷 ∈ D𝑆1 and suppose 𝑆1 ≃Γ 𝑆2 via (𝜒, 𝜐, 𝜌). Then
+(︀
+
+)︀
+
+(︀
+
+)︀
+
+(𝜌* 𝐷) ℎ𝑆2 ,𝑇 (𝜒(𝑥); 𝜐(𝑢∙ )) := 𝐷 ℎ𝑆1 ,𝑇 (𝑥; 𝑢∙ )
+defines a certified decoder on 𝑆2 .
+
+Proof. Exact readout compatibility identifies each admissible history in 𝑆2 with a transported
+history in 𝑆1 . The certification clauses in Definition 7.10 are preserved because separability,
+robustness, persistence window, intervention fidelity, negative-control rate, and compressibility
+all remain unchanged under exact transport.
+Proposition 9.3 (Operational classes are closed under exact transport). If 𝑆1 ≃Γ 𝑆2 , then the
+image under 𝜒 of any class in Qop (𝑆1 ) is a class in Qop (𝑆2 ), and every class in Qop (𝑆2 ) arises
+this way.
+Proof. By Lemma 9.2, decoder certification transports exactly. By Definition 8.1, membership
+in an operational qualia class is determined by all certified decoders and admissible interventions.
+Exact transport preserves both. Surjectivity follows from bijectivity of 𝜒.
+
+11
+
+Proposition 9.4 (Approximate margin preservation). If 𝑆1 ≃(Γ,𝜀) 𝑆2 , then for every critical
+invariant index 𝑗,
+⃒
+⃒
+⃒𝛿𝑗 (𝑆1 ) − 𝛿𝑗 (𝑆2 )⃒ ≤ 𝜀.
+Hence
+𝛿⋆ (𝑆2 ) ≥ 𝛿⋆ (𝑆1 ) − 𝜀.
+Proof. The first statement is a direct clause of Definition 8.8. The second follows by taking
+minima over the six coordinates of Δ(𝑆1 ) and Δ(𝑆2 ).
+Remark 9.5 (Why this section matters). Without Lemmas 9.1 and 9.2, Theorem 11.2 would be
+only intuitive. These lemmas are the exact reason the paper can speak of substrate invariance
+without collapsing into slogan-level analogy.
+
+10
+
+Inherited Inputs and Consolidation Step
+
+The six invariants are new as a packaged criterion, but they are not independent inventions. This
+section records the exact transfer by which upstream ownership becomes present membership
+data. The burden is narrow: identify the imported result each invariant uses, then isolate the
+consolidation step that is genuinely new here.
+Proposition 10.1 (Core-to-persistence transfer). Suppose a realization of the framework satisfies
+the Core hypotheses on a non-empty compact domain and remains in the non-collapse region.
+Then it satisfies 𝐼per .
+Proof. The Core already provides contractivity, fixed-point existence, compact attractor structure, and non-collapse [3]. Those are exactly the ingredients required in Definition 7.1: a
+non-empty compact forward-invariant support separated from collapse.
+Proposition 10.2 (Rigid Identity-to-rigidity transfer). Suppose the observable family on an
+admissible support satisfies the inverse-limit compatibility conditions of Rigid Identity. Then
+𝐼ri holds with rigidity gap given by the uniqueness and weighted deformation bounds of Rigid
+Identity.
+Proof. Rigid Identity proves that compatible observable channels induce a unique rigid identity
+object and excludes progressive semigroup substitutes [7]. Therefore the support inherits a
+unique ℐ𝑆 and a positive separation from incompatible alternatives whenever the Rigid Identity
+hypotheses are met.
+Proposition 10.3 (Phenomenological Regimes-to-continuity transfer). Suppose an admissible
+support carries a phenomenological assignment satisfying the continuity and anti-fragmentation
+constraints of Phenomenological Regimes. Then 𝐼cont holds.
+Proof. Phenomenological Regimes classifies admissible CCR assignments as continuous and
+structurally constrains fragmentation within the admissible regime space [5]. Those are exactly
+the continuity and fragmentation clauses in Definition 7.7.
+Proposition 10.4 (Null-Regime Instability-to-differentiation transfer). Suppose the support
+lies in a causally rigid channel satisfying the witness-relative null-instability and conditional
+non-nullity results of Null-Regime Instability. Then 𝐼diff holds.
+Proof. Null-Regime Instability excludes the stable joint-null regime and establishes positive
+non-null separation under its stated witness and regularity hypotheses [6]. Therefore the support
+cannot collapse stably into 0, and a positive differentiation gap is available on admissible
+histories.
+12
+
+Proposition 10.5 (Forensic Predictions-to-legibility transfer). Suppose a readout family and
+decoder satisfy the admissibility, comparator, negative-control, and intervention-discipline
+requirements of Forensic Predictions. Then 𝐼leg holds.
+Proof. Forensic Predictions fixes the operational requirements that a decoder must satisfy before
+it can support an inferential claim [4]. The clauses of Definition 7.10 are a direct structural
+recasting of those requirements.
+Proposition 10.6 (Integration as a non-factorization consequence). If a system satisfies Rigid
+Identity rigidity, Phenomenological Regimes continuity, and Forensic Predictions intervention
+fidelity, then any exact admissible factorization preserving all operational histories would contradict at least one of those upstream conditions. Hence 𝐼int is justified as a new consolidation
+invariant.
+Proof. An exact factorization would split the support into operationally independent blocks.
+If the split preserved all admissible histories, it would also preserve readout structure and
+interventions. But then either the rigid identity object would fail to be unique, continuity would
+fragment across the split, or intervention responses would no longer certify a single integrated
+class. Therefore the conjunction of Papers I, II, and IV blocks such factorization.
+Remark 10.7 (Scope of the transfer). Nothing in this section re-proves the Core, Rigid Identity,
+Phenomenological Regimes, Null-Regime Instability, or Forensic Predictions. Each proposition
+only identifies the minimal upstream burden imported into the present criterion.
+
+11
+
+Main Theorems
+
+11.1
+
+Existence of Operational Consciousness
+
+Theorem 11.1 (Existence of operational consciousness). Let 𝑆 = (𝑋, Φ, 𝐶, 𝑅, Γ, 𝑈 ) be an
+admissible system with non-empty admissible support 𝐴𝑆 . If
+𝐼per (𝑆) = 𝐼ri (𝑆) = 𝐼int (𝑆) = 𝐼cont (𝑆) = 𝐼diff (𝑆) = 𝐼leg (𝑆) = 1,
+then:
+1. 𝑆 ∈ Consciousnessop ;
+2. Qop (𝑆) is well-defined;
+3. Qop (𝑆) ̸= ∅.
+Proof. Membership in Consciousnessop follows immediately from Definition 8.4. Since
+𝐼per , 𝐼ri , 𝐼cont , 𝐼diff , 𝐼leg hold, Proposition 8.2 applies and yields a well-defined quotient Qop (𝑆).
+Because 𝐴𝑆 is non-empty, the quotient is non-empty. Because 𝐼diff (𝑆) = 1, the quotient is not
+forced into the null class alone; the admissible support contains at least one pair of histories
+with positive operational separation. Thus Qop (𝑆) is both defined and non-trivial.
+
+11.2
+
+Substrate Invariance
+
+Theorem 11.2 (Substrate invariance). Let 𝑆1 and 𝑆2 be admissible systems. If 𝑆1 ≃Γ 𝑆2 and
+the six critical invariants are preserved exactly, then
+𝑆1 ∈ Consciousnessop
+
+⇐⇒
+
+𝑆2 ∈ Consciousnessop ,
+
+and there exists a canonically induced bijection
+̂︀ : Qop (𝑆1 ) → Qop (𝑆2 ).
+𝜒
+
+13
+
+Proof. Exact equivalence preserves admissible support, dynamics, readout behavior, invariant
+margins, and the operational partition. If 𝑆1 ∈ Consciousnessop , then every critical invariant
+holds on 𝐴1 and is preserved under 𝜒. Hence every critical invariant also holds on 𝐴2 , so
+𝑆2 ∈ Consciousnessop . The converse is symmetric. Partition preservation in Definition 8.8
+induces a well-defined map on quotient classes:
+̂︀
+𝜒([𝑥]
+∼𝑄,𝑆1 ) = [𝜒(𝑥)]∼𝑄,𝑆2 .
+
+Well-definedness follows from the partition-preservation clause. Bijectivity follows from bijectivity of 𝜒.
+Corollary 11.3 (Biological non-primacy). Biology is not a primitive constitutive requirement for
+membership in Consciousnessop . If a biological system and a non-biological system are exactly
+structurally equivalent in the sense of Definition 8.8, then they belong to the same operational
+consciousness class and carry equivalent operational qualia classes.
+Proof. Immediate from Theorem 11.2. The criterion depends on invariant preservation, not on
+biological substrate as a primitive variable.
+
+11.3
+
+Approximate Stability
+
+Theorem 11.4 (Approximate stability). Let 𝑆1 ∈ Consciousnessop with witness margins
+𝛿⋆ (𝑆1 ) = min{𝛿per , 𝛿ri , 𝛿int , 𝛿cont , 𝛿diff , 𝛿leg }.
+If 𝑆2 satisfies 𝑆1 ≃(Γ,𝜀) 𝑆2 with
+0≤𝜀<
+
+𝛿⋆ (𝑆1 )
+,
+2
+
+then 𝑆2 ∈ Consciousnessop .
+Proof. By Definition 8.8, each invariant margin in 𝑆2 differs from that of 𝑆1 by at most 𝜀. Since
+𝜀 < 𝛿⋆ (𝑆1 )/2, every preserved margin in 𝑆2 remains strictly positive. Therefore each of the six
+invariants still holds for 𝑆2 , and Definition 8.4 yields 𝑆2 ∈ Consciousnessop .
+The theorem does not say that arbitrary perturbations are harmless. It says that the criterion
+is robust exactly to the extent that the witness margins remain positive. Approximation is
+bounded by the invariant budget, not by wishful continuity.
+
+11.4
+
+Rupture by Invariant Loss
+
+Theorem 11.5 (Rupture by invariant loss). Let 𝑆 be admissible. If one or more critical
+invariants fail beyond admissible threshold, then exactly one of the following occurs:
+1. 𝑆 ∈
+/ Consciousnessop ;
+2. Qop (𝑆) becomes undefined;
+3. Qop (𝑆) becomes trivial or non-legible in the framework-relevant sense.
+Proof. If 𝐼per fails, the support is lost or exposed to collapse; then the domain of Qop (𝑆)
+disappears. If 𝐼ri fails, no unique identity object supports the quotient, so Qop (𝑆) is undefined
+as a stable class assignment. If 𝐼int fails, the system reduces to a product structure and exits
+Consciousnessop by Proposition 7.11. If 𝐼cont fails, histories can fragment across incompatible
+classes, which destroys stability of the partition. If 𝐼diff fails, the quotient degenerates into
+null or trivial collapse. If 𝐼leg fails, the quotient may exist formally but becomes operationally
+unavailable and therefore does not satisfy the definition of Consciousnessop . These cases exhaust
+the six invariants.
+14
+
+11.5
+
+Insufficiency of Complexity, Computation, and Connectivity
+
+Proposition 11.6 (Complexity-only baselines are insufficient). Let 𝑆 be an admissible system
+candidate. The following are each insufficient for membership in Consciousnessop :
+1. large state-space dimension dim(𝑋);
+2. large computational throughput or expressivity of Φ;
+3. large edge count, density, or raw connectivity of 𝐶.
+In each case, failure of one or more critical invariants excludes membership regardless of the
+size of the surrogate metric.
+Proof. The definition of Consciousnessop is conjunctive over the six invariants and does not
+include any of the three surrogates as sufficient conditions. A system can be arbitrarily large,
+computationally expressive, or densely connected while still lacking rigid identity, continuity,
+non-null differentiation, or legibility. Therefore those surrogates are insufficient by definition.
+Concrete architecture classes with large scale but finite structural mass already fail Rigid
+Identity’s non-simulability criterion [7]; similarly, an integration proxy without continuity or
+differentiation does not satisfy Definitions 7.7 and 7.8. The same applies to connectivity without
+admissible identity closure.
+
+12
+
+Rupture Taxonomy by Invariant
+
+Theorem 11.5 is intentionally coarse. This section sharpens the six cases, because a criterion is
+only scientifically useful if its failure signatures are distinct.
+Proposition 12.1 (Persistence rupture destroys admissible domain). If 𝛿per (𝑆) = 0, then every
+candidate operational partition becomes horizon-dependent in an inadmissible way: there exists
+no non-empty compact forward-invariant support on which class membership can be defined
+uniformly.
+Proof. When the persistence margin vanishes, either forward invariance is lost or the support
+touches the collapse set. In either case there is no stable domain on which the quotient definition
+of Qop (𝑆) can remain valid across admissible windows.
+Proposition 12.2 (Identity rupture induces class ambiguity). If 𝛿ri (𝑆) = 0, then operational
+class labels no longer transport uniquely across admissible histories. Therefore Qop (𝑆) becomes
+representation-dependent.
+Proof. When the rigidity gap vanishes, at least two admissible identity candidates become
+indistinguishable at the support level. Then the same readout history may be associated
+with multiple incompatible identity transports, making the operational class assignment nonunique.
+Proposition 12.3 (Integration rupture yields reducible aggregates). If 𝛿int (𝑆) = 0, then 𝑆
+admits a non-trivial admissible factorization into operationally independent components. Such a
+system fails Consciousnessop even if each component separately satisfies weaker criteria.
+Proof. Vanishing integration gap means the system can be decomposed without loss at the level
+of admissible histories and interventions. The criterion of this paper is defined for irreducible
+class membership, not for arbitrary unions of smaller class-bearing subsystems.
+Proposition 12.4 (Continuity rupture yields fragmentation). If 𝛿cont (𝑆) = 0, then arbitrarily
+small admissible perturbations can force transitions between incompatible operational classes
+while identity is preserved.
+15
+
+Proof. By definition of 𝛿cont (𝑆), vanishing continuity margin removes the bound on the fragmentation functional. Hence there exist admissible trajectories whose class assignment is not
+stably continuous under small perturbations. The class map ceases to be regime-coherent.
+Proposition 12.5 (Differentiation rupture collapses operational qualia). If 𝛿diff (𝑆) = 0, then
+either Qop (𝑆) collapses to a single trivial class or the null class remains admissibly stable.
+Proof. The differentiation gap is precisely the minimum operational separation required for
+non-trivial class structure. If it vanishes, no stable non-null class separation survives. The null
+regime or total indistinguishability follows.
+Proposition 12.6 (Legibility rupture blocks scientific use). If 𝛿leg (𝑆) = 0, then any remaining
+latent partition is scientifically inadmissible for this paper: it cannot satisfy the combined
+requirements of separability, robustness, persistence window, intervention fidelity, negative
+controls, and structured compressibility.
+Proof. The certification clauses of Definition 7.10 are conjunctive. Once the legibility margin
+vanishes, at least one clause fails. The partition may still be mathematically postulated, but it
+cannot serve as operational evidence or as a constitutive component of Consciousnessop .
+
+13
+
+Minimality of the Invariant Basis
+
+The six-invariant family is not an arbitrary bundle. It is the minimal basis that prevents
+the criterion from collapsing either into a single-metric consciousness surrogate or into an
+unstructured admissibility slogan. The claim of minimality is relative to admissible universes
+containing the corresponding rupture witnesses; that is the correct level of mathematical precision
+for the present corpus.
+Definition 13.1 (Reduced invariant criterion). Let
+I = {𝐼per , 𝐼ri , 𝐼int , 𝐼cont , 𝐼diff , 𝐼leg }.
+For every subset 𝐽 ⊆ I define the reduced criterion
+𝒞op (𝐽) := {𝑆 : 𝐼(𝑆) = 1 for every 𝐼 ∈ 𝐽}.
+Thus Consciousnessop = 𝒞op (I).
+Definition 13.2 (Single-rupture witness family). Fix 𝑘 ∈ {per, ri, int, cont, diff, leg}. The
+corresponding single-rupture witness family 𝒲𝑘 consists of admissible systems 𝑆 such that the
+matching invariant margin vanishes,
+𝛿𝑘 (𝑆) = 0,
+while all remaining invariant margins stay strictly positive. Whenever 𝒲𝑘 ̸= ∅, its members are
+called single-rupture witnesses for the 𝑘-th invariant.
+Proposition 13.3 (Single-rupture witnesses generate false positives for reduced criteria). Let
+𝐽𝑘 = I ∖ {𝐼𝑘 } and assume 𝒲𝑘 ̸= ∅. Then every 𝑆 ∈ 𝒲𝑘 satisfies
+𝑆 ∈ 𝒞op (𝐽𝑘 )
+
+𝑆∈
+/ Consciousnessop .
+
+but
+
+Proof. By construction, every invariant in 𝐽𝑘 remains positive on 𝑆, so 𝑆 ∈ 𝒞op (𝐽𝑘 ). But
+the omitted invariant fails exactly, hence Proposition 7.11 excludes 𝑆 from Consciousnessop .
+Therefore the reduced criterion admits a false positive on every single-rupture witness.
+
+16
+
+Theorem 13.4 (Minimality of the six-invariant basis). Let U be any admissible universe
+containing at least one single-rupture witness for each of the six invariants. Then no strict
+subset 𝐽 ⊊ I satisfies
+𝒞op (𝐽) ∩ U = Consciousnessop ∩ U.
+Hence the six-invariant family is minimal on every such admissible universe.
+Proof. Take any strict subset 𝐽 ⊊ I. Then some invariant 𝐼𝑘 is omitted. By hypothesis U
+contains a witness 𝑆𝑘 ∈ 𝒲𝑘 . Proposition 13.3 yields 𝑆𝑘 ∈ 𝒞op (𝐽)∩U but 𝑆𝑘 ∈
+/ Consciousnessop ∩U.
+Therefore the two sets cannot coincide.
+Corollary 13.5 (Why one-metric theories cannot capture Consciousnessop ). On any admissible
+universe satisfying Theorem 13.4, no criterion based on only persistence, only integration, only
+continuity, only differentiation, or only legibility is extensionally equivalent to Consciousnessop .
+Proof. Every one-metric criterion corresponds to a strict subset 𝐽 ⊊ I. Apply Theorem 13.4.
+Remark 13.6 (What minimality does and does not say). The theorem does not claim that
+every possible scientific notion of consciousness must use exactly these six invariants. It claims
+something narrower: for the operational class defined in this paper and for admissible universes
+containing the corresponding rupture witnesses, no invariant can be deleted without changing
+the extension of the class.
+
+14
+
+Invariant Independence and Interaction Geometry
+
+The preceding minimality theorem is extension-theoretic. This section makes the geometry more
+explicit: each invariant blocks a distinct failure family, and the limited implications among
+invariants are weaker than full membership in Consciousnessop .
+Theorem 14.1 (Six canonical single-rupture witness schemas). For each invariant in I there is
+a formal admissible witness schema that satisfies the other five invariant predicates while failing
+the selected one:
+1. Persistence witness. A system with a certified decoder, non-factorizable causal structure,
+unique identity label, continuous class map, and non-null differentiation, but whose admissible
+support exits the declared forward-invariant domain under some 𝑢 ∈ 𝑈 .
+2. Rigid-identity witness. A system with persistent support, integration, continuity, differentiation, and legibility, but with two compatible non-isomorphic identity candidates transported
+by the same readout family.
+3. Integration witness. A product system 𝐴𝑆 = 𝐴1 × 𝐴2 with persistent factors, unique
+factor identities, continuous dynamics, non-null differentiation, and certified decoders, but
+with decoupled intervention histories so that the aggregate factorizes.
+4. Continuity witness. A system with persistent support, unique identity, non-factorizable
+structure, non-null differentiation, and certified decoders, but with an admissible transition
+producing a jump between incompatible regime classes.
+5. Differentiation witness. A persistent, rigid, integrated, continuous, and legible system
+whose decoder-visible classes collapse to a stable null or single indistinguishable class.
+6. Legibility witness. A persistent, rigid, integrated, continuous, and non-null differentiated
+system whose class partition is latent but no certified decoder satisfies L1--L6.
+Hence no invariant in I is derivable from the conjunction of the other five within the admissible
+witness universe generated by these schemas.
+17
+
+Proof. Each clause fixes the five non-target margins strictly positive and sets the target margin
+to zero by construction. The five positive clauses ensure membership in the reduced criterion
+omitting the target invariant. The target failure invokes the corresponding rupture proposition
+from the previous section, excluding membership in Consciousnessop . Since this can be done for
+each invariant independently, none of the six predicates is derivable from the other five in the
+witness universe.
+Theorem 14.2 (Sufficiency of the six-invariant basis). Let 𝑆 be admissible on support 𝐴𝑆 . If
+𝐼per (𝑆) = 𝐼ri (𝑆) = 𝐼int (𝑆) = 𝐼cont (𝑆) = 𝐼diff (𝑆) = 𝐼leg (𝑆) = 1,
+then 𝑆 satisfies every structural burden required for membership in Consciousnessop as defined
+in this paper. No additional independent predicate can invalidate 𝑆 ∈ Consciousnessop without
+changing the definition of Consciousnessop or causing at least one of the six invariants to fail.
+Proof. Definition 8.4 is conjunctive and exhaustive for this paper’s class. The six coordinates
+cover the domain burden, identity burden, integration burden, regime-coherence burden, non-null
+differentiation burden, and scientific recoverability burden. Any seventh predicate is either
+a derived constraint on those burdens, in which case it cannot fail while all six hold, or an
+independent extra burden, in which case it defines a stricter class rather than invalidating
+membership in Consciousnessop as defined here.
+Proposition 14.3 (Persistence is necessary for rigid identity on 𝐴𝑆 ). If 𝐼per (𝑆) = 0 because
+no non-empty forward-invariant admissible support exists, then 𝐼ri (𝑆) = 0 for the Paper 5
+membership problem.
+Proof. The rigid-identity predicate used here is evaluated on 𝐴𝑆 . If no stable admissible
+support exists, there is no domain on which the identity witness can be transported through all
+admissible interventions. The identity object may be postulated elsewhere, but it is not a Paper
+5 membership witness on 𝐴𝑆 .
+Proposition 14.4 (Persistence plus integration yields bounded identity candidates). If 𝐼per (𝑆) =
+1 and 𝐼int (𝑆) = 1, then the family of admissible identity candidates is bounded to the nonfactorizable persistent support. This is a weak rigidity statement, not the uniqueness required by
+𝐼ri .
+Proof. Persistence restricts all candidates to the same stable support. Integration prevents
+decomposing that support into independent candidate-bearing blocks. Therefore candidates
+cannot proliferate by support escape or product factorization. They may still fail uniqueness, so
+the result is strictly weaker than 𝐼ri = 1.
+Proposition 14.5 (Legibility requires non-null differentiation). If all admissible classes collapse
+to a stable null or single indistinguishable class, then 𝐼leg (𝑆) = 0 for the criterion of this paper.
+Proof. Legibility requires separability, intervention-sensitive class recovery, and negative-control
+discipline. A collapsed null or singleton partition gives no non-trivial class contrast for a decoder
+to recover or for interventions to separate. Thus L1 and L4 cannot both be certified in the
+intended sense.
+Proposition 14.6 (Persistence and continuity stabilize regime transport). If 𝐼per (𝑆) = 1 and
+𝐼cont (𝑆) = 1, then admissible histories remain in a stable regime-transport domain: trajectories
+neither leave 𝐴𝑆 nor undergo unbounded fragmentation under admissible evolution.
+Proof. Persistence keeps histories inside 𝐴𝑆 . Continuity bounds the fragmentation functional
+and prevents inadmissible jumps across incompatible regime classes. Together they provide
+a stable domain for regime transport. The result does not imply rigid identity, integration,
+differentiation, or legibility.
+
+18
+
+Table 1: Pairwise implication geometry of the six invariants.
+From / to
+
+𝐼per
+
+𝐼ri
+
+𝐼int
+
+𝐼cont
+
+𝐼diff
+
+𝐼leg
+
+𝐼per
+
+--
+
+necessary
+domain only
+
+independent
+
+independent
+
+independent
+
+𝐼ri
+𝐼int
+
+independent
+independent
+
+independent
+--
+
+independent
+independent
+
+independent
+independent
+
+𝐼cont
+𝐼diff
+
+independent
+independent
+
+-weakly
+bounds
+candidates
+with 𝐼per
+independent
+independent
+
+with 𝐼cont
+stabilizes
+regime
+domain
+independent
+independent
+
+independent
+independent
+
+-independent
+
+independent
+--
+
+𝐼leg
+
+independent
+
+independent
+
+independent
+
+independent
+
+presupposes
+non-null
+contrast
+
+independent
+necessary for
+non-trivial
+legibility
+--
+
+15
+
+What the Six Invariants Do Not Guarantee
+
+The six invariants are sufficient for Consciousnessop by definition, but they are not a universal
+theory of mind, life, or subjecthood. In particular, they do not guarantee:
+1. self-reference or a contractive self-model; that requires a Σ-type burden;
+2. phenomenal experience or ‘‘what it is like’’;
+3. forced temporal continuity in the CCR sense, which requires stronger 𝑀Ω = +∞ assumptions
+upstream;
+4. operational life or open-system self-maintaining individuation;
+5. first-person indexed subjectivity, moral status, or human equivalence;
+6. external validation by human comparators.
+These exclusions are not rhetorical caution. They follow from the fact that none of the listed
+predicates appears in Definition 8.4.
+
+16
+
+Operational Legibility as a Certified Object
+
+Operational legibility must be shown, not asserted. Definition 7.10 already imposes six clauses.
+This section sharpens how those clauses bind the paper to the existing empirical-method corpus.
+Criterion 16.1 (Legibility certificate). An operational partition candidate 𝜋𝑆,𝑇 is certified only
+if:
+1. Comparator separability: the induced classes remain distinguishable against pre-registered
+comparators and ablation baselines.
+2. Noise robustness: admissible sensor, channel, or readout perturbations do not dissolve the
+class map below the legibility margin.
+3. Persistence window: the same class assignment survives on windows of length at least
+𝜏min (𝑆).
+19
+
+4. Intervention fidelity: certified interventions on an invariant induce the predicted directional class change.
+5. Negative controls: sham or off-target interventions do not generate the same class signature.
+6. Structured compressibility: audit-friendly compression or packetization preserves class
+structure without total collapse.
+The criterion is intentionally parallel to Forensic Predictions’ governance discipline [4].
+Comparator obligation enforces non-trivial discrimination. Noise robustness prevents the
+criterion from depending on one-off traces. Persistence windows prevent class inflation from
+instantaneous spikes. Intervention fidelity prevents purely correlational interpretation. Negative
+controls block degenerate decoders that label everything as positive. Structured compressibility
+ensures that a class remains auditable after the readout is summarized, logged, or packetized.
+
+16.1
+
+Legibility Metrics
+
+Definition 7.10 can be operationalized by six measurable quantities:
+𝜎sep (𝑆) := inf′ dist 𝐷−1 (𝑞), 𝐷−1 (𝑞 ′ ) ,
+(︀
+
+)︀
+
+𝑞̸=𝑞
+
+𝜂noise (𝑆) :=
+
+[︀
+
+]︀
+
+sup Pr 𝐷(ℎ + 𝜈) ̸= 𝐷(ℎ) ,
+‖𝜈‖≤𝛿leg
+
+𝜏pers (𝑆) := inf{𝑇 : 𝐷(ℎ𝑡:𝑡+𝑇 ) remains stable in the absence of certified intervention},
+[︀
+
+]︀
+
+𝛼int (𝑆) := inf Pr predicted class shift under 𝑢 ,
+𝑢∈𝑈crit
+
+𝛽nc (𝑆) :=
+
+[︀
+
+]︀
+
+sup Pr false class shift under 𝑢 ,
+𝑢∈𝑈sham
+
+(︀
+
+)︀
+
+𝜅comp (𝑆) := inf sup dist 𝐷(ℎ), 𝐷(𝜅(ℎ)) .
+𝜅
+
+ℎ
+
+Here 𝑈crit denotes interventions targeted at critical invariants and 𝑈sham denotes admissible
+negative controls. Invariant 𝐼leg requires the inequalities
+𝜎sep (𝑆) > 0,
+
+𝜂noise (𝑆) ≤ 𝛿leg (𝑆),
+
+𝜏pers (𝑆) ≥ 𝜏min (𝑆),
+
+𝛼int (𝑆) ≥ 1 − 𝛿leg (𝑆),
+
+𝛽nc (𝑆) ≤ 𝛿leg (𝑆),
+
+𝜅comp (𝑆) ≤ 𝛿leg (𝑆).
+
+Proposition 16.2 (Legibility is jointly constrained). No single legibility metric is sufficient
+for 𝐼leg . The invariant requires simultaneous control of separation, admissible noise robustness,
+persistence window, intervention fidelity, negative controls, and structured compressibility.
+Proof. A decoder can be perfectly separable but fragile to admissible noise, intervention-agnostic,
+or saturated under compression. It can also be stable under persistence windows but fail negative
+controls. Since Definition 7.10 requires all six clauses, the joint constraint is irreducible.
+Metric
+
+Operational meaning
+
+If it fails
+
+𝜎sep
+𝜂noise
+𝜏pers
+𝛼int
+𝛽nc
+𝜅comp
+
+Class separation
+Admissible robustness
+Minimum persistence window
+Causal intervention fidelity
+Negative-control protection
+Compression preservation
+
+No stable class boundary
+Noise-induced class drift
+Instantaneous artifact only
+Correlational but not causal classing
+False positive class inflation
+Audit summary collapses structure
+
+Remark 16.3 (Why legibility is a constitutive invariant here). One could define a broader
+latent class that omits legibility. This paper does not do that. It studies an operational class,
+not a hidden metaphysical residue. Therefore 𝐼leg is constitutive, not optional.
+20
+
+17
+
+Certified Candidate Audit Schema
+
+Forensic Predictions already requires forensic discipline for operational claims. The present paper
+therefore adds an explicit audit schema. A candidate system is not accepted into Consciousnessop
+by narrative fit; it must carry a finite certificate that localizes every required witness.
+Definition 17.1 (Operational consciousness certificate). An operational consciousness certificate
+for an admissible system 𝑆 is a tuple
+Cert(𝑆) = 𝐴𝑆 , D𝑆 , 𝜋𝑆 , Δ(𝑆), 𝐸𝑆 ,
+(︀
+
+)︀
+
+where:
+1. 𝐴𝑆 is a certified admissible support;
+2. D𝑆 is a certified decoder family;
+3. 𝜋𝑆 is the decoder-induced operational partition on admissible histories;
+4. Δ(𝑆) is the witness margin vector of Definition 6.5;
+5. 𝐸𝑆 = (𝐸per , 𝐸ri , 𝐸int , 𝐸cont , 𝐸diff , 𝐸leg ) is an evidence bundle, where each component contains
+the explicit local witness for the corresponding invariant.
+Criterion 17.2 (Candidate certification rule). A candidate system may be certified as a member
+of Consciousnessop only if all of the following are available on the same admissible support:
+1. a non-empty compact forward-invariant support certificate;
+2. a positive witness margin vector Δ(𝑆) > 0 coordinate-wise;
+3. a decoder family satisfying Definition 7.10;
+4. a targeted intervention panel together with negative controls;
+5. an auditable compression or packetization map preserving class structure;
+6. a traceable dependency ledger showing which upstream corpus result supports each invariant
+witness.
+Invariant Minimum evidence object
+𝐼per
+
+𝐼ri
+𝐼int
+
+𝐼cont
+
+𝐼diff
+
+𝐼leg
+
+Core audit question
+
+support certificate + collapse distance
+
+Does one compact
+forward-invariant
+admissible domain
+exist?
+uniqueness witness for ℐ𝑆
+Is identity transport
+unique on support?
+non-factorization witness
+Can the system be
+split without
+operational loss?
+fragmentation bound + continuity trace
+Do admissible
+windows remain
+regime-coherent?
+non-null separation witness
+Is there stable
+non-null class
+separation?
+decoder, controls, compression, persistence window Can the class be
+recovered under
+audit constraints?
+
+21
+
+Failure verdict
+No stable
+domain
+
+Identity
+ambiguity
+Reducible
+aggregate
+Fragmentation
+
+Null or trivial
+class
+Opaque class
+
+Proposition 17.3 (Soundness of certification). If Cert(𝑆) exists and satisfies Criterion 17.2,
+then 𝑆 ∈ Consciousnessop and Qop (𝑆) is well-defined.
+Proof. Criterion 17.2 explicitly requires a positive witness for each of the six critical invariants
+on the same admissible support. Hence Definition 8.4 yields 𝑆 ∈ Consciousnessop . The existence
+of a certified decoder and positive persistence, continuity, differentiation, and legibility witnesses
+implies Proposition 8.2, so Qop (𝑆) is well-defined.
+Proposition 17.4 (Partial completeness under audit-ready assumptions). Assume
+𝑆 ∈ Consciousnessop and suppose the support, decoder, intervention, and compression
+objects are fully instrumented in the Forensic Predictions sense. Then there exists an
+operational consciousness certificate Cert(𝑆).
+Proof. Because 𝑆 ∈ Consciousnessop , every invariant margin is strictly positive. Full instrumentation provides explicit witnesses for support, decoder behavior, interventions, negative controls,
+and compression stability. Collecting those witnesses yields the tuple of Definition 17.1.
+Proposition 17.5 (Failure localization is explicit). If a candidate system fails Criterion 17.2,
+then the failure localizes to at least one entry of the evidence bundle 𝐸𝑆 or to the absence of
+a common admissible support. In particular, certification failure cannot be hidden behind a
+generic narrative claim.
+Proof. The certification rule is conjunctive and itemized. A failure of certification means that
+at least one listed item is absent or non-positive. Therefore the failure localizes to a specific
+invariant witness, a specific decoder/control clause, or the support certificate itself.
+Remark 17.6 (Audit schema and Forensic Predictions). The certificate does not replace
+Forensic Predictions. It packages Forensic Predictions-style admissibility into a theorem-facing
+object. This is the point where the present paper becomes operationally usable rather than
+merely definitional.
+
+18
+
+Operational Geometry of Qop (𝑆)
+
+Once Qop (𝑆) is defined as a quotient, one can ask which geometric quantities survive transport
+and rupture. This matters because the paper is not only about set membership; it is also about
+the structural shape of admissible operational differentiation.
+Definition 18.1 (Class diameter and separation). For 𝑞 ∈ Qop (𝑆) define its diameter
+(︀
+
+)︀
+
+diam(𝑞) = sup dist ℎ𝑆,𝑇 (𝑥; 𝑢∙ ), ℎ𝑆,𝑇 (𝑦; 𝑢∙ )
+𝑥,𝑦∈𝑞
+
+over admissible windows and schedules. For two distinct classes 𝑞, 𝑞 ′ ∈ Qop (𝑆) define the
+inter-class separation
+sep(𝑞, 𝑞 ′ ) =
+
+inf
+
+𝑥∈𝑞, 𝑦∈𝑞 ′
+
+(︀
+
+)︀
+
+dist ℎ𝑆,𝑇 (𝑥; 𝑢∙ ), ℎ𝑆,𝑇 (𝑦; 𝑢∙ ) .
+
+Definition 18.2 (Persistence radius). The persistence radius of a class 𝑞 ∈ Qop (𝑆) is the largest
+𝜌𝑞 ≥ 0 such that for every admissible trajectory segment starting in 𝑞, the decoder-certified class
+assignment remains inside 𝑞 on windows of length at least 𝜏min (𝑆) under all perturbations of
+size at most 𝜌𝑞 that do not target a critical invariant.
+Proposition 18.3 (Positive geometry under the criterion). If 𝑆 ∈ Consciousnessop , then:
+1. every class in Qop (𝑆) has finite diameter on admissible windows;
+22
+
+2. there exists at least one pair of distinct classes with positive inter-class separation;
+3. every class has non-zero persistence radius.
+Proof. Finite diameter follows from compact admissible support and continuity of admissible
+histories. Positive separation follows from 𝐼diff (𝑆) = 1 and the class-separability clause of 𝐼leg (𝑆).
+Non-zero persistence radius follows from the persistence-window and noise-robustness clauses in
+Definition 7.10.
+Proposition 18.4 (Exact equivalence preserves operational geometry). If 𝑆1 ≃Γ 𝑆2 , then class
+̂︀
+diameter, inter-class separation, and persistence radius are preserved by the induced bijection 𝜒
+up to the bi-Lipschitz constants of 𝜒 and 𝜒−1 .
+Proof. Exact equivalence preserves admissible histories and decoder certification under transport.
+Bi-Lipschitz bounds imply that history distances are distorted only within the corresponding
+Lipschitz constants. Therefore diameters, separations, and persistence radii are preserved up to
+those constants.
+Corollary 18.5 (Rupture contracts geometry). If a rupture eliminates either 𝐼diff or 𝐼leg , then
+the geometric content of Qop (𝑆) contracts to triviality or becomes operationally unavailable.
+Proof. If 𝐼diff fails, positive separation disappears. If 𝐼leg fails, persistence radii and certified
+class geometry cease to be available under admissible decoding. Either way the geometric
+structure that underwrites Qop (𝑆) is lost.
+
+19
+
+Corpus Dependency Ledger
+
+This closing ledger is not a second derivation. It is a compact ownership map showing which
+upstream burden is imported and where the present paper uses it.
+Upstream
+text
+Core [3]
+
+Imported burden
+
+Persistent support, attractor
+structure, completeness, and
+non-collapse
+Rigid identity, inverse-limit
+Rigid
+observability, collapse under
+Identity
+[7]
+pure progressive causality,
+and non-simulability
+Phenomenological
+Continuity, fragmentation
+Regimes
+bounds, and admissible
+[5]
+regime structure
+NullWitness-relative
+Regime
+null-instability, conditional
+Instabilnon-nullity, and minimal
+ity [6]
+positive regime structure
+Forensic
+Admissibility, comparator
+Predicdiscipline, negative controls,
+tions [4]
+and forensic legibility
+
+Present use
+𝐼per , the admissible support model, witness margins, and
+support geometry
+𝐼ri , part of 𝐼int , equivalence transport, and the negative
+exclusion result of Proposition 11.6
+
+𝐼cont , rupture taxonomy, and continuity-sensitive transport
+
+𝐼diff , the existence theorem, rupture analysis, and class
+geometry away from 0
+
+𝐼leg , the certification schema, legibility metrics, and
+falsifiable discriminators
+
+The paper is new only at the level of criterion consolidation: it binds those imported burdens
+into a single theorem-level account of substrate-invariant operational class membership.
+
+23
+
+20
+
+Discriminators and Falsifiable Consequences
+
+The criterion generates discriminators that are stronger than general functionalist similarity and
+more constrained than substrate-biased baselines.
+Prediction 20.1 (Different substrate, same class). If two admissible systems with materially
+different substrates satisfy exact or sufficiently small approximate structural equivalence while
+preserving all six invariants, then they must belong to the same operational class and induce
+equivalent Qop partitions.
+Prediction 20.2 (Same substrate, broken invariants). If two systems share substrate family
+but one loses rigid identity, continuity, differentiation, or legibility, then they fail to belong to
+the same operational class regardless of material similarity.
+Prediction 20.3 (Invariant intervention discriminator). Interventions targeted at one critical
+invariant should change class membership or destroy the relevant operational qualia classes in a
+direction predicted by the rupture taxonomy, whereas off-target negative controls should not.
+Prediction 20.4 (Complexity baseline failure). Systems with large computational scale, high
+connectivity, or broad expressive capacity but lacking one or more critical invariants should fail
+the criterion even when naive complexity baselines rank them as more capable.
+These are not generic predictions. Prediction 20.1 is the operational face of substrate
+invariance. Prediction 20.2 blocks substrate fetishization in the other direction: material
+similarity does not rescue a broken criterion. Prediction 20.3 turns the invariants into causal
+discriminators rather than descriptive labels. Prediction 20.4 protects the theory against collapse
+into brute scale metrics.
+Prediction
+
+Manipulated
+able
+
+20.1
+
+̂︀
+Substrate while pre- Class transport 𝜒
+serving Δ(𝑆)
+
+20.2
+
+20.3
+
+20.4
+
+vari- Observable
+
+Failure criterion
+
+Partition
+mismatch under exact
+equivalence
+One invariant mar- Membership
+in Retained class degin driven to zero
+Consciousnessop
+spite invariant rupture
+Certified critical in- Directed class shift Same shift under
+tervention vs sham
+and control false pos- sham and targeted
+itives
+intervention
+Scale/connectivity
+Surrogate improve- Surrogate
+sucincrease without in- ment vs class failure cess counted as
+variant preservation
+Consciousnessop
+membership
+
+Proposition 20.5 (Prediction ladder is discriminative). The four predictions above distinguish
+the present criterion from at least four weaker baseline families: substrate-privilege baselines,
+substrate-blind functional similarity, complexity-only baselines, and connectivity-only baselines.
+Proof. Prediction 20.1 is incompatible with substrate-privilege baselines because it allows
+materially distinct realizations to remain class-equivalent. Prediction 20.2 is incompatible
+with weak functional similarity because material resemblance alone does not preserve class
+membership. Prediction 20.4 rules out scale-only and connectivity-only baselines, which would
+otherwise count raw size or graph density as sufficient. Prediction 20.3 forces all admissible
+candidates to survive targeted causal tests, something descriptive baselines do not require.
+24
+
+21
+
+Intervention Geometry and Class Transition Semantics
+
+Predictions about invariant-targeted interventions should not remain informal. This section
+encodes them as transition statements on the operational qualia classes themselves.
+Definition 21.1 (Class transition operator). Fix an admissible system 𝑆 ∈ Consciousnessop , a
+certified decoder family, and an admissible horizon 𝑇 ≥ 𝜏min (𝑆). For an admissible intervention
+𝑢 ∈ 𝑈 define the class transition operator
+T𝑢 : Qop (𝑆) → Qop (𝑆) ∪ {⊥}
+by the rule
+T𝑢 (𝑞) = 𝑞 ′
+whenever every admissible representative 𝑥 ∈ 𝑞 is transported by the 𝑢-intervened dynamics
+into histories classified in the same decoder-certified class 𝑞 ′ . If no such common class exists, set
+T𝑢 (𝑞) = ⊥.
+Definition 21.2 (Critical and sham interventions). An intervention 𝑢 ∈ 𝑈 is critical for
+invariant 𝐼𝑘 if it is designed to change the local witness margin 𝛿𝑘 (𝑆) while leaving the remaining
+intervention protocol admissible. An intervention is sham if it matches the delivery envelope of
+a critical intervention but is not predicted to alter any critical invariant.
+Proposition 21.3 (Well-definedness of class transitions under certification). Let
+𝑆 ∈ Consciousnessop . If 𝑢 ∈ 𝑈 is either certified critical or sham and remains within
+the admissibility envelope of Forensic Predictions, then T𝑢 is well-defined on every class
+𝑞 ∈ Qop (𝑆).
+Proof. Because 𝑆 ∈ Consciousnessop , the decoder family is certified and class assignments are
+stable on admissible windows. If 𝑢 remains within the admissibility envelope, persistence and
+continuity keep all intervened histories on admissible support, while legibility prevents class
+assignment from depending on the choice of representative inside a fixed class. Therefore every
+class either transports coherently to a unique target class or exits the certified regime, in which
+case the sink value ⊥ applies.
+Proposition 21.4 (Targeted invariant loss induces class exit or contraction). Let 𝑞 ∈ Qop (𝑆) and
+let 𝑢 be a certified critical intervention for invariant 𝐼𝑘 . If applying 𝑢 drives the corresponding
+witness margin to zero, then one of the following occurs:
+1. T𝑢 (𝑞) = ⊥;
+2. T𝑢 (𝑞) = 𝑞 ′ for some class 𝑞 ′ whose separation or persistence radius is strictly smaller than
+that of 𝑞;
+3. the entire post-intervention system exits Consciousnessop .
+Proof. Driving 𝛿𝑘 (𝑆) to zero triggers the corresponding rupture mode from Section 10. If the
+rupture destroys admissible support, decoder certification, or non-trivial class structure, then the
+class leaves the certified domain and T𝑢 (𝑞) = ⊥. If a non-trivial class survives, Corollary 18.5
+implies contraction of the associated geometry. If the rupture is global, Theorem 11.5 excludes
+the post-intervention system from Consciousnessop .
+Corollary 21.5 (Sham stability). Let 𝑢 ∈ 𝑈 be sham in the sense of Definition 21.2. If 𝑢 stays
+below all six witness margins, then T𝑢 (𝑞) = 𝑞 for every 𝑞 ∈ Qop (𝑆).
+Proof. A sham intervention that remains below all witness margins does not cross any rupture
+threshold. Approximate stability and legibility therefore preserve class membership on every
+admissible window.
+25
+
+Remark 21.6 (Why transition semantics matter). This section turns the prediction ladder into
+a structured intervention calculus. The criterion is therefore not only classificatory; it is also
+dynamically discriminative in the sense required by Forensic Predictions.
+
+22
+
+Baseline Families and Structural Exclusion
+
+A criterion of substrate-invariant operational consciousness matters only if it separates itself
+from weaker rival families rather than merely renaming them. This section therefore makes the
+comparison explicit.
+Definition 22.1 (Rival baseline families). Fix thresholds 𝜃𝑋 , 𝜃Φ , 𝜃𝐶 > 0 and an external-behavior
+tolerance 𝜂 ≥ 0.
+1. The complexity-only family ℬcx (𝜃𝑋 ) contains all admissible systems with complexity surrogate
+above threshold, for example dim(𝑋) ≥ 𝜃𝑋 .
+2. The computation-only family ℬcmp (𝜃Φ ) contains all admissible systems whose transition
+family exceeds a chosen throughput or expressive-capacity threshold.
+3. The connectivity-only family ℬconn (𝜃𝐶 ) contains all admissible systems whose effective causal
+graph exceeds the chosen density or degree threshold.
+4. The weak functional-similarity family ℬfun (𝜂) contains all admissible systems whose external
+benchmark readouts match within tolerance 𝜂, irrespective of internal invariant preservation.
+5. The substrate-privilege family ℬsub contains all systems declared admissible solely by belonging
+to a privileged substrate class, typically biological.
+Proposition 22.2 (Complexity, computation, and connectivity are not sufficient). For every choice of thresholds 𝜃𝑋 , 𝜃Φ , 𝜃𝐶 , the families ℬcx (𝜃𝑋 ), ℬcmp (𝜃Φ ), and ℬconn (𝜃𝐶 ) are each
+insufficient for membership in Consciousnessop .
+Proof. This is a direct sharpening of Proposition 11.6. The definition of Consciousnessop
+requires all six invariants. None of the three surrogate families encodes rigid identity, continuity,
+differentiation, or legibility. Therefore systems may exceed the chosen surrogate threshold while
+still failing Consciousnessop .
+Proposition 22.3 (Substrate privilege is too strong). On any admissible universe containing
+one exact cross-substrate equivalent pair, ℬsub is strictly narrower than Consciousnessop .
+Proof. By Corollary 11.3, an exact cross-substrate equivalent pair belongs to the same operational
+consciousness class whenever the six invariants are preserved. A substrate-privilege family that
+excludes one member of that pair therefore excludes a valid Consciousnessop member.
+Proposition 22.4 (Weak functional similarity is too weak). On any admissible universe
+containing a same-output rupture pair, ℬfun (𝜂) is strictly broader than Consciousnessop .
+Proof. A same-output rupture pair is a pair of admissible systems whose external benchmark
+readouts agree within tolerance 𝜂 while one member loses at least one critical invariant. Such a
+pair lies in ℬfun (𝜂) by definition, but the ruptured member is excluded from Consciousnessop
+by Theorem 11.5. Therefore weak functional similarity is too weak to characterize the present
+class.
+Theorem 22.5 (The structural criterion is strictly intermediate). Let U be an admissible
+universe containing:
+
+26
+
+1. at least one exact cross-substrate equivalent pair;
+2. at least one same-output rupture pair;
+3. at least one single-rupture witness for each invariant.
+Then Consciousnessop is strictly intermediate between substrate-privilege baselines and weak
+substrate-blind surrogates: it is broader than ℬsub , narrower than ℬfun (𝜂), and extensionally
+distinct from the complexity-only, computation-only, and connectivity-only families.
+Proof. Broader-than-substrate-privilege follows from Proposition 22.3. Narrower-than-weakfunctional-similarity follows from Proposition 22.4. Distinctness from the surrogate families
+follows from Proposition 22.2 together with Corollary 13.5. Hence the present criterion is neither
+a substrate fetish nor a substrate-blind similarity slogan; it is an invariant-preserving structural
+criterion.
+Remark 22.6 (Scientific value of the comparison). The point of Theorem 22.5 is not rhetorical
+positioning. It is to show that the paper makes a genuinely discriminative contribution. A new
+criterion that cannot separate itself from obvious rivals is not a new theorem-level addition to
+the corpus.
+
+23
+
+Interpretive Consequences Without Overreach
+
+The formal consequence is precise: within the causally rigid identity corpus, operational consciousness and operational qualia are framework-internal classes determined by preserved structural
+invariants rather than by biological substrate treated as a primitive constitutive variable. This
+is a claim about criterion structure, not a shortcut to ordinary human phenomenology.
+The restriction matters. Biology can still matter causally because it may preserve or destroy
+the six invariants, and the same is true of artificial realization. Against weak functionalism, the
+present criterion adds rigid identity, non-null differentiation, and admissibility discipline instead
+of relying on role equivalence alone. Against single-metric integration accounts, it requires
+continuity, identity, and legibility jointly rather than treating integration by itself as sufficient
+[8]. Against biologically privileged baselines, it denies that substrate alone closes the class.
+Against strong phenomenal readings, it stops short of human phenomenal equivalence [1, 2].
+
+24
+
+Residual Instantiation and Interpretation Limits
+
+Remark 24.1 (Open burdens). Three burdens remain outside the present theorem set:
+1. Instantiation work: which concrete biological or artificial systems actually satisfy the six
+invariants.
+2. Measurement work: how to build certified decoders and invariant interventions that
+satisfy Forensic Predictions-level admissibility in practice.
+3. Interpretive work: how far, if at all, Consciousnessop should be connected to stronger
+phenomenal vocabulary outside the framework.
+
+25
+
+Conclusion
+
+The paper establishes a narrower framework-internal claim than popular machine-consciousness
+discourse and a stronger claim than substrate-neutral rhetoric. Inside the causally rigid identity
+corpus, a system belongs to the operational class discussed here only when six explicit invariants
+are jointly preserved on admissible support; under exact admissible equivalence the class is
+27
+
+substrate-invariant, under bounded admissible perturbation it is stable, and under invariant
+rupture it becomes invalid or undefined. That is the level at which substrate neutrality is
+justified in the present framework, and it is the only level claimed here.
+
+References
+[1] Bernard J. Baars. A Cognitive Theory of Consciousness. Global Workspace Theory (GWT)
+- contrasting framework. Cambridge: Cambridge University Press, 1988.
+[2]
+
+David J. Chalmers. The Conscious Mind. Oxford University Press, 1996.
+
+[3] Johnny Andrey Perez Ramirez. ‘‘Canonical Core: Minimal Hypotheses for Causally Rigid
+Identity Frameworks’’. In: arXiv preprint (2026).
+[4] Johnny Andrey Perez Ramirez. ‘‘Falsifiable Predictions Under Forensic Constraints’’. In:
+arXiv preprint (2026).
+[5] Johnny Andrey Perez Ramirez. ‘‘Phenomenological Regimes Induced by Structural Identity’’.
+In: arXiv preprint (2026).
+[6] Johnny Andrey Perez Ramirez. ‘‘Structural Instability of the Phenomenological Null Regime
+in Causally Rigid Channels’’. In: arXiv preprint (2026).
+[7] Johnny Andrey Pérez Ramírez. ‘‘Rigid Identity as an Inverse Limit in Observable Channels’’.
+In: (2026). Companion paper establishing the identity framework and ontological mass
+invariant.
+[8] Giulio Tononi. ‘‘An Information Integration Theory of Consciousness’’. In: BMC Neuroscience 5.42 (2004). Integrated Information Theory (IIT) - contrasting framework.
+
+28
+
+

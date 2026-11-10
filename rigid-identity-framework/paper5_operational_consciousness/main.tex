@@ -519,6 +519,35 @@ For the obstruction, write $\ell(x)=D(W(x))$ for the label obtained from a fixed
 \end{proof}
 
 
+\subsection{Legibility of Matched Paired Responses}
+
+\begin{definition}[Matched Paired Response Window]\label{def:matched-paired-response-window}
+On the common support $Z_{\mathcal P}$, a paired response window is the ordered pair of time-zero and time-one readout histories of two copies prepared from the same $(p,\theta,b)$ with a common input $u$ and coupling $\lambda$. The two arms have fixed signs $q=+1$ and $q=-1$. The metric is the maximum of the four-channel readout distances over both arms and both times. Use the distance $D=\rho(y_+,y_-)$ between the two observed time-one $r_0$ coordinates. The decoder returns low for $D\le L/2$, high for $D\ge 3L/2$, and abstains otherwise. Here $L=1/12$ turns. Preparation, command matching and arm order are guaranteed by the protocol. The decoder uses no hidden state or coupling parameter.
+\end{definition}
+
+\begin{theorem}[Legibility of Matched Integration Responses]\label{thm:matched-integration-legibility}
+Use the windows of Definition~\ref{def:matched-paired-response-window} with $\lambda\in\{0\}\cup[L,1/9]$ and adversarial observation error at most $\eta=1/256$ in the paired metric. The following are the L1--L6 properties of Definition~\ref{def:ileg} evaluated on the paired-response domain.
+\begin{enumerate}[leftmargin=1.5em]
+\item The clean high and low response sets have separation exactly $L$.
+\item All observations in the allowed noise balls preserve the clean class, with zero abstentions.
+\item For any train of at least three freshly reset pairs at a fixed coupling and fixed prepared first bit, the class persists when the common input phase varies across pairs.
+\item In the nonempty target population, retain the same state and common input, prepare $b_1=1$, and ablate $\lambda\in[L,1/9]$ to zero between paired trials. The class changes from high to low with zero misses.
+\item In the nonempty sham population, retain the state and coupling and vary the common input across paired trials. Both first-bit strata are allowed. The false-change and abstention rates are zero.
+\item On the resolved domain one bit retains the class with zero discrete class distortion, and zero bits are insufficient. Including the audit status of abstention requires two bits in a fixed-length encoding.
+\end{enumerate}
+At error radius $L/2$ a low and a high experiment can have identical full observations. If the common-input condition is removed, even a noise-free uncoupled experiment can decode as high.
+\end{theorem}
+
+\begin{proof}
+The clean score is $2\lambda b_1$, since $2\lambda\le2/9$ and the phase input cancels. The score is $2$-Lipschitz in the paired metric by the triangle inequality. Thus the clean score gap $2L$ implies a metric separation of at least $L$. Equality is attained with the same preparation and common input at $\lambda=0,L$ with $b_1=1$: each post-control phase changes by $L$ and no other channel or time contributes a larger distance.
+
+Every noisy low score is at most $2\eta<L/2$, and every noisy high score is at least $2L-2\eta>3L/2$. These inequalities hold for all allowed errors with no independence assumption on the noise. They apply pointwise along any reset train with the stated fixed bit and coupling. Under the matched target intervention the score changes from the high region to the low region. Under a sham it stays in its original region for either bit. The score on each paired trial therefore gives pointwise bounds of zero for misses, false changes and abstentions on the respective populations. The matching relation for target comparisons is equality of the preparation and common input, with arm order fixed. It is transitive, and equality of the decoded response classes is transitive as well. Encoding low as zero and high as one preserves both classes and all such class comparisons under the discrete loss that is one for a wrong class and zero otherwise.
+
+At $\eta=L/2$, the midpoint construction of Theorem~\ref{thm:paired-integration-rupture} applies to every phase channel by shifting each by the same signed error in its arm, leaving the code and time-zero readings exact. The observation has score $L$ and the decoder abstains. The same score occurs without noise at the intermediate coupling $L/2$ with $b_1=1$, outside the certified coupling domain. With $\lambda=0$ and mismatched commands $u+L$ and $u-L$, the clean score is $2L$ and is indistinguishable from the clean matched response at $\lambda=L$, $b_1=1$. Command matching is thus a necessary acquisition control for this inference.
+\end{proof}
+
+A low response with $b_1=0$ occurs in either coupling regime. The response label concerns the controlled pair, and persistence here concerns reset repetitions rather than the advancing state of one trajectory. This experiment leaves open the single-trajectory legibility criterion and the joint operational certificate. The coupling intervention is a model ablation between trials, with the support and readout fixed throughout.
+
 \subsection{Operational Continuity}
 \begin{definition}[Operational continuity and fragmentation bound]\label{def:icont}
 An admissible system $S$ satisfies operational continuity, written $\Icont(S)=1$, if there exists a complete metric space $(\mathcal{E}_S,d_{\mathcal{E}})$ and an admissible assignment

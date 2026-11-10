@@ -224,7 +224,7 @@ The tuple notation is intentionally compact, but the coordinates do not all live
 \times
 \mathbb{R}
 \times
-\big([0,1]^7\big)^{\IntervFam}
+\big([-1,1]^5\big)^{\IntervFam}
 \times
 \mathbb{R},
 \]
@@ -240,8 +240,8 @@ with the following intended roles:
 &&\text{comparative first-person factorization gain,}\\
 \ValAsym_\tau &\in \mathbb{R}
 &&\text{signed self/non-self valuation asymmetry functional,}\\
-\IntervProf_\tau &\in \big([0,1]^7\big)^{\IntervFam}
-&&\text{family of coordinate-drop response profiles under interventions,}\\
+\IntervProf_\tau &\in \big([-1,1]^5\big)^{\IntervFam}
+&&\text{signed drop profiles of the five primary coordinates,}\\
 \Irred_\tau &\in \mathbb{R}
 &&\text{parsimony-adjusted loss margin against weaker rivals.}
 \end{align*}
@@ -523,17 +523,16 @@ The gate decides whether the class is even live. The scalar compares stronger an
 \end{remark}
 
 \subsection{Concrete component readings}
-The paper does not leave the coordinates as pure symbols. A useful canonical reading is:
+Section~\ref{sec:canonical-subjectivity-estimators} specifies the component estimators. Record the raw contrast and the evidence status before any normalization. For a declared unit-scale raw score $z$, the normalized score is $\min(1,\max(0,z))$ when its inputs are admissible and sufficient. A required coordinate with insufficient evidence leaves the composite gate and scalar undefined. In particular a negative ownership contrast, a valid tie, and absent evidence are distinct outcomes.
+
+Five additional raw readings are available when their stated quantities exist. Ownership and selectivity use the matched procedures specified below.
 \begin{align*}
-\widehat{\SelfIndex}_\tau &= 1-\sup_{\pi\in\Pi_{\mathrm{adm}}}\dist(\pi\cdot \SelfIndex,\SelfIndex),\\
-\widehat{\OwnField}_\tau &= 1-\frac{1}{|\mathcal{E}_\tau|}\sum_{e\in\mathcal{E}_\tau}\big|\OwnField(e)-\OwnField^\star(e)\big|,\\
-\widehat{\ContField}_\tau &= \inf_{\kappa\in\mathcal{K}_{\mathrm{rival}}}\big(\mathrm{margin}_{\mathrm{self}}-\mathrm{margin}_{\kappa}\big)_+,\\
-\widehat{\Persp}_\tau &= \frac{\Loss(M_{\mathrm{3p}},\tau)-\Loss(M_{\mathrm{1p}},\tau)}{1+\Loss(M_{\mathrm{3p}},\tau)},\\
-\widehat{\ValAsym}_\tau &= \frac{\mathrm{self\text{-}weighted\ response}-\mathrm{nonself\text{-}weighted\ control}}{1+\mathrm{self\text{-}weighted\ response}},\\
-\widehat{\IntervProf}_\tau &= \frac{1}{|\IntervFam|}\sum_{u\in\IntervFam}\mathbf{1}\{\text{$u$ yields the expected selective pattern}\},\\
-\widehat{\Irred}_\tau &= \frac{\inf_{M\in\WeakClosure}\Loss(M,\tau)-\Loss(M_{\mathrm{subj}},\tau)}{1+\inf_{M\in\WeakClosure}\Loss(M,\tau)}.
+\widetilde{\SelfIndex}_\tau &= 1-\sup_{\pi\in\Pi_{\mathrm{adm}}}\dist(\pi\cdot \SelfIndex,\SelfIndex),\\
+\widetilde{\ContField}_\tau &= \inf_{\kappa\in\mathcal{K}_{\mathrm{rival}}}\big(\mathrm{margin}_{\mathrm{self}}-\mathrm{margin}_{\kappa}\big)_+,\\
+\widetilde{\Persp}_\tau &= \frac{\Loss(M_{\mathrm{3p}},\tau)-\Loss(M_{\mathrm{1p}},\tau)}{1+\Loss(M_{\mathrm{3p}},\tau)},\\
+\widetilde{\ValAsym}_\tau &= \frac{\mathrm{self\text{-}weighted\ response}-\mathrm{nonself\text{-}weighted\ control}}{1+\mathrm{self\text{-}weighted\ response}},\\
+\widetilde{\Irred}_\tau &= \frac{\inf_{M\in\WeakClosure}\Loss(M,\tau)-\Loss(M_{\mathrm{subj}},\tau)}{1+\inf_{M\in\WeakClosure}\Loss(M,\tau)}.
 \end{align*}
-These formulas are not the only admissible estimators, but they make the roles mathematically explicit and force every constitutive term to attach to a measurable gap rather than to informal language.
 
 \section{Bridge axioms and ontological commitments}
 The paper now makes explicit the commitments that weaker treatments typically leave implicit. These are not empirical findings. They are bridge principles that tell the reader what kind of ontological move the present framework is and is not making.
@@ -775,17 +774,14 @@ where the interventions are, respectively, self/non-self swap, ownership lesion,
 Each intervention targets one coordinate family more directly than the others. The point is not to simulate arbitrary damage. The point is to create perturbations whose expected selective effects differ across rival models. A generic degradation of everything proves very little. A clean and selective degradation pattern proves much more.
 
 \subsection{Selective response logic}
-For each intervention $u\in\IntervFam$, let
+For each $u\in\IntervFam$, let $J_{\rm prim}=\{\SelfIndex,\OwnField,\ContField,\Persp,\ValAsym\}$ and let $\mathcal J(u)\subseteq J_{\rm prim}$ be its preregistered nonempty target set. Compute the signed drop
 \[
-D_u^j(S,\tau)=\widehat{X}_\tau^j(S)-\widehat{X}_\tau^j(u\cdot S)
+ D_u^j(S,\tau)=\widehat X_\tau^j(S)-\widehat X_\tau^j(u\cdot S),
+ \qquad j\in J_{\rm prim}.
 \]
-be the drop in coordinate $j\in\{\SelfIndex,\OwnField,\ContField,\Persp,\ValAsym,\IntervProf,\Irred\}$ induced by $u$ on horizon $\tau$. An intervention is \emph{selective} for coordinate $j$ if
-\[
-D_u^j(S,\tau)\ge \theta_j
-\quad\text{and}\quad
-\max_{k\neq j} D_u^k(S,\tau)\le \eta_j D_u^j(S,\tau)
-\]
-for some admissible thresholds $\theta_j>0$ and $\eta_j\in(0,1)$. The intervention profile score $\widehat{\IntervProf}_\tau$ is then built from the fraction of interventions that satisfy the expected selectivity clauses together with matched negative controls.
+A response is selective if all target drops are at least $\theta_u>0$ and all absolute off-target changes are at most $\eta_u\ge0$. If there are no off-target coordinates the latter requirement is vacuous. Thresholds and matched controls are fixed before evaluation. The profile $\IntervProf_\tau$ is computed from these five-coordinate responses, and its score is the fraction of target trials meeting the selectivity rule on a nonempty admissible population. Test matched shams separately and require the declared false-positive bound. Insufficient primary evidence leaves the profile undefined.
+
+The resulting dependence is from the five primary measurements to $\IntervProf_\tau$. The comparative margin $\Irred_\tau$ uses a reserved comparison task with predictions fixed before evaluation. Neither derived coordinate is an input to the five-coordinate selectivity rule. Perturbations of a derived score can still be reported as downstream outcomes.
 
 \subsection{Self/non-self swap}
 \paragraph{Target.} The swap intervention $u_{\mathrm{swap}}$ exchanges the self-indexed locus with a matched non-self locus while preserving as much background organization as possible.
@@ -1268,8 +1264,8 @@ What remains open remains open for good reasons. Human equivalence is not yet cl
 
 \appendix
 
-\section{Canonical estimator family for the subjectivity coordinates}
-The main body defined the seven coordinates and gave a compact canonical reading. This appendix records a fuller estimator family so that the paper does not leave the implementation-facing burden underspecified.
+\section{Canonical estimator family for the subjectivity coordinates}\label{sec:canonical-subjectivity-estimators}
+This appendix gives the estimator family for the seven coordinates. Tildes denote signed raw contrasts before the admissibility and normalization step. A zero denominator, invalid domain or missing reference gives insufficient evidence.
 
 \subsection{Estimator for self-index stability}
 Let $\Pi_{\mathrm{adm}}$ be the admissible relabeling family on the latent candidate set $\mathcal{Z}_\tau$. Let $q(z)$ be the normalized weight assigned to candidate $z$ by the registry. A natural estimator is
@@ -1283,25 +1279,30 @@ Let $\Pi_{\mathrm{adm}}$ be the admissible relabeling family on the latent candi
 where $z^\star$ is the maximizer of $q$. The first factor captures uniqueness of the dominant index; the second captures relabeling robustness. The estimator is high only when one candidate clearly dominates and continues to dominate under admissible permutations.
 
 \subsection{Estimator for ownership coherence}
-Let $\mathcal{E}_\tau$ be the event family on the horizon, and let $o(e)$ be the measured ownership assignment. For a matched control assignment $o_{\mathrm{ctl}}$, define
+Use a preregistered matched nonempty event set $\mathcal E_\tau$ and an independently assigned reference $o^\star$, fixed without consulting candidate or control assignments. Both arms report scores $o(e),o_{\rm ctl}(e)\in[0,1]$ for the same events. For $v$ equal to either assignment, put
 \[
-\widehat{\OwnField}_\tau
-=
-1-
-\frac{1}{|\mathcal{E}_\tau|}
-\sum_{e\in\mathcal{E}_\tau}
-\big|o(e)-o^\star(e)\big|
--\lambda_{\mathrm{ctl}}
-\frac{1}{|\mathcal{E}_\tau|}
-\sum_{e\in\mathcal{E}_\tau}
-\big|o(e)-o_{\mathrm{ctl}}(e)\big|.
+ L(v)=|\mathcal E_\tau|^{-1}\sum_{e\in\mathcal E_\tau}|v(e)-o^\star(e)|.
 \]
-The control penalty is important because it prevents a trivial field from scoring highly just by being smooth. A good ownership estimator must be coherent and distinct from matched non-subjective baselines.
+With valid matching, admissible reference values in $[0,1]$ and the declared minimum coverage, report the signed contrast and normalized score separately:
+\[
+ O_{\rm raw}=L(o_{\rm ctl})-L(o),\qquad
+ \widehat{\OwnField}_\tau=\min(1,\max(0,O_{\rm raw})).
+\]
+If evidence is insufficient, both outputs are undefined and the status records the reason. A valid zero contrast records a tie. A negative contrast records a loss to the baseline even when the normalized score is zero.
+
+\begin{proposition}[Ownership Gain Is Relative to a Shared Reference]\label{prop:ownership-reference-gain}
+On valid evidence, $O_{\rm raw}\in[-1,1]$, is nonincreasing in candidate error for fixed baseline error, and is zero for identical assignments. It is invariant under a common bijective renaming of the events and their assignments and reference.
+\end{proposition}
+\begin{proof}
+Each mean absolute error lies in $[0,1]$. Their difference increases when the candidate's reference error decreases. Identical assignments have identical errors, and a common reindexing merely permutes both sums. Changing causal roles without the corresponding reference transformation changes the comparison and is not a renaming.
+\end{proof}
+
+A change in distance from the baseline incurs no separate penalty. The reference must encode the intended task or causal event assignment rather than the candidate's self-report. If each assignment and reference value has error bounded by $e$, the triangle inequality bounds the contrast error by $4e$; use the declared uncertainty and decision threshold when interpreting its sign.
 
 \subsection{Estimator for autobiographical continuity}
 Let $\mathcal{T}_\tau=\{\kappa_1,\dots,\kappa_m\}$ be the admissible continuity candidates with a designated self-indexed line $\kappa^\star$. Define
 \[
-\widehat{\ContField}_\tau
+\widetilde{\ContField}_\tau
 =
 \frac{\mathrm{score}(\kappa^\star)-\max_{\kappa\neq \kappa^\star}\mathrm{score}(\kappa)}
 {1+\mathrm{score}(\kappa^\star)}.
@@ -1311,7 +1312,7 @@ The score function may combine trajectory compatibility, remap robustness, and f
 \subsection{Estimator for perspective gain}
 Let $M_{\mathrm{1p}}$ be the best first-person indexed predictive factorization and $M_{\mathrm{3p}}$ the best index-neutral factorization on the same admissible support. Define
 \[
-\widehat{\Persp}_\tau
+\widetilde{\Persp}_\tau
 =
 \frac{\Loss(M_{\mathrm{3p}},\tau)-\Loss(M_{\mathrm{1p}},\tau)}
 {1+\Loss(M_{\mathrm{3p}},\tau)}.
@@ -1321,7 +1322,7 @@ This estimator turns perspective into a measurable gain rather than an interpret
 \subsection{Estimator for valuation asymmetry}
 Let $\mathfrak{U}_{\mathrm{self}}$ and $\mathfrak{U}_{\mathrm{nonself}}$ be matched perturbation families differing only in whether the target is self-indexed. Let $R(u)$ denote the resulting weighted response. Then
 \[
-\widehat{\ValAsym}_\tau
+\widetilde{\ValAsym}_\tau
 =
 \frac{\mathbb{E}_{u\in\mathfrak{U}_{\mathrm{self}}}[R(u)]-
 \mathbb{E}_{u\in\mathfrak{U}_{\mathrm{nonself}}}[R(u)]}
@@ -1330,20 +1331,13 @@ Let $\mathfrak{U}_{\mathrm{self}}$ and $\mathfrak{U}_{\mathrm{nonself}}$ be matc
 This estimator is high only when self-targeted perturbations matter differentially after structural matching.
 
 \subsection{Estimator for intervention selectivity}
-Let $\mathcal{J}(u)$ be the intended primary target set for intervention $u$. A natural estimator is
+Use the five-coordinate signed drops and preregistered targets of the selective-response rule. On the matched admissible target set $\mathcal I_{\rm tgt}\ne\varnothing$ the scalar is
 \[
-\widehat{\IntervProf}_\tau
-=
-\frac{1}{|\IntervFam|}
-\sum_{u\in\IntervFam}
-\mathbf{1}
-\left\{
-\min_{j\in\mathcal{J}(u)} D_u^j \ge \theta_u
-\ \text{and}\
-\max_{k\notin\mathcal{J}(u)} D_u^k \le \eta_u
-\right\}.
+ \widehat{\IntervProf}_\tau =
+ \frac{1}{|\mathcal I_{\rm tgt}|}\sum_{u\in\mathcal I_{\rm tgt}}
+ {\bf1}\bigl[\text{target drops and absolute off-target changes meet their thresholds}\bigr].
 \]
-This estimator treats selectivity as a structural property of the perturbation family rather than as a post hoc narrative.
+Record the separate matched-sham rate. The score lies in $[0,1]$ when defined. Replacing either derived coordinate while keeping the five primary measurements and protocol fixed leaves the score unchanged.
 
 \subsection{Estimator for irreducibility}
 The irreducibility estimator is already defined in the main text, but two further notes matter. First, the complexity penalty should be fixed before the comparison, not tuned after observing the result. Second, the weak rival family should be documented in the artifact layer so that a later critic can see exactly which alternatives were and were not defeated.
@@ -1355,6 +1349,29 @@ One may choose stricter or softer versions of the gate:
 \GateSubj^{(\mathrm{soft})}=\left(\prod_j \widehat{X}_j\right)^{1/7}.
 \]
 The present paper prefers the strict minimum as the gate and the geometric mean as the scalar because that pairing best separates class membership from within-class ordering. A future implementation may report both.
+
+\subsection{A Joint Rational Measurement Window}
+
+Use a finite system with state $(z,b)\in\{0,1\}\times\{0,1\}^5$, where $z$ is a balanced exogenous context and $b=(b_I,b_O,b_C,b_P,b_V)$. Reset $b$ to all ones. On a one-step window a target $u_j$ sets only $b_j=0$; the sham $u_0$ preserves all bits. The context is unchanged. Use the same prepared contexts in every arm and error-free rational observations. All the coordinates below are functions of this one transition system and protocol.
+
+In the order \emph{context label, other label}, the index weights are $((1+b_I)/2,(1-b_I)/2)$. The admissible within-run index relabelling is the identity. The index gap is $b_I$, including zero when the weights tie. For the two events, fix the reference $r_z=(1-z,z)$ by the assigned context. The candidate reports $r_z$ when $b_O=1$ and $(1/2,1/2)$ otherwise. The matched control always reports $(1/2,1/2)$, so the reference-based ownership gain is $b_O/2$. The declared continuity scores of the context line and its rival are $b_C$ and zero, giving $b_C/(1+b_C)$. These scores use a fixed context match on the two candidate lines.
+
+The perspective outcome is the binary readout $b_Pz$. The indexed predictor uses $z$ and the command, while the index-neutral rival may use the command but receives no context proxy. Its best zero-one loss on the balanced population is $b_P/2$, and the indexed predictor has loss zero. The normalized perspective gain is $b_P/(2+b_P)$. For valuation, a probe of role $\ell\in\{0,1\}$ produces $b_V\mathbf1_{\ell=z}$. The matched roles $z$ and $1-z$ have equal budgets and give responses $b_V$ and zero, so the normalized asymmetry is $b_V/(1+b_V)$.
+
+For irreducibility reserve separate balanced replicas with $u_0$ for baseline loss and $u_O$ for intervention loss. Both have $b_P=1$. The candidate and rivals receive the same command and predict the same declared selectivity pattern, giving zero selectivity-prediction loss; the complexity coefficient is fixed at zero. Against the declared finite weak family of all context-blind binary predictors by command, the candidate has total loss zero and the best rival has total loss $1/2+1/2=1$. Giving a rival the index is a separate tie control. The reserve is never used to compute the intervention profile.
+
+\begin{proposition}[Joint Rational Certificate of the Seven Local Measurements]\label{prop:joint-rational-window}
+For this window, with minimum target drop $1/4$, maximum absolute off-target change $1/8$, and zero allowed sham positives, the normalized measurements in the order of $\Substate$ are
+\[
+ (1,\tfrac12,\tfrac12,\tfrac13,\tfrac12,1,\tfrac12).
+\]
+The gate is $1/3$ and the functional with equal weights $1/7$ is $48^{-1/7}$. Both exceed the declared threshold $1/4$.
+\end{proposition}
+\begin{proof}
+At reset, the five primary scores evaluate to the first five entries. Each of the five target transitions sets its designated score to zero and leaves all other primary scores unchanged, while the sham changes none. Thus each target drop is at least $1/3$, the off-target changes are zero and the intervention score is one. The reserved rival loss is one because two equiprobable contexts have opposite binary outcomes under each reserved command. No context-blind rule beats $1/2$ on either balanced block. Hence the irreducibility score is $(1-0)/(1+1)=1/2$. Multiplication gives the seventh power $1/48$, and the minimum is $1/3$. Since $48<4^7$, the functional exceeds $1/4$. Restoring the index to the weak predictor permits zero loss and forces a tie, as required by the negative control.
+\end{proof}
+
+This is a nonempty local measurement certificate, with the intervention and rival clauses verified on the declared finite protocol. Definition~\ref{def:subfp} also requires inherited Paper V and VII certificates. Those clauses remain separate obligations for full membership. The comparison establishes a gap relative to the specified context-blind predictors on these tasks.
 
 \section{Intervention-to-artifact mapping and failure semantics}
 The implementation burden becomes much clearer when each intervention is mapped to artifacts and failure codes.

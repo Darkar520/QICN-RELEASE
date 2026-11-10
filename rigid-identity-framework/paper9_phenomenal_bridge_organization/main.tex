@@ -379,13 +379,31 @@ The separation matters in four directions.
 
 This distinction is especially important for $\PiE$ and $\PiT$. It is tempting to read embodied closure or temporal lived structure as if they already named well-understood ontological properties. Inside the present framework they do not. They name burden packages whose ontological interpretation remains constrained by future comparator and intervention results.
 
-\begin{proposition}[Bridge ontology is not reducible to the Paper 8 ontology]
-The bridge ontology cannot be reduced to the Paper 8 ontology by relabeling or monotone reparameterization alone.
-\end{proposition}
+A mode window carries its complete Paper VIII record, including the inherited certificates, threshold decisions, matched intervention outcomes and held-out losses. A transport extension adds a finite graph of such windows and an independently recorded relation between witness instances for each edge. Forgetting those relations recovers the local records unchanged. For the following finite domain each window has two instances, labelled $0,1$, of the same local certificate. The copies carry all the data of that certificate. A local relabelling of instances does not change the underlying certificate.
 
+\begin{definition}[Coherent Transport of Local Witnesses]\label{def:coherent-local-witnesses}
+A transport extension is coherent if a choice of one certified witness instance $w_i$ at each mode $i$ satisfies every independently established edge relation. An edge datum $(w,w')$ is accepted only when both labels are identified from its paired observations under the declared error budget.
+\end{definition}
+
+\begin{proposition}[A Cycle Separates Local Certification from Coherent Transport]\label{prop:bridge-transport-cycle}
+For any complete Paper VIII certificate on an admissible window, the three-mode transport extensions below preserve it in every window. One admits coherent transport and the other does not. Thus, on the domain of such extensions of certified windows, coherent transport cuts out a proper subclass whenever that local certificate domain is nonempty. Coherent transport does not factor through the tuple of local Paper VIII records.
+\end{proposition}
 \begin{proof}
-Suppose, for contradiction, that the bridge ontology were reducible to the Paper 8 ontology by relabeling or monotone reparameterization alone. Then each bridge coordinate would add no new comparator, intervention, or artifact burden beyond those already fixed for Paper 8. But the bridge coordinates are introduced precisely to separate phenomena such as world richness from perspective gain, valence structure from valuation asymmetry, and temporal lived structure from continuity. These separations require additional rival families and intervention families not present in the Paper 8 ontology. Therefore the bridge ontology cannot be obtained by relabeling or monotone reparameterization alone.
+Copy the local record to modes $A,B,C$ and duplicate the witness instance in each window. On edge $e$ prepare both witnesses $w=0,1$ and record $(w,w\oplus k_e)$ in that order. Here $\oplus$ is addition modulo two. These observations recover the unique edge map $w\mapsto w\oplus k_e$. For coordinatewise errors strictly less than $1/2$, nearest-label decoding is exact. At radius $1/2$, a reported $1/2$ is compatible with either label and cannot certify the edge.
+
+Use $(k_{AB},k_{BC},k_{CA})=(0,0,1)$ in the negative instance. The first two edges force $w_A=w_B=w_C$ and the last forces $w_A=1-w_C$. No choice satisfies the cycle. In the positive instance use $(0,1,1)$; both $(0,0,1)$ and $(1,1,0)$ are coherent choices. The local record is identical across the two instances, so a decision using it alone would give the same result on both. More generally the cycle is coherent exactly when the XOR of its three edge bits is zero. The edge experiment can be realized by three two-state modes with the specified deterministic transfers. It uses no inference of edge data from the local scores.
 \end{proof}
+
+This is an explicit positive and negative witness for the transport condition. The class-level statement is relative to a complete local certificate, so each inherited clause is preserved by copying its witness. The finite edge dynamics alone do not realize the upstream system. The proper-inclusion question for fully bridge-admissible systems still requires a joint realization of the remaining BPF predicates, comparator, intervention and governance obligations. Paper VIII local scores alone cannot supply that realization.
+
+\begin{corollary}[The Two Transport Cycles on a Nonempty Rational Record]\label{cor:transport-rational-record}
+The joint rational measurement window of Paper VIII \cite{paper8}, identified there by \texttt{prop:joint-rational-window}, gives a nonempty local record for both cycles of Proposition~\ref{prop:bridge-transport-cycle}. At this measurement level, the transport-certified class is a proper subclass of the three-mode extensions of that record.
+\end{corollary}
+\begin{proof}
+Attach the same realized seven-coordinate record, intervention responses and reserved losses to both witness instances in each mode. Its gate is $1/3$ and its scalar is $48^{-1/7}$ in every copy. In the cycle $(0,1,1)$, the assignments $(0,0,1)$ and $(1,1,0)$ satisfy the measured edge relations. In the cycle $(0,0,1)$, the first two edge equalities and the last edge flip are inconsistent. Thus the two observed transport outcomes differ on identical, explicitly realized local data.
+\end{proof}
+
+The rational measurement record verifies the local scoring, selective-response and rival-comparison clauses of Paper VIII. The inherited Paper V and VII class certificates are still required for the full premise of Proposition~\ref{prop:bridge-transport-cycle}. The six BPF predicate realizations, bridge-specific rival defeat, selective intervention support, and the artifact, drift and governance conditions remain separate obligations for full bridge membership.
 
 \section{Explicit Bridge Axioms}
 The bridge axioms are the minimal bridge-opening commitments required to connect indexed subjectivity to disciplined phenomenal targets without smuggling the conclusion into the premises. Each axiom is classified explicitly.
@@ -555,15 +573,16 @@ where:
 The bridge loss family is therefore intervention-aware and governance-relevant from the outset. A model that matches reports but ignores intervention structure or requires excessive narrative slack does not win the comparison.
 
 \subsection{Bridge irreducibility margin}
-Let $M_{\mathrm{bridge}}$ denote the full bridge model candidate and let $\BridgeWeakClosure$ denote the admissible bridge weak closure. Define the bridge irreducibility margin
+Let $M_{\mathrm{bridge}}$ be the candidate and $\BridgeWeakClosure$ the admissible bridge weak closure. With a valid matched bundle $\mathcal B$, a nonempty admissible closure, finite candidate loss and finite rival infimum, record the signed margin in units of loss:
 \[
-\BridgeMargin
-=
-\min_{M\in \BridgeWeakClosure}\BridgeLoss(M;\mathcal{B})
--
-\BridgeLoss(M_{\mathrm{bridge}};\mathcal{B}).
+\BridgeMargin=\inf_{M\in\BridgeWeakClosure}\BridgeLoss(M;\mathcal B)
+-\BridgeLoss(M_{\mathrm{bridge}};\mathcal B).
 \]
-Positive margin is evidence of comparative superiority relative to the specified weak closure. Negative or zero margin implies reducibility within the chosen bridge family.
+A strictly positive margin defeats the declared rivals, a negative margin gives a better rival, and zero is an infimal tie, with an actual matching rival only when the infimum is attained. Record insufficient evidence separately if any required comparison input is unavailable or invalid. In that case neither the signed margin nor its normalized value is defined. Fix a positive calibration scale $s_R$ in units of loss before evaluation, and use
+\[
+ \widehat{\BridgeMargin}=\min\{1,\max\{0,\BridgeMargin/s_R\}\}.
+\]
+The raw margin and evidence status remain in the record. A calibrated zero can represent a tie or a loss; missing evidence has no numeric score.
 
 \subsection{Local not absolute superiority}
 As in Paper 8, comparative superiority here is local, not absolute. A positive $\BridgeMargin$ says that the specified bridge model outperforms the specified bridge rivals on the specified task bundle under the specified loss family. It does not say that the bridge model is metaphysically privileged. The distinction matters because bridge language is particularly prone to absolute overreadings.
@@ -766,63 +785,26 @@ This asymmetry is not a defect of the paper. It is a disciplined statement of th
 
 \section{Bridge Functional, Gate, and Taxonomy}
 \subsection{Functional}
-The bridge functional is introduced as a graded organization functional, not as a gate:
+On admissible evidence with the six normalized predicate scores and the normalized intervention summary $\widehat{\Delta}_{\mathrm b}$ in $[0,1]$, use
 \[
-\PhiBridge
-=
-\widehat{\Pi}_D^{\alpha_D}
-\widehat{\Pi}_V^{\alpha_V}
-\widehat{\Pi}_W^{\alpha_W}
-\widehat{\Pi}_A^{\alpha_A}
-\widehat{\Pi}_E^{\alpha_E}
-\widehat{\Pi}_T^{\alpha_T}
-\BridgeMargin^{\alpha_R}
-\widehat{\Delta}_{\mathrm{b}}^{\alpha_\Delta},
+ \PhiBridge=\prod_{k\in\{D,V,W,A,E,T\}}\widehat{\Pi}_k^{\alpha_k}
+ \cdot\widehat{\BridgeMargin}^{\alpha_R}
+ \cdot\widehat{\Delta}_{\mathrm b}^{\alpha_\Delta},
 \]
-or, more robustly in multiplicative form,
-\[
-\PhiBridge
-=
-\prod_{k\in \{D,V,W,A,E,T\}}
-\widehat{\Pi}_k^{\alpha_k}
-\cdot
-\BridgeMargin^{\alpha_R}
-\cdot
-\widehat{\Delta}_{\mathrm{b}}^{\alpha_\Delta}.
-\]
-The exact aggregation rule is a design choice to be finalized at BPF-4. What matters formally is that the functional aggregates bridge organization and that it remains weaker than the gate.
+where all exponents are positive and fixed by the protocol. Use $0^\alpha=0$ for $\alpha>0$. If any required score is undefined, report insufficient evidence for the functional. For valid inputs its value lies in $[0,1]$ because every factor lies in $[0,1]$. Tie and defeat both give zero contribution through the normalized margin and retain their distinct raw values. The calibration scale and thresholds are task-specific and remain to be fitted and audited in BPF-4.
 
 \subsection{Gate}
-The bridge gate must remain conjunctive:
-\[
-\GateBridge
-=
-\mathbf{1}
-\left[
-\min
-\left\{
-\widehat{\Pi}_D,
-\widehat{\Pi}_V,
-\widehat{\Pi}_W,
-\widehat{\Pi}_A,
-\widehat{\Pi}_E,
-\widehat{\Pi}_T,
-\BridgeMargin,
-\widehat{\Delta}_{\mathrm{b}}
-\right\}
-\ge
-\vartheta_{\Gamma}
-\;\land\;
-\mathsf{cmp}
-\;\land\;
-\mathsf{int}
-\;\land\;
-\mathsf{drift}
-\;\land\;
-\mathsf{gov}
-\right],
-\]
-where $\mathsf{cmp}$ denotes comparator validity, $\mathsf{int}$ denotes intervention stability, $\mathsf{drift}$ denotes absence of stale or drift invalidation, and $\mathsf{gov}$ denotes governance compliance. The threshold slots
+For valid evidence the bridge gate is conjunctive. Missing required evidence leaves its evaluation insufficient:
+\begin{align*}
+ m_\Gamma
+ &=\min\{\widehat{\Pi}_D,\widehat{\Pi}_V,\widehat{\Pi}_W,\widehat{\Pi}_A,
+          \widehat{\Pi}_E,\widehat{\Pi}_T,\widehat{\BridgeMargin},\widehat{\Delta}_{\mathrm b}\},\\
+ \GateBridge
+ &=\mathbf1\bigl[m_\Gamma\ge\vartheta_\Gamma
+ \land\BridgeMargin>\vartheta_R\land\mathsf{tr}\land\mathsf{cmp}\\
+ &\hphantom{=\mathbf1\bigl[}\land\mathsf{int}\land\mathsf{drift}\land\mathsf{gov}\bigr].
+\end{align*}
+where $\vartheta_R\ge0$ is a raw-loss threshold, $\mathsf{tr}$ is verified coherence on the declared mode graph, and $\mathsf{cmp}$ denotes comparator validity, $\mathsf{int}$ denotes intervention stability, $\mathsf{drift}$ denotes absence of stale or drift invalidation, and $\mathsf{gov}$ denotes governance compliance. The threshold slots
 \[
 \Thresholds=
 \{\vartheta_D,\vartheta_V,\vartheta_W,\vartheta_A,\vartheta_E,\vartheta_T,\vartheta_R,\vartheta_\Delta,\vartheta_{\Gamma}\}
@@ -1267,6 +1249,45 @@ The paper deliberately closes only the formal grammar of the bridge program. To 
 \end{enumerate}
 
 These burdens are not future work in the casual sense. They are the exact missing conditions that separate a defined bridge program from a bridge-admissible system.
+
+\section{Projection Geometry and Recoverable Distance}
+
+The dated v30 projection annex is retained as provenance. The following statements give the corrected estimator and latent-distance conditions in the present source. Let $X$ be compact Hausdorff, $\pi:X\to\mathbb R^n$ continuous, and $\varnothing\ne A\subseteq X$ closed. Use $Y=\pi(X)$ with its subspace topology, so $\pi:X\to Y$ is onto a compact codomain. Let $F:X\to Z$ be continuous into a metric space. For $y\in\pi(A)$ set $S_y=F(A\cap\pi^{-1}(y))$ and $D_y=\operatorname{diam}(S_y)$; these fibres have nonempty compact images. Write
+\[
+ r_Z(S_y)=\inf_{z\in Z}\sup_{s\in S_y}d_Z(z,s).
+\]
+
+\begin{theorem}[Measurable Centres and the Scalar Minimax Radius]\label{thm:measurable-fibre-centres}
+A Borel estimator with uniform error at most $\varepsilon$ exists exactly when the centre sets
+\[
+ \{z\in Z:\sup_{s\in S_y}d_Z(z,s)\le\varepsilon\}
+ \qquad (y\in\pi(A))
+\]
+have a Borel selector. Necessarily $D_y\le2\varepsilon$ and $D_y/2\le r_Z(S_y)$. The diameter bound alone is insufficient in general. For $Z=\mathbb R$ with its usual metric, the minimax error is exactly $\tfrac12\sup_{y\in\pi(A)}D_y$, attained by a Borel estimator.
+\end{theorem}
+\begin{proof}
+Restrict any estimator to $\pi(A)$ to obtain the selector. Conversely extend the selector by a fixed value off $\pi(A)$. Since $\pi(A)$ is compact, it is closed in $Y$, and both pieces of this extension are Borel. The triangle inequality gives the diameter lower bound for every centre, and then for the infimum. The infimum need not itself provide an attaining centre or a measurable selector at the prescribed tolerance.
+
+In the complete two-point codomain at mutual distance $2$, the whole codomain has diameter $2$ and radius $2$. Even in the Euclidean plane the points $(0,0),(2,0),(1,3/2)$ have diameter $2$. The only centre of a radius-one ball covering the first two is $(1,0)$, and it misses the third.
+
+In the scalar case let $a_y=\min S_y$ and $b_y=\max S_y$. The sets $\{y:b_y\ge t\}$ and $\{y:a_y\le t\}$ are images under $\pi$ of the corresponding closed subsets of $A$, and are compact, hence closed. The midpoint $(a_y+b_y)/2$ is therefore Borel and has error $(b_y-a_y)/2$ on the fibre. No smaller error is possible by the diameter bound.
+\end{proof}
+
+\begin{proposition}[Coercivity for Latent Distance Recovery]\label{prop:projection-coercivity-bounds}
+If $X$ is metric and on pairs in each restricted fibre
+\[
+ c\,d_X(x,x')\le d_Z(F(x),F(x'))\le L\,d_X(x,x')
+ \qquad (c>0,\ L\ge0),
+\]
+then $c\,\operatorname{diam}_X(A\cap\pi^{-1}(y))\le D_y
+\le L\,\operatorname{diam}_X(A\cap\pi^{-1}(y))$.
+Uniform error $\varepsilon$ entails a latent fibre diameter at most $2\varepsilon/c$. For scalar $F$ the upper bound alone gives a sufficient error budget of $(L/2)$ times the supremum of the latent diameters. In a sector where distance is recovered directly from observations, a bound $c_\pi d_X(x,x')\le d_Y(\pi x,\pi x')$ with $c_\pi>0$ gives the inverse-distance bound there.
+\end{proposition}
+\begin{proof}
+Take suprema over the restricted fibre and apply Theorem~\ref{thm:measurable-fibre-centres}. The upper bound for scalar $F$ uses the attained midpoint error, also when $L=0$. The inverse-distance statement follows by division by $c_\pi$. On $[0,1]^2$ with the maximum metric, $F(x_1,x_2)=\pi(x_1,x_2)=x_1$ is $1$-Lipschitz and is recovered exactly. Every latent fibre has diameter one. This shows why an upper Lipschitz bound cannot substitute for coercivity, including on the observable map itself.
+\end{proof}
+
+The scalar formula repairs the centre and diameter assertions of the dated annex. In a general metric codomain, checking the radius and the attaining measurable choice remains a separate obligation. The geometric statements do not carry over the annex's statistical or adjudication claims.
 
 \section{Audit-Covered Bridge Independence Burdens}
 The following entries preserve AUDIT\_MASTER coverage while keeping their

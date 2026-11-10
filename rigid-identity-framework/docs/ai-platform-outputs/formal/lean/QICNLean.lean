@@ -18,3 +18,4 @@ import QICNLean.QICNCoupledSplitMargin
 import QICNLean.QICNCoupledSplitMarginUniversal
 import QICNLean.QICNProjectiveTransport
 import QICNLean.QICNObservationBudget
+import QICNLean.QICNFiniteP4

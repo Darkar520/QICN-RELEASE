@@ -540,46 +540,35 @@ remains absent.
 \section{Adjudication Blind Protocol}
 \sectionstatus{formalized}
 
-Let $Y$ be the masked evidence bundle shown to adjudicators. A blinding map
-$B:\mathcal{T}^n\to\mathcal{Y}$ is admissible only when it removes source
-labels while preserving the frozen statistics required by $\Sigma$. The null
-hypothesis $H_0$ is that source labels are exchangeable conditional on $Y$; the
-alternative $H_1$ is that labels are distinguishable above the preregistered
-margin.
+Let $Y$ denote the masked evidence bundle and $\ell\in\{h,m\}$ its source label. The reference procedure uses forced choice with a balanced source distribution. A protocol permitting abstention fixes its cost and minimum coverage before evaluating held-out bundles. The randomization of a decision rule is independent of the source conditional on its permitted input.
 
 \begin{definition}[Blind adjudicator loss]
-For an adjudicator decision rule $a:\mathcal{Y}\to\{h,m,\mathtt{tie}\}$ and
-true source label $\ell\in\{h,m\}$, define
-\begin{equation}
-L(a(Y),\ell)=\mathbf{1}[a(Y)\neq \ell \ \mathrm{and}\ a(Y)\neq\mathtt{tie}].
-\end{equation}
-The blinded error rate is $R(a)=\mathbb{E}[L(a(Y),\ell)]$ under the frozen
-sampling design.
+For $a(Y)\in\{h,m,\mathtt{tie}\}$ and a declared $\gamma\in[1/2,1]$, put
+\[
+ L_\gamma(a(Y),\ell)=
+ {\bf1}\{a(Y)\ne\ell,\ a(Y)\ne\mathtt{tie}\}
+ +\gamma{\bf1}\{a(Y)=\mathtt{tie}\}.
+\]
+Report $R_\gamma=\mathbb E L_\gamma$, coverage $C=\Pr(a(Y)\ne\mathtt{tie})$, and error conditional on coverage when $C>0$. For acceptance require a preregistered $C\ge C_{\min}>0$. Forced choice has $C=1$; always abstaining has $C=0$ and $R_\gamma=\gamma$.
 \end{definition}
 
 \begin{theorem}[Null error lower bound]\label{thm:null-forced}
-Under $H_0$ and balanced source-label sampling, no blinded adjudicator rule can
-achieve expected error below chance except by exploiting leakage:
-\begin{equation}
-R(a)\geq \frac{1}{2}-\mathbb{P}(\mathrm{leak}).
-\end{equation}
+Let $E$ denote leakage and $p=\Pr(E)$. If in the clean stratum $\ell$ is balanced conditional on $Y,E^c$, then
+\[
+ R_\gamma(a)\ge(1-p)/2.
+\]
+Alternatively, suppose $Y$ is coupled to a clean bundle $Y_0$ for which $\ell$ is balanced conditional on $Y_0$, and $Y=Y_0$ outside an event of probability at most $p$. Then
+\[
+ R_\gamma(a)\ge\max\{0,1/2-p\}.
+\]
+The assumptions are distinct. Under the first, revealing the label on a leak event independent of the balanced label can attain the bound with forced choice.
 \end{theorem}
-
 \begin{proof}
-If $H_0$ holds, the conditional distribution of $Y$ is invariant under exchange
-of the hidden labels. Without leakage, a deterministic or randomized rule has
-no label-informative statistic beyond chance; the best expected success rate is
-$1/2$. Leakage events may reveal label information, and their contribution is
-bounded above by $\mathbb{P}(\mathrm{leak})$. Rearranging gives the stated lower
-bound on error.
+With a balanced posterior, any covered guess has conditional risk $1/2$ and abstention has conditional risk $\gamma\ge1/2$. In the first case this lower-bounds risk on the clean stratum; risk on leakage is nonnegative. For sharpness use a constant clean bundle and a leak revealing the label, choosing either fixed label on clean observations. For the coupling bound use the same decision randomization on $Y_0$ and $Y$. Their losses agree when the bundles agree and differ by at most one otherwise. The risk on $Y_0$ is at least $1/2$. Nonnegativity gives the stated maximum. Label-dependent contamination can change the balance in the clean stratum, so the first bound cannot be inferred from the coupling alone.
 \end{proof}
 
 \begin{proposition}[Alternative detectability criterion]
-Evidence for distinguishability under $H_1$ requires a preregistered rule
-$a^\star$ and frozen margin $\eta>0$ such that
-$R(a^\star)\leq 1/2-\eta$ on admissible held-out bundles, with all leakage and
-multiple-comparison corrections applied. No such inequality is presently
-reported by this manuscript.
+Evidence for distinguishability under $H_1$ requires a preregistered rule $a^\star$, minimum coverage $C_{\min}>0$, a justified null bound $B_0$ accounting for the leakage budget, and margin $\eta>0$. On admissible held-out bundles require $C\ge C_{\min}$ and $R_\gamma(a^\star)\le B_0-\eta$ after sampling uncertainty and multiple-comparison corrections. Forced-choice, balanced label permutations, always abstaining and known-leak controls are evaluated under the same loss and coverage protocol. The manuscript reports no campaign satisfying this criterion.
 \end{proposition}
 
 \section{Reviewer and Adjudicator Independence Architecture}

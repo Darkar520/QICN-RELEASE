@@ -227,6 +227,77 @@ The current canon predicts that continuity and non-null differentiation are not 
 
 \noindent\textit{Upstream source.} The continuity side is inherited from \textit{Phenomenological Regimes}, while the non-null side is inherited from \textit{Null-Regime Instability}. This paper adds only the prediction and failure-mode reading.
 
+\subsection{A Held-Out Probe of Retained Response}
+
+Consider the controlled seven-profile model of Paper V \cite{paper5}. Its transition on profile $p$, phase $\theta$ and bit sequence $b$ is
+\[
+ (p,\theta,b)\longmapsto(p,u+q\lambda b_1,Rb),\qquad
+ Rb=(0,1-b_1,1-b_2,\ldots).
+\]
+Prepare two identical copies, apply opposite initial signs $q_0=+1,-1$ with the same phase command $u_0$, then give both copies the same sequence of controls. Index observations by the number of transitions completed.
+
+\begin{proposition}[Matched-Pulse Extinction in the Original Model]\label{prop:matched-pulse-extinction}
+The two states and all four original readouts coincide from time two onward, for every common continuation. At time one and $\lambda\in[0,1/9]$, the early-phase distance is $2\lambda b_{1,0}$ turns.
+\end{proposition}
+\begin{proof}
+The profile is constant and the bit update is independent of both controls, so the two sequences of profiles and bits agree. The initial commands produce an early-phase distance $2\lambda b_{1,0}\le 2/9$ on the circle. At every time $t\ge1$, the first bit is zero, so the phase at time $t+1$ equals the common $u_t$. Equality of states gives equality of every original readout, including the three phase channels and the ternary code.
+\end{proof}
+
+Add a scalar $m$ in linear units of phase amplitude, with $m_0=0$ on both arms and delayed observation $Y_t=m_t+e_t$. Keep the original dynamics in both candidate models. For $\lambda\in[1/12,1/9]$, retention $a\in[1/2,3/4]$ and $s(-1)=-1$, $s(0)=s(+1)=1$, compare
+\begin{align*}
+ \text{M}\colon\quad m_{t+1} &= a s(q_t)m_t+\lambda q_tb_{1,t},\\
+ \text{A}\colon\quad m_{t+1} &= a m_t+\lambda q_tb_{1,t}.
+\end{align*}
+Each model has one additional real state and one adjustable retention coefficient with the same range. The interval $[-4/9,4/9]$ is forward invariant for both by $3/4\cdot4/9+1/9=4/9$. They receive the same control schedule, preparation and known coupling, and use the same delayed readout. The reset and commands are assigned externally, and the readout error has no feedback into either update. The paired early-phase decoder of Paper V uses only the original channels, which agree between M and A for each fixed preparation and schedule. The new response $Y$ may differ even when these original channels agree.
+
+Calibrate with $b_{1,0}=1$, no late pulse, and the observed contrast $C_2=Y_2^{(+)}-Y_2^{(-)}$. Fit $a$ once by projecting $C_2/(2\lambda)$ onto $[1/2,3/4]$, yielding $\hat a$. For each reserved horizon $T=4,5$, repeat the paired trial twice, with a single common probe $q_j=+1$ or $-1$ at the same $j\in\{1,T-1\}$ and zero on the other later steps. Write $C_T(q_j)$ for the signed difference of the two delayed observations under that probe. A model is accepted for this comparison when both of its predicted contrasts differ from the observed ones by at most $1/256$ turns. The rule reports a unique selection only when exactly one model is accepted.
+
+\begin{proposition}[A Held-Out Interaction Separates Two Matched Memory Models]\label{prop:heldout-memory-interaction}
+Put $k=T-1$. The clean contrasts of M are $2\lambda a^k(1,-1)$ for probes $(+1,-1)$, while the clean contrasts of A are $2\lambda a^k(1,1)$. Consequently the clean interaction $C_T(+1)-C_T(-1)$ is at least $1/48$ turns in M and is zero in A. With at most $1/4096$ turns of error per observation in calibration and evaluation, the rule using $\hat a$ uniquely selects the generating model for either generator under the declared protocol.
+\end{proposition}
+\begin{proof}
+At time one the memory is $\pm\lambda$. No further loading by $b_1$ occurs, so the product of the late multipliers propagates this contrast. A single negative probe contributes one sign change in M. Any additive late forcing common to the two arms cancels in A, and the late contrast still decays by $a$ per step. Since $k\le4$, $2\lambda a^k\ge1/96$ and $4\lambda a^k\ge1/48$.
+
+Let $e_\ast=1/4096$. Calibration has clean contrast $2\lambda a$, so projection gives $|\hat a-a|\le e_\ast/\lambda$. The derivative of $a^k$ on the admissible interval is bounded by $k(3/4)^{k-1}$. In $2\lambda|\hat a^k-a^k|$, the factor $2\lambda$ cancels the $1/\lambda$ from the calibration bound. Each correctly specified contrast therefore has residual bounded by
+\[
+ 2e_\ast+2k(3/4)^{k-1} e_\ast \ \le\ \tfrac{43}{8}e_\ast \ <\ 1/256.
+\]
+At the negative probe the rival predicts the opposite sign, with both the true and predicted clean magnitudes at least $1/96$. Its residual is at least $1/48-2e_\ast>1/256$. The argument applies to either generating model and does not require stochastic independence of the errors.
+\end{proof}
+
+The zero-probe sham preserves the positive delayed contrast of both models; two negative probes cancel the sign changes in M. A preparation with first bit zero or zero coupling supplies no initial load. Ablating the memory multiplier removes the delayed contrast while leaving the initial phase effect intact. Under the stated error bound, an observed delayed pair consistent with neither set of predictions rejects both candidates. Agreement of the two models on unprobed calibration trials is by construction. The reserved trials test the consequences of the specified transition laws in synthetic data. A model with an equivalent input-dependent memory update can reproduce the same interaction, so the comparison only discriminates against the declared fixed-retention rival family. The construction supplies neither a single-trajectory certificate nor empirical support for an application.
+
+\subsection{Delayed Phase Readout and an Interacting Rival}
+
+On the same profile support, append $m\in[-4\lambda,4\lambda]$ and use the original phase and ternary readouts. For $0\le\kappa\le1/8$ set
+\[
+ \theta_{t+1}=u_t+q_t\lambda b_{1,t}+\kappa{\bf1}_{q_t=0}m_t\pmod 1,
+ \qquad m_{t+1}=a s(q_t)m_t+\lambda q_t b_{1,t},
+\]
+with the original profile and bit updates. Here $0\le\lambda\le1/9$ and $1/2\le a\le3/4$. Model M has $s(q)=-1$ only at $q=-1$. The interacting rival B has $s(q)=-1$ at both nonzero signs. Each has one scalar state and one adjustable $a$, and receives the same commands and calibration data. Neutral commands provide a delayed phase readout through the state transition.
+
+\begin{proposition}[Observable Feedback Preserves the Declared Split Bounds]\label{prop:observable-feedback-split}
+The extension is invariant and contracts within each profile under common controls by a factor at most $5/6$ in the metric $\max\{\rho(\theta,\theta'),|c-c'|,|m-m'|/4\}$. The ternary contraction remains $1/3$. The four-channel identity observations and split-comparator bounds of Paper V, including the $\lambda/2$ infimum with exact time-zero readouts, remain valid in their declared sectors. Opposite initial nonzero pulses retain the original paired phase contrast.
+\end{proposition}
+\begin{proof}
+The memory interval is invariant since $a\,4\lambda+\lambda\le4\lambda$. Distinct first bits imply $|c-c'|\ge1/3$. For two states on a profile at distance $d$, the next weighted memory discrepancy is at most $(a+3\lambda/4)d\le5d/6$. The next phase distance is at most $3\lambda d$ at a nonzero command or $4\kappa d$ at a neutral one, and the ternary discrepancy is divided by three. At $\lambda>0$ the neutral update has the memory eigenvalue $a$ along the invariant linear phase-memory direction near its fixed point, so a uniform $1/3$ Lipschitz bound in the displayed metric is impossible.
+
+All phase offsets relative to $r_0$ and the projected four-channel support are unchanged. Thus the same coverage, catalogue separation and identity decoder apply. For the integration lower bounds the original fiber arguments use only time zero and the nonzero signs, where feedback vanishes for every $m$. The product-corner contradiction and the exact-initial-readout argument therefore apply to the augmented support. For the upper bound assign the phases to the factor carrying $(p,\theta)$ and the code to the bit factor. The predictor $u+q\lambda/2$ has error at most $\lambda/2$ at a nonzero command and at most $4\kappa\lambda\le\lambda/2$ at a neutral command. The initial readouts are exact. For other splits the lower bound of Paper V still holds, with the upper bound on the infimum over the allowed splits. At $\lambda=0$ the memory interval is a singleton and the comparator is exact. The initial pair uses nonzero signs, so its phase contrast is unchanged.
+\end{proof}
+
+\begin{proposition}[Parity and Resolution of Delayed Phase Probes]\label{prop:delayed-phase-probe-parity}
+Reset $m_0=0$ and prepare $b_{1,0}=1$. Apply opposite first pulses and use common controls thereafter. For terminal observation at $T$ with a neutral last command, the oriented phase contrast of M is $2\kappa\lambda a^{T-2}(-1)^{n_-}$, while that of B is $2\kappa\lambda a^{T-2}(-1)^{n_-+n_+}$. Here $n_\pm$ count the corresponding late probes before the neutral transition. For a common $a$, $\kappa>0$ and $\lambda>0$, the clean contrasts coincide exactly at even $n_+$. A nonneutral last command erases the phase contrast for either model. With known $a$ and odd $n_+$, the two contrast intervals under error at most $e$ per phase are disjoint exactly when $\kappa\lambda a^{T-2}>e$, in the signed unwrapping regime.
+
+For $\kappa=1/8$ and $\lambda\in[1/12,1/9]$, estimate $a$ from the contrast at time three after two neutral continuations, by dividing by $2\kappa\lambda$ and projecting onto $[1/2,3/4]$. Reserve $T=5,6$, with one common probe at $j=1$ or $j=T-2$ and all other later commands neutral. Under error at most $1/32768$ turns per phase in calibration and evaluation, the two reserved signs select the generating model uniquely with a tolerance of $1/2048$ per contrast.
+\end{proposition}
+\begin{proof}
+After the first pulse the memory is $\pm\lambda$ and the first bit remains zero. The late multipliers give the stated parities. At the final neutral transition the common $u$ cancels and the phase differences unwrap uniquely near zero. At a nonneutral command the next phase is just $u$. Each observed contrast differs from its clean value by at most $2e$, and every error in that interval is attainable by choosing the two phase errors. For odd positive parity, the centers have distance $4\kappa\lambda a^{T-2}$, giving the strict separation condition.
+
+The calibration yields $|\hat a-a|\le e/(\kappa\lambda)$. For $k=T-2\in\{3,4\}$ the factor $2\kappa\lambda$ in the contrast cancels the reciprocal scale in that estimate, so the correct-model residual is at most $(43/8)e$. At a single positive probe the two signs oppose each other and the rejected-model residual is at least $\kappa/48-2e$. The chosen tolerance lies strictly between these bounds. The result holds for both generators and for adversarial errors within the stated budget.
+\end{proof}
+
+The neutral sham and an even number of positive probes cannot distinguish these laws from their terminal contrasts. In a longer history a neutral observation after an odd positive prefix can distinguish them. Setting $\kappa=0$ removes the delayed phase signal while preserving the pulse and the hidden memory update. This construction establishes an observable mathematical discriminator within the declared family. It leaves the single-trajectory and joint certificates of Paper V open.
+
 \section{Main Discriminators}
 The predictive value of the framework lies in how it diverges from weaker alternatives.
 

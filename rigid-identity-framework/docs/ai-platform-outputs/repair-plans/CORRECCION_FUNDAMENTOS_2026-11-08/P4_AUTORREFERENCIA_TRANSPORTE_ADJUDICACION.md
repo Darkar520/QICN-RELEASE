@@ -1,0 +1,36 @@
+# P4 · Autorreferencia, transporte y adjudicación
+
+## Prerregistro congelado
+
+Base de trabajo `f87eaa9` con las fases locales P2–P3. Orden: Paper Puente, Paper IX y Paper X. Alcance: tres fuentes y sus PDF de trabajo, monolito, registro interno, control racional, roadmap y ledger. Mantener los estados científicos del proyecto. Las pruebas siguientes se formulan dentro de dominios explícitos.
+
+1. **Paper Puente.** Probar el punto fijo común por contracción y conmutación. Controles de fase `(u,0)` con `u=0,1/4` excluyen el punto fijo común en la torre de referencia. Para `m≥1`, conservar perfil, fase y prefijo de m bits, rellenar con la cola del equilibrio alternante, fijar precisión uniforme `3^(-m)` y constante de contracción cero en la fibra que fija esos datos. Medir el defecto en el máximo de distancias de fase y código ternario, verificando la discrepancia exacta en el bit `m+1`. Controles: prefijo coincidente y opuesto al equilibrio, profundidad cero, controles no neutros y dos profundidades consecutivas. Enumerar prefijos exhaustivos hasta `m=6`. Distinguir la obstrucción en el soporte actual de una refutación universal de pertenencia a Cop.
+2. **Paper IX.** Registrar el margen firmado en unidades de pérdida y escalar sólo el factor del funcional mediante una unidad positiva congelada. Verificar ganancia, derrota, empate de ínfimo, falta de evidencia, recorte y exponente racional positivo. Para la independencia del transporte, extender copias de un certificado local completo de Paper VIII mediante tres modos con dos testigos por fibra y medición explícita de las correspondencias de cada arista. Mantener idénticos los datos locales. Usar el ciclo con paridad impar como negativo y paridad par como positivo, enumerando las ocho asignaciones y todas las leyes de arista. Verificar distancia y ambigüedad al radio 1/2. La no vacuidad del transporte finito se verifica directamente. La inclusión estricta para clases de sistemas completos exige un certificado local completo ya realizado y una realización conjunta de las obligaciones del puente; ninguna puntuación fijada sustituye esas hipótesis.
+3. **Paper X.** Elección forzada como referencia y abstención opcional con pérdida gamma en [1/2,1]. Prerregistrar cobertura mínima estrictamente positiva y margen de detección respecto de la cota nula aplicable. Probar por separado balance condicional en estrato limpio, con cota (1-p)/2, y contaminación de una copia ciega balanceada con probabilidad p, con cota max(0,1/2-p). Enumerar reglas h/m/empate, costes 1/2, 3/4 y 1, etiquetas equilibradas y fuga conocida a tasas 0,1/8,1/4,1/2,1. Incluir contaminación dependiente de etiqueta para mostrar por qué la cota fuerte exige su propia hipótesis. El control de etiquetas barajadas se evalúa sobre la distribución exacta de permutaciones balanceadas.
+
+Herramientas: aritmética racional exacta, comparación de fuentes y registro, compilación y verificación aisladas. Detener ante discrepancias o cambios de umbrales tras observar datos. Resultados internos y sintéticos. La contrastación y revisión independientes permanecen separadas.
+
+
+
+## Resultados por fase
+
+- **Paper Puente.** La contracción estricta da un único punto fijo. La conmutación lleva ese punto a otro punto fijo de la misma contracción, que debe ser el mismo. Los comandos neutros con fases 0 y 1/4 excluyen un punto fijo común sobre la torre. El truncamiento retiene perfil, fase y prefijo y contrae cada fibra con constante cero, con precisión uniforme `3^(-m)`. Su defecto es cero si el bit m coincide con el equilibrio alternante y es exactamente `2·3^(-(m+1))` en otro caso. Los 2.268 controles racionales incluyeron 1.134 casos de cada tipo. Se corrigieron los enunciados dependientes que trataban la omisión de un símbolo como una demostración de no existencia. La no implicación universal desde Cop sigue requiriendo un sistema con los seis certificados y una obstrucción aplicable.
+- **Paper IX.** El margen de pérdida se conserva firmado. El funcional recibe la versión calibrada en `[0,1]` con exponentes positivos. Empate de ínfimo, derrota y comparación insuficiente tienen estados distintos. Los dos sistemas de tres modos tienen idéntico registro local. El ciclo `(0,0,1)` no admite asignación; el ciclo `(0,1,1)` admite dos. Las relaciones se recuperan de observaciones de arista con error estrictamente menor que 1/2. El radio 1/2 admite una observación ambigua. Se comprobaron 48 casos del margen, 36 pares de observaciones ruidosas y ocho ciclos bajo ocho renombrados. La inclusión estricta se establece para extensiones de ventanas ya certificadas si existe un certificado local completo. El testigo positivo verifica transporte; la no vacuidad global de Paper VIII y del paquete completo de Paper IX sigue abierta.
+- **Paper X.** La referencia es elección forzada. La abstención opcional tiene coste `gamma≥1/2` y exige reportar cobertura y superar un mínimo positivo congelado. Una regla de abstención total tiene riesgo `gamma` y cobertura cero. Con balance condicional en el estrato limpio, el riesgo es al menos `(1-p)/2`. Con contaminación de un canal ciego balanceado, la cota es `max(0,1/2-p)`. Por ejemplo, con fuga selectiva de probabilidad 1/8, el riesgo 3/8 alcanza la segunda cota y queda por debajo de 7/16, lo que separa las hipótesis. Pasaron 810 casos nulos y 243 reglas bajo etiquetas permutadas de forma balanceada. La clasificación con coste explícito de rechazo tiene el antecedente clásico de Chow. [Artículo original](https://research.ibm.com/publications/on-optimum-recognition-error-and-reject-tradeoff)
+
+Todos los resultados se refieren al modelo o al protocolo declarado. Quedan pendientes revisión independiente, mecanización y una realización completa de los certificados heredados y del puente.
+
+
+## Verificación documental
+
+- SHA-256 del prerregistro congelado: `57cb4e254689419a50b755d89c74c3ee7b5b30438b332121fecdbfdb2d058d34`. La copia aislada incluyó 736 archivos. Los controles, las compilaciones y los informes de verificación se conservaron en `E:/QICN-PRESERVACION/2026-11-09-p4-puente-ix-x-f87eaa9`.
+- Pasaron los tres verificadores raíz, `npm run verify:release` 6/6, `npm run verify:math` 15/15 y los validadores del registro, con 823 entradas y 383 macros. Se conservaron los 820 identificadores anteriores, se actualizaron ocho enunciados y se añadieron tres entradas.
+- Veredictos crudos v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`, v27/v28/v30 `BLOCKED_MULTIPLE_GATES`, v31 `BLOCKED_FOUNDATION_FIRST_GATES`, todos con `external_support_certified=false`.
+- `pdflatex`, `biber` donde corresponde, `npm run compile:monolithic`, `check-monolith.cjs`, `pdfinfo` y `pdftotext` confirmaron los cambios en las fuentes y en los PDF. Concordancia de 12/12 secciones y conservación de las otras nueve. Cero referencias indefinidas o etiquetas duplicadas, y sin aumento de avisos de maquetación frente a la base.
+
+| PDF de trabajo | Páginas | SHA-256 |
+|---|---:|---|
+| Paper Puente | 25 | `baf359cf3125da843fd26a8a97ddeb6656572d0f52e96aa5120388dbd90ff4f8` |
+| Paper IX | 43 | `b8c180f41988c4164e096fe6fc4797e3caba567a12c18d04815a615480a55d9b` |
+| Paper X | 33 | `6a282487ca217cf1ab41b8fe238e62b66f83d4e092fafafe530ad94352d2b113` |
+| Monolito | 367 | `b14cf11bc30fbb04a7fa0e2d6b7981e1cac8220def421eee04b6da47f8ec3b8d` |

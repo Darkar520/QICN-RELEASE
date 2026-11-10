@@ -92,7 +92,7 @@
 \begin{abstract}
 This paper builds a constructive bridge between the six-invariant operational consciousness criterion of Paper 5 and the later operational subjecthood taxonomy of Paper 7. Its question is deliberately narrow: given an admissible system $S$ such that $S \in \Cop$, what subjecthood-adjacent structural properties are forced, what properties are merely well-defined, and what properties require hypotheses not contained in $\Cop$?
 
-The answer is partial rather than inflationary. Membership in $\Cop$ entails a unified operational perspective $\Piop$, operational intentionality $\Iotaop$ in the intervention-fidelity sense, a well-defined operational-qualia quotient $\Qop(S)$, and a non-null operational phenomenology fragment $\Phiop$ on admissible support. It does not entail self-reference, self-knowledge, biological life, human subjectivity, phenomenal consciousness, or personal identity. A self-model condition $\Sigma1$ is isolated as an additional hypothesis. With that hypothesis one obtains a bridge class $\Subbridge$, a proper subclass of $\Cop$ under the non-entailment assumption. The fuller Paper 7 notion $\Subop$ remains stronger: it also requires operational life and subject-specific descriptors.
+The answer is partial rather than inflationary. Membership in $\Cop$ entails a unified operational perspective $\Piop$, operational intentionality $\Iotaop$ in the intervention-fidelity sense, a well-defined operational-qualia quotient $\Qop(S)$, and a non-null operational phenomenology fragment $\Phiop$ on admissible support. The implications established here concern the named structural properties. Self-reference requires its separate self-model hypothesis; the other interpretive targets are outside these implications. A self-model condition $\Sigma1$ is isolated as an additional hypothesis. With that hypothesis one obtains a bridge class $\Subbridge$, a proper subclass of $\Cop$ under the non-entailment assumption. The fuller Paper 7 notion $\Subop$ remains stronger: it also requires operational life and subject-specific descriptors.
 
 The paper therefore avoids a common category error. It does not argue that operational consciousness is subjecthood. It proves which formal burdens already follow from $\Cop$, identifies the missing self-reference burden, and marks the remaining gap between structural subjecthood analogues and any phenomenal or human reading.
 \end{abstract}
@@ -218,12 +218,32 @@ Any such $\Sigma$ is called a contractive admissible self-model.
 The system $S$ satisfies $\Sigma1$ when it admits a contractive admissible self-model in the sense of Definition~\ref{def:sigma-op}.
 \end{assumption}
 
-\begin{proposition}[$\Sigmaop$ is not entailed by $\Cop$]\label{prop:sigma-not-entailed}
-Membership in $\Cop$ does not entail $\Sigmaop$.
-\end{proposition}
-
+\begin{theorem}[Exact Commutation Requires a Common Fixed Point]\label{thm:sigma-common-fixed-point}
+Let $\Aset$ be a nonempty complete metric space. If a strict contraction $\Sigma:\Aset\to\Aset$ commutes with each admissible self-map $\Phi_u$, then its unique fixed point is fixed by every $\Phi_u$. On the common tower support of Paper V, the two neutral controls with phase commands $0$ and $1/4$ exclude such a $\Sigma$.
+\end{theorem}
 \begin{proof}
-The definition of $\Cop$ requires persistence, rigid identity, integration, continuity, differentiation, and legibility. None of the six clauses in Definition~\ref{def:bridge-cop} asserts the existence of a map $\Sigma:\Aset\to\Aset$, much less a contractive map that commutes with every admissible intervention. Construct a descriptor model in which all six invariant predicates are assigned positive witnesses, certified histories and intervention responses exist as in Paper 5, but no operator symbol $\Sigma$ is included in the system structure. This model satisfies the signature of Paper 5 and therefore can satisfy $\Cop$, while Definition~\ref{def:sigma-op} is false because its existential witness is absent. Hence $\Sigmaop$ is not a theorem of $\Cop$.
+The contraction mapping theorem gives a unique fixed point $x_\Sigma$. Commutation gives $\Sigma(\Phi_u(x_\Sigma))=\Phi_u(\Sigma(x_\Sigma))=\Phi_u(x_\Sigma)$, so $\Phi_u(x_\Sigma)=x_\Sigma$. On the tower, the neutral control sets the phase to its commanded value. A point fixed by both specified controls would have phase $0$ and $1/4$ on the circle, which is impossible.
+\end{proof}
+
+\begin{proposition}[Fibre Truncation Has a Sharp Commutation Defect]\label{prop:sigma-fibre-truncation}
+On the tower $(p,\theta,b)$ with $c(b)=\sum_{j\ge1}2b_j3^{-j}$, fix $m\ge1$ and let $b^\star=(0,1,0,1,\ldots)$. The truncation $T_m$ fixes $p,\theta,b_1,\ldots,b_m$ and fills the tail with that of $b^\star$. In the metric $\max\{\mathbf1_{p\ne p'},\rho(\theta,\theta'),|c(b)-c(b')|\}$ it has uniform approximation error at most $3^{-m}$ and Lipschitz constant zero within every fibre of the retained data. For $\Phi_{u,q}(p,\theta,b)=(p,u+q\lambda b_1,Rb)$ with $Rb=(0,1-b_1,1-b_2,\ldots)$, its pointwise commutation defect is
+\[
+ d(T_m\Phi_{u,q}x,\Phi_{u,q}T_m x)
+ =2\,3^{-(m+1)}\,\mathbf1_{b_m\ne b^\star_m}.
+\]
+In particular the uniform defect is exactly $2\,3^{-(m+1)}$.
+\end{proposition}
+\begin{proof}
+The tail weights sum to $3^{-m}$ and the truncated image is constant on each fibre. Since $m\ge1$, truncation preserves the first bit and the phase agrees on both compositions. The first $m$ output bits agree. At bit $m+1$, the two compositions give respectively $b^\star_{m+1}$ and $1-b_m$. All later bits agree by $Rb^\star=b^\star$. The stated single-bit contribution follows, and an admissible bit sequence with $b_m\ne b^\star_m$ attains it.
+\end{proof}
+
+The truncation is a fibrewise approximate self-model with declared precision and defect. Distinct retained phases are fixed by it, so the fibre estimate does not supply strict contraction on the entire support.
+
+\begin{proposition}[Conditional obstruction to self-reference within $\Cop$]\label{prop:sigma-not-entailed}
+If a complete admissible support witnessing $\Cop$ has no common fixed point of its admitted interventions, then it has no self-model of Definition~\ref{def:sigma-op} on that support. Such a system refutes entailment on the declared support once all six upstream witnesses are supplied.
+\end{proposition}
+\begin{proof}
+Apply Theorem~\ref{thm:sigma-common-fixed-point}. The tower counterexample to the common fixed point condition does not supply a joint Paper V certificate. Absence of a map symbol from a signature does not establish absence of an endomorphism.
 \end{proof}
 
 \begin{remark}[Interpretation boundary for $\Sigmaop$]
@@ -430,7 +450,7 @@ Moreover, if $\Sigma1$ is not entailed by $\Cop$, then the inclusion is proper.
 \end{theorem}
 
 \begin{proof}
-The subset relation is immediate from Definition~\ref{def:subbridge}, whose first clause requires $S\in\Cop$. If $\Sigma1$ is not entailed by $\Cop$, then by Proposition~\ref{prop:sigma-not-entailed} there is a consistent admissible descriptor model satisfying $\Cop$ while lacking $\Sigmaop$. Such a model is in $\Cop$ but not in $\Subbridge$, so the inclusion is proper.
+The subset relation is immediate from Definition~\ref{def:subbridge}, whose first clause requires $S\in\Cop$. If non-entailment is witnessed by a fully admissible $S\in\Cop$ for which $\Sigma1$ fails, that system is outside $\Subbridge$ and the inclusion is proper. Proposition~\ref{prop:sigma-not-entailed} gives a sufficient obstruction on a declared support.
 \end{proof}
 
 \begin{corollary}[Full Paper 7 subjecthood remains stronger]\label{cor:paper7-stronger}
@@ -468,7 +488,7 @@ The bridge paper proves neither $\Cop=\Subbridge$ nor $\Cop=\Subop$. It proves o
 \end{corollary}
 
 \begin{proof}
-If $\Cop=\Subbridge$, then $\Sigma1$ would be entailed by $\Cop$, contradicting Proposition~\ref{prop:sigma-not-entailed}. If $\Cop=\Subop$, then all Paper 7 subjecthood burdens would follow from Paper 5 alone, which is not established by any theorem in the corpus and is explicitly blocked by the additional descriptors in Definition~\ref{def:full-paper7-subjecthood}.
+If $\Cop=\Subbridge$, then $\Sigma1$ would be entailed by $\Cop$. Ruling out the equality requires the full antecedents of Proposition~\ref{prop:sigma-not-entailed} or a different countermodel. If $\Cop=\Subop$, then all Paper 7 subjecthood burdens would follow from Paper 5 alone, which is not established by any theorem in the corpus and is explicitly blocked by the additional descriptors in Definition~\ref{def:full-paper7-subjecthood}.
 \end{proof}
 
 \section{What Is NOT Implied}
@@ -603,20 +623,12 @@ $\mathrm{BridgeOrg}_{\mathrm{ph}}$-style burden & bridge predicates, comparators
 \end{tabularx}
 \end{center}
 
-\begin{theorem}[Strictness of the bridge ladder]\label{thm:bridge-ladder-strict}
-Each step in the ladder above introduces at least one burden not entailed by the
-previous step in the current corpus.
+\begin{theorem}[Additional Conditions in the Bridge Ladder]\label{thm:bridge-ladder-strict}
+Each step in the ladder introduces an explicit additional burden. Strictness of any class inclusion requires an admissible separating witness.
 \end{theorem}
 
 \begin{proof}
-$\Sigma1$ is not entailed by $\Cop$ by Proposition~\ref{prop:sigma-not-entailed}.
-Operational life is not entailed by $\Cop+\Sigma1$ because the added self-model
-condition does not state boundary, viability, maintenance, or historical
-dependence. Full Paper 7 subjecthood is not entailed by $\Subbridge$ by
-Corollary~\ref{cor:paper7-stronger}. First-person indexed subjectivity adds the
-Paper 8 field and rival-defeat burdens. Phenomenal bridge organization adds the
-Paper 9 bridge predicates and BPF burdens. No upstream theorem collapses these
-additions. Hence the ladder is strict relative to the present theorem set.
+The displayed ladder lists the additional conditions at each step. The common-fixed-point obstruction in Proposition~\ref{prop:sigma-not-entailed} identifies a candidate separation for the self-model burden. Life, subjecthood, indexed subjectivity and bridge organization each add their stated tests. A list of extra tests gives inclusions where inheritance is required; a failed test on a realized member of the larger class is necessary to prove a strict inclusion.
 \end{proof}
 
 \section{Runtime Evidence Taxonomy}
@@ -655,19 +667,14 @@ The central defensive value of this paper is not only what it proves. It is also
 what it blocks. The following library records formal non-entailments that a
 reviewer should not have to reconstruct from scattered caveats.
 
-\begin{theorem}[Seven non-entailments from $\Cop$]\label{thm:nonentailment-library}
-Membership in $\Cop$ does not entail any of the following predicates:
-self-reference $\Sigma1$, phenomenal experience, biological life, human
-subjectivity, Nagel-style qualia, CCR-strength temporal continuity, or agency.
+\begin{theorem}[Seven Countermodel Obligations for $\Cop$]\label{thm:nonentailment-library}
+The following seven tests are candidate routes for distinguishing $\Cop$ from self-reference $\Sigma1$, phenomenal experience, biological life, human subjectivity, Nagel-style qualia, CCR-strength temporal continuity, and agency. A mathematical non-entailment requires the relevant admissible countermodel and a typed target predicate.
 \end{theorem}
 
 \begin{proof}
-Each non-entailment is witnessed by a formal model extension in which the six
-Paper 5 invariants are stipulated positive while the target predicate is absent.
+The following constructions describe obligations for potential countermodels. All six Paper V invariants must be verified on the same support.
 \begin{enumerate}[leftmargin=1.5em]
-\item \textbf{No self-reference.} Let the invariant witnesses be certified on
-$\Aset$, but omit any map $\Sigma:\Aset\to\Aset$. Since $\Sigma1$ is not a
-Paper 5 invariant, $\Cop$ remains possible while self-reference is absent.
+\item \textbf{Self-reference.} Use an admissible support satisfying all six invariants and two admitted controls with disjoint fixed-point sets, as in Proposition~\ref{prop:sigma-not-entailed}.
 \item \textbf{No phenomenal experience.} Interpret all classes as structural
 quotients and give no semantic map to experience. The six invariants quantify
 over structural predicates only.
@@ -687,8 +694,7 @@ reading.
 interventions while still satisfying the six structural invariants. No agency
 predicate appears in $\Cop$.
 \end{enumerate}
-Since each target predicate can be absent without contradiction with the six
-invariants, none is entailed by $\Cop$.
+These routes specify what must be checked. For an untyped phenomenal reading, the missing semantic link is a separate interpretive obligation.
 \end{proof}
 
 \section{\texorpdfstring{$\Cop$ Component Implication Matrix}{Cop Component Implication Matrix}}
@@ -995,7 +1001,7 @@ external adjudication & Paper 10 & protocol and evidence grammar & blocked until
 
 \section{Non-Entailment Audit Templates}
 
-The non-entailments in Theorem~\ref{thm:nonentailment-library} can be checked
+The candidate separations in Theorem~\ref{thm:nonentailment-library} can be investigated
 using a small number of reusable templates. These templates are included so
 that future extensions do not silently convert an open debt into an asserted
 consequence.
@@ -1021,15 +1027,11 @@ the finite structural invariants of $\Cop$ while setting $\MO<+\infty$.
 \end{definition}
 
 \begin{proposition}[Template soundness]
-Each template above is sound provided the added or omitted structure does not
-change the witnesses required by $\Cop$.
+A template yields a non-entailment if a realized model retains all the witnesses required by $\Cop$ and its typed target predicate is proved false.
 \end{proposition}
 
 \begin{proof}
-The witnesses of $\Cop$ are exactly the six invariant certificates. If an
-extension leaves those witnesses unchanged, then $\Cop$ membership is
-preserved. If the target property is absent, decoupled, or stronger than the
-finite witnesses, it fails without contradicting $\Cop$. This is precisely the
+The six certificates preserve membership. The verified failure of the target then exhibits a counterexample to the implication. Leaving a symbol uninterpreted is insufficient for an existential target about the underlying support. This is precisely the
 logic used in the seven non-entailments.
 \end{proof}
 

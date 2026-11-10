@@ -494,7 +494,7 @@ A finite positive-denominator ratio gives a finite upper bound on the infimum; i
     
     \item \textbf{Implementation impedance.} Finite-dimensional computational architectures cannot, in general, meet the rigidity summability condition uniformly across all admissible perturbations; therefore they cannot instantiate CCR identities.
     
-    \item \textbf{Empirical testability.} The weighted norms and entropy measures provide explicit, implementable tests: apply controlled perturbation sequences $\{\delta U_t\}$, measure induced deformation $d_w$ on inferred inverse-limit classes (via observables), compute the ratio, and produce an empirical lower bound for $M_\Omega$.
+    \item \textbf{Empirical testability.} The weighted norms and entropy measures provide explicit, implementable tests: apply controlled perturbation sequences $\{\delta U_t\}$, measure induced deformation $d_w$ on inferred inverse-limit classes (via observables), and compute the ratio. For exactly reconstructed distances, the tested infimum gives an upper bound on $M_\Omega$.
 \end{enumerate}
 
 \subsection{Technical Notes and Limitations}
@@ -583,86 +583,50 @@ Assume the specified intervention sector and common metric of Definition~\ref{de
 Taking an infimum over fewer ratios can only increase it. Every positive-deformation witness of finite cost gives a finite ratio. If no such witness exists, the infimum is infinite. The infima of nested families decrease, and the approximation hypothesis forces their limit to the sector infimum. Exact finite comparisons with no witness cannot distinguish sectors with an untested witness from sectors with none.
 \end{proof}
 
-\subsection{Spectral Coupling Constant}
+\subsection{Observable Separation by Scale}
 
-We now derive the coupling constant between identity deformation and observable deformation as a spectral invariant, rather than an axiom. This closes the last technical gap in the framework.
-
-\begin{definition}[Phenomenological Compatibility Operator]\label{def:phenom-compat}
-Let $(\mathcal{I}, d_w)$ be the identitary metric space and let $(O, d_O)$ be the observable output space. Define the phenomenological compatibility operator:
-\begin{equation}
-    T_\Phi: (\mathcal{I}, d_w) \to (O, d_O), \quad T_\Phi(x) := \Phi(x),
-\end{equation}
-where $\Phi: \mathcal{I} \to O$ is the observable assignment induced by the projective system.
+\begin{definition}[Observable Compatibility Operator]\label{def:phenom-compat}
+Let $T_\Phi:(\mathcal I,d_w)\to(O,d_O)$ be the declared observable assignment.
 \end{definition}
 
-\begin{definition}[Spectral Coupling Constant]\label{def:spectral-constant}
-The spectral coupling constant $\sigma_{\min}$ is defined as:
-\begin{equation}
-    \sigma_{\min}(T_\Phi) := \inf_{\substack{x, y \in \mathcal{I} \\ d_w(x, y) = 1}} d_O(T_\Phi(x), T_\Phi(y)).
-\end{equation}
+\begin{definition}[Separation Modulus]\label{def:spectral-constant}
+For $r>0$ such that $A_r=\{(x,y)\in\mathcal I^2:d_w(x,y)\ge r\}$ is nonempty, define
+\[
+ \omega_T(r)=\inf_{(x,y)\in A_r} d_O(T_\Phi(x),T_\Phi(y)).
+\]
+An empty $A_r$ gives no observable separation test at that scale.
 \end{definition}
 
-\begin{theorem}[Spectral Coupling Theorem]\label{thm:spectral-coupling}
-Let $T_\Phi$ be the phenomenological compatibility operator. If $T_\Phi$ satisfies:
-\begin{enumerate}[leftmargin=*]
-    \item (Compactness) $T_\Phi$ is a compact operator;
-    \item (Non-collapse) For all $x \neq y$ in $\mathcal{I}$, $T_\Phi(x) \neq T_\Phi(y)$;
-\end{enumerate}
-then $\sigma_{\min}(T_\Phi) > 0$ and for all $x, y \in \mathcal{I}$:
-\begin{equation}
-    d_O(T_\Phi(x), T_\Phi(y)) \geq \sigma_{\min} \cdot d_w(x, y).
-\end{equation}
+\begin{theorem}[Positive Separation at a Fixed Scale]\label{thm:spectral-coupling}
+If $\mathcal I$ is a nonempty compact metric space and $T_\Phi$ is continuous and injective, then $\omega_T(r)>0$ at every scale in its domain. The infimum is attained.
 \end{theorem}
-
 \begin{proof}
-Consider the unit sphere $\mathcal{S} := \{(x, y) \in \mathcal{I} \times \mathcal{I} : d_w(x, y) = 1\}$.
-
-\textbf{Step 1.} By compactness of $T_\Phi$ and the Polish structure of $\mathcal{I}$ (H2), the image $T_\Phi(\mathcal{I})$ is relatively compact in $O$.
-
-\textbf{Step 2.} Define $f: \mathcal{S} \to \mathbb{R}_{\geq 0}$ by $f(x, y) = d_O(T_\Phi(x), T_\Phi(y))$. By continuity of $T_\Phi$ and $d_O$, $f$ is continuous.
-
-\textbf{Step 3.} By non-collapse, $f(x, y) > 0$ for all $(x, y) \in \mathcal{S}$.
-
-\textbf{Step 4.} By Axiom~\ref{ax:state-space-regularity}, $\mathcal{I}$ is compact metrizable. Hence $\mathcal{S}$ is a closed subset of $\mathcal{I}\times\mathcal{I}$ and is compact whenever it is non-empty, so $f$ attains its infimum:
-\begin{equation}
-    \sigma_{\min} = \min_{(x, y) \in \mathcal{S}} f(x, y) > 0.
-\end{equation}
-
-\textbf{Step 5.} For arbitrary $x, y \in \mathcal{I}$ with $d_w(x, y) = r > 0$, rescaling yields:
-\begin{equation}
-    d_O(T_\Phi(x), T_\Phi(y)) \geq \sigma_{\min} \cdot r = \sigma_{\min} \cdot d_w(x, y).
-\end{equation}
+$A_r$ is closed in the compact product. The observable distance is continuous and strictly positive on $A_r$, since $r>0$ excludes the diagonal and $T_\Phi$ is injective. It therefore attains a positive minimum.
 \end{proof}
 
-\begin{corollary}[Spectral Derivation of Coupling]\label{cor:spectral-derivation}
-The coupling constant $C$ appearing in deformation bounds is not an axiom; it is the spectral constant:
-\begin{equation}
-    C = \sigma_{\min}(T_\Phi).
-\end{equation}
+\begin{corollary}[Resolution and Coercivity]\label{cor:spectral-derivation}
+If each of two observed values has error at most $\eta$ in $d_O$, then true separation in $d_w$ of at least $r$ gives measured separation at least $\omega_T(r)-2\eta$. A global linear bound requires a positive lower Lipschitz constant $c$, established or assumed for the stated domain.
 \end{corollary}
+\begin{proof}
+Apply the triangle inequality and the theorem. With a lower Lipschitz constant, $\omega_T(r)\ge cr$. Compactness and injectivity alone do not supply such a constant: $T(x)=x^2$ on $[0,1]$ has ratio $d_O(T(0),T(x))/d_w(0,x)=x$, although $\omega_T(r)=r^2$ for $0<r\le1$. Indeed $(x+r)^2-x^2\ge r^2$, with equality at $x=0$. A coercive example is the binary tower with first-disagreement metric $3^{-m}$ at position $m\ge1$ and ternary readout $\sum_{j\ge1}2b_j3^{-j}$. The leading term has size $2\cdot3^{-m}$ and the opposing tail has size at most $3^{-m}$, giving lower constant one and upper constant three.
+\end{proof}
 
-\begin{remark}
-This result is fundamental: it converts the observable--identity coupling from an assumed parameter to a derived spectral invariant. The constant $\sigma_{\min}$ is intrinsic to the operator $T_\Phi$ and can, in principle, be computed from the projective system.
+\begin{remark}\label{rem:scale-vs-linear}
+The separation modulus is metric and scale-dependent. No spectral interpretation is required.
 \end{remark}
 
-\subsection{Relation to Causal Isolation}
+\subsection{Observational Information and Causal Invariance}
 
-Let $\beth_q$ be the causal isolation measure defined by \\cite{shannon1948, cover2006}:
-\begin{equation}
-    \beth_q = 1 - \frac{I(X; Y)}{H(X)},
-\end{equation}
-where $X$ are internal states and $Y$ external inputs.
+For discrete observed state $X$ with $0<H(X)<\infty$ and input $Y$, the statistic $\beth_q=1-I(X;Y)/H(X)$ describes the observed joint law.
 
-\begin{proposition}[Causal Isolation Implies Rigidity]\label{prop:causal-rigid}
-If $\beth_q \to 1$, then for any finite-energy perturbation, $\Delta^{(k)} \to 0$, hence $\hat{M}_\Omega \to +\infty$. Therefore:
-\begin{equation}
-    \beth_q \to 1 \implies M_\Omega = +\infty.
-\end{equation}
+\begin{proposition}[Observational Isolation Does Not Determine Interventional Invariance]\label{prop:causal-rigid}
+Even $\beth_q=1$ does not determine whether the state law is invariant under interventions on $Y$. With a structural model $X=f(Y,Z)$ and a fixed exogenous law for $Z$, the law under $\mathrm{do}(Y=y)$ is the pushforward of that law by $f(y,\cdot)$. Invariance of these laws on a specified intervention family requires equality of the corresponding pushforwards.
 \end{proposition}
-
 \begin{proof}
-Direct from the definition of causal isolation and the rigidity bound of Section 4.
+Replace the equation for $Y$ by the constant $y$, leaving the exogenous law unchanged. For an observationally constant $Y=0$ and $Z$ Bernoulli with parameter $1/4$, both $X=Z$ and $X=Y\oplus Z$ give the same observational law and $\beth_q=1$. The first preserves the law under $\mathrm{do}(Y=1)$, whereas the second changes $\Pr(X=1)$ to $3/4$. The two models thus agree observationally and disagree interventionally.
 \end{proof}
+
+Law invariance and zero Hausdorff deformation of identity objects are separate conditions. For Definition~\ref{def:ontmass}, $M_\Omega=+\infty$ requires absence of positive-deformation witnesses of finite cost in the declared sector.
 
 \subsection{Operational Protocol}
 
@@ -674,15 +638,15 @@ Direct from the definition of causal isolation and the rigidity bound of Section
     \item Estimate $\hat{M}_\Omega$.
 \end{enumerate}
 
-This protocol requires no internal access and is invariant to substrate realization.
+This protocol uses observable data when the declared readout supports calibrated reconstruction of the compared identity classes.
 
 \subsection{Summary of Section 5}
 
 \begin{enumerate}[leftmargin=*]
-    \item Identity deformation is externally observable via inverse-limit equivalence.
-    \item Ontological mass admits an empirical estimator.
-    \item Divergence of $\hat{M}_\Omega$ certifies CCR behavior.
-    \item The framework is operationally irreducible.
+    \item Inferring identity deformation from observations requires a declared comparison and a reconstruction error bound.
+    \item With exact distances, a finite tested infimum bounds the sector infimum from above.
+    \item An infinite tested infimum establishes absence of a witness in the tested family. A sector-wide conclusion requires coverage of the sector.
+    \item Observational independence leaves intervention invariance undetermined.
 \end{enumerate}
 
 % ============================================================================
@@ -1020,50 +984,30 @@ A system is \textit{structurally causally closed} if for every extension $E$, th
 This reformulation of causal closure is purely categorical: it requires invariance of the inverse limit under extensions, without appealing to information-theoretic quantities. This makes the definition operationally precise and independent of Shannon-theoretic assumptions.
 \end{remark}
 
-\begin{theorem}[Prefix Information Isolation]\label{thm:info-isolation}
-If $\mathcal{I} = \varprojlim S_t$, then no finite prefix admits a natural section into $\mathcal{I}$. Hence:
-\begin{equation}
-    I(\text{prefix}; \mathcal{I}) = 0.
-\end{equation}
+\begin{theorem}[Finite-Prefix Recovery and Information]\label{thm:info-isolation}
+For a canonical projection $p_t:\mathcal I\to S_t$, exact recovery of every history from its prefix is possible precisely when $p_t$ is injective, with a decoder defined on its image. If $P=p_t(X)$ is a finite-valued prefix of a random history $X$ under a declared law, then $I(P;X)=H(P)$.
 \end{theorem}
-
 \begin{proof}
-By definition of inverse limits, every finite prefix admits multiple infinite compatible extensions. Therefore no finite information suffices to determine $\mathcal{I}$.
+A left inverse exists precisely for an injective projection, by taking its inverse on the image. A choice of one extension per prefix is a right inverse and need not recover the original history. The binary tower admits a right inverse by padding with zero bits. For the information identity, $H(P\mid X)=0$ because $P$ is a function of $X$, so $I(P;X)=H(P)-H(P\mid X)=H(P)$.
 \end{proof}
 
-\subsection{Categorical Isolation Functor}
+\subsection{A Law-Dependent Isolation Statistic}
 
-We reformulate causal isolation as a categorical invariant, rather than an information-theoretic quantity.
-
-\begin{definition}[Categorical Isolation Functor]\label{def:isolation-functor}
-Define the causal isolation functor
-\begin{equation}
-    \mathfrak{B}: \mathbf{Obs} \to [0,1]
-\end{equation}
-by
-\begin{equation}
-    \mathfrak{B}(X) := 1 - \frac{I(X; Y)}{H(X)},
-\end{equation}
-where $(X, Y)$ are observable prefix--identity pairs and $I(\cdot; \cdot)$ denotes mutual information.
+\begin{definition}[Normalized Conditional Entropy]\label{def:isolation-functor}
+For finite-valued $(X,Y)$ with a declared joint law and $H(X)>0$, set $\mathfrak B(X;Y)=H(X\mid Y)/H(X)$.
 \end{definition}
 
-\begin{lemma}[Categorical Properties of $\mathfrak{B}$]\label{lem:isolation-properties}
-The functor $\mathfrak{B}$ satisfies:
-\begin{enumerate}[leftmargin=*]
-    \item (Monotonicity) $\mathfrak{B}$ is monotone under projective morphisms;
-    \item (Invariance) $\mathfrak{B}$ is invariant under inverse-limit isomorphisms;
-    \item (Collapse detection) $\mathfrak{B}(X) = 0$ iff the projective system is degenerate.
-\end{enumerate}
+\begin{lemma}[Coarsening and Relabeling]\label{lem:isolation-properties}
+For fixed $X$, replacing $Y$ by a function of $Y$ cannot decrease $\mathfrak B$. Bijective relabelings of the random variables preserve it. It vanishes precisely when $X$ is determined by $Y$ almost surely under the declared law.
 \end{lemma}
-
 \begin{proof}
-(1) Follows from data processing inequality.
-(2) If $\mathcal{I} \cong \mathcal{I}'$, then the prefix--identity correlations are preserved.
-(3) Degeneracy implies $H(X) = I(X; Y)$, hence $\mathfrak{B}(X) = 0$.
+The first statement follows by data processing for mutual information and the fixed denominator. Relabeling preserves the probabilities used by entropy. For finite variables, conditional entropy is zero precisely when every conditional law of $X$ on a positive-probability value of $Y$ is concentrated at one point.
 \end{proof}
 
-\begin{remark}
-This reformulation converts the causal isolation concept from a statistical quantity into a categorical invariant. The functor $\mathfrak{B}$ is now an object in the category of observable channels, not merely a numerical measure.
+Almost-sure recovery can hold on a chosen law even if the projection has multiple extensions on the full space. This statistic requires a law and does not classify projective systems by itself.
+
+\begin{remark}\label{rem:law-dependent-isolation}
+The normalization is defined only when the chosen law gives positive finite entropy.
 \end{remark}
 
 \subsection{MIR as the Unique Compatible Geometry}
@@ -1152,71 +1096,29 @@ This lemma establishes that identity is not freely postulated inside the declare
 Within the same observable channel and hypotheses, no distinct compatible identity object is available.
 \end{remark}
 
-\subsection{Stone Space Classification of Observables}
-
-We now establish a complete topological classification of the observable space, demonstrating that it forms a canonical Stone space.
+\subsection{Point Histories and Compatible Probability Laws}
 
 \begin{definition}[Projective Observable Limit]\label{def:proj-obs-limit}
-The observable space is the projective limit of probability distributions over state spaces:
-\begin{equation}
-    O := \varprojlim \text{Prob}(S_t),
-\end{equation}
-where $\text{Prob}(S_t)$ denotes the space of probability measures on $S_t$ with the weak-* topology.
+For finite nonempty discrete spaces $S_t$ and surjective bonding maps, let $\mathcal I=\varprojlim S_t$ with the subspace product topology. Let $O=\varprojlim\mathrm{Prob}(S_t)$ with pushforward bonding maps and the subspace product topology of the finite probability simplexes.
 \end{definition}
 
-\begin{theorem}[Stone Space Classification]\label{thm:stone-classification}
-The observable space $O$ is a Stone space, i.e., it satisfies:
-\begin{enumerate}[leftmargin=*]
-    \item (Compactness) $O$ is compact;
-    \item (Total disconnection) $O$ is totally disconnected;
-    \item (Completeness) $O$ is complete as a metric space;
-    \item (Zero-dimensionality) Every point has a neighborhood base of clopen sets.
-\end{enumerate}
+\begin{theorem}[Topology of Point and Law Limits]\label{thm:stone-classification}
+The point limit $\mathcal I$ is nonempty, compact, metrizable, and has a clopen basis. The law limit $O$ is nonempty, compact, metrizable, and convex under coordinatewise mixing. If $O$ contains distinct points, it is path connected and is not a Stone space.
 \end{theorem}
-
 \begin{proof}
-\textbf{(1) Compactness:} By Banach--Alaoglu theorem, $\text{Prob}(S_t)$ is compact in the weak-* topology for each $t$. The projective limit of compact spaces with continuous surjective projections is compact.
-
-\textbf{(2) Total disconnection:} The connected components of $O$ are singletons, since any two distinct points in $O$ can be separated by clopen sets induced by cylinder sets.
-
-\textbf{(3) Completeness:} By the Polish structure of each $S_t$ (H2), $\text{Prob}(S_t)$ is metrizable by the Prokhorov metric. The product metric on $O$ is complete.
-
-\textbf{(4) Zero-dimensionality:} Follows from total disconnection and compactness (Stone duality).
+Surjectivity gives successive lifts of a point, hence a compatible history. The compatibility equations are closed in each product, so both limits are closed subspaces of compact metrizable products. Finite-coordinate cylinders give a clopen basis for the point limit. The point history supplies compatible Dirac measures, proving nonemptiness of the law limit. Pushforward is affine, so coordinatewise mixtures are compatible. The segment joining two distinct compatible laws is continuous and connected. For the constant two-point tower, $O$ is the full probability interval $[0,1]$.
 \end{proof}
 
-\begin{corollary}[Observable Morphism Structure]\label{cor:obs-morphism}
-Every external observable induces a continuous morphism:
-\begin{equation}
-    f: \mathcal{I} \to O,
-\end{equation}
-and the set of all such morphisms forms a Stone space in the compact-open topology.
+\begin{corollary}[Embedding by Compatible Dirac Measures]\label{cor:obs-morphism}
+The map $x\mapsto(\delta_{x_t})_t$ embeds $\mathcal I$ homeomorphically as a closed subspace of $O$.
 \end{corollary}
-
 \begin{proof}
-By the universal property of Stone spaces and the continuity of projection maps.
+Each coordinate Dirac map is continuous and injective. Compatibility follows from pushforward of point masses. The product map on histories is continuous and injective, with compact domain and Hausdorff codomain, so it is a homeomorphism onto its closed image.
 \end{proof}
 
-\begin{remark}
-This classification is fundamental: it establishes that the observable space is not arbitrary; it is topologically determined as a Stone space by the projective structure. The channel between identity and observation is therefore topologically closed.
+\begin{remark}\label{rem:point-vs-law-topology}
+The Dirac image carries the topology of histories of points; mixtures belong to the law limit.
 \end{remark}
-
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Observable Property} & \textbf{Status} \\
-\hline
-Compactness & Forced by Banach--Alaoglu \\
-\hline
-Total disconnection & Forced by cylinder sets \\
-\hline
-Completeness & Forced by Polish structure \\
-\hline
-Stone space structure & Canonical classification \\
-\hline
-\end{tabular}
-\end{center}
-
-\textbf{The observable channel is topologically closed.}
 
 \subsection{Closure of Appendix A}
 
@@ -1231,7 +1133,7 @@ Retroinduction & Forced by non-degeneracy \\
 \hline
 $\aleph$ operator & Exists and is unique \\
 \hline
-Causal closure & Categorical invariant \\
+Causal closure & Explicit invariance in a declared comparison \\
 \hline
 MIR geometry & Closed class \\
 \hline
@@ -1423,17 +1325,11 @@ This confirms that rigid identity is not merely a construction but the \textit{t
 
 \subsection{Relation to Causal Inference}
 
-The causal closure property established in Appendix A has implications for causal inference frameworks \cite{pearl2009}:
-
-\begin{proposition}[Causal Interventional Invariance]
-If $\mathcal{I}$ is a CCR identity, then for any admissible intervention $\text{do}(X = x)$ with finite scope:
-\begin{equation}
-    \mathcal{I}_{\text{post-intervention}} \cong \mathcal{I}_{\text{pre-intervention}}.
-\end{equation}
+\begin{proposition}[Invariance in the Declared Finite-Cost Sector]
+Suppose a structural model associates to each intervention an identity object in a common metric comparison space and a cost in the sector of Definition~\ref{def:ontmass}. If $M_\Omega=+\infty$, each intervention in that sector of finite cost has zero Hausdorff deformation. If the compared objects are closed, they are equal as subsets of the comparison space.
 \end{proposition}
-
 \begin{proof}
-Finite interventions induce finite-energy perturbations. By CCR rigidity, $M_\Omega = +\infty$ implies no deformation.
+A positive deformation at finite cost would contribute a finite ratio to the infimum. Zero Hausdorff distance between nonempty closed sets implies equality. Membership in the declared sector and finite cost must be verified for each intervention used in this conclusion.
 \end{proof}
 
 \subsection{Computational Complexity Bounds}

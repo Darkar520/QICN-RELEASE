@@ -11112,3 +11112,18 @@ R4, ampliación de tipos detectada al revisar dependencias: BaseCore 07 usaba At
 
 - El usuario auditó `c870191`, el informe y la planta ejecutable, confirmó raíz 3/3, publicación 6/6, matemáticas 18/18, 834 registros y el monolito de 376 páginas, y autorizó publicar en `main`. Se cotejó el remoto, donde `9aa9d48` ya estaba publicado, y se archivó la caché regenerable de la auditoría fuera del repositorio. La fase se cierra en el dominio sintético declarado.
 - Veredictos crudos preservados. Bloque v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`, v27/v28/v30 `BLOCKED_MULTIPLE_GATES`, v31 `BLOCKED_FOUNDATION_FIRST_GATES`, con `external_support_certified=false`. Continúan pendientes la revisión independiente y las condiciones de pertenencia completa.
+
+
+### 2026-11-10 · Codex · Auditoría y plan posterior a la torre común
+
+- Alcance solicitado: auditar y proponer, con base pública `4941308`. Se contrastaron autoridades, auditoría integral anterior, cambios de BaseCore a Paper X y Puente, legado, Lean, registro, monolito y controles. Se comprobaron los contraejemplos de escala, leyes de dos puntos y acceso al contexto. [Auditoría y plan](analysis/AUDITORIA_Y_PLAN_POST_TORRE_2026-11-10.md).
+- Copia aislada en `E:/QICN-PRESERVACION/2026-11-10-auditoria-pos-torre-4941308`: raíz 3/3, release 6/6, matemáticas 18/18, registro 834, macros 383 y PDF público de 376 páginas con huella cotejada. Veredictos crudos v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`, v27/v28/v30 `BLOCKED_MULTIPLE_GATES`, v31 `BLOCKED_FOUNDATION_FIRST_GATES`, con `external_support_certified=false`.
+- Entrega documental. Prioridad propuesta: coercividad e inferencia causal de Paper I, certificado conjunto V/VII y reserva de VIII frente a rivales informados. La auditoría no recompiló el agregado Lean ni modificó las fuentes matemáticas.
+
+
+### 2026-11-10 · Codex · Frente 1 de fortalecimiento posterior a la torre
+
+- Solicitud y alcance. Ejecutar las cuatro correcciones de Paper I aprobadas sobre `4941308` y cotejar dependencias en BaseCore §§03–04 y Papers II–III. Se consultaron las cinco autoridades de raíz, instrucciones, roadmap, auditoría post-torre, fuentes, registro y ensamblador. [Prerregistro y resultados](repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_1_PAPER_I.md). SHA-256 previo a los controles `43c93b941c5b877819fa1f2b08e814dc0443bc05ce2d565c83af5277c4c7cf84`.
+- Cambios. Paper I y su PDF, el monolito y su capítulo generado de Paper I, 15 registros de contenido más localizaciones, el control racional y su incorporación a la suite. Se corrigieron separación por escala, alcance interventional, recuperación de prefijos, topologías de puntos y leyes, y la interpretación del estimador finito. BaseCore, Papers II–III, canon congelado y los otros capítulos conservan su contenido.
+- Verificación aislada. Raíz 3/3, publicación 6/6, matemáticas 19/19, registro 834 con el mismo conjunto de IDs y macros 383. `pdflatex`, `biber`, `npm run compile:monolithic`, `check-monolith.cjs`, `pdfinfo` y `pdftotext` verificaron 12/12 capítulos y los dos PDF de 27 y 376 páginas, sin citas o referencias indefinidas ni etiquetas duplicadas. Los PDF y el capítulo corregido se sincronizaron por huella. Los logs conservan avisos tipográficos y del entorno MiKTeX. Evidencia en `E:/QICN-PRESERVACION/2026-11-10-frente1-paper1-4941308`.
+- Veredictos y deuda. v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`, v27/v28/v30 `BLOCKED_MULTIPLE_GATES`, v31 `BLOCKED_FOUNDATION_FIRST_GATES`, todos con `external_support_certified=false`. Cierre local del frente, pendiente de revisión matemática independiente. Los cambios se mantienen locales.

@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 TESTS=ROOT/'docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08'
 CACHE=ROOT.parent/'.cache/qicn-math-regressions';CACHE.mkdir(parents=True,exist_ok=True)
 results=[]
-controls=['check_math.py','check_regime_implementation.py','check_partitions.py','check_null.py','check_bc_met_rig.py','check_bc_ns.py','check_p1_dynamics.py','check_p2_comparators.py','check_p2_diagnostics.py','check_p2_ruptures.py','check_p2_common_support.py','check_p2_legibility.py','check_p3_memory.py','check_p3_followups.py','check_p4_bridge_adjudication.py','check_p4_p5_window_geometry.py','check_unified_tower.py','check_prefix_tower.py']
+controls=['check_math.py','check_regime_implementation.py','check_partitions.py','check_null.py','check_bc_met_rig.py','check_bc_ns.py','check_p1_dynamics.py','check_p2_comparators.py','check_p2_diagnostics.py','check_p2_ruptures.py','check_p2_common_support.py','check_p2_legibility.py','check_p3_memory.py','check_p3_followups.py','check_p4_bridge_adjudication.py','check_p4_p5_window_geometry.py','check_unified_tower.py','check_prefix_tower.py','check_paper1_front.py']
 for name in controls:
     run=subprocess.run([sys.executable,str(TESTS/name)],cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace')
     (CACHE/(name+'.log')).write_text(run.stdout+run.stderr,encoding='utf-8')

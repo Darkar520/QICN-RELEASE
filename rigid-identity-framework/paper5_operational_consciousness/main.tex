@@ -548,6 +548,40 @@ At $\eta=L/2$, the midpoint construction of Theorem~\ref{thm:paired-integration-
 
 A low response with $b_1=0$ occurs in either coupling regime. The response label concerns the controlled pair, and persistence here concerns reset repetitions rather than the advancing state of one trajectory. This experiment leaves open the single-trajectory legibility criterion and the joint operational certificate. The coupling intervention is a model ablation between trials, with the support and readout fixed throughout.
 
+\subsection{A Writable Prefix on the Common Support}
+
+Use the seven profiles above and the phase-memory plant of Papers VI--VII \cite{paper6,paper7} with $\lambda=1/12$, $a=1/2$, $\kappa=1/8$, and $|m|\le1/4$. Its state is $(p,\theta,b,m)$. Let $b^\star=(0,1,0,1,\ldots)$, $J=\{3,4,5,6,7\}$, and $A_j(b)=\mathbf 1_{\{b_j=b_j^\star\}}$. A write $w=(j,v)$, $j\in J$ and $v\in\{0,1\}$, overwrites one digit after the native shift-complement $R$. Denote it by $E_w$, with $E_\varnothing$ the identity. A neutral command can also carry a role probe $h=(i,\ell)$, where $i\in J$, $\ell\in\{0,1\}$. Fix $p_0=(0,0,0)$, $p_1=(0,0,1/8)$ as the role profiles. Write $\delta=1/(16\cdot 3^7)$ and set $G_h(p,b)=\delta A_i(b)\mathbf 1_{\{p=p_\ell\}}$ for a probe and $G_\varnothing=0$. The full update preserves $p$ and has components
+\begin{align*}
+ b'&=E_w(Rb),\\
+ \theta'&=u+q\lambda b_1+\kappa\mathbf 1_{\{q=0\}}m+G_h(p,b)\pmod 1,\\
+ m'&=a s(q)m+\lambda q b_1 .
+\end{align*}
+Here $s(q)=-1$ only at $q=-1$ and $h=\varnothing$ for $q\ne0$. The probe feeds back the pre-transition tape through the phase input. The write affects the post-transition tape. The observed channels are still $r_j=\theta+p_j$ (using the profile offsets at the three cuts) and $c(b)$. The indices $0,1$ on the role profiles denote catalogue elements, not observation cuts.
+
+\begin{proposition}[Projective Prefix Writes Preserve Identity and Integration]\label{prop:writable-prefix-preservation}
+Each tape update commutes with prefix truncation at every positive depth. The full update is compatible on the cofinal system of depths at least seven. The safe support is invariant and the branch contraction factor is at most $9/16$ under common commands in the phase-code-memory metric of Paper VI. Catalogue separation is $1/80$. In the four-channel split sector,
+\[
+ \frac{1}{216}\le e_\ast\le\frac{1}{24},
+\]
+with infimum $1/24$ when all initial readouts are exact.
+\end{proposition}
+\begin{proof}
+At cut depth $n$, truncate the shift-complement and apply $E_w$ at its address if the address is visible. Each retained output digit depends only on the retained input prefix or on the declared write. These finite updates commute with deletion of later digits. At $n\ge7$ the phase and memory transitions also use only retained bits. The underlying tape and the profile link maps are unchanged, so the original summable weights still apply. A write changes $c$ by at most $2\cdot3^{-j}$ at site $j$. A cut omitting the probed bit cannot in general determine the probed phase.
+
+If two tapes first differ at $k$, their code distance is at least $3^{-k}$. For a write at $j<k$ the distance is unchanged. For $j=k$ the remaining difference is at most $3^{-k}$. For $j>k$ the possible increase is at most $2\cdot3^{-j}$, giving ratio at most $5/3$. Since $c(Rb)=(1-c(b))/3$, the tape update has bound $5/9$. On a common branch, let $d$ be the maximum of phase distance, code distance, and memory distance divided by four. The phase bound for a nonneutral command is $3\lambda d$. For a neutral probe it is at most $(4\kappa+\delta 3^7)d$, since a difference in a bit at $i$ implies code distance at least $3^{-i}$. The memory bound in the weighted metric is $(a+3\lambda/4)d$. Their maximum with $5d/9$ is $9d/16$. Also $|m'|\le5/24<1/4$.
+
+The projected support of the four channels is unchanged. The catalogue argument of Theorem~\ref{thm:addressable-identity-alternatives} still gives $g=1/80$. Restrict an enlarged comparator to the native commands. The factor-fibre lower bounds of Theorem~\ref{thm:integration-all-identity-channels} apply on this same memory support by the native results of Papers VI--VII \cite{paper6,paper7}. For the upper bound keep the tape factor with its exact write update and the phase factor with phase prediction $u+q\lambda/2$. Memory can be assigned to the phase factor with an autonomous update since this comparator does not observe it. The phase error is at most $\lambda/2$ at nonzero $q$ and at most $\kappa/4+\delta<\lambda/2$ at $q=0$. The initial readouts are exact. This gives the upper bound on the whole command family and equality in the exact-initial sector.
+\end{proof}
+
+The leading two bits are protected. After two steps every schedule has $b_2=1$, and the original lower code bound $2/9$ applies. The support stays compact and is at positive distance from the closed constant-field collapse set by the original profile embedding. It includes the fixed state of the native neutral command on each profile. Under the full family, each branch also has a nonempty compact switched attractor: the successive unions of reachable images of the whole branch are nested and compact, and a common-command image of length $n$ has diameter at most $(9/16)^n$ times the initial diameter. The native fixed state belongs to their intersection. Every update preserves the intersection, and comparing any trajectory with the trajectory from this fixed preparation under the same commands gives uniform attraction to the intersection. Profiles remain invariant, so the discrete-time regime and fragmentation witness with bound $5/4$ is preserved. The initial all-zero and all-one tapes still give unit code separation.
+
+\begin{proposition}[Finite Legibility on One Tower Trajectory]\label{prop:writable-tower-trajectory-legibility}
+On this support use the binary decoder that reports whether the first ten tape digits contain a deviation from $b^\star$. It has clean code separation $3^{-10}$ and is correct at error at most $3^{-10}/4$. From a preparation with $b=b^\star$, any of the five opposite writes in $J$ changes the label. The post-target label persists through three more native sham steps on the same trajectory. The matched sham has zero false shifts. One bit preserves the two classes exactly.
+\end{proposition}
+\begin{proof}
+The length-ten cylinders lie in code intervals of length $3^{-10}$ with distinct intervals separated by at least $3^{-10}$. For the reference interval, a neighbouring cylinder differing only at the last digit attains that gap. The finite prefix decoder using ternary midpoint cuts is correct for the stated error. A deviation at $j$ advances to $j+1$ under the sham since $Rb^\star=b^\star$. Thus a target starts with one deviation and retains it within the ten inspected digits for four consecutive observations including the initial post-target observation. On the sham trajectory all ten digits stay equal to the reference. The decoder reads the code channel with no command label. For Definition~\ref{def:ileg}, the matched population uses equality of the preparation and nuisance commands, the target and sham error rates are zero, and the two labels have zero distortion under the one-bit encoding. Zero bits cannot preserve both labels. This is a finite persistence window. A lesion at site seven leaves the decoder's inspection range after four further shifts. On the declared catalogue and split sector, these results put the six witness types on one admissible support. The legibility margin uses a finite window and the code-noise metric of this protocol.
+\end{proof}
+
 \subsection{Operational Continuity}
 \begin{definition}[Operational continuity and fragmentation bound]\label{def:icont}
 An admissible system $S$ satisfies operational continuity, written $\Icont(S)=1$, if there exists a complete metric space $(\mathcal{E}_S,d_{\mathcal{E}})$ and an admissible assignment

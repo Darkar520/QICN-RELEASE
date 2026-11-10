@@ -298,6 +298,21 @@ The calibration yields $|\hat a-a|\le e/(\kappa\lambda)$. For $k=T-2\in\{3,4\}$ 
 
 The neutral sham and an even number of positive probes cannot distinguish these laws from their terminal contrasts. In a longer history a neutral observation after an odd positive prefix can distinguish them. Setting $\kappa=0$ removes the delayed phase signal while preserving the pulse and the hidden memory update. This construction establishes an observable mathematical discriminator within the declared family. It leaves the single-trajectory and joint certificates of Paper V open.
 
+\subsection{Delayed Parity with Matched Prefix Writes}
+
+\begin{proposition}[Matched Prefix Writes Preserve the Delayed Phase Contrast]\label{prop:writable-tower-phase-parity}
+In the writable common tower of Paper V \cite{paper5}, apply the opposite initial pulses of Proposition~\ref{prop:delayed-phase-probe-parity} with the same tape write in both arms. Subsequently use the same inputs, signs, and writes in both arms. At a neutral terminal transition, a common role probe is also allowed. The two models retain their oriented contrasts
+\[
+ 2\kappa\lambda a^{T-2}(-1)^{n_-},
+ \qquad
+ 2\kappa\lambda a^{T-2}(-1)^{n_-+n_+}.
+\]
+A nonneutral terminal transition gives zero phase contrast. With known $a$ and signed unwrapping, at odd $n_+$ the bounded-error intervals remain disjoint exactly for $e<\kappa\lambda a^{T-2}$.
+\end{proposition}
+\begin{proof}
+The tapes are equal after the initial pair and remain equal because all tape updates are matched. At each later step the input term $\lambda q b_1$ is equal in both arms, so the difference of memories obeys the original signed recurrence, starting at $2\lambda$. The role probe is equal in both arms because it reads only the common profile and tape. The neutral phase difference is therefore $\kappa$ times the preceding memory difference. At a nonneutral command the phase depends only on the shared input, sign and leading bit. Each terminal contrast receives error at most $2e$, and the stated strict inequality is the exact disjointness condition for the two opposite centers. The native calibration and held-out schedules are included by omitting the added commands.
+\end{proof}
+
 \section{Main Discriminators}
 The predictive value of the framework lies in how it diverges from weaker alternatives.
 

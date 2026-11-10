@@ -1115,6 +1115,21 @@ Its mean return is $1/2$, including actions at the same absolute effort as exact
 
 The viability statement uses the invariant admissible band. Requiring this same floor throughout the ambient $X$ would fail at time zero where $|m|=1/3$. The result supplies viability, persistence, and maintenance on one model. The operational boundary, class-relevant historical dependence, and the inherited joint certificate remain separate obligations for class membership.
 
+\subsection{Boundary and Historical Repair in the Writable Tower}
+
+\begin{proposition}[Safe Prefix Perturbations and Historical Repair on the Common Tower]\label{prop:writable-tower-viability}
+On the writable common support of Paper V \cite{paper5}, Proposition~\ref{prop:common-tower-phase-repair} retains $\Viab=1/12$, $\Persist=3/64$, and $\Maint\ge3/8$ at its stated memory error bound. The following matched protocols also give an operational prefix boundary margin $\Bound=2/27$ and a historical repair-action margin $\HistDep=1/2$.
+\end{proposition}
+\begin{proof}
+The memory law is unchanged for all writes and probes, so $W_S$ and its viability floor remain valid on all admissible trajectories. The native maintenance and recovery commands, kernel and metric remain the same. The comparison at equal budget therefore retains exact returns $1$ and $1/2$, and the robust lower gain $3/8$.
+
+For the boundary protocol use seven common neutral native steps, followed by one terminal step. Define the interior action as a phase input $1/8$ with no write. Define the boundary-threatening action as a write opposite to $b^\star_3$ at site three, with phase input zero and no probe. Compare each action with the zero-input sham and use terminal code distance. The common neutral steps insert a reference prefix for every initial tape. The interior action has code distance zero, and the write gives distance $2/27$ for every initial state in $W_S$. This tests disruption of the organized reference prefix inside the viable band. That prefix controls the role probes when the corresponding slot is active.
+
+For history, use the balanced initial memories $\pm1/8$, with the same profile, phase zero and tape $b^\star$. A neutral zero-input step followed by a positive native pulse yields phase zero and memory $\pm1/32$ at the second observation. The four current readouts are identical across the two arms. Define the repair class by the unique action in $\{-1/256,1/256\}$ that returns the phase to zero at the next neutral step. This is a repair-action tag of the current state. The wrong action gives phase distance $1/128$. The first post-preparation phase, $\pm1/64$, determines the correct tag. The best snapshot and history predictors have zero-one risk $1/2$ and $0$, respectively. A snapshot predictor given the past phase ties, and using the same passive action in both recovery arms gives zero comparative gain.
+\end{proof}
+
+The margins concern a prefix perturbation and a particular recovery decision. They give positive threshold choices for the life descriptors in Definition F on the declared support and protocols, together with the inherited non-null witness. The additional subjecthood descriptors of Definition I require their own evidence.
+
 \section{Residual Runtime and Interpretation Limits}
 This paper remains intentionally restrictive at the empirical and interpretive boundary.
 

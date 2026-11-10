@@ -1386,6 +1386,31 @@ At fixed $(p,b)$ the fibre is homeomorphic to $\mathbb T\times[-1/4,1/4]$ and is
 
 Two fixed profiles can encode context. The five initial prefix bits can be read as preparation contrasts, but the common shift and complement carry them to positions $2$ through $6$ in every arm. A selective change to a prefix bit from a common preparation requires an intervention that changes the prefix update. Restricted diagnostic domains offer a different possibility because separated phase or memory regions need not be connected within the domain. Their evidence requires declared coverage and a rival with access to the same commands. For example, prepare $m=0$ and use $q=0$. The six commands $u=w/32$, where $w$ is the all-active five-bit word or one of its five single-bit lesions interpreted as an integer, give six separated phases $\theta'=u$. A rival given $u$ predicts these labels exactly. This control separates the existence of labels on a restricted domain from selective intervention on the system's own organization.
 
+\subsection{Selective Lesions in the Writable Common Tower}
+
+Use the writable circle-prefix tower of Paper V \cite{paper5}, with the same memory and safe-band recovery of Papers VI--VII \cite{paper6,paper7}. Associate sites $3$ through $7$ in order with index, ownership, continuity, perspective, and valuation. For each balanced context $z=0,1$, prepare $(p_z,0,b^\star,0)$. From that same preparation use a neutral sham or write the opposite of $b^\star$ at one designated site. On copies of the resulting state use common neutral role probes with zero base phase and no additional write. The diagnostic does not receive the lesion label. The next observed $r_0$ in turns, unwrapped near zero, is either $0$ or $\delta$. Thresholding at $\delta/2$ gives
+\[
+ Y_i(\ell)=A_i(b)\mathbf 1_{\{\ell=z\}}.
+\]
+This decoder is correct for phase error at most $\delta/4$; the code prefix and profile are also decodable within this budget. The scope is the prepared diagnostic windows with zero memory. The phase probe acts on the state transition.
+
+\begin{proposition}[Five Selective Lesions on the Writable Common Tower]\label{prop:writable-tower-selective-lesions}
+The five interventions each reduce their primary score by at least $1/4$, with zero changes off target and zero sham positives. The normalized vector in the order of $\Substate$ on the declared comparison is
+\[
+ (1,\tfrac12,\tfrac12,\tfrac13,\tfrac12,1,\tfrac12).
+\]
+Against the declared context-blind family the reserve loss gap is one, the gate is $1/3$, and the equal-weight functional is $48^{-1/7}>1/4$.
+\end{proposition}
+\begin{proof}
+In each block the tape after the sham is $b^\star$ and a target changes only its address. The phase and memory after that step agree across arms. For the index, form the two weights $(1+Y_i(\ell)-Y_i(1-\ell))/2$ from the index probe. Their gap is $A_i$. The within-run admissible relabeling fixes the roles. A joint renaming of roles and their references preserves the comparison. For ownership use the same two assignments from the ownership probe, with the reference fixed by the prepared role and a flat comparator with assignments $1/2$. The gain in mean absolute error is $A_i/2$. For continuity compare the responses of the matched profile line and its rival in the continuity probe, giving gap $A_i/(1+A_i)$. The valuation contrast uses the matched self and other probe roles and gives the same normalized formula at its own site.
+
+For perspective predict $Y_i(1)$ from the measured pre-probe profile and bit. The candidate has loss zero. A predictor without the profile or a proxy for it receives identical data in the two balanced contexts, including the command, phase, tape and memory available to it. Its best zero-one loss is $A_i/2$, so the normalized perspective gain is $A_i/(2+A_i)$. Each score therefore changes only when its own site changes. The minimum target drop is $1/3$. All five targets meet the selectivity rule and its score is one. A write of the reference value gives the same control as the native sham from this preparation.
+
+Use separate balanced replicas of the sham and ownership lesion for baseline and intervention loss in the reserve. Both have the perspective site active. The future phase outcome has opposite labels in the two contexts within each block. Candidate loss is zero. Every context-blind predictor, including mixtures based on the same information, has expected loss $1/2$ in each block. The complexity weight is zero and the declared selectivity pattern is predicted equally in both arms. The normalized gap is therefore $\widehat{\Irred}_{\mathrm{blind}}=1/2$. Multiplication gives $\PhiSubj^7=1/48$ and the minimum gives $\GateSubj=1/3$.
+\end{proof}
+
+The reserved loss comparison masks the relative phase channels for the blind family. Restoring these channels gives a rival zero loss because the profile is then decodable. Suppressing the write leaves all sites active and removes the target drops. Suppressing the probe feedback retains the tape changes and removes the phase response. At phase error $\delta/2$ the two clean levels can give the same reading. These controls locate the causal and information assumptions. The construction escapes the connected-fibre obstruction by changing the tape component of the fibre. The local margins hold against the declared information-restricted family. Full membership in Definition~\ref{def:subfp} still requires the inherited subjecthood evidence and a comparison against the admissible weak closure.
+
 \section{Intervention-to-artifact mapping and failure semantics}
 The implementation burden becomes much clearer when each intervention is mapped to artifacts and failure codes.
 

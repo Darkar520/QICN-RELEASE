@@ -1913,3 +1913,8 @@ La verificación local añade cinco entradas al registro, que queda en 834, y un
 ### Cierre interno de la unificación de la torre común · 2026-11-10
 
 La auditoría del usuario confirmó el hito científico `c870191` y autorizó su publicación en `main`. La planta común preserva las cotas de V–VI y la reparación de VII, y realiza las cinco lesiones selectivas de VIII bajo el protocolo declarado. La evidencia de cierre comprende raíz 3/3, publicación 6/6, matemáticas 18/18, 834 registros y monolito de 376 páginas. v31 conserva `BLOCKED_FOUNDATION_FIRST_GATES` y `external_support_certified=false`. La revisión matemática independiente y la pertenencia a la clase completa de VIII siguen abiertas.
+
+
+### Frente 2 posterior a la torre · Certificado V–VII
+
+El [prerregistro y la verificación](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_2_TORRE_COMUN.md) prueban el horizonte exacto de una lesión bajo sham, cuatro contrastes de linaje sobre la planta existente y una matriz conjunta de los seis invariantes de V y cuatro descriptores de VII. El clon de estado completo y el rival con copia de memoria empatan. La garantía se limita a las preparaciones, canales y comparadores declarados. Verificación local raíz 3/3, release 6/6, matemáticas 20/20, registro 837, monolito de 378 páginas. v31 conserva `BLOCKED_FOUNDATION_FIRST_GATES` y `external_support_certified=false`. Pendientes revisión independiente y reserva de VIII con información y presupuestos equiparados.

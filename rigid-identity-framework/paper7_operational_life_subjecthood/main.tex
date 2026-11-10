@@ -1,4 +1,4 @@
-﻿\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 \input{glyphtounicode}
 \pdfgentounicode=1
@@ -1129,6 +1129,60 @@ For history, use the balanced initial memories $\pm1/8$, with the same profile, 
 \end{proof}
 
 The margins concern a prefix perturbation and a particular recovery decision. They give positive threshold choices for the life descriptors in Definition F on the declared support and protocols, together with the inherited non-null witness. The additional subjecthood descriptors of Definition I require their own evidence.
+
+\subsection{Causal Lineage Tests on the Common Tower}
+
+The following comparison uses the writable plant of Paper V \cite{paper5}, run in matched replicas. Let $\eta=3^{-10}/4$ in the four-channel weighted maximum norm with phase weights $(1,1/3,1/9)$ and code weight one. The sign and loss calculations use the early phase $r_0=\theta$, measured in turns. Use the short signed representative about zero and abstain for sign readings of magnitude at most $\eta$. Start on a common profile $p$ in the kernel of Proposition~\ref{prop:common-tower-phase-repair}. The typed preparation impulse
+\[
+ H_s(p,0,b^\star,m)=(p,0,b^\star,s/8),\qquad s\in\{-1,1\},
+\]
+lies in $W_S$. It changes memory alone and is used as an initial preparation, rather than a new tower command. When $s$ is hidden, the public history, the state readout at the impulse and the subsequent choice set are identical before the first neutral response. The physical slots of the paired replicas and the intervention that prepared each slot fix its lineage. This reference is recorded independently of the subsequent phase responses. Trial populations balance the two signs and keep the profile and other preparation coordinates matched.
+
+\begin{proposition}[Four Finite Operational Subject Descriptors on the Common Tower]\label{prop:writable-tower-subject-descriptors}
+On the stated matched trial populations, privileged continuity against a readout clone has clean gap at least $1/256$ turns over four successor observations. The equal-cost discrimination contrast has absolute clean gap $1/64$ turns and reverses under causal reassignment. The internal-memory return predictor beats the public-history predictor by at least $1/2$ in zero-one action loss. The ownership agreement score is one under retention and simultaneous relabeling and zero under the causal transplant. These conclusions hold under the stated readout noise, with phase-distance margins reduced by at most $2\eta$ and with internal memory error at most $1/32$ in the prediction trial.
+\end{proposition}
+\begin{proof}
+\emph{Privileged continuity.} For a task reference $s$ fixed before the response, compare $H_s$ with its readout clone $H_{-s}$. They have the same time-zero readout. Apply the same schedule $q=0$, $u_t=-s2^{-t}/64$, without writes or probes, to both replicas for $t=0,1,2,3$. Before step $t+1$ their memories are $s2^{-t}/8$ and $-s2^{-t}/8$. Their next phases are zero and $-s2^{-t}/32$. The line that continues the kernel phase under the common challenge is selected by the smaller observed distance to zero. Its worst-case clearance over the competing line is at least $1/256-2\eta>0$. An exact state clone follows the same phase path under the same commands and gives no privileged margin. The claim concerns the selected task reference in this comparison, with no uniqueness claim under cloning of the full state.
+
+\emph{Self/non-self discrimination.} Start at $H_s$ and apply $q=\sigma\in\{-1,1\}$, $u=0$. The first bit is zero, so the two signs of $q$ give identical immediate public readouts and memories $\sigma s/16$. In two fresh copies of this prepared state, apply respectively the two action ports $u=\pm1/128$, $q=0$. The cost $|u|$ is identical, as is the assignment step cost $|q|$. Write $L_\pm$ for the resulting circular distance to zero under the positive and negative ports. Then $L_+-L_-=\sigma s/64$. Thus the successful port follows the causal assignment and reverses when $\sigma$ changes, even though the port names and costs stay fixed. With memory zero both losses are $1/128$ and there is no clean contrast. This test uses phase return as the outcome rather than a port label as evidence.
+
+\emph{Self-model closure.} At the hidden preparation $H_s$, score selection between $u=\pm1/64$, $q=0$, by whether the selected action minimizes the next circular distance to zero. The right action gives zero and the other gives $1/32$. Both predictors receive the same public history, with common readout errors across the matched sign preparations. The model-aware predictor additionally has the internal estimate $\widehat m$ and forecasts each outcome with $u+\kappa\widehat m$. Its sign and therefore its chosen port are correct for $|\widehat m-m|\le1/32$. A predictor using only the public history cannot distinguish the balanced signs, even with randomization independent of the preparation. Its expected action error is $1/2$ and its expected true phase loss is $1/64$. The prediction trial measures the added information about return, with an informed rival given the same internal estimate tying. The observed winning action remains identifiable because $1/32>2\eta$.
+
+\emph{Ownership coherence.} Retain the recorded assignment of the two signs to the two physical slots. Apply a common hidden assignment command $q=\sigma$, $u=0$, to both slots. An optional common write at one of the writable sites during that step preserves the leading zero. The measured phase and code after assignment are independent of $\sigma$. The actual two memories after $q=-1$ are the swapped two memories after $q=1$, while the other state coordinates in corresponding slots agree. Under a subsequent neutral diagnostic with $u=0$, the phases are $\sigma s/128$. This sign decoder uses the physical readout and no lineage record. Compare its signs with the fixed preparation record and report the fraction of slots in agreement. Retention gives one, and the causal swap gives zero. A permutation of the names of the slots acts on the recorded and decoded vectors together and leaves the agreement invariant. Zero memory yields an abstention under every allowed noise error, while a nonzero response remains sign-decodable since $1/128>2\eta$. Thus the comparison distinguishes renaming, harmless perturbation and transfer of a causal state within the declared experiment.
+\end{proof}
+
+\subsection{Joint Certificate on the Declared Support}
+
+\begin{proposition}[Joint Tower Certificate for the Declared Protocols]\label{prop:writable-tower-joint-certificate}
+The support and observation family of Table~\ref{tab:writable-tower-joint-certificate} admit all six Paper V witnesses and the four finite subject descriptors together. Different rows may use different schedules and preparations within that support. Integration is relative to the declared split-readout sector, identity to the prepared catalogue, continuity to the discrete regime model, and subject margins to the matched lineage and information protocols.
+\end{proposition}
+\begin{proof}
+For persistence, the profile embedding avoids the closed constant-field collapse set with positive distance by compactness. Each same-profile branch is compact and invariant. The decreasing reachable sets under all commands define a nonempty invariant attractor, and common commands contract within the branch. Thus one may track a trajectory initialized on the attractor under the same commands to bound attraction by $(9/16)^t$ times the initial branch diameter. For identity the full acquisition covers every available profile, so the $1/80$ gap identifies the catalogue when $2\eta<1/80$. The split comparison can restrict to native commands for its lower bound and keep the same explicit factor construction for the writable family for its upper bound, as proved in Paper V \cite{paper5}. The phase-code readout has step distance at most one, and invariant profiles prevent incompatible regime crossings. The code is at least $2/9$ after two steps, precluding an all-zero attractor, and opposite initial constant tapes give unit separation.
+
+For legibility, the four-observation prefix certificate uses a single trajectory in each arm. Equality of the complete preparation and common nuisance protocol gives a transitive matching relation. The same binary class set and equality of decoder outputs give structural closure, with zero distortion under one-bit coding. For life, Proposition~\ref{prop:writable-tower-viability} supplies its additional margins, including the separate recovery comparison. Proposition~\ref{prop:writable-tower-subject-descriptors} proves the remaining rows. All challenges and all impulse images lie in the same safe band. The four descriptors here can share a memory mechanism. Their different tests do not prove their independence. The witness table records a mathematical realization for the declared protocols and leaves any extension of their domains to a separate comparison.
+\end{proof}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Joint certificate on the seven-profile writable tower with $|m|\le1/4$. The observed channels are $(r_0,r_1,r_2,c)$, with error $\eta=3^{-10}/4$ in the weighted maximum norm. Static certificates use clean state metrics, and the internal-copy row separately bounds its memory error. Time is in plant steps.}
+\label{tab:writable-tower-joint-certificate}
+\begin{tabularx}{\textwidth}{@{}l X X@{}}
+\toprule
+Witness & Commands and horizon & Certified margin or decision \\
+\midrule
+$\Iper$ & All commands, all times & Positive distance to collapse; branch contraction $\le9/16$ \\
+$\Iri$ & Full profile acquisition at time zero & Catalogue gap $1/80$, with $2\eta<1/80$ \\
+$\Iint$ & Split observations, times 0 and 1 for the lower bound & Clean $e_\ast\in[1/216,1/24]$; exact initial readouts give $1/24$ \\
+$\Icont$ & All schedules in the discrete regime model & Step bound $1$, below $5/4$; no regime switch \\
+$\Idiff$ & Extreme tapes at time zero; all schedules from time two & Code gap $1$; non-null code floor $2/9$ \\
+$\Ileg$ & Opposite write and three shams after the write & Gap $3^{-10}$, four observations, one bit, no errors \\
+$\Priv$ & Four common neutral challenge steps & Phase gap $\ge1/256-2\eta$ against readout clone \\
+$\SelfDisc$ & Equal-cost assignment and port trial, two steps & Signed reversal; clearance $\ge1/64-2\eta$ \\
+$\SelfModel$ & Hidden preparation and one-step return trial & Action risk gain $1/2$; memory error $\le1/32$ \\
+$\Own$ & Assignment and neutral readout, two steps & Sign clearance $1/128-2\eta$; agreement $1$ versus $0$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \section{Residual Runtime and Interpretation Limits}
 This paper remains intentionally restrictive at the empirical and interpretive boundary.

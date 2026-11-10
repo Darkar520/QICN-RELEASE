@@ -1373,6 +1373,19 @@ At reset, the five primary scores evaluate to the first five entries. Each of th
 
 This is a nonempty local measurement certificate, with the intervention and rival clauses verified on the declared finite protocol. Definition~\ref{def:subfp} also requires inherited Paper V and VII certificates. Those clauses remain separate obligations for full membership. The comparison establishes a gap relative to the specified context-blind predictors on these tasks.
 
+\subsection{A Topological Obstruction to Native Lesions}
+
+Use the circle-prefix tower of Papers V--VI \cite{paper5,paper6} on the safe band of Paper VII \cite{paper7}. Its states are $(p,\theta,b,m)$ with $\theta\in\mathbb T$, $b\in\{0,1\}^{\mathbb N_{>0}}$, and $m\in[-1/4,1/4]$. For all native commands $(u,q)$ the projected update on $(p,b)$ is $(p,Rb)$ with $Rb=(0,1-b_1,1-b_2,\ldots)$. The phase and memory updates depend on the commands.
+
+\begin{theorem}[Connected-Fibre Obstruction to Native Discrete Lesions]\label{thm:tower-native-lesion-obstruction}
+Suppose the sham and targets start from the same preparation, use only native commands, and are evaluated after the same number of transitions. Let their discrete word be assigned by a common continuous decoder from the whole safe support. The same hypothesis holds for the induced state decoder if it uses a common fixed finite diagnostic schedule with continuous clean observations and preserves the clean label under observation error of a uniformly positive radius. Then every target has the same word as the sham. In particular the five distinct native lesions required to reproduce the discrete switch protocol of Proposition~\ref{prop:joint-rational-window} cannot be realized under these conditions.
+\end{theorem}
+\begin{proof}
+At fixed $(p,b)$ the fibre is homeomorphic to $\mathbb T\times[-1/4,1/4]$ and is connected. A continuous map from it to a discrete space is constant. In the diagnostic formulation, write $H(x)$ for the clean window starting at the state to be decoded. For $x'$ sufficiently close to $x$, continuity puts $H(x')$ inside the allowed noise ball around $H(x)$. Uniform robustness makes their decoded words identical, so the induced state decoder is locally constant and hence continuous. After $n$ native steps from one preparation, all arms have the same $(p,R^n b)$ even if the commands are chosen by feedback. Thus all arms end in one fibre. The finite switch protocol instead requires a one-step target word different from the sham word.
+\end{proof}
+
+Two fixed profiles can encode context. The five initial prefix bits can be read as preparation contrasts, but the common shift and complement carry them to positions $2$ through $6$ in every arm. A selective change to a prefix bit from a common preparation requires an intervention that changes the prefix update. Restricted diagnostic domains offer a different possibility because separated phase or memory regions need not be connected within the domain. Their evidence requires declared coverage and a rival with access to the same commands. For example, prepare $m=0$ and use $q=0$. The six commands $u=w/32$, where $w$ is the all-active five-bit word or one of its five single-bit lesions interpreted as an integer, give six separated phases $\theta'=u$. A rival given $u$ predicts these labels exactly. This control separates the existence of labels on a restricted domain from selective intervention on the system's own organization.
+
 \section{Intervention-to-artifact mapping and failure semantics}
 The implementation burden becomes much clearer when each intervention is mapped to artifacts and failure codes.
 

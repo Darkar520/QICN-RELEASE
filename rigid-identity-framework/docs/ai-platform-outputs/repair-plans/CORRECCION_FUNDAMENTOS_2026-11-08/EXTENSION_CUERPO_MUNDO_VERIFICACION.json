@@ -1,0 +1,416 @@
+{
+  "base_commit": "ceb7b91bed4ea00da314a6a8737bd855cb3cb467",
+  "preregistration_sha256": "6f884a6fa4db81a70866b7c99833fbbaa9fe4958bd280c8d219acdea03d7b702",
+  "prospective_addendum_sha256": "85361aeae03b4a4dd280e65e3cf0fc3f2d622868b36adf5a7c3a220ecea4192a",
+  "gates": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.14
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0,
+      "seconds": 1.16
+    },
+    {
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0,
+      "seconds": 45.03
+    },
+    {
+      "name": "math",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:math"
+      ],
+      "exit": 0,
+      "seconds": 126.39
+    },
+    {
+      "name": "corpus",
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "exit": 0,
+      "seconds": 0.28
+    },
+    {
+      "name": "macros",
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "exit": 0,
+      "seconds": 0.11
+    }
+  ],
+  "compilation": [
+    {
+      "name": "paper9-first",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 10.02
+    },
+    {
+      "name": "paper9-biber",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 18.19
+    },
+    {
+      "name": "paper9-second",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 4.84
+    },
+    {
+      "name": "paper9-third",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.72
+    },
+    {
+      "name": "monolithic-command",
+      "command": [
+        "node",
+        "scripts/build-monolithic-volume.js",
+        "--compile"
+      ],
+      "exit": 0,
+      "seconds": 73.78
+    }
+  ],
+  "math": {
+    "passed": true,
+    "results": [
+      {
+        "script": "check_math.py",
+        "exit": 0
+      },
+      {
+        "script": "check_regime_implementation.py",
+        "exit": 0
+      },
+      {
+        "script": "check_partitions.py",
+        "exit": 0
+      },
+      {
+        "script": "check_null.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_met_rig.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_ns.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p1_dynamics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_comparators.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_diagnostics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_ruptures.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_common_support.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_legibility.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_memory.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_followups.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_bridge_adjudication.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_p5_window_geometry.py",
+        "exit": 0
+      },
+      {
+        "script": "check_unified_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_prefix_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_paper1_front.py",
+        "exit": 0
+      },
+      {
+        "script": "check_tower_joint_certificate.py",
+        "exit": 0
+      },
+      {
+        "script": "check_informed_reserve.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bridge_transport_burdens.py",
+        "exit": 0
+      },
+      {
+        "script": "check_campaign_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_adjudication_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_body_world.py",
+        "exit": 0
+      }
+    ],
+    "scope": "Finite controls and source links; not empirical validation or complete theorem formalization."
+  },
+  "new_control_raw_output": "Projection: 36036 native lift checks, invariant zero sections and seven adaptive pairs\nSafety: 24576 affine-box corner checks; exact invariant bound and contraction <= 3/4\nV: exact scalar/gradient optimum gamma/2; nonzero circulation; scalar and Hermite grid emulators exposed\nW: rank-four minimal realization; C1 input/output Jacobian checked; inverse norm 24; 729 rank-two LTI controls\nE: early competence unchanged; signed motor return +/-1/256; cut and label-leak controls\nJoint: six burdens in one four-step plant; full-rank selective response matrix; min margin 13/96\nGauge: 1536 signed-frame conjugacies; state-sharing scalar hybrid matches every tested full trajectory\nexternal_support_certified=false\n",
+  "preservation_and_pdfs": {
+    "preserved_tex_sources": 22,
+    "preserved_lean_sources": 24,
+    "preserved_native_plant_and_controls": 26,
+    "paper9_baseline_preserved_by_exact_section_removal": true,
+    "baseline_registry": 854,
+    "registry": 863,
+    "new_ids": [
+      "paper9:definition:def-bridge-two-port-system",
+      "paper9:proposition:prop-bridge-finite-table-obstruction",
+      "paper9:proposition:prop-bridge-indexed-world",
+      "paper9:proposition:prop-bridge-shared-hybrid-obstruction",
+      "paper9:proposition:prop-bridge-six-port-certificate",
+      "paper9:theorem:thm-bridge-motor-closure",
+      "paper9:theorem:thm-bridge-port-minimality",
+      "paper9:theorem:thm-bridge-port-preservation",
+      "paper9:theorem:thm-bridge-typed-valence"
+    ],
+    "chapters": 12,
+    "pdfs": {
+      "paper9_phenomenal_bridge_organization/main.pdf": {
+        "pages": 54,
+        "sha256": "3ed964f2f792df533ba284317c57efcb9a43d1a44810f1f2c35f6217f114217c",
+        "overfull": 38,
+        "underfull": 222,
+        "overfull_in_new_section": 0
+      },
+      "monolithic/QICN_MONOLITHIC.pdf": {
+        "pages": 396,
+        "sha256": "05f2fa21398eb1b69749d1b3512606062d589ce9c7b46e74140a6a26e509223e",
+        "overfull": 4,
+        "underfull": 334,
+        "overfull_underfull_counts_unchanged_from_front5": true
+      }
+    },
+    "verdicts": {
+      "25": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "26": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "27": "BLOCKED_MULTIPLE_GATES",
+      "28": "BLOCKED_MULTIPLE_GATES",
+      "30": "BLOCKED_MULTIPLE_GATES",
+      "31": "BLOCKED_FOUNDATION_FIRST_GATES"
+    },
+    "external_support_certified": false
+  },
+  "monolithic_comparison": {
+    "method": "Pure assembler transforms evaluated in memory; original build() and main() never executed; equality after CRLF normalization",
+    "results": [
+      {
+        "source": "basecore/BASECORE.tex",
+        "chapter": "01-basecore.tex",
+        "expected_sha256": "9c978ac9bdc4259f6a6b106cb01a64cb57b42ff67db0608ec74c70bb126bcece",
+        "actual_sha256": "9c978ac9bdc4259f6a6b106cb01a64cb57b42ff67db0608ec74c70bb126bcece",
+        "equal": true,
+        "source_bytes": 5330,
+        "chapter_bytes": 163648
+      },
+      {
+        "source": "paper1/main.tex",
+        "chapter": "02-rigid-identity-as-an-inverse-limit-in-observable-channels.tex",
+        "expected_sha256": "68ad767ccb91a26658f9daa20b84320b68573f780ed7ea6be1c4a570f63f92c0",
+        "actual_sha256": "68ad767ccb91a26658f9daa20b84320b68573f780ed7ea6be1c4a570f63f92c0",
+        "equal": true,
+        "source_bytes": 88377,
+        "chapter_bytes": 88380
+      },
+      {
+        "source": "paper2/main.tex",
+        "chapter": "03-phenomenological-regimes-induced-by-structural-identity.tex",
+        "expected_sha256": "1b194fe6dea4bc3c5597a2fcf01c2f249006374349bb26f28441fede7c6be466",
+        "actual_sha256": "1b194fe6dea4bc3c5597a2fcf01c2f249006374349bb26f28441fede7c6be466",
+        "equal": true,
+        "source_bytes": 60807,
+        "chapter_bytes": 60725
+      },
+      {
+        "source": "paper3/main.tex",
+        "chapter": "04-structural-instability-of-the-phenomenological-null-regime.tex",
+        "expected_sha256": "c5f50e18326165130728bfa1810f05375fccdcc7a08690c728bdcbc82ecab504",
+        "actual_sha256": "c5f50e18326165130728bfa1810f05375fccdcc7a08690c728bdcbc82ecab504",
+        "equal": true,
+        "source_bytes": 62296,
+        "chapter_bytes": 61138
+      },
+      {
+        "source": "paper4/main.tex",
+        "chapter": "05-falsifiable-predictions-under-forensic-constraints.tex",
+        "expected_sha256": "95555633a2c0fe96f898381968e5269d7625d6df1129455c9f0b1607669c51e9",
+        "actual_sha256": "95555633a2c0fe96f898381968e5269d7625d6df1129455c9f0b1607669c51e9",
+        "equal": true,
+        "source_bytes": 43973,
+        "chapter_bytes": 43995
+      },
+      {
+        "source": "paper5_operational_consciousness/main.tex",
+        "chapter": "06-structural-criterion-for-substrate-invariant-operational-consciousness.tex",
+        "expected_sha256": "9618be1f0253ef9f704f7b974673d11304961e74b707b69a1a13631ee1c53c20",
+        "actual_sha256": "9618be1f0253ef9f704f7b974673d11304961e74b707b69a1a13631ee1c53c20",
+        "equal": true,
+        "source_bytes": 140224,
+        "chapter_bytes": 140772
+      },
+      {
+        "source": "paper6_predictions_falsation/main.tex",
+        "chapter": "07-predictions-discriminators-and-failure-modes.tex",
+        "expected_sha256": "ea98d75910cd05dbda06f84ccdd73136a11564120cc6c6a457ac54b8f98e421e",
+        "actual_sha256": "ea98d75910cd05dbda06f84ccdd73136a11564120cc6c6a457ac54b8f98e421e",
+        "equal": true,
+        "source_bytes": 74913,
+        "chapter_bytes": 73654
+      },
+      {
+        "source": "paper7_operational_life_subjecthood/main.tex",
+        "chapter": "08-operational-life-structural-class-and-subjecthood.tex",
+        "expected_sha256": "4af6994994bc6de2c7f1ba8c3ec3788d1eed5e3c838fc31432db9ffe65fc7b9e",
+        "actual_sha256": "4af6994994bc6de2c7f1ba8c3ec3788d1eed5e3c838fc31432db9ffe65fc7b9e",
+        "equal": true,
+        "source_bytes": 102596,
+        "chapter_bytes": 101217
+      },
+      {
+        "source": "paper8_first_person_subjectivity/main.tex",
+        "chapter": "09-first-person-indexed-subjectivity.tex",
+        "expected_sha256": "253abe4e7fdccf2bca460b9b5371ba493ec3d39fb6ad023b59efbaca0500c6fb",
+        "actual_sha256": "253abe4e7fdccf2bca460b9b5371ba493ec3d39fb6ad023b59efbaca0500c6fb",
+        "equal": true,
+        "source_bytes": 155723,
+        "chapter_bytes": 155156
+      },
+      {
+        "source": "paper9_phenomenal_bridge_organization/main.tex",
+        "chapter": "10-phenomenal-bridge-organization.tex",
+        "expected_sha256": "b1f278efe814622f6835bd4839ae8ee13e3863b4844b771e2150637ed7ca72d7",
+        "actual_sha256": "b1f278efe814622f6835bd4839ae8ee13e3863b4844b771e2150637ed7ca72d7",
+        "equal": true,
+        "source_bytes": 173521,
+        "chapter_bytes": 171462
+      },
+      {
+        "source": "paper10_external_adjudication/main.tex",
+        "chapter": "11-external-adjudication-of-bridge-formalized-machine-subjectivity.tex",
+        "expected_sha256": "d740c64da6b778ca3b33faf71d975159167dd892cb3f135f8eb5fd4991f456f5",
+        "actual_sha256": "d740c64da6b778ca3b33faf71d975159167dd892cb3f135f8eb5fd4991f456f5",
+        "equal": true,
+        "source_bytes": 76932,
+        "chapter_bytes": 76654
+      },
+      {
+        "source": "paper_bridge_operational_subjecthood/main.tex",
+        "chapter": "12-operational-consciousness-to-operational-subjecthood-bridge.tex",
+        "expected_sha256": "95c72d29bd66e1b90bb9a924d70b7a50ee528c3766971b049b33d24b561a2143",
+        "actual_sha256": "95c72d29bd66e1b90bb9a924d70b7a50ee528c3766971b049b33d24b561a2143",
+        "equal": true,
+        "source_bytes": 85493,
+        "chapter_bytes": 84627
+      }
+    ]
+  },
+  "archive_byte_restoration": {
+    "eol_only_files": 653,
+    "generated_reports_reset": [
+      "rigid-identity-framework/docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v26.json",
+      "rigid-identity-framework/docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v26.md",
+      "rigid-identity-framework/docs/reports/V35_ALL_LEGACY_VERIFICATION.json"
+    ],
+    "frozen_originals_unchanged": 76,
+    "canonical_archive_sha256": "d6db17410c41cb4a4d7305dfc87b288897b42ca2dfc68259e9c6c4e7b62dcb6a",
+    "inventory_path": "E:\\QICN-PRESERVACION\\2026-11-11-cuerpo-mundo-bridge\\logs\\archive-byte-restoration.json",
+    "inventory_sha256": "b019b23544ea8b8f78af7b519239e020e37d48267ad568b76b75c9467b8306fb"
+  },
+  "local_robust_margins": [
+    "1/4",
+    "7/16",
+    "13/96",
+    "1/4",
+    "31/32",
+    "1/2-64/19683"
+  ],
+  "deficiency_retaining_aggregate_margin": "5/192",
+  "shared_state_hybrid_clean_margin": "0",
+  "global_bridge_certified": false,
+  "new_results_lean_mechanized": false,
+  "external_support_certified": false
+}

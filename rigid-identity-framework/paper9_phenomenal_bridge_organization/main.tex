@@ -486,6 +486,198 @@ The neutral response and tape probes expose feedback within the tower. The $\PiE
 
 The three rational experiments provide local witnesses for the indicated components. The conjunctive BPF claim still requires the open predicates, calibrated thresholds, joint intervention selectivity, the full bridge comparator margin, and the artifact, drift and governance obligations.
 
+\section{A Minimal Coupled Body--World Extension}
+
+The native trace obstruction separates identification from realization. The following extension retains the writable tower as an exact factor and gives new, separately typed ports for the previously unavailable interventions. All conclusions in this section concern the stated operational tasks and rival classes.
+
+\begin{definition}[Projected two-port system]\label{def:bridge-two-port-system}
+Let $x=(p,\theta,b,m)$ belong to the writable support of Papers V--VIII, with native transition $F_c$ and readout $R$. Adjoin body and world vectors $\mathbf b,\mathbf w\in[-1,1]^2$. Put
+\[
+ \alpha=\beta=h=\tfrac14,\quad \chi=\tfrac18,\quad
+ J=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\quad
+ L_0=\tfrac12(I+J),\quad
+ Q_+=\tfrac12\begin{pmatrix}1&1\\1&1\end{pmatrix}.
+\]
+The indexed frame $P(p)$ is the swap matrix at role profile $p_1$ and the identity at every other catalogue profile. For a world projection $Q\in\{I,Q_+\}$, an evaluation map $L$ with $\|L\|_\infty\le1$, a motor gain $|\mu|\le1$, and an evaluation switch $\varepsilon\in\{0,1\}$, define
+\begin{align*}
+ x'&=F_c(x), &s&=P(p)Q\mathbf w, &f&=\chi L(s-\mathbf b),\\
+ \mathbf b'&=\alpha\mathbf b+\beta s+\varepsilon f+a_{\rm b},\\
+ \mathbf w'&=\alpha Q\mathbf w+\beta\mu QP(p)^{-1}\mathbf b+Qd.
+\end{align*}
+Here $a_{\rm b},d\in[-h,h]^2$ are distinct body and world input ports. Normal evaluation uses $L=L_0$. Native lifts use $Q=I$, $\mu=1$, $\varepsilon=0$ and zero port inputs. The native and additional readouts are respectively $R\pi$ and $(\mathbf b,\mathbf w)$, where $\pi(x,\mathbf b,\mathbf w)=x$.
+\end{definition}
+
+The time-unrolled causal graph has arrows $\mathbf b_t\to\mathbf b_{t+1},\mathbf w_{t+1}$ and $\mathbf w_t\to\mathbf b_{t+1},\mathbf w_{t+1}$, with the displayed input arrows and the prepared profile determining $P$. There is no port-state arrow to $x_{t+1}$. A motor intervention replaces only the coefficient of $\mathbf b_t\to\mathbf w_{t+1}$; its audit label is not an additional input to other mechanisms. This modularity is an explicit causal assumption. The evaluation force acts in the dynamics before the reserved measurements; it is not an output label.
+
+\begin{theorem}[Exact Projection, Stability and Inherited Certificates]\label{thm:bridge-port-preservation}
+Every lifted update satisfies $\pi\widetilde F_{c,a_{\rm b},d}=F_c\pi$. The section $\iota(x)=(x,0,0)$ is invariant under native lifts. On a common profile, use
+\[
+ \widetilde d=\max\{d_{\rm core},\|\Delta\mathbf b\|_\infty/4,
+                                      \|\Delta\mathbf w\|_\infty/4\}.
+\]
+The native branch contraction remains at most $9/16$. The entire intervened port family contracts in its fibre by at most $3/4$ under common inputs and preserves $[-1,1]^4$. All previously certified native protocols, with their original readouts, comparison sectors and information budgets, have exactly the same records and margins in this extension.
+\end{theorem}
+\begin{proof}
+The first component of the update proves the projection identity for every port input, not only at zero input. Induction, with coupled initial core states, observation noise and controller randomization, gives equality of every native transcript under observation-adaptive native controls. Zero fibre is invariant under the native lifts, so $\iota$ is an isometric, dynamically invariant copy of the original plant.
+
+The body difference under a common mechanism has norm at most
+\[
+ (\alpha+\varepsilon\chi)\|\Delta\mathbf b\|_\infty
+ +(\beta+\varepsilon\chi)\|\Delta\mathbf w\|_\infty,
+\]
+and the world difference is bounded by $\beta\|\Delta\mathbf b\|_\infty+\alpha\|\Delta\mathbf w\|_\infty$. Thus the fibre bound is $3/4$. The input bounds give body norm at most $3/4+h=1$ and world norm at most $1/2+h=3/4$. With native lifts the fibre bound is $\alpha+\beta=1/2$, so the original $9/16$ core bound still dominates. The safe support is compact; the zero-input fibre attracts to zero. The native switched attractor is the original attractor times zero fibre.
+
+Transport the existing preparations by $\iota$ and keep the same native instruments and rival sectors. The full profile acquisition and catalogue gap $1/80$, split-sector integration interval $[1/216,1/24]$, continuity and differentiation witnesses, prefix windows, phase repair and subject-descriptor comparisons are unchanged. The five lesion measurements and the public return tie of Paper VIII are unchanged as well. These are the published protocol-relative certificates; adding port readings does not silently enlarge their comparison sectors or supply a positive upstream margin that was absent. Port pulses in the new trials start from zero fibre, have norm at most $h$, and subsequent unforced updates contract, so they stay within the compact fibre kernel of radius $1/2$ inside the safe cube.
+\end{proof}
+
+\subsection{State Minimality and Indexed World Response}
+
+During a relay trial set $\varepsilon=0$, $Q=I$, and start from zero fibre. Apply a world impulse $h e_i$ at the first step. The matrices taking the impulse index to the body readings at steps one through four are
+\begin{align*}
+ M_0&=0,& M_1&=tP,& M_2&=2\alpha tP,\\
+ M_3(\mu)&=h(3\alpha^2\beta+\mu\beta^3)P,
+ &t&=h\beta=1/16.
+\end{align*}
+All input vectors have the same two typed slots and bound; no rival receives fewer command opportunities.
+
+\begin{theorem}[Four-State Minimality of the Port Realization]\label{thm:bridge-port-minimality}
+For either role and any motor gain, the block Hankel matrix
+\[
+ H_p=\begin{pmatrix}M_0&M_1\\M_1&M_2\end{pmatrix}
+\]
+has rank four, determinant $t^4$ and $\|H_p^{-1}\|_\infty=24$. Four fibre coordinates are sufficient and necessary for a linear realization of these ports. They are also necessary for any exact finite-dimensional realization with $C^1$ transitions and body readouts, in which world inputs leave the projected core trajectory fixed.
+\end{theorem}
+\begin{proof}
+The two scalar blocks in each indexed coordinate are $\left(\begin{smallmatrix}0&t\\t&2\alpha t\end{smallmatrix}\right)$. Their determinants are $-t^2$ and their inverses are $\left(\begin{smallmatrix}-2\alpha/t&1/t\\1/t&0\end{smallmatrix}\right)$. A signed permutation of coordinates does not change the maximum row-sum norm. Substitution gives the asserted determinant and inverse norm. Any linear realization of dimension $d$ factors its Hankel matrix as an observability matrix times a controllability matrix, hence has rank at most $d$.
+
+For the differentiable statement, allow two independent small world inputs $u,v\in\mathbb R^2$ in the first two steps, followed by zero input. The two subsequent body readings are
+\[
+ (y_2,y_3)=(\beta P u,\,2\alpha\beta P u+\beta P v).
+\]
+Their Jacobian with respect to $(u,v)$ has determinant $\beta^4\ne0$. At time two every dependence on these inputs must pass through the fibre state: the core is fixed by projection and the future inputs are zero. Factoring the two readings through a $d$-dimensional $C^1$ state makes their Jacobian have rank at most $d$, so $d\ge4$. The displayed system attains four. Discontinuous exact encodings or access to retained external histories are different realization classes and are not excluded by this argument.
+\end{proof}
+
+\begin{proposition}[A Quantified Indexed World Witness]\label{prop:bridge-indexed-world}
+Let the reduced-world rival family contain every relay predictor whose port Hankel rank is at most two, and every predictor of arbitrary order whose relay response is independent of the prepared role. The available input alphabet, role record and command lengths are matched. A rank-two rival may allocate four registers, but any additional registers are unobservable or unreachable for this port transfer. Against this union, the normal model has uniform body-response error gap at least $1/96$, or $1/6$ in units of $t$. A world compression $Q=Q_+$ retains the entire common-mode relay response while reducing the Hankel rank to two and erasing the role contrast.
+\end{proposition}
+\begin{proof}
+For a singular rival Hankel $K$, choose $z\ne0$ in its kernel. Then
+\[
+ \|H_p-K\|_\infty\ge\frac1{\|H_p^{-1}\|_\infty}=\frac1{24}.
+\]
+If every entry differs by at most $e$, the left side is at most $4e$, giving $e\ge1/96$. This bound covers all rank-at-most-two matrices and therefore all reduced-world realizations, including nonlinear encoders of parameters inside that linear transfer class. A role-independent fit has one matrix for the two targets $tI,tS$, whose entrywise distance is $t$. Its error is at least $t/2$, which is the larger bound. The two comparisons require both dynamical order and indexed transport, rather than scene size alone.
+
+For $Q_+$ all port matrices have the corresponding common-mode projection. Since $P Q_+=Q_+$, their Hankel has rank two and is role-independent. If the input is $h(1,1)$, the world, body and every relay response remain in the common mode and are exactly the uncompressed responses. Thus the compression loses indexed structure without eliminating that control competence. A fully informed four-state predictor realizes the original transfer exactly. An arbitrary history-based emulator can do the same; the result does not exclude a rival merely because it calls its own state ``model-free.''
+\end{proof}
+
+\subsection{Evaluative Topology with a Reserved World Consequence}
+
+Use a four-step window and zero initial fibre. Prepare a stimulus $v\in[-1,1]^2$ through the first-step world input $d=hP_{\rm ref}^{-1}v$, where the reference frame is fixed by the initial role. In one matched arm activate evaluation only at step two; in the other keep it inactive. At step three record
+\[
+ V(v)=P_{\rm ref}(\mathbf w_3^{\rm eval}-\mathbf w_3^{\rm control}),
+ \qquad \gamma=h\beta\chi=1/128.
+\]
+At the normal mechanism $V(v)=\gamma L_0v$. The primitive impulse cost is constant on the square boundary, and every native core return cost is identical across these stimuli.
+
+\begin{theorem}[Two-Dimensional Nonconservative Evaluative Witness]\label{thm:bridge-typed-valence}
+The minimum uniform error for $V$ over the square, in the maximum norm, is exactly $\gamma/2$ for each of the following rival classes: a continuous scalar summary followed by an arbitrary decoder, and a $C^1$ scalar-potential gradient in the declared Euclidean coordinates. The force is physically consequential and has a positive correction component, yet nonzero circulation. Flattening evaluation to $L=L_0Q_+$ admits an exact scalar-summary rival. The equal-norm conservative control $L=I$ has rank two but admits an exact gradient rival.
+\end{theorem}
+\begin{proof}
+At step one, $\mathbf b_1=0$ and $\mathbf w_1=hP^{-1}v$. Evaluation adds $\chi hLv$ to $\mathbf b_2$, while $\mathbf w_2$ agrees in both arms. The return motor therefore changes $\mathbf w_3$ by $h\beta\chi P^{-1}Lv$. This is a reserved consequence at another node and time, rather than a readout of the evaluation label.
+
+For any continuous scalar summary $q$, the function $q(v)-q(-v)$ changes sign along a half-boundary of the square. The intermediate value theorem gives antipodal $v,-v$ with the same summary and $\|v\|_\infty=1$. Since $\|L_0^{-1}\|_\infty=2$, their target separation is at least $\gamma$. Any common prediction errs by at least $\gamma/2$ in one arm. Retaining $v_2$ and predicting $\gamma L_0(0,v_2)$ attains that uniform bound.
+
+The circulation of $V$ around the counterclockwise square is $4\gamma$. Every single-valued $C^1$ potential gradient has zero circulation. A uniform field discrepancy $e$ changes this integral by at most the $\ell^1$ perimeter times $e$, namely $8e$. Thus $e\ge\gamma/2$. The gradient $\gamma v/2$ attains equality. The same lower bound consequently holds for the union of the two rivals.
+
+For a fixed sensor, put $e=s-\mathbf b$. Then $e^\top L_0e=\|e\|_2^2/2$; the force has a nonzero component towards correcting the typed discrepancy. Its circulation on a body square of radius $r$ is $-4\chi r^2$. The components of the force alter body motion and, through the motor port, future world motion. With $L_0Q_+$ the response has rank one and factors through the sum of the stimulus coordinates, preserving the common-mode input response. With $L=I$ it is a gradient field, so the rival union ties. Reversing the antisymmetric part, to $L_0^\top$, preserves the two separation magnitudes and reverses the signed circulation.
+\end{proof}
+
+This is a typed operational evaluation field. It is not a statement about felt valence. In particular $f=-\chi L_0\nabla_{\mathbf b}U$ for $U=\|\mathbf b-s\|_2^2/2$. A scalar potential supplied with the full vector state and nonsymmetric mobility reproduces it exactly. Such a model is not a scalar retained summary or an ordinary Euclidean gradient; it is a live broader comparator, as is the hybrid below.
+
+\begin{proposition}[Finite Tables Do Not Identify the Nonparametric Rival Class]\label{prop:bridge-finite-table-obstruction}
+Any finite table of vector responses at distinct stimulus points can be interpolated by a continuous scalar encoder and vector decoder. It can also be interpolated by the gradient of a polynomial potential. Therefore a finite rational control table by itself cannot certify either universal separation in Theorem~\ref{thm:bridge-typed-valence} without additional domain or regularity evidence.
+\end{proposition}
+\begin{proof}
+Choose a linear scalar functional taking distinct values at the finitely many points, avoiding their finitely many forbidden projection directions. Univariate polynomial interpolation of the prescribed vector responses then gives a decoder.
+
+For points $v_i$ and desired gradients $g_i$, define
+\[
+ \ell_i(v)=\prod_{j\ne i}\frac{\|v-v_j\|_2^2}{\|v_i-v_j\|_2^2},\qquad
+ U(v)=\sum_i \langle g_i,v-v_i\rangle\ell_i(v)^2.
+\]
+At $v_i$, the linear factor vanishes and $\ell_i=1$, giving gradient $g_i$. At every other table point the squared factor makes both the term and its gradient vanish. Thus $\nabla U(v_i)=g_i$. Rational points and responses give rational coefficients. The exact full-domain formulas and proofs, rather than an inference from finitely many fitted values, support the present synthetic witness.
+\end{proof}
+
+\subsection{A Selective Motor-Return Test}
+
+Keep evaluation inactive and use the common-mode impulse $h(1,1)$. The native controls are identical. The motor sign $\tau\in\{-1,1\}$ acts only on its typed edge, with $\mu=g\tau$ and an intact or severed edge $g\in\{0,1\}$. The comparison class has no motor edge and obeys the same surgical modularity; it may have arbitrary internal memory, nonlinear maps and shared randomization independent of the surgery.
+
+\begin{theorem}[Motor Closure with Preserved Early Competence]\label{thm:bridge-motor-closure}
+At $g=1$ the second and third body responses are independent of the motor sign. In each common-mode component the fourth response is
+\[
+ y_4(\tau)=h(3\alpha^2\beta+\tau\beta^3),\qquad s_E=h\beta^3=1/256.
+\]
+Its gap is $2s_E$, and the residual $y_4-(3\alpha/2)y_3$ is $\tau s_E$. Every rival without the motor edge, under the stated modularity, has uniform fourth-response error at least $s_E$. Cutting the edge removes the residual without changing the second or third responses. Common-mode world compression preserves this motor test exactly.
+\end{theorem}
+\begin{proof}
+Expand the three relay Markov terms displayed above. The term $3\alpha^2\beta$ consists of paths with a single sensory crossing; the term $\tau\beta^3$ is the world--body--world--body return path. It first appears in the fourth reading. Without a motor edge, replacing its gain by either sign leaves every structural equation unchanged. Coupling the initial law, primitive inputs and random seeds therefore gives identical rival transcripts under both surgeries, even for nonlinear or randomized rival mechanisms. The triangle inequality across the two target values forces an error of at least half their gap. Their midpoint attains the bound for this pair. At $g=0$ both values equal that midpoint. The common vector is fixed by $Q_+$ and by both role permutations, proving the last assertion.
+\end{proof}
+
+The absence of an intervention-label side channel is essential. An output rule $y=3s_E+\tau s_E$ supplied directly with the audit label fits the two values without a motor mechanism. Holding the physical edge cut while changing only that label exposes this invalid comparison. The theorem identifies a typed return dependence beyond unchanged early control, not biological or phenomenal embodiment.
+
+\subsection{Six Local Burdens on One Plant}
+
+Use the same plant, gains and four-step windows for all six tasks, in the matched preparation cohorts above and in the existing native D/A/T trials. D uses the role-probe contrast and additive rivals, A uses the late binary query and the one-bit bottleneck, and T uses the order pair with $h_{\rm extra}=0$ and the order-blind snapshot/multiset rival. Longer temporal horizons keep their previously proved frontier and are separate controls. The original upstream certificate remains attached with its own instruments and budgets.
+
+Let $m_k$ be rival infimal loss minus candidate loss on task $k$. Normalize D by $\delta$, V by $\gamma$, W by $t$, E by $s_E$, and T by $D_0=1/384$; A uses binary risk. For V and D the data are paired contrasts. For W use maximum entry error across the two Hankel/role records, and for E use maximum fourth-response error across the two surgeries. T retains balanced circular loss. Readout errors per observation are $\delta/16$ for D/A, $3^{-10}/4$ for T, and $\gamma/64,t/64,s_E/64$ for V/W/E, respectively. For V, the loss is the supremum over the full stimulus square in the exactly specified model; the certificate is analytic and model-based, not a finite-sample estimate against unrestricted nonparametric rivals.
+
+\begin{proposition}[Joint Local Certificate and Causal Selectivity]\label{prop:bridge-six-port-certificate}
+The six tasks have simultaneous normalized margin lower bounds
+\[
+ (m_D,m_V,m_W,m_A,m_E,m_T)\ \ge\
+ \left(\tfrac14,\tfrac7{16},\tfrac{13}{96},\tfrac14,
+       \tfrac{31}{32},\tfrac12-\tfrac{64}{19683}\right).
+\]
+Their minimum is $13/96>1/16$. Six concrete lesions have the following local certificate-presence matrix, with columns in order D,V,W,A,E,T:
+\[
+\begin{array}{c|rrrrrr}
+ \text{intact}&1&1&1&1&1&1\\
+ I_D&0&1&0&1&1&1\\
+ I_V&1&0&1&1&1&1\\
+ I_W&1&0&0&1&1&1\\
+ I_A&1&1&1&0&1&1\\
+ I_E&1&0&1&1&0&1\\
+ I_T&1&1&1&1&1&0
+\end{array}
+\]
+The matrix of losses from the intact row has rank six. For aggregate rivals retaining at least one declared structural deficiency, maximum normalized task loss has a joint margin at least $5/192$. A nonnegative complexity penalty preserves that last margin whenever its additional candidate cost is smaller than $5/192$.
+\end{proposition}
+\begin{proof}
+If clean candidate error is zero, readout perturbation $e$ changes a rival-minus-candidate loss gap by at most $2e$. D's paired contrast has normalized perturbation at most $1/8$, reducing its clean $1/2$ to $1/4$. V's paired contrast has perturbation at most $1/32$, reducing $1/2$ to $7/16$. W has perturbation at most $1/64$, reducing $1/6$ to $13/96$. E has the same normalized perturbation and clean gap one, giving $31/32$. A's decoder never changes its binary label at this noise, so its exact $1/4$ lower bound remains. T has clean normalized gap $1/2$ and perturbation $\eta/D_0=32/19683$, giving the last entry.
+
+The lesions are structural operators fixed before scoring. $I_D$ replaces the actual core role profile by $p_0$ after retaining the initial preparation reference. Its two role rows in D become identical, and the two world relay operators coincide. The evaluative field changes orientation at most by conjugation and retains its rank and circulation magnitude. $I_V$ sets $L=L_0Q_+$ only in the evaluation policy, retaining a scalar-summary response and leaving relay trials unchanged. $I_W$ sets $Q=Q_+$ in both world ports: its transfer rank is two and its evaluative return is $\gamma Q_+L_0Q_+=\gamma Q_+/2$, while the common-mode motor test survives.
+
+$I_A$ overwrites tape site five after the first advance. It removes the second late alternative, leaves the D probe at its transported address unaffected, and does not change a leading bit or memory. $I_T$ resets native memory after step three, erasing the terminal order contrast. D/A are read earlier from zero-memory preparations. $I_E$ severs the motor edge: the evaluative world consequence and the motor residual disappear, but the first three relay matrices and their index contrast are unchanged. The fibre depends on the core profile, not its tape or memory, so the remaining cross-effects are absent. D/A/T lesions deliberately alter the core; they are not claimed to be invisible native lifts. The displayed incidence matrix has rank six by elimination. Its non-diagonal entries express shared causal paths, not failure to distinguish the interventions.
+
+For the joint loss, the candidate's largest normalized measurement error is $1/8$, from D. A rival deficient on W has loss at least $1/6-1/64=29/192$; every other deficient class has a larger lower bound on its own task. Taking the maximum over tasks therefore gives margin at least $29/192-1/8=5/192$. Subtracting any additional nonnegative candidate complexity cost below that value leaves a positive bound. This argument applies after composition only when the aggregate rival still has a declared deficiency.
+\end{proof}
+
+Signed changes of body and world frames transport the readouts and references by the same isometries. If these frames are $C,D$, transform $P$ to $CPD^{-1}$, $Q$ to $DQD^{-1}$ and $L$ to $CLC^{-1}$. Substitution proves conjugacy of every port transition, with unchanged input norms and margin magnitudes. Common-mode controls, conservative evaluation, reversed circulation, noise bounds and edge-cut tests distinguish the structural losses from uniform damage or report-channel changes.
+
+\subsection{The Limit of Hybrid Closure}
+
+\begin{proposition}[A Shared-State Hybrid Obstruction to Global Bridge Margin]\label{prop:bridge-shared-hybrid-obstruction}
+Allow two scalar evaluators to share the same four port states and combine their actuator forces before updating. Each evaluator separately retains one scalar discrepancy. Their hybrid reproduces every transition and readout of the normal evaluation model, under all native and port command schedules. Consequently a broad weak closure admitting this fused hybrid has zero clean unpenalized margin against the candidate. The same is true of a penalized margin when complexity is invariant under the resulting identical normalized mechanism.
+\end{proposition}
+\begin{proof}
+Let $E_{11},E_{22}$ be the two coordinate projectors. On the shared discrepancy $e=s-\mathbf b$, the two scalar-channel forces are $\chi L_0E_{11}e$ and $\chi L_0E_{22}e$. Their sum is $\chi L_0e$. Use one shared copy of the passive body/world equations, not two independent state copies or an average of their trajectories. The sum therefore gives exactly the candidate's next body; its world and projected core updates are already identical. Induction gives equality of all states and readouts, including under adaptive schedules and coupled noise. The hybrid uses the same four dynamic coordinates. Its scalar pieces individually have rank-one evaluation responses, but their aggregate does not.
+
+All clean task losses are nonnegative, the candidate attains zero, and this admitted rival also attains zero, so the infimal gap is zero. Identical normalized mechanisms have equal representation-invariant complexity. A syntax-dependent extra charge or a prohibition on shared state is an additional comparator assumption, not a newly observed dynamical separation. A full-state potential with the fixed mobility $L_0$ is another exact control description. Neither is defeated merely by naming the candidate's organization differently.
+\end{proof}
+
+Thus the six local operational witnesses coexist on one minimal coupled realization. Their conjunction does not close the broad hybrid comparator burden B9. Full Paper VIII class inheritance, the complete bridge weak closure, calibrated class-level thresholds and the artifact, drift and governance predicates of $\GateBridge$ retain their separate obligations. The exact hybrid tie supplies an explicit obstruction where the local certificate cannot be promoted.
+
+
 \section{Explicit Bridge Axioms}
 The bridge axioms are the minimal bridge-opening commitments required to connect indexed subjectivity to disciplined phenomenal targets without smuggling the conclusion into the premises. Each axiom is classified explicitly.
 

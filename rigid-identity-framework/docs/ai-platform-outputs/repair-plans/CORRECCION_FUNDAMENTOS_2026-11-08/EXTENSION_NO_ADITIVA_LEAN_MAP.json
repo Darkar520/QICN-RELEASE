@@ -1,0 +1,393 @@
+{
+  "lean_version": "4.31.0",
+  "base_commit": "e6b1a38bbb0a569f7c19cc5039dd3b8a80f40125",
+  "modules": {
+    "QICNBodyWorldDynamics": {
+      "source": "docs/ai-platform-outputs/formal/lean/QICNLean/QICNBodyWorldDynamics.lean",
+      "sha256": "9d85f3aa62788c491d0357c25a15507fa3a029854ea3b7f2446e649709df68f9",
+      "theorems": {
+        "QICNBodyWorldDynamics.projection_commutes": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 31,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.zero_section_invariant": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 34,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.body_envelope": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 63,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.native_body_envelope": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 76,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.world_envelope": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 84,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.evaluation_row_error": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 96,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.intervened_cube": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 108,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.update_zero": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 131,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.body_difference": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 134,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.native_body_difference": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 139,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.world_difference": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 144,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.native_contraction": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 149,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.intervened_contraction": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 158,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.product_difference_bound": {
+          "label": "thm:bridge-bilinear-safe-extension",
+          "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+          "source_line": 170,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.normal_body_difference": {
+          "label": "thm:bridge-bilinear-safe-extension",
+          "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+          "source_line": 192,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.nonlinear_body_difference": {
+          "label": "thm:bridge-bilinear-safe-extension",
+          "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+          "source_line": 201,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.nonlinear_body_cube": {
+          "label": "thm:bridge-bilinear-safe-extension",
+          "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+          "source_line": 222,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.normal_body_cube": {
+          "label": "thm:bridge-bilinear-safe-extension",
+          "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+          "source_line": 241,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.nonlinear_cube": {
+          "label": "thm:bridge-bilinear-safe-extension",
+          "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+          "source_line": 255,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.nonlinear_contraction": {
+          "label": "thm:bridge-bilinear-safe-extension",
+          "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+          "source_line": 271,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.evaluated_cube": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 292,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.evaluated_contraction": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 309,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.evaluated_update_zero": {
+          "label": "thm:bridge-port-preservation",
+          "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+          "source_line": 325,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        },
+        "QICNBodyWorldDynamics.nonlinear_update_zero": {
+          "label": "thm:bridge-bilinear-safe-extension",
+          "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+          "source_line": 329,
+          "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+        }
+      }
+    },
+    "QICNBodyWorldFinite": {
+      "source": "docs/ai-platform-outputs/formal/lean/QICNLean/QICNBodyWorldFinite.lean",
+      "sha256": "92b167161f9f5834649ea8071deac7efc7644febb6984438969e01cde6c13c02",
+      "theorems": {
+        "QICNLean.body_world_hankel_det": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 23,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_hankel_inverse_left": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 29,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_hankel_inverse_right": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 36,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_hankel_det_nonzero": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 43,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_hankel_columns_independent": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 48,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_hankel_det_at_scale": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 52,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_indexed_hankel_det": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 63,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_indexed_hankel_columns_independent": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 71,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_hankel_inverse_row_bound": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 78,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_hankel_inverse_row_sharp": {
+          "label": "thm:bridge-port-minimality",
+          "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+          "source_line": 83,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_motor_residual": {
+          "label": "thm:bridge-motor-closure",
+          "registry_id": "paper9:theorem:thm-bridge-motor-closure",
+          "source_line": 92,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_motor_signed_residual": {
+          "label": "thm:bridge-motor-closure",
+          "registry_id": "paper9:theorem:thm-bridge-motor-closure",
+          "source_line": 98,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_motor_sign_gap": {
+          "label": "thm:bridge-motor-closure",
+          "registry_id": "paper9:theorem:thm-bridge-motor-closure",
+          "source_line": 104,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_motor_cut_residual": {
+          "label": "thm:bridge-motor-closure",
+          "registry_id": "paper9:theorem:thm-bridge-motor-closure",
+          "source_line": 109,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_lesion_inverse_left": {
+          "label": "prop:bridge-six-port-certificate",
+          "registry_id": "paper9:proposition:prop-bridge-six-port-certificate",
+          "source_line": 125,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_lesion_inverse_right": {
+          "label": "prop:bridge-six-port-certificate",
+          "registry_id": "paper9:proposition:prop-bridge-six-port-certificate",
+          "source_line": 132,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_lesion_det_nonzero": {
+          "label": "prop:bridge-six-port-certificate",
+          "registry_id": "paper9:proposition:prop-bridge-six-port-certificate",
+          "source_line": 139,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        },
+        "QICNLean.body_world_lesion_columns_independent": {
+          "label": "prop:bridge-six-port-certificate",
+          "registry_id": "paper9:proposition:prop-bridge-six-port-certificate",
+          "source_line": 146,
+          "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+        }
+      }
+    },
+    "QICNBodyWorldEvaluation": {
+      "source": "docs/ai-platform-outputs/formal/lean/QICNLean/QICNBodyWorldEvaluation.lean",
+      "sha256": "aca064433f09a94e8f2c269b4e3d0e7a80891232974964e6202529dcf16e55e3",
+      "theorems": {
+        "QICNLean.bw_evaluation_inverse": {
+          "label": "thm:bridge-typed-valence",
+          "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+          "source_line": 19,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_evaluation_inverse_bound": {
+          "label": "thm:bridge-typed-valence",
+          "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+          "source_line": 24,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_nonlinear_antipodal_difference": {
+          "label": "thm:bridge-typed-valence",
+          "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+          "source_line": 49,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_antipodal_collision_radius": {
+          "label": "thm:bridge-typed-valence",
+          "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+          "source_line": 59,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_additive_rectangle_zero": {
+          "label": "prop:bridge-rectangular-additivity",
+          "registry_id": "paper9:proposition:prop-bridge-rectangular-additivity",
+          "source_line": 104,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_rectangle_zero_iff_additive": {
+          "label": "prop:bridge-rectangular-additivity",
+          "registry_id": "paper9:proposition:prop-bridge-rectangular-additivity",
+          "source_line": 111,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_nonlinear_rectangle": {
+          "label": "thm:bridge-nonadditive-gap",
+          "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+          "source_line": 126,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_nonlinear_additive_iff": {
+          "label": "thm:bridge-nonadditive-gap",
+          "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+          "source_line": 132,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_additive_error_rectangle": {
+          "label": "thm:bridge-nonadditive-gap",
+          "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+          "source_line": 149,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_additive_corner_lower_bound": {
+          "label": "thm:bridge-nonadditive-gap",
+          "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+          "source_line": 157,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_additive_uniform_lower_bound": {
+          "label": "thm:bridge-nonadditive-gap",
+          "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+          "source_line": 171,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_vector_additive_uniform_lower_bound": {
+          "label": "thm:bridge-nonadditive-gap",
+          "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+          "source_line": 179,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_preregistered_additive_separation": {
+          "label": "thm:bridge-nonadditive-gap",
+          "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+          "source_line": 189,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_additive_matching_upper_bound": {
+          "label": "thm:bridge-nonadditive-gap",
+          "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+          "source_line": 197,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_cross_term_restores_exact_tie": {
+          "label": "cor:bridge-cross-informed-tie",
+          "registry_id": "paper9:corollary:cor-bridge-cross-informed-tie",
+          "source_line": 220,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_evaluation_square_circulation": {
+          "label": "thm:bridge-typed-valence",
+          "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+          "source_line": 234,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_circulation_error_radius": {
+          "label": "thm:bridge-typed-valence",
+          "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+          "source_line": 242,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        },
+        "QICNLean.bw_exact_nonlinear_scales": {
+          "label": "thm:bridge-nonadditive-gap",
+          "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+          "source_line": 248,
+          "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+        }
+      }
+    }
+  },
+  "new_public_theorems": 60,
+  "aggregate_modules": 27,
+  "aggregate_public_theorems": 186,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "external_support_certified": false
+}

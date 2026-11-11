@@ -678,6 +678,79 @@ All clean task losses are nonnegative, the candidate attains zero, and this admi
 Thus the six local operational witnesses coexist on one minimal coupled realization. Their conjunction does not close the broad hybrid comparator burden B9. Full Paper VIII class inheritance, the complete bridge weak closure, calibrated class-level thresholds and the artifact, drift and governance predicates of $\GateBridge$ retain their separate obligations. The exact hybrid tie supplies an explicit obstruction where the local certificate cannot be promoted.
 
 
+\subsection{A Nonadditive Evaluative Branch and Its Comparator Boundary}
+
+The shared-state obstruction above is retained without alteration: coordinate-linear forces add to the original normal operator. To separate a genuinely coordinate-additive evaluator, the target must have a nonzero mixed response. This changes the evaluative branch, not the projected tower or the number of dynamic states.
+
+\begin{definition}[Coordinate-Additive Port Comparators]\label{def:bridge-additive-port-class}
+On a fixed preparation and reference frame, a coordinate-additive evaluator is a map $G(v_1,v_2)=g_1(v_1)+g_2(v_2)$ with arbitrary functions $g_i:[-1,1]\to\mathbb R^2$. No continuity or linearity is required. Its channels have no access to a cross-coordinate message that makes either function depend on both coordinates. A fixed common initial condition is allowed. A state-dependent or sequential composition that communicates both coordinates need not belong to this class. The loss is the uniform maximum-norm error of the reserved world response, or its maximum on the four corners when stated explicitly.
+\end{definition}
+
+\begin{proposition}[Exact Rectangular Criterion for Additivity]\label{prop:bridge-rectangular-additivity}
+For a map $F:A\times B\to V$ into a real vector space and nonempty $A,B$, coordinate additivity is equivalent to vanishing of every rectangular difference
+\[
+ F(x,y)-F(x,y')-F(x',y)+F(x',y')=0.
+\]
+\end{proposition}
+\begin{proof}
+An additive map cancels term by term. Conversely fix $(x_0,y_0)$ and put $g_1(x)=F(x,y_0)$ and $g_2(y)=F(x_0,y)-F(x_0,y_0)$. The rectangular identity with base point $(x_0,y_0)$ gives $F(x,y)=g_1(x)+g_2(y)$. Thus the condition is exact without regularity assumptions. A nonzero difference is a certificate against this class, rather than against every architecture described as modular.
+\end{proof}
+
+Let $u=(1,0)$, $\kappa=1/8$, and $\sigma\in\{0,1\}$. For an evaluation-input projection $R\in\{I,Q_+\}$ replace only the force of Definition~\ref{def:bridge-two-port-system} by
+\[
+ f_\sigma(e)=\chi\{L_0Re+\sigma\kappa (Re)_1(Re)_2u\},
+ \qquad e=P Q\mathbf w-\mathbf b.
+\]
+Normal evaluation uses $R=I$ and $\sigma=1$. Flattening uses $R=Q_+$ on the entire force, including the interaction. The preserved linear branch is $\sigma=0,R=I$; native lifts keep evaluation inactive. The memory, motor update and primitive input bounds are unchanged. In the causal graph this adds a joint dependence of the body update on the two discrepancy coordinates, without a new dynamic coordinate or an arrow to the projected core.
+
+\begin{theorem}[Safe Bilinear Extension with Exact Projection]\label{thm:bridge-bilinear-safe-extension}
+The new family preserves the projection identity and invariant native zero section. On the safe cube its fibre contraction is at most $3/4$ under common controls and at most $1/2$ when evaluation is inactive. Its next body and world norms are bounded respectively by $15/16$ and $3/4$, including the primitive inputs. The four-state minimality remains valid for this family. For $R=I$, the evaluative direction retains the corrective bound
+\[
+ e^\top\{L_0e+\kappa e_1e_2u\}\ge\tfrac14\|e\|_2^2.
+\]
+\end{theorem}
+\begin{proof}
+The core equation is unchanged and the extra term vanishes at zero fibre. For $R=I,Q_+$, direct row sums give
+\[
+ \|\alpha I-\chi L_0R\|_\infty\le\tfrac14,\qquad
+ \|\beta I+\chi L_0R\|_\infty\le\tfrac38.
+\]
+Both sensor frames and world projections have norm at most one. On the cube $\|Re\|_\infty\le2$. For two states with body and world differences bounded by $d_b,d_w$, the product difference is at most $4(d_b+d_w)$. Since $\chi\kappa=1/64$, the body difference is at most
+\[
+ \tfrac5{16}d_b+\tfrac7{16}d_w\le\tfrac34\max(d_b,d_w).
+\]
+When evaluation is inactive the original coefficients sum to $1/2$; the world coefficients always sum to at most $1/2$. The linear evaluated body has norm at most $5/8$, the added term at most $1/16$, and the body input at most $1/4$. Their sum is $15/16$. The world bound is the original $3/4$. These inequalities apply throughout the cube, not merely at its vertices.
+
+Finally $e^\top L_0e=\|e\|_2^2/2$ and $\kappa e_1^2e_2\ge-e_1^2/4$ for $|e_2|\le2$. The claimed corrective bound follows. Relay protocols with evaluation inactive still contain the original rank-four input/output map, so Theorem~\ref{thm:bridge-port-minimality} supplies the same lower bound; the displayed four-state construction attains it.
+\end{proof}
+
+In the reserved world protocol, with $R=I$ and normal motor gain, the exact response becomes
+\[
+ V_\sigma(v)=\gamma L_0v+\sigma\xi v_1v_2u,
+ \qquad \xi=h^2\beta\chi\kappa=1/4096.
+\]
+Indeed the discrepancy at the evaluation step is $hv$, and the next world update transports its extra body force by $\beta P^{-1}$. This observation fixes the physical unit and estimator: a paired difference of the third-step world readings in the fixed body reference frame, rather than a report of the force label.
+
+\begin{theorem}[Exact Separation from Coordinate-Additive Hybrids]\label{thm:bridge-nonadditive-gap}
+For $\sigma=1$, the infimal uniform error against all comparators of Definition~\ref{def:bridge-additive-port-class} is exactly $\xi=1/4096$. The same optimum holds when the loss uses only the four corners. If each raw reading has maximum-norm error at most $\xi/64$, the observed rival-minus-candidate loss gap is at least $15\xi/16=15/65536$.
+\end{theorem}
+\begin{proof}
+At the four corners, the rectangular difference of the target is $4\xi u$, while every additive comparator has difference zero. If its maximum corner error is $r$, the triangle inequality bounds this difference by $4r$, so $r\ge\xi$. The linear map $\gamma L_0v$ is additive and differs from $V_1$ by exactly $\xi v_1v_2u$; its supremum is $\xi$, attained at the corners. This proves both optima, even for arbitrary, discontinuous rival channels.
+
+Each paired reading differs from its exact target by at most $2\xi/64=\xi/32$. Maximum loss is Lipschitz with constant one in these data, for both the candidate and the infimum over rivals. Their gap can therefore decrease by at most $\xi/16$, giving the asserted bound. Unlike the nonparametric scalar interpolation issue above, a four-corner table suffices to refute coordinate additivity, because that structural class obeys a finite exact identity.
+\end{proof}
+
+\begin{corollary}[Cross-Informed Tie and Preservation of Local Selectivity]\label{cor:bridge-cross-informed-tie}
+Providing the rival with the complete cross term restores exact transition and readout equality. Setting $\sigma=0$ also restores the original additive tie. The bilinear branch preserves the six local certificate-presence patterns of Proposition~\ref{prop:bridge-six-port-certificate}, using flattening of the whole evaluative input as specified above. Neither the new separation nor these patterns defeat a broad weak closure admitting the cross-informed rival.
+\end{corollary}
+\begin{proof}
+Supply the shared-state rival with the additional scalar $e_1e_2$ and the fixed actuator $\chi\kappa u$. Its sum with the original two linear forces equals $f_1$ pointwise, so induction proves equality under every command schedule. No information advantage is hidden: the rival has gained precisely the previously unavailable joint dependence. At $\sigma=0$ the previous obstruction applies verbatim.
+
+For the local V bound the bilinear term is even under $v\mapsto-v$, so it cancels from the antipodal target difference. Its circulation on the centered square is zero, since its first component is proportional to $v_1v_2$. Thus the original antipodal lower bound and circulation obstruction survive; their exact upper optima need not be asserted anew. Flattening $Re$ makes both terms functions of a single coordinate sum. World compression likewise factors the reserved response through that sum. A severed motor removes the reserved world consequence. An index lesion conjugates the linear field and moves the bilinear output coordinate, preserving antipodal separation and circulation magnitude. W and E use evaluation inactive, so their records are unchanged. D/A/T are projected native tests and remain unchanged. These facts give the same presence matrix and full-rank loss incidence, including its documented cross-effects. They are operational comparisons with the declared preparation cohorts, not a claim of a single trajectory realizing all incompatible preparations.
+\end{proof}
+
+The added interaction therefore separates the specified additive class with an exact positive margin, while explicitly identifying the cross-coordinate information that permits the stronger rival to tie. A new syntax penalty, a prohibition on communication, or a phenomenological interpretation does not follow from this calculation. The broad comparator, governance, external-data and complete-class obligations remain distinct.
+
 \section{Explicit Bridge Axioms}
 The bridge axioms are the minimal bridge-opening commitments required to connect indexed subjectivity to disciplined phenomenal targets without smuggling the conclusion into the premises. Each axiom is classified explicitly.
 

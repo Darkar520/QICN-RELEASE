@@ -1,0 +1,1486 @@
+{
+  "base_commit": "e6b1a38bbb0a569f7c19cc5039dd3b8a80f40125",
+  "preregistration_sha256": "f54bfaa47079fdd7b7d556e01013a4bbc274fd2b83ca9eb19789e3321ea13329",
+  "gates": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0,
+      "seconds": 1.69
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.19
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0,
+      "seconds": 4.53
+    },
+    {
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0,
+      "seconds": 103.11
+    },
+    {
+      "name": "math",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:math"
+      ],
+      "exit": 0,
+      "seconds": 189.42
+    },
+    {
+      "name": "corpus",
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "exit": 0,
+      "seconds": 0.62
+    },
+    {
+      "name": "macros",
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "exit": 0,
+      "seconds": 0.14
+    }
+  ],
+  "math": {
+    "passed": true,
+    "results": [
+      {
+        "script": "check_math.py",
+        "exit": 0
+      },
+      {
+        "script": "check_regime_implementation.py",
+        "exit": 0
+      },
+      {
+        "script": "check_partitions.py",
+        "exit": 0
+      },
+      {
+        "script": "check_null.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_met_rig.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_ns.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p1_dynamics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_comparators.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_diagnostics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_ruptures.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_common_support.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_legibility.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_memory.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_followups.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_bridge_adjudication.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_p5_window_geometry.py",
+        "exit": 0
+      },
+      {
+        "script": "check_unified_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_prefix_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_paper1_front.py",
+        "exit": 0
+      },
+      {
+        "script": "check_tower_joint_certificate.py",
+        "exit": 0
+      },
+      {
+        "script": "check_informed_reserve.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bridge_transport_burdens.py",
+        "exit": 0
+      },
+      {
+        "script": "check_campaign_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_adjudication_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_body_world.py",
+        "exit": 0
+      },
+      {
+        "script": "check_nonadditive_body_world.py",
+        "exit": 0
+      }
+    ],
+    "scope": "Finite controls and source links; not empirical validation or complete theorem formalization."
+  },
+  "quality": {
+    "preserved_tex_sources": 22,
+    "preserved_lean_sources": 23,
+    "preserved_native_plant_and_controls": 28,
+    "paper9_baseline_preserved_by_exact_section_removal": true,
+    "baseline_registry": 863,
+    "registry": 868,
+    "new_ids": [
+      "paper9:corollary:cor-bridge-cross-informed-tie",
+      "paper9:definition:def-bridge-additive-port-class",
+      "paper9:proposition:prop-bridge-rectangular-additivity",
+      "paper9:theorem:thm-bridge-bilinear-safe-extension",
+      "paper9:theorem:thm-bridge-nonadditive-gap"
+    ],
+    "chapters": 12,
+    "pdfs": {
+      "paper9_phenomenal_bridge_organization/main.pdf": {
+        "pages": 56,
+        "sha256": "168bdf72226a22728d4b2c78b2b4d3d046141d5ffab4944de7e0261863d695a6",
+        "overfull": 38,
+        "underfull": 222,
+        "overfull_in_new_section": 0
+      },
+      "monolithic/QICN_MONOLITHIC.pdf": {
+        "pages": 398,
+        "sha256": "6a851e8a9905ecf1f3a3f0d7db6811d74599afa2b075ce9de4b6c4c3ddf2ebc4",
+        "overfull": 4,
+        "underfull": 334
+      }
+    },
+    "verdicts": {
+      "25": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "26": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "27": "BLOCKED_MULTIPLE_GATES",
+      "28": "BLOCKED_MULTIPLE_GATES",
+      "30": "BLOCKED_MULTIPLE_GATES",
+      "31": "BLOCKED_FOUNDATION_FIRST_GATES"
+    },
+    "external_support_certified": false
+  },
+  "lean": {
+    "passed": true,
+    "external_support_certified": false,
+    "steps": [
+      {
+        "name": "version",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "--version"
+        ],
+        "exit": 0,
+        "seconds": 0.28
+      },
+      {
+        "name": "builtin-library",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "--print-libdir"
+        ],
+        "exit": 0,
+        "seconds": 0.22
+      },
+      {
+        "name": "pin-mathlib",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\mathlib",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.19
+      },
+      {
+        "name": "pin-plausible",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\plausible",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.2
+      },
+      {
+        "name": "pin-LeanSearchClient",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\LeanSearchClient",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.2
+      },
+      {
+        "name": "pin-importGraph",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\importGraph",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.2
+      },
+      {
+        "name": "pin-proofwidgets",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\proofwidgets",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.16
+      },
+      {
+        "name": "pin-aesop",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\aesop",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "pin-Qq",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Qq",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "pin-batteries",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\batteries",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "pin-Cli",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Cli",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.19
+      },
+      {
+        "name": "kernel-QICNLean.Basic",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\Basic.olean",
+          "QICNLean\\Basic.lean"
+        ],
+        "exit": 0,
+        "seconds": 96.34
+      },
+      {
+        "name": "kernel-QICNLean.QICNContraction",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNContraction.olean",
+          "QICNLean\\QICNContraction.lean"
+        ],
+        "exit": 0,
+        "seconds": 116.3
+      },
+      {
+        "name": "kernel-QICNLean.QICNHilbertInstance",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNHilbertInstance.olean",
+          "QICNLean\\QICNHilbertInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 177.41
+      },
+      {
+        "name": "kernel-QICNLean.QICNConvexProjection",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNConvexProjection.olean",
+          "QICNLean\\QICNConvexProjection.lean"
+        ],
+        "exit": 0,
+        "seconds": 35.31
+      },
+      {
+        "name": "kernel-QICNLean.QICNAttractorCompact",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNAttractorCompact.olean",
+          "QICNLean\\QICNAttractorCompact.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.56
+      },
+      {
+        "name": "kernel-QICNLean.QICNAttractorConcrete",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNAttractorConcrete.olean",
+          "QICNLean\\QICNAttractorConcrete.lean"
+        ],
+        "exit": 0,
+        "seconds": 34.33
+      },
+      {
+        "name": "kernel-QICNLean.QICNNonCollapse",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNNonCollapse.olean",
+          "QICNLean\\QICNNonCollapse.lean"
+        ],
+        "exit": 0,
+        "seconds": 29.53
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5Derivation",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNH5Derivation.olean",
+          "QICNLean\\QICNH5Derivation.lean"
+        ],
+        "exit": 0,
+        "seconds": 34.3
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5Convex",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNH5Convex.olean",
+          "QICNLean\\QICNH5Convex.lean"
+        ],
+        "exit": 0,
+        "seconds": 31.28
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5ConvexExclusion",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNH5ConvexExclusion.olean",
+          "QICNLean\\QICNH5ConvexExclusion.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.86
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5QuotientDynamics",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNH5QuotientDynamics.olean",
+          "QICNLean\\QICNH5QuotientDynamics.lean"
+        ],
+        "exit": 0,
+        "seconds": 28.0
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5QuotientDisplacement",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNH5QuotientDisplacement.olean",
+          "QICNLean\\QICNH5QuotientDisplacement.lean"
+        ],
+        "exit": 0,
+        "seconds": 51.72
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5UnilateralBridge",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNH5UnilateralBridge.olean",
+          "QICNLean\\QICNH5UnilateralBridge.lean"
+        ],
+        "exit": 0,
+        "seconds": 29.7
+      },
+      {
+        "name": "kernel-QICNLean.QICNSInstance",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNSInstance.olean",
+          "QICNLean\\QICNSInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 28.97
+      },
+      {
+        "name": "kernel-QICNLean.QICNSCoupledInstance",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNSCoupledInstance.olean",
+          "QICNLean\\QICNSCoupledInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 32.95
+      },
+      {
+        "name": "kernel-QICNLean.QICNRotationSpectral",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNRotationSpectral.olean",
+          "QICNLean\\QICNRotationSpectral.lean"
+        ],
+        "exit": 0,
+        "seconds": 53.11
+      },
+      {
+        "name": "kernel-QICNLean.QICNCoupledSplitMargin",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNCoupledSplitMargin.olean",
+          "QICNLean\\QICNCoupledSplitMargin.lean"
+        ],
+        "exit": 0,
+        "seconds": 34.38
+      },
+      {
+        "name": "kernel-QICNLean.QICNCoupledSplitMarginUniversal",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNCoupledSplitMarginUniversal.olean",
+          "QICNLean\\QICNCoupledSplitMarginUniversal.lean"
+        ],
+        "exit": 0,
+        "seconds": 25.97
+      },
+      {
+        "name": "kernel-QICNLean.QICNProjectiveTransport",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNProjectiveTransport.olean",
+          "QICNLean\\QICNProjectiveTransport.lean"
+        ],
+        "exit": 0,
+        "seconds": 2.42
+      },
+      {
+        "name": "kernel-QICNLean.QICNObservationBudget",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNObservationBudget.olean",
+          "QICNLean\\QICNObservationBudget.lean"
+        ],
+        "exit": 0,
+        "seconds": 2.67
+      },
+      {
+        "name": "kernel-QICNLean.QICNFiniteP4",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNFiniteP4.olean",
+          "QICNLean\\QICNFiniteP4.lean"
+        ],
+        "exit": 0,
+        "seconds": 2.33
+      },
+      {
+        "name": "kernel-QICNLean.QICNMetricFronts",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNMetricFronts.olean",
+          "QICNLean\\QICNMetricFronts.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.2
+      },
+      {
+        "name": "kernel-QICNLean.QICNFiniteFronts",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNFiniteFronts.olean",
+          "QICNLean\\QICNFiniteFronts.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.73
+      },
+      {
+        "name": "kernel-QICNLean.QICNBodyWorldDynamics",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNBodyWorldDynamics.olean",
+          "QICNLean\\QICNBodyWorldDynamics.lean"
+        ],
+        "exit": 0,
+        "seconds": 30.56
+      },
+      {
+        "name": "kernel-QICNLean.QICNBodyWorldFinite",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNBodyWorldFinite.olean",
+          "QICNLean\\QICNBodyWorldFinite.lean"
+        ],
+        "exit": 0,
+        "seconds": 53.75
+      },
+      {
+        "name": "kernel-QICNLean.QICNBodyWorldEvaluation",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean\\QICNBodyWorldEvaluation.olean",
+          "QICNLean\\QICNBodyWorldEvaluation.lean"
+        ],
+        "exit": 0,
+        "seconds": 30.95
+      },
+      {
+        "name": "kernel-QICNLean",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\kernel-objects-uvt5eh1c\\QICNLean.olean",
+          "QICNLean.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.72
+      },
+      {
+        "name": "axioms",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\workspace\\.cache\\qicn-lean\\AuditAxioms.lean"
+        ],
+        "exit": 0,
+        "seconds": 19.58
+      }
+    ],
+    "lean": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+    "mode": "kernel-only",
+    "modules": [
+      {
+        "source": "QICNLean/Basic.lean",
+        "sha256": "265e4023cec03dc33bd91c90e5f6072420e4eb0ecae2dffa8b66b01489db8acb",
+        "olean_sha256": "f13c1a9739720af34a4c00c0c337998c9f706dd708817f6af89104c4203371b1"
+      },
+      {
+        "source": "QICNLean/QICNAttractorCompact.lean",
+        "sha256": "d97969baa1736963790e009f6368e4d81f34c3447e5c5d45ff97268e9b1d8347",
+        "olean_sha256": "54abd2b7fe1e99f608a45b499494b6b3ec62bf1ddafe9594cb79885be646b58d"
+      },
+      {
+        "source": "QICNLean/QICNAttractorConcrete.lean",
+        "sha256": "2b6e7419ad365e3633a91489c05b912dd7b8d36649d1db18915c91ac3d44011e",
+        "olean_sha256": "3b08cc1f2ab12d43f4f4bd377d9a369d8e7cf95ad4848830498e6a056c989a96"
+      },
+      {
+        "source": "QICNLean/QICNBodyWorldDynamics.lean",
+        "sha256": "9d85f3aa62788c491d0357c25a15507fa3a029854ea3b7f2446e649709df68f9",
+        "olean_sha256": "3155968c186153c9f89945ade1d1f0d3fb7d2afeca5c24f19c899a394a6ac002"
+      },
+      {
+        "source": "QICNLean/QICNBodyWorldEvaluation.lean",
+        "sha256": "aca064433f09a94e8f2c269b4e3d0e7a80891232974964e6202529dcf16e55e3",
+        "olean_sha256": "d5262cfd75aad0589dbc9b534963c0c583cdc51397e58647b31b2f867a57ca86"
+      },
+      {
+        "source": "QICNLean/QICNBodyWorldFinite.lean",
+        "sha256": "92b167161f9f5834649ea8071deac7efc7644febb6984438969e01cde6c13c02",
+        "olean_sha256": "0b0444650ef8a86f829fca388f87a242d19ddd4b5bb8d788cc8784045584dc3f"
+      },
+      {
+        "source": "QICNLean/QICNContraction.lean",
+        "sha256": "ec5d490b26402faa7095ea42ef646700a4f67fc91af3330e7cb55a0839becbec",
+        "olean_sha256": "cfeca4eb362b8ce255b6f40a1514e17f550c0f949e756ac34ac0264fbd423ae4"
+      },
+      {
+        "source": "QICNLean/QICNConvexProjection.lean",
+        "sha256": "cef90e049c0ffdd6b2eaacdc8794eb4ce4740b11c489d2aff909229623dad052",
+        "olean_sha256": "1bad6a5b298ac06174c1b713fe774f2022b94b77bbcdc58484e38299cab5f673"
+      },
+      {
+        "source": "QICNLean/QICNCoupledSplitMargin.lean",
+        "sha256": "a693929e8911ccda76952a5d6766bc443a58ff50d8ae07924b7f54e1d4a9bdd8",
+        "olean_sha256": "1fd981856ab64ac69fd253580115b0b80dd4c7d027f9c7acf9b43fc7f38a4d65"
+      },
+      {
+        "source": "QICNLean/QICNCoupledSplitMarginUniversal.lean",
+        "sha256": "dc19e27f6ea203cf4b5b293dc3b6927f4e451976516ec7f8a213d56aaec6a3d9",
+        "olean_sha256": "4d169ed3ead605df37cf980de7e6aec1efe38e621ee6947c51e67cc9225f8055"
+      },
+      {
+        "source": "QICNLean/QICNFiniteFronts.lean",
+        "sha256": "752c0c32bd402f13eb23eb1726d39abb250912ce7d4d216608d2fd6f6008722e",
+        "olean_sha256": "722a0184c8cd2f636200af99e72550becdda6596b1798cc4fe3cb025a2e2d8e8"
+      },
+      {
+        "source": "QICNLean/QICNFiniteP4.lean",
+        "sha256": "a5028368b21eb31c654062cd12e905bf0ec67828a3218d4d89d86aa679fa1457",
+        "olean_sha256": "b1b3959cb304f806d2c53df17358de718f08c40d190838a3e2f961fdaf6f9c0e"
+      },
+      {
+        "source": "QICNLean/QICNH5Convex.lean",
+        "sha256": "bd399b7532f22fb5f67e46ff914d54ec9f78f3283744118cd4fcfd30adfb1e3d",
+        "olean_sha256": "bb7c7feb0291c35ad23ded3483abede1324a86d68a0278e40884d6576e781b04"
+      },
+      {
+        "source": "QICNLean/QICNH5ConvexExclusion.lean",
+        "sha256": "73897ed07d2793708136fb3f1fb410e359c8b7772aebc7a32b170b281276033e",
+        "olean_sha256": "84e58d0720ed3851f3e8fb46b088a60ffe443a511867bf4607430b22cb2cd1a3"
+      },
+      {
+        "source": "QICNLean/QICNH5Derivation.lean",
+        "sha256": "b60d6b6d75d6a0959cd0d2a314b18e75d36071df6a0400a68806a0046ae6c847",
+        "olean_sha256": "6ae19a79454513355a820e55f9bf0d24df8647a989a769959789173b52613abe"
+      },
+      {
+        "source": "QICNLean/QICNH5QuotientDisplacement.lean",
+        "sha256": "0dc27605b05d69e9f9cce773e5b020643881917587388bdf0ed2f56859f6452f",
+        "olean_sha256": "a904726560c82ef4edc74761974a7340268345cb2366baa94d5410a56f061dc2"
+      },
+      {
+        "source": "QICNLean/QICNH5QuotientDynamics.lean",
+        "sha256": "50e82e66b27e11a7152a7499bc2a6632f844b1bf5d507710d4e695b74e14897f",
+        "olean_sha256": "4dfe02243764080ee275de07575f8710b9c9330780ed7144b17dfe19c465d241"
+      },
+      {
+        "source": "QICNLean/QICNH5UnilateralBridge.lean",
+        "sha256": "6e9518702d025ff6f528b530222139bc554aaaef04aa63b8513a8e23b46272db",
+        "olean_sha256": "4d865fd89bf4fd8a44cabc8d50728e19781c81f110fc34c53aa496b73c1222d0"
+      },
+      {
+        "source": "QICNLean/QICNHilbertInstance.lean",
+        "sha256": "e3f6d71d9e5b2b3a392a2e3d8d2313854475b69f40733015b48239726a8c6164",
+        "olean_sha256": "91a9f98f8b15052b293b8955b99a2e3e4535dc44695f3d6c26140c21b028ad7e"
+      },
+      {
+        "source": "QICNLean/QICNMetricFronts.lean",
+        "sha256": "15fc7b6dc0a4ef42e5bff004ad48b612161c9927bd3523f0bd558b8ff32ebf37",
+        "olean_sha256": "ea1a7577940b3e1684bb4d8329564e47331dc719ab38b15cb0aa010b9ba5d22e"
+      },
+      {
+        "source": "QICNLean/QICNNonCollapse.lean",
+        "sha256": "05dd49375f72fa7c3df8fc9ce850ed64126c8c0549bd412e3541e40f21cfd781",
+        "olean_sha256": "8d06b78d4f96a511aad518ed9c7663fcbfdfe56108f9f0ee2b4f11eb0a8334e4"
+      },
+      {
+        "source": "QICNLean/QICNObservationBudget.lean",
+        "sha256": "f547fc9e350cf8d73aaa76eb383c5660b4d73a36cba5b3eabf491a71d2ccea5b",
+        "olean_sha256": "6ccc3e3a3f487518e986a7ab1c65aeafbd4f050c282c1282ea5573f21a967bc8"
+      },
+      {
+        "source": "QICNLean/QICNProjectiveTransport.lean",
+        "sha256": "db8ba27b670059da01759d445ed1453ce510c8cba2b9d574a9df9147b2fdf70e",
+        "olean_sha256": "ce478fbb0f5b2a8d8693fc119337843ef46fc6447efce486868aaa748a417ea5"
+      },
+      {
+        "source": "QICNLean/QICNRotationSpectral.lean",
+        "sha256": "5300efa09f00952ea33106108a4c3d01fe7f3ac1362ad6ab35a9d2466189eaec",
+        "olean_sha256": "4de9c265729880a5fdfb8654a7148206d3d92b36f171be478a2957ab461f7e31"
+      },
+      {
+        "source": "QICNLean/QICNSCoupledInstance.lean",
+        "sha256": "19cc301d09241987d3bcd08907727f9d8d3ffdfdd3ab7eb799bb385acc69b9e4",
+        "olean_sha256": "15024b9c67e6e8882fca002d53fa45679bfbc152a40eb73db48c5690f90b27e1"
+      },
+      {
+        "source": "QICNLean/QICNSInstance.lean",
+        "sha256": "9bb45dcfbe4f5a71bb3e8112d5b5ad958951aabd28e3c7bf2f80927c78ae67f0",
+        "olean_sha256": "f8f5b4cb0fd96c7aba3b9e93a6266132c1bff670ce024c7e08250b41d7b58ea1"
+      },
+      {
+        "source": "QICNLean.lean",
+        "sha256": "8f1d9e9b6a4db16ec3f6b400c07a8a98d46fe34f1b9978aec56744d3f319c9dc",
+        "olean_sha256": "64751b91d34311c921b55a0be36b08ff46551a179c91b7970f83a9b29b6a6eeb"
+      }
+    ],
+    "source_modules": 27,
+    "public_theorems_audited": 186,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "scope": "Kernel build of the declared project and public theorem dependency audit. Private lemmas are compiled and checked through their sources/dependents. This does not formalize every manuscript claim, certify novelty, or supply external empirical validation."
+  },
+  "new_lean_map": {
+    "lean_version": "4.31.0",
+    "base_commit": "e6b1a38bbb0a569f7c19cc5039dd3b8a80f40125",
+    "modules": {
+      "QICNBodyWorldDynamics": {
+        "source": "docs/ai-platform-outputs/formal/lean/QICNLean/QICNBodyWorldDynamics.lean",
+        "sha256": "9d85f3aa62788c491d0357c25a15507fa3a029854ea3b7f2446e649709df68f9",
+        "theorems": {
+          "QICNBodyWorldDynamics.projection_commutes": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 31,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.zero_section_invariant": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 34,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.body_envelope": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 63,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.native_body_envelope": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 76,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.world_envelope": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 84,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.evaluation_row_error": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 96,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.intervened_cube": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 108,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.update_zero": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 131,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.body_difference": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 134,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.native_body_difference": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 139,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.world_difference": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 144,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.native_contraction": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 149,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.intervened_contraction": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 158,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.product_difference_bound": {
+            "label": "thm:bridge-bilinear-safe-extension",
+            "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+            "source_line": 170,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.normal_body_difference": {
+            "label": "thm:bridge-bilinear-safe-extension",
+            "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+            "source_line": 192,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.nonlinear_body_difference": {
+            "label": "thm:bridge-bilinear-safe-extension",
+            "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+            "source_line": 201,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.nonlinear_body_cube": {
+            "label": "thm:bridge-bilinear-safe-extension",
+            "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+            "source_line": 222,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.normal_body_cube": {
+            "label": "thm:bridge-bilinear-safe-extension",
+            "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+            "source_line": 241,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.nonlinear_cube": {
+            "label": "thm:bridge-bilinear-safe-extension",
+            "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+            "source_line": 255,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.nonlinear_contraction": {
+            "label": "thm:bridge-bilinear-safe-extension",
+            "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+            "source_line": 271,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.evaluated_cube": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 292,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.evaluated_contraction": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 309,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.evaluated_update_zero": {
+            "label": "thm:bridge-port-preservation",
+            "registry_id": "paper9:theorem:thm-bridge-port-preservation",
+            "source_line": 325,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          },
+          "QICNBodyWorldDynamics.nonlinear_update_zero": {
+            "label": "thm:bridge-bilinear-safe-extension",
+            "registry_id": "paper9:theorem:thm-bridge-bilinear-safe-extension",
+            "source_line": 329,
+            "scope": "Coordinate inequalities and actual fibre update; fixed normal body/world chart. The arbitrary evaluation row bound is explicit. No claim of formalized signed-frame conjugacy or all upstream certificates."
+          }
+        }
+      },
+      "QICNBodyWorldFinite": {
+        "source": "docs/ai-platform-outputs/formal/lean/QICNLean/QICNBodyWorldFinite.lean",
+        "sha256": "92b167161f9f5834649ea8071deac7efc7644febb6984438969e01cde6c13c02",
+        "theorems": {
+          "QICNLean.body_world_hankel_det": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 23,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_hankel_inverse_left": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 29,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_hankel_inverse_right": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 36,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_hankel_det_nonzero": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 43,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_hankel_columns_independent": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 48,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_hankel_det_at_scale": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 52,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_indexed_hankel_det": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 63,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_indexed_hankel_columns_independent": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 71,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_hankel_inverse_row_bound": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 78,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_hankel_inverse_row_sharp": {
+            "label": "thm:bridge-port-minimality",
+            "registry_id": "paper9:theorem:thm-bridge-port-minimality",
+            "source_line": 83,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_motor_residual": {
+            "label": "thm:bridge-motor-closure",
+            "registry_id": "paper9:theorem:thm-bridge-motor-closure",
+            "source_line": 92,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_motor_signed_residual": {
+            "label": "thm:bridge-motor-closure",
+            "registry_id": "paper9:theorem:thm-bridge-motor-closure",
+            "source_line": 98,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_motor_sign_gap": {
+            "label": "thm:bridge-motor-closure",
+            "registry_id": "paper9:theorem:thm-bridge-motor-closure",
+            "source_line": 104,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_motor_cut_residual": {
+            "label": "thm:bridge-motor-closure",
+            "registry_id": "paper9:theorem:thm-bridge-motor-closure",
+            "source_line": 109,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_lesion_inverse_left": {
+            "label": "prop:bridge-six-port-certificate",
+            "registry_id": "paper9:proposition:prop-bridge-six-port-certificate",
+            "source_line": 125,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_lesion_inverse_right": {
+            "label": "prop:bridge-six-port-certificate",
+            "registry_id": "paper9:proposition:prop-bridge-six-port-certificate",
+            "source_line": 132,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_lesion_det_nonzero": {
+            "label": "prop:bridge-six-port-certificate",
+            "registry_id": "paper9:proposition:prop-bridge-six-port-certificate",
+            "source_line": 139,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          },
+          "QICNLean.body_world_lesion_columns_independent": {
+            "label": "prop:bridge-six-port-certificate",
+            "registry_id": "paper9:proposition:prop-bridge-six-port-certificate",
+            "source_line": 146,
+            "scope": "Actual finite matrices, bilateral inverses/column independence and motor-response algebra. Realization-factorization theorem, C1 dimension argument and causal modularity proof remain in the manuscript."
+          }
+        }
+      },
+      "QICNBodyWorldEvaluation": {
+        "source": "docs/ai-platform-outputs/formal/lean/QICNLean/QICNBodyWorldEvaluation.lean",
+        "sha256": "aca064433f09a94e8f2c269b4e3d0e7a80891232974964e6202529dcf16e55e3",
+        "theorems": {
+          "QICNLean.bw_evaluation_inverse": {
+            "label": "thm:bridge-typed-valence",
+            "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+            "source_line": 19,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_evaluation_inverse_bound": {
+            "label": "thm:bridge-typed-valence",
+            "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+            "source_line": 24,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_nonlinear_antipodal_difference": {
+            "label": "thm:bridge-typed-valence",
+            "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+            "source_line": 49,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_antipodal_collision_radius": {
+            "label": "thm:bridge-typed-valence",
+            "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+            "source_line": 59,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_additive_rectangle_zero": {
+            "label": "prop:bridge-rectangular-additivity",
+            "registry_id": "paper9:proposition:prop-bridge-rectangular-additivity",
+            "source_line": 104,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_rectangle_zero_iff_additive": {
+            "label": "prop:bridge-rectangular-additivity",
+            "registry_id": "paper9:proposition:prop-bridge-rectangular-additivity",
+            "source_line": 111,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_nonlinear_rectangle": {
+            "label": "thm:bridge-nonadditive-gap",
+            "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+            "source_line": 126,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_nonlinear_additive_iff": {
+            "label": "thm:bridge-nonadditive-gap",
+            "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+            "source_line": 132,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_additive_error_rectangle": {
+            "label": "thm:bridge-nonadditive-gap",
+            "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+            "source_line": 149,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_additive_corner_lower_bound": {
+            "label": "thm:bridge-nonadditive-gap",
+            "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+            "source_line": 157,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_additive_uniform_lower_bound": {
+            "label": "thm:bridge-nonadditive-gap",
+            "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+            "source_line": 171,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_vector_additive_uniform_lower_bound": {
+            "label": "thm:bridge-nonadditive-gap",
+            "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+            "source_line": 179,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_preregistered_additive_separation": {
+            "label": "thm:bridge-nonadditive-gap",
+            "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+            "source_line": 189,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_additive_matching_upper_bound": {
+            "label": "thm:bridge-nonadditive-gap",
+            "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+            "source_line": 197,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_cross_term_restores_exact_tie": {
+            "label": "cor:bridge-cross-informed-tie",
+            "registry_id": "paper9:corollary:cor-bridge-cross-informed-tie",
+            "source_line": 220,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_evaluation_square_circulation": {
+            "label": "thm:bridge-typed-valence",
+            "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+            "source_line": 234,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_circulation_error_radius": {
+            "label": "thm:bridge-typed-valence",
+            "registry_id": "paper9:theorem:thm-bridge-typed-valence",
+            "source_line": 242,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          },
+          "QICNLean.bw_exact_nonlinear_scales": {
+            "label": "thm:bridge-nonadditive-gap",
+            "registry_id": "paper9:theorem:thm-bridge-nonadditive-gap",
+            "source_line": 248,
+            "scope": "Universal arbitrary-function additive separation and algebraic upper bound; inverse/antipodal bound after a common prediction is supplied; exact boundary polynomial identity and lower-bound consequence after the integral error estimate. IVT collision existence and the general gradient line-integral theorem are not mechanized here."
+          }
+        }
+      }
+    },
+    "new_public_theorems": 60,
+    "aggregate_modules": 27,
+    "aggregate_public_theorems": 186,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "external_support_certified": false
+  },
+  "new_control_raw": "Response: both roles, 25 stimuli, exact xi=1/4096, antipodal/circulation preserved; flattened and disclosed-cross ties\nAdditive: 81 arbitrary corner-channel tables; exact clean optimum xi; 256 raw-noise controls; sharp robust margin 15/65536\nStability: 1944 exact cube/projection/difference controls; 3/4 intervened, 1/2 native; positive corrective component\nSix-burden lesion matrix unchanged, rank6; fully cross-informed shared-state rival matches complete trajectories\nexternal_support_certified=false\n",
+  "monolithic_comparison": {
+    "method": "Pure assembler transforms evaluated in memory; original build() and main() never executed; equality after CRLF normalization",
+    "results": [
+      {
+        "source": "basecore/BASECORE.tex",
+        "chapter": "01-basecore.tex",
+        "expected_sha256": "9c978ac9bdc4259f6a6b106cb01a64cb57b42ff67db0608ec74c70bb126bcece",
+        "actual_sha256": "9c978ac9bdc4259f6a6b106cb01a64cb57b42ff67db0608ec74c70bb126bcece",
+        "equal": true,
+        "source_bytes": 5330,
+        "chapter_bytes": 163648
+      },
+      {
+        "source": "paper1/main.tex",
+        "chapter": "02-rigid-identity-as-an-inverse-limit-in-observable-channels.tex",
+        "expected_sha256": "68ad767ccb91a26658f9daa20b84320b68573f780ed7ea6be1c4a570f63f92c0",
+        "actual_sha256": "68ad767ccb91a26658f9daa20b84320b68573f780ed7ea6be1c4a570f63f92c0",
+        "equal": true,
+        "source_bytes": 88377,
+        "chapter_bytes": 88380
+      },
+      {
+        "source": "paper2/main.tex",
+        "chapter": "03-phenomenological-regimes-induced-by-structural-identity.tex",
+        "expected_sha256": "1b194fe6dea4bc3c5597a2fcf01c2f249006374349bb26f28441fede7c6be466",
+        "actual_sha256": "1b194fe6dea4bc3c5597a2fcf01c2f249006374349bb26f28441fede7c6be466",
+        "equal": true,
+        "source_bytes": 60807,
+        "chapter_bytes": 60725
+      },
+      {
+        "source": "paper3/main.tex",
+        "chapter": "04-structural-instability-of-the-phenomenological-null-regime.tex",
+        "expected_sha256": "c5f50e18326165130728bfa1810f05375fccdcc7a08690c728bdcbc82ecab504",
+        "actual_sha256": "c5f50e18326165130728bfa1810f05375fccdcc7a08690c728bdcbc82ecab504",
+        "equal": true,
+        "source_bytes": 62296,
+        "chapter_bytes": 61138
+      },
+      {
+        "source": "paper4/main.tex",
+        "chapter": "05-falsifiable-predictions-under-forensic-constraints.tex",
+        "expected_sha256": "95555633a2c0fe96f898381968e5269d7625d6df1129455c9f0b1607669c51e9",
+        "actual_sha256": "95555633a2c0fe96f898381968e5269d7625d6df1129455c9f0b1607669c51e9",
+        "equal": true,
+        "source_bytes": 43973,
+        "chapter_bytes": 43995
+      },
+      {
+        "source": "paper5_operational_consciousness/main.tex",
+        "chapter": "06-structural-criterion-for-substrate-invariant-operational-consciousness.tex",
+        "expected_sha256": "9618be1f0253ef9f704f7b974673d11304961e74b707b69a1a13631ee1c53c20",
+        "actual_sha256": "9618be1f0253ef9f704f7b974673d11304961e74b707b69a1a13631ee1c53c20",
+        "equal": true,
+        "source_bytes": 140224,
+        "chapter_bytes": 140772
+      },
+      {
+        "source": "paper6_predictions_falsation/main.tex",
+        "chapter": "07-predictions-discriminators-and-failure-modes.tex",
+        "expected_sha256": "ea98d75910cd05dbda06f84ccdd73136a11564120cc6c6a457ac54b8f98e421e",
+        "actual_sha256": "ea98d75910cd05dbda06f84ccdd73136a11564120cc6c6a457ac54b8f98e421e",
+        "equal": true,
+        "source_bytes": 74913,
+        "chapter_bytes": 73654
+      },
+      {
+        "source": "paper7_operational_life_subjecthood/main.tex",
+        "chapter": "08-operational-life-structural-class-and-subjecthood.tex",
+        "expected_sha256": "4af6994994bc6de2c7f1ba8c3ec3788d1eed5e3c838fc31432db9ffe65fc7b9e",
+        "actual_sha256": "4af6994994bc6de2c7f1ba8c3ec3788d1eed5e3c838fc31432db9ffe65fc7b9e",
+        "equal": true,
+        "source_bytes": 102596,
+        "chapter_bytes": 101217
+      },
+      {
+        "source": "paper8_first_person_subjectivity/main.tex",
+        "chapter": "09-first-person-indexed-subjectivity.tex",
+        "expected_sha256": "253abe4e7fdccf2bca460b9b5371ba493ec3d39fb6ad023b59efbaca0500c6fb",
+        "actual_sha256": "253abe4e7fdccf2bca460b9b5371ba493ec3d39fb6ad023b59efbaca0500c6fb",
+        "equal": true,
+        "source_bytes": 155723,
+        "chapter_bytes": 155156
+      },
+      {
+        "source": "paper9_phenomenal_bridge_organization/main.tex",
+        "chapter": "10-phenomenal-bridge-organization.tex",
+        "expected_sha256": "b3d35ff4588efdc893e5dba2bd79a3818bf73ea7965bba1db14de48497da0526",
+        "actual_sha256": "b3d35ff4588efdc893e5dba2bd79a3818bf73ea7965bba1db14de48497da0526",
+        "equal": true,
+        "source_bytes": 180601,
+        "chapter_bytes": 178743
+      },
+      {
+        "source": "paper10_external_adjudication/main.tex",
+        "chapter": "11-external-adjudication-of-bridge-formalized-machine-subjectivity.tex",
+        "expected_sha256": "d740c64da6b778ca3b33faf71d975159167dd892cb3f135f8eb5fd4991f456f5",
+        "actual_sha256": "d740c64da6b778ca3b33faf71d975159167dd892cb3f135f8eb5fd4991f456f5",
+        "equal": true,
+        "source_bytes": 76932,
+        "chapter_bytes": 76654
+      },
+      {
+        "source": "paper_bridge_operational_subjecthood/main.tex",
+        "chapter": "12-operational-consciousness-to-operational-subjecthood-bridge.tex",
+        "expected_sha256": "95c72d29bd66e1b90bb9a924d70b7a50ee528c3766971b049b33d24b561a2143",
+        "actual_sha256": "95c72d29bd66e1b90bb9a924d70b7a50ee528c3766971b049b33d24b561a2143",
+        "equal": true,
+        "source_bytes": 85493,
+        "chapter_bytes": 84627
+      }
+    ]
+  },
+  "preserved_aggregate_failure": {
+    "directory": "E:\\QICN-PRESERVACION\\2026-11-11-no-aditiva-lean\\logs\\full-lean-first-failure",
+    "summary_sha256": "2725fa1084843d7f1cdb6c8f6064089d1907a19041e21ff978bb06a3f59129dd",
+    "error": "std::bad_alloc in the inherited QICNAttractorConcrete module after five successful modules"
+  },
+  "clean_additive_optimum": "1/4096",
+  "robust_margin": "15/65536",
+  "cross_informed_clean_margin": "0",
+  "external_support_certified": false
+}

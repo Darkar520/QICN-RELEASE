@@ -1918,3 +1918,8 @@ La auditoría del usuario confirmó el hito científico `c870191` y autorizó su
 ### Frente 2 posterior a la torre · Certificado V–VII
 
 El [prerregistro y la verificación](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_2_TORRE_COMUN.md) prueban el horizonte exacto de una lesión bajo sham, cuatro contrastes de linaje sobre la planta existente y una matriz conjunta de los seis invariantes de V y cuatro descriptores de VII. El clon de estado completo y el rival con copia de memoria empatan. La garantía se limita a las preparaciones, canales y comparadores declarados. Verificación local raíz 3/3, release 6/6, matemáticas 20/20, registro 837, monolito de 378 páginas. v31 conserva `BLOCKED_FOUNDATION_FIRST_GATES` y `external_support_certified=false`. Pendientes revisión independiente y reserva de VIII con información y presupuestos equiparados.
+
+
+### Frente 3 posterior a la torre · Reserva de retorno frente a rivales informados
+
+La [reserva y su verificación](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_3_RESERVA_INFORMADA.md) prueban empate exacto de la clase pública bajo historial igualado y una condición necesaria y suficiente de separación con un canal privado accesible. Paper VI conserva el contraste de interacción y Paper VIII distingue el riesgo balanceado del minimax sobre el peor signo. Raíz 3/3, release 6/6, matemáticas 21/21, 840 registros y monolito de 381 páginas. v31 conserva `BLOCKED_FOUNDATION_FIRST_GATES` y `external_support_certified=false`. La revisión independiente queda pendiente.

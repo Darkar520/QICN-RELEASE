@@ -378,6 +378,41 @@ failure;
 The final table must report counts for all four classes. A favorable result with
 unexplained missingness is not admissible for escalation.
 
+\section{Independent Campaign Units and Exact Failure Controls}
+
+\subsection{Frozen Population, Noise and Decision}
+
+The inferential unit is an independently drawn preparation block, with both systems evaluated under the same seed, intervention, acquisition schedule and predeclared scoring map. All ticks, repeated renderings and coupled replicas of that preparation belong to the block. Independent blocks have independent assignments and disturbances. Define the paired loss difference $D_i=L_{i,\mathrm{rival}}-L_{i,\mathrm{candidate}}\in[-1,1]$, the population mean $\Delta=\mathbb E D_i$ and the primary win probability $\pi=\Pr(W_i=1)$ for a fixed rule $W_i$. These are different estimands. A sign-based result alone does not identify $\Delta$.
+
+Freeze the population, identifiers, pairing, horizon, threshold, randomization, calibration and exclusion map before unmasking outcomes. Readout errors may be dependent within a block. If the two loss estimates each have certified error at most $\eta$, then $|\widehat D_i-D_i|\le2\eta$. A declared win rule $\widehat D_i>2\eta+\tau$, for a fixed $\tau\ge0$, guarantees $D_i>\tau$. The probabilistic null for that rule must be specified independently. Exclusion requires an integrity rule invariant to arm exchange and hidden labels, applied before inspecting the endpoint. Every planned block retains a disposition in the audit trail. An insufficient number of eligible blocks gives an unsupported campaign. Future campaigns use these frozen units for inference, with preliminary synthetic tables retaining their descriptive status.
+
+\begin{theorem}[Exact Independent-Block Win Test and Power]\label{thm:campaign-block-sign-test}
+Suppose $W_1,\ldots,W_n$ are independent Bernoulli variables and $\Pr(W_i=1)\le1/2$ under the sign null. For a fixed $k$, the rejection probability of $\sum_i W_i\ge k$ is at most
+\[
+ B_{n,k}(1/2)=2^{-n}\sum_{j=k}^n {n\choose j}.
+\]
+For iid success probability $\pi$ the power is exactly $B_{n,k}(\pi)=\sum_{j=k}^n{n\choose j}\pi^j(1-\pi)^{n-j}$. With $n=20$, $\alpha=1/20$ and $k=15$, the size is at most $5425/262144<\alpha$ and the power at $\pi=4/5$ exceeds $4/5$. The threshold $14$ fails the size requirement.
+\end{theorem}
+\begin{proof}
+Couple each indicator to an independent uniform variable. Raising each success probability to $1/2$ can only raise the increasing event, whose probability is the binomial tail. Under the stated iid alternative the same enumeration gives the power formula. Substitution gives the exact rational inequalities. Under a sharp no-effect null, independently randomized arm exchange makes the paired score sign conditionally symmetric; ties assigned to non-wins are conservative. The sign null also admits other specified Bernoulli models. An average-effect null for $\Delta$ alone does not imply that sign null.
+\end{proof}
+
+\subsection{Exact Inflation under Three Auditable Violations}
+
+\begin{proposition}[Leakage, Pseudoreplication and Selected-Window Inflation]\label{prop:campaign-pathology-inflation}
+The following synthetic null traces have exact false-positive rates under their stated generation laws.
+\begin{enumerate}
+\item A frozen blind predictor matching five independent fair labels in all five cases passes with probability $1/32$. Copying the held-out label, including through a calibration table keyed by a reused held-out unit identifier, passes with probability one.
+\item Three independent fair signs repeated four times each and analyzed as twelve signs pass the nominal ten-of-twelve rule with probability $1/8$. The incorrectly reported iid tail is $79/4096$. The three-block test at $\alpha=1/20$ never rejects.
+\item For two independent five-sign windows, declaring success if either window is all positive has probability $63/1024$. A single preselected window has probability $1/32$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+In the first trace, independent matches multiply to $2^{-5}$, while the leaked predictor is correct by construction. In the second trace the possible twelve-counts are $0,4,8,12$, so the naive rule rejects exactly when the three independent signs are all positive. With three genuine units the smallest possible upper-tail probability is $1/8>\alpha$. In the third trace the two success events have probability $1/32$ independently, so their union has probability $1-(31/32)^2=63/1024>\alpha$. More generally, selecting any of $K$ independent tests of exact size $p$ gives size $1-(1-p)^K$. Without their independence the union bound still gives size at most $Kp$. A predeclared joint maximum statistic can instead be evaluated under its full joint randomization law, or a fixed family can use its predeclared multiplicity allocation.
+\end{proof}
+
+An audit rejects the displayed leaked trace when calibration and reserve identifiers overlap or when a counterfactual change of a hidden label alone changes the output of a supposedly blind frozen predictor. Repeated unit identifiers expose the duplicated-block trace. A decision window absent from the frozen protocol or an unrecorded stopping opportunity invalidates the selected-window promotion. These rejection rules require the complete provenance record. Observed output accuracy alone cannot certify absence of covert leakage. Excluding a failed block after observing its score or choosing a new threshold requires a fresh confirmatory campaign or a separately justified selective-inference procedure.
+
 \section{Acceptance Criteria}
 \begin{criterion}[Intermediate Claim Gate]
 Support at intermediate tier requires:

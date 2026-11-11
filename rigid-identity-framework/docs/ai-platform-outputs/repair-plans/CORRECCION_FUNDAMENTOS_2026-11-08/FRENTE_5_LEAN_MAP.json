@@ -1,0 +1,115 @@
+{
+  "lean_version": "4.31.0",
+  "modules": {
+    "QICNMetricFronts": {
+      "QICNLean.fixed_scale_minimum": {
+        "label": "thm:spectral-coupling",
+        "registry_id": "paper1:theorem:thm-spectral-coupling"
+      },
+      "QICNLean.fixed_scale_modulus_pos": {
+        "label": "thm:spectral-coupling",
+        "registry_id": "paper1:theorem:thm-spectral-coupling"
+      },
+      "QICNLean.fixed_scale_modulus_le": {
+        "label": "thm:spectral-coupling",
+        "registry_id": "paper1:theorem:thm-spectral-coupling"
+      },
+      "QICNLean.approximate_commutation_displacement": {
+        "label": "thm:sigma-approximate-displacement",
+        "registry_id": "bridge:theorem:thm-sigma-approximate-displacement"
+      },
+      "QICNLean.approximate_commutation_pair": {
+        "label": "thm:sigma-approximate-displacement",
+        "registry_id": "bridge:theorem:thm-sigma-approximate-displacement"
+      }
+    },
+    "QICNFiniteFronts": {
+      "QICNLean.neutral_code_gap": {
+        "label": "prop:writable-tower-legibility-horizon",
+        "registry_id": "paper5:proposition:prop-writable-tower-legibility-horizon"
+      },
+      "QICNLean.neutral_code_iter_gap": {
+        "label": "prop:writable-tower-legibility-horizon",
+        "registry_id": "paper5:proposition:prop-writable-tower-legibility-horizon"
+      },
+      "QICNLean.tower_lesion_gap": {
+        "label": "prop:writable-tower-legibility-horizon",
+        "registry_id": "paper5:proposition:prop-writable-tower-legibility-horizon"
+      },
+      "QICNLean.closed_error_collision_iff": {
+        "label": "prop:writable-tower-legibility-horizon",
+        "registry_id": "paper5:proposition:prop-writable-tower-legibility-horizon"
+      },
+      "QICNLean.tower_resolution_iff": {
+        "label": "prop:writable-tower-legibility-horizon",
+        "registry_id": "paper5:proposition:prop-writable-tower-legibility-horizon"
+      },
+      "QICNLean.tower_lesion_resolution_iff": {
+        "label": "prop:writable-tower-legibility-horizon",
+        "registry_id": "paper5:proposition:prop-writable-tower-legibility-horizon"
+      },
+      "QICNLean.tower_noise_collision_iff": {
+        "label": "prop:writable-tower-legibility-horizon",
+        "registry_id": "paper5:proposition:prop-writable-tower-legibility-horizon"
+      },
+      "QICNLean.binary_pointwise_lower": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.binary_minimum_identity": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.finite_binary_lower": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.likelihood_decision_bounds": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.likelihood_decision_attains": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.finite_binary_tv_identity": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.finite_binary_tv_lower": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.finite_binary_tv_attained": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.identical_public_laws_tie": {
+        "label": "thm:writable-tower-public-return-tie",
+        "registry_id": "paper8:theorem:thm-writable-tower-public-return-tie"
+      },
+      "QICNLean.public_abstention_risk": {
+        "label": "thm:writable-tower-public-return-tie",
+        "registry_id": "paper8:theorem:thm-writable-tower-public-return-tie"
+      },
+      "QICNLean.public_abstention_lower": {
+        "label": "thm:writable-tower-public-return-tie",
+        "registry_id": "paper8:theorem:thm-writable-tower-public-return-tie"
+      },
+      "QICNLean.total_variation_nonneg": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.total_variation_le_one": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      },
+      "QICNLean.private_signal_margin_exact": {
+        "label": "thm:writable-tower-private-return-separation",
+        "registry_id": "paper8:theorem:thm-writable-tower-private-return-separation"
+      }
+    }
+  },
+  "scope": "Analytic metric and finite-decision kernels; probability interpretation requires normalized nonnegative masses. No empirical or external certification.",
+  "external_support_certified": false
+}

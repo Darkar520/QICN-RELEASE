@@ -1,7 +1,7 @@
 # Monolithic Build Report v2
 
 Status: MONOLITHIC_COMPILED
-Date: 2026-06-23
+Date: 2026-11-11
 
 ## Boundary
 
@@ -48,35 +48,35 @@ INFO - Writing 'QICN_MONOLITHIC.bbl' with encoding 'UTF-8'
 INFO - Output to QICN_MONOLITHIC.bbl
 
 [pdflatex pass 2]
-/fonts/type1/public/lm/lmr8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lm
 r9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/irisp/
 MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/publi
 c/lm/lmss10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Use
 rs/irisp/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/irisp/MiKTeX/fonts/ty
-pe1/public/lm/lmsy8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtk10.pfb
-><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/irisp/MiKTeX
-/fonts/type1/public/lm/lmtt8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/l
-mtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/iri
-sp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX
-/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/ty
-pe1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (339 pages, 2860538 bytes).
+pe1/public/lm/lmsy7.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
+<C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/irisp/MiKTeX/
+fonts/type1/public/lm/lmtt10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/l
+mtt8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/irisp
+/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/rsfs/rsfs10.p
+fb>
+Output written on QICN_MONOLITHIC.pdf (388 pages, 3255680 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 [pdflatex pass 3]
-/fonts/type1/public/lm/lmr8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lm
 r9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/irisp/
 MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/publi
 c/lm/lmss10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Use
 rs/irisp/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/irisp/MiKTeX/fonts/ty
-pe1/public/lm/lmsy8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtk10.pfb
-><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/irisp/MiKTeX
-/fonts/type1/public/lm/lmtt8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/l
-mtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/iri
-sp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX
-/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/ty
-pe1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (339 pages, 2860538 bytes).
+pe1/public/lm/lmsy7.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
+<C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/irisp/MiKTeX/
+fonts/type1/public/lm/lmtt10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/l
+mtt8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/irisp
+/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/rsfs/rsfs10.p
+fb>
+Output written on QICN_MONOLITHIC.pdf (388 pages, 3255900 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 ```
@@ -88,6 +88,13 @@ Transcript written on QICN_MONOLITHIC.log.
 pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [biber]
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "C.UTF-8",
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
 biber: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [pdflatex pass 2]

@@ -1928,3 +1928,14 @@ La [reserva y su verificación](docs/ai-platform-outputs/repair-plans/CORRECCION
 ### Frente 4 posterior a la torre · Automodelos y transporte
 
 El [prerregistro y la verificación](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_4_PUENTE_TRANSPORTE.md) incorporan la cota exacta de desplazamiento, el piso global de fase, el transporte binario invariante bajo reetiquetado y tres ensayos racionales para D, A y T. Quedan abiertas V, W y E, así como la conjunción BPF. Raíz 3/3, release 6/6, matemáticas 22/22, registro 848 y monolito de 385 páginas. v31 conserva `BLOCKED_FOUNDATION_FIRST_GATES` y `external_support_certified=false`. La revisión independiente queda pendiente.
+
+
+### Frente 5 posterior a la torre · Identificación, adjudicación y Lean · 2026-11-11
+
+El [prerregistro y cierre](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_5_IDENTIFICACION_ADJUDICACION_LEAN.md) fijan la unidad independiente de campaña, prueban la inflación exacta por fuga, pseudorreplicación y selección de ventana, y derivan inferencia exacta conjunta de riesgo/cobertura con dos hipótesis de fuga separadas. Paper X incorpora la densidad estacionaria AR(1) y GLS, distinguiendo sus supuestos de la geometría de fibras. Se añadieron seis resultados a IV/X sin sustituir las fuentes anteriores.
+
+El agregado Lean 4.31.0 queda reproducido con los siete lemas de P4 preservados y 26 lemas nuevos sobre separación compacta por escala, horizonte y colisión de la torre, decisión binaria finita y conmutación aproximada. El [mapa formal](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_5_LEAN_MAP.json) precisa los identificadores y el informe delimita lo que cada núcleo cubre. La reproducción del agregado resuelve esa deuda técnica registrada en los balances históricos; la formalización integral del manuscrito conserva su alcance pendiente.
+
+Verificación local: raíz 3/3, release 6/6, matemáticas 24/24, registro 854, macros 383, doce capítulos cotejados y monolito de 388 páginas. El [recibo](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_5_VERIFICACION.json) contiene fuentes, objetos y auditoría de axiomas. v31 mantiene `BLOCKED_FOUNDATION_FIRST_GATES` y `external_support_certified=false`.
+
+Queda cerrada la ejecución interna de los cinco frentes del plan post-torre. Continúan la revisión matemática independiente, los datos externos y la cota de fuga justificada en su población. La clase completa de VIII, las cargas V/W/E de IX y la conjunción BPF requieren sus obligaciones declaradas. La mecanización no sustituye esas realizaciones ni certifica conciencia o equivalencia humana.

@@ -1,0 +1,967 @@
+{
+  "base_commit": "a1ebcf16e68b3e05339910869f6dccbd8b234107",
+  "preregistration_sha256": "81677f906847f9247df79217b8ee8053b4b3a3680d0d03d85c0608c9148a68cf",
+  "gates": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.88
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.09
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0,
+      "seconds": 1.81
+    },
+    {
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0,
+      "seconds": 66.59
+    },
+    {
+      "name": "math",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:math"
+      ],
+      "exit": 0,
+      "seconds": 93.81
+    },
+    {
+      "name": "corpus",
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "exit": 0,
+      "seconds": 0.3
+    },
+    {
+      "name": "macros",
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "exit": 0,
+      "seconds": 0.14
+    }
+  ],
+  "mathematical_suites": 24,
+  "quality": {
+    "preserved_tex_sources": 21,
+    "baseline_registry": 848,
+    "registry": 854,
+    "new_ids": [
+      "paper10:proposition:prop-block-label-permutation",
+      "paper10:theorem:thm-coverage-sensitive-leakage",
+      "paper10:theorem:thm-independent-block-risk-intervals",
+      "paper10:theorem:thm-stationary-ar1-likelihood-gls",
+      "paper4:proposition:prop-campaign-pathology-inflation",
+      "paper4:theorem:thm-campaign-block-sign-test"
+    ],
+    "chapters": 12,
+    "pdfs": {
+      "paper4/main.pdf": {
+        "pages": 18,
+        "sha256": "a7c5a4964eb2ce816511cb0a7d4e9275d3d474c47f87204d8349c6236a709317",
+        "overfull": 13,
+        "underfull": 14
+      },
+      "paper10_external_adjudication/main.pdf": {
+        "pages": 36,
+        "sha256": "ab6354fc54db087b00d260e0c81cc3bed452c40cbe94334a8b25c0a4645ef15b",
+        "overfull": 57,
+        "underfull": 0
+      },
+      "monolithic/QICN_MONOLITHIC.pdf": {
+        "pages": 388,
+        "sha256": "9acc143d2038bb2d0d129f8302b152de2a43f06091092db101b952f59c5a9567",
+        "overfull": 4,
+        "underfull": 334
+      }
+    },
+    "verdicts": {
+      "25": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "26": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "27": "BLOCKED_MULTIPLE_GATES",
+      "28": "BLOCKED_MULTIPLE_GATES",
+      "30": "BLOCKED_MULTIPLE_GATES",
+      "31": "BLOCKED_FOUNDATION_FIRST_GATES"
+    },
+    "external_support_certified": false
+  },
+  "monolithic_comparison": {
+    "method": "Pure assembler transforms evaluated in memory; original build() and main() never executed; equality after CRLF normalization",
+    "results": [
+      {
+        "source": "basecore/BASECORE.tex",
+        "chapter": "01-basecore.tex",
+        "expected_sha256": "9c978ac9bdc4259f6a6b106cb01a64cb57b42ff67db0608ec74c70bb126bcece",
+        "actual_sha256": "9c978ac9bdc4259f6a6b106cb01a64cb57b42ff67db0608ec74c70bb126bcece",
+        "equal": true,
+        "source_bytes": 5330,
+        "chapter_bytes": 163648
+      },
+      {
+        "source": "paper1/main.tex",
+        "chapter": "02-rigid-identity-as-an-inverse-limit-in-observable-channels.tex",
+        "expected_sha256": "68ad767ccb91a26658f9daa20b84320b68573f780ed7ea6be1c4a570f63f92c0",
+        "actual_sha256": "68ad767ccb91a26658f9daa20b84320b68573f780ed7ea6be1c4a570f63f92c0",
+        "equal": true,
+        "source_bytes": 88377,
+        "chapter_bytes": 88380
+      },
+      {
+        "source": "paper2/main.tex",
+        "chapter": "03-phenomenological-regimes-induced-by-structural-identity.tex",
+        "expected_sha256": "1b194fe6dea4bc3c5597a2fcf01c2f249006374349bb26f28441fede7c6be466",
+        "actual_sha256": "1b194fe6dea4bc3c5597a2fcf01c2f249006374349bb26f28441fede7c6be466",
+        "equal": true,
+        "source_bytes": 60807,
+        "chapter_bytes": 60725
+      },
+      {
+        "source": "paper3/main.tex",
+        "chapter": "04-structural-instability-of-the-phenomenological-null-regime.tex",
+        "expected_sha256": "c5f50e18326165130728bfa1810f05375fccdcc7a08690c728bdcbc82ecab504",
+        "actual_sha256": "c5f50e18326165130728bfa1810f05375fccdcc7a08690c728bdcbc82ecab504",
+        "equal": true,
+        "source_bytes": 62296,
+        "chapter_bytes": 61138
+      },
+      {
+        "source": "paper4/main.tex",
+        "chapter": "05-falsifiable-predictions-under-forensic-constraints.tex",
+        "expected_sha256": "95555633a2c0fe96f898381968e5269d7625d6df1129455c9f0b1607669c51e9",
+        "actual_sha256": "95555633a2c0fe96f898381968e5269d7625d6df1129455c9f0b1607669c51e9",
+        "equal": true,
+        "source_bytes": 43973,
+        "chapter_bytes": 43995
+      },
+      {
+        "source": "paper5_operational_consciousness/main.tex",
+        "chapter": "06-structural-criterion-for-substrate-invariant-operational-consciousness.tex",
+        "expected_sha256": "9618be1f0253ef9f704f7b974673d11304961e74b707b69a1a13631ee1c53c20",
+        "actual_sha256": "9618be1f0253ef9f704f7b974673d11304961e74b707b69a1a13631ee1c53c20",
+        "equal": true,
+        "source_bytes": 140224,
+        "chapter_bytes": 140772
+      },
+      {
+        "source": "paper6_predictions_falsation/main.tex",
+        "chapter": "07-predictions-discriminators-and-failure-modes.tex",
+        "expected_sha256": "ea98d75910cd05dbda06f84ccdd73136a11564120cc6c6a457ac54b8f98e421e",
+        "actual_sha256": "ea98d75910cd05dbda06f84ccdd73136a11564120cc6c6a457ac54b8f98e421e",
+        "equal": true,
+        "source_bytes": 74913,
+        "chapter_bytes": 73654
+      },
+      {
+        "source": "paper7_operational_life_subjecthood/main.tex",
+        "chapter": "08-operational-life-structural-class-and-subjecthood.tex",
+        "expected_sha256": "4af6994994bc6de2c7f1ba8c3ec3788d1eed5e3c838fc31432db9ffe65fc7b9e",
+        "actual_sha256": "4af6994994bc6de2c7f1ba8c3ec3788d1eed5e3c838fc31432db9ffe65fc7b9e",
+        "equal": true,
+        "source_bytes": 102596,
+        "chapter_bytes": 101217
+      },
+      {
+        "source": "paper8_first_person_subjectivity/main.tex",
+        "chapter": "09-first-person-indexed-subjectivity.tex",
+        "expected_sha256": "253abe4e7fdccf2bca460b9b5371ba493ec3d39fb6ad023b59efbaca0500c6fb",
+        "actual_sha256": "253abe4e7fdccf2bca460b9b5371ba493ec3d39fb6ad023b59efbaca0500c6fb",
+        "equal": true,
+        "source_bytes": 155723,
+        "chapter_bytes": 155156
+      },
+      {
+        "source": "paper9_phenomenal_bridge_organization/main.tex",
+        "chapter": "10-phenomenal-bridge-organization.tex",
+        "expected_sha256": "2d7bd95018ee3f82358b83f1b6a2e55f83d488b84d3c37ab1b47e00768a22c5f",
+        "actual_sha256": "2d7bd95018ee3f82358b83f1b6a2e55f83d488b84d3c37ab1b47e00768a22c5f",
+        "equal": true,
+        "source_bytes": 147256,
+        "chapter_bytes": 145227
+      },
+      {
+        "source": "paper10_external_adjudication/main.tex",
+        "chapter": "11-external-adjudication-of-bridge-formalized-machine-subjectivity.tex",
+        "expected_sha256": "d740c64da6b778ca3b33faf71d975159167dd892cb3f135f8eb5fd4991f456f5",
+        "actual_sha256": "d740c64da6b778ca3b33faf71d975159167dd892cb3f135f8eb5fd4991f456f5",
+        "equal": true,
+        "source_bytes": 76932,
+        "chapter_bytes": 76654
+      },
+      {
+        "source": "paper_bridge_operational_subjecthood/main.tex",
+        "chapter": "12-operational-consciousness-to-operational-subjecthood-bridge.tex",
+        "expected_sha256": "95c72d29bd66e1b90bb9a924d70b7a50ee528c3766971b049b33d24b561a2143",
+        "actual_sha256": "95c72d29bd66e1b90bb9a924d70b7a50ee528c3766971b049b33d24b561a2143",
+        "equal": true,
+        "source_bytes": 85493,
+        "chapter_bytes": 84627
+      }
+    ]
+  },
+  "lean": {
+    "passed": true,
+    "external_support_certified": false,
+    "steps": [
+      {
+        "name": "version",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "--version"
+        ],
+        "exit": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "builtin-library",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "--print-libdir"
+        ],
+        "exit": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "pin-mathlib",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\mathlib",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "pin-plausible",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\plausible",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "pin-LeanSearchClient",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\LeanSearchClient",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "pin-importGraph",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\importGraph",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "pin-proofwidgets",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\proofwidgets",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "pin-aesop",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\aesop",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "pin-Qq",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Qq",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "pin-batteries",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\batteries",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "pin-Cli",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Cli",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.09
+      },
+      {
+        "name": "kernel-QICNLean.Basic",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\Basic.olean",
+          "QICNLean\\Basic.lean"
+        ],
+        "exit": 0,
+        "seconds": 13.61
+      },
+      {
+        "name": "kernel-QICNLean.QICNContraction",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNContraction.olean",
+          "QICNLean\\QICNContraction.lean"
+        ],
+        "exit": 0,
+        "seconds": 107.55
+      },
+      {
+        "name": "kernel-QICNLean.QICNHilbertInstance",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNHilbertInstance.olean",
+          "QICNLean\\QICNHilbertInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 171.05
+      },
+      {
+        "name": "kernel-QICNLean.QICNConvexProjection",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNConvexProjection.olean",
+          "QICNLean\\QICNConvexProjection.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.94
+      },
+      {
+        "name": "kernel-QICNLean.QICNAttractorCompact",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNAttractorCompact.olean",
+          "QICNLean\\QICNAttractorCompact.lean"
+        ],
+        "exit": 0,
+        "seconds": 17.0
+      },
+      {
+        "name": "kernel-QICNLean.QICNAttractorConcrete",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNAttractorConcrete.olean",
+          "QICNLean\\QICNAttractorConcrete.lean"
+        ],
+        "exit": 0,
+        "seconds": 22.62
+      },
+      {
+        "name": "kernel-QICNLean.QICNNonCollapse",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNNonCollapse.olean",
+          "QICNLean\\QICNNonCollapse.lean"
+        ],
+        "exit": 0,
+        "seconds": 15.31
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5Derivation",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNH5Derivation.olean",
+          "QICNLean\\QICNH5Derivation.lean"
+        ],
+        "exit": 0,
+        "seconds": 22.62
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5Convex",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNH5Convex.olean",
+          "QICNLean\\QICNH5Convex.lean"
+        ],
+        "exit": 0,
+        "seconds": 20.31
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5ConvexExclusion",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNH5ConvexExclusion.olean",
+          "QICNLean\\QICNH5ConvexExclusion.lean"
+        ],
+        "exit": 0,
+        "seconds": 16.39
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5QuotientDynamics",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNH5QuotientDynamics.olean",
+          "QICNLean\\QICNH5QuotientDynamics.lean"
+        ],
+        "exit": 0,
+        "seconds": 19.84
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5QuotientDisplacement",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNH5QuotientDisplacement.olean",
+          "QICNLean\\QICNH5QuotientDisplacement.lean"
+        ],
+        "exit": 0,
+        "seconds": 33.94
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5UnilateralBridge",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNH5UnilateralBridge.olean",
+          "QICNLean\\QICNH5UnilateralBridge.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.56
+      },
+      {
+        "name": "kernel-QICNLean.QICNSInstance",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNSInstance.olean",
+          "QICNLean\\QICNSInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 19.92
+      },
+      {
+        "name": "kernel-QICNLean.QICNSCoupledInstance",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNSCoupledInstance.olean",
+          "QICNLean\\QICNSCoupledInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 16.16
+      },
+      {
+        "name": "kernel-QICNLean.QICNRotationSpectral",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNRotationSpectral.olean",
+          "QICNLean\\QICNRotationSpectral.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.77
+      },
+      {
+        "name": "kernel-QICNLean.QICNCoupledSplitMargin",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNCoupledSplitMargin.olean",
+          "QICNLean\\QICNCoupledSplitMargin.lean"
+        ],
+        "exit": 0,
+        "seconds": 28.22
+      },
+      {
+        "name": "kernel-QICNLean.QICNCoupledSplitMarginUniversal",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNCoupledSplitMarginUniversal.olean",
+          "QICNLean\\QICNCoupledSplitMarginUniversal.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.67
+      },
+      {
+        "name": "kernel-QICNLean.QICNProjectiveTransport",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNProjectiveTransport.olean",
+          "QICNLean\\QICNProjectiveTransport.lean"
+        ],
+        "exit": 0,
+        "seconds": 1.41
+      },
+      {
+        "name": "kernel-QICNLean.QICNObservationBudget",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNObservationBudget.olean",
+          "QICNLean\\QICNObservationBudget.lean"
+        ],
+        "exit": 0,
+        "seconds": 1.56
+      },
+      {
+        "name": "kernel-QICNLean.QICNFiniteP4",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNFiniteP4.olean",
+          "QICNLean\\QICNFiniteP4.lean"
+        ],
+        "exit": 0,
+        "seconds": 1.47
+      },
+      {
+        "name": "kernel-QICNLean.QICNMetricFronts",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNMetricFronts.olean",
+          "QICNLean\\QICNMetricFronts.lean"
+        ],
+        "exit": 0,
+        "seconds": 16.34
+      },
+      {
+        "name": "kernel-QICNLean.QICNFiniteFronts",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean\\QICNFiniteFronts.olean",
+          "QICNLean\\QICNFiniteFronts.lean"
+        ],
+        "exit": 0,
+        "seconds": 18.06
+      },
+      {
+        "name": "kernel-QICNLean",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\kernel-objects-4ba0y06r\\QICNLean.olean",
+          "QICNLean.lean"
+        ],
+        "exit": 0,
+        "seconds": 18.38
+      },
+      {
+        "name": "axioms",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\workspace\\.cache\\qicn-lean\\AuditAxioms.lean"
+        ],
+        "exit": 0,
+        "seconds": 17.34
+      }
+    ],
+    "lean": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+    "mode": "kernel-only",
+    "modules": [
+      {
+        "source": "QICNLean/Basic.lean",
+        "sha256": "265e4023cec03dc33bd91c90e5f6072420e4eb0ecae2dffa8b66b01489db8acb",
+        "olean_sha256": "f13c1a9739720af34a4c00c0c337998c9f706dd708817f6af89104c4203371b1"
+      },
+      {
+        "source": "QICNLean/QICNAttractorCompact.lean",
+        "sha256": "d97969baa1736963790e009f6368e4d81f34c3447e5c5d45ff97268e9b1d8347",
+        "olean_sha256": "54abd2b7fe1e99f608a45b499494b6b3ec62bf1ddafe9594cb79885be646b58d"
+      },
+      {
+        "source": "QICNLean/QICNAttractorConcrete.lean",
+        "sha256": "2b6e7419ad365e3633a91489c05b912dd7b8d36649d1db18915c91ac3d44011e",
+        "olean_sha256": "3b08cc1f2ab12d43f4f4bd377d9a369d8e7cf95ad4848830498e6a056c989a96"
+      },
+      {
+        "source": "QICNLean/QICNContraction.lean",
+        "sha256": "ec5d490b26402faa7095ea42ef646700a4f67fc91af3330e7cb55a0839becbec",
+        "olean_sha256": "cfeca4eb362b8ce255b6f40a1514e17f550c0f949e756ac34ac0264fbd423ae4"
+      },
+      {
+        "source": "QICNLean/QICNConvexProjection.lean",
+        "sha256": "cef90e049c0ffdd6b2eaacdc8794eb4ce4740b11c489d2aff909229623dad052",
+        "olean_sha256": "1bad6a5b298ac06174c1b713fe774f2022b94b77bbcdc58484e38299cab5f673"
+      },
+      {
+        "source": "QICNLean/QICNCoupledSplitMargin.lean",
+        "sha256": "a693929e8911ccda76952a5d6766bc443a58ff50d8ae07924b7f54e1d4a9bdd8",
+        "olean_sha256": "1fd981856ab64ac69fd253580115b0b80dd4c7d027f9c7acf9b43fc7f38a4d65"
+      },
+      {
+        "source": "QICNLean/QICNCoupledSplitMarginUniversal.lean",
+        "sha256": "151e15a29bead78ebd0982296d736a4a6b8922d77a2df39a3773765350975bd8",
+        "olean_sha256": "4d169ed3ead605df37cf980de7e6aec1efe38e621ee6947c51e67cc9225f8055"
+      },
+      {
+        "source": "QICNLean/QICNFiniteFronts.lean",
+        "sha256": "752c0c32bd402f13eb23eb1726d39abb250912ce7d4d216608d2fd6f6008722e",
+        "olean_sha256": "722a0184c8cd2f636200af99e72550becdda6596b1798cc4fe3cb025a2e2d8e8"
+      },
+      {
+        "source": "QICNLean/QICNFiniteP4.lean",
+        "sha256": "a5028368b21eb31c654062cd12e905bf0ec67828a3218d4d89d86aa679fa1457",
+        "olean_sha256": "b1b3959cb304f806d2c53df17358de718f08c40d190838a3e2f961fdaf6f9c0e"
+      },
+      {
+        "source": "QICNLean/QICNH5Convex.lean",
+        "sha256": "bd399b7532f22fb5f67e46ff914d54ec9f78f3283744118cd4fcfd30adfb1e3d",
+        "olean_sha256": "bb7c7feb0291c35ad23ded3483abede1324a86d68a0278e40884d6576e781b04"
+      },
+      {
+        "source": "QICNLean/QICNH5ConvexExclusion.lean",
+        "sha256": "309a1214a3fb54ec2e4ff940d1935784aeb3c36860fcecd04821680797659a86",
+        "olean_sha256": "84e58d0720ed3851f3e8fb46b088a60ffe443a511867bf4607430b22cb2cd1a3"
+      },
+      {
+        "source": "QICNLean/QICNH5Derivation.lean",
+        "sha256": "b60d6b6d75d6a0959cd0d2a314b18e75d36071df6a0400a68806a0046ae6c847",
+        "olean_sha256": "6ae19a79454513355a820e55f9bf0d24df8647a989a769959789173b52613abe"
+      },
+      {
+        "source": "QICNLean/QICNH5QuotientDisplacement.lean",
+        "sha256": "eb273bead2f6ce37cc2fc2e5235d1b8e099289ff1ec76ab90703d680351e7643",
+        "olean_sha256": "a904726560c82ef4edc74761974a7340268345cb2366baa94d5410a56f061dc2"
+      },
+      {
+        "source": "QICNLean/QICNH5QuotientDynamics.lean",
+        "sha256": "6fc66e3404b48f18d1229edcd7a6901e8c33c06c13fe5d1bcc384712b63a19e7",
+        "olean_sha256": "4dfe02243764080ee275de07575f8710b9c9330780ed7144b17dfe19c465d241"
+      },
+      {
+        "source": "QICNLean/QICNH5UnilateralBridge.lean",
+        "sha256": "a6b88a037694644e0594d7da8105c6bd313fbdad9df0429b0aa6410639e49bf3",
+        "olean_sha256": "4d865fd89bf4fd8a44cabc8d50728e19781c81f110fc34c53aa496b73c1222d0"
+      },
+      {
+        "source": "QICNLean/QICNHilbertInstance.lean",
+        "sha256": "e3f6d71d9e5b2b3a392a2e3d8d2313854475b69f40733015b48239726a8c6164",
+        "olean_sha256": "91a9f98f8b15052b293b8955b99a2e3e4535dc44695f3d6c26140c21b028ad7e"
+      },
+      {
+        "source": "QICNLean/QICNMetricFronts.lean",
+        "sha256": "15fc7b6dc0a4ef42e5bff004ad48b612161c9927bd3523f0bd558b8ff32ebf37",
+        "olean_sha256": "ea1a7577940b3e1684bb4d8329564e47331dc719ab38b15cb0aa010b9ba5d22e"
+      },
+      {
+        "source": "QICNLean/QICNNonCollapse.lean",
+        "sha256": "05dd49375f72fa7c3df8fc9ce850ed64126c8c0549bd412e3541e40f21cfd781",
+        "olean_sha256": "8d06b78d4f96a511aad518ed9c7663fcbfdfe56108f9f0ee2b4f11eb0a8334e4"
+      },
+      {
+        "source": "QICNLean/QICNObservationBudget.lean",
+        "sha256": "24ac17a7feda5215532ecfc59a853dfe0fe62995aa195299072fccfce4195aeb",
+        "olean_sha256": "6ccc3e3a3f487518e986a7ab1c65aeafbd4f050c282c1282ea5573f21a967bc8"
+      },
+      {
+        "source": "QICNLean/QICNProjectiveTransport.lean",
+        "sha256": "f91207e2e6982e5cb32cdc14b5301232fcc489cb142488f4edf428e259cce1b7",
+        "olean_sha256": "ce478fbb0f5b2a8d8693fc119337843ef46fc6447efce486868aaa748a417ea5"
+      },
+      {
+        "source": "QICNLean/QICNRotationSpectral.lean",
+        "sha256": "5300efa09f00952ea33106108a4c3d01fe7f3ac1362ad6ab35a9d2466189eaec",
+        "olean_sha256": "4de9c265729880a5fdfb8654a7148206d3d92b36f171be478a2957ab461f7e31"
+      },
+      {
+        "source": "QICNLean/QICNSCoupledInstance.lean",
+        "sha256": "19cc301d09241987d3bcd08907727f9d8d3ffdfdd3ab7eb799bb385acc69b9e4",
+        "olean_sha256": "15024b9c67e6e8882fca002d53fa45679bfbc152a40eb73db48c5690f90b27e1"
+      },
+      {
+        "source": "QICNLean/QICNSInstance.lean",
+        "sha256": "9bb45dcfbe4f5a71bb3e8112d5b5ad958951aabd28e3c7bf2f80927c78ae67f0",
+        "olean_sha256": "f8f5b4cb0fd96c7aba3b9e93a6266132c1bff670ce024c7e08250b41d7b58ea1"
+      },
+      {
+        "source": "QICNLean.lean",
+        "sha256": "ff495522e216ba968f49bc187351f7a3d5320bd3e16108f26363ec2c4bda208c",
+        "olean_sha256": "6e11c501f3921fd8f523ad5005c19b6714d2adfe6d7d5673a7a7a2e3289df485"
+      }
+    ],
+    "source_modules": 24,
+    "public_theorems_audited": 126,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "scope": "Kernel build of the declared project and public theorem dependency audit. Private lemmas are compiled and checked through their sources/dependents. This does not formalize every manuscript claim, certify novelty, or supply external empirical validation."
+  },
+  "compiler_check": [
+    {
+      "file": "bin/lean.exe",
+      "sha256": "9b216deb50d37c32c829d1efaaa5bafd5560417d382df35a815489e31a31593f",
+      "official_archive_match": true
+    },
+    {
+      "file": "lib/lean/Init.olean",
+      "sha256": "9e6e77b58b46742b93b7de481229698d853595479a6e154e9c6fcfdf63b485c8",
+      "official_archive_match": true
+    },
+    {
+      "file": "lib/lean/Lean/Meta/AppBuilder.olean.private",
+      "sha256": "f01d481cf7e590ba9040849587596c031cc1aecad84baa2ccc05ef503a34bf91",
+      "official_archive_match": true
+    },
+    {
+      "file": "lib/lean/Init/Prelude.ir",
+      "sha256": "bd0c0a2829635e5d05e2726ec27993fe83177612d2a0b6bdfd8bc8e97a1d6712",
+      "official_archive_match": true
+    }
+  ],
+  "preserved_prior_lean_modules": [
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/Basic.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorCompact.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorConcrete.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNCoupledSplitMargin.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNCoupledSplitMarginUniversal.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNFiniteP4.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Convex.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5ConvexExclusion.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Derivation.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5QuotientDisplacement.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5QuotientDynamics.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5UnilateralBridge.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNNonCollapse.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNObservationBudget.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNProjectiveTransport.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNRotationSpectral.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNSCoupledInstance.lean",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNSInstance.lean"
+  ],
+  "new_lean_theorems": 26,
+  "installer_preservation": {
+    "source": "C:\\Users\\irisp\\.elan\\toolchains\\leanprover--lean4---v4.35.tmp",
+    "source_absent": true,
+    "preserved_at": "E:\\QICN-PRESERVACION\\2026-11-10-frente5\\archived-generated-cache\\lean-4.35-partial-installer\\remaining-toolchain",
+    "files": 14859,
+    "bytes": 2992660345,
+    "manifest_sha256": "ee976f95d412baa6beeb15e0ad7fa83ed42208ec0f2d3b10cc9f1de79537f8df",
+    "verified": true
+  },
+  "external_support_certified": false
+}

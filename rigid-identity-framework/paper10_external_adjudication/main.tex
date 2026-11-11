@@ -571,6 +571,94 @@ With a balanced posterior, any covered guess has conditional risk $1/2$ and abst
 Evidence for distinguishability under $H_1$ requires a preregistered rule $a^\star$, minimum coverage $C_{\min}>0$, a justified null bound $B_0$ accounting for the leakage budget, and margin $\eta>0$. On admissible held-out bundles require $C\ge C_{\min}$ and $R_\gamma(a^\star)\le B_0-\eta$ after sampling uncertainty and multiple-comparison corrections. Forced-choice, balanced label permutations, always abstaining and known-leak controls are evaluated under the same loss and coverage protocol. The manuscript reports no campaign satisfying this criterion.
 \end{proposition}
 
+\subsection{Coverage-Sensitive Leakage Bounds}
+
+Fix decision randomization independent of the bundle, source and leak event. Let $B$ indicate an executed decision and $W$ a covered error, so $C=\mathbb E B$ and $R_\gamma=\mathbb E W+\gamma(1-C)$.
+
+\begin{theorem}[Sharp Leakage Bounds at Fixed Coverage]\label{thm:coverage-sensitive-leakage}
+Writing $z_+=\max\{0,z\}$, the clean-stratum and coupling nulls of Theorem~\ref{thm:null-forced} respectively give
+\[
+ B_{\rm clean}(C,p)=\gamma(1-C)+\tfrac12(C-p)_+,\qquad
+ B_{\rm coup}(C,p)=\gamma(1-C)+(C/2-p)_+ .
+\]
+Both are sharp for each $C,p\in[0,1]$, with balanced marginal labels and leak probability at most $p$, including selective abstention. Minimizing over coverage gives the bounds of Theorem~\ref{thm:null-forced}.
+\end{theorem}
+\begin{proof}
+Clean-stratum balance gives $\mathbb E[W{\bf1}_{E^c}]=\tfrac12\mathbb E[B{\bf1}_{E^c}]$. At most $p$ covered mass lies in $E$, proving the first bound. In the coupling model use the same decision seed on $Y$ and $Y_0$. On clean input $\mathbb E(W_0-B_0/2)=0$. The centered variable $W-B/2$ lies in $[-1/2,1/2]$ and agrees with its clean version whenever the bundles agree. Thus $\mathbb E W-C/2\ge-p$, proving the second bound.
+
+For clean-stratum sharpness, reveal the label on a leak event independent of it, cover $\min\{C,p\}$ there, and cover the remaining mass with a fixed guess in the balanced clean stratum. For coupling sharpness, start with a label-independent clean cover flag of probability $C$ and a fixed covered guess. Replace $\min\{p,C/2\}$ of the wrong covered inputs by revealing inputs, preserving coverage. This replacement may depend on the label. Both bounds are nonincreasing in $C$ for $\gamma\ge1/2$, so $C=1$ attains their minima.
+\end{proof}
+
+\subsection{Exact Inference at the Independent Block}
+
+The sampling unit is an independent held-out block and supplies one decision from its entire masked record. Fix the rule on separate calibration data, the noise and exclusion policies, block boundary, and eligible population before inspecting held-out labels. The following model assumes independent identically distributed eligible blocks. Shared participants, runs and other dependence sources belong inside the block or require a sampling model that accounts for that dependence.
+
+For $0\le k\le n$, let $I_\alpha(k,n)$ denote the equal-tail exact binomial interval. The lower endpoint is zero at $k=0$ and otherwise solves $\Pr_q(\operatorname{Bin}(n,q)\ge k)=\alpha/2$. The upper endpoint is one at $k=n$ and otherwise solves $\Pr_q(\operatorname{Bin}(n,q)\le k)=\alpha/2$. Set $I_\alpha(0,0)=[0,1]$.
+
+\begin{theorem}[Independent-Block Risk and Coverage Inference]\label{thm:independent-block-risk-intervals}
+Let $M$ count covered decisions and $K$ count wrong covered decisions among $n$ independent blocks. Then
+\[
+ M\sim\operatorname{Bin}(n,C),\qquad K\mid M\sim\operatorname{Bin}(M,e),
+ \qquad e=\Pr(W=1\mid B=1)\quad(C>0).
+\]
+With $I_C=I_{\alpha_C}(M,n)$ and $I_e=I_{\alpha_e}(K,M)$, simultaneous coverage is at least $1-\alpha_C-\alpha_e$. When $M=0$ retain $I_e=[0,1]$ and leave sample conditional error unreported. The minimum and maximum of $\gamma(1-c)+cx$ over the corners of $I_C\times I_e$ give risk bounds simultaneous with $I_C$.
+
+A direct joint alternative uses counts $N=(K,M-K,n-M)$ and probabilities $\theta=(Ce,C(1-e),1-C)$. Let $f_\theta$ be their multinomial mass and define
+\[
+ p_\theta(N)=\sum_{\substack{m_1+m_2+m_3=n\\f_\theta(m)\le f_\theta(N)}} f_\theta(m),
+ \qquad \mathcal Q_\alpha(N)=\{\theta:p_\theta(N)>\alpha\}.
+\]
+Projecting $\mathcal Q_\alpha$ onto $C=\theta_1+\theta_2$ and $R_\gamma=\theta_1+\gamma\theta_3$, using infima and suprema, yields a simultaneous exact confidence region with coverage at least $1-\alpha$.
+
+Suppose a justified leak cap is $p_U$. For a stochastic audit, let an audit flag $D$ satisfy $\mathbf1_E\le D$ almost surely in the same target population. From $J$ flags in $n_D$ independent audit blocks, the upper endpoint of $I_{\alpha_D}(J,n_D)$ can supply $p_U$. With simultaneous coverage endpoints $C_L,C_U$ and risk upper endpoint $R_U$, certify the preregistered minimum coverage and a fixed positive margin $\eta$ against the applicable null floor only if
+\[
+ C_L\ge C_{\min},\qquad R_U\le B_\star(C_U,p_U)-\eta .
+\]
+Under that null this certification has probability at most $\alpha_C+\alpha_e+\alpha_D$ for the rectangle construction, or $\alpha+\alpha_D$ for the joint construction. A deterministic certified cap uses $\alpha_D=0$.
+\end{theorem}
+\begin{proof}
+The three block outcomes have probabilities $Ce,C(1-e),1-C$, and factoring their multinomial law proves the binomial laws. Exact binomial tail inversion bounds each failure probability. Conditional interval coverage holds for every $M$, and a union bound proves the rectangle guarantee. For $C=0$ the risk is $\gamma$ independently of $e$. The risk is affine in each coordinate separately, so both extrema lie at corners.
+
+For the joint method, order the finitely many multinomial masses, including ties. The total mass of outcomes whose inclusive lower mass-rank is at most $\alpha$ is at most $\alpha$. Thus $p_\theta$ is superuniform at the true $\theta$ and inversion and projection give the stated guarantee.
+
+The audit upper endpoint bounds $\mathbb E D$, which bounds $\Pr(E)$. Its domination of leakage needs a justified audit model. On the simultaneous coverage event, $R_\gamma\le R_U$, $C\le C_U$ and $p\le p_U$. Both null floors are nonincreasing in their arguments, so Theorem~\ref{thm:coverage-sensitive-leakage} gives $R_\gamma\ge B_\star(C_U,p_U)$. A positive-margin certification contradicts this inequality. Union bounds complete the error control. Allocate the stated error levels before any family of planned comparisons.
+\end{proof}
+
+\begin{proposition}[Whole-Block Label Permutation Control]\label{prop:block-label-permutation}
+Under conditional exchangeability of source labels across eligible independent blocks, conditional on public records and fixed label counts, fix the guesses and abstentions and permute block labels. If the design fixes exchangeability groups, permute within each group. The fraction of assignments with risk at most the observed risk is an exact lower-tail $p$-value. Coverage is fixed.
+\end{proposition}
+\begin{proof}
+The true assignment is uniform on the finite permutation set conditional on the frozen records and design counts. The inclusive lower-tail rank is superuniform by counting assignments. Abstention contributes the same constant for every assignment and each covered error is counted once per block. Conditional exchangeability is the premise of this test. Label-dependent contamination is handled by the applicable leakage bound.
+\end{proof}
+
+A four-block synthetic permutation control with two labels of each kind, positive guesses on two fixed blocks and abstentions on two blocks, gives covered-error counts $0,1,1,1,1,2$ over the six assignments. At $\gamma=3/4$ its mean risk is $5/8$, and zero covered errors has lower-tail probability $1/6$. An eight-atom coupling control covers four atoms with two labels of each kind and guesses the positive label there. Correcting one wrong covered guess by label-dependent replacement yields $C=1/2$, $p=1/8$, $R_{3/4}=1/2$. This attains the coupling floor and falls below the clean-stratum floor $9/16$ because the replacement changes the clean conditional balance.
+
+\subsection{Gaussian Within-Block Likelihood and GLS}
+
+\begin{theorem}[Stationary AR(1) Likelihood and GLS]\label{thm:stationary-ar1-likelihood-gls}
+For a block of length $n\ge1$ let $e_t=y_t-\mu_t$. Assume Gaussian $e_1\sim N(0,\sigma^2/(1-\rho^2))$ and innovations $e_t-\rho e_{t-1}\sim N(0,\sigma^2)$ independent of each other and of $e_1$, with $|\rho|<1$ and $\sigma^2>0$. Then
+\[
+ Q_\rho(e)=(1-\rho^2)e_1^2+\sum_{t=2}^n(e_t-\rho e_{t-1})^2,
+\]
+\[
+ \log f(y\mid\mu,\rho,\sigma^2)
+ =-\frac n2\log(2\pi\sigma^2)+\frac12\log(1-\rho^2)
+ -\frac{Q_\rho(y-\mu)}{2\sigma^2}.
+\]
+For two frozen mean models sharing the covariance, the log-density ratio in favor of $A$ is $(Q_\rho(e_B)-Q_\rho(e_A))/(2\sigma^2)$. With full-column-rank design $X$ and fixed common covariance, GLS uniquely minimizes $Q_\rho(y-X\beta)$ at
+\[
+ \widehat\beta=(X^\top A_\rho X)^{-1}X^\top A_\rho y,\qquad
+ Q_\rho(e)=e^\top A_\rho e .
+\]
+\end{theorem}
+\begin{proof}
+The residual-to-innovation map is triangular with unit determinant. Multiplication of its independent Gaussian densities gives the formula. For $n\ge2$ the precision factor $A_\rho$ has endpoints $1$, interior diagonal $1+\rho^2$ and neighboring entries $-\rho$. For $n=1$ it is $[1-\rho^2]$. The innovation representation gives positive definiteness and determinant $1-\rho^2$. Its inverse has entries $\rho^{|i-j|}/(1-\rho^2)$. Different covariance models retain their separate normalizers and quadratic scales in the log-density difference. With common covariance, differentiating the positive quadratic gives the GLS normal equations and full rank gives uniqueness.
+\end{proof}
+
+Freeze the parameters or estimate them on calibration blocks. At $\rho=1/2$, $\sigma^2=1$, residual vectors $(1,1)$ and $(1,-1/2)$ give log-density ratio $3/8$, while the independent Gaussian approximation gives $-3/8$. Residuals $(2,1)$ and $(0,1)$ give stationary log-density ratio $-1$, while omitting the initial quadratic term gives $1/2$. A constant fit to $(1,0,1)$ at this $\rho$ gives GLS estimate $4/5$ and the independent fit $2/3$.
+
+The Gaussian model supplies a score within each block. Independent-block sampling governs its risk inference. The fiber geometry of Paper IX uses a projection and target distances. The projection $(y,z)\mapsto y$ with hidden target $z\in\{0,1\}$ has fiber diameter one even when two Gaussian laws on $y$ give a discriminating likelihood ratio. With identity projection the fiber diameter is zero, while equal class laws give log-density ratio zero.
+
 \section{Reviewer and Adjudicator Independence Architecture}
 \sectionstatus{protocol_defined}
 

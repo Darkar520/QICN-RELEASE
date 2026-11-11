@@ -88,6 +88,8 @@ aggregate=PROJECT/'QICNLean.lean'
 all_sources={p.relative_to(PROJECT).with_suffix('').as_posix().replace('/','.'):p for p in [*sources,aggregate]}
 if args.kernel_only:
     env['LEAN_NUM_THREADS']='1'
+    builtin_lib=Path(run('builtin-library',[lean,'--print-libdir']).strip())
+    if not (builtin_lib/'Init.olean').is_file():raise SystemExit('Pinned compiler library missing')
     object_root=Path(tempfile.mkdtemp(prefix='kernel-objects-',dir=CACHE))
     dependency_libs=[package_dir/p['name']/'.lake/build/lib/lean' for p in manifest['packages']]
     if not (package_dir/'mathlib/.lake/build/lib/lean/Mathlib').is_dir():raise SystemExit('Mathlib artifacts missing; use --fetch-cache')
@@ -96,7 +98,9 @@ if args.kernel_only:
         if revision!=p['rev']:raise SystemExit('Dependency revision mismatch: '+p['name'])
     # The targeted cache need not materialize packages that no source imports.
     # Lean still rejects every genuinely missing import during elaboration.
-    env['LEAN_PATH']=os.pathsep.join(str(p) for p in [object_root,*dependency_libs] if p.is_dir())
+    # Resolve Init/Lean/Std directly instead of probing every external package
+    # for each standard module, which is costly on an external drive.
+    env['LEAN_PATH']=os.pathsep.join(str(p) for p in [builtin_lib,object_root,*dependency_libs] if p.is_dir())
     options=tomllib.loads((PROJECT/'lakefile.toml').read_text())['leanOptions']
     def flags(values,prefix=''):
         for name,value in values.items():

@@ -1923,3 +1923,8 @@ El [prerregistro y la verificación](docs/ai-platform-outputs/repair-plans/CORRE
 ### Frente 3 posterior a la torre · Reserva de retorno frente a rivales informados
 
 La [reserva y su verificación](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_3_RESERVA_INFORMADA.md) prueban empate exacto de la clase pública bajo historial igualado y una condición necesaria y suficiente de separación con un canal privado accesible. Paper VI conserva el contraste de interacción y Paper VIII distingue el riesgo balanceado del minimax sobre el peor signo. Raíz 3/3, release 6/6, matemáticas 21/21, 840 registros y monolito de 381 páginas. v31 conserva `BLOCKED_FOUNDATION_FIRST_GATES` y `external_support_certified=false`. La revisión independiente queda pendiente.
+
+
+### Frente 4 posterior a la torre · Automodelos y transporte
+
+El [prerregistro y la verificación](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/FRENTE_4_PUENTE_TRANSPORTE.md) incorporan la cota exacta de desplazamiento, el piso global de fase, el transporte binario invariante bajo reetiquetado y tres ensayos racionales para D, A y T. Quedan abiertas V, W y E, así como la conjunción BPF. Raíz 3/3, release 6/6, matemáticas 22/22, registro 848 y monolito de 385 páginas. v31 conserva `BLOCKED_FOUNDATION_FIRST_GATES` y `external_support_certified=false`. La revisión independiente queda pendiente.

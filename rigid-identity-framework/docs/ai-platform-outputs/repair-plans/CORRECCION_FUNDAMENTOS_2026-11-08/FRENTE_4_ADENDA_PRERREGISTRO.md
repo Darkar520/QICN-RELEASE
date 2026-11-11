@@ -1,0 +1,3 @@
+# Adenda analítica al prerregistro · 2026-11-10
+
+Para la familia neutral de todos los comandos de fase y una contracción global con L<1, examinar la vuelta completa del círculo de imágenes de un punto fijo. Una imagen contractiva de la vuelta omite un punto y tiene grado cero, mientras la vuelta objetivo tiene grado uno. Prever un punto antipodal y un piso exacto 1/2, alcanzable con un mapa constante en una preparación de cinta alternante y memoria cero. La misma obstrucción da precisión global de reconstrucción al menos 1/2 sobre la fibra de fase. El control racional comprueba la cota superior del candidato constante y su saturación con el comando antipodal. La necesidad universal proviene de la prueba topológica. Se conserva el protocolo y hash originales.

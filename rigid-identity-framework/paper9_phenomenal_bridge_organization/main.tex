@@ -405,6 +405,87 @@ Attach the same realized seven-coordinate record, intervention responses and res
 
 The rational measurement record verifies the local scoring, selective-response and rival-comparison clauses of Paper VIII. The inherited Paper V and VII class certificates are still required for the full premise of Proposition~\ref{prop:bridge-transport-cycle}. The six BPF predicate realizations, bridge-specific rival defeat, selective intervention support, and the artifact, drift and governance conditions remain separate obligations for full bridge membership.
 
+\subsection{Relabeling and Transport of Certified Tower Records}
+
+\begin{theorem}[Relabeling Invariance and Cycle Criterion for Binary Transport]\label{thm:bridge-binary-transport-gauge}
+Let a finite graph of mode windows have two certified witness instances per vertex and an independently certified bijection on each edge. In local binary labels, write this bijection as $w\mapsto w\oplus k_e$. Under a local relabeling $w_v\mapsto w_v\oplus a_v$, the edge bit for $e=uv$ becomes $k_e\oplus a_u\oplus a_v$. The XOR of the edge bits around each cycle is invariant. A coherent assignment exists exactly when the XOR vanishes on every fundamental cycle of a spanning forest, and there are then $2^c$ coherent assignments for $c$ connected components. For two collections of certified edge maps on the same graph, equality of their fundamental-cycle parities is equivalent to their differing by a local relabeling.
+\end{theorem}
+\begin{proof}
+Relabeling conjugates the old edge bijection by the source and destination label changes, yielding the stated formula. Edge orientation does not affect the bit because each binary bijection is its own inverse. The added vertex labels cancel in pairs around a cycle. A coherent assignment satisfies $w_v=w_u\oplus k_e$ at each edge, so its cycle sums vanish.
+
+Conversely, fix a label at the root of each tree of a spanning forest. Transport from that root along the unique tree paths defines one label at every vertex. A remaining edge satisfies its equation exactly when its fundamental cycle has parity zero. Thus a choice of one root label per component produces all and only the coherent assignments. For the last assertion apply the same criterion to the edgewise XOR of the two collections. Its vertex solution is precisely the relabeling that takes one collection to the other.
+\end{proof}
+
+\begin{proposition}[Coherent and Obstructed Transport on Certified Tower Windows]\label{prop:bridge-certified-tower-transport}
+There are two three-window extensions of the same realized local tower records with respective edge bits $(0,1,1)$ and $(0,0,1)$. The records include the six Paper V witnesses, the Paper VII life and four finite subject-descriptor certificates on their declared protocols, and the Paper VIII measurement and return comparisons with their stated information budgets. The paired tower edge responses certify both extensions under phase error at most $\eta=3^{-10}/4$ turns. The first extension has two coherent assignments, and the second has none under any local relabeling.
+\end{proposition}
+\begin{proof}
+Use the writable common support and the joint certificate of Paper VII \cite{paper5,paper7}. In each mode window attach the same joint record, including its separate preparations and schedules, and the writable-tower lesion and reserved-return records of Paper VIII \cite{paper8}. In particular the recorded margin for the public return comparison is zero. Both witness instances carry this same local record. The edge experiment tracks an instance by its prepared or decoded memory sign and is conducted separately from the local scoring trials. The three windows can all use one fixed tower profile for the edge trials. The mode names index the windows.
+
+Prepare two matched replicas with the alternating tape, phase zero and memories $m=\pm1/8$. Encode a positive memory sign by $w=0$ and a negative one by $w=1$. For an edge bit $k_e$, apply the command $q=(-1)^{k_e}$ at $u=0$, without a write or a role probe. The first bit of the alternating tape is zero, so this command leaves phase zero and updates memory to $q m/2$. A subsequent neutral command at $u=0$ gives the early phase $r_0=m_{\rm after}/8$ modulo one and halves the memory again while preserving its sign. Thus the short signed phase gives the destination label $w\oplus k_e$. Use the two replicas to record both rows of each edge map. The source of the first edge is identified by preparation and the subsequent source labels are the preceding decoded labels.
+
+Carry the two replicas through the three consecutive edges with their neutral diagnostics and without resetting memory. The alternating tape and profile stay fixed. At the $\ell$th diagnostic the magnitude of the clean short signed phase is
+\[
+ A_\ell=\frac{1}{128\,4^{\ell-1}},\qquad \ell=1,2,3 .
+\]
+The two signed values are separated by $2A_\ell$, and $\eta<1/2048=A_3$. Hence every edge row can be read from the observed phase despite the allowed error. At the last edge, error $1/2048$ permits the same phase-zero reading from either sign, so that diagnostic alone cannot certify its destination at that radius. This collision also holds for the full readout by shifting all phase channels equally and retaining the common tape reading.
+
+The independent edge records have even parity for $(0,1,1)$ and odd parity for $(0,0,1)$. Theorem~\ref{thm:bridge-binary-transport-gauge} gives the two decisions and their invariance under all eight local relabelings. The local trial records are identical in both extensions, proving non-factorization through the tuple of those records.
+\end{proof}
+
+The resulting strict inclusion concerns the extensions of the realized records. The Paper V and VII certificates retain their declared domains. The Paper VIII record includes both the restricted lesion comparison and the public return tie. Full Paper VIII class membership would require its positive margin against the relevant complete rival family, and full BPF membership would further require the independent bridge burdens.
+
+\subsection{Intervention Tests for Three Bridge Burdens}
+
+Use the writable tower of Paper V and the local record of Proposition~\ref{prop:bridge-certified-tower-transport}. Keep that record attached to every comparison. The following trials vary new preparations and interventions and record new phase responses. Their margins concern individual burdens of $\PiD,\PiA,\PiT$ under the stated rivals and budgets. The estimators in the bridge gate require their own calibration and joint certificate.
+
+\begin{proposition}[Role-Selective Differentiation on the Writable Tower]\label{prop:bridge-tower-differentiation}
+For the two prepared role profiles, let $C_{pr}$ be the clean early-phase response to a probe of role $r$ after a reference write minus the response after a lesion, with one common sham between write and probe. With the declared probe at the transported address, $C_{pr}=\delta\mathbf 1_{\{p=r\}}$ for $\delta=1/(16\cdot3^7)$ turns. The best additive fit $a_p+b_r$ has uniform error exactly $\delta/2$. At error at most $\delta/16$ per phase reading the measured matrix still has distance at least $3\delta/8$ from all additive fits.
+\end{proposition}
+\begin{proof}
+For each role profile prepare the alternating tape and zero memory. Make a reference write or the opposite write at site $3$, and advance a common neutral sham. This moves the active or lesioned bit to site $4$. The probe of site $4$ with role $r$ returns phase $\delta$ exactly when its role matches and the transported bit matches the reference. Memory remains zero. Taking the phase difference of the two write arms gives the matrix in the statement.
+
+The mixed difference $C_{00}-C_{01}-C_{10}+C_{11}=2\delta$ vanishes for every additive rival. An entrywise error of at most $e$ can change it by at most $4e$, giving $e\ge\delta/2$. The constant fit $\delta/2$ attains equality. Error in the measured paired contrast is at most $\delta/8$, so the triangle inequality gives the stated noisy lower bound. Two reference writes give zero contrast. A rival with the measured role-by-probe interaction can reproduce the clean matrix. This comparison identifies role-selective causal differentiation beyond the additive rival.
+\end{proof}
+
+\begin{proposition}[Late Choice Between Two Live Alternatives]\label{prop:bridge-tower-ambiguity}
+Prepare two independent uniform activity bits at tape sites $3,4$ and advance one common sham. A uniform query drawn after the rival's memory is fixed selects one of the transported sites $4,5$. The matching-role probe identifies the selected bit with zero error at phase noise at most $\delta/16$. Under this state and query law the optimal error of a rival retaining one bit before the query, with no subsequent tape reading, is exactly $1/4$. A write during the advance can erase the first alternative while preserving the second.
+\end{proposition}
+\begin{proof}
+At one fixed role profile with zero memory, encode two binary choices by matching or opposing the alternating reference at sites $3,4$. Complement and shift transport each activity bit to the corresponding new site. Under the matching-role probe, active and inactive give phase $\delta$ and zero, separated by threshold $\delta/2$ under the declared noise. Both alternatives thus remain capable of changing the observed result until the query. A write opposing the reference at site $4$ during the advance forces the first transported bit inactive. The query at site $5$ still returns the independently prepared second bit. This is a selective collapse intervention on the available outcomes.
+
+For each of its at most two memory values a deterministic rival has a pair of answers, one for each query. These at most two reconstruction words can exactly match at most two of the four equally likely prepared words. The sum of Hamming errors over the four words is at least two. Normalizing by the eight equally likely word-query pairs gives error at least $1/4$. Retain the first bit and use a fixed answer for the second to attain the bound. Randomized rules with randomness independent of preparation and query are mixtures of deterministic encoder-decoder pairs and satisfy the same lower bound. With two retained bits, the rival can also predict both responses exactly. The separation concerns maintenance of jointly available alternatives under the declared one-bit bottleneck.
+\end{proof}
+
+\begin{proposition}[Order-Dependent Return and an Exact Temporal Horizon]\label{prop:bridge-tower-temporal-order}
+On a common preparation with first bit one, zero memory and phase zero, run command orders $(+1,0)$ and $(0,+1)$ with all phase inputs zero and no writes or probes. After one common $+1$ and $h$ further common $+1$ steps, the current public readings and command multisets coincide. The subsequent neutral early-phase gap is exactly $D_h=1/(384\cdot 2^h)$ turns. The two terminal reading sets are disjoint under phase error at most $\eta=3^{-10}/4$ precisely for integer $0\le h\le8$. An order-blind predictor with the same snapshot and multiset has mean clean absolute circular loss at least $D_h/2$ in the balanced pair, and an order-informed predictor attains zero.
+\end{proposition}
+\begin{proof}
+Write the memory update as in Paper VI \cite{paper6}, with $a=1/2$, $\lambda=1/12$ and $\kappa=1/8$. The leading bit is zero after the first step in either order. The two-step memories are therefore $1/24$ and zero. A common positive command gives both arms phase zero and halves the memory difference. Each additional positive command repeats this effect. The tape and profile agree at every matched time. A final neutral command reads the memory difference with multiplier $\kappa$, giving $D_h$.
+
+The two clean terminal phases are zero and $D_h$, with $D_8=1/98304>2\eta$ and $D_9=1/196608<2\eta$. Below the overlap radius the midpoint decision separates the signs of the centered contrast. When $D_h\le2\eta$, the midpoint can occur in either arm. The collision extends to all phase channels by common phase shifts, with the tape reading fixed. For prediction from the order-blind record the two outcomes must share a prediction. The circular triangle inequality bounds the sum of the two losses below by $D_h$, attained by any point on the intervening short arc. The order-informed predictor uses the stated transition and predicts each clean response exactly. Ablating memory before the terminal command makes the responses coincide. The resulting horizon measures temporal order information beyond a current-state readout and an unordered command history.
+\end{proof}
+
+\subsection{Open Evaluative, World and Body/World Burdens}
+
+\begin{proposition}[Native Trace Equivalence and Extra Bridge Variables]\label{prop:bridge-native-trace-obstruction}
+Let an extended model project to the same writable tower state by $\pi$. For every native control $u$ let its transition $\widetilde F_u$ and readout $\widetilde R$ satisfy $\pi\widetilde F_u=F_u\pi$ and $\widetilde R=R\pi$, with the same projected initial law and observation noise. Then all native observation and intervention transcripts have the same law, even for observation-adaptive native controls. A target that differs between extensions satisfying these conditions cannot be identified from those transcripts or from the inherited record computed from them.
+\end{proposition}
+\begin{proof}
+Use the same projected initialization, noise and control randomization in the two experiments. At each step their matching observations give the same control and the commutation with $\pi$ gives the same next projected state. Induction gives identical transcripts under the coupling. Any statistic of the transcripts consequently has the same law in the two experiments. For a concrete pair, adjoin a fixed bit $z$ with native projection and readout as above and use $z=0$ versus $z=1$. A new test that adds $z/8$ turns to the neutral phase command separates the two completions while all native traces agree. This example concerns identification of an added coupling.
+\end{proof}
+
+\paragraph{Valence structure.}
+The return task has a scalar circular loss and a fixed phase reference. In the neutral alternating sector without a probe, reflecting phase, memory and phase command together preserves both circular return loss and absolute command cost. A structured evaluative topology for $\PiV$ needs an independently varied evaluation variable and a response that distinguishes its organization from the scalar recovery law.
+
+\paragraph{World richness.}
+The native comparison supplies commands from a recorded schedule. To test $\PiW$, an indexed world state must have an independently specified dynamics and perturbation, with an observable consequence at matched command complexity. Unobserved completions preserving native traces fall under Proposition~\ref{prop:bridge-native-trace-obstruction}.
+
+\paragraph{Embodied closure.}
+The neutral response and tape probes expose feedback within the tower. The $\PiE$ test requires distinct typed body and world variables, an intervention that breaks their coupling at matched control cost, and a measured consequence specific to that boundary. The native transcript alone leaves such completions observationally equivalent when their projections coincide.
+
+The three rational experiments provide local witnesses for the indicated components. The conjunctive BPF claim still requires the open predicates, calibrated thresholds, joint intervention selectivity, the full bridge comparator margin, and the artifact, drift and governance obligations.
+
 \section{Explicit Bridge Axioms}
 The bridge axioms are the minimal bridge-opening commitments required to connect indexed subjectivity to disciplined phenomenal targets without smuggling the conclusion into the premises. Each axiom is classified explicitly.
 

@@ -239,6 +239,39 @@ The tail weights sum to $3^{-m}$ and the truncated image is constant on each fib
 
 The truncation is a fibrewise approximate self-model with declared precision and defect. Distinct retained phases are fixed by it, so the fibre estimate does not supply strict contraction on the entire support.
 
+\subsection{Quantitative Obstructions for Approximate Commutation}
+
+\begin{theorem}[Fixed-Point Displacement under Approximate Commutation]\label{thm:sigma-approximate-displacement}
+Let $\Sigma$ be an $L$-Lipschitz self-map of a nonempty complete metric space, where $0\le L<1$, and let $p$ be its fixed point. For each intervention self-map $\Phi_u$ define
+\[
+ e_u(p)=d(\Sigma\Phi_u(p),\Phi_u\Sigma(p)),\qquad
+ \varepsilon_u=\sup_x d(\Sigma\Phi_u(x),\Phi_u\Sigma(x)).
+\]
+Then $d(\Phi_u(p),p)\le e_u(p)/(1-L)\le\varepsilon_u/(1-L)$. In particular,
+\[
+ (1-L)d(\Phi_u(p),\Phi_v(p))\le e_u(p)+e_v(p).
+\]
+If both uniform defects are bounded by $\varepsilon$, the separation is at most $2\varepsilon/(1-L)$. Both bounds are sharp, including simultaneously on rational affine models.
+\end{theorem}
+\begin{proof}
+For any $y$, $d(y,p)\le d(y,\Sigma y)+L d(y,p)$, since $\Sigma p=p$. With $y=\Phi_u(p)$, the first term equals $e_u(p)$. The pair bound follows by the triangle inequality through $p$. For every rational $L\in[0,1)$, use $[-1,1]$ with its ordinary metric, $\Sigma(x)=Lx$, and the constant interventions $\Phi_\pm(x)=\pm1$. The fixed point is zero, each defect is identically $1-L$, each displacement is one, and the images are distance two apart. The example has rational coefficients and retains the rational points of the complete interval.
+\end{proof}
+
+A prescribed global reconstruction error $\sup_x d(\Sigma x,x)\le\alpha$ also forces $(1-L)\operatorname{diam}(A_S)\le2\alpha$ on a bounded support, by applying the triangle inequality through $\Sigma x,\Sigma y$. This accuracy constraint and the commutation constraint can be imposed on the same candidate.
+
+\begin{proposition}[Global Phase Obstruction and Fibre Accuracy on the Writable Tower]\label{prop:sigma-tower-defect-floor}
+On the safe writable tower of Paper V \cite{paper5}, use the branch distance $\max(\rho,|c-c'|,|m-m'|/4)$ and distance one across profiles. For a global $L$-contraction the two native neutral phases $0,1/4$ force uniform defect at least $(1-L)/8$. The full neutral family of phases forces defect at least $(1-L)/2$. In fact with all phases the sharp uniform floor is $1/2$ for every $L<1$, even allowing the other writable commands, and uniform reconstruction error is at least $1/2$.
+
+In contrast, the depth-$d$ truncation $T_d$ of Proposition~\ref{prop:sigma-fibre-truncation}, extended to retain memory as well as phase, profile and the first $d\ge1$ digits, is constant on each retained-data fibre. Its uniform error is at most $3^{-d}$ and its uniform commutation defect for each native command is exactly $2\cdot3^{-(d+1)}$. For a candidate $\Sigma$ with $\sup_x d(\Sigma x,T_dx)\le\zeta$, its defect against any native neutral control is at least $2\cdot3^{-(d+1)}-3\zeta/2$.
+\end{proposition}
+\begin{proof}
+At the fixed point $p$ of $\Sigma$, the two neutral interventions set phase to their input plus the common shift $\kappa m(p)$, with the other coordinates equal. Their images are separated by $1/4$. For the full family choose the input whose image phase is antipodal to the phase of $p$. Theorem~\ref{thm:sigma-approximate-displacement} gives the two lower bounds.
+
+For sharpness on the full circle, the curve of neutral images $\Phi_{u,0}(p)$ as $u$ varies is a full phase circle at fixed values of all other coordinates. Its image under $\Sigma$ stays on one profile by continuity. A different profile from the original curve gives distance one. Otherwise the phase coordinate of $\Sigma$ on the curve has image diameter at most $L/2<1/2$ and omits a point of the circle. Parameterize the curve by its phase $t$ modulo one and lift the image phase to a continuous real-valued function $G$ on $[0,1]$ using the omitted point as a cut. Then $G(1)=G(0)$, so $G(t)-t$ attains a half-integer by the intermediate value theorem. At that input, $\Sigma\Phi_{u,0}(p)$ is antipodal in phase to $\Phi_{u,0}\Sigma(p)=\Phi_{u,0}(p)$. This forces defect at least $1/2$. The same argument on any phase fibre gives the reconstruction bound. The constant map to a state with alternating tape and zero memory attains defect $1/2$. All controls preserve its profile and memory, the phase displacement is at most $1/2$, and one optional write displaces its code by at most $2/27$. The antipodal neutral input attains equality.
+
+For $T_d$, the native phase and memory updates agree in both compositions because $m$ and $b_1$ are retained. The only code mismatch is at $d+1$, as in Proposition~\ref{prop:sigma-fibre-truncation}. A neutral native map has Lipschitz constant at most $1/2$ in the stated metric, by the memory factor $1/2$, phase coupling $\kappa=1/8$ and code factor $1/3$. The triangle inequality bounds the difference of the defects of $T_d$ and $\Sigma$ by $(1+1/2)\zeta$. The fibrewise contraction of $T_d$ and the obstruction to global phase contraction apply to different domains of pairs.
+\end{proof}
+
 \begin{proposition}[Conditional obstruction to self-reference within $\Cop$]\label{prop:sigma-not-entailed}
 If a complete admissible support witnessing $\Cop$ has no common fixed point of its admitted interventions, then it has no self-model of Definition~\ref{def:sigma-op} on that support. Such a system refutes entailment on the declared support once all six upstream witnesses are supplied.
 \end{proposition}

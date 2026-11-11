@@ -30,13 +30,13 @@
 \usepackage[unicode,pdfencoding=auto,psdextra,hidelinks]{hyperref}
 \hypersetup{
     pdftitle={A Structural Criterion for Substrate-Invariant Operational Consciousness},
-    pdfauthor={Johnny Andrey Pérez Ramírez},
+    pdfauthor={Johnny Andrey PÃƒÂ©rez RamÃƒÂ­rez},
     pdfsubject={Rigid Identity Framework - Operational Consciousness Criterion},
     pdfkeywords={operational consciousness, substrate invariance, operational qualia, rigid identity, causal integration, admissibility}
 }
 
 \title{\textbf{A Structural Criterion for Substrate-Invariant Operational Consciousness}}
-\author{Johnny Andrey Pérez Ramírez}
+\author{Johnny Andrey PÃƒÂ©rez RamÃƒÂ­rez}
 \date{}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -253,7 +253,7 @@ When the six witnesses are separately calibrated as certified radii in the same 
 A positive radius certifies the associated predicate at the target and throughout its declared perturbation ball. A zero or unreported radius alone does not determine failure at the target. Raw separations, risks, durations, fragmentation ceilings and compression errors require separate calibration before taking this minimum.
 \end{definition}
 
-A calibrated budget certifies simultaneous persistence of all six predicates under the declared protocol. Failure beyond the certified radius requires its own witness.
+A calibrated budget certifies simultaneous persistence of all six predicates under the declared protocol. Failure beyond the certified radius requires its own witness. Raw witness gaps and fragmentation ceilings below retain their original units. For transport and approximate stability we use the explicitly calibrated radii $\delta_j^{\mathrm{cal}}$ of Definition~\ref{def:transport-calibration}, not arbitrary choices of a lower witness bound.
 
 \begin{center}
 \small
@@ -725,48 +725,38 @@ The criterion is conjunctive. No proper subset of the six invariants is taken as
 
 \subsection{Exact and Approximate Structural Equivalence}
 \begin{definition}[Structural equivalence datum]\label{def:eqdatum}
-Let $S_i=(X_i,\Phi_i,C_i,R_i,\Gamma_i,U_i)$ for $i=1,2$, with admissible supports $A_i$. A structural equivalence datum between $S_1$ and $S_2$ is a triple
-\[
-(\chi,\upsilon,\rho)
-\]
-where:
-\begin{enumerate}[leftmargin=1.5em]
-\item $\chi : A_1 \to A_2$ is a bi-Lipschitz bijection;
-\item $\upsilon : U_1 \to U_2$ is an intervention correspondence;
-\item $\rho : R_1 \to R_2$ is a readout correspondence.
-\end{enumerate}
+A structural datum $(\chi,\upsilon,\rho)$ consists of a bi-Lipschitz bijection of the declared state supports, extended to the admissible comparison neighborhoods whenever attraction is tested; a bijection of admissible interventions and their schedules; and bijections of readout indices and values. The latter include calibrated value metrics and class-label renamings. Time indices and protocol horizons are not reparameterized. All data have inverse correspondences on their comparison domains.
 \end{definition}
 
 \begin{definition}[Exact and approximate structural equivalence]\label{def:equiv}
-Fix $\eps \ge 0$. We write
-\[
-S_1 \simeq_{(\Gamma,\eps)} S_2
-\]
-if there exists a structural equivalence datum $(\chi,\upsilon,\rho)$ such that:
+Write $S_1\simeq_{(\Gamma,\eps)}S_2$ if a structural datum satisfies the following primitive-data conditions, with $\eps\ge0$:
 \begin{enumerate}[leftmargin=1.5em]
-\item \textbf{Dynamic intertwining:}
+\item \textbf{Geometric calibration.} Supports, admissibility regions, designated collapse/null data, and the neighborhoods used for attraction correspond under $\chi$. State/readout comparison metrics and protocol losses are transported pullbacks, so their calibrated comparisons are isometric. Displayed coordinate metrics need not be isometric: conversion to the common chart has finite inverse Lipschitz constants $L_{\chi^{-1}},L_{\rho^{-1}}$, equal to one in the normalized case. Unadjusted numerical thresholds in different units are not matched data.
+\item \textbf{Dynamic intertwining.} For all declared initial states, schedules and times,
 \[
-\sup_{x \in A_1,\ u \in U_1,\ 0 \le t \le T_\Gamma}
-d_{X_2}\!\left(\chi(\Phi_{1,u}^t(x)), \Phi_{2,\upsilon(u)}^t(\chi(x))\right) \le \eps.
+ \sup d_{X_2}(\chi\Phi_{1,u_\bullet}^{t}x,\Phi_{2,\upsilon(u_\bullet)}^{t}\chi x)\le\eps.
 \]
-\item \textbf{Readout compatibility:}
+Exact one-step intertwining on an invariant comparison domain extends to all compositions by induction. Approximate finite-window observations are not a bound on the full transition operators unless every comparison state and control is covered.
+\item \textbf{Readout compatibility.} After value-coordinate calibration,
 \[
-\sup_{x,u,t,\alpha}
-\left|
-r^{(1)}_\alpha(\Phi_{1,u}^t(x))
--
-\rho(r^{(1)}_\alpha)(\Phi_{2,\upsilon(u)}^t(\chi(x)))
-\right|
-\le \eps.
+ \sup_{x,u_\bullet,t,\alpha}d_{\rho(\alpha)}
+ (\rho_\alpha r_{1,\alpha}^{t},r_{2,\rho(\alpha)}^{t})\le\eps.
 \]
-\item \textbf{Admissibility preservation:} admissible trajectories in $S_1$ map to admissible trajectories in $S_2$ and conversely.
-\item \textbf{Invariant preservation:} the witness margins for all six invariants differ by at most $\eps$.
-\item \textbf{Partition preservation:}
-\[
-x \sim_{Q,S_1} y \quad \Longleftrightarrow \quad \chi(x) \sim_{Q,S_2} \chi(y).
-\]
+Here $r_{1,\alpha}^{t}=r_\alpha^{(1)}(\Phi_{1,u_\bullet}^t x)$, $r_{2,\rho(\alpha)}^{t}=r_{\rho(\alpha)}^{(2)}(\Phi_{2,\upsilon(u_\bullet)}^t\chi x)$, and $d_{\rho(\alpha)}$ is the target readout metric.
+\item \textbf{Protocol and sector correspondence.} Admissible path domains, finite-energy perturbations and their cost units, identity candidate cones, causal factorization/comparator families, regime-coordinate assignments and their metrics, decoder algorithms and codebooks correspond bijectively under the datum. Target/sham matching, sampling laws, horizons, noise domains, class metrics, decision thresholds and compression budgets are transported as primitive protocol data. The decoder-family relation $\Dec_{S_2}=\rho_*\Dec_{S_1}$ means transport of candidate algorithms and their domains, not assumed preservation of their certification verdicts. Families of external rivals must be transported as well as the internal plant.
 \end{enumerate}
-The case $\eps=0$ is called \emph{exact} structural equivalence and written $S_1 \simeq_{\Gamma} S_2$.
+The exact case is $\eps=0$, written $S_1\simeq_\Gamma S_2$. Neither invariant-margin preservation nor equality of operational partitions is a clause of this definition.
+\end{definition}
+
+\begin{definition}[Calibrated presentation radius]\label{def:transport-calibration}
+Fix the structural geometry and protocol/sector catalogues of Definition~\ref{def:equiv}. Express both systems on the same coordinate domains. A presentation $z$ records its primitive one-step transition maps and instantaneous readout maps on the entire declared state/control domains, including the neighborhoods needed for attraction. On the finite-distance component use their maximum uniform metric $d_{\mathcal P}$ in common calibrated units. No invariant score enters this metric. Global failure sets below use the original all-time predicates. Finite sampled histories alone do not bound this full operator metric or certify a positive global radius.
+
+For each of the original six predicates, let $B_j$ be its failure set in this fixed presentation class, including undefined required evidence as failure. With a common cap $R>0$, define
+\[
+ \delta_j^{\mathrm{cal}}(z)=\min\{R,\operatorname{dist}_{\mathcal P}(z,B_j)\},\qquad
+ \delta_\star^{\mathrm{cal}}=\min_j\delta_j^{\mathrm{cal}},
+\]
+where distance to the empty set is $+\infty$. These are maximal capped robust radii in the declared metric, not arbitrary reported lower bounds. A positive radius certifies the predicate throughout its open ball; zero does not imply failure at the center. Raw gaps, ceilings, risks and durations in the six witness definitions are not silently identified with these radii. Their conversion to a positive calibrated radius needs its own evidence.
 \end{definition}
 
 \begin{definition}[Rupture]\label{def:rupture}
@@ -785,49 +775,51 @@ Given $S$, a rupture is any loss of admissibility or loss of at least one critic
 The main theorems become short only because the transport lemmas are made explicit here.
 
 \begin{lemma}[Support transfer under exact equivalence]\label{lem:support-transfer}
-If $S_1 \simeq_{\Gamma} S_2$ via $(\chi,\upsilon,\rho)$ and $A_1$ is an admissible support for $S_1$, then $A_2=\chi(A_1)$ is an admissible support for $S_2$.
+An exact structural equivalence transports a nonempty compact admissible support $A_1$ to an admissible support $A_2=\chi(A_1)$ on the specified comparison domain.
 \end{lemma}
-
 \begin{proof}
-Bi-Lipschitz bijectivity of $\chi$ preserves non-emptiness and compactness. Dynamic intertwining with $\eps=0$ gives forward invariance under the transported interventions. Admissibility preservation transports $A_1 \subseteq X_{\Gamma_1}$ into $A_2 \subseteq X_{\Gamma_2}$. Because the attractor-support relation and non-collapse margin are preserved exactly, $A_2$ inherits the same admissible support status.
+The bi-Lipschitz bijection preserves nonemptiness and compactness. Exact intertwining transports forward invariance, and the geometric correspondence transports admissibility constraints and disjointness from collapse. On the comparison neighborhoods, conjugacy preserves trajectories approaching an attractor: the Lipschitz bounds preserve convergence to the corresponding set, in both directions. Thus the attractor-support condition is transported. A bijection of supports alone, without the relevant attraction neighborhoods, would not justify this last conclusion. No invariant radius is assumed.
 \end{proof}
 
 \begin{lemma}[Decoder transport]\label{lem:decoder-transport}
-Let $D \in \Dec_{S_1}$ and suppose $S_1 \simeq_{\Gamma} S_2$ via $(\chi,\upsilon,\rho)$. Then
-\[
-(\rho_\ast D)\bigl(h_{S_2,T}(\chi(x);\upsilon(u_\bullet))\bigr)
-:=
-D\bigl(h_{S_1,T}(x;u_\bullet)\bigr)
-\]
-defines a certified decoder on $S_2$.
+For exact equivalence, let $H$ be the componentwise calibrated readout-window bijection and $\kappa$ its class-label bijection. The transported algorithm is $D_2=\kappa\circ D_1\circ H^{-1}$ on the declared clean and noisy observation domains. It is certified whenever $D_1$ is, and every target decoder arises by inverse transport.
 \end{lemma}
-
 \begin{proof}
-Exact readout compatibility identifies each admissible history in $S_2$ with a transported history in $S_1$. The certification clauses in Definition~\ref{def:ileg} are preserved because separability, robustness, persistence window, intervention fidelity, negative-control rate, and compressibility all remain unchanged under exact transport.
+Readout compatibility gives $H(h_{S_1,T}(x;u_\bullet))=h_{S_2,T}(\chi x;\upsilon(u_\bullet))$. The isometric calibration transports clean separations and noise balls (L1--L2). Equal horizons and sham schedules transport persistence windows (L3). Matching relations and pushforward sampling laws identify the same miss and false-shift events, so their probabilities coincide (L4--L5). Transporting the encoder by $H^{-1}$ and its code-to-class map by $\kappa$ preserves code count and class distortion (L6). Candidate-family correspondence supplies the algorithm, rather than assuming these six verdicts. Applying the same argument to the inverse datum gives the converse.
 \end{proof}
 
 \begin{proposition}[Operational classes are closed under exact transport]\label{prop:transport}
-If $S_1 \simeq_{\Gamma} S_2$, then the image under $\chi$ of any class in $\Qop(S_1)$ is a class in $\Qop(S_2)$, and every class in $\Qop(S_2)$ arises this way.
+Under exact structural equivalence,
+\[
+ x\sim_{Q,S_1}y\quad\Longleftrightarrow\quad\chi x\sim_{Q,S_2}\chi y.
+\]
+Consequently $[x]\mapsto[\chi x]$ is a bijection of the operational quotients whenever those quotients are defined.
 \end{proposition}
-
 \begin{proof}
-By Lemma~\ref{lem:decoder-transport}, decoder certification transports exactly. By Definition~\ref{def:indist}, membership in an operational qualia class is determined by all certified decoders and admissible interventions. Exact transport preserves both. Surjectivity follows from bijectivity of $\chi$.
+Lemma~\ref{lem:decoder-transport} bijects certified decoders, and schedules correspond in both directions. For each such pair of decoders, equality of their outputs is equivalent because $\kappa$ is injective. The raw intervention-response matching relation is transported by clause4 of Definition~\ref{def:equiv}; its equality tests and transitivity are therefore preserved. Taking the universal quantifiers in Definition~\ref{def:indist} proves the displayed equivalence. Bijectivity of $\chi$ then proves bijectivity on quotient classes, without assuming the partition in the equivalence datum.
 \end{proof}
 
 \begin{proposition}[Approximate margin preservation]\label{prop:margins}
-If $S_1 \simeq_{(\Gamma,\eps)} S_2$ with margins calibrated in a common perturbation metric for both systems, then for every critical invariant index $j$,
+Use the common presentation metric and fixed sectors of Definition~\ref{def:transport-calibration}. If $S_1\simeq_{(\Gamma,\eps)}S_2$, then
 \[
-\bigl| \delta_j(S_1) - \delta_j(S_2) \bigr| \le \eps.
+ |\delta_j^{\mathrm{cal}}(S_1)-\delta_j^{\mathrm{cal}}(S_2)|\le C_{\chi,\rho}\eps,
+ \quad C_{\chi,\rho}=\max\{1,L_{\chi^{-1}},L_{\rho^{-1}}\}.
 \]
-Hence
-\[
-\delta_\star(S_2) \ge \delta_\star(S_1) - \eps.
-\]
+The normalized isometric case has $C_{\chi,\rho}=1$. Hence $\delta_\star^{\mathrm{cal}}(S_2)\ge\delta_\star^{\mathrm{cal}}(S_1)-C_{\chi,\rho}\eps$. At exact equivalence all six predicates, their calibrated radii, and the operational indistinguishability relation are preserved. Optimal raw margins defined by corresponding infima/suprema of isometric losses are also equal; arbitrary chosen certificate values need not be.
 \end{proposition}
-
 \begin{proof}
-The first statement is a direct clause of Definition~\ref{def:equiv}. The second follows by taking minima over the six coordinates of $\Delta(S_1)$ and $\Delta(S_2)$.
+First establish exact predicate transport from primitive data. Support transfer gives persistence. Coherent identity-candidate cones and their separating comparison metrics transport existence/uniqueness and separation of alternatives. Conjugating every admitted factorization and its inverse preserves the entire reproduction-error comparison. Regime-coordinate maps, their metrics and the same time domains preserve continuity, fragmentation and compatible intervention responses. Designated null sets and conjugated attraction neighborhoods preserve the null-exclusion clause and readout differentiation. Lemma~\ref{lem:decoder-transport} supplies legibility. These six arguments identify the same failure sets $B_j$ after changing structural coordinates; they do not use any margin-preservation clause. Proposition~\ref{prop:transport} separately proves partition transport.
+
+For the approximate bound, take the dynamic discrepancy at one step and the readout discrepancy at time zero, on their full declared domains, and pull them into the common coordinate chart. The inverse coordinate Lipschitz constants give $d_{\mathcal P}(z_1,z_2)\le C_{\chi,\rho}\eps$. For any fixed nonempty failure set $B$, triangle inequality gives
+\[
+ \operatorname{dist}(z_1,B)\le d_{\mathcal P}(z_1,z_2)+\operatorname{dist}(z_2,B).
+\]
+Reverse the points and cap by the same $R$: the capped distance changes by at most $d_{\mathcal P}(z_1,z_2)$. If $B$ is empty both radii equal $R$. Taking minima over six coordinates proves the budget bound. At exact equivalence the presentations agree, so radii agree. For an optimal raw loss, a bijection of candidates/tests with equal loss values preserves its infimum or supremum; it does not force two arbitrarily reported lower certificates to be equal.
 \end{proof}
+
+\begin{remark}[No automatic transfer without the sector]\label{rem:sector-nontransfer}
+Conjugacy of an internal plant alone does not transport a rival-relative margin. For example, a constant-zero target has optimal error one against the sole constant-one rival, but error zero when a constant-zero rival is added, even though the plant and readout are unchanged. This is the no-automatic-transfer boundary of Paper III and the later bridge analysis. Clause4 of Definition~\ref{def:equiv} requires the corresponding rival sector, costs and loss calibration, not its verdict. Finite-time agreement likewise does not determine later collapse. Finally, certified lower bounds chosen arbitrarily can differ even for the same presentation; only a fixed functional or a specified calibration admits the quantitative transport theorem.
+\end{remark}
 
 \begin{remark}[Why this section matters]
 Without Lemmas~\ref{lem:support-transfer} and \ref{lem:decoder-transport}, Theorem~\ref{thm:substrate} would be only intuitive. These lemmas are the exact reason the paper can speak of substrate invariance without collapsing into slogan-level analogy.
@@ -909,52 +901,37 @@ Membership in $\Cop$ follows immediately from Definition~\ref{def:cop}. Since $\
 
 \subsection{Substrate Invariance}
 \begin{theorem}[Substrate invariance]\label{thm:substrate}
-Let $S_1$ and $S_2$ be admissible systems. If $S_1 \simeq_{\Gamma} S_2$ and the six critical invariants are preserved exactly, then
+For exact structural equivalence on the complete domains required by the six predicates,
 \[
-S_1 \in \Cop \quad \Longleftrightarrow \quad S_2 \in \Cop,
+ S_1\in\Cop\quad\Longleftrightarrow\quad S_2\in\Cop.
 \]
-and there exists a canonically induced bijection
+The induced map is
 \[
-\widehat{\chi} : \Qop(S_1) \to \Qop(S_2).
+ \widehat\chi:\Qop(S_1)\longrightarrow\Qop(S_2),\quad [x]\mapsto[\chi x],
 \]
+with $\widehat\chi$ a bijection. Invariant or partition preservation is not an additional hypothesis.
 \end{theorem}
-
 \begin{proof}
-Exact equivalence preserves admissible support, dynamics, readout behavior, invariant margins, and the operational partition. If $S_1 \in \Cop$, then every critical invariant holds on $A_1$ and is preserved under $\chi$. Hence every critical invariant also holds on $A_2$, so $S_2 \in \Cop$. The converse is symmetric. Partition preservation in Definition~\ref{def:equiv} induces a well-defined map on quotient classes:
-\[
-\widehat{\chi}([x]_{\sim_{Q,S_1}}) = [\chi(x)]_{\sim_{Q,S_2}}.
-\]
-Well-definedness follows from the partition-preservation clause. Bijectivity follows from bijectivity of $\chi$.
+Lemma~\ref{lem:support-transfer} transports the support. The exact predicate arguments in Proposition~\ref{prop:margins}, including Lemma~\ref{lem:decoder-transport}, transport all six defining conditions in both directions. Definition~\ref{def:cop} therefore gives membership equivalence. Proposition~\ref{prop:transport} proves that the displayed quotient map is well-defined and bijective. No clause assuming the conclusion is used.
 \end{proof}
 
 \begin{corollary}[Biological non-primacy]\label{cor:biology}
-Biology is not a primitive constitutive requirement for membership in $\Cop$. If a biological system and a non-biological system are exactly structurally equivalent in the sense of Definition~\ref{def:equiv}, then they belong to the same operational consciousness class and carry equivalent operational qualia classes.
+Biological substrate is not a primitive variable of $\Cop$. A biological and a non-biological system satisfying the full structural, protocol and sector equivalence of Definition~\ref{def:equiv} have the same operational membership and bijective operational quotient classes. This is conditional, not evidence that an actual biological/non-biological pair meets those hypotheses.
 \end{corollary}
-
 \begin{proof}
-Immediate from Theorem~\ref{thm:substrate}. The criterion depends on invariant preservation, not on biological substrate as a primitive variable.
+Apply Theorem~\ref{thm:substrate}. The datum transports the complete comparison problem rather than assuming its invariant verdicts.
 \end{proof}
 
 \subsection{Approximate Stability}
 \begin{theorem}[Approximate stability]\label{thm:stability}
-Let $S_1 \in \Cop$ and suppose both systems use certified radii in the same perturbation metric, with
+Let $S_1\in\Cop$, with $\delta_\star^{\mathrm{cal}}(S_1)>0$ in the specified common presentation class. Suppose $S_1\simeq_{(\Gamma,\eps)}S_2$ on all domains required by the six predicates and
 \[
-\delta_\star(S_1)
-=
-\min\{
-\delta_{\mathrm{per}},\delta_{\mathrm{ri}},\delta_{\mathrm{int}},
-\delta_{\mathrm{cont}},\delta_{\mathrm{diff}},\delta_{\mathrm{leg}}
-\}.
+ 0\le C_{\chi,\rho}\eps<\tfrac12\delta_\star^{\mathrm{cal}}(S_1).
 \]
-If $S_2$ satisfies $S_1 \simeq_{(\Gamma,\eps)} S_2$ with
-\[
-0 \le \eps < \frac{\delta_\star(S_1)}{2},
-\]
-then $S_2 \in \Cop$.
+Then $S_2\in\Cop$. Finite sampled windows alone do not supply the global premises: one needs the full-domain primitive operator bound and a positive calibrated radius against the global failure sets.
 \end{theorem}
-
 \begin{proof}
-By Definition~\ref{def:equiv}, each invariant margin in $S_2$ differs from that of $S_1$ by at most $\eps$. Since $\eps < \delta_\star(S_1)/2$, every preserved margin in $S_2$ remains strictly positive. Therefore each of the six invariants still holds for $S_2$, and Definition~\ref{def:cop} yields $S_2 \in \Cop$.
+Proposition~\ref{prop:margins} gives a strictly positive calibrated radius for every coordinate at $S_2$. A point in a failure set has zero distance to that set, so positivity excludes each failure. All six predicates therefore hold and Definition~\ref{def:cop} gives membership. Positive raw witness numbers alone would not justify the premise that the calibrated budget is positive.
 \end{proof}
 
 The theorem does not say that arbitrary perturbations are harmless. It says that the criterion is robust exactly to the extent that the witness margins remain positive. Approximation is bounded by the invariant budget, not by wishful continuity.

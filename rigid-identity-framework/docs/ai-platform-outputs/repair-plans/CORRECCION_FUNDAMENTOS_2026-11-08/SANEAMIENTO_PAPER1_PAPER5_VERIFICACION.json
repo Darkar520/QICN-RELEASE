@@ -1,0 +1,1485 @@
+{
+  "base_commit": "426ee6b1bd4018b0ea9e522a036a5e78656ae1e5",
+  "phase": "foundational sanitation I/V",
+  "evidence_directory": "E:/QICN-PRESERVACION/2026-11-11-saneamiento-p1-p5",
+  "preregistration_sha256": "1e1fb4828dcf0e42dba1d73d7816fcbb608179ceb76408dfc72fb6d76793de14",
+  "prospective_addendum_sha256": "5f54b12a02b6ffbf862749689b64ce6be44262dc80fd1c510e99106923ac131d",
+  "quality": {
+    "baseline_registry": 868,
+    "registry": 870,
+    "preserved_unmodified_formal_entries": 843,
+    "changed_ids": [
+      "paper1:corollary:cor-identity-forcing",
+      "paper1:definition:def-coexist",
+      "paper1:definition:def-degeneracy",
+      "paper1:definition:def-mir",
+      "paper1:example:ex-minimal-ccr",
+      "paper1:example:ex-symbolic-ccr",
+      "paper1:lemma:lem-bridge-identity",
+      "paper1:proposition:minimal-ccr-is-non-degenerate-and-rigid-l1301",
+      "paper1:proposition:prop-nonlocality",
+      "paper1:remark:remark-l1179",
+      "paper1:remark:remark-l1318",
+      "paper1:theorem:thm-collapse",
+      "paper1:theorem:thm-noalt",
+      "paper1:theorem:thm-noprogressive",
+      "paper1:theorem:thm-nosemigroup",
+      "paper1:theorem:thm-uniqueness",
+      "paper5:corollary:cor-biology",
+      "paper5:definition:def-eqdatum",
+      "paper5:definition:def-equiv",
+      "paper5:lemma:lem-decoder-transport",
+      "paper5:lemma:lem-support-transfer",
+      "paper5:proposition:prop-margins",
+      "paper5:proposition:prop-transport",
+      "paper5:theorem:thm-stability",
+      "paper5:theorem:thm-substrate"
+    ],
+    "new_ids": [
+      "paper5:definition:def-transport-calibration",
+      "paper5:remark:rem-sector-nontransfer"
+    ],
+    "preserved_tex_sources": 21,
+    "lean_modules": 27,
+    "lean_theorems": 186,
+    "formal_counts": {
+      "paper1/main.tex": {
+        "before": {
+          "theorem": 18,
+          "lemma": 4,
+          "proposition": 12,
+          "corollary": 8,
+          "definition": 27,
+          "hypothesis": 3,
+          "example": 5,
+          "proof": 34
+        },
+        "after": {
+          "theorem": 18,
+          "lemma": 4,
+          "proposition": 12,
+          "corollary": 8,
+          "definition": 27,
+          "hypothesis": 3,
+          "example": 5,
+          "proof": 34
+        },
+        "all_old_labels_preserved": true
+      },
+      "paper5_operational_consciousness/main.tex": {
+        "before": {
+          "theorem": 16,
+          "lemma": 2,
+          "proposition": 39,
+          "corollary": 4,
+          "definition": 28,
+          "hypothesis": 0,
+          "example": 0,
+          "proof": 61
+        },
+        "after": {
+          "theorem": 16,
+          "lemma": 2,
+          "proposition": 39,
+          "corollary": 4,
+          "definition": 29,
+          "hypothesis": 0,
+          "example": 0,
+          "proof": 61
+        },
+        "all_old_labels_preserved": true
+      }
+    },
+    "phrase_propagation": {
+      "This does not exclude arbitrary set injections": {
+        "baseline": 0,
+        "source": 1,
+        "monolithic": 1
+      },
+      "This is prefix reconstruction, not temporal attraction": {
+        "baseline": 0,
+        "source": 1,
+        "monolithic": 1
+      },
+      "Neither invariant-margin preservation nor equality of operational partitions": {
+        "baseline": 0,
+        "source": 1,
+        "monolithic": 1
+      },
+      "No automatic transfer without the sector": {
+        "baseline": 0,
+        "source": 1,
+        "monolithic": 1
+      }
+    },
+    "chapters": 12,
+    "pdfs": {
+      "paper1/main.pdf": {
+        "pages": 27,
+        "sha256": "18664afde4578d44d6cedcacb4e94d0c6e1dc68aca4eec71fe9cdbed76b48ccb",
+        "overfull": 3,
+        "underfull": 0
+      },
+      "paper5_operational_consciousness/main.pdf": {
+        "pages": 40,
+        "sha256": "ae2d37a71019d659536387590f9b4abdecf8a4ef2565bc7994def0c4f9714ece",
+        "overfull": 4,
+        "underfull": 10
+      },
+      "monolithic/QICN_MONOLITHIC.pdf": {
+        "pages": 399,
+        "sha256": "81f96ec964ad37a3be11b0e7ab0290d44793947fb442492f09b6134aaa9de9dd",
+        "overfull": 4,
+        "underfull": 334
+      }
+    },
+    "verdicts": {
+      "25": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "26": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "27": "BLOCKED_MULTIPLE_GATES",
+      "28": "BLOCKED_MULTIPLE_GATES",
+      "30": "BLOCKED_MULTIPLE_GATES",
+      "31": "BLOCKED_FOUNDATION_FIRST_GATES"
+    },
+    "external_support_certified": false
+  },
+  "gates": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.56
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.28
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0,
+      "seconds": 1.34
+    },
+    {
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0,
+      "seconds": 67.3
+    },
+    {
+      "name": "math",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:math"
+      ],
+      "exit": 0,
+      "seconds": 208.75
+    },
+    {
+      "name": "corpus",
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "exit": 0,
+      "seconds": 0.38
+    },
+    {
+      "name": "macros",
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "exit": 0,
+      "seconds": 0.14
+    }
+  ],
+  "compilation": [
+    {
+      "name": "paper1-first",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.73
+    },
+    {
+      "name": "paper1-biber",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 7.34
+    },
+    {
+      "name": "paper1-second",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.12
+    },
+    {
+      "name": "paper1-third",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 4.78
+    },
+    {
+      "name": "paper5_operational_consciousness-first",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 7.16
+    },
+    {
+      "name": "paper5_operational_consciousness-biber",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 6.72
+    },
+    {
+      "name": "paper5_operational_consciousness-second",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.72
+    },
+    {
+      "name": "paper5_operational_consciousness-third",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 7.42
+    },
+    {
+      "name": "monolithic-command",
+      "command": [
+        "node",
+        "scripts/build-monolithic-volume.js",
+        "--compile"
+      ],
+      "exit": 0,
+      "seconds": 100.22
+    }
+  ],
+  "lean": {
+    "passed": true,
+    "external_support_certified": false,
+    "steps": [
+      {
+        "name": "version",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "--version"
+        ],
+        "exit": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "builtin-library",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "--print-libdir"
+        ],
+        "exit": 0,
+        "seconds": 0.11
+      },
+      {
+        "name": "pin-mathlib",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\mathlib",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.11
+      },
+      {
+        "name": "pin-plausible",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\plausible",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.16
+      },
+      {
+        "name": "pin-LeanSearchClient",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\LeanSearchClient",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "pin-importGraph",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\importGraph",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.11
+      },
+      {
+        "name": "pin-proofwidgets",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\proofwidgets",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "pin-aesop",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\aesop",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "pin-Qq",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Qq",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.16
+      },
+      {
+        "name": "pin-batteries",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\batteries",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.11
+      },
+      {
+        "name": "pin-Cli",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Cli",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "kernel-QICNLean.Basic",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\Basic.olean",
+          "QICNLean\\Basic.lean"
+        ],
+        "exit": 0,
+        "seconds": 18.22
+      },
+      {
+        "name": "kernel-QICNLean.QICNContraction",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNContraction.olean",
+          "QICNLean\\QICNContraction.lean"
+        ],
+        "exit": 0,
+        "seconds": 22.91
+      },
+      {
+        "name": "kernel-QICNLean.QICNHilbertInstance",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNHilbertInstance.olean",
+          "QICNLean\\QICNHilbertInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 25.38
+      },
+      {
+        "name": "kernel-QICNLean.QICNConvexProjection",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNConvexProjection.olean",
+          "QICNLean\\QICNConvexProjection.lean"
+        ],
+        "exit": 0,
+        "seconds": 31.19
+      },
+      {
+        "name": "kernel-QICNLean.QICNAttractorCompact",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNAttractorCompact.olean",
+          "QICNLean\\QICNAttractorCompact.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.59
+      },
+      {
+        "name": "kernel-QICNLean.QICNAttractorConcrete",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNAttractorConcrete.olean",
+          "QICNLean\\QICNAttractorConcrete.lean"
+        ],
+        "exit": 0,
+        "seconds": 23.81
+      },
+      {
+        "name": "kernel-QICNLean.QICNNonCollapse",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNNonCollapse.olean",
+          "QICNLean\\QICNNonCollapse.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.27
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5Derivation",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNH5Derivation.olean",
+          "QICNLean\\QICNH5Derivation.lean"
+        ],
+        "exit": 0,
+        "seconds": 28.45
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5Convex",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNH5Convex.olean",
+          "QICNLean\\QICNH5Convex.lean"
+        ],
+        "exit": 0,
+        "seconds": 20.8
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5ConvexExclusion",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNH5ConvexExclusion.olean",
+          "QICNLean\\QICNH5ConvexExclusion.lean"
+        ],
+        "exit": 0,
+        "seconds": 23.33
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5QuotientDynamics",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNH5QuotientDynamics.olean",
+          "QICNLean\\QICNH5QuotientDynamics.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.53
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5QuotientDisplacement",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNH5QuotientDisplacement.olean",
+          "QICNLean\\QICNH5QuotientDisplacement.lean"
+        ],
+        "exit": 0,
+        "seconds": 39.05
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5UnilateralBridge",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNH5UnilateralBridge.olean",
+          "QICNLean\\QICNH5UnilateralBridge.lean"
+        ],
+        "exit": 0,
+        "seconds": 25.94
+      },
+      {
+        "name": "kernel-QICNLean.QICNSInstance",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNSInstance.olean",
+          "QICNLean\\QICNSInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 28.19
+      },
+      {
+        "name": "kernel-QICNLean.QICNSCoupledInstance",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNSCoupledInstance.olean",
+          "QICNLean\\QICNSCoupledInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 23.08
+      },
+      {
+        "name": "kernel-QICNLean.QICNRotationSpectral",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNRotationSpectral.olean",
+          "QICNLean\\QICNRotationSpectral.lean"
+        ],
+        "exit": 0,
+        "seconds": 25.2
+      },
+      {
+        "name": "kernel-QICNLean.QICNCoupledSplitMargin",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNCoupledSplitMargin.olean",
+          "QICNLean\\QICNCoupledSplitMargin.lean"
+        ],
+        "exit": 0,
+        "seconds": 34.28
+      },
+      {
+        "name": "kernel-QICNLean.QICNCoupledSplitMarginUniversal",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNCoupledSplitMarginUniversal.olean",
+          "QICNLean\\QICNCoupledSplitMarginUniversal.lean"
+        ],
+        "exit": 0,
+        "seconds": 29.55
+      },
+      {
+        "name": "kernel-QICNLean.QICNProjectiveTransport",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNProjectiveTransport.olean",
+          "QICNLean\\QICNProjectiveTransport.lean"
+        ],
+        "exit": 0,
+        "seconds": 2.22
+      },
+      {
+        "name": "kernel-QICNLean.QICNObservationBudget",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNObservationBudget.olean",
+          "QICNLean\\QICNObservationBudget.lean"
+        ],
+        "exit": 0,
+        "seconds": 2.51
+      },
+      {
+        "name": "kernel-QICNLean.QICNFiniteP4",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNFiniteP4.olean",
+          "QICNLean\\QICNFiniteP4.lean"
+        ],
+        "exit": 0,
+        "seconds": 2.22
+      },
+      {
+        "name": "kernel-QICNLean.QICNMetricFronts",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNMetricFronts.olean",
+          "QICNLean\\QICNMetricFronts.lean"
+        ],
+        "exit": 0,
+        "seconds": 18.33
+      },
+      {
+        "name": "kernel-QICNLean.QICNFiniteFronts",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNFiniteFronts.olean",
+          "QICNLean\\QICNFiniteFronts.lean"
+        ],
+        "exit": 0,
+        "seconds": 22.36
+      },
+      {
+        "name": "kernel-QICNLean.QICNBodyWorldDynamics",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNBodyWorldDynamics.olean",
+          "QICNLean\\QICNBodyWorldDynamics.lean"
+        ],
+        "exit": 0,
+        "seconds": 36.81
+      },
+      {
+        "name": "kernel-QICNLean.QICNBodyWorldFinite",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNBodyWorldFinite.olean",
+          "QICNLean\\QICNBodyWorldFinite.lean"
+        ],
+        "exit": 0,
+        "seconds": 52.0
+      },
+      {
+        "name": "kernel-QICNLean.QICNBodyWorldEvaluation",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean\\QICNBodyWorldEvaluation.olean",
+          "QICNLean\\QICNBodyWorldEvaluation.lean"
+        ],
+        "exit": 0,
+        "seconds": 38.61
+      },
+      {
+        "name": "kernel-QICNLean",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\kernel-objects-_iw3jg9e\\QICNLean.olean",
+          "QICNLean.lean"
+        ],
+        "exit": 0,
+        "seconds": 26.47
+      },
+      {
+        "name": "axioms",
+        "command": [
+          "C:/Users/irisp/.elan/toolchains/leanprover--lean4---v4.31.0/bin/lean.exe",
+          "-j",
+          "1",
+          "E:\\QICN-PRESERVACION\\2026-11-11-saneamiento-p1-p5\\workspace\\.cache\\qicn-lean\\AuditAxioms.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.27
+      }
+    ],
+    "lean": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+    "mode": "kernel-only",
+    "modules": [
+      {
+        "source": "QICNLean/Basic.lean",
+        "sha256": "265e4023cec03dc33bd91c90e5f6072420e4eb0ecae2dffa8b66b01489db8acb",
+        "olean_sha256": "f13c1a9739720af34a4c00c0c337998c9f706dd708817f6af89104c4203371b1"
+      },
+      {
+        "source": "QICNLean/QICNAttractorCompact.lean",
+        "sha256": "d97969baa1736963790e009f6368e4d81f34c3447e5c5d45ff97268e9b1d8347",
+        "olean_sha256": "54abd2b7fe1e99f608a45b499494b6b3ec62bf1ddafe9594cb79885be646b58d"
+      },
+      {
+        "source": "QICNLean/QICNAttractorConcrete.lean",
+        "sha256": "2b6e7419ad365e3633a91489c05b912dd7b8d36649d1db18915c91ac3d44011e",
+        "olean_sha256": "3b08cc1f2ab12d43f4f4bd377d9a369d8e7cf95ad4848830498e6a056c989a96"
+      },
+      {
+        "source": "QICNLean/QICNBodyWorldDynamics.lean",
+        "sha256": "9d85f3aa62788c491d0357c25a15507fa3a029854ea3b7f2446e649709df68f9",
+        "olean_sha256": "3155968c186153c9f89945ade1d1f0d3fb7d2afeca5c24f19c899a394a6ac002"
+      },
+      {
+        "source": "QICNLean/QICNBodyWorldEvaluation.lean",
+        "sha256": "aca064433f09a94e8f2c269b4e3d0e7a80891232974964e6202529dcf16e55e3",
+        "olean_sha256": "d5262cfd75aad0589dbc9b534963c0c583cdc51397e58647b31b2f867a57ca86"
+      },
+      {
+        "source": "QICNLean/QICNBodyWorldFinite.lean",
+        "sha256": "92b167161f9f5834649ea8071deac7efc7644febb6984438969e01cde6c13c02",
+        "olean_sha256": "0b0444650ef8a86f829fca388f87a242d19ddd4b5bb8d788cc8784045584dc3f"
+      },
+      {
+        "source": "QICNLean/QICNContraction.lean",
+        "sha256": "ec5d490b26402faa7095ea42ef646700a4f67fc91af3330e7cb55a0839becbec",
+        "olean_sha256": "cfeca4eb362b8ce255b6f40a1514e17f550c0f949e756ac34ac0264fbd423ae4"
+      },
+      {
+        "source": "QICNLean/QICNConvexProjection.lean",
+        "sha256": "cef90e049c0ffdd6b2eaacdc8794eb4ce4740b11c489d2aff909229623dad052",
+        "olean_sha256": "1bad6a5b298ac06174c1b713fe774f2022b94b77bbcdc58484e38299cab5f673"
+      },
+      {
+        "source": "QICNLean/QICNCoupledSplitMargin.lean",
+        "sha256": "a693929e8911ccda76952a5d6766bc443a58ff50d8ae07924b7f54e1d4a9bdd8",
+        "olean_sha256": "1fd981856ab64ac69fd253580115b0b80dd4c7d027f9c7acf9b43fc7f38a4d65"
+      },
+      {
+        "source": "QICNLean/QICNCoupledSplitMarginUniversal.lean",
+        "sha256": "dc19e27f6ea203cf4b5b293dc3b6927f4e451976516ec7f8a213d56aaec6a3d9",
+        "olean_sha256": "4d169ed3ead605df37cf980de7e6aec1efe38e621ee6947c51e67cc9225f8055"
+      },
+      {
+        "source": "QICNLean/QICNFiniteFronts.lean",
+        "sha256": "752c0c32bd402f13eb23eb1726d39abb250912ce7d4d216608d2fd6f6008722e",
+        "olean_sha256": "722a0184c8cd2f636200af99e72550becdda6596b1798cc4fe3cb025a2e2d8e8"
+      },
+      {
+        "source": "QICNLean/QICNFiniteP4.lean",
+        "sha256": "a5028368b21eb31c654062cd12e905bf0ec67828a3218d4d89d86aa679fa1457",
+        "olean_sha256": "b1b3959cb304f806d2c53df17358de718f08c40d190838a3e2f961fdaf6f9c0e"
+      },
+      {
+        "source": "QICNLean/QICNH5Convex.lean",
+        "sha256": "bd399b7532f22fb5f67e46ff914d54ec9f78f3283744118cd4fcfd30adfb1e3d",
+        "olean_sha256": "bb7c7feb0291c35ad23ded3483abede1324a86d68a0278e40884d6576e781b04"
+      },
+      {
+        "source": "QICNLean/QICNH5ConvexExclusion.lean",
+        "sha256": "73897ed07d2793708136fb3f1fb410e359c8b7772aebc7a32b170b281276033e",
+        "olean_sha256": "84e58d0720ed3851f3e8fb46b088a60ffe443a511867bf4607430b22cb2cd1a3"
+      },
+      {
+        "source": "QICNLean/QICNH5Derivation.lean",
+        "sha256": "b60d6b6d75d6a0959cd0d2a314b18e75d36071df6a0400a68806a0046ae6c847",
+        "olean_sha256": "6ae19a79454513355a820e55f9bf0d24df8647a989a769959789173b52613abe"
+      },
+      {
+        "source": "QICNLean/QICNH5QuotientDisplacement.lean",
+        "sha256": "0dc27605b05d69e9f9cce773e5b020643881917587388bdf0ed2f56859f6452f",
+        "olean_sha256": "a904726560c82ef4edc74761974a7340268345cb2366baa94d5410a56f061dc2"
+      },
+      {
+        "source": "QICNLean/QICNH5QuotientDynamics.lean",
+        "sha256": "50e82e66b27e11a7152a7499bc2a6632f844b1bf5d507710d4e695b74e14897f",
+        "olean_sha256": "4dfe02243764080ee275de07575f8710b9c9330780ed7144b17dfe19c465d241"
+      },
+      {
+        "source": "QICNLean/QICNH5UnilateralBridge.lean",
+        "sha256": "6e9518702d025ff6f528b530222139bc554aaaef04aa63b8513a8e23b46272db",
+        "olean_sha256": "4d865fd89bf4fd8a44cabc8d50728e19781c81f110fc34c53aa496b73c1222d0"
+      },
+      {
+        "source": "QICNLean/QICNHilbertInstance.lean",
+        "sha256": "e3f6d71d9e5b2b3a392a2e3d8d2313854475b69f40733015b48239726a8c6164",
+        "olean_sha256": "91a9f98f8b15052b293b8955b99a2e3e4535dc44695f3d6c26140c21b028ad7e"
+      },
+      {
+        "source": "QICNLean/QICNMetricFronts.lean",
+        "sha256": "15fc7b6dc0a4ef42e5bff004ad48b612161c9927bd3523f0bd558b8ff32ebf37",
+        "olean_sha256": "ea1a7577940b3e1684bb4d8329564e47331dc719ab38b15cb0aa010b9ba5d22e"
+      },
+      {
+        "source": "QICNLean/QICNNonCollapse.lean",
+        "sha256": "05dd49375f72fa7c3df8fc9ce850ed64126c8c0549bd412e3541e40f21cfd781",
+        "olean_sha256": "8d06b78d4f96a511aad518ed9c7663fcbfdfe56108f9f0ee2b4f11eb0a8334e4"
+      },
+      {
+        "source": "QICNLean/QICNObservationBudget.lean",
+        "sha256": "f547fc9e350cf8d73aaa76eb383c5660b4d73a36cba5b3eabf491a71d2ccea5b",
+        "olean_sha256": "6ccc3e3a3f487518e986a7ab1c65aeafbd4f050c282c1282ea5573f21a967bc8"
+      },
+      {
+        "source": "QICNLean/QICNProjectiveTransport.lean",
+        "sha256": "db8ba27b670059da01759d445ed1453ce510c8cba2b9d574a9df9147b2fdf70e",
+        "olean_sha256": "ce478fbb0f5b2a8d8693fc119337843ef46fc6447efce486868aaa748a417ea5"
+      },
+      {
+        "source": "QICNLean/QICNRotationSpectral.lean",
+        "sha256": "5300efa09f00952ea33106108a4c3d01fe7f3ac1362ad6ab35a9d2466189eaec",
+        "olean_sha256": "4de9c265729880a5fdfb8654a7148206d3d92b36f171be478a2957ab461f7e31"
+      },
+      {
+        "source": "QICNLean/QICNSCoupledInstance.lean",
+        "sha256": "19cc301d09241987d3bcd08907727f9d8d3ffdfdd3ab7eb799bb385acc69b9e4",
+        "olean_sha256": "15024b9c67e6e8882fca002d53fa45679bfbc152a40eb73db48c5690f90b27e1"
+      },
+      {
+        "source": "QICNLean/QICNSInstance.lean",
+        "sha256": "9bb45dcfbe4f5a71bb3e8112d5b5ad958951aabd28e3c7bf2f80927c78ae67f0",
+        "olean_sha256": "f8f5b4cb0fd96c7aba3b9e93a6266132c1bff670ce024c7e08250b41d7b58ea1"
+      },
+      {
+        "source": "QICNLean.lean",
+        "sha256": "8f1d9e9b6a4db16ec3f6b400c07a8a98d46fe34f1b9978aec56744d3f319c9dc",
+        "olean_sha256": "64751b91d34311c921b55a0be36b08ff46551a179c91b7970f83a9b29b6a6eeb"
+      }
+    ],
+    "source_modules": 27,
+    "public_theorems_audited": 186,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "scope": "Kernel build of the declared project and public theorem dependency audit. Private lemmas are compiled and checked through their sources/dependents. This does not formalize every manuscript claim, certify novelty, or supply external empirical validation."
+  },
+  "new_foundational_repairs_mechanized_in_lean": false,
+  "frozen_files": [
+    {
+      "file": "corpus/pdf_release/manifest.json",
+      "sha256": "85e6bf6af301b6a5b5b02b870ce60dfe2d49f7eb22a7159c6167f61651f5a70d"
+    },
+    {
+      "file": "corpus/pdf_release/manifest.sha256.txt",
+      "sha256": "e53da78d1606fba0d6b866ca2aca2118829f116a62815f31f6688fddefd8391d"
+    },
+    {
+      "file": "corpus/pdf_release/pdf_corpus.zip",
+      "sha256": "f5a826a7739037ae1f68d3dbba7b93c190cfe37f5f49e2bb64f8d59c913523ae"
+    },
+    {
+      "file": "corpus/pdf_release/pdf_corpus.zip.sha256.txt",
+      "sha256": "bb7f595817b22796b01b40e8f81f648f5a26519d071770e2eeb5a2b5694a455e"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf",
+      "sha256": "e57194de090c7672d69a35adec316cecfe5467f079041c78b794e6c38fd22b28"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6__1e1b2ec217a514f7.pdf",
+      "sha256": "97769050eb1f180804e9f202ec9a4e6f9a8fecdeed4cbd5f319a89c7ee015076"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf",
+      "sha256": "97a724df0ab8afa7f4cf0400ad3bb005152cd427753c0aac59cd86b9807e18a2"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf",
+      "sha256": "1029f2bec421ad596c1f692ecd871bed029bbc94c32fac3a38b9e3dc2696e482"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf",
+      "sha256": "81710282a74890579320c899572d3c879f7ef0780e195c617c1cd554e1ea65d1"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf",
+      "sha256": "62bb07b98035f7542c4542209513a1df0550dc6c831c028d27b5c72c767a2246"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730.pdf",
+      "sha256": "1d4f19a3e8816772efa57f54f8d9dbcb0f996181d5f0555cef6a52e8726e6942"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf",
+      "sha256": "754e421c96cb30f40fc74f07ffbbfc265b98f71f27a07a40026f094a5141835f"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b933892715a.pdf",
+      "sha256": "4a531535707c914dfe990c3d773288ed038f302f9d83f5d0ff68b9e9ceb0f181"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf",
+      "sha256": "20cf3c1eb76b85926e3d333b98558f7d0c751d8aca5050c9120a499ffe728efd"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf",
+      "sha256": "b4fad95e7a43611556ba89ada8ad31e6d4258412aaa8cc8da6b7ce9c5d8b706f"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/basecore_active__22e6f0b127df916b.pdf",
+      "sha256": "4e3ae62300371f63a3d1c292cbc247946f6f68528a55224a92764dcea91700a2"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d1cc6abf9c8c70.pdf",
+      "sha256": "05b6ad06d442b1f9429d0f83a15f33e538628d9cdb3e1007dee52f812af7ac44"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/canonical_core_74be3e__eead218e079c0ad2.pdf",
+      "sha256": "7e188a05a621517b955ecaaaefd9d0f2a40b6c8b6bfd7ee6d1767e1251f40ec9"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf",
+      "sha256": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf",
+      "sha256": "6c43f183bda6e1945c25af4b43053b19ba42e8e155cbf8e2abe8526064008b89"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/canonical_core_legacy_package__f37b3e3e96f89b1a.pdf",
+      "sha256": "8daa7bc939086cb429cb566bf70f4515bc773151b5246d672e4a42d7c5544ffb"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf",
+      "sha256": "bca3c1bdbd786ebd13dc65af25ed4c63f6c1fa66b4448c237300d30f01224ebd"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/paper9_phenomenal_bridge_organization__565acddf4d96cb0f.pdf",
+      "sha256": "efc3a8ffb6620af5ffd7bbd13becdc3eb2848a2b49f1dbb3b8028d25fc9713e6"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/phenomenological_instability_2fe669__0b013024c06a2f7d.pdf",
+      "sha256": "8f6037540b743b5abfef90e0eba7bf588111350f1cff50a730cdec666cfa5163"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/phenomenological_instability__04b40ecc9376767e.pdf",
+      "sha256": "31030ffc92201f86c06d463af37ae3431b4463f21ce1762df48ec8fd8ca938c3"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/phenomenological_regimes_529d6b__39860a8a5035ed82.pdf",
+      "sha256": "b0819508b3a38c35b28839d254ccc961604d3e798449bd356918075de6520452"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/phenomenological_regimes__9dab69286f9e9107.pdf",
+      "sha256": "7e3d5fdd494f7919320f9e27177e2381c89e23cc4c735d4aa001c38b350aa72e"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/rigid_identity_paper_8925ec__bb0cda8022f6c8ac.pdf",
+      "sha256": "c9e55f8f588d2bcb1ca4e55d97d2272d5ba0f9d7bf61199ac97e4ef684cf3c58"
+    },
+    {
+      "file": "corpus/pdf_release/pdfs/rigid_identity_paper__3e026c9275c59788.pdf",
+      "sha256": "7e014482f0cd9abfac1bac8e88eaa29196ce0299951c80f7afe45c180f17f578"
+    },
+    {
+      "file": "release/BLUEPRINT_EDITORIAL.md",
+      "sha256": "586c7c75c5bd211c79155c3a6f75f99938bbdf3877f5674932fdf6f01b57d6b6"
+    },
+    {
+      "file": "release/CANON_MAP.v1.json",
+      "sha256": "b87f6cf1aefd4ec341716925d09f948d8eb095f39af9738aed1c39d324bcc477"
+    },
+    {
+      "file": "release/CROSSPAPER_LINKMAP.v1.json",
+      "sha256": "59f54c9ea394c5b53f80074bcf2f1f47b42fd4fa986520399a8cbd798bc2db56"
+    },
+    {
+      "file": "release/EDITORIAL_BLUEPRINT_ACTIONS.v1.md",
+      "sha256": "3bffbc15dd6e9eccfd274c03a16cc4bf58765bf03a41cd944877890948cb702b"
+    },
+    {
+      "file": "release/FREEZE_AUDIT_v1/commands_run.txt",
+      "sha256": "91a80146694b14653cb2d3e29981736a58f7ba3f5ea3fe0d03d223ca4a0612bf"
+    },
+    {
+      "file": "release/FREEZE_AUDIT_v1/git_log_1.txt",
+      "sha256": "a18fb869379973b573be6e1e49a19512f01babb21d3f748bb9435cebebfb3abd"
+    },
+    {
+      "file": "release/FREEZE_AUDIT_v1/git_status.txt",
+      "sha256": "a35bf41c043f2352b36612efc38b15567a8738fc6868c18cfec187139022d41c"
+    },
+    {
+      "file": "release/FREEZE_AUDIT_v1/git_tags.txt",
+      "sha256": "dde99e981f39d7c8168855b78ac9dff3c9556e25720d59a7152911e3807db6d0"
+    },
+    {
+      "file": "release/FREEZE_AUDIT_v1/integrity_check.json",
+      "sha256": "4f9bd5fe92c47abe5e283dbd3d44ca917a875e98e389a667bf128e17b2182a1b"
+    },
+    {
+      "file": "release/GLOSSARY_CANONICAL.v1.md",
+      "sha256": "326169bbad644f2c98a0c9b00e8bf83851d6668fe5aabe33ffafa8b979cf2f1a"
+    },
+    {
+      "file": "release/INDEX_PDFS.json",
+      "sha256": "67f39c2a54e0f0f1afccf40ca20b81078a1d8b8c59f4b278ba8c1d60782a6b0f"
+    },
+    {
+      "file": "release/METHODS_GOVERNANCE_HUB.v1.md",
+      "sha256": "c38007b69f3cd88e8bb715e7065d54dc2ca190e83dd7949ac822735bba2e69b2"
+    },
+    {
+      "file": "release/RELEASE_MAP.md",
+      "sha256": "81ec42bdd982464c3c0ea887a9063e8fbe35434f9d0b517b932c85afc439663e"
+    },
+    {
+      "file": "release/STYLE_DISCLAIMER_POLICY.v1.md",
+      "sha256": "4cadc573071533e497de714d718191ee64f8673f10d9176b6bebb85ad1fb1526"
+    },
+    {
+      "file": "release/SUMMARY.json",
+      "sha256": "5bcbce3838490745fab28fbddb76b66778df332384146db7516e0c4327989d16"
+    },
+    {
+      "file": "release/TERM_MIGRATION_PLAN.v1.md",
+      "sha256": "613372127d39a4a7844780cea9dd273bd64ca991be2b6ef3e38f9d5e9c204e1d"
+    },
+    {
+      "file": "release/_non_canonical/README.md",
+      "sha256": "f5c595d0db2d6d766b800aae11c34edba50d00e6e44ba8eacaa74380a8a7ebac"
+    },
+    {
+      "file": "release/canon_manifest.v1.json",
+      "sha256": "963d3ce2f317c45d725432cce2bc0f4f35fb149ab626897ca318b2f30a1dddc9"
+    },
+    {
+      "file": "release/claim_registry.v1.json",
+      "sha256": "d10cd94fb82767a8fd7a390679d17a72132782de4e2a2bfe613b882a07e060cb"
+    },
+    {
+      "file": "release/commands_run.txt",
+      "sha256": "72a27e245beb06a74cef03f0c96d69838ab56d3fcf51458aa7aa2088f926a35c"
+    },
+    {
+      "file": "release/editorial_audit_v1/EXEC_SUMMARY.md",
+      "sha256": "b7486046e9677d0a1c586bd03257e3d2d2807030dbd3c31404d22d6f686b0f48"
+    },
+    {
+      "file": "release/editorial_audit_v1/anthropomorphic_terms_report.json",
+      "sha256": "5de00ecffc8787d4f79686b01910d0caec6cc368294e2ab48c95b46e04273fa2"
+    },
+    {
+      "file": "release/editorial_audit_v1/anthropomorphic_terms_report.md",
+      "sha256": "136ca0429ecf1daa5b2614a357ada94dbfccf99fe55afceaa4b8ce570564c0ae"
+    },
+    {
+      "file": "release/editorial_audit_v1/doc_inventory.json",
+      "sha256": "42e7f592471678476412833aadb983213b28bbc4bc193245065c5084b620337f"
+    },
+    {
+      "file": "release/editorial_audit_v1/doc_inventory.md",
+      "sha256": "76ca08d6dc5608d7b290ea14eb2643e48589d2b0cbdf8ccdc0f97346943c5c6e"
+    },
+    {
+      "file": "release/editorial_audit_v1/methods_coverage_table.csv",
+      "sha256": "c3be650fe16814f3d66dd13f0a2e7773359e0ab2eb25218867fb15584fc05de2"
+    },
+    {
+      "file": "release/editorial_audit_v1/methods_coverage_table.md",
+      "sha256": "f36bad6f3b94fe660473bc71617ecdde5ab87fb4aa61cbacf1d3bc52fe8ca2b1"
+    },
+    {
+      "file": "release/editorial_audit_v1/methods_mentions_index.json",
+      "sha256": "2991281cff697279595489399f82f4080bed63edd40efefc3f288ab909780c44"
+    },
+    {
+      "file": "release/editorial_audit_v1/methods_mentions_index.md",
+      "sha256": "9e511dec5bc0f1dbd801588d0e2b21f8353111fdc032ab3b030df54382fe36ef"
+    },
+    {
+      "file": "release/editorial_audit_v1/primary_supporting_map.json",
+      "sha256": "d8c96ac1d7b75a5140c6feded9cc9507d459319675f68e3a27ca32603387ae39"
+    },
+    {
+      "file": "release/editorial_audit_v1/primary_supporting_map.md",
+      "sha256": "025573bc18885bab36b30564507203232b427f1c3f59da950313999209afb89b"
+    },
+    {
+      "file": "release/editorial_audit_v1/q_t_candidate_evidence.json",
+      "sha256": "17d18ed6f53ad3eef29fe7ebd3bb699e486b16658bf80803275d44e0afbd4f34"
+    },
+    {
+      "file": "release/editorial_audit_v1/q_t_candidate_evidence.md",
+      "sha256": "e04414154ef50678cbf5010dabdb9f3ff8b67138a2c4224db9c26b35aae42d83"
+    },
+    {
+      "file": "release/layer_boundaries.v1.json",
+      "sha256": "51b66d186e258f79f893ca6d5d2aa7bf0a8e2f272bbe5c5de2c05183aaf7bc92"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/PR_QO_plan_v1.md",
+      "sha256": "a9a779d2f28621450fcada6a3bf055fd1db3f8963755efd6031232f792c731b6"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/QO_claim_registry.md",
+      "sha256": "1ddfcc1b13a4d58fb2d3ec1effa40bee98351934aa97837a6173151a89f6ac63"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/QO_spec_v1.json",
+      "sha256": "6e2c3175d7fb2070127462f54e6914126f28d594a6a38816165cd6046812cbc7"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/QO_spec_v1.md",
+      "sha256": "37b873d3329d8706b45bbf7dcb5627d74e63eb23b3c879bb27eb241d4eddf28b"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/editorial_insertion_plan.md",
+      "sha256": "e57f447572a507fb7df744996e7565bc6def9acd7985f90cbaad9afb1e56b45b"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/methods_mapping_table.csv",
+      "sha256": "3632070f23438bd09ef6f229ac71ac08df0c6bbbea07b112de29e39707645bd2"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/methods_mapping_table.md",
+      "sha256": "a17f2e6de994f58b1dfd3bb3a828e12cac01cd980eeac48830f1388b3943b414"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/papers_inventory.json",
+      "sha256": "46364d30fa4e1293961814e38c4a0492175ae3f5f6f8efe96d603532802d212d"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/papers_inventory.md",
+      "sha256": "81985dabdc7ebe303f38f10381d3107445a5fedb0f609a268e539e85f8228b50"
+    },
+    {
+      "file": "release/qualia_qo_planning_v1/summary.md",
+      "sha256": "97cebb72bf19f493af0131a0dd404d2a2fe217688b0e3aa111071b3ee52326fe"
+    },
+    {
+      "file": "release/references.bib",
+      "sha256": "ab8059bc27032689edc271a909681d1e39709f877961a2f3c96d8e9120beb54a"
+    },
+    {
+      "file": "release/release_freeze_manifest.json",
+      "sha256": "6a4922f447f476ea4ddca1408dd3bcde5c7a235a3bb6eddaad970b815efe3c69"
+    },
+    {
+      "file": "release/system_interface_boundary.v1.json",
+      "sha256": "a79d82550086506cf13d24c743bbd530317fa223d76bd9c447a04fcc7f97adf7"
+    }
+  ],
+  "external_support_certified": false,
+  "limitations": [
+    "Synthetic finite controls are not a proof of infinite claims.",
+    "The six halfspace radii are not an instantiation of the six original predicates.",
+    "Positive global calibration radii for the tower are not certified.",
+    "R0 necessity, product atomicity and channel-map injectivity remain bounded classical debt.",
+    "Independent scientific review and external data are pending."
+  ],
+  "verified_source_hashes": [
+    {
+      "file": "paper1/main.tex",
+      "sha256": "d69115f5cd381f406661f39c577bf5cdb68be9292f8266b4b403a0ce0de6ccc7"
+    },
+    {
+      "file": "paper5_operational_consciousness/main.tex",
+      "sha256": "8598e2ba037fa785bcff39d99723ffaa5fdcd87c12e9fe052f1bdedcab0f9126"
+    },
+    {
+      "file": "registry/theorems.jsonl",
+      "sha256": "cf23643aee6fe71933205d6b609e2f51c99edb82dc2af4016331488a1ffaa719"
+    },
+    {
+      "file": "scripts/verify-math-regressions.py",
+      "sha256": "d51c8bcefcbd53eede0e91d454bb024d7dc7ea2a158e2eac58babc6a468ca491"
+    },
+    {
+      "file": "docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/check_foundational_sanitation.py",
+      "sha256": "3a0b0bb7e40f2864ba22cbe50532134b3d9ab269b80a40277e2b73f5d27807e6"
+    },
+    {
+      "file": "docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/SANEAMIENTO_PAPER1_PAPER5.md",
+      "sha256": "f954048dd87d42dc51e93f03d74f6bfebf6c6316c42c478186fceb0adfd3dced"
+    },
+    {
+      "file": "docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/SANEAMIENTO_PAPER1_PAPER5_ADENDA.md",
+      "sha256": "5f54b12a02b6ffbf862749689b64ce6be44262dc80fd1c510e99106923ac131d"
+    }
+  ],
+  "evidence_log_hashes": [
+    {
+      "file": "logs/corpus.log",
+      "sha256": "7af0fb6deec55fce4b1b9ba88b0ac6eb2726a6e2d562e2e54319f0d055210634"
+    },
+    {
+      "file": "logs/full-lean-command.log",
+      "sha256": "7f550fc0a9af9d66ac651351d3b8d5a950c90fc9bc612fd6d26140e5fe830d17"
+    },
+    {
+      "file": "logs/macros.log",
+      "sha256": "5d7b3de0423a6c44b4db5a1a2067ecd1d6f79de867531eee58ad0ae86578026b"
+    },
+    {
+      "file": "logs/math.log",
+      "sha256": "1677745339f0b2a0eb6144f461fbc07c2c2b6b81d3f6e05bb155d2dcfbcbe864"
+    },
+    {
+      "file": "logs/monolith-final-comparison.log",
+      "sha256": "548b2c3a6b002c4943412a25288b2475a88173ba0195a2e7b0f850e0f770646a"
+    },
+    {
+      "file": "logs/monolithic-command.log",
+      "sha256": "d6cce25b3e7cffcaa05b8fab2f1f7e39c6bf9da4c91d1ea0d735f906e6f39b71"
+    },
+    {
+      "file": "logs/new-controls.log",
+      "sha256": "e281db7db666da6bd07158f693c15aa5394aa43c0bce435f6af01d2f133e2937"
+    },
+    {
+      "file": "logs/paper1-biber.log",
+      "sha256": "ca3150aa93bade324010660ccf3091629b058b49d909f95713725c8d114ac391"
+    },
+    {
+      "file": "logs/paper1-first.log",
+      "sha256": "6de29ca20595931ecb21f31e880bf18924847b8930f0cd07d1e7408a16a3f741"
+    },
+    {
+      "file": "logs/paper1-second.log",
+      "sha256": "6de29ca20595931ecb21f31e880bf18924847b8930f0cd07d1e7408a16a3f741"
+    },
+    {
+      "file": "logs/paper1-third.log",
+      "sha256": "6de29ca20595931ecb21f31e880bf18924847b8930f0cd07d1e7408a16a3f741"
+    },
+    {
+      "file": "logs/paper5_operational_consciousness-biber.log",
+      "sha256": "414e917a8bf283d0857a0ce6cd839f164189c7e093159d445f901b0a4676e198"
+    },
+    {
+      "file": "logs/paper5_operational_consciousness-first.log",
+      "sha256": "82e1ca333620bd3c27ad0549f82d6bebbe4c040e224427e8fc79ef4ed7ee7031"
+    },
+    {
+      "file": "logs/paper5_operational_consciousness-second.log",
+      "sha256": "cb63a043b55b1a8346dce572845501ed490534a6daa1bdc8c20ca98bee106aa2"
+    },
+    {
+      "file": "logs/paper5_operational_consciousness-third.log",
+      "sha256": "cb63a043b55b1a8346dce572845501ed490534a6daa1bdc8c20ca98bee106aa2"
+    },
+    {
+      "file": "logs/quality-final.log",
+      "sha256": "737c4e453aeb7cc7de89518d459cd4d841f5daa86777109aad005ffa9af63a58"
+    },
+    {
+      "file": "logs/release.log",
+      "sha256": "040277b2d1707b77c4511ddeb2bb30cf71d85152d8003cef3571d2fbd81b6b58"
+    },
+    {
+      "file": "logs/root-claims.log",
+      "sha256": "aa9df9ad92060389984e10e0bf4b2aca1323fa2dd78d85ae7fa99aa827c3471f"
+    },
+    {
+      "file": "logs/root-integrity.log",
+      "sha256": "8172c1fa56aa6d537bef66d2803500b376c44f654e204b748466bf93d24b1d65"
+    },
+    {
+      "file": "logs/root-release.log",
+      "sha256": "afc7f3ff35f73da72ecb3045614780abc93d58ac9753b47fdc1ffa6b9d6ba1df"
+    }
+  ]
+}

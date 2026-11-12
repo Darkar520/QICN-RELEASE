@@ -1,0 +1,278 @@
+{
+  "base_commit": "cc54d71318f7156e3f486e0b74b23696637b03ed",
+  "protocol_sha256": "4f2be86b1e5d80094e8cd01127913d657fd4d124ed96cc3b96b3e0f46730c4fa",
+  "protocol_text": "Auditoría estructural, segunda pasada, 2026-11-11. Base cc54d71.\nAlcance: dependencias y tipos en BaseCore/I–X/Puente, con énfasis en cuantificadores,\nproyecciones versus tiempo, inferencia observacional, estimadores y certificados.\nNo se modifican fuentes, registro, PDFs, runtime ni áreas congeladas; se preservan\nlos documentos locales de auditoría anteriores. Sólo informe, recibo y ledger.\nControles algebraicos previstos antes de ejecutarlos: interpolación de entradas\nen R0; dominio de historias; permutación de autoíndice; confusión de capacidad e\nhistoria; diferencia de amplitud como frontera; realimentación interna/externa\nobservacionalmente idéntica; signo del denominador de continuidad; cambio de unidad\nde pérdidas; truncación ternaria y separación en norma Lipschitz. Se esperan los\ncontraejemplos condicionados descritos, no refutación de toda la teoría ni de las\nrealizaciones existentes. Aritmética Fraction sin datos empíricos. Los casos\nfinitos comprueban cuentas; las afirmaciones infinitas llevan prueba analítica.\nParar ante huellas cambiadas, controles discrepantes o verificador de frontera fallido.\nNo se introduce revisión externa ni external_support_certified=true.\n",
+  "evidence_root": "E:/QICN-PRESERVACION/2026-11-11-auditoria-estructural",
+  "findings": [
+    {
+      "id": "B01",
+      "kind": "Error de formulación",
+      "source": "paper1/main.tex",
+      "line": 133,
+      "title": "R0 confunde dependencia causal de la ley con interpolación de una trayectoria.",
+      "evidence": "Para la planta x_next=1-x, sin dependencia de E, una trayectoria con entradas todas distintas siempre admite f(E_t)=x_(t+1). Con entradas repetidas puede no admitirla. La clasificación cambia con el calendario aunque la ley causal sea la misma.",
+      "strengthening_route": "Cuantificar la factorización de la ley sobre estados/preparaciones e intervenciones admisibles. Declarar qué variable retiene memoria y demostrar una separación con entradas emparejadas. El control finito no demuestra una afirmación universal: muestra el defecto de identificar una ley desde una trayectoria.",
+      "source_line": "    \\item \\textbf{Non-reactivity:} $\\nexists f: \\mathcal{E} \\to \\mathcal{I}$ such that $I_{t+1} = f(E_t)$"
+    },
+    {
+      "id": "B02",
+      "kind": "Error de tipo",
+      "source": "paper1/main.tex",
+      "line": 554,
+      "title": "La equivalencia de historias se aplica al espacio O de valores instantáneos.",
+      "evidence": "def:obs-equiv compara secuencias {O_t}; el párrafo siguiente escribe O/~. Para alfabeto binario, tres lecturas forman ocho historias, no dos valores. No hay identificación de dominios declarada.",
+      "strengthening_route": "Definir el espacio de historias observables admisibles y tomar allí el cociente. Separar valores, ventanas, trayectorias infinitas y conjuntos inferidos.",
+      "source_line": "This defines a quotient space $O / {\\sim_{\\mathcal{I}}}$ whose elements represent externally indistinguishable identity classes."
+    },
+    {
+      "id": "B03",
+      "kind": "Obligación formal",
+      "source": "paper1/main.tex",
+      "line": 547,
+      "title": "El cuantificador sobre perturbaciones no aparece en los términos de la igualdad.",
+      "evidence": "La igualdad d_w(I(O),I(O_prime))=0 no indexa O, O_prime ni el mapa inferido por la perturbación cuantificada. Tal como está, forall_delta no exige una respuesta a cada experimento; además el estimador set-valued I(O) no tiene un contrato de identificación aquí.",
+      "strengthening_route": "Introducir historias potenciales O^{delta}, una aplicación de inferencia definida en un espacio métrico común y leyes/controles compartidos. Demostrar equivalencia e identificabilidad relativa a la familia de sondas. Si sólo se quiere una relación estática, retirar el cuantificador experimental sin atribuirle fuerza causal.",
+      "source_line": "Two observable histories $\\{O_t\\}$ and $\\{O'_t\\}$ are \\textit{inverse-limit equivalent} (denoted $\\{O_t\\} \\sim_{\\mathcal{I}} \\{O'_t\\}$) if for all admissible perturbations $\\{\\delta E_t\\}$ with finite weighted energy,"
+    },
+    {
+      "id": "B04",
+      "kind": "Obligación de tipado",
+      "source": "paper1/main.tex",
+      "line": 522,
+      "title": "Canal observable y componente de conexión energética son objetos distintos.",
+      "evidence": "A1 usa un mapa U→O; más adelante C es la terna (E,O,R); def:coexist usa clases de historias conectadas. No existe una equivalencia automática entre los tres. También se reutiliza t para profundidad y evolución física.",
+      "strengthening_route": "Usar C_obs para la lectura, M para el modelo experimental y C_alpha para el componente energético. Definir los mapas entre sus dominios. Separar profundidad n, tiempo t y horizonte tau antes de propagar unicidad a otros papers.",
+      "source_line": "An observable channel is a triple $\\mathcal{C} = (E, O, R)$, where:"
+    },
+    {
+      "id": "B05",
+      "kind": "Incongruencia de simetría",
+      "source": "paper8_first_person_subjectivity/main.tex",
+      "line": 1271,
+      "title": "El estimador general de autoíndice penaliza una permutación pasiva de nombres.",
+      "evidence": "Si Pi contiene el intercambio de dos candidatos y dist es variación total, q=(1,0) tiene máxima dominancia pero el factor 1-sup dist(pi q,q) es cero. La construcción de lesiones, en cambio, fija roles dentro del ensayo y renombra conjuntamente roles y referencias. No demuestra invariancia bajo cualquier permutación del estimador general.",
+      "strengthening_route": "Separar renombrado pasivo, reasignación causal y perturbación. Comparar estimaciones alineadas por el transporte inverso y exigir equivariancia del índice ganador; si se usa un subgrupo que fija roles, declararlo. Probar ambas transformaciones y conservar el trasplante causal como control negativo.",
+      "source_line": "Let $\\Pi_{\\mathrm{adm}}$ be the admissible relabeling family on the latent candidate set $\\mathcal{Z}_\\tau$. Let $q(z)$ be the normalized weight assigned to candidate $z$ by the registry. A natural estimator is"
+    },
+    {
+      "id": "B06",
+      "kind": "Confusión identificativa",
+      "source": "paper7_operational_life_subjecthood/main.tex",
+      "line": 280,
+      "title": "La ganancia HistDep puede medir capacidad de modelo y no información histórica.",
+      "evidence": "G0 y G_hist no están relacionados formalmente en esta definición. Con c=Y_t binario balanceado, constantes en G0 y el predictor identidad en G_hist, el margen es1/2 aun sin ninguna información pasada adicional.",
+      "strengthening_route": "Definir riesgos Bayes respecto de las dos sigma-álgebras, o familias de capacidad igualada y una inclusión que permita ignorar el pasado. Separar ganancia informacional, ganancia de capacidad y dependencia causal. Verificar el control sin memoria con información actual suficiente.",
+      "source_line": "Let $c_t$ denote a class-relevant label or state tag induced by the relevant operational partition. Define"
+    },
+    {
+      "id": "B07",
+      "kind": "Contraejemplo a interpretación fuerte",
+      "source": "paper7_operational_life_subjecthood/main.tex",
+      "line": 213,
+      "title": "La puntuación de frontera no distingue por sí misma organización propia de amplitud de entrada.",
+      "evidence": "En x_next=u sobre[0,1], sham0, U_in={0}, U_out={1} y lectura identidad, Bound=1 uniformemente. La planta carece de memoria y de frontera endógena; satisface la fórmula de este descriptor aislado, no toda la clase de vida.",
+      "strengthening_route": "Emparejar magnitud/coste, soporte y efecto genérico de los controles; declarar la partición causal del sistema y qué estado organizacional se conserva o amenaza. Probar un contraste adicional ante una planta sin memoria. Conservar el descriptor como separación entre familias si no se añade ese contenido.",
+      "source_line": "An admissible system $S$ has an operational boundary on horizon $\\tau$ if there exist disjoint admissible intervention families $\\mathcal{U}_{\\mathrm{in}},\\mathcal{U}_{\\mathrm{out}} \\subseteq U^\\tau$ and a boundary-sensitive readout family $R_{\\partial}\\subseteq R$ such that"
+    },
+    {
+      "id": "B08",
+      "kind": "Obligación causal",
+      "source": "paper7_operational_life_subjecthood/main.tex",
+      "line": 275,
+      "title": "Mejorar el retorno frente al brazo pasivo no identifica la procedencia interna del controlador.",
+      "evidence": "x_next=x/2+v con v=-x/4 produce el mismo lazo cerrado si el controlador se incluye en el sistema o si lo aplica un aparato externo. El contraste3/4 versus1/2 no diferencia esas dos descripciones.",
+      "strengthening_route": "Ampliar el estado con controlador, sensores y energía/coste; fijar la frontera causal. Ablacionar los enlaces internos manteniendo intacta la planta y prohibir ayuda externa mediante el contrato. La recuperación activa ya demostrada permanece válida; la lectura de autonomía interna necesita ese paso.",
+      "source_line": "The definition excludes systems whose apparent stability is wholly imposed from outside. A system counts as self-maintaining only if recovery is generated by admissible internal organization rather than by an external oracle silently reimposing the desired state."
+    },
+    {
+      "id": "B09",
+      "kind": "Obstrucción y fortalecimiento",
+      "source": "paper2/main.tex",
+      "line": 369,
+      "title": "La no determinación por cortes finitos tiene radio cero en la norma uniforme de lecturas de esta realización.",
+      "evidence": "F_N usa los bits0..N y satisface ||F-F_N||_infty=3^(-(N+1))→0. Cada F_N es continua pero falla E2. Por tanto, el F exacto no está en el interior de E2 dentro de esta clase uniforme. No se sigue que todos los radios de Cop sean cero: se trata del predicado E2 y de esta clase/perturbación.",
+      "strengthening_route": "Probar robustez en una clase/norma que controle incrementos a todas las escalas. Si F tiene cota inferior c y Lip(G-F)<c, entonces |Gx-Gy|≥(c-Lip(G-F))d(x,y), y E2 persiste en cada fibra no trivial. Mantener separadas aproximación de valores y conservación estructural. Estimar o demostrar la cota global tiene obligaciones adicionales.",
+      "source_line": "\\begin{theorem}[Ternary Realization of E0--E2]\\label{thm:ternary-regime-realization}"
+    },
+    {
+      "id": "B10",
+      "kind": "Obligación de dominio",
+      "source": "paper8_first_person_subjectivity/main.tex",
+      "line": 1307,
+      "title": "Una ventaja de continuidad positiva puede cambiar de signo por el denominador.",
+      "evidence": "No se impone aquí score>=0. Ganador -2 y rival -3 dan gap1 y contraste -1 por el denominador1+score. La advertencia del apéndice excluye denominador cero, pero no asegura denominador positivo.",
+      "strengthening_route": "Declarar dominio, escala y positividad; o normalizar con una escala positiva fijada de modo que se conserve el signo del contraste. No elegir la transformación después de observar quién gana. Revisar igualmente la fórmula de valoración si R puede ser firmado.",
+      "source_line": "\\frac{\\mathrm{score}(\\kappa^\\star)-\\max_{\\kappa\\neq \\kappa^\\star}\\mathrm{score}(\\kappa)}"
+    },
+    {
+      "id": "B11",
+      "kind": "Obligación de calibración",
+      "source": "paper8_first_person_subjectivity/main.tex",
+      "line": 532,
+      "title": "El1 de varios denominadores fija una escala de pérdida sin declararla.",
+      "evidence": "Pérdidas(2,0) dan2/3; las mismas pérdidas en unidades multiplicadas por100 dan200/201. Un umbral3/4 cambia de decisión sin cambiar el orden ni el modelo. IX ya exige explícitamente s_R en unidades de pérdida para su margen.",
+      "strengthening_route": "Especificar una escala positiva con unidad para cada estimador y reglas de transporte de umbrales. Comprobar invariancia ante cambios de unidad. Si se adopta unidad convencional1, declararla y no atribuir invariancia a cambios que no transporten la calibración.",
+      "source_line": "\\widetilde{\\Persp}_\\tau &= \\frac{\\Loss(M_{\\mathrm{3p}},\\tau)-\\Loss(M_{\\mathrm{1p}},\\tau)}{1+\\Loss(M_{\\mathrm{3p}},\\tau)},\\\\"
+    },
+    {
+      "id": "B12",
+      "kind": "Contrato entre papers",
+      "source": "paper7_operational_life_subjecthood/main.tex",
+      "line": 363,
+      "title": "La herencia temporal de Cop necesita distinguir pertenencia global y certificado de ventana.",
+      "evidence": "V incluye historias/admisibilidad y exclusión de atractor nulo, mientras VII introduce Cop(S,tau) heredado y VIII continúa esa notación. Una ventana finita no establece esas propiedades globales. No se acusa a la torre de fallar: necesita constar qué hipótesis analíticas la hacen válida globalmente.",
+      "strengthening_route": "Definir Cop_global y Cert_Cop(S,tau,protocolo) sin identificarlos. Para recuperar un teorema global desde ventanas crecientes, exigir testigos compatibles, márgenes uniformes y un argumento de compacidad/cierre; no basta cada ventana con testigos diferentes.",
+      "source_line": "\\Cop(S,\\tau)=1"
+    },
+    {
+      "id": "B13",
+      "kind": "Límite de inferencia",
+      "source": "paper4/main.tex",
+      "line": 250,
+      "title": "Replay determinista no es un test suficiente de la identidad proyectiva.",
+      "evidence": "Una tabla determinista sin memoria puede repetir exactamente salidas ante la misma entrada/semilla. Eso verifica reproducción de software, no ramificación, resistencia o unicidad energética. El nombre de P4 se presta a importar un alcance que el protocolo no mide.",
+      "strengthening_route": "Nombrar la salida como reproducibilidad condicionada y conectar su utilidad a hipótesis concretas del experimento. Añadir contrastes de memoria, familias de sondas y controles de observación insuficiente cuando se ensaye identidad estructural.",
+      "source_line": "P4 & Deterministic identity robustness & Replay consistency under fixed seed/version/hash & Replay mismatch above tolerance \\\\"
+    },
+    {
+      "id": "B14",
+      "kind": "Obligación comparativa",
+      "source": "paper9_phenomenal_bridge_organization/main.tex",
+      "line": 902,
+      "title": "La jerarquía de modelos depende de familias y penalizaciones aún no canónicas.",
+      "evidence": "Omega cuenta mecanismos, tamaño de híbrido y slack. Una reparametrización puede cambiar esa cuenta sin cambiar el predictor. La positividad del margen sólo derrota la familia declarada. Para W1⊆W2, el mejor margen frente a W2 no puede ser mayor que frente a W1 bajo la misma pérdida.",
+      "strengthening_route": "Prerregistrar familias, acceso a información, código/coste y equivalencias de representación. Probar cotas analíticas contra clases definidas por propiedades, con sensibilidad a su ampliación y controles de igual acceso. No presentar los nombres memory-only/workspace/policy como clases matemáticas sin definirlas.",
+      "source_line": "The bridge program requires a loss family stronger than descriptive fit alone. For a candidate model $M$ and bridge task bundle $\\mathcal{B}$, define"
+    },
+    {
+      "id": "B15",
+      "kind": "Precisión de objetos",
+      "source": "basecore/core/sections/01_foundation_from_core.tex",
+      "line": 36,
+      "title": "El conjunto convexo de proyección y el límite inverso comparten notación sin ser el mismo objeto.",
+      "evidence": "H1 usa I cerrado convexo; la parte proyectiva define Id como límite, con realizaciones ramificadas y no convexas. El propio modelo de extensión ya usa embebimientos explícitos. No hay una contradicción por reutilizar un símbolo, pero no se pueden transportar hipótesis de convexidad o contracción entre ambos sin una aplicación.",
+      "strengthening_route": "Reservar C_proj para el conjunto convexo, I_inv para el límite y A para el soporte. Especificar embebimiento y operador que preserva A. Separar contracción en cada rama, familia de equilibrios y atractor bajo controles variables.",
+      "source_line": "Let $\\Hilb$ be a real Hilbert space with inner product $\\inner{\\cdot}{\\cdot}$ and norm $\\norm{\\cdot}$. Let $\\I \\subset \\Hilb$ be non-empty, closed, and convex."
+    }
+  ],
+  "exact_controls": {
+    "R0_path_interpolation": {
+      "distinct_inputs_fit": true,
+      "same_plant_repeated_inputs_fit": false
+    },
+    "histories_domain": {
+      "output_alphabet_size": 2,
+      "three_step_history_count": 8
+    },
+    "self_index_permutation": {
+      "TV": "1",
+      "original_formula_score": "0",
+      "transported_gap": 1
+    },
+    "history_without_extra_information": {
+      "constant_risk": "1/2",
+      "current_feature_decoder_risk": "0",
+      "artificial_history_gap": "1/2"
+    },
+    "amplitude_only_boundary": {
+      "plant": "x_next=u",
+      "in": [
+        0
+      ],
+      "out": [
+        1
+      ],
+      "boundary_score": 1
+    },
+    "internal_external_feedback": {
+      "identical_closed_loop": "x_next=x/4",
+      "active_return": "3/4",
+      "passive_return": "1/2"
+    },
+    "negative_continuity_denominator": {
+      "winner_score": -2,
+      "rival_score": -3,
+      "raw_gap": 1,
+      "reported_contrast": -1
+    },
+    "loss_unit_change": {
+      "calibration_scale": 100,
+      "before": "2/3",
+      "after": "200/201",
+      "fixed_threshold": "3/4"
+    },
+    "ternary_truncation": {
+      "uniform_tail_exact": "3^(-(N+1))",
+      "uniform_radius_against_finite_cut_maps": 0,
+      "increment_seminorm_lower_bound": 2,
+      "tested_depths": "0..6; analytic proof in report"
+    }
+  },
+  "previous_audit_files": {
+    "rigid-identity-framework/docs/ai-platform-outputs/analysis/AUDITORIA_PROSA_2026-11-11/AUDITORIA_Y_PLAN.md": "812f7a4cbb0125d9b9c5b64cfc511fc343537c6466a8d693018444816a796012",
+    "rigid-identity-framework/docs/ai-platform-outputs/analysis/AUDITORIA_PROSA_2026-11-11/INVENTARIO_Y_HALLAZGOS.json": "8eceb2c9fba89b62c6d4915c9f5fdb7f384b86dbb79dabf3bfe43919bf4eb582"
+  },
+  "theory_modified": false,
+  "external_support_certified": false,
+  "preservation": {
+    "previous_audit_files": 2,
+    "active_sources_and_pdfs": 12,
+    "basecore_inputs": 11,
+    "frozen_files": 76,
+    "all_hashes_unchanged": true
+  },
+  "root_checks": [
+    {
+      "artifact_role": "canonical_integrity_check",
+      "checked_at": "2026-11-12T00:17:05.216Z",
+      "status": "PASS",
+      "checks": {
+        "zip_sha256_match": true,
+        "manifest_sha256_match": true,
+        "canonical_pdf_count": 25,
+        "index_count": 25,
+        "freeze_tag_listed_in_audit": true,
+        "freeze_snapshot_commit_listed_in_audit": true,
+        "claim_registry_entries": 17,
+        "layer_count": 6,
+        "interface_count": 8,
+        "non_canonical_material_physically_separated": true,
+        "upstream_pin_status": "resolved"
+      },
+      "failures": [],
+      "warnings": [],
+      "provenance_notes": [
+        "working_tree_not_clean_at_hardening_start"
+      ]
+    },
+    {
+      "artifact_role": "claim_registry_check",
+      "checked_at": "2026-11-12T00:17:05.659Z",
+      "status": "PASS",
+      "counts": {
+        "entries": 17,
+        "unique_ids": 17,
+        "allowed_classes": 6
+      },
+      "failures": [],
+      "warnings": []
+    },
+    {
+      "artifact_role": "canonical_release_check",
+      "checked_at": "2026-11-12T00:17:05.945Z",
+      "status": "PASS",
+      "bundle": {
+        "bundleDir": "_build/canonical_release_bundle_2026-11-12T00-17-05-797Z",
+        "manifestPath": "_build/canonical_release_bundle_2026-11-12T00-17-05-797Z/canonical_release_manifest.json"
+      },
+      "failures": [],
+      "warnings": []
+    }
+  ],
+  "release_verification": {
+    "output": "V35 all legacy verification: PASS; passed=6/6",
+    "exit": 0,
+    "mode": "isolated workspace with identical theoretical sources; mutable reports kept off active checkout",
+    "external_support_certified": false
+  }
+}

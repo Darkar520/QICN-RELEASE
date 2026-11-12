@@ -112,6 +112,9 @@ For each run $r\in D$, we log:
 X(r)=\left(\beta_q,\Omega,CCC,PMIA,\Delta\lambda,\text{stasis},\text{forensic},\text{replay},\text{latency}_{p95},\text{latency}_{p99},\text{budget\_overflow\_rate},\eta\right).
 \]
 
+\paragraph{Observable and structural contracts.}
+The logged $\beta_q$, CCC, PMIA and other runtime fields retain their recorded provenance. They are not identified with structural predicates or causal autonomy merely by their names. Such identification requires a domain, estimator, uncertainty, calibrated map and intervention assumptions. Replay at fixed seed/version checks reproducibility: a deterministic memoryless lookup also passes it, so replay alone proves neither projective branching nor resistance. Preserve historical observations under their original contract.
+
 \subsection{Version-Frozen Operational Triple}
 \begin{definition}[Frozen Triple]
 For protocol version $v$, define:
@@ -247,7 +250,7 @@ P2 & No prolonged post-threshold flatline & QICN preserves bounded non-zero vari
 \hline
 P3 & Narrative-metric forensic consistency & Lower mismatch and higher exact+tolerated concordance & Mismatch inflation or integrity blocking \\
 \hline
-P4 & Deterministic identity robustness & Replay consistency under fixed seed/version/hash & Replay mismatch above tolerance \\
+P4 & Conditional replay reproducibility & Replay consistency under fixed seed/version/hash & Replay mismatch above tolerance \\
 \hline
 P5 & Integrated multi-metric advantage & Composite leadership across most scenario families & No stable leadership margin \\
 \hline
@@ -663,11 +666,11 @@ $\alpha$ & $\beta$ & Power & Effect size $d$ & Required $n$/group \\
 0.05 & 0.10 & 0.90 & 10.737 & 1 \\
 \bottomrule
 \end{tabular}
-\caption{Power planning under multiple settings.}
+\caption{Historical synthetic planning outputs; no confirmatory adequacy is certified by the displayed sample sizes.}
 \end{table}
 
 \subsection{Interpretation}
-Power table is planning guidance only; final adequacy depends on endpoint dilution and scenario heterogeneity.
+These rounded entries are historical synthetic plug-in outputs, not a justified inferential sample size. In particular, $n=1$ is not accepted as a power certificate without a specified test, population law, variance assumptions and independent-unit definition. Future confirmatory planning must evaluate size and power under the frozen endpoint/test; the twenty-block construction above is one exact design, not a universal minimum. Historical tables are not retroactively promoted to evidence for the updated protocol.
 
 \section{Methodological Appendix: Sensitivity Analysis}
 \subsection{Composite Weight Sensitivity}

@@ -526,15 +526,15 @@ The gate decides whether the class is even live. The scalar compares stronger an
 \end{remark}
 
 \subsection{Concrete component readings}
-Section~\ref{sec:canonical-subjectivity-estimators} specifies the component estimators. Record the raw contrast and the evidence status before any normalization. For a declared unit-scale raw score $z$, the normalized score is $\min(1,\max(0,z))$ when its inputs are admissible and sufficient. A required coordinate with insufficient evidence leaves the composite gate and scalar undefined. In particular a negative ownership contrast, a valid tie, and absent evidence are distinct outcomes.
+Section~\ref{sec:canonical-subjectivity-estimators} specifies the component estimators. Record the raw contrast and the evidence status before any normalization. Fix positive calibration scales $s_C,s_P,s_V,s_R$ before evaluation, in the units of the corresponding scores/losses. The constructive examples use unit scales one. Scores entering the continuity denominator and response magnitudes entering the valuation denominator are nonnegative; signed contrasts remain separate. Under unit conversion, scale these constants and any dimensioned thresholds with the data. For a declared unit-scale raw score $z$, the normalized score is $\min(1,\max(0,z))$ when its inputs are admissible and sufficient. A required coordinate with insufficient evidence leaves the composite gate and scalar undefined. In particular a negative ownership contrast, a valid tie, and absent evidence are distinct outcomes.
 
 Five additional raw readings are available when their stated quantities exist. Ownership and selectivity use the matched procedures specified below.
 \begin{align*}
-\widetilde{\SelfIndex}_\tau &= 1-\sup_{\pi\in\Pi_{\mathrm{adm}}}\dist(\pi\cdot \SelfIndex,\SelfIndex),\\
+\widetilde{\SelfIndex}_\tau &= \widehat{\SelfIndex}_\tau\quad\text{from the aligned estimator in the appendix},\\
 \widetilde{\ContField}_\tau &= \inf_{\kappa\in\mathcal{K}_{\mathrm{rival}}}\big(\mathrm{margin}_{\mathrm{self}}-\mathrm{margin}_{\kappa}\big)_+,\\
-\widetilde{\Persp}_\tau &= \frac{\Loss(M_{\mathrm{3p}},\tau)-\Loss(M_{\mathrm{1p}},\tau)}{1+\Loss(M_{\mathrm{3p}},\tau)},\\
+\widetilde{\Persp}_\tau &= \frac{\Loss(M_{\mathrm{3p}},\tau)-\Loss(M_{\mathrm{1p}},\tau)}{s_P+\Loss(M_{\mathrm{3p}},\tau)},\\
 \widetilde{\ValAsym}_\tau &= \frac{\mathrm{self\text{-}weighted\ response}-\mathrm{nonself\text{-}weighted\ control}}{1+\mathrm{self\text{-}weighted\ response}},\\
-\widetilde{\Irred}_\tau &= \frac{\inf_{M\in\WeakClosure}\Loss(M,\tau)-\Loss(M_{\mathrm{subj}},\tau)}{1+\inf_{M\in\WeakClosure}\Loss(M,\tau)}.
+\widetilde{\Irred}_\tau &= \frac{\inf_{M\in\WeakClosure}\Loss(M,\tau)-\Loss(M_{\mathrm{subj}},\tau)}{s_R+\inf_{M\in\WeakClosure}\Loss(M,\tau)}.
 \end{align*}
 
 \section{Bridge axioms and ontological commitments}
@@ -691,14 +691,14 @@ For an admissible system $S$ and horizon $\tau$, define
 \[
 \Irred_\tau(S)=
 \frac{\inf_{M\in\WeakClosure}\Loss(M,\tau)-\Loss(M_{\mathrm{subj}},\tau)}
-{1+\inf_{M\in\WeakClosure}\Loss(M,\tau)}.
+{s_R+\inf_{M\in\WeakClosure}\Loss(M,\tau)}.
 \]
 \end{definition}
 
 Positive $\Irred_\tau$ means that the best weak rival still incurs more explanatory loss than the full subjectivity model on the specified task bundle. Zero means an infimal tie; a matching rival exists only if the infimum is attained. Negative values indicate that the stronger model is strictly worse than some weaker alternative and therefore not licensed.
 
 \subsection{Explanatory superiority is local, not absolute}
-The present irreducibility criterion is deliberately local to the admissible task bundle. It does not say that the weaker families are false in every possible domain. It says that they are insufficient for the current target if they cannot jointly explain baseline organization, subject-specific intervention patterns, ownership coherence, continuity privilege, and valuation asymmetry as well as the stronger model does. This locality is a strength. It prevents the paper from pretending to settle every philosophical debate while still giving it enough bite to reject inadequate alternatives.
+The present irreducibility criterion is deliberately local to the admissible task bundle. Freeze the population, available readings and queries, memory/parameter budgets, horizon, complexity language and calibration before comparing losses. Passive reparameterizations must use a common representation-cost convention; if a minimum cost over representations is invoked, prove attainment or use its infimum explicitly. Names such as memory-only or workspace do not by themselves specify mathematical model classes. It does not say that the weaker families are false in every possible domain. It says that they are insufficient for the current target if they cannot jointly explain baseline organization, subject-specific intervention patterns, ownership coherence, continuity privilege, and valuation asymmetry as well as the stronger model does. This locality is a strength. It prevents the paper from pretending to settle every philosophical debate while still giving it enough bite to reject inadequate alternatives.
 
 \begin{theorem}[Positive irreducibility excludes weak-model sufficiency]
 If $\Irred_\tau(S)>0$, then no member of $\WeakClosure$ is sufficient, at equal or lower explanatory cost, for the baseline-plus-intervention task bundle that defines $\tau$.
@@ -1271,15 +1271,14 @@ What remains open remains open for good reasons. Human equivalence is not yet cl
 This appendix gives the estimator family for the seven coordinates. Tildes denote signed raw contrasts before the admissibility and normalization step. A zero denominator, invalid domain or missing reference gives insufficient evidence.
 
 \subsection{Estimator for self-index stability}
-Let $\Pi_{\mathrm{adm}}$ be the admissible relabeling family on the latent candidate set $\mathcal{Z}_\tau$. Let $q(z)$ be the normalized weight assigned to candidate $z$ by the registry. A natural estimator is
+Let the candidate set be finite with at least two elements, and let $q$ be a normalized nonnegative weight vector obtained by the frozen estimator. For a passive renaming $\pi$, rerun that estimator on jointly renamed data and references, obtaining $q^{[\pi]}$. Compare it after inverse alignment. With total variation on these finite weights, put
 \[
-\widehat{\SelfIndex}_\tau
-=
-\left(q(z^\star)-\sup_{z\neq z^\star}q(z)\right)_+
-\cdot
-\left(1-\sup_{\pi\in\Pi_{\mathrm{adm}}}\dist(\pi\cdot q,q)\right)_+,
+ r_{\rm eq}=\sup_{\pi\in\Pi_{\rm adm}}\operatorname{TV}(\pi^{-1}_*q^{[\pi]},q),
+ \qquad \widehat{\SelfIndex}_\tau=(q(z^\star)-\max_{z\ne z^\star}q(z))(1-r_{\rm eq}).
 \]
-where $z^\star$ is the maximizer of $q$. The first factor captures uniqueness of the dominant index; the second captures relabeling robustness. The estimator is high only when one candidate clearly dominates and continues to dominate under admissible permutations.
+Here $z^\star$ is a maximizer; a tie gives zero gap. Both factors lie in $[0,1]$. Exact equivariance of the estimator implies $r_{\rm eq}=0$; it must be checked, not assumed merely from the word relabeling. A causal role swap or transplant without the corresponding reference transport is a different intervention. Within-run role-fixing subgroups in the constructive examples retain their original protocol.
+
+For the negative control $q=(1,0)$, directly comparing the swapped vector to $q$ gives total variation one and destroys the score despite perfect dominance. Inverse alignment restores the vector. Thus passive renaming must not be confused with active reassignment of roles.
 
 \subsection{Estimator for ownership coherence}
 Use a preregistered matched nonempty event set $\mathcal E_\tau$ and an independently assigned reference $o^\star$, fixed without consulting candidate or control assignments. Both arms report scores $o(e),o_{\rm ctl}(e)\in[0,1]$ for the same events. For $v$ equal to either assignment, put
@@ -1308,9 +1307,9 @@ Let $\mathcal{T}_\tau=\{\kappa_1,\dots,\kappa_m\}$ be the admissible continuity 
 \widetilde{\ContField}_\tau
 =
 \frac{\mathrm{score}(\kappa^\star)-\max_{\kappa\neq \kappa^\star}\mathrm{score}(\kappa)}
-{1+\mathrm{score}(\kappa^\star)}.
+{s_C+\mathrm{score}(\kappa^\star)}.
 \]
-The score function may combine trajectory compatibility, remap robustness, and fork penalties. What matters is not the exact formula but that the estimator is gap-based: continuity must be privileged over nearby rivals.
+The score function is nonnegative in the fixed calibration and may combine trajectory compatibility, remap robustness, and fork penalties. A denominator with an arbitrary negative score is not admissible; for example scores $-2,-3$ would reverse a positive gap. Invalid inputs leave the estimator undefined. What matters is not the exact formula but that the estimator is gap-based: continuity must be privileged over nearby rivals.
 
 \subsection{Estimator for perspective gain}
 Let $M_{\mathrm{1p}}$ be the best first-person indexed predictive factorization and $M_{\mathrm{3p}}$ the best index-neutral factorization on the same admissible support. Define
@@ -1318,7 +1317,7 @@ Let $M_{\mathrm{1p}}$ be the best first-person indexed predictive factorization 
 \widetilde{\Persp}_\tau
 =
 \frac{\Loss(M_{\mathrm{3p}},\tau)-\Loss(M_{\mathrm{1p}},\tau)}
-{1+\Loss(M_{\mathrm{3p}},\tau)}.
+{s_P+\Loss(M_{\mathrm{3p}},\tau)}.
 \]
 This estimator turns perspective into a measurable gain rather than an interpretive flourish.
 
@@ -1329,7 +1328,7 @@ Let $\mathfrak{U}_{\mathrm{self}}$ and $\mathfrak{U}_{\mathrm{nonself}}$ be matc
 =
 \frac{\mathbb{E}_{u\in\mathfrak{U}_{\mathrm{self}}}[R(u)]-
 \mathbb{E}_{u\in\mathfrak{U}_{\mathrm{nonself}}}[R(u)]}
-{1+\mathbb{E}_{u\in\mathfrak{U}_{\mathrm{self}}}[R(u)]}.
+{s_V+\mathbb{E}_{u\in\mathfrak{U}_{\mathrm{self}}}[R(u)]}.
 \]
 This estimator is high only when self-targeted perturbations matter differentially after structural matching.
 

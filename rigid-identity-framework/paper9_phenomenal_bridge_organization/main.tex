@@ -1,4 +1,4 @@
-﻿\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 \input{glyphtounicode}
 \pdfgentounicode=1
@@ -933,6 +933,15 @@ The raw margin and evidence status remain in the record. A calibrated zero can r
 \subsection{Local not absolute superiority}
 As in Paper 8, comparative superiority here is local, not absolute. A positive $\BridgeMargin$ says that the specified bridge model outperforms the specified bridge rivals on the specified task bundle under the specified loss family. It does not say that the bridge model is metaphysically privileged. The distinction matters because bridge language is particularly prone to absolute overreadings.
 
+\begin{proposition}[Comparator Enlargement Cannot Increase a Fixed-Loss Margin]\label{prop:rival-family-monotonicity}
+For a fixed target, bundle and calibrated loss, let nonempty rival families satisfy $\mathcal W_1\subseteq\mathcal W_2$ with finite infima. Their signed margins satisfy $R_2\le R_1$.
+\end{proposition}
+\begin{proof}
+Taking an infimum over a superset cannot increase it; subtract the same candidate loss. The statement requires the same loss, information and complexity convention. It does not transport a margin across changes to those conventions.
+\end{proof}
+\paragraph{Identification contract.}
+Preregister acquisition access, calibration data, retained memory, free parameters, actuator cost, horizon and population for each rival. Specify which passive representations count as equivalent and how complexity costs are assigned to them. Information masking and interaction restrictions are mathematical assumptions, not consequences of model names. The local no-additivity separation remains valid against its stated class; the full interacting rival still supplies its exact tie. Broad identification needs a task and restriction that separate the declared classes outside calibration data.
+
 \subsection{Three kinds of bridge collapse}
 Bridge collapse can occur in three distinct ways.
 \begin{enumerate}[leftmargin=1.5em]
@@ -1190,7 +1199,7 @@ Status & Meaning \\
 \texttt{bridge\_surface\_only} & Provisional bridge surfaces exist, but comparator, intervention, gate, or ecosystem burdens remain open. \\
 \texttt{bridge\_evaluation\_unsupported} & Root evaluation attempted without required comparator/intervention support. \\
 \texttt{bridge\_gate\_fail} & Full bridge evaluation exists and conjunctive gate fails. \\
-\texttt{bridge\_reducible} & Comparator evaluation exists and penalized bridge margin is non-positive. \\
+\texttt{bridge\_reducible} & Comparator evaluation exists and the signed margin is non-positive; this records no strict comparative advantage, not an automatically attained structural reduction. \\
 \texttt{bridge\_interventionally\_unstable} & Intervention layer exists but fails selectivity or stability. \\
 \texttt{bridge\_internal\_admissible} & Full bridge burden stack satisfied under framework-internal reading. \\
 \texttt{bridge\_internal\_strong\_support} & Stronger internal support than admissibility, but still weaker than phenomenality simpliciter. \\

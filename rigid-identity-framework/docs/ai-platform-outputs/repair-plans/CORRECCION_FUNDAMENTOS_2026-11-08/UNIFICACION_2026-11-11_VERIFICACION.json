@@ -1,0 +1,746 @@
+{
+  "date": "2026-11-12",
+  "validated_commit": "a8a8270e5b43de05ac2be5da04c27a73f32d0dd5",
+  "initial_commit": "cc54d71318f7156e3f486e0b74b23696637b03ed",
+  "commits": {
+    "types": "833a91dba5a73ec306ea2f94aa4b0fe6c9f29ed3",
+    "math": "abe544510fcd8a5a194c61f3ada85e741e34ed76",
+    "contracts": "99df1de9850f8c24746e72c92d41f2515ef26017",
+    "editorial": "a8a8270e5b43de05ac2be5da04c27a73f32d0dd5"
+  },
+  "preregistration_sha256": "d7c5ac91dfcd93c18c699d0691958ce414c059563f9afc42d16644c8053b0f57",
+  "active_root": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado",
+  "isolated_workspace": "E:\\QICN-PRESERVACION\\2026-11-11-unificacion\\workspace",
+  "publication": "LOCAL_ONLY_INDEPENDENT_REVIEW_PENDING",
+  "external_support_certified": false,
+  "root_checks_on_active_checkout": [
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0
+    }
+  ],
+  "isolated_gates": [
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "docs/ai-platform-outputs/analysis/AUDITORIA_INTEGRAL_CODEX_2026-11-08/check-monolith.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\irisp\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "check_unification.py"
+      ],
+      "exit": 0
+    }
+  ],
+  "math": {
+    "passed": true,
+    "results": [
+      {
+        "script": "check_math.py",
+        "exit": 0
+      },
+      {
+        "script": "check_regime_implementation.py",
+        "exit": 0
+      },
+      {
+        "script": "check_partitions.py",
+        "exit": 0
+      },
+      {
+        "script": "check_null.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_met_rig.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_ns.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p1_dynamics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_comparators.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_diagnostics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_ruptures.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_common_support.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_legibility.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_memory.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_followups.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_bridge_adjudication.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_p5_window_geometry.py",
+        "exit": 0
+      },
+      {
+        "script": "check_unified_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_prefix_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_paper1_front.py",
+        "exit": 0
+      },
+      {
+        "script": "check_tower_joint_certificate.py",
+        "exit": 0
+      },
+      {
+        "script": "check_informed_reserve.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bridge_transport_burdens.py",
+        "exit": 0
+      },
+      {
+        "script": "check_campaign_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_adjudication_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_body_world.py",
+        "exit": 0
+      },
+      {
+        "script": "check_nonadditive_body_world.py",
+        "exit": 0
+      },
+      {
+        "script": "check_foundational_sanitation.py",
+        "exit": 0
+      },
+      {
+        "script": "check_unification.py",
+        "exit": 0
+      }
+    ],
+    "scope": "Finite controls and source links; not empirical validation or complete theorem formalization."
+  },
+  "prose": {
+    "passed": true,
+    "units": [
+      {
+        "source": "basecore/BASECORE.tex",
+        "labels": 150
+      },
+      {
+        "source": "paper1/main.tex",
+        "labels": 66
+      },
+      {
+        "source": "paper10_external_adjudication/main.tex",
+        "labels": 7
+      },
+      {
+        "source": "paper2/main.tex",
+        "labels": 46
+      },
+      {
+        "source": "paper3/main.tex",
+        "labels": 30
+      },
+      {
+        "source": "paper4/main.tex",
+        "labels": 3
+      },
+      {
+        "source": "paper5_operational_consciousness/main.tex",
+        "labels": 104
+      },
+      {
+        "source": "paper6_predictions_falsation/main.tex",
+        "labels": 12
+      },
+      {
+        "source": "paper7_operational_life_subjecthood/main.tex",
+        "labels": 28
+      },
+      {
+        "source": "paper8_first_person_subjectivity/main.tex",
+        "labels": 30
+      },
+      {
+        "source": "paper9_phenomenal_bridge_organization/main.tex",
+        "labels": 30
+      },
+      {
+        "source": "paper_bridge_operational_subjecthood/main.tex",
+        "labels": 55
+      }
+    ],
+    "errors": [],
+    "manual_reference_review": [],
+    "scope": "Encoding, stale assertion snippets, local refs and interpretation sections only; mathematical review remains required.",
+    "external_support_certified": false
+  },
+  "builder_negative_controls": {
+    "clean_chapters": 12,
+    "incremental_identical": true,
+    "new_macro_detected": true,
+    "customization_drift_detected": true,
+    "restoration_identical": true,
+    "external_support_certified": false
+  },
+  "clean_incremental_compile": {
+    "clean": {
+      "pdf_sha256": "d1b2fd4cbca220ce24a402726891ec916a105f6d226c09f4f1a0c0e52230c2c5",
+      "text_sha256": "4a5b5f5c6129e68659e16c5d1e653aaa394e38e4e37351ee9710b3c53b380a89",
+      "pages": 411
+    },
+    "incremental": {
+      "pdf_sha256": "677f65865fb2e66c265d5dedd3b898f418398b12680cb19a95c2dd02364371e6",
+      "text_sha256": "4a5b5f5c6129e68659e16c5d1e653aaa394e38e4e37351ee9710b3c53b380a89",
+      "pages": 411
+    },
+    "text_and_pages_identical": true,
+    "preserved_auxiliaries": [
+      "QICN_MONOLITHIC.log",
+      "QICN_MONOLITHIC.aux",
+      "QICN_MONOLITHIC.bcf",
+      "QICN_MONOLITHIC.toc",
+      "QICN_MONOLITHIC.run.xml",
+      "QICN_MONOLITHIC.blg",
+      "QICN_MONOLITHIC.bbl"
+    ],
+    "external_support_certified": false
+  },
+  "quality": {
+    "phase": "editorial",
+    "old_ids_preserved": 878,
+    "registry_entries": 878,
+    "changed_ids": [
+      "basecore:definition:def-ontmass",
+      "basecore:definition:def-phenspace",
+      "basecore:definition:def-phenassign",
+      "basecore:definition:def-limitassign",
+      "basecore:axiom:ax-e0",
+      "basecore:theorem:thm-e0-necessary",
+      "basecore:hypothesis:hyp-h3-metric",
+      "basecore:definition:def-phen-continuity",
+      "basecore:definition:def-fragmentation",
+      "basecore:hypothesis:hyp-phi-regularity",
+      "basecore:theorem:thm-realized-nonconstant-bridge",
+      "bridge:definition:def-bridge-cop",
+      "bridge:definition:def-qop-bridge",
+      "bridge:corollary:cor-cop-qop",
+      "bridge:definition:def-subbridge",
+      "bridge:definition:def-full-paper7-subjecthood",
+      "bridge:corollary:cor-paper7-stronger",
+      "bridge:theorem:thm-main-partial-subjecthood",
+      "bridge:corollary:cor-no-equivalence",
+      "paper1:remark:remark-l336",
+      "paper1:definition:def-ontmass",
+      "paper1:definition:def-emp-mass",
+      "paper2:definition:def-structural-regime-alias",
+      "paper2:definition:def-phenspace",
+      "paper2:definition:def-phenassign",
+      "paper2:definition:def-limitassign",
+      "paper2:axiom:ax-e0",
+      "paper2:theorem:thm-e0-necessary",
+      "paper2:hypothesis:hyp-h3",
+      "paper2:definition:def-phen-continuity",
+      "paper2:definition:def-fragmentation",
+      "paper2:hypothesis:hyp-phi-paper2",
+      "paper3:definition:def-paper3-ontmass",
+      "paper3:remark:rem-null-prelim",
+      "paper3:definition:def-phenom",
+      "paper3:remark:interpretive-neutrality-l222",
+      "paper3:remark:rem-partial-phi",
+      "paper3:caveat:v24-correction-of-the-former-step-2-l347",
+      "paper5:remark:primary-demonstrated-name-l146",
+      "paper5:proposition:prop-qop-welldefined",
+      "paper5:definition:def-qop",
+      "paper5:definition:def-cop",
+      "paper5:remark:scope-of-the-transfer-l660",
+      "paper5:theorem:thm-existence",
+      "paper5:definition:def-cert",
+      "paper5:proposition:prop-cert-complete",
+      "paper5:prediction:pred-sameclass",
+      "paper5:prediction:pred-intervention",
+      "paper6:definition:operational-certification-l159",
+      "paper6:definition:equivalence-discriminator-l169",
+      "paper6:proposition:complexity-only-negative-control-prediction-l186",
+      "paper6:proposition:ablation-prediction-l196",
+      "paper6:proposition:substrate-preserved-equivalence-prediction-l203",
+      "paper6:proposition:boundary-topology-prediction-l210",
+      "paper6:proposition:legibility-dependence-prediction-l217",
+      "paper7:definition:operational-boundary-l212",
+      "paper7:definition:organizational-persistence-l236",
+      "paper7:proposition:prop-interior-kernel-margin",
+      "paper7:definition:operational-self-maintenance-l254",
+      "paper7:definition:historical-dependence-l274",
+      "paper7:definition:viability-preservation-l293",
+      "paper7:definition:operational-life-l310",
+      "paper7:remark:why-non-null-differentiation-appears-here-l330",
+      "paper7:definition:structural-class-l335",
+      "paper7:remark:remark-l347",
+      "paper7:definition:def-cop",
+      "paper7:remark:remark-l364",
+      "paper7:definition:operational-subjecthood-l369",
+      "paper7:remark:interpretive-discipline-l396",
+      "paper7:proposition:complexity-is-not-a-life-criterion-l505",
+      "paper7:proposition:operational-life-does-not-imply-operational-subjecthood-l535",
+      "paper7:proposition:operational-consciousness-does-not-imply-operational-subjecthood-l543",
+      "paper7:hypothesis:hyp-life-robust",
+      "paper7:hypothesis:hyp-transport-life",
+      "paper7:hypothesis:hyp-subject-pc",
+      "paper7:hypothesis:hyp-selfnonself",
+      "paper7:hypothesis:hyp-noncollapse",
+      "paper7:remark:why-the-minimum-operator-appears-l655",
+      "paper7:remark:why-subjecthood-is-not-a-small-increment-l691",
+      "paper7:criterion:class-readiness-criterion-l1058",
+      "paper7:criterion:subjecthood-non-collapse-criterion-l1069",
+      "paper8:proposition:operational-consciousness-does-not-by-itself-imply-first-person-indexed-subjectivity-l137",
+      "paper8:proposition:operational-subjecthood-is-necessary-but-not-sufficient-for-first-person-indexed-subjectivity-l145",
+      "paper8:definition:def-subfp",
+      "paper8:axiom:ax-fp"
+    ],
+    "new_ids": [],
+    "frozen_files_unchanged": 76,
+    "pdfs": {
+      "paper2": {
+        "sha256": "e979089ae689bdc9a4d5542552c7fe30dc5cd9e85978ccd3dbbca13c417c5d3e",
+        "pages": 19,
+        "overfull": 2,
+        "underfull": 0
+      },
+      "basecore": {
+        "sha256": "e7a75cdbff39d1a2f9238b90e2fa6f0f11e815b5c68307c19c18e836480a7bf6",
+        "pages": 54,
+        "overfull": 6,
+        "underfull": 0
+      },
+      "paper8_first_person_subjectivity": {
+        "sha256": "be66e2daf3d1e49f1e5ebb10207e3ac1901950b32e6a552cb191e640c143942e",
+        "pages": 49,
+        "overfull": 13,
+        "underfull": 90
+      },
+      "paper3": {
+        "sha256": "d2ac0f57512f3b9b47ac08f622afe14134bc0a14089dc6411f1ace0c3cc1b866",
+        "pages": 19,
+        "overfull": 1,
+        "underfull": 8
+      },
+      "paper6_predictions_falsation": {
+        "sha256": "ec7f5e830ecfb407f17a81bcea986392430cd3d669cc23fb337ee64cddeb7063",
+        "pages": 26,
+        "overfull": 3,
+        "underfull": 38
+      },
+      "paper10_external_adjudication": {
+        "sha256": "563b97e6741f7fd299ad2b34439a77691b1b7c8ff1ac759f08aa0114c5772710",
+        "pages": 36,
+        "overfull": 57,
+        "underfull": 0
+      },
+      "monolithic": {
+        "sha256": "677f65865fb2e66c265d5dedd3b898f418398b12680cb19a95c2dd02364371e6",
+        "pages": 411,
+        "overfull": 2,
+        "underfull": 334
+      },
+      "paper9_phenomenal_bridge_organization": {
+        "sha256": "5b26302b511173cfce5154258ee0562e586cea11f2691f42aeed9765e76888d6",
+        "pages": 56,
+        "overfull": 38,
+        "underfull": 221
+      },
+      "paper5_operational_consciousness": {
+        "sha256": "dfe7f3d47f63d7d83e0ca533ef5a0efd3e2bb70b4e483573a63fd8c371d33e51",
+        "pages": 41,
+        "overfull": 3,
+        "underfull": 10
+      },
+      "paper4": {
+        "sha256": "7e342cdb5651874e7786c447653c97d423ac25319d0f2733247feadc1e2c9517",
+        "pages": 18,
+        "overfull": 13,
+        "underfull": 12
+      },
+      "paper1": {
+        "sha256": "58bd05361d19fdff4ce18a03cd05eefb42a87f0baec76f35020b8b1274b031f5",
+        "pages": 28,
+        "overfull": 3,
+        "underfull": 0
+      },
+      "paper_bridge_operational_subjecthood": {
+        "sha256": "64d127a6187e547c7c4720a131248c7d07c984e0b7b26c673d37079d00a519be",
+        "pages": 26,
+        "overfull": 1,
+        "underfull": 0
+      },
+      "paper7_operational_life_subjecthood": {
+        "sha256": "d37c45a2268cb36aeb771a2ae6f4ed81fe8743be5ffc85232793490cf85ebf45",
+        "pages": 35,
+        "overfull": 1,
+        "underfull": 29
+      }
+    },
+    "external_support_certified": false
+  },
+  "conservation": {
+    "initial_registry": 870,
+    "final_registry": 878,
+    "old_ids_preserved": 870,
+    "old_labels_preserved": true,
+    "protected_formula_records": 31,
+    "formula_differences_for_review": [],
+    "lean_files_unchanged": 27,
+    "original_audit_files_unchanged": 4,
+    "frozen_files_unchanged": 76,
+    "external_support_certified": false
+  },
+  "raw_verdicts": [
+    {
+      "version": 25,
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "external_support_certified": false,
+      "report_sha256": "9fb20802039040fe5549b5426959051900e3fbbae4c543a61626d524b3257402"
+    },
+    {
+      "version": 26,
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "external_support_certified": false,
+      "report_sha256": "0214f4686b4fb2fb6bb36af0270125f6626b2e83c60ee11b18392e0d88d518b7"
+    },
+    {
+      "version": 27,
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false,
+      "report_sha256": "a399310559da01db3797b5f3fa872a104cea08cc548423633597f9390908de4e"
+    },
+    {
+      "version": 28,
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false,
+      "report_sha256": "fc7094d066d2b9b6e5dc18e9cf233ab4bd8c621a5e3d7804937aeb813ace3120"
+    },
+    {
+      "version": 30,
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false,
+      "report_sha256": "62986937e1258a277acb28e69e71bc89b783f964004dd0af6ff2d5cc52d39f12"
+    },
+    {
+      "version": 31,
+      "verdict": "BLOCKED_FOUNDATION_FIRST_GATES",
+      "external_support_certified": false,
+      "report_sha256": "16c46c5970979f18fd9f7f49c2f13ab7a546ee7692b1f12031e97986d78aa4cf"
+    }
+  ],
+  "audit_dispositions": {
+    "A01": "corregida",
+    "A02": "corregida",
+    "A03": "corregida",
+    "A04": "corregida con prueba",
+    "A05": "corregida",
+    "A06": "corregida con prueba",
+    "A07": "obstrucciÃ³n demostrada; extensiÃ³n pendiente",
+    "A08": "corregida",
+    "A09": "corregida",
+    "A10": "corregida con prueba",
+    "A11": "corregida con prueba",
+    "A12": "corregida",
+    "A13": "corregida",
+    "A14": "corregida; obligaciÃ³n global pendiente",
+    "A15": "corregida",
+    "A16": "corregida",
+    "A17": "corregida",
+    "A18": "aclarada y actualizada",
+    "A19": "corregida",
+    "A20": "corregida",
+    "A21": "corregida",
+    "A22": "corregida",
+    "A23": "corregida",
+    "A24": "pendiente para la clase completa",
+    "A25": "corregida",
+    "A26": "corregida con prueba",
+    "A27": "corregida",
+    "A28": "corregida",
+    "A29": "corregida",
+    "A30": "corregida",
+    "A31": "corregida; campaÃ±a pendiente",
+    "A32": "corregida y ensayada",
+    "A33": "corregida",
+    "A34": "delimitaciÃ³n verificada",
+    "A35": "corregida",
+    "A36": "corregida",
+    "A37": "corregida",
+    "B01": "corregida con prueba y control",
+    "B02": "corregida",
+    "B03": "contrato corregido; identificaciÃ³n pendiente",
+    "B04": "corregida",
+    "B05": "corregida",
+    "B06": "corregida con prueba y control",
+    "B07": "obstrucciÃ³n demostrada; extensiÃ³n causal pendiente",
+    "B08": "no identificabilidad demostrada; evidencia causal pendiente",
+    "B09": "obstrucciÃ³n y protecciÃ³n probadas",
+    "B10": "corregida",
+    "B11": "corregida",
+    "B12": "contrato corregido; extensiÃ³n global pendiente",
+    "B13": "corregida",
+    "B14": "corregida con prueba; comparadores amplios pendientes",
+    "B15": "corregida"
+  },
+  "residual_layout": {
+    "paper4_scenario_grid_unchanged": true,
+    "source_block_sha256": "faf6663117d2da5a386eba5897855e5ca99e1ec5967ed746f6822dc1a0985e95",
+    "rendering_review": "The 60-row unbreakable tabular still causes an assembled-height warning; no row/data was changed. It remains layout debt, not a new theorem or changed result.",
+    "monolith_baseline_overfull": 4,
+    "external_support_certified": false,
+    "visual_review": "Monolith physical page 155 shows the unchanged 60-row grid; all rows are visible but the table extends below the useful bottom margin. Paper II page 8 and Paper V/title pages were inspected. No exhaustive page-by-page review."
+  },
+  "sources_of_evidence": "Analytic arguments in TeX; exact finite controls; no new Lean mechanization, empirical campaign or independent certification.",
+  "release_failure_and_repair": {
+    "failed_check": "momega_infimum_consistency",
+    "cause": "Technical renaming removed the historically titled Ontological Mass, infimum convention alias from Paper III",
+    "repair": "Restore the historical definition alias, linked to the active definition and its infimum semantics, in the final interpretation section. Audit criteria unchanged.",
+    "failed_source_output": "V25 superior gap audit: FAIL; pass=14/15"
+  },
+  "pdf_visual_review": "Spot checks: Paper V title/author; Paper II multiscale theorem page; monolith title, final interpretation section and the unchanged Paper IV large grid. This is not a visual review of every page.",
+  "dependency_id_repairs": [
+    {
+      "owner": "paper7:proposition:prop-interior-kernel-margin",
+      "from": "paper7:definition:def-organizational-persistence",
+      "to": "paper7:definition:organizational-persistence-l236"
+    },
+    {
+      "owner": "paper7:proposition:complexity-is-not-a-life-criterion-l505",
+      "from": "paper7:definition:def-operational-life",
+      "to": "paper7:definition:operational-life-l310"
+    },
+    {
+      "owner": "paper7:proposition:operational-life-does-not-imply-operational-subjecthood-l535",
+      "from": "paper7:definition:def-operational-life",
+      "to": "paper7:definition:operational-life-l310"
+    }
+  ],
+  "paper10_layout_baseline": {
+    "source": "base.zip at cc54d71",
+    "paper": "Paper X",
+    "overfull": 57,
+    "underfull": 0,
+    "commands_exit": [
+      0,
+      0,
+      0
+    ],
+    "baseline_widths_pt": [
+      0.2447,
+      0.27583,
+      0.63666,
+      0.78746,
+      1.85388,
+      2.72897,
+      4.09189,
+      5.36125,
+      6.03618,
+      8.57423,
+      11.01962,
+      16.02357,
+      16.53362,
+      16.678,
+      16.69008,
+      19.98436,
+      21.067,
+      22.33636,
+      22.4187,
+      23.24829,
+      23.52673,
+      26.72537,
+      32.38374,
+      32.38374,
+      37.52849,
+      37.52849,
+      37.52849,
+      38.04211,
+      38.04211,
+      43.70049,
+      43.70049,
+      49.35886,
+      50.62822,
+      55.21521,
+      61.36397,
+      61.89404,
+      63.77208,
+      66.33397,
+      66.33397,
+      70.62943,
+      71.87105,
+      76.2878,
+      79.49303,
+      83.30908,
+      83.30908,
+      88.96745,
+      100.2842,
+      101.55356,
+      101.55356,
+      117.25931,
+      134.23442,
+      136.07674,
+      137.0056,
+      147.60077,
+      189.45522,
+      212.0887,
+      217.96509
+    ],
+    "current_widths_pt": [
+      0.2447,
+      0.27583,
+      0.63666,
+      0.78746,
+      1.85388,
+      2.72897,
+      4.09189,
+      5.36125,
+      6.03618,
+      8.57423,
+      11.01962,
+      16.02357,
+      16.53362,
+      16.678,
+      16.69008,
+      19.98436,
+      21.067,
+      22.33636,
+      22.4187,
+      23.24829,
+      23.52673,
+      26.72537,
+      32.38374,
+      32.38374,
+      37.52849,
+      37.52849,
+      37.52849,
+      38.04211,
+      38.04211,
+      43.70049,
+      43.70049,
+      49.35886,
+      50.62822,
+      55.21521,
+      61.36397,
+      61.89404,
+      63.77208,
+      66.33397,
+      66.33397,
+      70.62943,
+      71.87105,
+      76.2878,
+      79.49303,
+      83.30908,
+      83.30908,
+      88.96745,
+      100.2842,
+      101.55356,
+      101.55356,
+      117.25931,
+      134.23442,
+      136.07674,
+      137.0056,
+      147.60077,
+      189.45522,
+      212.0887,
+      217.96509
+    ],
+    "width_multiset_identical": true
+  }
+}

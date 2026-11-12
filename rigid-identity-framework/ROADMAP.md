@@ -2046,3 +2046,8 @@ Las categorías distinguen corrección documental, resultado probado y obligaci�
 ### Unificación de tipos y concordancia · bloque editorial · 2026-11-12
 
 Base `99df1de9850f8c24746e72c92d41f2515ef26017`; [prerregistro y ejecución](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/UNIFICACION_2026-11-11.md). Bloque local verificado, conservación de IDs y áreas congeladas. Las 52 disposiciones A01–A37/B01–B15 están registradas en la tabla anterior: las obligaciones científicas abiertas siguen abiertas. `external_support_certified=false`.
+
+
+### Cierre documental del plan de unificación · 2026-11-12
+
+Los cuatro bloques están implementados y verificados localmente en `a8a8270e5b43de05ac2be5da04c27a73f32d0dd5`. Las 52 disposiciones anteriores distinguen correcciones, obstrucciones y obligaciones abiertas. Raíz 3/3, release 6/6, matemáticas 28/28, 878 entradas y 383 macros; monolito 411 páginas y reconstrucción limpia/incremental concordante. Véase el [informe y límites](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/UNIFICACION_2026-11-11.md#cierre-local-verificado--2026-11-12). Quedan la revisión independiente, la deuda de maquetación declarada y las obligaciones científicas enumeradas; no hay nueva certificación ni publicación remota. `external_support_certified=false`.

@@ -125,3 +125,22 @@ Base local `99df1de9850f8c24746e72c92d41f2515ef26017`. Raíz 3/3, release 6/6, r
 | paper_bridge_operational_subjecthood | 26 | `64d127a6187e547c7c4720a131248c7d07c984e0b7b26c673d37079d00a519be` |
 
 Veredictos: v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`; v27/v28/v30 `BLOCKED_MULTIPLE_GATES`; v31 `BLOCKED_FOUNDATION_FIRST_GATES`; `external_support_certified=false`. La verificación de software no certifica las nuevas pruebas. Sin publicación remota; revisión independiente pendiente.
+
+
+## Cierre local verificado · 2026-11-12
+
+Se completaron los cuatro bloques del plan: tipos, reparación matemática, contratos de identificación y propagación editorial. La tabla A01–A37/B01–B15 conserva las 52 disposiciones; no las equipara a 52 resultados demostrados. El registro pasa de 870 a 878 entradas, preservando todos los IDs y etiquetas previos. Se mantienen las 383 macros; 18 definiciones de presentación se actualizan sin renombrar sus comandos.
+
+Las 12 unidades tienen una sección interpretativa final con anclas formales, hipótesis adicionales, predicciones y obligaciones. Las cinco proposiciones iniciales de VI ya distinguen fallo del criterio, pérdida de un certificado, incertidumbre y no existencia de un decodificador admisible. Los anexos de BaseCore usan la misma notación del conjunto de proyección que sus hipótesis. El título, autoría y metadatos del volumen reflejan el encuadre técnico; los alias históricos permanecen.
+
+Verificación: raíz 3/3, release 6/6, matemáticas 28/28, registro y macros válidos y 12 capítulos cotejados. Los 12 documentos se reconstruyeron; el monolito tiene 411 páginas, sin referencias indefinidas, citas rotas ni etiquetas duplicadas. La compilación limpia y la incremental dan texto y páginas idénticos. Los controles de macro nueva y configuración no revisada bloquean correctamente el ensamblado. El control de prosa revisa codificación, referencias locales y expresiones retiradas: no certifica coherencia semántica universal.
+
+Conservación: 76 archivos congelados, cuatro auditorías originales y 27 fuentes Lean intactos. Las fórmulas de los 31 resultados constructivos protegidos no cambian. No se modificó el runtime ni se ejecutó una nueva mecanización Lean. No se relajaron verificadores. Se preservaron los fallos por retirada de un alias histórico y por tres dependencias derivadas de etiquetas nuevas; se restauró la correspondencia documental y se resolvieron las dependencias hacia sus IDs históricos. Después pasaron los controles completos.
+
+Quedan dos avisos de desbordamiento en el monolito: la tabla sintética de 60 filas de IV conserva el bloque fuente original y excede la altura útil; otra tabla tiene un desbordamiento horizontal de aproximadamente 0,6 puntos. También subsisten avisos de justificación (underfull), cuantificados en el recibo. Los PDF individuales conservan deuda de presentación: se reprodujo por separado el Paper X anterior y también genera sus 57 desbordamientos. Son deuda explícita, no referencias rotas ni resultados nuevos. La revisión visual fue por muestras, no de las 411 páginas.
+
+La atomicidad general, la inclusión propia de clases completas, la positividad de radios globales fuera de las familias demostradas, la identificación causal/empírica y la comparación con rivales ampliados conservan las obligaciones indicadas en la tabla. No se publica un cierre científico global. La revisión independiente y las campañas externas siguen pendientes.
+
+Veredictos crudos: v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`; v27/v28/v30 `BLOCKED_MULTIPLE_GATES`; v31 `BLOCKED_FOUNDATION_FIRST_GATES`. En todos los casos, `external_support_certified=false`.
+
+El [recibo de verificación](UNIFICACION_2026-11-11_VERIFICACION.json) contiene comandos, commits, conservación, hashes de PDF, las disposiciones y los veredictos. Los temporales y salidas completas se conservan en E:/QICN-PRESERVACION/2026-11-11-unificacion. Entrega local; publicación sujeta al plan de revisión independiente.

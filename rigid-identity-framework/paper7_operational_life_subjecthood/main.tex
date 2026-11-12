@@ -207,6 +207,9 @@ d_{\Psi}(\PsiVec_\tau(S_1),\PsiVec_\tau(S_2))
 \]
 and is assumed to respect admissibility: components that are undefined because admissibility fails are not silently set to zero; they are treated as excluded or incomparable.
 
+\paragraph{Window certificate and global membership.}
+Write $\mathsf{Cert}_{\rm op}(S,\tau;P)$ for evidence on the nonempty windows, interventions and error domains of protocol $P$. It is distinct from global $S\in\Cop$. The historical indicator $\Cop(S,\tau)=1$ below is shorthand for global membership accompanied by the declared window certificate, not a finite-window redefinition of the six predicates. A missing global argument leaves global membership unproved. Readout separation $\delta_{\rm diff}^{[\tau]}$ is a real margin; $\Idiff$ remains Boolean. Increasing windows yield a global result only with compatible witnesses, uniform bounds and the relevant compactness/closure argument.
+
 \section{Definitions}\label{sec:definitions}
 \subsection{Definition A: Operational Boundary}
 \begin{definition}[Operational boundary]
@@ -328,7 +331,7 @@ whenever all of the following hold:
 \item $\Maint(S,\tau) > \lambda_{\mu}$;
 \item $\HistDep(S,\tau) > \lambda_{\eta}$;
 \item $\Viab(S,\tau;\eta) \ge \lambda_{\nu}$ for a declared viability floor $\eta$;
-\item $\Idiff(S,\tau) > \lambda_{\mathrm{diff}}$.
+\item $\delta_{\mathrm{diff}}^{[\tau]}(S) > \lambda_{\mathrm{diff}}$ in the calibrated readout units, together with the independently required global $\Idiff(S)=1$ when global membership is claimed.
 \end{enumerate}
 \end{definition}
 

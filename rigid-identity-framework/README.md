@@ -101,3 +101,20 @@ Leer `INSTRUCCIONES.md` antes de cualquier cambio. Reglas clave: no inflación d
 claims, no destructivo, trazabilidad en
 `docs/ai-platform-outputs/IMPLEMENTATION_TRACE_LEDGER.md`, AI-output bajo
 `docs/ai-platform-outputs/`.
+
+
+## Shared mathematical types
+
+| Object | Domain and owner |
+|---|---|
+| State x_t and trajectory h | Controlled state domain X; physical time t |
+| Cut S_n, p_n | Projective diagram; depth n (legacy bound t in tower formulas only) |
+| Inverse-limit object I_inv | BaseCore projective part and Paper I |
+| Projection set C_proj | Closed convex subset of a Hilbert space; BaseCore projection part |
+| Support A | Declared invariant subset, with controls specified |
+| Observable map C_obs | States or histories to the declared readout domain |
+| Experiment model | Plant, controls, observations, laws and provenance |
+| Energy component C_alpha | Histories mutually reachable by finite-cost admissible chains |
+| Certificate Cert_op(S,tau;P) | Evidence relative to protocol P and finite windows; not global membership by itself |
+
+Domains, codomains, units and quantifiers must be stated before transporting a result. Coincident notation does not identify objects. Historical macros and labels are retained; aliases never transfer convexity, causal assumptions or temporal guarantees.

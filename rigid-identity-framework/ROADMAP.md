@@ -1966,3 +1966,8 @@ Raíz3/3, release6/6, matemáticas27/27, registro870 con868IDs preservados, macr
 Antes de anunciar cierre clásico completo: revisar la caracterización desde R0 (`prop:necessity` de I), atomicidad (`cor:indivisible`) e inyectividad canal→identidad (`prop:cardinality`). Siguen pendientes radios globales positivos/cálculo efectivo de V, revisión independiente, datos externos y clases completas VIII/IX. La orden expresa del usuario autoriza publicación Git de este alcance, sin convertirla en aprobación matemática externa.
 
 Publicación comprobada en GitHub: extensión no aditiva `426ee6b` y saneamiento `1fd5938`; ambas ramas remotas `main` y `codex/qicn-framework-ordenado` verificadas en `1fd5938d79e36494526c02d92b77cf3341b0b6af`. El asiento documental posterior no modifica resultados, PDF ni verificadores.
+
+
+### Unificacion de tipos y concordancia · bloque types · 2026-11-12
+
+Base `fa904a1f947915bf58b96a5d06cc97b28867d9e3`; [prerregistro y ejecucion](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/UNIFICACION_2026-11-11.md). Bloque local verificado, conservacion de IDs y areas congeladas. El cierre global del plan y las disposiciones A01–A37/B01–B15 se documentaran al completar los bloques; no se declaran resueltas por un PASS. `external_support_certified=false`.

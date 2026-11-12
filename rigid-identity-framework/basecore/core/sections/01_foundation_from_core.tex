@@ -1,4 +1,4 @@
-﻿\part{Foundational Dynamics}
+\part{Foundational Dynamics}
 \section{Scope, System Boundary, and Non-Inference Note}
 
 \noindent\textbf{What BaseCore does.}\enspace This document proves the mathematical base results that later layers may use: projection existence and uniqueness, strict contraction, unique fixed points, compact attractor families, parameterwise non-collapse under explicit anti-constant assumptions, inverse-limit identity under non-finite-determination assumptions, conditional rigidity, conditional non-simulability, and operational-criterion grammar.
@@ -30,10 +30,13 @@ We use standard tools from:
 
 This section is pure mathematics. The symbols ``identity,'' ``regime,'' and ``criterion'' are structural labels only. Their ordinary-language interpretations are not part of any proof unless explicitly formalized as assumptions.
 
+\paragraph{Typed objects.}
+Here ${C_{\mathrm{proj}}}$ is the closed convex projection set. It is not the inverse-limit object $\mathcal I_{\mathrm{inv}}$ introduced in the projective part. An invariant support $A$ needs its own inclusion and invariance proof. A contraction at fixed control, a family of equilibria, and attraction under varying controls are distinct statements.
+
 \section{Minimal Base Hypotheses}
 
 \begin{hypothesis}[H1: Projection Structure]\label{hyp:H1}
-Let $\Hilb$ be a real Hilbert space with inner product $\inner{\cdot}{\cdot}$ and norm $\norm{\cdot}$. Let $\I \subset \Hilb$ be non-empty, closed, and convex.
+Let $\Hilb$ be a real Hilbert space with inner product $\inner{\cdot}{\cdot}$ and norm $\norm{\cdot}$. Let ${C_{\mathrm{proj}}} \subset \Hilb$ be non-empty, closed, and convex.
 \end{hypothesis}
 
 \begin{hypothesis}[H2: Contraction Operator]\label{hyp:H2}
@@ -55,7 +58,7 @@ Let $\U$ be a compact metric space and let $\Gamma:\U\to\Hilb$ be uniformly cont
 \begin{proposition}[Base sufficiency of H1--H4]\label{prop:minimal}
 Hypotheses H1--H4 are sufficient for:
 \begin{enumerate}[leftmargin=*]
-\item existence and uniqueness of the metric projection onto $\I$;
+\item existence and uniqueness of the metric projection onto ${C_{\mathrm{proj}}}$;
 \item strict contraction of the transition operators $T_u$;
 \item existence and uniqueness of the fixed point $f_u^\ast$ for each $u\in\U$;
 \item compactness of the attractor family $\A^\ast=\{f_u^\ast:u\in\U\}$.
@@ -70,9 +73,9 @@ The four items are exactly the content of Theorems~\ref{thm:projection}, \ref{th
 \section{The Projection Operator}
 
 \begin{definition}[Metric Projection]\label{def:projection}
-For $\Psi\in\Hilb$, define the metric projection onto $\I$ by
+For $\Psi\in\Hilb$, define the metric projection onto ${C_{\mathrm{proj}}}$ by
 \[
-\aleph(\Psi):=\arg\min_{\Phi\in\I}\norm{\Psi-\Phi}.
+\aleph(\Psi):=\arg\min_{\Phi\in{C_{\mathrm{proj}}}}\norm{\Psi-\Phi}.
 \]
 \end{definition}
 
@@ -81,11 +84,11 @@ Under Hypothesis~\ref{hyp:H1}, the projection $\aleph(\Psi)$ exists and is uniqu
 \end{theorem}
 
 \begin{proof}
-Existence follows because a minimizing sequence in the closed convex set $\I$ is Cauchy by the parallelogram law, hence converges in the complete space $\Hilb$ to a point of $\I$ that attains the infimum. Uniqueness follows from strict convexity of the norm induced by the Hilbert inner product: if two minimizers existed, their midpoint would produce the same minimum and the parallelogram identity would force the two minimizers to coincide.
+Existence follows because a minimizing sequence in the closed convex set ${C_{\mathrm{proj}}}$ is Cauchy by the parallelogram law, hence converges in the complete space $\Hilb$ to a point of ${C_{\mathrm{proj}}}$ that attains the infimum. Uniqueness follows from strict convexity of the norm induced by the Hilbert inner product: if two minimizers existed, their midpoint would produce the same minimum and the parallelogram identity would force the two minimizers to coincide.
 \end{proof}
 
 \begin{lemma}[Non-Expansiveness of the Projection]\label{lem:nonexp}
-The map $\aleph:\Hilb\to\I$ is non-expansive:
+The map $\aleph:\Hilb\to{C_{\mathrm{proj}}}$ is non-expansive:
 \[
 \norm{\aleph(\Psi_1)-\aleph(\Psi_2)}\le \norm{\Psi_1-\Psi_2}
 \qquad
@@ -98,7 +101,7 @@ This is the standard Hilbert-space projection inequality. Let $\Phi_i=\aleph(\Ps
 \[
 \inner{\Psi_i-\Phi_i}{\Phi-\Phi_i}\le 0
 \qquad
-\forall \Phi\in\I
+\forall \Phi\in{C_{\mathrm{proj}}}
 \]
 applied with $\Phi=\Phi_2$ and $\Phi=\Phi_1$ yields
 \[
@@ -229,9 +232,9 @@ There exists a family satisfying H1--H4 for which H5 fails and its unique equili
 \end{proposition}
 
 \begin{proof}
-For the first assertion, take $\Hilb=L^2([0,1])$, $\I=\Hilb$, $K=q\operatorname{Id}$ with $0\leq q<1$, $\U=\{0\}$ and $\Gamma(0)=0$. Projection is the identity, $T_0f=qf$, and the unique fixed point is the constant zero function. H1--H4 hold, but H5 fails at $c=0$.
+For the first assertion, take $\Hilb=L^2([0,1])$, ${C_{\mathrm{proj}}}=\Hilb$, $K=q\operatorname{Id}$ with $0\leq q<1$, $\U=\{0\}$ and $\Gamma(0)=0$. Projection is the identity, $T_0f=qf$, and the unique fixed point is the constant zero function. H1--H4 hold, but H5 fails at $c=0$.
 
-For the second assertion, Theorem~\ref{thm:realized-nonconstant-bridge} and Example~\ref{ex:common-bridge-witness} construct a family with $\I=\{0\leq f\leq1\}$, $Kf=\tfrac14\int f$ and $\Gamma(u)(s)=s/4+u$, $u\in[0,1/4]$. Its explicitly computed unique fixed points have distance $1/(4\sqrt{12})$ from the constants for every parameter. The proof uses the displayed dynamics and does not assume H5 to derive that distance. Thus H1--H4 permit both regimes; a structural condition beyond them is needed to select non-collapse.
+For the second assertion, Theorem~\ref{thm:realized-nonconstant-bridge} and Example~\ref{ex:common-bridge-witness} construct a family with ${C_{\mathrm{proj}}}=\{0\leq f\leq1\}$, $Kf=\tfrac14\int f$ and $\Gamma(u)(s)=s/4+u$, $u\in[0,1/4]$. Its explicitly computed unique fixed points have distance $1/(4\sqrt{12})$ from the constants for every parameter. The proof uses the displayed dynamics and does not assume H5 to derive that distance. Thus H1--H4 permit both regimes; a structural condition beyond them is needed to select non-collapse.
 \end{proof}
 
 \section{Summary of Base Results}

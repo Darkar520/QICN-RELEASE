@@ -1,4 +1,4 @@
-﻿\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 % ============================================================================
 % ENCODING
@@ -113,6 +113,9 @@ Appendix A establishes that, under the stated persistence and observability cons
 
 We begin by stating the minimal assumptions required for the subsequent results. These assumptions are deliberately weak---any system that fails to satisfy them is not a candidate for rigid identity, and no claim is made about such systems.
 
+\paragraph{Shared types and index binding.}
+Physical time is $t$, projective depth is $n$, and $\tau$ is a finite observation horizon. In the historical pure-tower formulas below, the bound subscript $t$ is a local alias for depth $n$, not an assertion about temporal dynamics. $\mathcal I$ (also $\mathcal I_{\mathrm{inv}}$) is the inverse-limit object; $A$ is an invariant support. The readout map $C_{\rm obs}$, the experiment model $(E,O,R)$, and the finite-cost connected component $\mathcal C_\alpha$ of histories are different types. Neither equality of outputs nor reusing a symbol identifies these objects. A projection set $C_{\rm proj}$ from BaseCore is not assumed equal to the inverse limit.
+
 \subsection{Assumption A1: Observable Channel}
 
 There exists an observable channel $\mathcal{C}: \mathcal{U} \to \mathcal{O}$ mapping internal states $\mathcal{U}$ to observable outputs $\mathcal{O}$. We do not assume injectivity of $\mathcal{C}$; multiple internal states may produce identical observations.
@@ -127,14 +130,9 @@ The system persists through discrete time steps $t \in \mathbb{N}$. At each step
 
 \subsection{Assumption A3: Non-Triviality (R0)}
 
-The system satisfies a minimal non-triviality constraint:
-\begin{enumerate}[leftmargin=*]
-    \item \textbf{Persistence:} $\forall t, I_t \neq \varnothing$
-    \item \textbf{Non-reactivity:} $\nexists f: \mathcal{E} \to \mathcal{I}$ such that $I_{t+1} = f(E_t)$
-    \item \textbf{Non-constancy:} $\nexists c$ such that $\forall t, I_t = c$
-\end{enumerate}
+Declare a nonempty admissible state set $X_{\rm adm}$, an input set $E$, and a total controlled law $F:X_{\rm adm}\times E\to X_{\rm adm}$, restricted to the specified admissible controls. R0 means: admissible trajectories remain in this nonempty state domain; there are $e,x,x'$ with $F(x,e)\ne F(x',e)$; and the declared family contains a nonconstant trajectory. The middle clause says that $F$ does not factor through the current input projection. It is a statement about the controlled law, not a fit to one observed trajectory. Fixed-point trajectories may coexist with the required nonconstant one.
 
-This prohibits only three trivial cases: dead systems, pure mirrors, and frozen states. Any system failing R0 is not a candidate for identity analysis.
+For example, $F(x,e)=1-x$ on $\{0,1\}$ meets these clauses for any nonempty input set. If a recorded input takes a different value at each time, a function can interpolate that trajectory's next states even though the law is independent of the input. Such interpolation does not decide the structural clause.
 
 \subsection{Categorical Regularity: Topological Structure of State Spaces}
 
@@ -169,9 +167,12 @@ This condition is sufficient for the compact inverse-limit construction used her
 \end{enumerate}
 \end{remark}
 
-\begin{proposition}[A0 Becomes Categorially Closed]\label{prop:a0-closed}
-Under Definition~\ref{def:obs-spaces}, Assumption A3 (R0) is not merely a constraint but defines a closed class of systems admitting rigorous analysis.
+\begin{proposition}[R0 under Controlled-System Isomorphism]\label{prop:a0-closed}
+Let $h:X_{\rm adm}\to X'_{\rm adm}$ and $v:E\to E'$ be bijections and put $F'(hx,ve)=hF(x,e)$. R0 holds for one controlled system exactly when it holds for the other.
 \end{proposition}
+\begin{proof}
+State nonemptiness, admissible trajectories and nonconstancy transport through $h$. A factorization $F'(z,e')=g(e')$ pulls back to $F(x,e)=h^{-1}g(ve)$, and conversely. Thus non-factorization is preserved. This is closure under the declared isomorphisms, not a claim of topological closedness in an unspecified space of models.
+\end{proof}
 
 \subsection{Conditional Nature of Results}
 
@@ -201,10 +202,10 @@ satisfying the standard compatibility condition:
     \pi_{t+1 \to t} \circ \pi_{t+2 \to t+1} = \pi_{t+2 \to t} \quad \forall t \in \mathbb{N}.
 \end{equation}
 
-No assumption is made regarding:
+The set-theoretic cone construction alone does not require:
 \begin{itemize}[leftmargin=*]
-    \item the cardinality of $S_t$,
-    \item continuity or smoothness,
+    \item a fixed cardinality of $S_t$,
+    \item continuity or smoothness; the compact topological results separately impose the stated regularity,
     \item realizability by a computational mechanism.
 \end{itemize}
 
@@ -230,20 +231,13 @@ This definition is purely structural and does not depend on:
 
 \subsection{Compatibility with Minimal Assumption R0}
 
-We now show that this construction is determined within the minimal restriction $R_0$.
+The representation below uses a declared trajectory domain. R0 alone does not select its cuts or force non-finite determination.
 
-\begin{proposition}[Necessity of Projective Structure]\label{prop:necessity}
-Any system satisfying $R_0$ admits a projective representation $(S_t, \pi_{t+1 \to t})$ whose inverse limit is non-empty.
+\begin{proposition}[Prefix Representation of a Trajectory Domain]\label{prop:necessity}
+Let $H\subseteq X^{\mathbb N}$ be nonempty and let $S_n$ be its prefixes through time $n$, with deletion maps. These maps are surjective and $H$ embeds in their nonempty inverse limit. If $X$ is compact metric and $H$ is closed, the embedding is a homeomorphism onto that limit.
 \end{proposition}
-
 \begin{proof}
-\begin{enumerate}[leftmargin=*]
-    \item Persistence implies that admissible states cannot vanish over time.
-    \item Non-reactivity forbids forward-determined transitions $S_t \to S_{t+1}$ driven by environment.
-    \item Therefore, admissibility at time $t$ must be determined by compatibility with future states, not past ones.
-    \item Hence, the only admissible morphisms preserving identity under $R_0$ are projections from future to past, i.e., $\pi_{t+1 \to t}$.
-    \item The compatibility condition ensures persistence of consistency. \qedhere
-\end{enumerate}
+Every prefix comes from a history of $H$ and therefore has a longer lift. Mapping a history to all its prefixes is injective and compatible. A point of the limit specifies one sequence all of whose prefixes extend to $H$. If $H$ is closed, that sequence belongs to $H$: otherwise a product neighborhood disjoint from $H$ would exclude a sufficiently long prefix. The coordinate maps are continuous, and compactness of $H$ and Hausdorffness of the limit give the homeomorphism. The alternating two-state law satisfies R0, but its two trajectories are determined by their initial state. Thus R0 does not imply ramification or non-finite determination.
 \end{proof}
 
 \subsection{Identity Is Not a State}
@@ -259,13 +253,13 @@ Lift $a,b$ successively to infinite compatible histories $x,y$, and obtain earli
 
 This formalizes a key distinction:
 \begin{itemize}[leftmargin=*]
-    \item $S_t$: local, time-indexed configurations
-    \item $\mathcal{I}$: global, trans-temporal constraint
+    \item $S_t$: local configurations at a declared cut
+    \item $\mathcal{I}$: global projective compatibility constraint
 \end{itemize}
 
 \subsection{Impossibility of Progressive Construction}
 
-We now establish that identity cannot be constructed via progressive (forward) dynamics.
+We examine when compatible forward sections fail to exhaust the declared inverse limit.
 
 \begin{theorem}[No Progressive Identity Construction]\label{thm:noprogressive}
 If $p_0$ is noninjective, no compatible forward sections $f_t:S_t\to S_{t+1}$ with $\pi_{t+1\to t}f_t=\mathrm{id}$ generate all of $\mathcal I$ as the orbital history space $x_{t+1}=f_t(x_t)$.
@@ -276,26 +270,20 @@ They select exactly one orbit per initial point, whereas noninjectivity gives tw
 
 \subsection{Minimality of the Inverse Limit Construction}
 
-\begin{theorem}[Minimal Representation]\label{thm:minimal}
-Among all structures satisfying $R_0$, the inverse limit construction introduces the minimal additional structure necessary to define non-trivial identity.
+\begin{theorem}[Universal Representation of a Fixed Compatible Cone]\label{thm:minimal}
+For a declared inverse system, every coherent family $q_n:J\to S_n$ induces a unique map $q:J\to\mathcal I$ with $p_nq=q_n$. In the topological category, continuous $q_n$ give continuous $q$ in the product-subspace topology.
 \end{theorem}
-
-\textit{Justification.}
-\begin{itemize}[leftmargin=*]
-    \item No topology is assumed.
-    \item No metric is assumed.
-    \item No dynamics is assumed.
-    \item Only compatibility constraints are imposed.
-\end{itemize}
-Any weaker structure fails to ensure persistence. Any stronger structure introduces unnecessary assumptions.
+\begin{proof}
+Define $q(j)=(q_n(j))_n$. Coherence places this tuple in the inverse limit; its coordinates force uniqueness. A map to a product is continuous when its coordinates are continuous, and the image lies in the subspace. This is universality relative to a fixed diagram, not a proof that R0 selects a unique diagram or that every persistent system has a non-finitely determined identity.
+\end{proof}
 
 \subsection{Summary of Section 3}
 
 \begin{enumerate}[leftmargin=*]
     \item Identity is rigorously defined as an inverse limit $\mathcal{I} = \varprojlim S_t$.
-    \item This construction is determined within minimal assumption $R_0$.
-    \item Identity is not reducible to any finite-time state.
-    \item Progressive or reactive architectures cannot implement this structure.
+    \item A declared trajectory domain has the prefix representation just proved; R0 does not select a unique projective diagram.
+    \item Non-finite determination obstructs the declared finite cuts, when that additional hypothesis holds.
+    \item Compatible forward sections need not exhaust a ramified limit; dynamics storing the full history are not excluded by that obstruction.
     \item No metaphysical assumptions are introduced.
 \end{enumerate}
 
@@ -544,22 +532,22 @@ No access to internal states $S_t$ is assumed. The observer measures only the ti
 \subsection{Inference of Inverse-Limit Classes from Observables}
 
 \begin{definition}[Observable Equivalence]\label{def:obs-equiv}
-Two observable histories $\{O_t\}$ and $\{O'_t\}$ are \textit{inverse-limit equivalent} (denoted $\{O_t\} \sim_{\mathcal{I}} \{O'_t\}$) if for all admissible perturbations $\{\delta E_t\}$ with finite weighted energy,
-\begin{equation}
-    d_w(\mathcal{I}(O), \mathcal{I}(O')) = 0,
-\end{equation}
-where $\mathcal{I}(O)$ denotes the inferred inverse-limit class consistent with the observation sequence.
+Let $\mathcal H_O$ be the declared domain of admissible observable histories and $\mathcal D$ a nonempty family of finite-cost probes, including sham. For each $\delta\in\mathcal D$ require a specified response map $T_\delta:\mathcal H_O\to\mathcal H_O^{\delta}$ and reconstruction map $J_\delta$ into nonempty closed identity supports in a common comparison space. Define
+\[
+ O\sim_{\mathcal I}O'\quad\Longleftrightarrow\quad
+ \forall\delta\in\mathcal D,\quad d_H(J_\delta(T_\delta O),J_\delta(T_\delta O'))=0.
+\]
 \end{definition}
 
-This defines a quotient space $O / {\sim_{\mathcal{I}}}$ whose elements represent externally indistinguishable identity classes.
+The quotient is $\mathcal H_O/{\sim_{\mathcal I}}$, not the quotient of the instantaneous output alphabet. Each zero-distance relation is an equivalence relation, and their intersection is one. This definition requires well-defined responses and a common Hausdorff comparison; it does not infer latent supports or causal effects from uncalibrated observations. Reconstruction error and identification against alternative models require separate evidence.
 
 \subsection{Empirical Estimator of Ontological Mass}
 
 Let $\{\delta E_t^{(k)}\}$, $k = 1, \ldots, N$, be a family of controlled perturbation protocols with known weighted energies $E_w^{(k)}$.
 
-Let $\tilde{O}^{(k)}$ denote the perturbed observable history. Define the empirical deformation magnitude:
+For the sham reconstruction and probe $\delta_k$, let $\tilde{O}^{(k)}=T_{\delta_k}O$ denote the perturbed observable history. Define the empirical deformation magnitude:
 \begin{equation}
-    \Delta^{(k)} := d_w(\mathcal{I}(O), \mathcal{I}(\tilde{O}^{(k)})),
+    \Delta^{(k)} := d_H(J_0(O),J_{\delta_k}(\tilde{O}^{(k)})),
 \end{equation}
 where the distance between the two sets is Hausdorff distance in a declared common history space. Its reconstruction from observed data requires a separate estimator with error control.
 

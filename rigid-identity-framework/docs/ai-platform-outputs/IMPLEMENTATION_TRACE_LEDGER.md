@@ -11275,3 +11275,17 @@ Commit de contenido B/C verificado: `0b1fbe99bea4bffb1adc9bdd29a4773c95648c83`. 
 ### Ajuste final de procedencia · 2026-11-12
 
 Se corrigieron fechas de plantilla únicamente en las once entradas creadas y los dos eventos de modificación de esta fase. Fecha efectiva: 2026-11-12. No cambió ningún enunciado, prueba, ID, dependencia, etiqueta, estado o dato de curación; los eventos históricos anteriores quedaron intactos. Validador de corpus sin bloqueos y release 6/6 reproducidos después de la corrección. No se añadieron resultados ni se cambió ningún PDF. external_support_certified=false.
+
+
+### Ruta 2 verificada y publicación autorizada · 2026-11-12
+
+Base `f792707`. Ajustes exclusivos de presentación en quince fuentes, doce PDF individuales y monolito (422 páginas), sin alterar el contenido matemático. Cero Overfull horizontales/verticales en los trece PDF. Preservados 889 IDs, 383 macros, 76 archivos congelados y 26 fuentes Lean previas; 211 localizaciones de línea actualizadas. Tres módulos nuevos, 29 teoremas nuevos; Lean 4.31.0: 30 módulos compilados con agregador y 215 teoremas públicos auditados, sin sorryAx ni axiomas no estándar.
+
+Fuentes y recibos de compilación leídos; comandos: pdflatex/biber de las doce unidades, build:monolithic y compile:monolithic, verify:lean con kernel fresco/serial y caché fijada, raíz 3/3, verify:release 6/6, validate-corpus, validate-macros, verify-math-regressions 30/30, verify-prose-sync y check-monolith 12/12. Las comprobaciones que reescriben informes se aislaron en E:. [Informe y alcance](repair-plans/TIPOGRAFIA_LEAN_2026-11-12/EJECUCION.md). Persisten los Underfull documentados y los límites analíticos/empíricos declarados.
+
+Publicación autorizada a `origin/codex/qicn-framework-ordenado` y `origin/main`, sin force-push; la comprobación final exige igualdad de ambas referencias con HEAD y árbol limpio. Runtime completamente aislado. Ruta 3 reservada. Veredictos crudos: v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`; v27/v28/v30 `BLOCKED_MULTIPLE_GATES`; v31 `BLOCKED_FOUNDATION_FIRST_GATES`; `external_support_certified=false`.
+
+
+Se corrigió además la portabilidad del ensamblador: normaliza CRLF antes de transformar la composición. El comparador devuelve fallo ante discrepancias. Controles: versión anterior 11/12 con salida 0; versión corregida 12/12 en copia activa, LF y CRLF; capítulo alterado en memoria 11/12 con salida 1. Es una comprobación técnica exploratoria, no un nuevo experimento científico prerregistrado.
+
+Commits de contenido: typography `6007af18e55a8bef136366386808600566b5005e`; lean `95ed4f5840bf3e12bd810a6eba8d0881163ca462`; portable_assembly `902a623ac23e8e751fb364f8e1d10610edf9153a`; monolith_pdf `88d56863878ec515745c4d3de0629e63abdab901`.

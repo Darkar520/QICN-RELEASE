@@ -1,0 +1,13 @@
+# Ruta 2 y publicación · 2026-11-12
+
+Base limpia f792707dcfcdcd73282177e86f52ba6d4f63ffc3. Auditoría externa de A/B/C aprobada según la instrucción expresa del usuario; no se declara certificación empírica. El usuario autoriza publicar el estado final en ambas ramas de GitHub una vez cerrados los controles.
+
+Bloque 2A: reproducir doce PDF y monolito; inventariar cada overfull con archivo/líneas/magnitud; corregir solo composición, conservando todos los símbolos, celdas, hipótesis, cotas y etiquetas. Cero overfull hbox como objetivo, o excepción mínima explícitamente demostrada y revisada visualmente. Preservar los 889 registros y 383 macros: solo se pueden actualizar localizaciones. No regenerar textos ni metadatos curados del registro. Comparar antes/después conteos de overfull/underfull y conservación semántica del TeX. Mantener el contrato auditado del preámbulo y sus personalizaciones; cualquier cambio tipográfico de paquetes se revisa explícitamente.
+
+Bloque 2B: tres módulos Lean nuevos para atomicidad (umbral, igualdad, flips y partición), testigo infinito (cajas, constantes, raíz, rechazo nulo, inducción equivariante y puertas, fases incompatibles) e interfaz experimental (error, headroom, raíz/tamaño muestral y pushforward). Solo agregar imports al agregado existente; no modificar las 26 fuentes Lean anteriores. Todas las pruebas pasan por Lean 4.31.0 y auditoría completa de axiomas. Cero sorryAx y ningún axioma fuera de propext, Classical.choice, Quot.sound. No afirmar mecanización de compacidad infinita, conectividad/topología, límites inversos ni Hoeffding probabilístico.
+
+Temporal y cachés en E:. Reutilizar dependencias Mathlib fijadas y verificar sus revisiones. Preferir elaboración fresca, serial y auditada para no depender de objetos previos ni saturar memoria. Si faltan dependencias, obtener solo las del toolchain fijado; no actualizar versiones.
+
+Verificación final tras las últimas ediciones: verify:lean; raíz3; release6 con veredictos crudos; corpus889/macros383 sin bloqueos ni avisos; matemáticas30; prosa y capítulos12. Compilar toda unidad tocada y monolito. Mantener 76 archivos congelados byte a byte, separar commits por tipografía, Lean y cierre. Archivar auxiliares regenerables e informes en E: antes de limpiar únicamente rutas verificadas. Revisar cada staged diff, nunca git add -A. Publicar sin force-push; comprobar ambas referencias remotas con HEAD y estado limpio.
+
+Parar ante cambio matemático, ID/metadato perdido, macro alterada, axioma no estándar, evidencia insuficiente o gate obligatorio fallido. Corregir la causa sin relajar criterios. Registrar incidentes y límites. Runtime y Ruta 3 completamente fuera de alcance. external_support_certified=false.

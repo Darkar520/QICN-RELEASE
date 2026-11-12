@@ -535,11 +535,32 @@
     },
     {
       "file": "registry/theorems.jsonl",
-      "sha256": "26d9167b83d81c7c092b685a2aecfd17d62f1a591ab2e84e65dda1fe3ea0ae5c"
+      "sha256": "d6b92c604d0bbc1fe0850b28ff63faa52ca93879c4318980170dadfc1941f351"
     },
     {
       "file": "scripts/verify-math-regressions.py",
       "sha256": "5fe85b4c178e64519da8d9bf61c41922f88b82ae8b9831071965c1253582ab6b"
     }
-  ]
+  ],
+  "history_metadata_corrections": {
+    "date": "2026-11-12",
+    "ids": [
+      "bridge:corollary:cor-infinite-cop-nonentailed",
+      "paper1:definition:def-atomicity-certificate",
+      "paper1:proposition:prop-product-clamp-certificate",
+      "paper1:lemma:lem-cantor-product-obstruction",
+      "paper1:theorem:thm-cutpoint-product-atomicity",
+      "paper1:corollary:cor-indivisible",
+      "paper4:definition:def-external-experimental-interface",
+      "paper4:theorem:thm-external-interface-falsation-bound",
+      "paper4:proposition:prop-external-interface-nonidentifiability",
+      "paper5:definition:def-hilbert-prefix-system",
+      "paper5:theorem:thm-infinite-six-predicate-witness",
+      "paper8:proposition:strict-strengthening-l399",
+      "paper8:theorem:thm-infinite-strict-upstream-separation"
+    ],
+    "reason": "Removed inherited extraction-template dates only for records/events introduced in this phase; all mathematical, curatorial and earlier historical fields preserved.",
+    "corpus_validator_exit": 0,
+    "release_passed": 6
+  }
 }

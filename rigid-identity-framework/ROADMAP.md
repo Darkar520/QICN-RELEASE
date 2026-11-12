@@ -2068,3 +2068,8 @@ A verificado en `478be2c`; B/C verificados con raíz 3/3, release 6/6, matemáti
 
 
 Commit de contenido B/C verificado: `0b1fbe99bea4bffb1adc9bdd29a4773c95648c83`. El asiento posterior solo registra esta referencia y las comprobaciones sobre la carpeta activa; no modifica fuentes, pruebas ni PDF. Publicación de los bloques nuevos pendiente de revisión independiente.
+
+
+### Ajuste final de procedencia · 2026-11-12
+
+Se corrigieron fechas de plantilla únicamente en las once entradas creadas y los dos eventos de modificación de esta fase. Fecha efectiva: 2026-11-12. No cambió ningún enunciado, prueba, ID, dependencia, etiqueta, estado o dato de curación; los eventos históricos anteriores quedaron intactos. Validador de corpus sin bloqueos y release 6/6 reproducidos después de la corrección. No se añadieron resultados ni se cambió ningún PDF. external_support_certified=false.

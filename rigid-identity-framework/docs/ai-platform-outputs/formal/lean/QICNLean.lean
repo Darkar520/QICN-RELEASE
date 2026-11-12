@@ -24,3 +24,6 @@ import QICNLean.QICNFiniteFronts
 import QICNLean.QICNBodyWorldDynamics
 import QICNLean.QICNBodyWorldFinite
 import QICNLean.QICNBodyWorldEvaluation
+import QICNLean.QICNEpistemicAtomicity
+import QICNLean.QICNEpistemicWitness
+import QICNLean.QICNEpistemicInterface

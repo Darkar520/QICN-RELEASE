@@ -60,7 +60,7 @@ lic/lm/lmtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/U
 sers/irisp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/iris
 p/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/
 fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (421 pages, 3488757 bytes).
+Output written on QICN_MONOLITHIC.pdf (422 pages, 3485046 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 [pdflatex pass 3]
@@ -76,7 +76,7 @@ lic/lm/lmtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/U
 sers/irisp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/iris
 p/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/
 fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (421 pages, 3488757 bytes).
+Output written on QICN_MONOLITHIC.pdf (422 pages, 3485288 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 ```

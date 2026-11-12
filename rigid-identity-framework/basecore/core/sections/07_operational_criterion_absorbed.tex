@@ -1,4 +1,4 @@
-﻿\part{Operational-Criterion Grammar and Certification}
+\part{Operational-Criterion Grammar and Certification}
 \section{Admissible Systems, Supports, and Histories}
 
 \subsection{System Model}
@@ -89,7 +89,7 @@ A positive radius certifies the associated predicate at the target and throughou
 \small
 \renewcommand{\arraystretch}{1.14}
 \setlength{\tabcolsep}{4.5pt}
-\begin{tabularx}{\textwidth}{P{1.3cm} Y P{2.8cm} P{3.2cm}}
+\begin{tabularx}{\textwidth}{P{1.45cm} Y P{2.8cm} P{3.2cm}}
 \toprule
 Invariant & Certified content & Upstream anchor & Rupture signature \\
 \midrule
@@ -143,7 +143,7 @@ search space normalized independently of the target error, and no
 reconstruction decoder or time-dependent post-processing map that re-couples
 the factors at output time.  This default structural reading is the adopted
 class recorded in
-\texttt{docs/ai-platform-outputs/analysis/QICN\_IINT\_CANONICAL\_CLASS\_SPLIT\_READOUT.md}.
+\texttt{\detokenize{docs/}\allowbreak{}\detokenize{ai-}\allowbreak{}\detokenize{platform-}\allowbreak{}\detokenize{outputs/}\allowbreak{}\detokenize{analysis/}\allowbreak{}\detokenize{QICN_}\allowbreak{}\detokenize{IINT_}\allowbreak{}\detokenize{CANONICA}\allowbreak{}\detokenize{L_}\allowbreak{}\detokenize{CLASS_}\allowbreak{}\detokenize{SPLIT_}\allowbreak{}\detokenize{READOUT.}\allowbreak{}\detokenize{md}}.
 \end{definition}
 
 \begin{remark}[Class-relative integration margin]
@@ -220,7 +220,7 @@ such that:
 \end{definition}
 
 \begin{proposition}[Each invariant is individually necessary]\label{prop:invariant-necessity}
-If any one of $\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg$ fails, then $S\notin\Critop$.
+If any one of $\Iper,\allowbreak \Iri,\allowbreak \Iint,\allowbreak \Icont,\allowbreak \Idiff,\allowbreak \Ileg$ fails, then $S\notin\Critop$.
 \end{proposition}
 
 \begin{proof}
@@ -288,7 +288,7 @@ A criterion witness requires all six invariants on one admissible support. Globa
 \begin{definition}[Reduced criterion]
 Let
 \[
-\mathfrak{I}=\{\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg\}.
+\mathfrak{I}=\{\Iper,\allowbreak \Iri,\allowbreak \Iint,\allowbreak \Icont,\allowbreak \Idiff,\allowbreak \Ileg\}.
 \]
 For every subset $J\subseteq \mathfrak{I}$ define the reduced class
 \[
@@ -296,7 +296,7 @@ For every subset $J\subseteq \mathfrak{I}$ define the reduced class
 \]
 \end{definition}
 
-\begin{definition}[Single-rupture witness family]
+\begin{definition}[Single-rupture witness family]\leavevmode\par
 Fix one invariant index $k\in\{\mathrm{per},\mathrm{ri},\mathrm{int},\mathrm{cont},\mathrm{diff},\mathrm{leg}\}$. A single-rupture witness family $\mathcal{W}_k$ consists of admissible systems for which predicate $I_k$ fails and every other predicate holds on the declared comparison domain.
 \end{definition}
 

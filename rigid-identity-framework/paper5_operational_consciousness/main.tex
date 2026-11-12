@@ -74,7 +74,7 @@
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \begin{document}
-
+\setlength{\emergencystretch}{3em}
 \maketitle
 
 \begin{abstract}
@@ -260,7 +260,7 @@ A calibrated budget certifies simultaneous persistence of all six predicates und
 \small
 \renewcommand{\arraystretch}{1.14}
 \setlength{\tabcolsep}{4.5pt}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.3cm} Y >{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}p{3.15cm}}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.45cm} Y >{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}p{3.15cm}}
 \toprule
 Invariant & Certified content & Upstream anchor & Rupture signature \\
 \midrule
@@ -664,7 +664,7 @@ If $\Ileg(S)=0$, any putative class remains operationally opaque. The framework 
 
 \subsection{Necessity of Each Invariant}
 \begin{proposition}[Each invariant is individually necessary]\label{prop:necessity}
-If any one of $\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg$ fails, then $S \notin \Cop$.
+If any one of $\Iper,\allowbreak \Iri,\allowbreak \Iint,\allowbreak \Icont,\allowbreak \Idiff,\allowbreak \Ileg$ fails, then $S \notin \Cop$.
 \end{proposition}
 
 \begin{proof}
@@ -897,7 +897,7 @@ then:
 \end{theorem}
 
 \begin{proof}
-Membership in $\Cop$ follows immediately from Definition~\ref{def:cop}. Since $\Iper,\Iri,\Icont,\Idiff,\Ileg$ hold, Proposition~\ref{prop:qop-welldefined} applies and yields a well-defined quotient $\Qop(S)$. Because $\Aset$ is non-empty, the quotient is non-empty. This proves a defined nonempty quotient. A claim of at least two classes additionally requires a pair distinguished by a certified decoder or certified response-cell map; a raw state/readout gap alone does not establish that link.
+Membership in $\Cop$ follows immediately from Definition~\ref{def:cop}. Since $\Iper,\allowbreak \Iri,\allowbreak \Icont,\allowbreak \Idiff,\allowbreak \Ileg$ hold, Proposition~\ref{prop:qop-welldefined} applies and yields a well-defined quotient $\Qop(S)$. Because $\Aset$ is non-empty, the quotient is non-empty. This proves a defined nonempty quotient. A claim of at least two classes additionally requires a pair distinguished by a certified decoder or certified response-cell map; a raw state/readout gap alone does not establish that link.
 \end{proof}
 
 \begin{proposition}[Decoder-Visible Separation Gives a Nontrivial Quotient]\label{prop:decoder-visible-separation}
@@ -949,7 +949,7 @@ The distinguished null assignment is $(0,0)$ in the regime codomain. It can occu
 \begin{theorem}[All Six Predicates on an Infinite-Dimensional Support]\label{thm:infinite-six-predicate-witness}
 The system of Definition~\ref{def:hilbert-prefix-system}, with exactly its declared global comparison and observation data, has
 \[
- (\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg)=(1,1,1,1,1,1).
+ (\Iper,\allowbreak \Iri,\allowbreak \Iint,\allowbreak \Icont,\allowbreak \Idiff,\allowbreak \Ileg)=(1,1,1,1,1,1).
 \]
 Its support contains boxes of arbitrarily large dimension, and every Hilbert coordinate participates in the phase/response coupling. This is a global analytic witness, not an inference from finitely many truncations.
 \end{theorem}
@@ -1090,7 +1090,7 @@ The six-invariant family is not an arbitrary bundle. It is the minimal basis tha
 \begin{definition}[Reduced invariant criterion]\label{def:reduced}
 Let
 \[
-\mathfrak{I}=\{\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg\}.
+\mathfrak{I}=\{\Iper,\allowbreak \Iri,\allowbreak \Iint,\allowbreak \Icont,\allowbreak \Idiff,\allowbreak \Ileg\}.
 \]
 For every subset $J \subseteq \mathfrak{I}$ define the reduced criterion
 \[
@@ -1376,7 +1376,7 @@ A candidate system may be certified as a member of $\Cop$ only if all of the fol
 \small
 \renewcommand{\arraystretch}{1.14}
 \setlength{\tabcolsep}{4.5pt}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.35cm} Y >{\raggedright\arraybackslash}p{3.15cm} >{\raggedright\arraybackslash}p{2.4cm}}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.45cm} Y >{\raggedright\arraybackslash}p{3.15cm} >{\raggedright\arraybackslash}p{2.4cm}}
 \toprule
 Invariant & Minimum evidence object & Core audit question & Failure verdict \\
 \midrule

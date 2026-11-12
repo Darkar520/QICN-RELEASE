@@ -86,7 +86,7 @@
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \begin{document}
-
+\setlength{\emergencystretch}{3em}
 \maketitle
 
 \begin{abstract}
@@ -569,7 +569,7 @@ The runtime status table is intentionally conservative. A computational estimato
 \toprule
 Concept & Estimator or runtime analogue & Status \\
 \midrule
-$\Sigmaop$ & `OntologicalSingularityCore.selfModelSigma'; first-person certifier fields when present & Implemented as internal telemetry/proxy; not yet a formal proof of contraction and intervention commutation on $\Aset$. \\
+$\Sigmaop$ & `OntologicalSingularityCore.\allowbreak selfModelSigma'; first-person certifier fields when present & Implemented as internal telemetry/proxy; not yet a formal proof of contraction and intervention commutation on $\Aset$. \\
 $\Piop$ & $\Iri+\Iint$ in `CanonicalInvariantPackage' and related finite-horizon/non-factorization modules & Certified as internal support for Paper 5 invariants; not external validation. \\
 $\Iotaop$ & Legibility L4 intervention fidelity in `LegibilityCertifier' & Certified as internal support for directional class-shift fidelity under finite protocols. \\
 $\Qop$ & Output support labels, decoder classes, invariant package signals & Proxy or quotient-facing support; formal quotient certification remains bounded by Paper 5 assumptions. \\
@@ -673,17 +673,17 @@ For a runtime artifact $a$, distinguish the following statuses:
 \item \texttt{estimator}: an algorithm computes a declared approximation;
 \item \texttt{certificate}: a bounded predicate is verified under stated
 admissibility rules;
-\item \texttt{internal\_support}: governed artifacts support a claim family
+\item \texttt{\detokenize{internal_}\allowbreak{}\detokenize{support}}: governed artifacts support a claim family
 inside the current program;
-\item \texttt{external\_validation}: an external protocol such as Paper 10 has
+\item \texttt{\detokenize{external_}\allowbreak{}\detokenize{validati}\allowbreak{}\detokenize{on}}: an external protocol such as Paper 10 has
 been executed with admissible evidence.
 \end{enumerate}
 \end{definition}
 
 \begin{proposition}[Runtime non-promotion]\label{prop:runtime-non-promotion}
 No artifact with status \texttt{proxy}, \texttt{estimator},
-\texttt{certificate}, or \texttt{internal\_support} entails
-\texttt{external\_validation}.
+\texttt{certificate}, or \texttt{\detokenize{internal_}\allowbreak{}\detokenize{support}} entails
+\texttt{\detokenize{external_}\allowbreak{}\detokenize{validati}\allowbreak{}\detokenize{on}}.
 \end{proposition}
 
 \begin{proof}

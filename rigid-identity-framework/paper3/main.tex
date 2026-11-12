@@ -76,7 +76,7 @@
 % DOCUMENT
 % =============================================================================
 \begin{document}
-
+\setlength{\emergencystretch}{3em}
 \maketitle
 
 % =============================================================================
@@ -535,7 +535,7 @@ Estimator-only promotion & Runtime estimates are substituted for $\Phi$ without 
 
 \subsection{Robust Decision Margin}
 
-\begin{proposition}[Noise-robust null exclusion]\label{prop:noise-margin}
+\begin{proposition}[Noise-robust null exclusion]\label{prop:noise-margin}\leavevmode\par
 Let $e_i=\Phi(z_i)$ and estimates $\widehat e_i$ satisfy $\dE(e_i,\widehat e_i)\leq\eta_i$, $i=0,1$. Let $m=C\epsilon$ be a certified true separation. Then
 \[
 \dE(\widehat e_0,\widehat e_1)\geq m-\eta_0-\eta_1.

@@ -66,3 +66,6 @@ Raíz 3/3, release 6/6, matemáticas 30/30; registro 889 con los 878 IDs inicial
 La tabla de seis controles de IV conserva exactamente todas las celdas; su contenedor se cambió para resolver la regresión de paginación. El monolito conserva un desbordamiento previo de aproximadamente 0,6 puntos y 334 avisos underfull. Los PDF individuales mantienen deuda de maquetación cuantificada en el recibo; no se presenta la entrega como revisión visual exhaustiva. Las pruebas nuevas no están mecanizadas en Lean.
 
 Veredictos crudos: v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`; v27/v28/v30 `BLOCKED_MULTIPLE_GATES`; v31 `BLOCKED_FOUNDATION_FIRST_GATES`; `external_support_certified=false` en todos los casos. Los gates de software no son certificación científica. Permanecen la revisión independiente, la realización/calibración biológica, la extensión a comparadores más amplios y la realizabilidad de la clase fuerte completa. No se leyó ni se modificó el proyecto de runtime.
+
+
+Commit de contenido B/C verificado: `0b1fbe99bea4bffb1adc9bdd29a4773c95648c83`. El asiento posterior solo registra esta referencia y las comprobaciones sobre la carpeta activa; no modifica fuentes, pruebas ni PDF. Publicación de los bloques nuevos pendiente de revisión independiente.

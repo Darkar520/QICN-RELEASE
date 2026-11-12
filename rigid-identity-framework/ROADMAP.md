@@ -2065,3 +2065,6 @@ Certificado tipado con proyecciones dependientes del producto y realización de 
 ### Cierre formal de obligaciones A–C · 2026-11-12
 
 A verificado en `478be2c`; B/C verificados con raíz 3/3, release 6/6, matemáticas 30/30, registro 889 y macros 383. Monolito 421 páginas; 878 IDs iniciales y 76 archivos congelados preservados. Se cerraron las tareas formales del [encargo de teoría pura](docs/ai-platform-outputs/repair-plans/OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/EJECUCION.md), con los dominios y obligaciones residuales expresos. La clase fuerte completa no se declara realizada. Los seis commits previos están publicados en 1f56dab; los nuevos bloques quedan locales para revisión independiente. No hay campaña biológica ni certificación externa. `external_support_certified=false`.
+
+
+Commit de contenido B/C verificado: `0b1fbe99bea4bffb1adc9bdd29a4773c95648c83`. El asiento posterior solo registra esta referencia y las comprobaciones sobre la carpeta activa; no modifica fuentes, pruebas ni PDF. Publicación de los bloques nuevos pendiente de revisión independiente.

@@ -423,5 +423,123 @@
     "No empirical biological data, laboratory calibration or independent validation was supplied.",
     "New arguments are in TeX with rational finite controls, not new Lean mechanizations."
   ],
-  "visual_review": "Spot-checked the infinite-model definition page in the standalone Paper V PDF; not an exhaustive page review."
+  "visual_review": "Spot-checked the infinite-model definition page in the standalone Paper V PDF; not an exhaustive page review.",
+  "theory_commit": "0b1fbe99bea4bffb1adc9bdd29a4773c95648c83",
+  "root_checks_on_active_checkout": [
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0
+    }
+  ],
+  "active_files_compared": [
+    {
+      "file": "basecore/BASECORE.pdf",
+      "sha256": "e0fe781f99802530af9135800c8f99544515d8f980c7db6bb85bf38c3eb8b42b"
+    },
+    {
+      "file": "basecore/core/sections/03_identity_rigidity_absorbed.tex",
+      "sha256": "da8fa1fae6de50bf6706f9795ca682c62479e5e44e21d9fbc60e51f5f278dbb6"
+    },
+    {
+      "file": "docs/ai-platform-outputs/repair-plans/OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/check_atomicity.py",
+      "sha256": "754a0179c36723d46469d8264e7d39cc8d848708e1a598592ce3eed52fafc21c"
+    },
+    {
+      "file": "docs/ai-platform-outputs/repair-plans/OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/check_infinite_interface.py",
+      "sha256": "f74c888d3d694faac5098f3cfee01b8c3678d0e2e1aa7f49d33cc89fc9e05346"
+    },
+    {
+      "file": "monolithic/QICN_MONOLITHIC.pdf",
+      "sha256": "b4c2c3624fcb5896bdfc17a2c0e8e517cda46bc9a9ff34d9572582651714af78"
+    },
+    {
+      "file": "monolithic/QICN_MONOLITHIC.tex",
+      "sha256": "ed3df139b2249254f3f3926d5df5141e8751821be1776f21ddd782eb6691f743"
+    },
+    {
+      "file": "paper1/main.pdf",
+      "sha256": "ff8a0eadad43abf2e2ffe798d052bc5af5f8033b5ec02064de2eb7252abe0f3e"
+    },
+    {
+      "file": "paper1/main.tex",
+      "sha256": "ec1158e7213cc15ce3811eedc0abbcc992cd0840c8eefd04c299752d5d153273"
+    },
+    {
+      "file": "paper10_external_adjudication/main.pdf",
+      "sha256": "29e281570b266270261ce9368062f9f514fb8d1e42bc4dedfd78d3fcbd851dd9"
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "sha256": "3abd3d7b0c77ccf65a13e1e69e8f30c64ace35c0083eb6fd00a8f492a7c6f125"
+    },
+    {
+      "file": "paper4/main.pdf",
+      "sha256": "760a3b2e2061abce931acdc6c425c2eeb69843d6d77a6aa54c70ee2102cf33cf"
+    },
+    {
+      "file": "paper4/main.tex",
+      "sha256": "9182334ef98433cbb1afc9a32da59f8a9aa3025d7247248d89a5fe90c096e2a7"
+    },
+    {
+      "file": "paper5_operational_consciousness/main.pdf",
+      "sha256": "8ac5bd7f814901b33ad1514e000e6a24d02376ae558221760888aaaac2b39b38"
+    },
+    {
+      "file": "paper5_operational_consciousness/main.tex",
+      "sha256": "4374b5e1e7d2a6d11a6398acf0d4322b45561ca92893b5508d1da3ab390575b2"
+    },
+    {
+      "file": "paper6_predictions_falsation/main.pdf",
+      "sha256": "6d3d0c52f850b9336a64f7afb9dc7234a72181a6a0fc11c68dc6d9b086f50097"
+    },
+    {
+      "file": "paper6_predictions_falsation/main.tex",
+      "sha256": "bccd8d4909919c709efa0c6380d1a683a3d3455df0a22605f713b46c5b8a004f"
+    },
+    {
+      "file": "paper8_first_person_subjectivity/main.pdf",
+      "sha256": "cd4cb28a41e058f493f3f6864865354c0a527f18e36c315764ba34a7f8b33d42"
+    },
+    {
+      "file": "paper8_first_person_subjectivity/main.tex",
+      "sha256": "5562fc1cdcdc1eb9f1b198eade2c4c4731c60b1930f1d0546a678a6b94d1a9b6"
+    },
+    {
+      "file": "paper_bridge_operational_subjecthood/main.pdf",
+      "sha256": "bb90a4ad7f4f18e65072d572a5ff1d891b6709807818c6f0285e886c2c23ff83"
+    },
+    {
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "sha256": "5c1a7716094ce5cb103795757f116e444e10bdf449909d57d1083b692b631c05"
+    },
+    {
+      "file": "registry/macros.jsonl",
+      "sha256": "7d540b140e728dd815c1f2ea3046ec0b58e261567e642d06cfdea14c9b56df36"
+    },
+    {
+      "file": "registry/theorems.jsonl",
+      "sha256": "26d9167b83d81c7c092b685a2aecfd17d62f1a591ab2e84e65dda1fe3ea0ae5c"
+    },
+    {
+      "file": "scripts/verify-math-regressions.py",
+      "sha256": "5fe85b4c178e64519da8d9bf61c41922f88b82ae8b9831071965c1253582ab6b"
+    }
+  ]
 }

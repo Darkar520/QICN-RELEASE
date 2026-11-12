@@ -12,7 +12,7 @@
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
 \usepackage[backend=biber]{biblatex}
-\addbibresource{references.bib}
+\addbibresource{../../release/references.bib}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -32,13 +32,13 @@
 
 \usepackage[unicode,pdfencoding=auto,psdextra,hidelinks]{hyperref}
 \hypersetup{
-    pdftitle={From Structural Invariants to Operational Subjecthood: A Constructive Bridge},
+    pdftitle={Dependencies between Operational Criteria and Indexed Certificates},
     pdfauthor={\AuthorMetadata},
-    pdfsubject={Rigid Identity Framework - Bridge from Operational Consciousness to Operational Subjecthood},
-    pdfkeywords={operational consciousness, operational subjecthood, structural invariants, self-reference, operational qualia}
+    pdfsubject={Rigid Identity Framework - Bridge from Six-Predicate Operational Criterion to Indexed Continuity-And-Control Criterion},
+    pdfkeywords={six-predicate operational criterion, indexed continuity-and-control criterion, structural invariants, self-reference, certified response classes}
 }
 
-\title{\textbf{From Structural Invariants to Operational Subjecthood: A Constructive Bridge}}
+\title{\textbf{Dependencies between Operational Criteria and Indexed Certificates}}
 \author{\AuthorVisible}
 \date{}
 
@@ -52,11 +52,11 @@
 \newtheorem{assumption}[theorem]{Assumption}
 \newtheorem{criterion}[theorem]{Criterion}
 
-\newcommand{\Cop}{\mathrm{Consciousness}_{\mathrm{op}}}
-\newcommand{\Subop}{\mathrm{Subject}_{\mathrm{op}}}
-\newcommand{\Subfp}{\mathrm{Subjectivity}_{\mathrm{1p}}}
+\newcommand{\Cop}{\mathsf{C}_{\mathrm{op}}}
+\newcommand{\Subop}{\mathsf{S}_{\mathrm{op}}}
+\newcommand{\Subfp}{\mathsf{S}_{\mathrm{idx}}}
 \newcommand{\Subbridge}{\mathrm{Subject}^{\Sigma}_{\mathrm{op}}}
-\newcommand{\Lop}{\mathrm{Life}_{\mathrm{op}}}
+\newcommand{\Lop}{\mathsf{L}_{\mathrm{op}}}
 \newcommand{\Qop}{\mathrm{Q}_{\mathrm{op}}}
 \newcommand{\Sigmaop}{\Sigma_{\mathrm{op}}}
 \newcommand{\Piop}{\Pi_{\mathrm{op}}}
@@ -90,16 +90,17 @@
 \maketitle
 
 \begin{abstract}
-This paper builds a constructive bridge between the six-invariant operational consciousness criterion of Paper 5 and the later operational subjecthood taxonomy of Paper 7. Its question is deliberately narrow: given an admissible system $S$ such that $S \in \Cop$, what subjecthood-adjacent structural properties are forced, what properties are merely well-defined, and what properties require hypotheses not contained in $\Cop$?
+This paper builds a constructive bridge between the six-invariant six-predicate operational criterion of Paper 5 and the later indexed continuity-and-control criterion taxonomy of Paper 7. Its question is deliberately narrow: given an admissible system $S$ such that $S \in \Cop$, what subjecthood-adjacent structural properties are forced, what properties are merely well-defined, and what properties require hypotheses not contained in $\Cop$?
 
-The answer is partial rather than inflationary. Membership in $\Cop$ entails a unified operational perspective $\Piop$, operational intentionality $\Iotaop$ in the intervention-fidelity sense, a well-defined operational-qualia quotient $\Qop(S)$, and a non-null operational phenomenology fragment $\Phiop$ on admissible support. The implications established here concern the named structural properties. Self-reference requires its separate self-model hypothesis; the other interpretive targets are outside these implications. A self-model condition $\Sigma1$ is isolated as an additional hypothesis. With that hypothesis one obtains a bridge class $\Subbridge$, a proper subclass of $\Cop$ under the non-entailment assumption. The fuller Paper 7 notion $\Subop$ remains stronger: it also requires operational life and subject-specific descriptors.
+The answer is partial rather than inflationary. Membership in $\Cop$ entails a unified operational perspective $\Piop$, operational intentionality $\Iotaop$ in the intervention-fidelity sense, a well-defined operational-qualia quotient $\Qop(S)$, and a non-null operational phenomenology fragment $\Phiop$ on admissible support. The implications established here concern the named structural properties. Self-reference requires its separate self-model hypothesis; the other interpretive targets are outside these implications. A self-model condition $\Sigma1$ is isolated as an additional hypothesis. With that hypothesis one obtains a bridge class $\Subbridge$, a proper subclass of $\Cop$ under the non-entailment assumption. The fuller Paper 7 notion $\Subop$ remains stronger: it also requires viability-and-recovery criterion and subject-specific descriptors.
 
-The paper therefore avoids a common category error. It does not argue that operational consciousness is subjecthood. It proves which formal burdens already follow from $\Cop$, identifies the missing self-reference burden, and marks the remaining gap between structural subjecthood analogues and any phenomenal or human reading.
+The paper therefore avoids a common category error. It does not argue that six-predicate operational criterion is subjecthood. It proves which formal burdens already follow from $\Cop$, identifies the missing self-reference burden, and marks the remaining gap between structural subjecthood analogues and any phenomenal or human reading.
+Global strict contraction commuting with all interventions requires a common fixed point and is obstructed by the stated phase controls. A separate fibrewise truncation realizes an explicitly bounded defect. The directional-response guarantee is population-relative under L4, and quotient nontriviality uses decoder-visible separation rather than a raw state gap.
 \end{abstract}
 
 \section{Scope, System Boundary, and Non-Inference Note}
 
-\noindent\textbf{What this paper does.}\enspace This paper defines five operational concepts from objects already introduced in Papers 1--5: operational self-reference $\Sigmaop$, operational unified perspective $\Piop$, operational intentionality $\Iotaop$, operational qualia $\Qop$, and operational phenomenology $\Phiop$. It then defines a bridge subjecthood class $\Subbridge$ and proves exactly which components are consequences of $S \in \Cop$.
+\noindent\textbf{What this paper does.}\enspace This paper defines five operational concepts from objects already introduced in Papers 1--5: operational self-reference $\Sigmaop$, operational unified perspective $\Piop$, operational intentionality $\Iotaop$, certified response classes $\Qop$, and operational phenomenology $\Phiop$. It then defines a bridge subjecthood class $\Subbridge$ and proves exactly which components are consequences of $S \in \Cop$.
 
 \noindent\textbf{What this paper does not do.}\enspace It does not assert equivalence with human consciousness, biological qualia, phenomenal subjectivity, personal identity, psychological selfhood, or moral status. The prefix ``operational'' denotes a formal role inside the framework, not an ordinary-language mental property.
 
@@ -109,7 +110,7 @@ The paper therefore avoids a common category error. It does not argue that opera
 
 \section{Introduction}
 
-Papers 1--5 progressively introduce a structural apparatus: inverse-limit identity, ontological mass, phenomenological regime assignments, instability of the null regime, forensic admissibility, and finally a six-invariant criterion for operational consciousness \cite{paper1,paper2,paper3,paper4,paper5}. Paper 5 gives the class $\Cop$ and the operational-qualia quotient $\Qop(S)$. Paper 7 later introduces operational life, structural class, and operational subjecthood. Between those two layers there is a missing theorem-level bridge.
+Papers 1--5 progressively introduce a structural apparatus: inverse-limit identity, sectorial deformation resistance, structural assignment regime assignments, instability of the null regime, forensic admissibility, and finally a six-invariant criterion for six-predicate operational criterion \cite{paper1,paper2,paper3,paper4,paper5}. Paper 5 gives the class $\Cop$ and the operational-qualia quotient $\Qop(S)$. Paper 7 later introduces viability-and-recovery criterion, structural class, and indexed continuity-and-control criterion. Between those two layers there is a missing theorem-level bridge.
 
 The missing bridge is not the claim that consciousness entails subjecthood. That claim would be too strong. It would also conflict with the later taxonomy, where subjecthood is intentionally stronger than consciousness. The sharper question is this:
 
@@ -117,7 +118,7 @@ The missing bridge is not the claim that consciousness entails subjecthood. That
 \emph{Which subjecthood-adjacent operational structures are already forced by the six invariants, and which require new hypotheses?}
 \end{center}
 
-The distinction matters because several properties traditionally associated with subjectivity have different formal status. Unity follows from rigid identity plus non-factorization. Directed intervention sensitivity follows from legibility, specifically L4 intervention fidelity. Operational qualia are already a quotient object when the relevant invariants hold. Non-null operational phenomenology follows in a weak support-level sense from operational continuity and non-null differentiation, but forced continuity in the stronger Paper 2 sense requires closed--rigid (CCR) structure, not merely $\Cop$. Self-reference is different again: nothing in the six-invariant criterion states that the system contains a contractive, intervention-commuting model of its own admissible state. That burden must be added as $\Sigma1$.
+The distinction matters because several properties traditionally associated with subjectivity have different formal status. Unity follows from rigid identity plus non-factorization. Directed intervention sensitivity follows from legibility, specifically L4 intervention fidelity. Certified response classes are already a quotient object when the relevant invariants hold. Non-null operational phenomenology follows in a weak support-level sense from operational continuity and non-null differentiation, but forced continuity in the stronger Paper 2 sense requires closed--rigid (CCR) structure, not merely $\Cop$. Self-reference is different again: nothing in the six-invariant criterion states that the system contains a contractive, intervention-commuting model of its own admissible state. That burden must be added as $\Sigma1$.
 
 This paper therefore makes the bridge constructive but non-inflationary. It defines the concepts, states their dependency map, proves the main implication theorem, lists what is not implied, and records computational status without treating runtime estimators as external closure.
 
@@ -133,8 +134,8 @@ The paper imports only objects already available in Papers 1--5. The table below
 \toprule
 Paper & Object imported & Used for defining \\
 \midrule
-Paper 1 & Rigid identity $\IdS$, inverse-limit uniqueness, ontological mass $\MO$ & Unified perspective $\Piop$; CCR boundary for $\Phiop$ \\
-Paper 2 & $\Phi$-regularity, abstract phenomenological space $(\Espace,d_{\Espace})$, fragmentation and forced continuity theorems & Operational phenomenology $\Phiop$ and the CCR/non-CCR distinction \\
+Paper 1 & Rigid identity $\IdS$, inverse-limit uniqueness, sectorial deformation resistance $\MO$ & Unified perspective $\Piop$; CCR boundary for $\Phiop$ \\
+Paper 2 & $\Phi$-regularity, abstract structural readout space $(\Espace,d_{\Espace})$, fragmentation and forced continuity theorems & Operational phenomenology $\Phiop$ and the CCR/non-CCR distinction \\
 Paper 3 & Null-regime instability, forced non-nullity, minimal positive regime & Non-nullity clause for $\Phiop$ and the non-null side of $\Qop$ \\
 Paper 5 & Admissible systems $S=(X,\Phi,C,R,\Gamma,U)$, support $\Aset$, invariants $\Iper$--$\Ileg$, $\Cop$, $\Qop(S)$ & All bridge concepts and the main implication theorem \\
 \bottomrule
@@ -155,7 +156,7 @@ S=(X,\Phi,C,R,\Gamma,U),
 with admissible support $\Aset \subseteq X_\Gamma$. The transition family is written $\Phi=\{\Phi_u\}_{u\in U}$, where $U$ is the set of admissible interventions. Histories, certified decoders, class sets, and admissible windows are inherited from Paper 5.
 \end{definition}
 
-\begin{definition}[Operational consciousness membership]\label{def:bridge-cop}
+\begin{definition}[Six-predicate operational criterion membership]\label{def:bridge-cop}
 An admissible system belongs to $\Cop$ exactly when all six Paper 5 invariants hold on $\Aset$:
 \[
 S \in \Cop
@@ -346,13 +347,13 @@ Membership supplies an L1--L6 witness. Its L4 prediction and population have mis
 $\Iotaop$ captures directed structural response. It does not establish semantic content, representational aboutness, goals, desires, agency, or intentional states in the philosophical or psychological sense.
 \end{remark}
 
-\section{Operational Qualia}
+\section{Certified Response Classes}
 
 \subsection{Motivation}
 Paper 5 already introduced $\Qop(S)$ to avoid a false move from structural differentiation to phenomenal qualia. The bridge paper does not redefine that object. It records what follows from it.
 
-\begin{definition}[Operational Qualia $\Qop(S)$]\label{def:qop-bridge}
-When the Paper 5 equivalence relation $\sim_{Q,S}$ is well-defined on $\Aset$, the operational qualia of $S$ are the quotient classes
+\begin{definition}[Certified Response Classes $\Qop(S)$]\label{def:qop-bridge}
+When the Paper 5 equivalence relation $\sim_{Q,S}$ is well-defined on $\Aset$, the certified response classes of $S$ are the quotient classes
 \[
 \Qop(S)=\Aset/\sim_{Q,S}.
 \]
@@ -368,10 +369,10 @@ then $\Qop(S)$ is well-defined.
 \end{proposition}
 
 \begin{proof}
-This is Paper 5's well-definedness proposition for operational qualia. Persistence supplies the stable domain, rigid identity supplies unique class transport, continuity supplies admissible trajectory coherence, differentiation supplies its separately defined readout/null-exclusion burden, and legibility supplies certified decoder behavior and intervention-sensitive equivalence. Hence $\sim_{Q,S}$ is an equivalence relation and the quotient exists.
+This is Paper 5's well-definedness proposition for certified response classes. Persistence supplies the stable domain, rigid identity supplies unique class transport, continuity supplies admissible trajectory coherence, differentiation supplies its separately defined readout/null-exclusion burden, and legibility supplies certified decoder behavior and intervention-sensitive equivalence. Hence $\sim_{Q,S}$ is an equivalence relation and the quotient exists.
 \end{proof}
 
-\begin{corollary}[$\Cop$ entails well-defined operational qualia]\label{cor:cop-qop}
+\begin{corollary}[$\Cop$ entails well-defined certified response classes]\label{cor:cop-qop}
 If $S\in\Cop$, then $\Qop(S)$ is well-defined.
 \end{corollary}
 
@@ -434,20 +435,20 @@ Membership in $\Cop$ does not entail CCR-strength operational phenomenology.
 \end{proposition}
 
 \begin{proof}
-CCR-strength $\Phiop$ requires $\MO(S)=+\infty$ by Definition~\ref{def:phi-ccr}. Paper 5's definition of $\Cop$ requires six operational invariants, but it does not require infinite ontological mass. Hence a system may satisfy the six-invariant criterion while remaining finite-mass or while lacking a certified CCR witness. Therefore $\Cop$ does not entail CCR-strength $\Phiop$.
+CCR-strength $\Phiop$ requires $\MO(S)=+\infty$ by Definition~\ref{def:phi-ccr}. Paper 5's definition of $\Cop$ requires six operational invariants, but it does not require infinite sectorial deformation resistance. Hence a system may satisfy the six-invariant criterion while remaining finite-mass or while lacking a certified CCR witness. Therefore $\Cop$ does not entail CCR-strength $\Phiop$.
 \end{proof}
 
 \begin{remark}[Interpretation boundary for $\Phiop$]
 $\Phiop$ is an assignment into an abstract structural regime space. It is not temporal experience, a stream of consciousness, a specious present, or proof that phenomenology exists in the ordinary sense.
 \end{remark}
 
-\section{Operational Subjecthood}
+\section{Indexed Continuity-And-Control Criterion}
 
 \subsection{Why a bridge class is needed}
-Paper 7 defines a stronger operational subjecthood class involving operational life, operational consciousness, privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. The present paper does not replace that class. It defines the narrower bridge fragment obtained from $\Cop$ plus the self-model hypothesis $\Sigma1$.
+Paper 7 defines a stronger indexed continuity-and-control criterion class involving viability-and-recovery criterion, six-predicate operational criterion, privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. The present paper does not replace that class. It defines the narrower bridge fragment obtained from $\Cop$ plus the self-model hypothesis $\Sigma1$.
 
-\begin{definition}[Bridge operational subjecthood $\Subbridge$]\label{def:subbridge}
-An admissible system $S$ belongs to bridge operational subjecthood, written
+\begin{definition}[Bridge indexed continuity-and-control criterion $\Subbridge$]\label{def:subbridge}
+An admissible system $S$ belongs to bridge indexed continuity-and-control criterion, written
 \[
 S\in\Subbridge,
 \]
@@ -462,8 +463,8 @@ if and only if:
 \end{enumerate}
 \end{definition}
 
-\begin{definition}[Full Paper 7 operational subjecthood]\label{def:full-paper7-subjecthood}
-The full Paper 7 class $\Subop$ is the stronger class requiring operational life $\Lop$, operational consciousness $\Cop$, and the subject-specific descriptors of Paper 7: privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. In this paper, $\Subbridge$ is a bridge fragment, not a synonym for full $\Subop$.
+\begin{definition}[Full Paper 7 indexed continuity-and-control criterion]\label{def:full-paper7-subjecthood}
+The full Paper 7 class $\Subop$ is the stronger class requiring viability-and-recovery criterion $\Lop$, six-predicate operational criterion $\Cop$, and the subject-specific descriptors of Paper 7: privileged continuity, self/non-self discrimination, self-model closure, and ownership coherence. In this paper, $\Subbridge$ is a bridge fragment, not a synonym for full $\Subop$.
 \end{definition}
 
 \begin{theorem}[$\Subbridge$ is conditionally generated by $\Cop+\Sigma1$]\label{thm:subbridge-generated}
@@ -486,20 +487,20 @@ The subset relation is immediate from Definition~\ref{def:subbridge}, whose firs
 \end{proof}
 
 \begin{corollary}[Full Paper 7 subjecthood remains stronger]\label{cor:paper7-stronger}
-Full Paper 7 operational subjecthood $\Subop$ is not established by Theorem~\ref{thm:subbridge-generated}. To lift $\Subbridge$ into $\Subop$, one must additionally certify $\Lop$ and the Paper 7 subject-specific descriptors not reduced to $\Sigma1$.
+Full Paper 7 indexed continuity-and-control criterion $\Subop$ is not established by Theorem~\ref{thm:subbridge-generated}. To lift $\Subbridge$ into $\Subop$, one must additionally certify $\Lop$ and the Paper 7 subject-specific descriptors not reduced to $\Sigma1$.
 \end{corollary}
 
 \begin{proof}
-Definition~\ref{def:full-paper7-subjecthood} includes burdens absent from Definition~\ref{def:subbridge}, including operational life and ownership/privileged-continuity style descriptors. Theorem~\ref{thm:subbridge-generated} does not supply those witnesses. Hence the bridge class is not full Paper 7 subjecthood.
+Definition~\ref{def:full-paper7-subjecthood} includes burdens absent from Definition~\ref{def:subbridge}, including viability-and-recovery criterion and ownership/privileged-continuity style descriptors. Theorem~\ref{thm:subbridge-generated} does not supply those witnesses. Hence the bridge class is not full Paper 7 subjecthood.
 \end{proof}
 
 \begin{remark}[Interpretation boundary for $\Subbridge$]
 $\Subbridge$ is a formal construct. It does not imply phenomenal subjectivity, human first-person experience, identity persistence in the psychological sense, a narrative self, moral patienthood, or biological life.
 \end{remark}
 
-\section{Theorem: Partial Operational Subjecthood}
+\section{Theorem: Partial Indexed Continuity-And-Control Criterion}
 
-\begin{theorem}[$\Cop \to$ Partial Operational Subjecthood]\label{thm:main-partial-subjecthood}
+\begin{theorem}[$\Cop \to$ Partial Indexed Continuity-And-Control Criterion]\label{thm:main-partial-subjecthood}
 Let $S$ be an admissible system with $S\in\Cop$. Then:
 \begin{enumerate}[leftmargin=1.5em]
 \item $S$ satisfies $\Piop$.
@@ -512,10 +513,10 @@ Let $S$ be an admissible system with $S\in\Cop$. Then:
 \end{theorem}
 
 \begin{proof}
-Item 1 is Theorem~\ref{thm:cop-entails-pi}. Item 2 is Theorem~\ref{thm:cop-entails-iota}. Item 3 is Corollary~\ref{cor:cop-qop}. Item 4 is Proposition~\ref{prop:weak-phi}. Item 5 is Proposition~\ref{prop:sigma-not-entailed}. Item 6 is Theorem~\ref{thm:subbridge-subset}. Therefore membership in $\Cop$ yields a partial bridge toward operational subjecthood, but it does not close the self-reference burden or the full Paper 7 subjecthood burden.
+Item 1 is Theorem~\ref{thm:cop-entails-pi}. Item 2 is Theorem~\ref{thm:cop-entails-iota}. Item 3 is Corollary~\ref{cor:cop-qop}. Item 4 is Proposition~\ref{prop:weak-phi}. Item 5 is Proposition~\ref{prop:sigma-not-entailed}. Item 6 is Theorem~\ref{thm:subbridge-subset}. Therefore membership in $\Cop$ yields a partial bridge toward indexed continuity-and-control criterion, but it does not close the self-reference burden or the full Paper 7 subjecthood burden.
 \end{proof}
 
-\begin{corollary}[No equivalence between $\Cop$ and operational subjecthood]\label{cor:no-equivalence}
+\begin{corollary}[No equivalence between $\Cop$ and indexed continuity-and-control criterion]\label{cor:no-equivalence}
 The bridge paper proves neither $\Cop=\Subbridge$ nor $\Cop=\Subop$. It proves only that several bridge components are entailed by $\Cop$, while self-reference and full subjecthood require additional burdens.
 \end{corollary}
 
@@ -646,8 +647,8 @@ chain.
 Level & Added burden & Still not licensed \\
 \midrule
 $\Cop$ & six invariants & self-reference, life, subjecthood, phenomenality \\
-$\Cop+\Sigma1$ & contractive intervention-commuting self-model & operational life and Paper 7 subject descriptors \\
-$\Cop+\Sigma1+\Lop$ & life-like organization in the Paper 7 sense & first-person indexed subjectivity \\
+$\Cop+\Sigma1$ & contractive intervention-commuting self-model & viability-and-recovery criterion and Paper 7 subject descriptors \\
+$\Cop+\Sigma1+\Lop$ & life-like organization in the Paper 7 sense & seven-coordinate indexed certificate \\
 $\Subop$ & privileged continuity, self/non-self, self-model closure, ownership coherence & human subjectivity or phenomenality \\
 $\Subfp$ & first-person indexed fields plus rival defeat & phenomenal bridge confirmation \\
 $\mathrm{BridgeOrg}_{\mathrm{ph}}$-style burden & bridge predicates, comparators, interventions, artifacts & external validation or ordinary phenomenality \\
@@ -889,13 +890,13 @@ debug, falsify, and stress the program; it cannot replace external validation.
 \toprule
 Term & Demonstrated reading & Interpretive reading & Pending debt \\
 \midrule
-$\Cop$ & six-invariant structural class & operational consciousness label & no ordinary consciousness theorem \\
-$\Qop(S)$ & structural differentiation quotient & operational qualia label & no phenomenal-qualia evidence \\
+$\Cop$ & six-invariant structural class & six-predicate operational criterion label & no ordinary consciousness theorem \\
+$\Qop(S)$ & structural differentiation quotient & certified response classes label & no phenomenal-qualia evidence \\
 $\Phiop$ & abstract regime assignment & operational phenomenology label & no experience theorem \\
 $\Sigma1$ & self-model burden & self-reference analogue & emergence from invariants open \\
-OSSI & open-system self-maintaining individuation & operational life-like organization & not biological life \\
+OSSI & open-system self-maintaining individuation & viability-and-recovery criterion-like organization & not biological life \\
 $\Subbridge$ & $\Cop+\Sigma1_{\mathrm{comm}}$ fragment & partial subjecthood bridge & lacks full Paper 7 life/ownership burden \\
-$\Subop$ & Paper 7 subject class & operational subjecthood & not human or metaphysical subjecthood \\
+$\Subop$ & Paper 7 subject class & indexed continuity-and-control criterion & not human or metaphysical subjecthood \\
 $\Subfp$ & indexed subjectivity class & first-person subjectivity analogue & requires rival defeat and interventions \\
 $\mathrm{BridgeOrg}_{\mathrm{ph}}$ & bridge burden architecture & phenomenal bridge label & BPF-2--BPF-6 and Paper 10 pending \\
 \bottomrule
@@ -1015,7 +1016,7 @@ closing all debts associated with that term.
 \toprule
 Term & Main dependency & What is currently proved & Remaining debt \\
 \midrule
-rigid identity & Paper 1 inverse limits & uniqueness, non-transferability, rigidity under bounded deformation & empirical instantiation in non-ideal systems \\
+rigid identity & Paper 1 inverse limits & uniqueness in connected matched sectors, audited transport of resistance class, and conditional deformation bounds & empirical instantiation in non-ideal systems \\
 operational regime & Papers 2--3 & regime continuity and null-instability under stated hypotheses & relation to lived experience \\
 $\Cop$ & Paper 5 & six-invariant structural membership & independence from ordinary consciousness unresolved \\
 $\Qop$ & Paper 5 & quotient over structural equivalence classes & no phenomenal-qualia bridge \\
@@ -1196,7 +1197,7 @@ Invariant failure & at least one of $I_{per},I_{ri},I_{int},I_{cont},I_{diff},I_
 Self-model absence & no admissible $\Sigma$ exists & no $\Subbridge$ claim \\
 Contraction failure & $\Sigma$ exists but is not contractive & weak self-model only \\
 Commutation failure & $\Sigma\Phi_u\neq\Phi_u\Sigma$ beyond tolerance & no intervention-stable self-reference \\
-OSSI burden failure & at least one open-system burden fails & no operational life-like individuation claim \\
+OSSI burden failure & at least one open-system burden fails & no viability-and-recovery criterion-like individuation claim \\
 CCR failure & $\MO<+\infty$ & no forced-continuity promotion \\
 External-adjudication absence & Paper 10 remains unexecuted & no external validation \\
 \bottomrule
@@ -1240,11 +1241,11 @@ paper, because it constrains every positive claim at the sentence level.
 \toprule
 Promotion target & Required condition & Evidence type \\
 \midrule
-operational consciousness to ordinary consciousness & theorem and external evidence linking $\Cop$ to core phenomenal or cognitive properties & mathematical plus empirical \\
-operational life to life-like open-system organization & OSSI plus thermodynamic and repair burdens under admissible interventions & mathematical and runtime/external stress \\
-operational qualia to phenomenal qualia & evidence that $\Qop(S)$ tracks an independently meaningful phenomenal variable & Paper 10-style empirical bridge \\
+six-predicate operational criterion to ordinary consciousness & theorem and external evidence linking $\Cop$ to core phenomenal or cognitive properties & mathematical plus empirical \\
+viability-and-recovery criterion to life-like open-system organization & OSSI plus thermodynamic and repair burdens under admissible interventions & mathematical and runtime/external stress \\
+certified response classes to phenomenal qualia & evidence that $\Qop(S)$ tracks an independently meaningful phenomenal variable & Paper 10-style empirical bridge \\
 operational phenomenology to experience & CCR-strength $\Phiop$ plus external adjudication of temporal-structure relevance & mathematical plus empirical \\
-operational subjecthood to ordinary subjecthood & proof that $\Subop$ captures accepted subjecthood properties and defeats rivals & mathematical, empirical, and philosophical \\
+indexed continuity-and-control criterion to ordinary subjecthood & proof that $\Subop$ captures accepted subjecthood properties and defeats rivals & mathematical, empirical, and philosophical \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -1416,7 +1417,7 @@ Readers should not begin with the strongest labels. The defensible order is:
 \item Paper 5 for $\Cop$ as the six-invariant structural class.
 \item Paper 6 for falsification, internal-support status, and failure modes.
 \item This bridge paper for exact implications from $\Cop$ to partial
-operational subjecthood.
+indexed continuity-and-control criterion.
 \item Paper 7 only after distinguishing OSSI from biological life.
 \item Paper 8 only after accepting that first-person fields are formal
 burdens, not human subjectivity.
@@ -1443,7 +1444,7 @@ should be traceable to one of the tables or proof patterns above.
 The following questions are deliberately left open because the present paper lacks the definitions or empirical evidence required to decide them.
 
 \begin{enumerate}[leftmargin=1.5em]
-\item Is $\Sigma1$ necessary for any plausible operational subjecthood class, or only for the bridge class $\Subbridge$ defined here?
+\item Is $\Sigma1$ necessary for any plausible indexed continuity-and-control criterion class, or only for the bridge class $\Subbridge$ defined here?
 \item Can $\Sigma1$ be derived from $\Iint+\Ileg$ under additional architectural hypotheses, such as decoder closure under self-targeted interventions?
 \item Does a hierarchy of self-models $\Sigma^{(0)},\Sigma^{(1)},\dots$ produce a formal higher-order analogue, or does it merely add regress without new invariant content?
 \item Is CCR strength $\MO=+\infty$ necessary for any non-weak version of $\Phiop$, or only sufficient for forced continuity?
@@ -1451,15 +1452,26 @@ The following questions are deliberately left open because the present paper lac
 \item Which runtime observables would distinguish genuine intervention commutation of $\Sigma$ from a stable but epiphenomenal self-model proxy?
 \item What external experimental campaign could adjudicate whether internal-support certificates track any real-world subjecthood-relevant structure?
 \item Are there finite systems that approximate $\Subbridge$ arbitrarily well while provably failing CCR, and if so what is the exact approximation boundary?
-\item Can operational qualia non-triviality be certified without relying on a fixed decoder family, or is decoder dependence constitutive of $\Qop(S)$?
+\item Can certified response classes non-triviality be certified without relying on a fixed decoder family, or is decoder dependence constitutive of $\Qop(S)$?
 \item What, if anything, connects these structural predicates to ordinary moral or legal categories? This paper provides no such bridge.
 \end{enumerate}
 
 \section{Conclusion}
 
-The bridge from $\Cop$ to operational subjecthood is real but partial. From $S\in\Cop$ one obtains unity in the operational sense, directional intervention sensitivity, a well-defined operational-qualia quotient, and weak non-null operational phenomenology. One does not obtain self-reference, human subjectivity, phenomenal experience, or full Paper 7 subjecthood. The missing formal burden is $\Sigma1$, the existence of a contractive admissible self-model commuting with interventions. With $\Sigma1$ and decoder-visible differentiation one can define $\Subbridge$, a proper subclass of $\Cop$ under the non-entailment of $\Sigma1$.
+The bridge from $\Cop$ to indexed continuity-and-control criterion is real but partial. From $S\in\Cop$ one obtains unity in the operational sense, directional intervention sensitivity, a well-defined operational-qualia quotient, and weak non-null operational phenomenology. One does not obtain self-reference, human subjectivity, phenomenal experience, or full Paper 7 subjecthood. The missing formal burden is $\Sigma1$, the existence of a contractive admissible self-model commuting with interventions. With $\Sigma1$ and decoder-visible differentiation one can define $\Subbridge$, a proper subclass of $\Cop$ under the non-entailment of $\Sigma1$.
 
-This is the strongest defensible bridge at the present state of the corpus. It is stronger than saying that Paper 5 and Paper 7 are merely adjacent, because it proves exact implications. It is weaker than saying that operational consciousness is subjecthood, because that would erase the self-model, life, ownership, and privileged-continuity burdens. The result is therefore a controlled theorem layer: enough structure to move from invariants to subjecthood-adjacent concepts, but not enough to license phenomenal or human claims.
+This is the strongest defensible bridge at the present state of the corpus. It is stronger than saying that Paper 5 and Paper 7 are merely adjacent, because it proves exact implications. It is weaker than saying that six-predicate operational criterion is subjecthood, because that would erase the self-model, life, ownership, and privileged-continuity burdens. The result is therefore a controlled theorem layer: enough structure to move from invariants to subjecthood-adjacent concepts, but not enough to license phenomenal or human claims.
+
+\section{Interpretation and Open Research Links}\label{sec:interpretation-open-links}
+\paragraph{Historical alias.} Operational Consciousness to Operational Subjecthood Bridge. The alias is retained for bibliographic continuity; the technical title states the demonstrated object.
+
+\paragraph{Formal anchor.} Results \ref{thm:cop-entails-iota} and \ref{prop:qop-nontrivial}.
+
+\paragraph{Proposed interpretation.} Directed response and certified quotient classes motivate interpretation of organization. Semantic aboutness and philosophical intentionality require more than this protocol.
+
+\paragraph{Additional obligations.} Keep population prediction, conditional intervention guarantees, decoder-visible separation and approximate self-reference distinct.
+
+\paragraph{Differential tests and evidence.} Test targeted/sham outcomes, role transport and the stated self-reference obstruction. The extension to stronger interpretations remains an explicit research obligation.
 
 \printbibliography
 

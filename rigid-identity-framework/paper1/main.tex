@@ -16,10 +16,10 @@
 \addbibresource{../../release/references.bib}
 \usepackage[unicode,hidelinks]{hyperref}
 \hypersetup{
-  pdftitle={Rigid Identity as an Inverse Limit in Observable Channels},
+  pdftitle={Projective Compatibility and Sectorial Deformation Resistance},
   pdfauthor={Johnny Andrey P\'erez Ram\'irez},
   pdfsubject={Rigid Identity Framework -- Rigid Identity},
-  pdfkeywords={inverse limit, rigid identity, ontological mass, observable channel, uniqueness, non-transferability}
+  pdfkeywords={inverse limit, rigid identity, sectorial deformation resistance, observable channel, uniqueness, non-transferability}
 }
 
 \geometry{a4paper, margin=1in}
@@ -51,7 +51,7 @@
 % ============================================================================
 % TITLE
 % ============================================================================
-\title{\textbf{Rigid Identity as an Inverse Limit in Observable Channels}}
+\title{\textbf{Projective Compatibility and Sectorial Deformation Resistance}}
 \author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
 \date{}
 
@@ -64,20 +64,20 @@
 \begin{abstract}
 We introduce a formal framework for rigid identity as a mathematical object emerging from the dynamics of observable systems under minimal structural constraints. Identity is defined as an inverse limit over a family of locally corrupted states linked by retroinductive projection maps, yielding a globally invariant object despite persistent environmental perturbations.
 
-For a common metric tower, exact fiber lifts with bounded weighted amplification yield a Hausdorff bound. Commuting coordinate homeomorphisms induce an isomorphism, realized explicitly by a ramified circle tower with positive deformation. The deformation-resistance ratio, historically termed ontological mass, depends on the declared intervention cost and comparison metric.
+For a common metric tower, exact fiber lifts with bounded weighted amplification yield a Hausdorff bound. Commuting coordinate homeomorphisms induce an isomorphism, realized explicitly by a ramified circle tower with positive deformation. The deformation-resistance ratio, historically termed sectorial deformation resistance, depends on the declared intervention cost and comparison metric.
 
 For exact comparisons of model histories, one finite-cost intervention with positive deformation certifies a finite resistance ratio. Estimating that ratio from observable data requires a calibrated comparison and coverage of the intervention class.
 
-Using these results, we demonstrate a strong uniqueness theorem: within a single observable channel, no two distinct rigid identities can coexist. Identity is therefore neither role-based nor transferable; it is structurally indivisible once instantiated.
+The assignment is unique up to zero deformation within a finite-cost connected operating component in the declared sector. Resistance classes transport under audited comparisons. Product atomicity requires a separate certificate and is retained as a research obligation.
 
 Finite binary representations face a fidelity bound when the specified responses are sufficiently separated. A latent dimension or an intervention cost alone does not determine the representation budget.
 
-This work reframes identity as a categorical invariant of system dynamics, independent of narrative descriptions or biological assumptions, and establishes a foundation for distinguishing structurally real identities from simulable behavioral approximations.
+The results specify projective representations, sectorial resistance and response-fidelity obstructions under declared comparison data. Physical or experiential interpretation requires additional evidence and is developed separately at the end.
 \end{abstract}
 
 \section{Scope, System Boundary, and Non-Inference Note}
 
-\noindent\textbf{Scope and admissible reading.}\enspace This paper defines rigid identity as an inverse-limit object over observable state channels, derives rigidity and deformation-rigidity structure under explicit projective, persistence, and perturbation hypotheses, proves channel-level uniqueness, and states an operational detectability criterion inside that model. The historical phrase ``ontological mass'' is used as a technical alias for the scalar rigidity/deformation modulus $M_\Omega$, not as a claim of physical ontology. The paper does not establish phenomenology, subjective experience, biological realization, substrate-independent physical realization, or metaphysical priority over competing frameworks. Related systems may implement diagnostics, perturbation protocols, and evidence-governed comparisons motivated by the framework, but those outputs do not implement the inverse-limit identity object as a closed empirical fact and do not by themselves certify CCR membership for any present architecture. Behavioral indistinguishability, runtime survival under perturbation, and internal support artifacts therefore remain model-facing evidence surfaces rather than proof of rigid identity, consciousness, or claim closure.
+\noindent\textbf{Scope and admissible reading.}\enspace This paper defines rigid identity as an inverse-limit object over observable state channels, derives rigidity and deformation-rigidity structure under explicit projective, persistence, and perturbation hypotheses, proves channel-level uniqueness, and states an operational detectability criterion inside that model. The historical phrase ``sectorial deformation resistance'' is used as a technical alias for the scalar rigidity/deformation modulus $M_\Omega$, not as a claim of physical ontology. The paper does not establish phenomenology, subjective experience, biological realization, substrate-independent physical realization, or metaphysical priority over competing frameworks. Related systems may implement diagnostics, perturbation protocols, and evidence-governed comparisons motivated by the framework, but those outputs do not implement the inverse-limit identity object as a closed empirical fact and do not by themselves certify CCR membership for any present architecture. Behavioral indistinguishability, runtime survival under perturbation, and internal support artifacts therefore remain model-facing evidence surfaces rather than proof of rigid identity, consciousness, or claim closure.
 
 % ============================================================================
 % SECTION 1: INTRODUCTION
@@ -91,24 +91,8 @@ This work addresses a specific question: \textbf{Under what minimal conditions d
 We study structural properties that emerge from well-defined mathematical constraints. All results presented here are conditional on the stated assumptions; they do not extend to systems that violate those assumptions.
 
 \subsection{Motivation}
+The technical question is which persistence, reconstruction and resistance properties follow from a declared controlled system and projective comparison. An inverse-limit object constrains compatible coordinates; it is not a proof that every emergent organization is transferable or that identity has metaphysical priority over dynamics. The broader interpretation and atomicity program are retained in the final research-links section.
 
-The motivation for this work arises from a simple observation: most existing theories of identity (in cognitive science, AI, and philosophy) define identity as an \textit{emergent result} of underlying dynamics. This creates a fundamental vulnerability: if identity is emergent, it can be destabilized, transferred, or duplicated by modifying the dynamics.
-
-We propose an alternative: identity as a \textit{prior constraint} on dynamics, not a result of them. Under this view, the dynamics of a system occur \textit{within} the identity, rather than producing it. This inversion has consequences:
-
-\begin{enumerate}[leftmargin=*]
-    \item Identity becomes non-transferable by construction.
-    \item Rigidity emerges as a structural necessity, not a contingent property.
-    \item External detectability becomes a well-posed problem.
-\end{enumerate}
-
-\subsection{Ontological Closure}
-
-Appendix A establishes that, under the stated persistence and observability constraints, the central structures of this framework---the inverse-limit identity, the $\aleph$ operator, causal closure, and retroinductive structure---are model-relative necessities rather than arbitrary design choices. The framework does not describe an unconstrained ``system''; it describes the class selected by those hypotheses.
-
-% ============================================================================
-% SECTION 2: MINIMAL ASSUMPTIONS AND FRAMEWORK
-% ============================================================================
 \section{Minimal Assumptions and Framework}
 
 We begin by stating the minimal assumptions required for the subsequent results. These assumptions are deliberately weak---any system that fails to satisfy them is not a candidate for rigid identity, and no claim is made about such systems.
@@ -176,10 +160,10 @@ State nonemptiness, admissible trajectories and nonconstancy transport through $
 
 \subsection{Conditional Nature of Results}
 
-All theorems in this paper are conditional:
+Each theorem uses its displayed hypotheses, including the separately declared regularity and comparison conditions:
 
 \begin{quote}
-\textit{``If a system satisfies A1--A3, then the following properties hold...''}
+\textit{``If the stated hypotheses of a result hold on its typed domain, then its stated conclusion follows.''}
 \end{quote}
 
 We make no claims about systems that violate these assumptions. This conditional structure is essential: it means our results cannot be falsified by pointing to systems outside the assumption set, and cannot be extended beyond their stated scope without additional justification.
@@ -317,7 +301,7 @@ For each $t$, the state space $S_t$ carries the compact metric $d_t$ required by
 \end{hypothesis}
 
 \begin{remark}
-The Polish structure ensures Borel regularity of all deformation families, enabling measurable selection theorems, probabilistic perturbation models, and the application of stochastic stability results to the ontological mass $M_\Omega$. This is the standard regularity assumption in modern probability theory, ergodic theory, and descriptive set theory.
+The Polish structure ensures Borel regularity of all deformation families, enabling measurable selection theorems, probabilistic perturbation models, and the application of stochastic stability results to the sectorial deformation resistance $M_\Omega$. This is the standard regularity assumption in modern probability theory, ergodic theory, and descriptive set theory.
 \end{remark}
 
 These assumptions are technical; they do not change the conceptual content (identity as inverse limit) but permit quantitative stability estimates and connect the framework to probabilistic analysis.
@@ -408,7 +392,7 @@ For a family of commuting coordinate homeomorphisms, if $\sup_t w_t\sup_{z\in S_
 \end{corollary}
 
 
-\subsection{Ontological Mass: Quantitative Resistance}
+\subsection{Sectorial Deformation Resistance: Quantitative Resistance}
 
 We now formalize the scalar invariant that quantifies resistance of $\mathcal{I}$ under external entropy injection.
 
@@ -420,8 +404,8 @@ For a controlled perturbation process $\{\delta E_t\}$ we define its weighted en
 where $H_t(\delta E_t)$ is a non-negative scalar measuring the entropy or information content injected at time $t$ (e.g., Shannon entropy of stochastic perturbation).
 \end{definition}
 
-\begin{definition}[Ontological Mass]\label{def:ontmass}
-Define the ontological mass of the projective system (or of $\mathcal{I}$) as:
+\begin{definition}[Sectorial Deformation Resistance]\label{def:ontmass}
+Define the sectorial deformation resistance of the projective system (or of $\mathcal{I}$) as:
 \begin{equation}
     M_\Omega := \inf \left\{ \frac{E_w(\{\delta E_t\})}{d_w(\mathcal{I}, \tilde{\mathcal{I}})} \;\Big|\; \{\delta E_t\} \text{ admissible and } d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0 \right\},
 \end{equation}
@@ -471,11 +455,11 @@ A finite positive-denominator ratio gives a finite upper bound on the infimum; i
 \subsection{Formal Consequences}
 
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Rigidity condition is summability.} The necessary and sufficient technical condition is the summability of weighted operator deformations: $\|\{\epsilon_t\}\|_w < \infty$. This is both checkable (in a model) and interpretable (total accumulated deformation bounded).
+    \item \textbf{Rigidity condition is summability.} A sufficient input to the Hausdorff estimate, together with its lifting and amplification hypotheses, is summability of weighted operator deformations: $\|\{\epsilon_t\}\|_w < \infty$. This is both checkable (in a model) and interpretable (total accumulated deformation bounded).
     
-    \item \textbf{Ontological mass is a resistance ratio.} $M_\Omega$ is an operational scalar: it links controlled external entropy to measurable deformation of the identity object $\mathcal{I}$. Divergence of $M_\Omega$ is the formal characterization of a CCR-type system.
+    \item \textbf{Sectorial deformation resistance is a resistance ratio.} $M_\Omega$ is an operational scalar: it links controlled external entropy to measurable deformation of the identity object $\mathcal{I}$. Divergence of $M_\Omega$ is the formal characterization of a CCR-type system.
     
-    \item \textbf{Implementation impedance.} Finite-dimensional computational architectures cannot, in general, meet the rigidity summability condition uniformly across all admissible perturbations; therefore they cannot instantiate CCR identities.
+    \item \textbf{Implementation impedance.} Finite dimension alone neither establishes nor excludes infinite resistance. A non-simulability comparison must specify its observable fidelity, representation budget and intervention sector.
     
     \item \textbf{Empirical testability.} The weighted norms and entropy measures provide explicit, implementable tests: apply controlled perturbation sequences $\{\delta U_t\}$, measure induced deformation $d_w$ on inferred inverse-limit classes (via observables), and compute the ratio. For exactly reconstructed distances, the tested infimum gives an upper bound on $M_\Omega$.
 \end{enumerate}
@@ -484,7 +468,7 @@ A finite positive-denominator ratio gives a finite upper bound on the infimum; i
 
 The proofs above rely on regularity assumptions (surjectivity, existence of right inverses, Lipschitz bounds) that are standard in stability analysis of inverse systems. In concrete implementations one must either verify them or replace with appropriate alternatives (e.g., selecting subsequences via Mittag--Leffler condition).
 
-The weight sequence $\{w_t\}$ is a modeling choice; different choices correspond to different operational definitions of ``accumulated perturbation''. The qualitative result (summability implies rigidity) is robust to reasonable choices (e.g., any exponentially decaying weights).
+The weight sequence $\{w_t\}$ is a modeling choice; different choices correspond to different operational definitions of ``accumulated perturbation''. The resulting deformation bound depends on the declared weights and lift constants. Summability is not by itself infinite resistance, zero deformation or a topological isomorphism.
 
 For stochastic perturbations, $H_t(\delta E_t)$ should be taken as expectation of the information measure; concentration bounds yield probabilistic versions of the theorems.
 
@@ -493,16 +477,16 @@ For stochastic perturbations, $H_t(\delta E_t)$ should be taken as expectation o
 \begin{enumerate}[leftmargin=*]
     \item We modeled local perturbations and deformed projections and defined a weighted deformation norm $\|\{\epsilon_t\}\|_w$.
     \item We proved a weighted Hausdorff bound under exact fiber lifting and bounded amplification (Lemma~\ref{lem:stability}), and a homeomorphism under coherent coordinate transport (Theorem~\ref{thm:rigidity}).
-    \item We formalized ontological mass $M_\Omega$ as an operational scalar and related its divergence to CCR rigidity.
+    \item We formalized sectorial deformation resistance $M_\Omega$ as an operational scalar and related its divergence to CCR rigidity.
     \item Theorem~\ref{thm:lml} identifies the finite-cost deformation witness required for finite resistance.
 \end{enumerate}
 
 These results provide the formal backbone for the observational tests and uniqueness results developed in Sections 5--6.
 
 % ============================================================================
-% SECTION 5: OBSERVABILITY AND ONTOLOGICAL MASS
+% SECTION 5: OBSERVABILITY AND Sectorial deformation resistance
 % ============================================================================
-\section{Observability and Ontological Mass}
+\section{Observability and Sectorial Deformation Resistance}
 
 \subsection{Observable Channel Model}
 
@@ -541,7 +525,7 @@ Let $\mathcal H_O$ be the declared domain of admissible observable histories and
 
 The quotient is $\mathcal H_O/{\sim_{\mathcal I}}$, not the quotient of the instantaneous output alphabet. Each zero-distance relation is an equivalence relation, and their intersection is one. This definition requires well-defined responses and a common Hausdorff comparison; it does not infer latent supports or causal effects from uncalibrated observations. Reconstruction error and identification against alternative models require separate evidence.
 
-\subsection{Empirical Estimator of Ontological Mass}
+\subsection{Empirical Estimator of Sectorial Deformation Resistance}
 
 Let $\{\delta E_t^{(k)}\}$, $k = 1, \ldots, N$, be a family of controlled perturbation protocols with known weighted energies $E_w^{(k)}$.
 
@@ -551,7 +535,7 @@ For the sham reconstruction and probe $\delta_k$, let $\tilde{O}^{(k)}=T_{\delta
 \end{equation}
 where the distance between the two sets is Hausdorff distance in a declared common history space. Its reconstruction from observed data requires a separate estimator with error control.
 
-\begin{definition}[Empirical Ontological Mass Estimator]\label{def:emp-mass}
+\begin{definition}[Empirical Sectorial Deformation Resistance Estimator]\label{def:emp-mass}
 \begin{equation}
     \hat{M}_\Omega := \inf_{\substack{k = 1, \ldots, N \\ \Delta^{(k)} > 0}} \frac{E_w^{(k)}}{\Delta^{(k)}}.
 \end{equation}
@@ -706,7 +690,7 @@ Existence is part of the realized-domain hypothesis and uniqueness gives a singl
 All results in Sections 3--6 are conditional on the structural hypotheses introduced in Section 2 and the regularity hypotheses H1--H2 in Section 4. In particular:
 \begin{itemize}[leftmargin=*]
     \item Surjectivity (H1) ensures non-emptiness and constructibility of inverse limits.
-    \item Metric regularity (H2) enables quantitative stability bounds and the definition of ontological mass.
+    \item Metric regularity (H2) enables quantitative stability bounds and the definition of sectorial deformation resistance.
 \end{itemize}
 
 If either condition fails, the inverse limit may be empty or ill-defined, and the rigidity theorems do not apply.
@@ -741,7 +725,7 @@ This estimator is therefore a formal operational criterion for structured tests,
 
 \subsection{Non-Equivalence to Behavioral Indistinguishability}
 
-The theory does not identify rigid identity with behavioral or functional equivalence. Two systems may be behaviorally indistinguishable while differing in their ontological mass and rigidity class.
+The theory does not identify rigid identity with behavioral or functional equivalence. Two systems may be behaviorally indistinguishable while differing in their sectorial deformation resistance and rigidity class.
 
 Thus, passing any behavioral test (including classical Turing-style tests) does not entail CCR classification.
 
@@ -784,11 +768,11 @@ Starting from the minimal persistence restriction $R_0$, we derived:
     
     \item \textbf{Rigidity under perturbations.} We bounded Hausdorff deformation under two-sided exact lifting and exhibited coherent transport for a ramified circle tower. The weighted projection discrepancy alone does not control the topological type.
     
-    \item \textbf{Ontological mass as a scalar invariant.} We defined ontological mass $M_\Omega$ as the minimal perturbation energy per unit deformation of identity, yielding an operationally definable scalar invariant. Divergence of $M_\Omega$ characterizes closed--rigid (CCR) channels.
+    \item \textbf{Sectorial deformation resistance as a scalar invariant.} We defined sectorial deformation resistance $M_\Omega$ as the minimal perturbation energy per unit deformation of identity, yielding an operationally definable scalar invariant. Divergence of $M_\Omega$ characterizes closed--rigid (CCR) channels.
     
     \item \textbf{External observability.} We stated the exact finite-witness criterion and separated it from estimation of $\hat{M}_\Omega$ from observations.
     
-    \item \textbf{Strong uniqueness.} We proved that CCR channels admit at most one identity object. Rigid identity is therefore indivisible and non-duplicable within any single observable channel.
+    \item \textbf{Strong uniqueness.} We proved assignment uniqueness within a matched finite-cost connected component. This does not establish product atomicity or exclusion of replication into other components.
     
     \item \textbf{Implementation constraints.} The intervention class determines which positive-deformation witnesses are available. The binary-budget bound uses a separate observation model.
 \end{enumerate}
@@ -808,7 +792,7 @@ This separation clarifies which properties are internal, which are externally ob
 
 \subsection{Consequences for System Classification}
 
-The classification of observable channels into open (CA), semi-closed (CSC), and closed--rigid (CCR) categories follows directly from the ontological mass invariant. This yields a principled method for distinguishing:
+The classification of observable channels into open (CA), semi-closed (CSC), and closed--rigid (CCR) categories follows directly from the sectorial deformation resistance invariant. This yields a principled method for distinguishing:
 \begin{itemize}[leftmargin=*]
     \item systems that merely simulate persistence,
     \item systems that maintain partial causal closure,
@@ -976,7 +960,7 @@ Theorem~\ref{thm:collapse} gives one orbital history per initial point, whereas 
 
 \subsection{Structural Uniqueness Lemma (Bridge Lemma)}
 
-This subsection establishes the structural analog of the \textit{Phenomenological Regimes} bridge lemma: under CCR conditions, the identity object is the unique stable attractor of observationally compatible systems.
+This subsection separates uniqueness of an assignment in a connected comparison, reconstruction by projective prefixes and temporal attraction under an independently specified contraction.
 
 \begin{lemma}[Structural Coupling: Observable--Identity]\label{lem:bridge-identity}
 Use the connected operating channel and separating comparison of Definition~\ref{def:coexist}, with CCR for its connecting perturbations. Its observable--identity assignment is unique up to zero deformation by Theorem~\ref{thm:uniqueness}. For a compatible point-history $x$, if $w_t\operatorname{diam}(S_t)\to0$, every compatible completion $x^{[N]}$ agreeing through cut $N$ satisfies
@@ -1037,9 +1021,9 @@ The Dirac image carries the topology of histories of points; mixtures belong to 
 \hline
 \textbf{Structure} & \textbf{Status} \\
 \hline
-Inverse limit identity & Forced by A0 \\
+Inverse-limit representation & For the declared compatible diagram \\
 \hline
-Retroinduction & Forced by non-degeneracy \\
+Projective reconstruction & Relative to specified canonical cuts \\
 \hline
 $\aleph$ operator & Exists and is unique \\
 \hline
@@ -1240,6 +1224,17 @@ By contrast, the exact scalar $\sum_{j\geq1}2b_j3^{-j}$ distinguishes all histor
 % ============================================================================
 % BIBLIOGRAPHY
 % ============================================================================
+\section{Interpretation and Open Research Links}\label{sec:interpretation-open-links}
+\paragraph{Historical alias.} Rigid Identity as an Inverse Limit in Observable Channels. The alias is retained for bibliographic continuity; the technical title states the demonstrated object.
+
+\paragraph{Formal anchor.} Results \ref{thm:uniqueness}, \ref{prop:cardinality} and \ref{cor:indivisible}.
+
+\paragraph{Proposed interpretation.} The historical identity vocabulary motivates persistent structural assignment. It does not prove personal indivisibility or prohibit every physical or informational transfer.
+
+\paragraph{Additional obligations.} A broader atomicity claim needs an independent certificate that links factorization to finite deformation, with a matched comparison sector.
+
+\paragraph{Differential tests and evidence.} Contrast alternative assignments and interventions with calibrated reconstruction, including disconnected-component and product controls.
+
 \printbibliography
 \end{document}
 

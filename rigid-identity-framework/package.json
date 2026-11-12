@@ -84,6 +84,7 @@
     "adjudicate:external-session-zero-v31": "node scripts/external-session-zero-adjudicator-v31.js",
     "verify:v31": "npm run verify:v30 && npm run adjudicate:external-session-zero-v31",
     "verify:math": "python scripts/verify-math-regressions.py",
-    "verify:lean": "python scripts/verify-lean.py"
+    "verify:lean": "python scripts/verify-lean.py",
+    "verify:prose": "python scripts/verify-prose-sync.py"
   }
 }

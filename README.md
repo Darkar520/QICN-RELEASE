@@ -1,4 +1,4 @@
-﻿# QICN-FRAMEWORK
+# QICN-FRAMEWORK
 
 Audit-first mathematical framework for the QICN / Rigid Identity paper family.
 The active base layer is **BaseCore**; downstream papers derive from it and do
@@ -133,3 +133,10 @@ or synthetic gates as external validation.
 
 Copyright (c) 2026 Johnny Andrey Perez Ramirez. All rights reserved.
 Private repository for read-only review unless explicit permission is granted.
+
+
+## Mandatory theorem-to-prose propagation
+
+Every mathematical change must identify its definition/theorem owner, altered hypotheses and conclusions, and affected mentions in abstracts, introductions, tables, predictions, conclusions, appendices and cross-paper contracts. Update sources, preserved-ID registries and compiled volumes together; justify every unaffected surface. Record A01–A37/B01–B15 dispositions in the existing roadmap and ledger, not a parallel claim registry.
+
+Technical names describe demonstrated objects. Historical aliases remain traceable; interpretation is placed at the end of each paper with formal anchors, additional hypotheses, differential tests and evidence obligations. A finite certificate, an open conjecture and a proved global result remain distinct. Automated prose checks assist review and do not certify mathematical coherence.

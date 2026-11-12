@@ -16,10 +16,10 @@
 \addbibresource{../../release/references.bib}
 \usepackage[unicode,hidelinks]{hyperref}
 \hypersetup{
-  pdftitle={Phenomenological Regimes Induced by Structural Identity},
+  pdftitle={Controlled Structural Assignments on Projective Limits},
   pdfauthor={Johnny Andrey P\'erez Ram\'irez},
-  pdfsubject={Rigid Identity Framework -- Phenomenological Regimes},
-  pdfkeywords={phenomenological regime, structural identity, forced continuity, fragmentation, ontological mass, inverse limit}
+  pdfsubject={Rigid Identity Framework -- Structural Assignment Regimes},
+  pdfkeywords={structural assignment regime, structural identity, forced continuity, fragmentation, sectorial deformation resistance, inverse limit}
 }
 
 \geometry{a4paper, margin=1in}
@@ -50,7 +50,7 @@
 % ============================================================================
 % TITLE
 % ============================================================================
-\title{\textbf{Phenomenological Regimes Induced by Structural Identity}}
+\title{\textbf{Controlled Structural Assignments on Projective Limits}}
 \author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
 \date{}
 
@@ -77,7 +77,7 @@ An explicit binary-prefix system with ternary readouts realizes both conditions.
 
 \subsection{Background and Motivation}
 
-Recent work \cite{paper1} established a formal framework for rigid identity as an inverse limit in observable channels. That framework classifies systems by a scalar invariant, the ontological mass $M_\Omega$, which quantifies resistance to identity deformation under perturbation. Three regimes emerge:
+Recent work \cite{paper1} established a formal framework for rigid identity as an inverse limit in observable channels. That framework classifies systems by a scalar invariant, the sectorial deformation resistance $M_\Omega$, which quantifies resistance to identity deformation under perturbation. Three regimes emerge:
 \begin{itemize}[leftmargin=*]
     \item $M_\Omega = 0$: zero deformation-cost infimum;
     \item $0 < M_\Omega < \infty$: deformable persistence (finite rigidity);
@@ -103,7 +103,7 @@ The broader rigidity program asks when finite and infinite deformation-cost regi
 
 This work maintains strict ontological neutrality:
 \begin{enumerate}[leftmargin=*]
-    \item We define mathematical objects (phenomenological spaces, compatibility operators).
+    \item We define mathematical objects (structural readout spaces, compatibility operators).
     \item We derive structural constraints from axioms.
     \item We state impossibility theorems.
     \item We construct mathematical realizations, without asserting their physical or experiential instantiation.
@@ -113,15 +113,15 @@ The framework is therefore a theory of \textit{structural possibility}, not a th
 
 \subsection{Terminological Alignment: Structural Regime Assignments}
 
-The phrase ``phenomenological regime'' is retained for continuity with the
+The phrase ``structural assignment regime'' is retained for continuity with the
 published corpus, but the demonstrated object in this paper is more precisely a
 \emph{structural regime assignment}. The mathematical content is a constrained
 map from identity structure into an abstract codomain. No semantic clause in
 this paper identifies that codomain with experience.
 
 \begin{definition}[Structural regime alias]\label{def:structural-regime-alias}
-Whenever the paper writes a phenomenological space $\mathcal{E}$ or a
-phenomenological assignment $\Phi:\mathcal{I}\to\mathcal{E}$, the strictly
+Whenever the paper writes a structural readout space $\mathcal{E}$ or a
+structural assignment $\Phi:\mathcal{I}\to\mathcal{E}$, the strictly
 demonstrated reading is:
 \[
 \mathcal{E}_{\mathrm{str}}:=\mathcal{E},
@@ -168,17 +168,17 @@ We assume the identity framework of \cite{paper1}. Let $(S_t, \pi_{t+1 \to t})_{
     \mathcal{I} := \varprojlim S_t = \left\{ (x_t)_t \in \prod_t S_t \;\Big|\; \pi_{t+1 \to t}(x_{t+1}) = x_t \;\; \forall t \right\}.
 \end{equation}
 
-The ontological mass $M_\Omega$ quantifies resistance to identity deformation. We recall that:
+The sectorial deformation resistance $M_\Omega$ quantifies resistance to identity deformation. We recall that:
 \begin{itemize}[leftmargin=*]
     \item $M_\Omega = 0$: zero deformation-cost infimum;
     \item $0 < M_\Omega < \infty$: deformable persistence (finite rigidity);
     \item $M_\Omega = +\infty$: closed--rigid (CCR rigidity).
 \end{itemize}
 
-\subsection{Abstract Phenomenological Space}
+\subsection{Abstract Structural Readout Space}
 
-\begin{definition}[Phenomenological Space]\label{def:phenspace}
-A phenomenological space is a nonempty set $\mathcal{E}$ whose elements are called \textit{phenomenological configurations}. No topology, metric, or algebraic structure is assumed a priori.
+\begin{definition}[Structural Readout Space]\label{def:phenspace}
+A structural readout space is a nonempty set $\mathcal{E}$ whose elements are called \textit{phenomenological configurations}. No topology, metric, or algebraic structure is assumed a priori.
 \end{definition}
 
 \begin{remark}
@@ -187,7 +187,7 @@ We do not claim that $\mathcal{E}$ represents ``conscious states'' or ``qualia''
 
 \subsubsection{Why a Separate Space?}
 
-One might ask: why not use $\mathcal{I}$ itself as the phenomenological space? The answer is structural:
+One might ask: why not use $\mathcal{I}$ itself as the structural readout space? The answer is structural:
 
 \begin{proposition}[Endomorphisms Preserving All Canonical Projections]
 If $F:\mathcal I\to\mathcal I$ satisfies $p_t\circ F=p_t$ for every $t$, then $F=\operatorname{Id}$. This does not exclude endomorphisms with nonidentity coordinate actions.
@@ -199,10 +199,10 @@ For each $x$, $F(x)$ and $x$ have identical coordinates, hence are the same inve
 
 A separate codomain permits independent structural readouts; it is not forced by the universal property alone.
 
-\subsection{Phenomenological Assignment}
+\subsection{Structural Assignment}
 
-\begin{definition}[Phenomenological Assignment]\label{def:phenassign}
-A phenomenological assignment is a family of total maps on the declared observable state spaces:
+\begin{definition}[Structural Assignment]\label{def:phenassign}
+A structural assignment is a family of total maps on the declared observable state spaces:
 \begin{equation}
     \phi_t: S_t \to \mathcal{E}
 \end{equation}
@@ -210,7 +210,7 @@ indexed by $t \in \mathbb{N}$.
 \end{definition}
 
 \begin{definition}[Induced Limit Assignment]\label{def:limitassign}
-Given a phenomenological assignment $\{\phi_t\}$, the induced limit assignment, whenever it exists, is the map:
+Given a structural assignment $\{\phi_t\}$, the induced limit assignment, whenever it exists, is the map:
 \begin{equation}
     \Phi: \mathcal{I} \to \mathcal{E}, \quad \Phi((x_t)_t) := \lim_{t \to \infty} \phi_t(x_t),
 \end{equation}
@@ -236,7 +236,7 @@ For $m>n$, the triangle inequality bounds the distance between the $m$th and $n$
 We declare a controlled assignment model with explicit logical dependencies and a constructive nonempty realization.
 
 \begin{axiom}[E0: Non-Triviality]\label{ax:e0}
-The phenomenological space satisfies $|\mathcal{E}| \geq 2$, i.e., there exist at least two distinct phenomenological configurations.
+The structural readout space satisfies $|\mathcal{E}| \geq 2$, i.e., there exist at least two distinct phenomenological configurations.
 \end{axiom}
 
 \begin{axiom}[E1: Controlled Asymptotic Compatibility]\label{ax:e1}
@@ -262,7 +262,7 @@ The following results separate sufficient assumptions, a non-factorization requi
 \subsubsection{Nontriviality of the Codomain}
 
 \begin{theorem}[E0 is Necessary]\label{thm:e0-necessary}
-If $|\mathcal{E}| = 1$, then every phenomenological assignment is constant and no phenomenological classification is possible.
+If $|\mathcal{E}| = 1$, then every structural assignment is constant and no phenomenological classification is possible.
 \end{theorem}
 
 \begin{proof}
@@ -345,7 +345,7 @@ The limit is uniquely defined with a uniform tail bound. E2 remains a substantiv
 
 \subsection{Phenomenological Neutrality Clause}
 
-Throughout this paper, the phenomenological space $\mathcal{E}$ is treated as a \textit{purely abstract topological and metric structure}. No semantic, psychological, biological, or experiential interpretation is assumed or required for any of the formal results derived herein.
+Throughout this paper, the structural readout space $\mathcal{E}$ is treated as a \textit{purely abstract topological and metric structure}. No semantic, psychological, biological, or experiential interpretation is assumed or required for any of the formal results derived herein.
 
 The term ``phenomenological'' refers exclusively to the role of $\mathcal{E}$ as an abstract codomain of structural compatibility for inverse-limit identities, and does not presuppose the existence of consciousness, subjective experience, or any particular phenomenological content.
 
@@ -491,7 +491,7 @@ On $Z=\{0,1\}$, let $h(0)=1$, $h(1)=0$ and $F(x)=x$. The transport preserves $Z$
 
 \subsection{Induced Constraints from Identity Rigidity}
 
-Let $(\mathcal{I}, M_\Omega)$ be an identity object with ontological mass $M_\Omega$. We now study how $M_\Omega$ constrains the set of admissible phenomenological assignments.
+Let $(\mathcal{I}, M_\Omega)$ be an identity object with sectorial deformation resistance $M_\Omega$. We now study how $M_\Omega$ constrains the set of admissible structural assignments.
 
 \begin{definition}[Phenomenological Compatibility Class]\label{def:compat-class}
 For a declared identity domain and codomain, $\mathcal P(M_\Omega)$ consists of maps $\Phi:\mathcal I\to\mathcal E$ that are limits of some family $\{\phi_t\}$ satisfying E1, with E0 and E2 also satisfied. The readout family and its tail control are part of the realization data. The notation retains the mass index for comparisons, but no mass-dependent restriction follows from E0--E2 alone.
@@ -506,7 +506,7 @@ The compatibility class records choices of domain, codomain and readout family. 
 To state rigorous results about continuity and fragmentation, $\mathcal{E}$ must carry enough structure for distances, limits, and loss bounds to be meaningful. The following arguments identify the minimal metric assumptions used by the classification theorem.
 
 \begin{hypothesis}[H3: Metric on $\mathcal{E}$]\label{hyp:h3}
-The phenomenological space $\mathcal{E}$ admits a metric $d_\mathcal{E}$ such that $(\mathcal{E}, d_\mathcal{E})$ is a complete metric space.
+The structural readout space $\mathcal{E}$ admits a metric $d_\mathcal{E}$ such that $(\mathcal{E}, d_\mathcal{E})$ is a complete metric space.
 \end{hypothesis}
 
 \subsubsection{Role of the Metric}
@@ -552,7 +552,7 @@ This is rejected by Proposition~\ref{prop:complete-necessary}.
 \subsection{Phenomenological Continuity}
 
 \begin{definition}[Phenomenological Continuity]\label{def:phen-continuity}
-A phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is \textit{structurally continuous} if for every sequence $(x^{(n)})_n$ in $\mathcal{I}$ converging in the $d_w$ metric:
+A structural assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is \textit{structurally continuous} if for every sequence $(x^{(n)})_n$ in $\mathcal{I}$ converging in the $d_w$ metric:
 \begin{equation}
     d_w(x^{(n)}, x) \to 0 \implies d_\mathcal{E}(\Phi(x^{(n)}), \Phi(x)) \to 0.
 \end{equation}
@@ -565,7 +565,7 @@ Continuity follows from continuous finite readouts and the uniform tail control 
 \subsection{Phenomenological Fragmentation}
 
 \begin{definition}[Phenomenological Fragmentation]\label{def:fragmentation}
-A phenomenological assignment $\Phi$ is \textit{fragmentable} if there exists a perturbation $\{\epsilon_t\}$ with finite weighted energy such that:
+A structural assignment $\Phi$ is \textit{fragmentable} if there exists a perturbation $\{\epsilon_t\}$ with finite weighted energy such that:
 \begin{equation}
     d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) > 0
 \end{equation}
@@ -600,7 +600,7 @@ The quantitative formulas use a declared complete metric codomain. Continuous fi
 Before proving the main impossibility results, we isolate the global lower-bound regularity condition used by the fragmentation argument. Properness, local Lipschitz regularity, and non-collapse do not imply this bound in general, so the bound is carried as an explicit hypothesis.
 
 \begin{hypothesis}[$\Phi$-Regularity Lower Bound]\label{hyp:phi-paper2}
-Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Identity} and let $(\mathcal{E}, d_\mathcal{E})$ be the abstract phenomenological metric space. A phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is said to satisfy $\Phi$-regularity when it satisfies:
+Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Identity} and let $(\mathcal{E}, d_\mathcal{E})$ be the abstract phenomenological metric space. A structural assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is said to satisfy $\Phi$-regularity when it satisfies:
 \begin{enumerate}[leftmargin=*]
     \item (Properness) For every compact $K \subset \mathcal{E}$, $\Phi^{-1}(K)$ is compact in $\mathcal{I}$.
     \item (Local Lipschitz regularity) For every $x \in \mathcal{I}$, there exist $\varepsilon > 0$ and $L_x > 0$ such that for all $y, z \in B_\varepsilon(x)$:
@@ -620,7 +620,7 @@ The map $\Phi(x)=\arctan(x)$ from $\mathbb{R}$ to $(-\pi/2,\pi/2)$ is proper as 
 \end{remark}
 
 \begin{nonclaim}[Global lower Lipschitz bound is an assumption]\label{nonclaim:hphi-lower-bound}
-Hypothesis~\ref{hyp:phi-paper2} clause~(4) requires the existence of a global $C>0$ such that $d_{\mathcal{E}}(\Phi(x),\Phi(y))\geq C\cdot d_w(x,y)$ for all $x,y\in\mathcal{I}$. This is not a theorem derived from clauses~(1)--(3). The map $\Phi(x)=\arctan(x)$ from $\mathbb{R}$ to $(-\pi/2,\pi/2)$ satisfies the first three clauses in the local/proper sense described above but has no such global $C$. Therefore the Fragmentation Theorem (Theorem~\ref{thm:fragmentation}) is conditional on clause~(4). For any specific phenomenological assignment, one must independently verify that a global lower Lipschitz constant exists. The ternary realization in Theorem~\ref{thm:ternary-regime-realization} supplies a concrete constant $C=1$ on its specified domain. Comparisons on larger or different domains require a separate bound.
+Hypothesis~\ref{hyp:phi-paper2} clause~(4) requires the existence of a global $C>0$ such that $d_{\mathcal{E}}(\Phi(x),\Phi(y))\geq C\cdot d_w(x,y)$ for all $x,y\in\mathcal{I}$. This is not a theorem derived from clauses~(1)--(3). The map $\Phi(x)=\arctan(x)$ from $\mathbb{R}$ to $(-\pi/2,\pi/2)$ satisfies the first three clauses in the local/proper sense described above but has no such global $C$. Therefore the Fragmentation Theorem (Theorem~\ref{thm:fragmentation}) is conditional on clause~(4). For any specific structural assignment, one must independently verify that a global lower Lipschitz constant exists. The ternary realization in Theorem~\ref{thm:ternary-regime-realization} supplies a concrete constant $C=1$ on its specified domain. Comparisons on larger or different domains require a separate bound.
 \end{nonclaim}
 
 \begin{hypothesis}[Audited Perturbation Comparisons]\label{hyp:audited-comparison}
@@ -690,7 +690,7 @@ Apply Theorems~\ref{thm:fragmentation} and~\ref{thm:forced-continuity} with thei
 % ============================================================================
 % SECTION 5: CLASSIFICATION
 % ============================================================================
-\section{Classification of Phenomenological Regimes}
+\section{Classification of Structural Assignment Regimes}
 
 \subsection{Conditional Classification}
 
@@ -863,7 +863,7 @@ Any comparison with another theory requires an explicit common task, corresponde
 \subsection{Open Problems}
 
 \begin{enumerate}[leftmargin=*]
-    \item Characterization of the coupling constant $C$ in the Fragmentation Theorem;
+    \item Optimal comparison constants beyond the explicit ternary realization, for independently specified perturbation and readout classes;
     \item Extension of the explicit ternary realization to larger assignment and perturbation classes;
     \item Extension to continuous-time phenomenological dynamics;
     \item Relation between phenomenological continuity and subjective continuity.
@@ -896,7 +896,7 @@ The instability of the null regime, the no-null theorem, and the attractor-style
 
 \subsection{Closure of This Paper}
 
-The result of this paper is the classification boundary: if a compatible phenomenological regime exists, its admissible structure is constrained by Sections 1--8. \textit{Null-Regime Instability} addresses the null case with its separately stated witness-relative and conditional hypotheses.
+The result of this paper is the classification boundary: if a compatible structural assignment regime exists, its admissible structure is constrained by Sections 1--8. \textit{Null-Regime Instability} addresses the null case with its separately stated witness-relative and conditional hypotheses.
 
 \appendix
 \section{Extended Proofs}
@@ -936,6 +936,17 @@ The downstream bridge from classification to null-instability is intentionally m
 \item The formal results are conditional on the hypotheses stated; they do not establish truth outside the assumed structures.
 \item No interpretive-layer conclusion (consciousness, phenomenality, moral status) is derived from terminology alone.
 \end{enumerate}
+
+\section{Interpretation and Open Research Links}\label{sec:interpretation-open-links}
+\paragraph{Historical alias.} Phenomenological Regimes Induced by Structural Identity. The alias is retained for bibliographic continuity; the technical title states the demonstrated object.
+
+\paragraph{Formal anchor.} Results \ref{thm:ternary-regime-realization} and \ref{thm:multiscale-e2-protection}.
+
+\paragraph{Proposed interpretation.} The historical phenomenological vocabulary proposes a further interpretation of structural assignments; the codomain is not identified with experience.
+
+\paragraph{Additional obligations.} Connect the chosen readout and multiscale regularity to independently identified observables and costs.
+
+\paragraph{Differential tests and evidence.} Compare finite-cut predictors with controlled full readings under declared precision and intervention families; experiential interpretation requires independent evidence.
 
 \printbibliography
 \end{document}

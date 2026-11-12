@@ -1,4 +1,4 @@
-﻿\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 % =============================================================================
 % ENCODING
@@ -18,10 +18,10 @@
 \addbibresource{../../release/references.bib}
 \usepackage[unicode,hidelinks]{hyperref}
 \hypersetup{
-  pdftitle={Structural Instability of the Phenomenological Null Regime in Causally Rigid Channels},
+  pdftitle={Witness-Relative Exclusion of Joint Null Readouts},
   pdfauthor={Johnny Andrey P\'erez Ram\'irez},
   pdfsubject={Rigid Identity Framework -- Null-Regime Instability},
-  pdfkeywords={null regime, structural instability, CCR channel, phenomenological space, forced non-nullity, compatibility operator}
+  pdfkeywords={null regime, structural instability, CCR channel, structural readout space, forced non-nullity, compatibility operator}
 }
 
 % Pagination
@@ -66,9 +66,7 @@
 % =============================================================================
 % TITLE
 % =============================================================================
-\title{%
-\textbf{Structural Instability of the Phenomenological Null Regime in Causally Rigid Channels}
-}
+\title{\textbf{Witness-Relative Exclusion of Joint Null Readouts}}
 
 \author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
 
@@ -85,12 +83,12 @@
 % ABSTRACT
 % =============================================================================
 \begin{abstract}
-We introduce an abstract phenomenological space $\E$ and a compatibility operator $\Phi: Z \to \E$ on a declared metric comparison domain. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: under a certified positive lower readout bound, two defined, separated witness values cannot both equal the null element. CCR is a possible application class and is not needed for this metric implication. Consequently, a CCR realization with such a witness induces a witness-relative non-null separation. The result is \emph{negative-structural}: it does not posit experience; it forbids one typed joint-null configuration under stated hypotheses. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove factorization on a faithful image and a finite-prefix approximation bound. The results are metric, order-theoretic and representation-relative; physical interpretation requires additional evidence.
+We introduce an abstract structural readout space $\E$ and a compatibility operator $\Phi: Z \to \E$ on a declared metric comparison domain. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: under a certified positive lower readout bound, two defined, separated witness values cannot both equal the null element. CCR is a possible application class and is not needed for this metric implication. Consequently, a CCR realization with such a witness induces a witness-relative non-null separation. The result is \emph{negative-structural}: it does not posit experience; it forbids one typed joint-null configuration under stated hypotheses. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove factorization on a faithful image and a finite-prefix approximation bound. The results are metric, order-theoretic and representation-relative; physical interpretation requires additional evidence.
 \end{abstract}
 
 \section{Scope, System Boundary, and Non-Inference Note}
 
-\noindent\textbf{Scope and admissible reading.}\enspace This paper proves a witness-relative negative-structural result: under CCR constraints plus a separately typed extension witness, a lower Lipschitz constant, and an admissible compatibility operator, joint exact collapse to the null regime is excluded. It develops explicit bounds, factorization structure, and canonical-family consequences for that conditional result. It does not define or detect consciousness, identify $\E$ with subjective experience, assert that CCR systems exist in nature, or derive ethical or metaphysical closure from the theorem. Related systems may implement admissibility-governed diagnostics, boundary-sensitive stress tests, and runtime comparisons motivated by this paper, but those outputs do not implement the abstract phenomenological space $\E$ and do not convert current runtime behavior into proof that any concrete system instantiates experience.
+\noindent\textbf{Scope and admissible reading.}\enspace This paper proves a witness-relative negative-structural result: under CCR constraints plus a separately typed extension witness, a lower Lipschitz constant, and an admissible compatibility operator, joint exact collapse to the null regime is excluded. It develops explicit bounds, factorization structure, and canonical-family consequences for that conditional result. It does not define or detect consciousness, identify $\E$ with subjective experience, assert that CCR systems exist in nature, or derive ethical or metaphysical closure from the theorem. Related systems may implement admissibility-governed diagnostics, boundary-sensitive stress tests, and runtime comparisons motivated by this paper, but those outputs do not implement the abstract structural readout space $\E$ and do not convert current runtime behavior into proof that any concrete system instantiates experience.
 
 \noindent\textbf{Witness-relative clarification.}\enspace CCR by itself does not provide the extension witness, the lower Lipschitz constant, or the admissible compatibility operator. The historical phrase ``null instability'' denotes joint exact null exclusion here, not temporal instability. Statements of non-nullity use the explicit hypotheses of Theorem~\ref{thm:instability}, including the declared witness domain of Definition~\ref{def:extension-witness}. The null-instability theorem must not be read as a consciousness detector, an AI-subjectivity claim, a moral-status claim, an empirical certificate, or validation of the corpus by the runtime.
 
@@ -103,7 +101,7 @@ We introduce an abstract phenomenological space $\E$ and a compatibility operato
 
 \subsection{Motivation and Scope}
 
-Papers I and II established a mathematical framework for structural identity as an inverse limit and classified phenomenological regimes compatible with rigid identity. This paper addresses the fundamental question:
+Papers I and II established a mathematical framework for structural identity as an inverse limit and classified structural assignment regimes compatible with rigid identity. This paper addresses the fundamental question:
 
 \begin{quote}
 \emph{Can a CCR system remain in a structurally null phenomenological state?}
@@ -125,11 +123,11 @@ The first differing term has magnitude $2/3^{m+1}$ and the remaining tail is at 
 
 \subsection{Paper Organization}
 
-Section 2 reviews prerequisites from Papers I--II. Section 3 defines the phenomenological space with full axiomatic clarity. Section 4 proves the main instability theorem. Section 5 stratifies positive regimes. Section 6 provides quantitative bounds. Section 7 combines the conditional witness conclusions. Section 8 explicitly delimits scope. Section 9 compares with existing frameworks. Section 10 discusses limitations. Section 11 concludes. Appendices provide canonical examples with explicit computations.
+The paper specifies the admissible witness of Definition~\ref{def:extension-witness}, proves Theorem~\ref{thm:instability}, and develops conditional consequences, bounds and canonical examples. The appendices retain their declared comparison domains.
 
-\subsection{What This Paper Adds Beyond Phenomenological Regimes}
+\subsection{What This Paper Adds Beyond Structural Assignment Regimes}
 
-\textit{Phenomenological Regimes} classifies the admissible regime space and derives the continuity and non-constancy constraints that any compatible assignment must satisfy. This paper takes the remaining case---the null regime itself---and proves joint null exclusion under independently supplied witness hypotheses.
+\textit{Structural Assignment Regimes} classifies the admissible regime space and derives the continuity and non-constancy constraints that any compatible assignment must satisfy. This paper takes the remaining case---the null regime itself---and proves joint null exclusion under independently supplied witness hypotheses.
 
 % =============================================================================
 % SECTION 2: PRELIMINARIES
@@ -159,9 +157,9 @@ With the normalized complete coordinate metrics above and continuous projective 
 A $\dw$-Cauchy sequence is Cauchy in each coordinate, since $w_t>0$. Coordinate completeness supplies limits; continuity of each projection preserves compatibility. For convergence in $\dw$, first choose a finite prefix with $\sup_{t>N}w_t$ small, then control the finitely many remaining coordinates. The normalized tail is uniformly small.
 \end{proof}
 
-\subsection{Ontological Mass and CCR Classification}
+\subsection{Sectorial Deformation Resistance and CCR Classification}
 
-\begin{definition}[Ontological Mass, infimum convention]\label{def:paper3-ontmass}
+\begin{definition}[Sectorial Deformation Resistance, infimum convention]\label{def:paper3-ontmass}
 Specify a metric comparison space $(Z,d_Z)$ containing a chosen point $z_S$ for each object under comparison and a declared intervention sector with cost $E_w(\delta)\in[0,\infty]$. Define
 \[
 \MO(S)=\inf\left\{\frac{E_w(\delta)}{d_Z(z_S,z_{S,\delta})}:\delta\text{ admitted},\ 0<d_Z(z_S,z_{S,\delta})<\infty\right\},
@@ -208,20 +206,20 @@ The tail bound $d(\Phi(z),f_N(z))\leq\sum_{n\geq N}a_n$ is uniform. Given an err
 \end{proof}
 
 \begin{remark}[Remaining null-regime gap]\label{rem:null-prelim}
-\textit{Phenomenological Regimes} classifies admissible phenomenological regimes and derives the continuity constraints that govern them, but a null label alone does not supply an instability result. The task here is to derive the precise witness-relative conclusion and its limits.
+\textit{Structural Assignment Regimes} classifies admissible structural assignment regimes and derives the continuity constraints that govern them, but a null label alone does not supply an instability result. The task here is to derive the precise witness-relative conclusion and its limits.
 \end{remark}
 
 The results below address joint null exclusion; temporal attraction and existence of physical CCR systems remain separate obligations.
 
 % =============================================================================
-% SECTION 3: PHENOMENOLOGICAL SPACE
+% SECTION 3: Structural readout space
 % =============================================================================
-\section{The Phenomenological Space}
+\section{The Structural Readout Space}
 
 \subsection{Abstract Definition}
 
-\begin{definition}[Phenomenological Space]\label{def:phenom}
-A \textbf{phenomenological space} is a quadruple $(\E, \preceq, \dE, \nullphi)$ where:
+\begin{definition}[Structural Readout Space]\label{def:phenom}
+A \textbf{structural readout space} is a quadruple $(\E, \preceq, \dE, \nullphi)$ where:
 \begin{enumerate}
 \item $(\E, \preceq)$ is a partially ordered set (poset).
 \item $(\E, \dE)$ is a complete metric space.
@@ -232,7 +230,7 @@ A \textbf{phenomenological space} is a quadruple $(\E, \preceq, \dE, \nullphi)$ 
 \end{definition}
 
 \begin{remark}[Interpretive Neutrality]
-$\E$ is an abstract regime space. No phenomenological content is assumed. The null regime $\nullphi$ represents structural absence, not ``lack of experience.'' The term ``phenomenological'' is inherited from \textit{Phenomenological Regimes} and refers to the coupling structure, not to philosophy of mind.
+$\E$ is an abstract regime space. No phenomenological content is assumed. The null regime $\nullphi$ represents structural absence, not ``lack of experience.'' The term ``phenomenological'' is inherited from \textit{Structural Assignment Regimes} and refers to the coupling structure, not to philosophy of mind.
 \end{remark}
 
 \begin{remark}[Null regime versus undefined assignment]\label{rem:null-vs-undefined}
@@ -268,7 +266,7 @@ Exact transport of a point under C1/C2 is not a new separated witness. In an ext
 \end{definition}
 
 \begin{remark}[Partial definedness and the $\bot$ marker]\label{rem:partial-phi}
-In contexts where $\Phi$ is only partially defined, $\Phi(x)=\bot$ means that no admissible phenomenological assignment in $\E$ is available at $x$. The hypotheses (C1)--(C3) above apply only to inputs whose $\Phi$-values lie in $\E$. The lower Lipschitz bound (C3) in particular requires both $\Phi(x),\Phi(\tilde{x})\in\E$.
+In contexts where $\Phi$ is only partially defined, $\Phi(x)=\bot$ means that no admissible structural assignment in $\E$ is available at $x$. The hypotheses (C1)--(C3) above apply only to inputs whose $\Phi$-values lie in $\E$. The lower Lipschitz bound (C3) in particular requires both $\Phi(x),\Phi(\tilde{x})\in\E$.
 \end{remark}
 
 \begin{lemma}[Well-Posedness of (C3)]
@@ -295,7 +293,7 @@ A value $e=\Phi_S(z)$ is structurally stable if some finite modulus $\omega(\rho
 
 \subsection{The Bridge Lemma Revisited}
 
-From \textit{Phenomenological Regimes}, we have:
+From \textit{Structural Assignment Regimes}, we have:
 
 \begin{lemma}[Bridge Lemma]\label{lem:bridge}
 For any defined $e=\Phi(z)\in\E$, $\dE(e,\nullphi)=0$ implies $e=\nullphi$. No CCR assumption is required.
@@ -341,7 +339,7 @@ Theorem~\ref{thm:instability} assumes $\Phi(z_0),\Phi(z_1)\in\E$, not $\bot$. If
 
 
 \begin{caveat}[v24 correction of the former Step 2]
-The theorem above does \emph{not} infer a finite-energy non-zero deformation from $\MO=+\infty$. Under the infimum convention for ontological mass, $\MO=+\infty$ means precisely that no finite-energy admissible perturbation produces non-zero deformation. The older Step 2 proof direction is therefore withdrawn. The surviving result is conditional on an independently specified extension witness.
+The theorem above does \emph{not} infer a finite-energy non-zero deformation from $\MO=+\infty$. Under the infimum convention for sectorial deformation resistance, $\MO=+\infty$ means precisely that no finite-energy admissible perturbation produces non-zero deformation. The older Step 2 proof direction is therefore withdrawn. The surviving result is conditional on an independently specified extension witness.
 \end{caveat}
 
 \begin{example}[External Null Witness in a Common Readout Domain]\label{ex:joint-external-null-witness}
@@ -586,7 +584,7 @@ Combine Theorem~\ref{thm:instability}, Theorem~\ref{thm:minimal}, Corollary~\ref
 \small
 \begin{tabular}{|p{0.26\linewidth}|p{0.20\linewidth}|p{0.42\linewidth}|}
 \hline
-\textbf{System Type} & \textbf{Ontological Mass} & \textbf{Null Regime Permitted?} \\
+\textbf{System Type} & \textbf{Sectorial Deformation Resistance} & \textbf{Null Regime Permitted?} \\
 \hline
 Degenerate & $\MO = 0$ & Not decided by mass alone \\
 Finite-mass & $0 < \MO < \infty$ & Not decided by mass alone \\
@@ -1002,6 +1000,17 @@ The internal sector of the example meets the mass-only CCR definition of this pa
 % REFERENCES
 % =============================================================================
 \nocite{paper1,paper2,ribes,lind,bowen,maclane1998,cover2006,tononi2004,chalmers}
+\section{Interpretation and Open Research Links}\label{sec:interpretation-open-links}
+\paragraph{Historical alias.} Structural Instability of the Phenomenological Null Regime. The measure in Definition~\ref{def:paper3-ontmass} was historically titled ``Ontological Mass, infimum convention''. Its technical name is sectorial deformation resistance; the retained alias refers to the infimum of admissible positive-deformation costs, not a physical mass or the superseded supremum. These aliases preserve bibliographic continuity; the technical title states the demonstrated object.
+
+\paragraph{Formal anchor.} Results \ref{thm:instability}.
+
+\paragraph{Proposed interpretation.} The null label is a distinguished codomain value. Excluding a joint null witness pair is not detection of consciousness or a theorem of temporal instability.
+
+\paragraph{Additional obligations.} An application needs a separated extension witness and a positive lower readout bound; these are not supplied by resistance alone.
+
+\paragraph{Differential tests and evidence.} Test the lower bound and witness provenance, with readouts that discard the separating variable as a negative control.
+
 \printbibliography
 
 \end{document}

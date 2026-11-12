@@ -118,3 +118,10 @@ claims, no destructivo, trazabilidad en
 | Certificate Cert_op(S,tau;P) | Evidence relative to protocol P and finite windows; not global membership by itself |
 
 Domains, codomains, units and quantifiers must be stated before transporting a result. Coincident notation does not identify objects. Historical macros and labels are retained; aliases never transfer convexity, causal assumptions or temporal guarantees.
+
+
+## Mandatory theorem-to-prose propagation
+
+Every mathematical change must identify its definition/theorem owner, altered hypotheses and conclusions, and affected mentions in abstracts, introductions, tables, predictions, conclusions, appendices and cross-paper contracts. Update sources, preserved-ID registries and compiled volumes together; justify every unaffected surface. Record A01–A37/B01–B15 dispositions in the existing roadmap and ledger, not a parallel claim registry.
+
+Technical names describe demonstrated objects. Historical aliases remain traceable; interpretation is placed at the end of each paper with formal anchors, additional hypotheses, differential tests and evidence obligations. A finite certificate, an open conjecture and a proved global result remain distinct. Automated prose checks assist review and do not certify mathematical coherence.

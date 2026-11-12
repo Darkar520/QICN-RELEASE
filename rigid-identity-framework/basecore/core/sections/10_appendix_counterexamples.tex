@@ -3,23 +3,23 @@
 
 \subsection{Without H1 (Convexity)}
 
-Let $\I = \{x \in \mathbb{R}^2 : \norm{x} = 1\}$ (unit circle, not convex).
+Let ${C_{\mathrm{proj}}} = \{x \in \mathbb{R}^2 : \norm{x} = 1\}$ (unit circle, not convex).
 
-For $\Psi = (0, 0)$, every point on $\I$ is equidistant. Projection is not unique.
+For $\Psi = (0, 0)$, every point on ${C_{\mathrm{proj}}}$ is equidistant. Projection is not unique.
 
 \subsection{\texorpdfstring{Without H2 ($\norm{K} < 1$)}{Without H2 (norm K < 1)}}
 
-Take $\Hilb=\I=\mathbb R^2$, $\U=\{0\}$, $\Gamma(0)=0$ and let $K$ be rotation by $\pi/2$. The point $0$ is fixed, but every nonzero orbit cycles with period four and fails to converge. Thus removing strict contraction can destroy convergence even when a unique fixed point remains.
+Take $\Hilb={C_{\mathrm{proj}}}=\mathbb R^2$, $\U=\{0\}$, $\Gamma(0)=0$ and let $K$ be rotation by $\pi/2$. The point $0$ is fixed, but every nonzero orbit cycles with period four and fails to converge. Thus removing strict contraction can destroy convergence even when a unique fixed point remains.
 
 To obtain failure of existence as well, take $K=\operatorname{Id}$ and $\Gamma(0)=v\neq0$ on the same space. The equation $x=x+v$ has no solution. Both examples preserve H1, H3 and H4.
 
 \subsection{Without H3 (Completeness)}
 
-H1 already specifies a Hilbert space, so H3 cannot be removed independently while keeping H1 unchanged. To test the extension to a real inner-product space without completeness, take $c_{00}$, the real finite-support sequences with the $\ell^2$ norm, and $\I=c_{00}$. Let $S(x_1,x_2,\ldots)=(0,x_1,x_2,\ldots)$, $K=S/2$, $\U=\{0\}$ and $\Gamma(0)=e_1$. Projection onto $\I$ is the identity and $T(x)=Sx/2+e_1$ is a strict contraction. Its only possible fixed-point coordinates are $(1,1/2,1/4,\ldots)$, which do not belong to $c_{00}$. The iteration from zero is Cauchy but has no limit in the stated space. This isolates the completeness requirement for the generalized contraction argument.
+H1 already specifies a Hilbert space, so H3 cannot be removed independently while keeping H1 unchanged. To test the extension to a real inner-product space without completeness, take $c_{00}$, the real finite-support sequences with the $\ell^2$ norm, and ${C_{\mathrm{proj}}}=c_{00}$. Let $S(x_1,x_2,\ldots)=(0,x_1,x_2,\ldots)$, $K=S/2$, $\U=\{0\}$ and $\Gamma(0)=e_1$. Projection onto ${C_{\mathrm{proj}}}$ is the identity and $T(x)=Sx/2+e_1$ is a strict contraction. Its only possible fixed-point coordinates are $(1,1/2,1/4,\ldots)$, which do not belong to $c_{00}$. The iteration from zero is Cauchy but has no limit in the stated space. This isolates the completeness requirement for the generalized contraction argument.
 
 \subsection{Without H4 (Compactness)}
 
-Take $\Hilb=\I=\mathbb R$, $K=0$, $\U=\mathbb R$ and $\Gamma(u)=u$. The input map is uniformly continuous, but the parameter space is not compact. Each transition has the unique fixed point $f_u^\ast=u$, and $\A^\ast=\mathbb R$ is not compact. Thus compactness of the parameter space cannot simply be dropped while retaining the stated compact-image conclusion. It is sufficient, not necessary, since some maps on noncompact parameter spaces have compact image.
+Take $\Hilb={C_{\mathrm{proj}}}=\mathbb R$, $K=0$, $\U=\mathbb R$ and $\Gamma(u)=u$. The input map is uniformly continuous, but the parameter space is not compact. Each transition has the unique fixed point $f_u^\ast=u$, and $\A^\ast=\mathbb R$ is not compact. Thus compactness of the parameter space cannot simply be dropped while retaining the stated compact-image conclusion. It is sufficient, not necessary, since some maps on noncompact parameter spaces have compact image.
 
 \subsection{\texorpdfstring{Why $\Phi$-Regularity Is a Hypothesis}{Why Phi-Regularity Is a Hypothesis}}\label{app:phi-regularity-counterexample}
 

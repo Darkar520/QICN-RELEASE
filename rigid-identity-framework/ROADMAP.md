@@ -1,4 +1,4 @@
-﻿# ROADMAP PRINCIPAL QICN
+# ROADMAP PRINCIPAL QICN
 
 Estado: roadmap principal activo para `rigid-identity-framework`.
 Fecha de formalizacion: 2026-06-05.
@@ -1981,3 +1981,68 @@ Base `833a91dba5a73ec306ea2f94aa4b0fe6c9f29ed3`; [prerregistro y ejecucion](docs
 ### Unificacion de tipos y concordancia · bloque contracts · 2026-11-12
 
 Base `abe544510fcd8a5a194c61f3ada85e741e34ed76`; [prerregistro y ejecucion](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/UNIFICACION_2026-11-11.md). Bloque local verificado, conservacion de IDs y areas congeladas. El cierre global del plan y las disposiciones A01–A37/B01–B15 se documentaran al completar los bloques; no se declaran resueltas por un PASS. `external_support_certified=false`.
+
+
+## Disposición de las dos auditorías · A01–A37 y B01–B15
+
+Las categorías distinguen corrección documental, resultado probado y obligación abierta. Ningún PASS convierte una obligación pendiente en cierre científico. Los enunciados nuevos están en su paper propietario; los IDs anteriores se preservan.
+
+| ID | Estado | Resultado y obligación residual |
+|---|---|---|
+| A01 | corregida | Autor restaurado en UTF-8/acentos TeX; título y metadata se cotejan en el PDF V. |
+| A02 | corregida | Sumabilidad como entrada de una cota con levantamiento/amplificación, no caracterización de resistencia infinita. |
+| A03 | corregida | No exclusión por dimensión; fidelidad, sector y testigo explícitos. |
+| A04 | corregida con prueba | Condición alpha>p+1 y control armónico en la proposición de decaimiento. |
+| A05 | corregida | Unicidad de asignación en componente conectado, transporte sectorial y atomicidad diferenciados. |
+| A06 | corregida con prueba | Aplicación sobre un conjunto de componentes realizados y cota de imagen; separación entre componentes no asumida. |
+| A07 | obstrucción demostrada; extensión pendiente | Intercalado par/impar de Cantor refuta la atomicidad desde resistencia sola. Corolario condicionado a certificado independiente; construir ese certificado en un sector sustantivo sigue abierto. |
+| A08 | corregida | Reconstrucción por prefijos y atracción bajo contracción separadas en texto y lema. |
+| A09 | corregida | Pérdida de radio no equivale a fallo del predicado; tablas y ruptura ajustadas. |
+| A10 | corregida con prueba | Implicaciones de ruptura sin exclusividad falsa ni factorización exacta inferida de un ínfimo. |
+| A11 | corregida con prueba | Prop. decoder-visible-separation aporta la condición suficiente de dos celdas. La existencia básica sólo concluye cociente definido y no vacío. |
+| A12 | corregida | Equivalencia exacta da transporte de cociente; aproximación bajo radio calibrado sólo da pertenencia, salvo certificado adicional de celdas. |
+| A13 | corregida | Remisión al teorema de ruptura por etiqueta. |
+| A14 | corregida; obligación global pendiente | Contrato de operadores y radio calibrado en VI; soporte histórico no promovido. Positividad de radios globales requiere prueba por familia. |
+| A15 | corregida | Exclusión conjunta de nulo sobre par testigo; no inferencia de inestabilidad temporal universal. |
+| A16 | corregida | Contratos congelados por ciclo y construcciones posteriores distinguidos. |
+| A17 | corregida | Predicado Booleano distinto de margen real temporal y puntuación normalizada. |
+| A18 | aclarada y actualizada | No existía contradicción entre no observar empíricamente y construir valores racionales; contribuciones explícitas. |
+| A19 | corregida | Referencia a prop:localrobust por etiqueta. |
+| A20 | corregida | Corolario de cero irreducibilidad etiquetado y remisiones manuales sustituidas. |
+| A21 | corregida | Suma de exponentes exigida igual a uno; control racional del caso no normalizado. |
+| A22 | corregida | Se explicita cuándo el umbral escalar es redundante y qué exige una restricción adicional; no se declara vacía la clase. |
+| A23 | corregida | Empate de ínfimos separado de un rival que alcanza el empate; pérdida y falta de evidencia no se confunden. |
+| A24 | pendiente para la clase completa | Inclusión upstream probada y título corregido. Proper inclusión exige un miembro completo upstream fuera de la clase reforzada; los certificados locales no sustituyen ese testigo. |
+| A25 | corregida | Resultados locales, obstrucciones y rival informado se enlazan en el encuadre actualizado; pertenencia completa sigue abierta. |
+| A26 | corregida con prueba | Iota es garantía poblacional L4 con p_miss; garantía uniforme por intervención y distancia entre distribuciones son obligaciones separadas. |
+| A27 | corregida | Cociente por igualdad de etiquetas/celdas, no por cercanía no transitiva. |
+| A28 | corregida | Metadiscurso del prompt retirado del remark formal. |
+| A29 | corregida | Tabla de dependencias del puente refleja conexión energética y transporte de clase de resistencia. |
+| A30 | corregida | Realización de cuatro estados, ciclo, bilinealidad y margen local presentes; rival interactuante aún empata. |
+| A31 | corregida; campaña pendiente | n=1 identificado como salida histórica sintética no certificada. Diseño de veinte bloques conserva sus hipótesis y no es mínimo universal. Parámetros poblacionales y campaña requieren evidencia nueva. |
+| A32 | corregida y ensayada | Contrato de preámbulos esperados y personalizaciones explícitas. Build limpio/incremental idéntico; macro nueva y deriva de configuración bloquean el build. |
+| A33 | corregida | Ausencia de resultados empíricos diferenciada de los teoremas analíticos de protocolo. |
+| A34 | delimitación verificada | BaseCore no necesita listar cada parte en el resumen; se conserva su propiedad de resultados y se distinguen contratos downstream. |
+| A35 | corregida | Problemas abiertos delimitados más allá de las familias explícitas; organización de III sin remisiones manuales obsoletas. |
+| A36 | corregida | Negación de una conjunción no equivale a inexistencia de todo soporte; se identifica la cláusula que falla. |
+| A37 | corregida | Corolario limitado a sustitutos de una coordenada; un escalar puede codificar toda la conjunción. |
+| B01 | corregida con prueba y control | R0 sobre ley controlada; representación de prefijos con cierre y compacidad y propiedad universal del diagrama, sin necesidad falsa de ramificación desde R0. |
+| B02 | corregida | Dominio del cociente es el espacio de historias observables. |
+| B03 | contrato corregido; identificación pendiente | Sondas y reconstrucciones indexadas por intervención. Existencia/identificación de esos mapas requiere evidencia específica; no se afirma recuperarlos desde datos no identificantes. |
+| B04 | corregida | Lectura, modelo experimental y componente de conexión energética tipados por separado. |
+| B05 | corregida | Estimador alineado por transporte inverso, con roles/referencias; prueba de equivariancia queda relativa al estimador y familia declarados. |
+| B06 | corregida con prueba y control | Inclusión de reglas sin pasado, capacidades igualadas y nulo de independencia condicional; control sin información histórica adicional. |
+| B07 | obstrucción demostrada; extensión causal pendiente | Planta sin memoria separa familias por amplitud. Frontera endógena exige controles igualados, partición causal y variable organizacional; el margen bruto de la torre no demuestra por sí solo esa lectura. |
+| B08 | no identificabilidad demostrada; evidencia causal pendiente | Retorno interno/externo indistinguible en la traza. Contrato de controlador, sensores, coste y ablación especificado; identificación física requiere ejecutar ese protocolo. |
+| B09 | obstrucción y protección probadas | E2 tiene radio uniforme cero en la clase declarada; protección Lipschitz con familia G_e no vacía. No se transfieren radios entre topologías o a todos los predicados de V. |
+| B10 | corregida | Dominio de puntuaciones no negativas y escala positiva impiden inversión de signo por denominador negativo. |
+| B11 | corregida | Escalas positivas con unidades y transporte de umbrales; las realizaciones mantienen su calibración uno. |
+| B12 | contrato corregido; extensión global pendiente | Certificado finito separado de pertenencia global; derivación desde ventanas crecientes requiere testigos compatibles y márgenes uniformes. |
+| B13 | corregida | Replay nombrado reproducibilidad del procedimiento, sin atribuirle por sí solo identidad proyectiva. |
+| B14 | corregida con prueba; comparadores amplios pendientes | Presupuesto e información congelados, convención de representación y monotonicidad bajo ampliación de rivales. No se afirma derrota de familias no identificadas. |
+| B15 | corregida | C_proj distinto del límite inverso y del soporte; contracción por ramas no equivale a contracción global entre perfiles. |
+
+
+### Unificación de tipos y concordancia · bloque editorial · 2026-11-12
+
+Base `99df1de9850f8c24746e72c92d41f2515ef26017`; [prerregistro y ejecución](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/UNIFICACION_2026-11-11.md). Bloque local verificado, conservación de IDs y áreas congeladas. Las 52 disposiciones A01–A37/B01–B15 están registradas en la tabla anterior: las obligaciones científicas abiertas siguen abiertas. `external_support_certified=false`.

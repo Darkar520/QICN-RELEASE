@@ -19,13 +19,13 @@
 
 \usepackage[unicode,hidelinks]{hyperref}
 \hypersetup{
-    pdftitle={QICN v4.5: Falsifiable Predictions Under Forensic Constraints},
+    pdftitle={Reproducible Intervention and Comparator Protocols},
     pdfauthor={Johnny Andrey P\'erez Ram\'irez},
     pdfsubject={Rigid Identity Framework -- Forensic Predictions},
     pdfkeywords={falsification, forensic admissibility, pre-registration, QICN, decision gates, ablation, structural-functional validation}
 }
 
-\title{\textbf{Falsifiable Predictions Under Forensic Constraints}}
+\title{\textbf{Reproducible Intervention and Comparator Protocols}}
 \author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
 \date{}
 
@@ -69,7 +69,7 @@ QICN has formal foundations in rigid identity, regime structure, and non-null in
 This paper extends the previous corpus and is aligned with the formal line of:
 \begin{enumerate}
 \item paper1 (rigid identity),
-\item paper2 (phenomenological regimes),
+\item paper2 (structural assignment regimes),
 \item paper3 (structural instability and non-null constraints).
 \end{enumerate}
 It does not replace those results; it operationalizes them under benchmark-grade falsification pressure.
@@ -746,7 +746,7 @@ PPS defines \emph{operational phenomenology proxies}; it does not claim direct p
 Define workspace variable $W_t$ with explicit read/write schema and temporal persistence constraints. Every perturbation experiment logs pre-state, intervention, post-state, and replay token.
 
 \subsection{Entropy and Non-Determinism Inputs}
-When PPS is instantiated on the QICN runtime, the architecture may call a \texttt{QuantumEntropyBridge} to inject hardware-originating entropy into counterfactual exploration. Within this paper, that mechanism is treated only as an auditable source of operational non-determinism for perturbation protocols; it is not itself evidence for the ontological claims of \textit{Rigid Identity}, \textit{Phenomenological Regimes}, or \textit{Null-Regime Instability}.
+When PPS is instantiated on the QICN runtime, the architecture may call a \texttt{QuantumEntropyBridge} to inject hardware-originating entropy into counterfactual exploration. Within this paper, that mechanism is treated only as an auditable source of operational non-determinism for perturbation protocols; it is not itself evidence for the ontological claims of \textit{Rigid Identity}, \textit{Structural Assignment Regimes}, or \textit{Null-Regime Instability}.
 
 \subsection{Online World Model and Causal Interventions}
 The operational testbed may also use an online \texttt{WorldModelEngine} and a finite-horizon planner to select admissible interventions under fixed forensic constraints. In the release corpus, this mechanism belongs to the empirical protocol layer: it defines how interventions are scheduled and logged, not what the theoretical papers prove.
@@ -835,6 +835,17 @@ If the sign of $M(w)$ changes on admissible $w$, claims are downgraded to hypoth
 For every key experiment, include: heuristic baseline, planner-off, and world-model-off outputs with identical seeds and scenario assignments.
 
 \nocite{paper1,paper2,paper3,holm,efron}
+\section{Interpretation and Open Research Links}\label{sec:interpretation-open-links}
+\paragraph{Historical alias.} Falsifiable Predictions Under Forensic Constraints. The alias is retained for bibliographic continuity; the technical title states the demonstrated object.
+
+\paragraph{Formal anchor.} Results \ref{thm:campaign-block-sign-test}.
+
+\paragraph{Proposed interpretation.} Runtime indicators motivate operational tests, not identity or experiential conclusions by naming. Synthetic tables describe their original contract.
+
+\paragraph{Additional obligations.} A confirmatory campaign needs independently specified population, endpoint, blocks, capacity and leakage assumptions.
+
+\paragraph{Differential tests and evidence.} Use frozen held-out protocols, tamper/sham controls and matched rivals. Human or external scientific conclusions require independent collection and adjudication.
+
 \printbibliography
 
 \end{document}

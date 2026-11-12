@@ -48,35 +48,35 @@ INFO - Writing 'QICN_MONOLITHIC.bbl' with encoding 'UTF-8'
 INFO - Output to QICN_MONOLITHIC.bbl
 
 [pdflatex pass 2]
-r9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/irisp/
 MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/publi
-c/lm/lmss10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Use
-rs/irisp/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/irisp/MiKTeX/fonts/ty
-pe1/public/lm/lmsy7.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-<C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/irisp/MiKTeX/
-fonts/type1/public/lm/lmtt10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/l
-mtt8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/irisp
-/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/pu
-blic/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/rsfs/rsfs10.p
-fb>
-Output written on QICN_MONOLITHIC.pdf (403 pages, 3352207 bytes).
+c/lm/lmss10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Use
+rs/irisp/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/irisp/MiKTeX/fonts/ty
+pe1/public/lm/lmsy10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy6.pfb
+><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/irisp/MiKTeX/
+fonts/type1/public/lm/lmsy8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lm
+tk10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/iris
+p/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/pub
+lic/lm/lmtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/U
+sers/irisp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/iris
+p/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/
+fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on QICN_MONOLITHIC.pdf (411 pages, 3422113 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 [pdflatex pass 3]
-r9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/irisp/
 MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/publi
-c/lm/lmss10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Use
-rs/irisp/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/irisp/MiKTeX/fonts/ty
-pe1/public/lm/lmsy7.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-<C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/irisp/MiKTeX/
-fonts/type1/public/lm/lmtt10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/l
-mtt8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/irisp
-/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/pu
-blic/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/rsfs/rsfs10.p
-fb>
-Output written on QICN_MONOLITHIC.pdf (403 pages, 3352207 bytes).
+c/lm/lmss10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Use
+rs/irisp/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/irisp/MiKTeX/fonts/ty
+pe1/public/lm/lmsy10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy6.pfb
+><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/irisp/MiKTeX/
+fonts/type1/public/lm/lmsy8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lm
+tk10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/iris
+p/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/irisp/MiKTeX/fonts/type1/pub
+lic/lm/lmtt9.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/U
+sers/irisp/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/iris
+p/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/
+fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on QICN_MONOLITHIC.pdf (411 pages, 3422113 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 ```

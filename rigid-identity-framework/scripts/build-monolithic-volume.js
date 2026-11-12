@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const childProcess = require("child_process");
+const crypto = require("crypto");
 
 const ROOT = path.resolve(__dirname, "..");
 const MONO_DIR = path.join(ROOT, "monolithic");
@@ -16,83 +17,83 @@ function ensureDir(dirPath) {
 const SOURCES = [
   {
     kind: "basecore",
-    title: "BaseCore",
+    title: "Mathematical Foundations for Controlled Projective Systems",
     relPath: "basecore/BASECORE.tex",
     sectionName: "01-basecore.tex"
   },
   {
     kind: "paper",
     number: 1,
-    title: "Rigid Identity as an Inverse Limit in Observable Channels",
+    title: "Projective Compatibility and Sectorial Deformation Resistance",
     relPath: "paper1/main.tex",
     sectionName: "02-rigid-identity-as-an-inverse-limit-in-observable-channels.tex"
   },
   {
     kind: "paper",
     number: 2,
-    title: "Phenomenological Regimes Induced by Structural Identity",
+    title: "Controlled Structural Assignments on Projective Limits",
     relPath: "paper2/main.tex",
     sectionName: "03-phenomenological-regimes-induced-by-structural-identity.tex"
   },
   {
     kind: "paper",
     number: 3,
-    title: "Structural Instability of the Phenomenological Null Regime in Causally Rigid Channels",
+    title: "Witness-Relative Exclusion of Joint Null Readouts",
     relPath: "paper3/main.tex",
     sectionName: "04-structural-instability-of-the-phenomenological-null-regime.tex"
   },
   {
     kind: "paper",
     number: 4,
-    title: "Falsifiable Predictions Under Forensic Constraints",
+    title: "Reproducible Intervention and Comparator Protocols",
     relPath: "paper4/main.tex",
     sectionName: "05-falsifiable-predictions-under-forensic-constraints.tex"
   },
   {
     kind: "paper",
     number: 5,
-    title: "A Structural Criterion for Substrate-Invariant Operational Consciousness",
+    title: "A Six-Predicate Operational Criterion and Certified Response Classes",
     relPath: "paper5_operational_consciousness/main.tex",
     sectionName: "06-structural-criterion-for-substrate-invariant-operational-consciousness.tex"
   },
   {
     kind: "paper",
     number: 6,
-    title: "Predictions, Discriminators, and Failure Modes for the Causally Rigid Operational Consciousness Framework",
+    title: "Prediction Contracts, Controls, and Evidence Status",
     relPath: "paper6_predictions_falsation/main.tex",
     sectionName: "07-predictions-discriminators-and-failure-modes.tex"
   },
   {
     kind: "paper",
     number: 7,
-    title: "Operational Life, Structural Class, and Subjecthood in a Causally Rigid Framework",
+    title: "Viability, Active Recovery, and Operational Descriptors",
     relPath: "paper7_operational_life_subjecthood/main.tex",
     sectionName: "08-operational-life-structural-class-and-subjecthood.tex"
   },
   {
     kind: "paper",
     number: 8,
-    title: "First-Person Indexed Subjectivity",
+    title: "Indexed Operational Certificates and Matched Model Comparisons",
     relPath: "paper8_first_person_subjectivity/main.tex",
     sectionName: "09-first-person-indexed-subjectivity.tex"
   },
   {
     kind: "paper",
     number: 9,
-    title: "Phenomenal Bridge Organization",
+    title: "Cross-Mode Transport, Interaction, and Comparison Obligations",
     relPath: "paper9_phenomenal_bridge_organization/main.tex",
     sectionName: "10-phenomenal-bridge-organization.tex"
   },
   {
     kind: "paper",
     number: 10,
-    title: "External Adjudication of Bridge-Formalized Machine Subjectivity",
+    title: "Blind Adjudication Protocols and Coverage-Aware Risk Bounds",
     relPath: "paper10_external_adjudication/main.tex",
     sectionName: "11-external-adjudication-of-bridge-formalized-machine-subjectivity.tex"
   },
   {
     kind: "recovery",
-    title: "Operational Consciousness to Operational Subjecthood Bridge",
+    title: "Dependencies between Operational Criteria and Indexed Certificates",
     relPath: "paper_bridge_operational_subjecthood/main.tex",
     sectionName: "12-operational-consciousness-to-operational-subjecthood-bridge.tex",
     fallbackSectionName: "12-bridge-paper.tex"
@@ -103,7 +104,7 @@ const EDITORIAL_PREFACE = String.raw`\chapter*{Editorial Preface and Claim Bound
 \addcontentsline{toc}{chapter}{Editorial Preface and Claim Boundary}
 \markboth{Editorial Preface and Claim Boundary}{Editorial Preface and Claim Boundary}
 
-This monolithic volume is an editorial consolidation of the QICN rigid-identity corpus. BaseCore is treated as the foundational layer of the framework rather than as Paper 0. The downstream works are indexed in the table of contents by their direct research titles; internal labels such as paper numbers are retained only as provenance handles where the source text itself requires them.
+This monolithic volume is an editorial consolidation of the QICN rigid-identity corpus, historically titled \emph{QICN: A Rigid Identity Framework}. BaseCore is treated as the foundational layer of the framework rather than as Paper 0. The downstream works are indexed in the table of contents by their direct research titles; internal labels such as paper numbers are retained only as provenance handles where the source text itself requires them.
 
 The claims in this volume remain conditional, formal, and operational. The volume does not assert biological consciousness, phenomenal consciousness, agency, moral status, identity transfer, or external validation. Runtime measurements, finite estimators, and internal support artifacts are implementation evidence only when explicitly marked as such; they are not substitutes for theorem proof or externally reproduced empirical adjudication.
 
@@ -442,9 +443,9 @@ function wrapSection(source, content) {
   }
   return [
     "\\clearpage",
-    "\\chapter*{Operational Consciousness to Operational Subjecthood Bridge}",
-    "\\addcontentsline{toc}{chapter}{Operational Consciousness to Operational Subjecthood Bridge}",
-    "\\markboth{Operational Consciousness to Operational Subjecthood Bridge}{Operational Consciousness to Operational Subjecthood Bridge}",
+    "\\chapter*{Dependencies between Operational Criteria and Indexed Certificates}",
+    "\\addcontentsline{toc}{chapter}{Dependencies between Operational Criteria and Indexed Certificates}",
+    "\\markboth{Dependencies between Operational Criteria and Indexed Certificates}{Dependencies between Operational Criteria and Indexed Certificates}",
     ...hyperAnchorPrefixLines("mono.bridge."),
     content.replace(/^\\chapter\{Bridge Paper\}\s*/u, ""),
     "\\clearpage"
@@ -521,17 +522,17 @@ function build() {
     }
   });
 
-  if (!fs.existsSync(path.join(PREAMBLE_DIR, "packages.tex"))) {
-    fs.writeFileSync(path.join(PREAMBLE_DIR, "packages.tex"), `${dedupePackages(packages).join("\n")}\n`, "utf8");
+  const contractPath = path.join(PREAMBLE_DIR, "source-contract.json");
+  if (!fs.existsSync(contractPath)) throw new Error("Missing audited preamble contract; restore the versioned preamble inputs.");
+  const contract = JSON.parse(fs.readFileSync(contractPath,"utf8"));
+  const digest = text => crypto.createHash("sha256").update(text.replace(/\r\n/g,"\n")).digest("hex");
+  for (const source of SOURCES) {
+    const preamble = fs.readFileSync(path.join(ROOT,source.relPath),"utf8").split("\\begin{document}")[0];
+    if (digest(preamble)!==contract.sources[source.relPath]) throw new Error("Preamble drift in "+source.relPath+"; review packages/macros and explicitly update the audited contract.");
   }
-  if (!fs.existsSync(path.join(PREAMBLE_DIR, "setup.tex"))) {
-    fs.writeFileSync(
-      path.join(PREAMBLE_DIR, "setup.tex"),
-      `${uniqueLines(setup)
-        .filter((line) => !line.includes("\\AuthorVisible") && !line.includes("\\AuthorMetadata"))
-        .join("\n")}\n`,
-      "utf8"
-    );
+  for (const name of ["packages.tex","setup.tex"]) {
+    const file=path.join(PREAMBLE_DIR,name);
+    if(!fs.existsSync(file)||digest(fs.readFileSync(file,"utf8"))!==contract.customizations[name]) throw new Error("Missing or changed audited preamble customization: "+name);
   }
 
   const root = [
@@ -539,14 +540,14 @@ function build() {
     "\\input{preamble/packages}",
     "\\input{preamble/setup}",
     "% --- Document metadata ---",
-    "\\title{\\textbf{QICN: A Rigid Identity Framework}}",
+    "\\title{\\textbf{QICN: Projective Structures and Operational Certificates}}",
     "\\author{Johnny Andrey P{\\'e}rez Ram{\\'i}rez}",
     "\\date{2026}",
     "\\hypersetup{%",
-    "  pdftitle={QICN: A Rigid Identity Framework},%",
-    "  pdfauthor={Johnny Andrey Perez Ramirez},%",
-    "  pdfsubject={Operational Identity, Category Theory, Consciousness},%",
-    "  pdfkeywords={rigid identity, inverse limit, ontological mass, CCR, falsifiability},%",
+    "  pdftitle={QICN: Projective Structures and Operational Certificates},%",
+    "  pdfauthor={Johnny Andrey P{\\'e}rez Ram{\\'i}rez},%",
+    "  pdfsubject={Projective structures, controlled dynamics and operational certificates},%",
+    "  pdfkeywords={inverse limit, sectorial resistance, multiscale robustness, controlled dynamics, certified response classes},%",
     "  pdfcreator={pdfLaTeX}%",
     "}",
     "\\begin{document}",

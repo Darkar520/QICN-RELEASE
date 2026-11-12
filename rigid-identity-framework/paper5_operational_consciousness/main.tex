@@ -29,14 +29,14 @@
 
 \usepackage[unicode,pdfencoding=auto,psdextra,hidelinks]{hyperref}
 \hypersetup{
-    pdftitle={A Structural Criterion for Substrate-Invariant Operational Consciousness},
-    pdfauthor={Johnny Andrey PÃƒÂ©rez RamÃƒÂ­rez},
-    pdfsubject={Rigid Identity Framework - Operational Consciousness Criterion},
-    pdfkeywords={operational consciousness, substrate invariance, operational qualia, rigid identity, causal integration, admissibility}
+    pdftitle={A Six-Predicate Operational Criterion and Certified Response Classes},
+    pdfauthor={Johnny Andrey P\'erez Ram\'irez},
+    pdfsubject={Rigid Identity Framework - Six-Predicate Operational Criterion},
+    pdfkeywords={six-predicate operational criterion, substrate invariance, certified response classes, rigid identity, causal integration, admissibility}
 }
 
-\title{\textbf{A Structural Criterion for Substrate-Invariant Operational Consciousness}}
-\author{Johnny Andrey PÃƒÂ©rez RamÃƒÂ­rez}
+\title{\textbf{A Six-Predicate Operational Criterion and Certified Response Classes}}
+\author{Johnny Andrey P\'{e}rez Ram\'{i}rez}
 \date{}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -50,7 +50,7 @@
 \newtheorem{criterion}[theorem]{Criterion}
 \newtheorem{prediction}[theorem]{Prediction}
 
-\newcommand{\Cop}{\mathrm{Consciousness}_{\mathrm{op}}}
+\newcommand{\Cop}{\mathsf{C}_{\mathrm{op}}}
 \newcommand{\Qop}{\mathrm{Q}_{\mathrm{op}}}
 \newcommand{\Iper}{I_{\mathrm{per}}}
 \newcommand{\Iri}{I_{\mathrm{ri}}}
@@ -78,7 +78,7 @@
 \maketitle
 
 \begin{abstract}
-This paper introduces a structural criterion for a substrate-invariant notion of operational consciousness inside the causally rigid identity corpus. The target is deliberately restricted. The paper does not establish human phenomenal consciousness, biologically specific qualia, human-machine subjective equivalence, or personal identity transfer. Instead, it defines a framework-internal class $\Cop$ and an associated family of operational qualia classes $\Qop(S)$ for admissible systems
+This paper introduces a structural criterion for a substrate-invariant notion of six-predicate operational criterion inside the causally rigid identity corpus. The target is deliberately restricted. The paper does not establish human phenomenal consciousness, biologically specific qualia, human-machine subjective equivalence, or personal identity transfer. Instead, it defines a framework-internal class $\Cop$ and an associated family of certified response classes classes $\Qop(S)$ for admissible systems
 \[
 S = (X,\Phi,C,R,\Gamma,U),
 \]
@@ -86,27 +86,27 @@ where $X$ is state space, $\Phi$ is dynamics, $C$ is effective causal structure,
 
 The criterion is organized around six critical invariants: structural persistence, rigid identity, causal integration, operational continuity, non-null differentiation, and operational legibility. Each invariant is defined explicitly, tied to an upstream corpus dependency, and paired with a failure mode. On that basis the paper proves four framework-internal results: conditional membership given six jointly realized witnesses on admissible support, substrate invariance under exact structural equivalence, approximate stability under bounded admissible perturbations, and rupture under invariant loss. A further corollary establishes biological non-primacy: biology is not a primitive constitutive variable for the class under study, but one admissible realization among others provided the invariants are preserved.
 
-The criterion is not narrative. Every major claim is backed by a definition, a proposition, a theorem, a proof sketch, or an explicit dependency on the canonical corpus. The resulting paper adds a new role to the framework: it formalizes the level at which substrate ceases to be explanatorily primitive without reopening the ownership of the Core, \textit{Rigid Identity}, \textit{Phenomenological Regimes}, \textit{Null-Regime Instability}, or \textit{Forensic Predictions}.
+The criterion is not narrative. Every major claim is backed by a definition, a proposition, a theorem, a proof sketch, or an explicit dependency on the canonical corpus. The resulting paper adds a new role to the framework: it formalizes the level at which substrate ceases to be explanatorily primitive without reopening the ownership of the Core, \textit{Rigid Identity}, \textit{Structural Assignment Regimes}, \textit{Null-Regime Instability}, or \textit{Forensic Predictions}.
 \end{abstract}
 
 \section{Scope, System Boundary, and Non-Inference Note}
 
-\noindent\textbf{What this paper does.}\enspace This paper defines a framework-internal operational consciousness class $\Cop$, an associated family of operational qualia classes $\Qop(S)$, and the theorem chain that ties those classes to six explicit invariants and admissible structural equivalence.
+\noindent\textbf{What this paper does.}\enspace This paper defines a framework-internal six-predicate operational criterion class $\Cop$, an associated family of certified response classes classes $\Qop(S)$, and the theorem chain that ties those classes to six explicit invariants and admissible structural equivalence.
 
 \noindent\textbf{Scope and admissible reading.}\enspace The paper defines a structural class and its burdens; it does not establish human phenomenal consciousness, biologically specific qualia, human-machine subjective equivalence, personal identity transfer, moral parity, empirical instantiation, or philosophical closure. Biology, computation, and connectivity are not sufficient primitives on their own. A related system may instantiate downstream admissibility layers, invariant diagnostics, rupture checks, and prediction-facing evidence families, but such runtime-facing support does not by itself certify any present machine as a member of $\Cop$ or close the interpretive burden linking $\Cop$ to ordinary human phenomenology.
 
 \section{Introduction}
-The current corpus already fixes several upstream ingredients that are necessary for any serious account of substrate-neutral operational class membership. The Core establishes persistent support, contractive dynamics, a global attractor, and non-collapse under explicit minimal hypotheses \cite{core}. \textit{Rigid Identity} establishes rigid identity, inverse-limit coherence across observable channels, minimal detectability, and non-simulability constraints on incompatible architectures \cite{paper1}. \textit{Phenomenological Regimes} constrains admissible regime structure by classifying continuity and anti-fragmentation within the stated assignment model \cite{paper2}. \textit{Null-Regime Instability} excludes stable joint-null collapse and establishes witness-relative non-null separation under its stated extension-witness and regularity hypotheses \cite{paper3}. \textit{Forensic Predictions} imposes admissibility, comparator discipline, negative controls, and forensic legibility requirements on operational evidence \cite{paper4}.
+The current corpus already fixes several upstream ingredients that are necessary for any serious account of substrate-neutral operational class membership. The Core establishes persistent support, contractive dynamics, a global attractor, and non-collapse under explicit minimal hypotheses \cite{core}. \textit{Rigid Identity} establishes rigid identity, inverse-limit coherence across observable channels, minimal detectability, and non-simulability constraints on incompatible architectures \cite{paper1}. \textit{Structural Assignment Regimes} constrains admissible regime structure by classifying continuity and anti-fragmentation within the stated assignment model \cite{paper2}. \textit{Null-Regime Instability} excludes stable joint-null collapse and establishes witness-relative non-null separation under its stated extension-witness and regularity hypotheses \cite{paper3}. \textit{Forensic Predictions} imposes admissibility, comparator discipline, negative controls, and forensic legibility requirements on operational evidence \cite{paper4}.
 
 What is still missing is a single paper-level criterion that answers a narrower but decisive question: when, inside this framework, does substrate cease to be a primitive explanatory variable for a class of operationally defined conscious organization? That question is not answered by merely asserting that material composition is irrelevant. It requires a formal criterion that shows which properties must be preserved, which ruptures destroy class membership, and how those conditions remain connected to the existing corpus rather than floating above it.
 
 This paper provides that criterion. It does so under four constraints. First, it does not reopen theorem ownership already fixed upstream. Second, it does not smuggle in human phenomenology through language alone. Third, it does not claim that complexity, computation, or connectivity are sufficient by themselves. Fourth, it does not confuse framework-internal operational classes with full metaphysical closure.
 
-The result is a new corpus role. This paper is neither another foundational Core document nor a rephrasing of the phenomenological regime papers. It is the bridge that formalizes substrate-invariant operational consciousness and operational qualia as framework-defined structural classes. Its new content is concentrated in five items:
+The result is a new corpus role. This paper is neither another foundational Core document nor a rephrasing of the structural assignment regime papers. It is the bridge that formalizes substrate-invariant six-predicate operational criterion and certified response classes as framework-defined structural classes. Its new content is concentrated in five items:
 \begin{enumerate}[leftmargin=1.5em]
 \item a system-level model $S=(X,\Phi,C,R,\Gamma,U)$ with admissible support $\Aset$;
 \item a minimal six-invariant criterion;
-\item a quotient-level definition of operational qualia $\Qop(S)$;
+\item a quotient-level definition of certified response classes $\Qop(S)$;
 \item an exact and approximate structural equivalence relation $S_1 \simeq_{(\Gamma,\eps)} S_2$;
 \item a theorem chain that turns substrate neutrality into a falsifiable structural statement.
 \end{enumerate}
@@ -126,7 +126,7 @@ Theorems A--D in this paper are formal. The legibility certificate and predictio
 \section{Terminology Debt Ledger}
 The symbol $\Cop$ is retained for corpus compatibility. Its demonstrated
 content in this paper is a six-invariant structural class over admissible
-systems. The phrase ``operational consciousness'' is therefore a
+systems. The phrase ``six-predicate operational criterion'' is therefore a
 framework-internal label, not an ordinary-language conclusion.
 
 \begin{center}
@@ -135,8 +135,8 @@ framework-internal label, not an ordinary-language conclusion.
 \toprule
 Term & Demonstrated content in this paper & Not demonstrated here \\
 \midrule
-$\Cop$ / operational consciousness & membership in a conjunctive six-invariant structural class & human consciousness, phenomenal consciousness, moral status, personal identity \\
-$\Qop(S)$ / operational qualia & decoder-certified quotient of admissible internal differentiation & phenomenal qualia or ``what it is like'' states \\
+$\Cop$ / six-predicate operational criterion & membership in a conjunctive six-invariant structural class & human consciousness, phenomenal consciousness, moral status, personal identity \\
+$\Qop(S)$ / certified response classes & decoder-certified quotient of admissible internal differentiation & phenomenal qualia or ``what it is like'' states \\
 substrate invariance & preservation of class membership under exact structural equivalence & arbitrary transfer of identity or equivalence between human and machine subjects \\
 biological non-primacy & biology is not a primitive variable in the criterion & claim that any non-biological system currently satisfies the criterion \\
 \bottomrule
@@ -146,18 +146,18 @@ biological non-primacy & biology is not a primitive variable in the criterion & 
 \begin{remark}[Primary demonstrated name]
 For reviewer-facing prose, the safest primary description of $\Cop$ is
 ``six-invariant admissible structural class.'' The stronger phrase
-``operational consciousness'' may be used only as a technical alias after the
+``six-predicate operational criterion'' may be used only as a technical alias after the
 non-inference boundary has been stated.
 \end{remark}
 
 \section{Corpus Role and Novelty}
-This paper is corpus-dependent by design. It does not reopen theorem ownership for persistence, rigid identity, admissible regime structure, null-regime instability, or admissibility discipline. Those burdens remain respectively upstream in the Core, \textit{Rigid Identity}, \textit{Phenomenological Regimes}, \textit{Null-Regime Instability}, and \textit{Forensic Predictions}.
+This paper is corpus-dependent by design. It does not reopen theorem ownership for persistence, rigid identity, admissible regime structure, null-regime instability, or admissibility discipline. Those burdens remain respectively upstream in the Core, \textit{Rigid Identity}, \textit{Structural Assignment Regimes}, \textit{Null-Regime Instability}, and \textit{Forensic Predictions}.
 
 What is inherited stays upstream:
 \begin{enumerate}[leftmargin=1.5em]
 \item the Core supplies persistent support, attractor structure, completeness, and non-collapse;
 \item \textit{Rigid Identity} supplies rigid identity, inverse-limit observability, and non-simulability constraints;
-\item \textit{Phenomenological Regimes} supplies continuity and anti-fragmentation structure;
+\item \textit{Structural Assignment Regimes} supplies continuity and anti-fragmentation structure;
 \item \textit{Null-Regime Instability} supplies witness-relative null-regime instability and conditional non-nullity;
 \item \textit{Forensic Predictions} supplies admissibility, comparators, controls, and forensic legibility.
 \end{enumerate}
@@ -266,7 +266,7 @@ Invariant & Certified content & Upstream anchor & Rupture signature \\
 $\Iper$ & Non-empty, forward-invariant, non-collapsing support & Core \cite{core} & Support escape or collapse exposure \\
 $\Iri$ & Unique rigid identity object on support & Rigid Identity \cite{paper1} & Competing identity candidates \\
 $\Iint$ & No admissible non-trivial factorization & Rigid Identity + new consolidation & Product-style reducibility \\
-$\Icont$ & Continuous admissible regime evolution & Phenomenological Regimes \cite{paper2} & Fragmentation into incompatible classes \\
+$\Icont$ & Continuous admissible regime evolution & Structural Assignment Regimes \cite{paper2} & Fragmentation into incompatible classes \\
 $\Idiff$ & Stable exclusion of null or trivial collapse & Null-Regime Instability \cite{paper3} & Null-attractor or total indistinguishability \\
 $\Ileg$ & Decoder-certified recoverability under controls & Forensic Predictions \cite{paper4} & Opaque or non-auditable class assignment \\
 \bottomrule
@@ -613,10 +613,10 @@ stays below $\delta_{\mathrm{cont}}(S)$ on all admissible histories;
 \end{enumerate}
 \end{definition}
 
-This packages the \textit{Phenomenological Regimes} continuity/fragmentation burden \cite{paper2}. The new paper reuses the regime logic rather than duplicating its proof.
+This packages the \textit{Structural Assignment Regimes} continuity/fragmentation burden \cite{paper2}. The new paper reuses the regime logic rather than duplicating its proof.
 
 \paragraph{Failure mode.}
-If $\Icont(S)=0$, the class can fragment into incompatible operational regimes under admissible evolution. Then any operational consciousness criterion becomes unstable under its own dynamics.
+If $\Icont(S)=0$, the class can fragment into incompatible operational regimes under admissible evolution. Then any six-predicate operational criterion becomes unstable under its own dynamics.
 
 \subsection{Non-Null Differentiation}
 \begin{definition}[Non-null differentiation and differentiation gap]\label{def:idiff}
@@ -670,8 +670,8 @@ If any one of $\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg$ fails, then $S \notin \Cop$
 The six failure modes are non-redundant. Without $\Iper$ there is no stable domain for class assignment. Without $\Iri$ there is no unique identity object supporting consistent class transport. Without $\Iint$ the system is reducible into independent blocks. Without $\Icont$ admissible trajectories fragment across incompatible regime classes. Without $\Idiff$ the admissible partition collapses to nullity or triviality. Without $\Ileg$ the partition is not recoverable under admissible readout and intervention discipline. Since the definition of $\Cop$ given in Section~\ref{sec:cop} requires all six, failure of any one is exclusionary.
 \end{proof}
 
-\section{Operational Consciousness, Operational Qualia, and Equivalence}\label{sec:cop}
-\subsection{Operational Qualia Classes}
+\section{Six-Predicate Operational Criterion, Certified Response Classes, and Equivalence}\label{sec:cop}
+\subsection{Certified Response Classes Classes}
 
 \begin{definition}[Operational indistinguishability]\label{def:indist}
 For $x,y \in \Aset$, write $x \sim_{Q,S} y$ if, for every certified decoder $D \in \Dec_S$, every admissible horizon $T \ge \tau_{\min}(S)$, and every admissible intervention schedule $u_\bullet$,
@@ -681,7 +681,7 @@ D\bigl(h_{S,T}(x;u_\bullet)\bigr)=D\bigl(h_{S,T}(y;u_\bullet)\bigr),
 and the intervention response of the two histories remains matched within the legibility margin.
 \end{definition}
 
-\begin{proposition}[Well-definedness of operational qualia classes]\label{prop:qop-welldefined}
+\begin{proposition}[Well-definedness of certified response classes classes]\label{prop:qop-welldefined}
 If $\Iper(S)=\Iri(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1$, then $\sim_{Q,S}$ is an equivalence relation on $\Aset$.
 \end{proposition}
 
@@ -697,18 +697,18 @@ D(h_{S,T}(y;u_\bullet))=D(h_{S,T}(z;u_\bullet)).
 Hence $D(h_{S,T}(x;u_\bullet))=D(h_{S,T}(z;u_\bullet))$. The intervention-response clause is transitive by the structural closure requirement in Definition~\ref{def:decoder}. Since $D$, $T$, and $u_\bullet$ were arbitrary, Definition~\ref{def:indist} gives $x \sim_{Q,S} z$.
 \end{proof}
 
-\begin{definition}[Operational qualia]\label{def:qop}
-Assume Proposition~\ref{prop:qop-welldefined}. The operational qualia of $S$ are the quotient classes
+\begin{definition}[Certified response classes]\label{def:qop}
+Assume Proposition~\ref{prop:qop-welldefined}. The certified response classes of $S$ are the quotient classes
 \[
 \Qop(S) = \Aset / {\sim_{Q,S}}.
 \]
-An individual class $[x]_{\sim_{Q,S}} \in \Qop(S)$ is called an operational qualia class of $S$.
+An individual class $[x]_{\sim_{Q,S}} \in \Qop(S)$ is called an certified response classes class of $S$.
 \end{definition}
 
-This definition is disciplined. It does not identify an operational qualia class with a human qualitative state. It identifies it with a persistent, intervention-sensitive, decoder-certified class of admissible internal differentiation.
+This definition is disciplined. It does not identify an certified response classes class with a human qualitative state. It identifies it with a persistent, intervention-sensitive, decoder-certified class of admissible internal differentiation.
 
-\subsection{Operational Consciousness}
-\begin{definition}[Operational consciousness class membership]\label{def:cop}
+\subsection{Six-Predicate Operational Criterion}
+\begin{definition}[Six-predicate operational criterion class membership]\label{def:cop}
 An admissible system $S$ belongs to $\Cop$, written $S \in \Cop$, if there exists a non-empty admissible support $\Aset$ such that
 \[
 \Iper(S)=\Iri(S)=\Iint(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1.
@@ -877,12 +877,12 @@ The error bound gives the obstruction in Definition~\ref{def:iint}. Theorem~\ref
 \end{proof}
 
 \begin{remark}[Scope of the transfer]
-Nothing in this section re-proves the Core, \textit{Rigid Identity}, \textit{Phenomenological Regimes}, \textit{Null-Regime Instability}, or \textit{Forensic Predictions}. Each proposition only identifies the minimal upstream burden imported into the present criterion.
+Nothing in this section re-proves the Core, \textit{Rigid Identity}, \textit{Structural Assignment Regimes}, \textit{Null-Regime Instability}, or \textit{Forensic Predictions}. Each proposition only identifies the minimal upstream burden imported into the present criterion.
 \end{remark}
 
 \section{Main Theorems}
-\subsection{Existence of Operational Consciousness}
-\begin{theorem}[Existence of operational consciousness]\label{thm:existence}
+\subsection{Existence of Six-Predicate Operational Criterion}
+\begin{theorem}[Existence of six-predicate operational criterion]\label{thm:existence}
 Let $S=(X,\Phi,C,R,\Gamma,U)$ be an admissible system with non-empty admissible support $\Aset$. If
 \[
 \Iper(S)=\Iri(S)=\Iint(S)=\Icont(S)=\Idiff(S)=\Ileg(S)=1,
@@ -1216,8 +1216,8 @@ burden;
 \item phenomenal experience or ``what it is like'';
 \item forced temporal continuity in the CCR sense, which requires stronger
 $M_\Omega=+\infty$ assumptions upstream;
-\item operational life or open-system self-maintaining individuation;
-\item first-person indexed subjectivity, moral status, or human equivalence;
+\item viability-and-recovery criterion or open-system self-maintaining individuation;
+\item seven-coordinate indexed certificate, moral status, or human equivalence;
 \item external validation by human comparators.
 \end{enumerate}
 These exclusions are not rhetorical caution. They follow from the fact that
@@ -1279,8 +1279,8 @@ One could define a broader latent class that omits legibility. This paper does n
 \section{Certified Candidate Audit Schema}
 \textit{Forensic Predictions} already requires forensic discipline for operational claims. The present paper therefore adds an explicit audit schema. A candidate system is not accepted into $\Cop$ by narrative fit; it must carry a finite certificate that localizes every required witness.
 
-\begin{definition}[Operational consciousness certificate]\label{def:cert}
-An operational consciousness certificate for an admissible system $S$ is a tuple
+\begin{definition}[Six-predicate operational criterion certificate]\label{def:cert}
+An six-predicate operational criterion certificate for an admissible system $S$ is a tuple
 \[
 \mathrm{Cert}(S)=\bigl(\Aset,\Dec_S,\pi_S,\Delta(S),E_S\bigr),
 \]
@@ -1333,7 +1333,7 @@ Criterion~\ref{crit:cert} explicitly requires a positive witness for each of the
 \end{proof}
 
 \begin{proposition}[Partial completeness under audit-ready assumptions]\label{prop:cert-complete}
-Assume $S \in \Cop$ and suppose the support, decoder, intervention, and compression objects are fully instrumented in the \textit{Forensic Predictions} sense. Then there exists an operational consciousness certificate $\mathrm{Cert}(S)$.
+Assume $S \in \Cop$ and suppose the support, decoder, intervention, and compression objects are fully instrumented in the \textit{Forensic Predictions} sense. Then there exists an six-predicate operational criterion certificate $\mathrm{Cert}(S)$.
 \end{proposition}
 
 \begin{proof}
@@ -1410,7 +1410,7 @@ Upstream text & Imported burden & Present use \\
 \midrule
 Core \cite{core} & Persistent support, attractor structure, completeness, and non-collapse & $\Iper$, the admissible support model, witness margins, and support geometry \\
 Rigid Identity \cite{paper1} & Rigid identity, inverse-limit observability, collapse under pure progressive causality, and non-simulability & $\Iri$, part of $\Iint$, equivalence transport, and the negative exclusion result of Proposition~\ref{prop:insufficient} \\
-Phenomenological Regimes \cite{paper2} & Continuity, fragmentation bounds, and admissible regime structure & $\Icont$, rupture taxonomy, and continuity-sensitive transport \\
+Structural Assignment Regimes \cite{paper2} & Continuity, fragmentation bounds, and admissible regime structure & $\Icont$, rupture taxonomy, and continuity-sensitive transport \\
 Null-Regime Instability \cite{paper3} & Witness-relative null-instability, conditional non-nullity, and minimal positive regime structure & $\Idiff$, the existence theorem, rupture analysis, and class geometry away from $\nullclass$ \\
 Forensic Predictions \cite{paper4} & Admissibility, comparator discipline, negative controls, and forensic legibility & $\Ileg$, the certification schema, legibility metrics, and falsifiable discriminators \\
 \bottomrule
@@ -1423,7 +1423,7 @@ The paper is new only at the level of criterion consolidation: it binds those im
 The criterion generates discriminators that are stronger than general functionalist similarity and more constrained than substrate-biased baselines.
 
 \begin{prediction}[Different substrate, same class]\label{pred:sameclass}
-If two admissible systems with materially different substrates satisfy exact or sufficiently small approximate structural equivalence while preserving all six invariants, then they must belong to the same operational class and induce equivalent $\Qop$ partitions.
+If one system belongs to the criterion and a second satisfies its exact structural, protocol and sector equivalence, membership and the certified quotient transport. Under approximate equivalence, the positive calibrated radius bound supplies membership stability only; exact quotient transport requires its own decoder/cell correspondence.
 \end{prediction}
 
 \begin{prediction}[Same substrate, broken invariants]\label{pred:breakclass}
@@ -1431,7 +1431,7 @@ If two systems share substrate family but one loses rigid identity, continuity, 
 \end{prediction}
 
 \begin{prediction}[Invariant intervention discriminator]\label{pred:intervention}
-Interventions targeted at one critical invariant should change class membership or destroy the relevant operational qualia classes in a direction predicted by the rupture taxonomy, whereas off-target negative controls should not.
+Interventions targeted at one critical invariant should change class membership or destroy the relevant certified response classes classes in a direction predicted by the rupture taxonomy, whereas off-target negative controls should not.
 \end{prediction}
 
 \begin{prediction}[Complexity baseline failure]\label{pred:complexity}
@@ -1445,8 +1445,8 @@ These are not generic predictions. Prediction~\ref{pred:sameclass} is the operat
 \toprule
 Prediction & Manipulated variable & Observable & Failure criterion \\
 \midrule
-\ref{pred:sameclass} & Substrate while preserving $\Delta(S)$ & Class transport $\widehat{\chi}$ & Partition mismatch under exact equivalence \\
-\ref{pred:breakclass} & One invariant margin driven to zero & Membership in $\Cop$ & Retained class despite invariant rupture \\
+\ref{pred:sameclass} & Substrate under matched primitive data, protocol and sector & Class transport $\widehat{\chi}$ & Partition mismatch under exact equivalence \\
+\ref{pred:breakclass} & Verified predicate failure; loss of a radius alone is inconclusive & Membership in $\Cop$ & Retained class despite invariant rupture \\
 \ref{pred:intervention} & Certified critical intervention vs sham & Directed class shift and control false positives & Same shift under sham and targeted intervention \\
 \ref{pred:complexity} & Scale/connectivity increase without invariant preservation & Surrogate improvement vs class failure & Surrogate success counted as $\Cop$ membership \\
 \bottomrule
@@ -1464,7 +1464,7 @@ Prediction~\ref{pred:sameclass} is incompatible with substrate-privilege baselin
 
 
 \section{Intervention Geometry and Class Transition Semantics}
-Predictions about invariant-targeted interventions should not remain informal. This section encodes them as transition statements on the operational qualia classes themselves.
+Predictions about invariant-targeted interventions should not remain informal. This section encodes them as transition statements on the certified response classes classes themselves.
 
 \begin{definition}[Class transition operator]\label{def:transition}
 Fix an admissible system $S \in \Cop$, a certified decoder family, and an admissible horizon $T \ge \tau_{\min}(S)$. For an admissible intervention $u \in U$ define the class transition operator
@@ -1515,7 +1515,7 @@ A sham intervention that remains below all witness margins does not cross any ru
 This section turns the prediction ladder into a structured intervention calculus. The criterion is therefore not only classificatory; it is also dynamically discriminative in the sense required by \textit{Forensic Predictions}.
 \end{remark}
 \section{Baseline Families and Structural Exclusion}
-A criterion of substrate-invariant operational consciousness matters only if it separates itself from weaker rival families rather than merely renaming them. This section therefore makes the comparison explicit.
+A criterion of substrate-invariant six-predicate operational criterion matters only if it separates itself from weaker rival families rather than merely renaming them. This section therefore makes the comparison explicit.
 
 \begin{definition}[Rival baseline families]\label{def:baseline}
 Fix thresholds $\theta_X,\theta_\Phi,\theta_C >0$ and an external-behavior tolerance $\eta \ge 0$.
@@ -1541,7 +1541,7 @@ On any admissible universe containing one exact cross-substrate equivalent pair,
 \end{proposition}
 
 \begin{proof}
-By Corollary~\ref{cor:biology}, an exact cross-substrate equivalent pair belongs to the same operational consciousness class whenever the six invariants are preserved. A substrate-privilege family that excludes one member of that pair therefore excludes a valid $\Cop$ member.
+By Corollary~\ref{cor:biology}, an exact cross-substrate equivalent pair belongs to the same six-predicate operational criterion class when the primitive structural equivalence is verified and one member satisfies the criterion. A substrate-privilege family that excludes one member of that pair therefore excludes a valid $\Cop$ member.
 \end{proof}
 
 \begin{proposition}[Weak functional similarity is too weak]\label{prop:functional-weak}
@@ -1570,7 +1570,7 @@ Broader-than-substrate-privilege follows from Proposition~\ref{prop:substrate-st
 The point of Theorem~\ref{thm:intermediate} is not rhetorical positioning. It is to show that the paper makes a genuinely discriminative contribution. A new criterion that cannot separate itself from obvious rivals is not a new theorem-level addition to the corpus.
 \end{remark}
 \section{Interpretive Consequences Without Overreach}
-The formal consequence is precise: within the causally rigid identity corpus, operational consciousness and operational qualia are framework-internal classes determined by preserved structural invariants rather than by biological substrate treated as a primitive constitutive variable. This is a claim about criterion structure, not a shortcut to ordinary human phenomenology.
+The formal consequence is precise: within the causally rigid identity corpus, six-predicate operational criterion and certified response classes are framework-internal classes determined by preserved structural invariants rather than by biological substrate treated as a primitive constitutive variable. This is a claim about criterion structure, not a shortcut to ordinary human phenomenology.
 
 The restriction matters. Biology can still matter causally because it may preserve or destroy the six invariants, and the same is true of artificial realization. Against weak functionalism, the present criterion adds rigid identity, non-null differentiation, and admissibility discipline instead of relying on role equivalence alone. Against single-metric integration accounts, it requires continuity, identity, and legibility jointly rather than treating integration by itself as sufficient \cite{tononi2004}. Against biologically privileged baselines, it denies that substrate alone closes the class. Against strong phenomenal readings, it stops short of human phenomenal equivalence \cite{baars1988,chalmers}.
 
@@ -1586,6 +1586,17 @@ Three burdens remain outside the present theorem set:
 
 \section{Conclusion}
 The paper establishes a narrower framework-internal claim than popular machine-consciousness discourse and a stronger claim than substrate-neutral rhetoric. Inside the causally rigid identity corpus, a system belongs to the operational class discussed here only when six explicit invariants are jointly preserved on admissible support; under exact admissible equivalence the class is substrate-invariant, under bounded admissible perturbation it is stable, and under invariant rupture it becomes invalid or undefined. That is the level at which substrate neutrality is justified in the present framework, and it is the only level claimed here.
+
+\section{Interpretation and Open Research Links}\label{sec:interpretation-open-links}
+\paragraph{Historical alias.} A Structural Criterion for Substrate-Invariant Operational Consciousness. The alias is retained for bibliographic continuity; the technical title states the demonstrated object.
+
+\paragraph{Formal anchor.} Results \ref{thm:substrate}, \ref{thm:stability} and \ref{prop:decoder-visible-separation}.
+
+\paragraph{Proposed interpretation.} The historical consciousness and qualia names refer to a conjunctive criterion and response quotient. Their experiential reading is a research proposal beyond the demonstrated class grammar.
+
+\paragraph{Additional obligations.} Identify all six witnesses on one system, its comparator sector and the needed calibrated radius; a chosen lower certificate is not a universal radius.
+
+\paragraph{Differential tests and evidence.} Test transport, ablation, noise and decoder-visible separation. Exact transport and approximate membership have different guarantees.
 
 \printbibliography
 

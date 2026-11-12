@@ -9,17 +9,17 @@ We assume the identity framework of \cite{paper1}. Let $(S_t, \pi_{t+1 \to t})_{
     \mathcal{I} := \varprojlim S_t = \left\{ (x_t)_t \in \prod_t S_t \;\Big|\; \pi_{t+1 \to t}(x_{t+1}) = x_t \;\; \forall t \right\}.
 \end{equation}
 
-The ontological mass $M_\Omega$ quantifies resistance to identity deformation. We recall that:
+The sectorial deformation resistance $M_\Omega$ quantifies resistance to identity deformation. We recall that:
 \begin{itemize}[leftmargin=*]
     \item $M_\Omega = 0$: zero deformation-cost infimum;
     \item $0 < M_\Omega < \infty$: deformable persistence (finite rigidity);
     \item $M_\Omega = +\infty$: closed--rigid (CCR relative to the declared perturbation class).
 \end{itemize}
 
-\subsection{Abstract Phenomenological Space}
+\subsection{Abstract Structural Readout Space}
 
-\begin{definition}[Phenomenological Space]\label{def:phenspace}
-A phenomenological space is a nonempty set $\mathcal{E}$ whose elements are called \textit{phenomenological configurations}. No topology, metric, or algebraic structure is assumed a priori.
+\begin{definition}[Structural Readout Space]\label{def:phenspace}
+A structural readout space is a nonempty set $\mathcal{E}$ whose elements are called \textit{phenomenological configurations}. No topology, metric, or algebraic structure is assumed a priori.
 \end{definition}
 
 \begin{remark}
@@ -28,7 +28,7 @@ We do not claim that $\mathcal{E}$ represents ``conscious states'' or ``qualia''
 
 \subsubsection{Why a Separate Space?}
 
-One might ask: why not use $\mathcal{I}$ itself as the phenomenological space? The answer is structural:
+One might ask: why not use $\mathcal{I}$ itself as the structural readout space? The answer is structural:
 
 \begin{proposition}[Endomorphisms Preserving All Canonical Projections]
 If $F:\mathcal I\to\mathcal I$ satisfies $p_t\circ F=p_t$ for every $t$, then $F=\operatorname{Id}$. This does not exclude endomorphisms with nonidentity coordinate actions.
@@ -40,10 +40,10 @@ For each $x$, $F(x)$ and $x$ have identical coordinates, hence are the same inve
 
 A separate codomain permits independent structural readouts; it is not forced by the universal property alone.
 
-\subsection{Phenomenological Assignment}
+\subsection{Structural Assignment}
 
-\begin{definition}[Phenomenological Assignment]\label{def:phenassign}
-A phenomenological assignment is a family of total maps on the declared observable state spaces:
+\begin{definition}[Structural Assignment]\label{def:phenassign}
+A structural assignment is a family of total maps on the declared observable state spaces:
 \begin{equation}
     \phi_t: S_t \to \mathcal{E}
 \end{equation}
@@ -51,7 +51,7 @@ indexed by $t \in \mathbb{N}$.
 \end{definition}
 
 \begin{definition}[Induced Limit Assignment]\label{def:limitassign}
-Given a phenomenological assignment $\{\phi_t\}$, the induced limit assignment, whenever it exists, is the map:
+Given a structural assignment $\{\phi_t\}$, the induced limit assignment, whenever it exists, is the map:
 \begin{equation}
     \Phi: \mathcal{I} \to \mathcal{E}, \quad \Phi((x_t)_t) := \lim_{t \to \infty} \phi_t(x_t),
 \end{equation}
@@ -77,7 +77,7 @@ For $m>n$, the triangle inequality bounds the distance between the $m$th and $n$
 We declare a controlled assignment model. E0 is a nontriviality convention, E1 supplies convergent readouts, and E2 is a separately checked non-factorization requirement.
 
 \begin{axiom}[E0: Non-Triviality]\label{ax:e0}
-The phenomenological space satisfies $|\mathcal{E}| \geq 2$, i.e., there exist at least two distinct phenomenological configurations.
+The structural readout space satisfies $|\mathcal{E}| \geq 2$, i.e., there exist at least two distinct phenomenological configurations.
 \end{axiom}
 
 \begin{axiom}[E1: Controlled Asymptotic Compatibility]\label{ax:e1}
@@ -103,7 +103,7 @@ The following results separate sufficient assumptions, a non-factorization requi
 \subsubsection{Nontriviality of the Codomain}
 
 \begin{theorem}[E0 is Necessary]\label{thm:e0-necessary}
-If $|\mathcal{E}| = 1$, then every phenomenological assignment is constant and no phenomenological classification is possible.
+If $|\mathcal{E}| = 1$, then every structural assignment is constant and no phenomenological classification is possible.
 \end{theorem}
 
 \begin{proof}
@@ -186,7 +186,7 @@ The limit is uniquely defined with a uniform tail bound. E2 remains a substantiv
 
 \subsection{Phenomenological Neutrality Clause}
 
-Throughout this paper, the phenomenological space $\mathcal{E}$ is treated as a \textit{purely abstract topological and metric structure}. No semantic, psychological, biological, or experiential interpretation is assumed or required for any of the formal results derived herein.
+Throughout this paper, the structural readout space $\mathcal{E}$ is treated as a \textit{purely abstract topological and metric structure}. No semantic, psychological, biological, or experiential interpretation is assumed or required for any of the formal results derived herein.
 
 The term ``phenomenological'' refers exclusively to the role of $\mathcal{E}$ as an abstract codomain of structural compatibility for inverse-limit identities, and does not presuppose the existence of consciousness, subjective experience, or any particular phenomenological content.
 
@@ -304,7 +304,7 @@ On $Z=\{0,1\}$, let $h(0)=1$, $h(1)=0$ and $F(x)=x$. The transport preserves $Z$
 
 \subsection{Induced Constraints from Identity Rigidity}
 
-Let $(\mathcal{I}, M_\Omega)$ be an identity object with ontological mass $M_\Omega$. We now study how $M_\Omega$ constrains the set of admissible phenomenological assignments.
+Let $(\mathcal{I}, M_\Omega)$ be an identity object with sectorial deformation resistance $M_\Omega$. We now study how $M_\Omega$ constrains the set of admissible structural assignments.
 
 \begin{definition}[Phenomenological Compatibility Class]\label{def:compat-class}
 For a declared identity domain and codomain, $\mathcal P(M_\Omega)$ consists of maps $\Phi:\mathcal I\to\mathcal E$ that are limits of some family $\{\phi_t\}$ satisfying E1, with E0 and E2 also satisfied. The readout family and its tail control are part of the realization data. The notation retains the mass index for comparisons, but no mass-dependent restriction follows from E0--E2 alone.
@@ -319,7 +319,7 @@ The compatibility class records choices of domain, codomain and readout family. 
 Quantitative comparisons use a declared metric. The following statements identify the role and limits of that choice.
 
 \begin{hypothesis}[H3: Metric on $\mathcal{E}$]\label{hyp:H3-metric}
-The phenomenological space $\mathcal{E}$ admits a metric $d_\mathcal{E}$ such that $(\mathcal{E}, d_\mathcal{E})$ is a complete metric space.
+The structural readout space $\mathcal{E}$ admits a metric $d_\mathcal{E}$ such that $(\mathcal{E}, d_\mathcal{E})$ is a complete metric space.
 \end{hypothesis}
 
 \subsubsection{Role of the Metric}
@@ -365,7 +365,7 @@ This is rejected by Proposition~\ref{prop:complete-necessary}.
 \subsection{Phenomenological Continuity}
 
 \begin{definition}[Phenomenological Continuity]\label{def:phen-continuity}
-A phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is \textit{structurally continuous} if for every sequence $(x^{(n)})_n$ in $\mathcal{I}$ converging in the $d_w$ metric:
+A structural assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is \textit{structurally continuous} if for every sequence $(x^{(n)})_n$ in $\mathcal{I}$ converging in the $d_w$ metric:
 \begin{equation}
     d_w(x^{(n)}, x) \to 0 \implies d_\mathcal{E}(\Phi(x^{(n)}), \Phi(x)) \to 0.
 \end{equation}
@@ -378,7 +378,7 @@ Structural continuity is derived under the finite-readout conditions of Theorem~
 \subsection{Phenomenological Fragmentation}
 
 \begin{definition}[Phenomenological Fragmentation]\label{def:fragmentation}
-A phenomenological assignment $\Phi$ is \textit{fragmentable} if there exists a perturbation $\{\epsilon_t\}$ with finite weighted energy such that:
+A structural assignment $\Phi$ is \textit{fragmentable} if there exists a perturbation $\{\epsilon_t\}$ with finite weighted energy such that:
 \begin{equation}
     d_\mathcal{E}(\Phi(x), \tilde{\Phi}(\tilde{x})) > 0
 \end{equation}
@@ -413,7 +413,7 @@ The quantitative formulas use a declared complete metric codomain. Continuous fi
 Before proving the main impossibility results, we isolate the global lower-bound regularity condition used by the fragmentation argument. The condition is not derived from properness, local Lipschitz regularity, and non-collapse alone; it is carried as an explicit hypothesis.
 
 \begin{hypothesis}[$\Phi$-Regularity Lower Bound]\label{hyp:phi-regularity}
-Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Identity} and let $(\mathcal{E}, d_\mathcal{E})$ be the abstract phenomenological metric space. A phenomenological assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is said to satisfy $\Phi$-regularity when it satisfies:
+Let $(\mathcal{I}, d_w)$ be the identitary metric space from \textit{Rigid Identity} and let $(\mathcal{E}, d_\mathcal{E})$ be the abstract phenomenological metric space. A structural assignment $\Phi: \mathcal{I} \to \mathcal{E}$ is said to satisfy $\Phi$-regularity when it satisfies:
 \begin{enumerate}[leftmargin=*]
     \item (Properness) For every compact $K \subset \mathcal{E}$, $\Phi^{-1}(K)$ is compact in $\mathcal{I}$.
     \item (Local Lipschitz regularity) For every $x \in \mathcal{I}$, there exist $\varepsilon > 0$ and $L_x > 0$ such that for all $y, z \in B_\varepsilon(x)$:
@@ -499,7 +499,7 @@ Apply Theorems~\ref{thm:fragmentation} and~\ref{thm:forced-continuity} with thei
 % ============================================================================
 % SECTION 5: CLASSIFICATION
 % ============================================================================
-\section{Classification of Phenomenological Regimes}
+\section{Classification of Structural Assignment Regimes}
 
 \subsection{Conditional Classification}
 

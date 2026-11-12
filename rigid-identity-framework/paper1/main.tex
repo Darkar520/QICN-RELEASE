@@ -68,7 +68,7 @@ For a common metric tower, exact fiber lifts with bounded weighted amplification
 
 For exact comparisons of model histories, one finite-cost intervention with positive deformation certifies a finite resistance ratio. Estimating that ratio from observable data requires a calibrated comparison and coverage of the intervention class.
 
-The assignment is unique up to zero deformation within a finite-cost connected operating component in the declared sector. Resistance classes transport under audited comparisons. Product atomicity requires a separate certificate and is retained as a research obligation.
+The assignment is unique up to zero deformation within a finite-cost connected operating component in the declared sector. Resistance classes transport under audited comparisons. A typed product-retraction certificate gives a quantitative resistance obstruction; a separate cut-point argument proves exact product atomicity for an infinite-dimensional compact support. The Cantor control refutes inference from resistance alone. Physical admissibility and general approximation gaps remain research obligations.
 
 Finite binary representations face a fidelity bound when the specified responses are sufficiently separated. A latent dimension or an intervention cost alone does not determine the representation budget.
 
@@ -646,11 +646,64 @@ A finite connecting chain gives an admissible directed path between the generati
 
 \subsection{Indivisibility and Non-Duplicability}
 
+\begin{definition}[Typed product-retraction certificate]\label{def:atomicity-certificate}
+Fix a system $S$, a compact identity support $I\subset Z$, its declared resistance sector $\mathcal D_S$, nonnegative intervention cost $E_w$, and Hausdorff deformation $\Delta(\delta)=d_H(I,I^\delta)$. A product datum $P=(A_P,B_P,F_P)$ has nonempty compact metric factors of positive diameter and a homeomorphism $F_P:I\to A_P\times B_P$ preserving the specified observations, dynamics and intervention structure. The admitted family is $\mathcal A_{\rm prod}$. Its projections are a dependent family
+\[
+ \mathcal R_1(P)=\operatorname{pr}_1\circ F_P:I\to A_P,
+ \qquad \mathcal R_2(P)=\operatorname{pr}_2\circ F_P:I\to B_P.
+\]
+They are not two maps with a fixed codomain for every possible product. A certificate
+\[
+ \mathrm{Cert}_{\rm atom}(S)=
+ (\mathcal A_{\rm prod},\mathcal R_1,\mathcal R_2,\delta_{\rm atom}),
+ \qquad \delta_{\rm atom}>0,
+\]
+includes, for every admitted $P$, a specified $b_P\in B_P$ and a verified intervention $\delta_P\in\mathcal D_S$ satisfying
+\[
+ I^{\delta_P}=F_P^{-1}(A_P\times\{b_P\}),\qquad
+ E_w(\delta_P)<\infty,\qquad
+ \Delta(\delta_P)\ge\delta_{\rm atom}.
+\]
+The equality concerns the actual perturbed inverse-limit object, not only an arbitrary map on its ambient space. Compatibility of the clamp with the finite-level constraints, admissibility and cost must be checked independently. If a finite uniform cost bound is available, record $K_{\rm atom}=\sup_P E_w(\delta_P)<\infty$ in the sector specification. The deformation bound has units of the declared metric; $K_{\rm atom}/\delta_{\rm atom}$ has the resistance units. An empty product family gives a vacuous universal clause and supplies no measured positive margin by itself.
+\end{definition}
+
+\begin{proposition}[A Checkable Nonempty Product Certificate]\label{prop:product-clamp-certificate}
+Suppose the declared product sector uses isometries from $I$ onto products with the maximum metric, with $\operatorname{diam}(B_P)\ge d_0>0$. Suppose each factor clamp is realized by an admissible compatible intervention of cost at most $K$. Then the projections above and $\delta_{\rm atom}=d_0/2$ give a certificate. For a unit square with its coordinate product, a single admissible clamp $(x,y)\mapsto(x,0)$ of cost one gives the sharper values $\delta_{\rm atom}=K=1$.
+\end{proposition}
+\begin{proof}
+The Hausdorff distance to $A_P\times\{b_P\}$ is $\sup_{b\in B_P}d(b,b_P)$. This is at least half the diameter by the triangle inequality, and is exactly one for the stated square clamp. The separate realization assumption supplies the required intervention and cost. On the square, a resistance sector consisting of this clamp has $M_\Omega=1>0$, yet the square is a nontrivial product. Thus neither a positive finite resistance nor the certificate alone proves atomicity.
+\end{proof}
+
+\begin{lemma}[Cantor Product Obstruction to Unconditional Atomicity]\label{lem:cantor-product-obstruction}
+Let $B=\{0,1\}^{\mathbb N_{>0}}$ with its compact prefix topology and its canonical finite projections. Admit the maps $T_c(b)=b\mathbin\oplus c$ for $c\in B$, with cost $\sum_{j\ge1}3^{-j}c_j$. Every map preserves the full inverse-limit support, so its resistance is infinite. Nevertheless,
+\[
+ b\longmapsto((b_{2j-1})_{j\ge1},(b_{2j})_{j\ge1})
+\]
+is a homeomorphism onto $B\times B$. Both induced factor sectors also have infinite resistance. The retraction clause of Definition~\ref{def:atomicity-certificate} fails for this flip sector.
+\end{lemma}
+\begin{proof}
+Each flip is a compatible bijection at every finite cut, hence maps the full support onto itself and has zero Hausdorff deformation. Its cost is at most $1/2$. Any two histories differ by one such admissible flip, but this does not change the identity set. Interleaving is the continuous inverse of the displayed coordinate map; both factors are non-singleton compact prefix limits. Restricting the flips to odd or even coordinates again preserves each whole factor support. A clamp onto a fixed second factor is not surjective, so cannot be any admitted flip. Infinite resistance therefore does not furnish the missing certificate, even in this finite-cost connected history channel.
+\end{proof}
+
+\begin{theorem}[An Infinite-Dimensional Exact Product Obstruction]\label{thm:cutpoint-product-atomicity}
+Let $Q=\{z\in\ell^2:0\le z_j\le2^{-j}\}$ and
+\[
+ W=(Q\times\{0\})\cup(\{0\}\times Q)\subset\ell^2\oplus\ell^2.
+\]
+Then $W$ is a compact connected support with infinite affine dimension and is not homeomorphic to a product of two non-singleton compact spaces. This is an exact topological obstruction; it does not assert a positive approximation gap against an unspecified closure of products.
+\end{theorem}
+\begin{proof}
+The coordinate tails are uniformly square summable; finite boxes give total boundedness and closedness gives completeness, hence compactness of $Q$. It is convex. Each axis segment $[0,2^{-j}]e_j$ occurs, so its affine dimension is infinite. The two copies meet at zero, making $W$ connected. Removing zero leaves precisely two nonempty separated connected pieces: the positive cone property ensures that a segment between nonzero points in either copy avoids zero.
+
+If $W\simeq A\times B$, projection of the connected compact space makes both factors connected. Choose $a_0\ne a_*$ and $b_0\ne b_*$ for a point $(a_*,b_*)$. The connected skeleton $(A\times\{b_0\})\cup(\{a_0\}\times B)$ avoids that point. Every other point connects to this skeleton through a connected vertical slice if its first coordinate differs from $a_*$, and through a horizontal slice otherwise. Thus $(A\times B)\setminus\{(a_*,b_*)\}$ is connected. This contradicts the cut point of $W$.
+\end{proof}
+
+
 \begin{corollary}[Atomicity Conditional on a Factorization-to-Deformation Certificate]\label{cor:indivisible}
-Fix an admissible product-comparison sector. Suppose every nontrivial faithful factorization of the target would furnish an admissible finite-cost positive-deformation intervention in its resistance sector. An infinite-resistance target has no such factorization.
+Assume a verified $\mathrm{Cert}_{\rm atom}(S)$ in the fixed product-comparison sector of Definition~\ref{def:atomicity-certificate}. If $M_\Omega=+\infty$, there is no admitted nontrivial faithful factorization. With a finite uniform cost bound, the stronger quantitative implication is $M_\Omega>K_{\rm atom}/\delta_{\rm atom}\Rightarrow\mathcal A_{\rm prod}=\varnothing$. A statement about all products requires the sector to include every product structure under consideration.
 \end{corollary}
 \begin{proof}
-Any admitted factorization would, by the separate certificate hypothesis, produce a finite positive ratio in the resistance infimum, a contradiction. Uniqueness of an assignment alone does not supply that hypothesis. It must be proved independently for the intended comparison sector.
+An admitted product supplies the certificate's verified intervention with $\Delta\ge\delta_{\rm atom}>0$ and finite cost. Hence $M_\Omega\le E_w(\delta_P)/\Delta(\delta_P)<\infty$, or $M_\Omega\le K_{\rm atom}/\delta_{\rm atom}$ when the uniform bound is available. Both contradict the respective premise. Lemma~\ref{lem:cantor-product-obstruction} and Proposition~\ref{prop:product-clamp-certificate} exclude inference from resistance alone; Theorem~\ref{thm:cutpoint-product-atomicity} provides an independent exact obstruction in infinite dimension.
 \end{proof}
 \paragraph{Atomicity research obligation.}
 The binary-prefix limit is homeomorphic to the product of its even and odd bit sequences; its internal support-preserving flip sector can still have infinite resistance. Thus resistance or connected-channel uniqueness alone does not prove product atomicity. The program retains atomicity as a sector-specific objective: identify the permitted factors, the preserved observations and the required deformation certificate. No universal non-duplication of persons or information is inferred.
@@ -675,7 +728,7 @@ Existence is part of the realized-domain hypothesis and uniqueness gives a singl
 
 \begin{enumerate}[leftmargin=*]
     \item Realized connected comparison components admit one assignment class; uniqueness alone asserts at most one.
-    \item Atomicity needs an independent factorization certificate; matched finite-cost changes cannot produce a distinct assignment.
+    \item The product-retraction certificate gives sector-relative atomicity, and the cut-point example gives an independent exact obstruction; matched finite-cost changes cannot produce a distinct assignment.
     \item Distinct assignment classes cannot belong to one matched connected component; the converse requires separation between components.
     \item Identity is therefore a structural invariant of the channel, not an interchangeable role.
 \end{enumerate}
@@ -1231,7 +1284,7 @@ By contrast, the exact scalar $\sum_{j\geq1}2b_j3^{-j}$ distinguishes all histor
 
 \paragraph{Proposed interpretation.} The historical identity vocabulary motivates persistent structural assignment. It does not prove personal indivisibility or prohibit every physical or informational transfer.
 
-\paragraph{Additional obligations.} A broader atomicity claim needs an independent certificate that links factorization to finite deformation, with a matched comparison sector.
+\paragraph{Additional obligations.} The product-retraction certificate and cut-point example supply explicit sector-relative and exact topological results. Extending them to a physical intervention sector or a closure of approximate products requires independent admissibility and quantitative stability proofs.
 
 \paragraph{Differential tests and evidence.} Contrast alternative assignments and interventions with calibrated reconstruction, including disconnected-component and product controls.
 

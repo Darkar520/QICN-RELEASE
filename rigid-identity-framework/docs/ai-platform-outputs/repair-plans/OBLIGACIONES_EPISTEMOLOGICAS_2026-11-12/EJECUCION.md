@@ -1,0 +1,27 @@
+# Obligaciones epistemológicas · prerregistro 2026-11-12
+
+Base: 1f56dabbe60f8a3f9405f9d40e2bea358f83f42e. La orden de publicación del usuario autoriza expresamente los seis commits anteriores; no constituye revisión matemática independiente. Ambas ramas GitHub verificadas en esa base. El runtime está excluido incluso de lectura. Se preservan los 76 archivos congelados y las fuentes Lean.
+
+Alcance: A, certificado tipado de retracción de productos, obstrucción Cantor y ejemplo exacto por punto de corte; B, un testigo con soporte compacto de dimensión infinita y una prueba global de cada uno de los seis predicados, seguida de una valoración simétrica nula; C, contrato de identificación y falsación externa sin datos biológicos fabricados. Propagar a propietarios, puente, registro, monolito, roadmap y ledger.
+
+Resultados esperados A: Cert_atom depende de una familia tipada de productos y proyecciones, testigos admisibles de retracción y deformación uniforme positiva. M infinito o M>K/delta excluye esos productos; M>0 solo no basta. Cantor conserva resistencia infinita en el sector de flips y factoriza por paridad. La cuña de dos cubos de Hilbert tiene punto de corte y no es producto de dos compactos no triviales; esto prueba atomicidad exacta, no radio positivo frente a cualquier aproximación.
+
+Diseño candidato B: cubo compacto Q de pares de coordenadas l2 con cotas 2^-j, acoplado a fase y prefijos binarios. lambda=1/32, beta=1/3, funcional lineal simétrico ell de rango [-1,1], actualización de fase u+q lambda(b1+ell(z)/4), retorno Q mediante cos(2 pi theta)/32 y contracción 1/4. El sector de comparadores será el ya definido en V: todos los homeomorfismos producto y particiones no vacías de los tres canales fijos, sin decodificación conjunta. No se reducirá a un único rival. Esperamos cota inferior beta lambda/4=1/384; control lambda=0 separable solo al retirar también el retorno de fase. La cota superior no debe asumir que Q es autónomo cuando conserva dicho retorno. Las alternativas de identidad deben estar declaradas y separadas; no se transferirá la positividad a una familia continua de saltos. La dimensión infinita, la compacidad y la actividad de todas las coordenadas deben demostrarse. Tiempo discreto: no se afirmará un flujo Hamiltoniano ni compatibilidad con endomorfismos en cortes finitos que no se haya probado.
+
+Protocolo B: lectura binaria b1 con gap 1/3, ruido 1/16, umbral 1/2, sham que conserva b1 y lesión de inversión; compresión de un bit, miss/falso positivo cero bajo el dominio acotado. Comparación de puertos Hilbert izquierdo/derecho bajo intercambio causal y condiciones iniciales simétricas: respuesta ponderada idéntica y valoración cero. La prueba deberá cumplir todas las cláusulas de Cop globalmente; si alguna carece de testigo o depende de una definición no fijada, se registrará como obligación y no se proclamará inclusión estricta completa.
+
+C: tipos de población, preparación, canales y unidades, intervenciones y costes emparejados, sham, desconexión que conserva medición, rescate, decodificador ciego congelado, error de lectura y calibración independiente. Cota de error familiar por concentración de bloques independientes más fallo de calibración y fuga. No se trasladará un contraste de señales a causalidad sin supuestos de identificación ni a propiedades biológicas sin una realización externa. No hay campaña ejecutada.
+
+Controles racionales esperados: clamps a igualdad de umbral, Cantor par/impar, centros/costes no admisibles, esquinas producto incompatibles, intervalos de realimentación, truncaciones de Q como controles finitos (no prueba infinita), ruido en umbral de etiqueta, simetría e inversión de puertos, ausencia de alineación, interferencia entre bloques, fuga y falta de identificación. Fuente de verdad para los infinitos: pruebas analíticas en TeX.
+
+Parada: fallo de gate obligatorio, ID perdido, cambio congelado, pérdida de hipótesis, denominador inválido o conclusión que exceda el dominio demostrado. Conservar incidencias y corregir causas; no relajar gates. Verificar raíz 3, release 6, suite matemática completa, macros, corpus y prosa; compilar todos los documentos afectados y monolito. Conservar veredictos crudos y external_support_certified=false.
+
+
+## Publicación y estado inicial
+
+Árbol limpio en 1f56dab. Se ejecutaron los dos push solicitados sin force-push y se verificaron ambas referencias remotas por ls-remote y fetch en 1f56dabbe60f8a3f9405f9d40e2bea358f83f42e. No se accedió al runtime. A implementado en copia aislada, pendiente de verificación; B/C pendientes. El certificado de A conserva sus obligaciones de admisibilidad y no convierte resistencia finita positiva en atomicidad.
+
+
+## Módulo A verificado · 2026-11-12
+
+Certificado tipado con proyecciones dependientes del producto y realización de clamps, umbral M>K/delta, control del cuadrado a igualdad, obstrucción Cantor y testigo de cuña de cubos de Hilbert por punto de corte. La cota cuantitativa es relativa al sector; no se afirmó un radio general frente a aproximaciones. Se preservaron los 878 IDs y se añadieron cuatro entradas formales. BaseCore y Paper I reconstruidos; monolito 414 páginas, 12 capítulos cotejados; raíz 3/3, release 6/6, matemáticas 29/29, registro 882, macros 383. Los 76 archivos congelados permanecen intactos. [Recibo A](A_VERIFICACION.json). B/C siguen abiertos. Veredictos: v25/v26 INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY; v27/v28/v30 BLOCKED_MULTIPLE_GATES; v31 BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.

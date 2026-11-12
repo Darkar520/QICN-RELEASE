@@ -2051,3 +2051,13 @@ Base `99df1de9850f8c24746e72c92d41f2515ef26017`; [prerregistro y ejecución](doc
 ### Cierre documental del plan de unificación · 2026-11-12
 
 Los cuatro bloques están implementados y verificados localmente en `a8a8270e5b43de05ac2be5da04c27a73f32d0dd5`. Las 52 disposiciones anteriores distinguen correcciones, obstrucciones y obligaciones abiertas. Raíz 3/3, release 6/6, matemáticas 28/28, 878 entradas y 383 macros; monolito 411 páginas y reconstrucción limpia/incremental concordante. Véase el [informe y límites](docs/ai-platform-outputs/repair-plans/CORRECCION_FUNDAMENTOS_2026-11-08/UNIFICACION_2026-11-11.md#cierre-local-verificado--2026-11-12). Quedan la revisión independiente, la deuda de maquetación declarada y las obligaciones científicas enumeradas; no hay nueva certificación ni publicación remota. `external_support_certified=false`.
+
+
+### Obligaciones epistemológicas A–C · 2026-11-12
+
+Ambas ramas GitHub publicadas en 1f56dab por orden expresa. Se abre la [fase de teoría pura](docs/ai-platform-outputs/repair-plans/OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/EJECUCION.md): A, certificado tipado y obstrucciones independientes; B, realización infinita global de los seis predicados y valoración simétrica nula; C, contrato de falsación externo. A está implementado en aislamiento y pendiente de gates; B/C permanecen en desarrollo. No hay nueva validación externa ni acceso al runtime.
+
+
+## Módulo A verificado · 2026-11-12
+
+Certificado tipado con proyecciones dependientes del producto y realización de clamps, umbral M>K/delta, control del cuadrado a igualdad, obstrucción Cantor y testigo de cuña de cubos de Hilbert por punto de corte. La cota cuantitativa es relativa al sector; no se afirmó un radio general frente a aproximaciones. Se preservaron los 878 IDs y se añadieron cuatro entradas formales. BaseCore y Paper I reconstruidos; monolito 414 páginas, 12 capítulos cotejados; raíz 3/3, release 6/6, matemáticas 29/29, registro 882, macros 383. Los 76 archivos congelados permanecen intactos. [Recibo A](docs/ai-platform-outputs/repair-plans/OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/A_VERIFICACION.json). B/C siguen abiertos. Veredictos: v25/v26 INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY; v27/v28/v30 BLOCKED_MULTIPLE_GATES; v31 BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.

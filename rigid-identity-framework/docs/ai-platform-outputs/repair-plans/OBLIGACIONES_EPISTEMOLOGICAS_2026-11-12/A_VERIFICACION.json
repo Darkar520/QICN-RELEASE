@@ -1,0 +1,262 @@
+{
+  "base_commit": "1f56dabbe60f8a3f9405f9d40e2bea358f83f42e",
+  "module": "A",
+  "status": "VERIFIED_LOCAL",
+  "quality": {
+    "phase": "atomicity",
+    "old_ids_preserved": 878,
+    "registry_entries": 882,
+    "changed_ids": [
+      "paper1:corollary:cor-indivisible"
+    ],
+    "new_ids": [
+      "paper1:definition:def-atomicity-certificate",
+      "paper1:proposition:prop-product-clamp-certificate",
+      "paper1:lemma:lem-cantor-product-obstruction",
+      "paper1:theorem:thm-cutpoint-product-atomicity"
+    ],
+    "frozen_files_unchanged": 76,
+    "pdfs": {
+      "basecore": {
+        "sha256": "e0fe781f99802530af9135800c8f99544515d8f980c7db6bb85bf38c3eb8b42b",
+        "pages": 54,
+        "overfull": 6,
+        "underfull": 0
+      },
+      "paper1": {
+        "sha256": "ff8a0eadad43abf2e2ffe798d052bc5af5f8033b5ec02064de2eb7252abe0f3e",
+        "pages": 29,
+        "overfull": 3,
+        "underfull": 0
+      },
+      "monolithic": {
+        "sha256": "12c0132bc85d9ba47e58d235cc459f7d502dc21d593384107d15cd47ecce57ff",
+        "pages": 414,
+        "overfull": 2,
+        "underfull": 334
+      }
+    },
+    "external_support_certified": false
+  },
+  "gates": [
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "docs/ai-platform-outputs/analysis/AUDITORIA_INTEGRAL_CODEX_2026-11-08/check-monolith.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\irisp\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "E:\\QICN-PRESERVACION\\2026-11-12-obligaciones\\workspace\\rigid-identity-framework\\docs\\ai-platform-outputs\\repair-plans\\OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12\\check_atomicity.py"
+      ],
+      "exit": 0
+    }
+  ],
+  "math": {
+    "passed": true,
+    "results": [
+      {
+        "script": "check_math.py",
+        "exit": 0
+      },
+      {
+        "script": "check_regime_implementation.py",
+        "exit": 0
+      },
+      {
+        "script": "check_partitions.py",
+        "exit": 0
+      },
+      {
+        "script": "check_null.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_met_rig.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_ns.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p1_dynamics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_comparators.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_diagnostics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_ruptures.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_common_support.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_legibility.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_memory.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_followups.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_bridge_adjudication.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_p5_window_geometry.py",
+        "exit": 0
+      },
+      {
+        "script": "check_unified_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_prefix_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_paper1_front.py",
+        "exit": 0
+      },
+      {
+        "script": "check_tower_joint_certificate.py",
+        "exit": 0
+      },
+      {
+        "script": "check_informed_reserve.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bridge_transport_burdens.py",
+        "exit": 0
+      },
+      {
+        "script": "check_campaign_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_adjudication_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_body_world.py",
+        "exit": 0
+      },
+      {
+        "script": "check_nonadditive_body_world.py",
+        "exit": 0
+      },
+      {
+        "script": "check_foundational_sanitation.py",
+        "exit": 0
+      },
+      {
+        "script": "check_unification.py",
+        "exit": 0
+      },
+      {
+        "script": "../OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/check_atomicity.py",
+        "exit": 0
+      }
+    ],
+    "scope": "Finite controls and source links; not empirical validation or complete theorem formalization."
+  },
+  "raw_verdicts": [
+    {
+      "version": 25,
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "external_support_certified": false
+    },
+    {
+      "version": 26,
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "external_support_certified": false
+    },
+    {
+      "version": 27,
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    {
+      "version": 28,
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    {
+      "version": 30,
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    {
+      "version": 31,
+      "verdict": "BLOCKED_FOUNDATION_FIRST_GATES",
+      "external_support_certified": false
+    }
+  ],
+  "publication_of_previous_six_commits": {
+    "commit": "1f56dabbe60f8a3f9405f9d40e2bea358f83f42e",
+    "clean": true,
+    "remote_refs": "1f56dabbe60f8a3f9405f9d40e2bea358f83f42e\trefs/heads/codex/qicn-framework-ordenado\n1f56dabbe60f8a3f9405f9d40e2bea358f83f42e\trefs/heads/main\n",
+    "frozen_count": 76
+  },
+  "external_support_certified": false,
+  "remaining": "B and C are not yet implemented; physical admissibility and general approximation gaps remain separate research burdens."
+}

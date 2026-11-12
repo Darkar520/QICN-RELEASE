@@ -153,7 +153,7 @@ function expandLocalInputs(content, relPath, seen = new Set()) {
 }
 
 function stripEncodingNoise(content) {
-  return content.replace(/^\uFEFF/u, "").replace(/^ï»¿/u, "");
+  return content.replace(/^\uFEFF/u, "").replace(/^ï»¿/u, "").replace(/\r\n/g, "\n");
 }
 
 function rewriteAppendixForMonolithic(content) {

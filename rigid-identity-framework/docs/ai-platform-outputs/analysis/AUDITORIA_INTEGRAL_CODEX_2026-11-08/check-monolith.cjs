@@ -18,3 +18,4 @@ const results=a.SOURCES.map(s=>{
 });
 fs.writeFileSync(path.join(__dirname,'MONOLITH_COMPARISON.json'),JSON.stringify({method:'Pure assembler transforms evaluated in memory; original build() and main() never executed; equality after CRLF normalization',results},null,2));
 console.log(JSON.stringify(results,null,2));
+if(results.some(result=>!result.equal)) process.exitCode=1;

@@ -415,6 +415,31 @@ For the ternary assignment above, let an encoder choose at most $2^B$ states as 
 The cylinders of depth $B$ have intervals of length $3^{-B}$ between their two attainable endpoints. Different intervals have gaps at least $3^{-B}$: after the first differing bit $j\leq B$, the maximum opposing tail is $3^{-j}$. Thus all $2^{B+1}$ endpoints, including the depth-zero endpoints $0$ and $1$, are pairwise separated by at least $3^{-B}$. Two share a code and the triangle inequality forces error at least $3^{-B}/2$. Encoding the $B$-bit prefix and decoding to its interval midpoint attains the bound.
 \end{proof}
 
+\begin{theorem}[Uniform Approximation Does Not Protect E2]\label{thm:uniform-e2-obstruction}
+On the binary-prefix realization, let $F=\Phi$ and $F_N=\phi_N\circ p_N$. Then $\|F-F_N\|_\infty=3^{-(N+1)}$, while every $F_N$ factors through a finite cut and fails E2. Thus $F$ has zero uniform distance to the failure set of E2 in the declared class of continuous $[0,1]$-valued readings.
+\end{theorem}
+\begin{proof}
+The geometric tail has maximum $3^{-(N+1)}$, attained by the all-one continuation. Every $F_N$ is continuous and constant on each $p_N$ fibre. For any positive uniform radius choose $N$ with smaller tail. This is a statement about E2 in this class, not about all six calibrated radii of Paper V.
+\end{proof}
+
+\begin{theorem}[Multiscale Protection of Non-Finite Determination]\label{thm:multiscale-e2-protection}
+Let $(I,d)$ have a noninjective canonical cut $p_n$ for every $n$. Let $F,G:I\to B$, where $B$ is a normed linear space and both readings meet the separately declared feasibility and codomain constraints. Suppose $\|F(x)-F(y)\|\ge c d(x,y)$, $c>0$, and $L=\operatorname{Lip}(G-F)<c$. Then
+\[
+ \|G(x)-G(y)\|\ge(c-L)d(x,y),
+\]
+so $G$ cannot factor through any $p_n$.
+\end{theorem}
+\begin{proof}
+Write the difference of $G$ as the difference of $F$ plus that of $G-F$, and apply the reverse triangle inequality. For each cut take distinct points in its fibre. Their images under $G$ differ by a positive amount, which rules out factorization through that cut. The seminorm controls increments, not additive constants; an independently specified anchor bound controls values when needed.
+\end{proof}
+
+\begin{proposition}[A Nonempty Protected Ternary Family]\label{prop:protected-ternary-family}
+For the ternary $F$ above, $G_e=(1-e)F$ with $0\le e\le1/6$ is $[0,1]$-valued and has lower separation at least $1-3e\ge1/2$ in the declared prefix metric. The anchor at the zero history is unchanged. Although $F_N\to F$ uniformly, $\operatorname{Lip}(F-F_N)\ge2$ for every $N$.
+\end{proposition}
+\begin{proof}
+The existing two-sided bounds give $c=1$ and $\operatorname{Lip}(F)\le3$, hence $\operatorname{Lip}(G_e-F)\le3e<1$. Scaling preserves range and the zero anchor. Two histories differing only at bit $N+1$ have equal truncated values and full difference $2\cdot3^{-(N+2)}$, at distance $3^{-(N+2)}$. Their incremental ratio is two. Thus uniform approximation and small multiscale perturbation describe different comparison classes.
+\end{proof}
+
 \subsection{Common Readout on Two Coherently Transported Towers}
 
 \begin{theorem}[Joint Realization of Transport and Controlled Readouts]\label{thm:joint-transport-readout}

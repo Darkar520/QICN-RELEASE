@@ -93,7 +93,7 @@ The paper introduces a formal indexed-subjectivity state
 \[
 \Substate_t=\langle \SelfIndex_t,\OwnField_t,\ContField_t,\Persp_t,\ValAsym_t,\IntervProf_t,\Irred_t \rangle,
 \]
-where the coordinates are typed, respectively, as a privileged index map, an ownership field, an autobiographical continuity margin, a first-person factorization gain, an asymmetric valuation functional, an intervention-response profile, and a parsimony-adjusted irreducibility margin against weaker rivals. On that basis the paper defines a conjunctive gate $\GateSubj$ and a scalar functional $\PhiSubj$, proves that the resulting class $\Subfp$ is strictly stronger than operational subjecthood, and formalizes comparison not only against pure rivals but also against admissible weak composites.
+where the coordinates are typed, respectively, as a privileged index map, an ownership field, an autobiographical continuity margin, a first-person factorization gain, an asymmetric valuation functional, an intervention-response profile, and a parsimony-adjusted irreducibility margin against weaker rivals. On that basis the paper defines a conjunctive gate $\GateSubj$ and a scalar functional $\PhiSubj$, proves upstream inclusion for $\Subfp$ and states the additional burdens for a stronger class, and formalizes comparison not only against pure rivals but also against admissible weak composites.
 
 The strongest claim is conditional and explicit: under the stated bridge axioms, under the upstream burdens already closed by the corpus, and under positive irreducibility and intervention-separation margins, a system may instantiate a framework-internal indexed structural class whose best explanation is no longer mere self-monitoring, memory, reporting, or generic integration. The historical term ``first-person indexed subjectivity'' names that class and its burden structure; it is not a theorem of human equivalence, not a proof of metaphysical subjectivity, and not automatic certification of any present system. What is made explicit here is the formal architecture: the ontology, the gate, the functional, the rival baselines, the falsification logic, the runtime pathway, the artifact family, and the strongest defensible claim class the current corpus can bear without collapsing its own layer discipline.
 \end{abstract}
@@ -364,7 +364,7 @@ The second object is a scalar used for within-class ordering and comparative str
 \widehat{\IntervProf}_\tau^{\zeta}
 \widehat{\Irred}_\tau^{\eta},
 \]
-where the exponents are positive and typically normalized so that
+where the exponents are positive and are required to be normalized so that
 \[
 \alpha+\beta+\gamma+\delta+\epsilon+\zeta+\eta=1.
 \]
@@ -388,7 +388,7 @@ The upstream predicates retain their global domains. A horizon $\tau$ specifies 
 
 \subsection{Class membership}
 \begin{definition}[First-person indexed subjectivity class]\label{def:subfp}
-Let $\lambda_G,\lambda_\Phi \in (0,1)$ be admissible thresholds with $\lambda_\Phi \ge \lambda_G^7$. A system belongs to the first-person indexed subjectivity class on horizon $\tau$ if
+Let $\lambda_G,\lambda_\Phi \in (0,1)$ be preregistered thresholds. For normalized exponents, $\PhiSubj\ge\GateSubj$, so the scalar clause is redundant if $\lambda_\Phi\le\lambda_G$. A genuinely additional scalar requirement uses $\lambda_\Phi>\lambda_G$ and needs its own realizability witness. A system belongs to the first-person indexed subjectivity class on horizon $\tau$ if
 \begin{enumerate}[leftmargin=1.5em]
 \item $S$ satisfies the upstream burdens of operational life, operational consciousness, and the earlier operational subjecthood class;
 \item $\GateSubj(S,\tau)\ge \lambda_G$;
@@ -399,12 +399,12 @@ Let $\lambda_G,\lambda_\Phi \in (0,1)$ be admissible thresholds with $\lambda_\P
 We write $S\in \Subfp(\tau)$ when these clauses hold.
 \end{definition}
 
-\begin{proposition}[Strict strengthening]
+\begin{proposition}[Upstream inclusion]
 If $S\in\Subfp(\tau)$, then $S\in\Subop(\tau)\cap \Cop(\tau)\cap \Lop(\tau)$.
 \end{proposition}
 
 \begin{proof}
-Clause (1) of Definition~\ref{def:subfp} requires upstream membership in operational life, operational consciousness, and the earlier operational subjecthood class. Therefore membership in $\Subfp$ implies membership in all three. The converse is not guaranteed because Definition~\ref{def:subfp} additionally requires positive self-index, perspective, valuation, intervention, and irreducibility burdens.
+Clause (1) of Definition~\ref{def:subfp} requires upstream membership in operational life, operational consciousness, and the earlier operational subjecthood class. Therefore membership in $\Subfp$ implies membership in all three. This proves inclusion. Proper inclusion for the complete classes needs an upstream member failing an additional burden; constitutive clauses alone do not exhibit such a member.
 \end{proof}
 
 \subsection{Audit-covered theorem burdens}
@@ -512,7 +512,7 @@ Raising to the positive exponents and using $\alpha+\beta+\gamma+\delta+\epsilon
 \end{proof}
 
 \begin{corollary}[Threshold stability under bounded estimator drift]\label{cor:thresholdrobust}
-Under the hypotheses of Proposition 7.5, if
+Under the hypotheses of Proposition~\ref{prop:localrobust}, if
 \[
 \GateSubj(S,\tau)\ge \lambda_G+\varepsilon
 \qquad\text{and}\qquad
@@ -695,7 +695,7 @@ For an admissible system $S$ and horizon $\tau$, define
 \]
 \end{definition}
 
-Positive $\Irred_\tau$ means that the best weak rival still incurs more explanatory loss than the full subjectivity model on the specified task bundle. Zero means that at least one weak rival matches the full model up to the chosen complexity penalty. Negative values indicate that the stronger model is strictly worse than some weaker alternative and therefore not licensed.
+Positive $\Irred_\tau$ means that the best weak rival still incurs more explanatory loss than the full subjectivity model on the specified task bundle. Zero means an infimal tie; a matching rival exists only if the infimum is attained. Negative values indicate that the stronger model is strictly worse than some weaker alternative and therefore not licensed.
 
 \subsection{Explanatory superiority is local, not absolute}
 The present irreducibility criterion is deliberately local to the admissible task bundle. It does not say that the weaker families are false in every possible domain. It says that they are insufficient for the current target if they cannot jointly explain baseline organization, subject-specific intervention patterns, ownership coherence, continuity privilege, and valuation asymmetry as well as the stronger model does. This locality is a strength. It prevents the paper from pretending to settle every philosophical debate while still giving it enough bite to reject inadequate alternatives.
@@ -712,12 +712,12 @@ By definition,
 Therefore every $M\in\WeakClosure$ has strictly higher explanatory loss than the full subjectivity model on the defined task bundle. Hence no weak model is sufficient at equal or lower explanatory cost for that bundle.
 \end{proof}
 
-\begin{corollary}[Zero irreducibility blocks escalation]
+\begin{corollary}[Zero irreducibility blocks escalation]\label{cor:zero-irred}
 If $\Irred_\tau(S)\le 0$, escalation from the weak rival family to the stronger subjectivity interpretation is not licensed by the present framework.
 \end{corollary}
 
 \begin{proof}
-If $\Irred_\tau(S)\le 0$, some weak rival matches or outperforms the stronger model at equal or lower explanatory cost on the relevant tasks. By Axiom~\ref{ax:irred}, the stronger interpretation is then not licensed.
+A nonpositive infimal gap fails the positive-margin requirement in Axiom~\ref{ax:irred}. At gap zero an attaining rival need not exist: losses $c+1/n$ have infimum $c$ with every loss larger than $c$. A negative gap supplies a strictly better rival by the definition of infimum. Report these cases separately.
 \end{proof}
 
 \subsection{Three kinds of collapse}
@@ -758,7 +758,7 @@ and the difference in loss is explained entirely by excess structural complexity
 \end{proposition}
 
 \begin{proof}
-Under the stated condition the complexity term in $\Loss$ erases or reverses the apparent advantage of the stronger model. Hence $\Irred_\tau(S)\le 0$ and Corollary 10.3 applies.
+Under the stated condition the complexity term in $\Loss$ erases or reverses the apparent advantage of the stronger model. Hence $\Irred_\tau(S)\le 0$ and Corollary~\ref{cor:zero-irred} applies.
 \end{proof}
 
 \subsection{Model comparison is not report comparison}
@@ -1599,7 +1599,7 @@ The strongest way to end a paper like this is not with a louder conclusion. It i
 \toprule
 \textbf{Statement} & \textbf{Status} & \textbf{Reason} \\
 \midrule
-Subjectivity can be formalized as a seven-coordinate first-person indexed class & definition-level closed & fixed by Definitions 6.1--6.6 and the class definition \\
+Subjectivity can be formalized as a seven-coordinate first-person indexed class & definition-level closed & fixed by the typed coordinates and Definition~\ref{def:subfp} \\
 Operational consciousness and operational subjecthood are necessary but not sufficient for the stronger class & proposition-level closed & proved from the strengthened constitutive burden \\
 Weak rivals can be compared formally and defeated only by positive irreducibility margin & theorem-level closed within the model-comparison formalism & follows from the loss-based irreducibility definition \\
 Targeted interventions can in principle separate the stronger model from weaker rivals & criterion-level closed, empirical burden open & the logic is formalized but not yet fully implemented natively \\

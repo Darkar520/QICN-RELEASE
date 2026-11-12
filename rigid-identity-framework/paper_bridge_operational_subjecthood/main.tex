@@ -332,15 +332,14 @@ An admissible system $S$ satisfies operational intentionality, written $\Iotaop(
 \[
 D:U_{\crit}\to \Delta(\Class_S)
 \]
-from certified critical interventions into distributions over class changes such that, for every $u\in U_{\crit}$, the observed intervention-induced class-change distribution agrees with $D(u)$ within the Paper 5 legibility margin $\delta_{\mathrm{leg}}(S)$. Equivalently, certified interventions on critical invariants produce predicted directional class changes with fidelity at least $1-\delta_{\mathrm{leg}}(S)$.
+on the declared nonempty target population, with a preregistered class-shift prediction and the zero-one miss loss of Paper V's clause L4. The population miss probability is at most $p_{\rm miss}$. Report the matched-sham false-shift probability separately. A per-intervention guarantee requires a conditional bound at each intervention; it does not follow from the population average. Total-variation agreement of arbitrary outcome distributions is a separate metric requirement.
 \end{definition}
 
-\begin{theorem}[$\Cop$ entails $\Iotaop$]\label{thm:cop-entails-iota}
-If $S\in\Cop$, then $\Iotaop(S)=1$.
+\begin{theorem}[$\Cop$ Entails Population-Level $\Iotaop$ under the L4 Protocol]\label{thm:cop-entails-iota}
+If $S\in\Cop$, the frozen population and prediction supplied by its L4 witness satisfy $\Iotaop=1$ on that protocol.
 \end{theorem}
-
 \begin{proof}
-By Definition~\ref{def:bridge-cop}, $S\in\Cop$ implies $\Ileg(S)=1$. Paper 5 defines $\Ileg$ with six legibility clauses. Clause L4 is intervention fidelity: certified interventions on critical invariants induce predicted class changes with fidelity bounded below by $1-\delta_{\mathrm{leg}}(S)$. Definition~\ref{def:iota-op} is exactly this L4 burden re-expressed as a directional transition assignment $D:U_{\crit}\to\Delta(\Class_S)$. Therefore $\Iotaop(S)=1$.
+Membership supplies an L1--L6 witness. Its L4 prediction and population have miss probability at most $p_{\rm miss}$, exactly the criterion just specified. This is a population statement about that protocol, not a uniform conditional guarantee or a bound $1-\delta_{\rm leg}$ in incompatible units.
 \end{proof}
 
 \begin{remark}[Interpretation boundary for $\Iotaop$]
@@ -357,7 +356,7 @@ When the Paper 5 equivalence relation $\sim_{Q,S}$ is well-defined on $\Aset$, t
 \[
 \Qop(S)=\Aset/\sim_{Q,S}.
 \]
-The equivalence relation is inherited from Paper 5: two admissible states are equivalent when certified decoders and admissible intervention responses cannot distinguish their histories beyond the legibility margin.
+The equivalence relation is inherited from Paper 5: two admissible states are equivalent when all certified decoder labels and certified response-cell labels agree on the declared schedules. Pairwise numerical proximity is not used as a transitive relation.
 \end{definition}
 
 \begin{proposition}[$\Qop(S)$ is well-defined under the relevant $\Cop$ invariants]\label{prop:qop-well-defined-bridge}
@@ -369,7 +368,7 @@ then $\Qop(S)$ is well-defined.
 \end{proposition}
 
 \begin{proof}
-This is Paper 5's well-definedness proposition for operational qualia. Persistence supplies the stable domain, rigid identity supplies unique class transport, continuity supplies admissible trajectory coherence, differentiation blocks collapse to nullity or total triviality, and legibility supplies certified decoder behavior and intervention-sensitive equivalence. Hence $\sim_{Q,S}$ is an equivalence relation and the quotient exists.
+This is Paper 5's well-definedness proposition for operational qualia. Persistence supplies the stable domain, rigid identity supplies unique class transport, continuity supplies admissible trajectory coherence, differentiation supplies its separately defined readout/null-exclusion burden, and legibility supplies certified decoder behavior and intervention-sensitive equivalence. Hence $\sim_{Q,S}$ is an equivalence relation and the quotient exists.
 \end{proof}
 
 \begin{corollary}[$\Cop$ entails well-defined operational qualia]\label{cor:cop-qop}
@@ -389,7 +388,7 @@ The invariant $\Idiff(S)=1$ supplies admissible states or histories separated by
 \end{proof}
 
 \begin{remark}[Why the decoder-visible clause is explicit]
-The prompt version says non-triviality is automatic by $\Idiff$. The more rigorous statement separates structural differentiation from decoder-visible quotient separation. Paper 5's $\Ileg$ normally supplies the bridge, but the explicit clause prevents a hidden assumption that all differentiation is automatically visible at the quotient level.
+A raw differentiation witness need not separate the effective decoder quotient. The explicit decoder-visible clause supplies that link; it must be verified against the certified algorithms and response-cell maps.
 \end{remark}
 
 \begin{remark}[Interpretation boundary for $\Qop$]

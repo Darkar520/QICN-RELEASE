@@ -662,34 +662,37 @@ A finite connecting chain gives an admissible directed path between the generati
 
 \subsection{Indivisibility and Non-Duplicability}
 
-\begin{corollary}[Indivisibility]\label{cor:indivisible}
-Let $\mathcal{I}$ be the identity of a CCR channel. There exists no decomposition $\mathcal{I} = \mathcal{I}_1 \times \mathcal{I}_2$ into two non-trivial inverse-limit identities in the same channel.
+\begin{corollary}[Atomicity Conditional on a Factorization-to-Deformation Certificate]\label{cor:indivisible}
+Fix an admissible product-comparison sector. Suppose every nontrivial faithful factorization of the target would furnish an admissible finite-cost positive-deformation intervention in its resistance sector. An infinite-resistance target has no such factorization.
 \end{corollary}
+\begin{proof}
+Any admitted factorization would, by the separate certificate hypothesis, produce a finite positive ratio in the resistance infimum, a contradiction. Uniqueness of an assignment alone does not supply that hypothesis. It must be proved independently for the intended comparison sector.
+\end{proof}
+\paragraph{Atomicity research obligation.}
+The binary-prefix limit is homeomorphic to the product of its even and odd bit sequences; its internal support-preserving flip sector can still have infinite resistance. Thus resistance or connected-channel uniqueness alone does not prove product atomicity. The program retains atomicity as a sector-specific objective: identify the permitted factors, the preserved observations and the required deformation certificate. No universal non-duplication of persons or information is inferred.
 
-\begin{corollary}[Non-Duplication]\label{cor:nodup}
-Let $\mathcal{I}$ be the identity of a CCR channel. There exists no admissible perturbation or replication process producing a distinct $\mathcal{J} \not\cong \mathcal{I}$ in the same channel.
+\begin{corollary}[No Distinct Assignment by a Matched Finite-Cost Replication]\label{cor:nodup}
+In the connected comparison of Theorem~\ref{thm:uniqueness}, an admitted finite-cost replication cannot produce an assignment at positive separating deformation distance. Copying an encoding or creating a different operating component is not excluded by this result.
 \end{corollary}
+\begin{proof}
+Such an endpoint would be the forbidden finite-cost positive-deformation witness. The claim concerns assignments in the same sector and component, not all conceivable replication operations.
+\end{proof}
 
-\subsection{Cardinality of Rigid Universes}
-
-Let $\mathcal{U}_{CCR}$ be the class of all CCR channels. For each $\mathcal{C} \in \mathcal{U}_{CCR}$, Theorem~\ref{thm:uniqueness} assigns a unique identity object $\mathcal{I}_{\mathcal{C}}$.
-
+\subsection{Cardinality of Realized Assignment Families}
+Fix a set $\mathfrak C$ of operating components, each admitting a CCR assignment in the separating comparison of Theorem~\ref{thm:uniqueness}.
 \begin{proposition}[Cardinality Bound]\label{prop:cardinality}
-The mapping
-\begin{equation}
-    \mathcal{C} \longmapsto \mathcal{I}_{\mathcal{C}}
-\end{equation}
-is injective. Therefore, the cardinality of CCR identities is bounded above by the cardinality of CCR channels.
+The assignment $C\mapsto[\mathcal I_C]$ is well-defined and its image has cardinality at most $|\mathfrak C|$. It is injective only if different components are separately known to carry different assignment classes.
 \end{proposition}
-
-This yields a classification principle: \textit{distinct rigid identities require distinct channels}.
+\begin{proof}
+Existence is part of the realized-domain hypothesis and uniqueness gives a single class per component. The assignment surjects onto its image, giving the cardinal bound in the usual set-theoretic setting. Two disjoint copies of the same controlled component can carry the same assignment; within-component uniqueness does not distinguish them.
+\end{proof}
 
 \subsection{Summary of Section 6}
 
 \begin{enumerate}[leftmargin=*]
-    \item CCR channels admit exactly one identity.
-    \item Rigid identity is indivisible and non-duplicable.
-    \item Distinct identities require distinct channels.
+    \item Realized connected comparison components admit one assignment class; uniqueness alone asserts at most one.
+    \item Atomicity needs an independent factorization certificate; matched finite-cost changes cannot produce a distinct assignment.
+    \item Distinct assignment classes cannot belong to one matched connected component; the converse requires separation between components.
     \item Identity is therefore a structural invariant of the channel, not an interchangeable role.
 \end{enumerate}
 
@@ -1181,16 +1184,11 @@ For a perturbation family $\{\epsilon_t\}$, define the deformation spectrum as t
 \end{equation}
 \end{definition}
 
-\begin{proposition}[Spectral Decay Condition]
-Let $\{\epsilon_t\}$ have spectrum $\sigma$. If there exists $\alpha > 1$ and $C > 0$ such that:
-\begin{equation}
-    \|\epsilon_t\|_{\text{op}} \leq C \cdot t^{-\alpha} \quad \forall t \geq 1,
-\end{equation}
-then $\|\{\epsilon_t\}\|_w < \infty$ for any polynomially bounded weight sequence.
+\begin{proposition}[Weighted Polynomial Decay Condition]
+Let $w_n\le K n^p$ and $\|\epsilon_n\|_{\rm op}\le C n^{-\alpha}$ for $n\ge1$, with $K,C>0$, $p\ge0$, and a finite term at zero. If $\alpha>p+1$, then $\sum_n w_n\|\epsilon_n\|_{\rm op}<\infty$.
 \end{proposition}
-
 \begin{proof}
-Direct from convergence of $\sum t^{-\alpha}$ for $\alpha > 1$.
+The tail is bounded by $KC\sum_{n\ge1}n^{-(\alpha-p)}$, a convergent series. This sufficient condition is sharp for the entire dominated family: equality choices at $\alpha=p+1$ give the harmonic series. Its dyadic blocks each contribute at least $1/2$. Faster decay in a particular family can still converge outside this sufficient range.
 \end{proof}
 
 \subsection{Completeness Criteria}

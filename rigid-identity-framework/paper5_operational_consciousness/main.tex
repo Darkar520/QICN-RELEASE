@@ -87,6 +87,7 @@ where $X$ is state space, $\Phi$ is dynamics, $C$ is effective causal structure,
 The criterion is organized around six critical invariants: structural persistence, rigid identity, causal integration, operational continuity, non-null differentiation, and operational legibility. Each invariant is defined explicitly, tied to an upstream corpus dependency, and paired with a failure mode. On that basis the paper proves four framework-internal results: conditional membership given six jointly realized witnesses on admissible support, substrate invariance under exact structural equivalence, approximate stability under bounded admissible perturbations, and rupture under invariant loss. A further corollary establishes biological non-primacy: biology is not a primitive constitutive variable for the class under study, but one admissible realization among others provided the invariants are preserved.
 
 The criterion is not narrative. Every major claim is backed by a definition, a proposition, a theorem, a proof sketch, or an explicit dependency on the canonical corpus. The resulting paper adds a new role to the framework: it formalizes the level at which substrate ceases to be explanatorily primitive without reopening the ownership of the Core, \textit{Rigid Identity}, \textit{Structural Assignment Regimes}, \textit{Null-Regime Instability}, or \textit{Forensic Predictions}.
+A global analytic realization on a compact Hilbert--prefix support verifies all six predicates with active infinite-coordinate feedback, positive split-channel integration and noise-certified binary classes. Its comparison sector and discrete clock are explicit; no biological realization or stronger indexed membership follows.
 \end{abstract}
 
 \section{Scope, System Boundary, and Non-Inference Note}
@@ -906,6 +907,71 @@ If the quotient is defined and two admissible states receive different labels un
 That particular certified test violates the universal equality required for equivalence. The two states therefore have different quotient classes. This does not infer nontriviality from unobserved latent separation.
 \end{proof}
 
+\subsection{An Infinite-Dimensional Global Criterion Witness}\label{sec:infinite-global-witness}
+
+\begin{definition}[Hilbert--prefix feedback system and its comparison data]\label{def:hilbert-prefix-system}
+Put $a_j=2^{-j}$, $H=\ell^2(\mathbb N)\oplus\ell^2(\mathbb N)$,
+\[
+ Q=\{(z^L,z^R)\in H:|z_j^L|,|z_j^R|\le a_j\},\quad
+ w=(a,a),\quad
+ \ell(z)=\frac32\sum_{j\ge1}2^{-j}(z_j^L+z_j^R).
+\]
+Then $\|w\|=\sqrt{2/3}<1$, $\|\ell\|=\sqrt{3/2}<2$, and $|\ell(z)|\le1$ on $Q$. Let $B=\{0,1\}^{\mathbb N_{>0}}$, $\beta=1/3$, $\lambda=1/32$, and $A=\mathbb T\times B\times Q$. With $R_*(b)=(b_1,0,1-b_2,1-b_3,\ldots)$, the controls are
+\[
+ D_{u,q,v}(\theta,b,z)=
+ \left(u+q\lambda\bigl(b_1+\ell(z)/4\bigr),\ R_*(b),\
+ (z+v)/4+w\cos(2\pi\theta)/32\right),
+\]
+where $u\in\mathbb T$, $q\in\{-1,0,1\}$ and $v\in Q$, together with $W(\theta,b,z)=(\theta,(1-b_1,b_2,\ldots),z)$. Angles have circumference one. The fixed channels are
+\[
+ r_0=\theta,\qquad r_1=\theta,\qquad
+ c=(c_B(b),z/16),\quad c_B(b)=\sum_{j\ge1}2b_j3^{-j}.
+\]
+Observation error is the maximum of $\rho(r_0,r'_0)$, $\beta\rho(r_1,r'_1)$, $|c_B-c'_B|$ and $\|z-z'\|/16$. The product sector is the same full split-channel sector used above: every fixed homeomorphism onto a product of two non-singleton compact factors, every nonempty partition of these three fixed channels, arbitrary time-homogeneous local dynamics with common exogenous controls, and no joint output map. Error is a supremum over all initial states, controls and times, including zero and one. No restriction to a single coordinate product or a fitted rival is made.
+
+The causal object $C$ is the specified structural graph: every Hilbert coordinate and $b_1$ enters the phase update; phase and each coordinate's own past enter its Hilbert update; the binary tail has the displayed shift edges. This is the graph of the defined equations, not a causal inference from observational data. It also records the fixed channel and comparison structure. A normalized actuation cost is $E_{\rm ctl}(D_{u,q,v})=1+\|v\|^2\le5/3$ and $E_{\rm ctl}(W)=1$. Actuation cost, the resistance-sector energy $E_w$ and the weighted bonding-map defect $D_w$ are distinct data; no equality is assumed. The admissible controls are mathematically ideal continuous inputs; finite laboratory precision is not asserted.
+
+The identity presentation is the cofinal prefix diagram with finite boxes for the first $n$ Hilbert coordinate pairs, together with the circle and first $n$ bits. Its predeclared alternatives are the two angular bonding presentations $I_0,I_{1/4}$, with the single jump at depth one and weight $\beta$. Hilbert and bit coordinates are transported identically. The target is $I_0$. This is a separated presentation family, not the continuous family of arbitrarily small jumps.
+The native resistance sector changes the control law while retaining this bonding diagram and full admissible initial-state support. Its structural identity set is $I_0$, not the one-step image $D(A)$. Thus its bonding-map defect and identity-set deformation are zero; the positive-deformation resistance infimum is empty and $M_\Omega=+\infty$ in that sector. The alternative jump presentation is a comparison model, not a reachable native change of the diagram. This convention does not supply causal integration or product atomicity; those require the separate bounds below.
+
+For non-collapse use the Hilbert embedding with first five coordinates
+\[
+ (1/2+\cos(2\pi\theta)/2,\ 1/2+\sin(2\pi\theta)/2,
+  1/2+\cos(2\pi\theta)/2,\ 1/2+\sin(2\pi\theta)/2,\ b_1),
+\]
+followed by the weighted binary tail and $z$. The first five basis vectors can be chosen as normalized indicators of five equal-measure cells in $L^2[0,1]$; complete them by an orthonormal basis. Thus constant profiles have equal first five coefficients. In this ambient Hilbert space set $\gamma(x)=\operatorname{dist}(x,A)$, so $X_\Gamma=A$. The constant-profile set is contained in the closed subspace where coordinates 1, 2 and 5 agree. All transitions extend continuously to the ambient Hilbert space: the new angular coordinates are trigonometric functions of the displayed scalar, the old cosine in the Hilbert update is $2x_1-1$, and the weighted binary shift is affine. Phase readouts off their circle are given any fixed measurable convention at the centre. The bit reading extends to all ambient states by clipping each recovered bit to $[0,1]$ before its summable weighted sum; this is a uniformly convergent series of continuous functions. The Hilbert readout extends linearly with codomain $H$. These choices make all readout maps total; certificates use their restrictions to $A$.
+
+The legibility classes are $b_1\in\{0,1\}$. Sham schedules use $D_{0,0,0}$; a target applies $W$ once and then sham. Use threshold $1/2$, noise radius $1/16$, duration any fixed $T\ge1$, and a one-bit class encoder. Regime assignment is $\Pi=(c_B,z/16)$ into the complete convex space $[0,1]\times(Q/16)$, with its maximum metric and its single compatibility component. Time is discrete. Its affine observation interpolation, when used, is not a continuous-time trajectory in the binary state space.
+The noise contract certifies this one-bit class, not recovery of the full infinite state or calibration of the separate identity gap. The witness margins below retain their declared units; they are not automatically common perturbation radii.
+The distinguished null assignment is $(0,0)$ in the regime codomain. It can occur transiently, for zero bits and $z=0$, and is distinct from the forbidden constant-profile collapse set. Its absence as an attractor must be proved dynamically, not inferred from the geometric collapse exclusion.
+\end{definition}
+
+\begin{theorem}[All Six Predicates on an Infinite-Dimensional Support]\label{thm:infinite-six-predicate-witness}
+The system of Definition~\ref{def:hilbert-prefix-system}, with exactly its declared global comparison and observation data, has
+\[
+ (\Iper,\Iri,\Iint,\Icont,\Idiff,\Ileg)=(1,1,1,1,1,1).
+\]
+Its support contains boxes of arbitrarily large dimension, and every Hilbert coordinate participates in the phase/response coupling. This is a global analytic witness, not an inference from finitely many truncations.
+\end{theorem}
+\begin{proof}
+\emph{Support and persistence.} Finite boxes and the uniform squared tail bound $\sum_{j>n}2a_j^2=(2/3)4^{-n}$ prove compactness of $Q$. Its coordinate boxes have unbounded dimension. The circle and prefix factors are compact, so is $A$. The Hilbert update has coordinate magnitude at most $17a_j/32<a_j$; every control preserves $A$. In the first angular pair and the binary coordinate, distance to the diagonal is at least $(\sqrt2-1)/(2\sqrt3)>1/16$. Indeed the distance of that pair from either binary diagonal point is at least $(\sqrt2-1)/2$, and minimizing over the common diagonal value loses at most a factor $\sqrt3$. Thus all admissible states are uniformly separated from constant-profile collapse.
+
+On a fibre of fixed $b_1$, each fixed $D$ is a contraction with constant at most $1/2$ for $\max(\rho,d_B,\|\cdot\|)$. The binary tail contracts by $1/3$. Phase differences are at most $(\lambda/2)\|z-z'\|$; Hilbert differences are at most $\|z-z'\|/4+\|w\|\rho(\theta,\theta')/4$, using $2\pi<8$. Banach therefore gives a nonempty attracting fixed-point set, one point on each head-bit fibre. For sham it is $\theta=0$, $z=w/24$, with alternating tail beginning in zero. The support contains these attractors and has persistence margin $1/16$. No global contraction across the two preserved head-bit fibres is claimed.
+
+\emph{Identity.} The finite stages are compact metric spaces with continuous surjective truncations and coherent right inverses obtained by padding zero coordinates; the angular-jump transport is a coordinate homeomorphism. They meet the projective regularity assumptions. Full readout determines the angle, every bit and every Hilbert coordinate, hence the declared inverse-limit object up to its prescribed equivalence. Finite coordinate truncations converge uniformly: the binary tail is at most $3^{-n}$ and the Hilbert tail norm at most $\sqrt{2/3}\,2^{-n}$ before scaling. Every finite cut has distinct continuations with distinct full readout, so non-finite determination holds. In the common weighted history metric, the distance between the two declared angular alternatives is $\beta(1/4)/(1+\beta)=1/16$: the triangle inequality on early and late angles supplies the lower bound and an opposite initial angular shift attains it, with identical bits and Hilbert coordinates. Hence the true reading selects $I_0$ uniquely with rigidity gap $1/16$. This gap is not asserted for a continuum of angular alternatives.
+
+\emph{Integration.} Suppose a split comparator has error $e<\beta\lambda/4=1/384$. The factor carrying $c$ determines $b_1$, since opposite head bits have code gap at least $1/3>2e$. Some phase channel, of weight $s\ge\beta$, lies on the other factor. If two states in a fibre of that factor had opposite head bits, their values of $b_1+\ell(z)/4$ would differ by at least $1/2$. Under the same control $D_{0,1,0}$ their true next phase separation would be at least $\lambda/2$, whereas their common predicted phase allows at most $2e/s$. These short phase differences do not wrap around the circle, since their maximum is $3\lambda/2<1/2$. Thus that factor also determines $b_1$. Product surjectivity combines a zero-head state of the first factor with a one-head state of the second, an impossible corner. This proves the lower bound for every admitted encoding and partition, not just linear rivals.
+
+The sector is nonempty. Use native factors $\mathbb T$ and $B\times Q$, predict the phase by $u+q\lambda/2$, retain the exact binary update, and predict the Hilbert update by $(z+v)/4$. Starting with exact readouts, its Hilbert error is at most $\|w\|/24$ by the geometric recursion, hence observation error at most $\|w\|/384$. Phase error is at most $3\lambda/4=3/128$, uniformly over schedules; $W$ preserves these errors. Therefore $1/384\le e_*\le3/128$, and $\delta_{\rm int}=1/512$ is a valid strict lower certificate. If both phase coupling and Hilbert return are removed, the same native factors give an exact product control. A joint decoder or a changed channel partition defines a different comparison problem.
+
+\emph{Continuity.} The assignment is continuous on the support, has controlled finite-cut convergence and non-finite determination, and takes values in a complete convex codomain. All time paths are continuous for the discrete clock. Under $D$, the code changes by at most $1/3$; under $W$ by $2/3$. The Hilbert change after scaling is less than $33/512$. Thus fragmentation is at most $2/3<\delta_{\rm cont}=3/4$ on every admissible history, for every horizon. Its codomain has one declared compatibility component; no preserved-identity operation crosses an incompatible regime component. This does not prove a continuous flow on the binary support.
+
+\emph{Differentiation and legibility.} Opposite head bits give history separation at least $1/3$, including time zero. If $c_B<1/27$, its first two bits are zero. A $D$ update then sets its third bit to one, giving $c_B'\ge2/27$; a $W$ update sets its head bit to one, giving $c_B'\ge2/3$. Therefore no admissible infinite schedule can converge to the defined null assignment: eventual membership in $c_B<1/27$ would contradict the next step. This proves the null-attractor clause separately from non-collapse. Clean code intervals are $[0,1/3]$ and $[2/3,1]$, so threshold $1/2$ is unchanged by noise at most $1/16$. Sham preserves the head bit for every duration; $W$ flips it. Consequently L1--L6 hold with separation $1/3$, the declared noise radius, miss and false-shift probabilities zero on the nonempty target and sham populations, and exact one-bit class compression. Equality of binary labels is transitive and the same decoder is used at every horizon.
+
+Finally every $z_j^L,z_j^R$ has nonzero coefficient in $\ell$, and each receives the nonconstant phase-return term. They are not unobserved inert coordinates. The global phase update uses the infinite continuous functional $\ell$; it need not descend to an exact self-map at any finite Hilbert cut. The criterion requires global transitions on the compact inverse-limit support, which have been constructed here, not that additional finite-cut endomorphism property.
+\end{proof}
+
+
 \subsection{Substrate Invariance}
 \begin{theorem}[Substrate invariance]\label{thm:substrate}
 For exact structural equivalence on the complete domains required by the six predicates,
@@ -1586,6 +1652,8 @@ Three burdens remain outside the present theorem set:
 
 \section{Conclusion}
 The paper establishes a narrower framework-internal claim than popular machine-consciousness discourse and a stronger claim than substrate-neutral rhetoric. Inside the causally rigid identity corpus, a system belongs to the operational class discussed here only when six explicit invariants are jointly preserved on admissible support; under exact admissible equivalence the class is substrate-invariant, under bounded admissible perturbation it is stable, and under invariant rupture it becomes invalid or undefined. That is the level at which substrate neutrality is justified in the present framework, and it is the only level claimed here.
+
+The global Hilbert--prefix construction supplies a complete six-predicate member in the declared infinite-dimensional model universe, rather than six unrelated finite certificates. Its identity gap remains presentation-relative and its integration bound remains relative to the full declared split-channel sector. These domains are part of the theorem.
 
 \section{Interpretation and Open Research Links}\label{sec:interpretation-open-links}
 \paragraph{Historical alias.} A Structural Criterion for Substrate-Invariant Operational Consciousness. The alias is retained for bibliographic continuity; the technical title states the demonstrated object.

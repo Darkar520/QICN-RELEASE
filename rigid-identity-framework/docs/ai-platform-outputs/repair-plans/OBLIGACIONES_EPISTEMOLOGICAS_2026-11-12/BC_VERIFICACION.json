@@ -1,0 +1,427 @@
+{
+  "base_commit": "478be2c7ee6e0984feb2fadabf4e9a626d5d9a80",
+  "modules": [
+    "B",
+    "C"
+  ],
+  "status": "VERIFIED_LOCAL",
+  "quality": {
+    "phase": "epistemic",
+    "old_ids_preserved": 882,
+    "registry_entries": 889,
+    "changed_ids": [
+      "paper8:proposition:strict-strengthening-l399"
+    ],
+    "new_ids": [
+      "bridge:corollary:cor-infinite-cop-nonentailed",
+      "paper4:definition:def-external-experimental-interface",
+      "paper4:theorem:thm-external-interface-falsation-bound",
+      "paper4:proposition:prop-external-interface-nonidentifiability",
+      "paper5:definition:def-hilbert-prefix-system",
+      "paper5:theorem:thm-infinite-six-predicate-witness",
+      "paper8:theorem:thm-infinite-strict-upstream-separation"
+    ],
+    "frozen_files_unchanged": 76,
+    "pdfs": {
+      "paper8_first_person_subjectivity": {
+        "sha256": "cd4cb28a41e058f493f3f6864865354c0a527f18e36c315764ba34a7f8b33d42",
+        "pages": 50,
+        "overfull": 13,
+        "underfull": 90
+      },
+      "monolithic": {
+        "sha256": "b4c2c3624fcb5896bdfc17a2c0e8e517cda46bc9a9ff34d9572582651714af78",
+        "pages": 421,
+        "overfull": 1,
+        "underfull": 334
+      },
+      "paper_bridge_operational_subjecthood": {
+        "sha256": "bb90a4ad7f4f18e65072d572a5ff1d891b6709807818c6f0285e886c2c23ff83",
+        "pages": 27,
+        "overfull": 1,
+        "underfull": 0
+      },
+      "paper4": {
+        "sha256": "760a3b2e2061abce931acdc6c425c2eeb69843d6d77a6aa54c70ee2102cf33cf",
+        "pages": 20,
+        "overfull": 13,
+        "underfull": 12
+      },
+      "paper10_external_adjudication": {
+        "sha256": "29e281570b266270261ce9368062f9f514fb8d1e42bc4dedfd78d3fcbd851dd9",
+        "pages": 37,
+        "overfull": 57,
+        "underfull": 0
+      },
+      "paper5_operational_consciousness": {
+        "sha256": "8ac5bd7f814901b33ad1514e000e6a24d02376ae558221760888aaaac2b39b38",
+        "pages": 43,
+        "overfull": 3,
+        "underfull": 10
+      },
+      "paper6_predictions_falsation": {
+        "sha256": "6d3d0c52f850b9336a64f7afb9dc7234a72181a6a0fc11c68dc6d9b086f50097",
+        "pages": 26,
+        "overfull": 3,
+        "underfull": 38
+      }
+    },
+    "external_support_certified": false
+  },
+  "gates": [
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "node",
+        "docs/ai-platform-outputs/analysis/AUDITORIA_INTEGRAL_CODEX_2026-11-08/check-monolith.cjs"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\irisp\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "scripts/verify-prose-sync.py"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\irisp\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+        "E:\\QICN-PRESERVACION\\2026-11-12-obligaciones\\workspace\\rigid-identity-framework\\docs\\ai-platform-outputs\\repair-plans\\OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12\\check_infinite_interface.py"
+      ],
+      "exit": 0
+    }
+  ],
+  "math": {
+    "passed": true,
+    "results": [
+      {
+        "script": "check_math.py",
+        "exit": 0
+      },
+      {
+        "script": "check_regime_implementation.py",
+        "exit": 0
+      },
+      {
+        "script": "check_partitions.py",
+        "exit": 0
+      },
+      {
+        "script": "check_null.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_met_rig.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bc_ns.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p1_dynamics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_comparators.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_diagnostics.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_ruptures.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_common_support.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p2_legibility.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_memory.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p3_followups.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_bridge_adjudication.py",
+        "exit": 0
+      },
+      {
+        "script": "check_p4_p5_window_geometry.py",
+        "exit": 0
+      },
+      {
+        "script": "check_unified_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_prefix_tower.py",
+        "exit": 0
+      },
+      {
+        "script": "check_paper1_front.py",
+        "exit": 0
+      },
+      {
+        "script": "check_tower_joint_certificate.py",
+        "exit": 0
+      },
+      {
+        "script": "check_informed_reserve.py",
+        "exit": 0
+      },
+      {
+        "script": "check_bridge_transport_burdens.py",
+        "exit": 0
+      },
+      {
+        "script": "check_campaign_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_adjudication_front5.py",
+        "exit": 0
+      },
+      {
+        "script": "check_body_world.py",
+        "exit": 0
+      },
+      {
+        "script": "check_nonadditive_body_world.py",
+        "exit": 0
+      },
+      {
+        "script": "check_foundational_sanitation.py",
+        "exit": 0
+      },
+      {
+        "script": "check_unification.py",
+        "exit": 0
+      },
+      {
+        "script": "../OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/check_atomicity.py",
+        "exit": 0
+      },
+      {
+        "script": "../OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/check_infinite_interface.py",
+        "exit": 0
+      }
+    ],
+    "scope": "Finite controls and source links; not empirical validation or complete theorem formalization."
+  },
+  "conservation": {
+    "old_ids_preserved": 878,
+    "final_entries": 889,
+    "new_ids": [
+      "bridge:corollary:cor-infinite-cop-nonentailed",
+      "paper1:definition:def-atomicity-certificate",
+      "paper1:lemma:lem-cantor-product-obstruction",
+      "paper1:proposition:prop-product-clamp-certificate",
+      "paper1:theorem:thm-cutpoint-product-atomicity",
+      "paper4:definition:def-external-experimental-interface",
+      "paper4:proposition:prop-external-interface-nonidentifiability",
+      "paper4:theorem:thm-external-interface-falsation-bound",
+      "paper5:definition:def-hilbert-prefix-system",
+      "paper5:theorem:thm-infinite-six-predicate-witness",
+      "paper8:theorem:thm-infinite-strict-upstream-separation"
+    ],
+    "intervened_prior_ids": [
+      "paper1:corollary:cor-indivisible",
+      "paper8:proposition:strict-strengthening-l399"
+    ],
+    "other_prior_statements_proofs_and_curation_preserved": true,
+    "macros_preserved": 383,
+    "macro_definition_changes": 0,
+    "formal_environment_counts": {
+      "before": {
+        "definition": 121,
+        "theorem": 63,
+        "proof": 189,
+        "proposition": 108,
+        "corollary": 21,
+        "lemma": 6
+      },
+      "after": {
+        "definition": 124,
+        "theorem": 67,
+        "proof": 197,
+        "proposition": 110,
+        "corollary": 22,
+        "lemma": 7
+      }
+    },
+    "proof_increase": 8,
+    "phrase_propagation": [
+      {
+        "source": "paper1/main.tex",
+        "phrase": "Typed product-retraction certificate",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      },
+      {
+        "source": "paper1/main.tex",
+        "phrase": "Cantor Product Obstruction to Unconditional Atomicity",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      },
+      {
+        "source": "paper1/main.tex",
+        "phrase": "An Infinite-Dimensional Exact Product Obstruction",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      },
+      {
+        "source": "paper5_operational_consciousness/main.tex",
+        "phrase": "All Six Predicates on an Infinite-Dimensional Support",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      },
+      {
+        "source": "paper8_first_person_subjectivity/main.tex",
+        "phrase": "Infinite-Dimensional Strict Upstream Separation",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      },
+      {
+        "source": "paper_bridge_operational_subjecthood/main.tex",
+        "phrase": "Global Self-Reference and Indexed Valuation Are Not Forced",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      },
+      {
+        "source": "paper4/main.tex",
+        "phrase": "A Calibrated Blockwise Falsation Bound",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      },
+      {
+        "source": "paper4/main.tex",
+        "phrase": "Observation Alone Cannot Identify the Mechanism",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      },
+      {
+        "source": "paper6_predictions_falsation/main.tex",
+        "phrase": "Binding Predictions to an External Biological Interface",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      },
+      {
+        "source": "paper10_external_adjudication/main.tex",
+        "phrase": "External Interface Admission Before Biological Adjudication",
+        "before": 0,
+        "after": 1,
+        "chapter": 1
+      }
+    ],
+    "monolithic_chapters_equal": 12,
+    "paper4_control_table_cells_identical": true,
+    "frozen_unchanged": 76,
+    "lean_sources_unchanged": 27,
+    "external_support_certified": false
+  },
+  "raw_verdicts": [
+    {
+      "version": 25,
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "external_support_certified": false
+    },
+    {
+      "version": 26,
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "external_support_certified": false
+    },
+    {
+      "version": 27,
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    {
+      "version": 28,
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    {
+      "version": 30,
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    {
+      "version": 31,
+      "verdict": "BLOCKED_FOUNDATION_FIRST_GATES",
+      "external_support_certified": false
+    }
+  ],
+  "remote_refs": "1f56dabbe60f8a3f9405f9d40e2bea358f83f42e\trefs/heads/codex/qicn-framework-ordenado\n1f56dabbe60f8a3f9405f9d40e2bea358f83f42e\trefs/heads/main",
+  "previous_publication": "1f56dabbe60f8a3f9405f9d40e2bea358f83f42e",
+  "new_theory_published": false,
+  "external_support_certified": false,
+  "scope_limits": [
+    "All six predicates are proved on the declared infinite-dimensional global support, for the original full split-channel comparison sector and separated identity presentation family.",
+    "The clock is discrete; finite-cut dynamics are not asserted to be exact endomorphisms.",
+    "The indexed-class separation uses matched, transported, causally exchanged ports. It does not prove nonemptiness of the stronger class.",
+    "No empirical biological data, laboratory calibration or independent validation was supplied.",
+    "New arguments are in TeX with rational finite controls, not new Lean mechanizations."
+  ],
+  "visual_review": "Spot-checked the infinite-model definition page in the standalone Paper V PDF; not an exhaustive page review."
+}

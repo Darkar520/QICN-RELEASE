@@ -25,3 +25,44 @@ Parada: fallo de gate obligatorio, ID perdido, cambio congelado, pérdida de hip
 ## Módulo A verificado · 2026-11-12
 
 Certificado tipado con proyecciones dependientes del producto y realización de clamps, umbral M>K/delta, control del cuadrado a igualdad, obstrucción Cantor y testigo de cuña de cubos de Hilbert por punto de corte. La cota cuantitativa es relativa al sector; no se afirmó un radio general frente a aproximaciones. Se preservaron los 878 IDs y se añadieron cuatro entradas formales. BaseCore y Paper I reconstruidos; monolito 414 páginas, 12 capítulos cotejados; raíz 3/3, release 6/6, matemáticas 29/29, registro 882, macros 383. Los 76 archivos congelados permanecen intactos. [Recibo A](A_VERIFICACION.json). B/C siguen abiertos. Veredictos: v25/v26 INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY; v27/v28/v30 BLOCKED_MULTIPLE_GATES; v31 BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.
+
+
+## Implementación B/C pendiente de cierre
+
+B construye soporte compacto con cubos de dimensión arbitraria en un Hilbert separable, fase y prefijos. Todas las coordenadas de Hilbert participan en realimentación; el argumento de esquinas cubre todos los productos del sector original de canales separados y prueba e*>=1/384, con rival explícito de error <=3/128. Las alternativas de identidad se fijan antes del control: dos presentaciones separadas, sin extender la garantía a la familia continua. El reloj es discreto; no se afirma un flujo Hamiltoniano ni endomorfismos exactos de cortes finitos. El intercambio causal de puertos y referencias da valoración cero, con clases completas evaluadas sobre sistemas con protocolos definidos. No se prueba que Sub_fp sea no vacía.
+
+C define población, unidad independiente, canales, costes, shams, desconexión con medición preservada, rescate y decodificación ciega. Se prueban error familiar y potencia bajo bloques independientes no necesariamente idénticos; la fuga requiere acoplamiento con el diseño de referencia, no un porcentaje de auditorías favorables. No se fabricaron datos biológicos. La primera compilación de IV encontró infinite glue shrinkage al partir una tabla preexistente de seis filas tras cambiar la paginación del resumen: se preservó el fallo y se sustituyó solo el contenedor longtable por tabular centrado, manteniendo todas las celdas. La compilación corregida sigue en curso.
+
+
+## Cierre formal A–C · 2026-11-12
+
+La publicación solicitada de los seis commits anteriores está comprobada: ambas referencias remotas permanecen en `1f56dabbe60f8a3f9405f9d40e2bea358f83f42e`. El módulo A quedó guardado localmente en `478be2c`. B/C se entregan localmente tras los controles indicados abajo; no se publicaron sin revisión independiente.
+
+### B · realización y separación
+
+El soporte se realiza en un Hilbert separable con cubos de dimensión arbitraria, fase y prefijos. Todas las coordenadas de Hilbert participan en la realimentación y la lectura. El teorema global de Paper V verifica los seis predicados sobre ese mismo soporte, sin inferirlos de truncaciones finitas.
+
+| Predicado | Testigo y dominio |
+|---|---|
+| Persistencia | Soporte compacto invariante bajo todos los controles, distancia a perfiles constantes mayor que 1/16; atractores para cada control fijo en fibras de bit inicial. |
+| Identidad | Lectura completa y no determinación por corte finito; gap 1/16 entre las dos presentaciones separadas declaradas. No se afirma gap para una familia continua de saltos. |
+| Integración | Todos los homeomorfismos producto y particiones no vacías de los tres canales fijos, con controles exógenos compartidos: 1/384 <= e* <= 3/128; certificado estricto 1/512. |
+| Continuidad | Asignación continua al codominio completo, reloj discreto y fragmentación <= 2/3 < 3/4 en todos los horizontes. No se afirma un flujo continuo en el soporte binario. |
+| Diferenciación | Separación >=1/3 y prueba dinámica de ausencia de atractor nulo: si el código es <1/27, el siguiente paso tiene código >=2/27. El nulo puede existir transitoriamente; no se confunde con colapso geométrico. |
+| Legibilidad | Dos clases de bit inicial, ruido 1/16, cualquier duración preregistrada, shams y objetivos no vacíos con miss/falso positivo cero en ese dominio; compresión exacta de un bit. No es recuperación de todo el estado infinito con un bit. |
+
+Los márgenes brutos no se convierten automáticamente en radios comunes de perturbación. La integración no se transfiere a una nueva familia de salidas conjuntas o a otra partición de sensores. Los controles son idealizaciones matemáticas, no una realización de laboratorio.
+
+El intercambio de los dos grupos de coordenadas, junto con controles y referencias transportados, hace iguales las respuestas de cada par. La valoración normalizada es exactamente cero. Esto proporciona un miembro completo de Cop fuera de Sub_fp en el universo de sistemas con datos de comparación/medición especificados; la inclusión es propia también al restringir los soportes a dimensión infinita. Se explicita el tipo del universo en el teorema de VIII. No se demuestra no vacuidad de la clase fuerte. El Puente incorpora el mismo testigo y la obstrucción a una contracción global exactamente conmutante, mediante dos controles de fases sin punto fijo común.
+
+### C · interfaz experimental
+
+IV especifica población/preparación, bloques independientes, canales y unidades, intervenciones y costes emparejados, sham, desconexión con medición preservada, restauración, decodificador ciego congelado, calibración e identificación causal. Prueba la cota de falso rechazo `min(1, alpha+beta+p)` bajo el acoplamiento declarado y una garantía de potencia con headroom `g > t_n+t_zeta+4Le`, sin requerir bloques idénticamente distribuidos. Incluye una prueba de la concentración y la obstrucción de identificación bajo leyes observadas iguales. VI enlaza sus falsadores a ese contrato y X lo exige antes de adjudicación biológica. No se suministran organismos, datos ni protocolos físicos calibrados: esas realizaciones siguen sin ejecutarse.
+
+### Verificación y conservación
+
+Raíz 3/3, release 6/6, matemáticas 30/30; registro 889 con los 878 IDs iniciales conservados; 383 macros con sus definiciones intactas; 12 capítulos cotejados con sus fuentes. BaseCore, I, IV, V, VI, VIII, Puente y X reconstruidos en sus bloques; monolito final 421 páginas, sin referencias indefinidas, citas rotas o etiquetas duplicadas detectadas. Se ejecutó `npm run build:monolithic` además de la compilación completa. Se preservaron los 76 archivos congelados y 27 fuentes Lean. Hay once entradas formales nuevas y ocho pruebas adicionales; los enunciados, pruebas y curación no intervenidos se conservaron. Las frases nuevas se comprobaron por conteo en fuentes y capítulos, no solo por muestras. Véase [recibo B/C](BC_VERIFICACION.json).
+
+La tabla de seis controles de IV conserva exactamente todas las celdas; su contenedor se cambió para resolver la regresión de paginación. El monolito conserva un desbordamiento previo de aproximadamente 0,6 puntos y 334 avisos underfull. Los PDF individuales mantienen deuda de maquetación cuantificada en el recibo; no se presenta la entrega como revisión visual exhaustiva. Las pruebas nuevas no están mecanizadas en Lean.
+
+Veredictos crudos: v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`; v27/v28/v30 `BLOCKED_MULTIPLE_GATES`; v31 `BLOCKED_FOUNDATION_FIRST_GATES`; `external_support_certified=false` en todos los casos. Los gates de software no son certificación científica. Permanecen la revisión independiente, la realización/calibración biológica, la extensión a comparadores más amplios y la realizabilidad de la clase fuerte completa. No se leyó ni se modificó el proyecto de runtime.

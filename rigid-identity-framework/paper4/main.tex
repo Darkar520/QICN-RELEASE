@@ -51,6 +51,7 @@ This paper specifies a falsification-first protocol for evaluating QICN under st
 To prevent post-hoc inflation, evidence is admissible only if packet integrity, replay consistency, and runtime budget constraints pass simultaneously. We introduce a version-frozen operational triple $(A, J, W)$ (actuator set, objective functional, workspace interface), and require semantic version bumps for incompatible changes. We further include latency invalidation criteria and baseline obligations (heuristic, planner-off, world-model-off) for all key experiments.
 
 The strongest admissible conclusion remains constrained comparative support for audited cognition-operational hypotheses. This manuscript does not claim biological qualia, metaphysical identity equivalence, or direct proof of subjective experience.
+A typed external interface adds identification, sensory/motor calibration, matched sham/disconnection controls and design-conditional error and power bounds. No biological dataset or external experiment is supplied.
 \end{abstract}
 
 \section{Scope, System Boundary, and Non-Inference Note}
@@ -172,7 +173,8 @@ The protocol must include deliberately invalid artifacts. These controls are not
 stress tests of QICN behavior; they test whether the evaluation machinery refuses
 inadmissible evidence.
 
-\begin{longtable}{p{0.24\linewidth}p{0.34\linewidth}p{0.32\linewidth}}
+\begin{center}
+\begin{tabular}{p{0.24\linewidth}p{0.34\linewidth}p{0.32\linewidth}}
 \toprule
 Control & Injected defect & Required evaluator response \\
 \midrule
@@ -183,7 +185,8 @@ Clock distortion & violate declared tick or latency envelope & runtime-budget in
 Outcome-selected replay & keep only successful runs from a larger hidden set & inferential-integrity failure \\
 Malformed sensor summary & remove sensor fields needed by a primary metric & packet rejected for incomplete observability \\
 \bottomrule
-\end{longtable}
+\end{tabular}
+\end{center}
 
 \begin{proposition}[Evaluator Specificity]
 A forensic evaluator is specific enough for this protocol only if it rejects every
@@ -415,6 +418,53 @@ In the first trace, independent matches multiply to $2^{-5}$, while the leaked p
 \end{proof}
 
 An audit rejects the displayed leaked trace when calibration and reserve identifiers overlap or when a counterfactual change of a hidden label alone changes the output of a supposedly blind frozen predictor. Repeated unit identifiers expose the duplicated-block trace. A decision window absent from the frozen protocol or an unrecorded stopping opportunity invalidates the selected-window promotion. These rejection rules require the complete provenance record. Observed output accuracy alone cannot certify absence of covert leakage. Excluding a failed block after observing its score or choosing a new threshold requires a fresh confirmatory campaign or a separately justified selective-inference procedure.
+
+\subsection{A Typed External Experimental Interface}\label{sec:external-interface-contract}
+
+\begin{definition}[Experimental interface contract]\label{def:external-experimental-interface}
+A prospective external test specifies a tuple
+\[
+ \mathcal E=(\mathsf P,\mathsf B,\mathsf X,\mathsf U,\mathsf Y,
+ C_{\rm obs},\mathsf K,\mathsf D,\mathsf M,\mathsf L,\mathsf J).
+\]
+Here $\mathsf P$ is a population and preparation law, with inclusion criteria fixed before outcomes; $\mathsf B$ defines genuinely independent experimental units and dependence within each block; $\mathsf X$ is the candidate state model; $\mathsf U$ is the sensory/motor intervention specification, including target, matched sham, causal disconnection and restoration families; and $\mathsf Y$ supplies the measurement channels, sampling intervals, units and missing-data rules. The observation map $C_{\rm obs}$ and uncertainty kernel $\mathsf K$ bind model responses to measurements. The decoder/calibration object $\mathsf D$ is trained outside the confirmatory population, blinded to held-out assignments and frozen with a reproducible identifier. Matching $\mathsf M$ fixes amplitude, energy, timing, information, actuator cost and nuisance covariates; the loss/effect object $\mathsf L$ fixes signs, scales, decision thresholds, populations and multiplicity. Finally $\mathsf J$ records the causal graph or structural assumptions that identify the intervention contrast. Unavailable fields yield an unevaluable interface, not an unfavorable biological result.
+
+A biological realization must supply these fields through independent measurement and domain-specific methodological review. No organism, sensory modality, safe operating range or valid disconnection operator is identified by the abstract tuple alone. A biological sham is a realized manipulation matching the specified non-causal pathways while leaving the nominated mechanism intact; merely assigning a ``sham'' label does not establish that property. A disconnection test must preserve the measurement channel and declared comparator information, with off-target effects quantified. Restoration is a separate control of the claimed mechanism, not an automatic inference from survival or recovery.
+\end{definition}
+
+\paragraph{Causal and blinding assumptions.}
+One admissible design uses independently randomized block assignments $A_i$, block-level preparation $Z_i$, motor/sensory perturbation $U_{it}$, state law $X_{i,t+1}=F(X_{it},U_{it},A_i,Z_i)$ and observation $Y_{it}=C_{\rm obs}(X_{it})+\xi_{it}$. Assignment has no arrow into the frozen decoder or its calibration reference. Its arrows into outcomes are the declared mechanism and measured nuisance pathways. No interference between independent blocks, consistency of implemented interventions, positivity of their assignment probabilities and the stated exclusion/matching assumptions are required for the corresponding causal interpretation. Randomization alone does not prove that disconnection has no off-target pathway. If these assumptions fail, only the appropriately qualified measurement contrast remains identified.
+
+\begin{theorem}[A Calibrated Blockwise Falsation Bound]\label{thm:external-interface-falsation-bound}
+For a frozen family of $m\ge1$ directional contrasts, let independent block vectors have scores $D_{ik}\in[-1,1]$. Independence between coordinates $k$ is not required. Suppose $\mu_k=n^{-1}\sum_i\mathbb E D_{ik}\ge\eta_k$ is a prediction of the declared realized model; identically distributed blocks are not required. Assume uniform readout calibration error at most $e$ on an event of probability at least $1-\beta$, $0\le\beta\le1$, and score Lipschitz constant $L$ for each arm, so the recorded contrast differs from its ideal score by at most $2Le$. Let $0<\alpha<1$ and
+\[
+ t_n=\sqrt{\frac{2\log(m/\alpha)}{n}}.
+\]
+The rule rejecting the joint directional prediction when some recorded mean is below $\eta_k-t_n-2Le$ has false rejection probability at most $\min(1,\alpha+\beta)$. If the actual decision can be coupled to this specified blind design so that it agrees outside a failure event of probability at most $p$, the bound is at most $\min(1,\alpha+\beta+p)$. An audit pass fraction alone does not establish that coupling.
+
+For an alternative with some fixed $\mu_k\le\eta_k-g$, let $0<\zeta<1$ and $t_\zeta=\sqrt{2\log(1/\zeta)/n}$. If $g>t_n+t_\zeta+4Le$, rejection probability is at least $\max(0,1-\zeta-\beta-p)$ under the same coupling. For $g>4Le$, it suffices that
+\[
+ n>\frac{\bigl(\sqrt{2\log(m/\alpha)}+\sqrt{2\log(1/\zeta)}\bigr)^2}{(g-4Le)^2}.
+\]
+These are design-conditional guarantees, not a universal biological sample size.
+\end{theorem}
+\begin{proof}
+On the calibration event, a rejection implies an ideal sample mean below $\eta_k-t_n$. For completeness, if $D\in[-1,1]$ and $\psi(s)=\log\mathbb E\exp(s(D-\mathbb ED))$, then $\psi(0)=\psi'(0)=0$ and $\psi''(s)$ is a tilted variance bounded by one. Integration gives $\psi(s)\le s^2/2$. Multiplying the exponential moments of independent blocks and using Markov's inequality with $s=t$ bounds either tail of the mean by $\exp(-nt^2/2)$; identical distributions are unnecessary. Thus the lower deviation probability is at most $\exp(-nt_n^2/2)=\alpha/m$ for each contrast. A union bound over the fixed family gives $\alpha$. Add the calibration-failure probability, and the coupling-failure probability when needed. For the alternative, except on an upper-tail event of probability at most $\zeta$, its ideal mean is at most $\eta_k-g+t_\zeta$. Calibration can increase the recorded mean by at most $2Le$; the displayed gap therefore puts it strictly below $\eta_k-t_n-2Le$. Another union bound proves the power bound. Squaring the positive headroom inequality gives the stated sufficient $n$. No independence of the failure events is assumed. Independence is between the declared blocks, not between repeated readings inside a block; replacing $n$ by the number of correlated samples is not justified.
+\end{proof}
+
+\paragraph{Signal, controls and decisions.}
+Specify measurement error in each channel's units before quoting a signal/noise ratio. The term $2Le$ transports that error to the dimensionless contrast; changing units requires transporting $L$ and $e$ together. A population expectation, a uniform error domain and a calibrated noise tail are different guarantees. Target/sham and target/disconnection contrasts should share costs and usable measurements. Include a restoration contrast, label-shuffled controls and a measurement-only dropout control: deleting the sensor cannot by itself identify loss of the latent mechanism. Preregister multiplicity, exclusions and stopping before outcomes. The theorem is conditional on the specified independent-unit design; it does not turn a synthetic power calculation into biological planning evidence.
+
+\begin{proposition}[Observation Alone Cannot Identify the Mechanism]\label{prop:external-interface-nonidentifiability}
+If a candidate and a rival induce identical laws of all admissible recorded histories and assignments, every frozen decision rule has the same rejection probability for both. Thus no such rule can empirically separate their latent mechanisms on that interface.
+\end{proposition}
+\begin{proof}
+The decision rule is a measurable function of those data and its declared independent randomization. Equal input laws give equal pushforward decision laws. A separating intervention or observation, or an independently justified identifying restriction, is necessary to escape this obstruction.
+\end{proof}
+
+\paragraph{What a failure refutes.}
+A valid rejection challenges the conjunction of the model's structural prediction, its realization map, the observation/calibration contract and its causal assumptions. It does not refute an abstract mathematical theorem whose hypotheses were never verified in the preparation. A failed sham, lost measurement channel, broken blinding or unidentified mapping yields invalid or insufficient evidence according to the frozen rules. No empirical biological dataset or completed experiment is supplied here; external support remains uncertified.
+
 
 \section{Acceptance Criteria}
 \begin{criterion}[Intermediate Claim Gate]

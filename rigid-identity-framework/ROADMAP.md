@@ -1995,7 +1995,7 @@ Las categorías distinguen corrección documental, resultado probado y obligaci�
 | A04 | corregida con prueba | Condición alpha>p+1 y control armónico en la proposición de decaimiento. |
 | A05 | corregida | Unicidad de asignación en componente conectado, transporte sectorial y atomicidad diferenciados. |
 | A06 | corregida con prueba | Aplicación sobre un conjunto de componentes realizados y cota de imagen; separación entre componentes no asumida. |
-| A07 | obstrucción demostrada; extensión pendiente | Intercalado par/impar de Cantor refuta la atomicidad desde resistencia sola. Corolario condicionado a certificado independiente; construir ese certificado en un sector sustantivo sigue abierto. |
+| A07 | certificado y obstrucciones formalizados | Cert_atom tipado y umbral M>K/delta en I; Cantor impide inferencia desde resistencia sola. Una cuña infinita de cubos de Hilbert tiene atomicidad exacta por punto de corte. Admisibilidad física y radios de aproximación generales siguen abiertos. |
 | A08 | corregida | Reconstrucción por prefijos y atracción bajo contracción separadas en texto y lema. |
 | A09 | corregida | Pérdida de radio no equivale a fallo del predicado; tablas y ruptura ajustadas. |
 | A10 | corregida con prueba | Implicaciones de ruptura sin exclusividad falsa ni factorización exacta inferida de un ínfimo. |
@@ -2012,7 +2012,7 @@ Las categorías distinguen corrección documental, resultado probado y obligaci�
 | A21 | corregida | Suma de exponentes exigida igual a uno; control racional del caso no normalizado. |
 | A22 | corregida | Se explicita cuándo el umbral escalar es redundante y qué exige una restricción adicional; no se declara vacía la clase. |
 | A23 | corregida | Empate de ínfimos separado de un rival que alcanza el empate; pérdida y falta de evidencia no se confunden. |
-| A24 | pendiente para la clase completa | Inclusión upstream probada y título corregido. Proper inclusión exige un miembro completo upstream fuera de la clase reforzada; los certificados locales no sustituyen ese testigo. |
+| A24 | separación infinita demostrada en el dominio declarado | El testigo global de V cumple los seis predicados; VIII prueba valoración nula por intercambio causal y separación propia de las clases completas con sus datos de comparación/medición especificados. No se prueba que la clase fuerte sea no vacía ni se traslada el resultado a otras familias de comparación. |
 | A25 | corregida | Resultados locales, obstrucciones y rival informado se enlazan en el encuadre actualizado; pertenencia completa sigue abierta. |
 | A26 | corregida con prueba | Iota es garantía poblacional L4 con p_miss; garantía uniforme por intervención y distancia entre distribuciones son obligaciones separadas. |
 | A27 | corregida | Cociente por igualdad de etiquetas/celdas, no por cercanía no transitiva. |
@@ -2061,3 +2061,7 @@ Ambas ramas GitHub publicadas en 1f56dab por orden expresa. Se abre la [fase de 
 ## Módulo A verificado · 2026-11-12
 
 Certificado tipado con proyecciones dependientes del producto y realización de clamps, umbral M>K/delta, control del cuadrado a igualdad, obstrucción Cantor y testigo de cuña de cubos de Hilbert por punto de corte. La cota cuantitativa es relativa al sector; no se afirmó un radio general frente a aproximaciones. Se preservaron los 878 IDs y se añadieron cuatro entradas formales. BaseCore y Paper I reconstruidos; monolito 414 páginas, 12 capítulos cotejados; raíz 3/3, release 6/6, matemáticas 29/29, registro 882, macros 383. Los 76 archivos congelados permanecen intactos. [Recibo A](docs/ai-platform-outputs/repair-plans/OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/A_VERIFICACION.json). B/C siguen abiertos. Veredictos: v25/v26 INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY; v27/v28/v30 BLOCKED_MULTIPLE_GATES; v31 BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.
+
+### Cierre formal de obligaciones A–C · 2026-11-12
+
+A verificado en `478be2c`; B/C verificados con raíz 3/3, release 6/6, matemáticas 30/30, registro 889 y macros 383. Monolito 421 páginas; 878 IDs iniciales y 76 archivos congelados preservados. Se cerraron las tareas formales del [encargo de teoría pura](docs/ai-platform-outputs/repair-plans/OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/EJECUCION.md), con los dominios y obligaciones residuales expresos. La clase fuerte completa no se declara realizada. Los seis commits previos están publicados en 1f56dab; los nuevos bloques quedan locales para revisión independiente. No hay campaña biológica ni certificación externa. `external_support_certified=false`.

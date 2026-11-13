@@ -237,6 +237,75 @@ Let a declared product representation of the compact identity support be $F:I\to
 
 The compatibility and cost assumptions cannot be dropped. Binary histories split homeomorphically into their odd and even coordinates. All coordinate flips preserve each full compact support and cost at most $\sum_{j\ge1}3^{-j}=1/2$, so the whole object and both factors have infinite resistance in those sectors. No such flip is a non-surjective factor clamp. Exact product atomicity can instead be established by a separate invariant: a connected compact space with a cut point is not a product of two nontrivial compact spaces. Removing a point from such a product leaves the union of connected horizontal and vertical slices connected. The wedge of two positive Hilbert cubes at their common zero is compact, infinite-dimensional and has a cut point. This proves exact non-factorization for that support, without inferring any unspecified positive approximation radius or an experiential property.
 
+\begin{proposition}[Metric-Sector Stability of the Hilbert Wedge]
+\label{prop:base-wedge-metric-sector}
+For $Q=\{0\le z_j\le2^{-j}\}\subset\ell^2$ let
+$W=(Q\times\{0\})\cup(\{0\}\times Q)$ and $R=1/\sqrt3$.
+Cartesian products in these fixed axes, with both factor diameters at least
+$d_0>0$, have Hausdorff distance at least $\max\{d_0/2,R/2\}$ from W.
+More generally, for maximum-metric products of compact factors with these
+diameter bounds and embeddings with uniform constants $0<c\le C$,
+\[
+ d_H(W,F(A\times B))\ge
+ \delta_W:=\frac{c^2\min\{d_0/2,1/(4C)\}}{2C+4c}>0.
+\]
+Every nonempty compact support at distance less than $\delta_W/2$ from W
+therefore retains a gap greater than $\delta_W/2$ against this same sector.
+\end{proposition}
+\begin{proof}
+The mandatory product corner formed by points of norm at least $d_0/2$ has
+distance at least $d_0/2$ from both axes. Approximating the two arm tips
+$(\bar q,0),(0,\bar q)$ within h yields a second corner at distance at least
+$R-h$, hence $h\ge R/2$.
+
+For the embedding bound suppose $h<\delta_W$, and put
+$d_*:=\min\{d_0/2,1/(4C)\}$. Then $h<1/24$. Pull back approximations of zero
+and of $(e_1/2,0),(0,e_1/2)$; each endpoint has domain distance at least $d_*$
+from the central preimage. Hausdorff closeness to path-connected W implies
+that each factor is connected by chains with steps less than $\eta/c$ for
+every $\eta>2h$. Choose a point in each factor at distance at least $d_0/2$
+from the central coordinate. Holding a far coordinate fixed, move the other
+along a chain to its chosen far point and then move the first. This joins
+both endpoints through the product skeleton while remaining at domain
+distance at least $d_*$. Image chains have norm at least $cd_*-h$ and step
+less than $C\eta/c$. Approximating back in W gives norm at least $cd_*-2h$
+and step less than $C\eta/c+2h$. Since $(2C/c+4)h<cd_*$, choose $\eta>2h$
+so that the step is smaller than that norm bound. Such a chain avoids zero
+and cannot change arms, contradicting its endpoints. No path connectedness
+of either factor was assumed. The final assertion follows by the Hausdorff
+triangle inequality.
+\end{proof}
+
+\paragraph{Why the comparison bounds are necessary.}
+Insert a zero at depth n in the left Hilbert coordinate, shifting its tail,
+by an isometry $T_n$ with $\sup_W\|T_nx-x\|<3\cdot2^{-n}$. The maps
+$(x,b)\mapsto T_nx+be_n^L$ on $W\times[0,2^{-n}]$ are uniformly
+$(1,\sqrt2)$ bi-Lipschitz and approach W within $4\cdot2^{-n}$, while the
+interval factor degenerates. With fixed factors $W\times[0,1]$, use
+$(x,b)\mapsto T_nx+2^{-n}be_n^L$; both factor diameters stay positive, but
+the lower Lipschitz constant tends to zero. Thus the metric-sector result
+does not extend to arbitrary homeomorphisms.
+
+\paragraph{Conditional actuation versus a measured physical certificate.}
+For the compatible arm contractions
+$D_{s_L,s_R}(x,y)=((1-s_L)x,(1-s_R)y)$, put $s=\max(s_L,s_R)$.
+Their deformation is $sR$ and minimum unit-duration quadratic motion cost is
+$s^2R^2$. Allowing all amplitudes gives damage-sector resistance zero; the
+full arm clamp costs $1/3$ and deforms by $R\ge1/2$.
+In an ideal protected actuator requiring a completed unit-cost unlock before
+motion, each positive-deformation protocol instead costs at least
+$1+s^2R^2$, with equality for linear unlock and motion. Its resistance is
+$R+1/R=4/\sqrt3>2/3$. Partial unlocks change no support, and preparation is
+not free. All maps commute with finite coordinate cuts.
+This is an explicit operational energy model, not a physical calibration in
+joules. A hypothetical cost-preserving product whose clamp must cost at most
+$1/3$ and deform by at least $1/2$ is excluded by the strict protected
+threshold; no actual cheap clamp in that sector is asserted. The reference
+clamps exist on $Q\times Q$; preserving their cost and metric is an additional
+faithfulness condition. The metric gap above is independent of this contract.
+Support-preserving exchanges alone give infinite resistance on both W and
+the factorizable $Q\times Q$, and do not supply any clamp certificate.
+
 \section{Section Summary}
 
 \begin{enumerate}[leftmargin=*]

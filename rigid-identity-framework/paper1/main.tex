@@ -706,8 +706,203 @@ Assume a verified $\mathrm{Cert}_{\rm atom}(S)$ in the fixed product-comparison 
 \begin{proof}
 An admitted product supplies the certificate's verified intervention with $\Delta\ge\delta_{\rm atom}>0$ and finite cost. Hence $M_\Omega\le E_w(\delta_P)/\Delta(\delta_P)<\infty$, or $M_\Omega\le K_{\rm atom}/\delta_{\rm atom}$ when the uniform bound is available. Both contradict the respective premise. Lemma~\ref{lem:cantor-product-obstruction} and Proposition~\ref{prop:product-clamp-certificate} exclude inference from resistance alone; Theorem~\ref{thm:cutpoint-product-atomicity} provides an independent exact obstruction in infinite dimension.
 \end{proof}
+\subsubsection{Quantitative Product Separation in a Fixed Metric Sector}
+
+All distances in this subsection use the Hilbert norm on $H\oplus H$, where
+$H=\ell^2$. For the positive cube of Theorem~\ref{thm:cutpoint-product-atomicity}
+write $\bar q=(2^{-j})_{j\ge1}$ and $R=\|\bar q\|=1/\sqrt3$.
+The comparison sector is part of each statement; changing its distortion or
+diameter bounds changes the conclusion.
+
+\begin{proposition}[Cartesian Corner Gap]\label{prop:wedge-cartesian-gap}
+For nonempty compact $A,B\subset H$ with both diameters at least $d_0>0$,
+\[
+ d_H(W,A\times B)\ge
+ \delta_{\rm cart}(d_0):=\max\{d_0/2,R/2\}>0.
+\]
+In the fixed coordinate axes the bound $R/2$ holds even without the diameter
+assumption and is attained by $(Q/2)\times(Q/2)$.
+\end{proposition}
+\begin{proof}
+Some $a\in A$ and $b\in B$ satisfy $\|a\|,\|b\|\ge d_0/2$ by the triangle
+inequality. The corner $(a,b)$ has distance at least
+$\min\{\|a\|,\|b\|\}$ from the union of the two coordinate axes, hence from W.
+For the other bound set $h=d_H(W,A\times B)$. Approximate $(\bar q,0)$ by
+$(a_L,b_L)$ and $(0,\bar q)$ by $(a_R,b_R)$ within h. Then
+$\|a_L\|,\|b_R\|\ge R-h$. Their mandatory product corner $(a_L,b_R)$ has
+distance at least $R-h$ from W, giving $h\ge R-h$. For the stated sharp example,
+halving a point on either arm approximates it within $R/2$, and every point
+of $(Q/2)\times(Q/2)$ is within $R/2$ of an arm. Thus its Hausdorff distance is
+exactly $R/2$.
+\end{proof}
+
+\begin{theorem}[Bounded-Distortion Wedge Gap]\label{thm:wedge-bilipschitz-gap}
+Let A and B be nonempty compact metric spaces of diameter at least $d_0>0$.
+Give $A\times B$ the maximum metric. Suppose an embedding
+$F:A\times B\to H\oplus H$ satisfies
+\[
+ c\,d_\infty(p,p')\le\|F(p)-F(p')\|\le C\,d_\infty(p,p'),
+ \qquad 0<c\le C.
+\]
+Put
+\[
+ d_*:=\min\{d_0/2,1/(4C)\},\qquad
+ \delta_W:=\frac{c^2d_*}{2C+4c}.
+\]
+Then $d_H(W,F(A\times B))\ge\delta_W>0$. Consequently, if a nonempty compact
+$\widetilde W$ satisfies $d_H(W,\widetilde W)<r_W:=\delta_W/2$, its distance
+from every product in this same $(d_0,c,C)$ sector exceeds $\delta_W/2$.
+The factors need not be assumed path connected.
+\end{theorem}
+\begin{proof}
+Suppose $h=d_H(W,F(A\times B))<\delta_W$. Since $d_*\le1/(4C)$ and $c\le C$,
+$\delta_W\le1/24<1/8$. Choose $p_0=(a_*,b_*)$ with $\|F(p_0)\|\le h$,
+and $p_L,p_R$ whose images are within h of
+$w_L=(e_1/2,0)$ and $w_R=(0,e_1/2)$. For either endpoint p,
+\[
+ d_\infty(p,p_0)\ge(1/2-2h)/C\ge1/(4C)\ge d_*.
+\]
+Choose $a_0,b_0$ with $d_A(a_0,a_*)\ge d_0/2$ and
+$d_B(b_0,b_*)\ge d_0/2$.
+
+For every $\eta>2h$, the image is connected by finite chains with consecutive
+distances less than $\eta$: approximate a sufficiently fine partition of a
+path in W, including approximations of the endpoints. Pulling a chain back
+through F and projecting shows that each factor is connected by chains of
+step less than $\eta/c$. This is a chain statement, not an inference of path
+connectedness of A or B.
+
+Any domain point at distance at least $d_*$ from $p_0$ can be joined by such
+factor chains to $(a_0,b_0)$ while staying at distance at least $d_*$ from
+$p_0$. If its first coordinate is far, first change the second to $b_0$, then
+the first to $a_0$; if its second is far, reverse the order. Concatenating
+the paths for $p_L,p_R$ gives a product chain outside that ball, with steps
+less than $\eta/c$. Its image has norm at least $cd_*-h$ and steps less than
+$C\eta/c$. Approximate its points in W within h, choosing the endpoints to
+be exactly $w_L,w_R$. The resulting W-chain has norms at least $cd_*-2h$
+and steps less than $C\eta/c+2h$.
+
+The assumed bound on h is exactly
+$(2C/c+4)h<cd_*$. Hence choose $\eta>2h$ so close to $2h$ that
+$C\eta/c+2h<cd_*-2h$. This positive lower bound on the chain norms excludes
+zero. Consecutive points on different arms have distance at least the smaller
+of their norms, so a chain with these step bounds cannot change arms.
+Its prescribed endpoints do change arms, a contradiction. This also covers
+$h=0$ by choosing a sufficiently small positive $\eta$.
+Finally the Hausdorff triangle inequality gives
+$d_H(\widetilde W,F(A\times B))\ge\delta_W-d_H(W,\widetilde W)>\delta_W/2$.
+\end{proof}
+
+\begin{proposition}[Degenerating-Factor and Unbounded-Distortion Controls]
+\label{prop:wedge-degenerate-controls}
+There are embedded products arbitrarily close to W in each of these two
+larger sectors: (i) uniformly bi-Lipschitz embeddings with one factor diameter
+tending to zero; (ii) factors of uniformly positive diameter with no uniform
+positive lower Lipschitz constant. Neither control is a Cartesian product
+in the fixed axes of Proposition~\ref{prop:wedge-cartesian-gap}.
+\end{proposition}
+\begin{proof}
+Let $T_n$ insert a zero in the nth coordinate of the left copy of H, shifting
+its tail by one and leaving the right copy unchanged. It is an isometric
+linear injection, with range orthogonal to $e_n^L$. Uniformly on W,
+\[
+ \|T_nx-x\|\le2\Big(\sum_{j\ge n}4^{-j}\Big)^{1/2}
+ =\frac4{\sqrt3}2^{-n}<3\cdot2^{-n}.
+\]
+Set $\varepsilon_n=2^{-n}$. For (i) take factors W and
+$[0,\varepsilon_n]$ and $F_n(x,b)=T_nx+be_n^L$.
+Orthogonality gives constants $c=1,C=\sqrt2$ for the maximum domain metric,
+and $d_H(W,F_n(W\times[0,\varepsilon_n]))\le4\cdot2^{-n}$.
+For (ii) use factors W and $[0,1]$ with
+$G_n(x,b)=T_nx+\varepsilon_nbe_n^L$. The same Hausdorff bound holds, but
+the lower constant is $\varepsilon_n$, while $C\le\sqrt2$ and both factor
+diameters exceed $1/2$. Continuity and injectivity on compact domains give
+embeddings. Thus dropping either uniform hypothesis destroys a general gap.
+\end{proof}
+
+\subsubsection{Protected and Damage Sectors: a Conditional Energy Contract}
+
+\begin{proposition}[Operational Barrier and Cheap-Damage Contrast]
+\label{prop:wedge-energy-regimes}
+On W let $D_{s_L,s_R}(x,y)=((1-s_L)x,(1-s_R)y)$,
+$s_L,s_R\in[0,1]$, and $s=\max\{s_L,s_R\}$. These maps commute with all
+finite coordinate cuts and have deformation $\Delta=sR$. In a unit-duration
+quadratic actuation model their minimum worst-state motion energy is
+$s^2R^2$. Declare two sectors of completed protocols, both including all these
+maps: a damage sector with this motion energy alone; and a protected sector
+requiring a completed unlock of energy at least $B=1$ before any motion.
+Then
+\[
+ M_{\rm damage}=0,\qquad
+ M_{\rm protected}=R+R^{-1}=4/\sqrt3>2/3.
+\]
+The actual damage clamp $D_{0,1}$ has cost $K_{\rm atom}=1/3$ and
+deformation $R\ge\delta_{\rm atom}=1/2$, so it enforces
+$M_{\rm damage}\le K_{\rm atom}/\delta_{\rm atom}=2/3$.
+The protected sector admits that clamp only at cost $4/3>K_{\rm atom}$.
+\end{proposition}
+\begin{proof}
+The shrunk arms are contained in W. Clipping each coordinate at its new
+endpoint gives distance at most $sR$; the tip of the most shrunk arm attains
+it, since the other arm is no closer. Linear motion realizes energy
+$s^2R^2$; the integral Cauchy--Schwarz inequality at that tip proves the lower
+bound for every unit-duration path with the same endpoints. Model the unlock
+by a scalar absolutely continuous coordinate a, stationary plant during
+unlock, $a(0)=0,a(1)=1$, and cost $B\int_0^1|\dot a|^2dt\ge B$.
+Motion is permitted only after completion; an aborted unlock changes no
+support. The linear unlock achieves B. Preparation and unlock costs are
+included afresh in every qualified protocol, with no free previously opened
+actuator. Hence for $s>0$ the minimal protected cost is $1+s^2R^2$.
+The damage ratios are $sR$, with infimum zero as $s\downarrow0$.
+For the protected ratios, with $t=sR\le R<1$,
+\[
+ t+t^{-1}-(R+R^{-1})=(R-t)(1/(tR)-1)\ge0.
+\]
+The full clamp attains the lower bound. At depth m the same equations have
+$R_m^2=\sum_{j=1}^m4^{-j}$; compatible clamps and costs converge to the
+displayed limits. No incompatible finite-stage retraction has been substituted.
+\end{proof}
+
+\paragraph{Meaning of the energy hypothesis.}
+This is a specified ideal hybrid actuator model with dimensionless operational
+cost, not a measured device or a derivation of work from entropy. It can be
+represented in the nonnegative weighted cost convention by assigning the
+complete protocol cost to one positive-weight event. Identifying it with
+physical joules needs an independent calibration and admissibility argument.
+An energy barrier merely greater than K does not by itself bound E/Delta;
+here the explicit deformation and total cost establish the quotient bound.
+Admitting slow unbounded-duration unlocks, free preparation, or motion before
+unlock would change the sector and requires a new calculation.
+
+\paragraph{Conditional clamp, not simultaneous cheap actuation.}
+In Corollary~\ref{cor:indivisible} the implication from a hypothetical faithful
+factorization to a compatible clamp of cost at most $1/3$ and deformation at
+least $1/2$ is a constitutive comparison hypothesis. The strict protected
+resistance excludes such a product; it does not assert that its cheap clamp
+actually exists. Nonemptiness of this implication's reference class is
+checkable on $Q\times Q$, where a coordinate clamp has motion cost $1/3$ and
+deformation R. Faithfulness must preserve the declared cost, metric and
+finite-cut actuation; arbitrary homeomorphisms do not supply it.
+W has its independent topological and bounded-distortion metric obstructions,
+so no measured margin is deduced from a vacuous product family.
+
+\paragraph{Nonseparating intervention control.}
+The identity and arm exchange on W commute with cuts and preserve the full
+support. A sector generated by them has $\Delta=0$ and infinite resistance,
+but supplies no proper clamp. On the factorizable support $Q\times Q$ the
+same support-preserving exchange sector again has infinite resistance.
+It is therefore invalid to infer atomicity from that sector's resistance.
+W itself remains nonfactorizable by its separate cut-point argument; a failed
+intervention certificate is not a counterexample to that topological theorem.
+
 \paragraph{Atomicity research obligation.}
 The binary-prefix limit is homeomorphic to the product of its even and odd bit sequences; its internal support-preserving flip sector can still have infinite resistance. Thus resistance or connected-channel uniqueness alone does not prove product atomicity. The program retains atomicity as a sector-specific objective: identify the permitted factors, the preserved observations and the required deformation certificate. No universal non-duplication of persons or information is inferred.
+For the Hilbert wedge, Theorem~\ref{thm:wedge-bilipschitz-gap} additionally
+closes a quantitative approximate non-factorization problem at fixed
+$(d_0,c,C)$, with radius $\delta_W/2$. Proposition~\ref{prop:wedge-degenerate-controls}
+shows exactly why that conclusion cannot be extended to arbitrary embeddings.
+The operational energy regimes and conditional clamp implication remain
+separate from this metric proof and from physical calibration.
 
 \begin{corollary}[No Distinct Assignment by a Matched Finite-Cost Replication]\label{cor:nodup}
 In the connected comparison of Theorem~\ref{thm:uniqueness}, an admitted finite-cost replication cannot produce an assignment at positive separating deformation distance. Copying an encoding or creating a different operating component is not excluded by this result.

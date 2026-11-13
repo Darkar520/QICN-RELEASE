@@ -11289,3 +11289,34 @@ Publicación autorizada a `origin/codex/qicn-framework-ordenado` y `origin/main`
 Se corrigió además la portabilidad del ensamblador: normaliza CRLF antes de transformar la composición. El comparador devuelve fallo ante discrepancias. Controles: versión anterior 11/12 con salida 0; versión corregida 12/12 en copia activa, LF y CRLF; capítulo alterado en memoria 11/12 con salida 1. Es una comprobación técnica exploratoria, no un nuevo experimento científico prerregistrado.
 
 Commits de contenido: typography `6007af18e55a8bef136366386808600566b5005e`; lean `95ed4f5840bf3e12bd810a6eba8d0881163ca462`; portable_assembly `902a623ac23e8e751fb364f8e1d10610edf9153a`; monolith_pdf `88d56863878ec515745c4d3de0629e63abdab901`.
+
+
+### 2026-11-12 · Codex · Ruta 3 interna, pendiente de publicación
+
+Base limpia e6696344c30706f7b088e7899b29cf6edd376e62; prerregistro SHA256
+05b0bbd1465e9742e2bc5f0e2eb203e3949a0bb9c90776b45b0afa6fd68bde86. Se leyeron las cinco autoridades, instrucciones/roadmap/ejecución
+A–C, fuentes propietarias y herramientas listadas en el informe. Decisiones
+del usuario: umbral de clamp condicional y gramática causal común con control
+de emulación. Cambios: I/BaseCore 03; V/VII/VIII; dos módulos Lean y tres
+scripts exactos/runner; propagación BaseCore 07/VI/Puente/IX/X; registro,
+PDF y monolito, roadmap y este ledger. El informe documenta tipos, costes,
+hipótesis, controles y las revisiones prospectivas y correctivas.
+
+Comandos: pdflatex/biber/2 pdflatex de nueve unidades; build:monolithic y
+compile:monolithic; raíz 3/3, verify:release 6/6, corpus/macros cero avisos,
+verify-prose-sync, check-monolith 12/12, verify-math-regressions 32/32 y
+verify-lean kernel fresco/serial fijado en 4.31.0. Lean: 32 módulos/250
+teoremas, solo tres axiomas estándar, sin sorryAx. Monolito 438 páginas;
+cero Overfull h/v en diez PDF; 889 IDs conservados/17 nuevos/383 macros;
+76 congelados y 29 Lean previos intactos. [Informe y recibos](repair-plans/RUTA3_NO_VACUIDAD_ESTABILIDAD_2026-11-12/EJECUCION.md).
+
+Se preservaron los fallos de copia/hash, escritura olean, enlaces a IDs
+históricos y maquetación. Ningún criterio se relajó para pasar. La membresía
+fuerte es relativa a la gramática explícita, no a todos los modelos generales;
+la energía es operacional, no calibrada en julios. Pendientes: revisión
+independiente, realización externa y BPF completo. v25/v26
+INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY; v27/v28/v30 BLOCKED_MULTIPLE_GATES;
+v31 BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.
+Sin acceso al runtime ni push; las verificaciones corresponden al árbol final.
+
+Commits de contenido: 3A `fcce98322e0340eafdbcb3da4a0ce77b85216bba`, 3B `40bc3eac82b3bd0b53763b0bb8ce47141ca04fd4`, formal `f7f708638c8909e095ca8c9b02a56395c7fbb34e`, propagation `383159a0db5c7ee5c0eef6215b1500d0ce1b5b67`. Este asiento final conserva los recibos y la frontera de revisión; sin push.

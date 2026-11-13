@@ -2087,3 +2087,31 @@ Publicación autorizada a `origin/codex/qicn-framework-ordenado` y `origin/main`
 Se corrigió además la portabilidad del ensamblador: normaliza CRLF antes de transformar la composición. El comparador devuelve fallo ante discrepancias. Controles: versión anterior 11/12 con salida 0; versión corregida 12/12 en copia activa, LF y CRLF; capítulo alterado en memoria 11/12 con salida 1. Es una comprobación técnica exploratoria, no un nuevo experimento científico prerregistrado.
 
 Commits de contenido: typography `6007af18e55a8bef136366386808600566b5005e`; lean `95ed4f5840bf3e12bd810a6eba8d0881163ca462`; portable_assembly `902a623ac23e8e751fb364f8e1d10610edf9153a`; monolith_pdf `88d56863878ec515745c4d3de0629e63abdab901`.
+
+
+## Ruta 3 · realización nativa y cuña métrica · 2026-11-12
+
+Base e669634; protocolo y [ejecución](docs/ai-platform-outputs/repair-plans/RUTA3_NO_VACUIDAD_ESTABILIDAD_2026-11-12/EJECUCION.md).
+
+- [x] 3A: esquina cartesiana, brecha bi-Lipschitz y radio deltaW/2;
+  contra-controles de degeneración/distorsión y sector energético condicional.
+- [x] 3B: una planta infinita, seis invariantes globales, seis cláusulas de
+  vida y cuatro descriptores; siete coordenadas, diez intervenciones y
+  clase no vacía propia, relativa a W^(2,L,3). Control de emulador obligatorio.
+- [x] Escalar no redundante, mu=0 como contramodelo completo, continuidad
+  de ambos pasos y comparador pasivo genuino. Transporte XOR con certificado
+  local completo; obstrucción de autorreferencia exacta preservada.
+- [x] Conservación 889 IDs/383 macros/76 congelados/29 Lean previos;
+  906 registros, 32 suites y 32 módulos/250 teoremas. Monolito 438 páginas,
+  12/12 capítulos; cero Overfull en diez PDF. Evidencia cruda en el recibo.
+- [ ] Revisión matemática independiente y revisión de la pertinencia de la
+  gramática causal; publicación expresamente detenida antes del push.
+- [ ] Calibración física/externa y paquete BPF completo de IX. No se afirma
+  cierre frente a emuladores irrestrictos ni homeomorfismos sin cota métrica.
+
+Pruebas TeX globales y kernels Lean se distinguen en el informe. Los veredictos
+internos permanecen v25/v26 INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY,
+v27/v28/v30 BLOCKED_MULTIPLE_GATES, v31 BLOCKED_FOUNDATION_FIRST_GATES;
+external_support_certified=false. No se accedió al runtime.
+
+Puntos locales de contenido de Ruta 3: 3A `fcce983`, 3B `40bc3ea`, formal `f7f7086`, propagation `383159a`. El asiento final de trazabilidad no cambia resultados. Sin push.

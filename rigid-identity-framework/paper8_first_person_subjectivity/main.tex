@@ -433,7 +433,7 @@ The denominator is positive and the evidence domain is defined. Every valid comp
 \end{proof}
 
 \paragraph{Identification boundary.}
-The exchange is a causal exchange of two actual input/state groups, with measurement references transported, not a renaming of a report string. An unequal response weight or unequal intervention amplitude would create a different valuation protocol and could generate a spurious contrast even in this symmetric plant. The theorem does not say that every infinite-dimensional integrated system is symmetric. Nor does it transfer the integration gap to joint-output rivals or an arbitrarily enlarged sensor partition, or the identity gap to a continuous family of angular presentations. Nonemptiness of the complete stronger class and its additional biological/interpretive burdens remain separate obligations.
+The exchange is a causal exchange of two actual input/state groups, with measurement references transported, not a renaming of a report string. An unequal response weight or unequal intervention amplitude would create a different valuation protocol and could generate a spurious contrast even in this symmetric plant. The theorem does not say that every infinite-dimensional integrated system is symmetric. Nor does it transfer the integration gap to joint-output rivals or an arbitrarily enlarged sensor partition, or the identity gap to a continuous family of angular presentations. The separate native construction in Theorem~\ref{thm:native-nonempty-subfp} now establishes nonemptiness under its explicit causal grammar; unrestricted-rival, biological and interpretive extensions remain additional obligations.
 
 
 \subsection{Audit-covered theorem burdens}
@@ -1386,6 +1386,455 @@ One may choose stricter or softer versions of the gate:
 \GateSubj^{(\mathrm{soft})}=\left(\prod_j \widehat{X}_j\right)^{1/7}.
 \]
 The present paper prefers the strict minimum as the gate and the geometric mean as the scalar because that pairing best separates class membership from within-class ordering. A future implementation may report both.
+
+\subsection{An Explicit Causal Grammar for a Reserved Indexed Task}
+
+\begin{definition}[Two-port causal grammar and its full admissible closure]
+\label{def:indexed-causal-grammar}
+For the asymmetric native plant of Paper V, draw independently the retained
+index $\sigma=2b_9-1$ and the initial signs $x=2b_2-1$, $y=2b_3-1$.
+Every predictor receives all three signs, the command $g\in\{-1,0,1\}$,
+the same previous observations and the same fixed calibration, before a new
+actuation. Previous registers and exogenous randomization are independent of
+these freshly randomized inputs. No future residual or precomputed product
+is supplied. Inputs can be extracted by a common prefix decoder; that decoder
+does not contain the product of the three signs.
+The forecast interface has exactly the four decoded input wires
+$(g,\sigma,x,y)$ and the independent past registers. It does not also supply
+an uncharged packed real encoding of the freshly drawn signs. The full
+current preparation is a known deterministic function of these wires, so
+there is no information advantage for either model. Constructing, unpacking
+or querying a different joint encoding is charged in the same circuit
+language. Giving both models a free joint feature is a different, explicitly
+tested representation contract, not a consequence of Shannon information
+equivalence. The fixed three physical global channels are unchanged.
+
+Use a common unrolled circuit language: input/constant wires; unary or binary
+arithmetic, clipping, branching, copying and register operations; and a final
+affine readout with fixed coefficients. A command-dependent coefficient,
+implicit dispatch on g, or state-dependent choice of program is a charged
+operation, not a free change of terminal weights. Fixed signed permutations
+of input/output coordinates are interface conventions applied to both classes;
+they preserve cost and ancestry, but do not permit multiplying two input wires
+for free. Each nontrivial operation costs one, including a nontrivial
+index-dependent routing or conditional branch. Internal affine operations
+also count. Constants in the shared interface are $0,1$; additional constants
+and gates are explicitly described. Copies of raw input wires to terminals
+are part of the common interface, not an oracle. Loops, simulator calls and
+macros are expanded over the fixed window, so a loop does not hide a sequence
+of interactions. Both classes have three operations and one working register
+for the reserved forecast; a common fixed acquisition/calibration wrapper is
+identical for every model and the complexity is its conditional circuit cost.
+In particular Comp is the static number of nontrivial nodes in that unrolled
+forecast circuit, not an expected active-gate count or a weighted average
+of component costs. A mixture includes the nodes and routing needed by its
+components. The scoring wrapper may evaluate the same fixed forecast on
+different trials/commands without charging its description anew per data row.
+
+Tag every internal register by the set of randomized ports on which its value
+causally depends. A weak constitutive register has tag size at most two.
+The command and independent exogenous randomness are conditioned on, not
+counted as randomized ports. Final readout may add functions from the allowed
+registers, but may not feed their combined output into a new nonlinear or
+stateful coordinate violating the tag bound. This is an explicit causal
+restriction, not a theorem inferred from the word ``memory'' or from an
+absence of phenomenality.
+
+The six generating families are all monitoring, finite-memory, policy,
+narrative-token, broadcast and bookkeeping programs satisfying this signature
+and common budget. Policy optimization and encoded narrative/state access
+must use the same language; a lookup table or a latent tag has its actual
+port ancestry and construction cost. Admit every finite composition, mixture
+and latent coupling that preserves this signature and total budget. Mixture
+weights/latent seeds may be independent exogenous variables or belong to a
+registered component with the same ancestry rule. They cannot be free joint
+functions of the three ports. This defines the entire experimental instance
+$\WeakClosure=\WeakClosure^{(2,\mathcal L,3)}$, not six selected predictors.
+The superscript records causal signature, language and budget; it is not
+asserted to equal the unrestricted weak class for every instrumented system.
+For every fixed command and
+exogenous seed its outputs lie in
+\[
+ \mathcal V_2=\{f_{12}(\sigma,x)+f_{13}(\sigma,y)+f_{23}(x,y)\}.
+\]
+Constants and one-port terms are included. Conversely, only those elements
+realizable by the stated budget are admitted; no universal approximation
+claim for the budget is needed. The stronger model may create the joint
+register $\sigma xy$, paying for its operations in the same language.
+
+This signature is a prospective instantiation of the no-new-coordinate clause
+of the weak closure. General encoders, policies or workspaces without this
+restriction form a larger class. They must not be called excluded by the
+six family names alone. In particular a same-cost emulator in that larger
+class is an obligatory negative control.
+\end{definition}
+
+\begin{lemma}[Exact Loss Against the Entire Causal Closure]
+\label{lem:indexed-causal-closure-loss}
+On the balanced sign cube, let $\chi=\sigma xy$. The native controller applies
+to Hilbert coordinate j the inputs
+\[
+ v_j^L=(a_jxy/4)(1+g\sigma),\qquad
+ v_j^R=(a_jxy/4)(1-g\sigma),
+\]
+with $q=u=0$, initial $z=\bar z$, and $\theta=0$. Its normalized physical
+contrast at the next step is
+\[
+ T_g=\frac8{a_j}\bigl[(z_j^{L\prime}-\bar z_j^L)
+                         -(z_j^{R\prime}-\bar z_j^R)\bigr]=g\chi.
+\]
+At $g=0$ the indexed difference vanishes by equal broadcast; the input command
+cost remains charged at the same upstream port. Use squared error, three
+operations, and $\mathrm{Comp}/16$. Define the loss as one third of the basal
+forecast error ($g=1$), one third of its mean over the ten declared intervention
+commands (eight with $|g|=1$, two with $g=0$), and one third of the error in
+the reserved contrast $T_1-T_0$, plus that penalty. Then
+\[
+ \inf_{M\in\WeakClosure}\mathcal L(M)=14/15,\qquad
+ \min_{M\in\mathcal F_3}\mathcal L(M)=3/16,
+\]
+where $\mathcal F_3$ is the common-language class with at most three operations
+without the weak tag restriction. Its minimizer computes $g\sigma xy$ with
+three products. Thus the strict loss margin is $179/240$ and with $s_R=1$
+the normalized irreducibility score is $179/464$.
+\end{lemma}
+\begin{proof}
+The two ports have their own sham fixed points. Subtracting those references
+in a q-zero step leaves $v/4$; direct substitution proves the displayed
+physical contrast. All these coordinates belong to the single globally
+coupled infinite plant, not an additional Boolean transition system.
+
+Every $f\in\mathcal V_2$ is orthogonal to $\chi$ under the balanced cube:
+each pair term omits one independent mean-zero sign. Consequently
+\[
+ \mathbb E(\chi-f)^2=1+\mathbb E f^2\ge1.
+\]
+The identity holds conditionally on every independent latent seed and for
+all finite admissible hybrids; averaging does not reduce the bound. Differences
+between command-conditioned forecasts also belong to $\mathcal V_2$.
+Thus the three loss terms are bounded below by $1/3$, $4/15$ and $1/3$.
+The constant-zero program has no nontrivial gate cost and attains all three,
+proving the infimum $14/15$ over the entire declared closure.
+
+The three-product circuit has zero error on every task and penalty $3/16$.
+A circuit using at most two unary/binary internal operations has at most
+three raw inputs in any internal ancestry. Each contribution to its final
+affine readout either omits one randomized sign, or is independent of g.
+In the latter case it cancels in the command contrast; in the former case
+that contrast remains orthogonal to $\chi$. Hence its reserved contrast
+alone has squared error at least one and contributes at least $1/3>3/16$.
+Any circuit with three operations has penalty at least $3/16$ and nonnegative
+errors. This proves optimality without assuming an optimal fitting rule.
+The arithmetic gives $14/15-3/16=179/240$ and
+$(179/240)/(1+14/15)=179/464$.
+\end{proof}
+
+\paragraph{Emulator and representation controls.}
+The tag restriction is a structural experimental hypothesis, not a conclusion
+about all possible monitors or memory models. If a rival can instantiate the
+same three-product circuit at the same information and cost, its loss is
+$3/16$ and the stronger model's strict margin is at most zero. Supplying a
+free latent tag with $\chi$ also invalidates the independent-preparation
+assumption and removes the claimed bound. Under a passive exchange of the
+physical ports, flip the retained index and the prefix tail from site 9;
+the native shift commutes with this operation, x and y are unchanged, and
+both $T_g$ and $\chi$ change sign. Pair ancestry, costs and squared losses
+are preserved. A hidden index-dependent decoder cannot be declared a free
+renaming; its gates and ancestry must be counted for every competitor.
+
+\subsection{Native Indexed Measurements on One Infinite Plant}
+
+Use the globally certified asymmetric native plant of Paper V. The following
+native experiments also instantiate the descriptors of Paper VII. All windows have $\tau=2$;
+the task label and preparation stratum are recorded before randomization.
+They share one law, support, native index, channels and actuator specification.
+They need not start from one identical state: matched intervention arms require
+different preparations of that same plant. The global six-predicate proof is
+analytic on its full infinite support, independently of these finite strata.
+
+\begin{definition}[Native seven-coordinate protocol]
+\label{def:native-seven-protocol}
+Use exact normalized readings, the retained $\sigma=2b_9-1$, and all switches
+on in the baseline. In each stratum a fair sign r, when needed, is initially
+encoded in bit 2 and assigned independently of responses. The native index
+selects the higher-retention port and its predeclared causal reference.
+
+For I prepare $b_1=0$, $\theta=0$ and the two Hilbert states $\bar z$ and
+$\bar z-e_1^{\rm self}/4$. Apply the common challenge
+$q=b_4=1$, $u=-\lambda\ell(\bar z)/4$, $v=0$ and let $c_I$ be the
+first-query clearance from the predeclared kernel phase zero. The ordinary
+sham pads the second step. Put $d_I=3/2048$ and define the
+two candidate weights by
+\[
+ q=\bigl((1+\operatorname{clip}(c_I/d_I))/2,
+         (1-\operatorname{clip}(c_I/d_I))/2\bigr),
+\]
+where clipping is to $[-1,1]$. This is a calibrated score rule, not a claim
+of posterior probability. Include the common signed port/prefix renamings,
+with candidates and references transported, in the equivariance test.
+
+For O command opposite pulses $a_2r/2$ and $-a_2r/2$ to the indexed and
+partner ports at coordinate 2, starting from $\theta=0,z=\bar z$.
+Normalize the indexed next-step deviation by $8/a_2$, report $(1+R_O)/2$,
+and use the independently assigned reference $(1+r)/2$ and neutral control
+$1/2$. This instantiates the reference-MAE ownership estimator.
+
+For C prepare deviations $a_3r/8$ and $-a_3r/8$ on coordinate 3 of the
+indexed and partner ports, from the same references, and query with two
+$q=u=v=0$ steps. At each query $t=1,2$, normalize a line's deviation by
+$8/(a_3r_i^t)$, take its mean product with the original r and clip to $[0,1]$.
+Its score is the minimum of these two temporal correlations, so an intermediate
+misbinding is not erased by endpoint recovery. The two continuity candidates are the retained indexed line
+and this matched alternative; their scores enter the canonical estimator
+with $s_C=1$. An exact added clone is a distinct comparison control.
+
+For P and R use independent, separately labelled balanced sign-cube populations
+in the reserved task of Lemma~\ref{lem:indexed-causal-closure-loss}, on Hilbert
+coordinates 4 and 5 respectively. Predictions are fixed before their outcomes;
+no empirical fit to one population supplies an uncharged feature to the other.
+The five-coordinate intervention profile never enters either predictor.
+Use $s_P=313/240$ and $s_R=1$ in the existing normalized estimators.
+
+For V start from the same sham fixed point and use a pulse of amplitude
+$a_1=1/2$ on the indexed port or its partner, followed by sham, with
+$q=u=0$. The response is the sum of squared Hilbert deviations from the
+corresponding common sham at times 1 and 2. Both pulses have identical
+commanded norm and cost. Use $s_V=1$ and transport all references under
+passive renaming. The normalizations are dimensionless and fixed beforehand.
+\end{definition}
+
+\begin{proposition}[Seven Positive Native Coordinates]
+\label{prop:native-seven-coordinates}
+With the complete causal closure of Definition~\ref{def:indexed-causal-grammar}
+and the admissible intervention programs specified below, the baseline vector is
+\[
+ (\widehat{\SelfIndex},\widehat{\OwnField},\widehat{\ContField},
+  \widehat{\Persp},\widehat{\ValAsym},\widehat{\IntervProf},\widehat{\Irred})
+ =\left(1,\frac12,\frac12,\frac13,\frac{64}{266529},1,\frac{179}{464}\right).
+\]
+Each entry is computed on the same native infinite plant and two-step clock;
+the seventh compares the whole declared weak closure. No subjective experience
+is inferred from this vector.
+\end{proposition}
+\begin{proof}
+The phase challenge gives $c_I=d_I$, hence weights $(1,0)$. Passive transport
+inverse-aligns the candidates exactly, so $r_{\rm eq}=0$ and the index score
+is one. The first coordinate's meaning is relative to this separated
+comparison family; a full-state clone gives a tie, not absolute uniqueness.
+
+For O the physical next-step deviations are $a_2r/8$ and $-a_2r/8$;
+the frozen assignment has MAE zero and the control MAE $1/2$. For C the
+two normalized readings at each query are r and $-r$. Their clipped temporal
+minimum scores are one and zero, giving $1/(1+1)=1/2$.
+
+The causal-closure loss lemma gives weak loss $14/15$, full loss $3/16$
+and raw gain $179/240$. The perspective denominator is
+$313/240+14/15=537/240$, giving $1/3$; its independent reserved copy gives
+irreducibility $179/464$. These calculations use identical information,
+capacity and penalty conventions. The restriction is causal ancestry,
+explicitly distinct from an unrestricted policy or memory class.
+
+In the valuation trial only one Hilbert coordinate differs from sham.
+Its deviations are $1/8$ and $r_i/8$. Thus
+\[
+ R_{\rm self}=4385/262144,\quad R_{\rm other}=4321/262144,
+ \quad R_{\rm self}-R_{\rm other}=1/4096.
+\]
+The prescribed normalized gain is therefore $64/266529>0$ for both native
+index orientations. Lemma~\ref{lem:native-intervention-selectivity} proves profile one
+from the five primary measurements without using either derived score.
+\end{proof}
+
+\begin{lemma}[Native Ten-Operator Selectivity]
+\label{lem:native-intervention-selectivity}
+On the preparations of Definition~\ref{def:native-seven-protocol}, the ten
+native experimental operators below are admissible and give the declared
+selective five-primary drops, with threshold $32/266529$, off-target tolerance
+zero and profile one. Matched faithful/sham operators have no false positive.
+The assertion concerns these window domains, not arbitrary global preparations.
+\end{lemma}
+\begin{proof}
+Compute the five baseline measurements directly from
+Definition~\ref{def:native-seven-protocol} and
+Lemma~\ref{lem:indexed-causal-closure-loss}: they are
+$1,1/2,1/2,1/3,64/266529$. Neither derived score is an input to this calculation.
+The experimental operators below act on the native controller wiring,
+prepared retained coordinates or comparison candidates. They are not
+renamings of a report string. On each declared preparation their actuator
+programs are compositions of the D-steps, prefix writes and clipped native
+targets of Paper V; sensors and commanded costs are included. A memory payload
+means its deviation from the port's calibrated fixed point, not an untyped
+absolute coordinate on a different host.
+
+Own disables the ownership event coupling while retaining the same input
+command and dissipation cost. Break resets the coordinate-3 retained payloads
+to their sham targets with native feedback before the terminal query. Flat
+replaces indexed routing by equal broadcast, so $g=0$ for P and R; it preserves
+the other four diagnostic couplings. Val exchanges the two retention rates
+relative to the retained index, using $\mu=-1/64$ with calibration of the
+same physical units transported; it is not a passive exchange of names.
+
+Remap exchanges the attachment of the two pre-existing opposite ownership
+events and retained payloads while leaving their preassigned references and
+the native index fixed. Trans instead copies the partner's payload into the
+indexed host, retaining the donor. Perm performs the same nontrivial
+counterfactual reassignment of event/history hosts, with their observed
+contents and the remaining actuator addresses fixed. They differ as
+experimental operators even when their normalized failed coordinates coincide.
+For retained payloads the native target is the donor's live, calibrated
+nominal next value, using the routing controller of Paper V, not a future
+outcome or a fitted tag. Remap routes both donors once at the first query;
+trans copies the partner into the indexed host once and retains that donor.
+Perm leaves the contents in place initially but rewires the retained-memory
+update for both queries. Both unchanged and reassigned
+values lie strictly inside their coordinate boxes, so the clipped controllers
+realize them exactly on this preparation family. Ownership reports after
+opposite-event reassignment have signed gain $-1/2$.
+
+Clone adds an exact full-state copy to the index and continuity comparison
+families. Common commands give identical responses, so the winning index
+weights tie and the nearest continuity score ties. Ownership of the separately
+labelled causal events, valuation and the reserved forecast are unchanged.
+This control is deliberately stronger than the baseline phase-readout clone.
+
+Swap exchanges the indexed and partner actuator/content assignments without
+transporting their causal references: ownership and retained-history bindings
+fail as above, and the nominal self valuation pulse now excites the smaller
+retention rate. It reverses the P/R contrast ($g=-1$), which the indexed model
+can still predict at the same three-operation cost. A bijective swap therefore
+does not have to destroy either uniqueness or perspective. Xsub uses the
+coordinate change $z'=2z$, with transported metric, readings, targets and
+cost units; its target branch deliberately loses indexed routing ($g=0$),
+while its faithful transport branch is a sham. A substrate label alone has
+no effect. This is a mathematical transport experiment, not an implemented
+physical change of substrate.
+
+The resulting target sets and normalized primary failures are:
+\begin{center}
+\small
+\begin{tabular}{lll}
+\toprule
+Operator & Primary target set & Primary normalized outputs changed to zero\\
+\midrule
+swap & O,C,V & O,C,V\\
+own & O & O\\
+break & C & C\\
+flat & P & P\\
+val & V & V\\
+remap & O,C & O,C\\
+clone & I,C & I,C\\
+trans & O,C & O,C\\
+perm & O,C & O,C\\
+xsub (routing defect) & P & P\\
+\bottomrule
+\end{tabular}
+\end{center}
+All off-target primaries retain their baseline values. Negative ownership
+contrasts and ties are recorded separately before clipping. The continuity
+swap/copy gives a nonpositive signed gap: the indexed line is negatively
+correlated with its original reference, whereas an unchanged or swapped donor
+is a nonnegative competitor. Break and exact cloning give zero gaps.
+Val and swap give negative valuation contrast; symmetrizing the rates gives
+an exact zero contrast. Index weight ties give score zero.
+
+Set every target drop threshold to $\theta=32/266529$ and off-target tolerance
+to zero on these exact preparations. Every target drop is at least
+$64/266529$, and every off-target change is zero. Thus all ten selectivity
+tests pass, giving profile one. Their matched faithful transports, passive
+renamings, preserved edges and unchanged targets have primary drops zero and
+no false positive. Generic switch/preparation costs are matched at their
+commanded ports; lower transmitted work after a disconnection is not assigned
+as free actuation. These are finite-window intervention statements, not
+global claims of selective independence for arbitrary preparations.
+The off-target assertions follow because the actual queries clamp the phase
+to zero, so each designated coordinate responds to its own actuator; the index
+challenge uses its separate neutral preparation. This interventionally isolated
+measurement does not factor the global law, whose nonzero-q commands and
+full-domain product obstruction remain in place.
+Remap exchanges the stored attachments, trans overwrites a recipient while
+retaining its donor, and perm changes the counterfactual update routing while
+retaining the initial stored values. The double permutation can restore the
+terminal sign, but its first-query sign is reversed; the temporal-minimum
+continuity score still detects it. None transports the fixed causal references.
+\end{proof}
+
+\begin{theorem}[Nonempty Proper Indexed Class in the Infinite Model Universe]
+\label{thm:native-nonempty-subfp}
+Equip the asymmetric plant with the complete protocols above, the full declared
+causal closure, equal exponents $1/7$, and thresholds
+$\lambda_G=1/8192$, $\lambda_\Phi=1/16$. In the same complete instrumented
+model universe as Theorem~\ref{thm:infinite-strict-upstream-separation},
+\[
+ \varnothing\ne\Subfp(2)\cap\mathfrak M_\infty
+ \subsetneq\Cop\cap\mathfrak M_\infty.
+\]
+The statement is relative to the specified causal grammar, comparison domains,
+preparations and intrinsic state metric, not to all unrestricted memory or
+policy models or to empirical phenomenality.
+\end{theorem}
+\begin{proof}
+Paper V proves all six global predicates on the entire infinite support,
+with the unchanged full split-product sector and separated identity alternatives.
+Paper VII proves all six life clauses and the four indexed continuity
+descriptors on this same plant. Proposition~\ref{prop:native-seven-coordinates}
+and the intervention programs give all five primary measurements, profile one
+and strict irreducibility against every admissible causal hybrid.
+The smallest coordinate is $64/266529>1/8192$. The product is
+\[
+ \PhiSubj^7=\frac{179}{5568}\frac{64}{266529}>(1/8)^7>(1/16)^7.
+\]
+Monotonicity of the positive seventh root proves the scalar clause with
+$\lambda_\Phi>\lambda_G$. All denominators and evidence domains are defined,
+so every clause of Definition~\ref{def:subfp} holds, proving nonemptiness.
+Upstream inclusion is Proposition~\ref{prop:upstream-inclusion}; the independent
+symmetric infinite-dimensional witness of
+Theorem~\ref{thm:infinite-strict-upstream-separation} proves properness.
+It is not replaced by a truncation or a weakened product comparison.
+Alternatively set $\mu=0$ in this very native family and keep all the declared
+protocols, grammar and rate-dependent calibrations. The same global theorem
+still proves membership in $\Cop$, all required readings and denominators
+remain defined, and the paired valuation responses are exactly equal.
+This gives a complete countermodel in the same grammar with valuation zero,
+independently of the older symmetric witness.
+\end{proof}
+
+\paragraph{A realized control for the additional scalar burden.}
+The inequality $\lambda_\Phi>\lambda_G$ is not merely notational. On the same
+plant define, prospectively, a second complete calibration with
+$e=1/4096$. Soften the two index weights to $(1\pm e c_I/d_I)/2$ and the
+ownership assignment to $(1+2eR_O)/2$. Keep the independent reference and
+neutral control. The index and ownership scores are then e; the latter's
+raw causal transplant has signed gain $-e$. Use
+\[
+ s_C=(1-e)/e,\qquad
+ s_P=s_R=(179/240)/e-14/15,\qquad
+ s_V=1-4385/262144.
+\]
+All scales are positive, and the canonical formulas give e for continuity,
+perspective, valuation and irreducibility. The profile remains one when its
+prospectively matched drop threshold is $e/2$. The four physical upstream
+descriptors keep their raw clearances and predictive gains; ownership
+coherence is at least e, still above its fixed threshold $1/16384$.
+Thus the other defining clauses hold, with
+\[
+ \GateSubj=e>1/8192,\qquad
+ \PhiSubj^7=e^6=2^{-72}<2^{-28}=(1/16)^7.
+\]
+This complete, differently calibrated model passes the gate and fails only
+the scalar clause. Its parameters are part of its model data, not a
+post-outcome rescaling offered as evidence of stronger organization.
+
+\paragraph{Which burdens this theorem does not remove.}
+With an unrestricted same-cost emulator the raw irreducibility margin is
+nonpositive, the clipped coordinate is zero and the positive gate fails.
+Ownership collapse or a broken privileged history likewise gives a zero
+coordinate; rate symmetrization gives valuation zero, as the analytic response
+formulas show. These are failures of this very conjunction, not missing data
+silently filled with zeros. The result constructs an instrumented mathematical
+member of the specified class. It does not prove that the two-port restriction
+characterizes every non-subjective architecture or that the certificate implies
+experience. Wider grammars and complete Paper IX transport/adjudication burdens
+remain separate research problems.
 
 \subsection{A Joint Rational Measurement Window}
 

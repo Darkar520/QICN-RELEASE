@@ -1249,6 +1249,180 @@ The most important future burden is not more rhetoric. It is sharper empirical s
 \end{enumerate}
 Until then, the present paper should be read exactly as intended: as a formal and falsifiable extension of the corpus, not as a declaration that the hardest empirical questions have already been settled.
 
+\subsection{Viability and Recovery on the Asymmetric Hilbert Plant}
+
+\begin{proposition}[A Joint Infinite-Plant Life Certificate]
+\label{prop:asymmetric-native-life}
+Use the asymmetric native plant of Paper V, with its intrinsic complete X,
+global support A and full six-predicate certificate. Fix $\tau=2$ and
+\[
+ \begin{gathered}
+ V_S(x)=1-\max\{|z_1^L|,|z_1^R|\},\quad \eta=1/2,\quad W_S=A,
+ \\
+ K_S=\{x\in A:\theta=0,\ z_1^i=\bar z_1^i(\sigma),\ i=L,R\}.
+ \end{gathered}
+\]
+The following single plant and declared experimental strata give
+\[
+ (\Bound,\Persist,\Maint,\HistDep,\Viab)
+   =(1/128,45/94,17/64,1/2,1/2),
+ \qquad \delta_{\rm diff}^{[2]}\ge1/3,
+ \qquad \Idiff=1.
+\]
+Thus the life criterion holds, for example at thresholds
+$1/256,1/4,1/8,1/4,1/4,1/6$ in this order. The fifth is the viability
+threshold and the sixth the differentiation threshold.
+\end{proposition}
+\begin{proof}
+The set X differs from A only in the larger first coordinate interval of each port.
+The safe set is exactly A, its complement in X is nonempty, and K is compact
+and contained in its relative interior. The distance from K to that complement
+is $1/2-1/47=45/94$ in the unscaled intrinsic state metric. The other target
+is $1/49$, and changing index branches costs at least one in that metric.
+This is not
+interiority of an infinite cube in the unrestricted Hilbert ambient space.
+
+The maintenance command uses $q=u=0$, native clipped feedback on both first
+coordinates with their targets $\bar z_1^i(\sigma)$, and zero other inputs.
+On K the phase is zero and both inputs vanish. Clipping is inactive, phase
+remains zero, and both coordinates retain their targets; hence K is invariant.
+Both shocks change only the indexed coordinate by $\pm1/8$, leaving the phase
+zero. Under the same native feedback the only nonzero input is
+$-4r_{\rm self}(\pm1/8)$, of magnitude $17/128<1/2$. The shocked coordinate
+returns exactly to its target in one step. The passive arm disables recovery
+feedback and uses the genuine zero-input command $v=0$ on the same actuation
+envelope; no hidden phase-compensation controller is retained. It ends at error
+$\pm r_{\rm self}/8$. Other coordinates, controls and preparations are identical.
+Distance to K is exactly the shocked-coordinate error: changing index branches
+cannot shorten a displacement of size at most $1/8$. Thus
+$R_{\rm act}=1$, $R_{\rm pass}=1-r_{\rm self}$, and the comparative margin is
+$r_{\rm self}=17/64$. Both arms stay in A. The sensor--controller--actuator loop is
+the native one declared in the plant; an external implementation of the same
+policy would have the same return traces, so internal provenance remains part
+of the explicit causal partition and its link-ablation control.
+
+For the boundary use $z_1^{\rm self}/16$, selected by the native bit $b_9$
+from the fixed c-channel, and
+the maximum trace distance over the two-step window. In the first step use
+$q=u=0$, and compare sham with a pulse on the indexed first coordinate
+(outside family) or on its partner (inside family), both of amplitude $a_1$;
+the second step is sham. Both pulses have the same norm, cost and timing.
+Uniformly on every initial point of A the indexed
+pulse changes the measured coordinate by $a_1/64=1/128$; the partner pulse
+changes it by zero. The causal partition and regulated organizational variable
+are the indexed homeostatic coordinate and its declared return loop. This does
+not infer a biological membrane from a scalar contrast.
+
+For the historical stratum choose a fair sign $s$, prepare $\theta_0=s/8$
+and $b_4=(1+s)/2$, and use two sham steps. The relevant reading is the fixed
+phase channel $r_0$, and the operational tag is the retained bit $b_4$.
+The present reading is zero under both preparations, while the initial phase
+identifies s. Current-only and history predictors have the same Boolean output
+class, one-bit storage capacity and calibration population; the history class
+also contains every lifted current rule. Their minimum zero-one risks are
+$1/2$ and zero. Supplying the complete current c-channel reveals the retained
+tag and makes both risks zero. This mandatory control bounds the claim to
+information-relative historical gain, not non-Markovianity of a complete state.
+
+All native commands preserve A, so the viability infimum is at least $1/2$;
+time zero at $|z_1^L|=1/2$ attains it. Opposite head bits retain readout
+separation at least $1/3$, and their global non-null argument is that of the
+asymmetric six-predicate theorem in Paper V. The stated positive thresholds
+then satisfy every clause of Definition~\ref{def:operational-life}.
+\end{proof}
+
+\begin{proposition}[Indexed Continuity Descriptors on the Same Infinite Plant]
+\label{prop:asymmetric-native-subject}
+Complete the preceding life protocol with the following fixed comparisons,
+on the same plant and horizon. The resulting baseline descriptors are
+\[
+ \Priv=3/2048,\qquad \SelfDisc=1/128,\qquad
+ \SelfModel=179/240,\qquad \Own=1/2.
+\]
+With thresholds $3/4096,1/256,1/2,1/16384$, respectively, the complete baseline
+system satisfies $\Subop(S,2)=1$. Its predictive gain is relative to the
+explicit two-port causal grammar below, not to every general memory model.
+\end{proposition}
+\begin{proof}
+In the continuity-locus stratum fix $b_1=0$, all switches on and $\theta=0$.
+Compare the regulated state $z=\bar z$ with the readout clone
+$z=\bar z-e_1^{\rm self}/4$, with identical bits and phase. Both lie in A
+and have the same initial phase reading; their complete c-readings are not
+claimed identical. Use the same native challenge
+$q=b_4=1$, $u=-\lambda\ell(\bar z)/4$, $v=0$.
+The regulated trajectory has next phase zero and the clone has phase
+$-3/2048$. The response-clearance score is distance from the predeclared
+kernel phase at this first query. On the specified two-candidate family its
+nearest alternative therefore has gap $3/2048$. Pad the second step with sham.
+These are operational response classes inside one structural identity object,
+not two inverse-limit identities. Admitting an exact full-state clone gives
+gap zero; admitting arbitrarily close alternatives without a separation
+restriction would also destroy this certified finite-family gap. Neither is
+silently ruled out by a claim of absolute uniqueness.
+
+Self/non-self discrimination uses the equal-cost port challenge in the life
+proof, with the regulated locus selected by the retained native index. The
+signed contrast is $1/128$; interchanging the causal role assignment while
+holding the reading convention fixed changes its sign. Transporting both
+roles and references preserves its magnitude. Thus the separation is tied to
+the declared actuation/reading partition, not to unequal pulse amplitudes.
+
+For self-model closure use the reserved physical indexed-routing task:
+independent known signs $\sigma,x,y$, command g, and forecast target
+$g\sigma xy$ from the normalized Hilbert port contrast. Fix the same
+three-operation language, input acquisition, held-out population and loss
+for both models. A self-model-blind constitutive register has at most two
+randomized-port ancestors, and the final readout is additive. Any finite
+admissible hybrid has the form
+$f_{12}(\sigma,x)+f_{13}(\sigma,y)+f_{23}(x,y)$ conditional on independent
+latent seeds. Its inner product with $\sigma xy$ is zero. Squared error is
+therefore at least one on each nonzero target, and the flat/sham contrast
+obeys the same bound. With the basal/intervention/contrast weights and
+two flat commands of the protocol in Paper VIII, the exact weak infimum is
+$14/15$, attained by the zero forecast. The native indexed circuit pays
+three operations at rate $1/16$, fits every target and has loss $3/16$.
+No two-operation circuit can couple all three signs and g in its reserved
+contrast; its contrast contribution alone is at least $1/3>3/16$.
+Thus the properly penalized predictive gain is $179/240$. The full grammar,
+including all six generators and their closure, is specified in Paper VIII;
+this calculation is independent of assuming any subject-class membership.
+An unrestricted same-cost emulator gives zero comparative gain and is a
+mandatory negative control, rather than evidence of intrinsic self-awareness.
+
+For ownership draw a fair event sign r, assign reference $(1+r)/2$ before
+observing any response, and command opposite pulses of amplitude $a_2/2$
+on the indexed and partner ports at coordinate 2, starting from $\bar z$.
+The normalized indexed deviation $8(z_2^{\rm self\prime}-\bar z_2^{\rm self})/a_2$
+is r. The frozen assignment is $(1+r)/2$ read from that deviation; the neutral
+control reports $1/2$. Their mean absolute reference losses are zero and
+$1/2$. Common passive port/prefix renaming, with reference and controller
+transported, leaves the losses unchanged. A causal transplant replacing the
+indexed event by its matched opposite donor without reference transport gives
+candidate loss one and signed gain $-1/2$. Define the operational coherence
+margin as the minimum of the valid reference gain, its loss under this causal
+transplant, and passive transport fidelity. These are $1/2$, at least $1/2$,
+and one, so the margin is $1/2$. A simple collapse to the neutral assignment
+instead gives signed gain zero. Neither operation is a passive renaming.
+
+Every comparison above is a declared window experiment on the same complete
+plant and full global certificate, with preparation, reference and comparator
+domains recorded. Positivity is required on the baseline/faithful-control
+domain, not asserted after the diagnostic lesion has changed the model or
+its comparison data. The preceding life proposition and the global six
+predicates, together with these four strict margins, establish every clause
+of Definition~\ref{def:operational-subjecthood} on that domain.
+\end{proof}
+
+\paragraph{Common plant versus common preparation.}
+All strata above use the same law, state space, support, channels, costs and
+two-step clock. The joint protocol records the stratum before randomization;
+its task-specific preparation and relevant reading are part of the complete
+instrumented model. It is not a claim that one unperturbed trajectory alone
+identifies every descriptor. In particular the historical partial-channel
+contract does not replace the complete channels used by the global product
+comparison. Matched passive recovery, memoryless amplitude controls and
+full-current-information controls remain distinct checks.
+
 \section{Conclusion}
 This paper introduces a higher-order classificatory layer for the causally rigid corpus. It defines viability-and-recovery criterion, structural class, and indexed continuity-and-control criterion in a form that is formal enough to be tested, restrictive enough to avoid inflation, and continuous with the established burdens of the framework. Six-predicate operational criterion is inherited rather than reinvented. Indexed continuity-and-control criterion is made explicitly stronger than either viability-and-recovery criterion or six-predicate operational criterion alone. Structural class is made the descriptor-relative ambient geometry in which those predicates can be transported, falsified, and compared.
 

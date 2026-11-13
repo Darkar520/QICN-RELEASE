@@ -972,6 +972,163 @@ Finally every $z_j^L,z_j^R$ has nonzero coefficient in $\ell$, and each receives
 \end{proof}
 
 
+\subsection{An Asymmetric Plant with Native Diagnostic Actuation}
+
+\begin{definition}[Asymmetric Hilbert--prefix plant]\label{def:asymmetric-native-plant}
+Retain Q, w, $\ell$, the three fixed channels, observation metric, full split-product
+comparison sector, separated identity presentations and structural resistance
+convention of Definition~\ref{def:hilbert-prefix-system}. The support is the
+same $A=\mathbb T\times B\times Q$. Declare the complete intrinsic state space
+X by enlarging the first coordinate interval in each Hilbert port to $[-1,1]$, retaining
+all other intrinsic intervals and the circle/prefix coordinates. Thus X is
+a compact complete metric space embedded in the same separable Hilbert space
+with the explicit intrinsic metric below, and A has
+relative interior in X. Neither A nor X is asserted to have interior in the
+unrestricted ambient Hilbert space. The admissibility functional is distance
+to A in that embedding; transition/readout extensions off X remain available
+as above. This is a member of the same universe of complete, instrumented
+systems; it does not identify state space with an open Hilbert ball.
+
+The persistent native index is $\sigma=2b_9-1$. Put
+$r_L=1/4+\sigma/64$, $r_R=1/4-\sigma/64$ and
+$T_bz=(r_Lz^L,r_Rz^R)$. The indexed port, L for $\sigma=1$ and R for
+$\sigma=-1$, has rate $17/64$; its partner has rate $15/64$.
+The symmetry controls replace $1/64$ by a predeclared
+$\mu\in[-1/64,1/64]$. In the intrinsic state metric include unit separation
+between the two values of $b_9$. This preserves the product topology and is
+realized by a unit-weight embedding coordinate for that already existing bit,
+not a new independent state or an additional channel. The global observation
+metric and angular presentation comparison remain as previously declared.
+Replace $R_*$ by R, with
+\[
+ (Rb)_1=b_1,\quad (Rb)_2=0,\quad (Rb)_3=1-b_2,
+ \quad (Rb)_j=b_j\ (4\le j\le9),\quad
+ (Rb)_j=1-b_{j-1}\ (j\ge10).
+\]
+The basic controls and head flip are
+\[
+ \begin{aligned}
+ D_{u,q,v}(\theta,b,z)&=
+ (u+q\lambda(b_1+\ell(z)/4),\ Rb,\ T_bz+v/4+w\cos(2\pi\theta)/32),\\
+ W(\theta,b,z)&=(\theta,\operatorname{flip}_1b,z).
+ \end{aligned}
+\]
+Here $u,q,v,\lambda$ have their previous domains. The sites 4--8 are native
+diagnostic switches and site 9 is the index. Writing them is allowed only as part of a D-step,
+after R; no write changes sites 1--3. This prevents a new null-preserving
+standalone write from entering the control family.
+
+The following finite native controller templates are also allowed. On any
+declared finite coordinate set J use targets $t_j(b)$ given by finite
+expressions in prefix bits and fixed rational calibration constants, and
+\[
+ v_j=\operatorname{clip}_{[-a_j,a_j]}
+       \bigl(4t_j(b)-4r_jz_j-a_j\cos(2\pi\theta)/8\bigr),\quad j\in J.
+\]
+Elsewhere v is an exogenous element of Q or a bounded finite prefix expression.
+A retained-memory routing command may instead use, within a left/right pair
+at the same coordinate j, the live target
+\[
+ t_j^i=\bar z_j^i+r_{\pi(i)}(z_j^{\pi(i)}-\bar z_j^{\pi(i)}),
+ \qquad \pi(i)\in\{L,R\}.
+\]
+It transfers a donor's nominal next retained payload, with the same clipped
+actuator and no uncharged sensor. Swaps and one-sided copies are included;
+no source coordinate feeds more than its two destinations. This restriction
+is part of the native family, not arbitrary cross-coordinate feedback.
+A switch may gate this actuator between zero and its displayed value. These
+are state-dependent controls with their sensors, arithmetic and actuation
+inside the declared causal boundary. For the index challenge one may use
+$q=b_4$ and replace u by $u_0-b_4\lambda\ell(\bar z)/4$, where
+$\bar z_j^i=a_j/[32(1-r_i)]$ is calibration determined by the retained index,
+not a future observation. The scalar $\ell(\bar z)$ is independent of its
+orientation, since the left and right summands are exchanged.
+No other bit-dependent phase offsets are admitted. All controller expressions
+are fixed before the trials; the specific finite protocols are stated in
+Papers VII--VIII.
+
+Commanded actuation and effective transmitted actuation are distinguished.
+For a disconnected edge, work can be dissipated at the command port; cost
+is charged to the commanded vector, not made free because its transmitted
+value is zero. Use $1+\|v_{\rm cmd}\|^2$, with the same fixed cost per switch
+operation in target and sham. This is a normalized actuator specification,
+not physical calibration; it is distinct from both $E_w$ and the predictive
+program penalty. Paired port pulses have identical commanded norms.
+All commands are total on X and preserve A. Only the first coordinate in each port
+can exceed its support interval off A; its next magnitude is at most
+$17/64+1/8+1/64<1/2$ under a D-step.
+\end{definition}
+
+\begin{theorem}[Global Six-Predicate Certificate with Asymmetric Retention]
+\label{thm:asymmetric-native-six}
+The complete plant of Definition~\ref{def:asymmetric-native-plant}, with
+exactly its specified controller templates and full product sector, satisfies
+all six global predicates on A. It retains the identity gap $1/16$ and
+\[
+ 1/384\le e_*\le3/128,\qquad \delta_{\rm int}=1/512.
+\]
+These conclusions hold on the infinite support, including the declared rate
+symmetry controls; finite diagnostic windows are not their proof.
+\end{theorem}
+\begin{proof}
+Compactness, infinite affine dimension, finite-cut compatibility, full-readout
+separation, non-finite determination and the two-presentation identity distance
+are unchanged: they concern the same support, readings and diagram. Every
+Hilbert update has coordinate magnitude at most $35a_j/64<a_j$, including
+the clipped controllers. The first five non-collapse coordinates are unchanged,
+giving distance greater than $1/16$ from constant profiles. The sham has
+$\theta=0$, $z=\bar z$, $b_2=0,b_3=1$, arbitrary head, index and five switch bits,
+and the ensuing alternating tail. On each fixed head/index/switch fibre its binary
+map contracts by $1/3$, and its phase/Hilbert contraction bound is at most
+\[
+ 17/64+\|w\|/4<1/2,
+\]
+using $\|w\|<7/8$. Thus its finite union of fixed points is a nonempty
+admissible attractor region contained in A. Every admissible history stays
+in the same uniformly non-collapsing compact support.
+
+The lower integration bound uses only the basic control $D_{0,1,0}$ and
+the opposite head-bit corner argument of the preceding theorem, unchanged
+for every product encoding and every nonempty channel partition. For an
+upper comparator use native factors $\mathbb T$ and $B\times Q$. The latter
+retains exact bits and executes its specified controller with the old cosine
+replaced by one. For fixed bits, the uncrossed scalar closed-loop update
+is r-Lipschitz in z: its slope is either zero or r. With a live retained-memory
+routing target, each row of a two-port Jacobian selects either its own
+retention coefficient or its donor's. No column is used more than twice.
+Its Euclidean operator norm is at most $\sqrt2(17/64)<2/5$, in every clipping
+region. Continuity and integration along line segments give the global bound.
+Gating preserves it. Changing the
+cosine from its true value to one changes the Hilbert output by less than
+$1/8$ in norm, including the compensation and the direct phase return.
+Consequently its state error obeys
+\[
+ e_{t+1}^H\le(2/5)e_t^H+1/8,
+ \qquad e_t^H/16\le5/384<3/128.
+\]
+The initial error is zero. Head flips preserve it. The phase factor uses
+the previous centre $u+q\lambda/2$ for basic commands. In a gated challenge
+all true offsets lie in the interval with centre
+$u_0+\lambda(1/2-\ell(\bar z)/4)$ and radius $3\lambda/4$; zero offset is
+also in this interval since $|\ell(\bar z)|\le1$. It therefore predicts
+that centre. Phase error is uniformly at most $3/128$, also after a head
+flip. This is a time-homogeneous factor-local comparator with common commands
+and no joint readout; in particular the sector is nonempty.
+
+The regime codomain and its compatibility component are unchanged. A D-step,
+including a switch write, keeps the head bit and hence changes the code by
+at most $1/3$; W changes it by $2/3$. The scaled Hilbert jump is less than
+$99/1024<2/3$. Thus every horizon has fragmentation at most $2/3<3/4$.
+If the code is less than $1/27$, the first two bits are zero; every D-step
+sets bit 3 to one and every W sets bit 1 to one. No admissible schedule can
+approach the distinguished null. Opposite head-bit classes retain separation
+at least $1/3$. Sham preserves them and W flips them, so the same threshold,
+noise $1/16$, nonempty target/sham laws and one-bit compression prove legibility
+for every declared duration. Every Hilbert coordinate still enters $\ell$
+and receives the nonconstant phase-return term. The diagnostic switches do
+not replace that globally coupled infinite plant.
+\end{proof}
+
 \subsection{Substrate Invariance}
 \begin{theorem}[Substrate invariance]\label{thm:substrate}
 For exact structural equivalence on the complete domains required by the six predicates,
@@ -1654,6 +1811,14 @@ Three burdens remain outside the present theorem set:
 The paper establishes a narrower framework-internal claim than popular machine-consciousness discourse and a stronger claim than substrate-neutral rhetoric. Inside the causally rigid identity corpus, a system belongs to the operational class discussed here only when six explicit invariants are jointly preserved on admissible support; under exact admissible equivalence the class is substrate-invariant, under bounded admissible perturbation it is stable, and under invariant rupture it becomes invalid or undefined. That is the level at which substrate neutrality is justified in the present framework, and it is the only level claimed here.
 
 The global Hilbert--prefix construction supplies a complete six-predicate member in the declared infinite-dimensional model universe, rather than six unrelated finite certificates. Its identity gap remains presentation-relative and its integration bound remains relative to the full declared split-channel sector. These domains are part of the theorem.
+The native asymmetric variant retains that full global comparison and couples
+its persistent index to actual port retention and diagnostic actuation.
+Papers VII--VIII use this one plant to realize their additional window
+certificates under a stated causal-computational grammar. Their strict margin
+does not survive an unrestricted same-cost emulator and does not turn any
+raw witness number into a common perturbation radius. The product gap of
+Paper I concerns its Hilbert wedge and bounded-distortion product sector;
+it is not silently transferred to this different circle-prefix support.
 
 \section{Interpretation and Open Research Links}\label{sec:interpretation-open-links}
 \paragraph{Historical alias.} A Structural Criterion for Substrate-Invariant Operational Consciousness. The alias is retained for bibliographic continuity; the technical title states the demonstrated object.

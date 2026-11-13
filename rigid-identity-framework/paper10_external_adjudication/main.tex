@@ -16,8 +16,13 @@
 \newtheorem{proposition}[theorem]{Proposition}
 
 \title{\textbf{Blind Adjudication Protocols and Coverage-Aware Risk Bounds}}
-\author{QICN Program}
+\author{Johnny Andrey P\'erez Ram\'irez}
 \date{2026}
+
+\hypersetup{
+  pdftitle={Blind Adjudication Protocols and Coverage-Aware Risk Bounds},
+  pdfauthor={Johnny Andrey P\'erez Ram\'irez}
+}
 
 \newcommand{\sectionstatus}[1]{\paragraph{Section status.}\texttt{\detokenize{#1}}.}
 \newcommand{\codestate}[1]{\texttt{\detokenize{#1}}}
@@ -45,8 +50,8 @@ protocol results; no executed campaign results are reported. The protocol
 separates internal certificates from admissible human-comparator evidence,
 defines preregistration freeze and amendment rules, and specifies independent
 reviewer selection, blinding, matched interventions, negative controls, and
-coverage-aware decision rules. Runtime-health audits, clean-room reproduction,
-dependency and build assumptions, artifact regeneration, and path-leakage
+coverage-aware decision rules. Execution-environment integrity checks, isolated reproducibility,
+dependency specification, deterministic record regeneration, and path-sanitization
 controls are prerequisites to admissible collection, rather than evidence of
 the comparative outcome. Explicit gates distinguish rehearsal, session zero,
 and the first admissible collection event. The article reports no human
@@ -58,83 +63,64 @@ preservation, metaphysical subjecthood, or final comparative conclusions.
 \tableofcontents
 
 \section{Scope and Non-Claims}
-\sectionstatus{formalized}
 
-This article specifies the external-adjudication protocol. Its local
-protocol authority supplies no adjudication verdict,
-admissible dataset, human comparator evidence, public release surface,
-public-release recommendation, Paper 10 final authorization, human equivalence,
-superiority or inferiority claim, machine-consciousness claim, or metaphysical
-closure.
+This article specifies the external-adjudication protocol. Its procedural rules
+supply no adjudication verdict, admissible dataset, human comparator evidence,
+public release determination, human equivalence, superiority or inferiority claim,
+machine-consciousness claim, or metaphysical closure.
 
 \section{Formal Dependency Stack}
-\sectionstatus{formalized}
 
-The dependency stack is layered as follows. The alphanumeric handles below identify historical protocol layers; they do not certify that a gate has been executed or passed:
+The external adjudication stack is layered across progressive protocol tiers. These tier identifiers denote formal dependencies in the protocol design; listing them does not certify that any operational gate has been executed or passed:
 
 \begin{enumerate}
 \item \textbf{BaseCore}: active mathematical base layer.
-\item \textbf{Papers I--IX}: downstream theoretical and manuscript surfaces.
-\item \textbf{SRT-6}: subjectivity runtime ecosystem closure.
-\item \textbf{BPF-M3}: bridge-functional internal closure and bridge gate.
-\item \textbf{Stage 2-M4}: comparative internal closure and readiness boundary.
-\item \textbf{Stage3-RF}: burden fulfillment and Stage 3 opening gate.
-\item \textbf{Stage3-0}: external adjudication architecture and protocol specification.
-\item \textbf{Stage3-1}: human comparator instantiation contracts and preregistration templates.
-\item \textbf{Stage3-2}: reviewer independence, execution-readiness logic, and protocol-grade hardening.
-\item \textbf{Stage3-3}: preregistration freeze architecture, reviewer-selection packaging, adjudicator-assignment packaging, and execution-pilot packaging.
-\item \textbf{Stage3-4}: bounded execution-pilot dry-run opening logic.
-\item \textbf{Stage3-4B}: provenance closure, lineage reconciliation, and instantiated-empty record instantiation.
-\item \textbf{Stage3-5}: rehearsal-kit formalization, dry-run event grammar, and rehearsal-ready gating.
-\item \textbf{Stage3-6}: controlled execution opening, session-zero protocol, pre-collection admissibility gating, and live-but-unpopulated artifact instantiation.
-\item \textbf{Stage3-6B}: runtime-health audit, clean-room reproducibility audit, path-leakage audit, and artifact-regeneration audit.
-\item \textbf{Stage3-7}: first-admissible-collection opening criteria, collection-start command grammar, operator authorization grammar, and a conditional first-collection opening gate.
+\item \textbf{Papers I--IX}: downstream theoretical and methodological papers.
+\item \textbf{Subjectivity and Bridge Interface}: upstream operational subjectivity and phenomenal-bridge boundary criteria (Papers VIII--IX).
+\item \textbf{Tier P0 (Adjudication Architecture)}: external adjudication architecture and formal protocol specification.
+\item \textbf{Tier P1 (Comparator Contracts)}: human comparator instantiation contracts and preregistration templates.
+\item \textbf{Tier P2 (Independence and Rigor)}: reviewer independence, blinding criteria, and protocol execution readiness.
+\item \textbf{Tier P3 (Freeze and Packaging)}: cryptographic preregistration freeze architecture, reviewer-selection schemas, adjudicator-assignment schemas, and pilot execution packaging.
+\item \textbf{Tier P4 (Dry-Run and Provenance Closure)}: bounded execution-pilot dry-run logic, provenance reconciliation, and empty typed record schemas.
+\item \textbf{Tier P5 (Rehearsal Protocol)}: rehearsal verification protocol, dry-run event grammar, and rehearsal readiness gating.
+\item \textbf{Tier P6 (Controlled Execution Opening and Environment Integrity)}: session-zero initialization, pre-collection admissibility gating, unpopulated operational shells, isolated reproducibility, path-sanitization checks, and deterministic record regeneration.
+\item \textbf{Tier P7 (First Admissible Collection Gate)}: opening criteria, collection-start authorization grammar, and pre-collection opening gate.
 \end{enumerate}
 
-No later layer may borrow closure from an earlier layer, and no earlier layer
-may be retroactively reinterpreted as if it had already supplied later
-execution-era evidence.
+No later protocol tier may borrow empirical closure from an earlier tier, and no earlier formal tier may be retroactively interpreted as supplying later execution-era evidence.
 
-\section{Release-vs-Local Corpus Boundary}
-\sectionstatus{formalized}
+\section{Theoretical-vs-Protocol Authority Boundary}
 
-Paper 10 sits on a strict release-vs-local split:
+Paper 10 sits on a strict separation between mathematical formalization and empirical execution:
 
 \begin{itemize}
-\item The recorded public-release snapshot is \texttt{\detokenize{QICN-}\allowbreak{}\detokenize{RELEASE/}\allowbreak{}\detokenize{main@}\allowbreak{}\detokenize{92d5d2c3}\allowbreak{}\detokenize{ea91c65e}\allowbreak{}\detokenize{29dc8e10}\allowbreak{}\detokenize{2bed5048}\allowbreak{}\detokenize{66cffd2d}}.
-\item At that snapshot, the public release is limited to BaseCore, \texttt{\detokenize{canonica}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{core_}\allowbreak{}\detokenize{legacy}}, and downstream Papers I--IX.
-\item The protocol authority described in Paper 10 is local to \codestate{QICN-SYSTEM}; inclusion of this manuscript in the volume does not supply execution evidence.
-\item The Stage3-0 through Stage3-6 governance, freeze, packaging, dry-run, provenance-closure, instantiated-empty, rehearsal, and controlled-execution-opening surfaces described by the protocol remain local and non-public.
+\item BaseCore and Papers I--IX supply mathematical definitions, structural obstructions, finite constructive certificates, and conditional falsification criteria.
+\item The external adjudication protocol defined in Paper 10 specifies how future empirical campaigns would be preregistered, blinded, audited, and judged.
+\item Inclusion of this protocol monograph in the collected theoretical framework supplies zero execution-era human data and establishes no empirical support.
+\item Tiers P0 through P7 specify procedural, freeze, rehearsal, and controlled-opening conditions that remain non-evidential until executed independently with external participants.
 \end{itemize}
 
-Therefore release inclusion cannot be used as a substitute for adjudication,
-and local protocol maturity cannot be used as a substitute for public
-scientific closure.
+Therefore publication within the theoretical corpus cannot be substituted for empirical adjudication,
+and protocol completeness cannot be substituted for experimental closure.
 
 \section{Lineage and Provenance Semantics}
-\sectionstatus{formalized}
 
-Stage3-3 and Stage3-4 add a sharper lineage rule: every later admissible
-surface must distinguish among:
+Tiers P3 and P4 enforce a strict authority hierarchy; every admissible record must distinguish among:
 
 \begin{enumerate}
-\item public release authority,
-\item local protocol authority,
+\item public theoretical framework authority,
+\item local protocol specification authority,
 \item frozen preregistration authority,
 \item reviewer-package authority,
 \item adjudicator-package authority, and
 \item execution-era evidence authority.
 \end{enumerate}
 
-The repository already contains historical artifacts whose recorded lineage must
-remain intact by design. Live normative pinning surfaces may be updated when
-stale, but historical snapshots are not rewritten cosmetically.
+Archived records whose lineage reflects prior protocol snapshots are preserved intact for provenance; live specification bindings are updated explicitly without altering historical records retroactively.
 
-\section{Provenance Closure and Live Head Reconciliation}
-\sectionstatus{formalized}
+\section{Provenance Closure and Snapshot Reconciliation}
 
-Stage3-4B adds a stricter provenance-closure rule. A local artifact may now be
-classified as:
+Tier P4 specifies a formal provenance-closure classification. A recorded specification state may be classified as:
 
 \begin{itemize}
 \item \texttt{\detokenize{exact_}\allowbreak{}\detokenize{head_}\allowbreak{}\detokenize{aligned}};
@@ -143,16 +129,11 @@ classified as:
 \item \texttt{\detokenize{historic}\allowbreak{}\detokenize{al_}\allowbreak{}\detokenize{snapshot}\allowbreak{}\detokenize{s_}\allowbreak{}\detokenize{intentio}\allowbreak{}\detokenize{nally_}\allowbreak{}\detokenize{preserve}\allowbreak{}\detokenize{d}}.
 \end{itemize}
 
-This grammar matters because Stage 3 artifacts are generated before the
-subsequent commit that records them. Therefore exact local regeneration at the
-builder head may later become artifact-forward-compatible after the commit
-exists, without becoming scientifically stale or semantically dishonest.
+This distinction matters because preregistration and schema manifests are sealed prior to the archival snapshot that records them, allowing deterministic regeneration against the declared baseline without conflating forward-compatible manifests with empirical staleness.
 
 \section{External Adjudication Problem Statement}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-The problem is no longer only whether bridge formalization is internally
-coherent. The external problem is to specify:
+The external adjudication problem goes beyond internal model coherence and specifies:
 
 \begin{itemize}
 \item what independent reviewers may legitimately inspect;
@@ -164,7 +145,6 @@ coherent. The external problem is to specify:
 \end{itemize}
 
 \section{Formal Mathematical Grammar of External Adjudication}
-\sectionstatus{formalized}
 
 The adjudication surface is a measurable protocol object, not an impressionistic
 comparison between substrates. Let $(\mathcal{T},d_{\mathcal{T}})$ be the
@@ -250,16 +230,15 @@ identity, or substrate equivalence.
 
 
 \section{Frozen Preregistration Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-3 introduces a true freeze architecture rather than only preregistration
-templates. The governing surfaces are:
+Tier P3 introduces a cryptographic freeze architecture extending preregistration
+templates. The governing schemas (summarized in Appendix A) comprise:
 
 \begin{itemize}
-\item frozen preregistration record schema (Appendix A)
-\item preregistration freeze policy (Appendix A)
-\item preregistration amendment policy (Appendix A)
-\item preregistration lock manifest (Appendix A)
+\item the frozen preregistration record schema;
+\item the preregistration freeze policy;
+\item the preregistration amendment policy;
+\item the preregistration lock manifest.
 \end{itemize}
 
 The architecture formalizes:
@@ -303,7 +282,6 @@ protocol, modulo the stated cryptographic assumption.
 \end{proof}
 
 \section{Local-vs-External Freeze Distinction}
-\sectionstatus{formalized}
 
 The local freeze layer must not be conflated with external filing.
 
@@ -323,11 +301,9 @@ Externally filed record & absent & cannot be claimed from local architecture alo
 \end{table}
 
 \section{Instantiated-Empty Record Layer}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-4B moves the stack beyond package-only readiness by instantiating
-typed-but-empty records that remain explicitly non-evidential. The principal
-surfaces are:
+Tier P4 moves beyond package-level specifications by defining
+typed-but-empty records that remain explicitly non-evidential (Appendices~K--S):
 
 \begin{itemize}
 \item local frozen-record template (Appendix K)
@@ -341,15 +317,14 @@ surfaces are:
 \item evidence insertion manifest (Appendix S)
 \end{itemize}
 
-These artifacts are intentionally empty, typed, and freeze-capable. They are
-not populated evidence, not externally filed records, and not reviewer or
-adjudicator action.
+These schemas are intentionally empty, typed, and freeze-capable. They represent
+neither populated evidence, externally filed records, nor reviewer or
+adjudicator decisions.
 
 \section{Reviewer Candidate and Adjudicator Candidate Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-3 introduces typed candidate schemas without instantiating identities.
-The primary surfaces are:
+Tier P3 introduces typed candidate schemas without instantiating participant identities.
+The primary components are:
 
 \begin{itemize}
 \item reviewer candidate schema (Appendix C)
@@ -384,8 +359,9 @@ future selection from being arbitrary or retrofitted.
 \section{Blinding Assignment Logic}
 \paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Blinding is no longer treated as a generic admonition. Stage3-3 binds a typed
-blinding assignment manifest with classes such as:
+\section{Blinding Assignment Logic}
+
+Blinding is formalized via a typed assignment manifest rather than informal instruction. Tier P3 defines blinding classes including:
 
 \begin{itemize}
 \item \texttt{\detokenize{fully_}\allowbreak{}\detokenize{blinded}}
@@ -394,15 +370,12 @@ blinding assignment manifest with classes such as:
 \item \texttt{\detokenize{unblindi}\allowbreak{}\detokenize{ng_}\allowbreak{}\detokenize{not_}\allowbreak{}\detokenize{authoriz}\allowbreak{}\detokenize{ed}}
 \end{itemize}
 
-The key constraint is that no later dry-run or execution surface may silently
+The key constraint is that no later dry-run or execution stage may silently
 cross into unblinded interpretation.
 
 \section{Human Comparator Instantiation Logic}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-1 closed the gap between abstract channels and typed collection routes.
-Stage3-3 preserves that layer and pushes it closer to freeze- and
-package-compatible execution readiness.
+Tier P1 establishes the gap between abstract channels and typed collection routes, while Tier P3 extends that structure toward freeze-compatible execution readiness:
 
 \begin{itemize}
 \item every channel binds a human-side artifact family;
@@ -457,71 +430,59 @@ therefore exactly statistical and conditional.
 \end{proof}
 
 \section{Channel-by-Channel Execution Contracts}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 \subsection{Self-Report Channel}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 The self-report channel requires prompt-version freezing, missingness policy,
 de-identification, and explicit rejection of synthetic or relabeled
 self-report.
 
 \subsection{Intervention-Response Channel}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 The intervention-response channel requires matched intervention and matched
 negative-control families, dose policy, stop rules, and branch accounting.
 
 \subsection{Temporal-Structure Channel}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 The temporal-structure channel requires a declared segmentation schema, ordering
 policy, and aggregation policy.
 
 \subsection{Valence-Topology Channel}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 The valence-topology channel requires a shared topology schema and excludes
 scalar-only substitutes.
 
 \subsection{Embodiment-Boundary Channel}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 The embodiment-boundary channel requires an environment manifest, confound
 ledger, and error-budget policy.
 
 \subsection{Ambiguity-Load Channel}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 The ambiguity-load channel requires a task-family contract, annotation schema,
 and annotation reliability policy.
 
 \subsection{Transport-Preservation Channel}
-\paragraph{Section status.}\texttt{\detokenize{blocked_}\allowbreak{}\detokenize{until_}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n}}.
 
-The transport-preservation channel remains structurally special. It requires a
-real source-target pairing manifest and transport-axis budget binding. Stage3-3
-defines the pairing shell; it does not satisfy the pairing.
+The transport-preservation channel remains structurally distinct. It requires a
+real source-target pairing manifest and transport-axis budget binding. Tier P3
+defines the pairing shell; it does not populate the pairing.
 
 \section{Matched Intervention Dataset Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Matched-intervention architecture is now carried by both channel contracts and a
-pilot bundle shell. The bundle shell is defined in
-matched-intervention bundle (Appendix G). The bundle remains
-unpopulated, which means the architecture exists while the evidence does not.
+Matched-intervention architecture is carried by channel contracts and the
+pilot bundle shell (Appendix G). The bundle remains
+unpopulated, so the schema exists independently of empirical data.
 
 \section{Negative Control Dataset Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Negative-control architecture is similarly carried by channel contracts and by
-negative-control bundle (Appendix H). Controls remain part of
-the meaning of the future claim surface, not an optional cleanup step.
+Negative-control architecture is similarly carried by channel contracts and the
+negative-control bundle schema (Appendix H). Controls form an integral part of
+any future claim surface rather than a post hoc check.
 
 \section{Preregistration Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Paper 10 now separates three preregistration surfaces:
+Paper 10 distinguishes three preregistration layers:
 
 \begin{enumerate}
 \item template surface;
@@ -529,11 +490,9 @@ Paper 10 now separates three preregistration surfaces:
 \item external filing surface.
 \end{enumerate}
 
-Only the first two are implemented structurally in the current repo. The third
-remains absent.
+The present specification defines the schema grammar for the first two; independent external filing remains unexecuted.
 
 \section{Adjudication Blind Protocol}
-\sectionstatus{formalized}
 
 Let $Y$ denote the masked evidence bundle and $\ell\in\{h,m\}$ its source label. The reference procedure uses forced choice with a balanced source distribution. A protocol permitting abstention fixes its cost and minimum coverage before evaluating held-out bundles. The randomization of a decision rule is independent of the source conditional on its permitted input.
 
@@ -655,18 +614,13 @@ Freeze the parameters or estimate them on calibration blocks. At $\rho=1/2$, $\s
 The Gaussian model supplies a score within each block. Independent-block sampling governs its risk inference. The fiber geometry of Paper IX uses a projection and target distances. The projection $(y,z)\mapsto y$ with hidden target $z\in\{0,1\}$ has fiber diameter one even when two Gaussian laws on $y$ give a discriminating likelihood ratio. With identity projection the fiber diameter is zero, while equal class laws give log-density ratio zero.
 
 \section{Reviewer and Adjudicator Independence Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-2 defined criteria; Stage3-3 now binds those criteria into selection and
-assignment packages. This still does not instantiate reviewers or adjudicators,
-but it removes the ambiguity about what must exist before such instantiation is
-honest.
+Tier P2 defines independence criteria, and Tier P3 binds those criteria into selection and
+assignment schemas. Without instantiating human reviewers or adjudicators directly, this eliminates ambiguity about the prerequisites required before personnel assignment can proceed.
 
 \section{Reviewer Candidate Pool and Assignment Stub Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-4B deepens the reviewer and adjudicator layer from criteria and workflow
-packages into instantiated-empty workflow objects:
+Tier P4 expands the reviewer and adjudicator layer from workflow criteria into empty typed workflow schemas:
 
 \begin{itemize}
 \item reviewer candidate pool template;
@@ -676,15 +630,11 @@ packages into instantiated-empty workflow objects:
 \item reviewer blinding stub.
 \end{itemize}
 
-Each slot remains null-bearing by design. The point is not to simulate people;
-the point is to freeze field grammar, slot grammar, null-policy, and the
-conditions under which later population becomes honest.
+Each slot remains explicitly null-bearing until execution. The objective is not to simulate human evaluation, but to lock field schemas, null policies, and the preconditions governing eventual human assignment.
 
 \section{Execution Pilot Package Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-The execution-pilot package is now a typed family rather than a vague future
-bundle. It includes:
+The execution-pilot package is structured as a typed schema family comprising:
 
 \begin{itemize}
 \item execution session manifest;
@@ -696,34 +646,29 @@ bundle. It includes:
 \end{itemize}
 
 \section{Execution Pilot Rehearsal Kit Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-5 adds a rehearsal kit that sits above package readiness and below real
-collection. The governing surfaces are:
+Tier P5 specifies a rehearsal verification layer positioned between package readiness and live collection. Its components include:
 
 \begin{itemize}
-\item execution rehearsal kit (Appendix T)
-\item dry-run sequence plan (Appendix T)
-\item rehearsal event-log schema (Appendix U)
-\item rehearsal failure modes (Appendix T)
-\item rehearsal reset policy (Appendix T)
+\item execution rehearsal protocol (Appendix T);
+\item dry-run sequence plan (Appendix T);
+\item rehearsal event-log schema (Appendix U);
+\item rehearsal failure modes (Appendix T);
+\item rehearsal reset policy (Appendix T).
 \end{itemize}
 
-The rehearsal kit exists to validate sequence integrity, state transitions, and
-artifact hygiene without collecting evidence and without emitting decisions.
+The rehearsal kit validates state transitions, sequence integrity, and record hygiene without collecting empirical data or emitting adjudicative decisions.
 
 \section{Reproducibility Skeleton Architecture}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-The reproducibility shell exists as a slot-bearing structure. It records where
-later preregistration references, dataset references, control-bundle
+The reproducibility shell exists as a slot-bearing structure. It specifies where
+future preregistration references, dataset references, control-bundle
 references, analysis-shell references, reviewer bundles, and adjudicator
-bundles must go.
+bundles must be anchored.
 
 \section{Dataset Population Boundary}
-\sectionstatus{formalized}
 
-Stage3-3 and Stage3-4 enforce a hard distinction between:
+Tiers P3 and P4 enforce a strict boundary among:
 
 \begin{itemize}
 \item bundle defined;
@@ -732,14 +677,11 @@ Stage3-3 and Stage3-4 enforce a hard distinction between:
 \item bundle adjudicatively interpreted.
 \end{itemize}
 
-The current repo has the first state for several families and does not yet have
-the latter states.
+Only schema definitions are presently realized; downstream population and adjudication remain unexecuted.
 
 \section{Dry-Run Event Log Grammar}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Rehearsal logging is now typed separately from evidence logging. The current
-grammar permits:
+Rehearsal logging is typed disjointly from empirical evidence logging. The rehearsal grammar permits:
 
 \begin{itemize}
 \item \texttt{\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{initiali}\allowbreak{}\detokenize{zed}};
@@ -753,7 +695,6 @@ None of these event classes may be reinterpreted as human data, reviewer
 evidence, or adjudicator action.
 
 \section{Evidence Admissibility Grammar}
-\sectionstatus{formalized}
 
 The admissibility grammar still recognizes:
 
@@ -818,13 +759,11 @@ recognizes the following decision tokens as grammar only:
 \item \texttt{\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{decision_}\allowbreak{}\detokenize{withheld}}
 \end{itemize}
 
-These tokens are defined as future admissible states. They are not instantiated
-anywhere in the current repo as actual outcomes.
+These tokens specify future admissible states; none are populated here with empirical outcomes.
 
 \section{State Grammar for Execution Readiness}
-\sectionstatus{formalized}
 
-The Stage 3 manuscript surface now distinguishes the following state grammar:
+The external adjudication protocol distinguishes the following progression states:
 
 \begin{table}[ht]
 \centering
@@ -843,11 +782,11 @@ State & Meaning \\
 \texttt{\detokenize{session_}\allowbreak{}\detokenize{zero_}\allowbreak{}\detokenize{ready}} & Session-zero initialization is structurally ready, but still not started. \\
 \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{openable_}\allowbreak{}\detokenize{under_}\allowbreak{}\detokenize{controls}} & Pre-collection admissibility checks pass under contamination and abort controls. \\
 \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{open_}\allowbreak{}\detokenize{pre_}\allowbreak{}\detokenize{evidenti}\allowbreak{}\detokenize{al}} & Controlled execution may open as a live state without any populated evidence. \\
-\texttt{\detokenize{stage3_}\allowbreak{}\detokenize{7_}\allowbreak{}\detokenize{first_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{openable}} & Runtime-health and clean-room audits pass, the opening gate is structurally open, but no collection-start event has been executed. \\
+\texttt{\detokenize{first_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{openable}} & Environment integrity and isolated reproducibility audits pass, the Tier~P7 opening gate is structurally open, and no collection-start event has been executed. \\
 \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{started}} & A real authorized collection-start event exists. \\
 \texttt{\detokenize{evidence_}\allowbreak{}\detokenize{generate}\allowbreak{}\detokenize{d}} & Real dataset population or admissible log events exist. \\
 \texttt{\detokenize{adjudica}\allowbreak{}\detokenize{tion_}\allowbreak{}\detokenize{result_}\allowbreak{}\detokenize{recorded}} & Reviewer-governed or adjudicator-governed decision records exist. \\
-\texttt{\detokenize{paper10_}\allowbreak{}\detokenize{final_}\allowbreak{}\detokenize{authoriz}\allowbreak{}\detokenize{ed}} & A later separate manuscript-authorization layer has passed. \\
+\texttt{\detokenize{paper10_}\allowbreak{}\detokenize{final_}\allowbreak{}\detokenize{authoriz}\allowbreak{}\detokenize{ed}} & Independent post-execution authorization criteria are met. \\
 \codestate{dry_run_open} & Dry-run structure may execute without evidence or adjudication. \\
 \texttt{\detokenize{external}\allowbreak{}\detokenize{ly_}\allowbreak{}\detokenize{filed}} & A real external filing reference exists. \\
 \texttt{\detokenize{populate}\allowbreak{}\detokenize{d_}\allowbreak{}\detokenize{with_}\allowbreak{}\detokenize{admissib}\allowbreak{}\detokenize{le_}\allowbreak{}\detokenize{evidence}} & The object family is populated by real admissible evidence. \\
@@ -857,28 +796,25 @@ State & Meaning \\
 \end{table}
 
 \section{Controlled Execution Opening}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-6 adds a bounded controlled-execution opening layer. This layer is
-neither rehearsal-only nor evidence-bearing. It is the first local state in
-which live operational artifacts may exist as empty shells while collection
-still remains not started.
+Tier P6 specifies a bounded controlled-execution opening layer positioned
+between rehearsal and empirical data acquisition: an initial state in
+which live protocol records may exist as empty shells while collection
+remains unstarted.
 
 \begin{itemize}
-\item \texttt{\detokenize{executio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{opening_}\allowbreak{}\detokenize{policy_}\allowbreak{}\detokenize{defined}} means the controlled-execution policy is typed and bound to artifacts.
+\item \texttt{\detokenize{executio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{opening_}\allowbreak{}\detokenize{policy_}\allowbreak{}\detokenize{defined}} means the controlled-execution policy is typed and bound to structured schemas.
 \item \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{openable_}\allowbreak{}\detokenize{under_}\allowbreak{}\detokenize{controls}} means pre-collection gates pass under explicit contamination and abort constraints.
 \item \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{open_}\allowbreak{}\detokenize{pre_}\allowbreak{}\detokenize{evidenti}\allowbreak{}\detokenize{al}} means the system may open a live execution surface while still containing no evidence.
 \end{itemize}
 
-\section{Live-But-Unpopulated Artifacts}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
+\section{Live-But-Unpopulated Record Layer}
 
-Stage3-6 instantiates a new artifact class: live-but-unpopulated operational
-records. These include session-zero manifests, live collection manifests,
-empty collection logs, live dataset manifests, live reproducibility manifests,
-live decision-record stubs, and live evidence-insertion registers.
+Tier P6 introduces unpopulated operational shell schemas: session-zero manifests,
+live collection manifests, empty collection logs, live dataset manifests,
+reproducibility manifests, empty decision stubs, and evidence-insertion registers.
 
-Each such surface must explicitly preserve:
+Each such shell must explicitly preserve:
 
 \begin{itemize}
 \item \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{not_}\allowbreak{}\detokenize{started}};
@@ -887,11 +823,9 @@ Each such surface must explicitly preserve:
 \item explicit empty markers such as \texttt{\detokenize{empty_}\allowbreak{}\detokenize{dataset }\allowbreak{}\detokenize{= true}} where applicable.
 \end{itemize}
 
-Therefore live artifact instantiation is not population, and live shells must
-never be treated as if they were evidence-bearing records.
+Therefore operational shell creation does not constitute dataset population, and empty schemas may never be treated as evidential records.
 
 \section{Session-Zero Protocol}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 Session-zero is the bounded initialization checkpoint that binds local frozen
 record routing, live collection manifests, empty dataset manifests, empty
@@ -921,9 +855,8 @@ Passing this gate yields only \texttt{\detokenize{collecti}\allowbreak{}\detoken
 It does not yield \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{started}}.
 
 \section{Contamination, Abort, and Invalidation Controls}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-6 adds a more operational invalidation grammar:
+Tier P6 adds an operational invalidation grammar:
 
 \begin{itemize}
 \item \textbf{contamination event}: any unauthorized dataset population, evidence-bearing log entry, or decision-bearing record.
@@ -931,21 +864,19 @@ Stage3-6 adds a more operational invalidation grammar:
 \item \textbf{invalidated session}: any session whose pre-collection boundary, blinding route, or provenance cleanliness is breached.
 \end{itemize}
 
-These control classes are meaningful only because Stage3-6 now contains live
-artifacts. Without them, contamination and abort would remain abstract policy
-tokens rather than execution-opening constraints.
+These control classes bind the transition-ready protocol shells, establishing
+contamination and abort rules as execution-opening constraints rather than
+unattached policy tokens.
 
 \section{Operator Checklist}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-The operator checklist now matters as a transition object. It binds the local
+The operator checklist governs execution readiness by binding the local
 frozen record route, live manifest route, empty-log route, empty-dataset
 state, contamination rules, reset rules, and explicit confirmation that no
-evidence exists. Until it is complete, Stage3-6 must not move from
+evidence exists. Until it is complete, Tier P6 must not move from
 \texttt{\detokenize{session_}\allowbreak{}\detokenize{zero_}\allowbreak{}\detokenize{ready}} to \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{openable_}\allowbreak{}\detokenize{under_}\allowbreak{}\detokenize{controls}}.
 
 \section{Collection-Start Boundary}
-\sectionstatus{formalized}
 
 \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{open_}\allowbreak{}\detokenize{pre_}\allowbreak{}\detokenize{evidenti}\allowbreak{}\detokenize{al}} is not \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{started}}.
 The boundary is crossed only by a later real operator-authorized collection
@@ -953,129 +884,114 @@ start event with provenance, contamination-free status, and a first admissible
 log event.
 
 \section{Evidence-Generation Boundary}
-\sectionstatus{formalized}
 
 Evidence generation begins only when a real admissible population event enters
 the human comparator dataset family, matched intervention family,
 negative-control family, collection log, reproducibility package, or
-decision-linked provenance chain. No Stage3-6 artifact emitted in this pass
-crosses that boundary.
+decision-linked provenance chain. No Tier P6 pre-evidential shell instantiated under
+this specification crosses that boundary.
 
 \section{Decision-Record Boundary}
-\sectionstatus{formalized}
 
 The live decision-record stub is an execution-opening shell only. It is not a
 decision, not an adjudicator action, not a reviewer action, and not an
-outcome. The manuscript must preserve that distinction because a populated
+outcome. The protocol preserves that distinction because a populated
 decision record belongs to a later evidential and adjudicative state family.
 
 \section{Transition from Session-Zero to First Admissible Collection}
-\paragraph{Section status.}\texttt{\detokenize{blocked_}\allowbreak{}\detokenize{until_}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n}}.
 
-The next real transition is now sharper than in earlier passes:
+The transition from readiness to collection obeys five ordered steps:
 
 \begin{enumerate}
 \item session-zero becomes ready;
 \item the pre-collection gate opens collection under controls;
-\item Stage3-6 opens a live but still pre-evidential state;
+\item Tier P6 opens a live but still pre-evidential state;
 \item a later explicit collection-start command instantiates the first admissible collection event;
 \item only then may the first dataset-population event exist.
 \end{enumerate}
 
-\section{Runtime Health Audit}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
+\section{Executable Integrity Verification}
 
-Stage3-6B adds a runtime-health audit that asks whether the repository is
-actually executable on a bounded local environment rather than only formally
-specified. The required audit surfaces include:
+Tier P6B adds an executable-integrity verification layer to confirm that the
+declared implementation environment executes cleanly under reproducible rules.
+The required audit surfaces include:
 
 \begin{itemize}
 \item toolchain visibility;
-\item dependency-install behavior under the declared repository install route;
-\item repository build behavior;
-\item repository test behavior;
+\item deterministic dependency installation under the declared package route;
+\item full build behavior;
+\item test suite behavior;
 \item bounded local-start behavior;
-\item verifier-chain behavior for source-of-truth, comparative closure, Stage3-6, Stage3-5, and Paper 9 handoff.
+\item verifier-chain behavior for source-of-truth, comparative closure, Tier P6, Tier P5, and Paper 9 handoff.
 \end{itemize}
 
-The runtime-health audit may pass with warnings. Such warnings may include
-engine mismatch, fallback-install compatibility, or dependency advisories. A
-warning-bearing pass is still operationally meaningful, but it is not
-epistemically elevated into evidence.
+This verification step may pass with compatibility warnings such as engine
+version differences or dependency advisories. A warning-bearing pass remains
+operationally informative without crossing the boundary into empirical evidence.
 
 \section{Clean-Room Reproducibility}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-6B also adds a clean-room reproducibility audit. The clean-room audit
-asks whether a bounded local copy can reinstall dependencies, rebuild the
-repository, rerun key verifiers, and regenerate Stage 3 artifacts without
-relying on hidden machine-specific state. Clean-room reproducibility may pass
-with warnings when a compatibility route is required, provided the route is
-explicitly documented and the resulting build remains honest.
+Tier P6B also specifies a clean-room reproducibility check asking whether an
+isolated environment can reinstall dependencies, rebuild the package, rerun
+key verifiers, and regenerate protocol records without relying on hidden
+machine-specific state. Clean-room reproducibility may pass with warnings when a
+documented compatibility route is used, provided the build remains verifiable.
 
 \section{Dependency and Build Assumptions}
-\sectionstatus{formalized}
 
-The runtime-health layer now makes dependency and build assumptions explicit:
+The executable-integrity layer makes dependency and build assumptions explicit:
 
 \begin{itemize}
-\item the declared Node engine remains part of the reproducibility contract;
-\item the preferred install route remains \codestate{npm ci};
+\item the declared execution engine forms part of the reproducibility contract;
+\item deterministic locked installation remains the preferred setup route;
 \item a fallback install route may be recorded only as a compatibility surface;
 \item build success must remain distinct from evidence generation;
 \item test success must remain distinct from adjudication.
 \end{itemize}
 
-\section{Reproducible Artifact Regeneration}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
+\section{Reproducible Record Regeneration}
 
-Stage3-6B adds a source-driven artifact-regeneration audit. This audit checks
-whether tracked artifacts can be regenerated from the current source tree and
-whether the resulting diffs are:
+Tier P6B adds a source-driven record-regeneration check verifying whether
+protocol records can be deterministically regenerated from source definitions
+and classifying any differences as:
 
 \begin{itemize}
 \item absent;
 \item provenance-only;
-\item semantically stale but honestly fixed; or
+\item semantically stale; or
 \item blocking.
 \end{itemize}
 
-This matters because Stage 3 now depends on a growing artifact family. The
-audit therefore separates semantic drift from ordinary lineage and timestamp
-drift, and it refuses to treat manual cosmetic rewriting as acceptable
-regeneration.
+Because external-adjudication readiness relies on an extensive family of
+structured schemas, the audit separates semantic drift from ordinary timestamp
+or lineage variation and rejects manual editing as a substitute for deterministic
+generation.
 
 \section{Local Path Leakage Policy}
-\sectionstatus{formalized}
 
-Clean-room readiness now requires that live normative surfaces remain free of
-machine-specific absolute paths. Historical planning notes or preserved
-snapshots may still contain old local references, but they must remain
-explicitly classified as historical rather than live normative dependencies.
+Clean-room readiness requires that live normative protocol surfaces remain free
+of machine-specific absolute paths. Historical planning records, when archived,
+must remain explicitly marked as non-normative.
 
 \section{Controlled Execution Opening Audit}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-The controlled-execution opening layer is now itself audited. Stage3-6B does
-not replace Stage3-6; it checks whether Stage3-6 is actually executable,
-rebuildable, and reproducible. Therefore the live-but-unpopulated artifacts,
-session-zero gate, and pre-collection gate must now survive both runtime
-health verification and clean-room reconstruction.
+Tier P6B audits the controlled-execution opening layer itself without replacing
+Tier P6, confirming that the live unpopulated records, session-zero gate, and
+pre-collection gate survive executable verification and clean-room
+reconstruction.
 
 \section{Session-Zero Reproducibility}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Session-zero reproducibility means that a rebuilt local tree can recreate the
+Session-zero reproducibility requires that an isolated environment reconstruct the
 session-zero manifest, operator checklist state, and failure-mode assessment
-without any hidden local inputs and without producing collection-start or
+without hidden local inputs and without emitting collection-start or
 evidence-bearing records.
 
 \section{Pre-Collection Gate Reproducibility}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Pre-collection gate reproducibility means that a rebuilt local tree can
-recreate the pre-collection admissibility result, contamination checklist, and
-invalidation status while still preserving:
+Pre-collection gate reproducibility requires that an isolated environment reconstruct the
+pre-collection admissibility result, contamination checklist, and
+invalidation status while preserving:
 
 \begin{itemize}
 \item \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{not_}\allowbreak{}\detokenize{started}};
@@ -1084,32 +1000,29 @@ invalidation status while still preserving:
 \end{itemize}
 
 \section{Why Reproducibility Does Not Imply Evidence}
-\sectionstatus{formalized}
 
 Reproducibility shows that the formal and executable surfaces are rebuildable.
 It does not show that any dataset has been populated, that any human evidence
 exists, that any reviewer or adjudicator has acted, or that any result-bearing
-section is now licensed.
+section is licensed.
 
-\section{Why Runtime Health Does Not Imply Adjudication}
-\sectionstatus{formalized}
+\section{Why Execution Health Does Not Imply Adjudication}
 
-Runtime health shows that the code path and verifier path are alive. It does
-not imply that collection has started, that evidence has been generated, that
-reviewer-governed interpretation exists, or that adjudication is open. A
-healthy runtime is still a pre-evidential state until later real execution
-events occur.
+Execution health shows that the software and verification pathways operate reliably.
+It does not imply that collection has started, that evidence has been generated,
+that reviewer-governed interpretation exists, or that adjudication is open. A
+healthy execution environment remains pre-evidential until real collection events
+occur.
 
 \section{Transition Conditions for First Admissible Collection}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
-Stage3-7 may be classified as \texttt{\detokenize{stage3_}\allowbreak{}\detokenize{7_}\allowbreak{}\detokenize{first_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{openable}}
-only when runtime-health and clean-room reproducibility both pass honestly,
-path leakage remains clear on live normative surfaces, artifact regeneration is
-non-blocking, Stage3-6 remains openable, and Paper 10 remains non-final and
-non-result-bearing.
+Tier P7 may be classified as \texttt{\detokenize{first_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{openable}}
+only when executable integrity and clean-room reproducibility pass verification,
+normative surfaces remain free of path leakage, record regeneration is
+non-blocking, Tier P6 remains openable, and no uncollected empirical results are
+claimed.
 
-Even then, the current state must still preserve:
+Even then, the pre-evidential state must still preserve:
 
 \begin{itemize}
 \item \texttt{\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{start_}\allowbreak{}\detokenize{not_}\allowbreak{}\detokenize{executed}};
@@ -1119,7 +1032,6 @@ Even then, the current state must still preserve:
 \end{itemize}
 
 \section{Claim Grammar for Eventual Execution-Era Statements}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 Any later admissible result-bearing statement must reference:
 
@@ -1143,7 +1055,6 @@ Forbidden grammar remains explicit:
 \end{itemize}
 
 \section{Theorem, Proposition, and Protocol Mapping}
-\sectionstatus{formalized}
 
 \begin{table}[ht]
 \centering
@@ -1152,11 +1063,11 @@ Forbidden grammar remains explicit:
 \toprule
 Family & Dependency set & Formalized now & Requires execution & Remains forbidden \\
 \midrule
-Comparator channel contract & BaseCore, BPF, Stage 2, Stage3-1 & yes & no & result claim \\
-Freeze architecture & Stage3-1, Stage3-2, Stage3-3 & yes & no & external filing claim \\
-Reviewer package architecture & Stage3-2, Stage3-3 & yes & no & review outcome \\
-Pilot package architecture & Stage3-3 & yes & no & evidence claim \\
-Dry-run opening grammar & Stage3-3, Stage3-4 & yes & no & adjudication claim \\
+Comparator channel contract & BaseCore, Bridge Program, Subjectivity Tier, Tier P1 & yes & no & result claim \\
+Freeze architecture & Tier P1, Tier P2, Tier P3 & yes & no & external filing claim \\
+Reviewer package architecture & Tier P2, Tier P3 & yes & no & review outcome \\
+Pilot package architecture & Tier P3 & yes & no & evidence claim \\
+Dry-run opening grammar & Tier P3, Tier P4 & yes & no & adjudication claim \\
 Human comparator result section & all above + admissible data & no & yes & human equivalence \\
 Adjudication outcome section & all above + reviewer/adjudicator layer + admissible evidence & no & yes & metaphysical closure \\
 \bottomrule
@@ -1164,7 +1075,6 @@ Adjudication outcome section & all above + reviewer/adjudicator layer + admissib
 \end{table}
 
 \section{What Paper 10 Could and Could Not Change}
-\sectionstatus{formalized}
 
 Paper 10 is the only layer in the present corpus designed to move evidence out
 of the purely internal-support regime. Even a successful execution would not
@@ -1177,11 +1087,11 @@ authorize all possible interpretations.
 \toprule
 Claim family & Possible post-execution movement & Still forbidden by default \\
 \midrule
-Runtime reproducibility & from local/internal to externally reproduced under protocol & consciousness, subjecthood, phenomenality \\
+Execution reproducibility & from local/internal to externally reproduced under protocol & consciousness, subjecthood, phenomenality \\
 Human comparator similarity & from unpopulated protocol to measured channel comparison & human equivalence or moral parity \\
-Bridge predicate discrimination & from BPF scaffold/internal surfaces to adjudicated comparative evidence & phenomenal experience simpliciter \\
+Bridge predicate discrimination & from bridge schema and internal surfaces to adjudicated comparative evidence & phenomenal experience simpliciter \\
 Negative-control survival & from internal controls to externally witnessed controls & theorem confirmation beyond stated assumptions \\
-Failure or inconclusive result & from open uncertainty to documented non-support or bounded inconclusiveness & rhetorical rescue by post hoc reinterpretation \\
+Failure or inconclusive result & from open uncertainty to documented non-support or bounded inconclusiveness & post hoc reinterpretation \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1201,7 +1111,6 @@ evidence therefore changes its evidential status, not its semantic type.
 \end{proof}
 
 \section{Section-Status Ledger}
-\sectionstatus{formalized}
 
 \begin{table}[ht]
 \centering
@@ -1220,7 +1129,7 @@ Execution pilot package architecture & protocol\_\allowbreak defined & Pilot rem
 Reproducibility skeleton architecture & protocol\_\allowbreak defined & Package unpopulated \\
 Dataset population boundary & formalized & Keep defined-vs-populated split intact \\
 Adjudication decision grammar & protocol\_\allowbreak defined & Decision tokens remain uninstantiated \\
-Future result sections & blocked\_\allowbreak until\_\allowbreak execution & Requires admissible execution-era artifacts \\
+Future result sections & blocked\_\allowbreak until\_\allowbreak execution & Requires admissible execution-era records \\
 External adjudication discussion & blocked\_\allowbreak until\_\allowbreak external\_\allowbreak adjudication & Requires admissible reviewer-governed evidence \\
 Human equivalence / superiority / metaphysical consequences & forbidden\_\allowbreak claim\_\allowbreak surface & Remains outside current authority surface \\
 \bottomrule
@@ -1228,7 +1137,6 @@ Human equivalence / superiority / metaphysical consequences & forbidden\_\allowb
 \end{table}
 
 \section{Evidence Insertion Map}
-\paragraph{Section status.}\texttt{\detokenize{evidence_}\allowbreak{}\detokenize{pending}}.
 
 \paragraph{Human comparator result insertion point.}
 Admissible evidence required: frozen preregistration record, typed human
@@ -1251,7 +1159,6 @@ real candidate population, real assignment event, real collection session,
 real decision record population, and real reproducibility package population.
 
 \section{Open Burdens and Blocked Sections}
-\paragraph{Section status.}\texttt{\detokenize{blocked_}\allowbreak{}\detokenize{until_}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n}}.
 
 \blockedresultstatus
 
@@ -1273,7 +1180,6 @@ Open burdens remain explicit:
 \end{itemize}
 
 \section{Execution-Era Unlock Conditions}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 Before any result-bearing section may become writable, the following must all be
 true:
@@ -1292,10 +1198,9 @@ true:
 \end{enumerate}
 
 \section{Stronger Execution-to-Result Transition Map}
-\paragraph{Section status.}\texttt{\detokenize{blocked_}\allowbreak{}\detokenize{until_}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n}}.
 
-The transition from current Stage3-6 controlled opening to a result-bearing
-paper now has six distinct unlock layers:
+The transition from Tier P6 controlled opening to a result-bearing protocol
+has six distinct unlock layers:
 
 \begin{enumerate}
 \item \textbf{Instantiation layer}: empty records, pools, stubs, and rehearsal kit exist.
@@ -1303,115 +1208,89 @@ paper now has six distinct unlock layers:
 \item \textbf{Population layer}: real humans, real sessions, and real evidence populate those empty structures.
 \item \textbf{Admissibility layer}: controls, provenance, blinding, and declared shells survive audit.
 \item \textbf{Decision layer}: reviewer and adjudicator records become populated by real independent action.
-\item \textbf{Manuscript layer}: only then may result-bearing Paper 10 sections be written.
+\item \textbf{Empirical reporting layer}: only then may result-bearing Paper 10 sections be populated.
 \end{enumerate}
 
 \section{Conditions for Comparative Conclusions}
-\sectionstatus{formalized}
 
-Paper 10 cannot become final because the current repo still lacks the evidence
-bearing surfaces that would convert protocol architecture into scientific
-claims. The manuscript may now specify the machinery of later freezing,
-selection, packaging, dry-run, provenance closure, instantiated-empty records,
-and rehearsal-facing governance. It still may not write conclusions whose truth
-depends on evidence that does not yet exist.
+Paper 10 specifies the normative protocol prior to data collection and therefore
+withholds empirical conclusions until external evidence-bearing surfaces exist.
+The text specifies the machinery of freezing, selection, packaging, dry-run,
+provenance closure, instantiated-empty records, and rehearsal-facing governance,
+while prohibiting any conclusion whose truth depends on uncollected evidence.
 
-\section{Future Execution Pathway to Real Stage 3}
-\paragraph{Section status.}\texttt{\detokenize{blocked_}\allowbreak{}\detokenize{until_}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n}}.
+\section{Execution Pathway to External Evidence}
 
-The next executable pathway is not ``publish Paper 10.'' It is:
+The operational execution sequence proceeds through nine ordered steps:
 
 \begin{enumerate}
-\item populate the local frozen record honestly;
-\item populate reviewer and adjudicator pools honestly;
+\item populate the local frozen record under preregistration lock;
+\item populate reviewer and adjudicator pools with verified disclosures;
 \item instantiate actual reviewer, adjudicator, and blinding assignments;
 \item validate dry-run, rehearsal, and controlled-opening integrity;
-\item issue a real collection-start event under Stage3-6 controls;
+\item issue a real collection-start event under Tier P6 controls;
 \item populate admissible datasets, collection logs, and control bundles;
 \item run declared statistical shells;
 \item bind reviewer and adjudicator outputs;
-\item only then write result-bearing sections.
+\item only then populate result-bearing sections.
 \end{enumerate}
 
-\section{Boundary to Stage 4 Metaphysical Consequence Analysis}
-\paragraph{Section status.}\texttt{\detokenize{forbidde}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{claim_}\allowbreak{}\detokenize{surface}}.
+\section{Boundary to Metaphysical Consequence Analysis}
 
-Stage 4 remains outside the authority surface of this document. Even later
-successful execution-era evidence would still not automatically license
-metaphysical subjecthood, moral status, or cross-substrate identity
-preservation.
+Metaphysical consequence analysis remains outside the authority surface of this
+document. Even later successful execution-era evidence would not
+automatically license metaphysical subjecthood, moral status, or
+cross-substrate identity preservation.
 
 \section{Appendices of Schemas and Templates}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 \subsection*{Appendix A: Frozen Preregistration Record Template}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{frozen_}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{record_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: frozen preregistration record specification, governed by the
+preregistration freeze, amendment, and lock-manifest policies.\\
 Admissible evidence required before population: actual local lock and, where
 required by protocol, real external filing reference.
 
-
-Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{freeze_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}, \texttt{\detokenize{docs/}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{amendmen}\allowbreak{}\detokenize{t_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}, \texttt{\detokenize{docs/}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{lock_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
-
 \subsection*{Appendix B: Human Comparator Preregistration Template}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{human_}\allowbreak{}\detokenize{comparat}\allowbreak{}\detokenize{or_}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: human comparator channel preregistration specification.\\
 Admissible evidence required before population: channel-level freeze and later
 dataset lineage.
 
 \subsection*{Appendix C: Reviewer Candidate Schema}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reviewer_}\allowbreak{}\detokenize{candidat}\allowbreak{}\detokenize{e_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: reviewer candidate profile and conflict-governed selection workflow.\\
 Admissible evidence required before population: real candidate package and
 conflict disclosures.
 
-
-Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reviewer_}\allowbreak{}\detokenize{selectio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{workflow.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
-
 \subsection*{Appendix D: Adjudicator Candidate Schema}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{candidat}\allowbreak{}\detokenize{e_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: adjudicator candidate profile and authority-bounded assignment workflow.\\
 Admissible evidence required before population: real assignment package and
 decision-authority boundary.
 
-
-Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{assignme}\allowbreak{}\detokenize{nt_}\allowbreak{}\detokenize{workflow.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
-
 \subsection*{Appendix E: Blinding Assignment Template}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{blinding_}\allowbreak{}\detokenize{assignme}\allowbreak{}\detokenize{nt_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: blinding assignment manifest specification.\\
 Admissible evidence required before population: authorized assignment route and
 later unblinding event if one exists.
 
 \subsection*{Appendix F: Execution Pilot Package Manifest}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{pilot_}\allowbreak{}\detokenize{package_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: execution pilot package manifest specification.\\
 Admissible evidence required before population: real session manifests and
 later populated bundle references.
 
 \subsection*{Appendix G: Dataset Contract Summary}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{matched_}\allowbreak{}\detokenize{interven}\allowbreak{}\detokenize{tion_}\allowbreak{}\detokenize{dataset_}\allowbreak{}\detokenize{contract}\allowbreak{}\detokenize{s.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-and \texttt{\detokenize{docs/}\allowbreak{}\detokenize{negative_}\allowbreak{}\detokenize{control_}\allowbreak{}\detokenize{dataset_}\allowbreak{}\detokenize{contract}\allowbreak{}\detokenize{s.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: matched-intervention and negative-control dataset contracts,
+together with the pilot matched-intervention bundle specification.\\
 Admissible evidence required before result use: populated admissible datasets.
 
-
-Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{pilot_}\allowbreak{}\detokenize{matched_}\allowbreak{}\detokenize{interven}\allowbreak{}\detokenize{tion_}\allowbreak{}\detokenize{bundle.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
-
 \subsection*{Appendix H: Negative Control Bundle Summary}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{pilot_}\allowbreak{}\detokenize{negative_}\allowbreak{}\detokenize{control_}\allowbreak{}\detokenize{bundle.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: pilot negative-control bundle specification.\\
 Admissible evidence required before result use: populated bundle and control
 admissibility record.
 
 \subsection*{Appendix I: Statistical Shell Summary}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{statisti}\allowbreak{}\detokenize{cal_}\allowbreak{}\detokenize{analysis_}\allowbreak{}\detokenize{shells.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: preregistered statistical analysis shell specification.\\
 Admissible evidence required before result use: shell execution output on real
 admissible inputs.
 
 \subsection*{Appendix J: Adjudication Decision Grammar Summary}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 Decision tokens retained as grammar only:
 \texttt{\detokenize{external}\allowbreak{}\detokenize{ly_}\allowbreak{}\detokenize{admissib}\allowbreak{}\detokenize{le_}\allowbreak{}\detokenize{but_}\allowbreak{}\detokenize{inconclu}\allowbreak{}\detokenize{sive}},
 \texttt{\detokenize{protocol_}\allowbreak{}\detokenize{invalida}\allowbreak{}\detokenize{ted}},
@@ -1421,162 +1300,123 @@ Decision tokens retained as grammar only:
 \texttt{\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{decision_}\allowbreak{}\detokenize{withheld}}.
 
 \subsection*{Appendix K: Local Frozen Record Example}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{local_}\allowbreak{}\detokenize{frozen_}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{record_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: local frozen preregistration record specification.\\
 Admissible evidence required before result use: real local lock event and, where
 required by route, external filing provenance.
 
 \subsection*{Appendix L: Reviewer Candidate Pool Template}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reviewer_}\allowbreak{}\detokenize{candidat}\allowbreak{}\detokenize{e_}\allowbreak{}\detokenize{pool_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: reviewer candidate pool specification.\\
 Admissible evidence required before result use: real reviewer identities,
 conflict disclosures, and selection events.
 
 \subsection*{Appendix M: Adjudicator Candidate Pool Template}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{candidat}\allowbreak{}\detokenize{e_}\allowbreak{}\detokenize{pool_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: adjudicator candidate pool specification.\\
 Admissible evidence required before result use: real adjudicator identity,
 assignment provenance, and decision-authority declaration.
 
 \subsection*{Appendix N: Blinding Assignment Stub}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{blinding_}\allowbreak{}\detokenize{assignme}\allowbreak{}\detokenize{nt_}\allowbreak{}\detokenize{stub.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}} and
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{reviewer_}\allowbreak{}\detokenize{blinding_}\allowbreak{}\detokenize{stub.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: pre-evidential blinding assignment and reviewer-blinding structural stubs.\\
 Admissible evidence required before result use: real assignment route and real
 unblinding trace if one later exists.
 
 \subsection*{Appendix O: Execution Session Template}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{session_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: execution session manifest specification.\\
 Admissible evidence required before result use: real collection session and
 real session lineage.
 
 \subsection*{Appendix P: Empty Collection Log Schema}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{log_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: pre-evidential unpopulated collection-log schema.\\
 Admissible evidence required before result use: populated log entries from real
 collection events.
 
 \subsection*{Appendix Q: Empty Decision Record Template}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{decision_}\allowbreak{}\detokenize{record_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: pre-evidential decision-record structural template.\\
 Admissible evidence required before result use: real reviewer and adjudicator
 action, not grammar only.
 
 \subsection*{Appendix R: Reproducibility Manifest Example}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reproduc}\allowbreak{}\detokenize{ibility_}\allowbreak{}\detokenize{package_}\allowbreak{}\detokenize{manifest_}\allowbreak{}\detokenize{empty.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: unpopulated reproducibility package manifest specification.\\
 Admissible evidence required before result use: populated package slots,
 dataset references, shell outputs, and reviewer-facing bundles.
 
 \subsection*{Appendix S: Evidence Insertion Manifest}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{evidence_}\allowbreak{}\detokenize{insertio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
-Admissible evidence required before result use: actual artifact refs, actual
-decision refs, and populated provenance chains.
+Schema family: evidence insertion manifest specification.\\
+Admissible evidence required before result use: actual record references, actual
+decision references, and populated provenance chains.
 
 \subsection*{Appendix T: Rehearsal-Kit Map}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{pilot_}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{kit.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}} and
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{dry_}\allowbreak{}\detokenize{run_}\allowbreak{}\detokenize{sequence_}\allowbreak{}\detokenize{plan.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
-Admissible evidence required before result use: none at rehearsal time, but no
-rehearsal artifact may be promoted into evidence.
-
-
-Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{failure_}\allowbreak{}\detokenize{modes.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}, \texttt{\detokenize{docs/}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{reset_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
+Schema family: execution-pilot rehearsal kit and dry-run sequence specification,
+governed by rehearsal failure-mode and reset policies.\\
+Admissible evidence required before result use: none at rehearsal time, and no
+rehearsal record may be promoted into evidence.
 
 \subsection*{Appendix U: Dry-Run Event Log Grammar}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{event_}\allowbreak{}\detokenize{log_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: rehearsal event-log schema.\\
 Allowed event classes remain rehearsal-only and do not imply human data,
 reviewer action, or adjudicator action.
 
 \subsection*{Appendix V: Controlled Execution Opening Policy}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{controll}\allowbreak{}\detokenize{ed_}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{opening_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
-Admissible evidence required before result use: none at opening time, but no
-controlled-opening artifact may be promoted into evidence by itself.
+Schema family: controlled execution-opening policy specification.\\
+Admissible evidence required before result use: none at opening time, and no
+controlled-opening record may be promoted into evidence by itself.
 
 \subsection*{Appendix W: Session-Zero Protocol and Checklist}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{session_}\allowbreak{}\detokenize{zero_}\allowbreak{}\detokenize{protocol.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}} and
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{session_}\allowbreak{}\detokenize{zero_}\allowbreak{}\detokenize{operator_}\allowbreak{}\detokenize{checklis}\allowbreak{}\detokenize{t.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: session-zero protocol and operator-checklist specification.\\
 Admissible evidence required before result use: a later real collection-start
 event and later populated log entries.
 
 \subsection*{Appendix X: Pre-Collection Gate and Contamination Controls}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{pre_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{admissib}\allowbreak{}\detokenize{ility_}\allowbreak{}\detokenize{gate.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}},
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{pre_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{gate_}\allowbreak{}\detokenize{criteria.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}, and
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{pre_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{contamin}\allowbreak{}\detokenize{ation_}\allowbreak{}\detokenize{checklis}\allowbreak{}\detokenize{t.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
+Schema family: pre-collection admissibility gate, acceptance-criteria, and
+contamination-checklist specification.\\
 Admissible evidence required before result use: a later contamination-free
 collection-start event and later admissible dataset population.
 
-\subsection*{Appendix Y: Live-But-Unpopulated Artifact Map}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{external_}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tion/}\allowbreak{}\detokenize{stage3_}\allowbreak{}\detokenize{6/}\allowbreak{}\detokenize{live_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{json}},
-\texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{external_}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tion/}\allowbreak{}\detokenize{stage3_}\allowbreak{}\detokenize{6/}\allowbreak{}\detokenize{live_}\allowbreak{}\detokenize{human_}\allowbreak{}\detokenize{comparat}\allowbreak{}\detokenize{or_}\allowbreak{}\detokenize{dataset_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{json}},
-and parallel Stage3-6 live manifests.\\
+\subsection*{Appendix Y: Live-But-Unpopulated Record Map}
+Schema family: live pre-evidential collection manifest, live human-comparator
+dataset manifest, and parallel Tier P6 live operational shells.\\
 Allowed interpretation: live operational shell only. Forbidden interpretation:
 populated dataset, evidence, or adjudication.
 
 \subsection*{Appendix Z: First Admissible Collection Unlock Map}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{first_}\allowbreak{}\detokenize{admissib}\allowbreak{}\detokenize{le_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{unlock_}\allowbreak{}\detokenize{map.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-and \texttt{\detokenize{docs/}\allowbreak{}\detokenize{FIRST_}\allowbreak{}\detokenize{ADMISSIB}\allowbreak{}\detokenize{LE_}\allowbreak{}\detokenize{COLLECTI}\allowbreak{}\detokenize{ON_}\allowbreak{}\detokenize{UNLOCK_}\allowbreak{}\detokenize{MAP.}\allowbreak{}\detokenize{md}}.\\
+Schema family: first admissible collection unlock protocol and gate rules.\\
 Admissible evidence required before result use: actual reviewer selection,
 actual adjudicator assignment, actual blinding assignment, operator
 authorization, collection-start command, and first populated collection-log
 event.
 
-\subsection*{Appendix AA: Runtime Health Audit}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{runtime_}\allowbreak{}\detokenize{health_}\allowbreak{}\detokenize{audit.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}},
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{RUNTIME_}\allowbreak{}\detokenize{HEALTH_}\allowbreak{}\detokenize{AUDIT.}\allowbreak{}\detokenize{md}}, and
-\texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{runtime_}\allowbreak{}\detokenize{health/}\allowbreak{}\detokenize{runtime_}\allowbreak{}\detokenize{health_}\allowbreak{}\detokenize{audit.}\allowbreak{}\detokenize{json}}.\\
+\subsection*{Appendix AA: Executable Integrity Verification Audit}
+Schema family: executable-environment health and verifier-chain audit record.\\
 Allowed interpretation: executable health and verifier-chain status only.
 Forbidden interpretation: evidence, collection start, or adjudication.
 
 \subsection*{Appendix AB: Clean-Room Reproducibility Audit}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{clean_}\allowbreak{}\detokenize{room_}\allowbreak{}\detokenize{reproduc}\allowbreak{}\detokenize{ibility_}\allowbreak{}\detokenize{audit.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}},
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{CLEAN_}\allowbreak{}\detokenize{ROOM_}\allowbreak{}\detokenize{REPRODUC}\allowbreak{}\detokenize{IBILITY_}\allowbreak{}\detokenize{AUDIT.}\allowbreak{}\detokenize{md}}, and
-\texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{runtime_}\allowbreak{}\detokenize{health/}\allowbreak{}\detokenize{clean_}\allowbreak{}\detokenize{room_}\allowbreak{}\detokenize{reproduc}\allowbreak{}\detokenize{ibility_}\allowbreak{}\detokenize{audit.}\allowbreak{}\detokenize{json}}.\\
+Schema family: clean-room rebuildability and reproducibility audit record.\\
 Allowed interpretation: bounded rebuildability only. Forbidden interpretation:
-external adjudicative support, empirical support, or manuscript finality.
+external adjudicative support, empirical support, or completed empirical confirmation.
 
 \subsection*{Appendix AC: Local Path Leakage Audit}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{PATH_}\allowbreak{}\detokenize{AND_}\allowbreak{}\detokenize{LOCAL_}\allowbreak{}\detokenize{LEAKAGE_}\allowbreak{}\detokenize{AUDIT.}\allowbreak{}\detokenize{md}} and
-\texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{runtime_}\allowbreak{}\detokenize{health/}\allowbreak{}\detokenize{path_}\allowbreak{}\detokenize{and_}\allowbreak{}\detokenize{local_}\allowbreak{}\detokenize{leakage_}\allowbreak{}\detokenize{audit.}\allowbreak{}\detokenize{json}}.\\
+Schema family: path-leakage and self-containment classification audit.\\
 Allowed interpretation: leak classification only. Forbidden interpretation:
-claim that historical snapshots were rewritten or erased.
+claim that historical snapshots were erased.
 
-\subsection*{Appendix AD: Artifact Regeneration Audit}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{ARTIFACT_}\allowbreak{}\detokenize{REGENERA}\allowbreak{}\detokenize{TION_}\allowbreak{}\detokenize{AUDIT.}\allowbreak{}\detokenize{md}} and
-\texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{runtime_}\allowbreak{}\detokenize{health/}\allowbreak{}\detokenize{artifact_}\allowbreak{}\detokenize{regenera}\allowbreak{}\detokenize{tion_}\allowbreak{}\detokenize{audit.}\allowbreak{}\detokenize{json}}.\\
+\subsection*{Appendix AD: Record Regeneration Audit}
+Schema family: deterministic record regeneration and drift-classification audit.\\
 Allowed interpretation: regeneration and drift classification only. Forbidden
 interpretation: result-bearing evidence insertion.
 
-\subsection*{Appendix AE: Stage3-7 First Collection Opening Criteria}
-\paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
-Primary references:
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{stage3_}\allowbreak{}\detokenize{7_}\allowbreak{}\detokenize{first_}\allowbreak{}\detokenize{admissib}\allowbreak{}\detokenize{le_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{opening_}\allowbreak{}\detokenize{criteria.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}},
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{first_}\allowbreak{}\detokenize{admissib}\allowbreak{}\detokenize{le_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{start_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}},
-\texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{external_}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tion/}\allowbreak{}\detokenize{stage3_}\allowbreak{}\detokenize{7/}\allowbreak{}\detokenize{stage3_}\allowbreak{}\detokenize{7_}\allowbreak{}\detokenize{opening_}\allowbreak{}\detokenize{gate.}\allowbreak{}\detokenize{json}},
-and \texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{external_}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tion/}\allowbreak{}\detokenize{stage3_}\allowbreak{}\detokenize{7/}\allowbreak{}\detokenize{first_}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{opening_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{json}}.\\
+\subsection*{Appendix AE: Tier P7 First Collection Opening Criteria}
+Schema family: Tier P7 first admissible collection opening criteria,
+collection-start policy, opening gate, and opening manifest.\\
 Allowed interpretation: first-collection opening criteria only. Forbidden
 interpretation: executed collection start, evidence generation, or adjudication.
 
 \section{Blocked Result Surfaces}
-\paragraph{Section status.}\texttt{\detokenize{blocked_}\allowbreak{}\detokenize{until_}\allowbreak{}\detokenize{external_}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tion}}.
 
 \subsection{Human Comparator Results}
 \blockedresultstatus
 
 \paragraph{Admissible evidence required.}
-Frozen preregistration record required. Artifact references required. Negative
+Frozen preregistration record required. Execution records required. Negative
 controls required. Statistical shell required. Reviewer package required.
 
 \subsection{External Adjudication Results}
@@ -1590,12 +1430,11 @@ log required. Adjudicator decision record required.
 \blockedresultstatus
 
 \paragraph{Admissible evidence required.}
-Execution-era artifacts required. Adjudication-facing evidence required.
+Execution-era records required. Adjudication-facing evidence required.
 Identity-preservation, metaphysical, and moral-status claims remain forbidden
 even after this section becomes writable.
 
 \section{Non-Claim Ledger}
-\sectionstatus{formalized}
 
 This manuscript does not establish consciousness, phenomenality in the strong
 sense, human equivalence, superiority, inferiority, metaphysical subjecthood,
@@ -1630,5 +1469,23 @@ and replication remain unexecuted unless a submission documents them;
 \paragraph{Additional obligations.} The analytic risk bounds require their balance, leakage, independence and coverage assumptions; collection and external filing remain unexecuted unless sourced.
 
 \paragraph{Differential tests and evidence.} Run forced-choice, abstention, permutation and known-leak controls with justified sampling uncertainty and independent review.
+
+
+
+% BEGIN_AUTHORIAL_NOTE
+\section*{Authorial Note and Methodological Provenance}
+\addcontentsline{toc}{section}{Authorial Note and Methodological Provenance}
+The conception, theoretical direction, mathematical architecture, development,
+and integration of the QICN research programme were undertaken by a single
+independent researcher, Johnny Andrey P\'erez Ram\'irez, over more than one year.
+This account of provenance is supplied by the author. Several artificial
+intelligence systems and formal verification tools assisted with technical
+drafting, proof exploration, consistency checks, and mechanized kernels under
+his direction. The author retains intellectual responsibility for the
+programme, its claims, and any remaining errors. Analytical manuscript proofs,
+machine-checked kernels, and internal tests have distinct scopes; independent
+mathematical review and empirical validation remain separate obligations.
+\texttt{external\_support\_certified=false}.
+% END_AUTHORIAL_NOTE
 
 \end{document}

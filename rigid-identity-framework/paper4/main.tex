@@ -823,11 +823,10 @@ Pilot evidence is non-final by construction.
 Bound contracts: predictions registry, experiment matrix, results artifact, and schema set.
 
 \subsection{Run Artifact Naming}
-\texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{raw/}\allowbreak{}\detokenize{<system>/}\allowbreak{}\detokenize{<scenari}\allowbreak{}\detokenize{o>/}\allowbreak{}\detokenize{<run_}\allowbreak{}\detokenize{id>.}\allowbreak{}\detokenize{json}} and \texttt{\detokenize{artifact}\allowbreak{}\detokenize{s/}\allowbreak{}\detokenize{logs/}\allowbreak{}\detokenize{<system>/}\allowbreak{}\detokenize{<scenari}\allowbreak{}\detokenize{o>/}\allowbreak{}\detokenize{<run_}\allowbreak{}\detokenize{id>.}\allowbreak{}\detokenize{log}}.
+Each experimental execution emits a structured raw telemetry record indexed by system, scenario, and run identifier together with its paired execution log under a deterministic schema contract.
 
-\subsection{Auto-Generation Pipeline}
-\texttt{\detokenize{node res}\allowbreak{}\detokenize{earch/}\allowbreak{}\detokenize{scripts/}\allowbreak{}\detokenize{generate_}\allowbreak{}\detokenize{prelimin}\allowbreak{}\detokenize{ary_}\allowbreak{}\detokenize{pilot_}\allowbreak{}\detokenize{dataset.}\allowbreak{}\detokenize{v45.}\allowbreak{}\detokenize{mjs}} \\
-\texttt{\detokenize{node res}\allowbreak{}\detokenize{earch/}\allowbreak{}\detokenize{scripts/}\allowbreak{}\detokenize{generate_}\allowbreak{}\detokenize{latex_}\allowbreak{}\detokenize{assets.}\allowbreak{}\detokenize{v45.}\allowbreak{}\detokenize{mjs}}
+\subsection{Automated Generation Pipeline}
+Benchmark dataset synthesis and reporting tables are generated deterministically under fixed random seeds, SHA-256 manifest hashes, and locked protocol constants prior to statistical evaluation.
 
 \section{Discussion}
 The contribution is methodological discipline: pre-registered prediction logic + integrity admissibility + decision-complete acceptance. This blocks narrative inflation over weak traceability.
@@ -943,6 +942,24 @@ For every key experiment, include: heuristic baseline, planner-off, and world-mo
 
 \paragraph{Differential tests and evidence.} Use frozen held-out protocols, tamper/sham controls and matched rivals. Human or external scientific conclusions require independent collection and adjudication.
 
+
+
 \printbibliography
+
+% BEGIN_AUTHORIAL_NOTE
+\section*{Authorial Note and Methodological Provenance}
+\addcontentsline{toc}{section}{Authorial Note and Methodological Provenance}
+The conception, theoretical direction, mathematical architecture, development,
+and integration of the QICN research programme were undertaken by a single
+independent researcher, Johnny Andrey P\'erez Ram\'irez, over more than one year.
+This account of provenance is supplied by the author. Several artificial
+intelligence systems and formal verification tools assisted with technical
+drafting, proof exploration, consistency checks, and mechanized kernels under
+his direction. The author retains intellectual responsibility for the
+programme, its claims, and any remaining errors. Analytical manuscript proofs,
+machine-checked kernels, and internal tests have distinct scopes; independent
+mathematical review and empirical validation remain separate obligations.
+\texttt{external\_support\_certified=false}.
+% END_AUTHORIAL_NOTE
 
 \end{document}

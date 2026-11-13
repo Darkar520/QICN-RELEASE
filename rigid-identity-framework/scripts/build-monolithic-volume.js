@@ -185,9 +185,25 @@ calibration quantities $(K_i,\omega_i,\varepsilon_i,\Delta^*)$ remain an
 empirical identification obligation (Paper III,
 \ref{mono:p03:nonthm:estimator-gap}). Human mathematical review, physical
 calibration and independent experiments remain pending. Any future
-implementation study in \texttt{QICN-SYSTEM} is a separate phase; no runtime
+implementation study of the software system is a separate phase; no runtime
 was inspected for this edition. Throughout this volume,
 \texttt{external\_support\_certified=false}.`;
+
+const AUTHORIAL_NOTE = String.raw`% BEGIN_AUTHORIAL_NOTE
+\section*{Authorial Note and Methodological Provenance}
+\addcontentsline{toc}{section}{Authorial Note and Methodological Provenance}
+The conception, theoretical direction, mathematical architecture, development,
+and integration of the QICN research programme were undertaken by a single
+independent researcher, Johnny Andrey P\'erez Ram\'irez, over more than one year.
+This account of provenance is supplied by the author. Several artificial
+intelligence systems and formal verification tools assisted with technical
+drafting, proof exploration, consistency checks, and mechanized kernels under
+his direction. The author retains intellectual responsibility for the
+programme, its claims, and any remaining errors. Analytical manuscript proofs,
+machine-checked kernels, and internal tests have distinct scopes; independent
+mathematical review and empirical validation remain separate obligations.
+\texttt{external\_support\_certified=false}.
+% END_AUTHORIAL_NOTE`;
 
 function bodyOf(content) {
   const begin = content.indexOf("\\begin{document}");
@@ -378,6 +394,10 @@ function fitWideTablesForMonolithic(content) {
 }
 
 function applyMonolithicLayoutTransforms(content, relPath) {
+  // Authorial provenance is printed once after the collected bibliography.
+  const notes = content.match(/% BEGIN_AUTHORIAL_NOTE[\s\S]*?% END_AUTHORIAL_NOTE/g) || [];
+  if (notes.length !== 1) throw new Error("Expected one authorial note in " + relPath);
+  content = content.replace(notes[0], "");
   return fitWideTablesForMonolithic(
     fitLongDisplayMathForMonolithic(
       splitKnownAlignedChainsForMonolithic(
@@ -638,6 +658,8 @@ function build() {
     ...sections.map((section) => `\\input{build/sections/${section.sectionName}}`),
     "\\backmatter",
     "\\printbibliography[heading=bibintoc]",
+    "\\clearpage",
+    AUTHORIAL_NOTE,
     "\\end{document}",
     ""
   ].join("\n");

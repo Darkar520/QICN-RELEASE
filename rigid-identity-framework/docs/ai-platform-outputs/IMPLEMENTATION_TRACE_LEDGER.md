@@ -11371,3 +11371,13 @@ publicados los commits de Ruta 3 contenidos en esa historia. Este asiento,
 roadmap y recibos sólo documentan la publicación; no alteran TeX, PDF, registro,
 Lean o pruebas. Verificación final de referencias después del commit de traza.
 Revisión humana pendiente; external_support_certified=false.
+
+
+### 2026-11-13 · Codex · Ruta 5 en preparación aislada
+
+Se recibió HEAD 2d4fbcc con17 TeX modificados y prerregistro previo. Lecturas: AGENTS, cinco autoridades, INSTRUCCIONES, roadmap y diff íntegro mediante auditor aislado. Instantáneas recuperables en E:/QICN-PRESERVACION/2026-11-13-ruta5. Reparaciones y razones en repair-plans/RUTA5_EDICION_PUBLICA_FINAL_2026-11-13/ADENDA_AUDITORIA_CODEX.md. Conservados906 IDs/383 macros y114 huellas de congelados/Lean. Comprobadas23 fuentes, todas las fórmulas anteriores en orden y labels/refs; siete menciones adicionales de símbolos existentes declaradas por separado. Metadatos de X y contrato actualizados explícitamente; nota una vez al final por PDF y una vez en el ensamblador. Extract:registry completado, lint:nonclaims0. Compilación13 PDF y verificadores completos en ejecución: aún sin conclusión de aceptación, sin commit/push y sin modificación de la copia del Escritorio. Revisión final aislada, textosPDF, sincronización y Ruta6 pendientes. external_support_certified=false.
+
+
+### 2026-11-13 · Codex · Ruta 5 aprobada para publicación
+
+Cerrados 13 PDF, metadatos exactos y notas únicas, 482 bloques/1.658 fragmentos, 906 IDs/383 definiciones de macros, raíz 3/3, release 6/6, matemáticas 32/32, aliases y capítulos 12/12 LF/CRLF. Reparaciones adicionales de parser, macros y espécimen diagnóstico documentadas en informe/recibos. Dictamen del revisor aislado: APROBADO_PARA_COMMIT_Y_PUSH — AUDITORÍA AUTOMATIZADA AISLADA; ver AUDITORIA_PRE_PUSH.md en la carpeta de Ruta 5. Las fuentes/PDF/registro quedan congeladas para entrega cotejada. Ruta 6 reservada; sin cambios Lean o congelados. Publicación aún por ejecutar. external_support_certified=false.

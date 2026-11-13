@@ -118,3 +118,8 @@ Conteos explícitos:482 bloques y1.658 fragmentos, con ocurrencias antes/despué
 
 
 Dictamen final recibido: APROBADO_PARA_COMMIT_Y_PUSH — AUDITORÍA AUTOMATIZADA AISLADA. La constancia identifica el recibo y las huellas revisadas. Autoriza esta edición y constancias posteriores sin cambios de fuentes, registro o PDF. Revisión humana y evidencia externa siguen pendientes.
+
+
+## Publicación comprobada
+
+Contenido publicado en `6487fc612eb0fd9570a57cde44b801c9096f28b4` el 2026-11-13. HEAD, main y ambas referencias remotas coincidían; ls-remote lo confirmó, con árbol limpio y las 114 huellas y 37 hashes de contenido intactos. El commit posterior sólo registra esa comprobación, cierra el checklist de Ruta 5 y mantiene Ruta 6 abierta; se vuelven a verificar las referencias después. Sin cambios de fuentes, PDF, registro o Lean.

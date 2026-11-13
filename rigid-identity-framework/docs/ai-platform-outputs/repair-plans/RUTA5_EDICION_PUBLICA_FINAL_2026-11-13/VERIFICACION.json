@@ -1,6 +1,6 @@
 {
   "phase": "Ruta 5",
-  "status": "APPROVED_FOR_COMMIT_AND_PUSH",
+  "status": "PUBLISHED",
   "baseline": "2d4fbcc0bf436a181cd9371d1ec3408c4f9999c5",
   "external_support_certified": false,
   "pdfs": [
@@ -3253,8 +3253,8 @@
   ],
   "archive": {
     "file": "RECIBOS_CRUDOS.zip",
-    "sha256": "1de647c58212d7a89ef4d337ecb1c800478371a83499ef64485f8b07d3b1cbf2",
-    "bytes": 1817940
+    "sha256": "fa73ded91db1880bc5b6dbde2f1685672a1a48acc1af61e3a326fa9d6236dda8",
+    "bytes": 1821037
   },
   "delivery_files": [
     "rigid-identity-framework/ROADMAP.md",
@@ -3349,5 +3349,29 @@
     "verdict": "APROBADO_PARA_COMMIT_Y_PUSH - AUDITORIA AUTOMATIZADA AISLADA",
     "record": "AUDITORIA_PRE_PUSH.md",
     "reviewed_receipt_sha256": "575918977f6409ce0c24dae729231ac3797581e30599ebeeaaadfaf7b81e8913"
+  },
+  "publication_checkpoint": {
+    "utc": "2026-11-13T16:39:29.947270+00:00",
+    "before": {
+      "HEAD": "6487fc612eb0fd9570a57cde44b801c9096f28b4",
+      "main": "2d4fbcc0bf436a181cd9371d1ec3408c4f9999c5",
+      "origin/main": "2d4fbcc0bf436a181cd9371d1ec3408c4f9999c5",
+      "origin/codex/qicn-framework-ordenado": "2d4fbcc0bf436a181cd9371d1ec3408c4f9999c5"
+    },
+    "after": {
+      "HEAD": "6487fc612eb0fd9570a57cde44b801c9096f28b4",
+      "main": "6487fc612eb0fd9570a57cde44b801c9096f28b4",
+      "origin/main": "6487fc612eb0fd9570a57cde44b801c9096f28b4",
+      "origin/codex/qicn-framework-ordenado": "6487fc612eb0fd9570a57cde44b801c9096f28b4"
+    },
+    "ls_remote": {
+      "refs/heads/codex/qicn-framework-ordenado": "6487fc612eb0fd9570a57cde44b801c9096f28b4",
+      "refs/heads/main": "6487fc612eb0fd9570a57cde44b801c9096f28b4"
+    },
+    "clean_tree": true,
+    "protected_hashes_equal": true,
+    "content_hashes_equal": true,
+    "mode": "atomic ordinary fast-forward; no force",
+    "external_support_certified": false
   }
 }

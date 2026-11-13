@@ -2154,17 +2154,19 @@ de trazabilidad posterior registra este punto sin cambiar la teoría.
 
 Base `2d4fbcc`; alcance y reparación forense en docs/ai-platform-outputs/repair-plans/RUTA5_EDICION_PUBLICA_FINAL_2026-11-13/.
 
-- [x] Preservar17 TeX recibidos y prerregistro, contrastar con HEAD mediante revisor aislado y corregir pérdidas de alcance y errores editoriales.
-- [x] Preservar906 IDs/383 macros y114 huellas protegidas, incluidas32 Lean; nota de autoría al cierre y una sola en monolito.
+- [x] Preservar 17 TeX recibidos y prerregistro, contrastar con HEAD mediante revisor aislado y corregir pérdidas de alcance y errores editoriales.
+- [x] Preservar 906 IDs/383 macros y 114 huellas protegidas, incluidas 32 Lean; nota de autoría al cierre y una sola en monolito.
 - [x] Cerrar 13 PDF, escaneos completos, compuertas y recibos finales.
 - [x] Auditoría automatizada aislada: aprobado para commit y push.
-- [ ] Publicación y comprobación final de main y rama de trabajo con árbol limpio.
+- [x] Publicación y comprobación final de main y rama de trabajo con árbol limpio.
+
+Ruta 5 cerrada: edición publicada y verificada. Punto de contenido: `6487fc612eb0fd9570a57cde44b801c9096f28b4`. Revisión matemática humana y evidencia externa siguen pendientes.
 
 ## Ruta 6 · paquete formal y programa largo de mecanización · abierta para después de Ruta 5
 
-1. Exponer QICNLean como paquete visible y autónomo fuera de docs/ai-platform-outputs, conservando historial,32 módulos y contratos de reproducción. Comparar importaciones, toolchain 4.31.0, dependencias y agregador antes de reubicar. No realizar este traslado en Ruta 5.
-2. Opción B: programa independiente de largo alcance para mecanizar en Lean/Mathlib los núcleos analíticos e infinitos pendientes. Inventario actual:419 enunciados de tipos theorem(141), proposition(214), lemma(24), corollary(40). Clasificar cada uno por hipótesis, dependencias, estado de demostración y formalizabilidad antes de prometer cobertura. No confundir los250 teoremas públicos mecanizados con419 entradas del manuscrito.
+1. Exponer QICNLean como paquete visible y autónomo fuera de docs/ai-platform-outputs, conservando historial, 32 módulos y contratos de reproducción. Comparar importaciones, toolchain 4.31.0, dependencias y agregador antes de reubicar. No realizar este traslado en Ruta 5.
+2. Opción B: programa independiente de largo alcance para mecanizar en Lean/Mathlib los núcleos analíticos e infinitos pendientes. Inventario actual: 419 enunciados de tipos theorem (141), proposition (214), lemma (24), corollary (40). Clasificar cada uno por hipótesis, dependencias, estado de demostración y formalizabilidad antes de prometer cobertura. No confundir los 250 teoremas públicos mecanizados con 419 entradas del manuscrito.
 3. Priorizar dependencias comunes: topología de la cuña e hipótesis métricas; soporte y dinámica infinita; gramática causal/comparadores; transporte y criterios experimentales. Registrar para cada entrada la traducción formal y prueba sin sorry, o una obstrucción/obligación explícita. No fortalecer ni debilitar silenciosamente el manuscrito para facilitar mecanización.
-4. Mantener separados los teoremas analíticos, axiomas, interpretaciones y datos pendientes. Coordenadas(e_i,phi_i) congeladas, calibración K_i/omega_i/epsilon_i/Delta*, rivales irrestrictos, clase BPF completa y revisión humana/replicación independientes conservan su estado abierto.
+4. Mantener separados los teoremas analíticos, axiomas, interpretaciones y datos pendientes. Coordenadas (e_i,phi_i) congeladas, calibración K_i/omega_i/epsilon_i/Delta*, rivales irrestrictos, clase BPF completa y revisión humana/replicación independientes conservan su estado abierto.
 
 La publicación del paquete Lean y su extensión no constituyen validación empírica. external_support_certified=false.

@@ -2115,3 +2115,31 @@ v27/v28/v30 BLOCKED_MULTIPLE_GATES, v31 BLOCKED_FOUNDATION_FIRST_GATES;
 external_support_certified=false. No se accedió al runtime.
 
 Puntos locales de contenido de Ruta 3: 3A `fcce983`, 3B `40bc3ea`, formal `f7f7086`, propagation `383159a`. El asiento final de trazabilidad no cambia resultados. Sin push.
+
+
+## Ruta 4 · edición preparada para revisión humana · 2026-11-13
+
+Fase editorial iniciada el 12, base `5535a5c`; no modifica los resultados de
+Ruta 3. Inventario de 38 TeX, dependencias textuales inspeccionadas antes de
+editar y cinco papers intervenidos: III, IV, VI, IX y X. Se retiran carteles
+de desarrollo y versiones en prosa, conservando los identificadores necesarios
+para auditoría, las restricciones y todos los esquemas en los apéndices.
+
+Guía de lectura incorporada al ensamblador: PDF 3 de un monolito de 440 páginas.
+Mapa externo con 24 resultados, fuentes y páginas reales. Fuentes/PDF/registro
+sincronizados: 906 IDs, 383 macros, 1.272 cuerpos formales y 7.302 fragmentos
+matemáticos cotejados; 32 Lean y 122 huellas protegidas intactos. Raíz 3/3,
+release 6/6, matemáticas 32/32, capítulos 12/12 LF/CRLF, corpus/macros/prosa y
+seis compilaciones sin Overfull, referencias indefinidas o etiquetas duplicadas.
+
+[Informe, inventario, mapa y recibos](docs/ai-platform-outputs/repair-plans/RUTA4_HIGIENE_EDITORIAL_2026-11-12/EJECUCION.md).
+Se registran los Underfull/ajustes de floats y la indisponibilidad previa del
+auditor adicional v24 por fixture ausente. La opción B autoriza publicar ambas
+ramas por avance rápido tras los controles. No equivale a revisión humana.
+
+Próximo paso: revisión humana de las pruebas infinitas, de la gramática causal
+y su alcance comparativo; después, obligaciones de acoplamiento discreto,
+calibración y experimentos independientes, en fases separadas. La clase BPF
+completa sigue abierta. v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`;
+v27/v28/v30 `BLOCKED_MULTIPLE_GATES`; v31 `BLOCKED_FOUNDATION_FIRST_GATES`;
+`external_support_certified=false`. Sin acceso al runtime.

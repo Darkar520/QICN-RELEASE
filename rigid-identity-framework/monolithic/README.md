@@ -1,38 +1,55 @@
 # Monolithic Volume
 
-Volumen unificado del corpus QICN ensamblado a partir de los papers individuales.
+Vista unificada de BaseCore, Papers I–X y Puente, ensamblada desde las fuentes
+individuales. Edición editorial Ruta 4, compilada el **13 de noviembre de 2026**:
+**440 páginas**, con la guía de lectura en la página PDF **3** (iii).
+BaseCore comienza en PDF 25 (impresa 1); hay 24 páginas preliminares.
 
-## Archivos
+## Archivos y autoridad
 
-- `QICN_MONOLITHIC.tex` — documento master generado por el ensamblador.
-- `QICN_MONOLITHIC.pdf` — PDF compilado (339 págs, SHA256 ver fixplan).
-- `build/sections/` — chapters `.tex` generados (no editar a mano; se regeneran).
-- `build/monolithic_references.bib` — bibliografía unificada (generada).
-- `preamble/packages.tex`, `preamble/setup.tex` — preámbulo congelado (editar solo
-  para fixes tipográficos del ensamblado, no para cambios semánticos).
-- `compile.ps1` — script de compilación PowerShell.
+- `QICN_MONOLITHIC.tex`: documento maestro **generado**. No editarlo a mano:
+  `scripts/build-monolithic-volume.js` lo sobrescribe en cada ensamblado.
+- `QICN_MONOLITHIC.pdf`: volumen compilado de lectura. Su SHA-256 y las páginas
+  verificadas constan en el [recibo de Ruta 4](../docs/ai-platform-outputs/repair-plans/RUTA4_HIGIENE_EDITORIAL_2026-11-12/VERIFICACION.json).
+- `build/sections/`: doce capítulos TeX derivados. Las correcciones de contenido
+  pertenecen a BaseCore o a la fuente del paper; las de ensamblado, al script.
+- `build/monolithic_references.bib`: bibliografía conjunta generada.
+- `preamble/packages.tex`, `preamble/setup.tex`: personalizaciones auditadas.
+  `preamble/source-contract.json` verifica los preámbulos fuente y las
+  personalizaciones; no debe actualizarse para ocultar una deriva.
+- `compile.ps1`: secuencia de compilación del documento ya ensamblado.
 
-## Comandos
+## Reconstrucción
+
+Ejecutar desde `rigid-identity-framework/`:
 
 ```powershell
-npm run build:monolithic    # ensamblar (regenera build/ sin compilar)
-npm run compile:monolithic  # ensamblar + compilar PDF in situ
+npm run build:monolithic
+npm run compile:monolithic
 ```
 
-## Estado del gate tipográfico (v20)
+El primer comando regenera el maestro, capítulos y entradas de composición;
+el segundo ensambla y ejecuta `pdflatex`, `biber` y dos pases finales de
+`pdflatex`. Para cambiar el prefacio o la guía de lectura se modifica
+`EDITORIAL_PREFACE` en el ensamblador. Sus referencias usan los espacios de
+etiquetas propios de cada unidad y se resuelven al compilar.
 
-```text
-npm run audit:monolithic-build-quality
-overfull_hbox: 3 (ecuaciones display O3/O4/O5 — deuda math, no resolubles sin
-reescribir matemática). latex_warnings: 0. badness_masking: 0.
-Gate EXIT 1 (FAIL esperado por deuda de layout math).
-```
+## Verificación de esta edición
 
-Las 4 tablas overfull (O1/O2/O6/O7) fueron resueltas render-neutral en
-`scripts/build-monolithic-volume.js` (`fitWideTablesForMonolithic`).
+La comparación fuente→capítulo dio **12/12** en LF y CRLF. El monolito y las
+cinco unidades modificadas compilaron con **0 Overfull horizontales/verticales**,
+0 errores fatales, 0 citas/referencias indefinidas y 0 etiquetas duplicadas.
+En el volumen permanecen 181 avisos Underfull hbox y cuatro ajustes automáticos
+de posición de figuras/tablas; no se ocultan ni se presentan como cero avisos
+totales. No se atribuye una nueva aprobación al antiguo gate tipográfico v20.
 
-## Nota
+La [guía para revisión humana](../docs/ai-platform-outputs/repair-plans/RUTA4_HIGIENE_EDITORIAL_2026-11-12/GUIA_REVISOR.md)
+identifica 24 resultados con fuente, etiqueta, numeración y página PDF real.
+El [informe](../docs/ai-platform-outputs/repair-plans/RUTA4_HIGIENE_EDITORIAL_2026-11-12/EJECUCION.md)
+delimita la conservación matemática, las comprobaciones y las obligaciones.
 
-El ensamblado **no** modifica los papers standalone. Cada `paper*/main.pdf` se
-compila por separado y es canónico. El monolítico es una vista unificada para
-lectura, no la fuente de verdad.
+El ensamblado conserva las fuentes individuales y su propiedad formal. Las
+huellas de los 32 módulos Lean permanecen intactas; los núcleos mecanizados se
+distinguen de las pruebas que siguen exclusivamente en TeX. Esta edición no
+aporta una campaña externa ni revisión matemática humana independiente.
+**`external_support_certified=false`**.

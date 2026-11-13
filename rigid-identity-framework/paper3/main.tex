@@ -167,7 +167,7 @@ Specify a metric comparison space $(Z,d_Z)$ containing a chosen point $z_S$ for 
 with $\inf\varnothing=+\infty$. A common metric/embedding and cost model must be supplied; $\I$ itself is a set, not an input to a map whose domain is that set.
 \end{definition}
 
-\begin{remark}[v24 consistency patch]
+\begin{remark}[Infimum convention and scope]
 Earlier drafts used a supremum notation for $\MO$ in this paper. That notation is superseded here. The infimum convention measures a lower resistance to deformation in a specified sector, not a largest observed cost. All claims below are read under this convention.
 \end{remark}
 
@@ -239,7 +239,7 @@ The symbol $\nullphi$ serves two distinct roles in the broader framework, and co
 \item \textbf{Null regime ($\nullphi\in\E$):} In Definition~\ref{def:phenom}, $\nullphi$ is the bottom element of the phenomenological poset $(\E,\preceq)$. It is a legitimate element of $\E$, comparable to all other regimes via $\preceq$ and separated from them by $\dE$.
 \item \textbf{Undefined assignment ($\bot\notin\E$):} When a compatibility operator $\Phi$ is not defined on some input $x\in Z$, we write $\Phi(x)=\bot$. The symbol $\bot$ is disjoint from $\E$; it lives in the typed codomain $\E_\bot:=\E\sqcup\{\bot\}$.
 \end{enumerate}
-The instability theorem (Theorem~\ref{thm:instability}) concerns admissible values in $\E$ and rules out two separated witness endpoints both taking the value $\nullphi$. The v31 conditional closure theorem concerns a different case: $\Phi$ undefined on both witness endpoints, written $\Phi(z_0)=\bot$ and $\Phi(z_1)=\bot$. That case is excluded by the witness hypothesis, which requires $\Phi$ to be defined on both endpoints.
+The instability theorem (Theorem~\ref{thm:instability}) concerns admissible values in $\E$ and rules out two separated witness endpoints both taking the value $\nullphi$. The conditional theorem on defined witness endpoints concerns a different case: $\Phi$ undefined on both witness endpoints, written $\Phi(z_0)=\bot$ and $\Phi(z_1)=\bot$. That case is excluded by the witness hypothesis, which requires $\Phi$ to be defined on both endpoints.
 \end{remark}
 
 \begin{nontheorem}[What $\E$ Is Not]
@@ -338,7 +338,9 @@ Theorem~\ref{thm:instability} assumes $\Phi(z_0),\Phi(z_1)\in\E$, not $\bot$. If
 
 
 
-\begin{caveat}[v24 correction of the former Step 2]
+% Audit provenance marker required by audit-v24-critical-gaps.js:
+% v24 correction of the former Step 2
+\begin{caveat}[Extension witnesses are an independent hypothesis]
 The theorem above does \emph{not} infer a finite-energy non-zero deformation from $\MO=+\infty$. Under the infimum convention for sectorial deformation resistance, $\MO=+\infty$ means precisely that no finite-energy admissible perturbation produces non-zero deformation. The older Step 2 proof direction is therefore withdrawn. The surviving result is conditional on an independently specified extension witness.
 \end{caveat}
 

@@ -11320,3 +11320,42 @@ v31 BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.
 Sin acceso al runtime ni push; las verificaciones corresponden al árbol final.
 
 Commits de contenido: 3A `fcce98322e0340eafdbcb3da4a0ce77b85216bba`, 3B `40bc3eac82b3bd0b53763b0bb8ce47141ca04fd4`, formal `f7f708638c8909e095ca8c9b02a56395c7fbb34e`, propagation `383159a0db5c7ee5c0eef6215b1500d0ce1b5b67`. Este asiento final conserva los recibos y la frontera de revisión; sin push.
+
+
+### 2026-11-13 · Codex · Ruta 4 editorial, revisión humana pendiente
+
+- Base limpia `5535a5c0b7669ce4e7e86705334b935ec3e19618`; fase iniciada el 12.
+  Leídos AGENTS, las cinco autoridades documentales, INSTRUCCIONES, roadmap,
+  recibos de Ruta 3 y fuentes/ensamblador/validadores listados por el inventario.
+  Búsqueda previa de cadenas en scripts activos y legacy. Prerregistro congelado
+  y huella en [recibo](repair-plans/RUTA4_HIGIENE_EDITORIAL_2026-11-12/VERIFICACION.json).
+- Cambiados cinco fuentes y sus PDF (III, IV, VI, IX, X), prefacio del ensamblador,
+  hash de preámbulo de X por fecha, maestro/PDF/README del monolito, localizaciones
+  del registro, informe de composición y trazabilidad. El inventario y las 22
+  operaciones explican cada cambio, incluidos 24 esquemas enviados a apéndices.
+  No cambia matemática ni fronteras científicas. Conservados 906 IDs/383 macros,
+  etiquetas, topología formal, 1.272 cuerpos y 7.302 fragmentos de matemáticas;
+  dos títulos y una referencia editorial de III son las excepciones textuales.
+- Comandos: extracción a temporales y reconciliación curada; pdflatex/biber/dos
+  pases finales para unidades biblatex, tres pdflatex para X; compile:monolithic;
+  verificadores raíz 3/3, verify:release 6/6, verify-math-regressions 32/32,
+  corpus --json/macros/prosa, comparador 12/12 LF y CRLF. Monolito 440 páginas,
+  guía de una página PDF 3 y mapa verificado de 24 resultados. Seis compilaciones
+  sin Overfull/fatales/citas o referencias indefinidas/etiquetas duplicadas.
+- Lean no recompilado: coinciden los 32 SHA con la Ruta 3 de kernel 4.31.0.
+  Las 122 huellas protegidas, incluidos ocho archivos de Ruta 3 y cinco recibos,
+  permanecen intactas. Temporales, copia anterior recuperable y salidas en
+  E:/QICN-PRESERVACION/2026-11-12-ruta4; copia activa cotejada por bytes antes del commit.
+- Deuda explícita: 181 Underfull hbox/cuatro ajustes de floats en el monolito,
+  contador AUX del lema 8.41 frente a su página impresa, auditor opcional v24
+  imposible por fixture ausente tanto antes como después. No se relaja ni repara
+  ningún gate para pasar. Fallos exploratorios del helper de cierre por asumir
+  un comando appendix y una representación de rutas inexistentes se corrigieron
+  leyendo la representación TeX real, sin cambiar fuentes o verificadores.
+- [Informe y mapa humano](repair-plans/RUTA4_HIGIENE_EDITORIAL_2026-11-12/EJECUCION.md).
+  Publicación editorial autorizada expresamente por opción B, únicamente avance
+  rápido y push normal de ambas ramas con igualdad final. Revisión humana,
+  calibración física y BPF completo pendientes; runtime no accedido.
+  v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`; v27/v28/v30
+  `BLOCKED_MULTIPLE_GATES`; v31 `BLOCKED_FOUNDATION_FIRST_GATES`;
+  `external_support_certified=false`.

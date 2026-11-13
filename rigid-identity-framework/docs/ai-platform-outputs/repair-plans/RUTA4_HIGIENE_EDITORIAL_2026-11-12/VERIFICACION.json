@@ -1,0 +1,429 @@
+{
+  "phase": "Route 4 editorial only",
+  "baseline_commit": "5535a5c0b7669ce4e7e86705334b935ec3e19618",
+  "started": "2026-11-12",
+  "completed": "2026-11-13",
+  "external_support_certified": false,
+  "preregistration_sha256": "c8f1e088d17fd7d12314f7cdd8cb7d3331fea9c04d0bacd6fda9f9706f259af7",
+  "scope": {
+    "standalone_tex_changed": 5,
+    "reader_guide_pdf_page": 3,
+    "reader_guide_pages": 1,
+    "reviewer_results": 24,
+    "monolith_pages": 440
+  },
+  "conservation": {
+    "protected_count": 122,
+    "frozen_root_files": 76,
+    "lean_modules": 32,
+    "formal_bodies": 1272,
+    "math_fragments": 7302,
+    "all_equal": true
+  },
+  "registry": {
+    "original_ids": 906,
+    "final_ids": 906,
+    "ids_preserved": true,
+    "new_or_removed_ids": 0,
+    "macro_count": 383,
+    "curation_preserved": true
+  },
+  "registry_changed_rows": 64,
+  "compilation": {
+    "pdfs": [
+      {
+        "folder": "paper3",
+        "pages": 19,
+        "overfull_hbox": 0,
+        "overfull_vbox": 0,
+        "undefined_references": 0,
+        "undefined_citations": 0,
+        "duplicate_labels": 0,
+        "fatal_errors": 0,
+        "underfull_hbox": 8,
+        "underfull_vbox": 0,
+        "latex_warnings": 0,
+        "pdf_sha256": "0ef5c105b0ae92e7224f80965ce88e441c57b96191210e2ba7abc223f3efa1d0"
+      },
+      {
+        "folder": "paper4",
+        "pages": 21,
+        "overfull_hbox": 0,
+        "overfull_vbox": 0,
+        "undefined_references": 0,
+        "undefined_citations": 0,
+        "duplicate_labels": 0,
+        "fatal_errors": 0,
+        "underfull_hbox": 13,
+        "underfull_vbox": 0,
+        "latex_warnings": 3,
+        "pdf_sha256": "9fbd5bbdf3f5498b8c19712cefb44d79ca6400944f51d38da42b7f8b203c2c4b"
+      },
+      {
+        "folder": "paper6_predictions_falsation",
+        "pages": 27,
+        "overfull_hbox": 0,
+        "overfull_vbox": 0,
+        "undefined_references": 0,
+        "undefined_citations": 0,
+        "duplicate_labels": 0,
+        "fatal_errors": 0,
+        "underfull_hbox": 35,
+        "underfull_vbox": 0,
+        "latex_warnings": 0,
+        "pdf_sha256": "d6ee898d8ae87f1713544f76313ba67d83f1dac6b65c6cca0848b85340a5372e"
+      },
+      {
+        "folder": "paper9_phenomenal_bridge_organization",
+        "pages": 60,
+        "overfull_hbox": 0,
+        "overfull_vbox": 0,
+        "undefined_references": 0,
+        "undefined_citations": 0,
+        "duplicate_labels": 0,
+        "fatal_errors": 0,
+        "underfull_hbox": 15,
+        "underfull_vbox": 0,
+        "latex_warnings": 0,
+        "pdf_sha256": "fd572cd81b724cb1ff3e05169381964f3570327d99321854933664bc6f38d72e"
+      },
+      {
+        "folder": "paper10_external_adjudication",
+        "pages": 38,
+        "overfull_hbox": 0,
+        "overfull_vbox": 0,
+        "undefined_references": 0,
+        "undefined_citations": 0,
+        "duplicate_labels": 0,
+        "fatal_errors": 0,
+        "underfull_hbox": 13,
+        "underfull_vbox": 0,
+        "latex_warnings": 0,
+        "pdf_sha256": "6da1468b798e7db4fe184679ae77e14e2f5004f1959644e462c7c07414898a95"
+      },
+      {
+        "folder": "monolithic",
+        "pages": 440,
+        "overfull_hbox": 0,
+        "overfull_vbox": 0,
+        "undefined_references": 0,
+        "undefined_citations": 0,
+        "duplicate_labels": 0,
+        "fatal_errors": 0,
+        "underfull_hbox": 181,
+        "underfull_vbox": 0,
+        "latex_warnings": 4,
+        "pdf_sha256": "315340c38f7ebf8594e67ff180bc6c745343dec799b4451df6b20a49e1d7a6a9"
+      }
+    ],
+    "passed": true,
+    "external_support_certified": false
+  },
+  "gates": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace",
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace",
+      "exit": 0,
+      "seconds": 0.19
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace",
+      "exit": 0,
+      "seconds": 1.14
+    },
+    {
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 53.2
+    },
+    {
+      "name": "corpus",
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 0.36
+    },
+    {
+      "name": "macros",
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 0.14
+    },
+    {
+      "name": "math",
+      "command": [
+        "python",
+        "scripts/verify-math-regressions.py"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 181.41
+    },
+    {
+      "name": "prose",
+      "command": [
+        "python",
+        "scripts/verify-prose-sync.py"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 0.45
+    },
+    {
+      "name": "chapters",
+      "command": [
+        "node",
+        "docs/ai-platform-outputs/analysis/AUDITORIA_INTEGRAL_CODEX_2026-11-08/check-monolith.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 0.22
+    },
+    {
+      "name": "final-corpus-json",
+      "command": [
+        "node",
+        "scripts/validate-corpus.js",
+        "--json"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-12-ruta4\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "started_utc": "2026-11-13T07:58:08.053480+00:00"
+    }
+  ],
+  "desktop_checks": [
+    {
+      "name": "desktop-root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "cwd": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado",
+      "exit": 0,
+      "started_utc": "2026-11-13T08:01:00.918358+00:00"
+    },
+    {
+      "name": "desktop-root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "cwd": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado",
+      "exit": 0,
+      "started_utc": "2026-11-13T08:01:01.181639+00:00"
+    },
+    {
+      "name": "desktop-root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "cwd": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado",
+      "exit": 0,
+      "started_utc": "2026-11-13T08:01:01.372161+00:00"
+    },
+    {
+      "name": "desktop-corpus",
+      "command": [
+        "node",
+        "scripts/validate-corpus.js",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado\\rigid-identity-framework",
+      "exit": 0,
+      "started_utc": "2026-11-13T08:01:01.667986+00:00"
+    },
+    {
+      "name": "desktop-macros",
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "cwd": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado\\rigid-identity-framework",
+      "exit": 0,
+      "started_utc": "2026-11-13T08:01:02.148986+00:00"
+    },
+    {
+      "name": "desktop-prose",
+      "command": [
+        "python",
+        "scripts/verify-prose-sync.py"
+      ],
+      "cwd": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado\\rigid-identity-framework",
+      "exit": 0,
+      "started_utc": "2026-11-13T08:01:02.288717+00:00"
+    },
+    {
+      "name": "desktop-chapters",
+      "command": [
+        "node",
+        "docs/ai-platform-outputs/analysis/AUDITORIA_INTEGRAL_CODEX_2026-11-08/check-monolith.cjs"
+      ],
+      "cwd": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado\\rigid-identity-framework",
+      "exit": 0,
+      "started_utc": "2026-11-13T08:01:03.387423+00:00"
+    },
+    {
+      "name": "desktop-diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado",
+      "exit": 0,
+      "started_utc": "2026-11-13T08:01:03.729592+00:00"
+    }
+  ],
+  "source_chapter_comparator": {
+    "results": [
+      {
+        "source": "basecore/BASECORE.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper1/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper2/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper3/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper4/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper5_operational_consciousness/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper6_predictions_falsation/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper7_operational_life_subjecthood/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper8_first_person_subjectivity/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper9_phenomenal_bridge_organization/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper10_external_adjudication/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper_bridge_operational_subjecthood/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      }
+    ],
+    "passed": true,
+    "external_support_certified": false
+  },
+  "lean": "No rebuild in Route 4; all 32 Lean source hashes equal the Route 3 kernel-verified snapshot. Route 3 receipts unchanged.",
+  "raw_verdicts": {
+    "verify:v25": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+    "verify:v26": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+    "verify:v27": "BLOCKED_MULTIPLE_GATES",
+    "adjudicate:v28": "BLOCKED_MULTIPLE_GATES",
+    "verify:v30": "BLOCKED_MULTIPLE_GATES",
+    "verify:v31": "BLOCKED_FOUNDATION_FIRST_GATES"
+  },
+  "known_limits": [
+    "Additional optional legacy v24 checker fails on baseline and Route 4 because an untracked historical fixture is absent; active release 6/6 passes.",
+    "181 Underfull hbox warnings and 4 float-placement adjustments in monolith.",
+    "Lemma 8.41 AUX page counter precedes its printed heading by one page; guide uses actual PDF 315. Baseline PDF destination 313 advances by two added frontmatter pages to final PDF destination 315.",
+    "AI/editorial and software checks are not independent human mathematical review or empirical evidence."
+  ],
+  "archive": {
+    "file": "RECIBOS_CRUDOS.zip",
+    "sha256": "ca829616fb7908c312d57ab3f4978259582476be7460ad68775f2b208b23d6eb",
+    "bytes": 400137
+  },
+  "delivery_sha256": {
+    "rigid-identity-framework/paper3/main.tex": "663d9dbbcedb200c5443ade628b51055a4056d0c24765bd5cb4f0ab2133946b0",
+    "rigid-identity-framework/paper3/main.pdf": "0ef5c105b0ae92e7224f80965ce88e441c57b96191210e2ba7abc223f3efa1d0",
+    "rigid-identity-framework/paper4/main.tex": "ec27ead29cfc33f0f8cd750e27b6dfc87588f465db955421ea7740d62c79345f",
+    "rigid-identity-framework/paper4/main.pdf": "9fbd5bbdf3f5498b8c19712cefb44d79ca6400944f51d38da42b7f8b203c2c4b",
+    "rigid-identity-framework/paper6_predictions_falsation/main.tex": "3571d9d2dd0654f3141b3088b70c8d1ca2eebdcef5daaeb853388bbfd886a5d3",
+    "rigid-identity-framework/paper6_predictions_falsation/main.pdf": "d6ee898d8ae87f1713544f76313ba67d83f1dac6b65c6cca0848b85340a5372e",
+    "rigid-identity-framework/paper9_phenomenal_bridge_organization/main.tex": "02acdc9c15d70fb3c64b0e035fec9d4abbe79fc738c46dc20b138d024527e99c",
+    "rigid-identity-framework/paper9_phenomenal_bridge_organization/main.pdf": "fd572cd81b724cb1ff3e05169381964f3570327d99321854933664bc6f38d72e",
+    "rigid-identity-framework/paper10_external_adjudication/main.tex": "d17d3b88a6bd75152b5f710e42ededa9d0fd1b559a5a72ab4da46365261513ee",
+    "rigid-identity-framework/paper10_external_adjudication/main.pdf": "6da1468b798e7db4fe184679ae77e14e2f5004f1959644e462c7c07414898a95",
+    "rigid-identity-framework/scripts/build-monolithic-volume.js": "89a82b4c1f38433a722ac95a94e29e7971853b957812f895ceda2569311c1b33",
+    "rigid-identity-framework/monolithic/preamble/source-contract.json": "27c25e3809b5b189bcdd4c6090780bc7e09bba5e9b6f4a9bdd641daf3f774146",
+    "rigid-identity-framework/monolithic/QICN_MONOLITHIC.tex": "122f09e71a675e5543b8735fba1d65a05cc0d838449f8f44a4473b258d6d9848",
+    "rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf": "315340c38f7ebf8594e67ff180bc6c745343dec799b4451df6b20a49e1d7a6a9",
+    "rigid-identity-framework/monolithic/README.md": "e146ae56ccea1a9835dda8eb65c92fd50e11418a4292b3737bf147436cbce7be",
+    "rigid-identity-framework/registry/theorems.jsonl": "c8f89261d567db3495b261554631dd604a66835d578cf5d20c0e6d9f4481a750",
+    "rigid-identity-framework/registry/macros.jsonl": "2137c3a5f8ea89c67d49800b454f1d87075330f3efbb934fd6abfa78cfbf9339",
+    "rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md": "76f7fb02dc8e0b7d935de56b2f9bc53acd83b7741e6a79acdfe1548b3fdbebb5"
+  },
+  "publication": "Authorized by user Option B; final Git refs and clean-tree checks are recorded after delivery."
+}

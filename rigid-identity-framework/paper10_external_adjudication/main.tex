@@ -17,7 +17,7 @@
 
 \title{\textbf{Blind Adjudication Protocols and Coverage-Aware Risk Bounds}}
 \author{QICN Program}
-\date{Stage3-6B Runtime Health and Stage3-7 Conditional Opening}
+\date{2026}
 
 \newcommand{\sectionstatus}[1]{\paragraph{Section status.}\texttt{\detokenize{#1}}.}
 \newcommand{\codestate}[1]{\texttt{\detokenize{#1}}}
@@ -37,28 +37,22 @@ This section requires executed campaigns with human participants, frozen externa
 \setlength{\emergencystretch}{3em}
 \maketitle
 
-\begin{center}
-\textbf{SCAFFOLD ONLY -- NOT FINAL MANUSCRIPT}\\
-\textbf{PROTOCOL-GRADE BACKBONE}\\
-\textbf{SIXTH HARDENING PASS}
-\end{center}
-
 \begin{abstract}
-This document hardens Paper 10 into a denser protocol-heavy manuscript
-backbone without reporting executed campaign results. The analytic risk, coverage and Gaussian-comparison theorems below are mathematical protocol results. It extends the dependency
-stack from BaseCore through Papers I--IX, SRT-6, BPF-M3, Stage 2-M4,
-Stage3-RF, Stage3-0, Stage3-1, Stage3-2, Stage3-3, Stage3-4, Stage3-4B,
-Stage3-5 rehearsal preparation, Stage3-6 controlled execution opening,
-Stage3-6B runtime-health and clean-room reproducibility audit, and the
-conditional Stage3-7 first-collection opening criteria. It adds runtime health
-audit grammar, clean-room reproducibility semantics, dependency and build
-assumption reporting, reproducible artifact-regeneration constraints, local
-path-leakage policy, controlled-execution audit semantics, session-zero and
-pre-collection reproducibility requirements, and a sharper transition grammar
-from pre-evidential openness to the first admissible collection event. It does
-not report human comparator results, external adjudication verdicts, human
-equivalence, superiority, inferiority, cross-substrate identity preservation,
-metaphysical subjecthood, or Paper 10 final conclusions.
+This article specifies a protocol for external comparative adjudication of
+the operational certificates developed in BaseCore and Papers I--IX.
+The analytic risk, coverage, and Gaussian-comparison theorems are mathematical
+protocol results; no executed campaign results are reported. The protocol
+separates internal certificates from admissible human-comparator evidence,
+defines preregistration freeze and amendment rules, and specifies independent
+reviewer selection, blinding, matched interventions, negative controls, and
+coverage-aware decision rules. Runtime-health audits, clean-room reproduction,
+dependency and build assumptions, artifact regeneration, and path-leakage
+controls are prerequisites to admissible collection, rather than evidence of
+the comparative outcome. Explicit gates distinguish rehearsal, session zero,
+and the first admissible collection event. The article reports no human
+comparator results or external adjudication verdicts and makes no claim of
+human equivalence, superiority, inferiority, cross-substrate identity
+preservation, metaphysical subjecthood, or final comparative conclusions.
 \end{abstract}
 
 \tableofcontents
@@ -66,8 +60,8 @@ metaphysical subjecthood, or Paper 10 final conclusions.
 \section{Scope and Non-Claims}
 \sectionstatus{formalized}
 
-Paper 10 remains a local protocol-facing manuscript surface only. It is a
-scaffold for external-adjudication architecture, not an adjudication verdict,
+This article specifies the external-adjudication protocol. Its local
+protocol authority supplies no adjudication verdict,
 admissible dataset, human comparator evidence, public release surface,
 public-release recommendation, Paper 10 final authorization, human equivalence,
 superiority or inferiority claim, machine-consciousness claim, or metaphysical
@@ -76,7 +70,7 @@ closure.
 \section{Formal Dependency Stack}
 \sectionstatus{formalized}
 
-The dependency stack for Paper 10 is layered as follows:
+The dependency stack is layered as follows. The alphanumeric handles below identify historical protocol layers; they do not certify that a gate has been executed or passed:
 
 \begin{enumerate}
 \item \textbf{BaseCore}: active mathematical base layer.
@@ -85,7 +79,7 @@ The dependency stack for Paper 10 is layered as follows:
 \item \textbf{BPF-M3}: bridge-functional internal closure and bridge gate.
 \item \textbf{Stage 2-M4}: comparative internal closure and readiness boundary.
 \item \textbf{Stage3-RF}: burden fulfillment and Stage 3 opening gate.
-\item \textbf{Stage3-0}: external adjudication architecture and scaffold-only Paper 10 opening.
+\item \textbf{Stage3-0}: external adjudication architecture and protocol specification.
 \item \textbf{Stage3-1}: human comparator instantiation contracts and preregistration templates.
 \item \textbf{Stage3-2}: reviewer independence, execution-readiness logic, and protocol-grade hardening.
 \item \textbf{Stage3-3}: preregistration freeze architecture, reviewer-selection packaging, adjudicator-assignment packaging, and execution-pilot packaging.
@@ -107,10 +101,10 @@ execution-era evidence.
 Paper 10 sits on a strict release-vs-local split:
 
 \begin{itemize}
-\item The public release authority remains \texttt{\detokenize{QICN-}\allowbreak{}\detokenize{RELEASE/}\allowbreak{}\detokenize{main@}\allowbreak{}\detokenize{92d5d2c3}\allowbreak{}\detokenize{ea91c65e}\allowbreak{}\detokenize{29dc8e10}\allowbreak{}\detokenize{2bed5048}\allowbreak{}\detokenize{66cffd2d}}.
-\item The public release remains limited to BaseCore, \texttt{\detokenize{canonica}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{core_}\allowbreak{}\detokenize{legacy}}, and downstream Papers I--IX.
-\item Paper 10 remains local to \codestate{QICN-SYSTEM}.
-\item Stage3-0 through Stage3-6 governance, freeze, packaging, dry-run, provenance-closure, instantiated-empty, rehearsal, and controlled-execution-opening surfaces remain local and non-public.
+\item The recorded public-release snapshot is \texttt{\detokenize{QICN-}\allowbreak{}\detokenize{RELEASE/}\allowbreak{}\detokenize{main@}\allowbreak{}\detokenize{92d5d2c3}\allowbreak{}\detokenize{ea91c65e}\allowbreak{}\detokenize{29dc8e10}\allowbreak{}\detokenize{2bed5048}\allowbreak{}\detokenize{66cffd2d}}.
+\item At that snapshot, the public release is limited to BaseCore, \texttt{\detokenize{canonica}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{core_}\allowbreak{}\detokenize{legacy}}, and downstream Papers I--IX.
+\item The protocol authority described in Paper 10 is local to \codestate{QICN-SYSTEM}; inclusion of this manuscript in the volume does not supply execution evidence.
+\item The Stage3-0 through Stage3-6 governance, freeze, packaging, dry-run, provenance-closure, instantiated-empty, rehearsal, and controlled-execution-opening surfaces described by the protocol remain local and non-public.
 \end{itemize}
 
 Therefore release inclusion cannot be used as a substitute for adjudication,
@@ -262,10 +256,10 @@ Stage3-3 introduces a true freeze architecture rather than only preregistration
 templates. The governing surfaces are:
 
 \begin{itemize}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{frozen_}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{record_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{freeze_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{amendmen}\allowbreak{}\detokenize{t_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{lock_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
+\item frozen preregistration record schema (Appendix A)
+\item preregistration freeze policy (Appendix A)
+\item preregistration amendment policy (Appendix A)
+\item preregistration lock manifest (Appendix A)
 \end{itemize}
 
 The architecture formalizes:
@@ -336,15 +330,15 @@ typed-but-empty records that remain explicitly non-evidential. The principal
 surfaces are:
 
 \begin{itemize}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{local_}\allowbreak{}\detokenize{frozen_}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{record_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reviewer_}\allowbreak{}\detokenize{candidat}\allowbreak{}\detokenize{e_}\allowbreak{}\detokenize{pool_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{candidat}\allowbreak{}\detokenize{e_}\allowbreak{}\detokenize{pool_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{blinding_}\allowbreak{}\detokenize{assignme}\allowbreak{}\detokenize{nt_}\allowbreak{}\detokenize{stub.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{session_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{decision_}\allowbreak{}\detokenize{record_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reproduc}\allowbreak{}\detokenize{ibility_}\allowbreak{}\detokenize{package_}\allowbreak{}\detokenize{manifest_}\allowbreak{}\detokenize{empty.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{collecti}\allowbreak{}\detokenize{on_}\allowbreak{}\detokenize{log_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{evidence_}\allowbreak{}\detokenize{insertio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
+\item local frozen-record template (Appendix K)
+\item reviewer candidate-pool template (Appendix L)
+\item adjudicator candidate-pool template (Appendix M)
+\item blinding assignment template (Appendix N)
+\item execution session template (Appendix O)
+\item decision record template (Appendix Q)
+\item reproducibility package manifest (Appendix R)
+\item collection-log schema (Appendix P)
+\item evidence insertion manifest (Appendix S)
 \end{itemize}
 
 These artifacts are intentionally empty, typed, and freeze-capable. They are
@@ -358,10 +352,10 @@ Stage3-3 introduces typed candidate schemas without instantiating identities.
 The primary surfaces are:
 
 \begin{itemize}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reviewer_}\allowbreak{}\detokenize{candidat}\allowbreak{}\detokenize{e_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{candidat}\allowbreak{}\detokenize{e_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reviewer_}\allowbreak{}\detokenize{selectio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{workflow.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{assignme}\allowbreak{}\detokenize{nt_}\allowbreak{}\detokenize{workflow.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
+\item reviewer candidate schema (Appendix C)
+\item adjudicator candidate schema (Appendix D)
+\item reviewer selection workflow (Appendix C)
+\item adjudicator assignment workflow (Appendix D)
 \end{itemize}
 
 The candidate layer defines qualification summaries, independence assertions,
@@ -514,14 +508,14 @@ defines the pairing shell; it does not satisfy the pairing.
 
 Matched-intervention architecture is now carried by both channel contracts and a
 pilot bundle shell. The bundle shell is defined in
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{pilot_}\allowbreak{}\detokenize{matched_}\allowbreak{}\detokenize{interven}\allowbreak{}\detokenize{tion_}\allowbreak{}\detokenize{bundle.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}. The bundle remains
+matched-intervention bundle (Appendix G). The bundle remains
 unpopulated, which means the architecture exists while the evidence does not.
 
 \section{Negative Control Dataset Architecture}
 \paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 
 Negative-control architecture is similarly carried by channel contracts and by
-\texttt{\detokenize{docs/}\allowbreak{}\detokenize{pilot_}\allowbreak{}\detokenize{negative_}\allowbreak{}\detokenize{control_}\allowbreak{}\detokenize{bundle.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}. Controls remain part of
+negative-control bundle (Appendix H). Controls remain part of
 the meaning of the future claim surface, not an optional cleanup step.
 
 \section{Preregistration Architecture}
@@ -708,11 +702,11 @@ Stage3-5 adds a rehearsal kit that sits above package readiness and below real
 collection. The governing surfaces are:
 
 \begin{itemize}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{executio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{pilot_}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{kit.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{dry_}\allowbreak{}\detokenize{run_}\allowbreak{}\detokenize{sequence_}\allowbreak{}\detokenize{plan.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{event_}\allowbreak{}\detokenize{log_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{failure_}\allowbreak{}\detokenize{modes.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
-\item \texttt{\detokenize{docs/}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{reset_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
+\item execution rehearsal kit (Appendix T)
+\item dry-run sequence plan (Appendix T)
+\item rehearsal event-log schema (Appendix U)
+\item rehearsal failure modes (Appendix T)
+\item rehearsal reset policy (Appendix T)
 \end{itemize}
 
 The rehearsal kit exists to validate sequence integrity, state transitions, and
@@ -1312,7 +1306,7 @@ paper now has six distinct unlock layers:
 \item \textbf{Manuscript layer}: only then may result-bearing Paper 10 sections be written.
 \end{enumerate}
 
-\section{Why Paper 10 Still Cannot Become Final Yet}
+\section{Conditions for Comparative Conclusions}
 \sectionstatus{formalized}
 
 Paper 10 cannot become final because the current repo still lacks the evidence
@@ -1356,6 +1350,9 @@ Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{frozen_}\a
 Admissible evidence required before population: actual local lock and, where
 required by protocol, real external filing reference.
 
+
+Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{freeze_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}, \texttt{\detokenize{docs/}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{amendmen}\allowbreak{}\detokenize{t_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}, \texttt{\detokenize{docs/}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{lock_}\allowbreak{}\detokenize{manifest.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
+
 \subsection*{Appendix B: Human Comparator Preregistration Template}
 \paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{human_}\allowbreak{}\detokenize{comparat}\allowbreak{}\detokenize{or_}\allowbreak{}\detokenize{preregis}\allowbreak{}\detokenize{tration_}\allowbreak{}\detokenize{template.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
@@ -1368,11 +1365,17 @@ Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reviewer_}
 Admissible evidence required before population: real candidate package and
 conflict disclosures.
 
+
+Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{reviewer_}\allowbreak{}\detokenize{selectio}\allowbreak{}\detokenize{n_}\allowbreak{}\detokenize{workflow.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
+
 \subsection*{Appendix D: Adjudicator Candidate Schema}
 \paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
 Primary reference: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{candidat}\allowbreak{}\detokenize{e_}\allowbreak{}\detokenize{schema.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
 Admissible evidence required before population: real assignment package and
 decision-authority boundary.
+
+
+Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{adjudica}\allowbreak{}\detokenize{tor_}\allowbreak{}\detokenize{assignme}\allowbreak{}\detokenize{nt_}\allowbreak{}\detokenize{workflow.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
 
 \subsection*{Appendix E: Blinding Assignment Template}
 \paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
@@ -1391,6 +1394,9 @@ later populated bundle references.
 Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{matched_}\allowbreak{}\detokenize{interven}\allowbreak{}\detokenize{tion_}\allowbreak{}\detokenize{dataset_}\allowbreak{}\detokenize{contract}\allowbreak{}\detokenize{s.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}
 and \texttt{\detokenize{docs/}\allowbreak{}\detokenize{negative_}\allowbreak{}\detokenize{control_}\allowbreak{}\detokenize{dataset_}\allowbreak{}\detokenize{contract}\allowbreak{}\detokenize{s.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
 Admissible evidence required before result use: populated admissible datasets.
+
+
+Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{pilot_}\allowbreak{}\detokenize{matched_}\allowbreak{}\detokenize{interven}\allowbreak{}\detokenize{tion_}\allowbreak{}\detokenize{bundle.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
 
 \subsection*{Appendix H: Negative Control Bundle Summary}
 \paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.
@@ -1475,6 +1481,9 @@ Primary references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{executio}
 \texttt{\detokenize{docs/}\allowbreak{}\detokenize{dry_}\allowbreak{}\detokenize{run_}\allowbreak{}\detokenize{sequence_}\allowbreak{}\detokenize{plan.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.\\
 Admissible evidence required before result use: none at rehearsal time, but no
 rehearsal artifact may be promoted into evidence.
+
+
+Additional protocol references: \texttt{\detokenize{docs/}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{failure_}\allowbreak{}\detokenize{modes.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}, \texttt{\detokenize{docs/}\allowbreak{}\detokenize{rehearsa}\allowbreak{}\detokenize{l_}\allowbreak{}\detokenize{reset_}\allowbreak{}\detokenize{policy.}\allowbreak{}\detokenize{v1.}\allowbreak{}\detokenize{json}}.
 
 \subsection*{Appendix U: Dry-Run Event Log Grammar}
 \paragraph{Section status.}\texttt{\detokenize{protocol_}\allowbreak{}\detokenize{defined}}.

@@ -1,0 +1,263 @@
+{
+  "changes": [
+    {
+      "file": "paper3/main.tex",
+      "old": "\\begin{remark}[v24 consistency patch]",
+      "new": "\\begin{remark}[Infimum convention and scope]",
+      "reason": "Remove iteration number from an editorial heading; retain warning body exactly."
+    },
+    {
+      "file": "paper3/main.tex",
+      "old": "The v31 conditional closure theorem concerns a different case:",
+      "new": "The conditional theorem on defined witness endpoints concerns a different case:",
+      "reason": "Name the domain condition rather than the internal audit version."
+    },
+    {
+      "file": "paper3/main.tex",
+      "old": "\\begin{caveat}[v24 correction of the former Step 2]",
+      "new": "% Audit provenance marker required by audit-v24-critical-gaps.js:\n% v24 correction of the former Step 2\n\\begin{caveat}[Extension witnesses are an independent hypothesis]",
+      "reason": "Preserve the required literal audit anchor as a comment, with the unchanged substantive caveat immediately below."
+    },
+    {
+      "file": "paper4/main.tex",
+      "old": "\\subsection{What v4.5 Adds (and What It Does Not)}",
+      "new": "\\subsection{Falsification, Admissibility, and Baseline Policy}",
+      "reason": "Use content-based heading; retain versioned score and reproducibility commands."
+    },
+    {
+      "file": "paper4/main.tex",
+      "old": "v4.5 adds a hard falsification layer with strict admissibility and baseline policy.",
+      "new": "The protocol adds a hard falsification layer with strict admissibility and baseline policy.",
+      "reason": "Remove release number from explanatory prose only."
+    },
+    {
+      "file": "paper6_predictions_falsation/main.tex",
+      "old": "After the residual-resolution campaign and the Residual B hardening pass,",
+      "new": "After the residual-resolution campaign and the Residual B control study,",
+      "reason": "Replace development-pass wording without altering reported internal-only status or evidence."
+    },
+    {
+      "file": "paper6_predictions_falsation/main.tex",
+      "old": "High-value confirmation and Residual B hardening &",
+      "new": "Cross-family and independent-judge checks &",
+      "reason": "Content-based historical study heading; all table findings and limits unchanged."
+    },
+    {
+      "file": "paper9_phenomenal_bridge_organization/main.tex",
+      "old": "The dated v30 projection annex is retained as provenance.",
+      "new": "The historical projection annex is retained as provenance.",
+      "reason": "Versioned annex remains untouched and traceable; describe its role without an iteration label."
+    },
+    {
+      "file": "paper9_phenomenal_bridge_organization/main.tex",
+      "old": "machine-readable scaffolding and provisional run-level bridge surfaces",
+      "new": "machine-readable protocol specifications and provisional run-level bridge surfaces",
+      "reason": "Describe the specified artifact type; preserve provisional non-evidential status."
+    },
+    {
+      "file": "paper9_phenomenal_bridge_organization/main.tex",
+      "old": "implementation plan, scaffold-only code, and structural verification.",
+      "new": "implementation plan, non-evidential protocol code, and structural verification.",
+      "reason": "Remove draft language while retaining the code non-evidence boundary."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "\\date{Stage3-6B Runtime Health and Stage3-7 Conditional Opening}",
+      "new": "\\date{2026}",
+      "reason": "Replace development-stage date metadata only; no macro or package change."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "\\begin{center}\n\\textbf{SCAFFOLD ONLY -- NOT FINAL MANUSCRIPT}\\\\\n\\textbf{PROTOCOL-GRADE BACKBONE}\\\\\n\\textbf{SIXTH HARDENING PASS}\n\\end{center}\n\n",
+      "new": "",
+      "reason": "Remove internal manuscript-status banner; all scientific non-claims remain in the abstract and scope."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "\\begin{abstract}\nThis document hardens Paper 10 into a denser protocol-heavy manuscript\nbackbone without reporting executed campaign results. The analytic risk, coverage and Gaussian-comparison theorems below are mathematical protocol results. It extends the dependency\nstack from BaseCore through Papers I--IX, SRT-6, BPF-M3, Stage 2-M4,\nStage3-RF, Stage3-0, Stage3-1, Stage3-2, Stage3-3, Stage3-4, Stage3-4B,\nStage3-5 rehearsal preparation, Stage3-6 controlled execution opening,\nStage3-6B runtime-health and clean-room reproducibility audit, and the\nconditional Stage3-7 first-collection opening criteria. It adds runtime health\naudit grammar, clean-room reproducibility semantics, dependency and build\nassumption reporting, reproducible artifact-regeneration constraints, local\npath-leakage policy, controlled-execution audit semantics, session-zero and\npre-collection reproducibility requirements, and a sharper transition grammar\nfrom pre-evidential openness to the first admissible collection event. It does\nnot report human comparator results, external adjudication verdicts, human\nequivalence, superiority, inferiority, cross-substrate identity preservation,\nmetaphysical subjecthood, or Paper 10 final conclusions.\n\\end{abstract}",
+      "new": "\\begin{abstract}\nThis article specifies a protocol for external comparative adjudication of\nthe operational certificates developed in BaseCore and Papers I--IX.\nThe analytic risk, coverage, and Gaussian-comparison theorems are mathematical\nprotocol results; no executed campaign results are reported. The protocol\nseparates internal certificates from admissible human-comparator evidence,\ndefines preregistration freeze and amendment rules, and specifies independent\nreviewer selection, blinding, matched interventions, negative controls, and\ncoverage-aware decision rules. Runtime-health audits, clean-room reproduction,\ndependency and build assumptions, artifact regeneration, and path-leakage\ncontrols are prerequisites to admissible collection, rather than evidence of\nthe comparative outcome. Explicit gates distinguish rehearsal, session zero,\nand the first admissible collection event. The article reports no human\ncomparator results or external adjudication verdicts and makes no claim of\nhuman equivalence, superiority, inferiority, cross-substrate identity\npreservation, metaphysical subjecthood, or final comparative conclusions.\n\\end{abstract}",
+      "reason": "Replace a chronology of hardening passes with the same protocol scope and explicit unexecuted-evidence boundary."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "Paper 10 remains a local protocol-facing manuscript surface only. It is a\nscaffold for external-adjudication architecture, not an adjudication verdict,",
+      "new": "This article specifies the external-adjudication protocol. Its local\nprotocol authority supplies no adjudication verdict,",
+      "reason": "Present a protocol article without turning protocol specification into executed evidence."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "Stage3-0}: external adjudication architecture and scaffold-only Paper 10 opening.",
+      "new": "Stage3-0}: external adjudication architecture and protocol specification.",
+      "reason": "Retain the protocol-stage provenance identifier, remove manuscript-development wording."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "The dependency stack for Paper 10 is layered as follows:",
+      "new": "The dependency stack is layered as follows. The alphanumeric handles below identify historical protocol layers; they do not certify that a gate has been executed or passed:",
+      "reason": "Clarify provenance status before the retained protocol taxonomy."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "The public release authority remains \\texttt{",
+      "new": "The recorded public-release snapshot is \\texttt{",
+      "reason": "Make the historical pinned commit explicit instead of incorrectly asserting that it is the live branch tip."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "The public release remains limited to BaseCore,",
+      "new": "At that snapshot, the public release is limited to BaseCore,",
+      "reason": "Preserve the frozen release boundary while separating it from current manuscript inclusion."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "Paper 10 remains local to \\codestate{QICN-SYSTEM}.",
+      "new": "The protocol authority described in Paper 10 is local to \\codestate{QICN-SYSTEM}; inclusion of this manuscript in the volume does not supply execution evidence.",
+      "reason": "Preserve local protocol ownership; clarify that this source is a manuscript counterpart, not an execution record."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "Stage3-0 through Stage3-6 governance, freeze, packaging, dry-run, provenance-closure, instantiated-empty, rehearsal, and controlled-execution-opening surfaces remain local and non-public.",
+      "new": "The Stage3-0 through Stage3-6 governance, freeze, packaging, dry-run, provenance-closure, instantiated-empty, rehearsal, and controlled-execution-opening surfaces described by the protocol remain local and non-public.",
+      "reason": "Maintain original local/non-public artifact boundary without conflating it with publishing the manuscript."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "old": "\\section{Why Paper 10 Still Cannot Become Final Yet}",
+      "new": "\\section{Conditions for Comparative Conclusions}",
+      "reason": "Present unfulfilled evidence requirements as a scientific boundary rather than a draft status."
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "operation": "schema paths moved to existing appendices",
+      "mapping": [
+        {
+          "path": "docs/frozen_preregistration_record_schema.v1.json",
+          "description": "frozen preregistration record schema",
+          "appendix": "A"
+        },
+        {
+          "path": "docs/preregistration_freeze_policy.v1.json",
+          "description": "preregistration freeze policy",
+          "appendix": "A"
+        },
+        {
+          "path": "docs/preregistration_amendment_policy.v1.json",
+          "description": "preregistration amendment policy",
+          "appendix": "A"
+        },
+        {
+          "path": "docs/preregistration_lock_manifest.v1.json",
+          "description": "preregistration lock manifest",
+          "appendix": "A"
+        },
+        {
+          "path": "docs/local_frozen_preregistration_record_template.v1.json",
+          "description": "local frozen-record template",
+          "appendix": "K"
+        },
+        {
+          "path": "docs/reviewer_candidate_pool_template.v1.json",
+          "description": "reviewer candidate-pool template",
+          "appendix": "L"
+        },
+        {
+          "path": "docs/adjudicator_candidate_pool_template.v1.json",
+          "description": "adjudicator candidate-pool template",
+          "appendix": "M"
+        },
+        {
+          "path": "docs/blinding_assignment_stub.v1.json",
+          "description": "blinding assignment template",
+          "appendix": "N"
+        },
+        {
+          "path": "docs/execution_session_template.v1.json",
+          "description": "execution session template",
+          "appendix": "O"
+        },
+        {
+          "path": "docs/decision_record_template.v1.json",
+          "description": "decision record template",
+          "appendix": "Q"
+        },
+        {
+          "path": "docs/reproducibility_package_manifest_empty.v1.json",
+          "description": "reproducibility package manifest",
+          "appendix": "R"
+        },
+        {
+          "path": "docs/collection_log_schema.v1.json",
+          "description": "collection-log schema",
+          "appendix": "P"
+        },
+        {
+          "path": "docs/evidence_insertion_manifest.v1.json",
+          "description": "evidence insertion manifest",
+          "appendix": "S"
+        },
+        {
+          "path": "docs/reviewer_candidate_schema.v1.json",
+          "description": "reviewer candidate schema",
+          "appendix": "C"
+        },
+        {
+          "path": "docs/adjudicator_candidate_schema.v1.json",
+          "description": "adjudicator candidate schema",
+          "appendix": "D"
+        },
+        {
+          "path": "docs/reviewer_selection_workflow.v1.json",
+          "description": "reviewer selection workflow",
+          "appendix": "C"
+        },
+        {
+          "path": "docs/adjudicator_assignment_workflow.v1.json",
+          "description": "adjudicator assignment workflow",
+          "appendix": "D"
+        },
+        {
+          "path": "docs/pilot_matched_intervention_bundle.v1.json",
+          "description": "matched-intervention bundle",
+          "appendix": "G"
+        },
+        {
+          "path": "docs/pilot_negative_control_bundle.v1.json",
+          "description": "negative-control bundle",
+          "appendix": "H"
+        },
+        {
+          "path": "docs/execution_pilot_rehearsal_kit.v1.json",
+          "description": "execution rehearsal kit",
+          "appendix": "T"
+        },
+        {
+          "path": "docs/dry_run_sequence_plan.v1.json",
+          "description": "dry-run sequence plan",
+          "appendix": "T"
+        },
+        {
+          "path": "docs/rehearsal_event_log_schema.v1.json",
+          "description": "rehearsal event-log schema",
+          "appendix": "U"
+        },
+        {
+          "path": "docs/rehearsal_failure_modes.v1.json",
+          "description": "rehearsal failure modes",
+          "appendix": "T"
+        },
+        {
+          "path": "docs/rehearsal_reset_policy.v1.json",
+          "description": "rehearsal reset policy",
+          "appendix": "T"
+        }
+      ],
+      "reason": "Eliminate duplicate path-heavy lists in exposition; retain each exact identifier in the existing provenance appendix."
+    }
+  ],
+  "preamble_date_contract": {
+    "file": "paper10_external_adjudication/main.tex",
+    "before": "6f46d0005fdc1186a61c5384c57fb4eff8eceb1a704ff9d2508762ed681c5c07",
+    "after": "1814fcddace648e00229c49a365f5625d750f4c5959cd15d68379c236952d7df"
+  },
+  "external_support_certified": false
+}

@@ -11359,3 +11359,15 @@ Commits de contenido: 3A `fcce98322e0340eafdbcb3da4a0ce77b85216bba`, 3B `40bc3ea
   v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`; v27/v28/v30
   `BLOCKED_MULTIPLE_GATES`; v31 `BLOCKED_FOUNDATION_FIRST_GATES`;
   `external_support_certified=false`.
+
+
+### 2026-11-13 · Codex · Publicación de Ruta 4 comprobada
+
+Commit editorial `c90ef6b701ca7c009a42b59550d914f91d302f76` publicado en main y
+codex/qicn-framework-ordenado. Fetch y ls-remote confirmaron las cuatro
+referencias iguales y árbol limpio; avance rápido local y push atómico normal.
+Las 122 superficies protegidas conservaron sus huellas. También quedan
+publicados los commits de Ruta 3 contenidos en esa historia. Este asiento,
+roadmap y recibos sólo documentan la publicación; no alteran TeX, PDF, registro,
+Lean o pruebas. Verificación final de referencias después del commit de traza.
+Revisión humana pendiente; external_support_certified=false.

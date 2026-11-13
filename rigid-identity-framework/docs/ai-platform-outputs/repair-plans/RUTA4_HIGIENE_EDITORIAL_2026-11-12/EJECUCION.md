@@ -152,3 +152,12 @@ pasan estas comprobaciones. Esa autorización específica permite la publicació
 editorial sin afirmar que hubo revisión humana. La sincronización se hace
 únicamente por avance rápido y push normal; el cierre remoto exige igualdad
 de HEAD, main y ambas referencias remotas, además de árbol limpio.
+
+
+Publicación de contenido comprobada el 2026-11-13: commit
+`c90ef6b701ca7c009a42b59550d914f91d302f76`. HEAD, main, origin/main y
+origin/codex/qicn-framework-ordenado coincidían; `git ls-remote` confirmó ambas
+ramas y el árbol estaba limpio. Se conservaron las 122 huellas protegidas.
+El recibo registra ese punto comprobado. Un commit posterior contiene sólo
+esta constancia y su propagación documental; las referencias se cotejan otra
+vez al terminar, sin modificar fuentes, PDF, registro, Lean o pruebas.

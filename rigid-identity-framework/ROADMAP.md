@@ -2143,3 +2143,8 @@ calibración y experimentos independientes, en fases separadas. La clase BPF
 completa sigue abierta. v25/v26 `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`;
 v27/v28/v30 `BLOCKED_MULTIPLE_GATES`; v31 `BLOCKED_FOUNDATION_FIRST_GATES`;
 `external_support_certified=false`. Sin acceso al runtime.
+
+
+Publicación editorial verificada: `c90ef6b701ca7c009a42b59550d914f91d302f76` en ambas ramas
+remotas, HEAD y main, con árbol limpio y huellas protegidas intactas. El cierre
+de trazabilidad posterior registra este punto sin cambiar la teoría.

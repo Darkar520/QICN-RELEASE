@@ -402,8 +402,8 @@
   ],
   "archive": {
     "file": "RECIBOS_CRUDOS.zip",
-    "sha256": "ca829616fb7908c312d57ab3f4978259582476be7460ad68775f2b208b23d6eb",
-    "bytes": 400137
+    "sha256": "7c54c60bd032a9021bfb891c995a091785c777bfcdaad866b2ad7028d0c6561c",
+    "bytes": 402464
   },
   "delivery_sha256": {
     "rigid-identity-framework/paper3/main.tex": "663d9dbbcedb200c5443ade628b51055a4056d0c24765bd5cb4f0ab2133946b0",
@@ -425,5 +425,22 @@
     "rigid-identity-framework/registry/macros.jsonl": "2137c3a5f8ea89c67d49800b454f1d87075330f3efbb934fd6abfa78cfbf9339",
     "rigid-identity-framework/docs/reports/MONOLITHIC_BUILD_REPORT.md": "76f7fb02dc8e0b7d935de56b2f9bc53acd83b7741e6a79acdfe1548b3fdbebb5"
   },
-  "publication": "Authorized by user Option B; final Git refs and clean-tree checks are recorded after delivery."
+  "publication": {
+    "content_commit": "c90ef6b701ca7c009a42b59550d914f91d302f76",
+    "verified_utc": "2026-11-13T08:05:02.541583+00:00",
+    "refs_at_content_publication": {
+      "HEAD": "c90ef6b701ca7c009a42b59550d914f91d302f76",
+      "main": "c90ef6b701ca7c009a42b59550d914f91d302f76",
+      "origin/main": "c90ef6b701ca7c009a42b59550d914f91d302f76",
+      "origin/codex/qicn-framework-ordenado": "c90ef6b701ca7c009a42b59550d914f91d302f76"
+    },
+    "remote_ls_remote": {
+      "refs/heads/codex/qicn-framework-ordenado": "c90ef6b701ca7c009a42b59550d914f91d302f76",
+      "refs/heads/main": "c90ef6b701ca7c009a42b59550d914f91d302f76"
+    },
+    "clean_tree": true,
+    "protected_hashes_equal": true,
+    "method": "atomic, ordinary fast-forward, no --force",
+    "record_scope": "Verified publication checkpoint of the editorial content. Subsequent trace-only commit does not change TeX, PDFs, registry, Lean or gates. Final refs checked again after that commit."
+  }
 }

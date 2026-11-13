@@ -27,3 +27,5 @@ import QICNLean.QICNBodyWorldEvaluation
 import QICNLean.QICNEpistemicAtomicity
 import QICNLean.QICNEpistemicWitness
 import QICNLean.QICNEpistemicInterface
+import QICNLean.QICNEpistemicWedgeStability
+import QICNLean.QICNEpistemicSubfp

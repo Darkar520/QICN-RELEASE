@@ -11407,3 +11407,23 @@ instrucción expresa del usuario. external_support_certified=false.
 
 Contenido local congelado en `2a02857a25d99a960b89d0ebfb687adabafb1627`. Lectura remota confirmó main en
 `7b4b223`; no se ejecutó push. El segundo commit conserva la evidencia de fase.
+
+
+### 2026-11-13 · Antigravity · Micro-parche editorial post-Ruta 5B y cierre en main
+
+- Base `0a6c022` limpia tras auditoría completa de `2a02857` + `0a6c022`. Leídos `AGENTS.md`, las cinco autoridades bajo `docs/`, `INSTRUCCIONES.md`, `ROADMAP.md`, `package.json`, validadores y las secciones pertinentes de `paper4`, `paper7`, `paper9`, `paper10` y `paper_bridge`.
+- Cambios acotados (commit de contenido `a3822f00cfd22b23b847370545ef5b14bf0e1a43`):
+  - `paper10_external_adjudication/main.tex` y `main.pdf` (`33p`, SHA256 `C21783553BC9F1A90744BC9F3459279EC04A93EABE37B717F38EA37C5AEC1786`): eliminada sección consecutiva duplicada `Blinding Assignment Logic` y 6 rótulos `Section status. protocol specified.` (conservando `\newcommand{\sectionstatus}` en preámbulo/registro); corregidas mayúsculas y concordancias gramaticales en listas, encabezados y cláusulas tras sustituciones de aliases.
+  - `paper9_phenomenal_bridge_organization/main.tex` y `main.pdf` (`63p`, SHA256 `EC50E6EFFA532FBEE645DC74F65CC30A814BF76A75CC06FCDDA4BCEABD6F0B9B`): eliminadas duplicaciones `Provisional provisional` / `provisional provisional` y `provisional ... provisional surfaces`, corregidas mayúsculas tras punto, viñetas, encabezados de tablas y título del Apéndice `7.Q`.
+  - `paper7_operational_life_subjecthood/main.tex` y `main.pdf` (`37p`, SHA256 `DDC9E11D1D32556E8DE8F3435DE508E46E01BD72906AF4AC68E7F980B0C61ECF`): corregida frase duplicada `the criterion for six-predicate operational criterion` -> `the six-predicate operational criterion`.
+  - `paper_bridge_operational_subjecthood/main.tex` y `main.pdf` (`27p`, SHA256 `93EC60103532BA63FE2230B44BB5E41540FB2A68C9D8FD3358C7B83AC24FFB25`): corregido `structural assignment regime assignments` -> `structural assignment regimes` y pie heredado `Dependency-to-debt ledger` -> `Dependency and open-obligation map` (`\label{tab:debt-ledger}` preservado).
+  - `paper4/main.tex` y `main.pdf` (`21p`, SHA256 `0DB58EA845FBBE715419137C4C528A36AAA7A726AE1F713757F3D68721FF6E51`): consolidadas 3 subsecciones vacías heredadas (`Composite Score Curves`, `Stasis Pressure Curves`, `Forensic Concordance Curves`) en una única sección con su texto diagnóstico preservado.
+  - `monolithic/QICN_MONOLITHIC.pdf` (`410p`, `3236603` bytes, SHA256 `C20928EEA6CBF3ACDBF06D495BCC4D171CD30DEAD7D3A9C8B2656F033BA00424`), `docs/reports/MONOLITHIC_BUILD_REPORT.md` y 12 desplazamientos exactos de `location` en `registry/theorems.jsonl` (conservando 906 IDs, 383 macros y 0 cambios matemáticos).
+- Cero cambios en `release/`, `corpus/`, `artifacts/`, `canonical_core_legacy/` y archivos `*.lean`.
+- Verificaciones ejecutadas tras la edición y compilación:
+  - Compilación `pdflatex`/`biber` de 5 unidades (`0` referencias indefinidas) + `npm run compile:monolithic` + `npm run audit:monolithic-build-quality`: `PASS` (`pages_detected=410`, `latex_warnings=0`, `overfull_hbox=0`, `overfull_vbox=0`, `underfull_vbox=0`, `undefined_references=0`, `hyperref_pdfstring_warnings=0`, `question_mark_tokens_in_log=0`, `badness_masking_hits=0`).
+  - `verify:corpus-registry` (`906` formales, `383` macros, `0` blockers/warnings), `verify:macro-registry` (`383` macros, `40` canónicas, `0` blockers/warnings), `audit:extractor-reproducibility` (`REPRODUCIBLE`, `906/906`, `383/383`), `lint:nonclaims` (`0 violations`), `verify:prose` (`passed: true`, 12 unidades, `external_support_certified: false`).
+  - `python scripts/verify-math-regressions.py`: `32/32 PASS`.
+  - `npm run verify:release`: `V35 all legacy verification: PASS; passed=6/6` (`v25` `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`; `v27`/`v28`/`v30` `BLOCKED_MULTIPLE_GATES`; `v31` `BLOCKED_FOUNDATION_FIRST_GATES`; `external_support_certified=false`).
+  - Verificadores de raíz: `3/3 PASS` (`verify-canonical-integrity.cjs`, `verify-claim-registry.cjs`, `verify-canonical-release.cjs`).
+- Riesgos residuales y siguiente paso: revisión matemática humana, calibración externa y evidencia empírica independiente permanecen abiertas (`external_support_certified=false`). Cierre editorial autorizado para publicar en `main` y abrir **Ruta 6** (paquete Lean limpio + programa Mathlib).

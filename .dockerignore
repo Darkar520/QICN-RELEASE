@@ -12,3 +12,7 @@
 **/*.synctex.gz
 **/monolithic/build
 **/.DS_Store
+
+# Do not traverse external Lean caches or include generated objects.
+**/.lake
+**/.cache

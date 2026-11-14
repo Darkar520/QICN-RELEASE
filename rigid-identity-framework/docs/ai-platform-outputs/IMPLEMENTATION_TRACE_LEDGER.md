@@ -11468,3 +11468,47 @@ aislada, revisión de diff sin errores y control automatizado de preservación
 aprobado. Alcance documental cerrado; autorizada su publicación normal por la
 solicitud del usuario. El recibo de commit/push y de coincidencia de referencias
 se conserva en la carpeta de evidencia de E: indicada arriba.
+
+
+### 2026-11-14 · Codex · Ruta 6.1 y exposición 6.2
+
+Base 05f8e55; rama codex/ruta6-lean; prerregistro congelado antes de cambios en
+repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14. Leídos AGENTS,
+cinco autoridades, INSTRUCCIONES, ROADMAP, fuentes/configuraciones Lean,
+verificadores, inventario, informe histórico, ignores, CI y README de dos tiers.
+
+6.1: preservados 851 archivos versionados. Lean 4.31.0 kernel-only serial:
+32 fuentes / 250 declaraciones, axiomas Classical.choice/Quot.sound/propext,
+9 pins aprobados; nativo Windows interrumpido tras 712 s sin progreso, no aprobado.
+Recibo 30/215 preservado como histórico desactualizado. Matriz 419 completa:
+1 EXACT_MATCH / 53 FINITE_OR_PARTIAL_KERNEL / 349 PENDING_MATHLIB / 16 EMPIRICAL_OR_PROTOCOL_BOUNDED.
+
+6.2: 36 archivos trasladados byte por byte a lean/, junction conservada sin
+recursión y nuevo enlace al almacenamiento E:. Actualizados verificador de
+ubicación, inventario, ignores Git/Docker, package scripts y README. Recetas
+históricas por checkpoint intactas. Nuevo control de trazabilidad de 419 IDs;
+6 entradas dañadas en copia aislada rechazadas como controles negativos.
+
+Comandos y salidas crudas en E:/QICN-PRESERVACION/2026-11-14-ruta6/logs:
+verify-lean.py (baseline y repetición tras traslado), raíz 3, FCR/macros,
+nonclaims, prosa, math 32, release 6, inventario. Pruebas que reescriben informes
+ejecutadas en copia aislada. Raíz3/3,release 6/6,math 32/32 y controles
+documentales aprobados; repetición Lean tras traslado todavía en curso.
+153 archivos congelados/TeX/PDF/registry sin cambios; 32 Lean originales con
+hashes preservados. Ninguna afirmación del manuscrito cambia: no procede
+recompilar ni alterar prosa/monolito. Resultado formal acompañante, no validación.
+
+Regresiones buscadas: pérdida/duplicación de fuentes, pins alterados, rutas
+históricas rotas, recorrido de junction, inventario de caches, falsa cobertura.
+Incidente: el control nuevo inicialmente contaba reapertura del mismo namespace
+como dos; se corrigió al conjunto de namespaces, igual que el verificador Lean.
+No se relajó ningún control anterior. Riesgo residual: nativo Windows y revisión
+humana independiente abiertos. Se conservan INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY,
+BLOCKED_MULTIPLE_GATES, BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.
+
+Cierre 6.2: repetición Lean aprobada (32 fuentes / 250 declaraciones, mismos
+tres axiomas). Hashes de todas las fuentes idénticos a la línea base.
+VERIFICACION_6_2.json registra los 12 comandos de control aprobados, 6 negativos
+rechazados y 153 huellas protegidas conservadas. Alcance revisado para commit
+local exclusivo de exposición/inventario; sin push. La mecanización nueva
+comienza en el siguiente bloque y tendrá commit separado.

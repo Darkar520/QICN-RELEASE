@@ -35,6 +35,7 @@ rigid-identity-framework/
 │   ├── build/sections/                    # Chapters generados por el ensamblador
 │   ├── preamble/                          # Preámbulo LaTeX congelado
 │   └── compile.ps1
+├── lean/                                  # Paquete autónomo Lean4 + Mathlib, toolchain fijado
 ├── registry/                              # Formal Corpus Registry (JSON/JSONL)
 │   ├── schema.json                        # Contrato de esquema
 │   ├── theorems.jsonl                     # Registro de teoremas
@@ -45,9 +46,9 @@ rigid-identity-framework/
 │   ├── lib/                               # Módulos compartidos
 │   └── legacy/                            # Gates supersedidos preservados
 ├── docs/                                  # Documentación no-LaTeX
-│   ├── ai-platform-outputs/               # Análisis IA, Lean4, simulaciones
+│   ├── ai-platform-outputs/               # Análisis IA, recibos históricos, simulaciones
 │   │   ├── analysis/                      # Decisiones, red-teams, propuestas
-│   │   ├── formal/lean/                   # Proyecto Lean4 + mathlib (QICNLean/)
+│   │   ├── formal/lean/                   # Nota de transición histórica, sin fuentes activas
 │   │   ├── reports/                       # Reportes machine-generated
 │   │   └── sims/                          # Simulaciones (JS/Python)
 │   ├── fixtures/, measurement_specs/, preregistrations/
@@ -80,14 +81,21 @@ relativa al tier raíz del repo git).
 
 ## Lean4
 
-El proyecto de formalización vive en
-`docs/ai-platform-outputs/formal/lean/` (mathlib v4.31.0, 2361 jobs).
+El paquete autónomo está en [lean/](lean/README.md), con toolchain Lean 4.31.0,
+Mathlib fijado y una sola ubicación de fuentes. La guía distingue la compilación
+nativa y la verificación serial del kernel usada en Windows. Los recibos por
+checkpoint conservan su ruta histórica.
+
+Desde este directorio:
 
 ```powershell
-cd docs/ai-platform-outputs/formal/lean
-$env:ELAN_HOME="$env:USERPROFILE\.elan"
-& "$env:USERPROFILE\.elan\bin\lake.exe" build
+python scripts/verify-lean.py --kernel-only --packages-dir E:/QICN-LEAN/v4.31.0-desktop/packages
+python scripts/verify-lean-coverage.py
 ```
+
+La matriz inventaría 419 enunciados del manuscrito; contar declaraciones auxiliares
+Lean no mide por sí solo la cobertura de esos enunciados. Véanse las hipótesis,
+brechas y límites en la guía del paquete y en la matriz enlazada allí.
 
 ## Tier raíz (repositorio git)
 

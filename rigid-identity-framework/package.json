@@ -85,6 +85,7 @@
     "verify:v31": "npm run verify:v30 && npm run adjudicate:external-session-zero-v31",
     "verify:math": "python scripts/verify-math-regressions.py",
     "verify:lean": "python scripts/verify-lean.py",
+    "verify:lean:coverage": "python scripts/verify-lean-coverage.py",
     "verify:prose": "python scripts/verify-prose-sync.py"
   }
 }

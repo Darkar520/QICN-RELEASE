@@ -9,8 +9,14 @@ theory closure.
 
 La copia activa `qicn-framework-ordenado` está en la raíz del Escritorio,
 con almacén Git propio, el mismo historial y los remotos `origin` y `gitlab`.
-La rama de trabajo es `codex/qicn-framework-ordenado`. Las carpetas anteriores
+La rama pública es `main`; las ramas de trabajo utilizan el prefijo `codex/`. Las carpetas anteriores
 se conservan como respaldo.
+
+El paquete formal autónomo [QICNLean](rigid-identity-framework/lean/README.md)
+expone las fuentes Lean 4.31.0, sus instrucciones de reproducción y la
+[matriz de 419 enunciados](rigid-identity-framework/docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md).
+La prueba del kernel es evidencia matemática interna bajo hipótesis; no aporta
+validación empírica. El CI de gobierno actual no ejecuta Lean.
 
 El [plan completo de fortalecimiento](rigid-identity-framework/ROADMAP.md#plan-de-fortalecimiento-completo-2026-11-08)
 vive en el roadmap existente. La [verificación Lean](rigid-identity-framework/docs/ai-platform-outputs/reports/REORGANIZACION_QICN_2026-11-08.md#repetir-lean)

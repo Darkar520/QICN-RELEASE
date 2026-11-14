@@ -2218,3 +2218,24 @@ Ruta 5B queda cerrada editorialmente y publicada. **Ruta 6 queda preparada,
 todavía sin iniciar:** su primer paso es inventariar y exponer el paquete Lean
 conservando los 32 módulos, dependencias y contrato de reproducción.
 `external_support_certified=false`.
+
+
+## Ejecución de Ruta 6 · 2026-11-14
+
+Estado vigente posterior a las aclaraciones editoriales: Ruta 6 iniciada por
+solicitud expresa, en rama local `codex/ruta6-lean`, sin push automático.
+Plan y evidencia: [ejecución](docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/EJECUCION.md).
+
+- 6.1: línea base serial Lean 4.31.0 aprobada: 32 fuentes/250 declaraciones,
+  tres axiomas estándar y nueve pins; nativo Windows no verificado. Inventario
+  completo de 419 IDs; no confundir declaraciones auxiliares con cobertura.
+- 6.2: paquete único en lean/, 36 archivos originales con hashes conservados,
+  recetas históricas intactas y verificación posterior aprobada: Lean 32/250,
+  raíz 3/3, release 6/6, matemáticas 32/32 y controles documentales.
+- 6.3: siguiente bloque delimitado a proyección real/compleja general, familias
+  contractivas y topología del límite inverso; sin modificar TeX ni registro.
+
+La matriz inicial registra 1 exacto, 53 parciales, 349 pendientes y 16 acotados por
+protocolo. Son estados de traducción, no una aprobación científica. La cuña
+ponderada, calibración y contratos empíricos mantienen sus obligaciones.
+external_support_certified=false.

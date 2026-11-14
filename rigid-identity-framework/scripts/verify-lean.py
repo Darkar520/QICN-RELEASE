@@ -7,7 +7,7 @@ from pathlib import Path
 import argparse,hashlib,json,os,re,subprocess,tempfile,time,tomllib
 
 FRAMEWORK=Path(__file__).resolve().parents[1]
-PROJECT=FRAMEWORK/'docs/ai-platform-outputs/formal/lean'
+PROJECT=FRAMEWORK/'lean'
 CACHE=FRAMEWORK.parent/'.cache/qicn-lean';CACHE.mkdir(parents=True,exist_ok=True)
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--fetch-cache',action='store_true')

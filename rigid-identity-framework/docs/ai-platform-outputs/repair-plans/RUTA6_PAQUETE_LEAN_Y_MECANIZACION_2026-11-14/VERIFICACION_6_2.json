@@ -1,0 +1,173 @@
+{
+  "passed": true,
+  "lean": {
+    "lean": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+    "mode": "kernel-only",
+    "source_modules": 32,
+    "public_theorems_audited": 250,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "external_support_certified": false
+  },
+  "original_sources_identical": true,
+  "verification": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0,
+      "seconds": 1.22
+    },
+    {
+      "name": "registry",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:corpus-registry"
+      ],
+      "exit": 0,
+      "seconds": 2.56
+    },
+    {
+      "name": "macros",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:macro-registry"
+      ],
+      "exit": 0,
+      "seconds": 1.41
+    },
+    {
+      "name": "nonclaims",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint:nonclaims"
+      ],
+      "exit": 0,
+      "seconds": 3.62
+    },
+    {
+      "name": "prose",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:prose"
+      ],
+      "exit": 0,
+      "seconds": 2.88
+    },
+    {
+      "name": "math",
+      "command": [
+        "python",
+        "scripts/verify-math-regressions.py"
+      ],
+      "exit": 0,
+      "seconds": 209.09
+    },
+    {
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0,
+      "seconds": 49.67
+    },
+    {
+      "name": "coverage",
+      "command": [
+        "python",
+        "scripts/verify-lean-coverage.py"
+      ],
+      "exit": 0,
+      "seconds": 1.0
+    },
+    {
+      "name": "inventory-selftest",
+      "command": [
+        "node",
+        "scripts/inventory-traceability.js",
+        "--self-test"
+      ],
+      "exit": 0,
+      "seconds": 0.14
+    },
+    {
+      "name": "inventory",
+      "command": [
+        "node",
+        "scripts/inventory-traceability.js",
+        "--dry"
+      ],
+      "exit": 0,
+      "seconds": 3.66
+    }
+  ],
+  "preservation": {
+    "passed": true,
+    "protected_files": 153,
+    "relocated_files": 36,
+    "relocated_lean_files": 32,
+    "no_protected_changes": true
+  },
+  "negative_controls": [
+    {
+      "control": "missing registry target",
+      "rejected": true
+    },
+    {
+      "control": "duplicate registry ID",
+      "rejected": true
+    },
+    {
+      "control": "changed source statement hash",
+      "rejected": true
+    },
+    {
+      "control": "unknown Lean symbol",
+      "rejected": true
+    },
+    {
+      "control": "exact match without a theorem",
+      "rejected": true
+    },
+    {
+      "control": "scientific promotion",
+      "rejected": true
+    }
+  ],
+  "raw_verdicts": [
+    "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+    "BLOCKED_MULTIPLE_GATES",
+    "BLOCKED_FOUNDATION_FIRST_GATES"
+  ],
+  "evidence_root": "E:\\QICN-PRESERVACION\\2026-11-14-ruta6",
+  "external_support_certified": false
+}

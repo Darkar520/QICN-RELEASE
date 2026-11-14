@@ -33,6 +33,8 @@ const EXCLUDE_DIRS = new Set([
   '.git.orphan-jobhunter-remote.bak',
   'node_modules',
   '.lake',
+  '.cache',
+  '__pycache__',
   '.venv-phase7',
   '__pyphi_cache__',
   '_build',
@@ -323,7 +325,7 @@ function main(argv) {
 
   // Lean: el agregador QICNLean.lean (si existe) + lakefile como raices
   const leanRoots = files.filter((f) =>
-    path.basename(f) === 'QICNLean.lean' || path.basename(f).startsWith('lakefile'));
+    f.startsWith('lean/') && (path.basename(f) === 'QICNLean.lean' || path.basename(f).startsWith('lakefile')));
 
   // Node: entries de package.json
   const nodeRoots = files.filter((f) => pkgEntries.has(f));
@@ -379,6 +381,8 @@ function main(argv) {
 
     if (GOVERNANCE_FILES.has(base) && it.top !== 'docs') {
       bucket = 'KEEP'; note = 'governance/root';
+    } else if (it.rel.startsWith('lean/') && ['lakefile.toml', 'lake-manifest.json', 'lean-toolchain'].includes(base)) {
+      bucket = 'KEEP'; note = 'active pinned Lean package configuration';
     } else if (it.type === 'BUILD_ARTIFACT' || it.type === 'PDF') {
       bucket = 'BUILD_ARTIFACT'; note = 'artefacto de compilacion (reproducible)';
     } else if (['LATEX', 'BIB', 'LEAN', 'NODE'].includes(it.type)) {

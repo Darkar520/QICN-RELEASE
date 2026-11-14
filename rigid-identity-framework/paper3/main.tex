@@ -16,6 +16,7 @@
 \usepackage{tikz-cd}
 \usepackage[backend=biber]{biblatex}
 \addbibresource{../../release/references.bib}
+\addbibresource{../monolithic/novelty_references.bib}
 \usepackage[unicode,hidelinks]{hyperref}
 \hypersetup{
   pdftitle={Witness-Relative Exclusion of Joint Null Readouts},
@@ -86,17 +87,17 @@
 We introduce an abstract structural readout space $\E$ and a compatibility operator $\Phi: Z \to \E$ on a declared metric comparison domain. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: under a certified positive lower readout bound, two defined, separated witness values cannot both equal the null element. CCR is a possible application class and is not needed for this metric implication. Consequently, a CCR realization with such a witness induces a witness-relative non-null separation. The result is \emph{negative-structural}: it does not posit experience; it forbids one typed joint-null configuration under stated hypotheses. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove factorization on a faithful image and a finite-prefix approximation bound. The results are metric, order-theoretic and representation-relative; physical interpretation requires additional evidence.
 \end{abstract}
 
-\section{Scope, System Boundary, and Non-Inference Note}
+% BEGIN_OPERATIONAL_SCOPE
+\section*{Scope and Operational Postulate}
+This article studies the stated mathematical objects and their operational
+realization conditions. Whether a sufficiently realized artificial or biological
+system has phenomenal experience remains open as an independent bridge
+hypothesis. Empirical interpretation requires identified measurements and
+admissible comparisons.
+% END_OPERATIONAL_SCOPE
 
-\noindent\textbf{Scope and admissible reading.}\enspace This paper proves a witness-relative negative-structural result: under CCR constraints plus a separately typed extension witness, a lower Lipschitz constant, and an admissible compatibility operator, joint exact collapse to the null regime is excluded. It develops explicit bounds, factorization structure, and canonical-family consequences for that conditional result. It does not define or detect consciousness, identify $\E$ with subjective experience, assert that CCR systems exist in nature, or derive ethical or metaphysical closure from the theorem. Related systems may implement admissibility-governed diagnostics, boundary-sensitive stress tests, and runtime comparisons motivated by this paper, but those outputs do not implement the abstract structural readout space $\E$ and do not convert current runtime behavior into proof that any concrete system instantiates experience.
+\noindent\textbf{Witness-relative clarification.}\enspace CCR by itself does not provide the extension witness, the lower Lipschitz constant, or the admissible compatibility operator. The historical phrase ``null instability'' denotes joint exact null exclusion here, not temporal instability. Statements of non-nullity use the explicit hypotheses of Theorem~\ref{thm:instability}, including the declared witness domain of Definition~\ref{def:extension-witness}. 
 
-\noindent\textbf{Witness-relative clarification.}\enspace CCR by itself does not provide the extension witness, the lower Lipschitz constant, or the admissible compatibility operator. The historical phrase ``null instability'' denotes joint exact null exclusion here, not temporal instability. Statements of non-nullity use the explicit hypotheses of Theorem~\ref{thm:instability}, including the declared witness domain of Definition~\ref{def:extension-witness}. The null-instability theorem must not be read as a consciousness detector, an AI-subjectivity claim, a moral-status claim, an empirical certificate, or validation of the corpus by the runtime.
-
-
-
-% =============================================================================
-% SECTION 1: INTRODUCTION
-% =============================================================================
 \section{Introduction}
 
 \subsection{Motivation and Scope}
@@ -694,37 +695,52 @@ For a claimed null-fiber exclusion, the certificate record must identify:
 % =============================================================================
 \section{Comparison with Existing Frameworks}
 
-\subsection{Integrated Information Theory (IIT)}
+\subsection{Geometric foundations and the wider programme}
+Papers I--III establish a minimal geometric and dynamical layer: projective
+compatibility, controlled assignments, and witness-relative null exclusion.
+Their hypotheses determine the mathematical conclusions. Cognitive models and
+experimental contracts are introduced in subsequent layers, rather than
+being premises supplied retrospectively to this geometric core.
 
-\begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{center}\small
+\begin{tabular}{|p{0.22\linewidth}|p{0.31\linewidth}|p{0.34\linewidth}|}
 \hline
-& \textbf{IIT} & \textbf{This Framework} \\
-\hline
-Claims consciousness exists & Yes & No \\
-Defines $\Phi$ & Information integration & Structural map \\
-Quantitative measure & $\Phi$ (bits) & $\iota(e_\star)$ (metric) \\
-Metaphysical commitment & Panpsychism & None \\
-Falsifiable predictions & Debated & None (structural) \\
-\hline
+Question & Papers I--III & Subsequent layers \\ \hline
+Mathematical object & Compatible states and metric assignments & Joint operational certificates and matched comparisons \\
+Prediction & Conditional bounds and counterexamples & Intervention predictions in IV/VI and adjudication contracts in X \\
+Indexed organization & No cognitive architecture is required by the geometric hypotheses & VII/VIII and the theoretical dependencies paper specify indexed control, ownership and conditional self-reference \\
+Phenomenal association & Open bridge hypothesis & Remains open under additional identification and empirical criteria \\ \hline
 \end{tabular}
 \end{center}
 
-\subsection{Global Workspace Theory (GWT)}
+\subsection{Integration, global availability, and higher-order representation}
+Tononi's 2004 formulation links consciousness to information integration
+\cite{tononi2004}. The structural assignment in this paper has a different
+domain and codomain from that integration quantity. The distinction concerns
+the objects being compared; it supplies neither a conversion between the
+measures nor a verdict on the competing research programme.
 
-Our framework is orthogonal to GWT. We make no claims about attention, broadcast, or access consciousness. The structural results concern identity stability, not cognitive architecture.
+Baars's global-workspace account concerns a cognitive architecture
+\cite{baars1988}. The geometric core leaves such architecture unspecified;
+later operational criteria can be applied to a specified architecture once
+its states, controls and observation maps are identified.
 
-\subsection{Higher-Order Theories}
+Rosenthal's higher-order account relates a state's conscious status to suitable
+higher-order awareness of that state \cite{rosenthal1986}. Indexed control
+and ownership in the later QICN layers are operational constructions with
+their own intervention contracts. Their relation to that higher-order
+condition is a separate modelling question. The exact self-reference
+operator in the theoretical dependencies paper retains its additional
+hypotheses and its explicit obstructions.
 
-We do not model representations, meta-cognition, or self-awareness. The space $\E$ contains regimes, not mental states.
+\subsection{Mathematical conclusions and bridge hypotheses}
+The phenomenal interpretation remains open in the sense of an independent
+bridge hypothesis \cite{chalmers}. A faithful realization of a mathematical
+model and an explanation of experience answer different questions. The
+later prediction and adjudication layers specify how empirical evidence
+could constrain a realization and its interpretation without altering the
+proofs of the geometric results.
 
-\subsection{Mathematical Foundations (Chalmers, Nagel)}
-
-Our framework provides formal tools that \emph{could} be used in philosophical analysis, but we do not claim to resolve the ``hard problem.'' The conditional exclusion of joint exact nullity is a metric fact, not an explanation of subjective experience.
-
-% =============================================================================
-% SECTION 10: LIMITATIONS
-% =============================================================================
 \section{Limitations and Open Problems}
 
 \subsection{Limitations}
@@ -747,7 +763,7 @@ Our framework provides formal tools that \emph{could} be used in philosophical a
 \item \textbf{Computational bounds:} Sharper non-simulability results?
 \end{enumerate}
 
-\subsection{Foundation-Level Gaps and Non-Claims}\label{sec:gap-nonclaims}
+\subsection{Foundation-Level Gaps and Interpretive Scopes}\label{sec:gap-nonclaims}
 
 The following gaps remain open in the current corpus and are documented here to prevent over-reading of the separation theorem.
 
@@ -928,7 +944,7 @@ This is the certified lower-bound hypothesis applied to the witness pair.
 % =============================================================================
 % APPENDIX C: HEREDITARY RIGIDITY
 % =============================================================================
-\section{Hereditary Rigidity}
+\section{Hereditary Rigidity}\label{app:hereditary-rigidity}
 
 \begin{theorem}[Rigidity Inheritance]
 Suppose a readout $\Phi:Z\to\E$ has lower constant $C$ on a declared pair class. Let $a:Z'\to Z$ and $b:\E\to\E'$ satisfy lower bounds with constants $c_a,c_b>0$, and set $\Phi'=b\circ\Phi\circ a$. Then $\Phi'$ has lower constant $c_ac_bC$ on the pulled-back class. To inherit CCR additionally require that every finite-cost positive deformation in the new sector pulls back to a finite-cost positive deformation in the original sector. Summability alone supplies neither assumption.
@@ -941,7 +957,7 @@ Successive application of the three lower bounds gives $d_{\E'}(\Phi'(x),\Phi'(y
 % =============================================================================
 % APPENDIX D: UNIVERSAL FACTORIZATION
 % =============================================================================
-\section{Universal Factorization}
+\section{Universal Factorization}\label{app:universal-factorization}
 
 \begin{theorem}[Categorical Universality]
 If $\Phi:Z\to\E$ has a positive global lower bound, it is injective. For any $\Psi:Z\to F$ there is a unique factor map $u:\Phi(Z)\to F$ with $u\circ\Phi=\Psi$. If $\Psi$ is $L$-Lipschitz, $u$ is $L/C$-Lipschitz. No unique extension to all of $\E$ follows.
@@ -956,7 +972,7 @@ Define $u(\Phi(z))=\Psi(z)$. Injectivity gives well-definedness and uniqueness o
 % =============================================================================
 % APPENDIX E: NON-SIMULABILITY BOUNDS
 % =============================================================================
-\section{Non-Simulability Bounds}
+\section{Non-Simulability Bounds}\label{app:prefix-bounds}
 
 \subsection{Simulation Error}
 Fix the target readout and the information available to the decoder. On the binary prefix tower, let $p_N$ reveal bits $0,\ldots,N$ and let $F(b)=\sum_{j\geq0}2b_j/3^{j+1}$. Define
@@ -987,11 +1003,11 @@ In this prefix model, worst-case error at most $\varepsilon$ requires $1/(2\,3^{
 \section{Final Structural Closure}
 
 \begin{theorem}[Closure by Non-Alternatives]
-The following obligations are jointly sufficient for the corresponding structural conclusions: an admitted separated pair with a certified lower constant gives joint null exclusion; a null anchor gives the stronger anchored bound; faithful global readout gives image factorization; declared prefix access gives the approximation bound above; and the explicit pullback conditions of Appendix C give inheritance. A competing model satisfying those same obligations obeys those same conclusions. Neither CCR realizability nor satisfaction of all obligations is inferred from canonical topology alone.
+The following obligations are jointly sufficient for the corresponding structural conclusions: an admitted separated pair with a certified lower constant gives joint null exclusion; a null anchor gives the stronger anchored bound; faithful global readout gives image factorization; declared prefix access gives the approximation bound above; and the explicit pullback conditions of Appendix~\ref{app:hereditary-rigidity} give inheritance. A competing model satisfying those same obligations obeys those same conclusions. Neither CCR realizability nor satisfaction of all obligations is inferred from canonical topology alone.
 \end{theorem}
 
 \begin{proof}
-Apply the witness theorem, the anchored bound, and the corrected results of Appendices C--E with their hypotheses. They are independent implications; no circular existence assertion is used to supply their premises.
+Apply the witness theorem, the anchored bound, and the corrected results of Appendices~\ref{app:hereditary-rigidity}--\ref{app:prefix-bounds} with their hypotheses. They are independent implications; no circular existence assertion is used to supply their premises.
 \end{proof}
 
 \begin{remark}[Structural Import]

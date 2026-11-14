@@ -60,7 +60,7 @@ sers/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/irisp/MiKTeX/font
 s/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/rsf
 s/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (410 pages, 3239114 bytes).
+Output written on QICN_MONOLITHIC.pdf (410 pages, 3236370 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 [pdflatex pass 3]
@@ -76,7 +76,7 @@ sers/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/irisp/MiKTeX/font
 s/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/rsf
 s/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (410 pages, 3239114 bytes).
+Output written on QICN_MONOLITHIC.pdf (410 pages, 3236603 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 ```
@@ -88,13 +88,6 @@ Transcript written on QICN_MONOLITHIC.log.
 pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [biber]
-perl: warning: Setting locale failed.
-perl: warning: Please check that your locale settings:
-	LC_ALL = "C.UTF-8",
-	LC_CTYPE = "C.UTF-8",
-	LANG = "C.UTF-8"
-    are supported and installed on your system.
-perl: warning: Falling back to the standard locale ("C").
 biber: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [pdflatex pass 2]

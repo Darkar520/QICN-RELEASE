@@ -11544,3 +11544,18 @@ Riesgos: traducción humana por revisar, métrica ponderada y contratos empíric
 abiertos. Sigue verificación fresca final tras commit, sin push.
 INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY, BLOCKED_MULTIPLE_GATES y
 BLOCKED_FOUNDATION_FIRST_GATES conservados; external_support_certified=false.
+
+
+### 2026-11-14 · Codex · identificación de hitos y receta final de Ruta 6
+
+Commits locales `ce4e558c1689bf9aec040f91d592f9bcc04212a4` (6.1-6.2) y
+`eab037fe7b7201fddb55a7049e9c449e9b7be48b` (6.3). Este ajuste sólo identifica commits, cifras
+y receta en roadmap/ledger/EJECUCION. No altera código ni resultados.
+La reproducción fresca de entrega corre sobre el estado comitado limpio:
+verify-lean.py --kernel-only --packages-dir E:/QICN-LEAN/v4.31.0-desktop/packages;
+raíz 3, FCR/macros, nonclaims, prosa, matemáticas 32, release 6 e inventario
+en copia aislada. Recibos final-kernel.json/final-gates.json en la evidencia E:.
+Alcance vigente: 35 fuentes / 271 declaraciones, matriz 10 exactos / 49
+parciales / 344 pendientes / 16 ligados a protocolo; 153 huellas congeladas
+conservadas. Los veredictos crudos y external_support_certified=false siguen
+intactos. No se publica ni se anuncia cierre del programa de 419 enunciados.

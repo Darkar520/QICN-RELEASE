@@ -115,8 +115,8 @@ Compilación incremental: tres módulos nuevos y agregado aprobados con las mism
 opciones del paquete; los otros 31 conservan los hashes de la auditoría fresca
 de 6.2. Auditoría nueva de las 271 declaraciones públicas aprobada, con sólo
 Classical.choice, Quot.sound y propext. Cero admisiones en las fuentes.
-VERIFICACION_6_3.json identifica modo, fuentes y alcance. La prueba final fresca
-de 35 fuentes se ejecutará tras cerrar los commits y quedará en
+VERIFICACION_6_3.json identifica modo, fuentes y alcance. La reproducción final fresca
+de 35 fuentes se registra tras cerrar los commits en
 E:/QICN-PRESERVACION/2026-11-14-ruta6/logs/final-kernel.json.
 
 Matriz actual: 10 EXACT_MATCH, 49 FINITE_OR_PARTIAL_KERNEL, 344 PENDING_MATHLIB,
@@ -142,6 +142,31 @@ completo ya usa destinos frescos y no requiere cambiar su contrato. Persisten
 avisos de cabecera del linter de Mathlib; no se silenció ningún linter ni se
 acepta una declaración con error. Estos avisos no son admisiones de prueba.
 
-El estado final comitado se someterá a Lean fresco, raíz 3, release 6,
+El protocolo de entrega sobre el estado final comitado comprende Lean fresco, raíz 3, release 6,
 matemáticas 32, FCR/macros, nonclaims, prosa, inventario y cobertura; logs
 finales fuera del árbol para mantenerlo limpio. Sin push automático.
+
+
+## Commits y reproducción de entrega
+
+- `ce4e558c1689bf9aec040f91d592f9bcc04212a4`: exposición e inventario, 36 renombres íntegros, comprobación
+  fresca 32/250 y batería del proyecto aprobadas.
+- `eab037fe7b7201fddb55a7049e9c449e9b7be48b`: bloque analítico/infinito, tres módulos nuevos, 21 pruebas y
+  auditoría incremental 35/271 aprobadas; matriz actualizada por ID.
+- El commit documental que contiene esta entrada identifica ambos hitos y la
+  receta final; no cambia fuentes Lean, pins, manuscritos ni criterios.
+
+Recibos finales sobre el estado comitado limpio:
+`E:/QICN-PRESERVACION/2026-11-14-ruta6/logs/final-kernel.json` (Lean fresco) y
+`final-gates.json` (12 comandos raíz/interiores), con logs crudos adyacentes.
+La reproducción se ejecuta después del commit documental; las salidas se
+conservan fuera del árbol. Las huellas de los 35 archivos identifican la
+versión matemática comprobada; una salida incremental no se etiqueta como
+elaboración fresca.
+
+Cierre de alcance: exposición y primer bloque sustantivo de Ruta 6. El
+programa de 419 enunciados no está cerrado: 409 siguen sin equivalencia completa
+(49 parciales, 344 pendientes y 16 ligados a protocolos). La próxima fase de
+mayor efecto es la métrica de historiales y su transporte cuantitativo, antes
+de trasladar garantías a certificados downstream. Revisión humana y soporte
+externo abiertos; nativo Windows sin verificar. No se ejecutó push.

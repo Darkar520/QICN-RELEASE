@@ -2249,3 +2249,10 @@ ponderada (finitud/completitud/colas/topología), transporte cuantitativo y
 metrizabilidad/base clopen/límite de leyes. No convertir estos pendientes de
 formalización en nuevos teoremas ni en supuestos tácitos. Ver EJECUCION.md
 y VERIFICACION_6_3.json para alcance exacto y preparación del control final.
+
+Hitos locales de Ruta 6: `ce4e558c1689bf9aec040f91d592f9bcc04212a4` (exposición verificada) y
+`eab037fe7b7201fddb55a7049e9c449e9b7be48b` (primer bloque analítico/infinito). La receta de
+reproducción final y los recibos por huella están en EJECUCION.md. Los 419
+enunciados conservan su programa abierto; 409 no tienen equivalencia completa.
+Sin push automático; revisión humana independiente pendiente y
+external_support_certified=false.

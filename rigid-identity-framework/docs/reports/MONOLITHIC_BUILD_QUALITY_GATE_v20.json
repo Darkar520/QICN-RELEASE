@@ -6,9 +6,9 @@
   "log_path": "monolithic\\QICN_MONOLITHIC.log",
   "checks": {
     "log_present": true,
-    "pages_detected": 339,
+    "pages_detected": 410,
     "latex_warnings": 0,
-    "overfull_hbox": 3,
+    "overfull_hbox": 0,
     "overfull_vbox": 0,
     "underfull_vbox": 0,
     "undefined_references": 0,
@@ -19,23 +19,10 @@
   "detail": {
     "log": {
       "missing": false,
-      "line_count": 3886,
-      "pages": 339,
+      "line_count": 3149,
+      "pages": 410,
       "latex_warnings": [],
-      "overfull_hbox": [
-        {
-          "line": 2096,
-          "text": "Overfull \\hbox (17.07884pt too wide) detected at line 363"
-        },
-        {
-          "line": 2218,
-          "text": "Overfull \\hbox (22.27818pt too wide) in paragraph at lines 915--915"
-        },
-        {
-          "line": 3047,
-          "text": "Overfull \\hbox (0.59981pt too wide) in paragraph at lines 1048--1048"
-        }
-      ],
+      "overfull_hbox": [],
       "overfull_vbox": [],
       "underfull_vbox": [],
       "undefined_references": [],
@@ -47,5 +34,5 @@
       "hits": []
     }
   },
-  "result": "FAIL"
+  "result": "PASS"
 }

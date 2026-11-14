@@ -2170,3 +2170,29 @@ Ruta 5 cerrada: edición publicada y verificada. Punto de contenido: `6487fc612e
 4. Mantener separados los teoremas analíticos, axiomas, interpretaciones y datos pendientes. Coordenadas (e_i,phi_i) congeladas, calibración K_i/omega_i/epsilon_i/Delta*, rivales irrestrictos, clase BPF completa y revisión humana/replicación independientes conservan su estado abierto.
 
 La publicación del paquete Lean y su extensión no constituyen validación empírica. external_support_certified=false.
+
+
+## Ruta 5B · consolidación estructural y agnosticismo · 2026-11-13
+
+Edición local verificada desde `7b4b223`: tres partes reales, Puente numerado
+independientemente, 31 tarjetas de X en tres apéndices, 13 PDF A4. Monolito
+438→410 páginas; índice21→8; Tier B/P164→0; negaciones interpretativas104→53;
+governance68→11 (conteos léxicos, no validación semántica universal).
+Conservados906 IDs/383 macros, 404 pruebas y115 hashes protegidos, incluidos
+32 Lean sin cambios. Cuatro equivalencias editoriales formales y dos de
+referencias en pruebas están individualizadas en VERIFICACION.json.
+Raíz3/3, release6/6, matemáticas32/32, extractorREPRODUCIBLE, nonclaims0,
+prosa sin errores, doce proyecciones LF/CRLF y calidad monolítica sin fallos.
+HOT primario añadido únicamente a bibliografía activa por autorización expresa.
+
+Evidencia, incidentes y límites:
+`docs/ai-platform-outputs/repair-plans/RUTA5B_CONSOLIDACION_MONOGRAFIA_2026-11-13/`.
+Alcance editorial cerrado localmente; revisión humana e independiente pendientes.
+**Sin push**: revisar el PDF antes de cualquier autorización de publicación.
+No se ejecutó Ruta6 ni se cerraron obligaciones empíricas por edición.
+Veredictos crudos INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY,
+BLOCKED_MULTIPLE_GATES y BLOCKED_FOUNDATION_FIRST_GATES conservados;
+external_support_certified=false.
+
+Contenido local congelado en `2a02857a25d99a960b89d0ebfb687adabafb1627`. Lectura remota confirmó main en
+`7b4b223`; no se ejecutó push. El segundo commit conserva la evidencia de fase.

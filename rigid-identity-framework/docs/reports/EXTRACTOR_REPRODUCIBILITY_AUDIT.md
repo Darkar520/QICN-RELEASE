@@ -16,8 +16,8 @@ npm run audit:extractor-reproducibility
 
 | Surface | Committed registry | Fresh global extraction | Registry minus extraction |
 | --- | --- | --- | --- |
-| Formal registry entries | 699 | 699 | 0 |
-| Macro registry entries | 377 | 377 | 0 |
+| Formal registry entries | 906 | 906 | 0 |
+| Macro registry entries | 383 | 383 | 0 |
 
 ## Macro Owner Comparison
 
@@ -25,16 +25,16 @@ npm run audit:extractor-reproducibility
 | --- | --- | --- | --- |
 | basecore | 58 | 58 | 0 |
 | bridge | 43 | 43 | 0 |
-| paper1 | 8 | 8 | 0 |
+| paper1 | 10 | 10 | 0 |
 | paper10 | 9 | 9 | 0 |
-| paper2 | 8 | 8 | 0 |
+| paper2 | 9 | 9 | 0 |
 | paper3 | 21 | 21 | 0 |
 | paper4 | 10 | 10 | 0 |
 | paper5 | 35 | 35 | 0 |
-| paper6 | 44 | 44 | 0 |
+| paper6 | 46 | 46 | 0 |
 | paper7 | 48 | 48 | 0 |
 | paper8 | 38 | 38 | 0 |
-| paper9 | 55 | 55 | 0 |
+| paper9 | 56 | 56 | 0 |
 
 ## Registry Paths Missing From Current Checkout
 

@@ -1,0 +1,1267 @@
+{
+  "base_commit": "7b4b223d371a2bc59f02340518c0e56424ffc6b0",
+  "generated_at_utc": "2026-11-14T01:54:11.350765+00:00",
+  "status": "VERIFICADO_LOCAL_SIN_PUSH",
+  "commands": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace",
+      "exit": 0,
+      "seconds": 0.58
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace",
+      "exit": 0,
+      "seconds": 0.19
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace",
+      "exit": 0,
+      "seconds": 1.45
+    },
+    {
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 54.78
+    },
+    {
+      "name": "corpus",
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 0.51
+    },
+    {
+      "name": "macros",
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "name": "math",
+      "command": [
+        "python",
+        "scripts/verify-math-regressions.py"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 198.49
+    },
+    {
+      "name": "prose",
+      "command": [
+        "python",
+        "scripts/verify-prose-sync.py"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 0.44
+    },
+    {
+      "name": "extractor",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:extractor-reproducibility"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.47
+    },
+    {
+      "name": "nonclaims",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint:nonclaims"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 2.42
+    },
+    {
+      "name": "semantic",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:semantic-inflation"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\workspace\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.45
+    }
+  ],
+  "math_suites": 32,
+  "raw_adjudicator_outputs": [
+    "External Session Zero adjudicator v26: PASS; verdict=INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY; external_support_certified=false",
+    "External Session Zero adjudicator v27: PASS; verdict=BLOCKED_MULTIPLE_GATES; blockers=3; external_support_certified=false",
+    "External Session Zero adjudicator v28: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; blockers=4; external_support_certified=false",
+    "External Session Zero adjudicator v30: PASS; verdict=BLOCKED_MULTIPLE_GATES; strict=true; legacy_v27=false; blockers=4; external_support_certified=false",
+    "External Session Zero adjudicator v31: PASS; verdict=BLOCKED_FOUNDATION_FIRST_GATES; blockers=9; external_support_certified=false"
+  ],
+  "book": {
+    "before": {
+      "pages": 438,
+      "toc_physical_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "toc_pages": 21,
+      "counts": {
+        "interpretive_negative": 104,
+        "tier_BP": 164,
+        "governance_word": 68,
+        "versioned_score": 0
+      }
+    },
+    "after": {
+      "pages": 410,
+      "toc_physical_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "toc_pages": 8,
+      "counts": {
+        "interpretive_negative": 53,
+        "tier_BP": 0,
+        "governance_word": 11,
+        "versioned_score": 0
+      }
+    },
+    "volume_parts": 3,
+    "bridge_example_number": "8.8",
+    "cards_preserved": 31,
+    "appendices": 3,
+    "card_groups": {
+      "app:selection-contracts": 9,
+      "app:execution-records": 11,
+      "app:integrity-controls": 11
+    },
+    "orphan_appendix_toc_entries": 0,
+    "standalone_scopes": 12,
+    "interpretation_sections": 12,
+    "external_support_certified": false,
+    "lexical_method": {
+      "interpretive_negative": "\\b(?:does not|do not|not)\\b[^.]{0,180}\\b(?:consciousness|phenomenal|phenomenality|human equivalence|qualia|moral status|subjective experience)\\b",
+      "tier_BP": "\\bTier\\s*[~ ]*[BP]\\d\\w*",
+      "governance_word": "\\bgovernance\\b",
+      "versioned_score": "Score\\s*v\\s*4\\.5"
+    },
+    "qualification": "Lexical counts include scientifically necessary formal non-inferences; no semantic completeness claim."
+  },
+  "pdfs": [
+    {
+      "file": "basecore\\BASECORE.pdf",
+      "pages": 57,
+      "metadata": {
+        "Title": "Mathematical Foundations for Controlled Projective Systems",
+        "Subject": "Autonomous Mathematical Source Text for Foundational Dynamics, Identity Rigidity, Regime Constraints, and Operational-Criterion Grammar",
+        "Keywords": "basecore, rigid identity, inverse limit, contractive dynamics, non-finite determination, operational criterion, claim boundary",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:37:29-06",
+        "ModDate": "2026-11-13T19:37:29-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "57",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "806733 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "7c8654433dab0a72664edfca4d2821408ad5cd3b6850670e8d8aac97550d20a7",
+      "pdf_sha256": "c3a1f0bec0a831ff8ecec7348f2a3127f9b1d53ba2e4c1710240bd11e1daa413",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper1\\main.pdf",
+      "pages": 32,
+      "metadata": {
+        "Title": "Projective Compatibility and Sectorial Deformation Resistance",
+        "Subject": "Rigid Identity Framework – Rigid Identity",
+        "Keywords": "inverse limit, rigid identity, sectorial deformation resistance, observable channel, uniqueness, non-transferability",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:37:57-06",
+        "ModDate": "2026-11-13T19:37:57-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "32",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "533430 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "cdc4293445cf254a95d7f91aaf1d5c30d0560a4352fdb325a3ad5e9ccbf9642f",
+      "pdf_sha256": "39e5e7ea4fb1a22662ad657d42c6aca6b43a7732c51b21fae710e17cc545bf28",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper10_external_adjudication\\main.pdf",
+      "pages": 33,
+      "metadata": {
+        "Title": "Blind Adjudication Protocols and Coverage-Aware Risk Bounds",
+        "Subject": "Experimental contracts and blind comparative adjudication",
+        "Keywords": "preregistration, blinding, coverage, leakage, negative controls, operational certificates",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:48:04-06",
+        "ModDate": "2026-11-13T19:48:04-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "33",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "481450 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "5cedb1de3eecd2e31b440e35b42473300f32eb18baa583248515a04719d5389a",
+      "pdf_sha256": "8ab6ee420c8810f6143b90e4f7c0b427b773994f86e2a00749589c68f585e4bb",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper2\\main.pdf",
+      "pages": 19,
+      "metadata": {
+        "Title": "Controlled Structural Assignments on Projective Limits",
+        "Subject": "Rigid Identity Framework – Structural Assignment Regimes",
+        "Keywords": "structural assignment regime, structural identity, forced continuity, fragmentation, sectorial deformation resistance, inverse limit",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:38:24-06",
+        "ModDate": "2026-11-13T19:38:24-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "19",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "409706 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "8c32a0341fd1835d3eb8daaa480482fd87ce57e27f4b047457582ce2fd1be50e",
+      "pdf_sha256": "7cd199e8d5d35e2c5eabd0a7190d8b19c164a1dbc3e15d7f5e8c91942efd90c1",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper3\\main.pdf",
+      "pages": 20,
+      "metadata": {
+        "Title": "Witness-Relative Exclusion of Joint Null Readouts",
+        "Subject": "Rigid Identity Framework – Null-Regime Instability",
+        "Keywords": "null regime, structural instability, CCR channel, structural readout space, forced non-nullity, compatibility operator",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:28:19-06",
+        "ModDate": "2026-11-13T19:28:19-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "20",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "474262 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "1d3a8be904227e19d63d2a4ecac3c8f12080fa2fccb6368f29bc48ac9a4d19e6",
+      "pdf_sha256": "6b4101509586c69cba3e9646136b7a3c09ad3958c749b2884daa0e160612d80c",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper4\\main.pdf",
+      "pages": 21,
+      "metadata": {
+        "Title": "Reproducible Intervention and Comparator Protocols",
+        "Subject": "Rigid Identity Framework – Forensic Predictions",
+        "Keywords": "falsification, forensic admissibility, pre-registration, QICN, decision gates, ablation, structural-functional validation",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:46:39-06",
+        "ModDate": "2026-11-13T19:46:39-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "21",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "429196 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "0ffe86d15e3598422a4223603e69316ad55609ffc7aebdd3258774ae6cd554f5",
+      "pdf_sha256": "ceec778ea322ac5305f25b9f4d750eb34c076cdbd7e57001fca5bc03bb08a556",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper5_operational_consciousness\\main.pdf",
+      "pages": 47,
+      "metadata": {
+        "Title": "A Six-Predicate Operational Criterion and Certified Response Classes",
+        "Subject": "Rigid Identity Framework - Six-Predicate Operational Criterion",
+        "Keywords": "six-predicate operational criterion, substrate invariance, certified response classes, rigid identity, causal integration, admissibility",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:47:11-06",
+        "ModDate": "2026-11-13T19:47:11-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "47",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "683587 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "4a62add5c9c12978f64a86c442957293e1ec485647ebe760a557ba423e13d562",
+      "pdf_sha256": "e28e9a992e16c49b4267efe1721f93f46c1d98155cc88164cb96b498597bdf2e",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper6_predictions_falsation\\main.pdf",
+      "pages": 29,
+      "metadata": {
+        "Title": "Prediction Contracts, Controls, and Evidence Status",
+        "Subject": "Rigid Identity Framework - Predictions and Failure Modes",
+        "Keywords": "predictions, falsification, six-predicate operational criterion, substrate invariance, discriminators, failure modes",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:29:17-06",
+        "ModDate": "2026-11-13T19:29:17-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "29",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "500383 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "18b35834f418b5e75fb30ffadda3d9a634575da127c54acfd7235a2a15d6d218",
+      "pdf_sha256": "c29a3b7af04d64208232627f19353131585fd5eb0ddc164d2f0ec6bf69ec9fa3",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper7_operational_life_subjecthood\\main.pdf",
+      "pages": 37,
+      "metadata": {
+        "Title": "Viability, Active Recovery, and Operational Descriptors",
+        "Subject": "Rigid Identity Framework - Viability-And-Recovery Criterion and Subjecthood",
+        "Keywords": "viability-and-recovery criterion, structural class, subjecthood, six-predicate operational criterion, rigid identity, falsifiability",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:29:33-06",
+        "ModDate": "2026-11-13T19:29:33-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "37",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "542583 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "07fde8eff068489dc4b1680cbb81687e324f9b407ce34355e93f2a31c325bd07",
+      "pdf_sha256": "baed7b1fad2d4557dafa8d7d2506ca9764f1e516d1131f3ca198dfb2fcc73878",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper8_first_person_subjectivity\\main.pdf",
+      "pages": 57,
+      "metadata": {
+        "Title": "Indexed Operational Certificates and Matched Model Comparisons",
+        "Subject": "Rigid Identity Framework - Seven-Coordinate Indexed Certificate",
+        "Keywords": "subjectivity, first-person index, ownership, continuity, irreducibility, six-predicate operational criterion, rigid identity",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:38:54-06",
+        "ModDate": "2026-11-13T19:38:54-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "57",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "678691 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "96618b834ad2466a4606339ad96dccdd1bde1e3ed28ddbc32a33148e39607307",
+      "pdf_sha256": "c7af18259970c2bc6c23d47f294c90f5f1c2b2a3d8f6f474f54cf5d4aa9400c2",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper9_phenomenal_bridge_organization\\main.pdf",
+      "pages": 63,
+      "metadata": {
+        "Title": "Cross-Mode Transport, Interaction, and Comparison Obligations",
+        "Subject": "Rigid Identity Framework - Paper 9",
+        "Keywords": "phenomenal bridge, subjectivity, first-person index, irreducibility, intervention logic, internal admissibility",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:47:48-06",
+        "ModDate": "2026-11-13T19:47:48-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "63",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "678563 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "4b5e6a3f7366934e1728ae6c16723d5fff0552b73df9963da9a2bdfb9fc163b6",
+      "pdf_sha256": "cd1ce9644dbe77a5dbf9ca3e82e1dd536b71e2f834626989874d3cfc67a54897",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "paper_bridge_operational_subjecthood\\main.pdf",
+      "pages": 27,
+      "metadata": {
+        "Title": "Dependencies between Operational Criteria and Indexed Certificates",
+        "Subject": "Rigid Identity Framework - Bridge from Six-Predicate Operational Criterion to Indexed Continuity-And-Control Criterion",
+        "Keywords": "six-predicate operational criterion, indexed continuity-and-control criterion, structural invariants, self-reference, certified response classes",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "LaTeX with hyperref",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:40:00-06",
+        "ModDate": "2026-11-13T19:40:00-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "27",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "483352 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "3426918c75e4baf998452a30504ef910703a1cf5e800633468ed85f6cc44d205",
+      "pdf_sha256": "0e316b8aba976c523bf8b9f12f441283929b4cc657fcfbda2d00a946359ec6f9",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    },
+    {
+      "file": "monolithic\\QICN_MONOLITHIC.pdf",
+      "pages": 410,
+      "metadata": {
+        "Title": "QICN: Projective Structures and Operational Certificates",
+        "Subject": "Projective structures, controlled dynamics and operational certificates",
+        "Keywords": "inverse limit, sectorial resistance, multiscale robustness, controlled dynamics, certified response classes",
+        "Author": "Johnny Andrey Pérez Ramírez",
+        "Creator": "pdfLaTeX",
+        "Producer": "MiKTeX pdfTeX-1.40.25",
+        "CreationDate": "2026-11-13T19:49:38-06",
+        "ModDate": "2026-11-13T19:49:38-06",
+        "Custom Metadata": "yes",
+        "Metadata Stream": "no",
+        "Tagged": "no",
+        "UserProperties": "no",
+        "Suspects": "no",
+        "Form": "none",
+        "JavaScript": "no",
+        "Pages": "410",
+        "Encrypted": "no",
+        "Page size": "595.276 x 841.89 pts (A4)",
+        "Page rot": "0",
+        "File size": "3239114 bytes",
+        "Optimized": "no",
+        "PDF version": "1.5"
+      },
+      "text_sha256": "7b1d95171b049912bd92e843b609bbb9c6f1469c313c4c23b30c5157fb6ffe43",
+      "pdf_sha256": "496fcd4ecc676b3a488be3dfe0829077e5e2e3dd832a752c6cb53f0a7694734d",
+      "authorial_note_body_count": 1,
+      "last_note_after_references": true,
+      "scan_hits": {},
+      "log": {
+        "fatal": 0,
+        "undefined": 0,
+        "duplicate": 0,
+        "overfull_h": 0,
+        "overfull_v": 0
+      }
+    }
+  ],
+  "formal_preservation": {
+    "formal_count": 906,
+    "unchanged_formal_blocks": 902,
+    "referential_or_interpretive_edits": [
+      {
+        "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
+        "type": "remark",
+        "label": null,
+        "before": "\\begin{remark}[What has been removed]\nThe previous text incorrectly mixed strict contraction with a state-spectrum eigenvalue $\\lambda=1$. BaseCore no longer does that. Any neutral or persistent mode must now be interpreted as a parameter-family bookkeeping mode, not as an eigenmode of the contractive state Jacobian.\n\\end{remark}",
+        "after": "\\begin{remark}[What has been removed]\nThe previous text incorrectly mixed strict contraction with a state-spectrum eigenvalue $\\lambda=1$. BaseCore no longer does that. Any neutral or persistent mode must now be interpreted as a mode of variation across the parameter family, not as an eigenmode of the contractive state Jacobian.\n\\end{remark}"
+      },
+      {
+        "file": "paper_bridge_operational_subjecthood/main.tex",
+        "type": "remark",
+        "label": null,
+        "before": "\\begin{remark}[Interpretation boundary for $\\Iotaop$]\n$\\Iotaop$ captures directed structural response. It does not establish semantic content, representational aboutness, goals, desires, agency, or intentional states in the philosophical or psychological sense.\n\\end{remark}",
+        "after": "\\begin{remark}[Interpretation boundary for $\\Iotaop$]\n$\\Iotaop$ captures directed structural response. Connections to semantic content, representational aboutness, goals or intentional states remain open bridge questions requiring additional operational definitions and discriminating tests.\n\\end{remark}"
+      },
+      {
+        "file": "paper3/main.tex",
+        "type": "theorem",
+        "label": null,
+        "before": "\\begin{theorem}[Closure by Non-Alternatives]\nThe following obligations are jointly sufficient for the corresponding structural conclusions: an admitted separated pair with a certified lower constant gives joint null exclusion; a null anchor gives the stronger anchored bound; faithful global readout gives image factorization; declared prefix access gives the approximation bound above; and the explicit pullback conditions of Appendix C give inheritance. A competing model satisfying those same obligations obeys those same conclusions. Neither CCR realizability nor satisfaction of all obligations is inferred from canonical topology alone.\n\\end{theorem}",
+        "after": "\\begin{theorem}[Closure by Non-Alternatives]\nThe following obligations are jointly sufficient for the corresponding structural conclusions: an admitted separated pair with a certified lower constant gives joint null exclusion; a null anchor gives the stronger anchored bound; faithful global readout gives image factorization; declared prefix access gives the approximation bound above; and the explicit pullback conditions of Appendix~\\ref{app:hereditary-rigidity} give inheritance. A competing model satisfying those same obligations obeys those same conclusions. Neither CCR realizability nor satisfaction of all obligations is inferred from canonical topology alone.\n\\end{theorem}"
+      },
+      {
+        "file": "paper9_phenomenal_bridge_organization/main.tex",
+        "type": "criterion",
+        "label": null,
+        "before": "\\begin{criterion}[Necessary condition for bridge admissibility]\nA necessary condition for bridge admissibility is\n\\[\n\\BridgeMargin > \\vartheta_R,\n\\]\nwhere $\\vartheta_R$ is the symbolic bridge irreducibility threshold slot to be bound only at Tier~B4.\n\\end{criterion}",
+        "after": "\\begin{criterion}[Necessary condition for bridge admissibility]\nA necessary condition for bridge admissibility is\n\\[\n\\BridgeMargin > \\vartheta_R,\n\\]\nwhere $\\vartheta_R$ is the symbolic bridge irreducibility threshold slot to be bound only at calibrated gate evaluation.\n\\end{criterion}"
+      }
+    ],
+    "macro_count": 383,
+    "macro_definitions_and_metadata_equal": true,
+    "curation_and_ids_equal": true,
+    "external_support_certified": false
+  },
+  "proof_preservation": {
+    "proofs": 404,
+    "editorial_reference_or_alias_changes": [
+      {
+        "file": "paper3/main.tex",
+        "index": 29,
+        "before": "\\begin{proof}\nApply the witness theorem, the anchored bound, and the corrected results of Appendices C--E with their hypotheses. They are independent implications; no circular existence assertion is used to supply their premises.\n\\end{proof}",
+        "after": "\\begin{proof}\nApply the witness theorem, the anchored bound, and the corrected results of Appendices~\\ref{app:hereditary-rigidity}--\\ref{app:prefix-bounds} with their hypotheses. They are independent implications; no circular existence assertion is used to supply their premises.\n\\end{proof}"
+      },
+      {
+        "file": "paper9_phenomenal_bridge_organization/main.tex",
+        "index": 24,
+        "before": "\\begin{proof}\nBridge admissibility requires at least comparator support and intervention support in addition to positive bridge surfaces. Tier~B1 provides only provisional surfaces, so the implication fails.\n\\end{proof}",
+        "after": "\\begin{proof}\nBridge admissibility requires at least comparator support and intervention support in addition to positive bridge surfaces. The provisional readout construction provides only provisional surfaces, so the implication fails.\n\\end{proof}"
+      }
+    ],
+    "proofs_equal_modulo_only_declared_reference_aliases": true,
+    "protected_files": 115,
+    "lean_files": 32,
+    "protected_identical": true,
+    "prereg_hash_preserved": true,
+    "external_support_certified": false
+  },
+  "labels": [
+    {
+      "file": "basecore/BASECORE.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/01_foundation_from_core.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/03_identity_rigidity_absorbed.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/05_null_regime_absorbed.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/06_structural_classes_and_dynamics.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/07_operational_criterion_absorbed.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/08_claim_boundary_and_falsation.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/09_canonical_ledgers.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/10_appendix_counterexamples.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "basecore/core/sections/11_discrete_bridge.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "paper1/main.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "paper10_external_adjudication/main.tex",
+      "removed_labels": [],
+      "added_labels": [
+        "app:execution-records",
+        "app:integrity-controls",
+        "app:selection-contracts"
+      ]
+    },
+    {
+      "file": "paper2/main.tex",
+      "removed_labels": [],
+      "added_labels": [
+        "app:extended-classification-proofs"
+      ]
+    },
+    {
+      "file": "paper3/main.tex",
+      "removed_labels": [],
+      "added_labels": [
+        "app:hereditary-rigidity",
+        "app:prefix-bounds",
+        "app:universal-factorization"
+      ]
+    },
+    {
+      "file": "paper4/main.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "paper5_operational_consciousness/main.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "paper6_predictions_falsation/main.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "paper7_operational_life_subjecthood/main.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "paper8_first_person_subjectivity/main.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "paper9_phenomenal_bridge_organization/main.tex",
+      "removed_labels": [],
+      "added_labels": []
+    },
+    {
+      "file": "paper_bridge_operational_subjecthood/main.tex",
+      "removed_labels": [],
+      "added_labels": []
+    }
+  ],
+  "preamble_review": [
+    {
+      "path": "basecore/BASECORE.tex",
+      "before": "1c524701215924ce31e1bdb21f602962f7cd7cb85fc0da3e9d197c718648cdfa",
+      "after": "b8a090d0de40db008508cb3b1afa6eb3a6a45bd938b17786137b5b42af9b78b8",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -20,6 +20,7 @@\n",
+        " \\usepackage{tikz-cd}",
+        " \\usepackage[backend=biber]{biblatex}",
+        " \\addbibresource{core/canonical_core_references.bib}",
+        "+\\addbibresource{../monolithic/novelty_references.bib}",
+        " \\usepackage[final]{microtype}",
+        " \\usepackage{xcolor}",
+        " \\usepackage[unicode,pdfencoding=auto,psdextra,hidelinks]{hyperref}"
+      ]
+    },
+    {
+      "path": "paper1/main.tex",
+      "before": "4eaee866348752f525295212196043da18ac89d266eaadf57139b91235a23998",
+      "after": "d3e641edd2c0c4877f579964bfb9a392b8a060f0e92a5a018238fa28df0a2bff",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -14,6 +14,7 @@\n",
+        " \\usepackage{enumitem}",
+        " \\usepackage[backend=biber]{biblatex}",
+        " \\addbibresource{../../release/references.bib}",
+        "+\\addbibresource{../monolithic/novelty_references.bib}",
+        " \\usepackage[unicode,hidelinks]{hyperref}",
+        " \\hypersetup{",
+        "   pdftitle={Projective Compatibility and Sectorial Deformation Resistance},"
+      ]
+    },
+    {
+      "path": "paper3/main.tex",
+      "before": "cd0b157dc85f91ef02a4250159b03f772aa332e44666528d31e121601a5b7b87",
+      "after": "3eb1da82575cf4505ee54543e2e63d00e219ac771e0a5413212b7bdef1fcff03",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -16,6 +16,7 @@\n",
+        " \\usepackage{tikz-cd}",
+        " \\usepackage[backend=biber]{biblatex}",
+        " \\addbibresource{../../release/references.bib}",
+        "+\\addbibresource{../monolithic/novelty_references.bib}",
+        " \\usepackage[unicode,hidelinks]{hyperref}",
+        " \\hypersetup{",
+        "   pdftitle={Witness-Relative Exclusion of Joint Null Readouts},"
+      ]
+    },
+    {
+      "path": "paper5_operational_consciousness/main.tex",
+      "before": "8dfe7fa17aad2a72d20a46bce1866a12e5553d933ca748714e4b70bc8bd7689a",
+      "after": "b5aa183bf98e3b16696dd56a8078aa1e49c4358c10f77db6b70563a3ea162576",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -13,6 +13,7 @@\n",
+        " \\geometry{a4paper, margin=1in}",
+        " \\usepackage[backend=biber]{biblatex}",
+        " \\addbibresource{../../release/references.bib}",
+        "+\\addbibresource{../monolithic/novelty_references.bib}",
+        " \\usepackage{booktabs}",
+        " \\usepackage{longtable}",
+        " \\usepackage{array}"
+      ]
+    },
+    {
+      "path": "paper10_external_adjudication/main.tex",
+      "before": "3b6e94d947bffae17348216dace97141125183a6b8619744ec6d55f8940d49f6",
+      "after": "792e5c0cfb9aa98fa118b2bb68d3f70cfaf28093989e97f1ae34e1f1d1ba20dd",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -1,10 +1,12 @@\n",
+        "-\\documentclass[11pt]{article}",
+        "+\\documentclass[11pt,a4paper]{article}",
+        " ",
+        "-\\usepackage[margin=1in]{geometry}",
+        "+\\usepackage{geometry}",
+        "+\\geometry{a4paper, margin=1in}",
+        " \\usepackage[T1]{fontenc}",
+        " \\usepackage[utf8]{inputenc}",
+        " \\usepackage{array}",
+        " \\usepackage{booktabs}",
+        "+\\usepackage{longtable}",
+        " \\usepackage{hyperref}",
+        " \\usepackage{amsmath, amsthm, amssymb}",
+        " \\usepackage{centernot}",
+        "@@ -21,7 +23,9 @@\n",
+        " ",
+        " \\hypersetup{",
+        "   pdftitle={Blind Adjudication Protocols and Coverage-Aware Risk Bounds},",
+        "-  pdfauthor={Johnny Andrey P\\'erez Ram\\'irez}",
+        "+  pdfauthor={Johnny Andrey P\\'erez Ram\\'irez},",
+        "+  pdfsubject={Experimental contracts and blind comparative adjudication},",
+        "+  pdfkeywords={preregistration, blinding, coverage, leakage, negative controls, operational certificates}",
+        " }",
+        " ",
+        " \\newcommand{\\sectionstatus}[1]{\\paragraph{Section status.}\\texttt{\\detokenize{#1}}.}"
+      ]
+    },
+    {
+      "path": "monolithic/preamble/setup.tex",
+      "before": "aa781ba37d6153615ff5e946e66b75613977c1eaa7f338ef3e11b16d24398977",
+      "after": "7a5810ffea88d2d57c890e0086533c7637464041a64fbcb0246de2cf49956010",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -8,7 +8,7 @@\n",
+        " \\titleformat{\\chapter}[display]{\\normalfont\\huge\\bfseries}{}{0pt}{\\Huge}",
+        " \\titlespacing*{\\chapter}{0pt}{0pt}{2.2ex}",
+        " \\renewcommand{\\chaptermark}[1]{\\markboth{\\thechapter.\\ #1}{}}",
+        "-\\setcounter{tocdepth}{2}",
+        "+\\setcounter{tocdepth}{1}",
+        " \\setcounter{secnumdepth}{3}",
+        " \\setlength{\\cftsecnumwidth}{4.8em}",
+        " \\setlength{\\cftsubsecnumwidth}{5.8em}",
+        "@@ -32,6 +32,7 @@\n",
+        "   \\def\\operatorname#1{#1}\\def\\Sigma{Sigma}\\def\\Omega{Omega}\\def\\Phi{Phi}\\def\\Pi{Pi}%",
+        " }",
+        " \\addbibresource{../release/references.bib}",
+        "+\\addbibresource{novelty_references.bib}",
+        " \\newcolumntype{L}[1]{>{\\raggedright\\arraybackslash}p{#1}}",
+        " \\newcolumntype{P}[1]{>{\\raggedright\\arraybackslash}p{#1}}",
+        " \\newcolumntype{Y}{>{\\raggedright\\arraybackslash}X}"
+      ]
+    }
+  ],
+  "protected_sha256": {
+    "corpus/pdf_release/manifest.json": "85e6bf6af301b6a5b5b02b870ce60dfe2d49f7eb22a7159c6167f61651f5a70d",
+    "corpus/pdf_release/manifest.sha256.txt": "e53da78d1606fba0d6b866ca2aca2118829f116a62815f31f6688fddefd8391d",
+    "corpus/pdf_release/pdf_corpus.zip": "f5a826a7739037ae1f68d3dbba7b93c190cfe37f5f49e2bb64f8d59c913523ae",
+    "corpus/pdf_release/pdf_corpus.zip.sha256.txt": "bb7f595817b22796b01b40e8f81f648f5a26519d071770e2eeb5a2b5694a455e",
+    "corpus/pdf_release/pdfs/1a86ec656885a998_1a86ec656885a998_main_ac20e128__1a86ec656885a998.pdf": "e57194de090c7672d69a35adec316cecfe5467f079041c78b794e6c38fd22b28",
+    "corpus/pdf_release/pdfs/1e1b2ec217a514f7_1e1b2ec217a514f7_main_bc695bc6__1e1b2ec217a514f7.pdf": "97769050eb1f180804e9f202ec9a4e6f9a8fecdeed4cbd5f319a89c7ee015076",
+    "corpus/pdf_release/pdfs/44806ece96bbdae2_main_1c305418__44806ece96bbdae2.pdf": "97a724df0ab8afa7f4cf0400ad3bb005152cd427753c0aac59cd86b9807e18a2",
+    "corpus/pdf_release/pdfs/6968859f53621468_6968859f53621468_main_f973c787__6968859f53621468.pdf": "1029f2bec421ad596c1f692ecd871bed029bbc94c32fac3a38b9e3dc2696e482",
+    "corpus/pdf_release/pdfs/857c4c89149a369c_857c4c89149a369c_main_7294ab07__857c4c89149a369c.pdf": "81710282a74890579320c899572d3c879f7ef0780e195c617c1cd554e1ea65d1",
+    "corpus/pdf_release/pdfs/87dc170947cc65f0_87dc170947cc65f0_main_c7b5d93e__87dc170947cc65f0.pdf": "62bb07b98035f7542c4542209513a1df0550dc6c831c028d27b5c72c767a2246",
+    "corpus/pdf_release/pdfs/9e4b83e44e669730_9e4b83e44e669730_main_d5f7405e__9e4b83e44e669730.pdf": "1d4f19a3e8816772efa57f54f8d9dbcb0f996181d5f0555cef6a52e8726e6942",
+    "corpus/pdf_release/pdfs/a8cbd1be2034253b_a8cbd1be2034253b_main_6567b2a2__a8cbd1be2034253b.pdf": "754e421c96cb30f40fc74f07ffbbfc265b98f71f27a07a40026f094a5141835f",
+    "corpus/pdf_release/pdfs/aa4d0b933892715a_aa4d0b933892715a_main_df41c33d__aa4d0b933892715a.pdf": "4a531535707c914dfe990c3d773288ed038f302f9d83f5d0ff68b9e9ceb0f181",
+    "corpus/pdf_release/pdfs/b41dfe1db695dad6_b41dfe1db695dad6_main_a5d7a23d__b41dfe1db695dad6.pdf": "20cf3c1eb76b85926e3d333b98558f7d0c751d8aca5050c9120a499ffe728efd",
+    "corpus/pdf_release/pdfs/b75ad19ed8032bf0_b75ad19ed8032bf0_main_79f2a805__b75ad19ed8032bf0.pdf": "b4fad95e7a43611556ba89ada8ad31e6d4258412aaa8cc8da6b7ce9c5d8b706f",
+    "corpus/pdf_release/pdfs/basecore_active__22e6f0b127df916b.pdf": "4e3ae62300371f63a3d1c292cbc247946f6f68528a55224a92764dcea91700a2",
+    "corpus/pdf_release/pdfs/c3d1cc6abf9c8c70_c3d1cc6abf9c8c70_main_93b0b0fc__c3d1cc6abf9c8c70.pdf": "05b6ad06d442b1f9429d0f83a15f33e538628d9cdb3e1007dee52f812af7ac44",
+    "corpus/pdf_release/pdfs/canonical_core_74be3e__eead218e079c0ad2.pdf": "7e188a05a621517b955ecaaaefd9d0f2a40b6c8b6bfd7ee6d1767e1251f40ec9",
+    "corpus/pdf_release/pdfs/canonical_core_957f4e__ea247e98e09de39b.pdf": "c311ac0f19eea29e43caf1acbf44dbb1d7c0e0ff7150a917c671ce6817877234",
+    "corpus/pdf_release/pdfs/canonical_core__3b77e7b20616cf25.pdf": "6c43f183bda6e1945c25af4b43053b19ba42e8e155cbf8e2abe8526064008b89",
+    "corpus/pdf_release/pdfs/canonical_core_legacy_package__f37b3e3e96f89b1a.pdf": "8daa7bc939086cb429cb566bf70f4515bc773151b5246d672e4a42d7c5544ffb",
+    "corpus/pdf_release/pdfs/dc23c9c9345aae47_dc23c9c9345aae47_main_ddd19561__dc23c9c9345aae47.pdf": "bca3c1bdbd786ebd13dc65af25ed4c63f6c1fa66b4448c237300d30f01224ebd",
+    "corpus/pdf_release/pdfs/paper9_phenomenal_bridge_organization__565acddf4d96cb0f.pdf": "efc3a8ffb6620af5ffd7bbd13becdc3eb2848a2b49f1dbb3b8028d25fc9713e6",
+    "corpus/pdf_release/pdfs/phenomenological_instability_2fe669__0b013024c06a2f7d.pdf": "8f6037540b743b5abfef90e0eba7bf588111350f1cff50a730cdec666cfa5163",
+    "corpus/pdf_release/pdfs/phenomenological_instability__04b40ecc9376767e.pdf": "31030ffc92201f86c06d463af37ae3431b4463f21ce1762df48ec8fd8ca938c3",
+    "corpus/pdf_release/pdfs/phenomenological_regimes_529d6b__39860a8a5035ed82.pdf": "b0819508b3a38c35b28839d254ccc961604d3e798449bd356918075de6520452",
+    "corpus/pdf_release/pdfs/phenomenological_regimes__9dab69286f9e9107.pdf": "7e3d5fdd494f7919320f9e27177e2381c89e23cc4c735d4aa001c38b350aa72e",
+    "corpus/pdf_release/pdfs/rigid_identity_paper_8925ec__bb0cda8022f6c8ac.pdf": "c9e55f8f588d2bcb1ca4e55d97d2272d5ba0f9d7bf61199ac97e4ef684cf3c58",
+    "corpus/pdf_release/pdfs/rigid_identity_paper__3e026c9275c59788.pdf": "7e014482f0cd9abfac1bac8e88eaa29196ce0299951c80f7afe45c180f17f578",
+    "release/BLUEPRINT_EDITORIAL.md": "586c7c75c5bd211c79155c3a6f75f99938bbdf3877f5674932fdf6f01b57d6b6",
+    "release/CANON_MAP.v1.json": "b87f6cf1aefd4ec341716925d09f948d8eb095f39af9738aed1c39d324bcc477",
+    "release/CROSSPAPER_LINKMAP.v1.json": "59f54c9ea394c5b53f80074bcf2f1f47b42fd4fa986520399a8cbd798bc2db56",
+    "release/EDITORIAL_BLUEPRINT_ACTIONS.v1.md": "3bffbc15dd6e9eccfd274c03a16cc4bf58765bf03a41cd944877890948cb702b",
+    "release/FREEZE_AUDIT_v1/commands_run.txt": "91a80146694b14653cb2d3e29981736a58f7ba3f5ea3fe0d03d223ca4a0612bf",
+    "release/FREEZE_AUDIT_v1/git_log_1.txt": "a18fb869379973b573be6e1e49a19512f01babb21d3f748bb9435cebebfb3abd",
+    "release/FREEZE_AUDIT_v1/git_status.txt": "a35bf41c043f2352b36612efc38b15567a8738fc6868c18cfec187139022d41c",
+    "release/FREEZE_AUDIT_v1/git_tags.txt": "dde99e981f39d7c8168855b78ac9dff3c9556e25720d59a7152911e3807db6d0",
+    "release/FREEZE_AUDIT_v1/integrity_check.json": "4f9bd5fe92c47abe5e283dbd3d44ca917a875e98e389a667bf128e17b2182a1b",
+    "release/GLOSSARY_CANONICAL.v1.md": "326169bbad644f2c98a0c9b00e8bf83851d6668fe5aabe33ffafa8b979cf2f1a",
+    "release/INDEX_PDFS.json": "67f39c2a54e0f0f1afccf40ca20b81078a1d8b8c59f4b278ba8c1d60782a6b0f",
+    "release/METHODS_GOVERNANCE_HUB.v1.md": "c38007b69f3cd88e8bb715e7065d54dc2ca190e83dd7949ac822735bba2e69b2",
+    "release/RELEASE_MAP.md": "81ec42bdd982464c3c0ea887a9063e8fbe35434f9d0b517b932c85afc439663e",
+    "release/STYLE_DISCLAIMER_POLICY.v1.md": "4cadc573071533e497de714d718191ee64f8673f10d9176b6bebb85ad1fb1526",
+    "release/SUMMARY.json": "5bcbce3838490745fab28fbddb76b66778df332384146db7516e0c4327989d16",
+    "release/TERM_MIGRATION_PLAN.v1.md": "613372127d39a4a7844780cea9dd273bd64ca991be2b6ef3e38f9d5e9c204e1d",
+    "release/_non_canonical/README.md": "f5c595d0db2d6d766b800aae11c34edba50d00e6e44ba8eacaa74380a8a7ebac",
+    "release/canon_manifest.v1.json": "963d3ce2f317c45d725432cce2bc0f4f35fb149ab626897ca318b2f30a1dddc9",
+    "release/claim_registry.v1.json": "d10cd94fb82767a8fd7a390679d17a72132782de4e2a2bfe613b882a07e060cb",
+    "release/commands_run.txt": "72a27e245beb06a74cef03f0c96d69838ab56d3fcf51458aa7aa2088f926a35c",
+    "release/editorial_audit_v1/EXEC_SUMMARY.md": "b7486046e9677d0a1c586bd03257e3d2d2807030dbd3c31404d22d6f686b0f48",
+    "release/editorial_audit_v1/anthropomorphic_terms_report.json": "5de00ecffc8787d4f79686b01910d0caec6cc368294e2ab48c95b46e04273fa2",
+    "release/editorial_audit_v1/anthropomorphic_terms_report.md": "136ca0429ecf1daa5b2614a357ada94dbfccf99fe55afceaa4b8ce570564c0ae",
+    "release/editorial_audit_v1/doc_inventory.json": "42e7f592471678476412833aadb983213b28bbc4bc193245065c5084b620337f",
+    "release/editorial_audit_v1/doc_inventory.md": "76ca08d6dc5608d7b290ea14eb2643e48589d2b0cbdf8ccdc0f97346943c5c6e",
+    "release/editorial_audit_v1/methods_coverage_table.csv": "c3be650fe16814f3d66dd13f0a2e7773359e0ab2eb25218867fb15584fc05de2",
+    "release/editorial_audit_v1/methods_coverage_table.md": "f36bad6f3b94fe660473bc71617ecdde5ab87fb4aa61cbacf1d3bc52fe8ca2b1",
+    "release/editorial_audit_v1/methods_mentions_index.json": "2991281cff697279595489399f82f4080bed63edd40efefc3f288ab909780c44",
+    "release/editorial_audit_v1/methods_mentions_index.md": "9e511dec5bc0f1dbd801588d0e2b21f8353111fdc032ab3b030df54382fe36ef",
+    "release/editorial_audit_v1/primary_supporting_map.json": "d8c96ac1d7b75a5140c6feded9cc9507d459319675f68e3a27ca32603387ae39",
+    "release/editorial_audit_v1/primary_supporting_map.md": "025573bc18885bab36b30564507203232b427f1c3f59da950313999209afb89b",
+    "release/editorial_audit_v1/q_t_candidate_evidence.json": "17d18ed6f53ad3eef29fe7ebd3bb699e486b16658bf80803275d44e0afbd4f34",
+    "release/editorial_audit_v1/q_t_candidate_evidence.md": "e04414154ef50678cbf5010dabdb9f3ff8b67138a2c4224db9c26b35aae42d83",
+    "release/layer_boundaries.v1.json": "51b66d186e258f79f893ca6d5d2aa7bf0a8e2f272bbe5c5de2c05183aaf7bc92",
+    "release/qualia_qo_planning_v1/PR_QO_plan_v1.md": "a9a779d2f28621450fcada6a3bf055fd1db3f8963755efd6031232f792c731b6",
+    "release/qualia_qo_planning_v1/QO_claim_registry.md": "1ddfcc1b13a4d58fb2d3ec1effa40bee98351934aa97837a6173151a89f6ac63",
+    "release/qualia_qo_planning_v1/QO_spec_v1.json": "6e2c3175d7fb2070127462f54e6914126f28d594a6a38816165cd6046812cbc7",
+    "release/qualia_qo_planning_v1/QO_spec_v1.md": "37b873d3329d8706b45bbf7dcb5627d74e63eb23b3c879bb27eb241d4eddf28b",
+    "release/qualia_qo_planning_v1/editorial_insertion_plan.md": "e57f447572a507fb7df744996e7565bc6def9acd7985f90cbaad9afb1e56b45b",
+    "release/qualia_qo_planning_v1/methods_mapping_table.csv": "3632070f23438bd09ef6f229ac71ac08df0c6bbbea07b112de29e39707645bd2",
+    "release/qualia_qo_planning_v1/methods_mapping_table.md": "a17f2e6de994f58b1dfd3bb3a828e12cac01cd980eeac48830f1388b3943b414",
+    "release/qualia_qo_planning_v1/papers_inventory.json": "46364d30fa4e1293961814e38c4a0492175ae3f5f6f8efe96d603532802d212d",
+    "release/qualia_qo_planning_v1/papers_inventory.md": "81985dabdc7ebe303f38f10381d3107445a5fedb0f609a268e539e85f8228b50",
+    "release/qualia_qo_planning_v1/summary.md": "97cebb72bf19f493af0131a0dd404d2a2fe217688b0e3aa111071b3ee52326fe",
+    "release/references.bib": "ab8059bc27032689edc271a909681d1e39709f877961a2f3c96d8e9120beb54a",
+    "release/release_freeze_manifest.json": "6a4922f447f476ea4ddca1408dd3bcde5c7a235a3bb6eddaad970b815efe3c69",
+    "release/system_interface_boundary.v1.json": "a79d82550086506cf13d24c743bbd530317fa223d76bd9c447a04fcc7f97adf7",
+    "rigid-identity-framework/canonical_core_legacy/CANONICAL_CORE.pdf": "8daa7bc939086cb429cb566bf70f4515bc773151b5246d672e4a42d7c5544ffb",
+    "rigid-identity-framework/canonical_core_legacy/CANONICAL_CORE.tex": "aa532add706c905f19e89e994889e586d8233dad19b75f27320dcc530d26d54f",
+    "rigid-identity-framework/canonical_core_legacy/README.md": "879464842084602f17f481bfaeb54f591121a5b84166d2d90c3ad1dabbb022a7",
+    "rigid-identity-framework/canonical_core_legacy/source_snapshots/CANONICAL_CORE.tex.v2f.bak.20260305T000625Z": "914f78002e40f434ed869dc71d0872cf12f1fdd895141dd3659df05bfbc52164",
+    "rigid-identity-framework/canonical_core_legacy/source_snapshots/CANONICAL_CORE.tex.v2f.bak.20260305T001422Z": "1e4585e22bc0aa8dfbd22d90fb81ff62790bf21b3683637c342aa82139aab3e4",
+    "rigid-identity-framework/canonical_core_legacy/source_snapshots/CANONICAL_CORE.tex.v2f.bak.20260305T001649Z": "aa532add706c905f19e89e994889e586d8233dad19b75f27320dcc530d26d54f",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean.lean": "ea797f93c4f460a23db6fd5ce273a02f4e39cc4a7c8ebbc41d33d66fda919063",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/Basic.lean": "265e4023cec03dc33bd91c90e5f6072420e4eb0ecae2dffa8b66b01489db8acb",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorCompact.lean": "d97969baa1736963790e009f6368e4d81f34c3447e5c5d45ff97268e9b1d8347",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNAttractorConcrete.lean": "2b6e7419ad365e3633a91489c05b912dd7b8d36649d1db18915c91ac3d44011e",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNBodyWorldDynamics.lean": "9d85f3aa62788c491d0357c25a15507fa3a029854ea3b7f2446e649709df68f9",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNBodyWorldEvaluation.lean": "aca064433f09a94e8f2c269b4e3d0e7a80891232974964e6202529dcf16e55e3",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNBodyWorldFinite.lean": "92b167161f9f5834649ea8071deac7efc7644febb6984438969e01cde6c13c02",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNContraction.lean": "ec5d490b26402faa7095ea42ef646700a4f67fc91af3330e7cb55a0839becbec",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNConvexProjection.lean": "cef90e049c0ffdd6b2eaacdc8794eb4ce4740b11c489d2aff909229623dad052",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNCoupledSplitMargin.lean": "a693929e8911ccda76952a5d6766bc443a58ff50d8ae07924b7f54e1d4a9bdd8",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNCoupledSplitMarginUniversal.lean": "dc19e27f6ea203cf4b5b293dc3b6927f4e451976516ec7f8a213d56aaec6a3d9",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNEpistemicAtomicity.lean": "ae2cd01283685cf877a8a5d670904ae28db604ece26a793cc07f166c25be5a80",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNEpistemicInterface.lean": "2582730eb2933232ff4960b5a0ead7a3a657b8171fc6ed3adaf129151582697e",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNEpistemicSubfp.lean": "080baf4e27c02f4bb8a6dca1fcdaa56838edced0ca8b460e9bdc8a72e3caf50c",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNEpistemicWedgeStability.lean": "20157883187a7f40e9dc8c275e7584388f24c4129ef322fa911a5c6c1778714d",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNEpistemicWitness.lean": "e26d8fa9cff7abbc9ad203998e148052fbb64679a9aaabc63d3ec3f10e5e8dd7",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNFiniteFronts.lean": "752c0c32bd402f13eb23eb1726d39abb250912ce7d4d216608d2fd6f6008722e",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNFiniteP4.lean": "a5028368b21eb31c654062cd12e905bf0ec67828a3218d4d89d86aa679fa1457",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Convex.lean": "bd399b7532f22fb5f67e46ff914d54ec9f78f3283744118cd4fcfd30adfb1e3d",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5ConvexExclusion.lean": "73897ed07d2793708136fb3f1fb410e359c8b7772aebc7a32b170b281276033e",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5Derivation.lean": "b60d6b6d75d6a0959cd0d2a314b18e75d36071df6a0400a68806a0046ae6c847",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5QuotientDisplacement.lean": "0dc27605b05d69e9f9cce773e5b020643881917587388bdf0ed2f56859f6452f",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5QuotientDynamics.lean": "50e82e66b27e11a7152a7499bc2a6632f844b1bf5d507710d4e695b74e14897f",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNH5UnilateralBridge.lean": "6e9518702d025ff6f528b530222139bc554aaaef04aa63b8513a8e23b46272db",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNHilbertInstance.lean": "e3f6d71d9e5b2b3a392a2e3d8d2313854475b69f40733015b48239726a8c6164",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNMetricFronts.lean": "15fc7b6dc0a4ef42e5bff004ad48b612161c9927bd3523f0bd558b8ff32ebf37",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNNonCollapse.lean": "05dd49375f72fa7c3df8fc9ce850ed64126c8c0549bd412e3541e40f21cfd781",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNObservationBudget.lean": "f547fc9e350cf8d73aaa76eb383c5660b4d73a36cba5b3eabf491a71d2ccea5b",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNProjectiveTransport.lean": "db8ba27b670059da01759d445ed1453ce510c8cba2b9d574a9df9147b2fdf70e",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNRotationSpectral.lean": "5300efa09f00952ea33106108a4c3d01fe7f3ac1362ad6ab35a9d2466189eaec",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNSCoupledInstance.lean": "19cc301d09241987d3bcd08907727f9d8d3ffdfdd3ab7eb799bb385acc69b9e4",
+    "rigid-identity-framework/docs/ai-platform-outputs/formal/lean/QICNLean/QICNSInstance.lean": "9bb45dcfbe4f5a71bb3e8112d5b5ad958951aabd28e3c7bf2f80927c78ae67f0",
+    "rigid-identity-framework/release/references.bib": "ab8059bc27032689edc271a909681d1e39709f877961a2f3c96d8e9120beb54a"
+  },
+  "monolithic_quality": {
+    "log_present": true,
+    "pages_detected": 410,
+    "latex_warnings": 0,
+    "overfull_hbox": 0,
+    "overfull_vbox": 0,
+    "underfull_vbox": 0,
+    "undefined_references": 0,
+    "hyperref_pdfstring_warnings": 0,
+    "question_mark_tokens_in_log": 0,
+    "badness_masking_hits": 0
+  },
+  "propagation": {
+    "results": [
+      {
+        "source": "basecore/BASECORE.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper1/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper2/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper3/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper4/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper5_operational_consciousness/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper6_predictions_falsation/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper7_operational_life_subjecthood/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper8_first_person_subjectivity/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper9_phenomenal_bridge_organization/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper10_external_adjudication/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      },
+      {
+        "source": "paper_bridge_operational_subjecthood/main.tex",
+        "lf_equal": true,
+        "crlf_equal": true,
+        "lf_crlf_equal": true
+      }
+    ],
+    "passed": true,
+    "external_support_certified": false
+  },
+  "semantic_active_undefined_before": 8,
+  "semantic_active_undefined_after": 8,
+  "semantic_scope": "Lexical heuristic; unchanged explicit open obligations are not zero semantic risk.",
+  "excluded_isolated_mutations": [
+    "docs/fixtures/TRUSTED_KEYS_REGISTRY_v27.json",
+    "docs/reports/HUMAN_VETO_SIGNATURE_SELF_TEST_v27.json"
+  ],
+  "raw_log_directory": "E:\\QICN-PRESERVACION\\2026-11-13-ruta5b\\logs",
+  "independent_human_review": "pending",
+  "external_support_certified": false,
+  "cache_cleanup": "Eleven generated pyc files in two directories archived reversibly outside workspace in E:/QICN-PRESERVACION/2026-11-13-ruta5b/cache-quarantine; no caches delivered.",
+  "local_content_commit": "2a02857a25d99a960b89d0ebfb687adabafb1627",
+  "public_main_observed": "7b4b223d371a2bc59f02340518c0e56424ffc6b0",
+  "delivery_files": 57,
+  "push_performed": false
+}

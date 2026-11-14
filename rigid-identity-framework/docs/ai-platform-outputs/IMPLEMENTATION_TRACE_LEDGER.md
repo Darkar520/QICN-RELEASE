@@ -11386,3 +11386,24 @@ Cerrados 13 PDF, metadatos exactos y notas únicas, 482 bloques/1.658 fragmentos
 ### 2026-11-13 · Codex · Cierre y publicación de Ruta 5
 
 Commit de contenido `6487fc612eb0fd9570a57cde44b801c9096f28b4` publicado en main y codex/qicn-framework-ordenado mediante avance rápido y push atómico normal. Cuatro referencias y ls-remote coincidentes; árbol limpio, entrega de 48 archivos clasificados, 114 huellas protegidas y 37 hashes de contenido iguales al candidato aprobado. Copia anterior recuperable en E:/QICN-PRESERVACION/2026-11-13-ruta5/delivery-backup. Esta constancia y cierre de checklist son sólo trazabilidad; no modifican fuentes, PDF, registro, Lean o veredictos. Ruta 5 cerrada editorialmente y Ruta 6 abierta como programa separado. Dictamen automatizado aislado conservado; revisión humana pendiente. external_support_certified=false.
+
+
+### 2026-11-13 · Codex · Ruta 5B verificada para commits locales
+
+Base7b4b223 limpia; autoridades AGENTS y cinco documentos canónicos,
+INSTRUCCIONES, VERSION2 y cierreRuta5 leídos. Edición y compilaciones en E:.
+Cinco bloques implementados; 13 PDF A4, monolito410/índice8, tres partes y
+Puente8; tarjetasX31→tres tablas sin omisiones. HOT1986 autorizado sólo en
+bibliografía activa. Preservados906 IDs/383 macros/404 pruebas/115 hashes;
+cuatro equivalencias editoriales y dos referencias individualizadas. Raíz3,
+release6, matemáticas32, extractorREPRODUCIBLE, nonclaims0, prosa y calidad
+monolítica sin fallos; proyección12/12 LF/CRLF. Lecturas, cambios, comandos,
+veredictos, incidentes corregidos y riesgos en EJECUCION.md,
+AUDITORIA_PRE_COMMIT.md y VERIFICACION.json de la carpeta RUTA5B.
+Pruebas que reescriben fixtures aisladas y excluidas de la entrega.
+Auditoría automatizada interna; revisión humana e independiente pendientes.
+Commits locales de contenido acoplado y evidencia de fase; sin push por
+instrucción expresa del usuario. external_support_certified=false.
+
+Contenido local congelado en `2a02857a25d99a960b89d0ebfb687adabafb1627`. Lectura remota confirmó main en
+`7b4b223`; no se ejecutó push. El segundo commit conserva la evidencia de fase.

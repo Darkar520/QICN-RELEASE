@@ -1,0 +1,188 @@
+{
+  "A": {
+    "label": "app:selection-contracts",
+    "title": "Frozen Preregistration Record Template",
+    "body_before": "Schema family: frozen preregistration record specification, governed by the\npreregistration freeze, amendment, and lock-manifest policies.\\\\\nAdmissible evidence required before population: actual local lock and, where\nrequired by protocol, real external filing reference.",
+    "title_after": "Frozen Preregistration Record Template"
+  },
+  "B": {
+    "label": "app:selection-contracts",
+    "title": "Human Comparator Preregistration Template",
+    "body_before": "Schema family: human comparator channel preregistration specification.\\\\\nAdmissible evidence required before population: channel-level freeze and later\ndataset lineage.",
+    "title_after": "Human Comparator Preregistration Template"
+  },
+  "C": {
+    "label": "app:selection-contracts",
+    "title": "Reviewer Candidate Schema",
+    "body_before": "Schema family: reviewer candidate profile and conflict-governed selection workflow.\\\\\nAdmissible evidence required before population: real candidate package and\nconflict disclosures.",
+    "title_after": "Reviewer Candidate Schema"
+  },
+  "D": {
+    "label": "app:selection-contracts",
+    "title": "Adjudicator Candidate Schema",
+    "body_before": "Schema family: adjudicator candidate profile and authority-bounded assignment workflow.\\\\\nAdmissible evidence required before population: real assignment package and\ndecision-authority boundary.",
+    "title_after": "Adjudicator Candidate Schema"
+  },
+  "E": {
+    "label": "app:selection-contracts",
+    "title": "Blinding Assignment Template",
+    "body_before": "Schema family: blinding assignment manifest specification.\\\\\nAdmissible evidence required before population: authorized assignment route and\nlater unblinding event if one exists.",
+    "title_after": "Blinding Assignment Template"
+  },
+  "K": {
+    "label": "app:selection-contracts",
+    "title": "Local Frozen Record Example",
+    "body_before": "Schema family: local frozen preregistration record specification.\\\\\nAdmissible evidence required before result use: real local lock event and, where\nrequired by route, external filing provenance.",
+    "title_after": "Local Frozen Record Example"
+  },
+  "L": {
+    "label": "app:selection-contracts",
+    "title": "Reviewer Candidate Pool Template",
+    "body_before": "Schema family: reviewer candidate pool specification.\\\\\nAdmissible evidence required before result use: real reviewer identities,\nconflict disclosures, and selection events.",
+    "title_after": "Reviewer Candidate Pool Template"
+  },
+  "M": {
+    "label": "app:selection-contracts",
+    "title": "Adjudicator Candidate Pool Template",
+    "body_before": "Schema family: adjudicator candidate pool specification.\\\\\nAdmissible evidence required before result use: real adjudicator identity,\nassignment provenance, and decision-authority declaration.",
+    "title_after": "Adjudicator Candidate Pool Template"
+  },
+  "N": {
+    "label": "app:selection-contracts",
+    "title": "Blinding Assignment Stub",
+    "body_before": "Schema family: pre-evidential blinding assignment and reviewer-blinding structural stubs.\\\\\nAdmissible evidence required before result use: real assignment route and real\nunblinding trace if one later exists.",
+    "title_after": "Blinding Assignment Stub"
+  },
+  "F": {
+    "label": "app:execution-records",
+    "title": "Execution Pilot Package Manifest",
+    "body_before": "Schema family: execution pilot package manifest specification.\\\\\nAdmissible evidence required before population: real session manifests and\nlater populated bundle references.",
+    "title_after": "Execution Pilot Package Manifest"
+  },
+  "G": {
+    "label": "app:execution-records",
+    "title": "Dataset Contract Summary",
+    "body_before": "Schema family: matched-intervention and negative-control dataset contracts,\ntogether with the pilot matched-intervention bundle specification.\\\\\nAdmissible evidence required before result use: populated admissible datasets.",
+    "title_after": "Dataset Contract Summary"
+  },
+  "I": {
+    "label": "app:execution-records",
+    "title": "Statistical Shell Summary",
+    "body_before": "Schema family: preregistered statistical analysis shell specification.\\\\\nAdmissible evidence required before result use: shell execution output on real\nadmissible inputs.",
+    "title_after": "Statistical Shell Summary"
+  },
+  "J": {
+    "label": "app:execution-records",
+    "title": "Adjudication Decision Grammar Summary",
+    "body_before": "Decision tokens retained as grammar only:\n\\texttt{\\detokenize{external}\\allowbreak{}\\detokenize{ly_}\\allowbreak{}\\detokenize{admissib}\\allowbreak{}\\detokenize{le_}\\allowbreak{}\\detokenize{but_}\\allowbreak{}\\detokenize{inconclu}\\allowbreak{}\\detokenize{sive}},\n\\texttt{\\detokenize{protocol_}\\allowbreak{}\\detokenize{invalida}\\allowbreak{}\\detokenize{ted}},\n\\texttt{\\detokenize{adjudica}\\allowbreak{}\\detokenize{tion_}\\allowbreak{}\\detokenize{failed}},\n\\texttt{\\detokenize{adjudica}\\allowbreak{}\\detokenize{tion_}\\allowbreak{}\\detokenize{passed}},\n\\texttt{\\detokenize{reviewer_}\\allowbreak{}\\detokenize{consensu}\\allowbreak{}\\detokenize{s_}\\allowbreak{}\\detokenize{absent}},\n\\texttt{\\detokenize{adjudica}\\allowbreak{}\\detokenize{tor_}\\allowbreak{}\\detokenize{decision_}\\allowbreak{}\\detokenize{withheld}}.",
+    "title_after": "Adjudication Decision Grammar Summary"
+  },
+  "O": {
+    "label": "app:execution-records",
+    "title": "Execution Session Template",
+    "body_before": "Schema family: execution session manifest specification.\\\\\nAdmissible evidence required before result use: real collection session and\nreal session lineage.",
+    "title_after": "Execution Session Template"
+  },
+  "P": {
+    "label": "app:execution-records",
+    "title": "Empty Collection Log Schema",
+    "body_before": "Schema family: pre-evidential unpopulated collection-log schema.\\\\\nAdmissible evidence required before result use: populated log entries from real\ncollection events.",
+    "title_after": "Empty Collection Log Schema"
+  },
+  "Q": {
+    "label": "app:execution-records",
+    "title": "Empty Decision Record Template",
+    "body_before": "Schema family: pre-evidential decision-record structural template.\\\\\nAdmissible evidence required before result use: real reviewer and adjudicator\naction, not grammar only.",
+    "title_after": "Empty Decision Record Template"
+  },
+  "R": {
+    "label": "app:execution-records",
+    "title": "Reproducibility Manifest Example",
+    "body_before": "Schema family: unpopulated reproducibility package manifest specification.\\\\\nAdmissible evidence required before result use: populated package slots,\ndataset references, shell outputs, and reviewer-facing bundles.",
+    "title_after": "Reproducibility Manifest Example"
+  },
+  "S": {
+    "label": "app:execution-records",
+    "title": "Evidence Insertion Manifest",
+    "body_before": "Schema family: evidence insertion manifest specification.\\\\\nAdmissible evidence required before result use: actual record references, actual\ndecision references, and populated provenance chains.",
+    "title_after": "Evidence Insertion Manifest"
+  },
+  "W": {
+    "label": "app:execution-records",
+    "title": "Session-Zero Protocol and Checklist",
+    "body_before": "Schema family: session-zero protocol and operator-checklist specification.\\\\\nAdmissible evidence required before result use: a later real collection-start\nevent and later populated log entries.",
+    "title_after": "Session-Zero Protocol and Checklist"
+  },
+  "Y": {
+    "label": "app:execution-records",
+    "title": "Live-But-Unpopulated Record Map",
+    "body_before": "Schema family: live pre-evidential collection manifest, live human-comparator\ndataset manifest, and parallel Tier P6 live operational shells.\\\\\nAllowed interpretation: live operational shell only. Forbidden interpretation:\npopulated dataset, evidence, or adjudication.",
+    "title_after": "Live-But-Unpopulated Record Map"
+  },
+  "H": {
+    "label": "app:integrity-controls",
+    "title": "Negative Control Bundle Summary",
+    "body_before": "Schema family: pilot negative-control bundle specification.\\\\\nAdmissible evidence required before result use: populated bundle and control\nadmissibility record.",
+    "title_after": "Negative Control Bundle Summary"
+  },
+  "T": {
+    "label": "app:integrity-controls",
+    "title": "Rehearsal-Kit Map",
+    "body_before": "Schema family: execution-pilot rehearsal kit and dry-run sequence specification,\ngoverned by rehearsal failure-mode and reset policies.\\\\\nAdmissible evidence required before result use: none at rehearsal time, and no\nrehearsal record may be promoted into evidence.",
+    "title_after": "Rehearsal-Kit Map"
+  },
+  "U": {
+    "label": "app:integrity-controls",
+    "title": "Dry-Run Event Log Grammar",
+    "body_before": "Schema family: rehearsal event-log schema.\\\\\nAllowed event classes remain rehearsal-only and do not imply human data,\nreviewer action, or adjudicator action.",
+    "title_after": "Dry-Run Event Log Grammar"
+  },
+  "V": {
+    "label": "app:integrity-controls",
+    "title": "Controlled Execution Opening Policy",
+    "body_before": "Schema family: controlled execution-opening policy specification.\\\\\nAdmissible evidence required before result use: none at opening time, and no\ncontrolled-opening record may be promoted into evidence by itself.",
+    "title_after": "Controlled Execution Opening Policy"
+  },
+  "X": {
+    "label": "app:integrity-controls",
+    "title": "Pre-Collection Gate and Contamination Controls",
+    "body_before": "Schema family: pre-collection admissibility gate, acceptance-criteria, and\ncontamination-checklist specification.\\\\\nAdmissible evidence required before result use: a later contamination-free\ncollection-start event and later admissible dataset population.",
+    "title_after": "Pre-Collection Gate and Contamination Controls"
+  },
+  "Z": {
+    "label": "app:integrity-controls",
+    "title": "First Admissible Collection Unlock Map",
+    "body_before": "Schema family: first admissible collection unlock protocol and gate rules.\\\\\nAdmissible evidence required before result use: actual reviewer selection,\nactual adjudicator assignment, actual blinding assignment, operator\nauthorization, collection-start command, and first populated collection-log\nevent.",
+    "title_after": "First Admissible Collection Unlock Map"
+  },
+  "AA": {
+    "label": "app:integrity-controls",
+    "title": "Executable Integrity Verification Audit",
+    "body_before": "Schema family: executable-environment health and verifier-chain audit record.\\\\\nAllowed interpretation: executable health and verifier-chain status only.\nForbidden interpretation: evidence, collection start, or adjudication.",
+    "title_after": "Executable Integrity Verification Audit"
+  },
+  "AB": {
+    "label": "app:integrity-controls",
+    "title": "Clean-Room Reproducibility Audit",
+    "body_before": "Schema family: clean-room rebuildability and reproducibility audit record.\\\\\nAllowed interpretation: bounded rebuildability only. Forbidden interpretation:\nexternal adjudicative support, empirical support, or completed empirical confirmation.",
+    "title_after": "Clean-Room Reproducibility Audit"
+  },
+  "AC": {
+    "label": "app:integrity-controls",
+    "title": "Local Path Leakage Audit",
+    "body_before": "Schema family: path-leakage and self-containment classification audit.\\\\\nAllowed interpretation: leak classification only. Forbidden interpretation:\nclaim that historical snapshots were erased.",
+    "title_after": "Local Path Leakage Audit"
+  },
+  "AD": {
+    "label": "app:integrity-controls",
+    "title": "Record Regeneration Audit",
+    "body_before": "Schema family: deterministic record regeneration and drift-classification audit.\\\\\nAllowed interpretation: regeneration and drift classification only. Forbidden\ninterpretation: result-bearing evidence insertion.",
+    "title_after": "Record Regeneration Audit"
+  },
+  "AE": {
+    "label": "app:integrity-controls",
+    "title": "Tier P7 First Collection Opening Criteria",
+    "body_before": "Schema family: Tier P7 first admissible collection opening criteria,\ncollection-start policy, opening gate, and opening manifest.\\\\\nAllowed interpretation: first-collection opening criteria only. Forbidden\ninterpretation: executed collection start, evidence generation, or adjudication.",
+    "title_after": "First Collection Opening Criteria"
+  }
+}

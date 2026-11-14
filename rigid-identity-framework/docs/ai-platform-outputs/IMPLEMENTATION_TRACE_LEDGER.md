@@ -11427,3 +11427,44 @@ Contenido local congelado en `2a02857a25d99a960b89d0ebfb687adabafb1627`. Lectura
   - `npm run verify:release`: `V35 all legacy verification: PASS; passed=6/6` (`v25` `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`; `v27`/`v28`/`v30` `BLOCKED_MULTIPLE_GATES`; `v31` `BLOCKED_FOUNDATION_FIRST_GATES`; `external_support_certified=false`).
   - Verificadores de raíz: `3/3 PASS` (`verify-canonical-integrity.cjs`, `verify-claim-registry.cjs`, `verify-canonical-release.cjs`).
 - Riesgos residuales y siguiente paso: revisión matemática humana, calibración externa y evidencia empírica independiente permanecen abiertas (`external_support_certified=false`). Cierre editorial autorizado para publicar en `main` y abrir **Ruta 6** (paquete Lean limpio + programa Mathlib).
+
+
+### 2026-11-14 · Codex · aclaraciones documentales antes de Ruta 6
+
+Solicitud: resolver las dos observaciones de la auditoría del micro-parche y
+dejar el cierre actualizado. Base `d323a69`, árbol limpio y ambas ramas remotas
+comprobadas en ese commit. Alcance: exclusivamente ROADMAP.md y este ledger.
+Leídos: AGENTS, las cinco autoridades canónicas, INSTRUCCIONES, roadmap,
+auditoría posterior y recibo reproducido de diagnóstico tipográfico.
+
+1. El aviso «Sin push» de Ruta 5B se conserva como estado histórico de `0a6c022`;
+   el estado vigente identifica la publicación registrada en `d323a69`.
+2. Fe de erratas del resumen de plataforma: no hubo cero `Underfull hbox`.
+   La auditoría reprodujo **163 antes y 163 después** del micro-parche. El
+   `PASS` real corresponde a cero warnings LaTeX/package, Overfull h/v,
+   Underfull v, referencias indefinidas y enmascaramiento de badness.
+   La lista original del ledger era correcta; se precisa la frase del resumen.
+
+Evidencia: el PDF publicado y el reconstruido tienen texto idéntico, SHA-256
+`c226746f71e7bf0afd95147340b4578a0abb229428ddc20480050463feef8ace`.
+La auditoría previa reprodujo raíz3/3, release6/6 y matemáticas32/32, con
+906 bloques, 404 pruebas, 383 macros y115 archivos protegidos conservados.
+Esta fase sólo aclara documentación; no presenta esas verificaciones previas
+como una nueva ejecución de matemáticas o Lean. Se ejecutan raíz3/release6 en
+copia aislada y un control automatizado de alcance, cronología, cifras y hashes
+antes de commit/push. Prerregistro, backups y salidas en
+E:/QICN-PRESERVACION/2026-11-14-aclaraciones-cierre.
+
+No se cambian TeX, PDF, registro, Lean, herramientas ni áreas congeladas.
+Regresiones buscadas: pérdida de historia, publicación ambigua, confusión entre
+avisos de espaciado y errores bloqueantes, o promoción de evidencia científica.
+Ruta6 queda preparada, sin iniciarse. Revisión matemática humana, calibración
+externa y evidencia empírica independiente siguen pendientes. Se conservan
+INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY, BLOCKED_MULTIPLE_GATES y
+BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.
+
+Verificación de esta aclaración completada: raíz3/3 y release6/6 PASS en copia
+aislada, revisión de diff sin errores y control automatizado de preservación
+aprobado. Alcance documental cerrado; autorizada su publicación normal por la
+solicitud del usuario. El recibo de commit/push y de coincidencia de referencias
+se conserva en la carpeta de evidencia de E: indicada arriba.

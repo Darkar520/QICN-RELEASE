@@ -2187,11 +2187,34 @@ HOT primario añadido únicamente a bibliografía activa por autorización expre
 
 Evidencia, incidentes y límites:
 `docs/ai-platform-outputs/repair-plans/RUTA5B_CONSOLIDACION_MONOGRAFIA_2026-11-13/`.
-Alcance editorial cerrado localmente; revisión humana e independiente pendientes.
-**Sin push**: revisar el PDF antes de cualquier autorización de publicación.
+Estado histórico al cierre de `0a6c022`: edición local verificada, todavía sin push,
+a la espera de revisión del PDF y autorización de publicación.
+**Estado vigente:** Ruta 5B y el micro-parche están publicados en `main`; el cierre
+de publicación quedó registrado en `d323a69`. La auditoría posterior de 2026-11-14
+confirmó su preservación editorial. La revisión matemática humana y la evidencia
+empírica independiente mantienen sus obligaciones.
 No se ejecutó Ruta6 ni se cerraron obligaciones empíricas por edición.
 Veredictos crudos INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY,
 BLOCKED_MULTIPLE_GATES y BLOCKED_FOUNDATION_FIRST_GATES conservados;
 external_support_certified=false.
 
 Contenido local inicial de Ruta 5B en `2a02857a25d99a960b89d0ebfb687adabafb1627` y cierre de auditoría en `0a6c022`. Micro-parche editorial de cierre (`paper4`, `paper7`, `paper9`, `paper10`, `paper_bridge`, monolito `410p` recompilado y 12 ubicaciones sincronizadas preservando `906` IDs / `383` macros) fijado en `a3822f00cfd22b23b847370545ef5b14bf0e1a43`, con batería completa (`3/3` raíz, `32/32` matemáticas, `6/6` `verify:release`, `audit:monolithic-build-quality` `PASS`) y veredictos crudos conservados (`external_support_certified=false`), publicado en `main` para dar paso a **Ruta 6**.
+
+
+### Aclaraciones finales del cierre editorial · 2026-11-14
+
+Las dos observaciones de la auditoría posterior quedan aclaradas: el aviso
+previo de ausencia de push está marcado como histórico y la publicación vigente
+se identifica arriba. El monolito de 410 páginas conserva **163 avisos
+`Underfull hbox`**, tanto antes como después del micro-parche. Son avisos de
+espaciado horizontal preexistentes, no una regresión ni un desbordamiento.
+El control tipográfico obtuvo `PASS` con cero warnings LaTeX/package,
+`Overfull hbox`, `Overfull vbox`, `Underfull vbox`, referencias indefinidas y
+enmascaramiento de badness; no certifica cero `Underfull hbox`.
+Esta aclaración sustituye la formulación imprecisa del resumen de plataforma;
+no modifica manuscritos, PDF, registro, formalizaciones ni criterios del control.
+
+Ruta 5B queda cerrada editorialmente y publicada. **Ruta 6 queda preparada,
+todavía sin iniciar:** su primer paso es inventariar y exponer el paquete Lean
+conservando los 32 módulos, dependencias y contrato de reproducción.
+`external_support_certified=false`.

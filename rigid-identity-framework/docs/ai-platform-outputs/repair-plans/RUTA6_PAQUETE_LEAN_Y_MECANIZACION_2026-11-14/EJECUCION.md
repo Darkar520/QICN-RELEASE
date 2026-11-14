@@ -88,3 +88,60 @@ Se conservan literalmente `INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`,
 `external_support_certified=false`. H5 es una hipótesis adicional; compacidad
 no implica no-colapso. La calibración, datos independientes, rivales irrestrictos,
 clase BPF completa y revisión matemática humana mantienen su estado abierto.
+
+
+## 6.3 — primer bloque analítico e infinito
+
+El commit `ce4e558` cerró 6.2 con árbol limpio antes de introducir fuentes nuevas.
+Se añadieron tres módulos e importaciones en el agregado, sin modificar ninguno
+de los 31 módulos originales, los pins ni los manuscritos.
+
+1. QICNAnalyticProjection: cinco resultados sobre proyección en Hilbert real o
+   complejo, sin dimensión finita. Convexidad real, cerrado, no vacío y
+   completitud explícitos; minimizador único, pertenencia, Lipschitz y continuidad.
+   Reutiliza la prueba Hilbert real existente mediante restricción de escalares.
+2. QICNParametricContraction: nueve resultados. Punto fijo único y convergencia
+   en métrica completa; cota de perturbación evaluada en el equilibrio de
+   referencia y continuidad del selector bajo contracción uniforme y continuidad
+   paramétrica por estado. Compacidad requiere parámetros compactos. Las
+   interfaces cerradas afines enlazan exactamente H1-H4, sin derivar H5.
+3. QICNInverseLimitTopology: siete resultados y la instancia explícita de
+   topología producto-subespacio. Historiales coherentes cerrados/compactos,
+   no vacíos bajo inicio y sobreyectividad, separación por todas las coordenadas,
+   endomorfismo que fija evaluaciones, levantamiento único y continuo de conos.
+   Todos los niveles naturales; no se sustituye el límite por un prefijo finito.
+
+Compilación incremental: tres módulos nuevos y agregado aprobados con las mismas
+opciones del paquete; los otros 31 conservan los hashes de la auditoría fresca
+de 6.2. Auditoría nueva de las 271 declaraciones públicas aprobada, con sólo
+Classical.choice, Quot.sound y propext. Cero admisiones en las fuentes.
+VERIFICACION_6_3.json identifica modo, fuentes y alcance. La prueba final fresca
+de 35 fuentes se ejecutará tras cerrar los commits y quedará en
+E:/QICN-PRESERVACION/2026-11-14-ruta6/logs/final-kernel.json.
+
+Matriz actual: 10 EXACT_MATCH, 49 FINITE_OR_PARTIAL_KERNEL, 344 PENDING_MATHLIB,
+16 EMPIRICAL_OR_PROTOCOL_BOUNDED; total 419. Los 21 resultados nuevos enlazan
+IDs exactos. Nueve anotaciones adicionales de equivalencia quedan justificadas:
+cinco interfaces BaseCore ya apoyadas en analítica general existente y cuatro
+resultados de universalidad/separación. No se presenta esta cifra como porcentaje
+de ciencia validada. Los componentes de thm-stone-classification quedan parciales.
+
+Obligaciones prioritarias posteriores: prop-weighted-history de BaseCore/Paper I
+(finitud, completitud, colas y topología de la métrica ponderada); transporte
+ponderado con cotas cuantitativas; metrizabilidad/base clopen y límite de leyes
+en thm-stone-classification. Después, seguir dependencias P0/P1/P2 de la matriz.
+Las coordenadas empíricas, calibración, familias de rivales y revisión externa
+no se cierran con estos teoremas. No se encontró aquí una contradicción nueva
+del manuscrito; estas partes son brechas de mecanización, no refutaciones.
+
+Incidencias de implementación: se tipó explícitamente NNReal y la dependencia
+de la hipótesis contractiva; se declaró la topología canónica del subtipo. Una
+reescritura de .olean existente en E: falló con código Windows87; se archivó
+el objeto anterior y la compilación en destino fresco pasó. El verificador
+completo ya usa destinos frescos y no requiere cambiar su contrato. Persisten
+avisos de cabecera del linter de Mathlib; no se silenció ningún linter ni se
+acepta una declaración con error. Estos avisos no son admisiones de prueba.
+
+El estado final comitado se someterá a Lean fresco, raíz 3, release 6,
+matemáticas 32, FCR/macros, nonclaims, prosa, inventario y cobertura; logs
+finales fuera del árbol para mantenerlo limpio. Sin push automático.

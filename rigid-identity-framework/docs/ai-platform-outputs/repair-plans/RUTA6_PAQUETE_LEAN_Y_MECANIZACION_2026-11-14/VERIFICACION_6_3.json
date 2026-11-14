@@ -1,0 +1,164 @@
+{
+  "passed": true,
+  "mode": "incremental: 31 unchanged modules freshly checked in 6.2, 3 new modules and aggregate compiled, full public axiom audit",
+  "lean_version": "4.31.0",
+  "source_modules": 35,
+  "public_theorems_audited": 271,
+  "new_public_theorems": 21,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "modules": [
+    {
+      "source": "QICNLean/Basic.lean",
+      "sha256": "265e4023cec03dc33bd91c90e5f6072420e4eb0ecae2dffa8b66b01489db8acb"
+    },
+    {
+      "source": "QICNLean/QICNAnalyticProjection.lean",
+      "sha256": "f694b21c59bf3737bf9b80b011220738dc75f1136205ef60e1b9f6e307a2eb49"
+    },
+    {
+      "source": "QICNLean/QICNAttractorCompact.lean",
+      "sha256": "d97969baa1736963790e009f6368e4d81f34c3447e5c5d45ff97268e9b1d8347"
+    },
+    {
+      "source": "QICNLean/QICNAttractorConcrete.lean",
+      "sha256": "2b6e7419ad365e3633a91489c05b912dd7b8d36649d1db18915c91ac3d44011e"
+    },
+    {
+      "source": "QICNLean/QICNBodyWorldDynamics.lean",
+      "sha256": "9d85f3aa62788c491d0357c25a15507fa3a029854ea3b7f2446e649709df68f9"
+    },
+    {
+      "source": "QICNLean/QICNBodyWorldEvaluation.lean",
+      "sha256": "aca064433f09a94e8f2c269b4e3d0e7a80891232974964e6202529dcf16e55e3"
+    },
+    {
+      "source": "QICNLean/QICNBodyWorldFinite.lean",
+      "sha256": "92b167161f9f5834649ea8071deac7efc7644febb6984438969e01cde6c13c02"
+    },
+    {
+      "source": "QICNLean/QICNContraction.lean",
+      "sha256": "ec5d490b26402faa7095ea42ef646700a4f67fc91af3330e7cb55a0839becbec"
+    },
+    {
+      "source": "QICNLean/QICNConvexProjection.lean",
+      "sha256": "cef90e049c0ffdd6b2eaacdc8794eb4ce4740b11c489d2aff909229623dad052"
+    },
+    {
+      "source": "QICNLean/QICNCoupledSplitMargin.lean",
+      "sha256": "a693929e8911ccda76952a5d6766bc443a58ff50d8ae07924b7f54e1d4a9bdd8"
+    },
+    {
+      "source": "QICNLean/QICNCoupledSplitMarginUniversal.lean",
+      "sha256": "dc19e27f6ea203cf4b5b293dc3b6927f4e451976516ec7f8a213d56aaec6a3d9"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicAtomicity.lean",
+      "sha256": "ae2cd01283685cf877a8a5d670904ae28db604ece26a793cc07f166c25be5a80"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicInterface.lean",
+      "sha256": "2582730eb2933232ff4960b5a0ead7a3a657b8171fc6ed3adaf129151582697e"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicSubfp.lean",
+      "sha256": "080baf4e27c02f4bb8a6dca1fcdaa56838edced0ca8b460e9bdc8a72e3caf50c"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicWedgeStability.lean",
+      "sha256": "20157883187a7f40e9dc8c275e7584388f24c4129ef322fa911a5c6c1778714d"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicWitness.lean",
+      "sha256": "e26d8fa9cff7abbc9ad203998e148052fbb64679a9aaabc63d3ec3f10e5e8dd7"
+    },
+    {
+      "source": "QICNLean/QICNFiniteFronts.lean",
+      "sha256": "752c0c32bd402f13eb23eb1726d39abb250912ce7d4d216608d2fd6f6008722e"
+    },
+    {
+      "source": "QICNLean/QICNFiniteP4.lean",
+      "sha256": "a5028368b21eb31c654062cd12e905bf0ec67828a3218d4d89d86aa679fa1457"
+    },
+    {
+      "source": "QICNLean/QICNH5Convex.lean",
+      "sha256": "bd399b7532f22fb5f67e46ff914d54ec9f78f3283744118cd4fcfd30adfb1e3d"
+    },
+    {
+      "source": "QICNLean/QICNH5ConvexExclusion.lean",
+      "sha256": "73897ed07d2793708136fb3f1fb410e359c8b7772aebc7a32b170b281276033e"
+    },
+    {
+      "source": "QICNLean/QICNH5Derivation.lean",
+      "sha256": "b60d6b6d75d6a0959cd0d2a314b18e75d36071df6a0400a68806a0046ae6c847"
+    },
+    {
+      "source": "QICNLean/QICNH5QuotientDisplacement.lean",
+      "sha256": "0dc27605b05d69e9f9cce773e5b020643881917587388bdf0ed2f56859f6452f"
+    },
+    {
+      "source": "QICNLean/QICNH5QuotientDynamics.lean",
+      "sha256": "50e82e66b27e11a7152a7499bc2a6632f844b1bf5d507710d4e695b74e14897f"
+    },
+    {
+      "source": "QICNLean/QICNH5UnilateralBridge.lean",
+      "sha256": "6e9518702d025ff6f528b530222139bc554aaaef04aa63b8513a8e23b46272db"
+    },
+    {
+      "source": "QICNLean/QICNHilbertInstance.lean",
+      "sha256": "e3f6d71d9e5b2b3a392a2e3d8d2313854475b69f40733015b48239726a8c6164"
+    },
+    {
+      "source": "QICNLean/QICNInverseLimitTopology.lean",
+      "sha256": "e88058c6b165c55928a4ded1134f791c42c28359cc59d7e80bd92ea2c819f493"
+    },
+    {
+      "source": "QICNLean/QICNMetricFronts.lean",
+      "sha256": "15fc7b6dc0a4ef42e5bff004ad48b612161c9927bd3523f0bd558b8ff32ebf37"
+    },
+    {
+      "source": "QICNLean/QICNNonCollapse.lean",
+      "sha256": "05dd49375f72fa7c3df8fc9ce850ed64126c8c0549bd412e3541e40f21cfd781"
+    },
+    {
+      "source": "QICNLean/QICNObservationBudget.lean",
+      "sha256": "f547fc9e350cf8d73aaa76eb383c5660b4d73a36cba5b3eabf491a71d2ccea5b"
+    },
+    {
+      "source": "QICNLean/QICNParametricContraction.lean",
+      "sha256": "99e819302e949d8e24da3275c1019801ef61deffe6dd6b77af1f5ed711651050"
+    },
+    {
+      "source": "QICNLean/QICNProjectiveTransport.lean",
+      "sha256": "db8ba27b670059da01759d445ed1453ce510c8cba2b9d574a9df9147b2fdf70e"
+    },
+    {
+      "source": "QICNLean/QICNRotationSpectral.lean",
+      "sha256": "5300efa09f00952ea33106108a4c3d01fe7f3ac1362ad6ab35a9d2466189eaec"
+    },
+    {
+      "source": "QICNLean/QICNSCoupledInstance.lean",
+      "sha256": "19cc301d09241987d3bcd08907727f9d8d3ffdfdd3ab7eb799bb385acc69b9e4"
+    },
+    {
+      "source": "QICNLean/QICNSInstance.lean",
+      "sha256": "9bb45dcfbe4f5a71bb3e8112d5b5ad958951aabd28e3c7bf2f80927c78ae67f0"
+    },
+    {
+      "source": "QICNLean.lean",
+      "sha256": "d1e1c4d0c19f0d8de1d0480847dc3916e31a2496323e95ea0be28c06196c3fbc"
+    }
+  ],
+  "external_support_certified": false,
+  "coverage_counts": {
+    "PENDING_MATHLIB": 344,
+    "EXACT_MATCH": 10,
+    "FINITE_OR_PARTIAL_KERNEL": 49,
+    "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
+  },
+  "relocation_commit": "ce4e558",
+  "final_fresh_verification": "Required on final committed clean tree; see E:/QICN-PRESERVACION/2026-11-14-ruta6/logs/final-kernel.json and final-gates.json"
+}

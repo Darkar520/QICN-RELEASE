@@ -11512,3 +11512,35 @@ VERIFICACION_6_2.json registra los 12 comandos de control aprobados, 6 negativos
 rechazados y 153 huellas protegidas conservadas. Alcance revisado para commit
 local exclusivo de exposición/inventario; sin push. La mecanización nueva
 comienza en el siguiente bloque y tendrá commit separado.
+
+
+### 2026-11-14 · Codex · Ruta 6.3 · analítica e inversos infinitos
+
+Inicio desde ce4e558 limpio. Leídos H1-H5 de BaseCore, los enunciados de
+proyección/contracción/punto fijo/compacidad, universalidad y endomorfismos
+de I/II, clasificación de puntos/leyes, las pruebas Lean anteriores y APIs
+Mathlib de proyección, contracciones, producto, compacidad y separación.
+
+Añadidos QICNAnalyticProjection, QICNParametricContraction y
+QICNInverseLimitTopology, más importaciones en QICNLean.lean. Actualizados
+matriz de 419 IDs, README, roadmap y ejecución. 31 módulos originales intactos;
+153 huellas protegidas conservadas. No cambian definiciones del manuscrito: no
+se alteran TeX/registro/monolito; se documentan correspondencias y brechas.
+
+Prerregistro vigente de Ruta 6. Compilación de los tres módulos y agregado
+aprobada con Lean 4.31.0 y opciones fijadas. Auditoría completa de 271 símbolos
+aprobada: Classical.choice, Quot.sound, propext. Modo incremental explícito,
+31 módulos recién verificados en 6.2 y 3 nuevos. Matriz comprobada:
+10 exactos / 49 parciales / 344 pendientes / 16 ligados a protocolo. Los 21
+resultados nuevos están vinculados por ID; no equivalen a 21 claims completos.
+
+Regresiones buscadas: finito por infinito, hipótesis ocultas, topología tácita,
+falso no-colapso por compacidad, admisiones y actualización de TeX para facilitar
+Lean. Correcciones de elaboración y salida fresca de objetos descritas en
+EJECUCION.md. Compacidad de historiales no prueba el límite de leyes. Persisten
+avisos de cabecera Mathlib, sin silenciar verificadores. Registro de comandos y
+salidas en E:/QICN-PRESERVACION/2026-11-14-ruta6/logs/new-* e incremental-axioms.log.
+Riesgos: traducción humana por revisar, métrica ponderada y contratos empíricos
+abiertos. Sigue verificación fresca final tras commit, sin push.
+INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY, BLOCKED_MULTIPLE_GATES y
+BLOCKED_FOUNDATION_FIRST_GATES conservados; external_support_certified=false.

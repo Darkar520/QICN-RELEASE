@@ -2232,10 +2232,20 @@ Plan y evidencia: [ejecución](docs/ai-platform-outputs/repair-plans/RUTA6_PAQUE
 - 6.2: paquete único en lean/, 36 archivos originales con hashes conservados,
   recetas históricas intactas y verificación posterior aprobada: Lean 32/250,
   raíz 3/3, release 6/6, matemáticas 32/32 y controles documentales.
-- 6.3: siguiente bloque delimitado a proyección real/compleja general, familias
-  contractivas y topología del límite inverso; sin modificar TeX ni registro.
+- 6.3: tres módulos nuevos y 21 declaraciones comprobadas; proyección Hilbert
+  real/compleja, selector de familias contractivas e inversos infinitos con
+  topología canónica. Auditoría incremental 35 fuentes / 271 declaraciones;
+  prueba fresca final tras commit. Sin modificar TeX ni registro.
 
 La matriz inicial registra 1 exacto, 53 parciales, 349 pendientes y 16 acotados por
 protocolo. Son estados de traducción, no una aprobación científica. La cuña
 ponderada, calibración y contratos empíricos mantienen sus obligaciones.
 external_support_certified=false.
+
+Estado tras el primer bloque 6.3: matriz 419 con 10 EXACT_MATCH,
+49 FINITE_OR_PARTIAL_KERNEL, 344 PENDING_MATHLIB y 16 EMPIRICAL_OR_PROTOCOL_BOUNDED.
+La ruta larga de 419 enunciados sigue abierta. Prioridad siguiente: métrica
+ponderada (finitud/completitud/colas/topología), transporte cuantitativo y
+metrizabilidad/base clopen/límite de leyes. No convertir estos pendientes de
+formalización en nuevos teoremas ni en supuestos tácitos. Ver EJECUCION.md
+y VERIFICACION_6_3.json para alcance exacto y preparación del control final.

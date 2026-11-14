@@ -7,9 +7,9 @@
   "lean_version": "4.31.0",
   "classification_method": "Registry dependencies and typed topic obligations, plus explicit reviewed Lean links. Only adjudicated full source-equivalence annotations receive EXACT_MATCH. A link to a module proves component availability, not full manuscript coverage.",
   "counts": {
-    "PENDING_MATHLIB": 349,
-    "FINITE_OR_PARTIAL_KERNEL": 53,
-    "EXACT_MATCH": 1,
+    "PENDING_MATHLIB": 344,
+    "EXACT_MATCH": 10,
+    "FINITE_OR_PARTIAL_KERNEL": 49,
     "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
   },
   "rows": [
@@ -66,23 +66,19 @@
       "source_statement_tex": "\\begin{theorem}[Existence and Uniqueness of Projection]\\label{thm:projection}\nUnder Hypothesis~\\ref{hyp:H1}, the projection $\\aleph(\\Psi)$ exists and is unique for every $\\Psi\\in\\Hilb$.\n\\end{theorem}",
       "source_statement_sha256": "ab276d7f2a1cec1923f4ac75ae2459d2eeb94c14cd85af15d2cdd8199648ad56",
       "source_epistemic_status": "proved",
-      "classification": "FINITE_OR_PARTIAL_KERNEL",
-      "kernel_kind": "ANALYTIC_GENERAL_COMPONENT",
+      "classification": "EXACT_MATCH",
+      "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
       "lean_witnesses": [
         {
-          "module": "QICNLean.QICNConvexProjection",
-          "symbol": "QICNLean.convexProjection_mem"
+          "module": "QICNLean.QICNAnalyticProjection",
+          "symbol": "QICNLean.AnalyticProjection.projection_mem"
         },
         {
-          "module": "QICNLean.QICNConvexProjection",
-          "symbol": "QICNLean.convexProjection_minimizes"
-        },
-        {
-          "module": "QICNLean.QICNConvexProjection",
-          "symbol": "QICNLean.convex_minimizer_unique"
+          "module": "QICNLean.QICNAnalyticProjection",
+          "symbol": "QICNLean.AnalyticProjection.closed_convex_unique_minimizer"
         }
       ],
-      "fidelity_notes": "Existing general real-Hilbert components are already proved, with no finite-dimensional restriction. The remaining interface obligation is to assemble the exact manuscript statement from closed-set/completeness and parameter hypotheses, and audit that translation; it is not a missing finite calculation. ",
+      "fidelity_notes": "H1 declares a real Hilbert space and a nonempty closed real-convex set. Instantiate scalar field with real numbers; ambient completeness turns closedness into IsComplete. The theorem proves exists-unique minimizer over the entire ambient space. It also proves a complex-Hilbert extension using REAL convexity, not a finite-dimensional replacement. No independence of redundant H3 is claimed.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [
         "basecore:hypothesis:hyp-h1"
@@ -94,9 +90,7 @@
       ],
       "topic": "hilbert-projection",
       "priority": 0,
-      "remaining_obligations": [
-        "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation."
-      ],
+      "remaining_obligations": [],
       "empirical_or_external_obligations": []
     },
     {
@@ -113,15 +107,23 @@
       "source_statement_tex": "\\begin{lemma}[Non-Expansiveness of the Projection]\\label{lem:nonexp}\nThe map $\\aleph:\\Hilb\\to{C_{\\mathrm{proj}}}$ is non-expansive:\n\\[\n\\norm{\\aleph(\\Psi_1)-\\aleph(\\Psi_2)}\\le \\norm{\\Psi_1-\\Psi_2}\n\\qquad\n\\forall \\Psi_1,\\Psi_2\\in\\Hilb.\n\\]\n\\end{lemma}",
       "source_statement_sha256": "1355385a6549afa26bf8b166d4ea0dae295e487c0d3867e23aad4237d032c144",
       "source_epistemic_status": "proved",
-      "classification": "FINITE_OR_PARTIAL_KERNEL",
-      "kernel_kind": "ANALYTIC_GENERAL_COMPONENT",
+      "classification": "EXACT_MATCH",
+      "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
       "lean_witnesses": [
         {
-          "module": "QICNLean.QICNConvexProjection",
-          "symbol": "QICNLean.convexProjection_lipschitz"
+          "module": "QICNLean.QICNAnalyticProjection",
+          "symbol": "QICNLean.AnalyticProjection.projection_lipschitz"
+        },
+        {
+          "module": "QICNLean.QICNAnalyticProjection",
+          "symbol": "QICNLean.AnalyticProjection.projection_nonexpansive"
+        },
+        {
+          "module": "QICNLean.QICNAnalyticProjection",
+          "symbol": "QICNLean.AnalyticProjection.projection_continuous"
         }
       ],
-      "fidelity_notes": "Existing general real-Hilbert components are already proved, with no finite-dimensional restriction. The remaining interface obligation is to assemble the exact manuscript statement from closed-set/completeness and parameter hypotheses, and audit that translation; it is not a missing finite calculation. ",
+      "fidelity_notes": "Instantiate the real/complex result at the real field under H1. Norm non-expansiveness is exactly the stated inequality, with projection membership proved separately. Continuity is an additional consequence. Existing real analytic proof is reused, with no dimension bound.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -131,9 +133,7 @@
       ],
       "topic": "hilbert-projection",
       "priority": 0,
-      "remaining_obligations": [
-        "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation."
-      ],
+      "remaining_obligations": [],
       "empirical_or_external_obligations": []
     },
     {
@@ -150,15 +150,15 @@
       "source_statement_tex": "\\begin{theorem}[Contractivity]\\label{thm:contraction}\nUnder Hypotheses~\\ref{hyp:H1} and \\ref{hyp:H2}, each $T_u$ is a strict contraction with Lipschitz constant at most $\\norm{K}$:\n\\[\n\\norm{T_u(\\Psi_1)-T_u(\\Psi_2)}\\le \\norm{K}\\,\\norm{\\Psi_1-\\Psi_2}.\n\\]\n\\end{theorem}",
       "source_statement_sha256": "592ab567e741bd6b18bb10d895f22ccd49fbd9d2311b09fd343d9c4444389b46",
       "source_epistemic_status": "proved",
-      "classification": "FINITE_OR_PARTIAL_KERNEL",
-      "kernel_kind": "ANALYTIC_GENERAL_COMPONENT",
+      "classification": "EXACT_MATCH",
+      "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
       "lean_witnesses": [
         {
-          "module": "QICNLean.QICNAttractorConcrete",
-          "symbol": "QICNLean.projectedAffineMap_contracting"
+          "module": "QICNLean.QICNParametricContraction",
+          "symbol": "QICNLean.ParametricContraction.closed_projected_affine_contraction"
         }
       ],
-      "fidelity_notes": "Existing general real-Hilbert components are already proved, with no finite-dimensional restriction. The remaining interface obligation is to assemble the exact manuscript statement from closed-set/completeness and parameter hypotheses, and audit that translation; it is not a missing finite calculation. ",
+      "fidelity_notes": "H1-H2: nonempty closed convex subset in a Hilbert space, bounded linear K with norm < 1. Fix w=Gamma(u). The norm inequality has constant norm K; projectedAffineMap_contracting also supplies strictness. No finite-dimensional hypothesis. This closes an interface to the existing general proof, not a new Banach theorem.",
       "target_dependency_ids": [
         "basecore:lemma:lem-nonexp"
       ],
@@ -173,9 +173,7 @@
       ],
       "topic": "hilbert-projection",
       "priority": 0,
-      "remaining_obligations": [
-        "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation."
-      ],
+      "remaining_obligations": [],
       "empirical_or_external_obligations": []
     },
     {
@@ -192,15 +190,27 @@
       "source_statement_tex": "\\begin{theorem}[Unique Fixed Point]\\label{thm:fixedpoint}\nUnder Hypotheses~\\ref{hyp:H1}--\\ref{hyp:H3}, for each $u\\in\\U$ there exists a unique $f_u^\\ast\\in\\Hilb$ such that\n\\[\nT_u(f_u^\\ast)=f_u^\\ast.\n\\]\nMoreover, for every $\\Psi_0\\in\\Hilb$,\n\\[\n\\lim_{n\\to\\infty}T_u^n(\\Psi_0)=f_u^\\ast.\n\\]\n\\end{theorem}",
       "source_statement_sha256": "b0fc14d1b39642bb20d0db96a991fc3879ee44adb3fb5503b9842c1b5f944b24",
       "source_epistemic_status": "proved",
-      "classification": "FINITE_OR_PARTIAL_KERNEL",
-      "kernel_kind": "ANALYTIC_GENERAL_COMPONENT",
+      "classification": "EXACT_MATCH",
+      "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
       "lean_witnesses": [
         {
-          "module": "QICNLean.QICNConvexProjection",
-          "symbol": "QICNLean.hilbert_convex_projected_affine_fixed_point"
+          "module": "QICNLean.QICNParametricContraction",
+          "symbol": "QICNLean.ParametricContraction.closed_projected_affine_unique"
+        },
+        {
+          "module": "QICNLean.QICNParametricContraction",
+          "symbol": "QICNLean.ParametricContraction.equilibrium_fixed"
+        },
+        {
+          "module": "QICNLean.QICNParametricContraction",
+          "symbol": "QICNLean.ParametricContraction.equilibrium_unique"
+        },
+        {
+          "module": "QICNLean.QICNParametricContraction",
+          "symbol": "QICNLean.ParametricContraction.equilibrium_convergence"
         }
       ],
-      "fidelity_notes": "Existing general real-Hilbert components are already proved, with no finite-dimensional restriction. The remaining interface obligation is to assemble the exact manuscript statement from closed-set/completeness and parameter hypotheses, and audit that translation; it is not a missing finite calculation. ",
+      "fidelity_notes": "H1-H3 translate to a nonempty complete real Hilbert space and a strict projected-affine contraction. The closed-set wrapper proves exists-unique; the generic convergence theorem applies to that same map and every initial state. Parameters are held fixed during iteration, as in the manuscript. No assertion for varying controls or empirical dynamics.",
       "target_dependency_ids": [
         "basecore:theorem:thm-contraction"
       ],
@@ -215,9 +225,7 @@
       ],
       "topic": "hilbert-projection",
       "priority": 0,
-      "remaining_obligations": [
-        "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation."
-      ],
+      "remaining_obligations": [],
       "empirical_or_external_obligations": []
     },
     {
@@ -234,15 +242,27 @@
       "source_statement_tex": "\\begin{theorem}[Compactness of the Attractor Family]\\label{thm:compactness}\nUnder Hypotheses~\\ref{hyp:H1}--\\ref{hyp:H4}, the set $\\A^\\ast$ is compact in $\\Hilb$.\n\\end{theorem}",
       "source_statement_sha256": "af33db8210608384b15dd09c5f2fc2d339e4d5d055381a319d6a1c06de18739d",
       "source_epistemic_status": "proved",
-      "classification": "FINITE_OR_PARTIAL_KERNEL",
-      "kernel_kind": "ANALYTIC_GENERAL_COMPONENT",
+      "classification": "EXACT_MATCH",
+      "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
       "lean_witnesses": [
         {
-          "module": "QICNLean.QICNAttractorConcrete",
-          "symbol": "QICNLean.projected_affine_attractor_isCompact"
+          "module": "QICNLean.QICNParametricContraction",
+          "symbol": "QICNLean.ParametricContraction.equilibrium_perturbation"
+        },
+        {
+          "module": "QICNLean.QICNParametricContraction",
+          "symbol": "QICNLean.ParametricContraction.equilibrium_continuous"
+        },
+        {
+          "module": "QICNLean.QICNParametricContraction",
+          "symbol": "QICNLean.ParametricContraction.equilibrium_compact_range"
+        },
+        {
+          "module": "QICNLean.QICNParametricContraction",
+          "symbol": "QICNLean.ParametricContraction.closed_projected_affine_compact"
         }
       ],
-      "fidelity_notes": "Existing general real-Hilbert components are already proved, with no finite-dimensional restriction. The remaining interface obligation is to assemble the exact manuscript statement from closed-set/completeness and parameter hypotheses, and audit that translation; it is not a missing finite calculation. ",
+      "fidelity_notes": "H1-H4: compact metric parameter space and uniformly continuous Gamma; use Gamma.continuous and the existing continuous affine selector. The closed-set wrapper proves compactness of its range. The new generic theorem additionally treats uniform contractions with statewise parameter continuity. Compactness supplies no H5/non-collapse by itself.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [
         "basecore:hypothesis:hyp-h1",
@@ -255,9 +275,7 @@
       ],
       "topic": "hilbert-projection",
       "priority": 0,
-      "remaining_obligations": [
-        "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation."
-      ],
+      "remaining_obligations": [],
       "empirical_or_external_obligations": []
     },
     {
@@ -1054,10 +1072,19 @@
       "source_statement_tex": "\\begin{proposition}[Endomorphisms Preserving All Canonical Projections]\nIf $F:\\mathcal I\\to\\mathcal I$ satisfies $p_t\\circ F=p_t$ for every $t$, then $F=\\operatorname{Id}$. This does not exclude endomorphisms with nonidentity coordinate actions.\n\\end{proposition}",
       "source_statement_sha256": "d1b9eb36a04f5d47890e25f92d6d39a2f211dbac728e2a70fb3224acccaf2ee8",
       "source_epistemic_status": "proved",
-      "classification": "PENDING_MATHLIB",
-      "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
-      "lean_witnesses": [],
-      "fidelity_notes": "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation.",
+      "classification": "EXACT_MATCH",
+      "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.projections_separate"
+        },
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.projections_fix_endomorphism"
+        }
+      ],
+      "fidelity_notes": "Full inverse-limit histories are a subtype of the entire coordinate product. Coordinate equality at every stage gives equality of histories; hence an endomorphism fixing all canonical evaluations is identity. No prohibition of endomorphisms with nonidentity coordinate actions is inferred. No finite truncation is substituted.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -1067,9 +1094,7 @@
       ],
       "topic": "hilbert-projection",
       "priority": 0,
-      "remaining_obligations": [
-        "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation."
-      ],
+      "remaining_obligations": [],
       "empirical_or_external_obligations": []
     },
     {
@@ -4618,10 +4643,19 @@
       "source_statement_tex": "\\begin{theorem}[Universal Representation of a Fixed Compatible Cone]\\label{thm:minimal}\nFor a declared inverse system, every coherent family $q_n:J\\to S_n$ induces a unique map $q:J\\to\\mathcal I$ with $p_nq=q_n$. In the topological category, continuous $q_n$ give continuous $q$ in the product-subspace topology.\n\\end{theorem}",
       "source_statement_sha256": "aab96d5caa866109c4fd349abf82801a8f4a88e2ca498f438f0f578a6b2c173e",
       "source_epistemic_status": "conditional",
-      "classification": "PENDING_MATHLIB",
-      "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
-      "lean_witnesses": [],
-      "fidelity_notes": "Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
+      "classification": "EXACT_MATCH",
+      "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.compatible_cone_unique_lift"
+        },
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.coneLift_continuous"
+        }
+      ],
+      "fidelity_notes": "Successor inverse system indexed by all natural-number stages, with arbitrary dependent coordinate types and arbitrary cone domain J. Every compatible cone has one unique lift; continuous coordinates give continuous lift into the explicitly declared product-subspace topology. This covers sets and topological spaces in the declared inverse-system setting, not an assertion about arbitrary unrelated categories. Index zero versus first stage is a harmless reindexing. No surjectivity is needed for this universal-property implication.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -4631,9 +4665,7 @@
       ],
       "topic": "projective-topology",
       "priority": 0,
-      "remaining_obligations": [
-        "Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement."
-      ],
+      "remaining_obligations": [],
       "empirical_or_external_obligations": []
     },
     {
@@ -5671,10 +5703,23 @@
       "source_statement_tex": "\\begin{theorem}[Topology of Point and Law Limits]\\label{thm:stone-classification}\nThe point limit $\\mathcal I$ is nonempty, compact, metrizable, and has a clopen basis. The law limit $O$ is nonempty, compact, metrizable, and convex under coordinatewise mixing. If $O$ contains distinct points, it is path connected and is not a Stone space.\n\\end{theorem}",
       "source_statement_sha256": "4da529a484c323da4ebad445cf80946743b589e56ff5a207d7b3831d5c900d88",
       "source_epistemic_status": "proved",
-      "classification": "PENDING_MATHLIB",
-      "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
-      "lean_witnesses": [],
-      "fidelity_notes": "Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
+      "classification": "FINITE_OR_PARTIAL_KERNEL",
+      "kernel_kind": "INFINITE_TOPOLOGICAL_COMPONENT",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.coherent_set_closed"
+        },
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.coherent_set_compact"
+        },
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.inverse_limit_nonempty"
+        }
+      ],
+      "fidelity_notes": "General infinite components proved: the coherent-history set is closed for continuous bonds and Hausdorff coordinates; compact if all coordinates are compact; nonempty from a nonempty stage zero and surjective bonds. The complete manuscript theorem ALSO requires metrizability/clopen basis for the point limit and the compact convex/path-connected law limit. These conclusions remain unformalized, not inferred from this component.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -5965,10 +6010,19 @@
       "source_statement_tex": "\\begin{proposition}[Universal Property of Identity]\nThe identity $\\mathcal{I} = \\varprojlim S_t$ satisfies the universal property: for any object $J$ with compatible maps $\\phi_t: J \\to S_t$, there exists a unique morphism $\\psi: J \\to \\mathcal{I}$ making all diagrams commute.\n\\end{proposition}",
       "source_statement_sha256": "e664ed71b7d571b58bcf1464df8869a19336446f45d0335a8e3b142983e6fadb",
       "source_epistemic_status": "conditional",
-      "classification": "PENDING_MATHLIB",
-      "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
-      "lean_witnesses": [],
-      "fidelity_notes": "Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
+      "classification": "EXACT_MATCH",
+      "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.compatible_cone_unique_lift"
+        },
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.coneLift_continuous"
+        }
+      ],
+      "fidelity_notes": "Successor inverse system indexed by all natural-number stages, with arbitrary dependent coordinate types and arbitrary cone domain J. Every compatible cone has one unique lift; continuous coordinates give continuous lift into the explicitly declared product-subspace topology. This covers sets and topological spaces in the declared inverse-system setting, not an assertion about arbitrary unrelated categories. Index zero versus first stage is a harmless reindexing. No surjectivity is needed for this universal-property implication.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -5978,9 +6032,7 @@
       ],
       "topic": "projective-topology",
       "priority": 0,
-      "remaining_obligations": [
-        "Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement."
-      ],
+      "remaining_obligations": [],
       "empirical_or_external_obligations": []
     },
     {
@@ -6522,10 +6574,19 @@
       "source_statement_tex": "\\begin{proposition}[Endomorphisms Preserving All Canonical Projections]\nIf $F:\\mathcal I\\to\\mathcal I$ satisfies $p_t\\circ F=p_t$ for every $t$, then $F=\\operatorname{Id}$. This does not exclude endomorphisms with nonidentity coordinate actions.\n\\end{proposition}",
       "source_statement_sha256": "d1b9eb36a04f5d47890e25f92d6d39a2f211dbac728e2a70fb3224acccaf2ee8",
       "source_epistemic_status": "proved",
-      "classification": "PENDING_MATHLIB",
-      "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
-      "lean_witnesses": [],
-      "fidelity_notes": "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation.",
+      "classification": "EXACT_MATCH",
+      "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.projections_separate"
+        },
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.projections_fix_endomorphism"
+        }
+      ],
+      "fidelity_notes": "Full inverse-limit histories are a subtype of the entire coordinate product. Coordinate equality at every stage gives equality of histories; hence an endomorphism fixing all canonical evaluations is identity. No prohibition of endomorphisms with nonidentity coordinate actions is inferred. No finite truncation is substituted.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -6535,9 +6596,7 @@
       ],
       "topic": "hilbert-projection",
       "priority": 1,
-      "remaining_obligations": [
-        "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation."
-      ],
+      "remaining_obligations": [],
       "empirical_or_external_obligations": []
     },
     {

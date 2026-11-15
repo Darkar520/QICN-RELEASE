@@ -84,7 +84,7 @@
 % ABSTRACT
 % =============================================================================
 \begin{abstract}
-We introduce an abstract structural readout space $\E$ and a compatibility operator $\Phi: Z \to \E$ on a declared metric comparison domain. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: under a certified positive lower readout bound, two defined, separated witness values cannot both equal the null element. CCR is a possible application class and is not needed for this metric implication. Consequently, a CCR realization with such a witness induces a witness-relative non-null separation. The result is \emph{negative-structural}: it does not posit experience; it forbids one typed joint-null configuration under stated hypotheses. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove factorization on a faithful image and a finite-prefix approximation bound. The results are metric, order-theoretic and representation-relative; physical interpretation requires additional evidence.
+We introduce an abstract structural readout space $\E$ and a compatibility operator $\Phi: Z \to \E$ on a declared metric comparison domain. We define a null regime $\nullphi \in \E$ and prove a \textbf{Phenomenological Instability Theorem}: under a certified positive lower readout bound, two defined, separated witness values cannot both equal the null element. CCR is a possible application class and is not needed for this metric implication. Consequently, a CCR realization with such a witness induces a witness-relative non-null separation. The result is \emph{negative-structural}: it does not posit experience; it forbids one typed joint-null configuration under stated hypotheses. We provide explicit coupling bounds in two canonical families (profinite and symbolic dynamics) and prove factorization on a faithful image and a finite-prefix approximation bound. We also prove countable metric--Polish consistency, a conditional channel--projection law and explicit noise margins connecting approximation to finite-budget and null-separation bounds. The results are metric, order-theoretic and representation-relative; physical interpretation requires additional evidence.
 \end{abstract}
 
 % BEGIN_OPERATIONAL_SCOPE
@@ -140,7 +140,7 @@ The paper specifies the admissible witness of Definition~\ref{def:extension-witn
 From \textit{Rigid Identity}, we have:
 
 \begin{definition}[Identity Object]
-Let $(S_t, \pi_{t+1 \to t})_{t \in T}$ be a projective system of state spaces with surjective, compatible projections. The \textbf{identity object} is:
+Let $(S_t, \pi_{t+1 \to t})_{t \in T}$ be a projective system of state spaces with surjective, compatible projections. For the countable tower results below, $T=\mathbb N$; other directed index sets require their own metric and existence hypotheses. The \textbf{identity object} is:
 \[
 \I := \varprojlim S_t = \left\{ (x_t) \in \prod_t S_t : \pi_{t+1 \to t}(x_{t+1}) = x_t \right\}
 \]
@@ -158,14 +158,93 @@ With the normalized complete coordinate metrics above and continuous projective 
 A $\dw$-Cauchy sequence is Cauchy in each coordinate, since $w_t>0$. Coordinate completeness supplies limits; continuity of each projection preserves compatibility. For convergence in $\dw$, first choose a finite prefix with $\sup_{t>N}w_t$ small, then control the finitely many remaining coordinates. The normalized tail is uniformly small.
 \end{proof}
 
+\begin{theorem}[Countable Metric--Polish Consistency]\label{thm:compact-polish-consistency}
+Let $(S_n,d_n)_{n\geq0}$ be nonempty complete separable metric spaces with
+continuous bonding maps. Put $b_n=\min\{1,d_n\}$ and choose $w_n>0$ with
+$\sum_nw_n<\infty$. On the full coordinate product define
+\[
+ \bar d_w(x,y)=\sup_n w_n b_n(x_n,y_n).
+\]
+This is a finite complete separable metric inducing exactly the product
+topology. The inverse limit is closed, hence is Polish whenever nonempty.
+If the stages are compact metric, the inverse limit is compact metric and
+nonempty, even without surjectivity of the bonding maps. Surjectivity also
+makes every canonical projection onto its stage surjective.
+
+For the normalized metrics already declared above, $b_n=d_n$ and
+$\bar d_w=\dw$. For unnormalized compact coordinate metrics, the raw formula
+$\sup_n w_nd_n(x_n,y_n)$ has the same topology and compactness conclusions
+under the explicit tail condition $w_n\operatorname{diam}(S_n)\to0$.
+Summability of weights alone is not that condition.
+\end{theorem}
+
+\begin{proof}
+Truncation at one preserves the triangle inequality, completeness and topology
+of each coordinate metric. The weights are bounded and tend to zero, so the
+supremum is finite; separation follows from their strict positivity. The
+coordinate inequalities $w_nb_n(x_n,y_n)\leq\bar d_w(x,y)$ make every
+projection continuous. Conversely, given $\epsilon>0$, choose $N$ with
+$\sup_{n>N}w_n<\epsilon/2$. Requiring
+$b_n(x_n,y_n)<\epsilon/(2w_n)$ in the finitely many coordinates $n\leq N$
+defines a product neighborhood lying in the $\bar d_w$-ball of radius
+$\epsilon$. This proves equality of the topologies, with a quantitative tail.
+
+A $\bar d_w$-Cauchy sequence is Cauchy in each $b_n$, giving coordinate
+limits $x_n$. Pass to the limit in each of the uniform Cauchy inequalities
+$w_nb_n(x_n^{(k)},x_n^{(l)})\leq\epsilon$ and take the supremum to obtain
+$\bar d_w(x^{(k)},x)\leq\epsilon$. For separability, choose countable dense
+sets in all stages and a fixed base sequence. Sequences with finitely many
+initial coordinates in those dense sets and the base tail form a countable
+dense set, by the same tail estimate. The compatibility equalities are closed
+because the bonding maps are continuous and their metric codomains are
+Hausdorff. Their intersection is therefore a closed complete subspace;
+separability passes to metric subspaces, for example by the countable-base
+criterion. This proves the Polish assertion.
+
+For compact stages, Tychonoff compactness and closedness give compactness
+of the inverse limit. Every finite family of compatibility equations can be
+satisfied: choose a point above their largest level, project it downward,
+and choose arbitrary later coordinates. Thus their closed solution sets
+have the finite-intersection property in the nonempty compact product.
+Their intersection is nonempty. If the bonding maps are surjective, any
+chosen stage point extends upward by successive lifts and downward by the
+bonding maps, proving surjectivity of each evaluation.
+
+For the raw metric, replace the normalized tail estimate by
+$\sup_{n>N}w_n\operatorname{diam}(S_n)$. Finite heads and these vanishing
+tails prove equality with the product topology, hence compactness on compact
+stages. Without that condition, $S_n=[0,1]$ with identity bonds,
+$d_n(s,t)=4^n|s-t|$ and $w_n=2^{-n}$ has infinite raw distance between two
+distinct constant histories. This does not satisfy the normalization used
+in the first part of the theorem.
+\end{proof}
+
+The noncompact Polish conclusion does not supply a nonempty identity object
+without a lifting or existence argument. For instance $S_n=[n,\infty)$ with
+inclusion bonding maps consists of nonempty complete separable stages but has
+empty inverse limit. Surjectivity rules out that control. Neither arbitrary
+uncountable index systems nor nonseparable coordinate spaces are included.
+
 \subsection{Sectorial Deformation Resistance and CCR Classification}
 
 \begin{definition}[Sectorial Deformation Resistance, infimum convention]\label{def:paper3-ontmass}
-Specify a metric comparison space $(Z,d_Z)$ containing a chosen point $z_S$ for each object under comparison and a declared intervention sector with cost $E_w(\delta)\in[0,\infty]$. Define
+Specify an object-comparison metric space $(Z_\Omega,d_\Omega)$ with a point
+$z_S$ for each object, a declared intervention sector and costs
+$E_w(\delta)\in[0,\infty]$. Set
 \[
-\MO(S)=\inf\left\{\frac{E_w(\delta)}{d_Z(z_S,z_{S,\delta})}:\delta\text{ admitted},\ 0<d_Z(z_S,z_{S,\delta})<\infty\right\},
+ \MO(S)=\inf_{\substack{\delta\text{ admitted}\\
+                   0<d_\Omega(z_S,z_{S,\delta})<\infty}}
+       \frac{E_w(\delta)}{d_\Omega(z_S,z_{S,\delta})},
+ \qquad\inf\varnothing=+\infty.
 \]
-with $\inf\varnothing=+\infty$. A common metric/embedding and cost model must be supplied; $\I$ itself is a set, not an input to a map whose domain is that set.
+This agrees with Paper I by taking $Z_\Omega$ to be the Hausdorff metric
+component of nonempty closed identity sets in one common history space,
+$z_S=\mathcal I(S)$ and $d_\Omega=d_H$. Infinite cost over a finite positive
+denominator is infinite; zero denominators are omitted. A zero Hausdorff
+distance identifies closed sets, not necessarily transported points.
+The object-comparison space $Z_\Omega$ is distinct from the readout comparison
+domain $Z$ below; a map on histories does not automatically take identity
+sets as inputs. Units are cost per declared comparison-distance unit.
 \end{definition}
 
 \begin{remark}[Infimum convention and scope]
@@ -282,6 +361,58 @@ The identity map preserves distances exactly. Neither condition is deduced from 
 Axioms (C1)--(C3) are structural. No phenomenological content is introduced.
 \end{remark}
 
+\begin{theorem}[Compatible Observable Channels and Detectability]\label{thm:channel-projection-detectability}
+Let two countable towers have chosen coordinate metrics $d_n,e_n$, weights
+$w_n,v_n>0$, and finite weighted supremum metrics inducing their product
+topologies, for example those of Theorem~\ref{thm:compact-polish-consistency}.
+Write their bonding maps as $\pi_n:S_{n+1}\to S_n$ and
+$q_n:Y_{n+1}\to Y_n$. A declared observable-channel realization supplies maps
+$C_n:S_n\to Y_n$ satisfying the exact law
+\[
+ q_n C_{n+1}=C_n\pi_n\qquad(n\geq0).
+\]
+Then $C_\infty(x)_n=C_n(x_n)$ is a map between their inverse limits and
+$p_n^Y C_\infty=C_np_n^S$. It is continuous if every $C_n$ is continuous.
+If $c_n>0$ and
+\[
+ e_n(C_na,C_nb)\geq c_nd_n(a,b),\qquad
+ C_0:=\inf_n\frac{v_nc_n}{w_n}>0,
+\]
+then $d_Y(C_\infty x,C_\infty y)\geq C_0d_S(x,y)$.
+For a post-readout $L:\mathcal I_Y\to\E$ with lower constant $\ell>0$
+on the compared image pairs, $\Phi=L\circ C_\infty$ has lower constant
+$C=\ell C_0$ on the corresponding pairs. A single certified stage comparison
+$d_n(x_n,y_n)\geq\epsilon_n>0$ also gives the pair bound
+\[
+ \dE(\Phi(x),\Phi(y))\geq\ell v_nc_n\epsilon_n.
+\]
+Continuity of $\Phi$ additionally follows if $L$ is continuous. These are
+conditions on the coordinate maps of a channel, not an identification of a
+channel object with a map or a derivation of its calibration from CCR.
+\end{theorem}
+
+\begin{proof}
+Compatibility gives $q_n(C_{n+1}x_{n+1})=C_n(\pi_nx_{n+1})=C_nx_n$,
+so the coordinate image is an inverse-limit element and its evaluations
+have the asserted values. Continuous coordinates give a continuous map into
+the product, and hence into its inverse-limit subspace. For the lower bound,
+\[
+\begin{aligned}
+ d_Y(C_\infty x,C_\infty y)
+ &=\sup_n v_ne_n(C_nx_n,C_ny_n)\\
+ &\geq\sup_n v_nc_nd_n(x_n,y_n)
+ \geq C_0\sup_n w_nd_n(x_n,y_n).
+\end{aligned}
+\]
+The post-readout inequality composes this bound with $\ell$.
+Keeping only the $n$th term proves the stage-specific assertion.
+A lower bound at one fixed cut does not imply the global $C_0$ bound:
+distinct binary histories with that same prefix are a control. Without the
+commuting law a coordinate image need not even lie in the target inverse limit.
+An external witness uses this result only after placing both endpoints in
+the same declared realization or a specified joined tower.
+\end{proof}
+
 \subsection{Attractor Set}
 
 \begin{definition}[Attractor Set]
@@ -336,6 +467,46 @@ If both images were null their mutual distance would be zero, contradicting the 
 \begin{remark}[Applicability scope]\label{rem:instability-scope}
 Theorem~\ref{thm:instability} assumes $\Phi(z_0),\Phi(z_1)\in\E$, not $\bot$. If $\Phi$ is undefined on either endpoint, the separated-witness hypothesis of Definition~\ref{def:extension-witness} is not satisfied and the theorem does not apply.
 \end{remark}
+
+\begin{corollary}[Finite Approximation and Robust Witness Separation]\label{cor:robust-approximation-null-separation}
+On one common comparison domain let the continuous finite readouts of
+Theorem~\ref{thm:cont} approximate $\Phi$ with uniform tail
+$A_N=\sum_{n\geq N}a_n$. Suppose measured values $y_{i,N}$ at a separated
+witness satisfy $\dE(y_{i,N},f_N(z_i))\leq\nu$, and its true image separation
+is at least $C\epsilon>0$. Put $\eta=A_N+\nu$. Then
+\[
+\begin{aligned}
+ \dE(y_{0,N},y_{1,N})&\geq C\epsilon-2\eta,\\
+ \max_{i=0,1}\dE(y_{i,N},\nullphi)&\geq C\epsilon/2-\eta.
+\end{aligned}
+\]
+If $\eta<C\epsilon/4$, the first quantity is greater than $C\epsilon/2$
+and the second greater than $C\epsilon/4$. If a true endpoint is anchored at
+null, the other measured endpoint has null distance at least $C\epsilon-\eta$.
+For a finite test set with true image separation $\delta$, the finite-code
+lower bound of Theorem~\ref{thm:nonsim} transfers to proxy readouts with
+uniform error $\eta$ as a worst-case error of at least $\delta/2-\eta$.
+An audited injective Euclidean linear readout may supply
+$C=\sigma_{\min}(T)$ by Theorem~\ref{thm:spectral}; a nonlinear or uncalibrated
+readout needs its own lower-bound proof, such as the explicit hypotheses of
+Theorem~\ref{thm:channel-projection-detectability}.
+\end{corollary}
+
+\begin{proof}
+The controlled tail and measurement error give
+$\dE(y_{i,N},\Phi(z_i))\leq\eta$ for both endpoints. Two triangle
+inequalities give their measured mutual separation bound. The null-distance
+sum is at least that mutual distance, so its maximum is at least half.
+In the anchored case the true other endpoint has null distance at least
+$C\epsilon$ by Theorem~\ref{thm:instability}; one error $\eta$ is subtracted.
+The strict budget inequalities now follow by arithmetic.
+For a finite-code decoder, its worst-case true-readout error is at most its
+proxy-readout error plus $\eta$. Combine this with the collision bound
+$\delta/2$ to obtain the proxy lower bound. The singular-value assertion
+uses exactly the finite-dimensional injective domain of the cited theorem;
+it is unrelated to a state-transition spectral radius. Without a certified
+positive residual margin these inequalities give no non-null verdict.
+\end{proof}
 
 
 
@@ -767,20 +938,37 @@ proofs of the geometric results.
 
 The following gaps remain open in the current corpus and are documented here to prevent over-reading of the separation theorem.
 
-\begin{nontheorem}[Topology consistency gap]\label{nonthm:topology}
-Papers I--II assume both compact Hausdorff and Polish structures on state spaces, but do not prove their consistency for every QICN instantiation. The inverse limit $\mathcal{I}$ uses compactness and closed-subspace arguments, while the metric $d_w$ uses a metric regularity structure. Every compact metric space is Polish, so the composition is consistent when each $S_t$ is compact metric. Non-compact Polish spaces such as $\mathbb{R}^n$ require additional hypotheses and are not automatically covered.
+\begin{nontheorem}[Topology outside the Proved Metric Class]\label{nonthm:topology}
+Theorem~\ref{thm:compact-polish-consistency} proves consistency for the
+declared countable normalized metric towers: compact stages give compact
+Polish limits, and complete separable noncompact stages also give a Polish
+limit when nonempty. Noncompactness alone is therefore not an inconsistency.
+Nonemptiness, unnormalized metric tails, uncountable index systems and
+nonseparable stage models require their own hypotheses. Compact Hausdorff
+structure by itself is not a substitute for these metric data.
 \end{nontheorem}
 
-\begin{nontheorem}[Channel--projection composition gap]\label{nonthm:channel-projection}
-The observable channel $\mathcal{C}$ and the projective projections $\pi_{t+1\to t}:S_{t+1}\to S_t$ are not yet connected by a fully explicit composition law. Any detectability theorem that moves from observed responses to inverse-limit deformation requires such a composition. At present, that composition is an assumption to be specified for each concrete protocol, not a derived universal theorem.
+\begin{nontheorem}[Protocol-Specific Channel Compatibility]\label{nonthm:channel-projection}
+Theorem~\ref{thm:channel-projection-detectability} proves a sufficient
+commuting coordinate law and the lower bounds it transports. An actual
+observable-channel protocol must still supply those maps, compatible
+metrics, and the positive stage/post-readout constants. A fixed finite
+projection can discard later distinctions; neither CCR nor a channel name
+establishes this compatibility for every protocol.
 \end{nontheorem}
 
 \begin{nontheorem}[Null-regime exclusion requires external witness]\label{nonthm:null-external}
 The instability theorem (Theorem~\ref{thm:instability}) requires a separated external witness $(z_0,z_1,\epsilon,C)$. CCR alone does not produce such a witness. The theorem is witness-relative: if a CCR system has a typed external witness with lower Lipschitz constant $C>0$, then both endpoints cannot simultaneously be null. It does not state that CCR by itself implies non-nullity.
 \end{nontheorem}
 
-\begin{nontheorem}[Estimator verification gap]\label{nonthm:estimator-gap}
-No Lipschitz constant $K_i$, fiber oscillation $\omega_i(y)$, estimation error bound $\varepsilon_i$, or decision margin $\Delta^*$ has been computed for any QICN invariant. The projection-invariant bridge theorem is conditional on these quantities being verified, and all four material bridge hypotheses remain unverified.
+\begin{nontheorem}[Physical Calibration and Full-Class Estimator Gap]\label{nonthm:estimator-gap}
+Exact constants and margins proved for the mathematical realizations are
+model-relative certificates. They do not identify physical readouts or supply
+empirical $K_i$, $\omega_i$, $\varepsilon_i$ and $\Delta^*$ for an arbitrary
+QICN implementation. The new conditional composition and noise bounds
+require these quantities on their declared domains; full-class and external
+calibration obligations remain open. Their absence is not the claim that no
+mathematical example has ever had an explicit constant.
 \end{nontheorem}
 
 % =============================================================================

@@ -1,0 +1,26 @@
+{
+  "baseline_targets": 419,
+  "active_targets": 425,
+  "added_ids": [
+    "basecore:proposition:prop-coupled-energy-phase-bridge",
+    "basecore:theorem:thm-readout-loss-stability",
+    "paper2:theorem:thm-readout-loss-stability",
+    "paper3:corollary:cor-robust-approximation-null-separation",
+    "paper3:theorem:thm-channel-projection-detectability",
+    "paper3:theorem:thm-compact-polish-consistency"
+  ],
+  "signature_reviews": [
+    {
+      "id": "paper1:proposition:universal-property-of-identity-l1479",
+      "classification_retained": "EXACT_MATCH",
+      "reason": "Etapa 1 explicitly types the statement in sets and topological spaces for the declared countable inverse system. Existing compatible_cone_unique_lift and coneLift_continuous prove exactly this source scope; the explicit source proof was added. No assertion over arbitrary unrelated categories and no change to the Lean theorem."
+    }
+  ],
+  "counts": {
+    "PENDING_MATHLIB": 348,
+    "EXACT_MATCH": 10,
+    "FINITE_OR_PARTIAL_KERNEL": 51,
+    "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
+  },
+  "external_support_certified": false
+}

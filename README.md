@@ -14,7 +14,7 @@ se conservan como respaldo.
 
 El paquete formal autónomo [QICNLean](rigid-identity-framework/lean/README.md)
 expone las fuentes Lean 4.31.0, sus instrucciones de reproducción y la
-[matriz de 419 enunciados](rigid-identity-framework/docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md).
+[matriz de cobertura (419 iniciales; 425 tras Etapa 1)](rigid-identity-framework/docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md).
 La prueba del kernel es evidencia matemática interna bajo hipótesis; no aporta
 validación empírica. El CI de gobierno actual no ejecuta Lean.
 

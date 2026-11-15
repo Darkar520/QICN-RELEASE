@@ -105,29 +105,87 @@ Apply the anchored bound. Complement changes every symbol at finite total summab
 \end{proof}
 
 \begin{theorem}[Rigidity Inheritance]\label{thm:rigidity-inheritance}
-For $\Phi'=b\circ\Phi\circ a$, lower constants $c_a$ for $a$, $C$ for $\Phi$ on the mapped pairs and $c_b$ for $b$ give lower constant $c_ac_bC$. CCR inheritance separately requires every new finite-cost positive deformation to pull back to one in the old sector. Summability alone proves neither statement.
+Let $a:Z'\to Z$, $\Phi:Z\to\mathcal E$ and $b:\mathcal E\to\mathcal E'$
+be maps between declared metric domains, and set $\Phi'=b\circ\Phi\circ a$.
+On a specified pair class $W'$, assume positive lower constants $c_a,C,c_b$
+for $a$, $\Phi$ on the mapped pairs and $b$ on the resulting image pairs.
+Then $\Phi'$ has lower constant $c_ac_bC$ on $W'$.
+Independently, suppose every admitted new finite-cost positive deformation
+pulls back to an admitted old finite-cost positive deformation. Infinite
+resistance of the old sector then implies infinite resistance of the new one.
+Transport of a null anchor additionally requires $b(\nullphi)=\nullphi'$.
 \end{theorem}
 \begin{proof}
-Compose the three inequalities. A new finite-cost positive deformation would contradict original CCR under the stipulated pullback property. Null anchors and stability moduli need their own transport conditions.
+For $(x,y)\in W'$ all three inequalities are applied on their declared domains:
+\[
+ d_{\mathcal E'}(\Phi'x,\Phi'y)
+ \geq c_b d_{\mathcal E}(\Phi(ax),\Phi(ay))
+ \geq c_bC d_Z(ax,ay)\geq c_ac_bC d_{Z'}(x,y).
+\]
+If the new sector had a finite-cost positive deformation, its stipulated
+pullback would give one in the old sector, contradicting its infinite
+resistance under the infimum convention. This argument supplies no pullback
+unless it is actually constructed. The null-anchor assertion follows by
+evaluating the specified $b$ at the anchor; metric bounds alone do not fix it.
 \end{proof}
 
 \begin{theorem}[Factorization on a Faithful Image]\label{thm:null-categorical-universality}
-If $\Phi:Z\to\E$ has a positive global lower bound, then every map $\Psi:Z\to F$ factors uniquely through $\Phi(Z)$. If $\Psi$ is $L$-Lipschitz, the factor is $L/C$-Lipschitz. No unique extension to the whole ambient $\E$ is implied.
+Let $\Phi:Z\to\mathcal E$ have a global lower metric bound $C>0$.
+For every map $\Psi:Z\to F$ there is a unique $u:\Phi(Z)\to F$ satisfying
+$u\circ\Phi=\Psi$, with $\Phi$ regarded as a map onto its image.
+If $F$ is metric and $\Psi$ is $L$-Lipschitz, $u$ is $L/C$-Lipschitz
+for the subspace metric. No extension or uniqueness outside $\Phi(Z)$ is implied.
 \end{theorem}
 \begin{proof}
-The lower bound makes $\Phi$ injective with inverse Lipschitz constant $1/C$ on its image. Set $u(\Phi(z))=\Psi(z)$; this is well-defined, unique there, and has the stated bound. Outside the image no value is prescribed.
+Equal $\Phi$-values force $0\geq C d_Z(x,y)$ and hence $x=y$.
+Therefore $u(\Phi(z)):=\Psi(z)$ is well defined. Every value in the image
+has that form, proving existence and uniqueness there. For two image points,
+\[
+ d_F(u(\Phi x),u(\Phi y))\leq Ld_Z(x,y)
+ \leq(L/C)d_{\mathcal E}(\Phi x,\Phi y).
+\]
+No value at a point outside the image is prescribed by the commuting equation.
 \end{proof}
 
 \begin{theorem}[Finite-Prefix Simulation Bound]\label{thm:null-simulation-lower-bound}
-For $F(b)=\sum_{j\geq0}2b_j/3^{j+1}$ and a decoder observing only bits $0,\ldots,N$, the optimal worst-case scalar error is $1/(2\,3^{N+1})$. It is positive for every fixed prefix and tends to zero with growing budget. The conclusion concerns prefix information, not finite real dimension.
+Let $F(b)=\sum_{j\geq0}2b_j/3^{j+1}$ on the full binary-history space.
+For a decoder $g$ observing exactly bits $0,\ldots,N$, $N\geq0$, the sharp
+minimax scalar error is
+\[
+ \inf_g\sup_b|F(b)-g(b_0,\ldots,b_N)|=\frac1{2\,3^{N+1}}.
+\]
+This positive fixed-prefix bound tends to zero with increasing budget and
+does not concern finite real dimension without a precision constraint.
 \end{theorem}
 \begin{proof}
-Two extreme continuations of the same prefix have images separated by $3^{-(N+1)}$, forcing half that error for any single decoder value. The midpoint attains the bound on every fiber. This also supplies a non-empty approximation model consistent with revised E1/E2.
+For a fixed prefix with scalar partial sum $s$, the all-zero and all-one
+continuations attain $s$ and $s+3^{-(N+1)}$, by geometric summation.
+A single decoded number has maximum distance at least half their separation.
+Conversely every completion has value in that closed interval, so the
+decoder $s+1/(2\,3^{N+1})$ attains this bound in every prefix fiber.
+Taking the infimum over all decoders proves equality and attainment.
 \end{proof}
 
 \begin{theorem}[Conditional Closure by Non-Alternatives]\label{thm:null-closure-by-non-alternatives}
-Any alternative model satisfying the same declared pair, lower-bound, anchor and transport hypotheses obeys the corresponding preceding conclusions. The program of realizing these properties jointly with an infinite-mass intervention model remains open; pair separation is not a proof of an individual null state's dynamical instability.
+Every model with a defined pair of distance $\epsilon>0$ and readout lower
+constant $C>0$ obeys joint null exclusion, has a nonempty finite positive
+witness image with a minimal element, and satisfies
+$\max_i\dE(\Phi(z_i),\nullphi)\geq C\epsilon/2$.
+A null anchor gives a unique positive witness value with relative gap at least
+$C\epsilon$. Additional models satisfy these same conclusions only after
+supplying the same typed hypotheses; transport uses the preceding lower-bound
+and sector-pullback conditions. This is a conditional closure, not an existence
+or physical-admissibility theorem for arbitrary alternative models.
 \end{theorem}
 \begin{proof}
-The conclusions depend on the enumerated mathematical hypotheses and apply to every model satisfying them. Existence and physical interpretation are additional questions.
+Theorem~\ref{thm:phenomenological-instability} gives the metric bound and
+joint null exclusion. The finite-order argument of
+Theorem~\ref{thm:minimal-positive-regime} gives a minimal member of the
+positive witness image. With a null anchor,
+Theorem~\ref{thm:universal-intensity-bound} gives the unique positive witness
+and its relative gap. Theorem~\ref{thm:rigidity-inheritance} states exactly
+what preserves the needed lower bounds and infinite-resistance sector.
+Example~\ref{ex:joint-external-null-witness} already realizes a null-anchored
+separated pair together with a specified infinite-resistance internal sector.
+It supplies no automatic extension to other sectors or to physical systems.
 \end{proof}

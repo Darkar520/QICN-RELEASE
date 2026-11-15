@@ -253,6 +253,133 @@ f_u^\ast(s)=\frac{s}{4}+\frac1{24}+\frac{4u}{3},\qquad
 For $N\geq2$ the finite equilibrium coordinates are also nonconstant. This is a mathematical realization of the projection dynamics, dissipative finite transition, consistency and non-collapse obligations together. It does not establish the inverse-limit non-finite-determination condition, the six operational invariants or a phenomenal bridge.
 \end{example}
 
+\begin{proposition}[Nontrivial Energy--Phase Coupled Bridge]\label{prop:coupled-energy-phase-bridge}
+Let $\nu=kT>0$, with energy coordinates and $\nu$ expressed in the same normalized energy unit and phases in radians. Fix Lipschitz profiles $e:[0,1]\to[0,1]$ and a real lift
+$\phi:[0,1]\to\mathbb R$ with constants $L_e,L_\phi$ such that
+\[
+ |e(s)-e(t)|\leq E_0,\qquad
+ |\phi(s)-\phi(t)|\leq\theta_0<\pi/2.
+\]
+Define the positive kernel and operator
+\[
+ w(s,t)=\frac{\exp(-|e(s)-e(t)|/\nu)}{\cos(\phi(s)-\phi(t))},
+ \qquad (K_wf)(s)=\kappa\int_0^1w(s,t)f(t)\,dt.
+\]
+Assume $0<\kappa$, $q:=\kappa\sec\theta_0<1$, and let a nonconstant
+$L_a$-Lipschitz profile $a$ and a nonempty compact control interval $\U$ satisfy
+$0\leq a(s)+u\leq1-q$. Set $T^w_u=P_C(K_w\cdot+a+u)$.
+For $s_i=(i-1/2)/N$, freeze $e_i=e(s_i)$, $\phi_i=\phi(s_i)$ and set
+\[
+ (\widehat T^w_{N,u}\mathbf x)_i
+ =\operatorname{clamp}_{[0,1]}
+ \left(\frac\kappa N\sum_{j=1}^Nw(s_i,s_j)x_j+a_{N,i}+u\right).
+\]
+This is the original increment operator with the complete directed graph
+(self-edges included), $I_j=\operatorname{Id}$, $\theta=N/\kappa$,
+$\eta=\alpha=\beta=1$, $B=-\operatorname{Id}$ and $D=0$.
+
+Both maps are $q$-contractive in their Hilbert norms. More generally the
+same phase sector gives the sufficient directed-graph factor
+\[
+ q_N=|1-\alpha\beta|
+ +\frac{\eta L_I\sqrt{d_N^{\rm in}d_N^{\rm out}}}{\theta\cos\theta_0}
+ +\alpha L_D<1.
+\]
+With $P_N=J_NJ_N^\dagger$ and
+\[
+ L_w=\sec\theta_0\left(\frac{L_e}{\nu}+\tan\theta_0 L_\phi\right),
+ \qquad \varepsilon_N=\frac{\kappa L_w+L_a/\sqrt{12}}{N},
+\]
+the coupled discretization satisfies
+\[
+ \sup_{f\in C}\|J_N\widehat T^w_{N,u}J_N^\dagger f-T^w_uf\|_2
+ \leq\varepsilon_N,
+ \qquad
+ \|J_Nx^*_{N,u}-f^*_{w,u}\|_2\leq\frac{\varepsilon_N}{1-q}.
+\]
+In particular the requested one-step comparison holds for $f=J_N\mathbf x$.
+Let $d_0=\|a-\bar a\|_2$, $d_{0,N}=\|P_Na-\bar a\|_2$ and
+\[
+ b_w=\max\{1-e^{-E_0/\nu},\sec\theta_0-1\},
+ \qquad b_*:=\frac{\kappa b_w}{1-q}.
+\]
+Then, uniformly in $u$,
+\[
+ \operatorname{dist}(f^*_{w,u},\mathcal N)\geq d_0-b_* ,\qquad
+ \operatorname{dist}_N(x^*_{N,u},\mathcal N_N)\geq d_{0,N}-b_* .
+\]
+Whenever the respective right side is positive, non-collapse follows without
+assuming H5. Here $\mathcal N_N$ is the space of constant vectors.
+
+A genuinely coupled, uniformly nonempty sector is
+\[
+ \nu=1,\quad\kappa=1/4,\quad a(s)=s/4,\quad\U=[0,1/4],
+ \quad e(s)=\phi(s)=s/64.
+\]
+For this choice $q\leq2048/8191$ and both gaps, for every $N\geq2$, are at least
+\[
+ \gamma:=\frac1{16}-\frac{8191}{256\cdot6143}
+          =\frac{90097}{1572608}>0.
+\]
+Energy and phase vary between nodes and across the declared parameter sector;
+they remain fixed during each coherence iteration. No evolution law or
+contractivity for a joint time-varying energy--phase state is asserted.
+\end{proposition}
+
+\begin{proof}
+The kernel lies between $e^{-E_0/\nu}$ and $\sec\theta_0$. Its row and column
+integrals are at most $\sec\theta_0$; Cauchy--Schwarz with these bounds gives
+$\|K_w\|_{2\to2}\leq q$. The corresponding matrix Schur bound in the normalized
+finite norm is identical. The general directed estimate follows from
+Lemma~\ref{lem:directed-resonance-bound} and the dissipative feedback decomposition.
+Positivity and the range assumption imply $0\leq K_wf+a+u\leq1$ on $C$,
+and the same holds on $C_N$. Thus clamping is inactive on these domains,
+although its non-expansiveness also suffices for the contraction bounds.
+The unique equilibria may be constructed by the convergent Neumann series
+for $K_w$ and its finite sampled matrix; their values stay in the respective cubes.
+
+For $|v|\leq\theta_0$, the derivatives of $\sec v$ have absolute value at most
+$\sec\theta_0\tan\theta_0$. Also $r\mapsto e^{-r/\nu}$ is $1/\nu$-Lipschitz
+on $[0,\infty)$. The product estimate therefore gives
+\[
+ |w(s,t)-w(s',t')|
+ \leq L_w(|s-s'|+|t-t'|).
+\]
+Let $w_N$ take the midpoint value on each product cell. Then
+$\|w_N-w\|_\infty\leq L_w/N$, so the integral operators differ in $L^2$ norm
+by at most $\kappa L_w/N$. The sampled kernel is constant on input cells,
+hence $K_{w_N}P_N=K_{w_N}$. The finite lifted map is therefore
+$P_C(K_{w_N}f+P_Na+u)$. Since $\|f\|_2\leq1$ on $C$, non-expansiveness and
+Lemma~\ref{lem:cell-average-error} prove the uniform discrepancy.
+Insert each fixed point into the two transitions and rearrange the contraction
+inequality to obtain the fixed-point error bound.
+
+For the uncoupled mean operator $K_0f=\kappa\int f$, the kernel difference
+satisfies $\|K_w-K_0\|\leq\kappa b_w$. Evaluate that discrepancy at its
+uncoupled fixed point, whose norm is at most one, and use the coupled
+contraction factor $q$: its distance to $f^*_{w,u}$ is at most $b_*$.
+The same argument applies directly to the finite sampled operators.
+The uncoupled equilibria from Theorem~\ref{thm:realized-nonconstant-bridge}
+have constant-subspace distances exactly $d_0$ and $d_{0,N}$. Distance to a
+fixed closed set is $1$-Lipschitz, proving the two gap estimates.
+
+For the explicit nonzero profiles, $\cos(1/64)\geq1-1/8192=8191/8192$ and
+$1-e^{-1/64}\leq1/64$. Consequently $b_w\leq1/64$,
+$q\leq2048/8191$ and $b_*\leq8191/(256\cdot6143)$.
+The range assumption holds because $a+u\leq1/2<1-q$.
+Direct cell variance gives
+\[
+ d_0=\frac1{4\sqrt{12}}>\frac1{16},\qquad
+ d_{0,N}=\frac1{4\sqrt{12}}\sqrt{1-N^{-2}}\geq\frac1{16}\quad(N\geq2).
+\]
+This proves the rational gap $\gamma$. For distinct midpoint nodes the
+weight is genuinely different from its diagonal value: the logarithmic
+derivative of $e^{-r}/\cos r$ is $-1+\tan r<0$ on $(0,1/64]$.
+The energy--phase coefficients are therefore not replaced by their zero-profile
+values. Each frozen-profile model has compact $u$-domain and continuous forcing,
+so H1--H4 hold, and the positive equilibrium gap proves H5 in that model.
+\end{proof}
+
 \section{Projective Dissipation on the Circle-Prefix Towers}
 
 Fix the two towers of Theorem~\ref{thm:joint-transport-readout}, with $w_t=3^{-t}$, jump $a$ at stage $k$, and branch $s\in\{0,1\}$. Write $\beta_k=3^{-(k+1)}$. A history is specified by an initial angle $\theta$ and an infinite bit sequence $b$, with stage-$t$ angle $\theta+sa\mathbf{1}_{t>k}$. The depth $t$ is distinct from the iteration index $n$. For a fixed parameter $u\in\mathbb T=\mathbb R/\mathbb Z$, put

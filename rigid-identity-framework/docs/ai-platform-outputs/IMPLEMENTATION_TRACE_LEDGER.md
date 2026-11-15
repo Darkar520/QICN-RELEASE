@@ -11559,3 +11559,46 @@ Alcance vigente: 35 fuentes / 271 declaraciones, matriz 10 exactos / 49
 parciales / 344 pendientes / 16 ligados a protocolo; 153 huellas congeladas
 conservadas. Los veredictos crudos y external_support_certified=false siguen
 intactos. No se publica ni se anuncia cierre del programa de 419 enunciados.
+
+### 2026-11-14 · Codex · Etapas 0–1: BaseCore y Papers I–III
+
+Solicitud adjunta 6217133e-c77c-4e2a-a56b-d5879c2d087f; aprobación posterior
+para completar controles sin el límite inicial de diez minutos. Base limpia
+f7171e7, rama dedicada codex/etapa1-base-papers1-3, sin push. Baseline once
+pasos aprobado en 1638.39 s antes de editar. WSL sólo leído; lean/lake no
+detectados en PATH/ubicaciones estándar examinadas, preparación no confirmada.
+
+Leídos AGENTS, cinco fuentes canónicas, INSTRUCCIONES y roadmap; BC02/04/05/
+07/08/11, PI–III en los apartados auditados, registro, overlays, verificadores,
+matriz y módulos Lean correspondientes. AUDIT_MASTER_v5 ausente en checkout;
+se conservan referencias históricas sin inventar su contenido. Auditoría,
+tabla completa de resultados, límites, archivos y comandos en
+repair-plans/ETAPA1_BASECORE_PAPERS_I_III_2026-11-14/EJECUCION.md.
+
+Cambios: clasificación Fréchet/frontera y espectro/relajación; orden y tipos;
+cuatro pruebas nulas con estado curado actual coherente; siete pruebas de
+certificación con cuantificadores y controles; puente de energía/fase no nulas
+con gamma=90097/1572608; demostraciones faltantes de PI; cota uniforme de
+pérdida/protección; límite métrico–Polish, canales compatibles y ruido en PIII.
+Las dos omisiones de cierre de fórmula detectadas al compilar y el orden de
+la prueba del puente se corrigieron en fuentes, sin ocultar los logs previos.
+
+FCR quirúrgico: 906 IDs conservados, seis nuevos, 912 entradas; 299 anteriores
+sincronizadas, muchas sólo por líneas; 383 macros idénticas. Cobertura 425:
+10 EXACT_MATCH, 51 FINITE_OR_PARTIAL_KERNEL, 348 PENDING_MATHLIB y
+16 EMPIRICAL_OR_PROTOCOL_BOUNDED. Cuatro PDF unitarios y reportes derivados
+actualizados; monolito anterior preservado según alcance, pendiente de Etapa 2.
+No se modifican fuentes Lean, áreas congeladas ni Papers IV–X/Puente.
+
+Nueva suite de 32 controles racionales/intervalos/negativos, conservando las
+32 suites previas. Aceptación sujeta a los doce controles ordenados y a los
+recibos VERIFICACION_FINAL.json/CONSERVACION.json. Comandos completos,
+salidas y tiempos en E:/QICN-PRESERVACION/2026-11-14-etapa1-base-papers1-3/logs/;
+las comprobaciones que reescriben reportes están aisladas. Lean se reproduce
+fresco en la ruta activa con un proceso y dependencias fijadas externas.
+
+Deuda: propagación a descendentes y monolito; mecanización de los nuevos
+enunciados; calibración/controles físicos; revisión matemática independiente.
+Los controles internos no son validación científica. Veredictos conservados:
+INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY, BLOCKED_MULTIPLE_GATES,
+BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.

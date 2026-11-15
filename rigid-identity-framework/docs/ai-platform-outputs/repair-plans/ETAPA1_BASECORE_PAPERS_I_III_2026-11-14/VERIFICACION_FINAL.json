@@ -1,0 +1,222 @@
+{
+  "passed": true,
+  "completed_steps": 12,
+  "required_steps": 12,
+  "seconds": 2122.72,
+  "results": [
+    {
+      "order": 1,
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final",
+      "exit": 0,
+      "seconds": 0.22,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-root-integrity.log",
+      "log_sha256": "fa90d5cb921b8af9c238809beb1c75ed5664187d9ee8d96c97ed76b8fc981e45"
+    },
+    {
+      "order": 2,
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final",
+      "exit": 0,
+      "seconds": 0.09,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-root-claims.log",
+      "log_sha256": "bd03c375966edc19d76000d621e83e28c7b6a30f02cf46520c0615445bf8ef04"
+    },
+    {
+      "order": 3,
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final",
+      "exit": 0,
+      "seconds": 1.06,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-root-release.log",
+      "log_sha256": "c7bd1e0b872d84a01bbb3f316dcd809f5f37e8c1c48c5f1e4dfe6c216fd961b5"
+    },
+    {
+      "order": 4,
+      "name": "prose",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:prose"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.7,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-prose.log",
+      "log_sha256": "dfabe12d42e7df03c9b99089c213f9d0f02d2318884e06127361cff0cada2895"
+    },
+    {
+      "order": 5,
+      "name": "corpus",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:corpus-registry"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.23,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-corpus.log",
+      "log_sha256": "89297b259897775b23ae58bc4ce77fd24f3a6311b05983a106d6e3b7c7f2238d"
+    },
+    {
+      "order": 6,
+      "name": "macros",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:macro-registry"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.06,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-macros.log",
+      "log_sha256": "0e435599dc9b9ba32ff36923742756d783125fa5ee3cf619567e3de0c5b74cde"
+    },
+    {
+      "order": 7,
+      "name": "nonclaims",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint:nonclaims"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 2.08,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-nonclaims.log",
+      "log_sha256": "63b5094427915379c074617992eb4c0aa7399c9cc72697ff6674123f38657c9e"
+    },
+    {
+      "order": 8,
+      "name": "overlays",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:curation-overlays"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.03,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-overlays.log",
+      "log_sha256": "711a21131c9cf9c16cc24d185ff428df6515305456f14c57029b8ae4dbc4a447"
+    },
+    {
+      "order": 9,
+      "name": "math",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:math"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 161.44,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-math.log",
+      "log_sha256": "c7544359ec1ec295f9b5867b9e90adbec6eae030f7987791f477af0f16698ec9"
+    },
+    {
+      "order": 10,
+      "name": "lean",
+      "command": [
+        "python",
+        "scripts/verify-lean.py",
+        "--kernel-only",
+        "--packages-dir",
+        "E:/QICN-LEAN/v4.31.0-desktop/packages"
+      ],
+      "cwd": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1912.5,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-lean.log",
+      "log_sha256": "4da675e6b53f05a46691397934b9d888d78b52727d54ff5990f19cad6c0742da"
+    },
+    {
+      "order": 11,
+      "name": "coverage",
+      "command": [
+        "python",
+        "scripts/verify-lean-coverage.py"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.22,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-coverage.log",
+      "log_sha256": "ed805bc8edf5de362026cf3fbdf0fd0a1dcc98f475fbee1b61476ddd7d6e5e5b"
+    },
+    {
+      "order": 12,
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\final\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 38.88,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa1-base-papers1-3\\logs\\final-release.log",
+      "log_sha256": "09aa33fa8cd84e1861b740de7cfc124c78e31c2fc12c8662fa4b0ae80cafae82"
+    }
+  ],
+  "external_support_certified": false,
+  "input_files": 876,
+  "input_hashes_sha256": "7381d9ebd9076f51d07bb52534e9ab478bc6e4d5aea9c72a3016c758f71ae192",
+  "live_inputs_unchanged": true,
+  "math_suites": 33,
+  "lean_sources": 35,
+  "public_lean_declarations": 271,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "release_steps": 6,
+  "raw_verdicts": {
+    "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY": [
+      "docs/reports/FCR_DOWNGRADE_DRY_RUN_v26.json",
+      "docs/reports/HYBRID_V26_VERIFICATION.json",
+      "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v25.json",
+      "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v26.json",
+      "docs/reports/V26_SUPERIOR_GAP_AUDIT.json",
+      "docs/reports/V35_ALL_LEGACY_VERIFICATION.json"
+    ],
+    "BLOCKED_MULTIPLE_GATES": [
+      "docs/reports/AR1_CORRECTION_CLINICAL_SUMMARY_v28.json",
+      "docs/reports/AUDIT_v27.json",
+      "docs/reports/NEGATIVE_CONTROL_SUITE_v30.json",
+      "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v27.json",
+      "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v28.json",
+      "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v30.json",
+      "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v31.json",
+      "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v34.json",
+      "docs/reports/V35_ALL_LEGACY_VERIFICATION.json",
+      "docs/reports/V35_V30_V31_PARITY_CHECK.json"
+    ],
+    "BLOCKED_FOUNDATION_FIRST_GATES": [
+      "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v31.json",
+      "docs/reports/SESSION_ZERO_SYNTHETIC_FIXTURE_ADJUDICATION_v34.json",
+      "docs/reports/V35_ALL_LEGACY_VERIFICATION.json",
+      "docs/reports/V35_V30_V31_PARITY_CHECK.json"
+    ]
+  },
+  "coverage_targets": 425,
+  "coverage_counts": {
+    "EXACT_MATCH": 10,
+    "FINITE_OR_PARTIAL_KERNEL": 51,
+    "PENDING_MATHLIB": 348,
+    "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
+  }
+}

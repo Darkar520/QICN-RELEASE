@@ -12,6 +12,6 @@ Status: active semantic collision report. Repeated identical definitions, standa
 
 | Reason | Groups |
 |---|---:|
-| identical_definition_repeated | 124 |
+| identical_definition_repeated | 126 |
 | standard_formatting_macro | 1 |
-| theorem_environment_declaration | 18 |
+| theorem_environment_declaration | 17 |

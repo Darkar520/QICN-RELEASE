@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "scope": "419 registered theorem/proposition/lemma/corollary targets; public Lean declaration count is a different denominator.",
-  "registry_sha256": "ef09195f1d0f1f5969c676319525bc4f48982a2a53344f3ac36b520c5b16d45b",
-  "source_revision": "05f8e55e5060251bbf20962b414c0dfd5078f164",
+  "scope": "425 active theorem/proposition/lemma/corollary targets: 419 Route 6 baseline plus 6 explicitly added Etapa 1 results. Lean declaration count is a different denominator.",
+  "registry_sha256": "2d6ebe575f6182cc0f3bb57026f17e34b3cc4049ac4d705801de2e54fc729aae",
+  "source_revision": "Etapa 1 source edition; registry_sha256 identifies the exact working registry",
   "lean_package_path": "rigid-identity-framework/lean",
   "lean_version": "4.31.0",
   "classification_method": "Registry dependencies and typed topic obligations, plus explicit reviewed Lean links. Only adjudicated full source-equivalence annotations receive EXACT_MATCH. A link to a module proves component availability, not full manuscript coverage.",
   "counts": {
-    "PENDING_MATHLIB": 344,
+    "PENDING_MATHLIB": 348,
     "EXACT_MATCH": 10,
-    "FINITE_OR_PARTIAL_KERNEL": 49,
+    "FINITE_OR_PARTIAL_KERNEL": 51,
     "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
   },
   "rows": [
@@ -360,8 +360,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 130,
-        "line_end": 135
+        "line_start": 134,
+        "line_end": 139
       },
       "source_statement_tex": "\\begin{lemma}[The Embedding is Isometric]\nFor every $v\\in E$,\n\\[\n\\norm{j(v)}_\\infty=\\norm{v}_2.\n\\]\n\\end{lemma}",
       "source_statement_sha256": "c95fad81cecd0de61e7368d9fc58751c44de3ee3f020d1365aa6a37e0758a25d",
@@ -391,8 +391,8 @@
       "label": "lem:disk-projection",
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 146,
-        "line_end": 151
+        "line_start": 150,
+        "line_end": 155
       },
       "source_statement_tex": "\\begin{lemma}[The Disk Projection is Non-Expansive]\\label{lem:disk-projection}\nFor all $v,w\\in E$,\n\\[\n\\norm{P_E(v)-P_E(w)}_2\\le \\norm{v-w}_2.\n\\]\n\\end{lemma}",
       "source_statement_sha256": "7e3132fe137773b8fd53fc1eacb800ff089aada788c0970454b88a3ebf65084e",
@@ -423,8 +423,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 157,
-        "line_end": 162
+        "line_start": 161,
+        "line_end": 166
       },
       "source_statement_tex": "\\begin{lemma}[The Typed Projection is Non-Expansive]\nFor all $f,g\\in\\mathcal{B}$,\n\\[\n\\norm{\\aleph_{\\mathcal B}(f)-\\aleph_{\\mathcal B}(g)}_\\infty\\le \\norm{f-g}_\\infty.\n\\]\n\\end{lemma}",
       "source_statement_sha256": "b25505ed240e8950be3c19025f3e7b426be0dc9964d6fa6c4fe0f895e3472d37",
@@ -455,16 +455,16 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 178,
-        "line_end": 182
+        "line_start": 182,
+        "line_end": 186
       },
-      "source_statement_tex": "\\begin{lemma}[Norm of the Lifted Contraction]\n\\[\n\\norm{\\widetilde K}\\le \\frac{1}{2}.\n\\]\n\\end{lemma}",
-      "source_statement_sha256": "a3260b48e9c81edab892cdc030f4f3b39230d785b5de3c7b97addf7719416b27",
+      "source_statement_tex": "\\begin{lemma}[Norm of the Lifted Contraction]\n\\[\n\\norm{\\widetilde K}=\\frac{1}{2}.\n\\]\n\\end{lemma}",
+      "source_statement_sha256": "45d83841d7244e9057c83efe945c7be66f3c41a6c8b2b26b2d25f48ec1fb0b9b",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -487,8 +487,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 195,
-        "line_end": 200
+        "line_start": 200,
+        "line_end": 205
       },
       "source_statement_tex": "\\begin{theorem}[Typed Contraction on the Computable Witness]\nFor each $u\\in\\U$, the map $T_u:\\mathcal{B}\\to\\mathcal{I}_{\\mathrm c}$ is a strict contraction:\n\\[\n\\norm{T_u(f)-T_u(g)}_\\infty\\le \\frac{1}{2}\\norm{f-g}_\\infty.\n\\]\n\\end{theorem}",
       "source_statement_sha256": "b1469111e78d7f2cc1f3d5a1b49f92e6cb012ff273ebeabc08f09423e78a6f86",
@@ -519,8 +519,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 213,
-        "line_end": 218
+        "line_start": 218,
+        "line_end": 223
       },
       "source_statement_tex": "\\begin{corollary}[Unique Fixed Point in the Typed Witness]\nFor each $u\\in\\U$, there exists a unique $f_u^\\ast\\in\\mathcal{I}_{\\mathrm c}$ such that\n\\[\nT_u(f_u^\\ast)=f_u^\\ast.\n\\]\n\\end{corollary}",
       "source_statement_sha256": "83e572e286256203b729aac6b7d29a28eb837440ecbed679bd878d8ea8aa9e77",
@@ -551,8 +551,8 @@
       "label": "prop:Q3verify",
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 224,
-        "line_end": 232
+        "line_start": 229,
+        "line_end": 237
       },
       "source_statement_tex": "\\begin{proposition}[Typed Non-Vacuity of the Computable Model]\\label{prop:Q3verify}\nThe embedded constant-disk Golden Mean model is a fully typed, non-vacuous witness of the transition grammar:\n\\begin{enumerate}[leftmargin=*]\n\\item every operator has explicit domain and codomain;\n\\item the transition map $T_u$ is well-defined on $\\mathcal{B}$;\n\\item the family admits unique fixed points and a compact parameter image;\n\\item the state contraction bound is explicit and computable.\n\\end{enumerate}\n\\end{proposition}",
       "source_statement_sha256": "e63b81bf055405d019faed86d986f1e2f19a749c5af0076896bd9f8ca2ec1976",
@@ -583,8 +583,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 259,
-        "line_end": 263
+        "line_start": 264,
+        "line_end": 268
       },
       "source_statement_tex": "\\begin{lemma}[The Anti-Collapse Witness Set Avoids Constants]\n\\[\n\\I_{\\mathrm{ac}}\\cap \\mathcal{N}=\\varnothing.\n\\]\n\\end{lemma}",
       "source_statement_sha256": "52dd74279ff264ab90da805529237681c6d2f77260838f1058cac0f30b086491",
@@ -614,8 +614,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 282,
-        "line_end": 284
+        "line_start": 287,
+        "line_end": 289
       },
       "source_statement_tex": "\\begin{proposition}[Separate Witness for H5]\nThe family $\\{T_u^{\\mathrm{ac}}\\}_{u\\in\\U}$ satisfies Hypotheses~\\ref{hyp:H1}--\\ref{hyp:H5} of Section~1.\n\\end{proposition}",
       "source_statement_sha256": "5efea1dd8e2a523e5d4b79857dae9fadd8eac6a7bcb52afde3f27876a66adf19",
@@ -649,16 +649,16 @@
       "label": "thm:spectrum",
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 302,
-        "line_end": 317
+        "line_start": 307,
+        "line_end": 335
       },
-      "source_statement_tex": "\\begin{theorem}[State Spectral Gap]\\label{thm:spectrum}\nFix $u\\in\\U$ in the typed computable model. Assume $T_u$ is Fr\\'echet differentiable at its fixed point $f_u^\\ast$. Then\n\\[\n\\rho\\!\\left(DT_u(f_u^\\ast)\\right)\n\\le\n\\norm{DT_u(f_u^\\ast)}\n\\le\n\\norm{\\widetilde K}\n\\le\n\\frac{1}{2}.\n\\]\nConsequently the state spectral gap satisfies\n\\[\n\\Delta_{\\mathrm{state}}\\ge 1-\\norm{\\widetilde K}\\ge \\frac{1}{2}.\n\\]\n\\end{theorem}",
-      "source_statement_sha256": "fc004f2d13dfc7f295dd42c513666f4ab6c11e42f0f644a28941eb9984864f37",
+      "source_statement_tex": "\\begin{theorem}[State Spectral Gap]\\label{thm:spectrum}\nFix $u\\in\\U$. Write $e_1=(1,0)$ and let $P_\\perp(v_1,v_2)=(0,v_2)$.\nThe unique fixed point of the typed computable witness is\n\\[\n f_u^*=j(v_u^*),\\qquad v_u^*=\\min\\{2u,1\\}e_1.\n\\]\nThe map is Fr\\'echet differentiable at this point exactly when $u\\ne1/2$.\nAt these regular parameters its derivative and spectrum are\n\\[\n\\begin{array}{c|c|c}\n &DT_u(f_u^*)&\\sigma(DT_u(f_u^*))\\\\ \\hline\n0\\le u<1/2&\\tfrac12 jA&\\{0,1/2\\}\\\\[2pt]\nu>1/2&\\dfrac{1}{1+2u}jP_\\perp A&\\{0,(1+2u)^{-1}\\}.\n\\end{array}\n\\]\nHere the spectrum of a real operator means the spectrum of its complexification.\nIn both cases,\n\\[\n \\rho(DT_u(f_u^*))=\\|DT_u(f_u^*)\\|\n \\leq\\|\\widetilde K\\|=\\tfrac12,\n \\qquad \\Delta_{\\mathrm{state}}:=1-\\rho\\geq\\tfrac12.\n\\]\nAt $u=1/2$ the one-sided directional derivative is\n\\[\n D^+T_{1/2}(j(e_1);h)\n =\\tfrac12j\\bigl(Ah-e_1\\max\\{\\langle e_1,Ah\\rangle,0\\}\\bigr),\n\\]\nwhich is not linear; a state Jacobian spectrum is not assigned there.\n\\end{theorem}",
+      "source_statement_sha256": "d639ada3c75f422269a262780cb06e71a974b112466b05524897c6da2251589c",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -681,16 +681,16 @@
       "label": "thm:relaxation",
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 332,
-        "line_end": 341
+        "line_start": 373,
+        "line_end": 393
       },
-      "source_statement_tex": "\\begin{theorem}[Relaxation-Time Bound]\\label{thm:relaxation}\nUnder the hypotheses of Theorem~\\ref{thm:spectrum}, any discrete-to-continuous relaxation convention of the form\n\\[\n\\tau_{\\mathrm{state}}=-\\frac{1}{\\ln \\rho}\n\\]\nwith $\\rho=\\rho(DT_u(f_u^\\ast))$ gives\n\\[\n\\tau_{\\mathrm{state}}\\le \\frac{1}{\\ln 2}.\n\\]\n\\end{theorem}",
-      "source_statement_sha256": "c6a4fef8045ebef2f3d3f71c4d1c8560503429941b8b96c98d73ed61d184f481",
+      "source_statement_tex": "\\begin{theorem}[Relaxation-Time Bound]\\label{thm:relaxation}\nFor every fixed $u\\in\\U$, every $f\\in\\mathcal B$ and $n\\geq0$,\n\\[\n \\|T_u^n f-f_u^*\\|_\\infty\\leq2^{-n}\\|f-f_u^*\\|_\\infty.\n\\]\nAt a regular parameter of Theorem~\\ref{thm:spectrum}, put\n$\\rho=\\rho(DT_u(f_u^*))$. For every $r\\in(\\rho,1)$ there is a neighborhood\nof $f_u^*$ on which the error to that fixed point decreases by a factor at\nmost $r$ per iteration. Every orbit eventually enters that neighborhood.\nThe spectral e-folding convention, in iteration units, is therefore\n\\[\n \\tau_{\\mathrm{state}}=-1/\\ln\\rho\n =\\begin{cases}1/\\ln2,&u<1/2,\\\\\n 1/\\ln(1+2u),&u>1/2,\n \\end{cases}\n \\qquad \\frac1{\\ln3}\\leq\\tau_{\\mathrm{state}}\\leq\\frac1{\\ln2}.\n\\]\nThe global geometric bound still holds at $u=1/2$, where this linearized\nspectral convention is unavailable. It is not a physical relaxation-time\ncalibration or a claim that all nonlinear transients decay exactly as $\\rho^n$.\n\\end{theorem}",
+      "source_statement_sha256": "8aa6a74810462f7579e6c37ae112960ded583d7dcf9dba6fb71478b3b6774bf5",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Type the complete ambient space, nonempty closed convex set and operator/forcing hypotheses. Prove the exact universal conclusion; distinguish anti-constant premises and compact parameter hypotheses from their derivation.",
       "target_dependency_ids": [
         "basecore:theorem:thm-spectrum"
       ],
@@ -715,8 +715,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/02_model_and_spectral_extensions.tex",
-        "line_start": 347,
-        "line_end": 349
+        "line_start": 405,
+        "line_end": 407
       },
       "source_statement_tex": "\\begin{proposition}[Parameter-Family Persistence is not State Spectrum]\nLet $F:\\U\\to\\mathcal{B}$ be the fixed-point family $F(u)=f_u^\\ast$. Any persistence of parameter labels or family coordinates belongs to the variation of $F$ over $\\U$, not to the state-transition spectrum of $DT_u(f_u^\\ast)$ for fixed $u$.\n\\end{proposition}",
       "source_statement_sha256": "31b190cfc183cd1f9a653eea7eac7849cb28e576961212ebc345fb0a848dce34",
@@ -1066,8 +1066,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 33,
-        "line_end": 35
+        "line_start": 43,
+        "line_end": 45
       },
       "source_statement_tex": "\\begin{proposition}[Endomorphisms Preserving All Canonical Projections]\nIf $F:\\mathcal I\\to\\mathcal I$ satisfies $p_t\\circ F=p_t$ for every $t$, then $F=\\operatorname{Id}$. This does not exclude endomorphisms with nonidentity coordinate actions.\n\\end{proposition}",
       "source_statement_sha256": "d1b9eb36a04f5d47890e25f92d6d39a2f211dbac728e2a70fb3224acccaf2ee8",
@@ -1105,18 +1105,20 @@
       "label": "prop:unique-phi",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 63,
-        "line_end": 69
+        "line_start": 92,
+        "line_end": 98
       },
-      "source_statement_tex": "\\begin{proposition}[Uniqueness and Uniform Error of the Limit Assignment]\\label{prop:unique-phi}\nUnder E1, each trajectory has a unique limit assignment and\n\\[\nd_{\\mathcal E}\\bigl(\\Phi(x),\\phi_n(p_nx)\\bigr)\\leq A_n\n\\quad\\text{for all }x\\in\\mathcal I.\n\\]\n\\end{proposition}",
-      "source_statement_sha256": "53a9c37b17cebeeeae3c1c06800a5e5b13262fd25136c95417bfbc339235a649",
+      "source_statement_tex": "\\begin{proposition}[Uniqueness and Uniform Error of the Limit Assignment]\\label{prop:unique-phi}\nUnder Axiom~\\ref{ax:e1} in the declared complete metric codomain, each trajectory has a unique limit assignment and\n\\[\nd_{\\mathcal E}\\bigl(\\Phi(x),\\phi_n(p_nx)\\bigr)\\leq A_n\n\\quad\\text{for all }x\\in\\mathcal I.\n\\]\n\\end{proposition}",
+      "source_statement_sha256": "c4ac1aba06498a56fff5b4fc3e725da52faeb8442f35ac18b9b344b36f3cd5dc",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [],
-      "other_registry_dependency_ids": [],
+      "other_registry_dependency_ids": [
+        "basecore:axiom:ax-e1"
+      ],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
         "Mathlib.Logic.Function.Basic"
@@ -1136,8 +1138,8 @@
       "label": "thm:e0-necessary",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 105,
-        "line_end": 107
+        "line_start": 117,
+        "line_end": 119
       },
       "source_statement_tex": "\\begin{theorem}[E0 is Necessary]\\label{thm:e0-necessary}\nIf $|\\mathcal{E}| = 1$, then every structural assignment is constant and no phenomenological classification is possible.\n\\end{theorem}",
       "source_statement_sha256": "e47d80c595bfe37cc2480060fcae05290cdbe012619c73155c1be5d631b5e6b1",
@@ -1167,8 +1169,8 @@
       "label": "thm:e1-necessary",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 115,
-        "line_end": 117
+        "line_start": 127,
+        "line_end": 129
       },
       "source_statement_tex": "\\begin{theorem}[Controlled Compatibility Is Sufficient]\\label{thm:e1-necessary}\nE1 guarantees existence of the limit with the error bound in Proposition~\\ref{prop:unique-phi}. Absolute summability is sufficient, not necessary for an arbitrary convergent family.\n\\end{theorem}",
       "source_statement_sha256": "307b51e7da459a4ff849f3c85c502bdad16866901353abc170de74602f59d697",
@@ -1201,8 +1203,8 @@
       "label": "thm:e2-necessary",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 125,
-        "line_end": 127
+        "line_start": 137,
+        "line_end": 139
       },
       "source_statement_tex": "\\begin{theorem}[Non-Factorization Is an Independent Requirement]\\label{thm:e2-necessary}\nE2 excludes readouts determined by a single canonical finite cut. The inverse-limit construction and E1 alone do not imply E2.\n\\end{theorem}",
       "source_statement_sha256": "633c6461d6064bc3967ac94d84172ff0f848dbbc121a428db9e7213e84ce555c",
@@ -1235,8 +1237,8 @@
       "label": "thm:minimality",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 135,
-        "line_end": 137
+        "line_start": 147,
+        "line_end": 149
       },
       "source_statement_tex": "\\begin{theorem}[Logical Dependencies of the Assignment Conditions]\\label{thm:minimality}\nOn a nonempty trajectory domain, E2 implies E0. E1 does not imply E2. There exist assignments satisfying E0, the revised E1 and E2 simultaneously. Consequently these three conditions are not an independent minimal axiom basis as originally stated.\n\\end{theorem}",
       "source_statement_sha256": "56a868d1a42abbc5c413ae1851a2dad46abda56d697affed7808a299719cf958",
@@ -1268,8 +1270,8 @@
       "label": "prop:exact-e1-obstruction",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 200,
-        "line_end": 202
+        "line_start": 212,
+        "line_end": 214
       },
       "source_statement_tex": "\\begin{proposition}[Exact Compatibility Forces Finite-Cut Factorization]\\label{prop:exact-e1-obstruction}\nOn a nonempty trajectory domain, if $\\phi_{t+1}(p_{t+1}x)=\\phi_t(p_tx)$ for every $x,t$, then the limit assignment satisfies $\\Phi=\\phi_0\\circ p_0$. It cannot satisfy E2. The controlled E1 above replaces that exact equality, rather than assuming it together with E2.\n\\end{proposition}",
       "source_statement_sha256": "98cb168485ba2b2f3db903a1f6be46bfef2ca28e78989335ba42c4e1cc928059",
@@ -1300,8 +1302,8 @@
       "label": "thm:ternary-regime-realization",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 210,
-        "line_end": 228
+        "line_start": 222,
+        "line_end": 240
       },
       "source_statement_tex": "\\begin{theorem}[Ternary Realization of E0--E2]\\label{thm:ternary-regime-realization}\nLet $S_t=\\{0,1\\}^{t+1}$ with bonding maps that delete the last bit. Identify its inverse limit with $\\mathcal I=\\{0,1\\}^{\\mathbb N}$ and let $\\mathcal E=[0,1]$. Define\n\\[\n\\phi_t(b_0,\\ldots,b_t)=\\sum_{j=0}^t\\frac{2b_j}{3^{j+1}},\n\\qquad\n\\Phi(b)=\\sum_{j=0}^{\\infty}\\frac{2b_j}{3^{j+1}}.\n\\]\nThese assignments satisfy E0, controlled E1, and E2, with\n\\[\na_t=\\frac{2}{3^{t+2}},\\qquad\nA_t=\\frac{1}{3^{t+1}},\\qquad\n\\sup_b|\\Phi(b)-\\phi_t(p_tb)|=A_t.\n\\]\nFor distinct histories first differing at position $m$, put $d_{\\mathcal I}(b,c)=3^{-(m+1)}$, and put $d_{\\mathcal I}(b,b)=0$. Then\n\\[\nd_{\\mathcal I}(b,c)\\leq|\\Phi(b)-\\Phi(c)|\\leq3d_{\\mathcal I}(b,c).\n\\]\nThe domain is compact and complete, and the readout is injective and bi-Lipschitz onto its image. Thus a global lower bound is realized here rather than inserted without a witness.\n\\end{theorem}",
       "source_statement_sha256": "b725fc8509a169e16923be2e781e016e53ad5910f6609409306f4cf72527f680",
@@ -1332,8 +1334,8 @@
       "label": "thm:finite-cut-minimax",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 236,
-        "line_end": 246
+        "line_start": 248,
+        "line_end": 258
       },
       "source_statement_tex": "\\begin{theorem}[Sharp Finite-Cut Approximation Error]\\label{thm:finite-cut-minimax}\nFor the ternary realization and an arbitrary decoder $g:S_t\\to\\mathbb R$, let\n\\[\nR_t(g)=\\sup_{b\\in\\mathcal I}|\\Phi(b)-g(p_tb)|.\n\\]\nThen the exact minimax value is\n\\[\n\\inf_g R_t(g)=\\frac{1}{2\\,3^{t+1}}.\n\\]\nIt is attained by $g_\\ast(s)=\\phi_t(s)+1/(2\\,3^{t+1})$.\n\\end{theorem}",
       "source_statement_sha256": "4b9972baddc0ff1e2898a0dd668ea8e529227ed00ba79aca1824c765a3c6fb66",
@@ -1364,8 +1366,8 @@
       "label": "prop:ternary-arbitrary-code",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 252,
-        "line_end": 254
+        "line_start": 264,
+        "line_end": 266
       },
       "source_statement_tex": "\\begin{proposition}[Sharp Error for Arbitrary Binary Codes]\\label{prop:ternary-arbitrary-code}\nFor the ternary assignment above, let an encoder choose at most $2^B$ states as an arbitrary function of the whole history, and let each state decode to any real number. The minimum worst-case absolute error is $1/(2\\cdot3^B)$ for every integer $B\\geq0$.\n\\end{proposition}",
       "source_statement_sha256": "82268a9fadf7a698823df59e25c782c10aa87c2ae865c7ac3b0a8093c45c0bf0",
@@ -1395,8 +1397,8 @@
       "label": "thm:joint-transport-readout",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 261,
-        "line_end": 271
+        "line_start": 273,
+        "line_end": 283
       },
       "source_statement_tex": "\\begin{theorem}[Joint Realization of Transport and Controlled Readouts]\\label{thm:joint-transport-readout}\nUse circle-prefix stages $S_t=\\mathbb T\\times\\{0,1\\}^t$, stage metric $\\max(\\rho,\\mathbf{1}_{\\text{different prefix}})$, and weights $w_t=3^{-t}$, where $\\rho$ is circle distance with circumference one. Take the usual truncation tower $I_0$ and its variant $I_1$ with angle shift $-a$ at the single bonding level $k$, for $0<a<1/2$. Write $\\beta=3^{-(k+1)}$. In the common weighted history space put $Z=I_0\\cup I_1$. Let the complete codomain be $\\mathcal E=\\mathbb T^2\\times[0,1]$ with the maximum of the first circle distance, $\\beta$ times the second circle distance, and the absolute scalar difference. Define\n\\[\n F(x)=\\left(\\theta_0(x),\\theta_{k+1}(x),\\sum_{j\\geq1}2b_j(x)3^{-j}\\right).\n\\]\nThen $d_w(x,y)\\leq d_{\\mathcal E}(F(x),F(y))\\leq3d_w(x,y)$ on all of $Z$. On each tower the restriction satisfies E0--E2 with $a_t=2\\cdot3^{-(t+1)}$ and uniform tail $A_t=3^{-t}$. The coordinate homeomorphism $H:I_0\\to I_1$ shifts angles at stages $t>k$ by $a$. With projection-defect cost $E_w=3^{-k}a$, one has\n\\[\n d_w(x,Hx)=d_{\\mathcal E}(F(x),F(Hx))=\\beta a,\\qquad\n d_H(I_0,I_1)=\\frac{\\beta a}{1+\\beta}.\n\\]\n\\end{theorem}",
       "source_statement_sha256": "019e11c477313b16b0d140cb7da01bde801fc89ae139261453abe541bb0cf897",
@@ -1427,8 +1429,8 @@
       "label": "prop:readout-continuity-control",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 283,
-        "line_end": 285
+        "line_start": 295,
+        "line_end": 297
       },
       "source_statement_tex": "\\begin{proposition}[Setwise Invariance Does Not Supply Continuity]\\label{prop:readout-continuity-control}\nControlled E1 and E2 can hold for a discontinuous assignment, even if the identity domain is fixed under every declared intervention.\n\\end{proposition}",
       "source_statement_sha256": "039f3bdb23d517675c5ec390e5f60b2b6acbf799238be657d025305b0c5de3dc",
@@ -1458,8 +1460,8 @@
       "label": "prop:transport-control",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 295,
-        "line_end": 297
+        "line_start": 307,
+        "line_end": 309
       },
       "source_statement_tex": "\\begin{proposition}[Setwise and Pointwise Transport Are Distinct]\\label{prop:transport-control}\nPreserving an identity domain as a set does not guarantee equal values of a common readout on transported states.\n\\end{proposition}",
       "source_statement_sha256": "a997420c5cb54665aa19544feaa28b95a03a913d6e9626c4beee896f3dea3bbd",
@@ -1490,8 +1492,8 @@
       "label": "thm:h3-necessary",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 327,
-        "line_end": 329
+        "line_start": 337,
+        "line_end": 339
       },
       "source_statement_tex": "\\begin{theorem}[Metric Data Required by Quantitative Formulas]\\label{thm:h3-necessary}\nThe distance-based fragmentation and loss functionals used here require a declared metric, or a pseudometric with a stated quotient convention. Topological continuity can be defined without a metric. Completeness is used for the Cauchy-limit guarantee of E1.\n\\end{theorem}",
       "source_statement_sha256": "5d4805774e031ed95ae14de845124b99cbf70eeadc4a2073b91ebfa940583155",
@@ -1522,8 +1524,8 @@
       "label": "prop:complete-necessary",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 337,
-        "line_end": 339
+        "line_start": 347,
+        "line_end": 349
       },
       "source_statement_tex": "\\begin{proposition}[Completeness and Existence of Limits]\\label{prop:complete-necessary}\nWithout completeness, the conclusion that every E1-type Cauchy family has its limit in the declared codomain can fail. Completeness is not necessary for a family whose limit is already known to belong to that codomain.\n\\end{proposition}",
       "source_statement_sha256": "88692a229bfebb39426d0f94d479e4e9f3c7f453eec75e754d47947497645fb1",
@@ -1553,16 +1555,16 @@
       "label": "prop:metric-compat",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 394,
-        "line_end": 400
+        "line_start": 404,
+        "line_end": 418
       },
-      "source_statement_tex": "\\begin{proposition}[Continuity from Controlled Finite Readouts]\\label{prop:metric-compat}\nWrite $g_n=\\phi_n\\circ p_n$. Under E1,\n\\[\nd_{\\mathcal E}(\\Phi(x),\\Phi(y))\\leq2A_n+d_{\\mathcal E}(g_n(x),g_n(y)).\n\\]\nIf every $g_n$ is continuous, then $\\Phi$ is continuous. If every $g_n$ is $L$-Lipschitz with a common $L$, then $\\Phi$ is $L$-Lipschitz.\n\\end{proposition}",
-      "source_statement_sha256": "1f8d28381aca1a59c2ed948db441d1a40942528ba1c086ab63dff0cc466e1368",
+      "source_statement_tex": "\\begin{proposition}[Continuity from Controlled Finite Readouts]\\label{prop:metric-compat}\nWrite $g_n=\\phi_n\\circ p_n$. Under E1,\n\\[\nd_{\\mathcal E}(\\Phi(x),\\Phi(y))\\leq2A_n+d_{\\mathcal E}(g_n(x),g_n(y)).\n\\]\nContinuous $g_n$ give a continuous $\\Phi$; a common $L$-Lipschitz bound gives\nthe same bound for $\\Phi$. On a compact metric history domain, put\n\\[\n \\omega_n(r)=\\sup_{d_w(x,y)\\leq r}d_{\\mathcal E}(g_n(x),g_n(y)),\\qquad\n \\omega(r)=\\inf_n\\{2A_n+\\omega_n(r)\\}.\n\\]\nIf the $g_n$ are continuous, $\\omega$ is a finite nondecreasing modulus tending\nto zero at zero and bounds the limiting readout uniformly. No common\nLipschitz constant for the finite readouts is required for this conclusion.\n\\end{proposition}",
+      "source_statement_sha256": "8965d8dd6bb3ce8412cdacf45890b73db0e84efdd71b9063ad13ccf8dab7fcd4",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -1584,8 +1586,8 @@
       "label": "thm:fragmentation",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 446,
-        "line_end": 452
+        "line_start": 470,
+        "line_end": 476
       },
       "source_statement_tex": "\\begin{theorem}[Fragmentation under an Audited Displacement]\\label{thm:fragmentation}\nLet an assignment satisfy E0--E2. Assume the positive-displacement branch of Hypothesis~\\ref{hyp:audited-comparison} and a lower Lipschitz constant $C>0$ for $F$ on its common comparison domain. Then, for the witnessing pair,\n\\[\nd_{\\mathcal E}(\\Phi(x),\\Phi_\\varepsilon(h_\\varepsilon x))\\geq C d_Z(x,h_\\varepsilon x)>0.\n\\]\nThus the assignment is fragmentable. This applies to a finite-$M_\\Omega$ model when that model supplies the stated comparison data.\n\\end{theorem}",
       "source_statement_sha256": "27b3883f7fa17492b91784ae9e155f2fa05df9e27702ecfd6d0301c468eb1079",
@@ -1617,8 +1619,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 458,
-        "line_end": 460
+        "line_start": 482,
+        "line_end": 484
       },
       "source_statement_tex": "\\begin{corollary}[Fragmentability and Continuity Are Distinct]\nThe positive-displacement conclusion does not establish a topological discontinuity. A continuous assignment may be fragmentable under a state-changing intervention.\n\\end{corollary}",
       "source_statement_sha256": "1206e5913f11edbd67df764d06bbf21364ba0434a96f239c65abdceaae915bfe",
@@ -1648,8 +1650,8 @@
       "label": "thm:forced-continuity",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 468,
-        "line_end": 475
+        "line_start": 492,
+        "line_end": 499
       },
       "source_statement_tex": "\\begin{theorem}[Continuity and Conditional Perturbation Invariance]\\label{thm:forced-continuity}\nUnder E1, if each finite readout $g_n=\\phi_n\\circ p_n$ is continuous, then $\\Phi$ is continuous, irrespective of $M_\\Omega$. Under the zero-displacement branch of Hypothesis~\\ref{hyp:audited-comparison},\n\\[\n\\Phi_\\varepsilon(h_\\varepsilon x)=\\Phi(x)\n\\qquad(\\varepsilon\\in\\mathcal V,\\ x\\in\\mathcal I).\n\\]\nFor a CCR model the invariance conclusion therefore holds when its finite-cost interventions admit that branch. CCR alone is not a proof of continuity or of readout naturality.\n\\end{theorem}",
       "source_statement_sha256": "92db44353b293f47b7130886172dcfc7d974d734e168b0eeb185470a295ad66d",
@@ -1683,8 +1685,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 481,
-        "line_end": 483
+        "line_start": 505,
+        "line_end": 507
       },
       "source_statement_tex": "\\begin{corollary}[Invariance on the Audited Zero-Displacement Branch]\nA CCR model satisfying the zero-displacement comparison hypothesis has invariant assignment values under all interventions in its declared finite-cost class.\n\\end{corollary}",
       "source_statement_sha256": "93e176ac5f0b33076ebab4ab41213259170baecf28eb2f2c8c6e38c79c3ac73c",
@@ -1717,8 +1719,8 @@
       "label": "thm:dichotomy",
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 491,
-        "line_end": 493
+        "line_start": 515,
+        "line_end": 517
       },
       "source_statement_tex": "\\begin{theorem}[Conditional Classification by Audited Branches]\\label{thm:dichotomy}\nSuppose a model supplies the positive-displacement branch and lower bound whenever $M_\\Omega<\\infty$, and supplies continuous finite readouts and the zero-displacement branch whenever $M_\\Omega=+\\infty$. Then its finite regime is fragmentable and its infinite regime has a continuous, perturbation-invariant assignment. The mass cases are exclusive; fragmentability and topological continuity need not be exclusive properties.\n\\end{theorem}",
       "source_statement_sha256": "c4b70ec8ce0db101a8e33606d3c696a2639c950cd0a919d33d5b8f0e841fa05e",
@@ -1752,8 +1754,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 524,
-        "line_end": 526
+        "line_start": 548,
+        "line_end": 550
       },
       "source_statement_tex": "\\begin{proposition}[The Mass Label Does Not Define Assignment Existence]\nFor fixed identity domain, codomain and readout family, the class defined by E0--E2 is independent of a numerical label $M_\\Omega$. A claim that $M_\\Omega=0$ excludes assignments needs an additional link to the domain or admissible readouts.\n\\end{proposition}",
       "source_statement_sha256": "5c703aa68cbcdb255848643208aa674fda777f87fa7e40fd928bcab5930e207b",
@@ -1783,8 +1785,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 532,
-        "line_end": 534
+        "line_start": 556,
+        "line_end": 558
       },
       "source_statement_tex": "\\begin{proposition}[Deformable Branch with Comparison Data]\nFor $0<M_\\Omega<\\infty$, the positive-displacement and lower-bound hypotheses of Theorem~\\ref{thm:fragmentation} imply fragmentability.\n\\end{proposition}",
       "source_statement_sha256": "c6ea84f8eda5f815bb3360db9c88be00a0e16d07bfe5785f1015114a1b25cada",
@@ -1816,8 +1818,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 540,
-        "line_end": 542
+        "line_start": 564,
+        "line_end": 566
       },
       "source_statement_tex": "\\begin{proposition}[Rigid Branch with Comparison Data]\nFor $M_\\Omega=+\\infty$, continuous finite readouts under E1 imply continuity, and the zero-displacement branch implies perturbation invariance. These are the respective hypotheses of Theorem~\\ref{thm:forced-continuity}.\n\\end{proposition}",
       "source_statement_sha256": "e1686b9e7b1e2539820f835cd99c0c42a1f1be65928a66abdb7823e66e38d300",
@@ -1849,8 +1851,8 @@
       "label": null,
       "source": {
         "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-        "line_start": 564,
-        "line_end": 566
+        "line_start": 588,
+        "line_end": 590
       },
       "source_statement_tex": "\\begin{lemma}[Inheritance under Audited Fixed Transport]\nAn assignment satisfying the zero-displacement comparison branch inherits invariance under that declared intervention class. This applies to CCR realizations only after checking that branch.\n\\end{lemma}",
       "source_statement_sha256": "a76000167560d2f75979576289471c83905608d690ec095e99cbf7f89a4c4057",
@@ -2134,15 +2136,15 @@
       "source": {
         "file": "basecore/core/sections/05_null_regime_absorbed.tex",
         "line_start": 107,
-        "line_end": 109
+        "line_end": 117
       },
-      "source_statement_tex": "\\begin{theorem}[Rigidity Inheritance]\\label{thm:rigidity-inheritance}\nFor $\\Phi'=b\\circ\\Phi\\circ a$, lower constants $c_a$ for $a$, $C$ for $\\Phi$ on the mapped pairs and $c_b$ for $b$ give lower constant $c_ac_bC$. CCR inheritance separately requires every new finite-cost positive deformation to pull back to one in the old sector. Summability alone proves neither statement.\n\\end{theorem}",
-      "source_statement_sha256": "1fe898d7525590d1360d1bdaf96555383de31391dea10d04876ba0ba4839ea3d",
-      "source_epistemic_status": "conjectural",
+      "source_statement_tex": "\\begin{theorem}[Rigidity Inheritance]\\label{thm:rigidity-inheritance}\nLet $a:Z'\\to Z$, $\\Phi:Z\\to\\mathcal E$ and $b:\\mathcal E\\to\\mathcal E'$\nbe maps between declared metric domains, and set $\\Phi'=b\\circ\\Phi\\circ a$.\nOn a specified pair class $W'$, assume positive lower constants $c_a,C,c_b$\nfor $a$, $\\Phi$ on the mapped pairs and $b$ on the resulting image pairs.\nThen $\\Phi'$ has lower constant $c_ac_bC$ on $W'$.\nIndependently, suppose every admitted new finite-cost positive deformation\npulls back to an admitted old finite-cost positive deformation. Infinite\nresistance of the old sector then implies infinite resistance of the new one.\nTransport of a null anchor additionally requires $b(\\nullphi)=\\nullphi'$.\n\\end{theorem}",
+      "source_statement_sha256": "cb8e33abb1298052b217fe6a081b4bf755c7ce6a92812ee7278205aacd499d15",
+      "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -2164,16 +2166,16 @@
       "label": "thm:null-categorical-universality",
       "source": {
         "file": "basecore/core/sections/05_null_regime_absorbed.tex",
-        "line_start": 114,
-        "line_end": 116
+        "line_start": 132,
+        "line_end": 138
       },
-      "source_statement_tex": "\\begin{theorem}[Factorization on a Faithful Image]\\label{thm:null-categorical-universality}\nIf $\\Phi:Z\\to\\E$ has a positive global lower bound, then every map $\\Psi:Z\\to F$ factors uniquely through $\\Phi(Z)$. If $\\Psi$ is $L$-Lipschitz, the factor is $L/C$-Lipschitz. No unique extension to the whole ambient $\\E$ is implied.\n\\end{theorem}",
-      "source_statement_sha256": "00e3be4c51b9051f751e9181c52cb140fc10d49729ca734e38a2bcb0b83691fa",
-      "source_epistemic_status": "conjectural",
+      "source_statement_tex": "\\begin{theorem}[Factorization on a Faithful Image]\\label{thm:null-categorical-universality}\nLet $\\Phi:Z\\to\\mathcal E$ have a global lower metric bound $C>0$.\nFor every map $\\Psi:Z\\to F$ there is a unique $u:\\Phi(Z)\\to F$ satisfying\n$u\\circ\\Phi=\\Psi$, with $\\Phi$ regarded as a map onto its image.\nIf $F$ is metric and $\\Psi$ is $L$-Lipschitz, $u$ is $L/C$-Lipschitz\nfor the subspace metric. No extension or uniqueness outside $\\Phi(Z)$ is implied.\n\\end{theorem}",
+      "source_statement_sha256": "0dbe5a94f3172a72083fd99df85b2fd40f2661e3915d03cfda5c9336ea87be2a",
+      "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -2195,16 +2197,16 @@
       "label": "thm:null-simulation-lower-bound",
       "source": {
         "file": "basecore/core/sections/05_null_regime_absorbed.tex",
-        "line_start": 121,
-        "line_end": 123
+        "line_start": 150,
+        "line_end": 159
       },
-      "source_statement_tex": "\\begin{theorem}[Finite-Prefix Simulation Bound]\\label{thm:null-simulation-lower-bound}\nFor $F(b)=\\sum_{j\\geq0}2b_j/3^{j+1}$ and a decoder observing only bits $0,\\ldots,N$, the optimal worst-case scalar error is $1/(2\\,3^{N+1})$. It is positive for every fixed prefix and tends to zero with growing budget. The conclusion concerns prefix information, not finite real dimension.\n\\end{theorem}",
-      "source_statement_sha256": "04fbf14cf9fe3f3cdd5e56fd0dbce043bb3d9785d1215f714217ecfd85889058",
-      "source_epistemic_status": "conjectural",
+      "source_statement_tex": "\\begin{theorem}[Finite-Prefix Simulation Bound]\\label{thm:null-simulation-lower-bound}\nLet $F(b)=\\sum_{j\\geq0}2b_j/3^{j+1}$ on the full binary-history space.\nFor a decoder $g$ observing exactly bits $0,\\ldots,N$, $N\\geq0$, the sharp\nminimax scalar error is\n\\[\n \\inf_g\\sup_b|F(b)-g(b_0,\\ldots,b_N)|=\\frac1{2\\,3^{N+1}}.\n\\]\nThis positive fixed-prefix bound tends to zero with increasing budget and\ndoes not concern finite real dimension without a precision constraint.\n\\end{theorem}",
+      "source_statement_sha256": "ef3329b5b969c9129c4f219d534dbff9bc733af55e7637314a90fa09d038320a",
+      "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -2227,18 +2229,25 @@
       "label": "thm:null-closure-by-non-alternatives",
       "source": {
         "file": "basecore/core/sections/05_null_regime_absorbed.tex",
-        "line_start": 128,
-        "line_end": 130
+        "line_start": 169,
+        "line_end": 179
       },
-      "source_statement_tex": "\\begin{theorem}[Conditional Closure by Non-Alternatives]\\label{thm:null-closure-by-non-alternatives}\nAny alternative model satisfying the same declared pair, lower-bound, anchor and transport hypotheses obeys the corresponding preceding conclusions. The program of realizing these properties jointly with an infinite-mass intervention model remains open; pair separation is not a proof of an individual null state's dynamical instability.\n\\end{theorem}",
-      "source_statement_sha256": "e8a49175c79cf49ecfa548dca881fe2e381204fc14ee85acebd7959b427d09bd",
-      "source_epistemic_status": "conjectural",
+      "source_statement_tex": "\\begin{theorem}[Conditional Closure by Non-Alternatives]\\label{thm:null-closure-by-non-alternatives}\nEvery model with a defined pair of distance $\\epsilon>0$ and readout lower\nconstant $C>0$ obeys joint null exclusion, has a nonempty finite positive\nwitness image with a minimal element, and satisfies\n$\\max_i\\dE(\\Phi(z_i),\\nullphi)\\geq C\\epsilon/2$.\nA null anchor gives a unique positive witness value with relative gap at least\n$C\\epsilon$. Additional models satisfy these same conclusions only after\nsupplying the same typed hypotheses; transport uses the preceding lower-bound\nand sector-pullback conditions. This is a conditional closure, not an existence\nor physical-admissibility theorem for arbitrary alternative models.\n\\end{theorem}",
+      "source_statement_sha256": "6a80d8fdd935505b00110b268a2eb7d3d3f7baa62a92c3baa9047b74b8f5880b",
+      "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
-      "target_dependency_ids": [],
-      "other_registry_dependency_ids": [],
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
+      "target_dependency_ids": [
+        "basecore:theorem:thm-minimal-positive-regime",
+        "basecore:theorem:thm-phenomenological-instability",
+        "basecore:theorem:thm-rigidity-inheritance",
+        "basecore:theorem:thm-universal-intensity-bound"
+      ],
+      "other_registry_dependency_ids": [
+        "basecore:example:ex-joint-external-null-witness"
+      ],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
         "Mathlib.Topology.Constructions",
@@ -2388,13 +2397,13 @@
         "line_start": 220,
         "line_end": 222
       },
-      "source_statement_tex": "\\begin{proposition}[Each invariant is individually necessary]\\label{prop:invariant-necessity}\nIf any one of $\\Iper,\\Iri,\\Iint,\\Icont,\\Idiff,\\Ileg$ fails, then $S\\notin\\Critop$.\n\\end{proposition}",
-      "source_statement_sha256": "42e34ed161deb573a9e1eb0872088843ee3cf7828c5a3192dbc8f3da3301e0e4",
+      "source_statement_tex": "\\begin{proposition}[Each invariant is individually necessary]\\label{prop:invariant-necessity}\nIf any one of $\\Iper,\\allowbreak \\Iri,\\allowbreak \\Iint,\\allowbreak \\Icont,\\allowbreak \\Idiff,\\allowbreak \\Ileg$ fails, then $S\\notin\\Critop$.\n\\end{proposition}",
+      "source_statement_sha256": "4226cab63f2dfb11e1318ea6ca7331103f58cb29e1322b038256d2db7f6dc441",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [
         "basecore:definition:def-cop"
@@ -2622,16 +2631,16 @@
       "label": "prop:integrity-first",
       "source": {
         "file": "basecore/core/sections/08_claim_boundary_and_falsation.tex",
-        "line_start": 24,
-        "line_end": 26
+        "line_start": 27,
+        "line_end": 33
       },
-      "source_statement_tex": "\\begin{proposition}[Integrity-first inference]\\label{prop:integrity-first}\nIf admissibility fails, inferential significance is non-actionable.\n\\end{proposition}",
-      "source_statement_sha256": "f204ef5740ae8e18dfbb2fee3b42fee45ea259388374419d317397380c7fe834",
+      "source_statement_tex": "\\begin{proposition}[Integrity-first inference]\\label{prop:integrity-first}\nLet an actionable decision use the rule\n$A(K,p)=a(K)\\mathbf1_{\\{p\\leq\\alpha\\}}$, with a declared threshold $\\alpha$,\nand let a run contribute support only through\n$a(K)\\mathbf1_{\\{\\text{support condition}\\}}$. If any required admissibility\ncheck fails, both contributions are zero, regardless of $p$.\n\\end{proposition}",
+      "source_statement_sha256": "e5b254c9299070163bf48379be0939ee3b272a52bd19bb06b897513929e6b0d5",
       "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -2653,18 +2662,20 @@
       "label": "prop:complexity-only-negative-control",
       "source": {
         "file": "basecore/core/sections/08_claim_boundary_and_falsation.tex",
-        "line_start": 52,
-        "line_end": 61
+        "line_start": 71,
+        "line_end": 81
       },
-      "source_statement_tex": "\\begin{proposition}[Complexity-only negative control prediction]\\label{prop:complexity-only-negative-control}\nIf a candidate exhibits high connectivity, high entropy, or rich activity but no admissible support realizes all required critical witnesses together, then\n\\[\n\\operatorname{CertFlag}(S)=0,\n\\qquad\nS\\notin\\Critop\\text{ in certified form},\n\\qquad\n\\Partop(S)\\text{ is not certified}.\n\\]\n\\end{proposition}",
-      "source_statement_sha256": "15b3a0b9329bfb0e85e6cd440e61d1c19a8a691594b95635e300b8cec2284f8e",
+      "source_statement_tex": "\\begin{proposition}[Complexity-only negative control prediction]\\label{prop:complexity-only-negative-control}\nSuppose that for every admissible support at least one of the six required\npredicates fails, so no common support realizes their conjunction. Then\n\\[\n \\operatorname{CertFlag}(S)=0,\\qquad\n S\\notin\\Critop,\\qquad \\Partop(S)\\text{ is not certified}.\n\\]\nHigh connectivity, entropy or activity alone does not replace that conjunction.\nThe hypothesis is universal nonexistence, not failure to find a support in a\nfinite search.\n\\end{proposition}",
+      "source_statement_sha256": "b8176dce86e8f0b4496eef0a2bec21e021e59aae61ab36b060d05eca8ea12a3b",
       "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [],
-      "other_registry_dependency_ids": [],
+      "other_registry_dependency_ids": [
+        "basecore:definition:def-operational-certification"
+      ],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
         "Mathlib.Logic.Function.Basic"
@@ -2684,16 +2695,16 @@
       "label": "prop:ablation-prediction",
       "source": {
         "file": "basecore/core/sections/08_claim_boundary_and_falsation.tex",
-        "line_start": 63,
-        "line_end": 65
+        "line_start": 91,
+        "line_end": 96
       },
-      "source_statement_tex": "\\begin{proposition}[Ablation prediction]\\label{prop:ablation-prediction}\nIf an intervention destroys a required witness on the certified support, that certificate loses validity. Excluding a replacement certificate on a different support requires checking that support as well.\n\\end{proposition}",
-      "source_statement_sha256": "ab2d09ab9e3af35ff5f6708e52eaf8abba1db66cd305d60b5c14cdc088fc31f8",
+      "source_statement_tex": "\\begin{proposition}[Ablation prediction]\\label{prop:ablation-prediction}\nLet $c$ be a fixed certificate with its stored support, witnesses and margins.\nIf an intervention makes a required obligation false for the transported tuple,\nthat tuple is no longer a valid certificate. This does not exclude replacement\nwitnesses on the same support or a replacement certificate on another support.\n\\end{proposition}",
+      "source_statement_sha256": "9ab9eb88b9311c7f2ae76cc57f221bb2830ee78e004eda48f9770097f40805ce",
       "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -2716,18 +2727,20 @@
       "label": "prop:grammar-transport-prediction",
       "source": {
         "file": "basecore/core/sections/08_claim_boundary_and_falsation.tex",
-        "line_start": 67,
-        "line_end": 69
+        "line_start": 105,
+        "line_end": 115
       },
-      "source_statement_tex": "\\begin{proposition}[Exact grammar-transport prediction]\\label{prop:grammar-transport-prediction}\nIf two realizations preserve the relevant signatures, admissibility conditions, decoder behavior, and six critical invariants up to the allowed comparison regime, then the framework predicts preserved BaseCore criterion membership.\n\\end{proposition}",
-      "source_statement_sha256": "76da28286fa7a4dbedf230ec63a88feb8ea71221611085bf5e02e1bbc1c98036",
+      "source_statement_tex": "\\begin{proposition}[Exact grammar-transport prediction]\\label{prop:grammar-transport-prediction}\nSuppose a bijection of state spaces and inverse transport preserve the complete\ncertificate data: dynamics and time windows, admissible supports, attractors\nand collapse sets, intervention/cost classes, identity comparison metrics,\nfactorization and decoder classes, readout distances and noise domains,\nand the probability laws of the declared target/control populations.\nThen valid certificates transport in both directions and criterion membership\nis equivalent. For an approximate transport, a given certificate persists if\nthe error is smaller than all its certified radii in the same perturbation\nmetric and all remaining discrete admissibility data are preserved.\n\\end{proposition}",
+      "source_statement_sha256": "ce11560d0a443ccfae6ba83b923a51b346701da218e12549217997599d06a330",
       "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
       "target_dependency_ids": [],
-      "other_registry_dependency_ids": [],
+      "other_registry_dependency_ids": [
+        "basecore:definition:def-margins"
+      ],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
         "Mathlib.Topology.Constructions",
@@ -2748,16 +2761,16 @@
       "label": "prop:threshold-sensitive-boundary",
       "source": {
         "file": "basecore/core/sections/08_claim_boundary_and_falsation.tex",
-        "line_start": 71,
-        "line_end": 73
+        "line_start": 132,
+        "line_end": 147
       },
-      "source_statement_tex": "\\begin{proposition}[Threshold-sensitive boundary behavior]\\label{prop:threshold-sensitive-boundary}\nThe framework predicts stable pass/fail regions together with narrow transition bands near critical margins. It predicts neither global threshold collapse nor perfect flat insensitivity.\n\\end{proposition}",
-      "source_statement_sha256": "40baf9a682762bcf8cf4daa9823a1e3758fbf341e42424d2e51612b1d58dfbfa",
+      "source_statement_tex": "\\begin{proposition}[Threshold-sensitive boundary behavior]\\label{prop:threshold-sensitive-boundary}\nOn a fixed admissible parameter patch, suppose a candidate certificate's\nrequired tests are represented exactly by six signed margins $m_i(\\lambda)>0$,\nand the other admissibility data remain fixed. If each margin is\n$L_i$-Lipschitz, write $L=\\max_iL_i$ and $m=\\min_i m_i$.\nA perturbation of parameter distance at most $r$ preserves a pass where\n$m>Lr$ and a failure of that candidate where $m<-Lr$.\nFor a scalar threshold parameter with $m(\\lambda_*)=0$ and\n$|m(\\lambda)|\\geq s|\\lambda-\\lambda_*|$, $s>0$, measurement error $\\eta$\nand parameter error $r$ confine ambiguity to\n\\[\n |\\lambda-\\lambda_*|\\leq(\\eta+Lr)/s.\n\\]\nThus a band-width bound requires an explicit transversal lower slope;\nno universal narrow band follows without it.\n\\end{proposition}",
+      "source_statement_sha256": "7e1da7640c8d21d11dec4cd2a74bf21a33f701b79cf869b54d4666945999b42b",
       "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -2780,18 +2793,20 @@
       "label": "prop:legibility-dependence",
       "source": {
         "file": "basecore/core/sections/08_claim_boundary_and_falsation.tex",
-        "line_start": 75,
-        "line_end": 77
+        "line_start": 160,
+        "line_end": 167
       },
-      "source_statement_tex": "\\begin{proposition}[Legibility dependence prediction]\\label{prop:legibility-dependence}\nCriterion membership becomes inadmissible if readouts cease to be separable, noise-robust, intervention-sensitive, or compressible without total collapse.\n\\end{proposition}",
-      "source_statement_sha256": "bc1658beaa4f65c024e31c5bad3a6a4adb7da3d5ee0c019685256651f8f4cd9d",
+      "source_statement_tex": "\\begin{proposition}[Legibility dependence prediction]\\label{prop:legibility-dependence}\nFailure of a required clause L1--L6 invalidates the particular legibility\ncertificate using that decoder, protocol and budget. Excluding legibility\naltogether requires failure for every admitted candidate.\nIn the uniform-distortion version of L6, if $M$ declared classes are pairwise\nat class-metric distance at least $\\sigma_C>0$, distortion below $\\sigma_C/2$\nwith an integer $B$-bit code requires $M\\leq2^B$.\n\\end{proposition}",
+      "source_statement_sha256": "359cf58e20789c22fa1b7d7f9d0bafac1d3e6d038573a3068fee332d8359c3c6",
       "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
       "target_dependency_ids": [],
-      "other_registry_dependency_ids": [],
+      "other_registry_dependency_ids": [
+        "basecore:definition:def-ileg"
+      ],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
         "Mathlib.Order.Filter.Basic",
@@ -2812,18 +2827,20 @@
       "label": "prop:continuity-nonnull-relevance",
       "source": {
         "file": "basecore/core/sections/08_claim_boundary_and_falsation.tex",
-        "line_start": 79,
-        "line_end": 81
+        "line_start": 177,
+        "line_end": 184
       },
-      "source_statement_tex": "\\begin{proposition}[Continuity and non-null relevance]\\label{prop:continuity-nonnull-relevance}\nRegime continuity and non-null differentiation are constitutive. Systems that preserve rich activity while losing continuity or collapsing toward effective null structure fail the operational criterion or leave it undefined.\n\\end{proposition}",
-      "source_statement_sha256": "dbb010fd95a2e1532a92d0a696b1f825099c42e6da83fca7fe6cd0dbf43857fc",
+      "source_statement_tex": "\\begin{proposition}[Continuity and non-null relevance]\\label{prop:continuity-nonnull-relevance}\nFailure of $\\Icont$ or $\\Idiff$ excludes the operational criterion. In\nparticular $\\Idiff$ fails if every admitted differentiation comparison has\nzero history separation, or if the null class is an asymptotically stable\nadmissible attractor. Falling below a stored positive margin invalidates that\ncertificate; merely tending toward zero does not imply failure at a finite\nparameter value or exclude recertification at a smaller positive margin.\n\\end{proposition}",
+      "source_statement_sha256": "5dba1a8c8c7e79f4d2d4e5aab3b8c5873bd7f61c7b2e2b9ac8f9e1b416048fc0",
       "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Formalize the actual plant/support, all conjunctive predicates, decoder/rival grammar, information and cost contract. Existing finite calculations must be linked to the full same-system certificate before exact coverage is claimed.",
       "target_dependency_ids": [],
-      "other_registry_dependency_ids": [],
+      "other_registry_dependency_ids": [
+        "basecore:definition:def-idiff"
+      ],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
         "Mathlib.Order.Filter.Basic",
@@ -3049,8 +3066,8 @@
       "label": "thm:projective-dissipation",
       "source": {
         "file": "basecore/core/sections/11_discrete_bridge.tex",
-        "line_start": 266,
-        "line_end": 272
+        "line_start": 393,
+        "line_end": 399
       },
       "source_statement_tex": "\\begin{theorem}[Contractive Projective Evolution and Equilibrium Transport]\\label{thm:projective-dissipation}\nThe stage maps commute with their bonding maps and with the existing transport $h_t$ between towers. At fixed $u$, the map $D_{s,u}$ has sharp Lipschitz constant $1/3$ on $I_s$ in $d_w$. Its unique fixed history $x^\\ast_{s,u}$ has initial angle $u$ and binary sequence $0101\\ldots$. For $n\\geq 0$ its orbit satisfies\n\\[\n d_w(D_{s,u}^{\\,n}x,x^\\ast_{s,u})\\leq 3^{-n}d_w(x,x^\\ast_{s,u}).\n\\]\nThe existing transport $H$ conjugates the two evolutions and sends $x^\\ast_{0,u}$ to $x^\\ast_{1,u}$. Their $d_w$ and common readout distances are both $\\beta_k a$. The finite readouts retain E0--E2 on each history domain, with the original uniform tail $3^{-t}$.\n\\end{theorem}",
       "source_statement_sha256": "26fd4f5cfa68da80a41126b306d817a8f3fedd080bc7cc918ad3deef130a0ff9",
@@ -3083,8 +3100,8 @@
       "label": "thm:hilbert-projective-dissipation",
       "source": {
         "file": "basecore/core/sections/11_discrete_bridge.tex",
-        "line_start": 280,
-        "line_end": 288
+        "line_start": 407,
+        "line_end": 415
       },
       "source_statement_tex": "\\begin{theorem}[Hilbert Realization of the Projective Dissipation]\\label{thm:hilbert-projective-dissipation}\nThe circle-prefix evolutions above embed into the BaseCore projected dynamics on $L^2([0,1])$ with $C=\\{0\\leq f\\leq1\\text{ a.e.}\\}$, $\\|K\\|=1/3$, and compact parameter space $\\{0,1\\}\\times\\mathbb T$. The embedding is bi-Lipschitz on $I_0\\cup I_1$ for fixed $k$. The equilibrium profiles $f^\\ast_{s,u}$ satisfy\n\\[\n \\inf_{s,u}\\operatorname{dist}(f^\\ast_{s,u},\\mathcal N)\\geq\\sqrt{2/45},\n\\]\nwhere $\\mathcal N$ is the subspace of constant $L^2$ functions. Thus H5 follows for this family.\n\nAt depth $t$ let $Q_t$ be the orthogonal projection onto the retained profile cells, with zero tail. The realized finite map has $N_t=8\\cdot 9^t$ equal-mesh nodes and its embedded update is $Q_tT_{s,u}$. It commutes with restriction in the sense $Q_tT_{s,u}=Q_tT_{s,u}Q_t$ on $C$. Its uniform one-step discrepancy on $C$ is at most $3^{-t}/\\sqrt{2}$, with equality for $t\\geq1$. Its fixed point is $Q_tf^\\ast_{s,u}$, with error at most the same bound. Starting the finite evolution at $Q_tf_0$ gives this bound at every iteration $n\\geq1$ relative to the orbit from $f_0$.\n\\end{theorem}",
       "source_statement_sha256": "a9d5b3e9bca9047cc8dff098562b1d2b704d79a973c16d651504a4ae3a85def7",
@@ -4795,7 +4812,9 @@
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
       "fidelity_notes": "Encode the entire inverse system and product-subspace topology; prove compatibility, all-stage quantifiers and the claimed continuity/separation. A finite prefix, chosen lift or algebraic square is not the general topological statement.",
-      "target_dependency_ids": [],
+      "target_dependency_ids": [
+        "paper1:theorem:thm-rigidity"
+      ],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
@@ -4817,20 +4836,22 @@
       "label": null,
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 450,
-        "line_end": 452
+        "line_start": 475,
+        "line_end": 481
       },
-      "source_statement_tex": "\\begin{proposition}[Relation to Rigidity]\nInterpret $d_w(\\mathcal I,\\widetilde{\\mathcal I})$ in the mass ratio as the Hausdorff distance in the common weighted history space. If for every admissible intervention of finite cost the hypotheses of Lemma~\\ref{lem:stability} hold with a common $C$ and $D_w\\leq A E_w$ for a common $A>0$, then $M_\\Omega\\geq 1/(CA)$. A single admissible finite-cost intervention with positive deformation proves $M_\\Omega<+\\infty$. If none exists, then $M_\\Omega=+\\infty$.\n\\end{proposition}",
-      "source_statement_sha256": "480e0da094f9e9f0b969e5afee4cedd237482e98a4259698c3325d854b1d0acc",
+      "source_statement_tex": "\\begin{proposition}[Relation to Rigidity]\nUse Definition~\\ref{def:ontmass}, including its common Hausdorff metric component.\nSuppose all admitted finite-cost interventions satisfy Lemma~\\ref{lem:stability}\nwith one $C>0$ and $D_w\\leq A E_w$ with one $A>0$. Then\n$M_\\Omega\\geq1/(CA)$. One admitted finite-cost positive deformation implies\n$M_\\Omega<\\infty$; if no such deformation exists, $M_\\Omega=+\\infty$.\n\\end{proposition}",
+      "source_statement_sha256": "fa095c40b697daa3a3bb4be1671d4b11d6d3ac93615f19e6ca27e7131e4ce912",
       "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Define the declared weighted/sector metric, admissible transports and all infinite-tail/coercivity bounds; finite ordered inequalities alone do not establish topology, completeness or a global factorization gap.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Define the declared weighted/sector metric, admissible transports and all infinite-tail/coercivity bounds; finite ordered inequalities alone do not establish topology, completeness or a global factorization gap.",
       "target_dependency_ids": [
         "paper1:lemma:lem-stability"
       ],
-      "other_registry_dependency_ids": [],
+      "other_registry_dependency_ids": [
+        "paper1:definition:def-ontmass"
+      ],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
         "Mathlib.Topology.MetricSpace.Basic",
@@ -4851,8 +4872,8 @@
       "label": "thm:lml",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 461,
-        "line_end": 463
+        "line_start": 495,
+        "line_end": 497
       },
       "source_statement_tex": "\\begin{theorem}[Finite Resistance Requires an Admitted Deformation Witness]\\label{thm:lml}\nIn a declared common metric space, finite resistance for a candidate of this class is equivalent to the existence of an admitted intervention of finite cost with positive Hausdorff deformation. Finite latent dimension and Lipschitz dynamics alone permit systems without such a witness.\n\\end{theorem}",
       "source_statement_sha256": "a859f503da2cc6668a3db9ef11e580dd1c8d448fb32df0a10efea3c9d7a09de8",
@@ -4883,8 +4904,8 @@
       "label": "thm:detectability",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 559,
-        "line_end": 561
+        "line_start": 593,
+        "line_end": 595
       },
       "source_statement_tex": "\\begin{theorem}[Finite Witnesses for Deformation Resistance]\\label{thm:detectability}\nAssume the specified intervention sector and common metric of Definition~\\ref{def:ontmass}. For any finite family of interventions of finite cost with exactly known Hausdorff distances, its infimum ratio is an upper bound on $M_\\Omega$. This infimum is finite exactly when the family contains a positive-deformation witness. Moreover $M_\\Omega<+\\infty$ exactly when the full sector contains such a finite-cost witness. Exhaustion by nested families gives convergence to $M_\\Omega$ if their union contains witnesses with ratios arbitrarily close to the sector infimum.\n\\end{theorem}",
       "source_statement_sha256": "7ad3eb46f571ebe0ff2e26092f4bbe40ab4fb72f142511614e4819213ca1766b",
@@ -4917,8 +4938,8 @@
       "label": "thm:spectral-coupling",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 580,
-        "line_end": 582
+        "line_start": 614,
+        "line_end": 616
       },
       "source_statement_tex": "\\begin{theorem}[Positive Separation at a Fixed Scale]\\label{thm:spectral-coupling}\nIf $\\mathcal I$ is a nonempty compact metric space and $T_\\Phi$ is continuous and injective, then $\\omega_T(r)>0$ at every scale in its domain. The infimum is attained.\n\\end{theorem}",
       "source_statement_sha256": "557e549e99759523d9dd55fe62b0d47cf3085e9bb75e1722c7325d351c768841",
@@ -4961,8 +4982,8 @@
       "label": "cor:spectral-derivation",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 587,
-        "line_end": 589
+        "line_start": 621,
+        "line_end": 623
       },
       "source_statement_tex": "\\begin{corollary}[Resolution and Coercivity]\\label{cor:spectral-derivation}\nIf each of two observed values has error at most $\\eta$ in $d_O$, then true separation in $d_w$ of at least $r$ gives measured separation at least $\\omega_T(r)-2\\eta$. A global linear bound requires a positive lower Lipschitz constant $c$, established or assumed for the stated domain.\n\\end{corollary}",
       "source_statement_sha256": "dba84658447ebd2e57594f34906fc8dd37959d42f251ead12a57136c472a2097",
@@ -4993,8 +5014,8 @@
       "label": "prop:causal-rigid",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 602,
-        "line_end": 604
+        "line_start": 636,
+        "line_end": 638
       },
       "source_statement_tex": "\\begin{proposition}[Observational Isolation Does Not Determine Interventional Invariance]\\label{prop:causal-rigid}\nEven $\\beth_q=1$ does not determine whether the state law is invariant under interventions on $Y$. With a structural model $X=f(Y,Z)$ and a fixed exogenous law for $Z$, the law under $\\mathrm{do}(Y=y)$ is the pushforward of that law by $f(y,\\cdot)$. Invariance of these laws on a specified intervention family requires equality of the corresponding pushforwards.\n\\end{proposition}",
       "source_statement_sha256": "17c7359007ef0d2701d0d8e268bb085ee6124d0e7282d9076525d80c860b925c",
@@ -5025,8 +5046,8 @@
       "label": "thm:uniqueness",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 653,
-        "line_end": 655
+        "line_start": 687,
+        "line_end": 689
       },
       "source_statement_tex": "\\begin{theorem}[Strong Uniqueness]\\label{thm:uniqueness}\nWithin one operating channel of Definition~\\ref{def:coexist}, at most one CCR identity assignment exists up to the declared zero-deformation equivalence, provided the connecting moves belong to that same CCR comparison sector. Two coexisting assignments therefore have $d_{\\mathrm{Id}}(\\mathcal I,\\mathcal J)=0$.\n\\end{theorem}",
       "source_statement_sha256": "d1cce5a968e2c237029295f52761beecee89e038164a257478131239ffb10be6",
@@ -5060,8 +5081,8 @@
       "label": "prop:product-clamp-certificate",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 683,
-        "line_end": 685
+        "line_start": 717,
+        "line_end": 719
       },
       "source_statement_tex": "\\begin{proposition}[A Checkable Nonempty Product Certificate]\\label{prop:product-clamp-certificate}\nSuppose the declared product sector uses isometries from $I$ onto products with the maximum metric, with $\\operatorname{diam}(B_P)\\ge d_0>0$. Suppose each factor clamp is realized by an admissible compatible intervention of cost at most $K$. Then the projections above and $\\delta_{\\rm atom}=d_0/2$ give a certificate. For a unit square with its coordinate product, a single admissible clamp $(x,y)\\mapsto(x,0)$ of cost one gives the sharper values $\\delta_{\\rm atom}=K=1$.\n\\end{proposition}",
       "source_statement_sha256": "f8d3663f581812d2382d2d7b6778f9d6aae9a462f2bcda7ca05e79db79acea0e",
@@ -5125,8 +5146,8 @@
       "label": "lem:cantor-product-obstruction",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 690,
-        "line_end": 696
+        "line_start": 724,
+        "line_end": 730
       },
       "source_statement_tex": "\\begin{lemma}[Cantor Product Obstruction to Unconditional Atomicity]\\label{lem:cantor-product-obstruction}\nLet $B=\\{0,1\\}^{\\mathbb N_{>0}}$ with its compact prefix topology and its canonical finite projections. Admit the maps $T_c(b)=b\\mathbin\\oplus c$ for $c\\in B$, with cost $\\sum_{j\\ge1}3^{-j}c_j$. Every map preserves the full inverse-limit support, so its resistance is infinite. Nevertheless,\n\\[\n b\\longmapsto((b_{2j-1})_{j\\ge1},(b_{2j})_{j\\ge1})\n\\]\nis a homeomorphism onto $B\\times B$. Both induced factor sectors also have infinite resistance. The retraction clause of Definition~\\ref{def:atomicity-certificate} fails for this flip sector.\n\\end{lemma}",
       "source_statement_sha256": "72ad1a24bc9d5dfba9371ebd6c2dcd5831cd962bcef4c075303238085c08d7ae",
@@ -5192,8 +5213,8 @@
       "label": "thm:cutpoint-product-atomicity",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 701,
-        "line_end": 707
+        "line_start": 735,
+        "line_end": 741
       },
       "source_statement_tex": "\\begin{theorem}[An Infinite-Dimensional Exact Product Obstruction]\\label{thm:cutpoint-product-atomicity}\nLet $Q=\\{z\\in\\ell^2:0\\le z_j\\le2^{-j}\\}$ and\n\\[\n W=(Q\\times\\{0\\})\\cup(\\{0\\}\\times Q)\\subset\\ell^2\\oplus\\ell^2.\n\\]\nThen $W$ is a compact connected support with infinite affine dimension and is not homeomorphic to a product of two non-singleton compact spaces. This is an exact topological obstruction; it does not assert a positive approximation gap against an unspecified closure of products.\n\\end{theorem}",
       "source_statement_sha256": "48711d8ad252a41a8c4b59237be745f76a5bb787054d8011acdf7f2df3bcf07e",
@@ -5223,8 +5244,8 @@
       "label": "cor:indivisible",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 715,
-        "line_end": 717
+        "line_start": 749,
+        "line_end": 751
       },
       "source_statement_tex": "\\begin{corollary}[Atomicity Conditional on a Factorization-to-Deformation Certificate]\\label{cor:indivisible}\nAssume a verified $\\mathrm{Cert}_{\\rm atom}(S)$ in the fixed product-comparison sector of Definition~\\ref{def:atomicity-certificate}. If $M_\\Omega=+\\infty$, there is no admitted nontrivial faithful factorization. With a finite uniform cost bound, the stronger quantitative implication is $M_\\Omega>K_{\\rm atom}/\\delta_{\\rm atom}\\Rightarrow\\mathcal A_{\\rm prod}=\\varnothing$. A statement about all products requires the sector to include every product structure under consideration.\n\\end{corollary}",
       "source_statement_sha256": "b87741e8e1aae6998e618b51100ad3b17aaad48ee7fcac3e5d1a045859de2089",
@@ -5294,8 +5315,8 @@
       "label": "cor:nodup",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 919,
-        "line_end": 921
+        "line_start": 953,
+        "line_end": 955
       },
       "source_statement_tex": "\\begin{corollary}[No Distinct Assignment by a Matched Finite-Cost Replication]\\label{cor:nodup}\nIn the connected comparison of Theorem~\\ref{thm:uniqueness}, an admitted finite-cost replication cannot produce an assignment at positive separating deformation distance. Copying an encoding or creating a different operating component is not excluded by this result.\n\\end{corollary}",
       "source_statement_sha256": "b8489f2dd352f65d963be2ce40663d8761f0d7f5ae238e16d60d28c9f7a402bd",
@@ -5327,8 +5348,8 @@
       "label": "prop:cardinality",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 928,
-        "line_end": 930
+        "line_start": 962,
+        "line_end": 964
       },
       "source_statement_tex": "\\begin{proposition}[Cardinality Bound]\\label{prop:cardinality}\nThe assignment $C\\mapsto[\\mathcal I_C]$ is well-defined and its image has cardinality at most $|\\mathfrak C|$. It is injective only if different components are separately known to carry different assignment classes.\n\\end{proposition}",
       "source_statement_sha256": "31f371b6fed2d51dd23ae854024b73f16dd3d91de5c384101845d40ac62b63bb",
@@ -5358,8 +5379,8 @@
       "label": "thm:noalt",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1104,
-        "line_end": 1106
+        "line_start": 1138,
+        "line_end": 1140
       },
       "source_statement_tex": "\\begin{theorem}[No--Alternative Representation]\\label{thm:noalt}\nLet $q_t:J\\to S_t$ be coherent: $\\pi_{t+1\\to t}q_{t+1}=q_t$. A faithful complete encoding means joint separation ($q_t(j)=q_t(k)$ for every $t$ implies $j=k$) and exhaustivity (every compatible history equals $(q_t(j))_t$ for some $j$). Then $Q(j)=(q_t(j))_t$ is the unique bijection $J\\to\\mathcal I$ commuting with cut evaluations. It is a topological isomorphism if $J$ is compact, $\\mathcal I$ Hausdorff, and all $q_t$ continuous.\n\\end{theorem}",
       "source_statement_sha256": "c4898c994ae955901b9c0197b6efed227ce7aeda5719afdce6ebd09ef935dca0",
@@ -5390,8 +5411,8 @@
       "label": "thm:collapse",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1113,
-        "line_end": 1115
+        "line_start": 1147,
+        "line_end": 1149
       },
       "source_statement_tex": "\\begin{theorem}[Collapse under Pure Progressive Causality]\\label{thm:collapse}\nSuppose $f_t:S_t\\to S_{t+1}$ satisfies $\\pi_{t+1\\to t}f_t=\\mathrm{id}_{S_t}$. Set $B_0=S_0$, $B_{t+1}=f_t(B_t)$ and restrict histories to $x_{t+1}=f_t(x_t)$. The restricted bonding map $B_{t+1}\\to B_t$ is bijective with inverse $f_t|_{B_t}$, and the orbital inverse limit is canonically bijective to $S_0$ (homeomorphic for continuous maps on compact Hausdorff stages). The original unrestricted limit need not collapse.\n\\end{theorem}",
       "source_statement_sha256": "c1d39741ddaf204fac6f4d750cf17d44b3f8ef9316cf35bda1425c6173e60e0e",
@@ -5422,8 +5443,8 @@
       "label": null,
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1128,
-        "line_end": 1130
+        "line_start": 1162,
+        "line_end": 1164
       },
       "source_statement_tex": "\\begin{corollary}[Necessity of Retroinduction]\nBreaking purely progressive causality is necessary under the non-degeneracy condition. Minimal retroinduction is structurally required within that model class.\n\\end{corollary}",
       "source_statement_sha256": "9673f35de81c40e45cf7973b0b7b58a9422f6403e1e3908c36e5ccb30ec7028b",
@@ -5453,8 +5474,8 @@
       "label": "thm:aleph-unique",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1148,
-        "line_end": 1150
+        "line_start": 1182,
+        "line_end": 1184
       },
       "source_statement_tex": "\\begin{theorem}[Existence of Minimizers and Conditional Uniqueness of $\\aleph$]\\label{thm:aleph-unique}\nFor a nonempty inverse limit of compact metric stages with continuous bonding maps and the diameter-sum condition above, the objective $d(\\Phi,\\Psi)$ attains its minimum over $\\mathcal I$ for every ambient product point $\\Psi$. If $\\mathcal I$ is convex in a specified real linear ambient space and this objective is strictly convex on $\\mathcal I$, the minimizer is unique.\n\\end{theorem}",
       "source_statement_sha256": "951c0d8270abd44dc7b14f5a404f3b94372d129910c70f5831bcb1c70ab60c1f",
@@ -5485,8 +5506,8 @@
       "label": null,
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1156,
-        "line_end": 1158
+        "line_start": 1190,
+        "line_end": 1192
       },
       "source_statement_tex": "\\begin{proposition}[Nearest-Point Selection Is an Extra Requirement]\nA selector from $\\aleph(\\Psi)$ returns a compatible history when the minimizer set is nonempty. Compatibility of the output alone allows any map into $\\mathcal I$ and does not force nearest-point selection.\n\\end{proposition}",
       "source_statement_sha256": "748322072c9c182174a862b39e3a95437a4a50036509f31923e73944dc633cf3",
@@ -5517,8 +5538,8 @@
       "label": "thm:info-isolation",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1176,
-        "line_end": 1178
+        "line_start": 1210,
+        "line_end": 1212
       },
       "source_statement_tex": "\\begin{theorem}[Finite-Prefix Recovery and Information]\\label{thm:info-isolation}\nFor a canonical projection $p_t:\\mathcal I\\to S_t$, exact recovery of every history from its prefix is possible precisely when $p_t$ is injective, with a decoder defined on its image. If $P=p_t(X)$ is a finite-valued prefix of a random history $X$ under a declared law, then $I(P;X)=H(P)$.\n\\end{theorem}",
       "source_statement_sha256": "c764f1fa9e27e573fbc9ca5e7be882ef74bc3c4ed58955aa38959f05b97adda3",
@@ -5562,8 +5583,8 @@
       "label": "lem:isolation-properties",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1189,
-        "line_end": 1191
+        "line_start": 1223,
+        "line_end": 1225
       },
       "source_statement_tex": "\\begin{lemma}[Coarsening and Relabeling]\\label{lem:isolation-properties}\nFor fixed $X$, replacing $Y$ by a function of $Y$ cannot decrease $\\mathfrak B$. Bijective relabelings of the random variables preserve it. It vanishes precisely when $X$ is determined by $Y$ almost surely under the declared law.\n\\end{lemma}",
       "source_statement_sha256": "98a1467441245c86ab661eef8c846366a276c640ba4a474894ec4ffe2bb55fef",
@@ -5593,8 +5614,8 @@
       "label": "thm:nosemigroup",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1215,
-        "line_end": 1217
+        "line_start": 1249,
+        "line_end": 1251
       },
       "source_statement_tex": "\\begin{theorem}[No Semigroup Compatibility]\\label{thm:nosemigroup}\nIf $p_0$ is noninjective, no compatible deterministic forward family generates all projective histories as its orbital subsystem. Forward semigroups on spaces already storing complete histories are not excluded.\n\\end{theorem}",
       "source_statement_sha256": "99c81958c07da60a010e7687409765785bcbc0d4cba2d13695b74bd9042a5bf6",
@@ -5627,8 +5648,8 @@
       "label": "lem:bridge-identity",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1226,
-        "line_end": 1232
+        "line_start": 1260,
+        "line_end": 1266
       },
       "source_statement_tex": "\\begin{lemma}[Structural Coupling: Observable--Identity]\\label{lem:bridge-identity}\nUse the connected operating channel and separating comparison of Definition~\\ref{def:coexist}, with CCR for its connecting perturbations. Its observable--identity assignment is unique up to zero deformation by Theorem~\\ref{thm:uniqueness}. For a compatible point-history $x$, if $w_t\\operatorname{diam}(S_t)\\to0$, every compatible completion $x^{[N]}$ agreeing through cut $N$ satisfies\n\\[\n d_w(x^{[N]},x)\\le\\sup_{t>N}w_t\\operatorname{diam}(S_t)\\longrightarrow0.\n\\]\nThis is prefix reconstruction, not temporal attraction. If additionally a contraction $T$ acts on a nonempty complete metric space of admitted identity candidates, with $d(Ta,Tb)\\le qd(a,b)$, $0\\le q<1$, it has a unique attracting fixed point. Identification with the channel assignment further requires that fixed candidate to belong to the same comparison channel.\n\\end{lemma}",
       "source_statement_sha256": "12fa80043dccf1e25ce165a031265a87f5255a084c9867b94198aa65591f08bd",
@@ -5663,8 +5684,8 @@
       "label": "cor:identity-forcing",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1237,
-        "line_end": 1239
+        "line_start": 1271,
+        "line_end": 1273
       },
       "source_statement_tex": "\\begin{corollary}[Identity Forcing under CCR]\\label{cor:identity-forcing}\nIn an energy-connected CCR operating channel with a well-defined assignment into the separating comparison, all assigned identities coincide. An attracting realization additionally needs the dynamical hypotheses of Lemma~\\ref{lem:bridge-identity}.\n\\end{corollary}",
       "source_statement_sha256": "712679a64942d109c29ca19e5649b2702dbe5fdf84b3a4e2035542f12774e9df",
@@ -5697,8 +5718,8 @@
       "label": "thm:stone-classification",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1260,
-        "line_end": 1262
+        "line_start": 1294,
+        "line_end": 1296
       },
       "source_statement_tex": "\\begin{theorem}[Topology of Point and Law Limits]\\label{thm:stone-classification}\nThe point limit $\\mathcal I$ is nonempty, compact, metrizable, and has a clopen basis. The law limit $O$ is nonempty, compact, metrizable, and convex under coordinatewise mixing. If $O$ contains distinct points, it is path connected and is not a Stone space.\n\\end{theorem}",
       "source_statement_sha256": "4da529a484c323da4ebad445cf80946743b589e56ff5a207d7b3831d5c900d88",
@@ -5742,8 +5763,8 @@
       "label": "cor:obs-morphism",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1267,
-        "line_end": 1269
+        "line_start": 1301,
+        "line_end": 1303
       },
       "source_statement_tex": "\\begin{corollary}[Embedding by Compatible Dirac Measures]\\label{cor:obs-morphism}\nThe map $x\\mapsto(\\delta_{x_t})_t$ embeds $\\mathcal I$ homeomorphically as a closed subspace of $O$.\n\\end{corollary}",
       "source_statement_sha256": "82d11f52a37e4928842e0a7955dc7596156f57c6ad9d40595c73bfe32c150292",
@@ -5774,8 +5795,8 @@
       "label": null,
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1319,
-        "line_end": 1321
+        "line_start": 1353,
+        "line_end": 1355
       },
       "source_statement_tex": "\\begin{proposition}[Minimal CCR is Non-Degenerate and Rigid]\nThe example has compact stages, summable weighted diameter tails, two-point fibres at each bonding map and $2^t$ prefixes over each initial $u$. Every $p_T$ is noninjective. Its identity-support mass is $M_\\Omega=+\\infty$ in the specified internal sector.\n\\end{proposition}",
       "source_statement_sha256": "fa93914da5aba1c28cb5997e1a8a2dc862a53abc8375d4b812bec767b50d2f0b",
@@ -5808,8 +5829,8 @@
       "label": "thm:non-simulability",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1366,
-        "line_end": 1368
+        "line_start": 1400,
+        "line_end": 1402
       },
       "source_statement_tex": "\\begin{theorem}[Conditional Non-Simulability from a Finite-Cost Witness]\\label{thm:non-simulability}\nFor any candidate simulator with a declared intervention sector and common comparison metric, suppose there is an admissible finite-cost intervention producing positive Hausdorff deformation. Then $M_\\Omega<+\\infty$ in that sector. It cannot faithfully realize an infinite-resistance target if faithfulness is required to preserve the resistance class.\n\\end{theorem}",
       "source_statement_sha256": "c9e6fff129c54c0e43f54c1d68f8d3161b89d7579802ae1c87c300b8ff4b0f2f",
@@ -5840,16 +5861,16 @@
       "label": "thm:non-transferability",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1375,
-        "line_end": 1381
+        "line_start": 1409,
+        "line_end": 1415
       },
-      "source_statement_tex": "\\begin{theorem}[Resistance under Audited Transport]\\label{thm:non-transferability}\nLet an ambient bijection $A$ satisfy $c\\,d(x,y)\\leq d'(Ax,Ay)\\leq C\\,d(x,y)$ with $0<c\\leq C<\\infty$. It maps the baseline identity to the target identity. Suppose a bijection between the declared intervention sectors maps $\\delta$ to $\\delta'$ with $A(I_\\delta)=I'_{\\delta'}$ and $a E(\\delta)\\leq E'(\\delta')\\leq b E(\\delta)$ for $0<a\\leq b<\\infty$. For nonempty baseline and deformed sets at finite Hausdorff distance, the two resistance values satisfy\n\\[\n \\frac{a}{C}M_\\Omega\\leq M'_\\Omega\\leq\\frac{b}{c}M_\\Omega.\n\\]\nIn particular such a transport preserves the finite versus infinite resistance class.\n\\end{theorem}",
-      "source_statement_sha256": "836049e1a9c164999edc531cfbb1e56cf897d6b23dc42f8228ec88e66cc0c336",
+      "source_statement_tex": "\\begin{theorem}[Resistance under Audited Transport]\\label{thm:non-transferability}\\leavevmode\\par\nLet an ambient bijection $A$ satisfy $c\\,d(x,y)\\leq d'(Ax,Ay)\\leq C\\,d(x,y)$ with $0<c\\leq C<\\infty$. It maps the baseline identity to the target identity. Suppose a bijection between the declared intervention sectors maps $\\delta$ to $\\delta'$ with $A(I_\\delta)=I'_{\\delta'}$ and $a E(\\delta)\\leq E'(\\delta')\\leq b E(\\delta)$ for $0<a\\leq b<\\infty$. For nonempty baseline and deformed sets at finite Hausdorff distance, the two resistance values satisfy\n\\[\n \\frac{a}{C}M_\\Omega\\leq M'_\\Omega\\leq\\frac{b}{c}M_\\Omega.\n\\]\nIn particular such a transport preserves the finite versus infinite resistance class.\n\\end{theorem}",
+      "source_statement_sha256": "3729ecd0c889666164506fb2cb7be94967f3e2a122e810ddb306dd527aab0025",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Define the declared weighted/sector metric, admissible transports and all infinite-tail/coercivity bounds; finite ordered inequalities alone do not establish topology, completeness or a global factorization gap.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Define the declared weighted/sector metric, admissible transports and all infinite-tail/coercivity bounds; finite ordered inequalities alone do not establish topology, completeness or a global factorization gap.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -5872,8 +5893,8 @@
       "label": "lem:canonical-closure",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1388,
-        "line_end": 1390
+        "line_start": 1422,
+        "line_end": 1424
       },
       "source_statement_tex": "\\begin{lemma}[Closure under Composed Sector Comparisons]\\label{lem:canonical-closure}\nTwo consecutive transports satisfying Theorem~\\ref{thm:non-transferability} compose to a transport of the same kind. If both also intertwine the specified readouts exactly, their composition does so.\n\\end{lemma}",
       "source_statement_sha256": "10b22c8f8aab13a8948eb9ac4eeeb145cf3b63567e80e82dc809c89ef59637d7",
@@ -5906,8 +5927,8 @@
       "label": "thm:stratification",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1406,
-        "line_end": 1417
+        "line_start": 1440,
+        "line_end": 1451
       },
       "source_statement_tex": "\\begin{theorem}[Stratification Theorem]\\label{thm:stratification}\nThe class of observable channels admits a stratification by rigidity degree:\n\\begin{equation}\n    \\mathcal{U} = \\mathcal{U}_0 \\sqcup \\mathcal{U}_{(0,\\infty)} \\sqcup \\mathcal{U}_\\infty,\n\\end{equation}\nwhere:\n\\begin{itemize}[leftmargin=*]\n    \\item $\\mathcal{U}_0$: channels with $\\rho = 0$ (zero rigidity, fully deformable);\n    \\item $\\mathcal{U}_{(0,\\infty)}$: channels with $0 < \\rho < \\infty$ (partial rigidity);\n    \\item $\\mathcal{U}_\\infty$: channels with $\\rho = \\infty$ (CCR rigidity).\n\\end{itemize}\n\\end{theorem}",
       "source_statement_sha256": "c26469849e79d2c8bd9751c7b4455e634434806b3a97b26bc981de0ab2c007c3",
@@ -5938,8 +5959,8 @@
       "label": null,
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1432,
-        "line_end": 1434
+        "line_start": 1466,
+        "line_end": 1468
       },
       "source_statement_tex": "\\begin{proposition}[Weighted Polynomial Decay Condition]\nLet $w_n\\le K n^p$ and $\\|\\epsilon_n\\|_{\\rm op}\\le C n^{-\\alpha}$ for $n\\ge1$, with $K,C>0$, $p\\ge0$, and a finite term at zero. If $\\alpha>p+1$, then $\\sum_n w_n\\|\\epsilon_n\\|_{\\rm op}<\\infty$.\n\\end{proposition}",
       "source_statement_sha256": "0353191901a3eae5c5085938b7cf36415209cec7f9de8783c7b02f8dc728a6b6",
@@ -5970,8 +5991,8 @@
       "label": "thm:completeness",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1445,
-        "line_end": 1447
+        "line_start": 1479,
+        "line_end": 1481
       },
       "source_statement_tex": "\\begin{theorem}[Completeness Inheritance]\\label{thm:completeness}\nIf the coordinate spaces are complete and the bonding maps continuous, every finite-distance component of $(\\mathcal I,d_w)$ is complete. Under the full-product finiteness condition of Proposition~\\ref{prop:weighted-history}, this gives completeness on all of $\\mathcal I$.\n\\end{theorem}",
       "source_statement_sha256": "8ab84704cb3610517b6b0319f365222f857e351a0a3f4b6010f30a7247df921f",
@@ -6004,11 +6025,11 @@
       "label": null,
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1455,
-        "line_end": 1457
+        "line_start": 1489,
+        "line_end": 1494
       },
-      "source_statement_tex": "\\begin{proposition}[Universal Property of Identity]\nThe identity $\\mathcal{I} = \\varprojlim S_t$ satisfies the universal property: for any object $J$ with compatible maps $\\phi_t: J \\to S_t$, there exists a unique morphism $\\psi: J \\to \\mathcal{I}$ making all diagrams commute.\n\\end{proposition}",
-      "source_statement_sha256": "e664ed71b7d571b58bcf1464df8869a19336446f45d0335a8e3b142983e6fadb",
+      "source_statement_tex": "\\begin{proposition}[Universal Property of Identity]\nFor the declared tower of sets, every coherent family $\\phi_t:J\\to S_t$\ninduces a unique map $\\psi:J\\to\\mathcal I=\\varprojlim S_t$ with\n$p_t\\psi=\\phi_t$. For a tower of topological spaces with its product-subspace\nlimit topology, continuous $\\phi_t$ induce the unique continuous such map.\n\\end{proposition}",
+      "source_statement_sha256": "0cd4b9c5058ee28ff1969cda9f6d0d5ec615d51a7d9edf9a6d7c7addd6e23ad8",
       "source_epistemic_status": "conditional",
       "classification": "EXACT_MATCH",
       "kernel_kind": "ANALYTIC_GENERAL_THEOREM",
@@ -6022,7 +6043,7 @@
           "symbol": "QICNLean.InverseLimitTopology.coneLift_continuous"
         }
       ],
-      "fidelity_notes": "Successor inverse system indexed by all natural-number stages, with arbitrary dependent coordinate types and arbitrary cone domain J. Every compatible cone has one unique lift; continuous coordinates give continuous lift into the explicitly declared product-subspace topology. This covers sets and topological spaces in the declared inverse-system setting, not an assertion about arbitrary unrelated categories. Index zero versus first stage is a harmless reindexing. No surjectivity is needed for this universal-property implication.",
+      "fidelity_notes": "Etapa 1 explicitly types the statement in sets and topological spaces for the declared countable inverse system. Existing compatible_cone_unique_lift and coneLift_continuous prove exactly this source scope; the explicit source proof was added. No assertion over arbitrary unrelated categories and no change to the Lean theorem.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -6043,8 +6064,8 @@
       "label": null,
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1463,
-        "line_end": 1465
+        "line_start": 1511,
+        "line_end": 1513
       },
       "source_statement_tex": "\\begin{proposition}[Invariance in the Declared Finite-Cost Sector]\nSuppose a structural model associates to each intervention an identity object in a common metric comparison space and a cost in the sector of Definition~\\ref{def:ontmass}. If $M_\\Omega=+\\infty$, each intervention in that sector of finite cost has zero Hausdorff deformation. If the compared objects are closed, they are equal as subsets of the comparison space.\n\\end{proposition}",
       "source_statement_sha256": "cd7ca2bf1ff113c9eccc6cfa554c00e0007a42e3039abb7724d8201d044c82f1",
@@ -6077,8 +6098,8 @@
       "label": null,
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1472,
-        "line_end": 1474
+        "line_start": 1520,
+        "line_end": 1522
       },
       "source_statement_tex": "\\begin{theorem}[Complexity Lower Bound for CCR Simulation]\nSuppose a deterministic code of $B$ bits must recover any requested prefix of a binary history through horizon $t$. Exact prefix recovery requires $B\\geq t$. For complete decoded histories in the prefix metric $d(x,y)=2^{-m}$ at first differing position $m\\geq1$, the optimal uniform error is $2^{-(B+1)}$.\n\\end{theorem}",
       "source_statement_sha256": "d75e9b9c50a5f390dead8900c439e82f57b879798e8c14ec3715f1dcdbe2dc06",
@@ -6109,8 +6130,8 @@
       "label": null,
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 1479,
-        "line_end": 1481
+        "line_start": 1527,
+        "line_end": 1529
       },
       "source_statement_tex": "\\begin{corollary}[Impossibility of Perfect Simulation]\nA fixed finite binary budget cannot recover every prefix on the binary-prefix target.\n\\end{corollary}",
       "source_statement_sha256": "169309859de14aa866909f2ab52ac0ee13b22b985992cfe998db8ae9079e06f2",
@@ -6568,8 +6589,8 @@
       "label": null,
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 195,
-        "line_end": 197
+        "line_start": 205,
+        "line_end": 207
       },
       "source_statement_tex": "\\begin{proposition}[Endomorphisms Preserving All Canonical Projections]\nIf $F:\\mathcal I\\to\\mathcal I$ satisfies $p_t\\circ F=p_t$ for every $t$, then $F=\\operatorname{Id}$. This does not exclude endomorphisms with nonidentity coordinate actions.\n\\end{proposition}",
       "source_statement_sha256": "d1b9eb36a04f5d47890e25f92d6d39a2f211dbac728e2a70fb3224acccaf2ee8",
@@ -6607,18 +6628,20 @@
       "label": "prop:unique-phi",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 225,
-        "line_end": 231
+        "line_start": 254,
+        "line_end": 260
       },
-      "source_statement_tex": "\\begin{proposition}[Uniqueness and Uniform Error of the Limit Assignment]\\label{prop:unique-phi}\nUnder E1, each trajectory has a unique limit assignment and\n\\[\nd_{\\mathcal E}\\bigl(\\Phi(x),\\phi_n(p_nx)\\bigr)\\leq A_n\n\\quad\\text{for all }x\\in\\mathcal I.\n\\]\n\\end{proposition}",
-      "source_statement_sha256": "53a9c37b17cebeeeae3c1c06800a5e5b13262fd25136c95417bfbc339235a649",
+      "source_statement_tex": "\\begin{proposition}[Uniqueness and Uniform Error of the Limit Assignment]\\label{prop:unique-phi}\nUnder Axiom~\\ref{ax:e1} in the declared complete metric codomain, each trajectory has a unique limit assignment and\n\\[\nd_{\\mathcal E}\\bigl(\\Phi(x),\\phi_n(p_nx)\\bigr)\\leq A_n\n\\quad\\text{for all }x\\in\\mathcal I.\n\\]\n\\end{proposition}",
+      "source_statement_sha256": "c4ac1aba06498a56fff5b4fc3e725da52faeb8442f35ac18b9b344b36f3cd5dc",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [],
-      "other_registry_dependency_ids": [],
+      "other_registry_dependency_ids": [
+        "paper2:axiom:ax-e1"
+      ],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
         "Mathlib.Logic.Function.Basic"
@@ -6638,8 +6661,8 @@
       "label": "thm:e0-necessary",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 267,
-        "line_end": 269
+        "line_start": 279,
+        "line_end": 281
       },
       "source_statement_tex": "\\begin{theorem}[E0 is Necessary]\\label{thm:e0-necessary}\nIf $|\\mathcal{E}| = 1$, then every structural assignment is constant and no phenomenological classification is possible.\n\\end{theorem}",
       "source_statement_sha256": "e47d80c595bfe37cc2480060fcae05290cdbe012619c73155c1be5d631b5e6b1",
@@ -6669,8 +6692,8 @@
       "label": "thm:e1-necessary",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 277,
-        "line_end": 279
+        "line_start": 289,
+        "line_end": 291
       },
       "source_statement_tex": "\\begin{theorem}[Controlled Compatibility Is Sufficient]\\label{thm:e1-necessary}\nE1 guarantees existence of the limit with the error bound in Proposition~\\ref{prop:unique-phi}. Absolute summability is sufficient, not necessary for an arbitrary convergent family.\n\\end{theorem}",
       "source_statement_sha256": "307b51e7da459a4ff849f3c85c502bdad16866901353abc170de74602f59d697",
@@ -6703,8 +6726,8 @@
       "label": "thm:e2-necessary",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 287,
-        "line_end": 289
+        "line_start": 299,
+        "line_end": 301
       },
       "source_statement_tex": "\\begin{theorem}[Non-Factorization Is an Independent Requirement]\\label{thm:e2-necessary}\nE2 excludes readouts determined by a single canonical finite cut. The inverse-limit construction and E1 alone do not imply E2.\n\\end{theorem}",
       "source_statement_sha256": "633c6461d6064bc3967ac94d84172ff0f848dbbc121a428db9e7213e84ce555c",
@@ -6737,8 +6760,8 @@
       "label": "thm:minimality",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 297,
-        "line_end": 299
+        "line_start": 309,
+        "line_end": 311
       },
       "source_statement_tex": "\\begin{theorem}[Logical Dependencies of the Assignment Conditions]\\label{thm:minimality}\nOn a nonempty trajectory domain, E2 implies E0. E1 does not imply E2. There exist assignments satisfying E0, the revised E1 and E2 simultaneously. Consequently these three conditions are not an independent minimal axiom basis as originally stated.\n\\end{theorem}",
       "source_statement_sha256": "56a868d1a42abbc5c413ae1851a2dad46abda56d697affed7808a299719cf958",
@@ -6770,8 +6793,8 @@
       "label": "prop:exact-e1-obstruction",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 362,
-        "line_end": 364
+        "line_start": 374,
+        "line_end": 376
       },
       "source_statement_tex": "\\begin{proposition}[Exact Compatibility Forces Finite-Cut Factorization]\\label{prop:exact-e1-obstruction}\nOn a nonempty trajectory domain, if $\\phi_{t+1}(p_{t+1}x)=\\phi_t(p_tx)$ for every $x,t$, then the limit assignment satisfies $\\Phi=\\phi_0\\circ p_0$. It cannot satisfy E2. The controlled E1 above replaces that exact equality, rather than assuming it together with E2.\n\\end{proposition}",
       "source_statement_sha256": "98cb168485ba2b2f3db903a1f6be46bfef2ca28e78989335ba42c4e1cc928059",
@@ -6802,8 +6825,8 @@
       "label": "thm:ternary-regime-realization",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 372,
-        "line_end": 390
+        "line_start": 384,
+        "line_end": 402
       },
       "source_statement_tex": "\\begin{theorem}[Ternary Realization of E0--E2]\\label{thm:ternary-regime-realization}\nLet $S_t=\\{0,1\\}^{t+1}$ with bonding maps that delete the last bit. Identify its inverse limit with $\\mathcal I=\\{0,1\\}^{\\mathbb N}$ and let $\\mathcal E=[0,1]$. Define\n\\[\n\\phi_t(b_0,\\ldots,b_t)=\\sum_{j=0}^t\\frac{2b_j}{3^{j+1}},\n\\qquad\n\\Phi(b)=\\sum_{j=0}^{\\infty}\\frac{2b_j}{3^{j+1}}.\n\\]\nThese assignments satisfy E0, controlled E1, and E2, with\n\\[\na_t=\\frac{2}{3^{t+2}},\\qquad\nA_t=\\frac{1}{3^{t+1}},\\qquad\n\\sup_b|\\Phi(b)-\\phi_t(p_tb)|=A_t.\n\\]\nFor distinct histories first differing at position $m$, put $d_{\\mathcal I}(b,c)=3^{-(m+1)}$, and put $d_{\\mathcal I}(b,b)=0$. Then\n\\[\nd_{\\mathcal I}(b,c)\\leq|\\Phi(b)-\\Phi(c)|\\leq3d_{\\mathcal I}(b,c).\n\\]\nThe domain is compact and complete, and the readout is injective and bi-Lipschitz onto its image. Thus a global lower bound is realized here rather than inserted without a witness.\n\\end{theorem}",
       "source_statement_sha256": "b725fc8509a169e16923be2e781e016e53ad5910f6609409306f4cf72527f680",
@@ -6834,8 +6857,8 @@
       "label": "thm:finite-cut-minimax",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 398,
-        "line_end": 408
+        "line_start": 410,
+        "line_end": 420
       },
       "source_statement_tex": "\\begin{theorem}[Sharp Finite-Cut Approximation Error]\\label{thm:finite-cut-minimax}\nFor the ternary realization and an arbitrary decoder $g:S_t\\to\\mathbb R$, let\n\\[\nR_t(g)=\\sup_{b\\in\\mathcal I}|\\Phi(b)-g(p_tb)|.\n\\]\nThen the exact minimax value is\n\\[\n\\inf_g R_t(g)=\\frac{1}{2\\,3^{t+1}}.\n\\]\nIt is attained by $g_\\ast(s)=\\phi_t(s)+1/(2\\,3^{t+1})$.\n\\end{theorem}",
       "source_statement_sha256": "4b9972baddc0ff1e2898a0dd668ea8e529227ed00ba79aca1824c765a3c6fb66",
@@ -6866,8 +6889,8 @@
       "label": "prop:ternary-arbitrary-code",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 414,
-        "line_end": 416
+        "line_start": 426,
+        "line_end": 428
       },
       "source_statement_tex": "\\begin{proposition}[Sharp Error for Arbitrary Binary Codes]\\label{prop:ternary-arbitrary-code}\nFor the ternary assignment above, let an encoder choose at most $2^B$ states as an arbitrary function of the whole history, and let each state decode to any real number. The minimum worst-case absolute error is $1/(2\\cdot3^B)$ for every integer $B\\geq0$.\n\\end{proposition}",
       "source_statement_sha256": "82268a9fadf7a698823df59e25c782c10aa87c2ae865c7ac3b0a8093c45c0bf0",
@@ -6897,8 +6920,8 @@
       "label": "thm:uniform-e2-obstruction",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 421,
-        "line_end": 423
+        "line_start": 433,
+        "line_end": 435
       },
       "source_statement_tex": "\\begin{theorem}[Uniform Approximation Does Not Protect E2]\\label{thm:uniform-e2-obstruction}\nOn the binary-prefix realization, let $F=\\Phi$ and $F_N=\\phi_N\\circ p_N$. Then $\\|F-F_N\\|_\\infty=3^{-(N+1)}$, while every $F_N$ factors through a finite cut and fails E2. Thus $F$ has zero uniform distance to the failure set of E2 in the declared class of continuous $[0,1]$-valued readings.\n\\end{theorem}",
       "source_statement_sha256": "e5325afd51d3b90977415d8d8a0e0fe10fdd1c1ddb2d8f8ec2d53de36b0f3bce",
@@ -6929,8 +6952,8 @@
       "label": "thm:multiscale-e2-protection",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 428,
-        "line_end": 434
+        "line_start": 440,
+        "line_end": 446
       },
       "source_statement_tex": "\\begin{theorem}[Multiscale Protection of Non-Finite Determination]\\label{thm:multiscale-e2-protection}\nLet $(I,d)$ have a noninjective canonical cut $p_n$ for every $n$. Let $F,G:I\\to B$, where $B$ is a normed linear space and both readings meet the separately declared feasibility and codomain constraints. Suppose $\\|F(x)-F(y)\\|\\ge c d(x,y)$, $c>0$, and $L=\\operatorname{Lip}(G-F)<c$. Then\n\\[\n \\|G(x)-G(y)\\|\\ge(c-L)d(x,y),\n\\]\nso $G$ cannot factor through any $p_n$.\n\\end{theorem}",
       "source_statement_sha256": "e5c99b70d7db4a144c9b45443bc4ce61412db6c32146ca3b8cac4b628bb0ae90",
@@ -7026,8 +7049,8 @@
       "label": "prop:protected-ternary-family",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 439,
-        "line_end": 441
+        "line_start": 451,
+        "line_end": 453
       },
       "source_statement_tex": "\\begin{proposition}[A Nonempty Protected Ternary Family]\\label{prop:protected-ternary-family}\nFor the ternary $F$ above, $G_e=(1-e)F$ with $0\\le e\\le1/6$ is $[0,1]$-valued and has lower separation at least $1-3e\\ge1/2$ in the declared prefix metric. The anchor at the zero history is unchanged. Although $F_N\\to F$ uniformly, $\\operatorname{Lip}(F-F_N)\\ge2$ for every $N$.\n\\end{proposition}",
       "source_statement_sha256": "16b12e4300c42e424d800ea46dd64cfe76c1ad43d52ab09d9151151531fac5bb",
@@ -7123,8 +7146,8 @@
       "label": "thm:joint-transport-readout",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 448,
-        "line_end": 458
+        "line_start": 460,
+        "line_end": 470
       },
       "source_statement_tex": "\\begin{theorem}[Joint Realization of Transport and Controlled Readouts]\\label{thm:joint-transport-readout}\nUse circle-prefix stages $S_t=\\mathbb T\\times\\{0,1\\}^t$, stage metric $\\max(\\rho,\\mathbf{1}_{\\text{different prefix}})$, and weights $w_t=3^{-t}$, where $\\rho$ is circle distance with circumference one. Take the usual truncation tower $I_0$ and its variant $I_1$ with angle shift $-a$ at the single bonding level $k$, for $0<a<1/2$. Write $\\beta=3^{-(k+1)}$. In the common weighted history space put $Z=I_0\\cup I_1$. Let the complete codomain be $\\mathcal E=\\mathbb T^2\\times[0,1]$ with the maximum of the first circle distance, $\\beta$ times the second circle distance, and the absolute scalar difference. Define\n\\[\n F(x)=\\left(\\theta_0(x),\\theta_{k+1}(x),\\sum_{j\\geq1}2b_j(x)3^{-j}\\right).\n\\]\nThen $d_w(x,y)\\leq d_{\\mathcal E}(F(x),F(y))\\leq3d_w(x,y)$ on all of $Z$. On each tower the restriction satisfies E0--E2 with $a_t=2\\cdot3^{-(t+1)}$ and uniform tail $A_t=3^{-t}$. The coordinate homeomorphism $H:I_0\\to I_1$ shifts angles at stages $t>k$ by $a$. With projection-defect cost $E_w=3^{-k}a$, one has\n\\[\n d_w(x,Hx)=d_{\\mathcal E}(F(x),F(Hx))=\\beta a,\\qquad\n d_H(I_0,I_1)=\\frac{\\beta a}{1+\\beta}.\n\\]\n\\end{theorem}",
       "source_statement_sha256": "019e11c477313b16b0d140cb7da01bde801fc89ae139261453abe541bb0cf897",
@@ -7155,8 +7178,8 @@
       "label": "prop:readout-continuity-control",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 473,
-        "line_end": 475
+        "line_start": 485,
+        "line_end": 487
       },
       "source_statement_tex": "\\begin{proposition}[Setwise Invariance Does Not Supply Continuity]\\label{prop:readout-continuity-control}\nControlled E1 and E2 can hold for a discontinuous assignment, even if the identity domain is fixed under every declared intervention.\n\\end{proposition}",
       "source_statement_sha256": "039f3bdb23d517675c5ec390e5f60b2b6acbf799238be657d025305b0c5de3dc",
@@ -7186,8 +7209,8 @@
       "label": "prop:transport-control",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 485,
-        "line_end": 487
+        "line_start": 497,
+        "line_end": 499
       },
       "source_statement_tex": "\\begin{proposition}[Setwise and Pointwise Transport Are Distinct]\\label{prop:transport-control}\nPreserving an identity domain as a set does not guarantee equal values of a common readout on transported states.\n\\end{proposition}",
       "source_statement_sha256": "a997420c5cb54665aa19544feaa28b95a03a913d6e9626c4beee896f3dea3bbd",
@@ -7218,8 +7241,8 @@
       "label": "thm:h3-necessary",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 517,
-        "line_end": 519
+        "line_start": 527,
+        "line_end": 529
       },
       "source_statement_tex": "\\begin{theorem}[Metric Data Required by Quantitative Formulas]\\label{thm:h3-necessary}\nThe distance-based fragmentation and loss functionals used here require a declared metric, or a pseudometric with a stated quotient convention. Topological continuity can be defined without a metric. Completeness is used for the Cauchy-limit guarantee of E1.\n\\end{theorem}",
       "source_statement_sha256": "5d4805774e031ed95ae14de845124b99cbf70eeadc4a2073b91ebfa940583155",
@@ -7250,8 +7273,8 @@
       "label": "prop:complete-necessary",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 527,
-        "line_end": 529
+        "line_start": 537,
+        "line_end": 539
       },
       "source_statement_tex": "\\begin{proposition}[Completeness and Existence of Limits]\\label{prop:complete-necessary}\nWithout completeness, the conclusion that every E1-type Cauchy family has its limit in the declared codomain can fail. Completeness is not necessary for a family whose limit is already known to belong to that codomain.\n\\end{proposition}",
       "source_statement_sha256": "88692a229bfebb39426d0f94d479e4e9f3c7f453eec75e754d47947497645fb1",
@@ -7281,16 +7304,16 @@
       "label": "prop:metric-compat",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 584,
-        "line_end": 590
+        "line_start": 594,
+        "line_end": 608
       },
-      "source_statement_tex": "\\begin{proposition}[Continuity from Controlled Finite Readouts]\\label{prop:metric-compat}\nWrite $g_n=\\phi_n\\circ p_n$. Under E1,\n\\[\nd_{\\mathcal E}(\\Phi(x),\\Phi(y))\\leq2A_n+d_{\\mathcal E}(g_n(x),g_n(y)).\n\\]\nIf every $g_n$ is continuous, then $\\Phi$ is continuous. If every $g_n$ is $L$-Lipschitz with a common $L$, then $\\Phi$ is $L$-Lipschitz.\n\\end{proposition}",
-      "source_statement_sha256": "1f8d28381aca1a59c2ed948db441d1a40942528ba1c086ab63dff0cc466e1368",
+      "source_statement_tex": "\\begin{proposition}[Continuity from Controlled Finite Readouts]\\label{prop:metric-compat}\nWrite $g_n=\\phi_n\\circ p_n$. Under E1,\n\\[\nd_{\\mathcal E}(\\Phi(x),\\Phi(y))\\leq2A_n+d_{\\mathcal E}(g_n(x),g_n(y)).\n\\]\nContinuous $g_n$ give a continuous $\\Phi$; a common $L$-Lipschitz bound gives\nthe same bound for $\\Phi$. On a compact metric history domain, put\n\\[\n \\omega_n(r)=\\sup_{d_w(x,y)\\leq r}d_{\\mathcal E}(g_n(x),g_n(y)),\\qquad\n \\omega(r)=\\inf_n\\{2A_n+\\omega_n(r)\\}.\n\\]\nIf the $g_n$ are continuous, $\\omega$ is a finite nondecreasing modulus tending\nto zero at zero and bounds the limiting readout uniformly. No common\nLipschitz constant for the finite readouts is required for this conclusion.\n\\end{proposition}",
+      "source_statement_sha256": "8965d8dd6bb3ce8412cdacf45890b73db0e84efdd71b9063ad13ccf8dab7fcd4",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -7312,8 +7335,8 @@
       "label": "thm:fragmentation",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 640,
-        "line_end": 646
+        "line_start": 664,
+        "line_end": 670
       },
       "source_statement_tex": "\\begin{theorem}[Fragmentation under an Audited Displacement]\\label{thm:fragmentation}\nLet an assignment satisfy E0--E2. Assume the positive-displacement branch of Hypothesis~\\ref{hyp:audited-comparison} and a lower Lipschitz constant $C>0$ for $F$ on its common comparison domain. Then, for the witnessing pair,\n\\[\nd_{\\mathcal E}(\\Phi(x),\\Phi_\\varepsilon(h_\\varepsilon x))\\geq C d_Z(x,h_\\varepsilon x)>0.\n\\]\nThus the assignment is fragmentable. This applies to a finite-$M_\\Omega$ model when that model supplies the stated comparison data.\n\\end{theorem}",
       "source_statement_sha256": "27b3883f7fa17492b91784ae9e155f2fa05df9e27702ecfd6d0301c468eb1079",
@@ -7345,8 +7368,8 @@
       "label": null,
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 652,
-        "line_end": 654
+        "line_start": 676,
+        "line_end": 678
       },
       "source_statement_tex": "\\begin{corollary}[Fragmentability and Continuity Are Distinct]\nThe positive-displacement conclusion does not establish a topological discontinuity. A continuous assignment may be fragmentable under a state-changing intervention.\n\\end{corollary}",
       "source_statement_sha256": "1206e5913f11edbd67df764d06bbf21364ba0434a96f239c65abdceaae915bfe",
@@ -7376,8 +7399,8 @@
       "label": "thm:forced-continuity",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 662,
-        "line_end": 669
+        "line_start": 686,
+        "line_end": 693
       },
       "source_statement_tex": "\\begin{theorem}[Continuity and Conditional Perturbation Invariance]\\label{thm:forced-continuity}\nUnder E1, if each finite readout $g_n=\\phi_n\\circ p_n$ is continuous, then $\\Phi$ is continuous, irrespective of $M_\\Omega$. Under the zero-displacement branch of Hypothesis~\\ref{hyp:audited-comparison},\n\\[\n\\Phi_\\varepsilon(h_\\varepsilon x)=\\Phi(x)\n\\qquad(\\varepsilon\\in\\mathcal V,\\ x\\in\\mathcal I).\n\\]\nFor a CCR model the invariance conclusion therefore holds when its finite-cost interventions admit that branch. CCR alone is not a proof of continuity or of readout naturality.\n\\end{theorem}",
       "source_statement_sha256": "92db44353b293f47b7130886172dcfc7d974d734e168b0eeb185470a295ad66d",
@@ -7411,8 +7434,8 @@
       "label": null,
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 675,
-        "line_end": 677
+        "line_start": 699,
+        "line_end": 701
       },
       "source_statement_tex": "\\begin{corollary}[Invariance on the Audited Zero-Displacement Branch]\nA CCR model satisfying the zero-displacement comparison hypothesis has invariant assignment values under all interventions in its declared finite-cost class.\n\\end{corollary}",
       "source_statement_sha256": "93e176ac5f0b33076ebab4ab41213259170baecf28eb2f2c8c6e38c79c3ac73c",
@@ -7445,8 +7468,8 @@
       "label": "thm:dichotomy",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 685,
-        "line_end": 687
+        "line_start": 709,
+        "line_end": 711
       },
       "source_statement_tex": "\\begin{theorem}[Conditional Classification by Audited Branches]\\label{thm:dichotomy}\nSuppose a model supplies the positive-displacement branch and lower bound whenever $M_\\Omega<\\infty$, and supplies continuous finite readouts and the zero-displacement branch whenever $M_\\Omega=+\\infty$. Then its finite regime is fragmentable and its infinite regime has a continuous, perturbation-invariant assignment. The mass cases are exclusive; fragmentability and topological continuity need not be exclusive properties.\n\\end{theorem}",
       "source_statement_sha256": "c4b70ec8ce0db101a8e33606d3c696a2639c950cd0a919d33d5b8f0e841fa05e",
@@ -7480,8 +7503,8 @@
       "label": null,
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 718,
-        "line_end": 720
+        "line_start": 742,
+        "line_end": 744
       },
       "source_statement_tex": "\\begin{proposition}[The Mass Label Does Not Define Assignment Existence]\nFor fixed identity domain, codomain and readout family, the class defined by E0--E2 is independent of a numerical label $M_\\Omega$. A claim that $M_\\Omega=0$ excludes assignments needs an additional link to the domain or admissible readouts.\n\\end{proposition}",
       "source_statement_sha256": "5c703aa68cbcdb255848643208aa674fda777f87fa7e40fd928bcab5930e207b",
@@ -7511,8 +7534,8 @@
       "label": null,
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 726,
-        "line_end": 728
+        "line_start": 750,
+        "line_end": 752
       },
       "source_statement_tex": "\\begin{proposition}[Deformable Branch with Comparison Data]\nFor $0<M_\\Omega<\\infty$, the positive-displacement and lower-bound hypotheses of Theorem~\\ref{thm:fragmentation} imply fragmentability.\n\\end{proposition}",
       "source_statement_sha256": "c6ea84f8eda5f815bb3360db9c88be00a0e16d07bfe5785f1015114a1b25cada",
@@ -7544,8 +7567,8 @@
       "label": null,
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 734,
-        "line_end": 736
+        "line_start": 758,
+        "line_end": 760
       },
       "source_statement_tex": "\\begin{proposition}[Rigid Branch with Comparison Data]\nFor $M_\\Omega=+\\infty$, continuous finite readouts under E1 imply continuity, and the zero-displacement branch implies perturbation invariance. These are the respective hypotheses of Theorem~\\ref{thm:forced-continuity}.\n\\end{proposition}",
       "source_statement_sha256": "e1686b9e7b1e2539820f835cd99c0c42a1f1be65928a66abdb7823e66e38d300",
@@ -7577,8 +7600,8 @@
       "label": "thm:loss",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 760,
-        "line_end": 762
+        "line_start": 784,
+        "line_end": 786
       },
       "source_statement_tex": "\\begin{theorem}[Loss Capacity under the Audited Branches]\\label{thm:loss}\nUnder the positive-displacement and lower-bound hypotheses of Theorem~\\ref{thm:fragmentation}, $R(\\Phi)>0$. Under the zero-displacement branch of Hypothesis~\\ref{hyp:audited-comparison}, $R(\\Phi)=0$. Associating these branches with finite mass and CCR requires the model link declared in Theorem~\\ref{thm:dichotomy}.\n\\end{theorem}",
       "source_statement_sha256": "1300ce79f864a485f6cd211451068e8fa8f1aa78e3dd88a8a97292949d6d482f",
@@ -7614,16 +7637,16 @@
       "label": "prop:damage-char",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 781,
-        "line_end": 783
+        "line_start": 805,
+        "line_end": 807
       },
-      "source_statement_tex": "\\begin{proposition}[Damage under the Audited Comparisons]\\label{prop:damage-char}\nThe positive branch has $\\sup_\\varepsilon D_\\varepsilon(\\Phi)>0$. On the zero-displacement branch, $D_\\varepsilon(\\Phi)=0$ for every declared intervention.\n\\end{proposition}",
-      "source_statement_sha256": "f34610b8449b98eecb71efe821bedd31b451f14e1e0c732875295c3fac17465d",
+      "source_statement_tex": "\\begin{proposition}[Damage under the Audited Comparisons]\\label{prop:damage-char}\\leavevmode\\par\nThe positive branch has $\\sup_\\varepsilon D_\\varepsilon(\\Phi)>0$. On the zero-displacement branch, $D_\\varepsilon(\\Phi)=0$ for every declared intervention.\n\\end{proposition}",
+      "source_statement_sha256": "66df8dc1f12c41cd829fa756694f5ab256a9ffc52965f8d989b0248eff9a82cc",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [
         "paper2:theorem:thm-loss"
       ],
@@ -7649,8 +7672,8 @@
       "label": "cor:protection",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 803,
-        "line_end": 805
+        "line_start": 893,
+        "line_end": 895
       },
       "source_statement_tex": "\\begin{corollary}[Protection under the Audited Branches]\\label{cor:protection}\nThe zero-displacement branch has $P=1$; the positive-displacement branch with a lower readout bound has $P<1$. For a mass-based classification these conclusions require the corresponding hypotheses of Theorem~\\ref{thm:dichotomy}.\n\\end{corollary}",
       "source_statement_sha256": "51e9eb4c9aee81fba42274b3ed0662defd3b3a69c662069ca03922c583a244be",
@@ -7660,7 +7683,8 @@
       "lean_witnesses": [],
       "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [
-        "paper2:theorem:thm-dichotomy"
+        "paper2:theorem:thm-dichotomy",
+        "paper2:theorem:thm-loss"
       ],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -7682,8 +7706,8 @@
       "label": "thm:asymmetry",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 811,
-        "line_end": 813
+        "line_start": 908,
+        "line_end": 910
       },
       "source_statement_tex": "\\begin{theorem}[Conditional Structural Asymmetry]\\label{thm:asymmetry}\nWhen a rigidity model establishes the branch hypotheses in Theorem~\\ref{thm:dichotomy}, its finite branch has $R>0$ and $P<1$, while its infinite branch has $R=0$ and $P=1$. This is an asymmetry of the declared comparison model, not a conclusion about all systems sharing a numerical mass label.\n\\end{theorem}",
       "source_statement_sha256": "71b82a66e60f62f559a4d76dc43fac55f11b60b2e4773aefa86ac61d0ea5d248",
@@ -7718,17 +7742,19 @@
       "label": "cor:loss-possibility",
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 829,
-        "line_end": 831
+        "line_start": 926,
+        "line_end": 928
       },
-      "source_statement_tex": "\\begin{corollary}[Conditional Possibility of Loss]\\label{cor:loss-possibility}\nLoss is possible on the positive-displacement/coercive-readout branch and absent on the fixed-transport/common-readout branch. Extending this claim to all finite-mass or all CCR systems requires proving those branch conditions for the intended class.\n\\end{corollary}",
-      "source_statement_sha256": "6780f3fe81f5b9dcc71c06b5e7839aa1bc33da21fe1880b887fce2f139d6c5c7",
+      "source_statement_tex": "\\begin{corollary}[Conditional Possibility of Loss]\\label{cor:loss-possibility}\\leavevmode\\par\nLoss is possible on the positive-displacement/coercive-readout branch and absent on the fixed-transport/common-readout branch. Extending this claim to all finite-mass or all CCR systems requires proving those branch conditions for the intended class.\n\\end{corollary}",
+      "source_statement_sha256": "2b2cf05e5179ca2a9ae11ded7058944f7ba187baaba8f56da769c1df360ffac4",
       "source_epistemic_status": "conditional",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Define the declared weighted/sector metric, admissible transports and all infinite-tail/coercivity bounds; finite ordered inequalities alone do not establish topology, completeness or a global factorization gap.",
-      "target_dependency_ids": [],
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Define the declared weighted/sector metric, admissible transports and all infinite-tail/coercivity bounds; finite ordered inequalities alone do not establish topology, completeness or a global factorization gap.",
+      "target_dependency_ids": [
+        "paper2:theorem:thm-loss"
+      ],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
       "candidate_mathlib_modules": [
@@ -7750,8 +7776,8 @@
       "label": null,
       "source": {
         "file": "paper2/main.tex",
-        "line_start": 921,
-        "line_end": 923
+        "line_start": 1025,
+        "line_end": 1027
       },
       "source_statement_tex": "\\begin{lemma}[Inheritance under Audited Fixed Transport]\nAn assignment satisfying the zero-displacement comparison branch inherits invariance under that declared intervention class. This applies to CCR realizations only after checking that branch.\n\\end{lemma}",
       "source_statement_sha256": "a76000167560d2f75979576289471c83905608d690ec095e99cbf7f89a4c4057",
@@ -7814,8 +7840,8 @@
       "label": "thm:nonsim",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 185,
-        "line_end": 187
+        "line_start": 264,
+        "line_end": 266
       },
       "source_statement_tex": "\\begin{theorem}[Finite Representation Budget]\\label{thm:nonsim}\nFix a finite test set $A\\subseteq Z$ with $\\dE(\\Phi(x),\\Phi(y))\\geq\\delta>0$ for every distinct $x,y\\in A$. An encoder $q:A\\to Q$ with $|Q|<|A|$ and any decoder $g:Q\\to\\E$ incur worst-case error at least $\\delta/2$. Finite real dimension alone is not this cardinal budget.\n\\end{theorem}",
       "source_statement_sha256": "573f90db171be3e28168d2bafaacc2c4e89b31dc55b5695a1abdf7c440525265",
@@ -7859,8 +7885,8 @@
       "label": "thm:spectral",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 193,
-        "line_end": 195
+        "line_start": 272,
+        "line_end": 274
       },
       "source_statement_tex": "\\begin{theorem}[Audited Linear Coupling]\\label{thm:spectral}\nIf an audited linear readout $T$ from a nonzero finite-dimensional Euclidean space to another Euclidean space is injective, then its least singular value is positive and $\\|T(x-y)\\|\\geq\\sigma_{\\min}(T)\\|x-y\\|$. A nonlinear readout requires a separate lower-bound proof; a named spectral gap does not supply one.\n\\end{theorem}",
       "source_statement_sha256": "58674ba37f68821853ed07e9d8336d784c4a1dedc549a2c6dce257ef4fb6c272",
@@ -7891,8 +7917,8 @@
       "label": "thm:cont",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 201,
-        "line_end": 203
+        "line_start": 280,
+        "line_end": 282
       },
       "source_statement_tex": "\\begin{theorem}[Continuity under Controlled Approximation]\\label{thm:cont}\nIn a complete metric codomain, suppose finite continuous readouts $f_n$ satisfy $d(f_{n+1}(z),f_n(z))\\leq a_n$ uniformly, with $\\sum_n a_n<\\infty$. Their limit $\\Phi$ is continuous. The mass label is not sufficient by itself.\n\\end{theorem}",
       "source_statement_sha256": "bbd2540f9f5cab4da4facbf1f3f6de73b491d0fbb0a4f1d6ab3993896fe54ed3",
@@ -7922,8 +7948,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 273,
-        "line_end": 275
+        "line_start": 352,
+        "line_end": 354
       },
       "source_statement_tex": "\\begin{lemma}[Well-Posedness of (C3)]\nContinuity and a positive lower bound are jointly realizable; for example $Z=\\E=[0,1]$ with the ordinary metric and $\\Phi(x)=x$ satisfies both with $C=1$.\n\\end{lemma}",
       "source_statement_sha256": "b140e4c5e9965b5d2462530f28764b61edc7c5351e410026f773f30ae697e023",
@@ -7953,8 +7979,8 @@
       "label": "lem:bridge",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 299,
-        "line_end": 301
+        "line_start": 430,
+        "line_end": 432
       },
       "source_statement_tex": "\\begin{lemma}[Bridge Lemma]\\label{lem:bridge}\nFor any defined $e=\\Phi(z)\\in\\E$, $\\dE(e,\\nullphi)=0$ implies $e=\\nullphi$. No CCR assumption is required.\n\\end{lemma}",
       "source_statement_sha256": "50c4630e97f3c1e16846c2d8c879b59fca9b3104d4126401c30ae316cde63113",
@@ -7984,8 +8010,8 @@
       "label": "thm:instability",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 323,
-        "line_end": 330
+        "line_start": 454,
+        "line_end": 461
       },
       "source_statement_tex": "\\begin{theorem}[Conditional Null-Separation Under an Admissible Extension Witness]\\label{thm:instability}\nLet $\\Phi:Z\\to\\E$ be defined on a declared separated witness pair $(z_0,z_1)$ with $d_Z(z_0,z_1)=\\epsilon>0$ and $\\dE(\\Phi(z_0),\\Phi(z_1))\\geq C\\epsilon$, $C>0$. Then\n\\[\n\\neg(\\Phi(z_0)=\\nullphi\\ \\wedge\\ \\Phi(z_1)=\\nullphi),\\qquad\n\\max_{i=0,1}\\dE(\\Phi(z_i),\\nullphi)\\geq C\\epsilon/2.\n\\]\nThis applies to a CCR channel if it supplies these data; CCR is unnecessary for the metric conclusion. It excludes joint exact null assignment, not a single stable null endpoint.\n\\end{theorem}",
       "source_statement_sha256": "0c9c65d3e58e13b25ebf963d5f25a3729149ee0ec419191780fc63ee808426d0",
@@ -8016,8 +8042,8 @@
       "label": "cor:forced",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 367,
-        "line_end": 369
+        "line_start": 538,
+        "line_end": 540
       },
       "source_statement_tex": "\\begin{corollary}[Conditional Forced Non-Nullity]\\label{cor:forced}\nIf a CCR channel admits an admissible extension witness for $\\Phi$ and if $\\Phi(z_1)=\\nullphi$ for the witness object, then $\\Phi(z_0)\\neq\\nullphi$. Symmetrically, if $\\Phi(z_0)=\\nullphi$, then $\\Phi(z_1)\\neq\\nullphi$.\n\\end{corollary}",
       "source_statement_sha256": "fae8c7e0d0ee1127c2f73e7463ef93a34368a79bdb25ad5ed9af24b5b268c7ca",
@@ -8049,8 +8075,8 @@
       "label": "lem:no-collapse",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 393,
-        "line_end": 395
+        "line_start": 564,
+        "line_end": 566
       },
       "source_statement_tex": "\\begin{lemma}[Witness-Relative No-Minimum Collapse]\\label{lem:no-collapse}\nThe finite positive witness image $A=\\{\\Phi(z_0),\\Phi(z_1)\\}\\setminus\\{\\nullphi\\}$ is non-empty. Its infimum, if one exists in the ambient poset, need not be positive or belong to $A$.\n\\end{lemma}",
       "source_statement_sha256": "d2dd8b8d6eaa132b601a5d1705e7ad4ffc44f26cb5e86cf46bd875fec850328e",
@@ -8082,8 +8108,8 @@
       "label": "thm:minimal",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 403,
-        "line_end": 405
+        "line_start": 574,
+        "line_end": 576
       },
       "source_statement_tex": "\\begin{theorem}[Witness-Relative Minimal Positive Regime]\\label{thm:minimal}\nThe finite non-empty positive witness image $A$ has at least one minimal element in its inherited partial order. If its two possible elements are comparable, it has a unique least element. These statements require no ambient infimum or order completeness; they concern $A$, not all of $\\Eplus$.\n\\end{theorem}",
       "source_statement_sha256": "68f5f06378a46d9f0b67884bef7e845bf66d4048b8e4b79c006ced76abff13bc",
@@ -8113,8 +8139,8 @@
       "label": "cor:intensity",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 421,
-        "line_end": 423
+        "line_start": 592,
+        "line_end": 594
       },
       "source_statement_tex": "\\begin{corollary}[Witness-Relative Positive Intensity]\\label{cor:intensity}\nFor a minimal positive member $e$ of the finite witness image $A$ and $A_0=A\\cup\\{\\nullphi\\}$, $\\iota_{A_0}(e)=r(e)>0$. The global $\\iota(e)$ need not be positive.\n\\end{corollary}",
       "source_statement_sha256": "1c967768f5a16a967fa029a413372ab6c3e28501db9a2de5dd59b484f5a1e934",
@@ -8144,8 +8170,8 @@
       "label": "thm:bound",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 436,
-        "line_end": 441
+        "line_start": 607,
+        "line_end": 612
       },
       "source_statement_tex": "\\begin{theorem}[Witness Intensity Bound]\\label{thm:bound}\nUnder the hypotheses of Theorem~\\ref{thm:instability}, if exactly one of $\\Phi(z_0)$ and $\\Phi(z_1)$ is null, then the non-null witness image $e$ satisfies\n\\[\n\\dE(e,\\nullphi)\\geq C\\epsilon>0.\n\\]\n\\end{theorem}",
       "source_statement_sha256": "fffc67af5f5238fd0918270000a2920599b7a8b1bdd2bc26aa89499e2072ed4e",
@@ -8242,8 +8268,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 452,
-        "line_end": 457
+        "line_start": 623,
+        "line_end": 628
       },
       "source_statement_tex": "\\begin{proposition}[Conditional Profinite Bound]\nFor a profinite family with a verified extension witness of separation $\\epsilon$, one endpoint fixed at $\\nullphi$, and an independently certified witness-level lower constant $C_{\\mathrm{prof}}>0$, the witness image separation satisfies\n\\[\n\\dE(e,\\nullphi)\\geq C_{\\mathrm{prof}}\\epsilon.\n\\]\n\\end{proposition}",
       "source_statement_sha256": "cc80fec9cf798cef49d07de69e4993f856383c58f6f6c60dd4227086d15ec933",
@@ -8275,8 +8301,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 463,
-        "line_end": 468
+        "line_start": 634,
+        "line_end": 639
       },
       "source_statement_tex": "\\begin{proposition}[Conditional Symbolic Bound]\nFor a symbolic family with a verified extension witness of separation $\\epsilon$, one endpoint fixed at $\\nullphi$, and an independently certified witness-level lower constant $C_{\\mathrm{sym}}>0$, the witness image separation satisfies\n\\[\n\\dE(e,\\nullphi)\\geq C_{\\mathrm{sym}}\\epsilon.\n\\]\n\\end{proposition}",
       "source_statement_sha256": "ee77bc854f12f939bf3002492c0c0d45833fcecb67f2c1c0ae022f3f01fef536",
@@ -8308,8 +8334,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 501,
-        "line_end": 503
+        "line_start": 672,
+        "line_end": 674
       },
       "source_statement_tex": "\\begin{proposition}[Certificate sufficiency]\nIf a conclusion-independent witness certificate exists for $(z_0,z_1)$, and both endpoints are assigned to $\\nullphi$, then the certificate is inconsistent.\n\\end{proposition}",
       "source_statement_sha256": "79f3ab48766baf9f423d837efffbbfe2ef5e537431148a53287b2945c4828007",
@@ -8340,16 +8366,16 @@
       "label": "prop:noise-margin",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 541,
-        "line_end": 551
+        "line_start": 712,
+        "line_end": 722
       },
-      "source_statement_tex": "\\begin{proposition}[Noise-robust null exclusion]\\label{prop:noise-margin}\nLet $e_i=\\Phi(z_i)$ and estimates $\\widehat e_i$ satisfy $\\dE(e_i,\\widehat e_i)\\leq\\eta_i$, $i=0,1$. Let $m=C\\epsilon$ be a certified true separation. Then\n\\[\n\\dE(\\widehat e_0,\\widehat e_1)\\geq m-\\eta_0-\\eta_1.\n\\]\nPositive estimated separation follows from $m>\\eta_0+\\eta_1$. If null acceptance instead means $\\dE(\\widehat e_i,\\nullphi)\\leq r_i$, both estimates cannot be accepted as null when\n\\[\nm>\\eta_0+\\eta_1+r_0+r_1.\n\\]\nFor equal estimation and acceptance radii $\\eta$, this sufficient condition is $m>4\\eta$, not merely $m>2\\eta$.\n\\end{proposition}",
-      "source_statement_sha256": "b98d871f0bf704bf5c07bcd673e1645aae29961af9ce1d801a28903552f3ad0b",
+      "source_statement_tex": "\\begin{proposition}[Noise-robust null exclusion]\\label{prop:noise-margin}\\leavevmode\\par\nLet $e_i=\\Phi(z_i)$ and estimates $\\widehat e_i$ satisfy $\\dE(e_i,\\widehat e_i)\\leq\\eta_i$, $i=0,1$. Let $m=C\\epsilon$ be a certified true separation. Then\n\\[\n\\dE(\\widehat e_0,\\widehat e_1)\\geq m-\\eta_0-\\eta_1.\n\\]\nPositive estimated separation follows from $m>\\eta_0+\\eta_1$. If null acceptance instead means $\\dE(\\widehat e_i,\\nullphi)\\leq r_i$, both estimates cannot be accepted as null when\n\\[\nm>\\eta_0+\\eta_1+r_0+r_1.\n\\]\nFor equal estimation and acceptance radii $\\eta$, this sufficient condition is $m>4\\eta$, not merely $m>2\\eta$.\n\\end{proposition}",
+      "source_statement_sha256": "3ccd2f54589dac57fe97bcbd9e392ee0ec5c256800eecb9d35b29424a4353863",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
       "lean_witnesses": [],
-      "fidelity_notes": "Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
+      "fidelity_notes": "Etapa 1 strengthened or typed this manuscript result and supplied/expanded its source proof. No source-equivalent Lean proof is claimed. Translate the stated objects, quantifiers and structural premises explicitly; discharge the manuscript implication/countermodel rather than assuming its conclusion in a new predicate.",
       "target_dependency_ids": [],
       "other_registry_dependency_ids": [],
       "source_refs_outside_formal_registry": [],
@@ -8371,8 +8397,8 @@
       "label": "thm:closure",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 576,
-        "line_end": 578
+        "line_start": 747,
+        "line_end": 749
       },
       "source_statement_tex": "\\begin{theorem}[Conditional Phenomenological Closure]\\label{thm:closure}\nA declared separated, detected pair has a non-empty positive image and the unanchored lower bound $\\max_i r(\\Phi(z_i))\\geq C\\epsilon/2$. Its finite positive image has a minimal member; uniqueness requires comparability. If one endpoint is null, the other is the unique positive witness image, with relative gap and null distance at least $C\\epsilon$. Temporal stability, global minimal positivity, and physical CCR realizability are not consequences.\n\\end{theorem}",
       "source_statement_sha256": "18356d88bcaa7ea64d9940e84c30484b8bf6f937462ec89fe869c81259ecdcd8",
@@ -8407,8 +8433,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 623,
-        "line_end": 625
+        "line_start": 794,
+        "line_end": 796
       },
       "source_statement_tex": "\\begin{proposition}[Null-fiber exclusion on detected pairs]\nLet $W$ be a witness class on which $\\Phi$ is witness-detecting with constant $C_W>0$. If $(x,y)\\in W$ and $d_Z(x,y)>0$, then $(x,y)$ cannot both lie in $\\mathcal{N}_\\Phi$.\n\\end{proposition}",
       "source_statement_sha256": "2b7f8fb4e800fbfb5f03694dad909c0a40f8c1e200be1a769d66bdce38bd5189",
@@ -8438,8 +8464,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 631,
-        "line_end": 633
+        "line_start": 802,
+        "line_end": 804
       },
       "source_statement_tex": "\\begin{corollary}[Diameter obstruction]\nIf a subset $A\\subseteq Z$ contains a detected witness pair $(x,y)$ with $d_Z(x,y)>0$, then $A$ cannot be contained in $\\mathcal{N}_\\Phi$.\n\\end{corollary}",
       "source_statement_sha256": "00b8718dd29e3e4dec59b0987f9d92bdc87b82a8ac09021ca8f5c41d5b4d250b",
@@ -8470,8 +8496,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 643,
-        "line_end": 648
+        "line_start": 814,
+        "line_end": 819
       },
       "source_statement_tex": "\\begin{proposition}[Quotient obstruction]\nSuppose $\\Phi=h\\circ q$ and $q(x)=q(y)$ while $d_Z(x,y)>0$. Then no constant $C>0$ can satisfy\n\\[\n\\dE(\\Phi(x),\\Phi(y))\\geq C\\,d_Z(x,y).\n\\]\n\\end{proposition}",
       "source_statement_sha256": "0285adb5fb16114402b7f69ba979b83dfc95d6b239f96f1940bbb11517c012b1",
@@ -8501,8 +8527,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 656,
-        "line_end": 662
+        "line_start": 827,
+        "line_end": 833
       },
       "source_statement_tex": "\\begin{proposition}[Minimum over a finite witness ledger]\nLet $m\\geq1$ and let $W_0=\\{(x_i,y_i)\\}_{i=1}^m$ be a finite ledger of separated witness pairs. Suppose each pair has a certified lower constant $C_i>0$:\n\\[\n\\dE(\\Phi(x_i),\\Phi(y_i))\\geq C_i\\,d_Z(x_i,y_i).\n\\]\nThen $C_*=\\min_i C_i>0$ is a valid lower constant for the finite ledger.\n\\end{proposition}",
       "source_statement_sha256": "6d942ffe3eb96ce5080fdf5a0a61a8e15edac36744cfa6e72476b2a7ab1db3d4",
@@ -8532,8 +8558,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 672,
-        "line_end": 674
+        "line_start": 843,
+        "line_end": 845
       },
       "source_statement_tex": "\\begin{proposition}[Strict margin persistence]\nLet $\\widehat m>0$ be a certified lower bound on the current estimated pair distance. If a further perturbation changes that distance by at most $\\rho<\\widehat m$, the estimates remain separated. From true margin $m=C\\epsilon$ and estimator radii, one may use $\\widehat m=m-\\eta_0-\\eta_1$ only when it is positive.\n\\end{proposition}",
       "source_statement_sha256": "fd1a353d51a019d04c80c2829ecd4ac3918f783473bca0578d6d0e06dc3d0ee2",
@@ -8564,8 +8590,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 837,
-        "line_end": 839
+        "line_start": 1025,
+        "line_end": 1027
       },
       "source_statement_tex": "\\begin{proposition}\nSummable coordinate-change costs do not certify CCR. If an admitted transformation changes infinitely many coordinates and costs $\\sum_{n\\in J}w_n$ with $\\sum_n w_n<\\infty$, its cost is finite.\n\\end{proposition}",
       "source_statement_sha256": "238ac76e8eb8a546d7c110011f084a72a9822fb5f23aa9449fe804a67f733a01",
@@ -8595,8 +8621,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 855,
-        "line_end": 864
+        "line_start": 1043,
+        "line_end": 1052
       },
       "source_statement_tex": "\\begin{theorem}[Certified Profinite Witness Bound]\nAssume that the chosen profinite readout has been certified on the audited witness class by a positive lower constant $C_{\\mathrm{prof}}>0$:\n\\[\n\\dE(\\Phi_f(x), \\Phi_f(\\tilde{x})) \\geq C_{\\mathrm{prof}} \\cdot d_G(x, \\tilde{x})\n\\]\nfor the witness pair or witness neighborhood under review. Then any witness pair with $d_G(x,\\tilde{x})=\\epsilon>0$ satisfies\n\\[\n\\dE(\\Phi_f(x),\\Phi_f(\\tilde{x}))\\geq C_{\\mathrm{prof}}\\epsilon.\n\\]\n\\end{theorem}",
       "source_statement_sha256": "91e5341edd29db30ba09f2ad3177c2de80781090a6534036394befab3f621978",
@@ -8626,8 +8652,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 911,
-        "line_end": 913
+        "line_start": 1099,
+        "line_end": 1101
       },
       "source_statement_tex": "\\begin{proposition}\nSymbolic compactness and summable coordinate weights do not certify CCR under coordinate-change cost.\n\\end{proposition}",
       "source_statement_sha256": "90a86b82295f367089376853cf4a5faf50f3e90d73f456401b248ae8b235c47f",
@@ -8657,8 +8683,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 929,
-        "line_end": 938
+        "line_start": 1117,
+        "line_end": 1126
       },
       "source_statement_tex": "\\begin{theorem}[Certified Symbolic Witness Bound]\nAssume that the chosen symbolic readout has been certified on the audited witness class by a positive lower constant $C_{\\mathrm{sym}}>0$:\n\\[\n\\dE(\\Phi_g(x), \\Phi_g(\\tilde{x})) \\geq C_{\\mathrm{sym}} \\cdot d_B(x, \\tilde{x})\n\\]\nfor the witness pair or witness neighborhood under review. Then any witness pair with $d_B(x,\\tilde{x})=\\epsilon>0$ satisfies\n\\[\n\\dE(\\Phi_g(x),\\Phi_g(\\tilde{x}))\\geq C_{\\mathrm{sym}}\\epsilon.\n\\]\n\\end{theorem}",
       "source_statement_sha256": "4548fd5f23b40435a8e1f4a2c914b7ce6b79818ca3541ec39ddccdf240e6fbf8",
@@ -8688,8 +8714,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 949,
-        "line_end": 951
+        "line_start": 1137,
+        "line_end": 1139
       },
       "source_statement_tex": "\\begin{theorem}[Rigidity Inheritance]\nSuppose a readout $\\Phi:Z\\to\\E$ has lower constant $C$ on a declared pair class. Let $a:Z'\\to Z$ and $b:\\E\\to\\E'$ satisfy lower bounds with constants $c_a,c_b>0$, and set $\\Phi'=b\\circ\\Phi\\circ a$. Then $\\Phi'$ has lower constant $c_ac_bC$ on the pulled-back class. To inherit CCR additionally require that every finite-cost positive deformation in the new sector pulls back to a finite-cost positive deformation in the original sector. Summability alone supplies neither assumption.\n\\end{theorem}",
       "source_statement_sha256": "ff735e879a83a7e44f156318909b2a41787382cddd13298557bef06294b9c1a2",
@@ -8719,8 +8745,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 962,
-        "line_end": 964
+        "line_start": 1150,
+        "line_end": 1152
       },
       "source_statement_tex": "\\begin{theorem}[Categorical Universality]\nIf $\\Phi:Z\\to\\E$ has a positive global lower bound, it is injective. For any $\\Psi:Z\\to F$ there is a unique factor map $u:\\Phi(Z)\\to F$ with $u\\circ\\Phi=\\Psi$. If $\\Psi$ is $L$-Lipschitz, $u$ is $L/C$-Lipschitz. No unique extension to all of $\\E$ follows.\n\\end{theorem}",
       "source_statement_sha256": "74d5b6aca718367deea1fa288d1ddd5cb8180d451a0ae1645cd21eb64821ceb6",
@@ -8751,8 +8777,8 @@
       "label": "thm:sim-cond",
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 984,
-        "line_end": 990
+        "line_start": 1172,
+        "line_end": 1178
       },
       "source_statement_tex": "\\begin{theorem}[Simulation Lower Bound]\\label{thm:sim-cond}\nFor the fixed target and prefix class above,\n\\[\n\\operatorname{err}_N=\\frac{1}{2\\,3^{N+1}}>0,\\qquad \\lim_{N\\to\\infty}\\operatorname{err}_N=0.\n\\]\nThus exact reconstruction fails at every fixed prefix budget, while arbitrarily accurate approximation is possible as the budget grows.\n\\end{theorem}",
       "source_statement_sha256": "54bda24a8faf2d0c755688466912401f12953290ebf8fc0937c41ceeaf0a8715",
@@ -8783,8 +8809,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 996,
-        "line_end": 998
+        "line_start": 1184,
+        "line_end": 1186
       },
       "source_statement_tex": "\\begin{corollary}\nIn this prefix model, worst-case error at most $\\varepsilon$ requires $1/(2\\,3^{N+1})\\leq\\varepsilon$. Hence $N$ must diverge as $\\varepsilon\\downarrow0$. This does not forbid a real-valued encoding with unbounded precision.\n\\end{corollary}",
       "source_statement_sha256": "61df35cdbc0130bf15fdd7cf2f0fc78f300178e4ac69cb95026d4eccfce424d0",
@@ -8815,8 +8841,8 @@
       "label": null,
       "source": {
         "file": "paper3/main.tex",
-        "line_start": 1005,
-        "line_end": 1007
+        "line_start": 1193,
+        "line_end": 1195
       },
       "source_statement_tex": "\\begin{theorem}[Closure by Non-Alternatives]\nThe following obligations are jointly sufficient for the corresponding structural conclusions: an admitted separated pair with a certified lower constant gives joint null exclusion; a null anchor gives the stronger anchored bound; faithful global readout gives image factorization; declared prefix access gives the approximation bound above; and the explicit pullback conditions of Appendix~\\ref{app:hereditary-rigidity} give inheritance. A competing model satisfying those same obligations obeys those same conclusions. Neither CCR realizability nor satisfaction of all obligations is inferred from canonical topology alone.\n\\end{theorem}",
       "source_statement_sha256": "5eeb7779ced8e74392f4fb14e6b1c554aa3dc7182b9144ec468e28d4d94dd40f",
@@ -15362,8 +15388,8 @@
       "label": "prop:wedge-cartesian-gap",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 729,
-        "line_end": 737
+        "line_start": 763,
+        "line_end": 771
       },
       "source_statement_tex": "\\begin{proposition}[Cartesian Corner Gap]\\label{prop:wedge-cartesian-gap}\nFor nonempty compact $A,B\\subset H$ with both diameters at least $d_0>0$,\n\\[\n d_H(W,A\\times B)\\ge\n \\delta_{\\rm cart}(d_0):=\\max\\{d_0/2,R/2\\}>0.\n\\]\nIn the fixed coordinate axes the bound $R/2$ holds even without the diameter\nassumption and is attained by $(Q/2)\\times(Q/2)$.\n\\end{proposition}",
       "source_statement_sha256": "bdf9012e446054c765b93227056cf96bb81b06d0d683ad35bf0c1935c873cf2c",
@@ -15459,8 +15485,8 @@
       "label": "thm:wedge-bilipschitz-gap",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 751,
-        "line_end": 768
+        "line_start": 785,
+        "line_end": 802
       },
       "source_statement_tex": "\\begin{theorem}[Bounded-Distortion Wedge Gap]\\label{thm:wedge-bilipschitz-gap}\nLet A and B be nonempty compact metric spaces of diameter at least $d_0>0$.\nGive $A\\times B$ the maximum metric. Suppose an embedding\n$F:A\\times B\\to H\\oplus H$ satisfies\n\\[\n c\\,d_\\infty(p,p')\\le\\|F(p)-F(p')\\|\\le C\\,d_\\infty(p,p'),\n \\qquad 0<c\\le C.\n\\]\nPut\n\\[\n d_*:=\\min\\{d_0/2,1/(4C)\\},\\qquad\n \\delta_W:=\\frac{c^2d_*}{2C+4c}.\n\\]\nThen $d_H(W,F(A\\times B))\\ge\\delta_W>0$. Consequently, if a nonempty compact\n$\\widetilde W$ satisfies $d_H(W,\\widetilde W)<r_W:=\\delta_W/2$, its distance\nfrom every product in this same $(d_0,c,C)$ sector exceeds $\\delta_W/2$.\nThe factors need not be assumed path connected.\n\\end{theorem}",
       "source_statement_sha256": "c5800c18a8785721f999e2bf6d6f73353e2f676d50d0debba8bb2e73e09efbfd",
@@ -15556,8 +15582,8 @@
       "label": "prop:wedge-degenerate-controls",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 808,
-        "line_end": 815
+        "line_start": 842,
+        "line_end": 849
       },
       "source_statement_tex": "\\begin{proposition}[Degenerating-Factor and Unbounded-Distortion Controls]\n\\label{prop:wedge-degenerate-controls}\nThere are embedded products arbitrarily close to W in each of these two\nlarger sectors: (i) uniformly bi-Lipschitz embeddings with one factor diameter\ntending to zero; (ii) factors of uniformly positive diameter with no uniform\npositive lower Lipschitz constant. Neither control is a Cartesian product\nin the fixed axes of Proposition~\\ref{prop:wedge-cartesian-gap}.\n\\end{proposition}",
       "source_statement_sha256": "877eb37f6dae64db48c573fe3fc7181405d8b62663ba6ac37c0a1ff9dda6a09d",
@@ -15655,8 +15681,8 @@
       "label": "prop:wedge-energy-regimes",
       "source": {
         "file": "paper1/main.tex",
-        "line_start": 837,
-        "line_end": 855
+        "line_start": 871,
+        "line_end": 889
       },
       "source_statement_tex": "\\begin{proposition}[Operational Barrier and Cheap-Damage Contrast]\n\\label{prop:wedge-energy-regimes}\nOn W let $D_{s_L,s_R}(x,y)=((1-s_L)x,(1-s_R)y)$,\n$s_L,s_R\\in[0,1]$, and $s=\\max\\{s_L,s_R\\}$. These maps commute with all\nfinite coordinate cuts and have deformation $\\Delta=sR$. In a unit-duration\nquadratic actuation model their minimum worst-state motion energy is\n$s^2R^2$. Declare two sectors of completed protocols, both including all these\nmaps: a damage sector with this motion energy alone; and a protected sector\nrequiring a completed unlock of energy at least $B=1$ before any motion.\nThen\n\\[\n M_{\\rm damage}=0,\\qquad\n M_{\\rm protected}=R+R^{-1}=4/\\sqrt3>2/3.\n\\]\nThe actual damage clamp $D_{0,1}$ has cost $K_{\\rm atom}=1/3$ and\ndeformation $R\\ge\\delta_{\\rm atom}=1/2$, so it enforces\n$M_{\\rm damage}\\le K_{\\rm atom}/\\delta_{\\rm atom}=2/3$.\nThe protected sector admits that clamp only at cost $4/3>K_{\\rm atom}$.\n\\end{proposition}",
       "source_statement_sha256": "3f94e99fd278264a9e7173e50b5923153a934d12f8e3131d6ef2081da7f5c46f",
@@ -16399,7 +16425,254 @@
       "empirical_or_external_obligations": [
         "Independent identification of (e_i, phi_i), calibration K_i/omega_i/epsilon_i/Delta*, admissibility and independent review are not inferred from a proof."
       ]
+    },
+    {
+      "registry_id": "basecore:theorem:thm-readout-loss-stability",
+      "type": "theorem",
+      "paper": "basecore",
+      "title": "Quantitative Stability of Audited Readout Loss",
+      "label": "thm:readout-loss-stability",
+      "source": {
+        "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+        "line_start": 597,
+        "line_end": 633
+      },
+      "source_statement_tex": "\\begin{theorem}[Quantitative Stability of Audited Readout Loss]\\label{thm:readout-loss-stability}\nLet $Z$ be a compact metric space, $X\\subseteq Z$ a nonempty compact set,\n$\\Theta$ a nonempty compact control space, and $h:\\Theta\\times X\\to Z$\ncontinuous. Let $F:Z\\to\\mathcal E$ be continuous into a metric space.\nFor $r\\geq0$ define its uniform modulus and the comparison quantities\n\\[\n\\begin{aligned}\n \\omega_F(r)&=\\sup_{d_Z(z,z')\\leq r}d_{\\mathcal E}(Fz,Fz'),\\\\\n \\Delta&=\\max_{\\theta\\in\\Theta,\\,x\\in X}d_Z(x,h_\\theta x),\\\\\n R(F,h)&=\\max_{\\theta,x}d_{\\mathcal E}(Fx,F(h_\\theta x)),\\qquad\n P(F,h)=\\frac{r_0}{r_0+R(F,h)},\\quad r_0>0.\n\\end{aligned}\n\\]\nThese maxima are finite, and $\\omega_F(r)\\to0$ as $r\\downarrow0$. If a\nlower bound $d_{\\mathcal E}(Fx,F(h_\\theta x))\\geq C d_Z(x,h_\\theta x)$\nholds on these compared pairs, then\n\\[\n C\\Delta\\leq R(F,h)\\leq\\omega_F(\\Delta).\n\\]\nFor another readout $G:Z\\to\\mathcal E$ and transport family $h'$ on the same\ndomains, suppose, with $\\eta,\\zeta\\geq0$,\n\\[\n \\sup_{z\\in Z}d_{\\mathcal E}(Fz,Gz)\\leq\\eta,\n \\qquad \\sup_{\\theta,x}d_Z(h_\\theta x,h'_\\theta x)\\leq\\zeta.\n\\]\nUsing a supremum for $R(G,h')$ if a maximum is not attained, one has\n\\[\n\\begin{aligned}\n |R(F,h)-R(G,h')|&\\leq2\\eta+\\omega_F(\\zeta),\\\\\n |P(F,h)-P(G,h')|&\\leq\\frac{2\\eta+\\omega_F(\\zeta)}{r_0}.\n\\end{aligned}\n\\]\nIn particular $R(F,h)\\geq C\\delta$ for any witnessed displacement\n$d_Z(x,h_\\theta x)\\geq\\delta>0$. Such positivity survives a comparison\nerror smaller than $C\\delta$. No scalar mass label supplies the common\ndomain, lower bound, transport or uniform approximation hypotheses.\n\\end{theorem}",
+      "source_statement_sha256": "72bab048ff62e62813c1516a2159b884496a2952fa36af19a6be2deac5212bd8",
+      "source_epistemic_status": "conditional",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_CONDITIONAL_RESULT_NOT_MECHANIZED",
+      "lean_witnesses": [],
+      "fidelity_notes": "Mechanize compact readout moduli, extrema, suprema and the uniform transport/readout error estimate, including the dimensional normalization r0. The source proof does not calibrate a physical readout or infer a mass-to-branch link.",
+      "target_dependency_ids": [],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [
+        "Mathlib.Topology.Compactness.Compact",
+        "Mathlib.Topology.Constructions",
+        "Mathlib.Topology.MetricSpace.Contracting"
+      ],
+      "topic": "etapa1-foundations",
+      "priority": 1,
+      "remaining_obligations": [
+        "Mechanize compact readout moduli, extrema, suprema and the uniform transport/readout error estimate, including the dimensional normalization r0. The source proof does not calibrate a physical readout or infer a mass-to-branch link."
+      ],
+      "empirical_or_external_obligations": [
+        "Physical measurement identification, admissibility/calibration and independent review remain separate."
+      ]
+    },
+    {
+      "registry_id": "basecore:proposition:prop-coupled-energy-phase-bridge",
+      "type": "proposition",
+      "paper": "basecore",
+      "title": "Nontrivial Energy--Phase Coupled Bridge",
+      "label": "prop:coupled-energy-phase-bridge",
+      "source": {
+        "file": "basecore/core/sections/11_discrete_bridge.tex",
+        "line_start": 256,
+        "line_end": 327
+      },
+      "source_statement_tex": "\\begin{proposition}[Nontrivial Energy--Phase Coupled Bridge]\\label{prop:coupled-energy-phase-bridge}\nLet $\\nu=kT>0$, with energy coordinates and $\\nu$ expressed in the same normalized energy unit and phases in radians. Fix Lipschitz profiles $e:[0,1]\\to[0,1]$ and a real lift\n$\\phi:[0,1]\\to\\mathbb R$ with constants $L_e,L_\\phi$ such that\n\\[\n |e(s)-e(t)|\\leq E_0,\\qquad\n |\\phi(s)-\\phi(t)|\\leq\\theta_0<\\pi/2.\n\\]\nDefine the positive kernel and operator\n\\[\n w(s,t)=\\frac{\\exp(-|e(s)-e(t)|/\\nu)}{\\cos(\\phi(s)-\\phi(t))},\n \\qquad (K_wf)(s)=\\kappa\\int_0^1w(s,t)f(t)\\,dt.\n\\]\nAssume $0<\\kappa$, $q:=\\kappa\\sec\\theta_0<1$, and let a nonconstant\n$L_a$-Lipschitz profile $a$ and a nonempty compact control interval $\\U$ satisfy\n$0\\leq a(s)+u\\leq1-q$. Set $T^w_u=P_C(K_w\\cdot+a+u)$.\nFor $s_i=(i-1/2)/N$, freeze $e_i=e(s_i)$, $\\phi_i=\\phi(s_i)$ and set\n\\[\n (\\widehat T^w_{N,u}\\mathbf x)_i\n =\\operatorname{clamp}_{[0,1]}\n \\left(\\frac\\kappa N\\sum_{j=1}^Nw(s_i,s_j)x_j+a_{N,i}+u\\right).\n\\]\nThis is the original increment operator with the complete directed graph\n(self-edges included), $I_j=\\operatorname{Id}$, $\\theta=N/\\kappa$,\n$\\eta=\\alpha=\\beta=1$, $B=-\\operatorname{Id}$ and $D=0$.\n\nBoth maps are $q$-contractive in their Hilbert norms. More generally the\nsame phase sector gives the sufficient directed-graph factor\n\\[\n q_N=|1-\\alpha\\beta|\n +\\frac{\\eta L_I\\sqrt{d_N^{\\rm in}d_N^{\\rm out}}}{\\theta\\cos\\theta_0}\n +\\alpha L_D<1.\n\\]\nWith $P_N=J_NJ_N^\\dagger$ and\n\\[\n L_w=\\sec\\theta_0\\left(\\frac{L_e}{\\nu}+\\tan\\theta_0 L_\\phi\\right),\n \\qquad \\varepsilon_N=\\frac{\\kappa L_w+L_a/\\sqrt{12}}{N},\n\\]\nthe coupled discretization satisfies\n\\[\n \\sup_{f\\in C}\\|J_N\\widehat T^w_{N,u}J_N^\\dagger f-T^w_uf\\|_2\n \\leq\\varepsilon_N,\n \\qquad\n \\|J_Nx^*_{N,u}-f^*_{w,u}\\|_2\\leq\\frac{\\varepsilon_N}{1-q}.\n\\]\nIn particular the requested one-step comparison holds for $f=J_N\\mathbf x$.\nLet $d_0=\\|a-\\bar a\\|_2$, $d_{0,N}=\\|P_Na-\\bar a\\|_2$ and\n\\[\n b_w=\\max\\{1-e^{-E_0/\\nu},\\sec\\theta_0-1\\},\n \\qquad b_*:=\\frac{\\kappa b_w}{1-q}.\n\\]\nThen, uniformly in $u$,\n\\[\n \\operatorname{dist}(f^*_{w,u},\\mathcal N)\\geq d_0-b_* ,\\qquad\n \\operatorname{dist}_N(x^*_{N,u},\\mathcal N_N)\\geq d_{0,N}-b_* .\n\\]\nWhenever the respective right side is positive, non-collapse follows without\nassuming H5. Here $\\mathcal N_N$ is the space of constant vectors.\n\nA genuinely coupled, uniformly nonempty sector is\n\\[\n \\nu=1,\\quad\\kappa=1/4,\\quad a(s)=s/4,\\quad\\U=[0,1/4],\n \\quad e(s)=\\phi(s)=s/64.\n\\]\nFor this choice $q\\leq2048/8191$ and both gaps, for every $N\\geq2$, are at least\n\\[\n \\gamma:=\\frac1{16}-\\frac{8191}{256\\cdot6143}\n          =\\frac{90097}{1572608}>0.\n\\]\nEnergy and phase vary between nodes and across the declared parameter sector;\nthey remain fixed during each coherence iteration. No evolution law or\ncontractivity for a joint time-varying energy--phase state is asserted.\n\\end{proposition}",
+      "source_statement_sha256": "16a67c09038bbe77cc4f441e7bdeaefd4980aeefdb22b59b5f07a687b7483d05",
+      "source_epistemic_status": "conditional",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_CONDITIONAL_RESULT_NOT_MECHANIZED",
+      "lean_witnesses": [],
+      "fidelity_notes": "Mechanize the sampled positive energy-phase kernel, Schur/Lipschitz estimates, uniform O(1/N) operator discrepancy, fixed-point perturbation and explicit positive rational gap for all N>=2. Existing uncoupled/finite kernels are not this coupled theorem.",
+      "target_dependency_ids": [
+        "basecore:lemma:lem-cell-average-error",
+        "basecore:lemma:lem-directed-resonance-bound",
+        "basecore:theorem:thm-realized-nonconstant-bridge"
+      ],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [
+        "Mathlib.Topology.Compactness.Compact",
+        "Mathlib.Topology.Constructions",
+        "Mathlib.Topology.MetricSpace.Contracting"
+      ],
+      "topic": "etapa1-foundations",
+      "priority": 0,
+      "remaining_obligations": [
+        "Mechanize the sampled positive energy-phase kernel, Schur/Lipschitz estimates, uniform O(1/N) operator discrepancy, fixed-point perturbation and explicit positive rational gap for all N>=2. Existing uncoupled/finite kernels are not this coupled theorem."
+      ],
+      "empirical_or_external_obligations": [
+        "Physical measurement identification, admissibility/calibration and independent review remain separate."
+      ]
+    },
+    {
+      "registry_id": "paper2:theorem:thm-readout-loss-stability",
+      "type": "theorem",
+      "paper": "paper2",
+      "title": "Quantitative Stability of Audited Readout Loss",
+      "label": "thm:readout-loss-stability",
+      "source": {
+        "file": "paper2/main.tex",
+        "line_start": 827,
+        "line_end": 863
+      },
+      "source_statement_tex": "\\begin{theorem}[Quantitative Stability of Audited Readout Loss]\\label{thm:readout-loss-stability}\nLet $Z$ be a compact metric space, $X\\subseteq Z$ a nonempty compact set,\n$\\Theta$ a nonempty compact control space, and $h:\\Theta\\times X\\to Z$\ncontinuous. Let $F:Z\\to\\mathcal E$ be continuous into a metric space.\nFor $r\\geq0$ define its uniform modulus and the comparison quantities\n\\[\n\\begin{aligned}\n \\omega_F(r)&=\\sup_{d_Z(z,z')\\leq r}d_{\\mathcal E}(Fz,Fz'),\\\\\n \\Delta&=\\max_{\\theta\\in\\Theta,\\,x\\in X}d_Z(x,h_\\theta x),\\\\\n R(F,h)&=\\max_{\\theta,x}d_{\\mathcal E}(Fx,F(h_\\theta x)),\\qquad\n P(F,h)=\\frac{r_0}{r_0+R(F,h)},\\quad r_0>0.\n\\end{aligned}\n\\]\nThese maxima are finite, and $\\omega_F(r)\\to0$ as $r\\downarrow0$. If a\nlower bound $d_{\\mathcal E}(Fx,F(h_\\theta x))\\geq C d_Z(x,h_\\theta x)$\nholds on these compared pairs, then\n\\[\n C\\Delta\\leq R(F,h)\\leq\\omega_F(\\Delta).\n\\]\nFor another readout $G:Z\\to\\mathcal E$ and transport family $h'$ on the same\ndomains, suppose, with $\\eta,\\zeta\\geq0$,\n\\[\n \\sup_{z\\in Z}d_{\\mathcal E}(Fz,Gz)\\leq\\eta,\n \\qquad \\sup_{\\theta,x}d_Z(h_\\theta x,h'_\\theta x)\\leq\\zeta.\n\\]\nUsing a supremum for $R(G,h')$ if a maximum is not attained, one has\n\\[\n\\begin{aligned}\n |R(F,h)-R(G,h')|&\\leq2\\eta+\\omega_F(\\zeta),\\\\\n |P(F,h)-P(G,h')|&\\leq\\frac{2\\eta+\\omega_F(\\zeta)}{r_0}.\n\\end{aligned}\n\\]\nIn particular $R(F,h)\\geq C\\delta$ for any witnessed displacement\n$d_Z(x,h_\\theta x)\\geq\\delta>0$. Such positivity survives a comparison\nerror smaller than $C\\delta$. No scalar mass label supplies the common\ndomain, lower bound, transport or uniform approximation hypotheses.\n\\end{theorem}",
+      "source_statement_sha256": "72bab048ff62e62813c1516a2159b884496a2952fa36af19a6be2deac5212bd8",
+      "source_epistemic_status": "conditional",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_CONDITIONAL_RESULT_NOT_MECHANIZED",
+      "lean_witnesses": [],
+      "fidelity_notes": "Mechanize compact readout moduli, extrema, suprema and the uniform transport/readout error estimate, including the dimensional normalization r0. The source proof does not calibrate a physical readout or infer a mass-to-branch link.",
+      "target_dependency_ids": [],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [
+        "Mathlib.Topology.Compactness.Compact",
+        "Mathlib.Topology.Constructions",
+        "Mathlib.Topology.MetricSpace.Contracting"
+      ],
+      "topic": "etapa1-foundations",
+      "priority": 1,
+      "remaining_obligations": [
+        "Mechanize compact readout moduli, extrema, suprema and the uniform transport/readout error estimate, including the dimensional normalization r0. The source proof does not calibrate a physical readout or infer a mass-to-branch link."
+      ],
+      "empirical_or_external_obligations": [
+        "Physical measurement identification, admissibility/calibration and independent review remain separate."
+      ]
+    },
+    {
+      "registry_id": "paper3:theorem:thm-compact-polish-consistency",
+      "type": "theorem",
+      "paper": "paper3",
+      "title": "Countable Metric--Polish Consistency",
+      "label": "thm:compact-polish-consistency",
+      "source": {
+        "file": "paper3/main.tex",
+        "line_start": 161,
+        "line_end": 179
+      },
+      "source_statement_tex": "\\begin{theorem}[Countable Metric--Polish Consistency]\\label{thm:compact-polish-consistency}\nLet $(S_n,d_n)_{n\\geq0}$ be nonempty complete separable metric spaces with\ncontinuous bonding maps. Put $b_n=\\min\\{1,d_n\\}$ and choose $w_n>0$ with\n$\\sum_nw_n<\\infty$. On the full coordinate product define\n\\[\n \\bar d_w(x,y)=\\sup_n w_n b_n(x_n,y_n).\n\\]\nThis is a finite complete separable metric inducing exactly the product\ntopology. The inverse limit is closed, hence is Polish whenever nonempty.\nIf the stages are compact metric, the inverse limit is compact metric and\nnonempty, even without surjectivity of the bonding maps. Surjectivity also\nmakes every canonical projection onto its stage surjective.\n\nFor the normalized metrics already declared above, $b_n=d_n$ and\n$\\bar d_w=\\dw$. For unnormalized compact coordinate metrics, the raw formula\n$\\sup_n w_nd_n(x_n,y_n)$ has the same topology and compactness conclusions\nunder the explicit tail condition $w_n\\operatorname{diam}(S_n)\\to0$.\nSummability of weights alone is not that condition.\n\\end{theorem}",
+      "source_statement_sha256": "ccbe6082d60d3a1e23246c73ac232f8901c2e4662500487ba39768921f6ce5f5",
+      "source_epistemic_status": "conditional",
+      "classification": "FINITE_OR_PARTIAL_KERNEL",
+      "kernel_kind": "INFINITE_TOPOLOGICAL_COMPONENT",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.coherent_set_closed"
+        },
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.coherent_set_compact"
+        },
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.inverse_limit_nonempty"
+        }
+      ],
+      "fidelity_notes": "Existing general Lean components prove product-subspace closedness/compactness and nonemptiness under surjective bonds. Missing: normalized weighted metric topology, completeness/separability/Polishness and compact FIP nonemptiness without surjectivity. Do not treat the surjective lemma as the sharper compact theorem.",
+      "target_dependency_ids": [],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [
+        "Mathlib.Topology.Compactness.Compact",
+        "Mathlib.Topology.Constructions",
+        "Mathlib.Topology.MetricSpace.Contracting"
+      ],
+      "topic": "etapa1-foundations",
+      "priority": 0,
+      "remaining_obligations": [
+        "Existing general Lean components prove product-subspace closedness/compactness and nonemptiness under surjective bonds. Missing: normalized weighted metric topology, completeness/separability/Polishness and compact FIP nonemptiness without surjectivity. Do not treat the surjective lemma as the sharper compact theorem."
+      ],
+      "empirical_or_external_obligations": [
+        "Physical measurement identification, admissibility/calibration and independent review remain separate."
+      ]
+    },
+    {
+      "registry_id": "paper3:theorem:thm-channel-projection-detectability",
+      "type": "theorem",
+      "paper": "paper3",
+      "title": "Compatible Observable Channels and Detectability",
+      "label": "thm:channel-projection-detectability",
+      "source": {
+        "file": "paper3/main.tex",
+        "line_start": 364,
+        "line_end": 392
+      },
+      "source_statement_tex": "\\begin{theorem}[Compatible Observable Channels and Detectability]\\label{thm:channel-projection-detectability}\nLet two countable towers have chosen coordinate metrics $d_n,e_n$, weights\n$w_n,v_n>0$, and finite weighted supremum metrics inducing their product\ntopologies, for example those of Theorem~\\ref{thm:compact-polish-consistency}.\nWrite their bonding maps as $\\pi_n:S_{n+1}\\to S_n$ and\n$q_n:Y_{n+1}\\to Y_n$. A declared observable-channel realization supplies maps\n$C_n:S_n\\to Y_n$ satisfying the exact law\n\\[\n q_n C_{n+1}=C_n\\pi_n\\qquad(n\\geq0).\n\\]\nThen $C_\\infty(x)_n=C_n(x_n)$ is a map between their inverse limits and\n$p_n^Y C_\\infty=C_np_n^S$. It is continuous if every $C_n$ is continuous.\nIf $c_n>0$ and\n\\[\n e_n(C_na,C_nb)\\geq c_nd_n(a,b),\\qquad\n C_0:=\\inf_n\\frac{v_nc_n}{w_n}>0,\n\\]\nthen $d_Y(C_\\infty x,C_\\infty y)\\geq C_0d_S(x,y)$.\nFor a post-readout $L:\\mathcal I_Y\\to\\E$ with lower constant $\\ell>0$\non the compared image pairs, $\\Phi=L\\circ C_\\infty$ has lower constant\n$C=\\ell C_0$ on the corresponding pairs. A single certified stage comparison\n$d_n(x_n,y_n)\\geq\\epsilon_n>0$ also gives the pair bound\n\\[\n \\dE(\\Phi(x),\\Phi(y))\\geq\\ell v_nc_n\\epsilon_n.\n\\]\nContinuity of $\\Phi$ additionally follows if $L$ is continuous. These are\nconditions on the coordinate maps of a channel, not an identification of a\nchannel object with a map or a derivation of its calibration from CCR.\n\\end{theorem}",
+      "source_statement_sha256": "7c04f1ef039533384942bd5b2010cbadf785a04331a9d789b7144399148813b0",
+      "source_epistemic_status": "conditional",
+      "classification": "FINITE_OR_PARTIAL_KERNEL",
+      "kernel_kind": "INFINITE_TOPOLOGICAL_COMPONENT",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.compatible_cone_unique_lift"
+        },
+        {
+          "module": "QICNLean.QICNInverseLimitTopology",
+          "symbol": "QICNLean.InverseLimitTopology.coneLift_continuous"
+        }
+      ],
+      "fidelity_notes": "The general unique continuous cone lift supplies the qualitative induced-map component. Missing: the actual typed pair of towers, commuting channel family, weighted all-stage coercivity and post-readout detectability inequalities.",
+      "target_dependency_ids": [
+        "paper3:theorem:thm-compact-polish-consistency"
+      ],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [
+        "Mathlib.Topology.Compactness.Compact",
+        "Mathlib.Topology.Constructions",
+        "Mathlib.Topology.MetricSpace.Contracting"
+      ],
+      "topic": "etapa1-foundations",
+      "priority": 0,
+      "remaining_obligations": [
+        "The general unique continuous cone lift supplies the qualitative induced-map component. Missing: the actual typed pair of towers, commuting channel family, weighted all-stage coercivity and post-readout detectability inequalities."
+      ],
+      "empirical_or_external_obligations": [
+        "Physical measurement identification, admissibility/calibration and independent review remain separate."
+      ]
+    },
+    {
+      "registry_id": "paper3:corollary:cor-robust-approximation-null-separation",
+      "type": "corollary",
+      "paper": "paper3",
+      "title": "Finite Approximation and Robust Witness Separation",
+      "label": "cor:robust-approximation-null-separation",
+      "source": {
+        "file": "paper3/main.tex",
+        "line_start": 471,
+        "line_end": 493
+      },
+      "source_statement_tex": "\\begin{corollary}[Finite Approximation and Robust Witness Separation]\\label{cor:robust-approximation-null-separation}\nOn one common comparison domain let the continuous finite readouts of\nTheorem~\\ref{thm:cont} approximate $\\Phi$ with uniform tail\n$A_N=\\sum_{n\\geq N}a_n$. Suppose measured values $y_{i,N}$ at a separated\nwitness satisfy $\\dE(y_{i,N},f_N(z_i))\\leq\\nu$, and its true image separation\nis at least $C\\epsilon>0$. Put $\\eta=A_N+\\nu$. Then\n\\[\n\\begin{aligned}\n \\dE(y_{0,N},y_{1,N})&\\geq C\\epsilon-2\\eta,\\\\\n \\max_{i=0,1}\\dE(y_{i,N},\\nullphi)&\\geq C\\epsilon/2-\\eta.\n\\end{aligned}\n\\]\nIf $\\eta<C\\epsilon/4$, the first quantity is greater than $C\\epsilon/2$\nand the second greater than $C\\epsilon/4$. If a true endpoint is anchored at\nnull, the other measured endpoint has null distance at least $C\\epsilon-\\eta$.\nFor a finite test set with true image separation $\\delta$, the finite-code\nlower bound of Theorem~\\ref{thm:nonsim} transfers to proxy readouts with\nuniform error $\\eta$ as a worst-case error of at least $\\delta/2-\\eta$.\nAn audited injective Euclidean linear readout may supply\n$C=\\sigma_{\\min}(T)$ by Theorem~\\ref{thm:spectral}; a nonlinear or uncalibrated\nreadout needs its own lower-bound proof, such as the explicit hypotheses of\nTheorem~\\ref{thm:channel-projection-detectability}.\n\\end{corollary}",
+      "source_statement_sha256": "516ef9653f63d1f9822d55677e46f6a5f97bec53b0d6b6e2714a2c9dd3cbd3b8",
+      "source_epistemic_status": "conditional",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_CONDITIONAL_RESULT_NOT_MECHANIZED",
+      "lean_witnesses": [],
+      "fidelity_notes": "Mechanize the full metric triangle/collision bounds with a summable uniform approximation tail and explicit measurement radius, then instantiate only with a separately certified lower constant. No empirical margin is inferred from the source proof.",
+      "target_dependency_ids": [
+        "paper3:theorem:thm-channel-projection-detectability",
+        "paper3:theorem:thm-cont",
+        "paper3:theorem:thm-instability",
+        "paper3:theorem:thm-nonsim",
+        "paper3:theorem:thm-spectral"
+      ],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [
+        "Mathlib.Topology.Compactness.Compact",
+        "Mathlib.Topology.Constructions",
+        "Mathlib.Topology.MetricSpace.Contracting"
+      ],
+      "topic": "etapa1-foundations",
+      "priority": 1,
+      "remaining_obligations": [
+        "Mechanize the full metric triangle/collision bounds with a summable uniform approximation tail and explicit measurement radius, then instantiate only with a separately certified lower constant. No empirical margin is inferred from the source proof."
+      ],
+      "empirical_or_external_obligations": [
+        "Physical measurement identification, admissibility/calibration and independent review remain separate."
+      ]
     }
   ],
-  "external_support_certified": false
+  "external_support_certified": false,
+  "baseline_target_count": 419,
+  "target_count": 425,
+  "source_base_revision": "f7171e76144e95e0680a22fc40668da48561013b"
 }

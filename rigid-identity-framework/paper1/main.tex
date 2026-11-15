@@ -403,6 +403,14 @@ Take $S_t=\{0,\ldots,2^t-1\}$ with discrete distance scaled by $r>0$, $w_t=2^{-t
 \begin{corollary}[Small Displacement of Coherent Transports]
 For a family of commuting coordinate homeomorphisms, if $\sup_t w_t\sup_{z\in S_t}d_t(z,h_t(z))$ tends to zero, then the induced transports converge uniformly to the inclusion of $I$ in the common history space.
 \end{corollary}
+\begin{proof}
+Index the family by $r$ and let $b_r=\sup_t w_t\sup_z d_t(z,h_{r,t}(z))$.
+Theorem~\ref{thm:rigidity} supplies a map $H_r:I\to I_r$ into the same
+declared history space and gives $\sup_{x\in I}d_w(H_rx,x)\leq b_r$.
+If $b_r\to0$, this is precisely uniform convergence to the inclusion
+$I\hookrightarrow Z_{\mathrm h}$. Varying target subsets cause no type
+problem because the comparison is in their common ambient metric space.
+\end{proof}
 
 
 \subsection{Sectorial Deformation Resistance: Quantitative Resistance}
@@ -418,11 +426,28 @@ where $H_t(\delta E_t)$ is a non-negative scalar measuring the entropy or inform
 \end{definition}
 
 \begin{definition}[Sectorial Deformation Resistance]\label{def:ontmass}
-Define the sectorial deformation resistance of the projective system (or of $\mathcal{I}$) as:
-\begin{equation}
-    M_\Omega := \inf \left\{ \frac{E_w(\{\delta E_t\})}{d_w(\mathcal{I}, \tilde{\mathcal{I}})} \;\Big|\; \{\delta E_t\} \text{ admissible and } d_w(\mathcal{I}, \tilde{\mathcal{I}}) > 0 \right\},
-\end{equation}
-with the convention that if no admissible perturbation produces non-zero deformation (i.e., $d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0$ for all finite-energy perturbations), then $M_\Omega = +\infty$.
+Fix a common metric history space $(Z_{\mathrm h},d_w)$ and a baseline
+nonempty closed identity set $\mathcal I$. Compare identity objects in its
+Hausdorff metric component
+\[
+ \mathfrak C_{\mathcal I}=\{J\subseteq Z_{\mathrm h}:J\ne\varnothing,
+ J\text{ closed},\ d_H^{Z_{\mathrm h}}(\mathcal I,J)<\infty\}.
+\]
+For a declared intervention sector with $\widetilde{\mathcal I}_\delta\in
+\mathfrak C_{\mathcal I}$ and cost $E_w(\delta)\in[0,\infty]$, define
+\[
+ M_\Omega=\inf_{\substack{\delta\text{ admitted}\\
+             0<d_H^{Z_{\mathrm h}}(\mathcal I,\widetilde{\mathcal I}_\delta)<\infty}}
+ \frac{E_w(\delta)}{d_H^{Z_{\mathrm h}}(\mathcal I,\widetilde{\mathcal I}_\delta)},
+ \qquad \inf\varnothing=+\infty.
+\]
+Infinite cost divided by a finite positive distance is $+\infty$; zero
+deformation is excluded from the ratio. Point distance $d_w(x,y)$ and
+object distance $d_H^{Z_{\mathrm h}}(I,J)$ have different domains.
+Closedness makes zero Hausdorff distance equality of the compared sets.
+Operations leaving this finite-distance component require another declared
+comparison contract. If cost has unit $\mathsf E$ and distance $\mathsf L$,
+the resistance has unit $\mathsf E/\mathsf L$.
 \end{definition}
 
 \subsection{Internal Perturbations and External Extensions}
@@ -448,10 +473,19 @@ Theorem~\ref{thm:detectability} gives a finite-witness test for exact model comp
 This quantity measures the \textit{minimal perturbation energy per unit identity deformation}.
 
 \begin{proposition}[Relation to Rigidity]
-Interpret $d_w(\mathcal I,\widetilde{\mathcal I})$ in the mass ratio as the Hausdorff distance in the common weighted history space. If for every admissible intervention of finite cost the hypotheses of Lemma~\ref{lem:stability} hold with a common $C$ and $D_w\leq A E_w$ for a common $A>0$, then $M_\Omega\geq 1/(CA)$. A single admissible finite-cost intervention with positive deformation proves $M_\Omega<+\infty$. If none exists, then $M_\Omega=+\infty$.
+Use Definition~\ref{def:ontmass}, including its common Hausdorff metric component.
+Suppose all admitted finite-cost interventions satisfy Lemma~\ref{lem:stability}
+with one $C>0$ and $D_w\leq A E_w$ with one $A>0$. Then
+$M_\Omega\geq1/(CA)$. One admitted finite-cost positive deformation implies
+$M_\Omega<\infty$; if no such deformation exists, $M_\Omega=+\infty$.
 \end{proposition}
 \begin{proof}
-Every positive finite-cost ratio has denominator at most $CA E_w$. A finite-cost positive witness contributes a finite ratio to the infimum. Without such a witness every ratio is infinite or the admissible set of positive deformations is empty.
+Every eligible finite-cost deformation obeys
+$0<d_H\leq CD_w\leq CAE_w$. Division by its finite positive denominator
+gives $E_w/d_H\geq1/(CA)$. Infinite-cost ratios are infinite and cannot lower
+this bound. A finite-cost positive witness contributes a finite ratio to
+the infimum. Without one, all eligible ratios are infinite or the class
+is empty; both cases have infimum $+\infty$ by the stated convention.
 \end{proof}
 
 \subsection{Intervention Witnesses for Finite-Dimensional Latent Dynamics}
@@ -1399,7 +1433,7 @@ A morphism of projective systems gives a map on compatible histories. The finite
 \begin{definition}[Rigidity Degree]
 For a projective system $(S_t, \pi_{t+1 \to t})$, define the rigidity degree $\rho \in [0, \infty]$ as:
 \begin{equation}
-    \rho := \sup \left\{ r \geq 0 \;\Big|\; \forall \{\epsilon_t\}: \|\{\epsilon_t\}\|_w < r \implies d_w(\mathcal{I}, \tilde{\mathcal{I}}) = 0 \right\}.
+    \rho := \sup \left\{ r \geq 0 \;\Big|\; \forall \{\epsilon_t\}: \|\{\epsilon_t\}\|_w < r \implies d_H^{Z_{\mathrm h}}(\mathcal{I}, \tilde{\mathcal{I}}) = 0 \right\}.
 \end{equation}
 \end{definition}
 
@@ -1453,8 +1487,22 @@ Apply Proposition~\ref{prop:weighted-history} to the component of any fixed hist
 \subsection{Categorical Universality}
 
 \begin{proposition}[Universal Property of Identity]
-The identity $\mathcal{I} = \varprojlim S_t$ satisfies the universal property: for any object $J$ with compatible maps $\phi_t: J \to S_t$, there exists a unique morphism $\psi: J \to \mathcal{I}$ making all diagrams commute.
+For the declared tower of sets, every coherent family $\phi_t:J\to S_t$
+induces a unique map $\psi:J\to\mathcal I=\varprojlim S_t$ with
+$p_t\psi=\phi_t$. For a tower of topological spaces with its product-subspace
+limit topology, continuous $\phi_t$ induce the unique continuous such map.
 \end{proposition}
+\begin{proof}
+In sets, put $\psi(j)=(\phi_t(j))_t$. Compatibility of the maps places this
+sequence in the inverse limit, and each canonical evaluation equals $\phi_t$.
+Any other such map has the same value in every coordinate, hence is equal
+to $\psi$. In topological spaces, continuous $\phi_t$ make the map into
+the coordinate product continuous; its image is in the inverse limit, so
+it is continuous into the product-subspace topology as well. The same
+pointwise uniqueness gives uniqueness among continuous maps. For a weighted
+metric presentation, use the declared equivalence with that topology;
+no arbitrary unrelated category is being quantified over.
+\end{proof}
 
 This confirms that rigid identity is not merely a construction but the \textit{terminal object} in the category of compatible families over the projective system \cite{maclane1998}.
 
@@ -1479,6 +1527,11 @@ All $2^t$ prefixes occur, so distinct prefixes must have distinct codes. For the
 \begin{corollary}[Impossibility of Perfect Simulation]
 A fixed finite binary budget cannot recover every prefix on the binary-prefix target.
 \end{corollary}
+\begin{proof}
+For a fixed $B$ choose the horizon $t=B+1$. Exact recovery of all its prefixes
+would require $B\geq t=B+1$ by the preceding binary-budget lower bound,
+a contradiction. The claim concerns the fixed finite binary budget.
+\end{proof}
 
 By contrast, the exact scalar $\sum_{j\geq1}2b_j3^{-j}$ distinguishes all histories, because its leading difference exceeds the remaining tail. On its image the corresponding inverse decoder recovers each finite observation. This model separates numerical precision from real dimension.
 

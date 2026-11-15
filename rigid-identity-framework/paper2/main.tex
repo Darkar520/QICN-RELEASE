@@ -64,7 +64,7 @@
 \begin{abstract}
 We study structural assignments from inverse-limit histories into an abstract metric codomain. Exact equality of all finite readouts forces factorization through the first cut and is incompatible with the required non-factorization. We replace that equality by uniformly summable readout increments, retaining non-factorization as a separately checked condition.
 
-An explicit binary-prefix system with ternary readouts realizes both conditions. It gives uniform approximation, a global lower and upper readout bound, and an exact minimax error for each finite observation budget. Continuity follows from controlled approximation by continuous finite readouts. Cross-system fragmentation and invariance require typed comparison domains and audited transports; a scalar rigidity label alone does not imply them. Under those comparison hypotheses we derive loss and normalized protection statements. Phenomenal and normative interpretations require independent bridge premises.
+An explicit binary-prefix system with ternary readouts realizes both conditions. It gives uniform approximation, a global lower and upper readout bound, and an exact minimax error for each finite observation budget. Continuity follows from controlled approximation by continuous finite readouts. Cross-system fragmentation and invariance require typed comparison domains and audited transports; a scalar rigidity label alone does not imply them. Under those comparison hypotheses we derive loss and normalized protection statements, including uniform perturbation bounds for both functionals on compact comparison models. Phenomenal and normative interpretations require independent bridge premises.
 \end{abstract}
 
 % BEGIN_OPERATIONAL_SCOPE
@@ -181,8 +181,18 @@ The sectorial deformation resistance $M_\Omega$ quantifies resistance to identit
 \subsection{Abstract Structural Readout Space}
 
 \begin{definition}[Structural Readout Space]\label{def:phenspace}
-A structural readout space is a nonempty set $\mathcal{E}$ whose elements are called \textit{phenomenological configurations}. No topology, metric, or algebraic structure is assumed a priori.
+A structural readout space is a nonempty set $\mathcal E$, with historical
+alias ``phenomenological configurations'' for its elements. The set-level
+definition supplies no topology. All limit and distance statements below
+use the complete metric class declared immediately next, with its induced
+Hausdorff topology. Separability, and hence a Polish conclusion, must be
+supplied or proved where used; completeness alone does not imply it.
 \end{definition}
+
+\begin{hypothesis}[H3: Metric on $\mathcal{E}$]\label{hyp:h3}
+The structural readout space $\mathcal{E}$ admits a metric $d_\mathcal{E}$ such that $(\mathcal{E}, d_\mathcal{E})$ is a complete metric space.
+Limits and continuity use the topology induced by this metric.
+\end{hypothesis}
 
 \begin{remark}
 We do not claim that $\mathcal{E}$ represents ``conscious states'' or ``qualia''. It is an abstract mathematical space whose interpretation is not specified by the formalism. The space $\mathcal{E}$ is introduced purely as the codomain of a structural assignment; its ontological status is deliberately left open.
@@ -220,19 +230,7 @@ Given a structural assignment $\{\phi_t\}$, the induced limit assignment, whenev
 The convergence statements below use the complete metric codomain of Hypothesis~\ref{hyp:h3}. Partial readouts may instead be studied on a specified common domain, with all projections and factorizations restricted to that domain.
 \end{definition}
 
-\subsubsection{Uniqueness of the Limit Assignment}
 
-\begin{proposition}[Uniqueness and Uniform Error of the Limit Assignment]\label{prop:unique-phi}
-Under E1, each trajectory has a unique limit assignment and
-\[
-d_{\mathcal E}\bigl(\Phi(x),\phi_n(p_nx)\bigr)\leq A_n
-\quad\text{for all }x\in\mathcal I.
-\]
-\end{proposition}
-
-\begin{proof}
-For $m>n$, the triangle inequality bounds the distance between the $m$th and $n$th readings by $\sum_{t=n}^{m-1}a_t$. Thus each sequence is Cauchy. Completeness supplies its limit, uniqueness follows from metric separation, and passage to the limit gives the bound. Since $A_n\to0$ independently of $x$, convergence is uniform.
-\end{proof}
 
 \subsection{Axioms for Phenomenological Coherence}
 
@@ -250,6 +248,20 @@ d_{\mathcal E}\bigl(\phi_{t+1}(p_{t+1}x),\phi_t(p_tx)\bigr)\leq a_t
 \]
 Here $p_t:\mathcal I\to S_t$ is the canonical projection. Define the tail budget $A_n=\sum_{t=n}^{\infty}a_t$. Exact equality is the special case $a_t=0$, not a requirement of E1.
 \end{axiom}
+
+\subsubsection{Uniqueness of the Limit Assignment}
+
+\begin{proposition}[Uniqueness and Uniform Error of the Limit Assignment]\label{prop:unique-phi}
+Under Axiom~\ref{ax:e1} in the declared complete metric codomain, each trajectory has a unique limit assignment and
+\[
+d_{\mathcal E}\bigl(\Phi(x),\phi_n(p_nx)\bigr)\leq A_n
+\quad\text{for all }x\in\mathcal I.
+\]
+\end{proposition}
+
+\begin{proof}
+For $m>n$, the triangle inequality bounds the distance between the $m$th and $n$th readings by $\sum_{t=n}^{m-1}a_t$. Thus each sequence is Cauchy. Completeness supplies its limit, uniqueness follows from metric separation, and passage to the limit gives the bound. Since $A_n\to0$ independently of $x$, convergence is uniform.
+\end{proof}
 
 \begin{axiom}[E2: Non-Locality]\label{ax:e2}
 There exists no function $f: S_t \to \mathcal{E}$ (for any fixed $t$) such that for all trajectories $(x_t)_t \in \mathcal{I}$:
@@ -350,7 +362,7 @@ The limit is uniquely defined with a uniform tail bound. E2 remains a substantiv
 
 Throughout this paper, the structural readout space $\mathcal{E}$ is treated as a \textit{purely abstract topological and metric structure}. No semantic, psychological, biological, or experiential interpretation is assumed or required for any of the formal results derived herein.
 
-The historical term ``phenomenological denotes $\mathcal{E}$ as an abstract codomain of structural compatibility for inverse-limit identities. Its relation to experience remains an independent bridge hypothesis.
+The historical term ``phenomenological'' denotes $\mathcal{E}$ as an abstract codomain of structural compatibility for inverse-limit identities. Its relation to experience remains an independent bridge hypothesis.
 
 All theorems, constructions, and stability results presented in this work are therefore statements about abstract mathematical objects only. Any interpretation of $\mathcal{E}$ in relation to experiential, cognitive, or phenomenological phenomena lies strictly outside the formal scope of this paper.
 
@@ -508,9 +520,7 @@ The compatibility class records choices of domain, codomain and readout family. 
 
 To state rigorous results about continuity and fragmentation, $\mathcal{E}$ must carry enough structure for distances, limits, and loss bounds to be meaningful. The following arguments identify the minimal metric assumptions used by the classification theorem.
 
-\begin{hypothesis}[H3: Metric on $\mathcal{E}$]\label{hyp:h3}
-The structural readout space $\mathcal{E}$ admits a metric $d_\mathcal{E}$ such that $(\mathcal{E}, d_\mathcal{E})$ is a complete metric space.
-\end{hypothesis}
+
 
 \subsubsection{Role of the Metric}
 
@@ -586,11 +596,25 @@ Write $g_n=\phi_n\circ p_n$. Under E1,
 \[
 d_{\mathcal E}(\Phi(x),\Phi(y))\leq2A_n+d_{\mathcal E}(g_n(x),g_n(y)).
 \]
-If every $g_n$ is continuous, then $\Phi$ is continuous. If every $g_n$ is $L$-Lipschitz with a common $L$, then $\Phi$ is $L$-Lipschitz.
+Continuous $g_n$ give a continuous $\Phi$; a common $L$-Lipschitz bound gives
+the same bound for $\Phi$. On a compact metric history domain, put
+\[
+ \omega_n(r)=\sup_{d_w(x,y)\leq r}d_{\mathcal E}(g_n(x),g_n(y)),\qquad
+ \omega(r)=\inf_n\{2A_n+\omega_n(r)\}.
+\]
+If the $g_n$ are continuous, $\omega$ is a finite nondecreasing modulus tending
+to zero at zero and bounds the limiting readout uniformly. No common
+Lipschitz constant for the finite readouts is required for this conclusion.
 \end{proposition}
-
 \begin{proof}
-Insert $g_n(x)$ and $g_n(y)$ and apply the uniform error bound. For continuity, first make $2A_n$ smaller than half the prescribed error, then use continuity of that fixed $g_n$. For the Lipschitz conclusion use the same bound for all $n$ and let $n\to\infty$.
+Insert the two finite readings and use the uniform tail bound. For continuity
+choose $n$ making $2A_n$ small and then use continuity of this fixed $g_n$.
+For a common Lipschitz constant let $n\to\infty$ in the displayed inequality.
+On a compact domain every continuous $g_n$ is bounded and uniformly continuous;
+thus each $\omega_n$ is finite and tends to zero. The infimum defines a
+nonnegative nondecreasing finite function. Given an error, first choose $n$
+with small $A_n$ and then choose $r$ with small $\omega_n(r)$, proving
+$\omega(r)\to0$. Taking the supremum over pairs proves the uniform bound.
 \end{proof}
 
 \subsection{Closure of Section 3}
@@ -800,9 +824,82 @@ P(\Phi)=\frac{1}{1+R(\Phi)/r_0},\qquad P(\Phi)=0\text{ if }R(\Phi)=+\infty.
 Thus $P\in[0,1]$, $P=1$ exactly when $R=0$, and $P<1$ exactly when $R>0$. This chosen dimensionless rescaling depends on $r_0$ and is not a separately derived law.
 \end{definition}
 
+\begin{theorem}[Quantitative Stability of Audited Readout Loss]\label{thm:readout-loss-stability}
+Let $Z$ be a compact metric space, $X\subseteq Z$ a nonempty compact set,
+$\Theta$ a nonempty compact control space, and $h:\Theta\times X\to Z$
+continuous. Let $F:Z\to\mathcal E$ be continuous into a metric space.
+For $r\geq0$ define its uniform modulus and the comparison quantities
+\[
+\begin{aligned}
+ \omega_F(r)&=\sup_{d_Z(z,z')\leq r}d_{\mathcal E}(Fz,Fz'),\\
+ \Delta&=\max_{\theta\in\Theta,\,x\in X}d_Z(x,h_\theta x),\\
+ R(F,h)&=\max_{\theta,x}d_{\mathcal E}(Fx,F(h_\theta x)),\qquad
+ P(F,h)=\frac{r_0}{r_0+R(F,h)},\quad r_0>0.
+\end{aligned}
+\]
+These maxima are finite, and $\omega_F(r)\to0$ as $r\downarrow0$. If a
+lower bound $d_{\mathcal E}(Fx,F(h_\theta x))\geq C d_Z(x,h_\theta x)$
+holds on these compared pairs, then
+\[
+ C\Delta\leq R(F,h)\leq\omega_F(\Delta).
+\]
+For another readout $G:Z\to\mathcal E$ and transport family $h'$ on the same
+domains, suppose, with $\eta,\zeta\geq0$,
+\[
+ \sup_{z\in Z}d_{\mathcal E}(Fz,Gz)\leq\eta,
+ \qquad \sup_{\theta,x}d_Z(h_\theta x,h'_\theta x)\leq\zeta.
+\]
+Using a supremum for $R(G,h')$ if a maximum is not attained, one has
+\[
+\begin{aligned}
+ |R(F,h)-R(G,h')|&\leq2\eta+\omega_F(\zeta),\\
+ |P(F,h)-P(G,h')|&\leq\frac{2\eta+\omega_F(\zeta)}{r_0}.
+\end{aligned}
+\]
+In particular $R(F,h)\geq C\delta$ for any witnessed displacement
+$d_Z(x,h_\theta x)\geq\delta>0$. Such positivity survives a comparison
+error smaller than $C\delta$. No scalar mass label supplies the common
+domain, lower bound, transport or uniform approximation hypotheses.
+\end{theorem}
+
+\begin{proof}
+The continuous image $F(Z)$ is compact and bounded. Uniform continuity gives
+$\omega_F(r)\to0$; the two comparison functions are continuous on the compact
+space $\Theta\times X$, so they attain finite maxima. Evaluate the lower
+readout inequality at a maximizer of the geometric displacement to obtain
+$C\Delta\leq R(F,h)$; the definition of $\omega_F$ gives the upper bound.
+For each compared pair the reverse triangle inequality gives
+\[
+\begin{aligned}
+ &\bigl|d_{\mathcal E}(Fx,F(h_\theta x))
+       -d_{\mathcal E}(Gx,G(h'_\theta x))\bigr|\\
+ &\qquad\leq d_{\mathcal E}(Fx,Gx)
+        +d_{\mathcal E}(F(h_\theta x),G(h'_\theta x))
+ \leq2\eta+\omega_F(\zeta).
+\end{aligned}
+\]
+Both suprema are finite since $G$ stays within $\eta$ of the bounded image
+of $F$. Taking suprema in both directions proves the loss bound. For
+$R,R'\geq0$ the exact normalization identity is
+\[
+ \left|\frac{r_0}{r_0+R}-\frac{r_0}{r_0+R'}\right|
+ =\frac{r_0|R-R'|}{(r_0+R)(r_0+R')}
+ \leq\frac{|R-R'|}{r_0},
+\]
+which proves the protection bound with its declared distance unit.
+The last assertion follows by evaluating the supremum at the positive witness.
+\end{proof}
+
 \begin{corollary}[Protection under the Audited Branches]\label{cor:protection}
 The zero-displacement branch has $P=1$; the positive-displacement branch with a lower readout bound has $P<1$. For a mass-based classification these conclusions require the corresponding hypotheses of Theorem~\ref{thm:dichotomy}.
 \end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:loss} gives $R=0$ on the zero-displacement branch and
+$R>0$ on the witnessed coercive branch. Substitute into
+$P=r_0/(r_0+R)$ with $r_0>0$. The branch-to-mass link is exactly the
+additional hypothesis in Theorem~\ref{thm:dichotomy}.
+\end{proof}
 
 \subsection{Structural Asymmetry Constraints}
 
@@ -829,6 +926,13 @@ The result establishes only that certain structural configurations admit loss wh
 \begin{corollary}[Conditional Possibility of Loss]\label{cor:loss-possibility}\leavevmode\par
 Loss is possible on the positive-displacement/coercive-readout branch and absent on the fixed-transport/common-readout branch. Extending this claim to all finite-mass or all CCR systems requires proving those branch conditions for the intended class.
 \end{corollary}
+
+\begin{proof}
+Loss is possible exactly when the defining supremum contains a positive
+comparison. The positive witnessed branch supplies one, and the zero branch
+contains only zero comparisons by Theorem~\ref{thm:loss}. No conclusion
+about a larger intervention sector follows without checking its comparisons.
+\end{proof}
 
 \subsection{Relation to Normative Ethics}
 

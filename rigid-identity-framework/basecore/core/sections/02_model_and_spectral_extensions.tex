@@ -24,7 +24,11 @@ u(x)=\sum_{i=1}^{\infty} x_i\phi^{-i},
 \qquad
 \phi=\frac{1+\sqrt{5}}{2}.
 \]
-The image $\U:=u(S_A)\subset [0,1]$ is compact.
+The image $\U:=u(S_A)\subset [0,1]$ is compact. Indeed $S_A$ is closed in
+the compact binary product, and the geometric tail makes $u$ a continuous
+uniform limit of finite sums. In each pair of successive positions the
+largest permitted contribution is the first weight; hence
+$u(x)\leq\phi^{-1}/(1-\phi^{-2})=1$.
 \end{definition}
 
 \subsection{Typed Banach Witness}
@@ -177,7 +181,7 @@ Using the isometry of $j$, the non-expansiveness of $P_E$, and Jensen's inequali
 
 \begin{lemma}[Norm of the Lifted Contraction]
 \[
-\norm{\widetilde K}\le \frac{1}{2}.
+\norm{\widetilde K}=\frac{1}{2}.
 \]
 \end{lemma}
 
@@ -190,6 +194,7 @@ For any $f\in\mathcal{B}$,
 \le \frac{1}{2}\int_0^1 \norm{f(\tau)}_2\,d\tau
 \le \frac{1}{2}\norm{f}_\infty.
 \]
+For a constant unit vector $f=j(v)$ the output norm is exactly $1/2$, so the bound is attained.
 \end{proof}
 
 \begin{theorem}[Typed Contraction on the Computable Witness]
@@ -300,48 +305,101 @@ BaseCore therefore distinguishes two roles cleanly: the Golden Mean witness cert
 \section{State Spectral Gap and Parameter-Family Persistence}
 
 \begin{theorem}[State Spectral Gap]\label{thm:spectrum}
-Fix $u\in\U$ in the typed computable model. Assume $T_u$ is Fr\'echet differentiable at its fixed point $f_u^\ast$. Then
+Fix $u\in\U$. Write $e_1=(1,0)$ and let $P_\perp(v_1,v_2)=(0,v_2)$.
+The unique fixed point of the typed computable witness is
 \[
-\rho\!\left(DT_u(f_u^\ast)\right)
-\le
-\norm{DT_u(f_u^\ast)}
-\le
-\norm{\widetilde K}
-\le
-\frac{1}{2}.
+ f_u^*=j(v_u^*),\qquad v_u^*=\min\{2u,1\}e_1.
 \]
-Consequently the state spectral gap satisfies
+The map is Fr\'echet differentiable at this point exactly when $u\ne1/2$.
+At these regular parameters its derivative and spectrum are
 \[
-\Delta_{\mathrm{state}}\ge 1-\norm{\widetilde K}\ge \frac{1}{2}.
+\begin{array}{c|c|c}
+ &DT_u(f_u^*)&\sigma(DT_u(f_u^*))\\ \hline
+0\le u<1/2&\tfrac12 jA&\{0,1/2\}\\[2pt]
+u>1/2&\dfrac{1}{1+2u}jP_\perp A&\{0,(1+2u)^{-1}\}.
+\end{array}
 \]
+Here the spectrum of a real operator means the spectrum of its complexification.
+In both cases,
+\[
+ \rho(DT_u(f_u^*))=\|DT_u(f_u^*)\|
+ \leq\|\widetilde K\|=\tfrac12,
+ \qquad \Delta_{\mathrm{state}}:=1-\rho\geq\tfrac12.
+\]
+At $u=1/2$ the one-sided directional derivative is
+\[
+ D^+T_{1/2}(j(e_1);h)
+ =\tfrac12j\bigl(Ah-e_1\max\{\langle e_1,Ah\rangle,0\}\bigr),
+\]
+which is not linear; a state Jacobian spectrum is not assigned there.
 \end{theorem}
 
 \begin{proof}
-At every point where the projection $P_E$ is Fr\'echet differentiable, its derivative has operator norm at most $1$ because $P_E$ is non-expansive. Since $\aleph_{\mathcal B}=j\circ P_E\circ A$,
+After one update every state is constant. Its fixed vector solves
+$v=P_E(v/2+ue_1)$, and direct substitution gives the displayed $v_u^*$;
+uniqueness follows from the contraction theorem. Set $z_u=v_u^*/2+ue_1$.
+On the open ball $\|z\|<1$, $DP_E(z)=\operatorname{Id}$. On the open exterior,
+ordinary differentiation of $z/\|z\|$ gives
 \[
-DT_u(f_u^\ast)=
-D\aleph_{\mathcal B}\!\left(\widetilde K f_u^\ast+\Gamma_{\mathcal B}(u)\right)\circ \widetilde K,
+ DP_E(z)h=\frac{h}{\|z\|}
+       -\frac{z\langle z,h\rangle}{\|z\|^3}.
 \]
-and therefore
-\[
-\norm{DT_u(f_u^\ast)}\le \norm{D\aleph_{\mathcal B}}\norm{\widetilde K}\le \frac{1}{2}.
-\]
-The spectral-radius bound follows from $\rho(L)\le \norm{L}$ for bounded linear operators.
+The inverse images of these open sets under $f\mapsto Af/2+ue_1$
+are precisely the regular regions used in the chain rule. For $u<1/2$,
+$z_u=2ue_1$ is interior; for $u>1/2$, $z_u=(u+1/2)e_1$ is exterior.
+Using $Aj=\operatorname{Id}_E$ gives the two derivative formulas. No
+differentiability assertion about an arbitrary convex metric projection is used.
+
+The bounded projection $jA$ splits $\mathcal B$ into the closed complemented
+spaces $j(E)$ and $\ker A$. Each derivative vanishes on $\ker A$ and has the
+displayed two-dimensional action on $j(E)$. A nonzero mean-zero continuous
+function realizes the zero eigenvalue. Constant horizontal and vertical vectors
+realize the other displayed eigenvalues. Outside their union, the bounded
+inverses on these two summands combine to a resolvent, proving the exact spectra.
+The averaging inequality gives $\|A\|\leq1$, and unit constant inputs attain one.
+Since $j$ is isometric, $\|A\|=1$ and $\|P_\perp\|=1$, the derivative norms
+have the stated upper bounds; constant unit vectors in the surviving directions
+attain them. More generally, the derivative of any $1/2$-Lipschitz map,
+where it exists, has norm at most $1/2$ by difference quotients.
+
+At $z=e_1$, expansion for $t\downarrow0$ of $P_E(e_1+tv)$ yields
+$v-e_1\max\{\langle e_1,v\rangle,0\}$. Substituting $v=Ah/2$ proves the
+directional formula. The directions $h=j(e_1)$ and $-h$ give $0$ and
+$-j(e_1)/2$, contradicting linearity of a putative Fr\'echet derivative.
+This parameter actually occurs: the Golden Mean sequence $010010\ldots$
+has encoding $\phi^{-2}/(1-\phi^{-3})=1/2$.
 \end{proof}
 
 \begin{theorem}[Relaxation-Time Bound]\label{thm:relaxation}
-Under the hypotheses of Theorem~\ref{thm:spectrum}, any discrete-to-continuous relaxation convention of the form
+For every fixed $u\in\U$, every $f\in\mathcal B$ and $n\geq0$,
 \[
-\tau_{\mathrm{state}}=-\frac{1}{\ln \rho}
+ \|T_u^n f-f_u^*\|_\infty\leq2^{-n}\|f-f_u^*\|_\infty.
 \]
-with $\rho=\rho(DT_u(f_u^\ast))$ gives
+At a regular parameter of Theorem~\ref{thm:spectrum}, put
+$\rho=\rho(DT_u(f_u^*))$. For every $r\in(\rho,1)$ there is a neighborhood
+of $f_u^*$ on which the error to that fixed point decreases by a factor at
+most $r$ per iteration. Every orbit eventually enters that neighborhood.
+The spectral e-folding convention, in iteration units, is therefore
 \[
-\tau_{\mathrm{state}}\le \frac{1}{\ln 2}.
+ \tau_{\mathrm{state}}=-1/\ln\rho
+ =\begin{cases}1/\ln2,&u<1/2,\\
+ 1/\ln(1+2u),&u>1/2,
+ \end{cases}
+ \qquad \frac1{\ln3}\leq\tau_{\mathrm{state}}\leq\frac1{\ln2}.
 \]
+The global geometric bound still holds at $u=1/2$, where this linearized
+spectral convention is unavailable. It is not a physical relaxation-time
+calibration or a claim that all nonlinear transients decay exactly as $\rho^n$.
 \end{theorem}
 
 \begin{proof}
-Theorem~\ref{thm:spectrum} gives $\rho\le 1/2$. Since $-\ln(\rho)\ge \ln 2$, the bound follows.
+Iterate the global $1/2$-contraction inequality against its fixed point.
+At a regular point, Fr\'echet differentiability and $\|DT_u(f_u^*)\|=\rho$
+give, for sufficiently small $h$, $\|T_u(f_u^*+h)-f_u^*\|\leq r\|h\|$.
+The corresponding ball is invariant since $r<1$. The global bound brings
+every orbit into it, and induction gives the local geometric estimate.
+The exact spectra above and $0\leq u\leq1$ give $1/3\leq\rho\leq1/2$;
+substitution into the declared convention proves its formula and bounds.
 \end{proof}
 
 \begin{proposition}[Parameter-Family Persistence is not State Spectrum]

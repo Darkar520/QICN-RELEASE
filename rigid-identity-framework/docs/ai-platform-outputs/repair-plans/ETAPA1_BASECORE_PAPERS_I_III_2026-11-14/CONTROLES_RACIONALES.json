@@ -1,0 +1,168 @@
+{
+  "passed": true,
+  "checks": 32,
+  "controls": [
+    {
+      "name": "exact coupled envelopes",
+      "passed": true,
+      "detail": "cos>=1-theta^2/2, 1-exp(-E)<=E; positive gamma in coherence-norm units"
+    },
+    {
+      "name": "coupled equilibrium N=2 u=0",
+      "passed": true,
+      "detail": "Exact rational midpoint solve plus certified exp/cos intervals; actual fixed-point uncertainty bounded by contraction"
+    },
+    {
+      "name": "coupled equilibrium N=2 u=1/8",
+      "passed": true,
+      "detail": "Exact rational midpoint solve plus certified exp/cos intervals; actual fixed-point uncertainty bounded by contraction"
+    },
+    {
+      "name": "coupled equilibrium N=2 u=1/4",
+      "passed": true,
+      "detail": "Exact rational midpoint solve plus certified exp/cos intervals; actual fixed-point uncertainty bounded by contraction"
+    },
+    {
+      "name": "coupled equilibrium N=4 u=0",
+      "passed": true,
+      "detail": "Exact rational midpoint solve plus certified exp/cos intervals; actual fixed-point uncertainty bounded by contraction"
+    },
+    {
+      "name": "coupled equilibrium N=4 u=1/8",
+      "passed": true,
+      "detail": "Exact rational midpoint solve plus certified exp/cos intervals; actual fixed-point uncertainty bounded by contraction"
+    },
+    {
+      "name": "coupled equilibrium N=4 u=1/4",
+      "passed": true,
+      "detail": "Exact rational midpoint solve plus certified exp/cos intervals; actual fixed-point uncertainty bounded by contraction"
+    },
+    {
+      "name": "coupled equilibrium N=8 u=0",
+      "passed": true,
+      "detail": "Exact rational midpoint solve plus certified exp/cos intervals; actual fixed-point uncertainty bounded by contraction"
+    },
+    {
+      "name": "coupled equilibrium N=8 u=1/8",
+      "passed": true,
+      "detail": "Exact rational midpoint solve plus certified exp/cos intervals; actual fixed-point uncertainty bounded by contraction"
+    },
+    {
+      "name": "coupled equilibrium N=8 u=1/4",
+      "passed": true,
+      "detail": "Exact rational midpoint solve plus certified exp/cos intervals; actual fixed-point uncertainty bounded by contraction"
+    },
+    {
+      "name": "nonconstant energy and phase",
+      "passed": true,
+      "detail": "Nonzero slopes e=phi=s/64 and nonuniform positive edge coefficients; no zero-profile substitution"
+    },
+    {
+      "name": "sampled kernel consistency",
+      "passed": true,
+      "detail": "Rational interval checks of the Lipschitz kernel envelope; the universal integral O(1/N) bound is proved in TeX"
+    },
+    {
+      "name": "single-node negative control",
+      "passed": true,
+      "detail": "Every N=1 vector is constant; finite positive gap is claimed only for N>=2"
+    },
+    {
+      "name": "regular spectral sectors",
+      "passed": true,
+      "detail": "Exact constant-block eigenvalues; infinite zero-mean complement and resolvent proof are in the manuscript"
+    },
+    {
+      "name": "corner negative control",
+      "passed": true,
+      "detail": "At u=1/2 the opposite radial directional derivatives are not negatives of each other; no Frechet derivative"
+    },
+    {
+      "name": "sharp readout perturbation",
+      "passed": true,
+      "detail": "Finite compact model attains 2eta in R; normalized protection obeys the same-unit r0 bound"
+    },
+    {
+      "name": "setwise versus pointwise negative control",
+      "passed": true,
+      "detail": "Setwise Hausdorff deformation zero and infinite sector resistance coexist with positive readout loss"
+    },
+    {
+      "name": "finite and zero cost sectors",
+      "passed": true,
+      "detail": "Finite positive Hausdorff deformation with finite/zero cost gives finite/zero resistance, not a null-readout conclusion"
+    },
+    {
+      "name": "ablation versus recertification",
+      "passed": true,
+      "detail": "A damaged stored certificate does not exclude another valid certificate on the same support"
+    },
+    {
+      "name": "non-admissible packet",
+      "passed": true,
+      "detail": "Integrity gate suppresses action/support independently of the inferential score"
+    },
+    {
+      "name": "threshold controls",
+      "passed": true,
+      "detail": "Strict signed margins survive bounded error; a flat zero score leaves the entire patch unresolved"
+    },
+    {
+      "name": "no finite collapse from a limit",
+      "passed": true,
+      "detail": "A vanishing sequence of positive margins is not exact finite-stage collapse"
+    },
+    {
+      "name": "legibility packing control",
+      "passed": true,
+      "detail": "Three unit-separated classes cannot have uniform distortion below 1/2 with two codes, for every tested encoder and decoded pair"
+    },
+    {
+      "name": "unnormalized metric negative control",
+      "passed": true,
+      "detail": "Summable 2^-n weights with 4^n-scaled coordinate distances have growing weighted diameters; normalized tails vanish instead"
+    },
+    {
+      "name": "compact versus noncompact existence",
+      "passed": true,
+      "detail": "Each finite inclusion tower S_n=[n,infinity) has a compatible point; witnesses escape and every tested fixed value is excluded later. Universal empty-intersection proof is in TeX."
+    },
+    {
+      "name": "single-cut channel negative control",
+      "passed": true,
+      "detail": "One faithful observed cut cannot distinguish all later histories"
+    },
+    {
+      "name": "noncommuting channel negative control",
+      "passed": true,
+      "detail": "Identity C0 and first-bit-flipping C1 fail q0 C1=C0 pi0 on every binary two-stage history; the image is not coherent"
+    },
+    {
+      "name": "robust finite readout budget",
+      "passed": true,
+      "detail": "Ternary all-zero/all-one histories, actual finite-cut tail and adverse measurement errors preserve the explicit pair and anchored-null residuals"
+    },
+    {
+      "name": "noise boundary negative control",
+      "passed": true,
+      "detail": "Without a strict residual budget, a separation result alone cannot exclude both accepted null balls"
+    },
+    {
+      "name": "current null-theorem metadata",
+      "passed": true,
+      "detail": "Historical demotions are preserved as provenance, not current conjecture status"
+    },
+    {
+      "name": "seven explicit certificate proofs",
+      "passed": true,
+      "detail": "Each targeted proposition has an immediate source proof with its quantified scope"
+    },
+    {
+      "name": "audit provenance preserved",
+      "passed": true,
+      "detail": "Required historical audit markers remain verbatim"
+    }
+  ],
+  "scope": "Rational/interval and negative regression controls; not a proof of every universal manuscript statement, physical calibration or external validation.",
+  "external_support_certified": false
+}

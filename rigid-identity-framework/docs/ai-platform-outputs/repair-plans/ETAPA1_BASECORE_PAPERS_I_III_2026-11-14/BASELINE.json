@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "completed_steps": 11,
+  "required_steps": 11,
+  "elapsed_seconds": 1638.39,
+  "results": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0,
+      "seconds": 5.42
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.58
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0,
+      "seconds": 11.95
+    },
+    {
+      "name": "prose",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:prose"
+      ],
+      "exit": 0,
+      "seconds": 2.64
+    },
+    {
+      "name": "corpus",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:corpus-registry"
+      ],
+      "exit": 0,
+      "seconds": 1.25
+    },
+    {
+      "name": "macros",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:macro-registry"
+      ],
+      "exit": 0,
+      "seconds": 1.05
+    },
+    {
+      "name": "nonclaims",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint:nonclaims"
+      ],
+      "exit": 0,
+      "seconds": 2.44
+    },
+    {
+      "name": "overlays",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:curation-overlays"
+      ],
+      "exit": 0,
+      "seconds": 1.03
+    },
+    {
+      "name": "math",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:math"
+      ],
+      "exit": 0,
+      "seconds": 172.7
+    },
+    {
+      "name": "lean",
+      "command": [
+        "python",
+        "scripts/verify-lean.py",
+        "--kernel-only",
+        "--packages-dir",
+        "E:/QICN-LEAN/v4.31.0-desktop/packages"
+      ],
+      "exit": 0,
+      "seconds": 1438.17
+    },
+    {
+      "name": "coverage",
+      "command": [
+        "python",
+        "scripts/verify-lean-coverage.py"
+      ],
+      "exit": 0,
+      "seconds": 0.5
+    }
+  ]
+}

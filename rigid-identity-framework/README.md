@@ -93,7 +93,7 @@ python scripts/verify-lean.py --kernel-only --packages-dir E:/QICN-LEAN/v4.31.0-
 python scripts/verify-lean-coverage.py
 ```
 
-La matriz inventaría 419 enunciados del manuscrito; contar declaraciones auxiliares
+La matriz conserva 419 enunciados iniciales y 425 activos tras Etapa 1; contar declaraciones auxiliares
 Lean no mide por sí solo la cobertura de esos enunciados. Véanse las hipótesis,
 brechas y límites en la guía del paquete y en la matriz enlazada allí.
 

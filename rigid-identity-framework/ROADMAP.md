@@ -2256,3 +2256,38 @@ reproducción final y los recibos por huella están en EJECUCION.md. Los 419
 enunciados conservan su programa abierto; 409 no tienen equivalencia completa.
 Sin push automático; revisión humana independiente pendiente y
 external_support_certified=false.
+
+## Etapas 0–1 posteriores a Ruta 6 · 2026-11-14
+
+Rama dedicada `codex/etapa1-base-papers1-3`, desde `f7171e7`; `main`
+permanece en `05f8e55`. Alcance: fortalecimiento de BaseCore y Papers I–III,
+sin reescritura de IV–X/Puente y sin expansión de Lean. Informe y recibos:
+[Etapa 1](docs/ai-platform-outputs/repair-plans/ETAPA1_BASECORE_PAPERS_I_III_2026-11-14/EJECUCION.md).
+
+- Baseline completo: 11 pasos aprobados, 1638.39 s. El usuario autorizó superar
+  diez minutos para terminar Lean. WSL no queda confirmado listo; no se instala nada.
+- Espectro exacto en regiones regulares y derivada direccional no lineal en la
+  frontera; relajación en iteraciones, no calibración física.
+- Tipos y orden de hipótesis; pruebas explícitas del régimen nulo y de las siete
+  proposiciones de certificación; dominio Hausdorff coherente entre PI y PIII.
+- Puente energía/fase con perfiles no constantes, contracción y margen racional
+  positivo para todo N>=2. No equivale a evolución conjunta de sus auxiliares.
+- Estabilidad uniforme de pérdida/protección; límite inverso métrico–Polish con
+  normalización explícita; canales conmutativos y separación robusta a ruido.
+- Registro: 906 IDs conservados +6 =912; macros 383 idénticas. Cobertura activa
+  425: 10 exactos, 51 parciales, 348 pendientes, 16 de protocolo. Los 35 archivos
+  Lean/271 declaraciones permanecen sin cambios. Mecanización nueva pendiente.
+- Cuatro PDF unitarios reconstruidos. Monolito de 410 páginas preservado como
+  edición anterior: su reconstrucción y propagación quedan en Etapa 2, conforme
+  a la solicitud. No se presenta como compilación de esta etapa.
+
+La aceptación efectiva exige `VERIFICACION_FINAL.json` con los doce pasos
+aprobados en orden, 33 suites matemáticas y conservación comprobada. Este
+recibo se genera después de congelar las entradas; no se sustituye por la
+expectativa de éxito. Commit local sólo después de esa puerta; sin push.
+
+Siguiente secuencia: Etapa 2 (contratos descendentes y monolito), Etapa 3
+(mecanización de firmas estabilizadas y entorno Linux si se elige), Etapa 4
+(realizaciones/comparadores/calibración), Etapa 5 (revisión independiente).
+Permanecen INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY, BLOCKED_MULTIPLE_GATES,
+BLOCKED_FOUNDATION_FIRST_GATES y external_support_certified=false.

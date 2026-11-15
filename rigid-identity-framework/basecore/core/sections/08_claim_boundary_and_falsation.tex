@@ -1,4 +1,4 @@
-﻿\part{Scope of the Conclusions and Falsation Grammar}
+\part{Scope of the Conclusions and Falsation Grammar}
 
 \section{Forensic Admissibility and Integrity Grammar}
 
@@ -10,11 +10,14 @@ K=(\mathrm{tick},\mathrm{seed},\mathrm{versionHash},H_v,\mathrm{metrics},\mathrm
 \end{definition}
 
 \begin{assumption}[Packet admissibility]\label{ass:packet-admissibility}
-A run is admissible only if checksum, schema, seed consistency, version hash, and $H_v$ consistency all pass.
+A run is admissible only if checksum, schema, seed consistency, version hash,
+and $H_v$ consistency all pass. A claimed replay must also pass its critical-state
+comparison. Write $a(K)\in\{0,1\}$ for this conjunction of required checks.
 \end{assumption}
 
 \begin{definition}[Severe violation]\label{def:severe-violation}
-A run has a severe violation if any of the following holds: checksum mismatch, schema failure, seed/version inconsistency, or critical-state replay mismatch.
+A run has a severe violation if any of the following holds: checksum mismatch,
+schema failure, seed/version inconsistency, or critical-state replay mismatch.
 \end{definition}
 
 \begin{criterion}[Integrity gate]\label{crit:integrity-gate}
@@ -22,64 +25,178 @@ Severely violated runs are excluded from support counting and marked as hard fai
 \end{criterion}
 
 \begin{proposition}[Integrity-first inference]\label{prop:integrity-first}
-If admissibility fails, inferential significance is non-actionable.
+Let an actionable decision use the rule
+$A(K,p)=a(K)\mathbf1_{\{p\leq\alpha\}}$, with a declared threshold $\alpha$,
+and let a run contribute support only through
+$a(K)\mathbf1_{\{\text{support condition}\}}$. If any required admissibility
+check fails, both contributions are zero, regardless of $p$.
 \end{proposition}
+\begin{proof}
+A failed conjunct gives $a(K)=0$, which annihilates both products.
+This is the specified decision rule; it supplies no distributional validity
+for the statistic $p$ and makes no assertion about a rejected run's physical state.
+\end{proof}
 
 \section{Certification, Comparison, and Rupture}
 
 \begin{definition}[Operational Certification Indicator]\label{def:operational-certification}
-Keep $\Cert(S)$ for the certificate object of Definition~\ref{def:cert}. Define a distinct mathematical indicator $\operatorname{CertFlag}(S)$ to be $1$ exactly when such a certificate satisfies Criterion~\ref{crit:cert} on one common admissible support and meets the integrity grammar above; otherwise its value is $0$. This does not identify a tuple with a Boolean value. An empirical audit may have an unknown verdict: missing evidence is not a proof that this mathematical indicator is zero.
+Keep $\Cert(S)$ for the certificate object of Definition~\ref{def:cert}.
+Define a distinct mathematical indicator $\operatorname{CertFlag}(S)$ to be
+$1$ exactly when there exists such a certificate satisfying Criterion~\ref{crit:cert}
+on one common admissible support and meeting the integrity grammar above;
+otherwise its value is $0$. This does not identify a tuple with a Boolean value.
+An empirical audit may have an unknown verdict: missing evidence is not a proof
+that this mathematical indicator is zero.
 \end{definition}
 
 \begin{definition}[Equivalence discriminator]\label{def:equivalence-discriminator}
 For two admissible systems $S_1,S_2$, define
-\[
-\Eq_{\Gamma,\eps}(S_1,S_2)=1
-\]
-when the relevant signatures, admissibility bundle, decoder behavior, and invariant deltas match within the allowed comparison regime.
+$\Eq_{\Gamma,\eps}(S_1,S_2)=1$ when the relevant signatures, admissibility
+bundle, decoder behavior, and invariant deltas match within the allowed
+comparison regime. A numerical match is not by itself an isomorphism of
+all certificate data; the sufficient transport conditions are specified below.
 \end{definition}
 
 \begin{definition}[Rupture event]\label{def:rupture-event}
-For a targeted invariant family $J$, define
-\[
-\Rupt_J(S)=1
-\]
-when an admissible intervention or perturbation drives at least one invariant in $J$ below its certification margin so that class membership becomes invalidated, destroyed, or undefined.
+Fix a candidate certificate and a targeted invariant family $J$.
+The notation $\Rupt_J(S)=1$ is relative to that declared certificate and means
+that an admissible intervention or perturbation defeats at least one of its
+required witness obligations or certified margins. The affected certificate
+then becomes invalid or unavailable. Exclusion of every replacement certificate
+is a separate quantified assertion.
 \end{definition}
 
 \section{Prediction and Falsation Grammar}
 
 \begin{proposition}[Complexity-only negative control prediction]\label{prop:complexity-only-negative-control}
-If a candidate exhibits high connectivity, high entropy, or rich activity but no admissible support realizes all required critical witnesses together, then
+Suppose that for every admissible support at least one of the six required
+predicates fails, so no common support realizes their conjunction. Then
 \[
-\operatorname{CertFlag}(S)=0,
-\qquad
-S\notin\Critop\text{ in certified form},
-\qquad
-\Partop(S)\text{ is not certified}.
+ \operatorname{CertFlag}(S)=0,\qquad
+ S\notin\Critop,\qquad \Partop(S)\text{ is not certified}.
 \]
+High connectivity, entropy or activity alone does not replace that conjunction.
+The hypothesis is universal nonexistence, not failure to find a support in a
+finite search.
 \end{proposition}
+\begin{proof}
+The criterion requires an admissible support carrying all six predicates.
+The assumption $\forall A\,\exists i\,\neg P_i(A)$ negates
+$\exists A\,\forall i\,P_i(A)$. Hence no valid certificate exists and the
+indicator is zero by Definition~\ref{def:operational-certification}.
+A certified partition requires such a certificate. The three aggregate
+activity descriptors do not enter this existential proof obligation.
+\end{proof}
 
 \begin{proposition}[Ablation prediction]\label{prop:ablation-prediction}
-If an intervention destroys a required witness on the certified support, that certificate loses validity. Excluding a replacement certificate on a different support requires checking that support as well.
+Let $c$ be a fixed certificate with its stored support, witnesses and margins.
+If an intervention makes a required obligation false for the transported tuple,
+that tuple is no longer a valid certificate. This does not exclude replacement
+witnesses on the same support or a replacement certificate on another support.
 \end{proposition}
+\begin{proof}
+Validity of the stored tuple is a conjunction of its witness obligations.
+One false conjunct defeats that tuple. The system-level indicator instead
+quantifies existentially over all valid tuples, so defeating one tuple does
+not negate that existential quantifier. Global exclusion needs failure for
+every candidate in the declared family.
+\end{proof}
 
 \begin{proposition}[Exact grammar-transport prediction]\label{prop:grammar-transport-prediction}
-If two realizations preserve the relevant signatures, admissibility conditions, decoder behavior, and six critical invariants up to the allowed comparison regime, then the framework predicts preserved BaseCore criterion membership.
+Suppose a bijection of state spaces and inverse transport preserve the complete
+certificate data: dynamics and time windows, admissible supports, attractors
+and collapse sets, intervention/cost classes, identity comparison metrics,
+factorization and decoder classes, readout distances and noise domains,
+and the probability laws of the declared target/control populations.
+Then valid certificates transport in both directions and criterion membership
+is equivalent. For an approximate transport, a given certificate persists if
+the error is smaller than all its certified radii in the same perturbation
+metric and all remaining discrete admissibility data are preserved.
 \end{proposition}
+\begin{proof}
+Conjugacy transports invariant supports and trajectories; the isometries
+preserve compactness, collapse distances, identity gaps and continuity.
+The bijection of factorization classes preserves the integration obstruction.
+The readout and decoder transports preserve separated classes, duration and
+noise requirements. Pushforward of the specified probability laws preserves
+miss and false-shift probabilities, and the same codes preserve the compression
+budget and class distortion. Thus all six witnessed clauses and the integrity
+checks hold for the transported certificate. The inverse gives the converse.
+For approximation, let $r<\min\Delta(S)$ in the calibrated common metric.
+Each associated predicate persists throughout its certified $r$-ball by
+Definition~\ref{def:margins}; the unchanged discrete data complete that certificate.
+This last conclusion is conditional on actual certified radii, not inferred
+from closeness of a finite list of readings.
+\end{proof}
 
 \begin{proposition}[Threshold-sensitive boundary behavior]\label{prop:threshold-sensitive-boundary}
-The framework predicts stable pass/fail regions together with narrow transition bands near critical margins. It predicts neither global threshold collapse nor perfect flat insensitivity.
+On a fixed admissible parameter patch, suppose a candidate certificate's
+required tests are represented exactly by six signed margins $m_i(\lambda)>0$,
+and the other admissibility data remain fixed. If each margin is
+$L_i$-Lipschitz, write $L=\max_iL_i$ and $m=\min_i m_i$.
+A perturbation of parameter distance at most $r$ preserves a pass where
+$m>Lr$ and a failure of that candidate where $m<-Lr$.
+For a scalar threshold parameter with $m(\lambda_*)=0$ and
+$|m(\lambda)|\geq s|\lambda-\lambda_*|$, $s>0$, measurement error $\eta$
+and parameter error $r$ confine ambiguity to
+\[
+ |\lambda-\lambda_*|\leq(\eta+Lr)/s.
+\]
+Thus a band-width bound requires an explicit transversal lower slope;
+no universal narrow band follows without it.
 \end{proposition}
+\begin{proof}
+The minimum of finitely many $L$-Lipschitz functions is $L$-Lipschitz:
+compare all six values at the two parameters and then take their minima.
+The asserted strict signs therefore persist outside the stated error band.
+With measurement error, an unresolved sign requires
+$|m(\lambda)|\leq\eta+Lr$; combine this with the lower slope inequality.
+The constant margin $m\equiv0$ leaves an entire patch unresolved and shows
+why Lipschitz regularity alone gives no narrow geometric transition region.
+These conclusions concern the specified score representation, whose validity
+for a particular global invariant remains an obligation to demonstrate.
+\end{proof}
 
 \begin{proposition}[Legibility dependence prediction]\label{prop:legibility-dependence}
-Criterion membership becomes inadmissible if readouts cease to be separable, noise-robust, intervention-sensitive, or compressible without total collapse.
+Failure of a required clause L1--L6 invalidates the particular legibility
+certificate using that decoder, protocol and budget. Excluding legibility
+altogether requires failure for every admitted candidate.
+In the uniform-distortion version of L6, if $M$ declared classes are pairwise
+at class-metric distance at least $\sigma_C>0$, distortion below $\sigma_C/2$
+with an integer $B$-bit code requires $M\leq2^B$.
 \end{proposition}
+\begin{proof}
+The first assertion is the conjunction in Definition~\ref{def:ileg} with
+its existentially chosen data. For the quantitative assertion, if $M>2^B$
+two distinct classes share a code. Its decoded value would have distance
+less than $\sigma_C/2$ from both, contradicting their separation by the
+triangle inequality. This uses the declared class metric and worst-case
+distortion; a probabilistic average-loss model requires its own bound.
+\end{proof}
 
 \begin{proposition}[Continuity and non-null relevance]\label{prop:continuity-nonnull-relevance}
-Regime continuity and non-null differentiation are constitutive. Systems that preserve rich activity while losing continuity or collapsing toward effective null structure fail the operational criterion or leave it undefined.
+Failure of $\Icont$ or $\Idiff$ excludes the operational criterion. In
+particular $\Idiff$ fails if every admitted differentiation comparison has
+zero history separation, or if the null class is an asymptotically stable
+admissible attractor. Falling below a stored positive margin invalidates that
+certificate; merely tending toward zero does not imply failure at a finite
+parameter value or exclude recertification at a smaller positive margin.
 \end{proposition}
+\begin{proof}
+The criterion requires both predicates. A zero separation for every candidate
+cannot witness the positive gap in Definition~\ref{def:idiff}; its second
+clause also explicitly excludes a stable admissible null attractor.
+The same conjunction argument applies to a failed continuity witness.
+For the limiting distinction, $\sigma_n=2^{-n}$ stays positive at every finite
+$n$ although its infimum is zero. Thus an asymptotic loss of a uniform radius
+cannot be silently replaced by exact finite-stage collapse. The null class of
+readout histories and a null value of a separate structural assignment retain
+their declared types.
+\end{proof}
 
 \begin{remark}[What stays outside BaseCore]
-Runtime status classes, empirical comparative programs, human comparator campaigns, Papers 7--9, and bridge-facing burden architectures remain downstream constructs. BaseCore includes only the falsation grammar and claim-boundary semantics needed to keep theorem hypotheses explicit.
+Runtime status classes, empirical comparative programs, human comparator
+campaigns, Papers 7--9, and bridge-facing burden architectures remain downstream
+constructs. BaseCore includes only the falsation grammar and claim-boundary
+semantics needed to keep theorem hypotheses explicit.
 \end{remark}

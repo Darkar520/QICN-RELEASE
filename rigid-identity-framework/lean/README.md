@@ -58,7 +58,7 @@ and release gates; they do not run Lean.
 
 ## Coverage and fidelity
 
-The [complete 419-entry matrix](../docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md)
+The [coverage matrix (419 initial targets, 425 after Etapa 1)](../docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md)
 links exact registry IDs to Lean symbols, source hashes, hypotheses, dependencies,
 priority and remaining obligations. Its adjacent JSON is checked by
 `verify-lean-coverage.py`. Public Lean declarations and manuscript entries have
@@ -88,8 +88,8 @@ declarations; these totals include the aggregate and auxiliary results.
 | [QICNParametricContraction](QICNLean/QICNParametricContraction.lean) | Complete metric spaces; uniform contraction constant and statewise parameter continuity; compact range requires compact parameters | BaseCore `thm-contraction`, `thm-fixedpoint`, `thm-compactness` |
 | [QICNInverseLimitTopology](QICNLean/QICNInverseLimitTopology.lean) | All natural-number stages, product-subspace topology, closed/compact coherent histories, separate nonemptiness, unique continuous cone lift and separation | Paper I `thm-minimal`, universal-property proposition; BaseCore/Paper II canonical-projection endomorphisms; `thm-stone-classification` only partial |
 
-The weighted-history metric's finiteness, completeness, tail bound and agreement
-with product topology are still distinct obligations. The law-limit theorem's
+In this Lean companion, the weighted-history metric's finiteness, completeness, tail bound and agreement
+with product topology are still distinct mechanization obligations. The Etapa 1 manuscript proofs do not automatically close their Lean translation. The law-limit theorem's
 metrizability, clopen point basis, convexity and path connectivity are not supplied
 by compactness of the point-history set. A universal-property proof here concerns
 sets/topological spaces for the declared successor system, not arbitrary categories.

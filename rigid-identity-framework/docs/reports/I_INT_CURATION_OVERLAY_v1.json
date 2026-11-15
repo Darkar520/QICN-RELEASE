@@ -1,32 +1,36 @@
 {
   "schema_version": "0.1.0",
-  "date": "2026-05-26",
-  "status": "materialized_with_v17_conditional_factorization_theorem",
-  "boundary": "This overlay has been materialized through the source-aware AUDIT_OVERRIDES path in scripts/registry-lib.js and regenerated into registry/theorems.jsonl. FCR v17 proves a conditional factorization-triviality theorem under an explicit atomic-separator hypothesis, but it does not prove the unconditional Paper 5 transfer proposition until that atomicity hypothesis is derived from upstream commitments and independently reviewed.",
+  "date": "2026-11-15",
+  "status": "materialized_etapa2_typed_conditional_proofs",
+  "boundary": "Typed response-preserving product factorizations and atomic separator implications now have explicit proofs, plus a finite swap realization and a hold/product negative control. These prove conditional transfer, not a universal derivation of atomicity from BaseCore rigidity. External support remains uncertified.",
   "overlays": [
     {
       "target_id": "paper5:proposition:prop-integration-transfer",
       "target_file": "paper5_operational_consciousness/main.tex",
       "previous_registry_epistemic_status": "proved",
-      "current_registry_epistemic_status": "open_burden",
-      "recommended_epistemic_status": "open_burden",
+      "current_registry_epistemic_status": "conditional",
+      "recommended_epistemic_status": "conditional",
       "materialized": true,
       "materialized_by": "scripts/registry-lib.js AUDIT_OVERRIDES",
       "recommended_claim_class": "conditional_consolidation_invariant",
-      "reason": "FCR v17 closes the conditional theorem: atomic identity/history/response separators imply factorization triviality. The remaining burden is deriving separator atomicity from upstream rigidity, continuity, and intervention fidelity rather than assuming it.",
+      "reason": "The active conditional transfer is proved through the declared admissible category and response atomicity. The quantified finite theorem gives a response-error bound; the unconditional upstream atomicity implication remains an independent open obligation.",
       "required_for_reupgrade": [
-        "define admissible factorization category as in docs/reports/I_INT_FACTORIZATION_CATEGORY_SPEC.md",
-        "define trivial up to admissible isomorphism without smuggling integration into the definition",
-        "treat paper5:theorem:thm-iint-faithful-factorization-triviality as a conditional theorem only",
-        "prove that upstream rigidity, continuity, and intervention fidelity imply atomicity of the operational separator family Theta_S",
-        "rule out weakly coupled product counterexamples",
-        "refactor prop:integration-transfer to cite both the atomicity derivation and the completed conditional theorem after human mathematical review"
+        "derive separator atomicity for each claimed upstream class instead of assuming it",
+        "preserve the exact response-compatible factorization category and its nonempty comparison sector",
+        "retain hold/product and communicating-factor counterexamples outside that category",
+        "obtain independent mathematical review before any public proof/support upgrade"
       ],
       "blocked_actions": [
-        "cite prop:integration-transfer as an independent proof of causal integration",
-        "use I_int as externally validated evidence",
-        "edit registry/theorems.jsonl manually to hide the burden"
+        "cite conditional integration transfer as an unconditional BaseCore consequence",
+        "claim externally validated integration",
+        "suppress the original audit history or product counterexamples"
+      ],
+      "conditional_results": [
+        "thm:iint-faithful-factorization-triviality",
+        "thm:response-atomic-factorization",
+        "ex:response-atomic-swap"
       ]
     }
-  ]
+  ],
+  "external_support_certified": false
 }

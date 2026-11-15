@@ -6,16 +6,16 @@ This graph maps machine-extracted theorem dependencies. It does not prove consis
 
 ## Summary
 
-- Registry entries total: 699
-- Theorem nodes: 99
-- Theorem-to-any-formal edges: 96
-- Theorem-to-theorem edges: 27
-- Unresolved references: 0
+- Registry entries total: 921
+- Theorem nodes: 156
+- Theorem-to-any-formal edges: 155
+- Theorem-to-theorem edges: 51
+- Unresolved references: 2
 - Cycles: 0
-- Leaves not used by other theorem nodes: 80
-- Roots with no theorem dependencies: 84
-- Conditional or open theorem nodes: 17
-- Proved but not human-reviewed theorem nodes: 77
+- Leaves not used by other theorem nodes: 118
+- Roots with no theorem dependencies: 125
+- Conditional or open theorem nodes: 28
+- Proved but not human-reviewed theorem nodes: 128
 
 ## Interpretation
 

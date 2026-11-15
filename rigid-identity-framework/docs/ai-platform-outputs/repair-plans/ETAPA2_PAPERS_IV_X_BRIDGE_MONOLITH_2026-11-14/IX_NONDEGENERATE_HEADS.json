@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "patterns": 64,
+  "gains": [
+    "1/64",
+    "1"
+  ],
+  "all_six_transcripts_nonconstant": true,
+  "threshold": "1/16",
+  "false_score": "1/32",
+  "true_score": "1",
+  "loss_scales_changed": false,
+  "intervention_families_changed": false,
+  "primitive_ports_changed": false,
+  "basis": "Existing homogeneous loss proof in thm:predicate-independence; zero gains are not necessary for its truth patterns.",
+  "source_control_sha256": "d8f73ba84d863657a662aa1755cd584097ab379b9ba5f1210302e60427dc13be",
+  "scope": "Independence of calibrated instrumental predicates only; not intrinsic B1-B10 or conjunctive gate independence.",
+  "external_support_certified": false,
+  "reproduction_python": "from itertools import product\nfrom fractions import Fraction as Q\nfrom pathlib import Path\nimport runpy\np=next(Path('docs/ai-platform-outputs/repair-plans/ETAPA2_PAPERS_IV_X_BRIDGE_MONOLITH_2026-11-14').glob('check_etapa2_downstream.py'))\ng=runpy.run_path(str(p)); raw=g['raw_heads']; patterns=set()\nfor gains in product([Q(1,64),Q(1)], repeat=6):\n    data=[[a*x for x in h] for a,h in zip(gains,raw)]\n    assert all(any(x!=y for x in h for y in h) for h in data)\n    scores=[g['clip'](2*max(map(abs,h))/max(map(abs,r))) for h,r in zip(data,raw)]\n    patterns.add(tuple(s>=Q(1,16) for s in scores))\nassert len(patterns)==64\n",
+  "reproduction_cwd": "rigid-identity-framework/"
+}

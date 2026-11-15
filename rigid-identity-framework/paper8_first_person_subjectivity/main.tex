@@ -176,6 +176,18 @@ This tuple is not introduced as a metaphysical inventory of everything a subject
 
 The seven coordinates are deliberately heterogeneous. Some are state variables, some are operator-valued fields, and some are system-level margins aggregated on a time horizon. That heterogeneity is a feature, not a defect. Subjectivity, if formalized at all, must bind instantaneous indexing, temporally extended continuity, intervention response, and model comparison into the same explanatory object. Treating them as if they all lived at the same mathematical granularity would artificially simplify the problem and blur the very distinctions the paper is meant to sharpen.
 
+\paragraph{Domains retained from the foundation.}
+The state, its intervention-indexed history, the inverse-limit object and the
+object-comparison space are distinct. Paper III's metric--Polish theorem uses
+bounded coordinate metrics and a summable tail, with a separate existence
+condition outside compact towers. A channel assembled from cut maps must
+satisfy its commuting law; its weighted lower constant and final readout
+coercivity are additional hypotheses. An estimated pair separation loses
+twice the total tail-plus-measurement error. These conditions apply before
+using observed separation as an index or ownership comparison. They do not
+derive a local score, a causal parent graph or a rival family from the scalar
+resistance of an identity object.
+
 \subsection{Constitutive coordinates}
 \begin{definition}[Self-index]\label{def:selfindex}
 Let $\mathcal{Z}_t$ be the admissible latent-state family of system $S$ at time $t$. A \emph{self-index} is a map
@@ -441,39 +453,160 @@ The denominator is positive and the evidence domain is defined. Every valid comp
 The exchange is a causal exchange of two actual input/state groups, with measurement references transported, not a renaming of a report string. An unequal response weight or unequal intervention amplitude would create a different valuation protocol and could generate a spurious contrast even in this symmetric plant. The theorem does not say that every infinite-dimensional integrated system is symmetric. Nor does it transfer the integration gap to joint-output rivals or an arbitrarily enlarged sensor partition, or the identity gap to a continuous family of angular presentations. The separate native construction in Theorem~\ref{thm:native-nonempty-subfp} now establishes nonemptiness under its explicit causal grammar; unrestricted-rival, biological and interpretive extensions remain additional obligations.
 
 
-\subsection{Open proof obligations}
-The following entries formulate conditional theoretical obligations rather than
-already closed theorems. They make explicit which burdens must be proved or
-executed before stronger subjectivity language can be licensed.
+\subsection{Local Indexing, Causal Transport and Five-Field Reconstruction}
 
-\begin{criterion}[Self-index emergence burden]\label{thm:selfindex-emergence}
-If $S\in\Subop(\tau)$ has a positive subjecthood margin bundle and an
-admissible family of candidate continuity loci, then a constructive
-self-index claim must exhibit an estimator
+Use a fixed nonempty compact metric preparation domain $Z$, a finite set
+$L$ of at least two candidate loci and a compact nonempty horizon $T$.
+For each locus let $\ell_l:Z\times T\to\mathbb R_{\ge0}$ be a continuous
+loss, in a common calibrated unit. The loss includes the actual continuation
+and matched control queries; comparing report strings alone is not this
+experiment. Define
 \[
-\widehat{\SelfIndex}_\tau:\mathcal{A}_S\to[0,1]
+ g_l(z)=\min_{t\in T,\,k\ne l}(\ell_k(z,t)-\ell_l(z,t)),\quad
+ a_l(z)=\frac{(g_l(z))_+}{s_I+(g_l(z))_+},\qquad s_I>0.
 \]
-whose winning locus is persistent under bounded perturbation, distinguishable
-from matched rival loci, and stable under admissible temporal continuation on
-the horizon $\tau$. This is a conditional proof burden; it is not closed by the
-definitions alone.
-\end{criterion}
+The vector $(a_l)_{l\in L}$ is a local normalized index estimator. Its entries
+are scores, not posterior probabilities. A tie has zero privileged score;
+missing comparison data leave the estimator undefined.
 
-\begin{criterion}[Ownership nontransfer burden]\label{thm:ownership-nontransfer}
-Any nontransfer claim for the ownership field must be stated relative to an
-independently specified admissible morphism class. If the morphism is defined
-by preserving ownership, then nontransfer follows only by definition and has no
-standalone theorem value. A valid future theorem must separate ownership
-preservation from the morphism definition before proving failure of transfer.
-\end{criterion}
+\begin{theorem}[Continuous Local Index with a Persistent Winner]
+\label{thm:selfindex-emergence}
+The functions $g_l$ and $a_l$ are continuous. If $g_{l_*}(z_*)=g_*>0$,
+there is a neighborhood on which $l_*$ remains the unique winning locus at
+every tested time. More quantitatively, if all losses change by at most
+$\eta$ uniformly in locus and time, their gaps change by at most $2\eta$
+and their normalized scores by at most $2\eta/s_I$. For $2\eta<g_*$ the
+same winner persists. The assertion requires actual loss/continuation
+regularity; upstream class membership alone supplies neither the losses nor
+their positive margin.
+\end{theorem}
+\begin{proof}
+Continuity on the compact product gives a common uniform modulus for the
+finite family of losses. Each difference changes by at most twice that
+modulus, uniformly in time and competing locus. The minimum of two bounded
+families differs by no more than their uniform difference, proving continuity
+of $g_l$ and the bound $2\eta$. The positive-part map is nonexpansive, and
+$x\mapsto x/(s_I+x)$ for $x\ge0$ has difference at most $|x-y|/s_I$.
+This proves the score bound. A positive gap says every competitor has larger
+loss at every time; the same holds under perturbations smaller than half the
+gap. Equal losses at two loci give $g_l\le0$ and no privileged winner, even
+when a deterministic program resolves the tie by a name.
+\end{proof}
 
-\begin{criterion}[Five-field reduction burden]\label{thm:five-field-reduction}
-A reduction from the seven-coordinate first-person state to any five-field
-subsystem must provide an explicit projection, a reconstruction or comparison
-map, and a loss bound showing that intervention selectivity and weak-rival
-separation are preserved. Until such a bound is supplied, five-field reduction
-is a conjectural compression program rather than a proved equivalence.
-\end{criterion}
+For causal transport, fix a finite directed acyclic event graph, for example
+the time-unrolling of a declared linear causal model. Its roots are the
+intervention/preparation ports $L$, edge weights are nonnegative transfer
+coefficients in common normalized units, and each root has a fixed positive
+preparation weight $\rho_l$. The causal assumptions are that these edges
+are the specified structural dependences and that interventions replace the
+declared equations, without hidden parents in the tested graph. Let
+\[
+ A_{el}=\sum_{p:l\leadsto e}\prod_{a\in p}w_a,\qquad
+ O_l(e)=\frac{\rho_l A_{el}}{\sum_k\rho_k A_{ek}}
+\]
+when the denominator is positive. A zero denominator is unsupported evidence,
+not a numerical ownership value. These are causal contribution weights in
+this model, not experiential properties.
+
+An admissible transport is a graph isomorphism $f$, with root permutation
+$\pi$ and a preparation bijection $f_Z:Z\to Z'$, preserving time, edge weights, preparation weights, intervention
+ports/equations and the primitive comparison losses with their references.
+No ownership value or index estimate occurs in this definition.
+
+\begin{theorem}[Causal Nontransfer under Primitive Graph Transport]
+\label{thm:ownership-nontransfer}
+Every admissible transport satisfies
+$O'_{\pi(l)}(f(e))=O_l(e)$ wherever defined. It transports the locally
+unique index winner of Theorem~\ref{thm:selfindex-emergence} to $\pi(l_*)$.
+Thus a passive reidentification transports causal attribution, while a
+transplant changing a parent port with references held fixed need not preserve
+it. This conclusion is about the declared causal model, not an independently
+proved causal identification of an arbitrary observational record.
+\end{theorem}
+\begin{proof}
+The graph isomorphism bijects directed paths from $l$ to $e$ with paths from
+$\pi(l)$ to $f(e)$. Each product has the same edge weights. Therefore the
+path sums agree, and preparation weights preserve both numerator and the
+positive denominator. Primitive loss transport gives
+$\ell'_{\pi(l)}(f_Z(z),t)=\ell_l(z,t)$, so it transports the minima and gaps
+and their unique winner. Neither conclusion was assumed in admissibility.
+For a counterexample take two roots, both of weight one, and one event
+initially receiving a unit edge only from root 1. Then $O_1(e)=1$.
+Transplant its incoming unit edge to root 2, retaining the event label,
+root actuation ports and reference index 1. Now $O_1(e)=0$; no root-fixing
+graph isomorphism preserves the edge. Keeping a memory label has not kept
+its causal provenance. Permuting both roots and all references instead is
+an admissible renaming and preserves the transported value.
+\end{proof}
+
+For the reduction question let $\mathcal Z$ be the complete valid record
+space for a fixed protocol, including its measurements and comparator data,
+and put $P(z)=y\in[0,1]^5$ for its five primary normalized readings. Require
+the actual intervention records to factor as
+\[
+ P(I_u z)=H_u(Pz)\qquad(u\in\mathcal I_{\rm tgt}),
+\]
+with fixed maps $H_u$. Fix a nonempty finite rival family and require its
+penalized losses and the candidate loss to be respectively
+$L_r(z)=l_r(Pz)\ge0$ and $L_*(z)=l_*(Pz)\ge0$. Thus the same primary tuple
+must determine the reserved outcomes, predictions and costs; their omission
+is a substantive restriction, not permission to tune them afterward.
+All reference/template/threshold data are fixed in this record space.
+
+Define $d_u(y)=y-H_u(y)$ and let $b_u(y)\in\{0,1\}$ be exactly the
+target-drop/off-target test of the selective-response rule. Set
+\[
+ h_6(y)=|\mathcal I_{\rm tgt}|^{-1}\sum_u b_u(y),\qquad
+ h_7(y)=\operatorname{clip}_{[0,1]}
+ \frac{\min_r l_r(y)-l_*(y)}{s_R+\min_r l_r(y)},\quad s_R>0.
+\]
+
+\begin{theorem}[Exact Five-Field Reconstruction with a Threshold Boundary]
+\label{thm:five-field-reduction}
+Under the factorization hypotheses, the seven-coordinate record is exactly
+$\mathcal R(Pz)$, where $\mathcal R(y)=(y,h_6(y),h_7(y))$. In particular
+its gate, scalar and declared weak-rival separation are reconstructed with
+zero loss. If the $H_u,l_r,l_*$ are continuous, $h_7$ is continuous, while
+$h_6$ is locally constant wherever every tested threshold inequality has a
+strict signed clearance. There it follows that $\mathcal R$ is continuous;
+no continuity is claimed across an indicator boundary.
+
+For an arbitrary record space, exact reconstruction exists if and only if
+the two derived coordinates are constant on every fibre of $P$. If two
+records in one fibre have derived-coordinate distance $d>0$ in maximum norm,
+any five-field reconstruction has uniform error at least $d/2$ on that pair.
+Thus there is no unconditional five-field reduction of all valid records.
+\end{theorem}
+\begin{proof}
+Substitute the commuting law into each of the five-coordinate drops. It
+gives precisely $d_u(Pz)$ and the same threshold test, so their mean is
+$h_6(Pz)$. Substitute the loss factorizations into the reserved comparison
+formula to obtain $h_7(Pz)$. The fixed nonempty finite minimum is attained;
+its denominator is at least $s_R$. These two identities prove the exact
+reconstruction and preserve all functions of that vector.
+
+A finite minimum of continuous functions is continuous, so division by the
+positive denominator and clipping preserve continuity of $h_7$. At a point
+with strict clearance, finitely many continuous threshold differences retain
+their signs on a common neighborhood. Each $b_u$ and their mean are constant
+there. The other five coordinates are the identity, completing continuity.
+At zero clearance a target drop can cross its threshold under arbitrarily
+small drift; the indicator is not globally continuous by its name.
+
+Necessity of fibre constancy follows by applying a function of $Pz$ to two
+equal primary tuples. Conversely define each derived value on $P(\mathcal Z)$
+using any representative; constancy makes it well defined. Finally one
+decoded value cannot be at distance less than $d/2$ from both true derived
+vectors by triangle inequality. For an explicit control, use two records
+with the same primary tuple, one target with zero off-target changes and
+target drop respectively $1/2$ and zero at threshold $1/4$. Their profile
+scores are one and zero, so reconstruction error is at least $1/2$.
+Both records can be produced by different causal intervention states with
+the same baseline readings. Keeping a baseline tuple is insufficient to
+fix its intervention responses. A reserved rival with exact access to the
+candidate also makes the signed comparison nonpositive, irrespective of
+the unchanged primary tuple.
+\end{proof}
 
 \begin{proposition}[No compensation by surplus on other coordinates]
 If any one normalized coordinate among

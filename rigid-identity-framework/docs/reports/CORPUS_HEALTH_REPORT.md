@@ -4,16 +4,16 @@ Status: FCR structural registry generated from active LaTeX sources. This report
 
 ## Metrics
 
-- Formal registry entries: 912
+- Formal registry entries: 921
 - Macro registry entries: 383
-- Theorem entries: 145
+- Theorem entries: 156
 - Hypothesis entries: 22
-- Conjecture entries: 2
+- Conjecture entries: 0
 - Audit v5 overlays: 21
 - False-status entries with required counterexample metadata: 0
-- Proved-status entries: 355
-- Conditional-status entries: 395
-- Heuristic-status entries: 155
+- Proved-status entries: 360
+- Conditional-status entries: 405
+- Heuristic-status entries: 156
 - Active macro-collision entries: 0
 - Active macro-collision groups: 0
 - Blocking validation errors: 0
@@ -32,18 +32,18 @@ Status: FCR structural registry generated from active LaTeX sources. This report
 | paper1:theorem:thm-aleph-unique | conditional | present | corrected_with_strict_convexity_hypothesis | paper1/main.tex:1182 |
 | paper1:theorem:thm-info-isolation | proved | present | corrected_to_epistemic_boundary | paper1/main.tex:1210 |
 | paper1:theorem:thm-stone-classification | proved | present | corrected_to_boundary_remark | paper1/main.tex:1294 |
-| paper10:theorem:thm-null-forced | conditional | present | corrected_forced_choice_variant | paper10_external_adjudication/main.tex:511 |
+| paper10:theorem:thm-null-forced | conditional | present | corrected_forced_choice_variant | paper10_external_adjudication/main.tex:525 |
 | paper2:hypothesis:hyp-phi-paper2 | conditional | not_applicable | corrected_from_false_theorem | paper2/main.tex:629 |
 | paper3:theorem:thm-instability | conditional | present | corrected_pointwise_c3 | paper3/main.tex:454 |
-| paper3:proposition:conditional-profinite-bound-l448 | conjectural | not_expected | demoted_to_conjecture | paper3/main.tex:623 |
+| paper3:proposition:conditional-profinite-bound-l448 | conditional | present | conditional_profinite_coercive_proof_reviewed | paper3/main.tex:623 |
 | paper3:theorem:thm-sim-cond | conditional | present | corrected_to_conditional | paper3/main.tex:1172 |
-| paper5:proposition:prop-integration-transfer | open_burden | heuristic | iint_factorization_burden_open | paper5_operational_consciousness/main.tex:899 |
-| paper8:criterion:thm-selfindex-emergence | conditional | heuristic | proof_gap | paper8_first_person_subjectivity/main.tex:449 |
-| paper8:criterion:thm-ownership-nontransfer | tautology | invalid | circular_definition | paper8_first_person_subjectivity/main.tex:462 |
-| paper8:criterion:thm-five-field-reduction | conjectural | sketch | proof_sketch | paper8_first_person_subjectivity/main.tex:470 |
-| paper9:conjecture:thm-predicate-independence | conjectural | not_expected | demoted_to_conjecture_circular_witness | paper9_phenomenal_bridge_organization/main.tex:1689 |
-| paper9:conjecture:thm-registry-independence | conjectural | not_expected | demoted_to_conjecture_circular_witness | paper9_phenomenal_bridge_organization/main.tex:1697 |
-| paper9:criterion:thm-bridge-realization-exists | tautology | heuristic | vacuous_non_emptiness | paper9_phenomenal_bridge_organization/main.tex:1704 |
+| paper5:proposition:prop-integration-transfer | conditional | present | conditional_factorization_category_and_response_separator | paper5_operational_consciousness/main.tex:998 |
+| paper8:criterion:thm-selfindex-emergence | conditional | present | conditional_compact_loss_margin_proved | paper8_first_person_subjectivity/main.tex:472 |
+| paper8:criterion:thm-ownership-nontransfer | conditional | present | conditional_structural_path_transport_proved | paper8_first_person_subjectivity/main.tex:516 |
+| paper8:criterion:thm-five-field-reduction | conditional | present | conditional_fibre_reconstruction_proved | paper8_first_person_subjectivity/main.tex:564 |
+| paper9:conjecture:thm-predicate-independence | conditional | present | conditional_calibrated_instrument_class_independence | paper9_phenomenal_bridge_organization/main.tex:2253 |
+| paper9:conjecture:thm-registry-independence | conditional | present | conditional_faithful_row_local_transport | paper9_phenomenal_bridge_organization/main.tex:2279 |
+| paper9:criterion:thm-bridge-realization-exists | conditional | present | conditional_proper_ancestry_operational_realization | paper9_phenomenal_bridge_organization/main.tex:2305 |
 
 ## Blockers
 

@@ -1,0 +1,647 @@
+{
+  "passed": true,
+  "pdfs": [
+    {
+      "unit": "paper4",
+      "path": "rigid-identity-framework/paper4/main.pdf",
+      "sha256": "a5efd9bdd8a7011b227afe7b1c4df80984b61e16c1b3f49bbaa01dc9dd7c05f4",
+      "pages": 21,
+      "source_sha256": "a207f7fc7e8b3cca618fcf718c87963175b7e5d85fa061a2ebbe06274e6e77ed",
+      "underfull_hbox": 12,
+      "warnings": 1
+    },
+    {
+      "unit": "paper5_operational_consciousness",
+      "path": "rigid-identity-framework/paper5_operational_consciousness/main.pdf",
+      "sha256": "c7e8db636979c32c888a2702389bc3329f3379838d5b5309f22eb02c8eff7be3",
+      "pages": 48,
+      "source_sha256": "286551aad78ee3a7cd3900a294626a966bb8b86edd84cf27a10174e5b0259591",
+      "underfull_hbox": 10,
+      "warnings": 0
+    },
+    {
+      "unit": "paper6_predictions_falsation",
+      "path": "rigid-identity-framework/paper6_predictions_falsation/main.pdf",
+      "sha256": "b3f180d603ad8a6dd4a9b596b51f37b1f101c4988c504087e28d3bcedf755b0b",
+      "pages": 29,
+      "source_sha256": "181f5fb2fea6f15f0119b49e9bb8622d96e334ed6fa7ef00f436a3fe837c973c",
+      "underfull_hbox": 26,
+      "warnings": 0
+    },
+    {
+      "unit": "paper7_operational_life_subjecthood",
+      "path": "rigid-identity-framework/paper7_operational_life_subjecthood/main.pdf",
+      "sha256": "537bb2dd97fb415d2badd3ae0a25093be16f5b87aa0e7c9f7adfcab0b00c2cac",
+      "pages": 37,
+      "source_sha256": "c0594c4ffb3cf2615407b10ed2ff784ac6c6967df5f81e468b3467567ba6ee1e",
+      "underfull_hbox": 29,
+      "warnings": 0
+    },
+    {
+      "unit": "paper8_first_person_subjectivity",
+      "path": "rigid-identity-framework/paper8_first_person_subjectivity/main.pdf",
+      "sha256": "af21fddca16bcbb502d50450818099bcd175a98f8a3f9a1eef439cb23d8d2b24",
+      "pages": 58,
+      "source_sha256": "fa20b19749c753928ab0d0eae40bc429a733d785df6295d285511066ab90ae6e",
+      "underfull_hbox": 103,
+      "warnings": 0
+    },
+    {
+      "unit": "paper9_phenomenal_bridge_organization",
+      "path": "rigid-identity-framework/paper9_phenomenal_bridge_organization/main.pdf",
+      "sha256": "8bc5abe288a277b2ede73654a1233fc41fda44c14ffd015156aef690724be21d",
+      "pages": 71,
+      "source_sha256": "7f12807ad8d957a8f043ff97473e6a25123be38bd0ba7cec2435f3700911372b",
+      "underfull_hbox": 14,
+      "warnings": 0
+    },
+    {
+      "unit": "paper10_external_adjudication",
+      "path": "rigid-identity-framework/paper10_external_adjudication/main.pdf",
+      "sha256": "ec8f87e90efda6c935b3914cfa595666522bbb2f6327372ed6baf2b0ae6f1ea8",
+      "pages": 33,
+      "source_sha256": "4b9a607aed0ff34ce2946ecf3b1109d9695bc39edfa80b1523e466149d3a99b3",
+      "underfull_hbox": 5,
+      "warnings": 0
+    },
+    {
+      "unit": "paper_bridge_operational_subjecthood",
+      "path": "rigid-identity-framework/paper_bridge_operational_subjecthood/main.pdf",
+      "sha256": "58fb7ae9f16b9041cf7dcb49f9db3e1a7e90a4ae16b99650746d925374d06e9c",
+      "pages": 28,
+      "source_sha256": "9eb6bb1056411755783ab50785dfde130d57f51820476013c61f66f1875f23da",
+      "underfull_hbox": 0,
+      "warnings": 0
+    },
+    {
+      "unit": "monolithic",
+      "path": "rigid-identity-framework/monolithic/QICN_MONOLITHIC.pdf",
+      "sha256": "30500fbfc44fefdf2946f89061a75f3ac87e89cf7eb320238456e133e49327d3",
+      "pages": 435,
+      "source_sha256": "f94f8dd52a4c0288d3c79dabf89414a5923cd238ee8b49fb70bfe828bee11fa5",
+      "underfull_hbox": 163,
+      "warnings": 0
+    }
+  ],
+  "steps_including_diagnosed_attempts": [
+    {
+      "step": "compile-paper4-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 3.38,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper4-0.log"
+    },
+    {
+      "step": "compile-paper4-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 12.83,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper4-1.log"
+    },
+    {
+      "step": "compile-paper4-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 3.45,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper4-2.log"
+    },
+    {
+      "step": "compile-paper4-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 3.42,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper4-3.log"
+    },
+    {
+      "step": "compile-paper5_operational_consciousness-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 4.95,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper5_operational_consciousness-0.log"
+    },
+    {
+      "step": "compile-paper5_operational_consciousness-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 5.42,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper5_operational_consciousness-1.log"
+    },
+    {
+      "step": "compile-paper5_operational_consciousness-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.66,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper5_operational_consciousness-2.log"
+    },
+    {
+      "step": "compile-paper5_operational_consciousness-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.02,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper5_operational_consciousness-3.log"
+    },
+    {
+      "step": "compile-paper6_predictions_falsation-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 3.97,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper6_predictions_falsation-0.log"
+    },
+    {
+      "step": "compile-paper6_predictions_falsation-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 5.7,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper6_predictions_falsation-1.log"
+    },
+    {
+      "step": "compile-paper6_predictions_falsation-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.97,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper6_predictions_falsation-2.log"
+    },
+    {
+      "step": "compile-paper6_predictions_falsation-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 3.72,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper6_predictions_falsation-3.log"
+    },
+    {
+      "step": "compile-paper7_operational_life_subjecthood-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 4.62,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper7_operational_life_subjecthood-0.log"
+    },
+    {
+      "step": "compile-paper7_operational_life_subjecthood-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 5.89,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper7_operational_life_subjecthood-1.log"
+    },
+    {
+      "step": "compile-paper7_operational_life_subjecthood-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.26,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper7_operational_life_subjecthood-2.log"
+    },
+    {
+      "step": "compile-paper7_operational_life_subjecthood-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.52,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper7_operational_life_subjecthood-3.log"
+    },
+    {
+      "step": "compile-paper8_first_person_subjectivity-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.02,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper8_first_person_subjectivity-0.log"
+    },
+    {
+      "step": "compile-paper8_first_person_subjectivity-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 5.75,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper8_first_person_subjectivity-1.log"
+    },
+    {
+      "step": "compile-paper8_first_person_subjectivity-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.94,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper8_first_person_subjectivity-2.log"
+    },
+    {
+      "step": "compile-paper8_first_person_subjectivity-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.02,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper8_first_person_subjectivity-3.log"
+    },
+    {
+      "step": "compile-paper9_phenomenal_bridge_organization-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.05,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper9_phenomenal_bridge_organization-0.log"
+    },
+    {
+      "step": "compile-paper9_phenomenal_bridge_organization-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 5.36,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper9_phenomenal_bridge_organization-1.log"
+    },
+    {
+      "step": "compile-paper9_phenomenal_bridge_organization-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.0,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper9_phenomenal_bridge_organization-2.log"
+    },
+    {
+      "step": "compile-paper9_phenomenal_bridge_organization-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.78,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper9_phenomenal_bridge_organization-3.log"
+    },
+    {
+      "step": "compile-paper10_external_adjudication-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 2.7,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper10_external_adjudication-0.log"
+    },
+    {
+      "step": "compile-paper10_external_adjudication-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 2,
+      "seconds": 4.06,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper10_external_adjudication-1.log"
+    },
+    {
+      "step": "compile-paper9_phenomenal_bridge_organization-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 7.28,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper9_phenomenal_bridge_organization-0.log"
+    },
+    {
+      "step": "compile-paper9_phenomenal_bridge_organization-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 12.01,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper9_phenomenal_bridge_organization-1.log"
+    },
+    {
+      "step": "compile-paper9_phenomenal_bridge_organization-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 3.95,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper9_phenomenal_bridge_organization-2.log"
+    },
+    {
+      "step": "compile-paper9_phenomenal_bridge_organization-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.58,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper9_phenomenal_bridge_organization-3.log"
+    },
+    {
+      "step": "compile-paper10_external_adjudication-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 4.12,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper10_external_adjudication-0.log"
+    },
+    {
+      "step": "compile-paper10_external_adjudication-biber",
+      "exit": 0,
+      "status": "NOT_APPLICABLE",
+      "reason": "No bibliography or citations in this unit; bcf correctly absent. No bibliographic engine installed or source added."
+    },
+    {
+      "step": "compile-paper10_external_adjudication-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 2.47,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper10_external_adjudication-2.log"
+    },
+    {
+      "step": "compile-paper10_external_adjudication-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 2.34,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper10_external_adjudication-3.log"
+    },
+    {
+      "step": "compile-paper_bridge_operational_subjecthood-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 3.06,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper_bridge_operational_subjecthood-0.log"
+    },
+    {
+      "step": "compile-paper_bridge_operational_subjecthood-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 5.12,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper_bridge_operational_subjecthood-1.log"
+    },
+    {
+      "step": "compile-paper_bridge_operational_subjecthood-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 5.03,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper_bridge_operational_subjecthood-2.log"
+    },
+    {
+      "step": "compile-paper_bridge_operational_subjecthood-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 4.47,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-paper_bridge_operational_subjecthood-3.log"
+    },
+    {
+      "step": "build-monolithic",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build:monolithic"
+      ],
+      "exit": 0,
+      "seconds": 2.55,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\build-monolithic.log"
+    },
+    {
+      "step": "compile-monolithic",
+      "command": [
+        "npm.cmd",
+        "run",
+        "compile:monolithic"
+      ],
+      "exit": 0,
+      "seconds": 57.11,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\compile-monolithic.log"
+    },
+    {
+      "step": "audit-monolithic-risk",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:monolithic-risk"
+      ],
+      "exit": 0,
+      "seconds": 1.02,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\audit-monolithic-risk.log"
+    },
+    {
+      "step": "audit-monolithic-build-quality",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:monolithic-build-quality"
+      ],
+      "exit": 0,
+      "seconds": 1.02,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\audit-monolithic-build-quality.log"
+    }
+  ],
+  "bibliography_exception": {
+    "unit": "paper10_external_adjudication",
+    "biber": "NOT_APPLICABLE",
+    "reason": "No bibliography/citations; no bcf. Attempt preserved, three LaTeX passes completed."
+  },
+  "structure": {
+    "parts": 3,
+    "independent_bridge_chapter": 8,
+    "paper10_appendices": [
+      "A",
+      "B",
+      "C"
+    ],
+    "undefined_tokens_in_pdf": 0,
+    "custom_preamble_byte_identical": true
+  },
+  "quality_report": {
+    "schema_version": "1.0.0",
+    "generated_at": "2026-05-26",
+    "gate": "qicn-monolithic-build-quality-v20",
+    "governance_boundary": "This is a build-quality gate only. It does not certify theorem truth, external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+    "log_path": "monolithic\\QICN_MONOLITHIC.log",
+    "checks": {
+      "log_present": true,
+      "pages_detected": 410,
+      "latex_warnings": 0,
+      "overfull_hbox": 0,
+      "overfull_vbox": 0,
+      "underfull_vbox": 0,
+      "undefined_references": 0,
+      "hyperref_pdfstring_warnings": 0,
+      "question_mark_tokens_in_log": 0,
+      "badness_masking_hits": 0
+    },
+    "detail": {
+      "log": {
+        "missing": false,
+        "line_count": 3149,
+        "pages": 410,
+        "latex_warnings": [],
+        "overfull_hbox": [],
+        "overfull_vbox": [],
+        "underfull_vbox": [],
+        "undefined_references": [],
+        "hyperref_pdfstring": [],
+        "question_mark_tokens": []
+      },
+      "badness_masking": {
+        "tex_files_scanned": 15,
+        "hits": []
+      }
+    },
+    "result": "PASS"
+  },
+  "external_support_certified": false
+}

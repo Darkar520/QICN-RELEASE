@@ -117,7 +117,9 @@ The bridge question concerns the additional conditions under which a system sati
 \emph{Which subjecthood-adjacent operational structures are already forced by the six invariants, and which require new hypotheses?}
 \end{center}
 
-The distinction matters because several properties traditionally associated with subjectivity have different formal status. Unity follows from rigid identity plus non-factorization. Directed intervention sensitivity follows from legibility, specifically L4 intervention fidelity. Certified response classes are already a quotient object when the relevant invariants hold. Non-null operational phenomenology follows in a weak support-level sense from operational continuity and non-null differentiation, but forced continuity in the stronger Paper 2 sense requires closed--rigid (CCR) structure, not merely $\Cop$. Self-reference is different again: nothing in the six-invariant criterion states that the system contains a contractive, intervention-commuting model of its own admissible state. That burden must be added as $\Sigma1$.
+The distinction matters because several properties traditionally associated with subjectivity have different formal status. Unity follows from rigid identity plus non-factorization. Directed intervention sensitivity follows from legibility, specifically L4 intervention fidelity. Certified response classes are already a quotient object when the relevant invariants hold. Non-null operational phenomenology follows in a weak support-level sense from operational continuity and non-null differentiation, while Paper 2 derives continuity from controlled finite readouts and E1,
+independently of a scalar resistance value. Perturbation invariance requires
+its separate fixed-transport comparison hypothesis. Self-reference is different again: nothing in the six-invariant criterion states that the system contains a contractive, intervention-commuting model of its own admissible state. That burden must be added as $\Sigma1$.
 
 This paper therefore makes the bridge constructive but non-inflationary. It defines the concepts, states their dependency map, proves the main implication theorem, lists what is not implied, and records computational status without treating runtime estimators as external closure.
 
@@ -133,9 +135,9 @@ The paper imports only objects already available in Papers 1--5. The table below
 \toprule
 Paper & Object imported & Used for defining \\
 \midrule
-Paper 1 & Rigid identity $\IdS$, inverse-limit uniqueness, sectorial deformation resistance $\MO$ & Unified perspective $\Piop$; CCR boundary for $\Phiop$ \\
-Paper 2 & $\Phi$-regularity, abstract structural readout space $(\Espace,d_{\Espace})$, fragmentation and forced continuity theorems & Operational phenomenology $\Phiop$ and the CCR/non-CCR distinction \\
-Paper 3 & Null-regime instability, forced non-nullity, minimal positive regime & Non-nullity clause for $\Phiop$ and the non-null side of $\Qop$ \\
+Paper 1 & Rigid identity $\IdS$, inverse-limit uniqueness, sectorial deformation resistance $\MO$ & Unified perspective $\Piop$; object-sector contract for $\Phiop$ \\
+Paper 2 & $\Phi$-regularity, abstract structural readout space $(\Espace,d_{\Espace})$, fragmentation and forced continuity theorems & Operational assignment $\Phiop$ with readout and comparison hypotheses \\
+Paper 3 & Witness-relative joint null exclusion and minimal positive witness image & Non-nullity clause for $\Phiop$ and the non-null side of $\Qop$ \\
 Paper 5 & Admissible systems $S=(X,\Phi,C,R,\Gamma,U)$, support $\Aset$, invariants $\Iper$--$\Ileg$, $\Cop$, $\Qop(S)$ & All bridge concepts and the main implication theorem \\
 \bottomrule
 \end{tabularx}
@@ -144,6 +146,20 @@ Paper 5 & Admissible systems $S=(X,\Phi,C,R,\Gamma,U)$, support $\Aset$, invaria
 \begin{remark}[No duplicated theorem ownership]
 The present paper does not re-prove rigid identity, forced continuity, null-instability, legibility, or the well-definedness of $\Qop(S)$ from scratch. It imports those results and proves a new relation among them.
 \end{remark}
+
+\paragraph{Typed imports and quantitative scope.}
+Sectorial resistance compares closed identity sets in a common history space;
+response and regime distances compare points in their own declared domains.
+The metric--Polish history construction of Paper III uses countable bounded
+metrics and summable weights, with separate nonemptiness outside compact
+towers. A cut channel must commute with its projections and supply weighted
+coercivity before it can transfer a positive gap. The uniform loss-stability
+theorem of Paper II requires a common compact domain and a full-domain budget
+for both readout and transport perturbations. The BaseCore disk has no linear
+Jacobian at its boundary parameter, and its relaxation bound counts iterations.
+The energy--phase bridge uses frozen profiles. The independent self-reference
+and operational descriptors in this paper cannot be inferred from any of
+these bounds without their displayed hypotheses.
 
 \section{Preliminaries and Notation}
 
@@ -418,7 +434,11 @@ An admissible system has CCR-strength operational phenomenology when Definition~
 \[
 \MO(S)=+\infty.
 \]
-In that case Paper 2's forced-continuity theorem and Paper 3's null-instability theorem apply at CCR strength.
+The infinite-resistance clause concerns the declared identity-object sector.
+Paper 2's continuity conclusion additionally uses continuous finite readouts
+and E1; invariance uses a pointwise fixed transport. Paper III's joint null
+exclusion requires a defined separated witness pair and a certified lower
+readout constant. None of those inputs is supplied by the mass value.
 \end{definition}
 
 \begin{proposition}[$\Cop$ gives weak non-null operational phenomenology]\label{prop:weak-phi}
@@ -430,11 +450,26 @@ Membership in $\Cop$ entails $\Icont(S)=1$ and $\Idiff(S)=1$. The first supplies
 \end{proof}
 
 \begin{proposition}[$\Cop$ does not entail CCR-strength $\Phiop$]\label{prop:cop-not-ccr}
-Membership in $\Cop$ does not entail CCR-strength operational phenomenology.
+In the instrumented universe where identity-object perturbation sectors are
+declared independently of executed state-control schedules, membership in
+$\Cop$ does not entail CCR-strength operational phenomenology.
 \end{proposition}
-
 \begin{proof}
-CCR-strength $\Phiop$ requires $\MO(S)=+\infty$ by Definition~\ref{def:phi-ccr}. Paper 5's definition of $\Cop$ requires six operational invariants, but it does not require infinite sectorial deformation resistance. Hence a system may satisfy the six-invariant criterion while remaining finite-mass or while lacking a certified CCR witness. Therefore $\Cop$ does not entail CCR-strength $\Phiop$.
+Use the infinite Hilbert--prefix witness of Paper V with its fixed state
+controls, readout ports, identity-candidate pair and all six certificates.
+Its two admitted diagram presentations have positive Hausdorff separation
+$1/16$ in their common history metric. In the object-comparison sector admit
+one operation replacing the first presentation by the second, at normalized
+cost one, and zero-deformation operations only otherwise. This operation
+acts on the diagram object; it is not an added state input to the unchanged
+controlled trajectory law. Its resistance is exactly $1/(1/16)=16$.
+The six predicates use the same support, state schedules, unique identified
+presentation, alternative gap, response comparison and decoder data as before;
+none of their clauses equates this separately declared cost ratio with
+infinity. They therefore still hold. The additional CCR clause fails, giving
+a countermodel rather than an inference from a missing premise or absent
+measurement. A universe identifying every object operation with an executed
+state control would need a separate compatibility proof; it is not assumed here.
 \end{proof}
 
 \begin{remark}[Interpretation boundary for $\Phiop$]

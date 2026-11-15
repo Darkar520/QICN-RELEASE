@@ -2291,3 +2291,39 @@ Siguiente secuencia: Etapa 2 (contratos descendentes y monolito), Etapa 3
 (realizaciones/comparadores/calibración), Etapa 5 (revisión independiente).
 Permanecen INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY, BLOCKED_MULTIPLE_GATES,
 BLOCKED_FOUNDATION_FIRST_GATES y external_support_certified=false.
+
+## Etapa 2 — contratos descendentes y monolito · 2026-11-15
+
+Rama local `codex/etapa2-papers4-10-bridge-monolith`, desde `f985470`.
+Sin push; `main` permanece en `05f8e55`. Alcance, demostraciones, controles y
+obligaciones: [ejecución de Etapa 2](docs/ai-platform-outputs/repair-plans/ETAPA2_PAPERS_IV_X_BRIDGE_MONOLITH_2026-11-14/EJECUCION.md).
+
+- Contratos de Etapa 1 propagados a IV–X y Bridge, preservando fuentes
+  BaseCore/I–III y Lean. La proposición profinita de III recibe sólo corrección
+  de metadatos: su prueba condicional ya estaba presente.
+- V: categoría de productos y separadores de respuestas tipados, prueba
+  cuantitativa y realización swap; producto y comunicación como controles.
+  La derivación universal de atomicidad sigue abierta.
+- VIII: margen compacto continuo, transporte por estructura causal previa
+  y reducción por fibras con demostraciones completas y contraejemplos.
+- IX: soporte nativo ampliado, certificado global de integración, seis tareas
+  físicas y contraste de cuarto orden frente a clausura de ascendencia propia.
+  Cuatro entradas y retención accesibles por igual. La réplica irrestricta
+  reproduce exactamente: no se afirma separación universal de controladores.
+- Independencia de seis cabezas instrumentales y transporte de registros
+  locales probados en su clase semántica. No independencia de B1–B10 ni del
+  gate completo. Realización conjunta del binding operacional con autoridad
+  sintética matemática; interpretación fenomenal y soporte externo abiertos.
+- Registro: 921 entradas, 912 IDs previos conservados; macros 383 idénticas.
+  Cobertura 436: 10 exactos, 51 parciales, 359 pendientes, 16 de protocolo.
+  No se modifican los 35 archivos Lean ni sus 271 declaraciones.
+- Se reconstruyen ocho PDF unitarios y el monolito manteniendo tres partes,
+  Bridge como capítulo 8 independiente y los tres apéndices de X. Los hashes,
+  páginas y controles reales quedan en COMPILACION y VERIFICACION_FINAL.
+
+Aceptación: catorce puertas finales ordenadas, 34 suites, Lean serial fresco,
+conservación y commit local limpio. El recibo final es la evidencia de su
+ejecución, no la expectativa de este roadmap. Etapa 3 mecaniza las firmas;
+Etapa 4 amplía realizaciones/comparadores y calibración; Etapa 5 revisa y
+replica independientemente. Los veredictos crudos permanecen sin promoción:
+`external_support_certified=false`.

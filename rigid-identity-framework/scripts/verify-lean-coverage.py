@@ -10,11 +10,9 @@ import hashlib, json, re
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / 'docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14'
 REGISTRY = ROOT / 'registry/theorems.jsonl'
-# Etapa 1 deliberately adds 4 theorems, 1 proposition and 1 corollary.
-TYPES = {'theorem': 145, 'proposition': 215, 'lemma': 24, 'corollary': 41}
-PAPERS = {'basecore': 94, 'paper5': 64, 'paper1': 49, 'bridge': 40,
-          'paper2': 35, 'paper3': 34, 'paper9': 29, 'paper7': 25,
-          'paper8': 23, 'paper6': 14, 'paper10': 11, 'paper4': 7}
+# Etapa 2 adds conditional manuscript targets; no Lean source/EXACT_MATCH upgrade.
+TYPES = {'proposition': 215, 'theorem': 156, 'lemma': 24, 'corollary': 41}
+PAPERS = {'basecore': 94, 'bridge': 40, 'paper1': 49, 'paper10': 11, 'paper2': 35, 'paper3': 34, 'paper4': 7, 'paper5': 65, 'paper6': 14, 'paper7': 25, 'paper8': 26, 'paper9': 36}
 STATES = {'EXACT_MATCH', 'FINITE_OR_PARTIAL_KERNEL', 'PENDING_MATHLIB',
           'EMPIRICAL_OR_PROTOCOL_BOUNDED'}
 
@@ -23,11 +21,11 @@ def check():
     records = [json.loads(line) for line in REGISTRY.read_text(encoding='utf8').splitlines()]
     targets = {r['id']: r for r in records if r['type'] in TYPES}
     matrix = json.loads((PLAN / 'COVERAGE_MATRIX_419.json').read_text(encoding='utf8'))
-    assert len(targets) == sum(TYPES.values()) == 425
+    assert len(targets) == sum(TYPES.values()) == 436
     assert matrix['registry_sha256'] == hashlib.sha256(REGISTRY.read_bytes()).hexdigest()
     rows = matrix['rows']
-    assert matrix['baseline_target_count'] == 419 and matrix['target_count'] == 425
-    assert len(rows) == 425 and {r['registry_id'] for r in rows} == targets.keys()
+    assert matrix['baseline_target_count'] == 419 and matrix['target_count'] == 436
+    assert len(rows) == 436 and {r['registry_id'] for r in rows} == targets.keys()
     assert Counter(r['type'] for r in rows) == TYPES
     assert Counter(r['paper'] for r in rows) == PAPERS
     assert Counter(r['classification'] for r in rows) == matrix['counts']

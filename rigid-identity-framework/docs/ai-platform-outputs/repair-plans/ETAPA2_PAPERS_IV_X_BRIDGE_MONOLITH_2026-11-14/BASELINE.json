@@ -1,0 +1,291 @@
+{
+  "passed": true,
+  "completed_steps": 11,
+  "required_steps": 11,
+  "results": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.23,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-root-integrity.log"
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.12,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-root-claims.log"
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0,
+      "seconds": 1.16,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-root-release.log"
+    },
+    {
+      "name": "prose",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:prose"
+      ],
+      "exit": 0,
+      "seconds": 2.62,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-prose.log"
+    },
+    {
+      "name": "corpus",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:corpus-registry"
+      ],
+      "exit": 0,
+      "seconds": 1.23,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-corpus.log"
+    },
+    {
+      "name": "macros",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:macro-registry"
+      ],
+      "exit": 0,
+      "seconds": 1.05,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-macros.log"
+    },
+    {
+      "name": "nonclaims",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint:nonclaims"
+      ],
+      "exit": 0,
+      "seconds": 2.36,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-nonclaims.log"
+    },
+    {
+      "name": "overlays",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:curation-overlays"
+      ],
+      "exit": 0,
+      "seconds": 1.11,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-overlays.log"
+    },
+    {
+      "name": "math",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:math"
+      ],
+      "exit": 0,
+      "seconds": 170.81,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-math.log"
+    },
+    {
+      "name": "coverage",
+      "command": [
+        "python",
+        "scripts/verify-lean-coverage.py"
+      ],
+      "exit": 0,
+      "seconds": 0.8,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-coverage.log"
+    },
+    {
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0,
+      "seconds": 41.81,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-14-etapa2-papers4-10-bridge-monolith\\logs\\baseline-release.log"
+    }
+  ],
+  "seconds": 224.89,
+  "external_support_certified": false,
+  "inspection": [
+    {
+      "unit": "paper4",
+      "source_sha256": "1dbce7999e46bcc05ccbc00566d463e4da52d1b91c2e5e093a918bffc5f3c453",
+      "pdf_sha256": "0db58ea845fbbe715419137c4c528a36aaa7a726ae1f713757f3d68721ff6e51",
+      "pages": 21,
+      "formal_environment_counts": {
+        "theorem": 2,
+        "proposition": 4,
+        "lemma": 0,
+        "corollary": 1,
+        "criterion": 8,
+        "conjecture": 0,
+        "definition": 13,
+        "proof": 5
+      },
+      "labels": 7,
+      "mode": "Inspection of preserved baseline PDF/source; no claim of current monolithic propagation from Etapa 1."
+    },
+    {
+      "unit": "paper5_operational_consciousness",
+      "source_sha256": "8e0d9da3a235825b1948a187aa6fa1a9dfc58601bd789cffa6c043d1144cfb5a",
+      "pdf_sha256": "e28e9a992e16c49b4267efe1721f93f46c1d98155cc88164cb96b498597bdf2e",
+      "pages": 47,
+      "formal_environment_counts": {
+        "theorem": 18,
+        "proposition": 40,
+        "lemma": 2,
+        "corollary": 4,
+        "criterion": 2,
+        "conjecture": 0,
+        "definition": 31,
+        "proof": 64
+      },
+      "labels": 109,
+      "mode": "Inspection of preserved baseline PDF/source; no claim of current monolithic propagation from Etapa 1."
+    },
+    {
+      "unit": "paper6_predictions_falsation",
+      "source_sha256": "8fcdf04d969d9c9cff7886f88145aad4601b5ec0245bfd16c723eec4ac9c0e0a",
+      "pdf_sha256": "c29a3b7af04d64208232627f19353131585fd5eb0ddc164d2f0ec6bf69ec9fa3",
+      "pages": 29,
+      "formal_environment_counts": {
+        "theorem": 0,
+        "proposition": 14,
+        "lemma": 0,
+        "corollary": 0,
+        "criterion": 6,
+        "conjecture": 0,
+        "definition": 7,
+        "proof": 13
+      },
+      "labels": 12,
+      "mode": "Inspection of preserved baseline PDF/source; no claim of current monolithic propagation from Etapa 1."
+    },
+    {
+      "unit": "paper7_operational_life_subjecthood",
+      "source_sha256": "1db8978f8493164c4affa111f2f6b48c483350789f3b75d409cbc46f90029d83",
+      "pdf_sha256": "ddc9e11d1d32556e8de8f3435de508e46e01bd72906af4ac68e7f980b0c61ecf",
+      "pages": 37,
+      "formal_environment_counts": {
+        "theorem": 0,
+        "proposition": 25,
+        "lemma": 0,
+        "corollary": 0,
+        "criterion": 7,
+        "conjecture": 0,
+        "definition": 12,
+        "proof": 25
+      },
+      "labels": 30,
+      "mode": "Inspection of preserved baseline PDF/source; no claim of current monolithic propagation from Etapa 1."
+    },
+    {
+      "unit": "paper8_first_person_subjectivity",
+      "source_sha256": "2390f88208481928e9ea1f4fb4610ec0b2ea8080e59f966ee8a110356350bfff",
+      "pdf_sha256": "c7af18259970c2bc6c23d47f294c90f5f1c2b2a3d8f6f474f54cf5d4aa9400c2",
+      "pages": 57,
+      "formal_environment_counts": {
+        "theorem": 6,
+        "proposition": 13,
+        "lemma": 2,
+        "corollary": 2,
+        "criterion": 5,
+        "conjecture": 0,
+        "definition": 11,
+        "proof": 22
+      },
+      "labels": 38,
+      "mode": "Inspection of preserved baseline PDF/source; no claim of current monolithic propagation from Etapa 1."
+    },
+    {
+      "unit": "paper9_phenomenal_bridge_organization",
+      "source_sha256": "a77273dfe1e4245ead0350213d0d44e1458b60750190772166354bf1940a42cd",
+      "pdf_sha256": "ec50e6effa532fbee645dc74f65cc30a814bf76a75cc06fcdda4bceabd6f0b9b",
+      "pages": 63,
+      "formal_environment_counts": {
+        "theorem": 8,
+        "proposition": 17,
+        "lemma": 0,
+        "corollary": 4,
+        "criterion": 2,
+        "conjecture": 2,
+        "definition": 9,
+        "proof": 29
+      },
+      "labels": 31,
+      "mode": "Inspection of preserved baseline PDF/source; no claim of current monolithic propagation from Etapa 1."
+    },
+    {
+      "unit": "paper10_external_adjudication",
+      "source_sha256": "dace174565278279a619fbb488dcf814260b7fa6bdb8a9bc3f228abfd8956dc5",
+      "pdf_sha256": "c21783553bc9f1a90744bc9f3459279ec04a93eabe37b717f38ea37c5aec1786",
+      "pages": 33,
+      "formal_environment_counts": {
+        "theorem": 6,
+        "proposition": 5,
+        "lemma": 0,
+        "corollary": 0,
+        "criterion": 0,
+        "conjecture": 0,
+        "definition": 6,
+        "proof": 9
+      },
+      "labels": 10,
+      "mode": "Inspection of preserved baseline PDF/source; no claim of current monolithic propagation from Etapa 1."
+    },
+    {
+      "unit": "paper_bridge_operational_subjecthood",
+      "source_sha256": "1900932c35372568ba8a42df18ed456f7edf7ab648509bcee1eec671f5d6e462",
+      "pdf_sha256": "93ec60103532ba63fe2230b44bb5e41540fb2a68c9d8fd3358c7b83ac24ffb25",
+      "pages": 27,
+      "formal_environment_counts": {
+        "theorem": 14,
+        "proposition": 19,
+        "lemma": 0,
+        "corollary": 7,
+        "criterion": 0,
+        "conjecture": 0,
+        "definition": 26,
+        "proof": 40
+      },
+      "labels": 57,
+      "mode": "Inspection of preserved baseline PDF/source; no claim of current monolithic propagation from Etapa 1."
+    },
+    {
+      "unit": "monolithic",
+      "source_sha256": "b2817c99de5102c6add17f222e3b4771b1ec52caab7e643f9960f911727258de",
+      "pdf_sha256": "c20928eea6cbf3acdbf06d495bcc4d171cd30dead7d3a9c8b2656f033ba00424",
+      "pages": 410,
+      "formal_environment_counts": {
+        "theorem": 0,
+        "proposition": 0,
+        "lemma": 0,
+        "corollary": 0,
+        "criterion": 0,
+        "conjecture": 0,
+        "definition": 0,
+        "proof": 0
+      },
+      "labels": 0,
+      "mode": "Inspection of preserved baseline PDF/source; no claim of current monolithic propagation from Etapa 1."
+    }
+  ],
+  "math_suites": 33
+}

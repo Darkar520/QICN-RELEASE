@@ -11602,3 +11602,42 @@ enunciados; calibración/controles físicos; revisión matemática independiente
 Los controles internos no son validación científica. Veredictos conservados:
 INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY, BLOCKED_MULTIPLE_GATES,
 BLOCKED_FOUNDATION_FIRST_GATES; external_support_certified=false.
+
+## Etapa 2 · 2026-11-15 · contratos IV–X, Bridge y monolito
+
+Solicitud y alcance congelados en
+repair-plans/ETAPA2_PAPERS_IV_X_BRIDGE_MONOLITH_2026-11-14/PRERREGISTRO.md.
+Rama local codex/etapa2-papers4-10-bridge-monolith desde f985470; sin push ni
+cambios en main. Lecturas: AGENTS, cinco fuentes de verdad en orden,
+INSTRUCCIONES/ROADMAP, ejecución Etapa 1, corpus/overlay, BaseCore/I–III,
+ocho descendentes, registro/cobertura y scripts correspondientes.
+
+Preservación inicial: tres informes/fixtures de autoprueba y dos cachés,
+verificados en E: antes de restaurar/trasladar. Baseline 11 pasos PASS,
+224.89 s; inventario de 881 archivos. No se interviene en áreas congeladas,
+BaseCore/I–III ni .lean; III sólo corrige su overlay condicional.
+
+Cambios: contratos compartidos en ocho fuentes; categoría Moore y separador
+cuantitativo en V; tres pruebas completas en VIII; extensión nativa cuártica
+con integración global, seis tareas, comparación de cuatro raíces, transporte
+coherente e independencia instrumental/registro local en IX. Réplica exacta
+irrestricta mantenida como control. V/W/E afectan también A: efectos cruzados
+declarados, no ocultos. Bridge distingue continuidad/masa de objetos.
+
+Registro fusionado por cambios de extracción, IDs y ocurrencias; conserva 912
+IDs/historia y añade nueve (921). Macros 383 idénticas; cobertura 436 con
+10 exactos/51 parciales/359 pendientes/16 de protocolo. REQUIRED_AUDIT_COVERAGE
+intacto. Compilación aislada de ocho unidades y monolito; X sin bibliografía
+no requiere Biber. Auxiliares y fallos previos permanecen en E:.
+
+Comandos: extracción a rutas externas, fusión auditada, report:corpus-health,
+build:theory-dependency-graph, pdflatex/biber según unidad, build:monolithic,
+compile:monolithic y auditorías; controles finales ordenados 1–14 de la
+solicitud. Comandos completos, salidas literales y tiempos en los recibos de
+la fase y E:/QICN-PRESERVACION/2026-11-14-etapa2-papers4-10-bridge-monolith/logs/.
+VERIFICACION_FINAL decide aceptación; no se sustituye por esta anotación.
+
+Deuda: mecanización nueva en Etapa 3; gramáticas rivales más amplias,
+atomicidad derivada y calibración física en Etapa 4; revisión/replicación
+externa en Etapa 5. Realización operacional sintética no equivale a
+fenomenalidad. Se reportan veredictos crudos y external_support_certified=false.

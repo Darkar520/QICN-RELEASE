@@ -91,7 +91,6 @@ digraph FCR_Dependencies {
   "bridge:corollary:cor-cop-qop" -> "bridge:proposition:prop-qop-well-defined-bridge";
   "bridge:definition:def-phi-ccr" -> "bridge:definition:def-phi-op";
   "bridge:proposition:prop-weak-phi" -> "bridge:definition:def-phi-op";
-  "bridge:proposition:prop-cop-not-ccr" -> "bridge:definition:def-phi-ccr";
   "bridge:definition:def-subbridge" -> "bridge:proposition:prop-qop-nontrivial";
   "bridge:theorem:thm-subbridge-generated" -> "bridge:corollary:cor-cop-qop";
   "bridge:theorem:thm-subbridge-generated" -> "bridge:definition:def-sigma-op";
@@ -196,7 +195,6 @@ digraph FCR_Dependencies {
   "paper3:nontheorem:nonthm-channel-projection" -> "paper3:theorem:thm-channel-projection-detectability";
   "paper3:nontheorem:nonthm-null-external" -> "paper3:theorem:thm-instability";
   "paper3:remark:structural-import-l999" -> "paper3:example:ex-joint-external-null-witness";
-  "paper5:remark:rem-iint-atomicity-burden" -> "paper5:proposition:prop-integration-transfer";
   "paper5:theorem:thm-paired-integration-rupture" -> "paper5:theorem:thm-circle-prefix-cofinal-margin";
   "paper5:proposition:prop-circle-prefix-rupture-controls" -> "paper5:theorem:thm-circle-prefix-cofinal-margin";
   "paper5:proposition:prop-circle-prefix-rupture-controls" -> "paper5:theorem:thm-paired-integration-rupture";
@@ -312,6 +310,7 @@ digraph FCR_Dependencies {
   "paper8:proposition:strict-strengthening-l399" -> "paper8:definition:def-subfp";
   "paper8:proposition:strict-strengthening-l399" -> "paper8:theorem:thm-infinite-strict-upstream-separation";
   "paper8:theorem:thm-infinite-strict-upstream-separation" -> "paper8:definition:def-subfp";
+  "paper8:criterion:thm-ownership-nontransfer" -> "paper8:criterion:thm-selfindex-emergence";
   "paper8:corollary:cor-thresholdrobust" -> "paper8:definition:def-subfp";
   "paper8:corollary:cor-thresholdrobust" -> "paper8:proposition:prop-localrobust";
   "paper8:corollary:zero-irreducibility-blocks-escalation-l713" -> "paper8:axiom:ax-irred";
@@ -355,6 +354,9 @@ digraph FCR_Dependencies {
   "paper9:theorem:thm-bridge-nonadditive-gap" -> "paper9:definition:def-bridge-additive-port-class";
   "paper9:corollary:cor-bridge-cross-informed-tie" -> "paper9:proposition:prop-bridge-six-port-certificate";
   "paper9:proposition:prop-projection-coercivity-bounds" -> "paper9:theorem:thm-measurable-fibre-centres";
+  "paper9:criterion:thm-bridge-realization-exists" -> "paper9:theorem:thm-bridge-four-root-identification";
+  "paper9:criterion:thm-bridge-realization-exists" -> "paper9:theorem:thm-bridge-quartic-global-certificate";
+  "paper9:criterion:thm-bridge-realization-exists" -> "paper9:theorem:thm-bridge-quartic-indexed-inheritance";
   "paper1:proposition:prop-wedge-degenerate-controls" -> "paper1:proposition:prop-wedge-cartesian-gap";
   "bridge:corollary:cor-native-indexed-selfreference-boundary" -> "paper8:theorem:thm-native-nonempty-subfp";
   "paper5:definition:def-asymmetric-native-plant" -> "paper5:definition:def-hilbert-prefix-system";
@@ -398,4 +400,5 @@ digraph FCR_Dependencies {
   "paper3:corollary:cor-robust-approximation-null-separation" -> "paper3:theorem:thm-instability";
   "paper3:corollary:cor-robust-approximation-null-separation" -> "paper3:theorem:thm-nonsim";
   "paper3:corollary:cor-robust-approximation-null-separation" -> "paper3:theorem:thm-spectral";
+  "paper9:definition:def-bridge-completed-operational-binding" -> "paper9:definition:def-bridge-proper-ancestry-closure";
 }

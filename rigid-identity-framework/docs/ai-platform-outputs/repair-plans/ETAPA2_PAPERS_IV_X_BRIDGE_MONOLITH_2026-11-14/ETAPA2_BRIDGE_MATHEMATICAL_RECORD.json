@@ -1,0 +1,249 @@
+{
+  "parameters": {
+    "alpha": "1/8",
+    "beta": "1/4",
+    "h": "1/4",
+    "chi": "1/8",
+    "kappa": "1/8",
+    "zeta": "1/128",
+    "xi4": "1/1048576"
+  },
+  "root_world_responses": [
+    {
+      "preparation": [
+        "-1",
+        "-1",
+        "-1",
+        "-1"
+      ],
+      "response": "0"
+    },
+    {
+      "preparation": [
+        "-1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "response": "-1/128"
+    },
+    {
+      "preparation": [
+        "-1",
+        "-1",
+        "1",
+        "-1"
+      ],
+      "response": "1/128"
+    },
+    {
+      "preparation": [
+        "-1",
+        "-1",
+        "1",
+        "1"
+      ],
+      "response": "65/65536"
+    },
+    {
+      "preparation": [
+        "-1",
+        "1",
+        "-1",
+        "-1"
+      ],
+      "response": "1/128"
+    },
+    {
+      "preparation": [
+        "-1",
+        "1",
+        "-1",
+        "1"
+      ],
+      "response": "0"
+    },
+    {
+      "preparation": [
+        "-1",
+        "1",
+        "1",
+        "-1"
+      ],
+      "response": "961/65536"
+    },
+    {
+      "preparation": [
+        "-1",
+        "1",
+        "1",
+        "1"
+      ],
+      "response": "1/128"
+    },
+    {
+      "preparation": [
+        "1",
+        "-1",
+        "-1",
+        "-1"
+      ],
+      "response": "-1/128"
+    },
+    {
+      "preparation": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "response": "-1087/65536"
+    },
+    {
+      "preparation": [
+        "1",
+        "-1",
+        "1",
+        "-1"
+      ],
+      "response": "0"
+    },
+    {
+      "preparation": [
+        "1",
+        "-1",
+        "1",
+        "1"
+      ],
+      "response": "-1/128"
+    },
+    {
+      "preparation": [
+        "1",
+        "1",
+        "-1",
+        "-1"
+      ],
+      "response": "65/65536"
+    },
+    {
+      "preparation": [
+        "1",
+        "1",
+        "-1",
+        "1"
+      ],
+      "response": "-1/128"
+    },
+    {
+      "preparation": [
+        "1",
+        "1",
+        "1",
+        "-1"
+      ],
+      "response": "1/128"
+    },
+    {
+      "preparation": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "response": "0"
+    }
+  ],
+  "lesion_scores": {
+    "intact": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "D": [
+      "0",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "V": [
+      "1",
+      "0",
+      "1",
+      "3/4",
+      "1",
+      "1"
+    ],
+    "W": [
+      "1",
+      "0",
+      "0",
+      "1/2",
+      "1",
+      "1"
+    ],
+    "A": [
+      "1",
+      "1",
+      "1",
+      "0",
+      "1",
+      "1"
+    ],
+    "E": [
+      "1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    "T": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "0"
+    ]
+  },
+  "four_root_coefficients": {
+    "intact": "1/262144",
+    "D": "1/262144",
+    "V": "3/2097152",
+    "W": "1/1048576",
+    "A": "0",
+    "E": "0",
+    "T": "1/262144"
+  },
+  "program_cost": {
+    "port": 348,
+    "native_formula_bound": 3264,
+    "total_bound": 3612,
+    "budget": 4096
+  },
+  "raw_margin_lower_bound": "261241/68719476736",
+  "normalized_margin": "1",
+  "intervention_profile": "1",
+  "functional": "1",
+  "head_factors": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+  ],
+  "independence_patterns": 64,
+  "transport_modes": 3,
+  "program_source_sha256": "d8f73ba84d863657a662aa1755cd584097ab379b9ba5f1210302e60427dc13be",
+  "authority": "synthetic_mathematical_certificate",
+  "external_support_certified": false
+}

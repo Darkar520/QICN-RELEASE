@@ -33,3 +33,8 @@ import QICNLean.QICNEpistemicSubfp
 import QICNLean.QICNAnalyticProjection
 import QICNLean.QICNParametricContraction
 import QICNLean.QICNInverseLimitTopology
+import QICNLean.QICNBaseSufficiency
+import QICNLean.QICNWeightedChannels
+import QICNLean.QICNMooreFactorization
+import QICNLean.QICNFourRootContrast
+import QICNLean.QICNFiniteAdjudication

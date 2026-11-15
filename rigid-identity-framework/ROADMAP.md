@@ -2342,3 +2342,28 @@ La publicación no convierte los bloqueos científicos en soporte externo.
 La segunda fase crea `codex/etapa3-lean` desde el main actualizado y deja
 su primer bloque mecanizado en commit local para auditoría, sin push.
 `external_support_certified=false`.
+
+
+## Etapa 3A — primer bloque Lean, cierre local · 2026-11-15
+
+Main publicado en `5aa5da2` tras Fase I; recibo de ambos remotos en la
+[ejecución de Etapa 3A](docs/ai-platform-outputs/repair-plans/ETAPA3_MECANIZACION_QICNLEAN_2026-11-15/EJECUCION.md).
+Rama `codex/etapa3-lean`, sin push. Prerregistro, baseline por conservación,
+revisión 1:1 y comprobación final fresca separadas.
+
+Cinco módulos nuevos: H1–H4/disco, torres y canales ponderados, factorización
+Moore, contraste cuártico universal y leyes finitas de adjudicación. Cuatro
+nuevos matches completos: prop:minimal, lem:disk-projection,
+thm:channel-projection-detectability y thm:response-atomic-factorization.
+Cobertura 436: 14 exactos, 56 parciales, 350 pendientes, 16 de protocolo;
+40 fuentes con agregado, 348 declaraciones públicas. Estos denominadores
+son distintos y no representan porcentaje de validación científica.
+
+Se conservan 921 entradas, 383 macros, fuentes TeX/PDF y 34 módulos previos.
+La aceptación depende de las catorce puertas y del recibo Lean fresco; los
+fixtures generados permanecen aislados en E:. Etapa 3B mantiene cálculo
+Fréchet/espectral y relajación completos, topología/métrica SUP y Polish,
+realización positiva H5, contratos completos de IX y probabilidad general
+con sharpness en X. Etapas 4–5: calibración, comparación y revisión externa.
+Ningún problema abierto cambia de estado por compilar. Veredictos crudos
+sin promoción; `external_support_certified=false`.

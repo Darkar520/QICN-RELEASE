@@ -1,0 +1,440 @@
+{
+  "source_main": "5aa5da2b64fc30265f88b8aeaa4c5b443c221df9",
+  "registry_entries": 921,
+  "targets": 436,
+  "before": {
+    "PENDING_MATHLIB": 359,
+    "EXACT_MATCH": 10,
+    "FINITE_OR_PARTIAL_KERNEL": 51,
+    "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
+  },
+  "after": {
+    "EXACT_MATCH": 14,
+    "FINITE_OR_PARTIAL_KERNEL": 56,
+    "PENDING_MATHLIB": 350,
+    "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
+  },
+  "changed_rows": [
+    {
+      "registry_id": "basecore:proposition:prop-minimal",
+      "before": "PENDING_MATHLIB",
+      "after": "EXACT_MATCH",
+      "source_statement_sha256": "fd001943f1c8255da29accd34f49533d663d16adaca8557996046141057c4bcd",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.h1_h4_sufficiency"
+        },
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.zero_data_fixed_point"
+        },
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.zero_family_fails_noncollapse"
+        }
+      ],
+      "fidelity_notes": "All four conclusions are packaged on the actual complete REAL Hilbert space with nonempty closed real-convex set, continuous linear K of norm <1 and compact metric U with uniformly continuous Gamma. The fixed-point map uses Gamma(u), not a surrogate forcing function. The zero-family countermodel on any such Hilbert space gives equilibrium zero in every declared constant subspace containing zero and explicitly violates H5. No positive non-collapse or stronger independence is inferred.",
+      "remaining_obligations": []
+    },
+    {
+      "registry_id": "basecore:lemma:lem-disk-projection",
+      "before": "PENDING_MATHLIB",
+      "after": "EXACT_MATCH",
+      "source_statement_sha256": "7e3132fe137773b8fd53fc1eacb800ff089aada788c0970454b88a3ebf65084e",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.radialDisk_minimizes"
+        },
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.radialDisk_eq_projection"
+        },
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.disk_projection_nonexpansive_plane"
+        }
+      ],
+      "fidelity_notes": "The defined radial map x if norm x <=1, otherwise inverse(norm x) smul x, is proved to minimize distance to the actual closed unit ball and equal its unique metric projection. The public plane theorem uses EuclideanSpace R (Fin 2) with its Euclidean norm, exactly E=R^2 in the manuscript, not the product maximum norm. It proves the stated inequality for every pair, with no restriction to sampled points.",
+      "remaining_obligations": []
+    },
+    {
+      "registry_id": "paper3:theorem:thm-channel-projection-detectability",
+      "before": "FINITE_OR_PARTIAL_KERNEL",
+      "after": "EXACT_MATCH",
+      "source_statement_sha256": "7c04f1ef039533384942bd5b2010cbadf785a04331a9d789b7144399148813b0",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.channel_projection"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.channel_continuous"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.channel_weighted_distance_lower"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.post_channel_detectability"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.single_stage_detectability"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.post_channel_continuous"
+        }
+      ],
+      "fidelity_notes": "Two dependent Nat-indexed metric towers and commuting coordinate channels define an actual map between coherent histories. Projection equations and product-subspace continuity are proved; positive all-stage infimum C0 gives the exact weighted-SUP lower bound. Post-readout lower bounds are assumed only on the compared image pair, as in the source; the single-stage bound has ell*v_n*c_n*epsilon_n. Positive source constants specialize the nonnegative Lean hypotheses. Finiteness supplies the explicit BddAbove witness; agreement with product topology is a SOURCE PREMISE here, not an extra conclusion being assumed. The SUM auxiliary is not used in this match. Continuity of L gives continuity of Phi. No calibration or injectivity of channel objects is claimed.",
+      "remaining_obligations": []
+    },
+    {
+      "registry_id": "paper5:theorem:thm-response-atomic-factorization",
+      "before": "PENDING_MATHLIB",
+      "after": "EXACT_MATCH",
+      "source_statement_sha256": "2c0326bc200f1c756c5306d1b46fd8768ee2178ef34e93625589cd6ebc5917b9",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNMooreFactorization",
+          "symbol": "QICNLean.MooreFactorization.atomic_response_factorization"
+        },
+        {
+          "module": "QICNLean.QICNMooreFactorization",
+          "symbol": "QICNLean.MooreFactorization.uniform_error_lower"
+        },
+        {
+          "module": "QICNLean.QICNMooreFactorization",
+          "symbol": "QICNLean.MooreFactorization.nonempty_family_infimum_lower"
+        },
+        {
+          "module": "QICNLean.QICNMooreFactorization",
+          "symbol": "QICNLean.MooreFactorization.exact_product_excluded"
+        }
+      ],
+      "fidelity_notes": "The source system and word set are finite; Lean quantifies over arbitrary finite X,J,U and a nonempty finite set of actual input words, dependent metric readout spaces (normed instances use dist=norm subtraction), all onto product encodings and arbitrary private factor forecasts. The separating finite maximum is equivalently a witness j,w. uniformError is the actual maximum over every state, port and word. Product factors and port blocks may vary with the arbitrary nonempty comparison family; the infimum requires no attainment. The theorem proves sigma/2, strict delta below it, and excludes every zero-error nontrivial product; an exact intertwining product is such a predictor by word induction. Identity-preserving families are restrictions, not an added separation assumption. The category is in the fixed calibrated primitive port frame; it does not exclude joint decoders or communication.",
+      "remaining_obligations": []
+    },
+    {
+      "registry_id": "basecore:proposition:prop-h5-not-derived",
+      "before": "PENDING_MATHLIB",
+      "after": "FINITE_OR_PARTIAL_KERNEL",
+      "source_statement_sha256": "4c035ba727ccae30789b760cce4bb3c4216a3b09f925295285addeaabfe51208",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.zero_data_fixed_point"
+        },
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.zero_family_fails_noncollapse"
+        }
+      ],
+      "fidelity_notes": "The collapsed H1-H4 family and violation of H5 are proved on arbitrary complete real Hilbert spaces. The source ALSO requires a noncollapsed family with explicit positive uniform distance, which is not supplied by this module.",
+      "remaining_obligations": [
+        "Mechanize the positive L2/nonconstant witness, its equilibrium and uniform distance 1/(4 sqrt 12); retain the proved zero-family countermodel."
+      ]
+    },
+    {
+      "registry_id": "basecore:theorem:thm-spectrum",
+      "before": "PENDING_MATHLIB",
+      "after": "FINITE_OR_PARTIAL_KERNEL",
+      "source_statement_sha256": "d639ada3c75f422269a262780cb06e71a974b112466b05524897c6da2251589c",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.cornerRay_not_linear"
+        }
+      ],
+      "fidelity_notes": "The scalar restriction (h-max(h,0))/2 of the displayed corner expression is not linear. This proves an algebraic obstruction, not identification of the directional derivative or a Frechet/spectral theorem.",
+      "remaining_obligations": [
+        "Identify the actual witness equilibrium, its one-sided derivative and Frechet differentiability locus; prove regular operator spectra, complexification, operator norms and spectral-radius equalities."
+      ]
+    },
+    {
+      "registry_id": "basecore:theorem:thm-relaxation",
+      "before": "PENDING_MATHLIB",
+      "after": "FINITE_OR_PARTIAL_KERNEL",
+      "source_statement_sha256": "8aa6a74810462f7579e6c37ae112960ded583d7dcf9dba6fb71478b3b6774bf5",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.geometric_iteration"
+        }
+      ],
+      "fidelity_notes": "The geometric iteration inequality is universal on metric spaces for a Lipschitz map with a fixed point. Instantiation at constant 1/2 supplies the geometric component; the typed manuscript witness and every spectral/logarithmic clause are not all bundled here.",
+      "remaining_obligations": [
+        "Instantiate the actual typed witness; prove local regular-parameter derivative control, eventual entry, logarithmic e-folding formula and the stated parameter-uniform interval. No physical-time calibration is inferred."
+      ]
+    },
+    {
+      "registry_id": "basecore:proposition:prop-weighted-history",
+      "before": "PENDING_MATHLIB",
+      "after": "FINITE_OR_PARTIAL_KERNEL",
+      "source_statement_sha256": "b036f10971f2bb7f323f38eb6d37a63ce57bcc6102239acd321aebe7e695e48f",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.supremum_prefix_tail"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.capped_weighted_sup_tail"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.bounded_metric_history_series"
+        }
+      ],
+      "fidelity_notes": "An all-Nat supremum has the proved finite-prefix/tail bound under explicit boundedness and tail hypotheses. The capped metric case is instantiated; a summable weighted SUM is separately finite and bounded. The SUM is an auxiliary construction, not a replacement for the manuscript SUP or a proof of its topology.",
+      "remaining_obligations": [
+        "Prove the full-product iff finiteness criterion, sector completeness, metric axioms and product-topology equivalence for the declared weighted SUP, compactness and every-stage surjective realization."
+      ]
+    },
+    {
+      "registry_id": "paper1:proposition:prop-weighted-history",
+      "before": "PENDING_MATHLIB",
+      "after": "FINITE_OR_PARTIAL_KERNEL",
+      "source_statement_sha256": "b036f10971f2bb7f323f38eb6d37a63ce57bcc6102239acd321aebe7e695e48f",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.supremum_prefix_tail"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.capped_weighted_sup_tail"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.bounded_metric_history_series"
+        }
+      ],
+      "fidelity_notes": "An all-Nat supremum has the proved finite-prefix/tail bound under explicit boundedness and tail hypotheses. The capped metric case is instantiated; a summable weighted SUM is separately finite and bounded. The SUM is an auxiliary construction, not a replacement for the manuscript SUP or a proof of its topology.",
+      "remaining_obligations": [
+        "Prove the full-product iff finiteness criterion, sector completeness, metric axioms and product-topology equivalence for the declared weighted SUP, compactness and every-stage surjective realization."
+      ]
+    },
+    {
+      "registry_id": "paper9:theorem:thm-bridge-four-root-identification",
+      "before": "PENDING_MATHLIB",
+      "after": "FINITE_OR_PARTIAL_KERNEL",
+      "source_statement_sha256": "0dc7ed5d551ad6ef354acba3e8d2449f81562cea618e96665a564c708ee4f93f",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNFourRootContrast",
+          "symbol": "QICNLean.FourRootContrast.proper_component_ignores"
+        },
+        {
+          "module": "QICNLean.QICNFourRootContrast",
+          "symbol": "QICNLean.FourRootContrast.ignores_depends_on_erasure"
+        },
+        {
+          "module": "QICNLean.QICNFourRootContrast",
+          "symbol": "QICNLean.FourRootContrast.all_proper_forecasts_error_lower"
+        },
+        {
+          "module": "QICNLean.QICNFourRootContrast",
+          "symbol": "QICNLean.FourRootContrast.proper_optimum_attained"
+        },
+        {
+          "module": "QICNLean.QICNFourRootContrast",
+          "symbol": "QICNLean.FourRootContrast.all_proper_forecasts_mean_lower"
+        },
+        {
+          "module": "QICNLean.QICNFourRootContrast",
+          "symbol": "QICNLean.FourRootContrast.manuscript_quartic_constant"
+        },
+        {
+          "module": "QICNLean.QICNFourRootContrast",
+          "symbol": "QICNLean.FourRootContrast.noise_cost_margin"
+        },
+        {
+          "module": "QICNLean.QICNFourRootContrast",
+          "symbol": "QICNLean.FourRootContrast.equal_cost_replica_margin"
+        }
+      ],
+      "fidelity_notes": "Universal functions on the full four-bit cube, not a finite list of rivals: missing-coordinate dependence is equivalent to proper-subset dependence, arbitrary finite sums annihilate the parity contrast, physical polynomial has coefficient 4*xi4 and the explicit background attains its error. The averaged absolute-error bound and rational constant are proved. The noise/cost lemma is arithmetic conditional on error inputs, not a proof of their raw-reading provenance; equal-cost replica gives zero paired margin.",
+      "remaining_obligations": [
+        "Connect the actual six-task plant/readout to the polynomial, arbitrary independent past and randomized expected loss; derive the raw-reading perturbation/cost contract, and prove the infimum/identification statement for the full declared family."
+      ]
+    },
+    {
+      "registry_id": "paper10:theorem:thm-null-forced",
+      "before": "FINITE_OR_PARTIAL_KERNEL",
+      "after": "FINITE_OR_PARTIAL_KERNEL",
+      "source_statement_sha256": "3064845fdd9022ac793370a0fe820967d43842998212c5f27b3669b6d91537fa",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNFiniteAdjudication",
+          "symbol": "QICNLean.FiniteAdjudication.finite_clean_stratum_null"
+        },
+        {
+          "module": "QICNLean.QICNFiniteAdjudication",
+          "symbol": "QICNLean.FiniteAdjudication.finite_coupling_null"
+        },
+        {
+          "module": "QICNLean.QICNFiniteAdjudication",
+          "symbol": "QICNLean.FiniteAdjudication.always_abstain_not_zero"
+        },
+        {
+          "module": "QICNLean.QICNFiniteAdjudication",
+          "symbol": "QICNLean.FiniteAdjudication.free_abstention_negative"
+        },
+        {
+          "module": "QICNLean.QICNFiniteAdjudication",
+          "symbol": "QICNLean.FiniteAdjudication.selective_leak_separates_nulls"
+        }
+      ],
+      "fidelity_notes": "Actual finite joint masses and the three-valued decision loss prove the clean-stratum (1-p)/2 bound and the separate coupling max(0,1/2-p) bound. The coupling reference risk premise is declared separately; clean-stratum balance is not silently transferred through label-selective leakage. Controls include free abstention and a balanced four-atom countermodel.",
+      "remaining_obligations": [
+        "Extend finite expectations to the full probability/conditional-label model and general randomized decisions; formalize the source sharpness claim for every p and measurement admissibility separately."
+      ]
+    },
+    {
+      "registry_id": "paper10:theorem:thm-coverage-sensitive-leakage",
+      "before": "FINITE_OR_PARTIAL_KERNEL",
+      "after": "FINITE_OR_PARTIAL_KERNEL",
+      "source_statement_sha256": "0f3269c7f02c4b3ab13c3c316b8cd1b5e444c71a57b63fb74210796168d6410b",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNFiniteAdjudication",
+          "symbol": "QICNLean.FiniteAdjudication.loss_coverage_decomposition"
+        },
+        {
+          "module": "QICNLean.QICNFiniteAdjudication",
+          "symbol": "QICNLean.FiniteAdjudication.finite_clean_coverage"
+        },
+        {
+          "module": "QICNLean.QICNFiniteAdjudication",
+          "symbol": "QICNLean.FiniteAdjudication.finite_coupling_coverage"
+        }
+      ],
+      "fidelity_notes": "Finite distributions prove risk=wrong mass+gamma*(1-coverage), and both clipped coverage floors using actual decisions. The clean-null is a label-balanced joint distribution; the coupling uses its distinct centered-reference identity. No assertion of arbitrary-measure sharpness follows from these finite inequalities.",
+      "remaining_obligations": [
+        "Prove arbitrary-measure and independent-randomization versions; construct sharp witnesses for every real C,p, prove minimization over coverage, and retain separate calibration/data obligations."
+      ]
+    }
+  ],
+  "new_modules": [
+    "QICNBaseSufficiency",
+    "QICNWeightedChannels",
+    "QICNMooreFactorization",
+    "QICNFourRootContrast",
+    "QICNFiniteAdjudication"
+  ],
+  "source_files_including_aggregate": 40,
+  "public_theorems_expected": 348,
+  "exact_upgrades": [
+    {
+      "registry_id": "basecore:proposition:prop-minimal",
+      "before": "PENDING_MATHLIB",
+      "after": "EXACT_MATCH",
+      "source_statement_sha256": "fd001943f1c8255da29accd34f49533d663d16adaca8557996046141057c4bcd",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.h1_h4_sufficiency"
+        },
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.zero_data_fixed_point"
+        },
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.zero_family_fails_noncollapse"
+        }
+      ],
+      "fidelity_notes": "All four conclusions are packaged on the actual complete REAL Hilbert space with nonempty closed real-convex set, continuous linear K of norm <1 and compact metric U with uniformly continuous Gamma. The fixed-point map uses Gamma(u), not a surrogate forcing function. The zero-family countermodel on any such Hilbert space gives equilibrium zero in every declared constant subspace containing zero and explicitly violates H5. No positive non-collapse or stronger independence is inferred.",
+      "remaining_obligations": []
+    },
+    {
+      "registry_id": "basecore:lemma:lem-disk-projection",
+      "before": "PENDING_MATHLIB",
+      "after": "EXACT_MATCH",
+      "source_statement_sha256": "7e3132fe137773b8fd53fc1eacb800ff089aada788c0970454b88a3ebf65084e",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.radialDisk_minimizes"
+        },
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.radialDisk_eq_projection"
+        },
+        {
+          "module": "QICNLean.QICNBaseSufficiency",
+          "symbol": "QICNLean.BaseSufficiency.disk_projection_nonexpansive_plane"
+        }
+      ],
+      "fidelity_notes": "The defined radial map x if norm x <=1, otherwise inverse(norm x) smul x, is proved to minimize distance to the actual closed unit ball and equal its unique metric projection. The public plane theorem uses EuclideanSpace R (Fin 2) with its Euclidean norm, exactly E=R^2 in the manuscript, not the product maximum norm. It proves the stated inequality for every pair, with no restriction to sampled points.",
+      "remaining_obligations": []
+    },
+    {
+      "registry_id": "paper3:theorem:thm-channel-projection-detectability",
+      "before": "FINITE_OR_PARTIAL_KERNEL",
+      "after": "EXACT_MATCH",
+      "source_statement_sha256": "7c04f1ef039533384942bd5b2010cbadf785a04331a9d789b7144399148813b0",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.channel_projection"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.channel_continuous"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.channel_weighted_distance_lower"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.post_channel_detectability"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.single_stage_detectability"
+        },
+        {
+          "module": "QICNLean.QICNWeightedChannels",
+          "symbol": "QICNLean.WeightedChannels.post_channel_continuous"
+        }
+      ],
+      "fidelity_notes": "Two dependent Nat-indexed metric towers and commuting coordinate channels define an actual map between coherent histories. Projection equations and product-subspace continuity are proved; positive all-stage infimum C0 gives the exact weighted-SUP lower bound. Post-readout lower bounds are assumed only on the compared image pair, as in the source; the single-stage bound has ell*v_n*c_n*epsilon_n. Positive source constants specialize the nonnegative Lean hypotheses. Finiteness supplies the explicit BddAbove witness; agreement with product topology is a SOURCE PREMISE here, not an extra conclusion being assumed. The SUM auxiliary is not used in this match. Continuity of L gives continuity of Phi. No calibration or injectivity of channel objects is claimed.",
+      "remaining_obligations": []
+    },
+    {
+      "registry_id": "paper5:theorem:thm-response-atomic-factorization",
+      "before": "PENDING_MATHLIB",
+      "after": "EXACT_MATCH",
+      "source_statement_sha256": "2c0326bc200f1c756c5306d1b46fd8768ee2178ef34e93625589cd6ebc5917b9",
+      "lean_witnesses": [
+        {
+          "module": "QICNLean.QICNMooreFactorization",
+          "symbol": "QICNLean.MooreFactorization.atomic_response_factorization"
+        },
+        {
+          "module": "QICNLean.QICNMooreFactorization",
+          "symbol": "QICNLean.MooreFactorization.uniform_error_lower"
+        },
+        {
+          "module": "QICNLean.QICNMooreFactorization",
+          "symbol": "QICNLean.MooreFactorization.nonempty_family_infimum_lower"
+        },
+        {
+          "module": "QICNLean.QICNMooreFactorization",
+          "symbol": "QICNLean.MooreFactorization.exact_product_excluded"
+        }
+      ],
+      "fidelity_notes": "The source system and word set are finite; Lean quantifies over arbitrary finite X,J,U and a nonempty finite set of actual input words, dependent metric readout spaces (normed instances use dist=norm subtraction), all onto product encodings and arbitrary private factor forecasts. The separating finite maximum is equivalently a witness j,w. uniformError is the actual maximum over every state, port and word. Product factors and port blocks may vary with the arbitrary nonempty comparison family; the infimum requires no attainment. The theorem proves sigma/2, strict delta below it, and excludes every zero-error nontrivial product; an exact intertwining product is such a predictor by word induction. Identity-preserving families are restrictions, not an added separation assumption. The category is in the fixed calibrated primitive port frame; it does not exclude joint decoders or communication.",
+      "remaining_obligations": []
+    }
+  ],
+  "external_support_certified": false,
+  "semantic_review": "Objects/domains/hypotheses/all conclusions reviewed manually; bookkeeping and compilation do not infer source equivalence. Final reproduction receipt is required."
+}

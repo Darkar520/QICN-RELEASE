@@ -49,16 +49,17 @@ the aggregate, without Lake's native/C build graph. Output and object hashes are
 recorded in the ignored repository `.cache/qicn-lean/`. It still uses the Lean
 kernel and the checked pinned Mathlib object cache; it is not an untrusted parser.
 
-Route 6's Windows native build was interrupted after 712 seconds without build
-progress; it is **not verified**. The serial baseline passed 32 source files
-(31 modules plus the aggregate), 250 public declarations and the three allowed
-axioms. Historical WSL/native receipts describe their own checkpoints, not a
-fresh native success for this edition. Root Docker/CI currently run governance
-and release gates; they do not run Lean.
+Route 6's historical Lake native/C build was interrupted after 712 seconds
+and remains unverified as a Lake build. This is distinct from the successful
+native Windows serial KERNEL elaboration. Etapa 2 verified 35 sources and 271
+public declarations. Etapa 3A's fresh all-source receipt is
+[LEAN_REPRODUCTION.json](../docs/ai-platform-outputs/repair-plans/ETAPA3_MECANIZACION_QICNLEAN_2026-11-15/LEAN_REPRODUCTION.json).
+Neither a WSL installation nor a cached project object is substituted for
+that fresh check. Root Docker/CI run governance and release, not Lean.
 
 ## Coverage and fidelity
 
-The [coverage matrix (419 initial targets, 425 after Etapa 1)](../docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md)
+The [coverage matrix (419 initial targets, 436 active)](../docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md)
 links exact registry IDs to Lean symbols, source hashes, hypotheses, dependencies,
 priority and remaining obligations. Its adjacent JSON is checked by
 `verify-lean-coverage.py`. Public Lean declarations and manuscript entries have
@@ -79,8 +80,12 @@ alone supplies no non-collapse. No finite surrogate is promoted to an infinite
 statement. The plan's execution report records the current audited totals.
 
 Route 6 adds three modules (21 public theorems/lemmas), reusing the existing
-general analytic proofs. The package now has 35 source files and 271 public
-declarations; these totals include the aggregate and auxiliary results.
+general analytic proofs. Etapa 2 has 35 source files and 271 public
+declarations. Etapa 3A adds five modules and 77 public results: **40 sources
+including the aggregate, 348 public theorems/lemmas**. These totals include
+auxiliaries; the matrix has a separate denominator of 436 source targets.
+Coverage: 14 EXACT_MATCH, 56 FINITE_OR_PARTIAL_KERNEL, 350 PENDING_MATHLIB
+and 16 EMPIRICAL_OR_PROTOCOL_BOUNDED. Ten prior exact matches are preserved.
 
 | Module | General scope | Main registry anchors |
 |---|---|---|
@@ -88,11 +93,30 @@ declarations; these totals include the aggregate and auxiliary results.
 | [QICNParametricContraction](QICNLean/QICNParametricContraction.lean) | Complete metric spaces; uniform contraction constant and statewise parameter continuity; compact range requires compact parameters | BaseCore `thm-contraction`, `thm-fixedpoint`, `thm-compactness` |
 | [QICNInverseLimitTopology](QICNLean/QICNInverseLimitTopology.lean) | All natural-number stages, product-subspace topology, closed/compact coherent histories, separate nonemptiness, unique continuous cone lift and separation | Paper I `thm-minimal`, universal-property proposition; BaseCore/Paper II canonical-projection endomorphisms; `thm-stone-classification` only partial |
 
-In this Lean companion, the weighted-history metric's finiteness, completeness, tail bound and agreement
-with product topology are still distinct mechanization obligations. The Etapa 1 manuscript proofs do not automatically close their Lean translation. The law-limit theorem's
-metrizability, clopen point basis, convexity and path connectivity are not supplied
-by compactness of the point-history set. A universal-property proof here concerns
-sets/topological spaces for the declared successor system, not arbitrary categories.
+Etapa 3A adds these five modules, with one namespace per source:
+
+| Module | Mechanized scope | Boundary |
+|---|---|---|
+| [QICNBaseSufficiency](QICNLean/QICNBaseSufficiency.lean) | H1--H4 packaged on the complete real Hilbert domain; actual radial metric projection on the Euclidean disk; zero-family countermodel | Full spectral/Frechet and logarithmic relaxation statements remain partial |
+| [QICNWeightedChannels](QICNLean/QICNWeightedChannels.lean) | Two infinite commuting towers, continuous channel, all-stage infimum coercivity, post-readout bounds; SUP tail and separate capped SUM | Does not establish completeness/Polish or equivalence of the weighted metric and product topology |
+| [QICNMooreFactorization](QICNLean/QICNMooreFactorization.lean) | Typed controlled Moore systems; word-compatible morphisms; all surjective private product forecasts, finite maximum and infimal sigma/2 gap; hold/swap controls | Fixed calibrated primitive ports; no exclusion of joint decoders, messages or arbitrary simulator families |
+| [QICNFourRootContrast](QICNLean/QICNFourRootContrast.lean) | All functions of proper subsets on the four-bit cube and arbitrary finite sums; exact 4*xi4 optimum and absolute-loss lower bound | Full source theorem remains partial: arbitrary random measures/past, raw-reading, plant and cost semantics need their own proof |
+| [QICNFiniteAdjudication](QICNLean/QICNFiniteAdjudication.lean) | Actual finite joint laws, separate clean/coupling nulls, fixed coverage floors and selective-leak/abstention controls | Not arbitrary probability spaces or sharp witnesses for every real coverage/leak budget |
+
+For weighted histories, SUP finiteness iff criteria, sector completeness,
+metric axioms and product-topology equivalence are still mechanization debt.
+The capped SUM is explicitly auxiliary. The channel theorem assumes the source
+metric/topology contract; it does not prove that contract by invoking it.
+The law-limit theorem's metrizability, clopen point basis, convexity and path
+connectivity do not follow merely from compactness of point histories.
+A cone-lift proof concerns the declared successor system in sets/topological
+spaces, not arbitrary categories.
+
+Full per-target semantic review, unchanged source hashes and Etapa 3B obligations
+are in [COVERAGE_DIFF.json](../docs/ai-platform-outputs/repair-plans/ETAPA3_MECANIZACION_QICNLEAN_2026-11-15/COVERAGE_DIFF.json).
+A source target is EXACT_MATCH only if all its conclusions are covered on its
+actual domains. Every manuscript source, 921 registry entries and 383 macros
+remain unchanged in this phase. Internal proof is not scientific certification.
 
 ## Source history and boundaries
 

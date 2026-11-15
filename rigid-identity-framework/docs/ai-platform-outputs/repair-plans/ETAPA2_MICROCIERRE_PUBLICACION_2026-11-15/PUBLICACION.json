@@ -1,0 +1,39 @@
+{
+  "phase": "I",
+  "main_commit": "5aa5da2b64fc30265f88b8aeaa4c5b443c221df9",
+  "merge": "--ff-only",
+  "candidate_bytes_preserved": true,
+  "checkout_line_ending_restorations": [],
+  "pushes": [
+    {
+      "remote": "origin",
+      "command": [
+        "git",
+        "push",
+        "origin",
+        "main"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "To https://github.com/Darkar520/QICN-RELEASE.git\n   05f8e55..5aa5da2  main -> main\n",
+      "seconds": 11.11,
+      "verified_main": "5aa5da2b64fc30265f88b8aeaa4c5b443c221df9"
+    },
+    {
+      "remote": "gitlab",
+      "command": [
+        "git",
+        "push",
+        "gitlab",
+        "main"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "To https://gitlab.com/qicn-group/QICN-RELEASE.git\n   fc4d8d5..5aa5da2  main -> main\n",
+      "seconds": 48.75,
+      "verified_main": "5aa5da2b64fc30265f88b8aeaa4c5b443c221df9"
+    }
+  ],
+  "external_support_certified": false,
+  "main_clean": true
+}

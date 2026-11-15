@@ -11665,3 +11665,33 @@ y las salidas de origin/gitlab se registran en el recibo de publicación que
 acompaña la apertura local de Etapa 3. No se fuerza ningún remoto.
 Deuda científica: Etapas 3–5, sin promoción por publicación.
 external_support_certified=false.
+
+
+## Etapa 3A · mecanización local · 2026-11-15
+
+Base main 5aa5da2, publicado en origin/gitlab según recibos de Fase I; rama
+codex/etapa3-lean sin push. Lecturas: AGENTS, cinco fuentes canónicas,
+INSTRUCCIONES/ROADMAP, guías, verificador, matriz y fuentes exactas A/B/C.
+Archivos: cinco módulos Lean nuevos, agregado; matriz JSON/MD, comentario
+del verificador de cobertura, tres README, roadmap y este ledger; recibos
+en repair-plans/ETAPA3_MECANIZACION_QICNLEAN_2026-11-15/.
+
+Pruebas: H1–H4 y disco euclídeo, canales Nat/SUP/coercividad, categoría
+Moore y sigma/2 para toda familia privada sobreyectiva, contraste universal
+4xi4 y probabilidad/cobertura finita. Controles negativos: cero/H5, frontera
+no lineal, canal constante, hold/swap, réplica, abstención y fuga selectiva.
+Doce filas revisadas, cuatro nuevos exactos. Registro 921/macros 383 y
+436 IDs conservados. Totales: 14/56/350/16; 40 fuentes/348 declaraciones.
+
+Conservación y pre-registro antes de intervenir; desarrollo serial por
+hashes previos y salida única de objetos. Comandos íntegros, salidas,
+tiempos, hashes y veredictos en VERIFICACION_FINAL, LEAN_REPRODUCTION y
+RELEASE_GATES. Batería aislada en E:/QICN-PRESERVACION/2026-11-15-etapa3-mecanizacion/.
+Las catorce puertas incluyen raíz3, corpus/editorial, matemáticas34,
+Lean fresco serial, cobertura y release6. Los recibos deciden aceptación;
+la cabecera histórica de Mathlib no obliga a inventar licencia Apache.
+
+Deuda 3B precisa por fila: análisis espectral completo, SUP/Polish,
+positivo H5, contratos íntegros de IX y probabilidad/sharpness general X.
+No cambios en áreas congeladas ni manuscritos. Sin evidencia empírica o
+certificación independiente nueva; external_support_certified=false.

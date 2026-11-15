@@ -1,0 +1,190 @@
+{
+  "passed": true,
+  "steps": [
+    {
+      "name": "baseline-monolithic-assembly",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build:monolithic"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\baseline\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 2.12,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\baseline-monolithic-assembly.log"
+    },
+    {
+      "name": "paper9-0",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "main.tex"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework\\paper9_phenomenal_bridge_organization",
+      "exit": 0,
+      "seconds": 5.53,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\paper9-0.log"
+    },
+    {
+      "name": "paper9-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework\\paper9_phenomenal_bridge_organization",
+      "exit": 0,
+      "seconds": 144.14,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\paper9-1.log"
+    },
+    {
+      "name": "paper9-2",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "main.tex"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework\\paper9_phenomenal_bridge_organization",
+      "exit": 0,
+      "seconds": 4.28,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\paper9-2.log"
+    },
+    {
+      "name": "paper9-3",
+      "command": [
+        "pdflatex",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "main.tex"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework\\paper9_phenomenal_bridge_organization",
+      "exit": 0,
+      "seconds": 4.36,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\paper9-3.log"
+    },
+    {
+      "name": "build-monolithic",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build:monolithic"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.34,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\build-monolithic.log"
+    },
+    {
+      "name": "compile-monolithic",
+      "command": [
+        "npm.cmd",
+        "run",
+        "compile:monolithic"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 77.08,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\compile-monolithic.log"
+    },
+    {
+      "name": "audit-monolithic-risk",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:monolithic-risk"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.5,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\audit-monolithic-risk.log"
+    },
+    {
+      "name": "audit-monolithic-build-quality",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:monolithic-build-quality"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.56,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\audit-monolithic-build-quality.log"
+    },
+    {
+      "name": "report-corpus-health",
+      "command": [
+        "npm.cmd",
+        "run",
+        "report:corpus-health"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 2.05,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\report-corpus-health.log"
+    },
+    {
+      "name": "build-theory-dependency-graph",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build:theory-dependency-graph"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.53,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\build-theory-dependency-graph.log"
+    }
+  ],
+  "pdfs": [
+    {
+      "file": "paper9_phenomenal_bridge_organization/main.pdf",
+      "sha256": "e3b65c8a0224e9f441893c1eb971f1bfbb8ff0810b5a3cb0f574d73a4e5ad78a",
+      "pages": 71
+    },
+    {
+      "file": "monolithic/QICN_MONOLITHIC.pdf",
+      "sha256": "1b77e0776301ec4f89efcba17c6e08407f14c4c42c88e46a1d1ac110c5b6a2d8",
+      "pages": 435
+    }
+  ],
+  "quality": {
+    "schema_version": "1.0.0",
+    "generated_at": "2026-05-26",
+    "gate": "qicn-monolithic-build-quality-v20",
+    "governance_boundary": "This is a build-quality gate only. It does not certify theorem truth, external support, consciousness, phenomenality, identity transfer, or bridge-burden closure.",
+    "log_path": "monolithic\\QICN_MONOLITHIC.log",
+    "checks": {
+      "log_present": true,
+      "pages_detected": 435,
+      "latex_warnings": 0,
+      "overfull_hbox": 0,
+      "overfull_vbox": 0,
+      "underfull_vbox": 0,
+      "undefined_references": 0,
+      "hyperref_pdfstring_warnings": 0,
+      "question_mark_tokens_in_log": 0,
+      "badness_masking_hits": 0
+    },
+    "detail": {
+      "log": {
+        "missing": false,
+        "line_count": 3199,
+        "pages": 435,
+        "latex_warnings": [],
+        "overfull_hbox": [],
+        "overfull_vbox": [],
+        "underfull_vbox": [],
+        "undefined_references": [],
+        "hyperref_pdfstring": [],
+        "question_mark_tokens": []
+      },
+      "badness_masking": {
+        "tex_files_scanned": 15,
+        "hits": []
+      }
+    },
+    "result": "PASS"
+  },
+  "external_support_certified": false
+}

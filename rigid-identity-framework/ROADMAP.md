@@ -2219,7 +2219,6 @@ todavía sin iniciar:** su primer paso es inventariar y exponer el paquete Lean
 conservando los 32 módulos, dependencias y contrato de reproducción.
 `external_support_certified=false`.
 
-
 ## Ejecución de Ruta 6 · 2026-11-14
 
 Estado vigente posterior a las aclaraciones editoriales: Ruta 6 iniciada por
@@ -2326,4 +2325,20 @@ conservación y commit local limpio. El recibo final es la evidencia de su
 ejecución, no la expectativa de este roadmap. Etapa 3 mecaniza las firmas;
 Etapa 4 amplía realizaciones/comparadores y calibración; Etapa 5 revisa y
 replica independientemente. Los veredictos crudos permanecen sin promoción:
+`external_support_certified=false`.
+
+## Micro-cierre de Etapa 2 y apertura autorizada de Etapa 3 · 2026-11-15
+
+Solicitud en dos fases ordenadas. Primero: dos aclaraciones en la prueba
+de `thm:bridge-quartic-global-certificate` (contracción sólo sobre el soporte
+invariante; washout 1–4, pulso 5 y lectura 6), recompilación IX/monolito,
+sincronización conservadora y verificación aislada. Se conservan 921 IDs,
+383 macros, cobertura 436 y todas las fuentes Lean. El usuario autoriza
+merge y push a main tras ese cierre. Un fallo de gitlab se registra sin force.
+
+Recibos y auditoría del alcance puntual:
+[micro-cierre](docs/ai-platform-outputs/repair-plans/ETAPA2_MICROCIERRE_PUBLICACION_2026-11-15/EJECUCION.md).
+La publicación no convierte los bloqueos científicos en soporte externo.
+La segunda fase crea `codex/etapa3-lean` desde el main actualizado y deja
+su primer bloque mecanizado en commit local para auditoría, sin push.
 `external_support_certified=false`.

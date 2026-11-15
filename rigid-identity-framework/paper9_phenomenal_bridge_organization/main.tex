@@ -1771,7 +1771,8 @@ certificate. All six global operational predicates hold with the stated
 enlarged readout and comparison data, not merely on its native zero section.
 \end{theorem}
 \begin{proof}
-On $|e_i|\le2$, the quadratic product is Lipschitz with constant four in
+On the invariant support $\widetilde A=A_8\times[-1,1]^4$, $|e_i|\le2$;
+all Lipschitz estimates below concern this support. The quadratic product is Lipschitz with constant four in
 maximum norm and the quartic product with constant 32. The linear bounds
 $\|\alpha I-\chi L_0R\|_\infty\le1/4$ and
 $\|\beta I+\chi L_0R\|_\infty\le3/8$ hold for both $R$ and are unchanged
@@ -1781,7 +1782,7 @@ $11d_b/32+15d_w/32\le13\max(d_b,d_w)/16$; the world row sum is at most
 $\alpha+\beta=3/8$. For invariance, the linear body term is at most $5/8$,
 the two nonlinear terms at most $1/16$ and $1/64$, and its input at most
 $1/4$. The total is $61/64$. The world bound $3/4$ is conservative.
-On the doubled cube the sharper linear body row bound is $1/8$,
+On the ambient cube $\widetilde X=X_8\times[-2,2]^4$, the sharper linear body row bound is $1/8$,
 so its two linear contributions sum to at most one. The quadratic, quartic
 and input terms are at most $1/4$ each, giving next body magnitude
 $7/4<2$; the maps are total on the intrinsic state space.
@@ -1803,8 +1804,9 @@ Otherwise all core ports lie in one factor. Error below $3^{-9}/2$ makes
 that factor determine $\sigma$: opposite ninth bits in the ternary code
 have distance at least $3^{-9}$, since their first differing bit is no later
 than nine. The other factor contains a port coordinate. Use four sham
-washout steps, evaluation off, then a pulse $h$ in its opposite body/world
-input coordinate and read it two steps later. The same commands preserve
+washout transitions $t=1,\ldots,4$, evaluation off, then a pulse $h$ in its
+opposite body/world input coordinate at $t=5$ and read at $t=6$, after one
+propagation step: six transitions in total. The same commands preserve
 the index. With zero initial port state, its two clean indexed outputs differ
 by $2\beta h/4=1/32$. Arbitrary initial states change the pair difference by
 at most

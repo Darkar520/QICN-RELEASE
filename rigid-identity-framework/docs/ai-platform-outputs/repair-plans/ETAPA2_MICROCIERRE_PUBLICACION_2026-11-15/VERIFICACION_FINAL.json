@@ -1,0 +1,179 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "root-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work",
+      "exit": 0,
+      "seconds": 0.22,
+      "output": "{\n  \"output\": \"_build\\\\canonical_hardening\\\\canonical_integrity_check.json\",\n  \"artifact_role\": \"canonical_integrity_check\",\n  \"checked_at\": \"2026-11-15T14:51:56.668Z\",\n  \"status\": \"PASS\",\n  \"checks\": {\n    \"zip_sha256_match\": true,\n    \"manifest_sha256_match\": true,\n    \"canonical_pdf_count\": 25,\n    \"index_count\": 25,\n    \"freeze_tag_listed_in_audit\": true,\n    \"freeze_snapshot_commit_listed_in_audit\": true,\n    \"claim_registry_entries\": 17,\n    \"layer_count\": 6,\n    \"interface_count\": 8,\n    \"non_canonical_material_physically_separated\": true,\n    \"upstream_pin_status\": \"resolved\"\n  },\n  \"failures\": [],\n  \"warnings\": [],\n  \"provenance_notes\": [\n    \"working_tree_not_clean_at_hardening_start\"\n  ]\n}\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-root-integrity.log"
+    },
+    {
+      "name": "root-claims",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work",
+      "exit": 0,
+      "seconds": 0.14,
+      "output": "{\n  \"output\": \"_build\\\\canonical_hardening\\\\claim_registry_check.json\",\n  \"artifact_role\": \"claim_registry_check\",\n  \"checked_at\": \"2026-11-15T14:51:56.817Z\",\n  \"status\": \"PASS\",\n  \"counts\": {\n    \"entries\": 17,\n    \"unique_ids\": 17,\n    \"allowed_classes\": 6\n  },\n  \"failures\": [],\n  \"warnings\": []\n}\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-root-claims.log"
+    },
+    {
+      "name": "root-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work",
+      "exit": 0,
+      "seconds": 1.23,
+      "output": "{\n  \"output\": \"_build\\\\canonical_hardening\\\\canonical_release_check.json\",\n  \"artifact_role\": \"canonical_release_check\",\n  \"checked_at\": \"2026-11-15T14:51:58.062Z\",\n  \"status\": \"PASS\",\n  \"bundle\": {\n    \"bundleDir\": \"_build/canonical_release_bundle_2026-11-15T14-51-56-985Z\",\n    \"manifestPath\": \"_build/canonical_release_bundle_2026-11-15T14-51-56-985Z/canonical_release_manifest.json\"\n  },\n  \"failures\": [],\n  \"warnings\": []\n}\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-root-release.log"
+    },
+    {
+      "name": "prose",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:prose"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 2.3,
+      "output": "\n> qicn-rigid-identity-framework@0.0.0-fcr verify:prose\n> python scripts/verify-prose-sync.py\n\n{\n  \"passed\": true,\n  \"units\": [\n    {\n      \"source\": \"basecore/BASECORE.tex\",\n      \"labels\": 153\n    },\n    {\n      \"source\": \"paper1/main.tex\",\n      \"labels\": 74\n    },\n    {\n      \"source\": \"paper10_external_adjudication/main.tex\",\n      \"labels\": 10\n    },\n    {\n      \"source\": \"paper2/main.tex\",\n      \"labels\": 48\n    },\n    {\n      \"source\": \"paper3/main.tex\",\n      \"labels\": 36\n    },\n    {\n      \"source\": \"paper4/main.tex\",\n      \"labels\": 7\n    },\n    {\n      \"source\": \"paper5_operational_consciousness/main.tex\",\n      \"labels\": 111\n    },\n    {\n      \"source\": \"paper6_predictions_falsation/main.tex\",\n      \"labels\": 12\n    },\n    {\n      \"source\": \"paper7_operational_life_subjecthood/main.tex\",\n      \"labels\": 30\n    },\n    {\n      \"source\": \"paper8_first_person_subjectivity/main.tex\",\n      \"labels\": 38\n    },\n    {\n      \"source\": \"paper9_phenomenal_bridge_organization/main.tex\",\n      \"labels\": 38\n    },\n    {\n      \"source\": \"paper_bridge_operational_subjecthood/main.tex\",\n      \"labels\": 57\n    }\n  ],\n  \"errors\": [],\n  \"manual_reference_review\": [],\n  \"scope\": \"Encoding, stale assertion snippets, local refs and interpretation sections only; mathematical review remains required.\",\n  \"external_support_certified\": false\n}\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-prose.log"
+    },
+    {
+      "name": "corpus",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:corpus-registry"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.95,
+      "output": "\n> qicn-rigid-identity-framework@0.0.0-fcr verify:corpus-registry\n> node scripts/validate-corpus.js\n\n# FCR Validation Report\n\n- Formal entries: 921\n- Macro entries: 383\n- Theorem entries: 156\n- Hypothesis entries: 22\n- Conjecture entries: 0\n- Audit-overlaid entries: 21\n- False-status entries: 0\n- Proved-status entries: 360\n- Conditional-status entries: 405\n- Heuristic-status entries: 156\n- Active macro-collision entries: 0\n- Active macro-collision groups: 0\n\n## Blockers\n\nNone.\n\n## Warnings\n\nNone.\n\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-corpus.log"
+    },
+    {
+      "name": "macros",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:macro-registry"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.58,
+      "output": "\n> qicn-rigid-identity-framework@0.0.0-fcr verify:macro-registry\n> node scripts/validate-macros.js\n\n# FCR Macro Validation\n\n- Macro entries: 383\n- Canonical macro entries: 40\n- Blockers: 0\n- Warnings: 0\n\n## Blockers\nNone.\n\n## Warnings\nNone.\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-macros.log"
+    },
+    {
+      "name": "nonclaims",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint:nonclaims"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 3.45,
+      "output": "\n> qicn-rigid-identity-framework@0.0.0-fcr lint:nonclaims\n> node scripts/lint-nonclaims.js\n\nNon-claim lint: 0 violations.\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-nonclaims.log"
+    },
+    {
+      "name": "overlays",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:curation-overlays"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.7,
+      "output": "\n> qicn-rigid-identity-framework@0.0.0-fcr verify:curation-overlays\n> node scripts/verify-curation-overlays.js\n\n====================================================\nQICN Registry Curation Overlay Gate\n====================================================\n[PASS] Validated 1 curation overlay file(s).\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-overlays.log"
+    },
+    {
+      "name": "monolithic-risk",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:monolithic-risk"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.45,
+      "output": "\n> qicn-rigid-identity-framework@0.0.0-fcr audit:monolithic-risk\n> node scripts/verify-monolithic-risk.js\n\nWrote docs/reports/MONOLITHIC_COMPILE_RISK_AUDIT.md\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-monolithic-risk.log"
+    },
+    {
+      "name": "monolithic-quality",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:monolithic-build-quality"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 1.34,
+      "output": "\n> qicn-rigid-identity-framework@0.0.0-fcr audit:monolithic-build-quality\n> node scripts/audit-monolithic-build-quality.js\n\nQICN monolithic build quality gate: PASS\nReport: docs\\reports\\MONOLITHIC_BUILD_QUALITY_GATE_v20.json\nlog_present: true\npages_detected: 435\nlatex_warnings: 0\noverfull_hbox: 0\noverfull_vbox: 0\nunderfull_vbox: 0\nundefined_references: 0\nhyperref_pdfstring_warnings: 0\nquestion_mark_tokens_in_log: 0\nbadness_masking_hits: 0\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-monolithic-quality.log"
+    },
+    {
+      "name": "math",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:math"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 140.5,
+      "output": "\n> qicn-rigid-identity-framework@0.0.0-fcr verify:math\n> python scripts/verify-math-regressions.py\n\ncheck_math.py: PASS\ncheck_regime_implementation.py: PASS\ncheck_partitions.py: PASS\ncheck_null.py: PASS\ncheck_bc_met_rig.py: PASS\ncheck_bc_ns.py: PASS\ncheck_p1_dynamics.py: PASS\ncheck_p2_comparators.py: PASS\ncheck_p2_diagnostics.py: PASS\ncheck_p2_ruptures.py: PASS\ncheck_p2_common_support.py: PASS\ncheck_p2_legibility.py: PASS\ncheck_p3_memory.py: PASS\ncheck_p3_followups.py: PASS\ncheck_p4_bridge_adjudication.py: PASS\ncheck_p4_p5_window_geometry.py: PASS\ncheck_unified_tower.py: PASS\ncheck_prefix_tower.py: PASS\ncheck_paper1_front.py: PASS\ncheck_tower_joint_certificate.py: PASS\ncheck_informed_reserve.py: PASS\ncheck_bridge_transport_burdens.py: PASS\ncheck_campaign_front5.py: PASS\ncheck_adjudication_front5.py: PASS\ncheck_body_world.py: PASS\ncheck_nonadditive_body_world.py: PASS\ncheck_foundational_sanitation.py: PASS\ncheck_unification.py: PASS\n../OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/check_atomicity.py: PASS\n../OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/check_infinite_interface.py: PASS\n../RUTA3_NO_VACUIDAD_ESTABILIDAD_2026-11-12/check_wedge_stability.py: PASS\n../RUTA3_NO_VACUIDAD_ESTABILIDAD_2026-11-12/check_native_subfp.py: PASS\n../ETAPA1_BASECORE_PAPERS_I_III_2026-11-14/check_etapa1_foundations.py: PASS\n../ETAPA2_PAPERS_IV_X_BRIDGE_MONOLITH_2026-11-14/check_etapa2_downstream.py: PASS\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-math.log"
+    },
+    {
+      "name": "coverage",
+      "command": [
+        "python",
+        "scripts/verify-lean-coverage.py"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 0.33,
+      "output": "{\n  \"passed\": true,\n  \"targets\": 436,\n  \"counts\": {\n    \"PENDING_MATHLIB\": 359,\n    \"EXACT_MATCH\": 10,\n    \"FINITE_OR_PARTIAL_KERNEL\": 51,\n    \"EMPIRICAL_OR_PROTOCOL_BOUNDED\": 16\n  },\n  \"public_lean_declarations\": 271,\n  \"scope\": \"ID/hash/symbol bookkeeping; semantic fidelity requires mathematical review\",\n  \"external_support_certified\": false\n}\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-coverage.log"
+    },
+    {
+      "name": "release",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\work\\rigid-identity-framework",
+      "exit": 0,
+      "seconds": 31.39,
+      "output": "\n> qicn-rigid-identity-framework@0.0.0-fcr verify:release\n> npm run verify:all-legacy\n\n\n> qicn-rigid-identity-framework@0.0.0-fcr verify:all-legacy\n> node scripts/legacy/run-all-legacy-verifications.js\n\nV35 all legacy verification: PASS; passed=6/6\n",
+      "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa2-microcierre-publicacion\\logs\\final-release.log"
+    }
+  ],
+  "required_steps": 13,
+  "seconds": 188.23,
+  "external_support_certified": false,
+  "math_suites": 34,
+  "coverage_targets": 436,
+  "release_steps": 6,
+  "lean_sources_identical": 35,
+  "protected_files_verified": 154,
+  "frozen_inputs_unchanged": true
+}

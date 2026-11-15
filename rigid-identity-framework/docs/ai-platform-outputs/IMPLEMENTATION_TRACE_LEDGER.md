@@ -11641,3 +11641,27 @@ Deuda: mecanización nueva en Etapa 3; gramáticas rivales más amplias,
 atomicidad derivada y calibración física en Etapa 4; revisión/replicación
 externa en Etapa 5. Realización operacional sintética no equivale a
 fenomenalidad. Se reportan veredictos crudos y external_support_certified=false.
+
+## Micro-cierre Etapa 2 · Fase I · 2026-11-15
+
+Base cdad4dd; autorización expresa de publicar tras corregir las dos
+observaciones del usuario. Lecturas: AGENTS, cinco fuentes de verdad en
+orden, INSTRUCCIONES/ROADMAP, README Lean, verificador y matriz 436.
+Intervención: únicamente la prueba de thm:bridge-quartic-global-certificate;
+se distingue soporte de contracción frente al ambiente y se fija lectura
+t=6 tras cuatro washout, pulso y propagación. Enunciados/constantes intactos.
+
+Registro: conservar 921 IDs y metadatos; actualizar prueba/ubicaciones y
+huella/ubicaciones de cobertura. Macros 383 y Lean 35/271 preservados por SHA.
+Compilación de IX/monolito, actualización intencional del reporte de calidad
+435 páginas y derivados. Auditoría de estructura formal, propagación completa,
+cadena de verificación, pendientes y alcance de un paper. Batería aislada en
+E:/QICN-PRESERVACION/2026-11-15-etapa2-microcierre-publicacion/.
+
+Recetas, archivos, resultados literales y autorización en
+repair-plans/ETAPA2_MICROCIERRE_PUBLICACION_2026-11-15/.
+Commit/merge/push sólo después de VERIFICACION_FINAL. La identidad publicada
+y las salidas de origin/gitlab se registran en el recibo de publicación que
+acompaña la apertura local de Etapa 3. No se fuerza ningún remoto.
+Deuda científica: Etapas 3–5, sin promoción por publicación.
+external_support_certified=false.

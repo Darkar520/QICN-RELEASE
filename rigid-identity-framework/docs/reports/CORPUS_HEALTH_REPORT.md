@@ -41,9 +41,9 @@ Status: FCR structural registry generated from active LaTeX sources. This report
 | paper8:criterion:thm-selfindex-emergence | conditional | present | conditional_compact_loss_margin_proved | paper8_first_person_subjectivity/main.tex:472 |
 | paper8:criterion:thm-ownership-nontransfer | conditional | present | conditional_structural_path_transport_proved | paper8_first_person_subjectivity/main.tex:516 |
 | paper8:criterion:thm-five-field-reduction | conditional | present | conditional_fibre_reconstruction_proved | paper8_first_person_subjectivity/main.tex:564 |
-| paper9:conjecture:thm-predicate-independence | conditional | present | conditional_calibrated_instrument_class_independence | paper9_phenomenal_bridge_organization/main.tex:2253 |
-| paper9:conjecture:thm-registry-independence | conditional | present | conditional_faithful_row_local_transport | paper9_phenomenal_bridge_organization/main.tex:2279 |
-| paper9:criterion:thm-bridge-realization-exists | conditional | present | conditional_proper_ancestry_operational_realization | paper9_phenomenal_bridge_organization/main.tex:2305 |
+| paper9:conjecture:thm-predicate-independence | conditional | present | conditional_calibrated_instrument_class_independence | paper9_phenomenal_bridge_organization/main.tex:2255 |
+| paper9:conjecture:thm-registry-independence | conditional | present | conditional_faithful_row_local_transport | paper9_phenomenal_bridge_organization/main.tex:2281 |
+| paper9:criterion:thm-bridge-realization-exists | conditional | present | conditional_proper_ancestry_operational_realization | paper9_phenomenal_bridge_organization/main.tex:2307 |
 
 ## Blockers
 

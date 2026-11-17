@@ -11695,3 +11695,25 @@ Deuda 3B precisa por fila: análisis espectral completo, SUP/Polish,
 positivo H5, contratos íntegros de IX y probabilidad/sharpness general X.
 No cambios en áreas congeladas ni manuscritos. Sin evidencia empírica o
 certificación independiente nueva; external_support_certified=false.
+
+
+## Etapa 3B · apertura y auditoría · 2026-11-15
+
+Solicitud: mecanización infinita de bloques 1–4 desde main 5769ecf, sin push.
+Estado inicial limpio, ambos remotos verificados, rama codex/etapa3b-lean.
+Lecturas: AGENTS, cinco fuentes canónicas en orden, INSTRUCCIONES, roadmap
+Ruta6/saldo3A, guías y cobertura, ejecución/diff3A, BaseCore01/02/03/11,
+PIII y fuentes Mathlib pertinentes. Conservación inicial de todos los archivos
+versionados y 40 Lean por SHA256. Recibos y alcance en
+repair-plans/ETAPA3B_MECANIZACION_INFINITA_QICNLEAN_2026-11-15/.
+
+Implementación en curso: prioridad L2/H5 y Banach espectral, después SUP/Polish,
+planta cuártica y probabilidad general. No nuevas promociones por anticipado.
+No modificaciones de TeX/PDF/FCR/paquetes congelados ni de las fuentes previas.
+Caché de la revisión pinneada en E:, compilaciones seriales y gates aislados.
+Puente acoplado localizado en 11_discrete_bridge, no en 02. Deuda y resultados
+se cerrarán por evidencia; external_support_certified=false.
+
+| 2026-11-17 | Etapa 3B: checkpoint por memoria | Lectura de recibos incrementales, instrucciones de etapa y estado Git; conservación de nombres al separar normas reales y restricción Golden Mean | EJECUCION.md actualizado con las versiones pendientes y orden de reanudación | RAM libre 129852 KB y luego 445188 KB; fallos de carga y OOM previos | BLOQUEADO_POR_RECURSOS; sin commit/push, sin promoción de cobertura; external_support_certified=false |
+
+| 2026-11-17 | Codex / Fase A checkpoint mínimo seguro solicitado | Lectura de las cinco fuentes canónicas, INSTRUCCIONES, ROADMAP, ejecución 3B y recibos; auditoría por SHA de fuente/objeto/axiomas | 54 módulos activos más agregado, ocho pendientes conservados; README, dos lectores de namespaces, dossier y roadmap actualizados; originales y teoría intactos | lake env lean serial vigilado en E: interrumpido por recursos; kernel-only fresco también interrumpido; sin reintento tras el guard | Raíz 3/3, release 6/6, matemáticas 34/34, corpus/macros/prosa/no-claims/overlays/calidad y cobertura PASS; 16 controles del lector y 187 hashes protegidos; 506 declaraciones por recibos conservados, sin promoción de los 436 targets | Deuda explícita no bloqueante sólo para checkpoint: reproducción fresca y ocho fuentes 3B-Cont; no se declara cierre del programa ni soporte externo | Commit local acotado en codex/etapa3b-lean; main 5769ecf; sin push/merge, QICN-SYSTEM excluido; Fase B separada desde main; external_support_certified=false |

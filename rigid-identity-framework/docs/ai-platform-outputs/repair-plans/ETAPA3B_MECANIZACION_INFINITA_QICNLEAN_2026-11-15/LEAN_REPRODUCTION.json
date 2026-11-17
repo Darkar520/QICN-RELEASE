@@ -1,0 +1,1373 @@
+{
+  "checkpoint_evidence_complete": true,
+  "full_fresh_reproduction_passed": false,
+  "baseline_by_unchanged_source": {
+    "passed": true,
+    "external_support_certified": false,
+    "steps": [
+      {
+        "name": "version",
+        "command": [
+          "lean",
+          "--version"
+        ],
+        "exit": 0,
+        "seconds": 0.14
+      },
+      {
+        "name": "builtin-library",
+        "command": [
+          "lean",
+          "--print-libdir"
+        ],
+        "exit": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "pin-mathlib",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\mathlib",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "pin-plausible",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\plausible",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.14
+      },
+      {
+        "name": "pin-LeanSearchClient",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\LeanSearchClient",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.14
+      },
+      {
+        "name": "pin-importGraph",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\importGraph",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.16
+      },
+      {
+        "name": "pin-proofwidgets",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\proofwidgets",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.16
+      },
+      {
+        "name": "pin-aesop",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\aesop",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.14
+      },
+      {
+        "name": "pin-Qq",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Qq",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.12
+      },
+      {
+        "name": "pin-batteries",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\batteries",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "pin-Cli",
+        "command": [
+          "git",
+          "-C",
+          "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Cli",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit": 0,
+        "seconds": 0.14
+      },
+      {
+        "name": "kernel-QICNLean.Basic",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\Basic.olean",
+          "QICNLean\\Basic.lean"
+        ],
+        "exit": 0,
+        "seconds": 12.48
+      },
+      {
+        "name": "kernel-QICNLean.QICNContraction",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNContraction.olean",
+          "QICNLean\\QICNContraction.lean"
+        ],
+        "exit": 0,
+        "seconds": 18.09
+      },
+      {
+        "name": "kernel-QICNLean.QICNHilbertInstance",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNHilbertInstance.olean",
+          "QICNLean\\QICNHilbertInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 22.16
+      },
+      {
+        "name": "kernel-QICNLean.QICNConvexProjection",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNConvexProjection.olean",
+          "QICNLean\\QICNConvexProjection.lean"
+        ],
+        "exit": 0,
+        "seconds": 26.06
+      },
+      {
+        "name": "kernel-QICNLean.QICNAttractorCompact",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNAttractorCompact.olean",
+          "QICNLean\\QICNAttractorCompact.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.03
+      },
+      {
+        "name": "kernel-QICNLean.QICNAttractorConcrete",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNAttractorConcrete.olean",
+          "QICNLean\\QICNAttractorConcrete.lean"
+        ],
+        "exit": 0,
+        "seconds": 20.41
+      },
+      {
+        "name": "kernel-QICNLean.QICNNonCollapse",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNNonCollapse.olean",
+          "QICNLean\\QICNNonCollapse.lean"
+        ],
+        "exit": 0,
+        "seconds": 18.02
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5Derivation",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNH5Derivation.olean",
+          "QICNLean\\QICNH5Derivation.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.3
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5Convex",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNH5Convex.olean",
+          "QICNLean\\QICNH5Convex.lean"
+        ],
+        "exit": 0,
+        "seconds": 22.05
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5ConvexExclusion",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNH5ConvexExclusion.olean",
+          "QICNLean\\QICNH5ConvexExclusion.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.36
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5QuotientDynamics",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNH5QuotientDynamics.olean",
+          "QICNLean\\QICNH5QuotientDynamics.lean"
+        ],
+        "exit": 0,
+        "seconds": 23.05
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5QuotientDisplacement",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNH5QuotientDisplacement.olean",
+          "QICNLean\\QICNH5QuotientDisplacement.lean"
+        ],
+        "exit": 0,
+        "seconds": 32.36
+      },
+      {
+        "name": "kernel-QICNLean.QICNH5UnilateralBridge",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNH5UnilateralBridge.olean",
+          "QICNLean\\QICNH5UnilateralBridge.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.11
+      },
+      {
+        "name": "kernel-QICNLean.QICNSInstance",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNSInstance.olean",
+          "QICNLean\\QICNSInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 17.98
+      },
+      {
+        "name": "kernel-QICNLean.QICNSCoupledInstance",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNSCoupledInstance.olean",
+          "QICNLean\\QICNSCoupledInstance.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.14
+      },
+      {
+        "name": "kernel-QICNLean.QICNRotationSpectral",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNRotationSpectral.olean",
+          "QICNLean\\QICNRotationSpectral.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.75
+      },
+      {
+        "name": "kernel-QICNLean.QICNCoupledSplitMargin",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNCoupledSplitMargin.olean",
+          "QICNLean\\QICNCoupledSplitMargin.lean"
+        ],
+        "exit": 0,
+        "seconds": 29.22
+      },
+      {
+        "name": "kernel-QICNLean.QICNCoupledSplitMarginUniversal",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNCoupledSplitMarginUniversal.olean",
+          "QICNLean\\QICNCoupledSplitMarginUniversal.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.5
+      },
+      {
+        "name": "kernel-QICNLean.QICNProjectiveTransport",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNProjectiveTransport.olean",
+          "QICNLean\\QICNProjectiveTransport.lean"
+        ],
+        "exit": 0,
+        "seconds": 1.91
+      },
+      {
+        "name": "kernel-QICNLean.QICNObservationBudget",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNObservationBudget.olean",
+          "QICNLean\\QICNObservationBudget.lean"
+        ],
+        "exit": 0,
+        "seconds": 2.42
+      },
+      {
+        "name": "kernel-QICNLean.QICNFiniteP4",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNFiniteP4.olean",
+          "QICNLean\\QICNFiniteP4.lean"
+        ],
+        "exit": 0,
+        "seconds": 2.28
+      },
+      {
+        "name": "kernel-QICNLean.QICNMetricFronts",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNMetricFronts.olean",
+          "QICNLean\\QICNMetricFronts.lean"
+        ],
+        "exit": 0,
+        "seconds": 19.56
+      },
+      {
+        "name": "kernel-QICNLean.QICNFiniteFronts",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNFiniteFronts.olean",
+          "QICNLean\\QICNFiniteFronts.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.78
+      },
+      {
+        "name": "kernel-QICNLean.QICNBodyWorldDynamics",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNBodyWorldDynamics.olean",
+          "QICNLean\\QICNBodyWorldDynamics.lean"
+        ],
+        "exit": 0,
+        "seconds": 35.3
+      },
+      {
+        "name": "kernel-QICNLean.QICNBodyWorldFinite",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNBodyWorldFinite.olean",
+          "QICNLean\\QICNBodyWorldFinite.lean"
+        ],
+        "exit": 0,
+        "seconds": 49.01
+      },
+      {
+        "name": "kernel-QICNLean.QICNBodyWorldEvaluation",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNBodyWorldEvaluation.olean",
+          "QICNLean\\QICNBodyWorldEvaluation.lean"
+        ],
+        "exit": 0,
+        "seconds": 32.8
+      },
+      {
+        "name": "kernel-QICNLean.QICNEpistemicAtomicity",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNEpistemicAtomicity.olean",
+          "QICNLean\\QICNEpistemicAtomicity.lean"
+        ],
+        "exit": 0,
+        "seconds": 15.98
+      },
+      {
+        "name": "kernel-QICNLean.QICNEpistemicWitness",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNEpistemicWitness.olean",
+          "QICNLean\\QICNEpistemicWitness.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.38
+      },
+      {
+        "name": "kernel-QICNLean.QICNEpistemicInterface",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNEpistemicInterface.olean",
+          "QICNLean\\QICNEpistemicInterface.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.81
+      },
+      {
+        "name": "kernel-QICNLean.QICNEpistemicWedgeStability",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNEpistemicWedgeStability.olean",
+          "QICNLean\\QICNEpistemicWedgeStability.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.3
+      },
+      {
+        "name": "kernel-QICNLean.QICNEpistemicSubfp",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNEpistemicSubfp.olean",
+          "QICNLean\\QICNEpistemicSubfp.lean"
+        ],
+        "exit": 0,
+        "seconds": 18.48
+      },
+      {
+        "name": "kernel-QICNLean.QICNAnalyticProjection",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNAnalyticProjection.olean",
+          "QICNLean\\QICNAnalyticProjection.lean"
+        ],
+        "exit": 0,
+        "seconds": 18.34
+      },
+      {
+        "name": "kernel-QICNLean.QICNParametricContraction",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNParametricContraction.olean",
+          "QICNLean\\QICNParametricContraction.lean"
+        ],
+        "exit": 0,
+        "seconds": 22.42
+      },
+      {
+        "name": "kernel-QICNLean.QICNInverseLimitTopology",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNInverseLimitTopology.olean",
+          "QICNLean\\QICNInverseLimitTopology.lean"
+        ],
+        "exit": 0,
+        "seconds": 14.17
+      },
+      {
+        "name": "kernel-QICNLean.QICNBaseSufficiency",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNBaseSufficiency.olean",
+          "QICNLean\\QICNBaseSufficiency.lean"
+        ],
+        "exit": 0,
+        "seconds": 26.78
+      },
+      {
+        "name": "kernel-QICNLean.QICNWeightedChannels",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNWeightedChannels.olean",
+          "QICNLean\\QICNWeightedChannels.lean"
+        ],
+        "exit": 0,
+        "seconds": 22.89
+      },
+      {
+        "name": "kernel-QICNLean.QICNMooreFactorization",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNMooreFactorization.olean",
+          "QICNLean\\QICNMooreFactorization.lean"
+        ],
+        "exit": 0,
+        "seconds": 16.73
+      },
+      {
+        "name": "kernel-QICNLean.QICNFourRootContrast",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNFourRootContrast.olean",
+          "QICNLean\\QICNFourRootContrast.lean"
+        ],
+        "exit": 0,
+        "seconds": 24.72
+      },
+      {
+        "name": "kernel-QICNLean.QICNFiniteAdjudication",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean\\QICNFiniteAdjudication.olean",
+          "QICNLean\\QICNFiniteAdjudication.lean"
+        ],
+        "exit": 0,
+        "seconds": 23.61
+      },
+      {
+        "name": "kernel-QICNLean",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "-Dpp.unicode.fun=true",
+          "-DrelaxedAutoImplicit=false",
+          "-Dweak.linter.mathlibStandardSet=true",
+          "-DmaxSynthPendingDepth=3",
+          "-o",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\kernel-objects-i479xxqf\\QICNLean.olean",
+          "QICNLean.lean"
+        ],
+        "exit": 0,
+        "seconds": 19.56
+      },
+      {
+        "name": "axioms",
+        "command": [
+          "lean",
+          "-j",
+          "1",
+          "E:\\QICN-PRESERVACION\\2026-11-15-etapa3-mecanizacion\\final-work\\.cache\\qicn-lean\\AuditAxioms.lean"
+        ],
+        "exit": 0,
+        "seconds": 21.83
+      }
+    ],
+    "lean": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+    "mode": "kernel-only",
+    "modules": [
+      {
+        "source": "QICNLean/Basic.lean",
+        "sha256": "265e4023cec03dc33bd91c90e5f6072420e4eb0ecae2dffa8b66b01489db8acb",
+        "olean_sha256": "f13c1a9739720af34a4c00c0c337998c9f706dd708817f6af89104c4203371b1"
+      },
+      {
+        "source": "QICNLean/QICNAnalyticProjection.lean",
+        "sha256": "f694b21c59bf3737bf9b80b011220738dc75f1136205ef60e1b9f6e307a2eb49",
+        "olean_sha256": "b71e2675a936e404e1ecbd1cadc0a995f6d1e596dc96306a88fcdc9b15b1c96f"
+      },
+      {
+        "source": "QICNLean/QICNAttractorCompact.lean",
+        "sha256": "d97969baa1736963790e009f6368e4d81f34c3447e5c5d45ff97268e9b1d8347",
+        "olean_sha256": "54abd2b7fe1e99f608a45b499494b6b3ec62bf1ddafe9594cb79885be646b58d"
+      },
+      {
+        "source": "QICNLean/QICNAttractorConcrete.lean",
+        "sha256": "2b6e7419ad365e3633a91489c05b912dd7b8d36649d1db18915c91ac3d44011e",
+        "olean_sha256": "3b08cc1f2ab12d43f4f4bd377d9a369d8e7cf95ad4848830498e6a056c989a96"
+      },
+      {
+        "source": "QICNLean/QICNBaseSufficiency.lean",
+        "sha256": "40d8759cc87a8baac6ad43c2682435437f17d6dca28360a67cc265a30eb72a4c",
+        "olean_sha256": "210bfbc935778cae66cdcee25f7fd5af7c440a327b7fc1609b77b95d1762539c"
+      },
+      {
+        "source": "QICNLean/QICNBodyWorldDynamics.lean",
+        "sha256": "9d85f3aa62788c491d0357c25a15507fa3a029854ea3b7f2446e649709df68f9",
+        "olean_sha256": "3155968c186153c9f89945ade1d1f0d3fb7d2afeca5c24f19c899a394a6ac002"
+      },
+      {
+        "source": "QICNLean/QICNBodyWorldEvaluation.lean",
+        "sha256": "aca064433f09a94e8f2c269b4e3d0e7a80891232974964e6202529dcf16e55e3",
+        "olean_sha256": "d5262cfd75aad0589dbc9b534963c0c583cdc51397e58647b31b2f867a57ca86"
+      },
+      {
+        "source": "QICNLean/QICNBodyWorldFinite.lean",
+        "sha256": "92b167161f9f5834649ea8071deac7efc7644febb6984438969e01cde6c13c02",
+        "olean_sha256": "0b0444650ef8a86f829fca388f87a242d19ddd4b5bb8d788cc8784045584dc3f"
+      },
+      {
+        "source": "QICNLean/QICNContraction.lean",
+        "sha256": "ec5d490b26402faa7095ea42ef646700a4f67fc91af3330e7cb55a0839becbec",
+        "olean_sha256": "cfeca4eb362b8ce255b6f40a1514e17f550c0f949e756ac34ac0264fbd423ae4"
+      },
+      {
+        "source": "QICNLean/QICNConvexProjection.lean",
+        "sha256": "cef90e049c0ffdd6b2eaacdc8794eb4ce4740b11c489d2aff909229623dad052",
+        "olean_sha256": "1bad6a5b298ac06174c1b713fe774f2022b94b77bbcdc58484e38299cab5f673"
+      },
+      {
+        "source": "QICNLean/QICNCoupledSplitMargin.lean",
+        "sha256": "a693929e8911ccda76952a5d6766bc443a58ff50d8ae07924b7f54e1d4a9bdd8",
+        "olean_sha256": "1fd981856ab64ac69fd253580115b0b80dd4c7d027f9c7acf9b43fc7f38a4d65"
+      },
+      {
+        "source": "QICNLean/QICNCoupledSplitMarginUniversal.lean",
+        "sha256": "dc19e27f6ea203cf4b5b293dc3b6927f4e451976516ec7f8a213d56aaec6a3d9",
+        "olean_sha256": "4d169ed3ead605df37cf980de7e6aec1efe38e621ee6947c51e67cc9225f8055"
+      },
+      {
+        "source": "QICNLean/QICNEpistemicAtomicity.lean",
+        "sha256": "ae2cd01283685cf877a8a5d670904ae28db604ece26a793cc07f166c25be5a80",
+        "olean_sha256": "42cc53be1ecf8657442de5bad9e2cedf3be286ea32f3a071fd7ac6b0ec0d299b"
+      },
+      {
+        "source": "QICNLean/QICNEpistemicInterface.lean",
+        "sha256": "2582730eb2933232ff4960b5a0ead7a3a657b8171fc6ed3adaf129151582697e",
+        "olean_sha256": "638379035f3cb1d734cb61ce497e0a4cea28b9746758e26a09fa25e75f6509d8"
+      },
+      {
+        "source": "QICNLean/QICNEpistemicSubfp.lean",
+        "sha256": "080baf4e27c02f4bb8a6dca1fcdaa56838edced0ca8b460e9bdc8a72e3caf50c",
+        "olean_sha256": "ccc724b7e66aa4879389fcfaa1a92f0751ad7b6e37371b9b98d72cf394fe43ce"
+      },
+      {
+        "source": "QICNLean/QICNEpistemicWedgeStability.lean",
+        "sha256": "20157883187a7f40e9dc8c275e7584388f24c4129ef322fa911a5c6c1778714d",
+        "olean_sha256": "98eeb7f8cd381f96ef17a6f339febdddb9be5dc8e1b904bc778849fdbf5465e1"
+      },
+      {
+        "source": "QICNLean/QICNEpistemicWitness.lean",
+        "sha256": "e26d8fa9cff7abbc9ad203998e148052fbb64679a9aaabc63d3ec3f10e5e8dd7",
+        "olean_sha256": "f4e4fec702b7c8b7800911a2affbe345526cbe7549c2f356948bbce68459bd8a"
+      },
+      {
+        "source": "QICNLean/QICNFiniteAdjudication.lean",
+        "sha256": "f2fd8c1186be3c8802c0abf1c55cd691b71703deff4d83169a822bd67d7c765b",
+        "olean_sha256": "0494958c6c651b8eb94c6911b8dc7a89e85086ab50de9b76dba23eae02a2309b"
+      },
+      {
+        "source": "QICNLean/QICNFiniteFronts.lean",
+        "sha256": "752c0c32bd402f13eb23eb1726d39abb250912ce7d4d216608d2fd6f6008722e",
+        "olean_sha256": "722a0184c8cd2f636200af99e72550becdda6596b1798cc4fe3cb025a2e2d8e8"
+      },
+      {
+        "source": "QICNLean/QICNFiniteP4.lean",
+        "sha256": "a5028368b21eb31c654062cd12e905bf0ec67828a3218d4d89d86aa679fa1457",
+        "olean_sha256": "b1b3959cb304f806d2c53df17358de718f08c40d190838a3e2f961fdaf6f9c0e"
+      },
+      {
+        "source": "QICNLean/QICNFourRootContrast.lean",
+        "sha256": "18de19f04f39b802a6699a51377844748caf348ae8f242ea57d555a2f79ae0a3",
+        "olean_sha256": "367d1756269356527402597f52a38fbfa0078d9aa520f3baea5fcab503457a38"
+      },
+      {
+        "source": "QICNLean/QICNH5Convex.lean",
+        "sha256": "bd399b7532f22fb5f67e46ff914d54ec9f78f3283744118cd4fcfd30adfb1e3d",
+        "olean_sha256": "bb7c7feb0291c35ad23ded3483abede1324a86d68a0278e40884d6576e781b04"
+      },
+      {
+        "source": "QICNLean/QICNH5ConvexExclusion.lean",
+        "sha256": "73897ed07d2793708136fb3f1fb410e359c8b7772aebc7a32b170b281276033e",
+        "olean_sha256": "84e58d0720ed3851f3e8fb46b088a60ffe443a511867bf4607430b22cb2cd1a3"
+      },
+      {
+        "source": "QICNLean/QICNH5Derivation.lean",
+        "sha256": "b60d6b6d75d6a0959cd0d2a314b18e75d36071df6a0400a68806a0046ae6c847",
+        "olean_sha256": "6ae19a79454513355a820e55f9bf0d24df8647a989a769959789173b52613abe"
+      },
+      {
+        "source": "QICNLean/QICNH5QuotientDisplacement.lean",
+        "sha256": "0dc27605b05d69e9f9cce773e5b020643881917587388bdf0ed2f56859f6452f",
+        "olean_sha256": "a904726560c82ef4edc74761974a7340268345cb2366baa94d5410a56f061dc2"
+      },
+      {
+        "source": "QICNLean/QICNH5QuotientDynamics.lean",
+        "sha256": "50e82e66b27e11a7152a7499bc2a6632f844b1bf5d507710d4e695b74e14897f",
+        "olean_sha256": "4dfe02243764080ee275de07575f8710b9c9330780ed7144b17dfe19c465d241"
+      },
+      {
+        "source": "QICNLean/QICNH5UnilateralBridge.lean",
+        "sha256": "6e9518702d025ff6f528b530222139bc554aaaef04aa63b8513a8e23b46272db",
+        "olean_sha256": "4d865fd89bf4fd8a44cabc8d50728e19781c81f110fc34c53aa496b73c1222d0"
+      },
+      {
+        "source": "QICNLean/QICNHilbertInstance.lean",
+        "sha256": "e3f6d71d9e5b2b3a392a2e3d8d2313854475b69f40733015b48239726a8c6164",
+        "olean_sha256": "91a9f98f8b15052b293b8955b99a2e3e4535dc44695f3d6c26140c21b028ad7e"
+      },
+      {
+        "source": "QICNLean/QICNInverseLimitTopology.lean",
+        "sha256": "e88058c6b165c55928a4ded1134f791c42c28359cc59d7e80bd92ea2c819f493",
+        "olean_sha256": "5a209c1fa91292e45f32244d2753e667d21c7737e2fb3deed65a08e94f1048c5"
+      },
+      {
+        "source": "QICNLean/QICNMetricFronts.lean",
+        "sha256": "15fc7b6dc0a4ef42e5bff004ad48b612161c9927bd3523f0bd558b8ff32ebf37",
+        "olean_sha256": "ea1a7577940b3e1684bb4d8329564e47331dc719ab38b15cb0aa010b9ba5d22e"
+      },
+      {
+        "source": "QICNLean/QICNMooreFactorization.lean",
+        "sha256": "bf0be498dc7083f1e269977ac2156eaed648e5b442ccda1d5dfa262fbb94786c",
+        "olean_sha256": "ae6eee2f6e4157afd346d417311f10ca00c9efddb1cd1c98a2041966b2a7496e"
+      },
+      {
+        "source": "QICNLean/QICNNonCollapse.lean",
+        "sha256": "05dd49375f72fa7c3df8fc9ce850ed64126c8c0549bd412e3541e40f21cfd781",
+        "olean_sha256": "8d06b78d4f96a511aad518ed9c7663fcbfdfe56108f9f0ee2b4f11eb0a8334e4"
+      },
+      {
+        "source": "QICNLean/QICNObservationBudget.lean",
+        "sha256": "f547fc9e350cf8d73aaa76eb383c5660b4d73a36cba5b3eabf491a71d2ccea5b",
+        "olean_sha256": "6ccc3e3a3f487518e986a7ab1c65aeafbd4f050c282c1282ea5573f21a967bc8"
+      },
+      {
+        "source": "QICNLean/QICNParametricContraction.lean",
+        "sha256": "99e819302e949d8e24da3275c1019801ef61deffe6dd6b77af1f5ed711651050",
+        "olean_sha256": "f5c2cf4209c8e16bc113fc3454d047c5d808987ebadedfb74fff53bd129f4ac1"
+      },
+      {
+        "source": "QICNLean/QICNProjectiveTransport.lean",
+        "sha256": "db8ba27b670059da01759d445ed1453ce510c8cba2b9d574a9df9147b2fdf70e",
+        "olean_sha256": "ce478fbb0f5b2a8d8693fc119337843ef46fc6447efce486868aaa748a417ea5"
+      },
+      {
+        "source": "QICNLean/QICNRotationSpectral.lean",
+        "sha256": "5300efa09f00952ea33106108a4c3d01fe7f3ac1362ad6ab35a9d2466189eaec",
+        "olean_sha256": "4de9c265729880a5fdfb8654a7148206d3d92b36f171be478a2957ab461f7e31"
+      },
+      {
+        "source": "QICNLean/QICNSCoupledInstance.lean",
+        "sha256": "19cc301d09241987d3bcd08907727f9d8d3ffdfdd3ab7eb799bb385acc69b9e4",
+        "olean_sha256": "15024b9c67e6e8882fca002d53fa45679bfbc152a40eb73db48c5690f90b27e1"
+      },
+      {
+        "source": "QICNLean/QICNSInstance.lean",
+        "sha256": "9bb45dcfbe4f5a71bb3e8112d5b5ad958951aabd28e3c7bf2f80927c78ae67f0",
+        "olean_sha256": "f8f5b4cb0fd96c7aba3b9e93a6266132c1bff670ce024c7e08250b41d7b58ea1"
+      },
+      {
+        "source": "QICNLean/QICNWeightedChannels.lean",
+        "sha256": "3e6e06acdd9ab7f8136b9c51cefefdb384b6d4bc21a0eb5af45b8bb0016740ce",
+        "olean_sha256": "7d096528b0e75e8e787cddaf0ddc1054750fe7014d1df02d8ee8291ef7fd8435"
+      },
+      {
+        "source": "QICNLean.lean",
+        "sha256": "d463709dbc7329764c26b6d62ea2c721b6fefe56b517b551fc1ca350a4a5a4e1",
+        "olean_sha256": "eb3715785be04fb7b4d02bdb54e0daa98b4649b8d995e43ad172bf8a8be4a93e"
+      }
+    ],
+    "source_modules": 40,
+    "public_theorems_audited": 348,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "scope": "Kernel build of the declared project and public theorem dependency audit. Private lemmas are compiled and checked through their sources/dependents. This does not formalize every manuscript claim, certify novelty, or supply external empirical validation."
+  },
+  "baseline_literal_axioms": "'QICNBodyWorldDynamics.body_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.body_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.evaluated_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.evaluated_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.evaluated_update_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.evaluation_row_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.intervened_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.intervened_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.native_body_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.native_body_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.native_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_body_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_body_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_update_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.normal_body_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.normal_body_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.product_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.projection_commutes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.update_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.world_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.world_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.zero_section_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.closed_convex_unique_minimizer' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.projection_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.projection_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.projection_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.projection_nonexpansive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.cornerRay_not_linear' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.disk_projection_nonexpansive_plane' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.geometric_iteration' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.h1_h4_sufficiency' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.radialDisk_eq_projection' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.radialDisk_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.radialDisk_minimizes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.radialDisk_nonexpansive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.zero_data_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.zero_family_fails_noncollapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicAtomicity.parity_join_split' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicAtomicity.parity_split_bijective' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicAtomicity.parity_split_join' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicAtomicity.positive_deformation_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicAtomicity.resistance_threshold_excludes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicAtomicity.square_equality_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicAtomicity.xor_flip_bijective' depends on axioms: [Quot.sound]\n'QICNLean.EpistemicAtomicity.xor_flip_involution' depends on axioms: [Quot.sound]\n'QICNLean.EpistemicInterface.alternative_headroom' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicInterface.decision_laws_equal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicInterface.paired_error_transport' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicInterface.rejection_measures_equal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicInterface.sample_size_headroom' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.active_passive_gain' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.all_pair_functions_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.all_pair_functions_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.binary_expression_leaf_identity' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicSubfp.emulator_forces_nonpositive_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.energy_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.feedback_returns_exactly' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.fewer_gate_contrast_excludes_optimality' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.EpistemicSubfp.four_input_expression_cost' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicSubfp.native_coordinates_and_gate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.operational_margins' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.ownership_zero_after_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.parity_error_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.positive_scalar_polynomial_certificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.EpistemicSubfp.realized_scalar_independence_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.same_cost_emulator_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.strict_budget_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.valuation_exact_and_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.weak_three_term_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.chain_obstruction_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.chain_strict_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.cheap_clamp_incompatible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.corner_norm_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.corner_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.damage_ratio_control' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.dyadic_arbitrarily_small' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.dyadic_tail_step' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.euclidean_corner_axis_distance' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.EpistemicWedgeStability.max_product_square' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.positive_support_radius' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.power_two_growth' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.protected_ratio_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.protected_regime_rational_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.EpistemicWedgeStability.two_arm_corner_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.wedge_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.box_interval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.constant_subspace_separation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.finite_functional_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.involution_trajectory' depends on axioms: [Quot.sound]\n'QICNLean.EpistemicWitness.no_common_phase' does not depend on any axioms\n'QICNLean.EpistemicWitness.no_eventual_null' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.null_D_escape' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.null_W_escape' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.null_prefix_head' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.paired_response' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.paired_trajectory' does not depend on any axioms\n'QICNLean.EpistemicWitness.positive_gate_excluded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.seven_min_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.seven_product_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.valuation_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.witness_rational_margins' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.always_abstain_not_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.centered_loss_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.finite_clean_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.finite_clean_stratum_null' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.finite_coupling_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.finite_coupling_null' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.free_abstention_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.loss_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.loss_coverage_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.loss_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.selective_leak_separates_nulls' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.stratum_coverage_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.stratum_null_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.abs_contrast_le_mean' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.all_proper_forecasts_error_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.all_proper_forecasts_mean_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.background_proper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_parity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_smul' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_sub' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.equal_cost_replica_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.ignored_coordinate_has_zero_contrast' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.FourRootContrast.ignores_depends_on_erasure' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.manuscript_quartic_constant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.noise_cost_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.parity_abs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.parity_flip' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.physical_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.physical_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.proper_component_ignores' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.proper_forecast_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.proper_optimum_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.spin_negation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.spin_square' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.I_mul_mem_of_nonreal_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.InverseLimitTopology.coherent_set_closed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.InverseLimitTopology.coherent_set_compact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.InverseLimitTopology.compatible_cone_unique_lift' depends on axioms: [Quot.sound]\n'QICNLean.InverseLimitTopology.coneLift_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.InverseLimitTopology.inverse_limit_nonempty' depends on axioms: [Classical.choice]\n'QICNLean.InverseLimitTopology.projections_fix_endomorphism' depends on axioms: [Quot.sound]\n'QICNLean.InverseLimitTopology.projections_separate' depends on axioms: [Quot.sound]\n'QICNLean.MooreFactorization.atomic_response_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.composition_associative' depends on axioms: [propext]\n'QICNLean.MooreFactorization.exact_product_excluded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.hold_product_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.hold_separator_fails' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.hold_word' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.identity_left' depends on axioms: [propext]\n'QICNLean.MooreFactorization.identity_right' depends on axioms: [propext]\n'QICNLean.MooreFactorization.morphism_word_commutes' depends on axioms: [propext]\n'QICNLean.MooreFactorization.morphism_word_read_commutes' depends on axioms: [propext]\n'QICNLean.MooreFactorization.nonempty_family_infimum_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.response_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.samples_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.swap_every_port_separates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.uniform_error_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.closed_projected_affine_compact' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.ParametricContraction.closed_projected_affine_contraction' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.ParametricContraction.closed_projected_affine_unique' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_compact_range' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_perturbation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.bounded_metric_history_series' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.bounded_weighted_series' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.capped_distance_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.capped_weighted_sup_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.channel_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.channel_projection' does not depend on any axioms\n'QICNLean.WeightedChannels.channel_weighted_distance_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.constant_has_no_positive_coercivity' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.WeightedChannels.infimum_weighted_coercivity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.post_channel_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.post_channel_detectability' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.post_readout_coercivity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.single_stage_detectability' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.supremum_prefix_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.upper_lipschitz_is_not_coercivity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.weighted_sup_coercivity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.affine_contracting' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.alternating_reference_fixed' depends on axioms: [Quot.sound]\n'QICNLean.approximate_commutation_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.approximate_commutation_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bilateral_admissibility_forces_N_subset' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bilateral_implies_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.binary_minimum_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.binary_pointwise_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.binary_prefix_has_late_branch' depends on axioms: [propext, Quot.sound]\n'QICNLean.body_world_hankel_columns_independent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_det' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_det_at_scale' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_det_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_inverse_left' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_inverse_right' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_inverse_row_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_inverse_row_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_indexed_hankel_columns_independent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_indexed_hankel_det' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_lesion_columns_independent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_lesion_det_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_lesion_inverse_left' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_lesion_inverse_right' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_motor_cut_residual' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_motor_residual' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_motor_sign_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_motor_signed_residual' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_corner_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_error_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_matching_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_rectangle_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_uniform_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_antipodal_collision_radius' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_circulation_error_radius' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_cross_term_restores_exact_tie' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_evaluation_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_evaluation_inverse_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_evaluation_square_circulation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_exact_nonlinear_scales' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_nonlinear_additive_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_nonlinear_antipodal_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_nonlinear_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_preregistered_additive_separation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_rectangle_zero_iff_additive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_vector_additive_uniform_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStarConstant_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStarConstant_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStarConstant_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStar_admissible_under_reduction_hypotheses' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStar_image_mem_N_iff_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.candidate_b_self_defeating' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.clean_abstention_risk_scaled' does not depend on any axioms\n'QICNLean.closed_error_collision_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.code_collision_of_binary_budget' depends on axioms: [propext, Quot.sound]\n'QICNLean.collapse_iff_cStar_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.common_point_of_least_right_endpoint' does not depend on any axioms\n'QICNLean.commuting_map_transports_fixed_point' does not depend on any axioms\n'QICNLean.complex_mul_mem_of_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.complex_mul_no_nontrivial_invariant_real_subspace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.constants_inadmissible_of_inter_empty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_eq_of_variational' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_mem_N_implies_starProjection_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_minimizes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_not_mem_of_inadmissible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_of_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_variational' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_collapsed_fixedpoint_eq_cStar' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_constant_fixedpoint_reduces' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_fixedpoint_mkQ_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_fixedpoint_not_mem_of_cStar_not_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_minimizer_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_noncollapse_from_constants_inadmissible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_noncollapse_of_cStar_not_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_projection_not_N_equivariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupledTraj_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupledTraj_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_attractor_family_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_blocks_exact_linear_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_fixedPoint_isFixedPt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_fixedPoint_selector_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_fixedPoint_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_psi1_fiber_thin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_psi2_fiber_thin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_split_readout_positive_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cycle_transport_iff_even' depends on axioms: [propext]\n'QICNLean.dichotomy_regimeA_satisfiable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.dissipative_bits_fixed_iff' depends on axioms: [Quot.sound]\n'QICNLean.dissipative_bits_move_first_difference' does not depend on any axioms\n'QICNLean.dissipative_prefix_square' does not depend on any axioms\n'QICNLean.dstar_universal_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.exact_response_obstruction' depends on axioms: [propext, Quot.sound]\n'QICNLean.finite_binary_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.finite_binary_tv_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.finite_binary_tv_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.finite_binary_tv_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.fixedPoint_perturbation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.fixed_point_common_of_unique' does not depend on any axioms\n'QICNLean.fixed_scale_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.fixed_scale_modulus_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.fixed_scale_modulus_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.h5ProjectedAffineFixedPoint_isFixedPt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.halfspace_projection' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.hilbert_convex_projected_affine_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.hilbert_subspace_projected_affine_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.identical_public_laws_tie' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.inverse_projective_square' does not depend on any axioms\n'QICNLean.likelihood_decision_attains' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.likelihood_decision_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.mathlib_metric_smoke' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.mem_iff_mkQ_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.neutral_code_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.neutral_code_iter_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.no_injective_fin_successor_code' depends on axioms: [propext, Quot.sound]\n'QICNLean.noncollapse_from_H5' does not depend on any axioms\n'QICNLean.noncollapse_from_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.noncollapse_of_positive_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.noncollapse_of_quotient_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.noncollapse_of_subspace_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.nonexpansive_after_contracting' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.paired_score_separates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.partial_regime_violates_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.private_signal_margin_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projectedAffineFixedPoint_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projectedAffineFixedPoint_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projectedAffineMap_contracting' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projected_affine_attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projected_contraction_exists_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projectiveTransport_leftInverse' depends on axioms: [Quot.sound]\n'QICNLean.projective_exact_lift' does not depend on any axioms\n'QICNLean.public_abstention_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.public_abstention_risk' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.quotientDriftAtCStar_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.quotientResidual_eq_zero_of_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.quotient_displacement_iff_cStar_moved' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.quotient_le_collapse_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.regime_a_implies_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.regime_a_implies_quotient_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.regimes_incompatible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.risk_contamination_scaled' depends on axioms: [propext, Quot.sound]\n'QICNLean.rotationContractionScalar_im_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.rotation_contraction_no_invariant_line' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_attractor_family_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_common_support_forward_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_fixedPoint_isFixedPt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_fixedPoint_selector_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_fixedPoint_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.stable_labels_agree_before_merge' does not depend on any axioms\n'QICNLean.submodule_eq_top_of_nonzero_and_I_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.subspace_starProjection_nonexpansive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.total_variation_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.total_variation_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.tower_lesion_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.tower_lesion_resolution_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.tower_noise_collision_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.tower_resolution_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.truncation_boundary_digit_defect' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.truncation_commutes_away_from_boundary' depends on axioms: [propext, Quot.sound]\n'QICNLean.two_factor_fibers_force_constant' does not depend on any axioms\n",
+  "active_new_module_receipts": [
+    {
+      "kind": "incremental",
+      "source": "QICNBoundaryObstruction.lean",
+      "sha256": "96fe3307bced254f9a2abad1f7ced7c0939b4668f0864e0c2f075516717e3cfa",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNBoundaryObstruction-1794779335770976800.json",
+      "olean_sha256": "393d546c039b586804ca572f053ee72a1ecd553e83fdf8eb2defc543b77b6dfd"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNBoundaryRadialDerivative.lean",
+      "sha256": "78aac50649c5c8de1f6dd91a8117edc8e796887d2ab3a89fbb8765f65d93656c",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNBoundaryRadialDerivative-1794777810500716200.json",
+      "olean_sha256": "7d433e4e61c7947bf103192a1b64893bb3c4b7147d7b54f7cbb0397297ba6fdd"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNCompactInverseLimit.lean",
+      "sha256": "d9f46a8d3336d573c3e18cde8d21d5e732df8948ec935379c8c4cc2343231ee1",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNCompactInverseLimit-1794773833922884000.json",
+      "olean_sha256": "7d6aa01e01189eed8f0c122f580f2caaa5084399f1837da0b0aae2a6ee2389b1"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNComplexBanachWitness.lean",
+      "sha256": "89889a79b4cc412d188b5b9248931bbb9c88e3218f0e2c23aeb0ffacd50e0b75",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNComplexBanachWitness-1794791622838938400.json",
+      "olean_sha256": "79639e1587bde65e1186088747a75fbe149bb71822045b9acd6f551289a70972"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNComplexificationMaps.lean",
+      "sha256": "8d28ab89db27a8c572683e7c2805647ac5f35f52a4203c2b56f29b9a00b184f1",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNComplexificationMaps-1794792060924566700.json",
+      "olean_sha256": "1bc09bd7e9f5d03d89212bd0093716f0e414e52e4affb16782f5486da85cee27"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNComplexifiedDerivatives.lean",
+      "sha256": "74b8a66be237b0ceacd5e525f5c46e95dad664f885af2f3dd45fdf4170078aae",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNComplexifiedDerivatives-1794792317045072000.json",
+      "olean_sha256": "1aaffe9ff0ee2503ed061362a0bccbcd55867966a87c3110b5b9ce9e08579834"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNComplexProjectionSpectrum.lean",
+      "sha256": "15c5f73774e16dc3bf9fbef879d07ddbb343083330233ff1af91e595d8e018d1",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNComplexProjectionSpectrum-1794791964872678000.json",
+      "olean_sha256": "76c0407670c802f9390a23f0103de997193eccbc0acf2d9f3682d98f6857e0b2"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNFrechetRadialDisk.lean",
+      "sha256": "b4161cd57a2abc578b0440a769bfb6778567c599b6cbab53be6a3e66fd682664",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNFrechetRadialDisk-1794775671944941100.json",
+      "olean_sha256": "e6166cf9b2d84a4fe27af7608ff292343f26c2be5ca0a950fde9c5ec7dbaba9f"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNL2PositiveWitness.lean",
+      "sha256": "bfa8a8f85ca6ab20eb60dc8b9a51e1362b49d61cd9b71d8018328fe847bd2a0f",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNL2PositiveWitness-1794773654107427600.json",
+      "olean_sha256": "bde99e5e09edccb68d5c6e302c52d8f3dcd92ad15d83baac9ba93775d4c64fd1"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNL2SineBall.lean",
+      "sha256": "7d792ed798ab8f27833c59f101938667b40f9d21768cfc8f1047e58c759691cd",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNL2SineBall-1794774319109846600.json",
+      "olean_sha256": "77061f4ca2ee1b42043aae6d550b084360c317ee8a7b1016e99120a28b53c447"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNProjectionSpectrum.lean",
+      "sha256": "6db6358a34bf4874ed3f594085ed68c89bdc62e64ff33d08b376e203f13ca959",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNProjectionSpectrum-1794779092468635400.json",
+      "olean_sha256": "2bdab4bbe6d4e7f9f163146d79b24cb407e3dd31d1aba3d061eb73161b3326b0"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNRegularEquilibriumDerivatives.lean",
+      "sha256": "e53e9b499abf64be5bd8de4c9aa34e7560b05da029e185d6518527021507d0b8",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNRegularEquilibriumDerivatives-1794777878049477900.json",
+      "olean_sha256": "fd1d6fa7d9ab88a5669750cc92806697c213d5fd3b32e0792f08e9bb05a22c58"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNTypedBanachWitness.lean",
+      "sha256": "8f4b9ec4caa64ea89292b1bb3f8a59dd08cc1737d487c81a2b0d36dea9f4f53b",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNTypedBanachWitness-1794774914123058600.json",
+      "olean_sha256": "b0c1229f7b416424fcca9b2d943ff0e2cc2b53e0b425cf02ff245a0479adb546"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNWeightedSupCompleteness.lean",
+      "sha256": "dcbbcfd24244098c4631df9eb06dc3eca10048ed787d6fd13f86743da0fdde20",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNWeightedSupCompleteness-1794777748713034400.json",
+      "olean_sha256": "42e8b5c4f7bcf899179f14ec6d70a1ef63720fcce696998c7d4cb489b874e836"
+    },
+    {
+      "kind": "incremental",
+      "source": "QICNWeightedSupMetric.lean",
+      "sha256": "4365fbd37dc86ad43d6a159d37135b7d9bc1b30c8242a8dc94d635916b7fa336",
+      "receipt": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion-infinita\\logs\\dev-QICNWeightedSupMetric-1794775010103125900.json",
+      "olean_sha256": "f73a61a5c04290379a5f30ebfaf57e8dc00e6bf3952956fcaf3d98205ce8432b"
+    }
+  ],
+  "active_new_axioms": {
+    "QICNLean.L2PositiveWitness.affine_memLp": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.affine_ae": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.inner_affine": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.gap_pos": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.gap_sq": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.distance_to_constant_sq": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.positive_separation": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.optimal_constant": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.nonconstant": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.affine_add": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.affine_smul": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.norm_one": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.mean_is_integral": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.mean_operator_norm": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.mean_operator_formula": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.affine_in_box": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.box_nonempty": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.box_closed": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.box_convex": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.projection_eq_self": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.affine_equilibrium_equation": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.equilibrium_in_box": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.equilibrium_fixed": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.transition_unique": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.constants_embedding_eq": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.constants_closed": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.equilibrium_distance": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.forcing_uniformContinuous": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.h5_positive_family": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2PositiveWitness.positive_family_certificate": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.sine_memLp": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.sine_ae": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.integral_sine_zero": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.integral_sine_square": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.orthogonal_constants": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.sine_norm_sq": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.sine_norm_pos": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.norm_distance_constant": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.witness_set_disjoint_constants": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.witness_inter_constants_empty": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.witness_set_eq_translate": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.witness_nonempty": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.witness_closed": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.witness_convex": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.ballK_norm_le": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.ball_forcing_uniformContinuous": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.ball_h5": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.L2SineBall.separate_h5_witness": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.CompactInverseLimit.finite_prefix_extension": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.CompactInverseLimit.prefix_nonempty": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.CompactInverseLimit.prefix_closed": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.CompactInverseLimit.prefix_antitone": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.CompactInverseLimit.inverse_limit_nonempty_without_surjectivity": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.CompactInverseLimit.canonical_projection_surjective": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.WeightedSupMetric.coordinate_le_rho": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.WeightedSupMetric.edist_eq_rho": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.WeightedSupMetric.sector_closed": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.WeightedSupMetric.sector_pair_finite": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.WeightedSupMetric.finite_distance_equivalence": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.WeightedSupMetric.sector_dist_eq_sup": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.norm_e1": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.norm_constant": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.j_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.j_norm": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.average_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.average_j": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.average_norm_le": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.transition_formula": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.j_norm_le": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.radial_axis": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.equilibrium_fixed": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.transition_norm_bound": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.transition_lipschitz": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.transition_contracting": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.unique_equilibrium": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.TypedBanachWitness.global_geometric_bound": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.FrechetRadialDisk.norm_hasFDerivAt": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.FrechetRadialDisk.normalized_hasFDerivAt": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.FrechetRadialDisk.radial_interior_derivative": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.FrechetRadialDisk.radial_exterior_derivative": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.FrechetRadialDisk.affine_input_derivative": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.FrechetRadialDisk.transition_interior_derivative": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.FrechetRadialDisk.transition_exterior_derivative": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ProjectionSpectrum.idempotent_unit_eq_one": "depends on axioms: [propext]",
+    "QICNLean.ProjectionSpectrum.complement_idempotent": "depends on axioms: [propext]",
+    "QICNLean.ProjectionSpectrum.idempotent_spectrum": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ProjectionSpectrum.scaled_idempotent_spectrum": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ProjectionSpectrum.scaled_idempotent_radius": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.RegularEquilibriumDerivatives.norm_e2": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.RegularEquilibriumDerivatives.perpendicular_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.RegularEquilibriumDerivatives.perpendicular_eq_sub": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.RegularEquilibriumDerivatives.perpendicular_norm": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.RegularEquilibriumDerivatives.normalized_axis_derivative": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.RegularEquilibriumDerivatives.affine_equilibrium_interior": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.RegularEquilibriumDerivatives.affine_equilibrium_exterior": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.RegularEquilibriumDerivatives.equilibrium_interior_derivative": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.RegularEquilibriumDerivatives.equilibrium_exterior_derivative": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.BoundaryRadialDerivative.radial_eq_max": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.BoundaryRadialDerivative.max_increment": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.BoundaryRadialDerivative.radial_difference_quotient": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.BoundaryRadialDerivative.norm_axis_ray_derivative": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.BoundaryRadialDerivative.radial_boundary_direction": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.BoundaryRadialDerivative.transition_boundary_ray": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.BoundaryRadialDerivative.transition_boundary_direction": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.WeightedSupCompleteness.coordinate_lipschitz": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.WeightedSupCompleteness.coordinate_cauchy": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.WeightedSupCompleteness.carrier_complete": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.WeightedSupCompleteness.sector_complete": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.WeightedSupCompleteness.sup_tendsto_of_coordinates_and_tail": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.BoundaryObstruction.corner_fixed": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.BoundaryObstruction.derivative_must_match_direction": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.BoundaryObstruction.corner_no_frechet_derivative": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.BoundaryObstruction.differentiable_iff_regular": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.norm_e1": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.norm_e2": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.norm_constant": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.j_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.j_norm": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.average_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.average_j": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.mean_projection_idempotent": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.perpendicular_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.perpendicular_idempotent": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexBanachWitness.transverse_projection_idempotent": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.j_norm_le": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.average_norm_le": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.perpendicular_norm": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.mean_projection_norm_le": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.transverse_projection_norm_le": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.mean_projection_ne_zero": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.mean_projection_ne_one": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.transverse_e1": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.transverse_e2": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.mean_projection_norm": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.transverse_projection_norm": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.mean_scaled_norm": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.transverse_scaled_norm": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.transverse_projection_ne_zero": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.transverse_projection_ne_one": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.mean_scaled_spectrum": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.transverse_scaled_spectrum": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.mean_scaled_radius": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexProjectionSpectrum.transverse_scaled_radius": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.vector_inclusion_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.vector_real_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.vector_imag_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.inclusion_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.real_part_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.imag_part_apply": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.real_inclusion": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.imag_inclusion": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.inclusion_injective": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexificationMaps.complex_decomposition": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexifiedDerivatives.average_inclusion": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexifiedDerivatives.inclusion_constant": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexifiedDerivatives.perpendicular_inclusion": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexifiedDerivatives.mean_projection_extension": "depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "QICNLean.ComplexifiedDerivatives.transverse_projection_extension": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+  },
+  "active_new_public_theorems": 158,
+  "pending": [
+    {
+      "source": "rigid-identity-framework\\lean\\pending\\Etapa3B-Cont\\QICNLean\\QICNRealDerivativeNorms.lean",
+      "sha256": "b1153fe6e69c35fcf78573c82e9f91b8d58851801f2b2e9ec55ba929d8830f60",
+      "reason": "Etapa 3B-Cont; current source lacks successful compilation receipt"
+    },
+    {
+      "source": "rigid-identity-framework\\lean\\pending\\Etapa3B-Cont\\QICNLean\\QICNTypedSpectrum.lean",
+      "sha256": "daa711f14e7c7b161849b7f9aed2878d13a0f842f0a5e785375fcef8dc711a35",
+      "reason": "Etapa 3B-Cont; current source lacks successful compilation receipt"
+    },
+    {
+      "source": "rigid-identity-framework\\lean\\pending\\Etapa3B-Cont\\QICNLean\\QICNTypedRelaxation.lean",
+      "sha256": "6738d2bd06b54d9f3e6feb8073fe2fab116b29f728105f8f0c60214dd6783329",
+      "reason": "Etapa 3B-Cont; current source lacks successful compilation receipt"
+    },
+    {
+      "source": "rigid-identity-framework\\lean\\pending\\Etapa3B-Cont\\QICNLean\\QICNGoldenMeanRestriction.lean",
+      "sha256": "3ac31bd7f3800108eb6efaff833a9d43aaf4827a9199e9c2f5d6cadf44afc911",
+      "reason": "Etapa 3B-Cont; current source lacks successful compilation receipt"
+    },
+    {
+      "source": "rigid-identity-framework\\lean\\pending\\Etapa3B-Cont\\QICNLean\\QICNStateSpectralBounds.lean",
+      "sha256": "3afc0a861f0d316e2c32a477492a079b9953a26a0ba35967bf5508b05b096929",
+      "reason": "Etapa 3B-Cont; current source lacks successful compilation receipt"
+    },
+    {
+      "source": "rigid-identity-framework\\lean\\pending\\Etapa3B-Cont\\QICNLean\\QICNGoldenMeanDomain.lean",
+      "sha256": "546704ce445c2ac11c9c2e2e84c247d0436207e0045f95158d1bf26a8d5f7eae",
+      "reason": "Compiled current source; current #print axioms interrupted by resource limit"
+    },
+    {
+      "source": "rigid-identity-framework\\lean\\pending\\Etapa3B-Cont\\QICNLean\\QICNGoldenMeanBoundary.lean",
+      "sha256": "481ffbd5dc5004c1d8623ba5cbc2ed7bc5f2e1c7c2ceabb1f7b9dbbd897c1cb1",
+      "reason": "Compiled current source; current #print axioms interrupted by resource limit"
+    },
+    {
+      "source": "rigid-identity-framework\\lean\\pending\\Etapa3B-Cont\\QICNLean\\QICNGoldenMeanParameter.lean",
+      "sha256": "808c803fbcf13e9c477671da8750d8584868342a91cea48dd859f5efaba57ddb",
+      "reason": "Compiled current source; current #print axioms interrupted by resource limit"
+    }
+  ],
+  "fresh_attempt": {
+    "name": "lean",
+    "command": [
+      "python",
+      "scripts/verify-lean.py",
+      "--kernel-only",
+      "--packages-dir",
+      "E:/QICN-LEAN/v4.31.0-desktop/packages"
+    ],
+    "cwd": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion\\checkpoint-work\\rigid-identity-framework",
+    "initial_memory": {
+      "physical": 3901882368,
+      "page": 1653850112
+    },
+    "pid": 16412,
+    "exit": 1,
+    "seconds": 11.41,
+    "output": "version: PASS\nbuiltin-library: PASS\npin-mathlib: PASS\npin-plausible: PASS\npin-LeanSearchClient: PASS\npin-importGraph: PASS\npin-proofwidgets: PASS\npin-aesop: PASS\npin-Qq: PASS\npin-batteries: PASS\npin-Cli: PASS\n",
+    "log": "E:\\QICN-PRESERVACION\\2026-11-15-etapa3b-mecanizacion\\logs\\checkpoint-lean.log",
+    "log_sha256": "4f016bb58b141385553a0f25d3a366a58fc96425fb445008ec444320e28e414e",
+    "stop_reason": "RESOURCE_LIMIT_BELOW_500_MB"
+  },
+  "external_support_certified": false
+}

@@ -18,6 +18,22 @@ STATES = {'EXACT_MATCH', 'FINITE_OR_PARTIAL_KERNEL', 'PENDING_MATHLIB',
           'EMPIRICAL_OR_PROTOCOL_BOUNDED'}
 
 
+def theorem_namespace(code):
+    """Permit nested type aliases only; never misattribute nested proofs."""
+    names=re.findall(r'^namespace\s+([\w.]+)',code,re.M)
+    assert names, 'Missing namespace'
+    for name in names[1:]:
+        if name==names[0]:continue
+        pattern=r'^namespace\s+'+re.escape(name)+r'\s*\n(.*?)^end\s+'+re.escape(name)+r'\s*$'
+        block=re.search(pattern,code,re.M|re.S)
+        assert block is not None, name
+        lines=[line.strip() for line in block.group(1).splitlines() if line.strip()]
+        assert lines and all(re.fullmatch(r'abbrev\s+\w+\s*:=\s*[^\n]+',line) for line in lines), name
+        code=code[:block.start()]+code[block.end():]
+    assert set(re.findall(r'^namespace\s+([\w.]+)',code,re.M))=={names[0]}
+    return names[0]
+
+
 def check():
     records = [json.loads(line) for line in REGISTRY.read_text(encoding='utf8').splitlines()]
     targets = {r['id']: r for r in records if r['type'] in TYPES}
@@ -38,11 +54,10 @@ def check():
         # the admission/axiom checker; verify-lean.py implements that contract.
         code = re.sub(r'/\-.*?\-/', '', code, flags=re.S)
         code = re.sub(r'--[^\n]*', '', code)
-        ns = set(re.findall(r'^namespace\s+([\w.]+)', code, re.M))
-        assert len(ns) == 1, file
+        ns = theorem_namespace(code)
         for name in re.findall(r'^(?:(?:@\[[^\]]*\]|protected|noncomputable)\s+)*'
                                r'(?:theorem|lemma)\s+([^\s(:{]+)', code, re.M):
-            declarations[next(iter(ns)) + '.' + name] = 'QICNLean.' + file.stem
+            declarations[ns + '.' + name] = 'QICNLean.' + file.stem
     for row in rows:
         source = targets[row['registry_id']]
         assert row['classification'] in STATES

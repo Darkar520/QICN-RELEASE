@@ -1,0 +1,44 @@
+{
+  "verified_commit": "5769ecf418a2bb92f1c338bc8b11c7fa09405b65",
+  "references": {
+    "main": {
+      "command": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "stdout": "5769ecf418a2bb92f1c338bc8b11c7fa09405b65\n",
+      "stderr": "",
+      "exit": 0
+    },
+    "origin/main": {
+      "command": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/main"
+      ],
+      "stdout": "5769ecf418a2bb92f1c338bc8b11c7fa09405b65\trefs/heads/main\n",
+      "stderr": "",
+      "exit": 0
+    },
+    "gitlab/main": {
+      "command": [
+        "git",
+        "ls-remote",
+        "gitlab",
+        "refs/heads/main"
+      ],
+      "stdout": "5769ecf418a2bb92f1c338bc8b11c7fa09405b65\trefs/heads/main\n",
+      "stderr": "",
+      "exit": 0
+    }
+  },
+  "push_executed_in_this_phase": false,
+  "external_support_certified": false,
+  "local_tracking_refs": {
+    "main": "5769ecf418a2bb92f1c338bc8b11c7fa09405b65",
+    "origin/main": "5769ecf418a2bb92f1c338bc8b11c7fa09405b65",
+    "gitlab/main": "5769ecf418a2bb92f1c338bc8b11c7fa09405b65"
+  }
+}

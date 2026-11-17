@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "controls": [
+    {
+      "script": "verify-lean.py",
+      "case": "one",
+      "expected_acceptance": true,
+      "accepted": true
+    },
+    {
+      "script": "verify-lean.py",
+      "case": "reopen",
+      "expected_acceptance": true,
+      "accepted": true
+    },
+    {
+      "script": "verify-lean.py",
+      "case": "aliases",
+      "expected_acceptance": true,
+      "accepted": true
+    },
+    {
+      "script": "verify-lean.py",
+      "case": "theorem",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "script": "verify-lean.py",
+      "case": "lemma",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "script": "verify-lean.py",
+      "case": "def",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "script": "verify-lean.py",
+      "case": "axiom",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "script": "verify-lean.py",
+      "case": "namespace",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "script": "verify-lean-coverage.py",
+      "case": "one",
+      "expected_acceptance": true,
+      "accepted": true
+    },
+    {
+      "script": "verify-lean-coverage.py",
+      "case": "reopen",
+      "expected_acceptance": true,
+      "accepted": true
+    },
+    {
+      "script": "verify-lean-coverage.py",
+      "case": "aliases",
+      "expected_acceptance": true,
+      "accepted": true
+    },
+    {
+      "script": "verify-lean-coverage.py",
+      "case": "theorem",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "script": "verify-lean-coverage.py",
+      "case": "lemma",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "script": "verify-lean-coverage.py",
+      "case": "def",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "script": "verify-lean-coverage.py",
+      "case": "axiom",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "script": "verify-lean-coverage.py",
+      "case": "namespace",
+      "expected_acceptance": false,
+      "accepted": false
+    }
+  ],
+  "external_support_certified": false
+}

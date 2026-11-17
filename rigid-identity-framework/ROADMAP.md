@@ -2367,3 +2367,39 @@ realización positiva H5, contratos completos de IX y probabilidad general
 con sharpness en X. Etapas 4–5: calibración, comparación y revisión externa.
 Ningún problema abierto cambia de estado por compilar. Veredictos crudos
 sin promoción; `external_support_certified=false`.
+
+
+## Etapa 3B — mecanización infinita · apertura 2026-11-15
+
+Main publicado en 5769ecf verificado; rama codex/etapa3b-lean sin push.
+El [prerregistro](docs/ai-platform-outputs/repair-plans/ETAPA3B_MECANIZACION_INFINITA_QICNLEAN_2026-11-15/PRERREGISTRO.md)
+congela el orden: L2/H5, Banach/espectro/relajación/energía-fase; SUP,
+sectores, completitud/producto/Polish/FIP; cuártico completo; probabilidad
+medible y optimalidad. Se conservan 40 Lean, 436 IDs y todas las fuentes.
+No se intercambian dominios ni se reclasifica por casos finitos. En ejecución;
+aceptación sólo tras prueba fresca y recibos. external_support_certified=false.
+
+## Checkpoint mínimo de Etapa 3B y fase científica separada · 2026-11-17
+
+Por solicitud nueva: cerrar un checkpoint en codex/etapa3b-lean, sin push,
+con control anti-OOM y deuda explícita de Etapa 3B-Cont. Se preservan 57 módulos
+activos con recibos y cinco fuentes reorganizadas pendientes fuera del agregado.
+La cobertura mantiene 436 targets y las clasificaciones previas; no hay cierre
+completo de SUP/Polish, energía-fase, cuártico ni probabilidad general.
+La aceptación del checkpoint requiere los recibos de las puertas aisladas y
+commit local limpio; no se presupone por esta entrada. Después: rama nueva
+codex/fase-cientifica-atomic-puente desde main 5769ecf, con prerregistro previo,
+separador atómico, contraste acoplado ampliado y prerrequisitos puente, sin
+escrituras en QICN-SYSTEM ni publicación. external_support_certified=false.
+
+Resultado acotado de Fase A: 54 módulos activos más agregado, con recibos por
+hash para 506 declaraciones; ocho fuentes preservadas en Etapa3B-Cont. La
+cobertura no cambia (14/56/350/16 sobre 436). Pasaron las 13 puertas no Lean,
+incluidas 34 suites y release 6/6. El replay Lean completo se interrumpió por
+el guard de recursos y NO tiene PASS. Esta deuda se admite sólo para el
+checkpoint local de preservación solicitado; impide anunciar cierre de 3B.
+Los tres Golden Mean tienen compilaciones exitosas, pero su auditoría actual
+está pendiente; los otros cinco pendientes requieren volver a compilar.
+Ver CHECKPOINT_VERIFICACION, LEAN_REPRODUCTION y CHECKPOINT_ACTIVE_MANIFEST en
+el dossier 3B. La Fase B científica parte de main, sin estas fuentes experimentales.
+external_support_certified=false.

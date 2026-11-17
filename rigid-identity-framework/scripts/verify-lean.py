@@ -65,6 +65,23 @@ def without_comments(text):
         output.append(text[i]);i+=1
     return ''.join(output)
 
+def theorem_namespace(code):
+    """Permit nested type aliases only; never misattribute nested proofs."""
+    names=re.findall(r'^namespace\s+([\w.]+)',code,re.M)
+    if not names:raise ValueError('Missing namespace')
+    for name in names[1:]:
+        if name==names[0]:continue
+        pattern=r'^namespace\s+'+re.escape(name)+r'\s*\n(.*?)^end\s+'+re.escape(name)+r'\s*$'
+        block=re.search(pattern,code,re.M|re.S)
+        if block is None:raise ValueError('Unresolved secondary namespace: '+name)
+        lines=[line.strip() for line in block.group(1).splitlines() if line.strip()]
+        if not lines or not all(re.fullmatch(r'abbrev\s+\w+\s*:=\s*[^\n]+',line) for line in lines):
+            raise ValueError('Secondary namespace contains more than type aliases: '+name)
+        code=code[:block.start()]+code[block.end():]
+    if set(re.findall(r'^namespace\s+([\w.]+)',code,re.M))!={names[0]}:
+        raise ValueError('Ambiguous theorem namespace')
+    return names[0]
+
 save()
 sources=sorted((PROJECT/'QICNLean').glob('*.lean'))
 symbols=[];modules=[]
@@ -72,9 +89,7 @@ for source in sources:
     code=without_comments(source.read_text(encoding='utf-8-sig'))
     if re.search(r'\b(sorry|admit)\b|^\s*axiom\s',code,re.M):
         raise SystemExit('Unproved admission or added axiom in '+str(source))
-    spaces=set(re.findall(r'^namespace\s+([\w.]+)',code,re.M))
-    if len(spaces)!=1:raise SystemExit('Review namespace mapping in '+str(source))
-    namespace=next(iter(spaces))
+    namespace=theorem_namespace(code)
     declarations=re.findall(r'^(?:(?:@\[[^\]]*\]|protected|noncomputable)\s+)*(?:theorem|lemma)\s+([^\s(:{]+)',code,re.M)
     symbols.extend(namespace+'.'+name for name in declarations)
     modules.append({'source':source.relative_to(PROJECT).as_posix(),'sha256':hashlib.sha256(source.read_bytes()).hexdigest()})

@@ -103,8 +103,10 @@ Etapa 3A adds these five modules, with one namespace per source:
 | [QICNFourRootContrast](QICNLean/QICNFourRootContrast.lean) | All functions of proper subsets on the four-bit cube and arbitrary finite sums; exact 4*xi4 optimum and absolute-loss lower bound | Full source theorem remains partial: arbitrary random measures/past, raw-reading, plant and cost semantics need their own proof |
 | [QICNFiniteAdjudication](QICNLean/QICNFiniteAdjudication.lean) | Actual finite joint laws, separate clean/coupling nulls, fixed coverage floors and selective-leak/abstention controls | Not arbitrary probability spaces or sharp witnesses for every real coverage/leak budget |
 
-For weighted histories, SUP finiteness iff criteria, sector completeness,
-metric axioms and product-topology equivalence are still mechanization debt.
+For weighted histories, the full SUP finiteness iff criterion and
+product-topology equivalence remain mechanization debt. The Etapa 3B checkpoint
+adds metric axioms and completeness of finite-distance sectors; these components
+do not close the entire weighted-history or compact-Polish source theorem.
 The capped SUM is explicitly auxiliary. The channel theorem assumes the source
 metric/topology contract; it does not prove that contract by invoking it.
 The law-limit theorem's metrizability, clopen point basis, convexity and path
@@ -130,3 +132,27 @@ Manuscripts, registry IDs, frozen release/corpus/artifacts and legacy sources
 were excluded from this relocation. Interpretations, novelty, full BPF class
 membership, identification of `(e_i, phi_i)`, calibration and human review are
 not kernel conclusions. `external_support_certified=false` remains in force.
+
+## Etapa 3B checkpoint and continuation
+
+The checkpoint contains 54 active modules plus the aggregate. Its new components
+cover the genuine L2 positive H5 witness, the sine-ball exclusion, compact
+inverse-limit existence without surjectivity, weighted SUP sectors, the real
+Banach transition and regular derivatives, the boundary obstruction, concrete
+complex projections. The Golden Mean stream encoding `010010...` as `1/2` has
+compiled receipts and is preserved in the continuation area, awaiting completion
+of its current-source axiom audit.
+Their complete source-target equivalence is not inferred from compilation.
+
+Five reorganized modules without a successful receipt for their current source,
+and three compiled Golden Mean modules with an interrupted axiom audit,
+are preserved under [pending/Etapa3B-Cont](pending/Etapa3B-Cont/README.md).
+All eight are excluded from both the aggregate and the active source directory.
+Full spectral/relaxation assembly and the energy-phase, SUP/Polish, quartic and
+general-probability contracts remain continuation obligations. The coverage
+matrix keeps its classifications until a complete source comparison justifies
+an explicit change.
+
+Checkpoint receipts and the anti-OOM interruption are retained under
+`E:/QICN-PRESERVACION/2026-11-15-etapa3b-mecanizacion/`. This is a local checkpoint;
+it does not publish or merge into `main` and does not certify external support.

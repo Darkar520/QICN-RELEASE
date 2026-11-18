@@ -1,0 +1,1089 @@
+{
+  "passed": true,
+  "external_support_certified": false,
+  "steps": [
+    {
+      "name": "version",
+      "command": [
+        "lean",
+        "--version"
+      ],
+      "exit": 0,
+      "seconds": 3.14
+    },
+    {
+      "name": "builtin-library",
+      "command": [
+        "lean",
+        "--print-libdir"
+      ],
+      "exit": 0,
+      "seconds": 0.22
+    },
+    {
+      "name": "pin-mathlib",
+      "command": [
+        "git",
+        "-C",
+        "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "name": "pin-plausible",
+      "command": [
+        "git",
+        "-C",
+        "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\plausible",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "name": "pin-LeanSearchClient",
+      "command": [
+        "git",
+        "-C",
+        "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\LeanSearchClient",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "name": "pin-importGraph",
+      "command": [
+        "git",
+        "-C",
+        "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\importGraph",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "name": "pin-proofwidgets",
+      "command": [
+        "git",
+        "-C",
+        "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\proofwidgets",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "name": "pin-aesop",
+      "command": [
+        "git",
+        "-C",
+        "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\aesop",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.16
+    },
+    {
+      "name": "pin-Qq",
+      "command": [
+        "git",
+        "-C",
+        "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Qq",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "name": "pin-batteries",
+      "command": [
+        "git",
+        "-C",
+        "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\batteries",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.17
+    },
+    {
+      "name": "pin-Cli",
+      "command": [
+        "git",
+        "-C",
+        "E:\\QICN-LEAN\\v4.31.0-desktop\\packages\\Cli",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.19
+    },
+    {
+      "name": "kernel-QICNLean.Basic",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\Basic.olean",
+        "QICNLean\\Basic.lean"
+      ],
+      "exit": 0,
+      "seconds": 306.16
+    },
+    {
+      "name": "kernel-QICNLean.QICNContraction",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNContraction.olean",
+        "QICNLean\\QICNContraction.lean"
+      ],
+      "exit": 0,
+      "seconds": 87.31
+    },
+    {
+      "name": "kernel-QICNLean.QICNHilbertInstance",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNHilbertInstance.olean",
+        "QICNLean\\QICNHilbertInstance.lean"
+      ],
+      "exit": 0,
+      "seconds": 138.45
+    },
+    {
+      "name": "kernel-QICNLean.QICNConvexProjection",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNConvexProjection.olean",
+        "QICNLean\\QICNConvexProjection.lean"
+      ],
+      "exit": 0,
+      "seconds": 25.44
+    },
+    {
+      "name": "kernel-QICNLean.QICNAttractorCompact",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNAttractorCompact.olean",
+        "QICNLean\\QICNAttractorCompact.lean"
+      ],
+      "exit": 0,
+      "seconds": 20.69
+    },
+    {
+      "name": "kernel-QICNLean.QICNAttractorConcrete",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNAttractorConcrete.olean",
+        "QICNLean\\QICNAttractorConcrete.lean"
+      ],
+      "exit": 0,
+      "seconds": 18.2
+    },
+    {
+      "name": "kernel-QICNLean.QICNNonCollapse",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNNonCollapse.olean",
+        "QICNLean\\QICNNonCollapse.lean"
+      ],
+      "exit": 0,
+      "seconds": 17.8
+    },
+    {
+      "name": "kernel-QICNLean.QICNH5Derivation",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNH5Derivation.olean",
+        "QICNLean\\QICNH5Derivation.lean"
+      ],
+      "exit": 0,
+      "seconds": 21.58
+    },
+    {
+      "name": "kernel-QICNLean.QICNH5Convex",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNH5Convex.olean",
+        "QICNLean\\QICNH5Convex.lean"
+      ],
+      "exit": 0,
+      "seconds": 20.81
+    },
+    {
+      "name": "kernel-QICNLean.QICNH5ConvexExclusion",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNH5ConvexExclusion.olean",
+        "QICNLean\\QICNH5ConvexExclusion.lean"
+      ],
+      "exit": 0,
+      "seconds": 21.08
+    },
+    {
+      "name": "kernel-QICNLean.QICNH5QuotientDynamics",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNH5QuotientDynamics.olean",
+        "QICNLean\\QICNH5QuotientDynamics.lean"
+      ],
+      "exit": 0,
+      "seconds": 24.22
+    },
+    {
+      "name": "kernel-QICNLean.QICNH5QuotientDisplacement",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNH5QuotientDisplacement.olean",
+        "QICNLean\\QICNH5QuotientDisplacement.lean"
+      ],
+      "exit": 0,
+      "seconds": 36.2
+    },
+    {
+      "name": "kernel-QICNLean.QICNH5UnilateralBridge",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNH5UnilateralBridge.olean",
+        "QICNLean\\QICNH5UnilateralBridge.lean"
+      ],
+      "exit": 0,
+      "seconds": 20.91
+    },
+    {
+      "name": "kernel-QICNLean.QICNSInstance",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNSInstance.olean",
+        "QICNLean\\QICNSInstance.lean"
+      ],
+      "exit": 0,
+      "seconds": 20.5
+    },
+    {
+      "name": "kernel-QICNLean.QICNSCoupledInstance",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNSCoupledInstance.olean",
+        "QICNLean\\QICNSCoupledInstance.lean"
+      ],
+      "exit": 0,
+      "seconds": 21.86
+    },
+    {
+      "name": "kernel-QICNLean.QICNRotationSpectral",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNRotationSpectral.olean",
+        "QICNLean\\QICNRotationSpectral.lean"
+      ],
+      "exit": 0,
+      "seconds": 24.52
+    },
+    {
+      "name": "kernel-QICNLean.QICNCoupledSplitMargin",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNCoupledSplitMargin.olean",
+        "QICNLean\\QICNCoupledSplitMargin.lean"
+      ],
+      "exit": 0,
+      "seconds": 28.64
+    },
+    {
+      "name": "kernel-QICNLean.QICNCoupledSplitMarginUniversal",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNCoupledSplitMarginUniversal.olean",
+        "QICNLean\\QICNCoupledSplitMarginUniversal.lean"
+      ],
+      "exit": 0,
+      "seconds": 25.5
+    },
+    {
+      "name": "kernel-QICNLean.QICNProjectiveTransport",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNProjectiveTransport.olean",
+        "QICNLean\\QICNProjectiveTransport.lean"
+      ],
+      "exit": 0,
+      "seconds": 1.67
+    },
+    {
+      "name": "kernel-QICNLean.QICNObservationBudget",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNObservationBudget.olean",
+        "QICNLean\\QICNObservationBudget.lean"
+      ],
+      "exit": 0,
+      "seconds": 1.77
+    },
+    {
+      "name": "kernel-QICNLean.QICNFiniteP4",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNFiniteP4.olean",
+        "QICNLean\\QICNFiniteP4.lean"
+      ],
+      "exit": 0,
+      "seconds": 1.58
+    },
+    {
+      "name": "kernel-QICNLean.QICNMetricFronts",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNMetricFronts.olean",
+        "QICNLean\\QICNMetricFronts.lean"
+      ],
+      "exit": 0,
+      "seconds": 14.27
+    },
+    {
+      "name": "kernel-QICNLean.QICNFiniteFronts",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNFiniteFronts.olean",
+        "QICNLean\\QICNFiniteFronts.lean"
+      ],
+      "exit": 0,
+      "seconds": 19.8
+    },
+    {
+      "name": "kernel-QICNLean.QICNBodyWorldDynamics",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNBodyWorldDynamics.olean",
+        "QICNLean\\QICNBodyWorldDynamics.lean"
+      ],
+      "exit": 0,
+      "seconds": 29.31
+    },
+    {
+      "name": "kernel-QICNLean.QICNBodyWorldFinite",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNBodyWorldFinite.olean",
+        "QICNLean\\QICNBodyWorldFinite.lean"
+      ],
+      "exit": 0,
+      "seconds": 39.0
+    },
+    {
+      "name": "kernel-QICNLean.QICNBodyWorldEvaluation",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNBodyWorldEvaluation.olean",
+        "QICNLean\\QICNBodyWorldEvaluation.lean"
+      ],
+      "exit": 0,
+      "seconds": 28.98
+    },
+    {
+      "name": "kernel-QICNLean.QICNEpistemicAtomicity",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNEpistemicAtomicity.olean",
+        "QICNLean\\QICNEpistemicAtomicity.lean"
+      ],
+      "exit": 0,
+      "seconds": 17.45
+    },
+    {
+      "name": "kernel-QICNLean.QICNEpistemicWitness",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNEpistemicWitness.olean",
+        "QICNLean\\QICNEpistemicWitness.lean"
+      ],
+      "exit": 0,
+      "seconds": 21.73
+    },
+    {
+      "name": "kernel-QICNLean.QICNEpistemicInterface",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNEpistemicInterface.olean",
+        "QICNLean\\QICNEpistemicInterface.lean"
+      ],
+      "exit": 0,
+      "seconds": 26.55
+    },
+    {
+      "name": "kernel-QICNLean.QICNEpistemicWedgeStability",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNEpistemicWedgeStability.olean",
+        "QICNLean\\QICNEpistemicWedgeStability.lean"
+      ],
+      "exit": 0,
+      "seconds": 24.52
+    },
+    {
+      "name": "kernel-QICNLean.QICNEpistemicSubfp",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNEpistemicSubfp.olean",
+        "QICNLean\\QICNEpistemicSubfp.lean"
+      ],
+      "exit": 0,
+      "seconds": 20.03
+    },
+    {
+      "name": "kernel-QICNLean.QICNAnalyticProjection",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNAnalyticProjection.olean",
+        "QICNLean\\QICNAnalyticProjection.lean"
+      ],
+      "exit": 0,
+      "seconds": 16.39
+    },
+    {
+      "name": "kernel-QICNLean.QICNParametricContraction",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNParametricContraction.olean",
+        "QICNLean\\QICNParametricContraction.lean"
+      ],
+      "exit": 0,
+      "seconds": 18.22
+    },
+    {
+      "name": "kernel-QICNLean.QICNInverseLimitTopology",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNInverseLimitTopology.olean",
+        "QICNLean\\QICNInverseLimitTopology.lean"
+      ],
+      "exit": 0,
+      "seconds": 17.06
+    },
+    {
+      "name": "kernel-QICNLean.QICNBaseSufficiency",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNBaseSufficiency.olean",
+        "QICNLean\\QICNBaseSufficiency.lean"
+      ],
+      "exit": 0,
+      "seconds": 26.2
+    },
+    {
+      "name": "kernel-QICNLean.QICNWeightedChannels",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNWeightedChannels.olean",
+        "QICNLean\\QICNWeightedChannels.lean"
+      ],
+      "exit": 0,
+      "seconds": 19.45
+    },
+    {
+      "name": "kernel-QICNLean.QICNMooreFactorization",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNMooreFactorization.olean",
+        "QICNLean\\QICNMooreFactorization.lean"
+      ],
+      "exit": 0,
+      "seconds": 22.33
+    },
+    {
+      "name": "kernel-QICNLean.QICNFourRootContrast",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNFourRootContrast.olean",
+        "QICNLean\\QICNFourRootContrast.lean"
+      ],
+      "exit": 0,
+      "seconds": 20.8
+    },
+    {
+      "name": "kernel-QICNLean.QICNFiniteAdjudication",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean\\QICNFiniteAdjudication.olean",
+        "QICNLean\\QICNFiniteAdjudication.lean"
+      ],
+      "exit": 0,
+      "seconds": 21.39
+    },
+    {
+      "name": "kernel-QICNLean",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-DmaxSynthPendingDepth=3",
+        "-o",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\kernel-objects-altjp79h\\QICNLean.olean",
+        "QICNLean.lean"
+      ],
+      "exit": 0,
+      "seconds": 19.01
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lean",
+        "-j",
+        "1",
+        "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\cn3-work\\.cache\\qicn-lean\\AuditAxioms.lean"
+      ],
+      "exit": 0,
+      "seconds": 20.7
+    }
+  ],
+  "lean": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+  "mode": "kernel-only",
+  "modules": [
+    {
+      "source": "QICNLean/Basic.lean",
+      "sha256": "265e4023cec03dc33bd91c90e5f6072420e4eb0ecae2dffa8b66b01489db8acb",
+      "olean_sha256": "f13c1a9739720af34a4c00c0c337998c9f706dd708817f6af89104c4203371b1"
+    },
+    {
+      "source": "QICNLean/QICNAnalyticProjection.lean",
+      "sha256": "f694b21c59bf3737bf9b80b011220738dc75f1136205ef60e1b9f6e307a2eb49",
+      "olean_sha256": "b71e2675a936e404e1ecbd1cadc0a995f6d1e596dc96306a88fcdc9b15b1c96f"
+    },
+    {
+      "source": "QICNLean/QICNAttractorCompact.lean",
+      "sha256": "d97969baa1736963790e009f6368e4d81f34c3447e5c5d45ff97268e9b1d8347",
+      "olean_sha256": "54abd2b7fe1e99f608a45b499494b6b3ec62bf1ddafe9594cb79885be646b58d"
+    },
+    {
+      "source": "QICNLean/QICNAttractorConcrete.lean",
+      "sha256": "2b6e7419ad365e3633a91489c05b912dd7b8d36649d1db18915c91ac3d44011e",
+      "olean_sha256": "3b08cc1f2ab12d43f4f4bd377d9a369d8e7cf95ad4848830498e6a056c989a96"
+    },
+    {
+      "source": "QICNLean/QICNBaseSufficiency.lean",
+      "sha256": "40d8759cc87a8baac6ad43c2682435437f17d6dca28360a67cc265a30eb72a4c",
+      "olean_sha256": "210bfbc935778cae66cdcee25f7fd5af7c440a327b7fc1609b77b95d1762539c"
+    },
+    {
+      "source": "QICNLean/QICNBodyWorldDynamics.lean",
+      "sha256": "9d85f3aa62788c491d0357c25a15507fa3a029854ea3b7f2446e649709df68f9",
+      "olean_sha256": "3155968c186153c9f89945ade1d1f0d3fb7d2afeca5c24f19c899a394a6ac002"
+    },
+    {
+      "source": "QICNLean/QICNBodyWorldEvaluation.lean",
+      "sha256": "aca064433f09a94e8f2c269b4e3d0e7a80891232974964e6202529dcf16e55e3",
+      "olean_sha256": "d5262cfd75aad0589dbc9b534963c0c583cdc51397e58647b31b2f867a57ca86"
+    },
+    {
+      "source": "QICNLean/QICNBodyWorldFinite.lean",
+      "sha256": "92b167161f9f5834649ea8071deac7efc7644febb6984438969e01cde6c13c02",
+      "olean_sha256": "0b0444650ef8a86f829fca388f87a242d19ddd4b5bb8d788cc8784045584dc3f"
+    },
+    {
+      "source": "QICNLean/QICNContraction.lean",
+      "sha256": "ec5d490b26402faa7095ea42ef646700a4f67fc91af3330e7cb55a0839becbec",
+      "olean_sha256": "cfeca4eb362b8ce255b6f40a1514e17f550c0f949e756ac34ac0264fbd423ae4"
+    },
+    {
+      "source": "QICNLean/QICNConvexProjection.lean",
+      "sha256": "cef90e049c0ffdd6b2eaacdc8794eb4ce4740b11c489d2aff909229623dad052",
+      "olean_sha256": "1bad6a5b298ac06174c1b713fe774f2022b94b77bbcdc58484e38299cab5f673"
+    },
+    {
+      "source": "QICNLean/QICNCoupledSplitMargin.lean",
+      "sha256": "a693929e8911ccda76952a5d6766bc443a58ff50d8ae07924b7f54e1d4a9bdd8",
+      "olean_sha256": "1fd981856ab64ac69fd253580115b0b80dd4c7d027f9c7acf9b43fc7f38a4d65"
+    },
+    {
+      "source": "QICNLean/QICNCoupledSplitMarginUniversal.lean",
+      "sha256": "dc19e27f6ea203cf4b5b293dc3b6927f4e451976516ec7f8a213d56aaec6a3d9",
+      "olean_sha256": "4d169ed3ead605df37cf980de7e6aec1efe38e621ee6947c51e67cc9225f8055"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicAtomicity.lean",
+      "sha256": "ae2cd01283685cf877a8a5d670904ae28db604ece26a793cc07f166c25be5a80",
+      "olean_sha256": "42cc53be1ecf8657442de5bad9e2cedf3be286ea32f3a071fd7ac6b0ec0d299b"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicInterface.lean",
+      "sha256": "2582730eb2933232ff4960b5a0ead7a3a657b8171fc6ed3adaf129151582697e",
+      "olean_sha256": "638379035f3cb1d734cb61ce497e0a4cea28b9746758e26a09fa25e75f6509d8"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicSubfp.lean",
+      "sha256": "080baf4e27c02f4bb8a6dca1fcdaa56838edced0ca8b460e9bdc8a72e3caf50c",
+      "olean_sha256": "ccc724b7e66aa4879389fcfaa1a92f0751ad7b6e37371b9b98d72cf394fe43ce"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicWedgeStability.lean",
+      "sha256": "20157883187a7f40e9dc8c275e7584388f24c4129ef322fa911a5c6c1778714d",
+      "olean_sha256": "98eeb7f8cd381f96ef17a6f339febdddb9be5dc8e1b904bc778849fdbf5465e1"
+    },
+    {
+      "source": "QICNLean/QICNEpistemicWitness.lean",
+      "sha256": "e26d8fa9cff7abbc9ad203998e148052fbb64679a9aaabc63d3ec3f10e5e8dd7",
+      "olean_sha256": "f4e4fec702b7c8b7800911a2affbe345526cbe7549c2f356948bbce68459bd8a"
+    },
+    {
+      "source": "QICNLean/QICNFiniteAdjudication.lean",
+      "sha256": "f2fd8c1186be3c8802c0abf1c55cd691b71703deff4d83169a822bd67d7c765b",
+      "olean_sha256": "0494958c6c651b8eb94c6911b8dc7a89e85086ab50de9b76dba23eae02a2309b"
+    },
+    {
+      "source": "QICNLean/QICNFiniteFronts.lean",
+      "sha256": "752c0c32bd402f13eb23eb1726d39abb250912ce7d4d216608d2fd6f6008722e",
+      "olean_sha256": "722a0184c8cd2f636200af99e72550becdda6596b1798cc4fe3cb025a2e2d8e8"
+    },
+    {
+      "source": "QICNLean/QICNFiniteP4.lean",
+      "sha256": "a5028368b21eb31c654062cd12e905bf0ec67828a3218d4d89d86aa679fa1457",
+      "olean_sha256": "b1b3959cb304f806d2c53df17358de718f08c40d190838a3e2f961fdaf6f9c0e"
+    },
+    {
+      "source": "QICNLean/QICNFourRootContrast.lean",
+      "sha256": "18de19f04f39b802a6699a51377844748caf348ae8f242ea57d555a2f79ae0a3",
+      "olean_sha256": "367d1756269356527402597f52a38fbfa0078d9aa520f3baea5fcab503457a38"
+    },
+    {
+      "source": "QICNLean/QICNH5Convex.lean",
+      "sha256": "bd399b7532f22fb5f67e46ff914d54ec9f78f3283744118cd4fcfd30adfb1e3d",
+      "olean_sha256": "bb7c7feb0291c35ad23ded3483abede1324a86d68a0278e40884d6576e781b04"
+    },
+    {
+      "source": "QICNLean/QICNH5ConvexExclusion.lean",
+      "sha256": "73897ed07d2793708136fb3f1fb410e359c8b7772aebc7a32b170b281276033e",
+      "olean_sha256": "84e58d0720ed3851f3e8fb46b088a60ffe443a511867bf4607430b22cb2cd1a3"
+    },
+    {
+      "source": "QICNLean/QICNH5Derivation.lean",
+      "sha256": "b60d6b6d75d6a0959cd0d2a314b18e75d36071df6a0400a68806a0046ae6c847",
+      "olean_sha256": "6ae19a79454513355a820e55f9bf0d24df8647a989a769959789173b52613abe"
+    },
+    {
+      "source": "QICNLean/QICNH5QuotientDisplacement.lean",
+      "sha256": "0dc27605b05d69e9f9cce773e5b020643881917587388bdf0ed2f56859f6452f",
+      "olean_sha256": "a904726560c82ef4edc74761974a7340268345cb2366baa94d5410a56f061dc2"
+    },
+    {
+      "source": "QICNLean/QICNH5QuotientDynamics.lean",
+      "sha256": "50e82e66b27e11a7152a7499bc2a6632f844b1bf5d507710d4e695b74e14897f",
+      "olean_sha256": "4dfe02243764080ee275de07575f8710b9c9330780ed7144b17dfe19c465d241"
+    },
+    {
+      "source": "QICNLean/QICNH5UnilateralBridge.lean",
+      "sha256": "6e9518702d025ff6f528b530222139bc554aaaef04aa63b8513a8e23b46272db",
+      "olean_sha256": "4d865fd89bf4fd8a44cabc8d50728e19781c81f110fc34c53aa496b73c1222d0"
+    },
+    {
+      "source": "QICNLean/QICNHilbertInstance.lean",
+      "sha256": "e3f6d71d9e5b2b3a392a2e3d8d2313854475b69f40733015b48239726a8c6164",
+      "olean_sha256": "91a9f98f8b15052b293b8955b99a2e3e4535dc44695f3d6c26140c21b028ad7e"
+    },
+    {
+      "source": "QICNLean/QICNInverseLimitTopology.lean",
+      "sha256": "e88058c6b165c55928a4ded1134f791c42c28359cc59d7e80bd92ea2c819f493",
+      "olean_sha256": "5a209c1fa91292e45f32244d2753e667d21c7737e2fb3deed65a08e94f1048c5"
+    },
+    {
+      "source": "QICNLean/QICNMetricFronts.lean",
+      "sha256": "15fc7b6dc0a4ef42e5bff004ad48b612161c9927bd3523f0bd558b8ff32ebf37",
+      "olean_sha256": "ea1a7577940b3e1684bb4d8329564e47331dc719ab38b15cb0aa010b9ba5d22e"
+    },
+    {
+      "source": "QICNLean/QICNMooreFactorization.lean",
+      "sha256": "bf0be498dc7083f1e269977ac2156eaed648e5b442ccda1d5dfa262fbb94786c",
+      "olean_sha256": "ae6eee2f6e4157afd346d417311f10ca00c9efddb1cd1c98a2041966b2a7496e"
+    },
+    {
+      "source": "QICNLean/QICNNonCollapse.lean",
+      "sha256": "05dd49375f72fa7c3df8fc9ce850ed64126c8c0549bd412e3541e40f21cfd781",
+      "olean_sha256": "8d06b78d4f96a511aad518ed9c7663fcbfdfe56108f9f0ee2b4f11eb0a8334e4"
+    },
+    {
+      "source": "QICNLean/QICNObservationBudget.lean",
+      "sha256": "f547fc9e350cf8d73aaa76eb383c5660b4d73a36cba5b3eabf491a71d2ccea5b",
+      "olean_sha256": "6ccc3e3a3f487518e986a7ab1c65aeafbd4f050c282c1282ea5573f21a967bc8"
+    },
+    {
+      "source": "QICNLean/QICNParametricContraction.lean",
+      "sha256": "99e819302e949d8e24da3275c1019801ef61deffe6dd6b77af1f5ed711651050",
+      "olean_sha256": "f5c2cf4209c8e16bc113fc3454d047c5d808987ebadedfb74fff53bd129f4ac1"
+    },
+    {
+      "source": "QICNLean/QICNProjectiveTransport.lean",
+      "sha256": "db8ba27b670059da01759d445ed1453ce510c8cba2b9d574a9df9147b2fdf70e",
+      "olean_sha256": "ce478fbb0f5b2a8d8693fc119337843ef46fc6447efce486868aaa748a417ea5"
+    },
+    {
+      "source": "QICNLean/QICNRotationSpectral.lean",
+      "sha256": "5300efa09f00952ea33106108a4c3d01fe7f3ac1362ad6ab35a9d2466189eaec",
+      "olean_sha256": "4de9c265729880a5fdfb8654a7148206d3d92b36f171be478a2957ab461f7e31"
+    },
+    {
+      "source": "QICNLean/QICNSCoupledInstance.lean",
+      "sha256": "19cc301d09241987d3bcd08907727f9d8d3ffdfdd3ab7eb799bb385acc69b9e4",
+      "olean_sha256": "15024b9c67e6e8882fca002d53fa45679bfbc152a40eb73db48c5690f90b27e1"
+    },
+    {
+      "source": "QICNLean/QICNSInstance.lean",
+      "sha256": "9bb45dcfbe4f5a71bb3e8112d5b5ad958951aabd28e3c7bf2f80927c78ae67f0",
+      "olean_sha256": "f8f5b4cb0fd96c7aba3b9e93a6266132c1bff670ce024c7e08250b41d7b58ea1"
+    },
+    {
+      "source": "QICNLean/QICNWeightedChannels.lean",
+      "sha256": "3e6e06acdd9ab7f8136b9c51cefefdb384b6d4bc21a0eb5af45b8bb0016740ce",
+      "olean_sha256": "7d096528b0e75e8e787cddaf0ddc1054750fe7014d1df02d8ee8291ef7fd8435"
+    },
+    {
+      "source": "QICNLean.lean",
+      "sha256": "d463709dbc7329764c26b6d62ea2c721b6fefe56b517b551fc1ca350a4a5a4e1",
+      "olean_sha256": "eb3715785be04fb7b4d02bdb54e0daa98b4649b8d995e43ad172bf8a8be4a93e"
+    }
+  ],
+  "source_modules": 40,
+  "public_theorems_audited": 348,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "scope": "Kernel build of the declared project and public theorem dependency audit. Private lemmas are compiled and checked through their sources/dependents. This does not formalize every manuscript claim, certify novelty, or supply external empirical validation.",
+  "literal_step_outputs": {
+    "version": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)\n",
+    "builtin-library": "c:\\Users\\irisp\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\lib\\lean\n",
+    "pin-mathlib": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f\n",
+    "pin-plausible": "63045536fe95024e6c18fc7b48e03f506701c5bc\n",
+    "pin-LeanSearchClient": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843\n",
+    "pin-importGraph": "5c7542ed018c78194f1e2b903eaf6a792b74c03d\n",
+    "pin-proofwidgets": "24b0d9dc081c5423f8eec7e866c441e5184f29d9\n",
+    "pin-aesop": "e3cb2f741431ce31bf73549fb52316a57368b06f\n",
+    "pin-Qq": "f46324995fca5f0483b742e4eb4daec7f4ee50d2\n",
+    "pin-batteries": "fa08db58b30eb033edcdab331bba000827f9f785\n",
+    "pin-Cli": "92564e5770e4d09f2d86dfbf8ada1e9c715b384c\n",
+    "kernel-QICNLean.Basic": "QICNLean\\Basic.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNContraction": "QICNLean\\QICNContraction.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNHilbertInstance": "QICNLean\\QICNHilbertInstance.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNConvexProjection": "QICNLean\\QICNConvexProjection.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNAttractorCompact": "QICNLean\\QICNAttractorCompact.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNAttractorConcrete": "QICNLean\\QICNAttractorConcrete.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNNonCollapse": "QICNLean\\QICNNonCollapse.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNH5Derivation": "QICNLean\\QICNH5Derivation.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNH5Convex": "QICNLean\\QICNH5Convex.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNH5ConvexExclusion": "QICNLean\\QICNH5ConvexExclusion.lean:2:0: warning: * 'INTERNAL_ADVERSA':\nCopyright line should start with 'Copyright (c) YYYY'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5ConvexExclusion.lean:2:24: warning: * 'OT_EXTERNAL_VALIDATION':\nCopyright line should end with '. All rights reserved.'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5ConvexExclusion.lean:4:0: warning: * 'Layer: SPECULATIVE / NON_CANONICAL.  No NEW_CLAIM.  FULL_COP_MEMBERSHIP: NOT_YET.\n\nThis file is an internal red-team artifact.  It is NOT external validation, NOT\npeer review, and does NOT prove BaseCore H5, non-collapse, Iint, or C_op.  It\nadversarially tests geometric-exclusion candidates that might replace H5 in the\ngeneral convex projection case.  See the companion analysis\ndocs/ai-platform-outputs/analysis/QICN_H5_CONVEX_EXCLUSION_REDTEAM.md.':\nIf an authors line spans multiple lines, each line but the last must end with a trailing comma\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5ConvexExclusion.lean:4:0: warning: * 'Layer: SP':\nThe authors line should begin with 'Authors: '\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5ConvexExclusion.lean:4:35: warning: * '  ':\nDouble spaces are not allowed.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5ConvexExclusion.lean:7:12: warning: * ' and ':\nPlease, do not use 'and'; use ',' instead.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5ConvexExclusion.lean:4:34: warning: * '.':\nPlease, do not end the authors' line with a period.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5ConvexExclusion.lean:3:0: warning: * 'external_support_certified = false':\nSecond copyright line should be \"Released under Apache 2.0 license as described in the file LICENSE.\"\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNH5QuotientDynamics": "QICNLean\\QICNH5QuotientDynamics.lean:2:0: warning: * 'INTERNAL_ADVERSA':\nCopyright line should start with 'Copyright (c) YYYY'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDynamics.lean:2:24: warning: * 'OT_EXTERNAL_VALIDATION':\nCopyright line should end with '. All rights reserved.'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDynamics.lean:4:0: warning: * 'Layer: NON_CANONICAL.  No NEW_CLAIM.  FULL_COP_MEMBERSHIP: NOT_YET.\n\nThis file is an internal red-team artifact.  It is NOT external validation, NOT\npeer review, and does NOT prove BaseCore H5, non-collapse, Iint, or C_op.  It\nadversarially probes the QUOTIENT-DYNAMICS attack on the convex non-collapse\nproblem.  See the companion analysis\ndocs/ai-platform-outputs/analysis/QICN_H5_QUOTIENT_DYNAMICS_REDTEAM.md.':\nIf an authors line spans multiple lines, each line but the last must end with a trailing comma\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDynamics.lean:4:0: warning: * 'Layer: NO':\nThe authors line should begin with 'Authors: '\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDynamics.lean:4:21: warning: * '  ':\nDouble spaces are not allowed.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDynamics.lean:7:12: warning: * ' and ':\nPlease, do not use 'and'; use ',' instead.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDynamics.lean:4:20: warning: * '.':\nPlease, do not end the authors' line with a period.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDynamics.lean:3:0: warning: * 'external_support_certified = false':\nSecond copyright line should be \"Released under Apache 2.0 license as described in the file LICENSE.\"\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNH5QuotientDisplacement": "QICNLean\\QICNH5QuotientDisplacement.lean:2:0: warning: * 'INTERNAL_ADVERSA':\nCopyright line should start with 'Copyright (c) YYYY'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDisplacement.lean:2:24: warning: * 'OT_EXTERNAL_VALIDATION':\nCopyright line should end with '. All rights reserved.'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDisplacement.lean:4:0: warning: * 'Layer: NON_CANONICAL.  No NEW_CLAIM.  FULL_COP_MEMBERSHIP: NOT_YET.\n\nThis file is an internal red-team artifact.  It is NOT external validation, NOT\npeer review, and does NOT prove BaseCore H5, non-collapse, Iint, or C_op.  It\nadversarially probes the THREE follow-up tracks left open by\nQICNH5QuotientDynamics.lean:\n  Track 1 (headline) \u2014 a QUOTIENT-DISPLACEMENT condition unifying regimes (a)/(c);\n  Track 2 \u2014 the descent obstruction as an explicit \u211d\u00b2 counterexample;\n  Track 3 \u2014 a quantitative margin bounding the H-displacement from below.\nSee the companion analysis\ndocs/ai-platform-outputs/analysis/QICN_H5_QUOTIENT_DISPLACEMENT_REDTEAM.md.':\nIf an authors line spans multiple lines, each line but the last must end with a trailing comma\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDisplacement.lean:4:0: warning: * 'Layer: NO':\nThe authors line should begin with 'Authors: '\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDisplacement.lean:4:21: warning: * '  ':\nDouble spaces are not allowed.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDisplacement.lean:7:12: warning: * ' and ':\nPlease, do not use 'and'; use ',' instead.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDisplacement.lean:4:20: warning: * '.':\nPlease, do not end the authors' line with a period.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5QuotientDisplacement.lean:3:0: warning: * 'external_support_certified = false':\nSecond copyright line should be \"Released under Apache 2.0 license as described in the file LICENSE.\"\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNH5UnilateralBridge": "QICNLean\\QICNH5UnilateralBridge.lean:2:0: warning: * 'INTERNAL_ADVERSA':\nCopyright line should start with 'Copyright (c) YYYY'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5UnilateralBridge.lean:2:24: warning: * 'OT_EXTERNAL_VALIDATION':\nCopyright line should end with '. All rights reserved.'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5UnilateralBridge.lean:4:0: warning: * 'Layer: NON_CANONICAL.  No NEW_CLAIM.  FULL_COP_MEMBERSHIP: NOT_YET.\n\nThis file is an internal red-team artifact.  It is NOT external validation, NOT\npeer review, and does NOT prove BaseCore H5, non-collapse, Iint, or C_op.  It\nadversarially probes whether a NON-CIRCULAR hypothesis strictly WEAKER than\nbilateral admissibility `hAdm` can carry the convex non-collapse bridge while\nbeing COMPATIBLE with the strong static regime (a) `s \u2229 N = \u2205`.  See the\ncompanion analysis\ndocs/ai-platform-outputs/analysis/QICN_H5_UNILATERAL_BRIDGE_REDTEAM.md.':\nIf an authors line spans multiple lines, each line but the last must end with a trailing comma\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5UnilateralBridge.lean:4:0: warning: * 'Layer: NO':\nThe authors line should begin with 'Authors: '\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5UnilateralBridge.lean:4:21: warning: * '  ':\nDouble spaces are not allowed.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5UnilateralBridge.lean:7:12: warning: * ' and ':\nPlease, do not use 'and'; use ',' instead.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5UnilateralBridge.lean:4:20: warning: * '.':\nPlease, do not end the authors' line with a period.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNH5UnilateralBridge.lean:3:0: warning: * 'external_support_certified = false':\nSecond copyright line should be \"Released under Apache 2.0 license as described in the file LICENSE.\"\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNSInstance": "QICNLean\\QICNSInstance.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNSCoupledInstance": "QICNLean\\QICNSCoupledInstance.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNRotationSpectral": "QICNLean\\QICNRotationSpectral.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNCoupledSplitMargin": "QICNLean\\QICNCoupledSplitMargin.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNCoupledSplitMarginUniversal": "QICNLean\\QICNCoupledSplitMarginUniversal.lean:2:0: warning: * 'INTERNAL_ADVERSA':\nCopyright line should start with 'Copyright (c) YYYY'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNCoupledSplitMarginUniversal.lean:2:24: warning: * 'OT_EXTERNAL_VALIDATION':\nCopyright line should end with '. All rights reserved.'\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNCoupledSplitMarginUniversal.lean:4:0: warning: * 'Layer: SPECULATIVE / NON_CANONICAL.  No NEW_CLAIM.  FULL_COP_MEMBERSHIP: NOT_YET.\n\nThis file is an internal red-team artifact.  It is NOT external validation, NOT\npeer review, and does NOT certify Iint or Crit_op.  See the companion analysis\ndocs/ai-platform-outputs/analysis/QICN_IINT_GLOBAL_QUANTIFIER_REDTEAM.md.':\nIf an authors line spans multiple lines, each line but the last must end with a trailing comma\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNCoupledSplitMarginUniversal.lean:4:0: warning: * 'Layer: SP':\nThe authors line should begin with 'Authors: '\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNCoupledSplitMarginUniversal.lean:4:35: warning: * '  ':\nDouble spaces are not allowed.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNCoupledSplitMarginUniversal.lean:7:12: warning: * ' and ':\nPlease, do not use 'and'; use ',' instead.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNCoupledSplitMarginUniversal.lean:4:34: warning: * '.':\nPlease, do not end the authors' line with a period.\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNCoupledSplitMarginUniversal.lean:3:0: warning: * 'external_support_certified = false':\nSecond copyright line should be \"Released under Apache 2.0 license as described in the file LICENSE.\"\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNProjectiveTransport": "",
+    "kernel-QICNLean.QICNObservationBudget": "",
+    "kernel-QICNLean.QICNFiniteP4": "",
+    "kernel-QICNLean.QICNMetricFronts": "QICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `namespace QICNLean`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/-- The fixed positive scale is used only when this set is nonempty. -/\ndef separatedPairs {\u03b1 : Type*} [MetricSpace \u03b1] (r : \u211d) : Set (\u03b1 \u00d7 \u03b1) :=\n  {z | r \u2264 dist z.1 z.2}`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/--\nPaper I, thm:spectral-coupling. The modulus is an infimum over admissible pairs. -/\nnoncomputable def fixedScaleModulus {\u03b1 \u03b2 : Type*} [MetricSpace \u03b1] [MetricSpace \u03b2] (f : \u03b1 \u2192 \u03b2) (r : \u211d) : \u211d :=\n  sInf ((fun z : \u03b1 \u00d7 \u03b1 => dist (f z.1) (f z.2)) '' separatedPairs r)`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/--\nPaper I, thm:spectral-coupling: attainability and a strictly positive minimum. -/\ntheorem fixed_scale_minimum {\u03b1 \u03b2 : Type*} [MetricSpace \u03b1] [CompactSpace \u03b1] [MetricSpace \u03b2] {f : \u03b1 \u2192 \u03b2}\n    (continuous_f : Continuous f) (injective_f : Function.Injective f) {r : \u211d} (positive_r : 0 < r)\n    (nonempty_pairs : (separatedPairs (\u03b1 := \u03b1) r).Nonempty) :\n    \u2203 z \u2208 separatedPairs r,\n      0 < dist (f z.1) (f z.2) \u2227 \u2200 w \u2208 separatedPairs r, dist (f z.1) (f z.2) \u2264 dist (f w.1) (f w.2) :=\n  by\n  have compact_pairs : IsCompact (separatedPairs (\u03b1 := \u03b1) r) :=\n    (isClosed_le continuous_const (continuous_fst.dist continuous_snd)).isCompact\n  have continuous_distance : Continuous (fun z : \u03b1 \u00d7 \u03b1 => dist (f z.1) (f z.2)) :=\n    (continuous_f.comp continuous_fst).dist (continuous_f.comp continuous_snd)\n  obtain \u27e8z, member_z, minimum_z\u27e9 := compact_pairs.exists_isMinOn nonempty_pairs continuous_distance.continuousOn\n  have distinct_z : z.1 \u2260 z.2 := by\n    intro equal_z\n    have zero_distance : dist z.1 z.2 = 0 := dist_eq_zero.mpr equal_z\n    have bound : r \u2264 dist z.1 z.2 := member_z\n    linarith\n  exact \u27e8z, member_z, dist_pos.mpr (fun equal_images => distinct_z (injective_f equal_images)), minimum_z\u27e9`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/--\nPaper I, thm:spectral-coupling: the exact infimum is positive on its declared domain. -/\ntheorem fixed_scale_modulus_pos {\u03b1 \u03b2 : Type*} [MetricSpace \u03b1] [CompactSpace \u03b1] [MetricSpace \u03b2] {f : \u03b1 \u2192 \u03b2}\n    (continuous_f : Continuous f) (injective_f : Function.Injective f) {r : \u211d} (positive_r : 0 < r)\n    (nonempty_pairs : (separatedPairs (\u03b1 := \u03b1) r).Nonempty) : 0 < fixedScaleModulus f r :=\n  by\n  obtain \u27e8z, member_z, positive_minimum, minimum_z\u27e9 :=\n    fixed_scale_minimum continuous_f injective_f positive_r nonempty_pairs\n  have least_image : IsLeast ((fun w : \u03b1 \u00d7 \u03b1 => dist (f w.1) (f w.2)) '' separatedPairs r) (dist (f z.1) (f z.2)) :=\n    by\n    refine \u27e8Set.mem_image_of_mem _ member_z, ?_\u27e9\n    intro value member_value\n    obtain \u27e8w, member_w, rfl\u27e9 := member_value\n    exact minimum_z w member_w\n  unfold fixedScaleModulus\n  rw [least_image.csInf_eq]\n  exact positive_minimum`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/--\nEvery admissible pair is bounded below by the declared fixed-scale modulus. -/\ntheorem fixed_scale_modulus_le {\u03b1 \u03b2 : Type*} [MetricSpace \u03b1] [MetricSpace \u03b2] (f : \u03b1 \u2192 \u03b2) (r : \u211d) (x y : \u03b1)\n    (separated : r \u2264 dist x y) : fixedScaleModulus f r \u2264 dist (f x) (f y) :=\n  by\n  unfold fixedScaleModulus\n  apply csInf_le\n  \u00b7 refine \u27e80, ?_\u27e9\n    rintro value \u27e8pair, _, rfl\u27e9\n    exact dist_nonneg\n  \u00b7 exact Set.mem_image_of_mem _ (show (x, y) \u2208 separatedPairs r from separated)`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/-- Paper Puente, thm:sigma-approximate-displacement.\nOnly the fixed-point equation and the metric contraction bound enter the inequality. -/\ntheorem approximate_commutation_displacement {\u03b1 : Type*} [MetricSpace \u03b1] (sigma control : \u03b1 \u2192 \u03b1) (p : \u03b1) (L : \u211d)\n    (contraction : \u2200 x y, dist (sigma x) (sigma y) \u2264 L * dist x y) (fixed : sigma p = p) :\n    (1 - L) * dist (control p) p \u2264 dist (sigma (control p)) (control (sigma p)) :=\n  by\n  have triangle := dist_triangle (control p) (sigma (control p)) p\n  have bound := contraction (control p) p\n  rw [fixed] at bound\n  rw [fixed]\n  rw [dist_comm (sigma (control p)) (control p)]\n  linarith`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/--\nPaper Puente, thm:sigma-approximate-displacement: two controls at the same fixed point. -/\ntheorem approximate_commutation_pair {\u03b1 : Type*} [MetricSpace \u03b1] (sigma first second : \u03b1 \u2192 \u03b1) (p : \u03b1) (L : \u211d)\n    (strict : L < 1) (contraction : \u2200 x y, dist (sigma x) (sigma y) \u2264 L * dist x y) (fixed : sigma p = p) :\n    (1 - L) * dist (first p) (second p) \u2264\n      dist (sigma (first p)) (first (sigma p)) + dist (sigma (second p)) (second (sigma p)) :=\n  by\n  have first_bound := approximate_commutation_displacement sigma first p L contraction fixed\n  have second_bound := approximate_commutation_displacement sigma second p L contraction fixed\n  have triangle := dist_triangle (first p) p (second p)\n  rw [dist_comm p (second p)] at triangle\n  have scaled := mul_le_mul_of_nonneg_left triangle (sub_nonneg.mpr (le_of_lt strict))\n  linarith`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `end QICNLean`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNMetricFronts.lean:5:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before ``.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNFiniteFronts": "QICNLean\\QICNFiniteFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNFiniteFronts.lean:10:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `open scoped BigOperators`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNFiniteFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNFiniteFronts.lean:10:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `noncomputable section`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNFiniteFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNFiniteFronts.lean:10:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `namespace QICNLean`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNFiniteFronts.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNFiniteFronts.lean:10:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/-!Kernels for Paper V prop:writable-tower-legibility-horizon and\nPaper VIII thm:writable-tower-public-return-tie /\nthm:writable-tower-private-return-separation. -/\n`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNFiniteFronts.lean:44:36: warning: missing space in the source\n\nThis part of the code\n  '\u211d)^j) :'\nshould be written as\n  '\u211d) ^ j)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNFiniteFronts.lean:80:17: warning: missing space in the source\n\nThis part of the code\n  '|a-b| ='\nshould be written as\n  '|a - b|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNFiniteFronts.lean:80:34: warning: missing space in the source\n\nThis part of the code\n  '\u211d)^j) :'\nshould be written as\n  '\u211d) ^ j)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNFiniteFronts.lean:85:17: warning: missing space in the source\n\nThis part of the code\n  '|a-b| ='\nshould be written as\n  '|a - b|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNFiniteFronts.lean:85:34: warning: missing space in the source\n\nThis part of the code\n  '\u211d)^j) :'\nshould be written as\n  '\u211d) ^ j)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\n",
+    "kernel-QICNLean.QICNBodyWorldDynamics": "QICNLean\\QICNBodyWorldDynamics.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldDynamics.lean:43:41: warning: Variable name `hr` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nQICNLean\\QICNBodyWorldDynamics.lean:64:47: warning: missing space in the source\n\nThis part of the code\n  '2*r) :'\nshould be written as\n  '2 * r)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nQICNLean\\QICNBodyWorldDynamics.lean:97:13: warning: missing space in the source\n\nThis part of the code\n  '|a|+|b| \u2264'\nshould be written as\n  '|a| + |b|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:124:100: warning: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nQICNLean\\QICNBodyWorldDynamics.lean:110:34: warning: missing space in the source\n\nThis part of the code\n  '1/4) (hp\u2082'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:110:53: warning: missing space in the source\n\nThis part of the code\n  '1/4)\n '\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:111:19: warning: missing space in the source\n\nThis part of the code\n  '1/4) (hd\u2082'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:111:38: warning: missing space in the source\n\nThis part of the code\n  '1/4) :'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:137:100: warning: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nQICNLean\\QICNBodyWorldDynamics.lean:135:12: warning: missing space in the source\n\nThis part of the code\n  '|b-B| \u2264'\nshould be written as\n  '|b - B|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:135:29: warning: missing space in the source\n\nThis part of the code\n  '|w-W| \u2264'\nshould be written as\n  '|w - W|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:135:46: warning: missing space in the source\n\nThis part of the code\n  '|g-G| \u2264'\nshould be written as\n  '|g - G|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:135:53: warning: missing space in the source\n\nThis part of the code\n  '2*r) :'\nshould be written as\n  '2 * r)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:137:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:137:78: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:137:101: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:142:100: warning: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nQICNLean\\QICNBodyWorldDynamics.lean:140:12: warning: missing space in the source\n\nThis part of the code\n  '|b-B| \u2264'\nshould be written as\n  '|b - B|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:140:29: warning: missing space in the source\n\nThis part of the code\n  '|w-W| \u2264'\nshould be written as\n  '|w - W|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:142:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:142:76: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:142:99: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:147:100: warning: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nQICNLean\\QICNBodyWorldDynamics.lean:145:12: warning: missing space in the source\n\nThis part of the code\n  '|b-B| \u2264'\nshould be written as\n  '|b - B|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:145:29: warning: missing space in the source\n\nThis part of the code\n  '|w-W| \u2264'\nshould be written as\n  '|w - W|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:147:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:147:75: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:147:99: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:160:14: warning: missing space in the source\n\nThis part of the code\n  '|g\u2081-G\u2081| \u2264'\nshould be written as\n  '|g\u2081 - G\u2081|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:160:22: warning: missing space in the source\n\nThis part of the code\n  '2*r) (hg\u2082'\nshould be written as\n  '2 * r)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:160:36: warning: missing space in the source\n\nThis part of the code\n  '|g\u2082-G\u2082| \u2264'\nshould be written as\n  '|g\u2082 - G\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:160:44: warning: missing space in the source\n\nThis part of the code\n  '2*r) :'\nshould be written as\n  '2 * r)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:170:50: warning: Variable name `hr` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nQICNLean\\QICNBodyWorldDynamics.lean:171:43: warning: missing space in the source\n\nThis part of the code\n  '|y-Y| \u2264'\nshould be written as\n  '|y - Y|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:171:50: warning: missing space in the source\n\nThis part of the code\n  '2*r) (hdx'\nshould be written as\n  '2 * r)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:171:63: warning: missing space in the source\n\nThis part of the code\n  '|x-X| \u2264'\nshould be written as\n  '|x - X|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:171:70: warning: missing space in the source\n\nThis part of the code\n  '2*r) :'\nshould be written as\n  '2 * r)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:193:26: warning: missing space in the source\n\nThis part of the code\n  '|b\u2081-B\u2081| \u2264'\nshould be written as\n  '|b\u2081 - B\u2081|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:193:45: warning: missing space in the source\n\nThis part of the code\n  '|b\u2082-B\u2082| \u2264'\nshould be written as\n  '|b\u2082 - B\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:194:13: warning: missing space in the source\n\nThis part of the code\n  '|w\u2081-W\u2081| \u2264'\nshould be written as\n  '|w\u2081 - W\u2081|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:194:32: warning: missing space in the source\n\nThis part of the code\n  '|w\u2082-W\u2082| \u2264'\nshould be written as\n  '|w\u2082 - W\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nQICNLean\\QICNBodyWorldDynamics.lean:202:26: warning: missing space in the source\n\nThis part of the code\n  '|b\u2081-B\u2081| \u2264'\nshould be written as\n  '|b\u2081 - B\u2081|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:202:45: warning: missing space in the source\n\nThis part of the code\n  '|b\u2082-B\u2082| \u2264'\nshould be written as\n  '|b\u2082 - B\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:203:13: warning: missing space in the source\n\nThis part of the code\n  '|w\u2081-W\u2081| \u2264'\nshould be written as\n  '|w\u2081 - W\u2081|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:203:32: warning: missing space in the source\n\nThis part of the code\n  '|w\u2082-W\u2082| \u2264'\nshould be written as\n  '|w\u2082 - W\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:204:13: warning: missing space in the source\n\nThis part of the code\n  '|w\u2081-b\u2081| \u2264'\nshould be written as\n  '|w\u2081 - b\u2081|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:204:32: warning: missing space in the source\n\nThis part of the code\n  '|W\u2082-B\u2082| \u2264'\nshould be written as\n  '|W\u2082 - B\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:210:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:210:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:212:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:212:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nQICNLean\\QICNBodyWorldDynamics.lean:229:100: warning: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nQICNLean\\QICNBodyWorldDynamics.lean:224:17: warning: missing space in the source\n\nThis part of the code\n  '1/4) :'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:236:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nQICNLean\\QICNBodyWorldDynamics.lean:243:17: warning: missing space in the source\n\nThis part of the code\n  '1/4) :'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:247:27: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:257:19: warning: missing space in the source\n\nThis part of the code\n  '1/4) (hp\u2082'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:257:38: warning: missing space in the source\n\nThis part of the code\n  '1/4)\n '\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:258:19: warning: missing space in the source\n\nThis part of the code\n  '1/4) (hd\u2082'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:258:38: warning: missing space in the source\n\nThis part of the code\n  '1/4) :'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:278:100: warning: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nQICNLean\\QICNBodyWorldDynamics.lean:293:33: warning: missing space in the source\n\nThis part of the code\n  '|a\u2081|+|a\u2082|'\nshould be written as\n  '|a\u2081| + |a\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:293:54: warning: missing space in the source\n\nThis part of the code\n  '|c\u2081|+|c\u2082|'\nshould be written as\n  '|c\u2081| + |c\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:294:34: warning: missing space in the source\n\nThis part of the code\n  '1/4) (hp\u2082'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:294:53: warning: missing space in the source\n\nThis part of the code\n  '1/4)\n '\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:295:19: warning: missing space in the source\n\nThis part of the code\n  '1/4) (hd\u2082'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:295:38: warning: missing space in the source\n\nThis part of the code\n  '1/4) :'\nshould be written as\n  '1 / 4)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:310:47: warning: missing space in the source\n\nThis part of the code\n  '|a\u2081|+|a\u2082|'\nshould be written as\n  '|a\u2081| + |a\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:311:14: warning: missing space in the source\n\nThis part of the code\n  '|c\u2081|+|c\u2082|'\nshould be written as\n  '|c\u2081| + |c\u2082|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldDynamics.lean:320:26: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:320:38: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:323:26: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldDynamics.lean:323:38: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+    "kernel-QICNLean.QICNBodyWorldFinite": "QICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `open scoped Matrix BigOperators`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `noncomputable section`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `namespace QICNLean`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/-- Paper IX: indexed coordinates can permute this identity-role Hankel. -/\ndef bodyWorldHankel (t a : \u211d) : Matrix (Fin 4) (Fin 4) \u211d :=\n  !![0, 0, t, 0; 0, 0, 0, t; t, 0, 2 * a * t, 0; 0, t, 0, 2 * a * t]`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/-- Explicit inverse, valid for every nonzero impulse scale. -/\ndef bodyWorldHankelInverse (t a : \u211d) : Matrix (Fin 4) (Fin 4) \u211d :=\n  !![-2 * a / t, 0, 1 / t, 0; 0, -2 * a / t, 0, 1 / t; 1 / t, 0, 0, 0; 0, 1 / t, 0, 0]`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:27:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_hankel_det (t a : \u211d) : (bodyWorldHankel t a).det = t ^ 4 :=\n  by simp [bodyWorldHankel, Matrix.det_succ_row_zero, Fin.sum_univ_succ, Matrix.submatrix, Fin.succAbove] <;> ring`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:34:25: warning: This simp argument is unused:\n  Matrix.one_apply\n\nHint: Omit it from the simp argument list.\n  simp [bodyWorldHankelInverse, bodyWorldHankel, Matrix.mul_apply, Fin.sum_univ_succ, M\u0335a\u0335t\u0335r\u0335i\u0335x\u0335.\u0335o\u0335n\u0335e\u0335_\u0335a\u0335p\u0335p\u0335l\u0335y\u0335,\u0335 \u0335ht]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_hankel_inverse_left (t a : \u211d) (ht : t \u2260 0) :\n    bodyWorldHankelInverse t a * bodyWorldHankel t a = 1 :=\n  by\n  ext i j\n  fin_cases i <;> fin_cases j <;>\n        simp [bodyWorldHankelInverse, bodyWorldHankel, Matrix.mul_apply, Fin.sum_univ_succ, Matrix.one_apply, ht] <;>\n      field_simp <;>\n    ring`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:41:25: warning: This simp argument is unused:\n  Matrix.one_apply\n\nHint: Omit it from the simp argument list.\n  simp [bodyWorldHankelInverse, bodyWorldHankel, Matrix.mul_apply, Fin.sum_univ_succ, M\u0335a\u0335t\u0335r\u0335i\u0335x\u0335.\u0335o\u0335n\u0335e\u0335_\u0335a\u0335p\u0335p\u0335l\u0335y\u0335,\u0335 \u0335ht]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_hankel_inverse_right (t a : \u211d) (ht : t \u2260 0) :\n    bodyWorldHankel t a * bodyWorldHankelInverse t a = 1 :=\n  by\n  ext i j\n  fin_cases i <;> fin_cases j <;>\n        simp [bodyWorldHankelInverse, bodyWorldHankel, Matrix.mul_apply, Fin.sum_univ_succ, Matrix.one_apply, ht] <;>\n      field_simp <;>\n    ring`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_hankel_det_nonzero (t a : \u211d) (ht : t \u2260 0) :\n    (bodyWorldHankel t a).det \u2260 0 := by\n  rw [body_world_hankel_det]\n  exact pow_ne_zero 4 ht`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_hankel_columns_independent (t a : \u211d) (ht : t \u2260 0) :\n    LinearIndependent \u211d (Matrix.col (bodyWorldHankel t a)) :=\n  Matrix.linearIndependent_cols_of_det_ne_zero (body_world_hankel_det_nonzero t a ht)`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_hankel_det_at_scale :\n    (bodyWorldHankel (1 / 16) (1 / 4)).det = 1 / 65536 :=\n  by\n  rw [body_world_hankel_det]\n  norm_num`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/-- The alternate prepared role swaps both sensory coordinates. -/\ndef bodyWorldIndexedHankel (t a : \u211d) (swap : Bool) : Matrix (Fin 4) (Fin 4) \u211d :=\n  if swap then !![0, 0, 0, t; 0, 0, t, 0; 0, t, 0, 2 * a * t; t, 0, 2 * a * t, 0] else bodyWorldHankel t a`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:69:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_indexed_hankel_det (t a : \u211d) (swap : Bool) :\n    (bodyWorldIndexedHankel t a swap).det = t ^ 4 := by\n  cases swap\n  \u00b7 simpa [bodyWorldIndexedHankel] using body_world_hankel_det t a\n  \u00b7\n    simp [bodyWorldIndexedHankel, Matrix.det_succ_row_zero, Fin.sum_univ_succ, Matrix.submatrix, Fin.succAbove] <;>\n      ring`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_indexed_hankel_columns_independent (t a : \u211d) (ht : t \u2260 0)\n    (swap : Bool) : LinearIndependent \u211d (Matrix.col (bodyWorldIndexedHankel t a swap)) :=\n  by\n  apply Matrix.linearIndependent_cols_of_det_ne_zero\n  rw [body_world_indexed_hankel_det]\n  exact pow_ne_zero 4 ht`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_hankel_inverse_row_bound (i : Fin 4) :\n    (\u2211 j : Fin 4, |bodyWorldHankelInverse (1 / 16) (1 / 4) i j|) \u2264 24 := by\n  fin_cases i <;> norm_num [bodyWorldHankelInverse, Fin.sum_univ_succ]`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_hankel_inverse_row_sharp :\n    (\u2211 j : Fin 4, |bodyWorldHankelInverse (1 / 16) (1 / 4) 0 j|) = 24 := by\n  norm_num [bodyWorldHankelInverse, Fin.sum_univ_succ]`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/-- The only order-three return term in the fourth body reading. -/\ndef bodyWorldMotorFourth (h a beta mu : \u211d) : \u211d :=\n  h * (3 * a ^ 2 * beta + mu * beta ^ 3)`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `def bodyWorldMotorThird (h a beta : \u211d) : \u211d :=\n  2 * h * a * beta`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_motor_residual (h a beta mu : \u211d) :\n    bodyWorldMotorFourth h a beta mu - (3 * a / 2) * bodyWorldMotorThird h a beta = mu * h * beta ^ 3 :=\n  by\n  unfold bodyWorldMotorFourth bodyWorldMotorThird\n  ring`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_motor_signed_residual (mu : \u211d) :\n    bodyWorldMotorFourth (1 / 4) (1 / 4) (1 / 4) mu - (3 * (1 / 4) / 2) * bodyWorldMotorThird (1 / 4) (1 / 4) (1 / 4) =\n      mu / 256 :=\n  by\n  rw [body_world_motor_residual]\n  ring`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_motor_sign_gap :\n    bodyWorldMotorFourth (1 / 4) (1 / 4) (1 / 4) 1 - bodyWorldMotorFourth (1 / 4) (1 / 4) (1 / 4) (-1) = 2 / 256 := by\n  norm_num [bodyWorldMotorFourth]`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_motor_cut_residual :\n    bodyWorldMotorFourth (1 / 4) (1 / 4) (1 / 4) 0 - (3 * (1 / 4) / 2) * bodyWorldMotorThird (1 / 4) (1 / 4) (1 / 4) =\n      0 :=\n  by\n  rw [body_world_motor_signed_residual]\n  norm_num`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/-- Loss of local certificate presence after the six declared physical lesions.\nRows and columns are D,V,W,A,E,T. Non-diagonal entries express mediation. -/\ndef bodyWorldLesionLoss : Matrix (Fin 6) (Fin 6) \u211d :=\n  !![1, 0, 1, 0, 0, 0; 0, 1, 0, 0, 0, 0; 0, 1, 1, 0, 0, 0; 0, 0, 0, 1, 0, 0; 0, 1, 0, 0, 1, 0; 0, 0, 0, 0, 0, 1]`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `def bodyWorldLesionInverse : Matrix (Fin 6) (Fin 6) \u211d :=\n  !![1, 1, -1, 0, 0, 0; 0, 1, 0, 0, 0, 0; 0, -1, 1, 0, 0, 0; 0, 0, 0, 1, 0, 0; 0, -1, 0, 0, 1, 0; 0, 0, 0, 0, 0, 1]`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_lesion_inverse_left :\n    bodyWorldLesionInverse * bodyWorldLesionLoss = 1 := by\n  ext i j\n  fin_cases i <;> fin_cases j <;>\n    norm_num [bodyWorldLesionInverse, bodyWorldLesionLoss, Matrix.mul_apply, Fin.sum_univ_succ, Matrix.one_apply]`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_lesion_inverse_right :\n    bodyWorldLesionLoss * bodyWorldLesionInverse = 1 := by\n  ext i j\n  fin_cases i <;> fin_cases j <;>\n    norm_num [bodyWorldLesionInverse, bodyWorldLesionLoss, Matrix.mul_apply, Fin.sum_univ_succ, Matrix.one_apply]`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_lesion_det_nonzero : bodyWorldLesionLoss.det \u2260 0 :=\n  by\n  have h := congrArg Matrix.det body_world_lesion_inverse_left\n  rw [Matrix.det_mul, Matrix.det_one] at h\n  intro hz\n  rw [hz, mul_zero] at h\n  norm_num at h`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `theorem body_world_lesion_columns_independent :\n    LinearIndependent \u211d (Matrix.col bodyWorldLesionLoss) :=\n  Matrix.linearIndependent_cols_of_det_ne_zero body_world_lesion_det_nonzero`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `end QICNLean`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldFinite.lean:9:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before ``.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNBodyWorldEvaluation": "QICNLean\\QICNBodyWorldEvaluation.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldEvaluation.lean:6:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `noncomputable section`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldEvaluation.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldEvaluation.lean:6:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `namespace QICNLean`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldEvaluation.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldEvaluation.lean:6:0: warning: The module doc-string for a file should be the first command after the imports.\nPlease, add a module doc-string before `/-!Evaluative kernels for Paper IX. The antipodal existence step and the\nfundamental theorem for continuous line integrals are not asserted here.\nThe collision and circulation-error consequences below are exact algebraic\nkernels. The additive separation, in contrast, quantifies over arbitrary\nunivariate rival functions without continuity assumptions. -/\n`.\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNBodyWorldEvaluation.lean:61:43: warning: missing space in the source\n\nThis part of the code\n  'y-px| \u2264'\nshould be written as\n  'y - px|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:62:58: warning: missing space in the source\n\nThis part of the code\n  '(-y)-px| \u2264'\nshould be written as\n  '(-y) - px|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:63:42: warning: missing space in the source\n\nThis part of the code\n  'y-py| \u2264'\nshould be written as\n  'y - py|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:64:57: warning: missing space in the source\n\nThis part of the code\n  '(-y)-py| \u2264'\nshould be written as\n  '(-y) - py|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:158:40: warning: missing space in the source\n\nThis part of the code\n  '1-(g 1+h'\nshould be written as\n  '1 - (g'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:158:45: warning: missing space in the source\n\nThis part of the code\n  '1+h 1)|'\nshould be written as\n  '1 + h'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:159:43: warning: missing space in the source\n\nThis part of the code\n  '(-1)-(g 1+h'\nshould be written as\n  '(-1) - (g'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:159:48: warning: missing space in the source\n\nThis part of the code\n  '1+h (-1))|'\nshould be written as\n  '1 + h'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:160:43: warning: missing space in the source\n\nThis part of the code\n  '1-(g (-1)+h'\nshould be written as\n  '1 - (g'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:160:51: warning: missing space in the source\n\nThis part of the code\n  '(-1)+h 1)|'\nshould be written as\n  '(-1) + h'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:161:46: warning: missing space in the source\n\nThis part of the code\n  '(-1)-(g (-1)+h'\nshould be written as\n  '(-1) - (g'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:161:54: warning: missing space in the source\n\nThis part of the code\n  '(-1)+h (-1))|'\nshould be written as\n  '(-1) + h'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:243:47: warning: missing space in the source\n\nThis part of the code\n  'loop=4*gamma)'\nshould be written as\n  'loop = 4'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNBodyWorldEvaluation.lean:244:28: warning: missing space in the source\n\nThis part of the code\n  '8*err)'\nshould be written as\n  '8 * err)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\n",
+    "kernel-QICNLean.QICNEpistemicAtomicity": "QICNLean\\QICNEpistemicAtomicity.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNEpistemicWitness": "QICNLean\\QICNEpistemicWitness.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNEpistemicWitness.lean:20:24: warning: missing space in the source\n\nThis part of the code\n  '2*w j*a'\nshould be written as\n  '2 * w'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:20:28: warning: missing space in the source\n\nThis part of the code\n  'j*a j \u2264'\nshould be written as\n  'j * a'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:74:42: warning: missing space in the source\n\nThis part of the code\n  '1/27) :'\nshould be written as\n  '1 / 27)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:79:42: warning: missing space in the source\n\nThis part of the code\n  '1/27) :'\nshould be written as\n  '1 / 27)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:86:42: warning: missing space in the source\n\nThis part of the code\n  '1/27) :'\nshould be written as\n  '1 / 27)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:92:29: warning: missing space in the source\n\nThis part of the code\n  '1/27 \u2192'\nshould be written as\n  '1 / 27'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:92:36: warning: missing space in the source\n\nThis part of the code\n  '2/27 \u2264'\nshould be written as\n  '2 / 27'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:92:49: warning: missing space in the source\n\nThis part of the code\n  '(n+1)) :'\nshould be written as\n  '(n + 1))'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:106:23: warning: missing space in the source\n\nThis part of the code\n  'x0=x0)\n'\nshould be written as\n  'x0 = x0)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:107:39: warning: missing space in the source\n\nThis part of the code\n  'b)=D (P'\nshould be written as\n  'b) = D'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:118:30: warning: missing space in the source\n\nThis part of the code\n  'x)=x) (t'\nshould be written as\n  'x) = x)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:125:23: warning: missing space in the source\n\nThis part of the code\n  'x0=x0)\n'\nshould be written as\n  'x0 = x0)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:126:39: warning: missing space in the source\n\nThis part of the code\n  'b)=D (P'\nshould be written as\n  'b) = D'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:127:62: warning: missing space in the source\n\nThis part of the code\n  'n))=R t)'\nshould be written as\n  'n)) = R'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:133:50: warning: missing space in the source\n\nThis part of the code\n  '0<s) (nonnegative'\nshould be written as\n  '0 < s)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:133:70: warning: missing space in the source\n\nThis part of the code\n  '0\u2264E1)\n'\nshould be written as\n  '0 \u2264 E1)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:134:15: warning: missing space in the source\n\nThis part of the code\n  'E1=E2) :'\nshould be written as\n  'E1 = E2)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:140:48: warning: missing space in the source\n\nThis part of the code\n  '0\u2264a) (hb'\nshould be written as\n  '0 \u2264 a)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:140:59: warning: missing space in the source\n\nThis part of the code\n  '0\u2264b)\n '\nshould be written as\n  '0 \u2264 b)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:141:11: warning: missing space in the source\n\nThis part of the code\n  '0\u2264c) (hd'\nshould be written as\n  '0 \u2264 c)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:141:22: warning: missing space in the source\n\nThis part of the code\n  '0\u2264d) (he'\nshould be written as\n  '0 \u2264 d)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:141:33: warning: missing space in the source\n\nThis part of the code\n  '0\u2264e) (hf'\nshould be written as\n  '0 \u2264 e)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:141:44: warning: missing space in the source\n\nThis part of the code\n  '0\u2264f) :'\nshould be written as\n  '0 \u2264 f)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:148:64: warning: missing space in the source\n\nThis part of the code\n  'gate=0)\n '\nshould be written as\n  'gate = 0)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:149:17: warning: missing space in the source\n\nThis part of the code\n  '0<threshold)'\nshould be written as\n  '0 < threshold)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:152:32: warning: missing space in the source\n\nThis part of the code\n  'a\u2260b) (force_f'\nshould be written as\n  'a \u2260 b)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:152:63: warning: missing space in the source\n\nThis part of the code\n  'x)=a)\n '\nshould be written as\n  'x) = a)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWitness.lean:153:31: warning: missing space in the source\n\nThis part of the code\n  'x)=b) :'\nshould be written as\n  'x) = b)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\n",
+    "kernel-QICNLean.QICNEpistemicInterface": "QICNLean\\QICNEpistemicInterface.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNEpistemicInterface.lean:15:13: warning: missing space in the source\n\nThis part of the code\n  '|xh-x|\u2264L*e)'\nshould be written as\n  '|xh - x|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:15:16: warning: missing space in the source\n\nThis part of the code\n  '|xh-x|\u2264L*e) (hy'\nshould be written as\n  'x| \u2264 L'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:15:31: warning: missing space in the source\n\nThis part of the code\n  '|yh-y|\u2264L*e)'\nshould be written as\n  '|yh - y|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:15:34: warning: missing space in the source\n\nThis part of the code\n  '|yh-y|\u2264L*e) :'\nshould be written as\n  'y| \u2264 L'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:24:18: warning: missing space in the source\n\nThis part of the code\n  '|Dhat-Dbar|\u22642*L*e)'\nshould be written as\n  '|Dhat - Dbar|'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:24:24: warning: missing space in the source\n\nThis part of the code\n  '|Dhat-Dbar|\u22642*L*e) (alternative'\nshould be written as\n  'Dbar| \u2264 2'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:24:51: warning: missing space in the source\n\nThis part of the code\n  'Dbar\u2264eta-g+tz)'\nshould be written as\n  'Dbar \u2264 eta'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:24:55: warning: missing space in the source\n\nThis part of the code\n  'Dbar\u2264eta-g+tz)\n'\nshould be written as\n  'eta - g'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:25:13: warning: missing space in the source\n\nThis part of the code\n  'tn+tz+4*L*e<g)'\nshould be written as\n  'tn + tz'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:25:16: warning: missing space in the source\n\nThis part of the code\n  'tn+tz+4*L*e<g) :'\nshould be written as\n  'tz + 4'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:30:21: warning: missing space in the source\n\nThis part of the code\n  '4*L*e<g) (positive_n'\nshould be written as\n  '4 * L'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:30:44: warning: missing space in the source\n\nThis part of the code\n  '0<n)\n '\nshould be written as\n  '0 < n)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:31:14: warning: missing space in the source\n\nThis part of the code\n  '(A+B)^2/(g-4*L*e)^2<n)'\nshould be written as\n  '(A + B)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:31:17: warning: missing space in the source\n\nThis part of the code\n  '(A+B)^2/(g-4*L*e)^2<n)'\nshould be written as\n  'B) ^ 2'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:31:22: warning: missing space in the source\n\nThis part of the code\n  '(A+B)^2/(g-4*L*e)^2<n)'\nshould be written as\n  '(g - 4'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:31:29: warning: missing space in the source\n\nThis part of the code\n  '(A+B)^2/(g-4*L*e)^2<n) :'\nshould be written as\n  'e) ^ 2'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:55:56: warning: missing space in the source\n\nThis part of the code\n  'obs=nu.map'\nshould be written as\n  'obs = nu.map'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicInterface.lean:63:56: warning: missing space in the source\n\nThis part of the code\n  'obs=nu.map'\nshould be written as\n  'obs = nu.map'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\n",
+    "kernel-QICNLean.QICNEpistemicWedgeStability": "QICNLean\\QICNEpistemicWedgeStability.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNEpistemicWedgeStability.lean:30:43: warning: missing space in the source\n\nThis part of the code\n  'x=0 \u2228 y=0)'\nshould be written as\n  'x = 0'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:30:49: warning: missing space in the source\n\nThis part of the code\n  'y=0) :'\nshould be written as\n  'y = 0)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:61:18: warning: missing space in the source\n\nThis part of the code\n  'c^2 * min'\nshould be written as\n  'c ^ 2'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:61:29: warning: missing space in the source\n\nThis part of the code\n  '(d/2) (1/(4*C))'\nshould be written as\n  '(d / 2)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:61:35: warning: missing space in the source\n\nThis part of the code\n  '(1/(4*C))'\nshould be written as\n  '(1 / (4'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:61:38: warning: missing space in the source\n\nThis part of the code\n  '(1/(4*C)) \u2264'\nshould be written as\n  '(4 * C))'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:61:47: warning: missing space in the source\n\nThis part of the code\n  '(2*C+4*c)*h)'\nshould be written as\n  '(2 * C'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:61:54: warning: missing space in the source\n\nThis part of the code\n  '(2*C+4*c)*h) :'\nshould be written as\n  'c) * h)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:75:29: warning: missing space in the source\n\nThis part of the code\n  'delta/2) (triangle'\nshould be written as\n  'delta / 2)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:75:54: warning: missing space in the source\n\nThis part of the code\n  'e+h) :'\nshould be written as\n  'e + h)'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:125:49: warning: missing space in the source\n\nThis part of the code\n  'K/delta'\nshould be written as\n  'K / delta'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicWedgeStability.lean:126:55: warning: missing space in the source\n\nThis part of the code\n  'M*Delta'\nshould be written as\n  'M * Delta'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\n",
+    "kernel-QICNLean.QICNEpistemicSubfp": "QICNLean\\QICNEpistemicSubfp.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\nQICNLean\\QICNEpistemicSubfp.lean:69:27: warning: missing space in the source\n\nThis part of the code\n  '4/5 \u2264 intervention)'\nshould be written as\n  '4 / 5'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\nQICNLean\\QICNEpistemicSubfp.lean:82:17: warning: missing space in the source\n\nThis part of the code\n  '1/3 \u2264 error)'\nshould be written as\n  '1 / 3'\n\n\nNote: This linter can be disabled with `set_option linter.style.whitespace false`\n",
+    "kernel-QICNLean.QICNAnalyticProjection": "QICNLean\\QICNAnalyticProjection.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNParametricContraction": "QICNLean\\QICNParametricContraction.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNInverseLimitTopology": "QICNLean\\QICNInverseLimitTopology.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNBaseSufficiency": "QICNLean\\QICNBaseSufficiency.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNWeightedChannels": "QICNLean\\QICNWeightedChannels.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNMooreFactorization": "QICNLean\\QICNMooreFactorization.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNFourRootContrast": "QICNLean\\QICNFourRootContrast.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean.QICNFiniteAdjudication": "QICNLean\\QICNFiniteAdjudication.lean:1:1: warning: * '-/':\nCopyright too short!\n\n\nNote: This linter can be disabled with `set_option linter.style.header false`\n",
+    "kernel-QICNLean": "",
+    "axioms": "'QICNBodyWorldDynamics.body_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.body_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.evaluated_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.evaluated_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.evaluated_update_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.evaluation_row_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.intervened_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.intervened_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.native_body_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.native_body_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.native_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_body_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_body_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.nonlinear_update_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.normal_body_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.normal_body_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.product_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.projection_commutes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.update_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.world_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.world_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNBodyWorldDynamics.zero_section_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.closed_convex_unique_minimizer' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.projection_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.projection_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.projection_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.AnalyticProjection.projection_nonexpansive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.cornerRay_not_linear' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.disk_projection_nonexpansive_plane' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.geometric_iteration' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.h1_h4_sufficiency' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.radialDisk_eq_projection' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.radialDisk_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.radialDisk_minimizes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.radialDisk_nonexpansive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.zero_data_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.BaseSufficiency.zero_family_fails_noncollapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicAtomicity.parity_join_split' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicAtomicity.parity_split_bijective' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicAtomicity.parity_split_join' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicAtomicity.positive_deformation_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicAtomicity.resistance_threshold_excludes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicAtomicity.square_equality_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicAtomicity.xor_flip_bijective' depends on axioms: [Quot.sound]\n'QICNLean.EpistemicAtomicity.xor_flip_involution' depends on axioms: [Quot.sound]\n'QICNLean.EpistemicInterface.alternative_headroom' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicInterface.decision_laws_equal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicInterface.paired_error_transport' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicInterface.rejection_measures_equal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicInterface.sample_size_headroom' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.active_passive_gain' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.all_pair_functions_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.all_pair_functions_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.binary_expression_leaf_identity' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicSubfp.emulator_forces_nonpositive_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.energy_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.feedback_returns_exactly' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.fewer_gate_contrast_excludes_optimality' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.EpistemicSubfp.four_input_expression_cost' depends on axioms: [propext, Quot.sound]\n'QICNLean.EpistemicSubfp.native_coordinates_and_gate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.operational_margins' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.ownership_zero_after_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.parity_error_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.positive_scalar_polynomial_certificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.EpistemicSubfp.realized_scalar_independence_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.same_cost_emulator_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.strict_budget_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.valuation_exact_and_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicSubfp.weak_three_term_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.chain_obstruction_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.chain_strict_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.cheap_clamp_incompatible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.corner_norm_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.corner_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.damage_ratio_control' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.dyadic_arbitrarily_small' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.dyadic_tail_step' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.euclidean_corner_axis_distance' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.EpistemicWedgeStability.max_product_square' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.positive_support_radius' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.power_two_growth' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.protected_ratio_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.protected_regime_rational_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.EpistemicWedgeStability.two_arm_corner_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWedgeStability.wedge_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.box_interval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.constant_subspace_separation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.finite_functional_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.involution_trajectory' depends on axioms: [Quot.sound]\n'QICNLean.EpistemicWitness.no_common_phase' does not depend on any axioms\n'QICNLean.EpistemicWitness.no_eventual_null' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.null_D_escape' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.null_W_escape' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.null_prefix_head' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.paired_response' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.paired_trajectory' does not depend on any axioms\n'QICNLean.EpistemicWitness.positive_gate_excluded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.seven_min_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.seven_product_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.valuation_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.EpistemicWitness.witness_rational_margins' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.always_abstain_not_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.centered_loss_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.finite_clean_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.finite_clean_stratum_null' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.finite_coupling_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.finite_coupling_null' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.free_abstention_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.loss_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.loss_coverage_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.loss_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.selective_leak_separates_nulls' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.stratum_coverage_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FiniteAdjudication.stratum_null_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.abs_contrast_le_mean' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.all_proper_forecasts_error_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.all_proper_forecasts_mean_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.background_proper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_parity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_smul' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_sub' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.contrast_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.equal_cost_replica_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.ignored_coordinate_has_zero_contrast' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.FourRootContrast.ignores_depends_on_erasure' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.manuscript_quartic_constant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.noise_cost_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.parity_abs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.parity_flip' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.physical_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.physical_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.proper_component_ignores' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.proper_forecast_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.proper_optimum_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.spin_negation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.FourRootContrast.spin_square' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.I_mul_mem_of_nonreal_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.InverseLimitTopology.coherent_set_closed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.InverseLimitTopology.coherent_set_compact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.InverseLimitTopology.compatible_cone_unique_lift' depends on axioms: [Quot.sound]\n'QICNLean.InverseLimitTopology.coneLift_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.InverseLimitTopology.inverse_limit_nonempty' depends on axioms: [Classical.choice]\n'QICNLean.InverseLimitTopology.projections_fix_endomorphism' depends on axioms: [Quot.sound]\n'QICNLean.InverseLimitTopology.projections_separate' depends on axioms: [Quot.sound]\n'QICNLean.MooreFactorization.atomic_response_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.composition_associative' depends on axioms: [propext]\n'QICNLean.MooreFactorization.exact_product_excluded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.hold_product_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.hold_separator_fails' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.hold_word' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.identity_left' depends on axioms: [propext]\n'QICNLean.MooreFactorization.identity_right' depends on axioms: [propext]\n'QICNLean.MooreFactorization.morphism_word_commutes' depends on axioms: [propext]\n'QICNLean.MooreFactorization.morphism_word_read_commutes' depends on axioms: [propext]\n'QICNLean.MooreFactorization.nonempty_family_infimum_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.response_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.samples_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.swap_every_port_separates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.MooreFactorization.uniform_error_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.closed_projected_affine_compact' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.ParametricContraction.closed_projected_affine_contraction' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.ParametricContraction.closed_projected_affine_unique' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_compact_range' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_perturbation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.ParametricContraction.equilibrium_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.bounded_metric_history_series' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.bounded_weighted_series' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.capped_distance_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.capped_weighted_sup_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.channel_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.channel_projection' does not depend on any axioms\n'QICNLean.WeightedChannels.channel_weighted_distance_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.constant_has_no_positive_coercivity' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'QICNLean.WeightedChannels.infimum_weighted_coercivity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.post_channel_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.post_channel_detectability' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.post_readout_coercivity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.single_stage_detectability' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.supremum_prefix_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.upper_lipschitz_is_not_coercivity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.WeightedChannels.weighted_sup_coercivity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.affine_contracting' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.alternating_reference_fixed' depends on axioms: [Quot.sound]\n'QICNLean.approximate_commutation_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.approximate_commutation_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bilateral_admissibility_forces_N_subset' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bilateral_implies_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.binary_minimum_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.binary_pointwise_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.binary_prefix_has_late_branch' depends on axioms: [propext, Quot.sound]\n'QICNLean.body_world_hankel_columns_independent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_det' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_det_at_scale' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_det_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_inverse_left' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_inverse_right' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_inverse_row_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_hankel_inverse_row_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_indexed_hankel_columns_independent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_indexed_hankel_det' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_lesion_columns_independent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_lesion_det_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_lesion_inverse_left' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_lesion_inverse_right' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_motor_cut_residual' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_motor_residual' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_motor_sign_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.body_world_motor_signed_residual' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_corner_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_error_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_matching_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_rectangle_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_additive_uniform_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_antipodal_collision_radius' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_circulation_error_radius' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_cross_term_restores_exact_tie' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_evaluation_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_evaluation_inverse_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_evaluation_square_circulation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_exact_nonlinear_scales' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_nonlinear_additive_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_nonlinear_antipodal_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_nonlinear_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_preregistered_additive_separation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_rectangle_zero_iff_additive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.bw_vector_additive_uniform_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStarConstant_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStarConstant_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStarConstant_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStar_admissible_under_reduction_hypotheses' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cStar_image_mem_N_iff_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.candidate_b_self_defeating' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.clean_abstention_risk_scaled' does not depend on any axioms\n'QICNLean.closed_error_collision_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.code_collision_of_binary_budget' depends on axioms: [propext, Quot.sound]\n'QICNLean.collapse_iff_cStar_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.common_point_of_least_right_endpoint' does not depend on any axioms\n'QICNLean.commuting_map_transports_fixed_point' does not depend on any axioms\n'QICNLean.complex_mul_mem_of_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.complex_mul_no_nontrivial_invariant_real_subspace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.constants_inadmissible_of_inter_empty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_eq_of_variational' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_mem_N_implies_starProjection_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_minimizes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_not_mem_of_inadmissible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_of_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convexProjection_variational' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_collapsed_fixedpoint_eq_cStar' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_constant_fixedpoint_reduces' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_fixedpoint_mkQ_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_fixedpoint_not_mem_of_cStar_not_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_minimizer_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_noncollapse_from_constants_inadmissible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_noncollapse_of_cStar_not_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.convex_projection_not_N_equivariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupledTraj_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupledTraj_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_attractor_family_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_blocks_exact_linear_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_fixedPoint_isFixedPt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_fixedPoint_selector_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_fixedPoint_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_psi1_fiber_thin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_psi2_fiber_thin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.coupled_split_readout_positive_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.cycle_transport_iff_even' depends on axioms: [propext]\n'QICNLean.dichotomy_regimeA_satisfiable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.dissipative_bits_fixed_iff' depends on axioms: [Quot.sound]\n'QICNLean.dissipative_bits_move_first_difference' does not depend on any axioms\n'QICNLean.dissipative_prefix_square' does not depend on any axioms\n'QICNLean.dstar_universal_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.exact_response_obstruction' depends on axioms: [propext, Quot.sound]\n'QICNLean.finite_binary_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.finite_binary_tv_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.finite_binary_tv_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.finite_binary_tv_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.fixedPoint_perturbation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.fixed_point_common_of_unique' does not depend on any axioms\n'QICNLean.fixed_scale_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.fixed_scale_modulus_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.fixed_scale_modulus_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.h5ProjectedAffineFixedPoint_isFixedPt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.halfspace_projection' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.hilbert_convex_projected_affine_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.hilbert_subspace_projected_affine_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.identical_public_laws_tie' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.inverse_projective_square' does not depend on any axioms\n'QICNLean.likelihood_decision_attains' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.likelihood_decision_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.mathlib_metric_smoke' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.mem_iff_mkQ_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.neutral_code_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.neutral_code_iter_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.no_injective_fin_successor_code' depends on axioms: [propext, Quot.sound]\n'QICNLean.noncollapse_from_H5' does not depend on any axioms\n'QICNLean.noncollapse_from_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.noncollapse_of_positive_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.noncollapse_of_quotient_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.noncollapse_of_subspace_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.nonexpansive_after_contracting' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.paired_score_separates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.partial_regime_violates_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.private_signal_margin_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projectedAffineFixedPoint_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projectedAffineFixedPoint_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projectedAffineMap_contracting' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projected_affine_attractor_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projected_contraction_exists_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.projectiveTransport_leftInverse' depends on axioms: [Quot.sound]\n'QICNLean.projective_exact_lift' does not depend on any axioms\n'QICNLean.public_abstention_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.public_abstention_risk' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.quotientDriftAtCStar_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.quotientResidual_eq_zero_of_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.quotient_displacement_iff_cStar_moved' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.quotient_le_collapse_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.regime_a_implies_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.regime_a_implies_quotient_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.regimes_incompatible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.risk_contamination_scaled' depends on axioms: [propext, Quot.sound]\n'QICNLean.rotationContractionScalar_im_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.rotation_contraction_no_invariant_line' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_attractor_family_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_common_support_forward_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_fixedPoint_isFixedPt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_fixedPoint_selector_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.sInstance_fixedPoint_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.stable_labels_agree_before_merge' does not depend on any axioms\n'QICNLean.submodule_eq_top_of_nonzero_and_I_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.subspace_starProjection_nonexpansive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.total_variation_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.total_variation_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.tower_lesion_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.tower_lesion_resolution_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.tower_noise_collision_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.tower_resolution_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.truncation_boundary_digit_defect' depends on axioms: [propext, Classical.choice, Quot.sound]\n'QICNLean.truncation_commutes_away_from_boundary' depends on axioms: [propext, Quot.sound]\n'QICNLean.two_factor_fibers_force_constant' does not depend on any axioms\n"
+  }
+}

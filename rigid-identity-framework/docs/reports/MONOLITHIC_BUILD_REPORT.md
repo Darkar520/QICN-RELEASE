@@ -1,7 +1,7 @@
 # Monolithic Build Report v2
 
 Status: MONOLITHIC_COMPILED
-Date: 2026-11-15
+Date: 2026-11-18
 
 ## Boundary
 
@@ -60,7 +60,7 @@ sers/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/irisp/MiKTeX/font
 s/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/rsf
 s/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (435 pages, 3395904 bytes).
+Output written on QICN_MONOLITHIC.pdf (440 pages, 3432759 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 [pdflatex pass 3]
@@ -76,7 +76,7 @@ sers/irisp/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/irisp/MiKTeX/font
 s/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/MiKTeX/fonts/type1/public/rsf
 s/rsfs10.pfb>
-Output written on QICN_MONOLITHIC.pdf (435 pages, 3396148 bytes).
+Output written on QICN_MONOLITHIC.pdf (440 pages, 3432759 bytes).
 Transcript written on QICN_MONOLITHIC.log.
 
 ```
@@ -85,7 +85,6 @@ Transcript written on QICN_MONOLITHIC.log.
 
 ```text
 [pdflatex pass 1]
-pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [biber]
 perl: warning: Setting locale failed.
@@ -95,12 +94,9 @@ perl: warning: Please check that your locale settings:
 	LANG = "C.UTF-8"
     are supported and installed on your system.
 perl: warning: Falling back to the standard locale ("C").
-biber: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [pdflatex pass 2]
-pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 [pdflatex pass 3]
-pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.
 
 ```

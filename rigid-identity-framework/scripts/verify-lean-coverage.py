@@ -10,10 +10,10 @@ import hashlib, json, re
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / 'docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14'
 REGISTRY = ROOT / 'registry/theorems.jsonl'
-# 436 source targets remain fixed in Etapa 3A. Classification counts are checked
+# 442 targets include six manuscript-only scientific additions. Classification counts are checked
 # dynamically; compilation and semantic fidelity are independent obligations.
-TYPES = {'proposition': 215, 'theorem': 156, 'lemma': 24, 'corollary': 41}
-PAPERS = {'basecore': 94, 'bridge': 40, 'paper1': 49, 'paper10': 11, 'paper2': 35, 'paper3': 34, 'paper4': 7, 'paper5': 65, 'paper6': 14, 'paper7': 25, 'paper8': 26, 'paper9': 36}
+TYPES = {'proposition': 218, 'theorem': 159, 'lemma': 24, 'corollary': 41}
+PAPERS = {'basecore': 96, 'bridge': 40, 'paper1': 49, 'paper10': 11, 'paper2': 35, 'paper3': 34, 'paper4': 7, 'paper5': 67, 'paper6': 14, 'paper7': 25, 'paper8': 26, 'paper9': 38}
 STATES = {'EXACT_MATCH', 'FINITE_OR_PARTIAL_KERNEL', 'PENDING_MATHLIB',
           'EMPIRICAL_OR_PROTOCOL_BOUNDED'}
 
@@ -22,11 +22,11 @@ def check():
     records = [json.loads(line) for line in REGISTRY.read_text(encoding='utf8').splitlines()]
     targets = {r['id']: r for r in records if r['type'] in TYPES}
     matrix = json.loads((PLAN / 'COVERAGE_MATRIX_419.json').read_text(encoding='utf8'))
-    assert len(targets) == sum(TYPES.values()) == 436
+    assert len(targets) == sum(TYPES.values()) == 442
     assert matrix['registry_sha256'] == hashlib.sha256(REGISTRY.read_bytes()).hexdigest()
     rows = matrix['rows']
-    assert matrix['baseline_target_count'] == 419 and matrix['target_count'] == 436
-    assert len(rows) == 436 and {r['registry_id'] for r in rows} == targets.keys()
+    assert matrix['baseline_target_count'] == 419 and matrix['target_count'] == 442
+    assert len(rows) == 442 and {r['registry_id'] for r in rows} == targets.keys()
     assert Counter(r['type'] for r in rows) == TYPES
     assert Counter(r['paper'] for r in rows) == PAPERS
     assert Counter(r['classification'] for r in rows) == matrix['counts']

@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "status": "TECHNICAL_VERIFICATION_COMPLETE_LOCAL_COMMIT_NEXT",
+  "scope": "Local scientific manuscript/control integration and actual Lean package reproduction; not external validation",
+  "external_support_certified": false,
+  "cn3_integration_verified": true,
+  "historical_cn3_erased_history": false,
+  "historical_allPreregisteredCriteriaPass": false,
+  "runtime_campaign_executed": false,
+  "lean": {
+    "passed": true,
+    "source_modules": 40,
+    "public_theorems_audited": 348,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "seconds": 1335.33
+  },
+  "math_regressions": {
+    "passed": true,
+    "suites": 35
+  },
+  "registry_entries": 927,
+  "macros": 383,
+  "coverage_targets": 442,
+  "new_exact_match": 0,
+  "raw_adjudicators": {
+    "26": {
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "external_support_certified": false
+    },
+    "27": {
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    "28": {
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    "30": {
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    "31": {
+      "v30_verdict": "BLOCKED_MULTIPLE_GATES",
+      "verdict": "BLOCKED_FOUNDATION_FIRST_GATES",
+      "external_support_certified": false
+    }
+  },
+  "cn3_gates_receipt": "CN3_ADDENDUM/VERIFICACION.json",
+  "cn3_final_build": "CN3_ADDENDUM/TYPOGRAPHY.json",
+  "scientific_resumption_receipt": "RESUMPTION/VERIFICACION.json",
+  "previous_stopped_attempt": {
+    "name": "lean",
+    "command": [
+      "python",
+      "scripts/verify-lean.py",
+      "--kernel-only",
+      "--packages-dir",
+      "E:/QICN-LEAN/v4.31.0-desktop/packages"
+    ],
+    "initial_memory": {
+      "physical_bytes": 2792800256,
+      "page_bytes": 1649528832
+    },
+    "pid": 17840,
+    "stopping_memory": {
+      "physical_bytes": 2696990720,
+      "page_bytes": 522334208
+    },
+    "exit": 1,
+    "seconds": 25.95,
+    "stop_reason": "RESOURCE_LIMIT_BELOW_500_MB",
+    "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\gate-lean.log",
+    "log_sha256": "4f016bb58b141385553a0f25d3a366a58fc96425fb445008ec444320e28e414e"
+  },
+  "post_commit_receipt": "E:/QICN-PRESERVACION/2026-11-17-fase-cientifica-atomico-puente/BRANCH_STATE_FINAL.json",
+  "final_metadata_gates": "RESUMPTION/FINAL_METADATA_GATES.json"
+}

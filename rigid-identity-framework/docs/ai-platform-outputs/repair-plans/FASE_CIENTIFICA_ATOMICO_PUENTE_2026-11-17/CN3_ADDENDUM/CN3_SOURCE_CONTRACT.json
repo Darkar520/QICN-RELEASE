@@ -1,0 +1,48 @@
+{
+  "source_repository": "QICN-SYSTEM",
+  "source_paths_sha256": {
+    "config/workbench/preregister.v1.json": "483ceef34873012a35a782d538c8feb4d758de2e46d1e4e27ef905ee34eeae9c",
+    "scripts/run-historical-dependence-ablation.mjs": "9822811f7b7b8309cd3a4a7554edc86369bc96a76cd24e2eaa7ae5dbf49b3f0d",
+    "scripts/run-full-cycle-language-ablation.mjs": "8b172f794950d53e8ce2b1ea878a8af1a108b3c98e5e4df4f6512e4d951de4f4",
+    "src/experiments/workbench/interventions.js": "b9b6c9ee557c3d24c9de518a3fb882abaeebd6e76ced85f34c620cda63c1aeaa",
+    "src/experiments/workbench/contracts.js": "9b002435a8240ad17aa507a1dd667b637280abaf53f0fdc12df44b811ed28a4d"
+  },
+  "runtime_head_at_read": "88dfd5cea71ad66845b50c5981df24febeba5eed",
+  "preregister_source_commit": "4142610792c51a171db3b965ff314646fa5535c1",
+  "historical_v1": {
+    "script": "scripts/run-historical-dependence-ablation.mjs",
+    "seeds": [
+      11,
+      23,
+      37,
+      41,
+      53
+    ],
+    "warmup_ticks": 420,
+    "evaluation_ticks": 180,
+    "nodes": 250,
+    "action_divergence_min": 0.2,
+    "anchor_l2_min": 0.08,
+    "viability_gain_min": 0.03,
+    "required_seeds": 4,
+    "primary_viability_rule": "deltaInTubeRate >= 0.03 OR deltaObjectiveScore >= 0.03",
+    "cn3_rule": "count(deltaMaturedMinusErased >= 0.03) >= 4 AND count(erasedActionDivergenceVsMatured >= 0.20) >= 4 AND every(erasedVsNaiveZeroProbeDivergence === 0)",
+    "stage0_memory_reproduction": {
+      "artifact_role": "diagnostic_summary_not_runtime_primary",
+      "seeds_meeting_action_divergence": 5,
+      "seeds_meeting_anchor_shift": 5,
+      "seeds_meeting_viability_gain": 4,
+      "cn3_seeds_meeting_advantage": 3,
+      "cn3_seeds_meeting_action_divergence": 3,
+      "cn3_erased_history": false,
+      "cn4_maxAbsDiff": 0,
+      "allPreregisteredCriteriaPass": false
+    },
+    "change_policy": "Preserve v1 unchanged. New causal protocols require a distinct version; never tune thresholds or remove seeds to turn this failure into a pass."
+  },
+  "paired_profile": "paired_intervention",
+  "paired_branch": "erase_declared_history",
+  "paired_erasure_scope": "one-time declared history reset; nodal/physical digest preserved; subsequent learning preserved",
+  "current_runtime_observed_not_reexecuted": true,
+  "external_support_certified": false
+}

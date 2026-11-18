@@ -2367,3 +2367,22 @@ realización positiva H5, contratos completos de IX y probabilidad general
 con sharpness en X. Etapas 4–5: calibración, comparación y revisión externa.
 Ningún problema abierto cambia de estado por compilar. Veredictos crudos
 sin promoción; `external_support_certified=false`.
+
+
+## Fase científica: separador y acoplamiento ampliado — 2026-11-17
+
+Rama codex/fase-cientifica-atomic-puente desde main 5769ecf; checkpoint experimental A separado en codex/etapa3b-lean (5fd9d01). No merge ni push.
+
+Seis resultados manuscritos nuevos: observabilidad desde irreducibilidad finita, control producto, separador I_int derivado y sus límites, seguridad del acoplamiento prefijo-mundo, contraste de cinco raíces y obstrucción de réplica total. No se anuncia cierre universal del gap atómico ni del puente fenomenal. Prerrequisitos y ledger H1–H4 actualizados; déficit histórico H4 preservado.
+
+Registro 927, IDs previos conservados, macros 383. Cobertura 442: 14 exactos, 56 parciales, 356 pendientes de Lean, 16 de protocolo. Tres unidades y monolito de 439 páginas compilados sin referencias rotas, duplicados ni overfull. Catorce puertas no-Lean aprobadas, incluyendo math 35/35 y release 6/6.
+
+**Cierre técnico local:** la reproducción fresca se completó tras mejorar los recursos: 40 módulos y 348 declaraciones públicas, axiomas estándar auditados. CN-3 quedó integrado conservando su false y su separación del protocolo prospectivo externo. Las verificaciones permiten preparar el commit local; el recibo post-commit fija su identidad. No se publica ni se declara cierre científico. Los seis resultados nuevos requieren mecanización y revisión independiente; el criterio finito no se deriva de las hipótesis generales continuas.
+
+Recibos: docs/ai-platform-outputs/repair-plans/FASE_CIENTIFICA_ATOMICO_PUENTE_2026-11-17/. external_support_certified=false.
+
+Auditoría de cierre y resolución CN-3, 2026-11-17: la procedencia queda fijada por historical_v1 de QICN-SYSTEM. Se conserva cn3_erased_history=false (3/5 y 3/5), sin retocar umbrales; se distingue erase_declared_history y su aprendizaje posterior. La extensión prospectiva bridge_cn3_extension_v1 mide F y Z_op con pérdida/intervalos/calibración preregistrados. Ver CN3_ADDENDUM y COMPLETION_AUDIT.json. La verificación del addendum y la reproducción Lean de la fase anterior se reportan por separado; no se cierra el puente externo. external_support_certified=false.
+
+Cierre del addendum CN-3: integración y propagación verificadas, fuentes del runtime intactas, historical_v1=false conservado. Paper IX 75 páginas y monolito 440 sin incidencias finales de LaTeX. La extensión del puente es prospectiva y requiere calibración externa antes de ejecutarse. Reproducción Lean de la fase científica: reanudación con mejora de memoria comprobada; recibo independiente en RESUMPTION.
+
+Reanudación final: RESUMPTION confirma Lean EXIT=0 y math 35/35; CN3_ADDENDUM confirma propagación compilada. Main 5769ecf y rama A 5fd9d01 conservados. El commit local se congela tras revisión del staged; SHA final en el recibo externo de la fase. H1–H4 externos y el control histórico CN-3=false no cambian.

@@ -1,0 +1,115 @@
+{
+  "passed": true,
+  "external_support_certified": false,
+  "results": [
+    {
+      "name": "gaps",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:gaps"
+      ],
+      "initial_memory": {
+        "physical_bytes": 3239161856,
+        "page_bytes": 6272536576
+      },
+      "pid": 18452,
+      "exit": 0,
+      "seconds": 2.05,
+      "stop_reason": null,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\gaps.log",
+      "log_sha256": "a0cc05647c4c535a3bfe611af82afcafc43f070eb9d8c20de1667054b8400a06",
+      "literal_output": "\n> qicn-rigid-identity-framework@0.0.0-fcr audit:gaps\n> node scripts/audit-superior-gaps.js\n\nUnified superior-gap audit: PASS; checks=3/3\n"
+    },
+    {
+      "name": "semantic",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:semantic-inflation"
+      ],
+      "initial_memory": {
+        "physical_bytes": 3241070592,
+        "page_bytes": 6273613824
+      },
+      "pid": 18336,
+      "exit": 0,
+      "seconds": 1.53,
+      "stop_reason": null,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\semantic.log",
+      "log_sha256": "790a71b91fe3db7dbc17d306b7fb5d4e28db0eaf18fbf3330bd70bcec35c79d2",
+      "literal_output": "\n> qicn-rigid-identity-framework@0.0.0-fcr audit:semantic-inflation\n> node scripts/audit-semantic-inflation.js\n\nSemantic inflation audit v40: PASS; files=305; below_threshold=consciousness,phenomenal,subjective,moral_status; report=docs/SEMANTIC_INFLATION_AUDIT_v40.md\n"
+    },
+    {
+      "name": "negative",
+      "command": [
+        "npm.cmd",
+        "run",
+        "test:negative-controls"
+      ],
+      "initial_memory": {
+        "physical_bytes": 3231723520,
+        "page_bytes": 6268366848
+      },
+      "pid": 20080,
+      "exit": 0,
+      "seconds": 1.05,
+      "stop_reason": null,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\negative.log",
+      "log_sha256": "eaf3b41ca35c21fc0ff8c0870bf21b74bd4ea38163b8de0e6a844e177857769f",
+      "literal_output": "\n> qicn-rigid-identity-framework@0.0.0-fcr test:negative-controls\n> node scripts/negative-control-suite.js\n\n[v30 STRICT] Fixture DW=0.0385 < 0.5 \u2014 severe serial autocorrelation. BLOCKED.\n[v30 STRICT] Fixture DW=0.0000 < 0.5 \u2014 severe serial autocorrelation. BLOCKED.\n[v30 STRICT] Fixture DW=0.0385 < 0.5 \u2014 severe serial autocorrelation. BLOCKED.\n[v30 STRICT] Fixture DW=0.0385 < 0.5 \u2014 severe serial autocorrelation. BLOCKED.\n[v30 STRICT] Fixture DW=0.0385 < 0.5 \u2014 severe serial autocorrelation. BLOCKED.\nNegative-control suite v30: PASS; cases=6/6; external_support_certified=false\n"
+    },
+    {
+      "name": "math",
+      "command": [
+        "python",
+        "scripts/verify-math-regressions.py"
+      ],
+      "initial_memory": {
+        "physical_bytes": 3235254272,
+        "page_bytes": 6268497920
+      },
+      "pid": 17696,
+      "exit": 0,
+      "seconds": 124.64,
+      "stop_reason": null,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\math.log",
+      "log_sha256": "94ee4e8e589ae4512f5310b6405db7407c25edbe113c65856a7def53c2d27bbc",
+      "literal_output": "check_math.py: PASS\ncheck_regime_implementation.py: PASS\ncheck_partitions.py: PASS\ncheck_null.py: PASS\ncheck_bc_met_rig.py: PASS\ncheck_bc_ns.py: PASS\ncheck_p1_dynamics.py: PASS\ncheck_p2_comparators.py: PASS\ncheck_p2_diagnostics.py: PASS\ncheck_p2_ruptures.py: PASS\ncheck_p2_common_support.py: PASS\ncheck_p2_legibility.py: PASS\ncheck_p3_memory.py: PASS\ncheck_p3_followups.py: PASS\ncheck_p4_bridge_adjudication.py: PASS\ncheck_p4_p5_window_geometry.py: PASS\ncheck_unified_tower.py: PASS\ncheck_prefix_tower.py: PASS\ncheck_paper1_front.py: PASS\ncheck_tower_joint_certificate.py: PASS\ncheck_informed_reserve.py: PASS\ncheck_bridge_transport_burdens.py: PASS\ncheck_campaign_front5.py: PASS\ncheck_adjudication_front5.py: PASS\ncheck_body_world.py: PASS\ncheck_nonadditive_body_world.py: PASS\ncheck_foundational_sanitation.py: PASS\ncheck_unification.py: PASS\n../OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/check_atomicity.py: PASS\n../OBLIGACIONES_EPISTEMOLOGICAS_2026-11-12/check_infinite_interface.py: PASS\n../RUTA3_NO_VACUIDAD_ESTABILIDAD_2026-11-12/check_wedge_stability.py: PASS\n../RUTA3_NO_VACUIDAD_ESTABILIDAD_2026-11-12/check_native_subfp.py: PASS\n../ETAPA1_BASECORE_PAPERS_I_III_2026-11-14/check_etapa1_foundations.py: PASS\n../ETAPA2_PAPERS_IV_X_BRIDGE_MONOLITH_2026-11-14/check_etapa2_downstream.py: PASS\n../FASE_CIENTIFICA_ATOMICO_PUENTE_2026-11-17/check_atomic_coupled.py: PASS\n"
+    },
+    {
+      "name": "lean",
+      "command": [
+        "python",
+        "scripts/verify-lean.py",
+        "--kernel-only",
+        "--packages-dir",
+        "E:/QICN-LEAN/v4.31.0-desktop/packages"
+      ],
+      "initial_memory": {
+        "physical_bytes": 3249758208,
+        "page_bytes": 6301687808
+      },
+      "pid": 4676,
+      "exit": 0,
+      "seconds": 1335.33,
+      "stop_reason": null,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\lean.log",
+      "log_sha256": "d12dabe2dd7ac85a2f5992d60402eeb1bdfb053a67e1974c260c2edb4a917dce",
+      "literal_output": "version: PASS\nbuiltin-library: PASS\npin-mathlib: PASS\npin-plausible: PASS\npin-LeanSearchClient: PASS\npin-importGraph: PASS\npin-proofwidgets: PASS\npin-aesop: PASS\npin-Qq: PASS\npin-batteries: PASS\npin-Cli: PASS\nkernel-QICNLean.Basic: PASS\nkernel-QICNLean.QICNContraction: PASS\nkernel-QICNLean.QICNHilbertInstance: PASS\nkernel-QICNLean.QICNConvexProjection: PASS\nkernel-QICNLean.QICNAttractorCompact: PASS\nkernel-QICNLean.QICNAttractorConcrete: PASS\nkernel-QICNLean.QICNNonCollapse: PASS\nkernel-QICNLean.QICNH5Derivation: PASS\nkernel-QICNLean.QICNH5Convex: PASS\nkernel-QICNLean.QICNH5ConvexExclusion: PASS\nkernel-QICNLean.QICNH5QuotientDynamics: PASS\nkernel-QICNLean.QICNH5QuotientDisplacement: PASS\nkernel-QICNLean.QICNH5UnilateralBridge: PASS\nkernel-QICNLean.QICNSInstance: PASS\nkernel-QICNLean.QICNSCoupledInstance: PASS\nkernel-QICNLean.QICNRotationSpectral: PASS\nkernel-QICNLean.QICNCoupledSplitMargin: PASS\nkernel-QICNLean.QICNCoupledSplitMarginUniversal: PASS\nkernel-QICNLean.QICNProjectiveTransport: PASS\nkernel-QICNLean.QICNObservationBudget: PASS\nkernel-QICNLean.QICNFiniteP4: PASS\nkernel-QICNLean.QICNMetricFronts: PASS\nkernel-QICNLean.QICNFiniteFronts: PASS\nkernel-QICNLean.QICNBodyWorldDynamics: PASS\nkernel-QICNLean.QICNBodyWorldFinite: PASS\nkernel-QICNLean.QICNBodyWorldEvaluation: PASS\nkernel-QICNLean.QICNEpistemicAtomicity: PASS\nkernel-QICNLean.QICNEpistemicWitness: PASS\nkernel-QICNLean.QICNEpistemicInterface: PASS\nkernel-QICNLean.QICNEpistemicWedgeStability: PASS\nkernel-QICNLean.QICNEpistemicSubfp: PASS\nkernel-QICNLean.QICNAnalyticProjection: PASS\nkernel-QICNLean.QICNParametricContraction: PASS\nkernel-QICNLean.QICNInverseLimitTopology: PASS\nkernel-QICNLean.QICNBaseSufficiency: PASS\nkernel-QICNLean.QICNWeightedChannels: PASS\nkernel-QICNLean.QICNMooreFactorization: PASS\nkernel-QICNLean.QICNFourRootContrast: PASS\nkernel-QICNLean.QICNFiniteAdjudication: PASS\nkernel-QICNLean: PASS\naxioms: PASS\n{\"passed\": true, \"source_modules\": 40, \"public_theorems_audited\": 348, \"axioms\": [\"Classical.choice\", \"Quot.sound\", \"propext\"], \"external_support_certified\": false}\n"
+    }
+  ],
+  "resources_changed": {
+    "before": {
+      "physical_bytes": 2792800256,
+      "page_bytes": 1649528832
+    },
+    "now": {
+      "physical_bytes": 3239170048,
+      "page_bytes": 6272536576
+    }
+  },
+  "scope": "Resume unfinished scientific phase after CN-3 closure and verified memory improvement",
+  "lean_source_modules": 40,
+  "public_theorems": 348
+}

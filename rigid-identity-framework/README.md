@@ -93,7 +93,7 @@ python scripts/verify-lean.py --kernel-only --packages-dir E:/QICN-LEAN/v4.31.0-
 python scripts/verify-lean-coverage.py
 ```
 
-La matriz conserva 419 enunciados iniciales y 436 activos tras Etapa 2; contar declaraciones auxiliares
+La matriz conserva 419 enunciados iniciales, 436 tras Etapa 2 y 442 activos tras la fase científica; contar declaraciones auxiliares
 Lean no mide por sí solo la cobertura de esos enunciados. Véanse las hipótesis,
 brechas y límites en la guía del paquete y en la matriz enlazada allí.
 Etapa 3A: 40 fuentes con agregado y 348 declaraciones públicas; cobertura
@@ -137,3 +137,5 @@ Domains, codomains, units and quantifiers must be stated before transporting a r
 Every mathematical change must identify its definition/theorem owner, altered hypotheses and conclusions, and affected mentions in abstracts, introductions, tables, predictions, conclusions, appendices and cross-paper contracts. Update sources, preserved-ID registries and compiled volumes together; justify every unaffected surface. Record A01–A37/B01–B15 dispositions in the existing roadmap and ledger, not a parallel claim registry.
 
 Technical names describe demonstrated objects. Historical aliases remain traceable; interpretation is placed at the end of each paper with formal anchors, additional hypotheses, differential tests and evidence obligations. A finite certificate, an open conjecture and a proved global result remain distinct. Automated prose checks assist review and do not certify mathematical coherence.
+
+La fase científica añade seis resultados manuscritos pendientes de mecanización: registro 927, macros 383 y cobertura actual 14 exactos / 56 parciales / 356 pendientes / 16 de protocolo. Las fuentes Lean de esta rama siguen siendo las 40 de Etapa 3A, con 348 declaraciones públicas. El checkpoint experimental Etapa 3B se conserva en otra rama. CN-3 sigue false en el runtime; su extensión al puente es un protocolo prospectivo. external_support_certified=false.

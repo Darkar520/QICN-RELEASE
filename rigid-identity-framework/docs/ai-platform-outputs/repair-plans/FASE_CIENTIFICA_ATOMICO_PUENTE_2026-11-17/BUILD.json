@@ -1,0 +1,202 @@
+{
+  "passed": true,
+  "external_support_certified": false,
+  "results": [
+    {
+      "name": "root-canonical-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.31,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\root-canonical-integrity.log",
+      "log_sha256": "4afd50fe4f9d419436d535267e1bfe232e107f2c418a32149be612bc4b9b52f1"
+    },
+    {
+      "name": "root-claim-registry",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.17,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\root-claim-registry.log",
+      "log_sha256": "35b5dbbcf54d118147ec8cecfae31da3628ea252fb99d714ad7fbcd944f8aaba"
+    },
+    {
+      "name": "root-canonical-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0,
+      "seconds": 1.28,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\root-canonical-release.log",
+      "log_sha256": "4b47b685db01bca8b569e54a4738c877e529b015f3e4f76e67240197304b47db"
+    },
+    {
+      "name": "basecore-0",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "BASECORE.tex"
+      ],
+      "exit": 0,
+      "seconds": 12.48,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\basecore-0.log",
+      "log_sha256": "81acdca41d58bd590379af765807f8232d29e8fa9204b018100ed847ff1d7d3c"
+    },
+    {
+      "name": "basecore-1",
+      "command": [
+        "biber",
+        "BASECORE"
+      ],
+      "exit": 0,
+      "seconds": 171.34,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\basecore-1.log",
+      "log_sha256": "b727e3fe7c4180e146433d14bf58cf518a856f8bd2acb6aec0b9b495dfe41021"
+    },
+    {
+      "name": "basecore-2",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "BASECORE.tex"
+      ],
+      "exit": 0,
+      "seconds": 7.77,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\basecore-2.log",
+      "log_sha256": "22561351faa09b241a45d807cb1eb9517ed866a2aa73b869ee3cdb96c1f5eda4"
+    },
+    {
+      "name": "basecore-3",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "BASECORE.tex"
+      ],
+      "exit": 0,
+      "seconds": 7.3,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\basecore-3.log",
+      "log_sha256": "64fcdc2a040509c934720ef6466090a66ea19c144d12f4b70afc3a2dc554ae8b"
+    },
+    {
+      "name": "paper5_operational_consciousness-0",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.67,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\paper5_operational_consciousness-0.log",
+      "log_sha256": "36b734f58acd162f4d3d6a8da4455e2da0db1def07fa3b5450f0916534a3fe7e"
+    },
+    {
+      "name": "paper5_operational_consciousness-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 6.06,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\paper5_operational_consciousness-1.log",
+      "log_sha256": "8632d3928b203ca4b1d9e2663f9ebe8f78cbc37d4d60cab65a36d2b4c03731b5"
+    },
+    {
+      "name": "paper5_operational_consciousness-2",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.75,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\paper5_operational_consciousness-2.log",
+      "log_sha256": "c98f926408ea4e240ac69b655c0555cdd16b475fe01d1baed66782e50a09f4fb"
+    },
+    {
+      "name": "paper5_operational_consciousness-3",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 7.55,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\paper5_operational_consciousness-3.log",
+      "log_sha256": "2a6d2c5eb94c1d74b25fc54fa7dfa072ed06dba1608ba67f1582c9242633544a"
+    },
+    {
+      "name": "paper9_phenomenal_bridge_organization-0",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 6.81,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\paper9_phenomenal_bridge_organization-0.log",
+      "log_sha256": "7f9ff46b8c193172dd690d9c9a52679447639c87fb4b4ea0154beb012f7e477a"
+    },
+    {
+      "name": "paper9_phenomenal_bridge_organization-1",
+      "command": [
+        "biber",
+        "main"
+      ],
+      "exit": 0,
+      "seconds": 9.47,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\paper9_phenomenal_bridge_organization-1.log",
+      "log_sha256": "df637de107d2095a861f14b5d39b1b6ff5fb041aff45a1605ad94cfcbc636b59"
+    },
+    {
+      "name": "paper9_phenomenal_bridge_organization-2",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 9.75,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\paper9_phenomenal_bridge_organization-2.log",
+      "log_sha256": "f4147d620bb9f88e442f1e19363850bf4a233fd284c0b807224013d60a331ee7"
+    },
+    {
+      "name": "paper9_phenomenal_bridge_organization-3",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "exit": 0,
+      "seconds": 8.59,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\paper9_phenomenal_bridge_organization-3.log",
+      "log_sha256": "7460431283ad7b6f5f101e37a564b03f2f4d8942487f1c30c090274e68e6b7be"
+    },
+    {
+      "name": "monolithic",
+      "command": [
+        "npm.cmd",
+        "run",
+        "compile:monolithic"
+      ],
+      "exit": 0,
+      "seconds": 89.73,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\logs\\monolithic.log",
+      "log_sha256": "7d07875b813d0467f221229bd73bf11984cbdfd8d9838f1ab378d2058592f524"
+    }
+  ],
+  "isolated_root": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\work"
+}

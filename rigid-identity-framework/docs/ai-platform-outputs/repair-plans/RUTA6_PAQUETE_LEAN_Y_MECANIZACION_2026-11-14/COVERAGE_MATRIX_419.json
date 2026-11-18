@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "scope": "436 active source targets; Etapa 3A adds reviewed general kernels and explicitly bounded components. Public Lean declarations have a different denominator.",
-  "registry_sha256": "0000129c1c9dc46533b440c82a009a4c2f9449301c95b13c20eec4bb7aa8d467",
-  "source_revision": "Etapa 3A Lean edition against unchanged main 5aa5da2 manuscript registry",
+  "scope": "442 active source targets; six manuscript-only scientific additions. No new EXACT_MATCH.",
+  "registry_sha256": "a8eae27c11ecd61dda37a9935f3ec301641c2d1f9db88b7c3128ed2456341b18",
+  "source_revision": "Scientific branch from 5769ecf; experimental Lean excluded",
   "lean_package_path": "rigid-identity-framework/lean",
   "lean_version": "4.31.0",
   "classification_method": "Registry dependencies and typed topic obligations, plus explicit reviewed Lean links. Only adjudicated full source-equivalence annotations receive EXACT_MATCH. A link to a module proves component availability, not full manuscript coverage.",
   "counts": {
     "EXACT_MATCH": 14,
     "FINITE_OR_PARTIAL_KERNEL": 56,
-    "PENDING_MATHLIB": 350,
+    "PENDING_MATHLIB": 356,
     "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
   },
   "rows": [
@@ -3970,8 +3970,8 @@
         "line_start": 717,
         "line_end": 721
       },
-      "source_statement_tex": "\\begin{proposition}[Runtime non-promotion]\\label{prop:runtime-non-promotion}\nNo artifact with status \\texttt{proxy}, \\texttt{estimator},\n\\texttt{certificate}, or \\texttt{internal\\_support} entails\n\\texttt{external\\_validation}.\n\\end{proposition}",
-      "source_statement_sha256": "c56906a6e034d1d5b02676d279a79d58d015e3e777db8ad76837e33273404789",
+      "source_statement_tex": "\\begin{proposition}[Runtime non-promotion]\\label{prop:runtime-non-promotion}\nNo artifact with status \\texttt{proxy}, \\texttt{estimator},\n\\texttt{certificate}, or \\texttt{\\detokenize{internal_}\\allowbreak{}\\detokenize{support}} entails\n\\texttt{\\detokenize{external_}\\allowbreak{}\\detokenize{validati}\\allowbreak{}\\detokenize{on}}.\n\\end{proposition}",
+      "source_statement_sha256": "32fb4727899f109a36862e408e1e83484368b861eab5a65d870f8c7930088c7c",
       "source_epistemic_status": "proved",
       "classification": "EMPIRICAL_OR_PROTOCOL_BOUNDED",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
@@ -9267,8 +9267,8 @@
       "label": "thm:circle-prefix-integration-obstruction",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 504,
-        "line_end": 506
+        "line_start": 582,
+        "line_end": 584
       },
       "source_statement_tex": "\\begin{theorem}[Exact Split at the Initial Projective Cut]\\label{thm:circle-prefix-integration-obstruction}\nOn each circle-prefix tower, every continuous branch-preserving evolution that descends to depth zero factors into phase and binary dynamics. If the evolutions on both towers commute with the existing transport, the split extends to $Z$. The original dissipative family and the declared phase rotations, jump transport and split readouts then admit a structural comparator with zero error. Consequently no support certificate on this full $Z$ can contain all six witnesses for the original dynamics and this sector.\n\\end{theorem}",
       "source_statement_sha256": "b65617815183dbe076e4b59c149a4ecb65f373b49de78f26abfb40321a9f13d1",
@@ -9301,8 +9301,8 @@
       "label": "thm:circle-prefix-cofinal-margin",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 512,
-        "line_end": 522
+        "line_start": 590,
+        "line_end": 600
       },
       "source_statement_tex": "\\begin{theorem}[Positive Split-Readout Margin on the Cofinal Tower]\\label{thm:circle-prefix-cofinal-margin}\nKeep $Z$ and the same three readout channels. Enlarge the control by $q\\in\\{-1,0,1\\}$ and fix $0<\\lambda\\le1/9$. On branch $s$ set\n\\[\n \\Psi_{u,q}(s,\\theta,b)=(s,u+q\\lambda b_1,R(b)).\n\\]\nThese maps descend to all stages $t\\ge1$ and commute with the jump transport, with the same inverse-limit support and the same E1--E2 readout. Each branch is forward invariant and each fixed-control map has sharp contraction factor $1/3$ there. The sector of product encodings and split-readout approximants just declared is nonempty. Its infimal error $e_\\ast$ satisfies\n\\[\n \\frac{\\beta\\lambda}{2}\\ \\le\\ e_\\ast\\ \\le\\ \\frac{\\lambda}{2}.\n\\]\nFor comparators reproducing all three channels exactly at time zero, the infimal error is exactly $\\lambda/2$. At $\\lambda=0$ the original exact comparator is recovered. For $\\lambda>0$, the new controls fail to descend to depth zero.\n\\end{theorem}",
       "source_statement_sha256": "e62fafe3ecce9edc2a45e9e3f1557e2e444bfd72182b869b98d8037a08dc2df2",
@@ -9348,8 +9348,8 @@
       "label": "thm:paired-integration-rupture",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 543,
-        "line_end": 545
+        "line_start": 621,
+        "line_end": 623
       },
       "source_statement_tex": "\\begin{theorem}[Sharp Paired Detection of Integration Loss]\\label{thm:paired-integration-rupture}\nIf $\\eta<L/2$, the rule $D>L$ detects the coupled case for every prepared state with $b_1=1$ and every allowed error. It rejects the uncoupled case and the sham with $b_1=0$. The score has clearance at least $L-2\\eta$ from the threshold. With $b_1=1$ this distinguishes a zero comparator margin from a margin at least $\\beta L/2$ in the declared sector. If $\\eta\\ge L/2$, there is no rule of the paired observations with a uniform guarantee over these two hypotheses, even if both phase channels and the ternary channel are recorded.\n\\end{theorem}",
       "source_statement_sha256": "820799992e304f7f95437b03d8c42335fbd737d6bd93df76dd0a17ba214c671a",
@@ -9384,8 +9384,8 @@
       "label": "thm:tower-identity-observation-resolution",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 553,
-        "line_end": 564
+        "line_start": 631,
+        "line_end": 642
       },
       "source_statement_tex": "\\begin{theorem}[Sharp Single-Readout Resolution of Tower Identity]\\label{thm:tower-identity-observation-resolution}\nIn the common history metric and the common readout metric, respectively,\n\\[\n d_H(I_a,I_{a'})=d_H(F(I_a),F(I_{a'}))\n =\\frac{\\beta}{1+\\beta}\\rho(a,a').\n\\]\nHere $F$ is the same early-phase, late-phase and ternary readout applied to every branch in the comparison. Two specified alternatives can be distinguished uniformly from a single observation with error at most $\\eta$ if and only if\n\\[\n \\rho(a,a')>2(1+\\beta^{-1})\\eta.\n\\]\nA decoder can use the measured phase difference $z=y_1-y_0$ and retain every alternative within circle distance $(1+\\beta^{-1})\\eta$ of $z$. For a separated family it returns the unique compatible alternative. A continuous interval of jumps has zero uniform deformation gap over distinct alternatives.\n\\end{theorem}",
       "source_statement_sha256": "d2d4a40e91af619ba169f5d8cc379190cb73ac3dd382af47bf2be302301ff03e",
@@ -9418,8 +9418,8 @@
       "label": "thm:addressable-identity-alternatives",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 578,
-        "line_end": 589
+        "line_start": 656,
+        "line_end": 667
       },
       "source_statement_tex": "\\begin{theorem}[Identity Separation from an Addressable Control Interface]\\label{thm:addressable-identity-alternatives}\nFor two candidate profiles $p,p'$ write $d_t=p_t-p'_t$. Their branch sets have exact Hausdorff distance, both in the common history space and in the calibrated readout space,\n\\[\n D(p,p')=\\max_{0\\le i,j\\le K+1}\n \\frac{w_iw_j}{w_i+w_j}|d_i-d_j|.\n\\]\nThe family of distinct candidates has minimum separation\n\\[\n g=\\frac{1}{M(3^{K+1}+1)}.\n\\]\nUniform identification from one observation with unknown initial phase and adversarial error at most $\\eta$ is possible for the entire family exactly when $2\\eta<g$. The measurement can return the set of compatible profiles and give a unique label only when that set is a singleton. Allowing continuous amplitudes or unbounded jump addresses removes the uniform gap. Omitting intermediate phase observations can make different addresses with the same amplitude identical to the observer.\n\\end{theorem}",
       "source_statement_sha256": "d9d99b4a5225b48ec759ddb4574b807993fee6b8139c50ed7a28c20d71bca7bd",
@@ -9452,8 +9452,8 @@
       "label": "prop:circle-prefix-rupture-controls",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 597,
-        "line_end": 599
+        "line_start": 675,
+        "line_end": 677
       },
       "source_statement_tex": "\\begin{proposition}[Rupture Controls on the Declared Circle-Prefix Model]\\label{prop:circle-prefix-rupture-controls}\nUse the same two-branch reference support and the control family of Theorem~\\ref{thm:circle-prefix-cofinal-margin}. Each of the following changes gives the specified witness loss under its declared protocol. The changes need not preserve all five other witnesses.\n\\end{proposition}",
       "source_statement_sha256": "0fb56c634b599616830e098e08d9e4045ab3e2fe24f302c04fe4d1e200dba9a8",
@@ -9489,8 +9489,8 @@
       "label": "thm:integration-all-identity-channels",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 622,
-        "line_end": 628
+        "line_start": 700,
+        "line_end": 706
       },
       "source_statement_tex": "\\begin{theorem}[Integration with All Identity Channels]\\label{thm:integration-all-identity-channels}\nFor $0<\\lambda\\le1/9$, the split-readout sector on $Z_{\\mathcal P}$ is nonempty, and its infimal history error is bounded by\n\\[\n \\frac{w_{K+1}\\lambda}{2}\\le e_\\ast\\le\\frac{\\lambda}{2}.\n\\]\nThe infimum is exactly $\\lambda/2$ in the subsector with all time-zero readouts exact. At $\\lambda=0$ there is an exact comparator in both sectors. The bounds cover every nonempty partition of the specified scalar and circle channels.\n\\end{theorem}",
       "source_statement_sha256": "eb5843405b05cd37fc4c668eac60705859be1791193ad9842e4147ad19e5669b",
@@ -9538,8 +9538,8 @@
       "label": "prop:common-support-sham-obstruction",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 638,
-        "line_end": 640
+        "line_start": 716,
+        "line_end": 718
       },
       "source_statement_tex": "\\begin{proposition}[Common Support and the Obstruction to Stable State Labels]\\label{prop:common-support-sham-obstruction}\nThe support $Z_{\\mathcal P}$ provides the persistence, catalogue-relative identity, split-sector integration, discrete-time continuity and non-null differentiation witnesses below. Consider a legibility protocol assigning each state a label by decoding a fixed finite observation window under a repeated sham $(u_0,0)$. Suppose the label is robust to uniform observation noise of some positive radius, and invariant under advancing the sham by one step for every admissible starting state. Then the label is constant on each branch. No branch-preserving internal control can produce a shift in such a label. A target population requiring such a shift cannot meet L4 in this protocol.\n\\end{proposition}",
       "source_statement_sha256": "6e05e319cd194cc2d148ed015195730195dad2b2e33f6b3677402da7f0a6a4af",
@@ -9574,8 +9574,8 @@
       "label": "thm:matched-integration-legibility",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 655,
-        "line_end": 666
+        "line_start": 733,
+        "line_end": 744
       },
       "source_statement_tex": "\\begin{theorem}[Legibility of Matched Integration Responses]\\label{thm:matched-integration-legibility}\nUse the windows of Definition~\\ref{def:matched-paired-response-window} with $\\lambda\\in\\{0\\}\\cup[L,1/9]$ and adversarial observation error at most $\\eta=1/256$ in the paired metric. The following are the L1--L6 properties of Definition~\\ref{def:ileg} evaluated on the paired-response domain.\n\\begin{enumerate}[leftmargin=1.5em]\n\\item The clean high and low response sets have separation exactly $L$.\n\\item All observations in the allowed noise balls preserve the clean class, with zero abstentions.\n\\item For any train of at least three freshly reset pairs at a fixed coupling and fixed prepared first bit, the class persists when the common input phase varies across pairs.\n\\item In the nonempty target population, retain the same state and common input, prepare $b_1=1$, and ablate $\\lambda\\in[L,1/9]$ to zero between paired trials. The class changes from high to low with zero misses.\n\\item In the nonempty sham population, retain the state and coupling and vary the common input across paired trials. Both first-bit strata are allowed. The false-change and abstention rates are zero.\n\\item On the resolved domain one bit retains the class with zero discrete class distortion, and zero bits are insufficient. Including the audit status of abstention requires two bits in a fixed-length encoding.\n\\end{enumerate}\nAt error radius $L/2$ a low and a high experiment can have identical full observations. If the common-input condition is removed, even a noise-free uncoupled experiment can decode as high.\n\\end{theorem}",
       "source_statement_sha256": "5e434dacdd021a09b5f58bbab1877e77ebc6f07529db00dd397f14e2dab91db9",
@@ -9613,8 +9613,8 @@
       "label": "prop:writable-prefix-preservation",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 688,
-        "line_end": 694
+        "line_start": 766,
+        "line_end": 772
       },
       "source_statement_tex": "\\begin{proposition}[Projective Prefix Writes Preserve Identity and Integration]\\label{prop:writable-prefix-preservation}\nEach tape update commutes with prefix truncation at every positive depth. The full update is compatible on the cofinal system of depths at least seven. The safe support is invariant and the branch contraction factor is at most $9/16$ under common commands in the phase-code-memory metric of Paper VI. Catalogue separation is $1/80$. In the four-channel split sector,\n\\[\n \\frac{1}{216}\\le e_\\ast\\le\\frac{1}{24},\n\\]\nwith infimum $1/24$ when all initial readouts are exact.\n\\end{proposition}",
       "source_statement_sha256": "61a9e1ef02f17907ed4c6797fb9c00fe2bd56a6d018f2862eaa7752332be5eb0",
@@ -9652,8 +9652,8 @@
       "label": "prop:writable-tower-trajectory-legibility",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 705,
-        "line_end": 707
+        "line_start": 783,
+        "line_end": 785
       },
       "source_statement_tex": "\\begin{proposition}[Finite Legibility on One Tower Trajectory]\\label{prop:writable-tower-trajectory-legibility}\nOn this support use the binary decoder that reports whether the first ten tape digits contain a deviation from $b^\\star$. It has clean code separation $3^{-10}$ and is correct at error at most $3^{-10}/4$. From a preparation with $b=b^\\star$, any of the five opposite writes in $J$ changes the label. The post-target label persists through three more native sham steps on the same trajectory. The matched sham has zero false shifts. One bit preserves the two classes exactly.\n\\end{proposition}",
       "source_statement_sha256": "6ed31f692473e3341c2f7299d6534b76cc98a13a5bdd6c71ce226df2a1c625c2",
@@ -9691,8 +9691,8 @@
       "label": "prop:writable-tower-legibility-horizon",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 712,
-        "line_end": 716
+        "line_start": 790,
+        "line_end": 794
       },
       "source_statement_tex": "\\begin{proposition}[Sharp Time Horizons for a Single Prefix Lesion]\\label{prop:writable-tower-legibility-horizon}\nLet $t=0$ be the observation just after an opposite write at $j\\in\\{3,\\ldots,7\\}$ from the alternating preparation, and then apply only native neutral shams without writes or probes. Against the matched unlesioned preparation, the scalar code gap at $t$ is $D_{j,t}=2\\,3^{-(j+t)}$, with all other observed coordinates identical. For depth $N\\ge j$, the decoder of the first $N$ digits keeps the target label exactly at times $0\\le t\\le N-j$ on clean data and under code error at most $3^{-N}/4$. The clean gap is at least the resolution $3^{-N}$ exactly on this same interval.\n\nFor the two specified preparations, classification from a single observation at time $t$ is uniformly possible under code errors bounded by $\\eta$ per observation exactly when $3^{-(j+t)}>\\eta$. In particular, for $N=10$ and $\\eta=3^{-10}/4$, the ten-digit horizon is $10-j$ and the latest identifiable time for the matched contrast is $11-j$. The uniform horizons across all five target sites are three and four sham steps, respectively.\n\\end{proposition}",
       "source_statement_sha256": "acf830e9ed1a28c9da12cdb53f1055a425014fb0b35c0656314044f100275d5d",
@@ -9757,11 +9757,11 @@
       "label": "prop:necessity",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 792,
-        "line_end": 794
+        "line_start": 870,
+        "line_end": 872
       },
-      "source_statement_tex": "\\begin{proposition}[Each invariant is individually necessary]\\label{prop:necessity}\nIf any one of $\\Iper,\\Iri,\\Iint,\\Icont,\\Idiff,\\Ileg$ fails, then $S \\notin \\Cop$.\n\\end{proposition}",
-      "source_statement_sha256": "26f78b9fe5aafef948bee64efd15b9c55dc2633d8b0d6680729b42a78c68b31f",
+      "source_statement_tex": "\\begin{proposition}[Each invariant is individually necessary]\\label{prop:necessity}\nIf any one of $\\Iper,\\allowbreak \\Iri,\\allowbreak \\Iint,\\allowbreak \\Icont,\\allowbreak \\Idiff,\\allowbreak \\Ileg$ fails, then $S \\notin \\Cop$.\n\\end{proposition}",
+      "source_statement_sha256": "cef0545bdda36eac50c5faabdcc0cd8486d536b429d1bf243538787fdab691b2",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
@@ -9793,8 +9793,8 @@
       "label": "prop:qop-welldefined",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 811,
-        "line_end": 813
+        "line_start": 889,
+        "line_end": 891
       },
       "source_statement_tex": "\\begin{proposition}[Well-definedness of certified response classes]\\label{prop:qop-welldefined}\nIf $\\Iper(S)=\\Iri(S)=\\Icont(S)=\\Idiff(S)=\\Ileg(S)=1$, then $\\sim_{Q,S}$ is an equivalence relation on $\\Aset$.\n\\end{proposition}",
       "source_statement_sha256": "47214630898748ccc8fedf5f5f71ea0e0dca3e8984b236dbf9323388456c8a63",
@@ -9830,8 +9830,8 @@
       "label": "lem:support-transfer",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 904,
-        "line_end": 906
+        "line_start": 982,
+        "line_end": 984
       },
       "source_statement_tex": "\\begin{lemma}[Support transfer under exact equivalence]\\label{lem:support-transfer}\nAn exact structural equivalence transports a nonempty compact admissible support $A_1$ to an admissible support $A_2=\\chi(A_1)$ on the specified comparison domain.\n\\end{lemma}",
       "source_statement_sha256": "397b45781e74a718a196ffb44abf7aa63e57fa86a9076a1924fe323880a3ece0",
@@ -9864,8 +9864,8 @@
       "label": "lem:decoder-transport",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 911,
-        "line_end": 913
+        "line_start": 989,
+        "line_end": 991
       },
       "source_statement_tex": "\\begin{lemma}[Decoder transport]\\label{lem:decoder-transport}\nFor exact equivalence, let $H$ be the componentwise calibrated readout-window bijection and $\\kappa$ its class-label bijection. The transported algorithm is $D_2=\\kappa\\circ D_1\\circ H^{-1}$ on the declared clean and noisy observation domains. It is certified whenever $D_1$ is, and every target decoder arises by inverse transport.\n\\end{lemma}",
       "source_statement_sha256": "bb9e958bb84db04424dbad75f29d56e158822852bacce7042da21abb23c1a460",
@@ -9898,8 +9898,8 @@
       "label": "prop:transport",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 918,
-        "line_end": 924
+        "line_start": 996,
+        "line_end": 1002
       },
       "source_statement_tex": "\\begin{proposition}[Operational classes are closed under exact transport]\\label{prop:transport}\nUnder exact structural equivalence,\n\\[\n x\\sim_{Q,S_1}y\\quad\\Longleftrightarrow\\quad\\chi x\\sim_{Q,S_2}\\chi y.\n\\]\nConsequently $[x]\\mapsto[\\chi x]$ is a bijection of the operational quotients whenever those quotients are defined.\n\\end{proposition}",
       "source_statement_sha256": "a0b15af75090d5b9942b654544403fbcbe83b9902eeb5fa8ea61fa346282fa41",
@@ -9937,8 +9937,8 @@
       "label": "prop:margins",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 929,
-        "line_end": 936
+        "line_start": 1007,
+        "line_end": 1014
       },
       "source_statement_tex": "\\begin{proposition}[Approximate margin preservation]\\label{prop:margins}\nUse the common presentation metric and fixed sectors of Definition~\\ref{def:transport-calibration}. If $S_1\\simeq_{(\\Gamma,\\eps)}S_2$, then\n\\[\n |\\delta_j^{\\mathrm{cal}}(S_1)-\\delta_j^{\\mathrm{cal}}(S_2)|\\le C_{\\chi,\\rho}\\eps,\n \\quad C_{\\chi,\\rho}=\\max\\{1,L_{\\chi^{-1}},L_{\\rho^{-1}}\\}.\n\\]\nThe normalized isometric case has $C_{\\chi,\\rho}=1$. Hence $\\delta_\\star^{\\mathrm{cal}}(S_2)\\ge\\delta_\\star^{\\mathrm{cal}}(S_1)-C_{\\chi,\\rho}\\eps$. At exact equivalence all six predicates, their calibrated radii, and the operational indistinguishability relation are preserved. Optimal raw margins defined by corresponding infima/suprema of isometric losses are also equal; arbitrary chosen certificate values need not be.\n\\end{proposition}",
       "source_statement_sha256": "bc47239b1aec1b09a899efb0152c7a4c7a98b612ccb650be1f08eef6a3c21c24",
@@ -9976,8 +9976,8 @@
       "label": "prop:core-per",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 958,
-        "line_end": 960
+        "line_start": 1036,
+        "line_end": 1038
       },
       "source_statement_tex": "\\begin{proposition}[Core-to-Persistence Transfer with a Common Support]\\label{prop:core-per}\nSuppose a Core realization has a nonempty compact admissible support that is invariant under every admitted control, stays at positive distance from the collapse set, and contains or converges into an admitted attractor region. Then $\\Iper$ holds on that support.\n\\end{proposition}",
       "source_statement_sha256": "c22f78fcbc02dbc04aa983540e035987a154d23b85ea6233299c28b102c25798",
@@ -10012,8 +10012,8 @@
       "label": "prop:p1-ri",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 966,
-        "line_end": 968
+        "line_start": 1044,
+        "line_end": 1046
       },
       "source_statement_tex": "\\begin{proposition}[Rigid Identity Transfer with a Declared Gap]\\label{prop:p1-ri}\nAn identified unique inverse-limit identity object and a positive lower deformation bound for every distinct admitted alternative certify $\\Iri$ on their declared support.\n\\end{proposition}",
       "source_statement_sha256": "b4d969e5ce372d35ee3508053708038b45852cd5411ef0304db2072d35fa9946",
@@ -10048,8 +10048,8 @@
       "label": "prop:p2-cont",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 974,
-        "line_end": 976
+        "line_start": 1052,
+        "line_end": 1054
       },
       "source_statement_tex": "\\begin{proposition}[Regime Continuity Transfer on the Declared Windows]\\label{prop:p2-cont}\nIf the regime assignment takes values in the declared complete comparison space, its paths and fragmentation meet the time-domain bounds, and admissible interventions preserving identity cannot jump to incompatible regimes, then $\\Icont$ holds there.\n\\end{proposition}",
       "source_statement_sha256": "d27a8c0bba5a6565d13eeb4494520f2944bc3e3f52da1fc7d90e027f60ea5af5",
@@ -10084,8 +10084,8 @@
       "label": "prop:p3-diff",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 982,
-        "line_end": 984
+        "line_start": 1060,
+        "line_end": 1062
       },
       "source_statement_tex": "\\begin{proposition}[Null-Regime Transfer with Temporal Evidence]\\label{prop:p3-diff}\nIf an admissible common schedule supplies a positive separation between two readout windows and the null class is excluded as an asymptotically stable admissible attractor, then $\\Idiff$ holds on the support.\n\\end{proposition}",
       "source_statement_sha256": "eb5219af608f0cd8d722bce9257e383fc1870b1e5781a0e0a41538177a6350a6",
@@ -10120,8 +10120,8 @@
       "label": "prop:p4-leg",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 990,
-        "line_end": 992
+        "line_start": 1068,
+        "line_end": 1070
       },
       "source_statement_tex": "\\begin{proposition}[Forensic Predictions-to-Legibility Transfer with Decoder Evidence]\\label{prop:p4-leg}\nA structurally closed decoder and finite-rate compression protocol that meet L1--L6 under the declared admissibility, target and sham comparisons certify $\\Ileg$.\n\\end{proposition}",
       "source_statement_sha256": "11638bddc076cfef98a02dbd85f201af7e0c479e9f9f3d9937e59a15fc8d82fe",
@@ -10156,8 +10156,8 @@
       "label": "prop:integration-transfer",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 998,
-        "line_end": 1000
+        "line_start": 1076,
+        "line_end": 1078
       },
       "source_statement_tex": "\\begin{proposition}[Integration Requires a Separate Factorization Bound]\\label{prop:integration-transfer}\nOn a declared support and a nonempty comparison sector, a uniform positive lower bound on the reproduction error of all identity-preserving comparators certifies the integration margin in that sector. Rigidity, continuity and intervention fidelity supply comparison data; a separate proof must exclude accurate factorizations.\n\\end{proposition}",
       "source_statement_sha256": "1a5fb1e8a371790d8ec0fb2d3f6df0cac328b86fbe8efed4bda85f0990a5cbd7",
@@ -10196,8 +10196,8 @@
       "label": "thm:existence",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1012,
-        "line_end": 1023
+        "line_start": 1090,
+        "line_end": 1101
       },
       "source_statement_tex": "\\begin{theorem}[Existence of six-predicate operational criterion]\\label{thm:existence}\nLet $S=(X,\\Phi,C,R,\\Gamma,U)$ be an admissible system with non-empty admissible support $\\Aset$. If\n\\[\n\\Iper(S)=\\Iri(S)=\\Iint(S)=\\Icont(S)=\\Idiff(S)=\\Ileg(S)=1,\n\\]\nthen:\n\\begin{enumerate}[leftmargin=1.5em]\n\\item $S \\in \\Cop$;\n\\item $\\Qop(S)$ is well-defined;\n\\item $\\Qop(S) \\neq \\varnothing$.\n\\end{enumerate}\n\\end{theorem}",
       "source_statement_sha256": "24bba2062804fb519c6f43b06702ddb9bea4774bce9e3d9b8f9fe0dbd4fbc081",
@@ -10234,8 +10234,8 @@
       "label": "prop:decoder-visible-separation",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1029,
-        "line_end": 1031
+        "line_start": 1107,
+        "line_end": 1109
       },
       "source_statement_tex": "\\begin{proposition}[Decoder-Visible Separation Gives a Nontrivial Quotient]\\label{prop:decoder-visible-separation}\nIf the quotient is defined and two admissible states receive different labels under one certified decoder, horizon and common intervention schedule, or under a certified response-cell map, then $|\\Qop(S)|\\ge2$.\n\\end{proposition}",
       "source_statement_sha256": "0717589c8615c9eecf944960005d7f37c7675c1753e1923de6d39d693df06067",
@@ -10268,11 +10268,11 @@
       "label": "thm:infinite-six-predicate-witness",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1075,
-        "line_end": 1081
+        "line_start": 1153,
+        "line_end": 1159
       },
-      "source_statement_tex": "\\begin{theorem}[All Six Predicates on an Infinite-Dimensional Support]\\label{thm:infinite-six-predicate-witness}\nThe system of Definition~\\ref{def:hilbert-prefix-system}, with exactly its declared global comparison and observation data, has\n\\[\n (\\Iper,\\Iri,\\Iint,\\Icont,\\Idiff,\\Ileg)=(1,1,1,1,1,1).\n\\]\nIts support contains boxes of arbitrarily large dimension, and every Hilbert coordinate participates in the phase/response coupling. This is a global analytic witness, not an inference from finitely many truncations.\n\\end{theorem}",
-      "source_statement_sha256": "f48a3a12904432eab749d35bf850b8a081ee3a58120d4f59aa4f148298e4a552",
+      "source_statement_tex": "\\begin{theorem}[All Six Predicates on an Infinite-Dimensional Support]\\label{thm:infinite-six-predicate-witness}\nThe system of Definition~\\ref{def:hilbert-prefix-system}, with exactly its declared global comparison and observation data, has\n\\[\n (\\Iper,\\allowbreak \\Iri,\\allowbreak \\Iint,\\allowbreak \\Icont,\\allowbreak \\Idiff,\\allowbreak \\Ileg)=(1,1,1,1,1,1).\n\\]\nIts support contains boxes of arbitrarily large dimension, and every Hilbert coordinate participates in the phase/response coupling. This is a global analytic witness, not an inference from finitely many truncations.\n\\end{theorem}",
+      "source_statement_sha256": "d9fcb666c5723f0aa92db8239842e30e97c42b1f7208be959df7e85169110e42",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
@@ -10304,8 +10304,8 @@
       "label": "thm:substrate",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1259,
-        "line_end": 1269
+        "line_start": 1337,
+        "line_end": 1347
       },
       "source_statement_tex": "\\begin{theorem}[Substrate invariance]\\label{thm:substrate}\nFor exact structural equivalence on the complete domains required by the six predicates,\n\\[\n S_1\\in\\Cop\\quad\\Longleftrightarrow\\quad S_2\\in\\Cop.\n\\]\nThe induced map is\n\\[\n \\widehat\\chi:\\Qop(S_1)\\longrightarrow\\Qop(S_2),\\quad [x]\\mapsto[\\chi x],\n\\]\nwith $\\widehat\\chi$ a bijection. Invariant or partition preservation is not an additional hypothesis.\n\\end{theorem}",
       "source_statement_sha256": "eb53205de11d7d5e90f30a21c7de39824f38d4eaaa433c0175d39ee8cedfd6aa",
@@ -10345,8 +10345,8 @@
       "label": "cor:biology",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1274,
-        "line_end": 1276
+        "line_start": 1352,
+        "line_end": 1354
       },
       "source_statement_tex": "\\begin{corollary}[Biological non-primacy]\\label{cor:biology}\nBiological substrate is not a primitive variable of $\\Cop$. A biological and a non-biological system satisfying the full structural, protocol and sector equivalence of Definition~\\ref{def:equiv} have the same operational membership and bijective operational quotient classes. This is conditional, not evidence that an actual biological/non-biological pair meets those hypotheses.\n\\end{corollary}",
       "source_statement_sha256": "566e9ca5884d7785bf73f69dc1c0ac3a3b6a06e985197ccb8fd5864704b44f66",
@@ -10383,8 +10383,8 @@
       "label": "thm:stability",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1282,
-        "line_end": 1288
+        "line_start": 1360,
+        "line_end": 1366
       },
       "source_statement_tex": "\\begin{theorem}[Approximate stability]\\label{thm:stability}\nLet $S_1\\in\\Cop$, with $\\delta_\\star^{\\mathrm{cal}}(S_1)>0$ in the specified common presentation class. Suppose $S_1\\simeq_{(\\Gamma,\\eps)}S_2$ on all domains required by the six predicates and\n\\[\n 0\\le C_{\\chi,\\rho}\\eps<\\tfrac12\\delta_\\star^{\\mathrm{cal}}(S_1).\n\\]\nThen $S_2\\in\\Cop$. Finite sampled windows alone do not supply the global premises: one needs the full-domain primitive operator bound and a positive calibrated radius against the global failure sets.\n\\end{theorem}",
       "source_statement_sha256": "9cb3347cee7be945e3ed0e161b396c65a7475c0766245c1de5d62f438c24ec79",
@@ -10421,8 +10421,8 @@
       "label": "thm:rupture",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1296,
-        "line_end": 1298
+        "line_start": 1374,
+        "line_end": 1376
       },
       "source_statement_tex": "\\begin{theorem}[Rupture by Invariant Loss]\\label{thm:rupture}\nOn a declared admissible comparison, failure of any defining predicate excludes $S$ from $\\Cop$. Loss of the quotient domain, failure of decoder certification and triviality of a surviving quotient are additional possible outcomes; they need not be mutually exclusive and do not all follow from every invariant failure.\n\\end{theorem}",
       "source_statement_sha256": "10fc0aaa483f38bf54483aa2a8daa597ae1e9d83132b8192443016d7e89348d2",
@@ -10455,8 +10455,8 @@
       "label": "prop:insufficient",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1304,
-        "line_end": 1312
+        "line_start": 1382,
+        "line_end": 1390
       },
       "source_statement_tex": "\\begin{proposition}[Complexity-only baselines are insufficient]\\label{prop:insufficient}\nLet $S$ be an admissible system candidate. The following are each insufficient for membership in $\\Cop$:\n\\begin{enumerate}[leftmargin=1.5em]\n\\item large state-space dimension $\\dim(X)$;\n\\item large computational throughput or expressivity of $\\Phi$;\n\\item large edge count, density, or raw connectivity of $C$.\n\\end{enumerate}\nIn each case, failure of one or more critical invariants excludes membership regardless of the size of the surrogate metric.\n\\end{proposition}",
       "source_statement_sha256": "8f4ec131f0953b812a44862319a12e2792759588452b53348de14971d7031b5d",
@@ -10492,8 +10492,8 @@
       "label": "prop:rupt-per",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1321,
-        "line_end": 1323
+        "line_start": 1399,
+        "line_end": 1401
       },
       "source_statement_tex": "\\begin{proposition}[Loss of Every Admissible Support]\\label{prop:rupt-per}\nIf there is no nonempty compact forward-invariant admissible support, the on-support persistence predicate fails. A zero certified radius alone does not imply that no such support exists.\n\\end{proposition}",
       "source_statement_sha256": "ce69a26ffbf75025816493791e0df8f9fcdb520f3de1d2d1f97d9bbfe060af27",
@@ -10528,8 +10528,8 @@
       "label": "prop:rupt-ri",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1329,
-        "line_end": 1331
+        "line_start": 1407,
+        "line_end": 1409
       },
       "source_statement_tex": "\\begin{proposition}[Identity Ambiguity Requires Competing Candidates]\\label{prop:rupt-ri}\nIf two inequivalent admissible identity objects fit the same observable data on the declared support, the uniqueness clause of $\\Iri$ fails. A zero infimum of alternative deformation distances need not produce a second fitting candidate.\n\\end{proposition}",
       "source_statement_sha256": "d81c070e305a3fe91da9871e83771a03246147170a85bdbef3a5700dce47b463",
@@ -10563,8 +10563,8 @@
       "label": "prop:rupt-int",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1337,
-        "line_end": 1339
+        "line_start": 1415,
+        "line_end": 1417
       },
       "source_statement_tex": "\\begin{proposition}[Integration Rupture and Attainment]\\label{prop:rupt-int}\nOn a nonempty comparison sector with nonnegative history error, a zero error infimum excludes a positive integration margin in that sector. It yields an exact admissible factorization if the infimum is attained.\n\\end{proposition}",
       "source_statement_sha256": "c8126189307edefbc27ff7385a502913ca89c7e5037e4ce22be4ed0ba2c90234",
@@ -10597,8 +10597,8 @@
       "label": "prop:rupt-cont",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1345,
-        "line_end": 1347
+        "line_start": 1423,
+        "line_end": 1425
       },
       "source_statement_tex": "\\begin{proposition}[Admissible Incompatible Jump]\\label{prop:rupt-cont}\nA witnessed admissible finite-energy jump into an incompatible regime with identity preserved violates $\\Icont$ on the specified regime and schedule domain. Failure to certify a positive perturbation radius does not itself produce such a witness.\n\\end{proposition}",
       "source_statement_sha256": "cf2ce8a10046b5131d03de571ceba2dd41c939c6bc4cb0f7b4f012cceab9e7ac",
@@ -10633,8 +10633,8 @@
       "label": "prop:rupt-diff",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1353,
-        "line_end": 1355
+        "line_start": 1431,
+        "line_end": 1433
       },
       "source_statement_tex": "\\begin{proposition}[Separation or Null-Attractor Failure]\\label{prop:rupt-diff}\nIf no readout-window pair on the declared support has positive separation, or if the null class is an asymptotically stable admissible attractor, then $\\Idiff$ fails there.\n\\end{proposition}",
       "source_statement_sha256": "7805099633b256fd28ec1e119bb54b2143ef8331159c1e008795a1359e2f507c",
@@ -10669,8 +10669,8 @@
       "label": "prop:rupt-leg",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1361,
-        "line_end": 1363
+        "line_start": 1439,
+        "line_end": 1441
       },
       "source_statement_tex": "\\begin{proposition}[Legibility Failure Under the Declared Protocol]\\label{prop:rupt-leg}\nIf no admissible decoder and compression family jointly meet L1--L6 under the declared protocol, then $\\Ileg$ fails. A zero certified perturbation radius does not alone establish that impossibility.\n\\end{proposition}",
       "source_statement_sha256": "2a5a0177959aa73d666624c082c0a614ebe6b1993f9b2f0ce9071d33b2d86e91",
@@ -10705,8 +10705,8 @@
       "label": "prop:witness",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1389,
-        "line_end": 1396
+        "line_start": 1467,
+        "line_end": 1474
       },
       "source_statement_tex": "\\begin{proposition}[Single-rupture witnesses generate false positives for reduced criteria]\\label{prop:witness}\nLet $J_k = \\mathfrak{I}\\setminus\\{I_k\\}$ and assume $\\mathcal{W}_k \\neq \\varnothing$. Then every $S \\in \\mathcal{W}_k$ satisfies\n\\[\nS \\in \\mathcal{C}_{\\mathrm{op}}(J_k)\n\\qquad\\text{but}\\qquad\nS \\notin \\Cop.\n\\]\n\\end{proposition}",
       "source_statement_sha256": "64c53f948015d3c0bcd8ee6d950db09cbea3466e68a82cd1cdd7766b50a3c01f",
@@ -10741,8 +10741,8 @@
       "label": "thm:minimality",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1402,
-        "line_end": 1408
+        "line_start": 1480,
+        "line_end": 1486
       },
       "source_statement_tex": "\\begin{theorem}[Minimality of the six-invariant basis]\\label{thm:minimality}\nLet $\\mathfrak{U}$ be any admissible universe containing at least one single-rupture witness for each of the six invariants. Then no strict subset $J \\subsetneq \\mathfrak{I}$ satisfies\n\\[\n\\mathcal{C}_{\\mathrm{op}}(J) \\cap \\mathfrak{U} = \\Cop \\cap \\mathfrak{U}.\n\\]\nHence the six-invariant family is minimal on every such admissible universe.\n\\end{theorem}",
       "source_statement_sha256": "c2e9c30933f33069bf48ded9936c1b56bb67523647ef13d134884ee8273686b6",
@@ -10777,8 +10777,8 @@
       "label": "cor:onemetric",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1414,
-        "line_end": 1416
+        "line_start": 1492,
+        "line_end": 1494
       },
       "source_statement_tex": "\\begin{corollary}[Why one-metric theories cannot capture $\\Cop$]\\label{cor:onemetric}\nOn any admissible universe satisfying Theorem~\\ref{thm:minimality}, no criterion based on only persistence, only integration, only continuity, only differentiation, or only legibility is extensionally equivalent to $\\Cop$.\n\\end{corollary}",
       "source_statement_sha256": "7d63e7001c166d1f542cd6245202490ff5322bebb01a5ba881da75b699633954",
@@ -10813,8 +10813,8 @@
       "label": "thm:six-witness-schemas",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1432,
-        "line_end": 1461
+        "line_start": 1510,
+        "line_end": 1539
       },
       "source_statement_tex": "\\begin{theorem}[Conditional Use of Single-Rupture Schemas]\\label{thm:six-witness-schemas}\nConsider these six candidate schemas. A schema separates its target invariant\nfrom the other five only when an admissible model realizes the five retained\npredicates and fails the target on the same declared comparison domain:\n\\begin{enumerate}[leftmargin=1.5em]\n\\item \\textbf{Persistence witness.} A system with a certified decoder,\nnon-factorizable causal structure, unique identity label, continuous class map,\nand non-null differentiation, but whose admissible support exits the declared\nforward-invariant domain under some $u\\in U$.\n\\item \\textbf{Rigid-identity witness.} A system with persistent support,\nintegration, continuity, differentiation, and legibility, but with two\ncompatible non-isomorphic identity candidates transported by the same readout\nfamily.\n\\item \\textbf{Integration witness.} A product system\n$A_S=A_1\\times A_2$ with persistent factors, unique factor identities,\ncontinuous dynamics, non-null differentiation, and certified decoders, but with\ndecoupled intervention histories so that the aggregate factorizes.\n\\item \\textbf{Continuity witness.} A system with persistent support, unique\nidentity, non-factorizable structure, non-null differentiation, and certified\ndecoders, but with an admissible transition producing a jump between\nincompatible regime classes.\n\\item \\textbf{Differentiation witness.} A persistent, rigid, integrated,\ncontinuous, and legible system whose decoder-visible classes collapse to a\nstable null or single indistinguishable class.\n\\item \\textbf{Legibility witness.} A persistent, rigid, integrated, continuous,\nand non-null differentiated system whose class partition is latent but no\ncertified decoder satisfies L1--L6.\n\\end{enumerate}\nExistence of the six models is a separate obligation.\n\\end{theorem}",
       "source_statement_sha256": "e1c65aa2c107c58244411e875ef88ce79b777502a1a6cb0bbc201a62f83129f6",
@@ -10850,8 +10850,8 @@
       "label": "thm:six-sufficiency",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1467,
-        "line_end": 1476
+        "line_start": 1545,
+        "line_end": 1554
       },
       "source_statement_tex": "\\begin{theorem}[Sufficiency of the six-invariant basis]\\label{thm:six-sufficiency}\nLet $S$ be admissible on support $\\Aset$. If\n\\[\n\\Iper(S)=\\Iri(S)=\\Iint(S)=\\Icont(S)=\\Idiff(S)=\\Ileg(S)=1,\n\\]\nthen $S$ satisfies every structural burden required for membership in $\\Cop$ as\ndefined in this paper. No additional independent predicate can invalidate\n$S\\in\\Cop$ without changing the definition of $\\Cop$ or causing at least one of\nthe six invariants to fail.\n\\end{theorem}",
       "source_statement_sha256": "ef69110fc457a4f2e5b6f654841b9340bc35b6a63003f00767b9d7e3295a9c81",
@@ -10886,8 +10886,8 @@
       "label": "prop:not-per-not-ri",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1488,
-        "line_end": 1491
+        "line_start": 1566,
+        "line_end": 1569
       },
       "source_statement_tex": "\\begin{proposition}[Persistence is necessary for rigid identity on $\\Aset$]\\label{prop:not-per-not-ri}\nIf $\\Iper(S)=0$ because no non-empty forward-invariant admissible support exists,\nthen $\\Iri(S)=0$ for the Paper 5 membership problem.\n\\end{proposition}",
       "source_statement_sha256": "3a925abd644d2f70e4b1ba6a2df17137fe9b57b4b0d8b02ad072e9545cb84416",
@@ -10920,8 +10920,8 @@
       "label": "prop:per-int-weak-ri",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1500,
-        "line_end": 1504
+        "line_start": 1578,
+        "line_end": 1582
       },
       "source_statement_tex": "\\begin{proposition}[Persistence plus integration yields bounded identity candidates]\\label{prop:per-int-weak-ri}\nIf $\\Iper(S)=1$ and $\\Iint(S)=1$, then the family of admissible identity\ncandidates is bounded to the non-factorizable persistent support. This is a weak\nrigidity statement, not the uniqueness required by $\\Iri$.\n\\end{proposition}",
       "source_statement_sha256": "67317a03c6585d2ce8d35c782885822d5c72570561baa6fff4094c0eeeb0c6d7",
@@ -10954,8 +10954,8 @@
       "label": "prop:leg-requires-diff",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1514,
-        "line_end": 1517
+        "line_start": 1592,
+        "line_end": 1595
       },
       "source_statement_tex": "\\begin{proposition}[Legibility requires non-null differentiation]\\label{prop:leg-requires-diff}\nIf all admissible classes collapse to a stable null or single indistinguishable\nclass, then $\\Ileg(S)=0$ for the criterion of this paper.\n\\end{proposition}",
       "source_statement_sha256": "911536964153f5e06be124cde7eaa447d60df9b9e81dc7a488678727cb7b8ab1",
@@ -10988,8 +10988,8 @@
       "label": "prop:per-cont-regime-stability",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1526,
-        "line_end": 1530
+        "line_start": 1604,
+        "line_end": 1608
       },
       "source_statement_tex": "\\begin{proposition}[Persistence and continuity stabilize regime transport]\\label{prop:per-cont-regime-stability}\nIf $\\Iper(S)=1$ and $\\Icont(S)=1$, then admissible histories remain in a stable\nregime-transport domain: trajectories neither leave $\\Aset$ nor undergo\nunbounded fragmentation under admissible evolution.\n\\end{proposition}",
       "source_statement_sha256": "ae5ad59d0b1e64a081888f9f64d82654d4525813e40acfe6617cfedbe84aa44a",
@@ -11022,8 +11022,8 @@
       "label": "prop:legibility",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1597,
-        "line_end": 1599
+        "line_start": 1675,
+        "line_end": 1677
       },
       "source_statement_tex": "\\begin{proposition}[Legibility is jointly constrained]\\label{prop:legibility}\nNo single legibility metric is sufficient for $\\Ileg$. The invariant requires simultaneous control of separation, admissible noise robustness, persistence window, intervention fidelity, negative controls, and structured compressibility.\n\\end{proposition}",
       "source_statement_sha256": "79fcab6de81aab2f27270613d9910902896c1e4c900865444a8070a621e020c0",
@@ -11058,8 +11058,8 @@
       "label": "prop:cert-sound",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1676,
-        "line_end": 1678
+        "line_start": 1754,
+        "line_end": 1756
       },
       "source_statement_tex": "\\begin{proposition}[Soundness of certification]\\label{prop:cert-sound}\nIf $\\mathrm{Cert}(S)$ exists and satisfies Criterion~\\ref{crit:cert}, then $S \\in \\Cop$ and $\\Qop(S)$ is well-defined.\n\\end{proposition}",
       "source_statement_sha256": "d24afe72feb486471ac4374f43cd6adb312265023e7bbe50ef664973bf48abc1",
@@ -11097,8 +11097,8 @@
       "label": "prop:cert-complete",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1684,
-        "line_end": 1686
+        "line_start": 1762,
+        "line_end": 1764
       },
       "source_statement_tex": "\\begin{proposition}[Partial completeness under audit-ready assumptions]\\label{prop:cert-complete}\nAssume $S \\in \\Cop$ and suppose the support, decoder, intervention, and compression objects are fully instrumented in the \\textit{Forensic Predictions} sense. Then there exists a six-predicate operational criterion certificate $\\mathrm{Cert}(S)$.\n\\end{proposition}",
       "source_statement_sha256": "59633f2bbb6a8aa67a10cd571f132a4a9783147346f0b4652e47a08886785560",
@@ -11133,8 +11133,8 @@
       "label": "prop:cert-local",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1692,
-        "line_end": 1694
+        "line_start": 1770,
+        "line_end": 1772
       },
       "source_statement_tex": "\\begin{proposition}[Failure localization is explicit]\\label{prop:cert-local}\nIf a candidate system fails Criterion~\\ref{crit:cert}, then the failure localizes to at least one entry of the evidence bundle $E_S$ or to the absence of a common admissible support. In particular, certification failure cannot be hidden behind a generic narrative claim.\n\\end{proposition}",
       "source_statement_sha256": "6767a531a531ac252606112c08283ab5fdb35791f87e4f0481bde13e634741ca",
@@ -11169,8 +11169,8 @@
       "label": "prop:geometry",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1721,
-        "line_end": 1728
+        "line_start": 1799,
+        "line_end": 1806
       },
       "source_statement_tex": "\\begin{proposition}[Positive geometry under the criterion]\\label{prop:geometry}\nIf $S \\in \\Cop$, then:\n\\begin{enumerate}[leftmargin=1.5em]\n\\item every class in $\\Qop(S)$ has finite diameter on admissible windows;\n\\item there exists at least one pair of distinct classes with positive inter-class separation;\n\\item every class has non-zero persistence radius.\n\\end{enumerate}\n\\end{proposition}",
       "source_statement_sha256": "cce49d410d7106c4a009a7ecd7d036e6bb1359a364cd1ec4720d4f4f9777d4a9",
@@ -11205,8 +11205,8 @@
       "label": "prop:geometry-transfer",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1734,
-        "line_end": 1736
+        "line_start": 1812,
+        "line_end": 1814
       },
       "source_statement_tex": "\\begin{proposition}[Exact equivalence preserves operational geometry]\\label{prop:geometry-transfer}\nIf $S_1 \\simeq_{\\Gamma} S_2$, then class diameter, inter-class separation, and persistence radius are preserved by the induced bijection $\\widehat{\\chi}$ up to the bi-Lipschitz constants of $\\chi$ and $\\chi^{-1}$.\n\\end{proposition}",
       "source_statement_sha256": "c68ce6f1b624d1146b33ac30be71942e64028b83a066f46c7a7ccaba2b7e8321",
@@ -11239,8 +11239,8 @@
       "label": "cor:geometry-rupture",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1742,
-        "line_end": 1744
+        "line_start": 1820,
+        "line_end": 1822
       },
       "source_statement_tex": "\\begin{corollary}[Rupture contracts geometry]\\label{cor:geometry-rupture}\nIf a rupture eliminates either $\\Idiff$ or $\\Ileg$, then the geometric content of $\\Qop(S)$ contracts to triviality or becomes operationally unavailable.\n\\end{corollary}",
       "source_statement_sha256": "c593232bd64ef7874c4faa599906388ffdf3c5127e65345ce766029cd591def3",
@@ -11273,8 +11273,8 @@
       "label": "prop:ladder",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1805,
-        "line_end": 1807
+        "line_start": 1883,
+        "line_end": 1885
       },
       "source_statement_tex": "\\begin{proposition}[Prediction ladder is discriminative]\\label{prop:ladder}\nThe four predictions above distinguish the present criterion from at least four weaker baseline families: substrate-privilege baselines, substrate-blind functional similarity, complexity-only baselines, and connectivity-only baselines.\n\\end{proposition}",
       "source_statement_sha256": "65afca9053ee7478af789c7311a89c2ba03555e5294553e60029d2221c6eab2b",
@@ -11312,8 +11312,8 @@
       "label": "prop:transition-well",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1834,
-        "line_end": 1836
+        "line_start": 1912,
+        "line_end": 1914
       },
       "source_statement_tex": "\\begin{proposition}[Well-definedness of class transitions under certification]\\label{prop:transition-well}\nLet $S \\in \\Cop$. If $u \\in U$ is either certified critical or sham and remains within the admissibility envelope of \\textit{Forensic Predictions}, then $\\mathsf{T}_u$ is well-defined on every class $q \\in \\Qop(S)$.\n\\end{proposition}",
       "source_statement_sha256": "5add459074dd2183ad8abd8c6b3813f6fac2678281408a5ec5ef4b0ad3ffeff1",
@@ -11345,8 +11345,8 @@
       "label": "prop:transition-rupture",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1842,
-        "line_end": 1849
+        "line_start": 1920,
+        "line_end": 1927
       },
       "source_statement_tex": "\\begin{proposition}[Targeted invariant loss induces class exit or contraction]\\label{prop:transition-rupture}\nLet $q \\in \\Qop(S)$ and let $u$ be a certified critical intervention for invariant $I_k$. If applying $u$ drives the corresponding witness margin to zero, then one of the following occurs:\n\\begin{enumerate}[leftmargin=1.5em]\n\\item $\\mathsf{T}_u(q)=\\bot$;\n\\item $\\mathsf{T}_u(q)=q'$ for some class $q'$ whose separation or persistence radius is strictly smaller than that of $q$;\n\\item the entire post-intervention system exits $\\Cop$.\n\\end{enumerate}\n\\end{proposition}",
       "source_statement_sha256": "2c11d9b7427bd46f038ddd5c6d3337d999c7802f207ecb7a29de591dcc209321",
@@ -11382,8 +11382,8 @@
       "label": "cor:sham",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1855,
-        "line_end": 1857
+        "line_start": 1933,
+        "line_end": 1935
       },
       "source_statement_tex": "\\begin{corollary}[Sham stability]\\label{cor:sham}\nLet $u \\in U$ be sham in the sense of Definition~\\ref{def:critical-sham}. If $u$ stays below all six witness margins, then $\\mathsf{T}_u(q)=q$ for every $q \\in \\Qop(S)$.\n\\end{corollary}",
       "source_statement_sha256": "8bb941efd21e70315bbaf4903d550c6ff8f6d065496ce07d6c538330c573a59c",
@@ -11418,8 +11418,8 @@
       "label": "prop:baseline-insufficient",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1880,
-        "line_end": 1882
+        "line_start": 1958,
+        "line_end": 1960
       },
       "source_statement_tex": "\\begin{proposition}[Complexity, computation, and connectivity are not sufficient]\\label{prop:baseline-insufficient}\nFor every choice of thresholds $\\theta_X,\\theta_\\Phi,\\theta_C$, the families $\\mathcal{B}_{\\mathrm{cx}}(\\theta_X)$, $\\mathcal{B}_{\\mathrm{cmp}}(\\theta_\\Phi)$, and $\\mathcal{B}_{\\mathrm{conn}}(\\theta_C)$ are each insufficient for membership in $\\Cop$.\n\\end{proposition}",
       "source_statement_sha256": "a642ceabcc7ae2e9ca685a053e04901452e61ff909ee99d90ed72f7b11c3108b",
@@ -11453,8 +11453,8 @@
       "label": "prop:substrate-strong",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1888,
-        "line_end": 1890
+        "line_start": 1966,
+        "line_end": 1968
       },
       "source_statement_tex": "\\begin{proposition}[Substrate privilege is too strong]\\label{prop:substrate-strong}\nOn any admissible universe containing one exact cross-substrate equivalent pair, $\\mathcal{B}_{\\mathrm{sub}}$ is strictly narrower than $\\Cop$.\n\\end{proposition}",
       "source_statement_sha256": "aecc421daff0cf39a9e9a726a7f7085603acd505221aac1ce13a3dacf2d8e326",
@@ -11488,8 +11488,8 @@
       "label": "prop:functional-weak",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1896,
-        "line_end": 1898
+        "line_start": 1974,
+        "line_end": 1976
       },
       "source_statement_tex": "\\begin{proposition}[Weak functional similarity is too weak]\\label{prop:functional-weak}\nOn any admissible universe containing a same-output rupture pair, $\\mathcal{B}_{\\mathrm{fun}}(\\eta)$ is strictly broader than $\\Cop$.\n\\end{proposition}",
       "source_statement_sha256": "7344d8798209f51dfb1a66a060b10610f7ae74acd9bdf32169468473cd40e0c0",
@@ -11524,8 +11524,8 @@
       "label": "thm:intermediate",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1904,
-        "line_end": 1912
+        "line_start": 1982,
+        "line_end": 1990
       },
       "source_statement_tex": "\\begin{theorem}[The structural criterion is strictly intermediate]\\label{thm:intermediate}\nLet $\\mathfrak{U}$ be an admissible universe containing:\n\\begin{enumerate}[leftmargin=1.5em]\n\\item at least one exact cross-substrate equivalent pair;\n\\item at least one same-output rupture pair;\n\\item at least one single-rupture witness for each invariant.\n\\end{enumerate}\nThen $\\Cop$ is strictly intermediate between substrate-privilege baselines and weak substrate-blind surrogates: it is broader than $\\mathcal{B}_{\\mathrm{sub}}$, narrower than $\\mathcal{B}_{\\mathrm{fun}}(\\eta)$, and extensionally distinct from the complexity-only, computation-only, and connectivity-only families.\n\\end{theorem}",
       "source_statement_sha256": "434291c06867ccaa114bd07d53abd0085a6054e585e2debb865f7c662d996540",
@@ -13829,8 +13829,8 @@
         "line_start": 419,
         "line_end": 421
       },
-      "source_statement_tex": "\\begin{corollary}[The Two Transport Cycles on a Nonempty Rational Record]\\label{cor:transport-rational-record}\nThe joint rational measurement window of Paper VIII \\cite{paper8}, identified there by \\texttt{prop:joint-rational-window}, gives a nonempty local record for both cycles of Proposition~\\ref{prop:bridge-transport-cycle}. At this measurement level, the transport-certified class is a proper subclass of the three-mode extensions of that record.\n\\end{corollary}",
-      "source_statement_sha256": "d8282f4c280aee433cf2b276c3d0d81e855b3c2308ee120c27b7b13b62f2a22e",
+      "source_statement_tex": "\\begin{corollary}[The Two Transport Cycles on a Nonempty Rational Record]\\label{cor:transport-rational-record}\nThe joint rational measurement window of Paper VIII \\cite{paper8}, identified there by \\texttt{\\detokenize{prop:joi}\\allowbreak{}\\detokenize{nt-}\\allowbreak{}\\detokenize{rational-}\\allowbreak{}\\detokenize{window}}, gives a nonempty local record for both cycles of Proposition~\\ref{prop:bridge-transport-cycle}. At this measurement level, the transport-certified class is a proper subclass of the three-mode extensions of that record.\n\\end{corollary}",
+      "source_statement_sha256": "e43d5246fe299fb2c92391d7ab752fdd7267420f7f527b782afc742dd85faf6c",
       "source_epistemic_status": "proved",
       "classification": "PENDING_MATHLIB",
       "kernel_kind": "not_yet_connected_to_a_verified_Lean_statement",
@@ -15485,8 +15485,8 @@
       "label": "thm:predicate-independence",
       "source": {
         "file": "paper9_phenomenal_bridge_organization/main.tex",
-        "line_start": 2255,
-        "line_end": 2264
+        "line_start": 2377,
+        "line_end": 2386
       },
       "source_statement_tex": "\\begin{theorem}[Independent Calibrated Response Predicates]\n\\label{thm:predicate-independence}\nIn this instrumented semantic class, the six predicates\n$\\widehat\\Pi_k\\ge1/16$ have every binary truth pattern with fixed comparator,\nactuation, loss and authority conventions. Their common primitive data and\nuncertainty domains remain defined. If two head gains are constrained equal,\nthe corresponding fully saturated/absent patterns cannot be independently\nselected by this construction. Neither result asserts independence of the\nwhole conjunctive bridge gate or of the B1--B10 commitments.\n\\end{theorem}",
       "source_statement_sha256": "d2e4647549c9766830363b06868e778b95a2c887bc1fcd9cd0cbc9e97d218d33",
@@ -15516,8 +15516,8 @@
       "label": "thm:registry-independence",
       "source": {
         "file": "paper9_phenomenal_bridge_organization/main.tex",
-        "line_start": 2281,
-        "line_end": 2289
+        "line_start": 2403,
+        "line_end": 2411
       },
       "source_statement_tex": "\\begin{theorem}[Faithful Row-Local Registry Transport and a Coupling Obstruction]\n\\label{thm:registry-independence}\nLet each registry row store its complete task payload, primitive parameters,\nfixed interpretation authority and deterministic derived score. Suppose row\nvalidation is task-local, with a recomputable common manifest and no additional\ncross-score constraint. The encoding preserves every truth pattern realized\nabove. This conclusion does not extend to an imposed conjunctive gate or\nan additional shared-loss condition.\n\\end{theorem}",
       "source_statement_sha256": "43ed0f2e41d52ccfb36db7044bcacf1a236f3720d66ad060a1b632e2a336109c",
@@ -15551,8 +15551,8 @@
       "label": "thm:bridge-realization-exists",
       "source": {
         "file": "paper9_phenomenal_bridge_organization/main.tex",
-        "line_start": 2307,
-        "line_end": 2316
+        "line_start": 2429,
+        "line_end": 2438
       },
       "source_statement_tex": "\\begin{theorem}[A Nondegenerate Completed Mathematical Bridge Instance]\n\\label{thm:bridge-realization-exists}\nAt all six gains equal to one, the indexed quartic plant with the completed\nbinding has a nonempty full operational bridge certificate relative to the\nentire declared proper-ancestry closure. It satisfies the global upstream\nclasses, all six calibrated response predicates, the intervention template,\ncoherent three-mode transport and a strictly positive penalized bridge margin.\nIts evidence authority remains synthetic mathematical and\n\\texttt{external\\_support\\_certified=false}.\n\\end{theorem}",
       "source_statement_sha256": "20665eccc3c488e10e297e84fbfef28aa96d6bda7275a5261b0a9def2a33dbf9",
@@ -16088,8 +16088,8 @@
       "label": "thm:asymmetric-native-six",
       "source": {
         "file": "paper5_operational_consciousness/main.tex",
-        "line_start": 1188,
-        "line_end": 1198
+        "line_start": 1266,
+        "line_end": 1276
       },
       "source_statement_tex": "\\begin{theorem}[Global Six-Predicate Certificate with Asymmetric Retention]\n\\label{thm:asymmetric-native-six}\nThe complete plant of Definition~\\ref{def:asymmetric-native-plant}, with\nexactly its specified controller templates and full product sector, satisfies\nall six global predicates on A. It retains the identity gap $1/16$ and\n\\[\n 1/384\\le e_*\\le3/128,\\qquad \\delta_{\\rm int}=1/512.\n\\]\nThese conclusions hold on the infinite support, including the declared rate\nsymmetry controls; finite diagnostic windows are not their proof.\n\\end{theorem}",
       "source_statement_sha256": "9a1800372684603900d04a66164881095c19cc305459f022d183cbe88bc94c1b",
@@ -17161,10 +17161,208 @@
       "source_statement_tex": "\\begin{theorem}[Exact Proper-Ancestry Gap and Non-Identification on Enlargement]\n\\label{thm:bridge-four-root-identification}\nThe infimal uniform error on the sixteen primitive preparations against the\nentire proper-ancestry closure is exactly $4\\xi_4=1/262144$. The bound holds\nconditional on any independent past and for randomized forecasts in expected\nabsolute loss. If each raw world reading has error at most\n$\\varepsilon\\le\\xi_4/1024$, the rival-minus-candidate loss margin after\nthe declared cost penalty is at least\n\\[\n 4\\xi_4-4\\varepsilon-\\xi_4/64\\ge1019\\xi_4/256>3\\xi_4.\n\\]\nIf the comparison family is enlarged to include an equal-cost four-root\nreplica, its signed margin is nonpositive. No observation or intervention\nthen separates those two interpretations of the same mechanism.\n\\end{theorem}",
       "source_statement_sha256": "0dc7ed5d551ad6ef354acba3e8d2449f81562cea618e96665a564c708ee4f93f",
       "source_epistemic_status": "proved"
+    },
+    {
+      "registry_id": "basecore:theorem:thm-basecore-irreducible-observation",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_ONLY",
+      "lean_witnesses": [],
+      "fidelity_notes": "New manuscript result with explicit proof and exact finite controls; no source-equivalent Lean proof claimed.",
+      "target_dependency_ids": [],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [],
+      "topic": "atomic-coupled-structural-proof",
+      "priority": 1,
+      "remaining_obligations": [
+        "Mechanize the exact source statement with its structural hypotheses, comparison class and quantitative bound; independent mathematical review."
+      ],
+      "empirical_or_external_obligations": [
+        "External bridge hypotheses remain open; external_support_certified=false."
+      ],
+      "type": "theorem",
+      "paper": "basecore",
+      "title": "Irreducibility Derives Every Linear Response Separator",
+      "label": "thm:basecore-irreducible-observation",
+      "source": {
+        "file": "basecore/core/sections/06_structural_classes_and_dynamics.tex",
+        "line_start": 94,
+        "line_end": 107
+      },
+      "source_statement_tex": "\\begin{theorem}[Irreducibility Derives Every Linear Response Separator]\n\\label{thm:basecore-irreducible-observation}\nLet $p$ be prime, $d\\ge2$, $X=\\mathbb F_p^d$, and let the minimal polynomial\nof $A:X\\to X$ be irreducible of degree $d$. For every nonzero linear\nfunctional $\\ell:X\\to\\mathbb F_p$, the map\n\\[\n x\\longmapsto(\\ell x,\\ell Ax,\\ldots,\\ell A^{d-1}x)\n\\]\nis injective. Encode a field symbol $a$ by its integer representative\n$\\iota(a)=a/(p-1)\\in[0,1]$. Distinct states have response distance at least\n$1/(p-1)$ in maximum norm. Every response-preserving state quotient is\ninjective. Conversely, observability of every nonzero linear functional\nimplies irreducibility of the characteristic polynomial of $A$.\n\\end{theorem}",
+      "source_statement_sha256": "3dcc7165b6c2f95ed8c4a70d6ef2138188d5fdb233d7c768b907913e01790453",
+      "source_epistemic_status": "proved"
+    },
+    {
+      "registry_id": "basecore:proposition:prop-basecore-irreducible-control",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_ONLY",
+      "lean_witnesses": [],
+      "fidelity_notes": "New manuscript result with explicit proof and exact finite controls; no source-equivalent Lean proof claimed.",
+      "target_dependency_ids": [
+        "basecore:theorem:thm-basecore-irreducible-observation"
+      ],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [],
+      "topic": "atomic-coupled-structural-proof",
+      "priority": 1,
+      "remaining_obligations": [
+        "Mechanize the exact source statement with its structural hypotheses, comparison class and quantitative bound; independent mathematical review."
+      ],
+      "empirical_or_external_obligations": [
+        "External bridge hypotheses remain open; external_support_certified=false."
+      ],
+      "type": "proposition",
+      "paper": "basecore",
+      "title": "A Coupled Instance and a Faithful Product Control",
+      "label": "prop:basecore-irreducible-control",
+      "source": {
+        "file": "basecore/core/sections/06_structural_classes_and_dynamics.tex",
+        "line_start": 127,
+        "line_end": 134
+      },
+      "source_statement_tex": "\\begin{proposition}[A Coupled Instance and a Faithful Product Control]\n\\label{prop:basecore-irreducible-control}\nFor $p=2,d=2$, $A(a,b)=(b,a+b)$ has minimal polynomial $t^2+t+1$,\nwhich is irreducible over $\\mathbb F_2$. Each nonzero linear port separates\nall states in two readings. With the same carrier, two coordinate ports,\nword horizon and command labels, replacing $A$ by the identity admits the\nexact independent product of its two binary coordinates.\n\\end{proposition}",
+      "source_statement_sha256": "5b45b5fd4558f096d232287f57fae0a7712154ac35d4c4b93dfde4cd19e4c0f5",
+      "source_epistemic_status": "proved"
+    },
+    {
+      "registry_id": "paper5:theorem:thm-iint-irreducible-derivation",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_ONLY",
+      "lean_witnesses": [],
+      "fidelity_notes": "New manuscript result with explicit proof and exact finite controls; no source-equivalent Lean proof claimed.",
+      "target_dependency_ids": [
+        "basecore:theorem:thm-basecore-irreducible-observation"
+      ],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [],
+      "topic": "atomic-coupled-structural-proof",
+      "priority": 1,
+      "remaining_obligations": [
+        "Mechanize the exact source statement with its structural hypotheses, comparison class and quantitative bound; independent mathematical review."
+      ],
+      "empirical_or_external_obligations": [
+        "External bridge hypotheses remain open; external_support_certified=false."
+      ],
+      "type": "theorem",
+      "paper": "paper5",
+      "title": "Structural Atomic Separator on Every Faithful Quotient",
+      "label": "thm:iint-irreducible-derivation",
+      "source": {
+        "file": "paper5_operational_consciousness/main.tex",
+        "line_start": 499,
+        "line_end": 519
+      },
+      "source_statement_tex": "\\begin{theorem}[Structural Atomic Separator on Every Faithful Quotient]\n\\label{thm:iint-irreducible-derivation}\nUse $X=\\mathbb F_p^d$, $d\\ge2$, with controls hold and $A$, where the minimal\npolynomial of $A$ is irreducible of degree $d$. Let the finite primitive\nports include at least one nonzero linear functional, encoded by\n$\\iota(a)=a/(p-1)$. All other compared ports, including any identity ports,\nare fixed before testing. Allow every nonempty split of these ports and\nall onto encodings into two non-singleton factors with independent\nfactor-local predictors, no joint decoder and no cross-factor messages.\nThen the response separator is atomic without assuming atomicity:\nwords $A^k$, $0\\le k<d$, give a gap $\\sigma=1/(p-1)$ in the block containing\nthe nonzero linear port. Every such product predictor has uniform error\nat least $1/[2(p-1)]$. Thus\n\\[\n \\delta_{\\rm int}=\\frac1{4(p-1)}>0\n\\]\nis a strict integration certificate in this sector, or any nonempty\nidentity-preserving subfamily of it. Every exact operationally faithful\nquotient is isomorphic to the original state system and has the same\nobstruction to nontrivial independent factorization.\n\\end{theorem}",
+      "source_statement_sha256": "2ecd5e606c481c148824a025868b66825a29764351f5207bc4fab982e4471b39",
+      "source_epistemic_status": "proved"
+    },
+    {
+      "registry_id": "paper5:proposition:prop-iint-irreducible-negatives",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_ONLY",
+      "lean_witnesses": [],
+      "fidelity_notes": "New manuscript result with explicit proof and exact finite controls; no source-equivalent Lean proof claimed.",
+      "target_dependency_ids": [
+        "basecore:proposition:prop-basecore-irreducible-control",
+        "paper5:theorem:thm-iint-irreducible-derivation"
+      ],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [],
+      "topic": "atomic-coupled-structural-proof",
+      "priority": 1,
+      "remaining_obligations": [
+        "Mechanize the exact source statement with its structural hypotheses, comparison class and quantitative bound; independent mathematical review."
+      ],
+      "empirical_or_external_obligations": [
+        "External bridge hypotheses remain open; external_support_certified=false."
+      ],
+      "type": "proposition",
+      "paper": "paper5",
+      "title": "Necessary Structural Boundary and Exact Controls",
+      "label": "prop:iint-irreducible-negatives",
+      "source": {
+        "file": "paper5_operational_consciousness/main.tex",
+        "line_start": 544,
+        "line_end": 553
+      },
+      "source_statement_tex": "\\begin{proposition}[Necessary Structural Boundary and Exact Controls]\n\\label{prop:iint-irreducible-negatives}\nIrreducibility is equivalent to observability from every nonzero linear\nfunctional in this linear class. It cannot simply be deleted from the\nuniform-port theorem: on $\\mathbb F_p^d$ with $A=I$ and coordinate ports,\nthe native coordinate split is an exact faithful independent product.\nFor $p=2,d=2$, $A(a,b)=(b,a+b)$ instead gives the above certificate\n$\\delta_{\\rm int}=1/4$. This does not assert irreducibility is necessary\nfor each particular system with an atomic response family.\n\\end{proposition}",
+      "source_statement_sha256": "80b9303aa4dd328bd614f56a16dd04e7307e485960717d9ccf436da6ecc65d79",
+      "source_epistemic_status": "proved"
+    },
+    {
+      "registry_id": "paper9:proposition:prop-bridge-prefix-coupling-safety",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_ONLY",
+      "lean_witnesses": [],
+      "fidelity_notes": "New manuscript result with explicit proof and exact finite controls; no source-equivalent Lean proof claimed.",
+      "target_dependency_ids": [
+        "paper9:theorem:thm-bridge-quartic-global-certificate"
+      ],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [],
+      "topic": "atomic-coupled-structural-proof",
+      "priority": 1,
+      "remaining_obligations": [
+        "Mechanize the exact source statement with its structural hypotheses, comparison class and quantitative bound; independent mathematical review."
+      ],
+      "empirical_or_external_obligations": [
+        "External bridge hypotheses remain open; external_support_certified=false."
+      ],
+      "type": "proposition",
+      "paper": "paper9",
+      "title": "Safety and the Domain of the Added Coupling",
+      "label": "prop:bridge-prefix-coupling-safety",
+      "source": {
+        "file": "paper9_phenomenal_bridge_organization/main.tex",
+        "line_start": 2074,
+        "line_end": 2085
+      },
+      "source_statement_tex": "\\begin{proposition}[Safety and the Domain of the Added Coupling]\n\\label{prop:bridge-prefix-coupling-safety}\nOn the invariant port cube and a common $b_8$ and index fibre, the new port\nlaw is at most $105/128$-Lipschitz. Its body next-state magnitude is at most\n$489/512<1$, and it is total on the ambient port cube with bound $57/32<2$.\nThe native core law is unchanged. The paired three-step protocol above now\nhas first world-coordinate consequence\n\\[\n Y_\\eta(s,r)=Y(s)+\\eta r\\xi_4(s_3-s_1)^2(s_4-s_2)^2.\n\\]\nThis is a consequence in the plant's own world channel, not a raw bit readout.\n\\end{proposition}",
+      "source_statement_sha256": "d3c03c5da9bbcec8fe0f2737889713c5f13a93b12d932c26033a1a62eaca5ded",
+      "source_epistemic_status": "proved"
+    },
+    {
+      "registry_id": "paper9:theorem:thm-bridge-expanded-identification",
+      "classification": "PENDING_MATHLIB",
+      "kernel_kind": "MANUSCRIPT_ONLY",
+      "lean_witnesses": [],
+      "fidelity_notes": "New manuscript result with explicit proof and exact finite controls; no source-equivalent Lean proof claimed.",
+      "target_dependency_ids": [
+        "paper9:proposition:prop-bridge-prefix-coupling-safety",
+        "paper9:theorem:thm-bridge-four-root-identification"
+      ],
+      "other_registry_dependency_ids": [],
+      "source_refs_outside_formal_registry": [],
+      "candidate_mathlib_modules": [],
+      "topic": "atomic-coupled-structural-proof",
+      "priority": 1,
+      "remaining_obligations": [
+        "Mechanize the exact source statement with its structural hypotheses, comparison class and quantitative bound; independent mathematical review."
+      ],
+      "empirical_or_external_obligations": [
+        "External bridge hypotheses remain open; external_support_certified=false."
+      ],
+      "type": "theorem",
+      "paper": "paper9",
+      "title": "Five-Root Coupled Gap and Equal-Cost Total-Replica Obstruction",
+      "label": "thm:bridge-expanded-identification",
+      "source": {
+        "file": "paper9_phenomenal_bridge_organization/main.tex",
+        "line_start": 2120,
+        "line_end": 2138
+      },
+      "source_statement_tex": "\\begin{theorem}[Five-Root Coupled Gap and Equal-Cost Total-Replica Obstruction]\n\\label{thm:bridge-expanded-identification}\nAgainst this entire restricted family the exact infimal maximum error and\nbalanced mean absolute error are\n\\[\n G=4\\eta\\xi_4=1/2097152>0.\n\\]\nIt holds for conditional randomized forecasts in expected absolute loss.\nIt covers missing-quartic-ancestry rivals, proper-ancestry shared hybrids\nand partial four-root replicas with the stated missing coupling. Assign\ncost weight $w_c=G/(128B)$. If each raw world reading has error at most\n$\\varepsilon\\le G/1024$, the signed penalized margin is at least\n\\[\n G-4\\varepsilon-Bw_c\\ge253G/256>G/2.\n\\]\nThe sham and physical $T_d$-coupling cut have zero fifth contrast. If a total\nreplica of the expanded graph is admitted at the same total budget and cost,\nthe infimal signed margin is at most zero under every interventional schedule.\n\\end{theorem}",
+      "source_statement_sha256": "0f8b5e1b59a36c4902eeb7fd4761a97df4b196c0a29471e5d1234da3b6e47dd2",
+      "source_epistemic_status": "proved"
     }
   ],
   "external_support_certified": false,
   "baseline_target_count": 419,
-  "target_count": 436,
+  "target_count": 442,
   "source_base_revision": "5aa5da2b64fc30265f88b8aeaa4c5b443c221df9"
 }

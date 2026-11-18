@@ -411,8 +411,8 @@ that a merely injective observation has a structure-preserving inverse.
 Atomicity concerns the declared primitive response family. Infinite sectorial
 resistance, continuity and intervention fidelity alone do not establish it.
 The following quantitative theorem gives a sufficient response condition
-and a nonempty example. Deriving such separation from broader upstream
-assumptions remains distinct from proving the conditional theorem.
+and a nonempty example. The intrinsic finite-field criterion below derives separation for a nonempty
+structural class; derivation for arbitrary continuous systems remains open.
 \end{remark}
 
 \subsection{Response Separators in a Typed Product Category}
@@ -492,6 +492,84 @@ can coexist with the hold/product control. The earlier abstract atomicity
 condition and the new measured separation condition therefore retain separate
 upstream obligations; a theorem about this category does not exclude arbitrary
 joint decoders or a larger communication budget.
+
+
+\subsection{Deriving Atomicity from an Irreducible Transition}
+
+\begin{theorem}[Structural Atomic Separator on Every Faithful Quotient]
+\label{thm:iint-irreducible-derivation}
+Use $X=\mathbb F_p^d$, $d\ge2$, with controls hold and $A$, where the minimal
+polynomial of $A$ is irreducible of degree $d$. Let the finite primitive
+ports include at least one nonzero linear functional, encoded by
+$\iota(a)=a/(p-1)$. All other compared ports, including any identity ports,
+are fixed before testing. Allow every nonempty split of these ports and
+all onto encodings into two non-singleton factors with independent
+factor-local predictors, no joint decoder and no cross-factor messages.
+Then the response separator is atomic without assuming atomicity:
+words $A^k$, $0\le k<d$, give a gap $\sigma=1/(p-1)$ in the block containing
+the nonzero linear port. Every such product predictor has uniform error
+at least $1/[2(p-1)]$. Thus
+\[
+ \delta_{\rm int}=\frac1{4(p-1)}>0
+\]
+is a strict integration certificate in this sector, or any nonempty
+identity-preserving subfamily of it. Every exact operationally faithful
+quotient is isomorphic to the original state system and has the same
+obstruction to nontrivial independent factorization.
+\end{theorem}
+\begin{proof}
+The finite-field observation theorem of BaseCore derives injectivity of
+$(\ell A^k)_{k<d}$ from irreducibility, not from a port-separation premise.
+For completeness its argument uses the invariant cyclic subspace of a
+hypothetically invisible vector: its minimal polynomial would be a
+nonconstant proper-degree divisor of an irreducible polynomial. This is
+impossible. Hence distinct states differ by at least $\sigma$ on the chosen
+port at some word in the fixed horizon.
+
+For any split let $i$ be the block containing that port. Surjectivity of
+$p:X\to X_1\times X_2$, with the other factor non-singleton, supplies
+$x\ne y$ with $p_i x=p_i y$. Predictions on that port and every common word
+are identical. The triangle inequality makes at least one error at least
+$\sigma/2$. This works for each split even if other port blocks fail to
+separate; the stronger hypothesis in Theorem~\ref{thm:response-atomic-factorization}
+is unnecessary here. The whole comparator sector is nonempty: take the
+native vector-coordinate product and constant forecasts; the bound applies
+even though they do not reproduce the coupled law. If identity preservation
+is additionally required, its nonemptiness must be checked separately.
+A faithful quotient must preserve all these responses, so it is injective,
+and surjectivity plus the commuting equations supplies the inverse
+isomorphism. Transfer the factorization argument along that isomorphism.
+\end{proof}
+
+\begin{proposition}[Necessary Structural Boundary and Exact Controls]
+\label{prop:iint-irreducible-negatives}
+Irreducibility is equivalent to observability from every nonzero linear
+functional in this linear class. It cannot simply be deleted from the
+uniform-port theorem: on $\mathbb F_p^d$ with $A=I$ and coordinate ports,
+the native coordinate split is an exact faithful independent product.
+For $p=2,d=2$, $A(a,b)=(b,a+b)$ instead gives the above certificate
+$\delta_{\rm int}=1/4$. This does not assert irreducibility is necessary
+for each particular system with an atomic response family.
+\end{proposition}
+\begin{proof}
+The converse and the product control are established by BaseCore's invariant
+subspace argument and identity dynamics. In the binary coupled instance,
+$t^2+t+1$ is irreducible, so the preceding theorem applies. The hold/swap
+example in Remark~\ref{ex:response-atomic-swap} can have atomic response
+separation although its operator has a proper invariant diagonal. Allowing
+messages between its factors restores the exact tie, as before. The Cantor
+product and product-clamp controls of Paper I address different topological
+and energy sectors and remain unchanged; no implication from infinite
+resistance is used in this proof.
+\end{proof}
+
+The closure of the atomic-separator burden is class-relative: a proved,
+nonempty finite-field structural criterion now supplies the separator and
+positive error bound. A theorem deriving this criterion from the general
+Hilbert or circle-prefix assumptions has not been proved. In particular,
+$\Iint=1$ here denotes causal/dynamic nonfactorization in the stated category;
+it does not certify phenomenality, and a communicating replica is a different
+comparison problem.
 
 \subsection{Comparison on the Dissipative Circle-Prefix Support}
 
@@ -1947,6 +2025,8 @@ Paper I concerns its Hilbert wedge and bounded-distortion product sector;
 it is not silently transferred to this different circle-prefix support.
 
 \section{Interpretation and Open Research Links}\label{sec:interpretation-open-links}
+\paragraph{New structural anchor.} Theorem~\ref{thm:iint-irreducible-derivation} derives an atomic separator from an irreducible finite-field transition, with an exact product negative control; it does not make the general continuous programme unconditional.
+
 \paragraph{Historical alias.} A Structural Criterion for Substrate-Invariant Operational Consciousness. The alias is retained for bibliographic continuity; the technical title states the demonstrated object.
 
 \paragraph{Formal anchor.} Results \ref{thm:substrate}, \ref{thm:stability} and \ref{prop:decoder-visible-separation}.

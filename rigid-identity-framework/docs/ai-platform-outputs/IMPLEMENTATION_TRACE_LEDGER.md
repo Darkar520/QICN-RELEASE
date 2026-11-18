@@ -11695,3 +11695,44 @@ Deuda 3B precisa por fila: análisis espectral completo, SUP/Polish,
 positivo H5, contratos íntegros de IX y probabilidad/sharpness general X.
 No cambios en áreas congeladas ni manuscritos. Sin evidencia empírica o
 certificación independiente nueva; external_support_certified=false.
+
+
+## Ledger de fase científica: separador y acoplamiento ampliado — 2026-11-17
+
+Rama codex/fase-cientifica-atomic-puente desde main 5769ecf; checkpoint experimental A separado en codex/etapa3b-lean (5fd9d01). No merge ni push.
+
+Seis resultados manuscritos nuevos: observabilidad desde irreducibilidad finita, control producto, separador I_int derivado y sus límites, seguridad del acoplamiento prefijo-mundo, contraste de cinco raíces y obstrucción de réplica total. No se anuncia cierre universal del gap atómico ni del puente fenomenal. Prerrequisitos y ledger H1–H4 actualizados; déficit histórico H4 preservado.
+
+Registro 927, IDs previos conservados, macros 383. Cobertura 442: 14 exactos, 56 parciales, 356 pendientes de Lean, 16 de protocolo. Tres unidades y monolito de 439 páginas compilados sin referencias rotas, duplicados ni overfull. Catorce puertas no-Lean aprobadas, incluyendo math 35/35 y release 6/6.
+
+**Bloqueo de cierre:** reproducción fresca Lean detenida sin reintento por límite de memoria virtual (<500 MiB), sin fallo matemático diagnosticado ni PASS de Lean. Commit científico pendiente. Resolver recursos/entorno antes de una nueva ejecución autorizada; después cerrar el recibo y el commit local. Los seis resultados nuevos requieren mecanización y revisión matemática independiente; el criterio finito no se deriva de las hipótesis generales continuas.
+
+Recibos: docs/ai-platform-outputs/repair-plans/FASE_CIENTIFICA_ATOMICO_PUENTE_2026-11-17/. external_support_certified=false.
+
+Lecturas, archivos, hipótesis, comandos, salidas, tiempos, hashes y deuda se detallan en EJECUCION.md, CONSERVACION.json, REGISTRY_COVERAGE_SYNC.json y VERIFICACION_FINAL.json del dossier. No se modificaron áreas congeladas ni QICN-SYSTEM.
+
+Auditoría de cierre 2026-11-17: además de la puerta Lean, falta identificar o definir formalmente CN-3. Ver COMPLETION_AUDIT.json del dossier científico. No se declara completa la especificación del puente; aclaración solicitada. external_support_certified=false.
+
+
+## Addendum CN-3: procedencia y extensión al puente — 2026-11-17
+
+Solicitud: conservar el control histórico del runtime, su fallo vigente y su correspondencia con la rama aislada; formalizar su extensión prospectiva conjunta a F/Z_op. Después retomar la reproducción Lean pendiente cuando los recursos lo permitan.
+
+Lecturas: reglas canónicas e INSTRUCCIONES/ROADMAP; prerrequisitos/ledger/cierre de IX y definición de dependencia histórica de VII. QICN-SYSTEM leído solamente: preregister.v1.json, run-historical-dependence-ablation.mjs, worker, interventions.js y contracts.js. Sus hashes y el contrato historical_v1 íntegro están en CN3_ADDENDUM/CN3_SOURCE_CONTRACT.json. No se ejecuta ni modifica el runtime.
+
+Cambios: prerrequisitos, cierre de Paper IX y ledger H1–H4; roadmap, este ledger y el dossier. Ningún teorema, definición, prueba ni criterio histórico cambia. Se corrige la omisión de procedencia sin convertir un diagnóstico interno en prueba del marco.
+
+Regresiones buscadas: cambio de semillas/ventanas/nodos/regla, reetiquetado del false, confusión entre borrado con plasticidad off y borrado único con aprendizaje posterior, pérdida de controles externos, modificación del registro o topología formal. Ver verify_cn3_contract.py: límites conjuntos con seis casos hipotéticos, no nuevas observaciones.
+
+Prerregistro y conservación antes de fuentes; comprobaciones y compilación en E:. La extensión al puente queda bloqueada para ejecución hasta calibrar y congelar instrumento, h, rivales, muestra, márgenes, intervalos y regla de parada. Se distingue un estado físico inicial idéntico de un estado de Markov completo idéntico, y no se deducen signos de intervención de la sola igualdad Z_op=h(F).
+
+Estado de verificación del addendum: CERRADO_DOCUMENTALMENTE; recibos completos en CN3_ADDENDUM/CIERRE.json. Paper IX 75 páginas y monolito 440, cero referencias rotas/duplicados/overfull. Una regresión tipográfica nueva fue corregida sin alterar el identificador. Contrato histórico false conservado; no reproducción empírica. Se retoma Lean fresco y commit científico de la fase anterior con recursos comprobados. external_support_certified=false.
+
+
+## Reanudación Lean y aceptación técnica local — 2026-11-17
+
+Solicitud de retomar la fase bloqueada después de CN-3. Se comprobó incremento material de memoria virtual antes de ejecutar; un único proceso serial, con parada protectora vigente. Gaps/semántica/negativos y math35 pasaron. Lean terminó EXIT=0, 40 módulos y 348 declaraciones públicas, axiomas únicamente propext/Classical.choice/Quot.sound. Recibos, comandos, salidas y tiempos reales en el dossier RESUMPTION; la parada anterior se conserva como antecedente.
+
+Actualización documental adicional: tres README mostraban 436 como total activo; ahora 442, seis resultados nuevos aún pendientes de Lean, sin nuevas promociones a EXACT_MATCH. Hashes previos en README_CONCORDANCE.json. Se conservan 129 hashes de activos matemáticos/congelados/toolchain; el cambio documental intencional en lean/README.md, inicialmente incluido en los 130, queda registrado con ambos hashes. Registro927, macros383 y fuentes compiladas idénticas.
+
+Paper IX75 y monolito440; no se modificó el runtime ni se ejecutó su campaña. Su CN-3 continúa false. La extensión F/Z_op es prospectiva; las obligaciones H1–H4 y revisión externa siguen abiertas. Estado: verificación técnica completada, revisión staged y commit local a continuación; identidad definitiva en recibo post-commit externo. No push ni merge. external_support_certified=false.

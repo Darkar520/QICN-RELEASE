@@ -46,3 +46,9 @@ atomic_separator_lemma_status: open_burden_refined
 effective_public_status: open_burden
 human_curated_status: not_reviewed
 ```
+
+## 2026-11-17: structural finite-field derivation
+
+The previous open burden is now supplemented by thm:basecore-irreducible-observation and thm:iint-irreducible-derivation. An irreducible degree-d minimal polynomial derives every nonzero linear response separator on F_p^d, and gives independent-product error >=1/[2(p-1)], with strict delta_int=1/[4(p-1)]. Faithful response quotients are injective. The identity-transition control factors exactly. This is a class-level algebraic proof, not enumeration alone.
+
+The general gap gap:basecore:i_int_atomic_separator is not universally closed: irreducibility is an additional structural hypothesis on a finite discrete carrier, not a consequence of rigid identity and continuity. Communicating factors and full replicas remain outside the positive comparison category or tie when admitted. Independent mathematical review is required; external_support_certified=false.

@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "root-final-canonical-integrity",
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.42,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\root-final-canonical-integrity.log",
+      "literal_output": "{\n  \"output\": \"_build\\\\canonical_hardening\\\\canonical_integrity_check.json\",\n  \"artifact_role\": \"canonical_integrity_check\",\n  \"checked_at\": \"2026-11-18T01:21:46.738Z\",\n  \"status\": \"PASS\",\n  \"checks\": {\n    \"zip_sha256_match\": true,\n    \"manifest_sha256_match\": true,\n    \"canonical_pdf_count\": 25,\n    \"index_count\": 25,\n    \"freeze_tag_listed_in_audit\": true,\n    \"freeze_snapshot_commit_listed_in_audit\": true,\n    \"claim_registry_entries\": 17,\n    \"layer_count\": 6,\n    \"interface_count\": 8,\n    \"non_canonical_material_physically_separated\": true,\n    \"upstream_pin_status\": \"resolved\"\n  },\n  \"failures\": [],\n  \"warnings\": [],\n  \"provenance_notes\": [\n    \"working_tree_not_clean_at_hardening_start\"\n  ]\n}\n"
+    },
+    {
+      "name": "root-final-claim-registry",
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "exit": 0,
+      "seconds": 0.12,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\root-final-claim-registry.log",
+      "literal_output": "{\n  \"output\": \"_build\\\\canonical_hardening\\\\claim_registry_check.json\",\n  \"artifact_role\": \"claim_registry_check\",\n  \"checked_at\": \"2026-11-18T01:21:46.883Z\",\n  \"status\": \"PASS\",\n  \"counts\": {\n    \"entries\": 17,\n    \"unique_ids\": 17,\n    \"allowed_classes\": 6\n  },\n  \"failures\": [],\n  \"warnings\": []\n}\n"
+    },
+    {
+      "name": "root-final-canonical-release",
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "exit": 0,
+      "seconds": 1.12,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\root-final-canonical-release.log",
+      "literal_output": "{\n  \"output\": \"_build\\\\canonical_hardening\\\\canonical_release_check.json\",\n  \"artifact_role\": \"canonical_release_check\",\n  \"checked_at\": \"2026-11-18T01:21:48.008Z\",\n  \"status\": \"PASS\",\n  \"bundle\": {\n    \"bundleDir\": \"_build/canonical_release_bundle_2026-11-18T01-21-47-002Z\",\n    \"manifestPath\": \"_build/canonical_release_bundle_2026-11-18T01-21-47-002Z/canonical_release_manifest.json\"\n  },\n  \"failures\": [],\n  \"warnings\": []\n}\n"
+    },
+    {
+      "name": "release-final",
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "exit": 0,
+      "seconds": 31.38,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\release-final.log",
+      "literal_output": "\n> qicn-rigid-identity-framework@0.0.0-fcr verify:release\n> npm run verify:all-legacy\n\n\n> qicn-rigid-identity-framework@0.0.0-fcr verify:all-legacy\n> node scripts/legacy/run-all-legacy-verifications.js\n\nV35 all legacy verification: PASS; passed=6/6\n"
+    },
+    {
+      "name": "nonclaims-final",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint:nonclaims"
+      ],
+      "exit": 0,
+      "seconds": 2.14,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\nonclaims-final.log",
+      "literal_output": "\n> qicn-rigid-identity-framework@0.0.0-fcr lint:nonclaims\n> node scripts/lint-nonclaims.js\n\nNon-claim lint: 0 violations.\n"
+    },
+    {
+      "name": "prose-final",
+      "command": [
+        "python",
+        "scripts/verify-prose-sync.py"
+      ],
+      "exit": 0,
+      "seconds": 0.33,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\prose-final.log",
+      "literal_output": "{\n  \"passed\": true,\n  \"units\": [\n    {\n      \"source\": \"basecore/BASECORE.tex\",\n      \"labels\": 155\n    },\n    {\n      \"source\": \"paper1/main.tex\",\n      \"labels\": 74\n    },\n    {\n      \"source\": \"paper10_external_adjudication/main.tex\",\n      \"labels\": 10\n    },\n    {\n      \"source\": \"paper2/main.tex\",\n      \"labels\": 48\n    },\n    {\n      \"source\": \"paper3/main.tex\",\n      \"labels\": 36\n    },\n    {\n      \"source\": \"paper4/main.tex\",\n      \"labels\": 7\n    },\n    {\n      \"source\": \"paper5_operational_consciousness/main.tex\",\n      \"labels\": 113\n    },\n    {\n      \"source\": \"paper6_predictions_falsation/main.tex\",\n      \"labels\": 12\n    },\n    {\n      \"source\": \"paper7_operational_life_subjecthood/main.tex\",\n      \"labels\": 30\n    },\n    {\n      \"source\": \"paper8_first_person_subjectivity/main.tex\",\n      \"labels\": 38\n    },\n    {\n      \"source\": \"paper9_phenomenal_bridge_organization/main.tex\",\n      \"labels\": 42\n    },\n    {\n      \"source\": \"paper_bridge_operational_subjecthood/main.tex\",\n      \"labels\": 57\n    }\n  ],\n  \"errors\": [],\n  \"manual_reference_review\": [],\n  \"scope\": \"Encoding, stale assertion snippets, local refs and interpretation sections only; mathematical review remains required.\",\n  \"external_support_certified\": false\n}\n"
+    },
+    {
+      "name": "semantic-final",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:semantic-inflation"
+      ],
+      "exit": 0,
+      "seconds": 1.38,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\semantic-final.log",
+      "literal_output": "\n> qicn-rigid-identity-framework@0.0.0-fcr audit:semantic-inflation\n> node scripts/audit-semantic-inflation.js\n\nSemantic inflation audit v40: PASS; files=305; below_threshold=consciousness,phenomenal,subjective,moral_status; report=docs/SEMANTIC_INFLATION_AUDIT_v40.md\n"
+    },
+    {
+      "name": "coverage-final",
+      "command": [
+        "python",
+        "scripts/verify-lean-coverage.py"
+      ],
+      "exit": 0,
+      "seconds": 0.23,
+      "log": "E:\\QICN-PRESERVACION\\2026-11-17-fase-cientifica-atomico-puente\\RESUMPTION\\logs\\coverage-final.log",
+      "literal_output": "{\n  \"passed\": true,\n  \"targets\": 442,\n  \"counts\": {\n    \"EXACT_MATCH\": 14,\n    \"FINITE_OR_PARTIAL_KERNEL\": 56,\n    \"PENDING_MATHLIB\": 356,\n    \"EMPIRICAL_OR_PROTOCOL_BOUNDED\": 16\n  },\n  \"public_lean_declarations\": 348,\n  \"scope\": \"ID/hash/symbol bookkeeping; semantic fidelity requires mathematical review\",\n  \"external_support_certified\": false\n}\n"
+    }
+  ],
+  "external_support_certified": false,
+  "scope": "Final metadata concordance after README corrections; compiled mathematical and Lean sources unchanged"
+}

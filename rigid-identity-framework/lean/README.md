@@ -59,7 +59,7 @@ that fresh check. Root Docker/CI run governance and release, not Lean.
 
 ## Coverage and fidelity
 
-The [coverage matrix (419 initial targets, 436 active)](../docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md)
+The [coverage matrix (419 initial targets, 442 active)](../docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md)
 links exact registry IDs to Lean symbols, source hashes, hypotheses, dependencies,
 priority and remaining obligations. Its adjacent JSON is checked by
 `verify-lean-coverage.py`. Public Lean declarations and manuscript entries have
@@ -83,7 +83,7 @@ Route 6 adds three modules (21 public theorems/lemmas), reusing the existing
 general analytic proofs. Etapa 2 has 35 source files and 271 public
 declarations. Etapa 3A adds five modules and 77 public results: **40 sources
 including the aggregate, 348 public theorems/lemmas**. These totals include
-auxiliaries; the matrix has a separate denominator of 436 source targets.
+auxiliaries; the source-target denominator was 436 in Etapa 3A and is now 442. The six scientific additions are manuscript-only and remain PENDING_MATHLIB.
 Coverage: 14 EXACT_MATCH, 56 FINITE_OR_PARTIAL_KERNEL, 350 PENDING_MATHLIB
 and 16 EMPIRICAL_OR_PROTOCOL_BOUNDED. Ten prior exact matches are preserved.
 
@@ -130,3 +130,7 @@ Manuscripts, registry IDs, frozen release/corpus/artifacts and legacy sources
 were excluded from this relocation. Interpretations, novelty, full BPF class
 membership, identification of `(e_i, phi_i)`, calibration and human review are
 not kernel conclusions. `external_support_certified=false` remains in force.
+
+## Scientific branch concordance
+
+The current registry contains 927 entries and 383 macros. Its 442 source targets comprise 14 EXACT_MATCH, 56 FINITE_OR_PARTIAL_KERNEL, 356 PENDING_MATHLIB and 16 EMPIRICAL_OR_PROTOCOL_BOUNDED. The six new manuscript results have no new source-equivalent Lean proof. This branch retains the 40-source/348-declaration package; the experimental Etapa 3B checkpoint is preserved on its separate branch. Reproduction status is recorded in the scientific phase receipt and is not inferred from these counts. external_support_certified=false.

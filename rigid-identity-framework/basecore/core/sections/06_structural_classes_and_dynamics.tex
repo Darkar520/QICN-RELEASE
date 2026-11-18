@@ -83,3 +83,65 @@ Suppose a finite implementation produces diagnostics for a downstream predicate 
 \begin{proof}
 The implementation supplies finite observations or computations. Promotion to a BaseCore result requires a class-level implication from the stated hypotheses to the predicate. Without that implication, the observations can support, falsify, or calibrate a downstream claim, but they do not alter the theorem inventory of BaseCore.
 \end{proof}
+
+
+\section{An Intrinsic Finite-Field Observation Criterion}
+
+The following export is finite algebra, independent of the Hilbert projection
+hypotheses. Its discrete carrier and normalized symbol metric are part of the
+statement; no positive uniform margin on a continuous carrier is inferred.
+
+\begin{theorem}[Irreducibility Derives Every Linear Response Separator]
+\label{thm:basecore-irreducible-observation}
+Let $p$ be prime, $d\ge2$, $X=\mathbb F_p^d$, and let the minimal polynomial
+of $A:X\to X$ be irreducible of degree $d$. For every nonzero linear
+functional $\ell:X\to\mathbb F_p$, the map
+\[
+ x\longmapsto(\ell x,\ell Ax,\ldots,\ell A^{d-1}x)
+\]
+is injective. Encode a field symbol $a$ by its integer representative
+$\iota(a)=a/(p-1)\in[0,1]$. Distinct states have response distance at least
+$1/(p-1)$ in maximum norm. Every response-preserving state quotient is
+injective. Conversely, observability of every nonzero linear functional
+implies irreducibility of the characteristic polynomial of $A$.
+\end{theorem}
+\begin{proof}
+Suppose $v\ne0$ has $\ell A^kv=0$ for $0\le k<d$. The minimal-polynomial
+identity makes this true for all $k\ge0$. The nonzero cyclic subspace
+$W=\operatorname{span}\{A^kv:k\ge0\}$ is invariant and lies in $\ker\ell$.
+Its restricted minimal polynomial is a nonconstant divisor of the irreducible
+minimal polynomial, hence has degree $d$. But its degree is at most
+$\dim W<d$, a contradiction. Distinct symbols differ by at least $1/(p-1)$
+after encoding. A quotient identifying two states could not preserve all
+these responses, proving injectivity.
+
+For the converse, any proper nonzero invariant subspace $W$ is annihilated
+by a nonzero $\ell$; all its trajectories then have zero response, contradicting
+observability. In absence of such subspaces the cyclic subspace of any
+nonzero vector is all $X$. Its annihilating polynomial has degree $d$ and
+must be irreducible: a proper factor would generate a proper nonzero cyclic
+submodule. It is the characteristic polynomial. This also proves that the
+hypothesis is structural rather than a renamed separator assumption.
+\end{proof}
+
+\begin{proposition}[A Coupled Instance and a Faithful Product Control]
+\label{prop:basecore-irreducible-control}
+For $p=2,d=2$, $A(a,b)=(b,a+b)$ has minimal polynomial $t^2+t+1$,
+which is irreducible over $\mathbb F_2$. Each nonzero linear port separates
+all states in two readings. With the same carrier, two coordinate ports,
+word horizon and command labels, replacing $A$ by the identity admits the
+exact independent product of its two binary coordinates.
+\end{proposition}
+\begin{proof}
+The polynomial has no root in $\mathbb F_2$ and direct multiplication gives
+$A^2+A+I=0$; $A$ is not scalar, so this is its minimal polynomial. The theorem
+applies. For the identity both coordinates remain unchanged under every
+word, giving the asserted faithful product with zero error. Irreducibility
+is necessary for the uniform guarantee over all nonzero choices of port;
+it is not necessary for observability of a particular selected port family.
+\end{proof}
+
+This export supplies carrier, operator, horizon, units and a negative control.
+The integration interpretation belongs to Paper V's independent-factor
+category. Neither phenomenal properties nor an unrestricted no-simulation
+claim belongs to this export.

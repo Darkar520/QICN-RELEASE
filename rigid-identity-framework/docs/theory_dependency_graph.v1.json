@@ -9,16 +9,16 @@
     ]
   },
   "summary": {
-    "registry_entries_total": 921,
-    "theorem_nodes": 156,
-    "theorem_to_any_formal_edges": 155,
-    "theorem_to_theorem_edges": 51,
+    "registry_entries_total": 927,
+    "theorem_nodes": 159,
+    "theorem_to_any_formal_edges": 159,
+    "theorem_to_theorem_edges": 54,
     "unresolved_references": 2,
     "cycles": 0,
-    "leaves_not_used_by_other_theorems": 118,
-    "roots_with_no_theorem_dependencies": 125,
+    "leaves_not_used_by_other_theorems": 119,
+    "roots_with_no_theorem_dependencies": 126,
     "conditional_or_open_theorems": 28,
-    "proved_but_not_human_reviewed_theorems": 128
+    "proved_but_not_human_reviewed_theorems": 131
   },
   "nodes": [
     {
@@ -321,6 +321,19 @@
       "line_start": 515
     },
     {
+      "id": "basecore:theorem:thm-readout-loss-stability",
+      "label": "thm:readout-loss-stability",
+      "title": "Quantitative Stability of Audited Readout Loss",
+      "paper": "basecore",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": null,
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
+      "line_start": 597
+    },
+    {
       "id": "basecore:theorem:thm-phenomenological-instability",
       "label": "thm:phenomenological-instability",
       "title": "Conditional Null Separation",
@@ -423,6 +436,19 @@
       "proof_status": "present",
       "file": "basecore/core/sections/05_null_regime_absorbed.tex",
       "line_start": 169
+    },
+    {
+      "id": "basecore:theorem:thm-basecore-irreducible-observation",
+      "label": "thm:basecore-irreducible-observation",
+      "title": "Irreducibility Derives Every Linear Response Separator",
+      "paper": "basecore",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": null,
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "basecore/core/sections/06_structural_classes_and_dynamics.tex",
+      "line_start": 94
     },
     {
       "id": "basecore:theorem:thm-rupture",
@@ -813,6 +839,19 @@
       "proof_status": "present",
       "file": "paper1/main.tex",
       "line_start": 735
+    },
+    {
+      "id": "paper1:theorem:thm-wedge-bilipschitz-gap",
+      "label": "thm:wedge-bilipschitz-gap",
+      "title": "Bounded-Distortion Wedge Gap",
+      "paper": "paper1",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": null,
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper1/main.tex",
+      "line_start": 785
     },
     {
       "id": "paper1:theorem:thm-noalt",
@@ -1218,6 +1257,19 @@
       "line_start": 784
     },
     {
+      "id": "paper2:theorem:thm-readout-loss-stability",
+      "label": "thm:readout-loss-stability",
+      "title": "Quantitative Stability of Audited Readout Loss",
+      "paper": "paper2",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": null,
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper2/main.tex",
+      "line_start": 827
+    },
+    {
       "id": "paper2:theorem:thm-asymmetry",
       "label": "thm:asymmetry",
       "title": "Conditional Structural Asymmetry",
@@ -1229,6 +1281,19 @@
       "proof_status": "missing",
       "file": "paper2/main.tex",
       "line_start": 908
+    },
+    {
+      "id": "paper3:theorem:thm-compact-polish-consistency",
+      "label": "thm:compact-polish-consistency",
+      "title": "Countable Metric--Polish Consistency",
+      "paper": "paper3",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": null,
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 161
     },
     {
       "id": "paper3:theorem:thm-nonsim",
@@ -1268,6 +1333,19 @@
       "proof_status": "missing",
       "file": "paper3/main.tex",
       "line_start": 280
+    },
+    {
+      "id": "paper3:theorem:thm-channel-projection-detectability",
+      "label": "thm:channel-projection-detectability",
+      "title": "Compatible Observable Channels and Detectability",
+      "paper": "paper3",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": null,
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper3/main.tex",
+      "line_start": 364
     },
     {
       "id": "paper3:theorem:thm-instability",
@@ -1439,6 +1517,32 @@
       "line_start": 388
     },
     {
+      "id": "paper5:theorem:thm-response-atomic-factorization",
+      "label": "thm:response-atomic-factorization",
+      "title": "Atomic Response Separation Gives a Product Error Bound",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": null,
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 447
+    },
+    {
+      "id": "paper5:theorem:thm-iint-irreducible-derivation",
+      "label": "thm:iint-irreducible-derivation",
+      "title": "Structural Atomic Separator on Every Faithful Quotient",
+      "paper": "paper5",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": null,
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 499
+    },
+    {
       "id": "paper5:theorem:thm-circle-prefix-integration-obstruction",
       "label": "thm:circle-prefix-integration-obstruction",
       "title": "Exact Split at the Initial Projective Cut",
@@ -1449,7 +1553,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 504
+      "line_start": 582
     },
     {
       "id": "paper5:theorem:thm-circle-prefix-cofinal-margin",
@@ -1462,7 +1566,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 512
+      "line_start": 590
     },
     {
       "id": "paper5:theorem:thm-paired-integration-rupture",
@@ -1475,7 +1579,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 543
+      "line_start": 621
     },
     {
       "id": "paper5:theorem:thm-tower-identity-observation-resolution",
@@ -1488,7 +1592,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 553
+      "line_start": 631
     },
     {
       "id": "paper5:theorem:thm-addressable-identity-alternatives",
@@ -1501,7 +1605,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 578
+      "line_start": 656
     },
     {
       "id": "paper5:theorem:thm-integration-all-identity-channels",
@@ -1514,7 +1618,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 622
+      "line_start": 700
     },
     {
       "id": "paper5:theorem:thm-matched-integration-legibility",
@@ -1527,7 +1631,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 655
+      "line_start": 733
     },
     {
       "id": "paper5:theorem:thm-existence",
@@ -1540,7 +1644,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1012
+      "line_start": 1090
     },
     {
       "id": "paper5:theorem:thm-infinite-six-predicate-witness",
@@ -1553,7 +1657,20 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1075
+      "line_start": 1153
+    },
+    {
+      "id": "paper5:theorem:thm-asymmetric-native-six",
+      "label": "thm:asymmetric-native-six",
+      "title": "Global Six-Predicate Certificate with Asymmetric Retention",
+      "paper": "paper5",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": null,
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper5_operational_consciousness/main.tex",
+      "line_start": 1266
     },
     {
       "id": "paper5:theorem:thm-substrate",
@@ -1566,7 +1683,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1259
+      "line_start": 1337
     },
     {
       "id": "paper5:theorem:thm-stability",
@@ -1579,7 +1696,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1282
+      "line_start": 1360
     },
     {
       "id": "paper5:theorem:thm-rupture",
@@ -1592,7 +1709,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1296
+      "line_start": 1374
     },
     {
       "id": "paper5:theorem:thm-minimality",
@@ -1605,7 +1722,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1402
+      "line_start": 1480
     },
     {
       "id": "paper5:theorem:thm-six-witness-schemas",
@@ -1618,7 +1735,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1432
+      "line_start": 1510
     },
     {
       "id": "paper5:theorem:thm-six-sufficiency",
@@ -1631,7 +1748,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1467
+      "line_start": 1545
     },
     {
       "id": "paper5:theorem:thm-intermediate",
@@ -1644,7 +1761,7 @@
       "effective_public_status": "proved",
       "proof_status": "present",
       "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1904
+      "line_start": 1982
     },
     {
       "id": "paper8:theorem:thm-infinite-strict-upstream-separation",
@@ -1710,6 +1827,19 @@
       "proof_status": "present",
       "file": "paper8_first_person_subjectivity/main.tex",
       "line_start": 870
+    },
+    {
+      "id": "paper8:theorem:thm-native-nonempty-subfp",
+      "label": "thm:native-nonempty-subfp",
+      "title": "Nonempty Proper Indexed Class in the Infinite Model Universe",
+      "paper": "paper8",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": null,
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper8_first_person_subjectivity/main.tex",
+      "line_start": 1899
     },
     {
       "id": "paper8:theorem:thm-tower-native-lesion-obstruction",
@@ -1855,149 +1985,6 @@
       "line_start": 1670
     },
     {
-      "id": "paper9:conjecture:thm-predicate-independence",
-      "label": "thm:predicate-independence",
-      "title": "Independent Calibrated Response Predicates",
-      "paper": "paper9",
-      "source_declared_status": "conditional",
-      "machine_extracted_status": "conditional",
-      "human_curated_status": null,
-      "effective_public_status": "conditional",
-      "proof_status": "present",
-      "file": "paper9_phenomenal_bridge_organization/main.tex",
-      "line_start": 2255
-    },
-    {
-      "id": "paper9:conjecture:thm-registry-independence",
-      "label": "thm:registry-independence",
-      "title": "Faithful Row-Local Registry Transport and a Coupling Obstruction",
-      "paper": "paper9",
-      "source_declared_status": "conditional",
-      "machine_extracted_status": "conditional",
-      "human_curated_status": null,
-      "effective_public_status": "conditional",
-      "proof_status": "present",
-      "file": "paper9_phenomenal_bridge_organization/main.tex",
-      "line_start": 2281
-    },
-    {
-      "id": "paper9:criterion:thm-bridge-realization-exists",
-      "label": "thm:bridge-realization-exists",
-      "title": "A Nondegenerate Completed Mathematical Bridge Instance",
-      "paper": "paper9",
-      "source_declared_status": "conditional",
-      "machine_extracted_status": "conditional",
-      "human_curated_status": null,
-      "effective_public_status": "conditional",
-      "proof_status": "present",
-      "file": "paper9_phenomenal_bridge_organization/main.tex",
-      "line_start": 2307
-    },
-    {
-      "id": "paper1:theorem:thm-wedge-bilipschitz-gap",
-      "label": "thm:wedge-bilipschitz-gap",
-      "title": "Bounded-Distortion Wedge Gap",
-      "paper": "paper1",
-      "source_declared_status": "proved",
-      "machine_extracted_status": "proved",
-      "human_curated_status": null,
-      "effective_public_status": "proved",
-      "proof_status": "present",
-      "file": "paper1/main.tex",
-      "line_start": 785
-    },
-    {
-      "id": "paper5:theorem:thm-asymmetric-native-six",
-      "label": "thm:asymmetric-native-six",
-      "title": "Global Six-Predicate Certificate with Asymmetric Retention",
-      "paper": "paper5",
-      "source_declared_status": "conditional",
-      "machine_extracted_status": "conditional",
-      "human_curated_status": null,
-      "effective_public_status": "conditional",
-      "proof_status": "present",
-      "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 1188
-    },
-    {
-      "id": "paper8:theorem:thm-native-nonempty-subfp",
-      "label": "thm:native-nonempty-subfp",
-      "title": "Nonempty Proper Indexed Class in the Infinite Model Universe",
-      "paper": "paper8",
-      "source_declared_status": "conditional",
-      "machine_extracted_status": "conditional",
-      "human_curated_status": null,
-      "effective_public_status": "conditional",
-      "proof_status": "present",
-      "file": "paper8_first_person_subjectivity/main.tex",
-      "line_start": 1899
-    },
-    {
-      "id": "basecore:theorem:thm-readout-loss-stability",
-      "label": "thm:readout-loss-stability",
-      "title": "Quantitative Stability of Audited Readout Loss",
-      "paper": "basecore",
-      "source_declared_status": "conditional",
-      "machine_extracted_status": "conditional",
-      "human_curated_status": null,
-      "effective_public_status": "conditional",
-      "proof_status": "present",
-      "file": "basecore/core/sections/04_regime_constraints_absorbed.tex",
-      "line_start": 597
-    },
-    {
-      "id": "paper2:theorem:thm-readout-loss-stability",
-      "label": "thm:readout-loss-stability",
-      "title": "Quantitative Stability of Audited Readout Loss",
-      "paper": "paper2",
-      "source_declared_status": "conditional",
-      "machine_extracted_status": "conditional",
-      "human_curated_status": null,
-      "effective_public_status": "conditional",
-      "proof_status": "present",
-      "file": "paper2/main.tex",
-      "line_start": 827
-    },
-    {
-      "id": "paper3:theorem:thm-compact-polish-consistency",
-      "label": "thm:compact-polish-consistency",
-      "title": "Countable Metric--Polish Consistency",
-      "paper": "paper3",
-      "source_declared_status": "conditional",
-      "machine_extracted_status": "conditional",
-      "human_curated_status": null,
-      "effective_public_status": "conditional",
-      "proof_status": "present",
-      "file": "paper3/main.tex",
-      "line_start": 161
-    },
-    {
-      "id": "paper3:theorem:thm-channel-projection-detectability",
-      "label": "thm:channel-projection-detectability",
-      "title": "Compatible Observable Channels and Detectability",
-      "paper": "paper3",
-      "source_declared_status": "conditional",
-      "machine_extracted_status": "conditional",
-      "human_curated_status": null,
-      "effective_public_status": "conditional",
-      "proof_status": "present",
-      "file": "paper3/main.tex",
-      "line_start": 364
-    },
-    {
-      "id": "paper5:theorem:thm-response-atomic-factorization",
-      "label": "thm:response-atomic-factorization",
-      "title": "Atomic Response Separation Gives a Product Error Bound",
-      "paper": "paper5",
-      "source_declared_status": "proved",
-      "machine_extracted_status": "proved",
-      "human_curated_status": null,
-      "effective_public_status": "proved",
-      "proof_status": "present",
-      "file": "paper5_operational_consciousness/main.tex",
-      "line_start": 447
-    },
-    {
       "id": "paper9:theorem:thm-bridge-quartic-global-certificate",
       "label": "thm:bridge-quartic-global-certificate",
       "title": "Safe Extension and a Global Integration Certificate",
@@ -2048,6 +2035,58 @@
       "proof_status": "present",
       "file": "paper9_phenomenal_bridge_organization/main.tex",
       "line_start": 1994
+    },
+    {
+      "id": "paper9:theorem:thm-bridge-expanded-identification",
+      "label": "thm:bridge-expanded-identification",
+      "title": "Five-Root Coupled Gap and Equal-Cost Total-Replica Obstruction",
+      "paper": "paper9",
+      "source_declared_status": "proved",
+      "machine_extracted_status": "proved",
+      "human_curated_status": null,
+      "effective_public_status": "proved",
+      "proof_status": "present",
+      "file": "paper9_phenomenal_bridge_organization/main.tex",
+      "line_start": 2120
+    },
+    {
+      "id": "paper9:conjecture:thm-predicate-independence",
+      "label": "thm:predicate-independence",
+      "title": "Independent Calibrated Response Predicates",
+      "paper": "paper9",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": null,
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper9_phenomenal_bridge_organization/main.tex",
+      "line_start": 2377
+    },
+    {
+      "id": "paper9:conjecture:thm-registry-independence",
+      "label": "thm:registry-independence",
+      "title": "Faithful Row-Local Registry Transport and a Coupling Obstruction",
+      "paper": "paper9",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": null,
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper9_phenomenal_bridge_organization/main.tex",
+      "line_start": 2403
+    },
+    {
+      "id": "paper9:criterion:thm-bridge-realization-exists",
+      "label": "thm:bridge-realization-exists",
+      "title": "A Nondegenerate Completed Mathematical Bridge Instance",
+      "paper": "paper9",
+      "source_declared_status": "conditional",
+      "machine_extracted_status": "conditional",
+      "human_curated_status": null,
+      "effective_public_status": "conditional",
+      "proof_status": "present",
+      "file": "paper9_phenomenal_bridge_organization/main.tex",
+      "line_start": 2429
     }
   ],
   "edges": [
@@ -2537,6 +2576,11 @@
       "target_is_theorem": true
     },
     {
+      "source": "paper3:theorem:thm-channel-projection-detectability",
+      "target": "paper3:theorem:thm-compact-polish-consistency",
+      "target_is_theorem": true
+    },
+    {
       "source": "paper3:theorem:thm-bound",
       "target": "paper3:theorem:thm-instability",
       "target_is_theorem": true
@@ -2559,6 +2603,16 @@
     {
       "source": "paper3:theorem:thm-closure",
       "target": "paper3:theorem:thm-minimal",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper5:theorem:thm-iint-irreducible-derivation",
+      "target": "basecore:theorem:thm-basecore-irreducible-observation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper5:theorem:thm-iint-irreducible-derivation",
+      "target": "paper5:theorem:thm-response-atomic-factorization",
       "target_is_theorem": true
     },
     {
@@ -2605,6 +2659,16 @@
       "source": "paper5:theorem:thm-infinite-six-predicate-witness",
       "target": "paper5:definition:def-hilbert-prefix-system",
       "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-asymmetric-native-six",
+      "target": "paper5:definition:def-asymmetric-native-plant",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper5:theorem:thm-asymmetric-native-six",
+      "target": "paper5:theorem:thm-infinite-six-predicate-witness",
+      "target_is_theorem": true
     },
     {
       "source": "paper5:theorem:thm-substrate",
@@ -2707,6 +2771,46 @@
       "target_is_theorem": true
     },
     {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper5:theorem:thm-asymmetric-native-six",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper7:proposition:prop-asymmetric-native-life",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper7:proposition:prop-asymmetric-native-subject",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper8:definition:def-subfp",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper8:lemma:lem-native-intervention-selectivity",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper8:proposition:prop-native-seven-coordinates",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper8:proposition:strict-strengthening-l399",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper8:theorem:thm-infinite-strict-upstream-separation",
+      "target_is_theorem": true
+    },
+    {
       "source": "paper8:theorem:thm-tower-native-lesion-obstruction",
       "target": "paper6:proposition:prop-observable-feedback-split",
       "target_is_theorem": false
@@ -2757,6 +2861,16 @@
       "target_is_theorem": false
     },
     {
+      "source": "paper9:theorem:thm-bridge-expanded-identification",
+      "target": "paper9:proposition:prop-bridge-prefix-coupling-safety",
+      "target_is_theorem": false
+    },
+    {
+      "source": "paper9:theorem:thm-bridge-expanded-identification",
+      "target": "paper9:theorem:thm-bridge-four-root-identification",
+      "target_is_theorem": true
+    },
+    {
       "source": "paper9:criterion:thm-bridge-realization-exists",
       "target": "paper9:theorem:thm-bridge-four-root-identification",
       "target_is_theorem": true
@@ -2769,61 +2883,6 @@
     {
       "source": "paper9:criterion:thm-bridge-realization-exists",
       "target": "paper9:theorem:thm-bridge-quartic-indexed-inheritance",
-      "target_is_theorem": true
-    },
-    {
-      "source": "paper5:theorem:thm-asymmetric-native-six",
-      "target": "paper5:definition:def-asymmetric-native-plant",
-      "target_is_theorem": false
-    },
-    {
-      "source": "paper5:theorem:thm-asymmetric-native-six",
-      "target": "paper5:theorem:thm-infinite-six-predicate-witness",
-      "target_is_theorem": true
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper5:theorem:thm-asymmetric-native-six",
-      "target_is_theorem": true
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper7:proposition:prop-asymmetric-native-life",
-      "target_is_theorem": false
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper7:proposition:prop-asymmetric-native-subject",
-      "target_is_theorem": false
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper8:definition:def-subfp",
-      "target_is_theorem": false
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper8:lemma:lem-native-intervention-selectivity",
-      "target_is_theorem": false
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper8:proposition:prop-native-seven-coordinates",
-      "target_is_theorem": false
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper8:proposition:strict-strengthening-l399",
-      "target_is_theorem": false
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper8:theorem:thm-infinite-strict-upstream-separation",
-      "target_is_theorem": true
-    },
-    {
-      "source": "paper3:theorem:thm-channel-projection-detectability",
-      "target": "paper3:theorem:thm-compact-polish-consistency",
       "target_is_theorem": true
     }
   ],
@@ -2999,6 +3058,11 @@
       "target_is_theorem": true
     },
     {
+      "source": "paper3:theorem:thm-channel-projection-detectability",
+      "target": "paper3:theorem:thm-compact-polish-consistency",
+      "target_is_theorem": true
+    },
+    {
       "source": "paper3:theorem:thm-bound",
       "target": "paper3:theorem:thm-instability",
       "target_is_theorem": true
@@ -3019,6 +3083,16 @@
       "target_is_theorem": true
     },
     {
+      "source": "paper5:theorem:thm-iint-irreducible-derivation",
+      "target": "basecore:theorem:thm-basecore-irreducible-observation",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper5:theorem:thm-iint-irreducible-derivation",
+      "target": "paper5:theorem:thm-response-atomic-factorization",
+      "target_is_theorem": true
+    },
+    {
       "source": "paper5:theorem:thm-paired-integration-rupture",
       "target": "paper5:theorem:thm-circle-prefix-cofinal-margin",
       "target_is_theorem": true
@@ -3034,8 +3108,23 @@
       "target_is_theorem": true
     },
     {
+      "source": "paper5:theorem:thm-asymmetric-native-six",
+      "target": "paper5:theorem:thm-infinite-six-predicate-witness",
+      "target_is_theorem": true
+    },
+    {
       "source": "paper8:criterion:thm-ownership-nontransfer",
       "target": "paper8:criterion:thm-selfindex-emergence",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper5:theorem:thm-asymmetric-native-six",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper8:theorem:thm-native-nonempty-subfp",
+      "target": "paper8:theorem:thm-infinite-strict-upstream-separation",
       "target_is_theorem": true
     },
     {
@@ -3046,6 +3135,11 @@
     {
       "source": "paper9:theorem:thm-bridge-bilinear-safe-extension",
       "target": "paper9:theorem:thm-bridge-port-minimality",
+      "target_is_theorem": true
+    },
+    {
+      "source": "paper9:theorem:thm-bridge-expanded-identification",
+      "target": "paper9:theorem:thm-bridge-four-root-identification",
       "target_is_theorem": true
     },
     {
@@ -3061,26 +3155,6 @@
     {
       "source": "paper9:criterion:thm-bridge-realization-exists",
       "target": "paper9:theorem:thm-bridge-quartic-indexed-inheritance",
-      "target_is_theorem": true
-    },
-    {
-      "source": "paper5:theorem:thm-asymmetric-native-six",
-      "target": "paper5:theorem:thm-infinite-six-predicate-witness",
-      "target_is_theorem": true
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper5:theorem:thm-asymmetric-native-six",
-      "target_is_theorem": true
-    },
-    {
-      "source": "paper8:theorem:thm-native-nonempty-subfp",
-      "target": "paper8:theorem:thm-infinite-strict-upstream-separation",
-      "target_is_theorem": true
-    },
-    {
-      "source": "paper3:theorem:thm-channel-projection-detectability",
-      "target": "paper3:theorem:thm-compact-polish-consistency",
       "target_is_theorem": true
     }
   ],
@@ -3103,6 +3177,7 @@
     "basecore:theorem:thm-finite-cut-minimax",
     "basecore:theorem:thm-h3-necessary",
     "basecore:theorem:thm-dichotomy",
+    "basecore:theorem:thm-readout-loss-stability",
     "basecore:theorem:thm-forced-phenomenological-closure",
     "basecore:theorem:thm-null-categorical-universality",
     "basecore:theorem:thm-null-simulation-lower-bound",
@@ -3133,6 +3208,7 @@
     "paper1:theorem:thm-spectral-coupling",
     "paper1:theorem:thm-uniqueness",
     "paper1:theorem:thm-cutpoint-product-atomicity",
+    "paper1:theorem:thm-wedge-bilipschitz-gap",
     "paper1:theorem:thm-noalt",
     "paper1:theorem:thm-aleph-unique",
     "paper1:theorem:thm-info-isolation",
@@ -3155,10 +3231,12 @@
     "paper2:theorem:thm-uniform-e2-obstruction",
     "paper2:theorem:thm-multiscale-e2-protection",
     "paper2:theorem:thm-h3-necessary",
+    "paper2:theorem:thm-readout-loss-stability",
     "paper2:theorem:thm-asymmetry",
     "paper3:theorem:thm-nonsim",
     "paper3:theorem:thm-spectral",
     "paper3:theorem:thm-cont",
+    "paper3:theorem:thm-channel-projection-detectability",
     "paper3:theorem:thm-closure",
     "paper3:theorem:certified-profinite-witness-bound-l829",
     "paper3:theorem:certified-symbolic-witness-bound-l900",
@@ -3169,6 +3247,7 @@
     "paper4:theorem:thm-campaign-block-sign-test",
     "paper4:theorem:thm-external-interface-falsation-bound",
     "paper5:theorem:thm-iint-faithful-factorization-triviality",
+    "paper5:theorem:thm-iint-irreducible-derivation",
     "paper5:theorem:thm-circle-prefix-integration-obstruction",
     "paper5:theorem:thm-tower-identity-observation-resolution",
     "paper5:theorem:thm-addressable-identity-alternatives",
@@ -3185,6 +3264,7 @@
     "paper8:criterion:thm-ownership-nontransfer",
     "paper8:criterion:thm-five-field-reduction",
     "paper8:theorem:positive-irreducibility-excludes-weak-model-sufficiency-l701",
+    "paper8:theorem:thm-native-nonempty-subfp",
     "paper8:theorem:thm-tower-native-lesion-obstruction",
     "paper8:theorem:thm-writable-tower-private-return-separation",
     "paper9:theorem:thm-bridge-binary-transport-gauge",
@@ -3194,16 +3274,11 @@
     "paper9:theorem:thm-bridge-bilinear-safe-extension",
     "paper9:theorem:thm-bridge-nonadditive-gap",
     "paper9:theorem:thm-measurable-fibre-centres",
+    "paper9:theorem:thm-bridge-quartic-cubic-gap",
+    "paper9:theorem:thm-bridge-expanded-identification",
     "paper9:conjecture:thm-predicate-independence",
     "paper9:conjecture:thm-registry-independence",
-    "paper9:criterion:thm-bridge-realization-exists",
-    "paper1:theorem:thm-wedge-bilipschitz-gap",
-    "paper8:theorem:thm-native-nonempty-subfp",
-    "basecore:theorem:thm-readout-loss-stability",
-    "paper2:theorem:thm-readout-loss-stability",
-    "paper3:theorem:thm-channel-projection-detectability",
-    "paper5:theorem:thm-response-atomic-factorization",
-    "paper9:theorem:thm-bridge-quartic-cubic-gap"
+    "paper9:criterion:thm-bridge-realization-exists"
   ],
   "roots_with_no_theorem_dependencies": [
     "basecore:theorem:thm-projection",
@@ -3224,6 +3299,7 @@
     "basecore:theorem:thm-h3-necessary",
     "basecore:theorem:thm-fragmentation",
     "basecore:theorem:thm-forced-continuity",
+    "basecore:theorem:thm-readout-loss-stability",
     "basecore:theorem:thm-phenomenological-instability",
     "basecore:theorem:thm-minimal-positive-regime",
     "basecore:theorem:thm-universal-intensity-bound",
@@ -3231,6 +3307,7 @@
     "basecore:theorem:thm-rigidity-inheritance",
     "basecore:theorem:thm-null-categorical-universality",
     "basecore:theorem:thm-null-simulation-lower-bound",
+    "basecore:theorem:thm-basecore-irreducible-observation",
     "basecore:theorem:thm-rupture",
     "basecore:theorem:thm-invariant-basis-minimality",
     "basecore:theorem:certified-criterion-membership-l354",
@@ -3256,6 +3333,7 @@
     "paper1:theorem:thm-spectral-coupling",
     "paper1:theorem:thm-uniqueness",
     "paper1:theorem:thm-cutpoint-product-atomicity",
+    "paper1:theorem:thm-wedge-bilipschitz-gap",
     "paper1:theorem:thm-noalt",
     "paper1:theorem:thm-collapse",
     "paper1:theorem:thm-aleph-unique",
@@ -3280,6 +3358,8 @@
     "paper2:theorem:thm-h3-necessary",
     "paper2:theorem:thm-fragmentation",
     "paper2:theorem:thm-forced-continuity",
+    "paper2:theorem:thm-readout-loss-stability",
+    "paper3:theorem:thm-compact-polish-consistency",
     "paper3:theorem:thm-nonsim",
     "paper3:theorem:thm-spectral",
     "paper3:theorem:thm-cont",
@@ -3294,6 +3374,7 @@
     "paper4:theorem:thm-campaign-block-sign-test",
     "paper4:theorem:thm-external-interface-falsation-bound",
     "paper5:theorem:thm-iint-faithful-factorization-triviality",
+    "paper5:theorem:thm-response-atomic-factorization",
     "paper5:theorem:thm-circle-prefix-integration-obstruction",
     "paper5:theorem:thm-circle-prefix-cofinal-margin",
     "paper5:theorem:thm-tower-identity-observation-resolution",
@@ -3320,19 +3401,15 @@
     "paper9:theorem:thm-bridge-motor-closure",
     "paper9:theorem:thm-bridge-nonadditive-gap",
     "paper9:theorem:thm-measurable-fibre-centres",
-    "paper9:conjecture:thm-predicate-independence",
-    "paper9:conjecture:thm-registry-independence",
-    "paper1:theorem:thm-wedge-bilipschitz-gap",
-    "basecore:theorem:thm-readout-loss-stability",
-    "paper2:theorem:thm-readout-loss-stability",
-    "paper3:theorem:thm-compact-polish-consistency",
-    "paper5:theorem:thm-response-atomic-factorization",
     "paper9:theorem:thm-bridge-quartic-global-certificate",
     "paper9:theorem:thm-bridge-quartic-indexed-inheritance",
     "paper9:theorem:thm-bridge-quartic-cubic-gap",
-    "paper9:theorem:thm-bridge-four-root-identification"
+    "paper9:theorem:thm-bridge-four-root-identification",
+    "paper9:conjecture:thm-predicate-independence",
+    "paper9:conjecture:thm-registry-independence"
   ],
   "conditional_or_open_theorems": [
+    "basecore:theorem:thm-readout-loss-stability",
     "basecore:theorem:thm-minimal-positive-regime",
     "basecore:theorem:thm-rigidity-inheritance",
     "basecore:theorem:thm-null-categorical-universality",
@@ -3342,25 +3419,24 @@
     "paper1:theorem:thm-aleph-unique",
     "paper1:theorem:thm-completeness",
     "paper10:theorem:thm-null-forced",
+    "paper2:theorem:thm-readout-loss-stability",
     "paper2:theorem:thm-asymmetry",
+    "paper3:theorem:thm-compact-polish-consistency",
     "paper3:theorem:thm-nonsim",
     "paper3:theorem:thm-spectral",
     "paper3:theorem:thm-cont",
+    "paper3:theorem:thm-channel-projection-detectability",
     "paper3:theorem:thm-instability",
     "paper3:theorem:thm-sim-cond",
     "paper3:theorem:closure-by-non-alternatives-l989",
+    "paper5:theorem:thm-asymmetric-native-six",
     "paper8:criterion:thm-selfindex-emergence",
     "paper8:criterion:thm-ownership-nontransfer",
     "paper8:criterion:thm-five-field-reduction",
+    "paper8:theorem:thm-native-nonempty-subfp",
     "paper9:conjecture:thm-predicate-independence",
     "paper9:conjecture:thm-registry-independence",
-    "paper9:criterion:thm-bridge-realization-exists",
-    "paper5:theorem:thm-asymmetric-native-six",
-    "paper8:theorem:thm-native-nonempty-subfp",
-    "basecore:theorem:thm-readout-loss-stability",
-    "paper2:theorem:thm-readout-loss-stability",
-    "paper3:theorem:thm-compact-polish-consistency",
-    "paper3:theorem:thm-channel-projection-detectability"
+    "paper9:criterion:thm-bridge-realization-exists"
   ],
   "proved_but_not_human_reviewed_theorems": [
     "basecore:theorem:thm-projection",
@@ -3389,6 +3465,7 @@
     "basecore:theorem:thm-phenomenological-instability",
     "basecore:theorem:thm-universal-intensity-bound",
     "basecore:theorem:thm-forced-phenomenological-closure",
+    "basecore:theorem:thm-basecore-irreducible-observation",
     "basecore:theorem:thm-rupture",
     "basecore:theorem:thm-invariant-basis-minimality",
     "basecore:theorem:certified-criterion-membership-l354",
@@ -3418,6 +3495,7 @@
     "paper1:theorem:thm-spectral-coupling",
     "paper1:theorem:thm-uniqueness",
     "paper1:theorem:thm-cutpoint-product-atomicity",
+    "paper1:theorem:thm-wedge-bilipschitz-gap",
     "paper1:theorem:thm-noalt",
     "paper1:theorem:thm-collapse",
     "paper1:theorem:thm-info-isolation",
@@ -3456,6 +3534,8 @@
     "paper4:theorem:thm-campaign-block-sign-test",
     "paper4:theorem:thm-external-interface-falsation-bound",
     "paper5:theorem:thm-iint-faithful-factorization-triviality",
+    "paper5:theorem:thm-response-atomic-factorization",
+    "paper5:theorem:thm-iint-irreducible-derivation",
     "paper5:theorem:thm-circle-prefix-integration-obstruction",
     "paper5:theorem:thm-circle-prefix-cofinal-margin",
     "paper5:theorem:thm-paired-integration-rupture",
@@ -3485,12 +3565,11 @@
     "paper9:theorem:thm-bridge-bilinear-safe-extension",
     "paper9:theorem:thm-bridge-nonadditive-gap",
     "paper9:theorem:thm-measurable-fibre-centres",
-    "paper1:theorem:thm-wedge-bilipschitz-gap",
-    "paper5:theorem:thm-response-atomic-factorization",
     "paper9:theorem:thm-bridge-quartic-global-certificate",
     "paper9:theorem:thm-bridge-quartic-indexed-inheritance",
     "paper9:theorem:thm-bridge-quartic-cubic-gap",
-    "paper9:theorem:thm-bridge-four-root-identification"
+    "paper9:theorem:thm-bridge-four-root-identification",
+    "paper9:theorem:thm-bridge-expanded-identification"
   ],
   "unresolved_references": [
     {

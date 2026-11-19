@@ -1,0 +1,355 @@
+{
+  "technical_acceptance_passed": false,
+  "status": "LEAN_RESOURCE_STOP",
+  "scope": "Phase material preserved before local acceptance and commit",
+  "verification": {
+    "BUILD": [
+      {
+        "name": "root-canonical-integrity",
+        "exit": 0,
+        "command": [
+          "node",
+          "scripts/verify-canonical-integrity.cjs"
+        ],
+        "seconds": 0.72,
+        "log_sha256": "ae33bfb5592c917b3a73343438420142a89e51f6bf46e49d8166d5a345cd4bc7"
+      },
+      {
+        "name": "root-claim-registry",
+        "exit": 0,
+        "command": [
+          "node",
+          "scripts/verify-claim-registry.cjs"
+        ],
+        "seconds": 0.23,
+        "log_sha256": "30e2f5e755bd861f3805a014ef610d70170ae67259cd5e0e79b5b1dd958f31f2"
+      },
+      {
+        "name": "root-canonical-release",
+        "exit": 0,
+        "command": [
+          "node",
+          "scripts/verify-canonical-release.cjs"
+        ],
+        "seconds": 1.36,
+        "log_sha256": "299ba6e2635657f98eb591070724b2fab544565c954b4c8c5e3cf2d918da214a"
+      },
+      {
+        "name": "paper5-0",
+        "exit": 0,
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "main.tex"
+        ],
+        "seconds": 11.5,
+        "log_sha256": "596799ef6e795fdcfdfe28b2b417bb6533ee6caf97dc8bd2032ef4c996a8be06"
+      },
+      {
+        "name": "paper5-1",
+        "exit": 0,
+        "command": [
+          "biber",
+          "main"
+        ],
+        "seconds": 21.69,
+        "log_sha256": "8632d3928b203ca4b1d9e2663f9ebe8f78cbc37d4d60cab65a36d2b4c03731b5"
+      },
+      {
+        "name": "paper5-2",
+        "exit": 0,
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "main.tex"
+        ],
+        "seconds": 8.42,
+        "log_sha256": "7e76f344ea943564aab1767cca1f17e913bfa86a7659e1f34b20f8a24cafb4a3"
+      },
+      {
+        "name": "paper5-3",
+        "exit": 0,
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "main.tex"
+        ],
+        "seconds": 8.8,
+        "log_sha256": "378681a3d5ea3ed33b9fbdc164a7675f277fc34a77cd6e8ff914c581a78cc186"
+      },
+      {
+        "name": "paper9-0",
+        "exit": 0,
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "main.tex"
+        ],
+        "seconds": 7.58,
+        "log_sha256": "3665060a03f53bb0dc63ff3e607366524a06bf2e1c9af7c96d4da6b4ae512a7b"
+      },
+      {
+        "name": "paper9-1",
+        "exit": 0,
+        "command": [
+          "biber",
+          "main"
+        ],
+        "seconds": 7.08,
+        "log_sha256": "df637de107d2095a861f14b5d39b1b6ff5fb041aff45a1605ad94cfcbc636b59"
+      },
+      {
+        "name": "paper9-2",
+        "exit": 0,
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "main.tex"
+        ],
+        "seconds": 6.72,
+        "log_sha256": "832d07766f6e2defc3c079ce39bc3b4c4756e20e3f333cfef0071fe4fbb74d18"
+      },
+      {
+        "name": "paper9-3",
+        "exit": 0,
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "main.tex"
+        ],
+        "seconds": 7.41,
+        "log_sha256": "57ac1b455684968475874fbb99a928c2a848a05cd57a9c33b218ffb68a76e2ac"
+      },
+      {
+        "name": "paper10-0",
+        "exit": 0,
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "main.tex"
+        ],
+        "seconds": 7.33,
+        "log_sha256": "5a329bf6aaf0255b0c6d64f3f3650de0eb8ad108d127189a14f7bee41b8cd418"
+      },
+      {
+        "name": "paper10-1",
+        "exit": 2,
+        "command": [
+          "biber",
+          "main"
+        ],
+        "seconds": 7.16,
+        "log_sha256": "bcee9803d60c3f17e68d0d1841395e48744621ae58908476d0b6156a4ba2aed1"
+      }
+    ],
+    "BUILD_CONTINUATION": [
+      {
+        "name": "paper10-final-1",
+        "exit": 0,
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "main.tex"
+        ],
+        "seconds": 4.2,
+        "log_sha256": "0259492f85c4b7f13886c27ea21518eecfe9aeb5ac0bf36bcad7cb7b72e9b75d"
+      },
+      {
+        "name": "paper10-final-2",
+        "exit": 0,
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "main.tex"
+        ],
+        "seconds": 4.09,
+        "log_sha256": "d65ec233f3214f5433248181778eb55de7bcb4fe0a8c68edd1e9adb3ddce0174"
+      },
+      {
+        "name": "monolithic",
+        "exit": 0,
+        "command": [
+          "npm.cmd",
+          "run",
+          "compile:monolithic"
+        ],
+        "seconds": 106.19,
+        "log_sha256": "7d07875b813d0467f221229bd73bf11984cbdfd8d9838f1ab378d2058592f524"
+      },
+      {
+        "name": "monolithic-quality",
+        "exit": 0,
+        "command": [
+          "node",
+          "scripts/audit-monolithic-build-quality.js"
+        ],
+        "seconds": 0.25,
+        "log_sha256": "f20410a8de8f9d8e562e08e5ae8f597fe04f14f251db82cc43d124ef85a3a871"
+      },
+      {
+        "name": "release",
+        "exit": 0,
+        "command": [
+          "npm.cmd",
+          "run",
+          "verify:release"
+        ],
+        "seconds": 57.36,
+        "log_sha256": "09aa33fa8cd84e1861b740de7cfc124c78e31c2fc12c8662fa4b0ae80cafae82"
+      },
+      {
+        "name": "prose",
+        "exit": 0,
+        "command": [
+          "python",
+          "scripts/verify-prose-sync.py"
+        ],
+        "seconds": 1.94,
+        "log_sha256": "023cb0e1f8cc98d3fc90860c8b57c0840914b5ff4aeab5ec22952cede14b817d"
+      },
+      {
+        "name": "corpus",
+        "exit": 0,
+        "command": [
+          "node",
+          "scripts/validate-corpus.js"
+        ],
+        "seconds": 1.0,
+        "log_sha256": "8c377afc932ddef307a7a359bfceef03482288720be889b190abf2f1e81d6058"
+      },
+      {
+        "name": "macros",
+        "exit": 0,
+        "command": [
+          "node",
+          "scripts/validate-macros.js"
+        ],
+        "seconds": 0.22,
+        "log_sha256": "5d7b3de0423a6c44b4db5a1a2067ecd1d6f79de867531eee58ad0ae86578026b"
+      },
+      {
+        "name": "math",
+        "exit": 0,
+        "command": [
+          "python",
+          "scripts/verify-math-regressions.py"
+        ],
+        "seconds": 214.45,
+        "log_sha256": "b3ba59bd6d94e70900d8630014c0123898ed91597df0b038faf84862bccc9802"
+      }
+    ],
+    "FINAL_NONLEAN": [
+      {
+        "name": "final-root-canonical-integrity",
+        "exit": 0,
+        "command": [
+          "node",
+          "scripts/verify-canonical-integrity.cjs"
+        ],
+        "seconds": 0.56,
+        "log_sha256": "1a09f0ca6b73d4e073a7a22e8e545815d093bc5c8753cbc70f1d7d5bc4bc31d6"
+      },
+      {
+        "name": "final-root-claim-registry",
+        "exit": 0,
+        "command": [
+          "node",
+          "scripts/verify-claim-registry.cjs"
+        ],
+        "seconds": 0.19,
+        "log_sha256": "bfd4e92ed5b88ab7402a1a3cc9ab320264cb58a723adc28cf0b1432eb22357d4"
+      },
+      {
+        "name": "final-root-canonical-release",
+        "exit": 0,
+        "command": [
+          "node",
+          "scripts/verify-canonical-release.cjs"
+        ],
+        "seconds": 1.47,
+        "log_sha256": "c49127c875c2d037921394cfe144ff0323df2da4eebff6a534fee20e5a5fc2e9"
+      },
+      {
+        "name": "final-nonclaims",
+        "exit": 0,
+        "command": [
+          "npm.cmd",
+          "run",
+          "lint:nonclaims"
+        ],
+        "seconds": 4.59,
+        "log_sha256": "63b5094427915379c074617992eb4c0aa7399c9cc72697ff6674123f38657c9e"
+      },
+      {
+        "name": "final-semantic",
+        "exit": 0,
+        "command": [
+          "npm.cmd",
+          "run",
+          "audit:semantic-inflation"
+        ],
+        "seconds": 2.25,
+        "log_sha256": "ae8a1882191b506ebac0ee5d2f0285f7172a23ce90a0867528ac0c042d538de6"
+      },
+      {
+        "name": "final-coverage",
+        "exit": 0,
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "scripts/verify-lean-coverage.py"
+        ],
+        "seconds": 0.44,
+        "log_sha256": "eec220056e6cb266b6f6a4167fa6349dd75126e7a0b458be6ede0dcd944f2421"
+      }
+    ]
+  },
+  "mathematical_suites": 36,
+  "coverage": {
+    "passed": true,
+    "targets": 444,
+    "counts": {
+      "EXACT_MATCH": 14,
+      "FINITE_OR_PARTIAL_KERNEL": 56,
+      "PENDING_MATHLIB": 358,
+      "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
+    },
+    "public_lean_declarations": 348,
+    "scope": "ID/hash/symbol bookkeeping; semantic fidelity requires mathematical review",
+    "external_support_certified": false
+  },
+  "raw_adjudicators": {
+    "26": {
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "external_support_certified": false
+    },
+    "27": {
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    "28": {
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    "30": {
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    "31": {
+      "verdict": "BLOCKED_FOUNDATION_FIRST_GATES",
+      "external_support_certified": false
+    }
+  },
+  "historical_cn3_erased_history": false,
+  "external_support_certified": false
+}

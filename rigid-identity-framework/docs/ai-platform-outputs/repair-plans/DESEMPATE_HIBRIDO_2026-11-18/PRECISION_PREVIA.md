@@ -1,0 +1,5 @@
+# Precisión anterior a la ejecución
+
+El párrafo sobre acceso tardío del prerregistro menciona dos condiciones suficientes (entregar la consulta completa a H o disponer de ella localmente). No son necesarias. Si se entregaron previamente m-1 bits, comunicar el coeficiente de la única coordenada desconocida y devolver su contribución basta para empatar. La cota principal sólo se aplica al contrato sin mensajes ni escrituras de H después del sellado y antes de la respuesta. Se conserva el prerregistro original y se agrega este control positivo de equivalencia antes de editar fuentes o ejecutar pruebas.
+
+La materialización usa la consecuencia mundo de Paper IX en s=(+1,+1,-1,-1). Su amplitud de diferencia respecto a la referencia pública es 4G. Dividir ambas lecturas por 4 tras centrar da la unidad G. La cota con eps usa un límite por lectura en las unidades ya calibradas. La consulta q se entrega a la ruta local de la construcción; entregarla al factor de retención rival antes de la lectura es un brazo separado de equivalencia. La ruta física, el calendario, el cálculo de paridad y la memoria deben contabilizarse en ambos grafos.

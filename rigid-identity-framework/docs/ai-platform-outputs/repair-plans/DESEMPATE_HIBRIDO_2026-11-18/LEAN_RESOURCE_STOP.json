@@ -1,0 +1,30 @@
+{
+  "start": {
+    "physical": 685453312,
+    "commit": 2372046848
+  },
+  "command": [
+    "lean",
+    "-j",
+    "1",
+    "-DautoImplicit=false",
+    "-o",
+    "E:\\QICN-PRESERVACION\\2026-11-18-desempate-hibrido\\lean-incremental\\QICNLean\\QICNHybridBoundary.olean",
+    "QICNLean/QICNHybridBoundary.lean"
+  ],
+  "stop": {
+    "physical": 521457664,
+    "commit": 1862467584
+  },
+  "exit": 1,
+  "reason": "RESOURCE_LIMIT_BELOW_500_MIB",
+  "seconds": 33.62,
+  "draft_sha256": {
+    "QICNHybridBoundary.lean": "be8ce97c63c0e5b3b4a2d3bcf24805bddb7e6b15cb68893f7857a4b73c3ba278",
+    "QICNIrreducibleObservation.lean": "a84c8fe3b042d12fb37cc63624890ba29f40ed1cfe5406a43be4e3ac50e0d1a8"
+  },
+  "active_package_sources_unchanged": true,
+  "full_kernel_gate": "NOT_RUN",
+  "axioms_audited": false,
+  "external_support_certified": false
+}

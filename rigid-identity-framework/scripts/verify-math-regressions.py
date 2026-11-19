@@ -13,6 +13,7 @@ controls += ['../RUTA3_NO_VACUIDAD_ESTABILIDAD_2026-11-12/check_native_subfp.py'
 controls += ['../ETAPA1_BASECORE_PAPERS_I_III_2026-11-14/check_etapa1_foundations.py']
 controls += ['../ETAPA2_PAPERS_IV_X_BRIDGE_MONOLITH_2026-11-14/check_etapa2_downstream.py']
 controls += ['../FASE_CIENTIFICA_ATOMICO_PUENTE_2026-11-17/check_atomic_coupled.py']
+controls += ['../DESEMPATE_HIBRIDO_2026-11-18/check_late_transcript.py']
 for name in controls:
     run=subprocess.run([sys.executable,str(TESTS/name)],cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace')
     (CACHE/(Path(name).name+'.log')).write_text(run.stdout+run.stderr,encoding='utf-8')

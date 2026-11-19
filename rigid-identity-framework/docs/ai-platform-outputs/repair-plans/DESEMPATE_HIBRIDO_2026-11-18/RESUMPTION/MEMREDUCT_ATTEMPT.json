@@ -1,0 +1,31 @@
+{
+  "schema": "qicn.memreduct-attempt.v1",
+  "recorded_at": "2026-11-18T19:00:38.2746054-06:00",
+  "program": "Mem Reduct 3.5.2",
+  "executable": "C:\\Program Files\\Mem Reduct\\memreduct.exe",
+  "executable_sha256": "dd55a81d56e8c32918e5190b2ec2a1f2a7edbbca884627439b4b619fdfb5602d",
+  "signature": "GPG GOODSIG and VALIDSIG; key fingerprint D98523611524AB29BE7330AC288120A75635B5FD",
+  "command": "memreduct.exe -clean",
+  "elevation_requested": true,
+  "result": "UAC_USER_CANCELLED",
+  "raw_error": "This command cannot be run due to the error: An error occurred trying to start process C:\\Program Files\\Mem Reduct\\memreduct.exe. El usuario ha cancelado la operación.",
+  "cleanup_executed": false,
+  "config_changed": false,
+  "preexisting_memreduct_process_id": 6108,
+  "lean_memory_stop_receipt": "C:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado\\rigid-identity-framework\\docs\\ai-platform-outputs\\repair-plans\\DESEMPATE_HIBRIDO_2026-11-18\\RESUMPTION\\LEAN_RESOURCE_STOP_QICNFiniteFronts.json",
+  "lean_memory_stop_sha256": "10ebbdd77429b10d6fe72a4a383c8ccccc62346ebe394208ca301d4601d71e05",
+  "memory_after_attempt": {
+    "commit_available_bytes": 1437761536,
+    "physical_free_bytes": 509911040,
+    "commit_available_mib": 1371.16,
+    "pressure_percent": 95,
+    "physical_free_mib": 486.29
+  },
+  "branch": "codex/desempate-hibrido",
+  "head": "361f7929505bd8d55550b2c0dada08e8589e1168",
+  "commit_created": false,
+  "push_performed": false,
+  "merge_performed": false,
+  "cn3_erased_history": false,
+  "external_support_certified": false
+}

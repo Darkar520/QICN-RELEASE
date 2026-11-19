@@ -609,6 +609,33 @@ For the upper bound keep the product coordinates and initial readouts exact. In 
 If the time-zero readouts are exact, $r_0$ and $r_1$ must be on the same factor. Each has range $\mathbb T$, and assigning them to different factors would realize all of $\mathbb T^2$ by product surjectivity, whereas the actual phase pairs have differences only $0$ or $a$. The phase factor now carries $r_0$ with weight one. For states with the same phase factor, input $q=1$ gives true next $r_0$ separation $\lambda$ whenever their first bits differ. A comparator with $\epsilon<\lambda/2$ cannot have such a pair on that fiber. The factor carrying $c$ determines the first bit exactly. The same product corner contradiction proves $\epsilon\ge\lambda/2$, and the displayed comparator attains equality.
 \end{proof}
 
+
+\paragraph{Finite transcript extension and the global boundary.}
+Fix $m$ retained binary coordinates with all $2^m$ combinations realized
+at one public preparation. Suppose a calibrated family of responses
+queries their parities, with opposite answers separated by $2G>0$.
+A factor lacking the retained record must carry a transcript into the
+response window. If that transcript has fewer than $2^m$ values, two
+records agree on the transcript. A unit query on a differing coordinate
+forces error at least $G$ on one of them. This certifies a finite
+observable quotient under the specified cut and deadline. Its hypotheses
+include reachability of the full binary record and a physical query
+actuator, not just the presence of prefix coordinates. Paper IX supplies
+one such response construction. With full timely communication the
+response admits an exact comparator. Neither statement alters the
+depth-zero obstruction above.
+
+More generally, a finite family of continuous bounded readings on an
+infinite compact support cannot separate every distinct pair with a
+uniform positive response distance. Its image is compact, hence totally
+bounded. Were such a distance $\sigma>0$ available, a finite
+$\sigma/3$-net could contain at most one image point in each ball,
+contradicting injectivity on an infinite support. This rules out copying
+the finite-field uniform all-pairs hypothesis to the full compact tower
+with a fixed finite continuous observation window. It leaves open other
+certificates, including separation of finitely many cells, fixed
+resolution, or the cofinal split-readout argument above.
+
 \paragraph{What persists on the same support.}
 For any sequence of the branch-preserving controls, the alternating-bit subset is compact, invariant and uniformly attracting in the binary metric. In the BaseCore profile embedding all of $Z$ is disjoint from constant functions: the first angular pair lies on the radius-$1/2$ circle centered at $(1/2,1/2)$, and the first binary cell equals zero or one. Neither constant pair $(0,0)$ nor $(1,1)$ belongs to that circle. Compactness gives positive profile distance from constants uniformly on $Z$. The original readout is continuous as a map of states, and its maximum one-step jump is at most one. This is an incremental bound for discrete time. The null anchor $(0,0,0)$ cannot be an attractor under the controlled evolution: from the second step onward $b_2=1$, so $c\ge2/9$ for every trajectory. Two histories with all-zero and all-one bits already have scalar separation one at time zero.
 

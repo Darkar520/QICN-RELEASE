@@ -59,7 +59,7 @@ that fresh check. Root Docker/CI run governance and release, not Lean.
 
 ## Coverage and fidelity
 
-The [coverage matrix (419 initial targets, 442 active)](../docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md)
+The [coverage matrix (419 initial targets, 444 active)](../docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.md)
 links exact registry IDs to Lean symbols, source hashes, hypotheses, dependencies,
 priority and remaining obligations. Its adjacent JSON is checked by
 `verify-lean-coverage.py`. Public Lean declarations and manuscript entries have
@@ -81,11 +81,18 @@ statement. The plan's execution report records the current audited totals.
 
 Route 6 adds three modules (21 public theorems/lemmas), reusing the existing
 general analytic proofs. Etapa 2 has 35 source files and 271 public
-declarations. Etapa 3A adds five modules and 77 public results: **40 sources
-including the aggregate, 348 public theorems/lemmas**. These totals include
-auxiliaries; the source-target denominator was 436 in Etapa 3A and is now 442. The six scientific additions are manuscript-only and remain PENDING_MATHLIB.
-Coverage: 14 EXACT_MATCH, 56 FINITE_OR_PARTIAL_KERNEL, 350 PENDING_MATHLIB
-and 16 EMPIRICAL_OR_PROTOCOL_BOUNDED. Ten prior exact matches are preserved.
+declarations. Etapa 3A adds five modules and 77 public results (40 sources
+including the aggregate, 348 public theorems/lemmas). The hybrid-boundary phase
+adds two verified modules (`QICNHybridBoundary` and `QICNIrreducibleObservation`,
+19 public theorems/lemmas): **42 sources including the aggregate, 367 public
+theorems/lemmas audited**. These totals include auxiliaries; the source-target
+denominator was 436 in Etapa 3A, 442 in the preceding scientific phase, and 444
+in the late-query phase. Five of the eight recent additions now have verified
+partial/finite-component witnesses (`FINITE_OR_PARTIAL_KERNEL`), while three
+remain `PENDING_MATHLIB`.
+Coverage: 14 `EXACT_MATCH`, 61 `FINITE_OR_PARTIAL_KERNEL`, 353 `PENDING_MATHLIB`
+and 16 `EMPIRICAL_OR_PROTOCOL_BOUNDED`. Ten prior exact matches and the four
+Etapa 3A exact matches are preserved.
 
 | Module | General scope | Main registry anchors |
 |---|---|---|
@@ -102,6 +109,8 @@ Etapa 3A adds these five modules, with one namespace per source:
 | [QICNMooreFactorization](QICNLean/QICNMooreFactorization.lean) | Typed controlled Moore systems; word-compatible morphisms; all surjective private product forecasts, finite maximum and infimal sigma/2 gap; hold/swap controls | Fixed calibrated primitive ports; no exclusion of joint decoders, messages or arbitrary simulator families |
 | [QICNFourRootContrast](QICNLean/QICNFourRootContrast.lean) | All functions of proper subsets on the four-bit cube and arbitrary finite sums; exact 4*xi4 optimum and absolute-loss lower bound | Full source theorem remains partial: arbitrary random measures/past, raw-reading, plant and cost semantics need their own proof |
 | [QICNFiniteAdjudication](QICNLean/QICNFiniteAdjudication.lean) | Actual finite joint laws, separate clean/coupling nulls, fixed coverage floors and selective-leak/abstention controls | Not arbitrary probability spaces or sharp witnesses for every real coverage/leak budget |
+| [QICNHybridBoundary](QICNLean/QICNHybridBoundary.lean) | Late parity queries and finite transcript capacity boundary (`card M < 2^m`), five-root contrast on `Bool^5` and `4*eta*xi4` attainment, signed margin readout stability, faithful quotient injectivity | Randomized mean lower bound `G(1 - sqrt(2^(B-m)))`, prefix mean attainment `G(1 - 2^(B-m))`, and full rival-class infimum remain partial |
+| [QICNIrreducibleObservation](QICNLean/QICNIrreducibleObservation.lean) | Cyclic orbit linear independence and observation injectivity over an arbitrary field when `deg(minpoly K A) = finrank K V`; product forecast lower bound `sigma/2 <= epsilon` | Converse characteristic-polynomial irreducibility and multi-port Moore control-word packaging remain partial |
 
 For weighted histories, SUP finiteness iff criteria, sector completeness,
 metric axioms and product-topology equivalence are still mechanization debt.
@@ -133,4 +142,4 @@ not kernel conclusions. `external_support_certified=false` remains in force.
 
 ## Scientific branch concordance
 
-The current registry contains 927 entries and 383 macros. Its 442 source targets comprise 14 EXACT_MATCH, 56 FINITE_OR_PARTIAL_KERNEL, 356 PENDING_MATHLIB and 16 EMPIRICAL_OR_PROTOCOL_BOUNDED. The six new manuscript results have no new source-equivalent Lean proof. This branch retains the 40-source/348-declaration package; the experimental Etapa 3B checkpoint is preserved on its separate branch. Reproduction status is recorded in the scientific phase receipt and is not inferred from these counts. external_support_certified=false.
+The current registry contains 929 entries and 383 macros. Its 444 source targets comprise 14 `EXACT_MATCH`, 61 `FINITE_OR_PARTIAL_KERNEL`, 353 `PENDING_MATHLIB` and 16 `EMPIRICAL_OR_PROTOCOL_BOUNDED`. Five of the eight recent manuscript results are linked as `FINITE_OR_PARTIAL_KERNEL` via `QICNHybridBoundary` and `QICNIrreducibleObservation`, expanding the active package to 42 sources and 367 audited public theorems/lemmas; the experimental Etapa 3B checkpoint is preserved on its separate branch. Reproduction status is recorded in `DESEMPATE_HIBRIDO_2026-11-18/RESUMPTION/LEAN_REPRODUCTION.json` and is not inferred from these counts. `external_support_certified=false`.

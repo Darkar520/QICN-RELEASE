@@ -93,13 +93,17 @@ python scripts/verify-lean.py --kernel-only --packages-dir E:/QICN-LEAN/v4.31.0-
 python scripts/verify-lean-coverage.py
 ```
 
-La matriz conserva 419 enunciados iniciales, 436 tras Etapa 2 y 442 activos tras la fase científica; contar declaraciones auxiliares
+La matriz conserva 419 enunciados iniciales, 436 tras Etapa 2, 442 en la fase científica anterior y 444 tras añadir la frontera de comunicación; contar declaraciones auxiliares
 Lean no mide por sí solo la cobertura de esos enunciados. Véanse las hipótesis,
 brechas y límites en la guía del paquete y en la matriz enlazada allí.
-Etapa 3A: 40 fuentes con agregado y 348 declaraciones públicas; cobertura
-14 exactos, 56 parciales, 350 pendientes y 16 de protocolo. La comprobación
-fresca y los límites de Etapa 3B se registran en
-[su ejecución](docs/ai-platform-outputs/repair-plans/ETAPA3_MECANIZACION_QICNLEAN_2026-11-15/EJECUCION.md).
+Etapa 3A: 40 fuentes con agregado y 348 declaraciones públicas; la rama
+`codex/desempate-hibrido` añade dos módulos verificados (`QICNHybridBoundary` y
+`QICNIrreducibleObservation`) para un total de **42 fuentes con agregado y 367
+teoremas/lemas públicos auditados**; cobertura sobre 444 objetivos:
+14 exactos, 61 parciales, 353 pendientes y 16 de protocolo. La comprobación
+fresca y los límites se registran en
+[Etapa 3A](docs/ai-platform-outputs/repair-plans/ETAPA3_MECANIZACION_QICNLEAN_2026-11-15/EJECUCION.md)
+y en [Desempate Híbrido](docs/ai-platform-outputs/repair-plans/DESEMPATE_HIBRIDO_2026-11-18/EJECUCION.md).
 
 ## Tier raíz (repositorio git)
 
@@ -138,4 +142,4 @@ Every mathematical change must identify its definition/theorem owner, altered hy
 
 Technical names describe demonstrated objects. Historical aliases remain traceable; interpretation is placed at the end of each paper with formal anchors, additional hypotheses, differential tests and evidence obligations. A finite certificate, an open conjecture and a proved global result remain distinct. Automated prose checks assist review and do not certify mathematical coherence.
 
-La fase científica añade seis resultados manuscritos pendientes de mecanización: registro 927, macros 383 y cobertura actual 14 exactos / 56 parciales / 356 pendientes / 16 de protocolo. Las fuentes Lean de esta rama siguen siendo las 40 de Etapa 3A, con 348 declaraciones públicas. El checkpoint experimental Etapa 3B se conserva en otra rama. CN-3 sigue false en el runtime; su extensión al puente es un protocolo prospectivo. external_support_certified=false.
+La fase científica anterior añadió seis resultados manuscritos y la frontera de comunicación añade dos. Registro 929, macros 383 y cobertura actual 14 exactos / 61 parciales / 353 pendientes / 16 de protocolo. El paquete Lean activo suma dos módulos verificados (`QICNHybridBoundary` y `QICNIrreducibleObservation`) a los 40 de Etapa 3A, alcanzando 42 fuentes con agregado y 367 teoremas/lemas públicos auditados. El checkpoint experimental Etapa 3B se conserva en otra rama. CN-3 sigue false en el runtime; su extensión al puente es un protocolo prospectivo. external_support_certified=false.

@@ -11736,3 +11736,52 @@ Solicitud de retomar la fase bloqueada después de CN-3. Se comprobó incremento
 Actualización documental adicional: tres README mostraban 436 como total activo; ahora 442, seis resultados nuevos aún pendientes de Lean, sin nuevas promociones a EXACT_MATCH. Hashes previos en README_CONCORDANCE.json. Se conservan 129 hashes de activos matemáticos/congelados/toolchain; el cambio documental intencional en lean/README.md, inicialmente incluido en los 130, queda registrado con ambos hashes. Registro927, macros383 y fuentes compiladas idénticas.
 
 Paper IX75 y monolito440; no se modificó el runtime ni se ejecutó su campaña. Su CN-3 continúa false. La extensión F/Z_op es prospectiva; las obligaciones H1–H4 y revisión externa siguen abiertas. Estado: verificación técnica completada, revisión staged y commit local a continuación; identidad definitiva en recibo post-commit externo. No push ni merge. external_support_certified=false.
+
+
+## Desempate híbrido con latencia causal — 2026-11-18
+
+Objetivo: ampliar 361f792 a una clase de híbridos definidos por una frontera verificable de comunicación, mecanizar los núcleos y diseñar su contraste causal con separación de capas. Lecturas: AGENTS y cinco fuentes de gobierno, INSTRUCCIONES y ROADMAP, prerrequisitos y ledger H1–H4, separador y torre de V, plantas y seis cargas de IX, adjudicación y fuga de X y recibos de 361f792. En runtime 1a1c94e: reglas, historial, runner, contratos, controles de workbench, registro estadístico, preregistro y ejecutor históricos. Conservación: SHA-256 de 88 activos protegidos y 202 fuentes del runtime. Se conserva cn3_erased_history=false.
+
+Cambios: manuscritos V/IX/X y PDFs, monolito y reporte de build, dos entradas de registro, grafo, matriz, verificadores de suites y cobertura, README, roadmap y este ledger. El dossier incluye prerregistro congelado, precisión del caso de consulta comprimida, protocolo comparativo, código y resultados racionales. Pruebas Lean propuestas bajo revisión y verificación serial. Los recibos definitivos se registran en EJECUCION.md.
+
+Regresiones buscadas: cambio de hipótesis del círculo al corte cero, pérdida de IDs, empate de réplica, reducción incorrecta del riesgo de protocolos aleatorios al caso determinista, sobreposición de ticks como unidades, fuga de enlace, asignación de costes asimétrica, desbordes o referencias de PDF. Se detectó y corrigió la expectativa incorrecta de mínimo medio G/2 en el caso de una partición binaria de cuatro estados. La enumeración obtuvo 3G/8. Biber no aplica a Paper X; la recompilación por pdfLaTeX estabilizó sus referencias. El histórico de comandos y resultados está en E:/QICN-PRESERVACION/2026-11-18-desempate-hibrido/.
+
+Riesgos residuales: verificación Lean fresca y fidelidad semántica, incorporación del montaje del runtime real, auditoría de presupuesto y del canal causal, calibración externa. La campaña sintética y la diferencia con réplica no cierran la fenomenalidad. external_support_certified=false.
+
+Verificación parcial: raíz 3/3, release 6/6, matemáticas 36/36, concordancia y calidad 444 páginas; cobertura 444 con 348 declaraciones activas preexistentes. Guard de compilación incremental detuvo Lean bajo 500 MiB físicos. Los dos borradores y sus hashes se conservan fuera del agregado, sin promoción de cobertura. No se crea commit de cierre. VERIFICACION_PARCIAL.json y LEAN_RESOURCE_STOP.json conservan trazabilidad y veredictos crudos. external_support_certified=false.
+
+
+## Reanudación Lean, integración de módulos y commit local (`codex/desempate-hibrido`) — 2026-11-18
+
+Agente/plataforma: Antigravity (continuando y cerrando la fase iniciada por Codex en `codex/desempate-hibrido` desde `361f792`).
+
+Solicitud del usuario: liberar RAM (`Mem Reduct`, cierre autorizado de procesos pesados `codex`, `brave` y `VELOCITY MUSIC`) y completar la verificación Lean 4.31.0, integración en el paquete activo, sincronización de cobertura, batería final de puertas y commit local limpio en `codex/desempate-hibrido`.
+
+Objetivo operativo: depurar y verificar en el kernel de Lean 4.31.0 los módulos `QICNHybridBoundary.lean` y `QICNIrreducibleObservation.lean`, integrarlos en `rigid-identity-framework/lean/`, actualizar la matriz de cobertura con fidelidad semántica estricta (`FINITE_OR_PARTIAL_KERNEL`, sin sobre-promoción a `EXACT_MATCH`), ejecutar la auditoría completa `#print axioms` sobre los 367 teoremas/lemas públicos y la batería de verificadores sin ensuciar timestamps en el árbol de trabajo, y crear el commit local limpio en `codex/desempate-hibrido`.
+
+Archivos leídos:
+- `rigid-identity-framework/INSTRUCCIONES.md`, `rigid-identity-framework/ROADMAP.md`
+- `rigid-identity-framework/lean/QICNLean.lean`, `rigid-identity-framework/lean/README.md`, `rigid-identity-framework/lean/QICNLean/QICNFourRootContrast.lean`
+- `rigid-identity-framework/scripts/verify-lean.py`, `rigid-identity-framework/scripts/verify-lean-coverage.py`
+- `rigid-identity-framework/docs/ai-platform-outputs/repair-plans/DESEMPATE_HIBRIDO_2026-11-18/` (`EJECUCION.md`, `PRERREGISTRO.md`, `PRECISION_PREVIA.md`, `PROTOCOLO_COMPARATIVO.md`, `CONSERVACION.json`, `LEAN_RESOURCE_STOP.json`, `VERIFICACION_PARCIAL.json`, `EXACT_CONTROLS.json`, `check_late_transcript.py`, `lean-draft/*`)
+- `rigid-identity-framework/docs/ai-platform-outputs/repair-plans/RUTA6_PAQUETE_LEAN_Y_MECANIZACION_2026-11-14/COVERAGE_MATRIX_419.json` y `COVERAGE_MATRIX_419.md`
+
+Archivos creados/modificados:
+- Creados en paquete activo: `rigid-identity-framework/lean/QICNLean/QICNHybridBoundary.lean`, `rigid-identity-framework/lean/QICNLean/QICNIrreducibleObservation.lean`
+- Modificados: `rigid-identity-framework/lean/QICNLean.lean`, `rigid-identity-framework/lean/README.md`, `README.md`, `rigid-identity-framework/README.md`, `COVERAGE_MATRIX_419.json`, `COVERAGE_MATRIX_419.md`, `DESEMPATE_HIBRIDO_2026-11-18/lean-draft/*`, `DESEMPATE_HIBRIDO_2026-11-18/EJECUCION.md`, `rigid-identity-framework/ROADMAP.md`, y este `IMPLEMENTATION_TRACE_LEDGER.md`
+- Creados en `DESEMPATE_HIBRIDO_2026-11-18/RESUMPTION/`: `LEAN_REPRODUCTION.json`, `VERIFICACION_FINAL.json` (con respaldo en `E:/QICN-PRESERVACION/2026-11-18-desempate-hibrido/`)
+
+Correcciones técnicas en borradores Lean 4.31.0:
+1. `QICNHybridBoundary.lean`: eliminado `import QICNLean.QICNMooreFactorization` no usado; renombrada hipótesis no usada `_hG` en `collision_forces_response_error`; simplificado `simp` en `deadline_capacity_lower`; reemplazado `Finset.abs_prod` inexistente en esta revisión de Mathlib por inducción explícita `Finset.induction_on` con `Finset.prod_insert` y `abs_mul` en `lateSign_abs`; añadidos lemas `rfl` evaluados en `true`/`false` en `physical5_contrast`.
+2. `QICNIrreducibleObservation.lean`: añadido `dsimp only` antes de `rw [map_sub, map_sub, sub_eq_zero]` en la inducción de `Submodule.span_induction` de `irreducible_observation_injective`; tipado explícito `(i : Fin (minpoly K A).natDegree)` en la hipótesis `herr` de `irreducible_product_bound`.
+
+Verificación:
+- Lean 4.31.0: `42` módulos fuente (`QICNLean.lean` + 41 módulos importados), `367` teoremas/lemas públicos auditados (`19` nuevos), `0` warnings/errores, `0` `sorry`/`admit`/`axiom`, axiomas exclusivamente en `{Classical.choice, Quot.sound, propext}`.
+- Cobertura (`verify-lean-coverage.py`): `passed=true`, `444` objetivos (`14` `EXACT_MATCH`, `61` `FINITE_OR_PARTIAL_KERNEL`, `353` `PENDING_MATHLIB`, `16` `EMPIRICAL_OR_PROTOCOL_BOUNDED`), `367` declaraciones públicas.
+- Conservación SHA-256: `88` activos protegidos del marco y `202` activos de `QICN-SYSTEM` verificados sin cambios; `main` (`5769ecf`), `codex/etapa3b-lean` (`5fd9d01`), `codex/fase-cientifica-atomic-puente` (`361f792`) y `QICN-SYSTEM` (`1a1c94e`) intactos.
+- Puertas raíz `3/3`, corpus (`929`), macros (`383`), prose-sync, nonclaims, semantic-inflation, `check_late_transcript.py`, `verify-math-regressions.py` (`36/36`) y `verify:release` (`6/6` en copia aislada `E:`) con `EXIT=0`.
+- Veredictos crudos conservados: `26: INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY`, `27/28/30: BLOCKED_MULTIPLE_GATES`, `31: BLOCKED_FOUNDATION_FIRST_GATES`; `cn3_erased_history=false`; `external_support_certified=false`.
+
+Riesgos residuales y siguiente paso:
+- La cota inferior media aleatoria $G(1-\sqrt{2^{B-m}})$, el recíproco de observabilidad universal $\Rightarrow$ irreducibilidad del polinomio característico, y el ínfimo penalizado sobre toda la clase rival quedan explícitamente como obligaciones de `FINITE_OR_PARTIAL_KERNEL`.
+- Siguiente paso: commit local limpio en `codex/desempate-hibrido` (sin push ni merge a `main`), dejando la rama lista para revisión humana o campaña experimental en `QICN-SYSTEM`. `external_support_certified=false`.

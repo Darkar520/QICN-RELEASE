@@ -1,0 +1,212 @@
+{
+  "technical_acceptance_passed": true,
+  "status": "TECHNICAL_VERIFICATION_COMPLETE_LOCAL_ONLY",
+  "scope": "Full verification including Lean 4.31.0 elaboration of QICNHybridBoundary, QICNIrreducibleObservation, 42-module aggregate QICNLean, and 367-theorem axiom audit. Historical LEAN_RESOURCE_STOP.json and VERIFICACION_PARCIAL.json preserved intact.",
+  "conservation_verified": {
+    "protected_framework_assets": 88,
+    "runtime_assets": 202,
+    "refs": {
+      "main": "5769ecf418a2bb92f1c338bc8b11c7fa09405b65",
+      "codex/etapa3b-lean": "5fd9d01a4d53ecceb55a6bf0bd7bf1fd3b61548c",
+      "codex/fase-cientifica-atomic-puente": "361f7929505bd8d55550b2c0dada08e8589e1168"
+    },
+    "runtime_head": "1a1c94edfec6ab7e9910b0433120ce25e3d24ff2",
+    "all_hashes_matched": true
+  },
+  "lean_reproduction": {
+    "receipt_path": "docs/ai-platform-outputs/repair-plans/DESEMPATE_HIBRIDO_2026-11-18/RESUMPTION/LEAN_REPRODUCTION.json",
+    "passed": true,
+    "lean": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+    "source_modules": 42,
+    "freshly_elaborated_modules": [
+      "QICNLean/QICNHybridBoundary.lean",
+      "QICNLean/QICNIrreducibleObservation.lean",
+      "QICNLean.lean"
+    ],
+    "cached_verified_modules_count": 39,
+    "public_theorems_audited": 367,
+    "new_public_theorems_audited": 19,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "external_support_certified": false
+  },
+  "coverage": {
+    "passed": true,
+    "targets": 444,
+    "counts": {
+      "EXACT_MATCH": 14,
+      "FINITE_OR_PARTIAL_KERNEL": 61,
+      "PENDING_MATHLIB": 353,
+      "EMPIRICAL_OR_PROTOCOL_BOUNDED": 16
+    },
+    "public_lean_declarations": 367,
+    "scope": "ID/hash/symbol bookkeeping; semantic fidelity requires mathematical review",
+    "external_support_certified": false
+  },
+  "mathematical_suites": 36,
+  "late_transcript_exact_controls": {
+    "passed": true,
+    "frontier_points": 27,
+    "m2_b1_best_mean": "3/16777216",
+    "replica_R": "0",
+    "inverted_reference_R": "-1/1048576",
+    "sharp_noisy_R": "255/536870912",
+    "known_selective_leak_risk": "3/8",
+    "always_tie_coverage": "0"
+  },
+  "resumption_gates": [
+    {
+      "name": "root-canonical-integrity",
+      "exit": 0,
+      "command": [
+        "node",
+        "scripts/verify-canonical-integrity.cjs"
+      ],
+      "seconds": 0.17,
+      "log_sha256": "55b84ca78e767f80f70248cc1977c33c8e339ac12de865016ff5dc8381d10f0f"
+    },
+    {
+      "name": "root-claim-registry",
+      "exit": 0,
+      "command": [
+        "node",
+        "scripts/verify-claim-registry.cjs"
+      ],
+      "seconds": 0.12,
+      "log_sha256": "60e8833a4bb02fbf34b00c255fa82e5d5d4df666a599efe78aca5f791580594c"
+    },
+    {
+      "name": "root-canonical-release",
+      "exit": 0,
+      "command": [
+        "node",
+        "scripts/verify-canonical-release.cjs"
+      ],
+      "seconds": 0.31,
+      "log_sha256": "715e234a91ef31c0be24821c78732d6f098f488eccc984b210c9230ab89b6cab"
+    },
+    {
+      "name": "validate-corpus",
+      "exit": 0,
+      "command": [
+        "node",
+        "scripts/validate-corpus.js"
+      ],
+      "seconds": 0.48,
+      "log_sha256": "ffcd9e8e9cd4e1678955bfe717b03b448dff85de3dde0a519ff595548d71c814"
+    },
+    {
+      "name": "validate-macros",
+      "exit": 0,
+      "command": [
+        "node",
+        "scripts/validate-macros.js"
+      ],
+      "seconds": 0.14,
+      "log_sha256": "07c6f39a3922a3e22b9e149980eb67317462945284b1a7e9c5e2e94f2af816f6"
+    },
+    {
+      "name": "verify-prose-sync",
+      "exit": 0,
+      "command": [
+        "python",
+        "scripts/verify-prose-sync.py"
+      ],
+      "seconds": 1.38,
+      "log_sha256": "023cb0e1f8cc98d3fc90860c8b57c0840914b5ff4aeab5ec22952cede14b817d"
+    },
+    {
+      "name": "verify-lean-coverage",
+      "exit": 0,
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "scripts/verify-lean-coverage.py"
+      ],
+      "seconds": 0.41,
+      "log_sha256": "c958bc4fee24909a9e6f105590bbcf1dcd57fe891261d3cedbd899e3a1f64203"
+    },
+    {
+      "name": "lint-nonclaims",
+      "exit": 0,
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint:nonclaims"
+      ],
+      "seconds": 3.89,
+      "log_sha256": "a67711692c46e9cfb81f06535ba5d3f61d1ddcef01e5c0c79c2011d87f64114c"
+    },
+    {
+      "name": "audit-semantic-inflation",
+      "exit": 0,
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:semantic-inflation"
+      ],
+      "seconds": 2.53,
+      "log_sha256": "171e61b13e941e0ffecb8ed7f5f52dc91c0d9cb815d2a07db0252461594bc78e"
+    },
+    {
+      "name": "check-late-transcript",
+      "exit": 0,
+      "command": [
+        "python",
+        "c:\\Users\\irisp\\OneDrive\\Escritorio\\qicn-framework-ordenado\\rigid-identity-framework\\docs\\ai-platform-outputs\\repair-plans\\DESEMPATE_HIBRIDO_2026-11-18\\check_late_transcript.py"
+      ],
+      "seconds": 5.8,
+      "log_sha256": "53118da38e81341f38ac6b06d77bf05d21ff7634b7df5a0849d8b410dca1ba85"
+    },
+    {
+      "name": "verify-math-regressions-36",
+      "exit": 0,
+      "command": [
+        "python",
+        "scripts/verify-math-regressions.py"
+      ],
+      "seconds": 212.95,
+      "log_sha256": "b3ba59bd6d94e70900d8630014c0123898ed91597df0b038faf84862bccc9802"
+    },
+    {
+      "name": "verify-release-isolated",
+      "exit": 0,
+      "command": [
+        "npm.cmd",
+        "run",
+        "verify:release"
+      ],
+      "seconds": 49.53,
+      "log_sha256": "120502371eac856d6ffbb10aa30b9ee8c3a3ed8af0ee324add4a8f430b6ccfc4"
+    }
+  ],
+  "prior_build_and_pdf_verification_preserved": "docs/ai-platform-outputs/repair-plans/DESEMPATE_HIBRIDO_2026-11-18/VERIFICACION_PARCIAL.json",
+  "raw_adjudicators": {
+    "26": {
+      "verdict": "INTERNAL_DIAGNOSTIC_PASS_SYNTHETIC_ONLY",
+      "external_support_certified": false
+    },
+    "27": {
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    "28": {
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    "30": {
+      "verdict": "BLOCKED_MULTIPLE_GATES",
+      "external_support_certified": false
+    },
+    "31": {
+      "verdict": "BLOCKED_FOUNDATION_FIRST_GATES",
+      "external_support_certified": false
+    }
+  },
+  "historical_cn3_erased_history": false,
+  "external_support_certified": false
+}

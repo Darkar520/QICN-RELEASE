@@ -38,3 +38,5 @@ import QICNLean.QICNWeightedChannels
 import QICNLean.QICNMooreFactorization
 import QICNLean.QICNFourRootContrast
 import QICNLean.QICNFiniteAdjudication
+import QICNLean.QICNHybridBoundary
+import QICNLean.QICNIrreducibleObservation

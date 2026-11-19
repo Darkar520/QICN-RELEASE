@@ -2174,6 +2174,123 @@ not establish that the full class of Paper IX defeats all equal-cost
 functional architectures. The existing four-root obstruction is preserved,
 now with a constructive enlargement and its own exact obstruction.
 
+
+\subsection{Late Queries with a Bounded History Transcript}
+
+A bound on the number of communicating edges does not by itself suppress a
+fifth-order response. In the $4+1$ split of the five-root construction, the
+history side can transmit its one sign before the response. The receiving side
+can then compute the full response. The following protocol instead varies the
+size of the retained record and chooses the query after the transcript is
+sealed. It tests the timing and capacity of an interface.
+
+At capture prepare $x\in\mathbb F_2^m$ on the retention side, for $m\ge1$.
+Give both programs the same raw preparations at their respective ingress ports.
+The interface may carry arbitrarily computed messages before the cutoff.
+Its full receiving-side view $M(x)$, conditional on public preparation,
+independent past and random tape, has at most $K\le 2^B$ possible values.
+Count timing, shared writes, cached observables and auxiliary channels in
+that view. Then draw $q\in\mathbb F_2^m$ independently and supply it to the
+reader. The retention side does not receive $q$, and no new signal from that
+side reaches the reader before its answer. Hence even an adaptive recurrent
+program has a final forecast $g(M(x),q)$ conditional on the past and tape.
+A shared register holding the full $x$ falls outside this restriction when
+$B<m$.
+
+The reference construction keeps $x$ available at its local actuation route.
+After the query it writes the bit representing $r=(-1)^{q\cdot x}$ to the
+coupling site $b_8$ in a copy of the quartic plant. This is a declared extra
+controller and memory bank, with $m$ binary cells and a parity calculation.
+For the fixed opposing preparations $s=(1,1,-1,-1)$, the world residual
+$Y_\eta(s,r)-Y(s)$ from the prior proposition is $16\eta\xi_4 r=4Gr$.
+A quarter-scale calibration gives the response $b(q)+G(-1)^{q\cdot x}$,
+where $b(q)$ is a known baseline (zero for the centred readout).
+The public calibration does not convey $x$. Tupled memory and the late
+write specify this mathematical realization. The native nodal runtime
+requires separate instrumentation of these routes.
+
+\begin{theorem}[Late Parity Queries and the Transcript Capacity Boundary]
+\label{thm:late-parity-transcript}
+Let $x,q$ be independent uniform vectors in $\mathbb F_2^m$ and let $G>0$.
+Among forecasts with the above fixed deadline, the deterministic minimax
+absolute error is exactly $G$ for $B<m$ and zero for $B\ge m$.
+For $B<m$ the balanced mean absolute error of every such protocol is at least
+\[
+ G\bigl(1-\sqrt{2^{B-m}}\bigr),
+\]
+also with independent shared or private randomization. The mean lower bound
+need not be sharp. Sending $B$ coordinates attains mean error
+$G(1-2^{B-m})$ for $0\le B\le m$.
+\end{theorem}
+
+\begin{proof}
+Subtract the public baseline. If $B<m$, some two records share a transcript.
+Their difference has a nonzero coordinate. The corresponding unit query
+produces opposite values $\pm G$ for those records, so one absolute error is
+at least $G$. A centred forecast attains the bound. If $B\ge m$, sending
+all $m$ bits and computing the character gives exact prediction. This is a
+capacity assertion. Whether that implementation fits a particular joint
+resource ceiling must also be checked.
+
+For the mean, write $N=2^m$ and let $A_j$ be the nonempty transcript cells
+of sizes $n_j$. For fixed $j,q$, the optimal absolute-loss forecast is a
+median of the two-point conditional law. Its error is
+$G(1-|S_j(q)|/n_j)$, where $S_j(q)=\sum_{x\in A_j}(-1)^{q\cdot x}$.
+For $x\ne x'$ pairing queries across a differing coordinate cancels the
+mean of $(-1)^{q\cdot(x-x')}$. Thus $\mathbb E_q S_j^2=n_j$ and
+$\mathbb E_q|S_j|\le\sqrt{n_j}$. Weight by $n_j/N$ and use
+$\sum_j\sqrt{n_j}\le\sqrt{KN}$ to obtain the bound. Fixing all independent
+random tapes preserves the cell count and uniform law, so integration proves
+the randomized mean statement. It does not extend the deterministic
+pointwise minimax value to a supremum of expected errors.
+For the prefix encoder the unknown part of the query is zero with
+probability $2^{B-m}$, in which case the answer is exact. Otherwise the
+sign is balanced conditionally and the centred answer has loss $G$.
+\end{proof}
+
+For a distinct late-communication arm, if the retention side receives the
+query before the deadline, one bit of return traffic suffices. Sending the
+whole query need not be necessary: after forwarding $m-1$ retained bits,
+the reader can send just the coefficient of the one remaining coordinate
+and recover its contribution in one reply. A shared state with full timely
+access also reconstructs the response. Delayed feedback, adaptive messages
+and hidden timing channels must be audited against the full view; a nominal
+message-length budget without this audit does not satisfy the theorem.
+
+\begin{proposition}[Signed Margin with Readout Error and Common Cost]
+\label{prop:late-transcript-noise-margin}
+Use the same absolute loss $e$ and graph charge $\lambda c$ for both sides
+in any arm, where $\lambda\ge0$. For a nonempty rival class with finite
+infimal loss write
+$R=\inf_r(e_r+\lambda c_r)-(e_h+\lambda c_h)$.
+If each of the two calibrated raw readings incurs error at most $\varepsilon$,
+then $|R_{\rm observed}-R_{\rm clean}|\le4\varepsilon$, for fixed tasks,
+forecasts and graph charges. With exact clean reference response, rival clean
+loss at least $L$, and $c_h-c_r\le\Delta c$ for every rival,
+$R_{\rm observed}\ge L-4\varepsilon-\lambda\Delta c$.
+An admitted total replica at equal cost still gives $R\le0$ on matched
+readings, including under interventions on the complete shared law.
+\end{proposition}
+
+\begin{proof}
+A difference of two readings changes by at most $2\varepsilon$. Absolute
+loss changes by no more, pointwise and under averaging or suprema.
+A uniform bound also passes through the infimum without requiring
+attainment. Apply it once to each side. Subtracting the maximum allowed
+extra charge gives the lower bound. The replica gives the candidate's
+same output for each command and the same charged cost, so it is a
+witness for the nonpositive infimal margin.
+\end{proof}
+
+With a measured common cost the penalty cancels. Otherwise the same
+encoding of operators, constants, working state, transmissions and
+deadline applies to both descriptions. Identical total cost ceilings
+do not establish identical access to a retained bit. Any comparison
+that imposes different routes must report that intervention as the
+source of the architectural distinction. Defeating a restricted class
+does not identify internal causal structure among predictors with
+identical laws on all allowed interventions.
+
 \subsection{An Explicit Six-Task Operational Binding}
 
 The symbolic bridge predicates admit different proposed empirical bindings.

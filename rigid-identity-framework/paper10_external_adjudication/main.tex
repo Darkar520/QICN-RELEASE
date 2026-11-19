@@ -541,6 +541,18 @@ With a balanced posterior, any covered guess has conditional risk $1/2$ and abst
 Evidence for distinguishability under $H_1$ requires a preregistered rule $a^\star$, minimum coverage $C_{\min}>0$, a justified null bound $B_0$ accounting for the leakage budget, and margin $\eta>0$. On admissible held-out bundles require $C\ge C_{\min}$ and $R_\gamma(a^\star)\le B_0-\eta$ after sampling uncertainty and multiple-comparison corrections. Forced-choice, balanced label permutations, always abstaining and known-leak controls are evaluated under the same loss and coverage protocol. The manuscript reports no campaign satisfying this criterion.
 \end{proposition}
 
+
+For the architectural comparisons of Paper IX, a distinct use of this loss
+takes $h,m$ as opaque source labels for two implementations. Each whole
+matched trajectory bundle contributes one decision. Source distinguishability
+and the signed difference of prediction losses on physical tasks are
+separate estimands: a classifier can identify an implementation without
+either predictor being better. If the equal-cost replica induces the same
+masked law in every randomized arm, the clean conditional balance premise
+holds under balanced label randomization. A timing or metadata cue is part
+of the bundle unless demonstrably removed. Fix eligibility and justify the
+leak model before applying a null floor.
+
 \subsection{Coverage-Sensitive Leakage Bounds}
 
 Fix decision randomization independent of the bundle, source and leak event. Let $B$ indicate an executed decision and $W$ a covered error, so $C=\mathbb E B$ and $R_\gamma=\mathbb E W+\gamma(1-C)$.
